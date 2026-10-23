@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2b27026cae3092ab1720",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bcbb1124-3c5b-4723-8257-479a2714d3bb/2025/11/26/13/LVD_Z15%20Pro_CN23BLLV%20002_AN%2050694438%200001%20s_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_Z15 Pro_CN23BLLV 002_AN 50694438 0001 s_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2b27026cae3092ab1720/LVD_Z15_Pro_CN23BLLV_002_AN_50694438_0001_s_extsigned.pdf",
+  "sha256": "c1e858129914abd4e6274d6f9cdc264f02f5009e0b316a603789c238f0d1a3e3",
+  "size_bytes": 1471908,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bcbb1124-3c5b-4723-8257-479a2714d3bb/2025/11/26/13/LVD_Z15%20Pro_CN23BLLV%20002_AN%2050694438%200001%20s_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 26 Nov 2025 05:50:20 GMT",
+  "etag": "\"481145474c6352d955f31ba29a00486f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1471908,
+      "actual": 1471908,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

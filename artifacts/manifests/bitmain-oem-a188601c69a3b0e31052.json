@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a188601c69a3b0e31052",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a43a85f9-26ef-4baa-88ef-7cbee86c6178/2026/08/06/17/ACRT2506202-S23%C2%A0Hyd.-SVHC247.pdf",
+  "kind": "document",
+  "title": "ACRT2506202-S23\u00a0Hyd.-SVHC247.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a188601c69a3b0e31052/ACRT2506202-S23_Hyd.-SVHC247.pdf",
+  "sha256": "cf224d402913b77bb0e5b07efb587151fac921c0e3fa4a45d1dff8fbf11eee36",
+  "size_bytes": 233591,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a43a85f9-26ef-4baa-88ef-7cbee86c6178/2026/08/06/17/ACRT2506202-S23%C2%A0Hyd.-SVHC247.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 06 Aug 2026 09:43:52 GMT",
+  "etag": "\"c29bd5b60cd955f183b3e91cd7b9c6f4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 233591,
+      "actual": 233591,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

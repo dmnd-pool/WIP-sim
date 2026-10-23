@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-06cf339aac901e6d7836",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a3310504-1d3f-4727-b773-ca015b4c2975/2023/11/27/18/S19j%20Pro%2B%20CB%2062368%202nd%20cert%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "S19j Pro+ CB 62368 2nd cert Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:45+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-06cf339aac901e6d7836/S19j_Pro+_CB_62368_2nd_cert_Shenzhen.pdf",
+  "sha256": "0c6a4d92129a51f3320b16dddc11991e947afd038489e2591b5d0f649278fb5f",
+  "size_bytes": 628658,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a3310504-1d3f-4727-b773-ca015b4c2975/2023/11/27/18/S19j%20Pro%2B%20CB%2062368%202nd%20cert%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 27 Nov 2023 10:31:43 GMT",
+  "etag": "\"ec765cf66815cc494395b0c9c4af261a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 628658,
+      "actual": 628658,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

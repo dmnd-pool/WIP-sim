@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ccbee4d2187d70d34838",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/68ef51a8-a55e-4418-85a6-b107b3ff0ada/2024/03/01/19/WTD24D02029012E_Report_KS5_FCC.pdf",
+  "kind": "document",
+  "title": "WTD24D02029012E_Report_KS5_FCC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:02+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ccbee4d2187d70d34838/WTD24D02029012E_Report_KS5_FCC.pdf",
+  "sha256": "2a92ce3f90375132086a7ff896522c6f71c8ffaab10d95c521890a04a08b991f",
+  "size_bytes": 590486,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/68ef51a8-a55e-4418-85a6-b107b3ff0ada/2024/03/01/19/WTD24D02029012E_Report_KS5_FCC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Mar 2024 11:47:10 GMT",
+  "etag": "\"f9f850f8e42f03f8b17aeb46bcfd7106\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 590486,
+      "actual": 590486,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

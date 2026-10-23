@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-f62dc3f5e031af84881f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/31d05708-5a4e-4ce9-84ad-32140ba8a7d9/2019/08/08/22/Antminer-S9j-xilinx-201907302056-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9j-xilinx-201907302056-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:39:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-f62dc3f5e031af84881f/ANTMINER-S9j-xilinx-201907302056-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "sha256": "86ffeb46ed3a7e729002b28acce5f3c93e9936403c5e2dee11a54c52620989da",
+  "size_bytes": 44228996,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/31d05708-5a4e-4ce9-84ad-32140ba8a7d9/2019/08/08/22/Antminer-S9j-xilinx-201907302056-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:21 GMT",
+  "etag": "\"73dd14291e097fc9f18c46f736997af2-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 44228996,
+      "actual": 44228996,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "561c0f5441a99825e25b9c0c3521fff7",
+      "actual": "561c0f5441a99825e25b9c0c3521fff7",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

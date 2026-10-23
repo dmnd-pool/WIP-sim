@@ -1,0 +1,152 @@
+Publisher English text from the bilingual SEALMINER Error Code Manual V2.0.
+
+This is a text extraction, not a new technical translation. Chinese characters are omitted. Original English wording and code numbers remain. The source uses separate code namespaces for operating errors and web updates. Read the original PDF if row alignment is unclear.
+
+                                                               Sealminer Error Code Manual - V2.0
+(Error code)                            (Reason)                                                           (Treatment method)
+     1                          (Control board initialize fail)                              (Check whether the firmware version and miner match)
+     2                       Asicboost(Control board not support asicboost)                                (Updata firmware)
+     3                           SN(Control board SN error)                                              (Contact the after-sales)
+     4                        MAC(Control board MAC address error)                                      (Contact the after-sales)
+
+      100                              1(Fan 1 detect error)                            (Check whether the fan connection is normal or replace the fan)
+      101                              2(Fan 2 detect error)                            (Check whether the fan connection is normal or replace the fan)
+      102                              3(Fan 3 detect error)                            (Check whether the fan connection is normal or replace the fan)
+      103                              4(Fan 4 detect error)                            (Check whether the fan connection is normal or replace the fan)
+      104                              5(Fan 5 detect error)                            (Check whether the fan connection is normal or replace the fan)
+      105                              6(Fan 6 detect error)                            (Check whether the fan connection is normal or replace the fan)
+
+      120                 (Air inlet fan speed too high)                                         (Check ambient temperature)
+      121                 (Air outlet fan speed too high)                                        (Check ambient temperature)
+      125         2000(The speed difference of air inlet fan exceeds 2000 rpm)    (Check whether the fan connection is normal or replace the fan)
+      126         2000(The speed difference of air outlet fan exceeds 2000 rpm)   (Check whether the fan connection is normal or replace the fan)
+
+      180                            OLED(OLED initialize fail)                                    OLEDOLED(Check OLED connection or replace OLED)
+
+      200            1 PCB (Board 1 PCB temperature sensor detect fail)                             (Check the connecting wire of board)
+      201            2 PCB (Board 2 PCB temperature sensor detect fail)                             (Check the connecting wire of board)
+      202            3 PCB (Board 3 PCB temperature sensor detect fail)                             (Check the connecting wire of board)
+
+      220          1 PCB (Board 1 temperature sensor communication error)                           (Check the connecting wire of board)
+      221          2 PCB (Board 2 temperature sensor communication error)                           (Check the connecting wire of board)
+      222          3 PCB (Board 3 temperature sensor communication error)                           (Check the connecting wire of board)
+
+      240                    1 PCB (Board 1 PCB temperature too high)                                       (Check ambient temperature)
+      241                    2 PCB (Board 2 PCB temperature too high)                                       (Check ambient temperature)
+      242                    3 PCB (Board 3 PCB temperature too high)                                       (Check ambient temperature)
+
+
+      270                     1 (Board 1 chip column count error)                                             (Contact the after-sales)
+      271                     2 (Board 2 chip column count error)                                             (Contact the after-sales)
+      272                     3 (Board 3 chip column count error)                                             (Contact the after-sales)
+
+      280                       1 (Board 1 chip row count error)                                              (Contact the after-sales)
+      281                       2 (Board 2 chip row count error)                                              (Contact the after-sales)
+      282                       3 (Board 3 chip row count error)                                              (Contact the after-sales)
+
+
+
+
+      290                             1 SN(Board 1 SN error)                                                     (Contact the after-sales)
+      291                             2 SN(Board 2 SN error)                                                     (Contact the after-sales)
+      292                             3 SN(Board 3 SN error)                                                     (Contact the after-sales)
+
+      300                1 EEPROM(Board 1 EEPROM communication error)                                    (Check the connecting wire of board)
+      301                2 EEPROM(Board 2 EEPROM communication error)                                    (Check the connecting wire of board)
+      302                3 EEPROM(Board 3 EEPROM communication error)                                    (Check the connecting wire of board)
+
+      310                    1 BIN(Board 1 Bin version parse error)                                           (Contact the after-sales)
+      311                    2 BIN(Board 2 Bin version parse error)                                           (Contact the after-sales)
+      312                    3 BIN(Board 3 Bin version parse error)                                           (Contact the after-sales)
+
+      320                     1 BIN(Board 1 Bin number parse error)                                            (Contact the after-sales)
+      321                     2 BIN(Board 2 Bin number parse error)                                            (Contact the after-sales)
+      322                     3 BIN(Board 3 Bin number parse error)                                            (Contact the after-sales)
+
+      330                         BIN(Bin version mismatch)                                                    (Contact the after-sales)
+      331                          BIN(Bin number mismatch)                                                     (Contact the after-sales)
+      332                             BIN(Bin file missing)                                                        (Contact the after-sales)
+      333                           BIN(Bin file parse error)                                                    (Contact the after-sales)
+      334                        (Board column count not match)                                                (Contact the after-sales)
+      335                         (Board row count not match)                                                  (Contact the after-sales)
+      336                         BIN(Bin number not test)                                                    (Contact the after-sales)
+
+      400                         1 (Board 1 clk detect error)                                                (Contact the after-sales)
+      401                         2 (Board 2 clk detect error)                                                (Contact the after-sales)
+      402                         3 (Board 3 clk detect error)                                                (Contact the after-sales)
+
+      410                        1 (Board 1 reset detect error)                                               (Contact the after-sales)
+      411                        2 (Board 2 reset detect error)                                               (Contact the after-sales)
+      412                        3 (Board 3 reset detect error)                                               (Contact the after-sales)
+
+
+      420                           1 (Board 1 not insert)                                             (Check the connecting wire of board)
+      421                           2 (Board 2 not insert)                                             (Check the connecting wire of board)
+      422                           3 (Board 3 not insert)                                             (Check the connecting wire of board)
+
+      430                     1 (Board 1 communication test error)                    (Try to power on again or exchange the position of the board)
+      431                     2 (Board 2 communication test error)                    (Try to power on again or exchange the position of the board)
+      432                     3 (Board 3 communication test error)                    (Try to power on again or exchange the position of the board)
+
+      440                           1 (Board 1 initialize fail)                            (Try to restart or exchange the position of the board)
+      441                           2 (Board 2 initialize fail)                            (Try to restart or exchange the position of the board)
+      442                           3 (Board 3 initialize fail)                            (Try to restart or exchange the position of the board)
+
+      450                        1 (Board 1 bad chip too much)                                                 (Contact the after-sales)
+      451                        2 (Board 2 bad chip too much)                                                 (Contact the after-sales)
+      452                        3 (Board 3 bad chip too much)                                                 (Contact the after-sales)
+
+      460                       1 (Board 1 frequency configure fail)                    (Try to repower on or exchange the position of the board)
+      461                       2 (Board 2 frequency configure fail)                    (Try to repower on or exchange the position of the board)
+      462                       3 (Board 3 frequency configure fail)                    (Try to repower on or exchange the position of the board)
+
+      470                              1 (Board 1 low hashrate)                                        (Try power on again or replace PSU)
+      471                              2 (Board 2 low hashrate)                                        (Try power on again or replace PSU)
+      472                              3 (Board 3 low hashrate)                                        (Try power on again or replace PSU)
+
+      480                        1 (Board 1 communication error)                        (Try to power on again or exchange the position of the board)
+      481                        2 (Board 2 communication error)                        (Try to power on again or exchange the position of the board)
+      482                        3 (Board 3 communication error)                        (Try to power on again or exchange the position of the board)
+
+
+      600                    (Bootup ambient temperature is too high)                               (Check ambient temperature)
+      601                        (The bootup time is too long)                              (Try power on again or upgrade the latest firmware)
+      602                  (Miner is running at reduced frequency)                               (Check ambient temperature)
+      603                  (Miner is running at reduced frequency)                               (Check ambient temperature)
+      604                       (Miner over temp shutdown)                                            (Check ambient temperature)
+
+      700                 (Pool connection failed or disconnected)                          (Check the network or ore pool configuration)
+      701                       BIN(Download bin file failed)                                              (Check the network)
+      702                   AsicBoost(Pool not support Over AsicBoost)                                      (Change pool)
+
+      800                              (PSU detect fail)                                            (Check the power cable or replace PSU)
+      801                            (PSU communication failure)                                    (Check the power cable or replace PSU)
+      802                             (PSU voltage no output)                                      (Check the power cable or replace PSU)
+      803                                (PSU overload)                                              (Check the ambient temperature or replace PSU)
+      804                               (PSU error detected)                                         (Check the ambient temperature or replace PSU)
+         805                         (PSU powerdown fail)                                       (Check the power cable or replace PSU)
+         806                         (PSU set voltage fail)                                     (Check the power cable or replace PSU)
+
+
+
+
+web(error Code)               (Reason)                                                       (Treatment method)
+         1                       (File is too large)                           ，,(Upload file error, the file is too large, confirm the file is correct.)
+         2                       (File is too large)                           ，,(Upload file error, the file is too large, confirm the file is correct.)
+         3                 (Only part of the file was uploaded)                            (Uploading a file Again)
+         4                     (No file was uploaded)                              。(Upload select an empty file. File selection error)
+         6               (The temporary file directory is not specified)                    (Try to power on again)
+         7                   (Failed to write a file. Procedure)                                            
+                                                                                                            (Try to power on again)
+
+         100                   (The miner system is faulty)                                           (Re-burn firmware upgrade)
+         101                    (Upgrade file error)                                                (Confirm the firmware is correct.)
+         102             (No local version configuration file found)                            (Confirm the firmware is correct.)
+         103                   (No upgrade file found)                                              (Confirm the firmware is correct.)
+         104              (Description Failed to extract the upgrade file)                         (Confirm the firmware is correct.)
+         105                       (Signature error)                                                   (Confirm the firmware is correct.)
+         106                 (Error extracting signature file)                                     (Confirm the firmware is correct.)
+         107                     MD5(MD5 Check error)                                                  (Confirm the firmware is correct.)
+         108                        (Version error)                                                    (Confirm the firmware is correct.)
+         109                    (Upgrade recovery Failed)                                             (Confirm the firmware is correct.)
+

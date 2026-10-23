@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-bfe703f5200c3e68f162",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a0cc5067-caab-42fb-b23e-02fed37251b8/2024/05/22/17/D9%20UKCA%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 UKCA Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-bfe703f5200c3e68f162/D9_UKCA_Shenzhen.pdf",
+  "sha256": "faa1f9b47ba94c01116c676084464a3f2f04c221b97dfddd72a9d6894da20d27",
+  "size_bytes": 1626090,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a0cc5067-caab-42fb-b23e-02fed37251b8/2024/05/22/17/D9%20UKCA%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:55:47 GMT",
+  "etag": "\"4eb3751dbcf1e882d1fa1b3d1e6e9890\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1626090,
+      "actual": 1626090,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

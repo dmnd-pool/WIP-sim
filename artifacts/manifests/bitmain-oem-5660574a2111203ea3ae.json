@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5660574a2111203ea3ae",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c065dbc3-364f-4def-8755-228fd986d202/2026/06/26/18/ACRT2410207-R1-U3S21EXPH-SVHC241.pdf",
+  "kind": "document",
+  "title": "ACRT2410207-R1-U3S21EXPH-SVHC241.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:02+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-5660574a2111203ea3ae/ACRT2410207-R1-U3S21EXPH-SVHC241.pdf",
+  "sha256": "814ac1913354c7694d0072bf4e393713b69fd2886747c2faa1c44a1bc8f86523",
+  "size_bytes": 234042,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c065dbc3-364f-4def-8755-228fd986d202/2026/06/26/18/ACRT2410207-R1-U3S21EXPH-SVHC241.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 26 Jun 2026 10:01:03 GMT",
+  "etag": "\"2f53f2fecc6a247e5322ba3ac8511bab\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 234042,
+      "actual": 234042,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

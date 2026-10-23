@@ -1,0 +1,417 @@
+{
+  "scope": "Clean offline source build and tests with installed Rust/Cargo1.94.1; not a clean firmware package installation or target acceptance.",
+  "cargo_home": "work/simulator/clean-cargo-home-210",
+  "target_directory": "work/simulator/clean-target-210",
+  "source_identity": "05f7a95c28562f80a17cda89932726b2c3b473f7ba013e85bff0a5375cf24d49",
+  "source_files": 3611,
+  "tests_passed": 535,
+  "test_binaries": 96,
+  "binaries": {
+    "work/simulator/clean-target-210/release/cgminer-fresh-work": {
+      "identity": {
+        "sha256": "5de15174f92acda281fbb086a9684aace378c93b376bb67f1d7de767250d0ce4",
+        "size": 1484032
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/md-sim": {
+      "identity": {
+        "sha256": "b34988baac8ee1bfcd0a5f58d50a3d1a9155fab01c5a8ccfd200edfa9ce442b4",
+        "size": 3842968
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/md-sim-worker-relay": {
+      "identity": {
+        "sha256": "e72d971b06db3483f7a8225531b108ee46e37a5957a9b2a105f5a960328274c5",
+        "size": 1159296
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/cgminer-coordinator": {
+      "identity": {
+        "sha256": "207192dc5dc71f4dbfc9f2a0b47a44c4083bacd89fba4c1aea80ac4e9408a7ad",
+        "size": 3816584
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/md-sim-remote": {
+      "identity": {
+        "sha256": "7ede0f3a9a90f0f0882e06c0a75b0dbab29cc22fd7d63d852e48d52ff7f6745e",
+        "size": 1390368
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/md-sim-access": {
+      "identity": {
+        "sha256": "ef9569633f913e7e241f499bbd37ae38bc493df46a220e5a2be58d5cdcb94fe8",
+        "size": 1690072
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/cgminer-lab": {
+      "identity": {
+        "sha256": "e8cd05519e8a643c6a91df2ab84561fab18eae3db9a438c2f3f7747fa9050a91",
+        "size": 2005192
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/md-sim-worker-ipc": {
+      "identity": {
+        "sha256": "c25fda8b484dadf32fc6747f8857966440474b6a92508cf9a571826c0e1f61b2",
+        "size": 1909016
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_sd_snapshot_inspect": {
+      "identity": {
+        "sha256": "f3a3a9f82868c0c3b731a6b098818601a716363e5558611cebd445769fb82d19",
+        "size": 1886928
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/native_browser_check": {
+      "identity": {
+        "sha256": "52a1e40cdf5b27338387eb69ffaaa3eca3668bb6582ffe90cfa377c043ed6d3b",
+        "size": 1622184
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_pool_guest": {
+      "identity": {
+        "sha256": "95098f2fe871f3711b8f49aa22741e471fd9683f16502585311066172933d7be",
+        "size": 2091936
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_update_bundle": {
+      "identity": {
+        "sha256": "228ffba689abd52ebcb180fe24ff7d8e8157509a9957a94d618f4d4095ba77d4",
+        "size": 1715648
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_nand_cycle": {
+      "identity": {
+        "sha256": "7e5fe59c648da0c59606dbaa698e8164338053f1baaee1b261707266210ef500",
+        "size": 1393784
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/browser_probe": {
+      "identity": {
+        "sha256": "1e5a5656877997811b1cdebced6f4868c4434f64e3c6f83c8b193edfc18895c8",
+        "size": 1464904
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_bitstream_probe": {
+      "identity": {
+        "sha256": "119f5568b3f822a5906ae9ded36afe1470cc8a50f34f19a40f58bc06bcde736e",
+        "size": 1642048
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_storage_report": {
+      "identity": {
+        "sha256": "5fb41802bfa3197f6a551543e0e4b17e8628aa10d4bb77dd38e5174a5e52d3cd",
+        "size": 1857184
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/process_vm": {
+      "identity": {
+        "sha256": "f50de2c73b2ceba0950681a0be56bf054dfe9e1fb5690c75a1b1815e69cd9444",
+        "size": 1849456
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_native_network": {
+      "identity": {
+        "sha256": "8555ac90afca8f9cddd4d20ba406c5c53af872c2fbcb892dab8e3a693473f0ea",
+        "size": 1125080
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/build_esp_qemu_backend": {
+      "identity": {
+        "sha256": "f9bf4e50af48b495615960671bbbec9939debcabae1921c68dfab50c6c891b03",
+        "size": 2210096
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/build_qemu_tool": {
+      "identity": {
+        "sha256": "2dcff7607df46ba3bfb64742bdebbb292d04046efd4e90634a71f8e5ea91d5e7",
+        "size": 1994904
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_pool_link": {
+      "identity": {
+        "sha256": "4bcddd72f832b43bfde454a032dcfae514e2efafaa7a6f298eac3259632f3a07",
+        "size": 2002016
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/reclaim_qemu_inputs": {
+      "identity": {
+        "sha256": "5ae91d45df18f1d90775a014aad9e6dceb37f71dcf8fb5c8cbd4453fcc5f1050",
+        "size": 1033792
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_asic_audit": {
+      "identity": {
+        "sha256": "aad2b024b8c73669032d04b9b87f1fe28a2538dac5ea166d08f988ac5a2c9f28",
+        "size": 2323696
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/pic16_static_listing": {
+      "identity": {
+        "sha256": "78585c63a7ae16fb1e095aea1e61ba6a98137cf1242a464ee02bc16d9eaa579e",
+        "size": 873264
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/freeze_cgminer_toolchain": {
+      "identity": {
+        "sha256": "54f17daa2dbe4f1e23e8a02007b0b445044dbbb2465f02e3a30a6b1d17785123",
+        "size": 1684296
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/capture_browser": {
+      "identity": {
+        "sha256": "5e56ce26254b40a6aa118719783c3843b3aa16246064497d3cbe2907649d8f19",
+        "size": 1232728
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_native_service": {
+      "identity": {
+        "sha256": "a3c7352c13f5e865e5c38bd61efe6f6e93e9596b4f53cf681c4b1d1fc3e9d527",
+        "size": 2109864
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/isolated_network_vm": {
+      "identity": {
+        "sha256": "5e29e2cdb1fff3856ef74ea5e84552b5a472aa39f96fbcfccc60b6bbb13abcbf",
+        "size": 2211816
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_nand_storage": {
+      "identity": {
+        "sha256": "15249fd8f91b3c5763822a494df4e412b72bdfdb1d8ee5135e36cec511c0a882",
+        "size": 1749320
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/remote_namespace_check": {
+      "identity": {
+        "sha256": "b21f9d4963595429c3a18dcd8168e295a2205b9c15d2a3d6bff966568300abd1",
+        "size": 3916072
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_backend_qtest": {
+      "identity": {
+        "sha256": "ced483fb09656a4ce2c709b00b98cc78df7d78903b116ffd9dc96c0a1e6a91db",
+        "size": 1852664
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/esp32_original_probe": {
+      "identity": {
+        "sha256": "14e7abc4b5e73de008ffa531f40ad985515ca236d9b72a60deb48b6161d5b3c2",
+        "size": 1941600
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_boot_storage_cycle": {
+      "identity": {
+        "sha256": "473590699224e1c7fcd08b1a8bc83f294239d217fdb6531001d0c91beaadcc40",
+        "size": 897040
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/aggregate_limits_check": {
+      "identity": {
+        "sha256": "d74fdd27770f86ab51231af7f7dde9da4ee93bbdf7870eaf8bc2dce503b7d57b",
+        "size": 2334136
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_cpu_regression": {
+      "identity": {
+        "sha256": "8bb10fddbedcaeccdd63c5f186405138674ef08ca30badec8c48d5d0168fd2a6",
+        "size": 1672816
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_dashboard_cycle": {
+      "identity": {
+        "sha256": "d9861464f8a5a7c0d8a6a0c002f524c4b597830d27e4b48eeaff36abd4c70fc7",
+        "size": 1523088
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/browser_source_inspect": {
+      "identity": {
+        "sha256": "13955a7374e8adaf85d76174266ce581765c45a68039b7ab7938f50155c87332",
+        "size": 1648752
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/checkpoint_qemu_core": {
+      "identity": {
+        "sha256": "8b79a2b62c5981577bdaec1ab7cd2300fde38847cd0bfd0b23de863260c89979",
+        "size": 895512
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/qemu_s9_backend": {
+      "identity": {
+        "sha256": "1fd458c89578e446e40d529ce73cbb878f473dae5232464787f60b0fc89acd86",
+        "size": 1876784
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_update_fault": {
+      "identity": {
+        "sha256": "60f4b728730ed494b52d30c687a9ff1b9f73465d219774bd10998d47548710c1",
+        "size": 1669992
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/esp32_backend_qtest": {
+      "identity": {
+        "sha256": "3cf7df01c53ba411ce6fcc6bf7a2e632f01c93a0530f77f4ec294d9ff8721b4e",
+        "size": 1698248
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/original_zynq_probe": {
+      "identity": {
+        "sha256": "deed82c3975e4cae03b167c066ea96c6199b165aad03903c28d035d1579e419d",
+        "size": 1811904
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_browser_check": {
+      "identity": {
+        "sha256": "16ab5930c28fe72099ff49d4966de539b425cc0014bb9b2a563aad1e8bc2a19d",
+        "size": 2111832
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/browser_report": {
+      "identity": {
+        "sha256": "9f62c448c528da81ce2fe5ea296120512267bb7a5c6a7605dd5d304fab68bfb4",
+        "size": 1295720
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/catalog_audit": {
+      "identity": {
+        "sha256": "98dc54e6db2d701e0494339dc12eb9e90ca68fbf0806bd67b4a9414e6dfda0d8",
+        "size": 1095264
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_execute_prepared": {
+      "identity": {
+        "sha256": "6adb854b19adf71fe7cd577ee36067767d86c5e520f8898b08e7f562f06249f5",
+        "size": 2312872
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/build_qemu_backend": {
+      "identity": {
+        "sha256": "c061cb7ce49bb600841dfb15238caa6f81e6eefb22576326a118cbb9312b2f8d",
+        "size": 2317256
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/browser_profile_check": {
+      "identity": {
+        "sha256": "c2029861f12ec32287699aa91c26b730fc27dc8b632075cf65044db1571080f1",
+        "size": 1798160
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/aggregate_limits_report": {
+      "identity": {
+        "sha256": "c56e32650fd795e9869947a25361ce804e65bfbcad06ec3766332e2a35d7acbd",
+        "size": 1196168
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/remote_transport_check": {
+      "identity": {
+        "sha256": "d81f47f38117d4b4ec74808851c397e20e71455cffe0747d785005c868179da5",
+        "size": 3175424
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/replay_s2_trace": {
+      "identity": {
+        "sha256": "015415c7b62d7db50365223d9a7304b23a2101438adf3bd44715546f6ad59baf",
+        "size": 924200
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_backend_boot": {
+      "identity": {
+        "sha256": "2441f6190874f049c8f35248e0cf06a5bba2a2a3c93ead69e7282eb9c4e63aa1",
+        "size": 1591880
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_pic_audit": {
+      "identity": {
+        "sha256": "5e7268abecca91c1ee61a0657b016ad516a97f7c8333fce437e2879866e6c0c7",
+        "size": 1308272
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_fan_pause_probe": {
+      "identity": {
+        "sha256": "662e62f1b28c2ae83b7a273e05de34058d1ed246643686a4f5cdf04bb1c5656c",
+        "size": 1691488
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/browser_group_check": {
+      "identity": {
+        "sha256": "933c2706f49aec7cd2cee4e5746803877ecf2a8a2363fd832ddff5dfae7a4412",
+        "size": 1018072
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/node_prerequisite_probe": {
+      "identity": {
+        "sha256": "a4219a43f6f277a48307eeb990cc403714709eb3d676746e220c808216662851",
+        "size": 1970352
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/qemu_socket_link_probe": {
+      "identity": {
+        "sha256": "c350696615c77fff9cf9d1632f9e593d97e7fb5ca1fa6dd19faac49300e3ac5c",
+        "size": 1682416
+      },
+      "matches_frozen209": true
+    },
+    "work/simulator/clean-target-210/release/examples/s9_boot_bundle": {
+      "identity": {
+        "sha256": "8066af6e582158d7eec9a4b747bf0a43e7f361c5a6be918516471e6108dc288f",
+        "size": 3513152
+      },
+      "matches_frozen209": true
+    }
+  }
+}

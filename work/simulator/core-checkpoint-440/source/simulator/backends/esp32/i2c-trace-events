@@ -1,0 +1,4 @@
+# md-sim ESP32-S3 I2C master development model
+md_sim_i2c_bus(unsigned index, unsigned operation, uint32_t value, int32_t result) "index=%u operation=%u value=0x%x result=%d"
+md_sim_i2c_state(unsigned index, uint64_t bytes, uint64_t faults) "index=%u bytes=%"PRIu64" faults=%"PRIu64
+md_sim_i2c_mmio(unsigned index, bool write, uint64_t address, unsigned size, uint32_t value) "index=%u write=%u addr=0x%"PRIx64" size=%u value=0x%08x"

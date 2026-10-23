@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1c605de4b371abd49ce5",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntRouter%20R1/Firmware/00720180808112511705x9aEjpIx06EB/AntRouter-R1-LTC-SIA-DASH-20180815.bin",
+  "kind": "firmware",
+  "title": "AntRouter-R1-LTC-SIA-DASH-20180815.bin",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-1c605de4b371abd49ce5/AntRouter-R1-LTC-SIA-DASH-20180815.bin",
+  "sha256": "a55326fbca01d37e7d429a0ed530cf73ab5660c05f035a68ede082d655d13127",
+  "size_bytes": 5177348,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntRouter%20R1/Firmware/00720180808112511705x9aEjpIx06EB/AntRouter-R1-LTC-SIA-DASH-20180815.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"4017bce984338446ec8d34c9b8b209b3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 5177348,
+      "actual": 5177348,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

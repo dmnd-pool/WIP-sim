@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7f019830555f0cf55210",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antivirus%20Tools/Manual/007201907091456348731P0vf1GJ065B/User%20Guide.pdf",
+  "kind": "document",
+  "title": "User Guide.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7f019830555f0cf55210/User_Guide.pdf",
+  "sha256": "ebd9266fabc5297ea3fdf90c020544821e80e1cd8493a0de74fc40b0aab70220",
+  "size_bytes": 5274250,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antivirus%20Tools/Manual/007201907091456348731P0vf1GJ065B/User%20Guide.pdf",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"5e94c26890b0500ed78a78c8a804f986\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 5274250,
+      "actual": 5274250,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

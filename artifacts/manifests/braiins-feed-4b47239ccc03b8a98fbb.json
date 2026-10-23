@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-4b47239ccc03b8a98fbb",
+  "url": "https://feeds.braiins-os.com/stm32mp157c-ii2-bmm1/firmware_2026-05-20-0-f0069b5e-26.05.1-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "kind": "firmware",
+  "title": "firmware_2026-05-20-0-f0069b5e-26.05.1-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:16:30+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-4b47239ccc03b8a98fbb/firmware_2026-05-20-0-f0069b5e-26.05.1-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "sha256": "3b48548a2f4095d435dfca6edbe541abb49071b0e5d7a90a2b780f066d23e8a3",
+  "size_bytes": 44882752,
+  "executed": false,
+  "expected_size_bytes": 44882752,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/stm32mp157c-ii2-bmm1/firmware_2026-05-20-0-f0069b5e-26.05.1-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "http_status": 206,
+  "etag": "\"6a0d9f0b-2acdb40\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 20 May 2026 11:46:19 GMT",
+  "publisher_sha256": "3b48548a2f4095d435dfca6edbe541abb49071b0e5d7a90a2b780f066d23e8a3",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-ce51acef72427a6281af",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "3b48548a2f4095d435dfca6edbe541abb49071b0e5d7a90a2b780f066d23e8a3",
+      "actual": "3b48548a2f4095d435dfca6edbe541abb49071b0e5d7a90a2b780f066d23e8a3",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "3b48548a2f4095d435dfca6edbe541abb49071b0e5d7a90a2b780f066d23e8a3",
+      "actual": "3b48548a2f4095d435dfca6edbe541abb49071b0e5d7a90a2b780f066d23e8a3",
+      "match": true,
+      "source_id": "braiins-feed-ce51acef72427a6281af"
+    }
+  ],
+  "upstream_integrity_match": true
+}

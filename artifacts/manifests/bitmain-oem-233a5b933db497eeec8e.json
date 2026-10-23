@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-233a5b933db497eeec8e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4c5dd257-a2c9-4057-b64e-084df1b71d45/2024/04/07/16/LVD_S19j%20XP_CN23A1AR%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_S19j XP_CN23A1AR 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-233a5b933db497eeec8e/LVD_S19j_XP_CN23A1AR_001_2023.10.11_extsigned.pdf",
+  "sha256": "94deed7469e8201626f6255b264132fbcba4110796f0dd82e568e349b610d1a3",
+  "size_bytes": 1683535,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4c5dd257-a2c9-4057-b64e-084df1b71d45/2024/04/07/16/LVD_S19j%20XP_CN23A1AR%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 07 Apr 2024 08:37:45 GMT",
+  "etag": "\"643ea26de567a7a4ac068345ef14aa82\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1683535,
+      "actual": 1683535,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

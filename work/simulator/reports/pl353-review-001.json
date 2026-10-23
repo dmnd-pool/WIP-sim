@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "scope": "Independent source and component review. No compiled latest NAND timing or exact board acceptance claim.",
+  "reviewed_files": {
+    "simulator/backends/qemu/axi-iic/src/pl353.rs": {
+      "sha256": "8dcddad98d1fc161413ba31199cf63bfcad4b2a9149073269b778e286cf89550",
+      "size": 23116
+    },
+    "simulator/backends/qemu/md-sim-pl353.c": {
+      "sha256": "8b70875dde67543dc53991e8452617a298fe3760be3166840cc0e719471fd4a4",
+      "size": 5663
+    },
+    "simulator/backends/qemu/md-sim-pl353.h": {
+      "sha256": "90b4244552a279210c8331b1d2cc6ddfc5bf0937d667859b737f7fbf33986220",
+      "size": 850
+    },
+    "simulator/backends/qemu/nand-timing.patch": {
+      "sha256": "ffd7a58d8283279b11e425d699e3ed3ed8704dc940ea80f61fbb89eaff7f188e",
+      "size": 9992
+    },
+    "simulator/backends/qemu/vendor/qemu-9.2.2/nand.c": {
+      "sha256": "6ef0d6f3bafea8f37c0d9307b8cc981c0cb08e3273a44f3e1e5d4e3d5c1f1667",
+      "size": 25412
+    }
+  },
+  "rust_tests": "16 pass, including all4096 single-bit ECC locations",
+  "findings": [
+    {
+      "id": "PL353-1",
+      "status": "open; sent to owner",
+      "detail": "Data-only backing mem_oob branch at OOB-only column2050 computes source pointer io-2 and wrong spare offset in legacy nand_blk_write. New timing bounds allow legal totalpage+OOB range. Fix branch or reject this backing layout; compiled OOB boundaries required."
+    },
+    {
+      "id": "PL353-2",
+      "status": "open; sent to owner",
+      "detail": "Exposed chip-id property permits16-bit and small-page NAND despite x8 five-cycle large-page controller contract. Reject unsupported identity/geometry in realize."
+    },
+    {
+      "id": "PL353-3",
+      "status": "open; sent to owner",
+      "detail": "Controller reset restores chip deadline only for program/erase. READ25us and RESET5us intervals exist only in Rust and can be lost after controller reset. Complete busy/reset behavior remains unverified."
+    }
+  ],
+  "other_observations": [
+    "Exact valid command/end tuples and duplicate-confirm rejection prevent malformed destructive sequences.",
+    "Spare-read pin is now asserted.",
+    "Pending write data separated from status bytes; program/erase delayed commit and NAND reset abort are explicit fixture semantics, not physical power-loss calibration.",
+    "Current tests prove persistence only across device reset, not process restart or filesystem durable flush.",
+    "ECC bit-position parity matches archived correction contract. Page-size/mode generality beyond current selected fixture is not established."
+  ],
+  "release_complete": false
+}

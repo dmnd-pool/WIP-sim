@@ -1,0 +1,20 @@
+{
+  "id": "vendors-cointerra-faq",
+  "url": "https://cointerra.com/faq/",
+  "kind": "document",
+  "title": "CoinTerra historical FAQ",
+  "language": "en",
+  "source_id": "source-cointerra-faq",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:42:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/vendors-cointerra-faq/index.html",
+  "sha256": "56dfa7b864bd7a685b6d2c88ca358c0833540152fc912317ac45cf6713371233",
+  "size_bytes": 160083,
+  "executed": false,
+  "http_status": 200,
+  "acquisition_method": "preserved-public-requests-response",
+  "previous_attempt_error": "HTTP Error 403: Forbidden",
+  "content_type": "text/html",
+  "content_note": "Preserved successful ordinary requests GET from discover_historical.py. Later urllib fetch returned 403. No login or credentials used."
+}

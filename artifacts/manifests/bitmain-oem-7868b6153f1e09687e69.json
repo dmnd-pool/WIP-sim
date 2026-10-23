@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7868b6153f1e09687e69",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1192fbee-2bbc-46f2-9b66-28c487e2f011/2025/09/15/16/L7%20Product%20Manual-V2.0.2.pdf",
+  "kind": "document",
+  "title": "L7 Product Manual-V2.0.2.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7868b6153f1e09687e69/L7_Product_Manual-V2.0.2.pdf",
+  "sha256": "566c7a4be2cd3b331122cbcefe4221d748dbd1008b78e89fb162fff4f0e9f3df",
+  "size_bytes": 909100,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1192fbee-2bbc-46f2-9b66-28c487e2f011/2025/09/15/16/L7%20Product%20Manual-V2.0.2.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 15 Sep 2025 08:38:07 GMT",
+  "etag": "\"862f74d505367fbe6b7ea796924509fd\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 909100,
+      "actual": 909100,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

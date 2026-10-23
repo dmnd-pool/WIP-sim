@@ -1,0 +1,40 @@
+{
+  "id": "auradine-fluxos-2-3-1-bin",
+  "url": "https://update.auradine.com/firmware/FluxOS-2.3.1.bin",
+  "kind": "firmware",
+  "title": "FluxOS-2.3.1.bin",
+  "language": "und",
+  "source_id": "auradine-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/auradine-fluxos-2-3-1-bin/FluxOS-2.3.1.bin",
+  "sha256": "9964ccd4c5a2cc8cec03ead74256926452e42acbe99b36daa1a514035988a374",
+  "size_bytes": 94919326,
+  "executed": false,
+  "final_url": "https://update.auradine.com/firmware/FluxOS-2.3.1.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 13 Mar 2026 21:48:23 GMT",
+  "etag": "\"83b56fa66da499b126edcad211e2f972-12\"",
+  "recovery_note": "The payload matches a publisher checksum. Recovered the manifest after a duplicate download task overwrote it with a rename error.",
+  "publisher_checksum_claims": [
+    {
+      "model": "AT,AI,AH",
+      "sha256": "9964ccd4c5a2cc8cec03ead74256926452e42acbe99b36daa1a514035988a374",
+      "size": "94919326",
+      "created": "2026-03-13 14:22:25.412859",
+      "branch": "v2.3.1"
+    },
+    {
+      "model": "AT1500,AI2500",
+      "sha256": "9964ccd4c5a2cc8cec03ead74256926452e42acbe99b36daa1a514035988a374",
+      "size": "94919326",
+      "created": "2026-03-13 14:22:25.412859",
+      "branch": "v2.3.1"
+    }
+  ],
+  "matches_any_publisher_sha256": true,
+  "matches_all_publisher_sha256": true,
+  "matches_any_publisher_size": true
+}

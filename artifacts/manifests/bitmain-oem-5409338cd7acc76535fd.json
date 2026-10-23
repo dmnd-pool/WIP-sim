@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5409338cd7acc76535fd",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7b08a641-208e-4179-9029-2f62f09d7c7f/2023/11/27/17/S19k%20Pro%20FCC%20SDOC%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "S19k Pro FCC SDOC Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:38+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-5409338cd7acc76535fd/S19k_Pro_FCC_SDOC_Shenzhen.pdf",
+  "sha256": "c110ad43a5642973a7de2d6f7f990cb87917eab396964e7a230e8da7b01bccbc",
+  "size_bytes": 701368,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7b08a641-208e-4179-9029-2f62f09d7c7f/2023/11/27/17/S19k%20Pro%20FCC%20SDOC%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 27 Nov 2023 09:23:37 GMT",
+  "etag": "\"c6795711a98bf81023276b82b05ce3de\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 701368,
+      "actual": 701368,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f946f75f2bf8683a37fa",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/33a0214f-bce7-47ae-b255-64651edaee8d/2024/05/22/16/ACRT2309222-SVHC224.pdf",
+  "kind": "document",
+  "title": "ACRT2309222-SVHC224.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:59+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f946f75f2bf8683a37fa/ACRT2309222-SVHC224.pdf",
+  "sha256": "5db90527e624d8403ca86b1bfaa81a644b0cdd143750711ce17ca1ca2b1d687d",
+  "size_bytes": 218406,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/33a0214f-bce7-47ae-b255-64651edaee8d/2024/05/22/16/ACRT2309222-SVHC224.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:50:32 GMT",
+  "etag": "\"cc27ce50dee0aa4b05eddb3347bb8ad0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 218406,
+      "actual": 218406,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

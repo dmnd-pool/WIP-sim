@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-01032188af39e9b6d96a",
+  "url": "https://feeds.braiins-os.com/am3-aml/firmware_2024-05-21-0-d5fa91c4-24.04.1-plus_aarch64_armv8-a.tar",
+  "kind": "firmware",
+  "title": "sysupgrade am3-aml nand 24.04.1",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:43:34+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-01032188af39e9b6d96a/firmware_2024-05-21-0-d5fa91c4-24.04.1-plus_aarch64_armv8-a.tar",
+  "sha256": "d7d1dc21614aaf518789281a136b8fa8c619a48b927edcb9c0dbc379cb7a9ef0",
+  "size_bytes": 23787520,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/am3-aml/firmware_2024-05-21-0-d5fa91c4-24.04.1-plus_aarch64_armv8-a.tar",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 21 May 2024 20:41:25 GMT",
+  "etag": "\"664d06f5-16af800\"",
+  "vendor_sha256": "d7d1dc21614aaf518789281a136b8fa8c619a48b927edcb9c0dbc379cb7a9ef0",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "d7d1dc21614aaf518789281a136b8fa8c619a48b927edcb9c0dbc379cb7a9ef0",
+      "actual": "d7d1dc21614aaf518789281a136b8fa8c619a48b927edcb9c0dbc379cb7a9ef0",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

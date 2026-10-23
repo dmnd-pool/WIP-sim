@@ -1,0 +1,49 @@
+{
+  "scope": "Exact local and private IPC source-fixture results only; no exact physical target, RPC or full release claim",
+  "checks": [
+    {
+      "directory": "work/simulator/bitcoin-core/coordinator-007-attempt-1-candidate-0",
+      "block_hash": "000246db9a047ed2fb008c97e45dbefeb0f52c8c7baa4e945266b97ef0974522",
+      "report": {
+        "sha256": "52b3e584f8e7855a676851678944b0a8a59eb74912cf5181dd623c916f14fbec",
+        "size": 1745
+      },
+      "verified_source_files": 11,
+      "header_coinbase_and_import_bytes": true,
+      "three_phase_raw_log": true
+    },
+    {
+      "directory": "work/simulator/bitcoin-core/coordinator-007-attempt-1-candidate-1",
+      "block_hash": "00040f873a136b53244b9671b0e75e5af37eedd8a42348b43ba4007401a4f78d",
+      "report": {
+        "sha256": "ff4a04ae9e45082d7d9f571acdb529d0575b6a1caca8e7409221a967a4a82b8f",
+        "size": 1745
+      },
+      "verified_source_files": 11,
+      "header_coinbase_and_import_bytes": true,
+      "three_phase_raw_log": true
+    },
+    {
+      "directory": "work/simulator/bitcoin-core/coordinator-007-attempt-2-candidate-0",
+      "block_hash": "000246db9a047ed2fb008c97e45dbefeb0f52c8c7baa4e945266b97ef0974522",
+      "report": {
+        "sha256": "8cfffac27d74f21a9ca175a8bbd659969d5967a5e938ba0ff16d4043ca956917",
+        "size": 1745
+      },
+      "verified_source_files": 11,
+      "header_coinbase_and_import_bytes": true,
+      "three_phase_raw_log": true
+    },
+    {
+      "directory": "work/simulator/bitcoin-core/coordinator-007-attempt-2-candidate-1",
+      "block_hash": "00040f873a136b53244b9671b0e75e5af37eedd8a42348b43ba4007401a4f78d",
+      "report": {
+        "sha256": "1a9080e1befe9a79d2bc8e9740f8c2b78f009221e8419f72e595e77c0e5b577e",
+        "size": 1745
+      },
+      "verified_source_files": 11,
+      "header_coinbase_and_import_bytes": true,
+      "three_phase_raw_log": true
+    }
+  ]
+}

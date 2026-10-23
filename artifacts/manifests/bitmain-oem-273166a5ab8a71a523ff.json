@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-273166a5ab8a71a523ff",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b27218d7-1eec-4907-83c7-28e9f8437890/2025/03/20/16/S21%20Hyd.%20User%20Guide-V4.0.14.pdf",
+  "kind": "document",
+  "title": "S21 Hyd. User Guide-V4.0.14.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-273166a5ab8a71a523ff/S21_Hyd._User_Guide-V4.0.14.pdf",
+  "sha256": "5ec67523d278e4d95d38c8e94871ac667eafe2b0852f32bee9b367b6c442bb7c",
+  "size_bytes": 2341430,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b27218d7-1eec-4907-83c7-28e9f8437890/2025/03/20/16/S21%20Hyd.%20User%20Guide-V4.0.14.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 20 Mar 2025 08:22:55 GMT",
+  "etag": "\"0d8cb6e5b662252f0896a8b11680aad1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2341430,
+      "actual": 2341430,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

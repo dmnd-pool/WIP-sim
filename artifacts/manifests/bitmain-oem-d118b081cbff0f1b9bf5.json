@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-d118b081cbff0f1b9bf5",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SafePrime-FCC_EMC.pdf",
+  "kind": "document",
+  "title": "SafePrime-FCC_EMC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:53+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-d118b081cbff0f1b9bf5/SafePrime-FCC_EMC.pdf",
+  "sha256": "755b9fcf4ea97a0342dbffbde8003b713f12e101499225a35cf7b44e27f3cc45",
+  "size_bytes": 636199,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SafePrime-FCC_EMC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"0379e58dcc270cf235179f36bdc0c73a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 636199,
+      "actual": 636199,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

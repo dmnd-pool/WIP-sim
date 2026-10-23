@@ -1,0 +1,20 @@
+{
+  "scope": "Independent source/test review of explicit shared Core evidence mode; no actual shared Core execution claim",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/node_prerequisite_probe.rs",
+      "sha256": "b5e3d92cdc56f75d4ad394b6fd6ccd0b1de1589e34b093f9b2f2ee4224cf0780",
+      "size": 37159
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/shared-node390-tests.log",
+      "sha256": "bfdebe09c1208c32a452ebd08d73aab3b7afa85c1c345442acc4e8d3df78819b",
+      "size": 1241
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/shared-node390-clippy.log",
+      "sha256": "227f519d02712774f38aad2258082acf27d69287a09db8ad3f74b1b905016c1a",
+      "size": 143
+    }
+  ]
+}

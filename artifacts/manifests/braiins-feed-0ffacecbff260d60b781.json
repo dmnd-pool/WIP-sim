@@ -1,0 +1,38 @@
+{
+  "id": "braiins-feed-0ffacecbff260d60b781",
+  "url": "https://feeds.braiins-os.com/23.03.2/braiins-os_am3-aml_ssh_2023-05-29-0-1daef48b-23.03.2-plus.tar.gz",
+  "kind": "firmware",
+  "title": "transitional am3-aml 23.03.2",
+  "language": "und",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:17:53+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-0ffacecbff260d60b781/braiins-os_am3-aml_ssh_2023-05-29-0-1daef48b-23.03.2-plus.tar.gz",
+  "sha256": "8e4c8f7f03d9f064002722f2f9e29be7426ce2a0d424b51eb34d4791356f6af0",
+  "size_bytes": 28581542,
+  "executed": false,
+  "expected_size_bytes": 28581542,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/23.03.2/braiins-os_am3-aml_ssh_2023-05-29-0-1daef48b-23.03.2-plus.tar.gz",
+  "http_status": 206,
+  "etag": "\"6474db33-1b41ea6\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 29 May 2023 17:04:51 GMT",
+  "publisher_sha256": "8e4c8f7f03d9f064002722f2f9e29be7426ce2a0d424b51eb34d4791356f6af0",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 25165824,
+  "published_checksum_sources": [
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "8e4c8f7f03d9f064002722f2f9e29be7426ce2a0d424b51eb34d4791356f6af0",
+      "actual": "8e4c8f7f03d9f064002722f2f9e29be7426ce2a0d424b51eb34d4791356f6af0",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

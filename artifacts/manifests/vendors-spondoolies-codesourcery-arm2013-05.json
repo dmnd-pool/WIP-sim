@@ -1,0 +1,23 @@
+{
+  "id": "vendors-spondoolies-codesourcery-arm2013-05",
+  "url": "https://codeload.github.com/Spondoolies-Tech/sp30-top/tar.gz/57c382eb5addc8829786bb228c2a342dfe523bdb",
+  "title": "Spondoolies bundled CodeSourcery ARM 2013.05 toolchain",
+  "kind": "tool",
+  "language": "unknown",
+  "license": "unknown; component licences apply",
+  "source_id": "source-spondoolies-tech-sp30-top",
+  "retrieved_at": "2026-10-19T10:42:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/vendors-spondoolies-codesourcery-arm2013-05/arm2013.05-CodeSourcery.tar.xz",
+  "sha256": "26a2bda97d9148bc809652b638f30676acbe5467939d31f1838021da9b6d1f0c",
+  "size_bytes": 33889404,
+  "executed": false,
+  "acquisition_method": "contained-in-downloaded-archive",
+  "parent_artifact_id": "vendors-spondoolies-tech-sp30-top",
+  "parent_sha256": "f7b9879c44fe6e8086fa8f51986c7bbb179ddbe9a86f041aebdaa72624de4684",
+  "archive_member": "sp30-top-57c382eb5addc8829786bb228c2a342dfe523bdb/toolchain/arm2013.05-CodeSourcery.tar.xz",
+  "git_commit": "57c382eb5addc8829786bb228c2a342dfe523bdb",
+  "notes": [
+    "Exact bytes saved from the pinned manufacturer repository. No binary or tool was run."
+  ]
+}

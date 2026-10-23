@@ -1,0 +1,120 @@
+{
+  "scope": "Independent pre-result inputs and bounds review. Native441 active; no TLS, mining/Core or target pass.",
+  "locked_run": {
+    "sha256": "09e19cc31d326fbee7f9d88c8cbaeca636f390d0fc03106850b011fbeea4f5a9",
+    "size": 16425
+  },
+  "native_argv_and_limits_equal_430": true,
+  "browser_requested": false,
+  "native_limits": {
+    "cpu_seconds": 330,
+    "file_bytes": 67108864,
+    "memory_bytes": 3221225472,
+    "processes": 64,
+    "tmp_bytes": 134217728,
+    "trace_bytes": 67108864,
+    "wall_seconds": 360
+  },
+  "native_hash_cap_hps": 10,
+  "pool_seconds": 300,
+  "observation_seconds": 305,
+  "captured_helpers": {
+    "/namespace-check": {
+      "sha256": "f489c0669d00cad5f3eaec4e2e44881e5fcf784b7c0d2e5d95c590a5291593b9",
+      "size": 6119664
+    },
+    "/md-sim-access": {
+      "sha256": "b7a85776ef14a03b8afa7fab5649186a5aeee4da3a3f96683132fa25be080d29",
+      "size": 2183352
+    }
+  },
+  "source_inputs": [
+    {
+      "path": "crates/md-sim-access/src/remote_carrier.rs",
+      "sha256": "b54be996d54ebf96a971d637494f18f0337de9fbe17561336651a753aa6bed73",
+      "size": 19405
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/shared_progress.rs",
+      "sha256": "7a7b6a44b31f416ea810e3dda345c0cbe793790fe4d44fbc728bc2830d38ef9c",
+      "size": 8508
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/shared_run.rs",
+      "sha256": "4fd0d8777c0d92f857fae8004ee28c46f47aff3301f1bf7d4af5a65f9bea7323",
+      "size": 15796
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard_client.rs",
+      "sha256": "df821c46985d4d29e8103fae4cf57a2022d933cfa6e4c8279e3927dba4822ff4",
+      "size": 13413
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard.rs",
+      "sha256": "ee740a8179bf2fd03d9eaa665f97ab9ae3b4e3623486fccfa4b85b7b1d024fbd",
+      "size": 34147
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/worker_shared_access.rs",
+      "sha256": "45f4992a129e469d1f8cb785d40817bac2014ffc5f211c844db2989e1f4e4009",
+      "size": 10013
+    }
+  ],
+  "static_inputs": [
+    {
+      "path": "work/simulator/network-vm/native-access-441/process-spec.json",
+      "sha256": "34bf3b288cea0bf939c227a7a6e434653ed19908eb58ee97dea233291585e06a",
+      "size": 5264
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/provider.json",
+      "sha256": "4c96b69f3cf34d9ada0e4a463fbbed78839e3e6d915c782e498d4322a894115c",
+      "size": 37002
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/scenario.shared-selection.json",
+      "sha256": "82f2dfd98bebc3d1a088b7898a24e852db3ab6311de1e9977d0849186402d47d",
+      "size": 625
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/scenario.json",
+      "sha256": "38b6146ebda3e31810bd58fca04fd7de41161aa60329137e33d059f989dc6784",
+      "size": 17799
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/ssh-inputs.json",
+      "sha256": "4aeaffd9ff841af2b0b2bb52e24ace5018b739d6f6dd4bdb827d132deda1e4f0",
+      "size": 2127
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/client-image/root-manifest.json",
+      "sha256": "77fcc2616484ad06da30f3ff3ae1c81ba2841f841089cccba7c636aed7a6cdaa",
+      "size": 24801
+    },
+    {
+      "path": "work/simulator/qemu-s9/native-access-prepared-440/process-spec.json",
+      "sha256": "8b532044ec994e74d17757fdeaa946fa819b656cd148f967c6432858200e6b67",
+      "size": 11222
+    },
+    {
+      "path": "work/simulator/qemu-s9/native-access-prepared-440/shared-pool.json",
+      "sha256": "f620fabec3c7345c4d02e0b0a3f4d7bd80e2620f7ab1c625d5362e7b82aab702",
+      "size": 930
+    },
+    {
+      "path": "work/simulator/qemu-s9/native-access-prepared-440/pool-input.json",
+      "sha256": "b4571bf040c845586affc764f6aab99ab05ae6633c29b3cde6c197d1e69c29e8",
+      "size": 1027
+    },
+    {
+      "path": "work/simulator/qemu-s9/native-access-prepared-440/carrier-dashboard.json",
+      "sha256": "a03f11822ec5f0df21a066c6547fcba560496a6729bc624fd7f90571428cf7ec",
+      "size": 489
+    },
+    {
+      "path": "work/simulator/core-checkpoint-440/manifest.json",
+      "sha256": "3189ad50a73b35fb001ad00aa4062ca9314cde5662662a61b57d3da2b5f13e48",
+      "size": 80358
+    }
+  ]
+}

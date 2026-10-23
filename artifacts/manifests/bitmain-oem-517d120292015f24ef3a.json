@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-517d120292015f24ef3a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/464f755b-68e4-42c3-a6ca-9412be8fc29a/2023/12/13/19/S21%20FCC%20SDOC.pdf",
+  "kind": "document",
+  "title": "S21 FCC SDOC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:02+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-517d120292015f24ef3a/S21_FCC_SDOC.pdf",
+  "sha256": "1213182991795fcad82e3f3c8fa3c78761459d1fcdfc7a40c530bf31602f057b",
+  "size_bytes": 586410,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/464f755b-68e4-42c3-a6ca-9412be8fc29a/2023/12/13/19/S21%20FCC%20SDOC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 11:19:09 GMT",
+  "etag": "\"d4a9a9ce96bc2c5ab5ca87c02a8bab98\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 586410,
+      "actual": 586410,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

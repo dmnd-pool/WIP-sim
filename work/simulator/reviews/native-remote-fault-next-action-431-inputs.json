@@ -1,0 +1,50 @@
+{
+  "scope": "Read-only source review. No native fault test pass claimed.",
+  "inputs": [
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/shared_run.rs",
+      "sha256": "4fd0d8777c0d92f857fae8004ee28c46f47aff3301f1bf7d4af5a65f9bea7323",
+      "bytes": 15796
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/worker_broker.rs",
+      "sha256": "855cde764c4754b209e09ac49b7ad84312f0f0d1e0e1bfe47ced34dccb8e3385",
+      "bytes": 29059
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/shared_pool.rs",
+      "sha256": "d57b0819e5dd7255e143865bc58c63ed5800ddb248383ee6dd2e08db4e1cc796",
+      "bytes": 17129
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/pool_service.rs",
+      "sha256": "de8beefd0babdbc8d61085e3d91e2921ba82554e7a4b6829420185387132f7be",
+      "bytes": 20339
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard_client.rs",
+      "sha256": "df821c46985d4d29e8103fae4cf57a2022d933cfa6e4c8279e3927dba4822ff4",
+      "bytes": 13413
+    },
+    {
+      "path": "crates/md-sim-coordinator/src/executor.rs",
+      "sha256": "7cfd10ed085dd6afc4df8a1584052b2f234a2273df695140b9de14714fefad7b",
+      "bytes": 30334
+    },
+    {
+      "path": "crates/md-sim-coordinator/src/ssh_transport.rs",
+      "sha256": "bd5823c8afa2ffd97d3443f6944a6b2ffd43c3f07e503a5dfeeb69413b703b2c",
+      "bytes": 32768
+    },
+    {
+      "path": "crates/md-sim-coordinator/src/remote_trace.rs",
+      "sha256": "b5a1932d7778cdfe5e994df4daebafe1131b633e2f08f84e0f878b410aa2dd11",
+      "bytes": 9735
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/ssh_one_reply.rs",
+      "sha256": "dcf66f370082422a28c5fdb2ed0976fa5140038447e77950eef7c9cc2eadf274",
+      "bytes": 1194
+    }
+  ]
+}

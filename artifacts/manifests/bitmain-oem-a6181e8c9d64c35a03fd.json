@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a6181e8c9d64c35a03fd",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6118243f-062f-4f0e-aa45-b1a796d7b3f6/2022/01/19/18/T9%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "T9 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:54+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a6181e8c9d64c35a03fd/T9_Server_Manual.pdf",
+  "sha256": "161cc0fedbf29cf992bc17f23d713d3f26c203f3710792d7cceedf8f1620fe4c",
+  "size_bytes": 2964928,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6118243f-062f-4f0e-aa45-b1a796d7b3f6/2022/01/19/18/T9%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:16:13 GMT",
+  "etag": "\"9a8133506168cf592fefc1568b8d2c9f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2964928,
+      "actual": 2964928,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "md-sim-research-evidence-inputs/1",
+  "claim": "Static driver readback analysis and planned vectors; no new vendor execution, ASIC effect or exact-target gate",
+  "files": [
+    {
+      "path": "work/simulator/reviews/t17-readback-analysis-442.md",
+      "sha256": "1df657699d38dfb0d47b713ef67adf705a964f02145d11fe391e9f4325a4f97c",
+      "size": 7228
+    },
+    {
+      "path": "work/simulator/reviews/t17-readback-ranges-442.json",
+      "sha256": "64876b5ecda57ed37dde25a047ad4eddf79f47b0db5a144844e4fec5c24337d9",
+      "size": 38404
+    },
+    {
+      "path": "work/simulator/reviews/t17-readback-vectors-442.json",
+      "sha256": "c63a092d2347227d17dc5b4c60f6f4e06074ac547f39b12509f34bfdb890178e",
+      "size": 5377
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-core-continuation-437.md",
+      "sha256": "2c2e1d1b4bd7f36d936c0b87dc67c43146a723030138e776e12e090ce2cc772c",
+      "size": 8584
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-core-continuation-437-inputs.json",
+      "sha256": "02afcf765c9f7b1390d4cee0793a0634f7b1d64bdd1e9c6d78e15390478ce613",
+      "size": 5441
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+      "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+      "size": 553247
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/a32.txt",
+      "sha256": "d519092b11da763c50b6aed3cfc1de0f9945ea2a228acc15cbafb5a67817004b",
+      "size": 3506185
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/symbols.txt",
+      "sha256": "136418301ec779e801b73b7bb37c736251f160d4a7ab30f10c1d9ea22eba4fa2",
+      "size": 13438
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/inspection.json",
+      "sha256": "d8bd27292ccbdd799bb0137c309de34e65eca596002858865a630092ca964e7f",
+      "size": 4072
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/core-mailbox-analysis.json",
+      "sha256": "fbb09e6cc06a0c488a3e3ea1ee86c3641e6ced4b5c170b62c34809672deba95f",
+      "size": 5645
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bm1397/reply.rs",
+      "sha256": "384b904ac44912d7185b50b83908a186fc87cc76cd0669d7d90955ce81221a98",
+      "size": 6594
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bm1397/core_control.rs",
+      "sha256": "0f25fcaf58c0e3bf3df7f3080bda65c450439283a83da0283f2276a8d47b4a63",
+      "size": 4965
+    }
+  ]
+}

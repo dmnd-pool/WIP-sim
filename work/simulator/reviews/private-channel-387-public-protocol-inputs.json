@@ -1,0 +1,20 @@
+{
+  "scope": "Public visibility of the unchanged strict worker envelope version; component checks only",
+  "files": [
+    {
+      "path": "crates/md-sim-runtime/src/worker.rs",
+      "sha256": "8dac3bb0d5eb0af9fbd7c5437759932a22109ee6dfb749aa969a76b307ca1c3c",
+      "size": 55856
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel387-public-protocol-check.log",
+      "sha256": "66bb96e159a10e8744ebb0291f03e4bbd20b8f9b97ba726cff18f6b340010447",
+      "size": 141
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel387-worker-tests.log",
+      "sha256": "c81dfc0a51f1303c3e5041c324d9d385bcf4fc745df762089ac7d5df464b8a48",
+      "size": 1705
+    }
+  ]
+}

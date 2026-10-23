@@ -1,0 +1,27 @@
+   Compiling md-sim-access v0.1.0 (/home/user/src/md-sim/crates/md-sim-access)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.28s
+     Running unittests src/lib.rs (target/debug/deps/md_sim_access-1c749713b7460f41)
+
+running 7 tests
+test browser::tests::malformed_and_oversized_frames_fail_before_allocation ... ok
+test browser::tests::utf8_frames_and_response_identity ... ok
+test gateway::tests::client_rules_need_real_bounds ... ok
+test gateway::tests::config_paths_reject_variables_and_directives ... ok
+test browser::tests::slow_partial_frame_cannot_extend_absolute_deadline ... ok
+test credentials::tests::blocked_and_noisy_helpers_are_bounded ... ok
+test gateway::tests::real_certificate_preflight_checks_ip_and_size_limits ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running unittests src/main.rs (target/debug/deps/md_sim_access-c42df74cd4c10495)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests md_sim_access
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

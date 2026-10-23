@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-67ba4f2c1a208e2cdd3f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3680aeab-5366-4458-8ecb-9773840f49b9/2024/03/01/19/CB%202nd%20cert-KS5-CN240RVF%20001-24.02.28_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert-KS5-CN240RVF 001-24.02.28_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:56+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-67ba4f2c1a208e2cdd3f/CB_2nd_cert-KS5-CN240RVF_001-24.02.28_extsigned.pdf",
+  "sha256": "9e4eb7c85b84a8971878c0b35374e362d76a5aae6319003e8beeb28cc7009eb5",
+  "size_bytes": 662114,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3680aeab-5366-4458-8ecb-9773840f49b9/2024/03/01/19/CB%202nd%20cert-KS5-CN240RVF%20001-24.02.28_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Mar 2024 11:43:39 GMT",
+  "etag": "\"bf0797675071a92645442903e53297af\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 662114,
+      "actual": 662114,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

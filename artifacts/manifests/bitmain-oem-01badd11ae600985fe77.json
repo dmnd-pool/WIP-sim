@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-01badd11ae600985fe77",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/initramfs.bin.SD-20140328.tar",
+  "kind": "firmware",
+  "title": "initramfs.bin.SD-20140328.tar",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:17+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-01badd11ae600985fe77/initramfs.bin.SD-20140328.tar",
+  "sha256": "19e21ebb1955792464a3603fbcf666d7b7e7892af186e2145486db71960dea42",
+  "size_bytes": 14676211,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/initramfs.bin.SD-20140328.tar",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:32 GMT",
+  "etag": "\"f5f86cee4e83ef2ecc06b9984e9832b8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 14676211,
+      "actual": 14676211,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

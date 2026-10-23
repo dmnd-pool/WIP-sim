@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-54199e1f737298af8fa9",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6bb63686-87a8-4241-b463-76693112365f/2022/02/28/12/S19%20Hydro%20Manual.pdf",
+  "kind": "document",
+  "title": "S19 Hydro Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:21+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-54199e1f737298af8fa9/S19_Hydro_Manual.pdf",
+  "sha256": "3ad591755c8e97e81ffd4c11f5738eb95f70799757631b1b3df285f21e868c4d",
+  "size_bytes": 1487023,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6bb63686-87a8-4241-b463-76693112365f/2022/02/28/12/S19%20Hydro%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 28 Feb 2022 04:09:12 GMT",
+  "etag": "\"53045259e5242ae8bc54c69e00f9037c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1487023,
+      "actual": 1487023,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

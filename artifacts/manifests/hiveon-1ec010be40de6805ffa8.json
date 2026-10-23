@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-1ec010be40de6805ffa8",
+  "url": "https://download.hiveos.farm/asic/T17/Antminer-T17-Hiveon-2.00-200613-sign.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17-Hiveon-2.00-200613-sign.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:56:17+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-1ec010be40de6805ffa8/Antminer-T17-Hiveon-2.00-200613-sign.tar.gz",
+  "sha256": "f74bd61706c17e68cf2a86dbb65870f927660231f514c0d09569de397860115c",
+  "size_bytes": 36061186,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/T17/Antminer-T17-Hiveon-2.00-200613-sign.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sat, 13 Jun 2020 09:22:16 GMT",
+  "etag": "\"5ee49ac8-2264002\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 36061186,
+      "actual": 36061186,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

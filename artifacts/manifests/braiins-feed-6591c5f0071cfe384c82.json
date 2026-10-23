@@ -1,0 +1,37 @@
+{
+  "id": "braiins-feed-6591c5f0071cfe384c82",
+  "url": "https://feeds.braiins-os.com/24.09.1/braiins-os_am3-aml_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz",
+  "kind": "firmware",
+  "title": "transitional am3-aml 24.09.1",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "executed": false,
+  "retrieved_at": "2026-10-19T10:52:28+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-6591c5f0071cfe384c82/braiins-os_am3-aml_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz",
+  "sha256": "d488a69cb07f994cb41728361109a9eab8e4468af11df9ed2c8301a83d14deab",
+  "size_bytes": 34098971,
+  "final_url": "https://feeds.braiins-os.com/24.09.1/braiins-os_am3-aml_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz?archive_retry=20261019",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 04 Dec 2024 00:03:15 GMT",
+  "etag": "\"674f9c43-2084f1b\"",
+  "http_content_length": 34098971,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/24.09.1/braiins-os_am3-aml_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "d488a69cb07f994cb41728361109a9eab8e4468af11df9ed2c8301a83d14deab",
+      "actual": "d488a69cb07f994cb41728361109a9eab8e4468af11df9ed2c8301a83d14deab",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

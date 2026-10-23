@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-19T15:00:41+00:00",
+  "scope": "Documentation only; no firmware or simulator was executed.",
+  "documents": [
+    "README.md",
+    "docs/simulator-specification.md",
+    "docs/simulator-design.md"
+  ],
+  "internal_heading_links_checked": 3,
+  "proposed_command_examples": 58,
+  "errors": [],
+  "result": "pass",
+  "reviewed_requirements": [
+    "low-rate functional hashing and recorded adaptations",
+    "exact hardware and firmware target resolution",
+    "local and remote workflows",
+    "native dashboard identity, browser access and cookie isolation",
+    "full matrix accounting and result identity",
+    "independent acceptance gates and original/adapted execution distinctions"
+  ]
+}

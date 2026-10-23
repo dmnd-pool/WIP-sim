@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-79f6b9fca1b03b6610a5",
+  "url": "https://download.hiveos.farm/asic/T17+/stock+client/SD-Antminer-T17+-(stock+client)-20191111-sig.zip",
+  "kind": "firmware",
+  "title": "SD-Antminer-T17+-(stock+client)-20191111-sig.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:14:51+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-79f6b9fca1b03b6610a5/SD-Antminer-T17+-_stock+client_-20191111-sig.zip",
+  "sha256": "a6075d9a45054c1bc4683b444cb19f4d6182c00dfc4fba8dfd147157a2ea129c",
+  "size_bytes": 48951178,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/T17+/stock+client/SD-Antminer-T17+-(stock+client)-20191111-sig.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Sat, 04 Apr 2020 18:24:43 GMT",
+  "etag": "\"5e88d0eb-2eaef8a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 48951178,
+      "actual": 48951178,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

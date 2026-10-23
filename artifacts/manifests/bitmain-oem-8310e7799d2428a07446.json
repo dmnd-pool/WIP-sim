@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8310e7799d2428a07446",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/87326d18-c738-44fb-a170-9f1fffa58f1f/2026/06/09/15/E11%20REACH%20SVHC241.pdf",
+  "kind": "document",
+  "title": "E11 REACH SVHC241.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8310e7799d2428a07446/E11_REACH_SVHC241.pdf",
+  "sha256": "c696fbca20e4295750e7f378a3a20b1b8f5e0d718308fabdc4eabbfda3c536d1",
+  "size_bytes": 232892,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/87326d18-c738-44fb-a170-9f1fffa58f1f/2026/06/09/15/E11%20REACH%20SVHC241.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 09 Jun 2026 07:13:00 GMT",
+  "etag": "\"4d9c3278cc8424af2252ebde34fda8ab\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 232892,
+      "actual": 232892,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

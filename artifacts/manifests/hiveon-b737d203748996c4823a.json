@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-b737d203748996c4823a",
+  "url": "https://download.hiveos.farm/asic/custom/sm1rnyga/Antminer-S9-all-Hiveon-1.03@210125-sign-sm1rnyga.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@210125-sign-sm1rnyga.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:13:38+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-b737d203748996c4823a/Antminer-S9-all-Hiveon-1.03_210125-sign-sm1rnyga.tar.gz",
+  "sha256": "5f644661fe0973cef9b8a33c04448f120c61a7bd8408e81e83ba35b476fec974",
+  "size_bytes": 23752290,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/sm1rnyga/Antminer-S9-all-Hiveon-1.03@210125-sign-sm1rnyga.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 25 Jan 2021 10:55:44 GMT",
+  "etag": "\"600ea3b0-16a6e62\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23752290,
+      "actual": 23752290,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,183 @@
+{
+  "schema": "md-sim-configuration-firmware-worker/1",
+  "time_utc": "2026-10-23T04:26:40.764982+00:00",
+  "full_specification_complete": false,
+  "exact_target_pass": false,
+  "original_board_gate": "incomplete",
+  "scope": "Archived original S9 firmware in the adapted reference board. IRQ/reset/fixed-source-guard model315. A separate local IPC worker repeats the identical prepared process and seeds. No SSH, TLS, physical-board or latest unbuilt model320 claim.",
+  "source_checkpoint": {
+    "path": "work/simulator/qemu-s9/core-checkpoint-315/manifest.json",
+    "sha256": "cfe5b0189dfeedb5dc621d418cc58a101bbbea4593d4c5245b9d156140e53d55",
+    "size": 71920
+  },
+  "backend": {
+    "path": "work/simulator/qemu-s9/backend-build-315-ubsan/qemu-system-arm",
+    "sha256": "530793d453142bcf0c93c9235a12de8c33a437bbe91b3264b6ecee777ef5f30a",
+    "size": 20189560
+  },
+  "build": {
+    "path": "work/simulator/qemu-s9/backend-build-315-ubsan/build-report.json",
+    "sha256": "c1742413d333c51b7b218c86e89c3923643d40fdae1caf190ffcd797f57ccd27",
+    "size": 2668459
+  },
+  "runs": [
+    {
+      "run": "work/simulator/qemu-s9/native-pcap-316",
+      "inputs": {
+        "process-spec.json": {
+          "path": "work/simulator/qemu-s9/native-pcap-316/process-spec.json",
+          "sha256": "a7868c93b623282f3746fe05cddb4a4a4c7faaa63f840c26eeec3371850c38ab",
+          "size": 12367
+        },
+        "adaptation.json": {
+          "path": "work/simulator/qemu-s9/native-pcap-316/adaptation.json",
+          "sha256": "e425e4768f0fd0aa6fd826d09b87c9fe30da158ccd4d66acdb82a30162f2d582",
+          "size": 16110
+        },
+        "pool-input.json": {
+          "path": "work/simulator/qemu-s9/native-pcap-316/pool-input.json",
+          "sha256": "38a29f7cade78b3e7378b6dcc6f235caf50abe614cc85b4d28a0ec562f660bd2",
+          "size": 1023
+        },
+        "console.json": {
+          "path": "work/simulator/qemu-s9/native-pcap-316/console.json",
+          "sha256": "a24578ffa65fe6723efefa30a245ce06eeaaed870fc08242ea8b8182198bbc68",
+          "size": 3541
+        }
+      },
+      "execution": {
+        "path": "work/simulator/qemu-s9/native-pcap-316/result.json",
+        "sha256": "9b60dad36337f44eaa1a2bf7804c25ad9925ec6ba745ed77dc07f1faeb4fb427",
+        "size": 102726727
+      },
+      "configuration_audit": {
+        "path": "work/simulator/qemu-s9/native-pcap-316/configuration-audit.json",
+        "sha256": "3b9c463bd7c7a1ac609bff30c86401802a2e1b6f6a89b9699e8cbec4e2678154",
+        "size": 1037
+      },
+      "mining_audit": {
+        "path": "work/simulator/qemu-s9/native-pcap-316/regtest-audit317.json",
+        "sha256": "eb3e8cd328c5419ce1277a13eb1d2459aa4b13a3c4e68aff8092ccc09d9a384a",
+        "size": 38836
+      },
+      "rate_audit": {
+        "path": "work/simulator/qemu-s9/native-pcap-316/rate-audit317.json",
+        "sha256": "60717ea36601cdae4155a8888c8668d73ba6f9e9aa29fe7104b077d1f7032240",
+        "size": 2236
+      },
+      "computed_hashes": 1310,
+      "fresh_jobs": 2,
+      "matched_computations": 8,
+      "verified_serial_results": 8,
+      "core_checks": [
+        {
+          "report": {
+            "path": "work/simulator/bitcoin-core/pcap316-candidate0-318/block-acceptance.json",
+            "sha256": "363f050dffe1607ba0114cf545d3220c9946c1aa38fce3686333bf2d9464b1d1",
+            "size": 1745
+          },
+          "block_hash": "79a53a51010a8ce3b383969e45f7a4401706397027d6117f979373550924d7c8"
+        },
+        {
+          "report": {
+            "path": "work/simulator/bitcoin-core/pcap316-candidate1-318/block-acceptance.json",
+            "sha256": "b6994c50de2641c8c07eeadc38afc8a27c38b55cd1c5c581eb3e1f07a72d2766",
+            "size": 1745
+          },
+          "block_hash": "1e5b220703ee5d1c9d89b1c58c4c8deca787bc3684e84442311405325c476a58"
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-worker-318",
+      "inputs": {
+        "process-spec.json": {
+          "path": "work/simulator/qemu-s9/pcap-worker-318/process-spec.json",
+          "sha256": "a7868c93b623282f3746fe05cddb4a4a4c7faaa63f840c26eeec3371850c38ab",
+          "size": 12367
+        },
+        "adaptation.json": {
+          "path": "work/simulator/qemu-s9/pcap-worker-318/adaptation.json",
+          "sha256": "e425e4768f0fd0aa6fd826d09b87c9fe30da158ccd4d66acdb82a30162f2d582",
+          "size": 16110
+        },
+        "pool-input.json": {
+          "path": "work/simulator/qemu-s9/pcap-worker-318/pool-input.json",
+          "sha256": "38a29f7cade78b3e7378b6dcc6f235caf50abe614cc85b4d28a0ec562f660bd2",
+          "size": 1023
+        },
+        "console.json": {
+          "path": "work/simulator/qemu-s9/pcap-worker-318/console.json",
+          "sha256": "a24578ffa65fe6723efefa30a245ce06eeaaed870fc08242ea8b8182198bbc68",
+          "size": 3541
+        }
+      },
+      "execution": {
+        "path": "work/simulator/qemu-s9/pcap-worker-318/result.json",
+        "sha256": "02028787b54ea536430e3393cbb62d0f7c34238dae23746241115cff73acd961",
+        "size": 103176821
+      },
+      "configuration_audit": {
+        "path": "work/simulator/qemu-s9/pcap-worker-318/configuration-audit.json",
+        "sha256": "bea7d9a1a7d11d3d4fc39c7a204561b2d53e51b9d263bc3a5af27214a911ca34",
+        "size": 1037
+      },
+      "mining_audit": {
+        "path": "work/simulator/qemu-s9/pcap-worker-318/regtest-audit319.json",
+        "sha256": "11926c8eaba50de389f51751918d784cae35932974a143a7aea762ffe300d7fd",
+        "size": 47817
+      },
+      "rate_audit": {
+        "path": "work/simulator/qemu-s9/pcap-worker-318/rate-audit319.json",
+        "sha256": "327e17a84ed250ce7ac19e2772a7927e960128fe4bd00c865445df3438240cbf",
+        "size": 2236
+      },
+      "computed_hashes": 1318,
+      "fresh_jobs": 2,
+      "matched_computations": 9,
+      "verified_serial_results": 9,
+      "core_checks": [
+        {
+          "report": {
+            "path": "work/simulator/bitcoin-core/pcap318-worker-candidate0-319/block-acceptance.json",
+            "sha256": "0c89df387fe3fac6603eedbcabb1b5bd01181bde429d767ab913849e4cdf01a8",
+            "size": 1745
+          },
+          "block_hash": "2d316e5401caf0944d7c461eba9c6277ec71c1bf4e74c7774cbf54c952d36318"
+        },
+        {
+          "report": {
+            "path": "work/simulator/bitcoin-core/pcap318-worker-candidate1-319/block-acceptance.json",
+            "sha256": "08ddcc5a8247510be02a3535e13ea89d1c8c6f47ddc5d1604c5c1d10b95e44fe",
+            "size": 1745
+          },
+          "block_hash": "059e7e3303cbe71da29a71537af2422ac5f6dc60f605cb16165383e5c6b65b12"
+        }
+      ]
+    }
+  ],
+  "worker": {
+    "destination_objects": 56,
+    "transfer": {
+      "path": "work/simulator/qemu-s9/pcap-worker-318/artifact-transfer.json",
+      "sha256": "4e113a1d96c0cbb0380cf8071f3be1a67b7fb35c318f8c12ddc8efcdd9b289e8",
+      "size": 10620
+    },
+    "cleanup": {
+      "path": "work/simulator/qemu-s9/pcap-worker-318/worker-cleanup.json",
+      "sha256": "cb3e540009bc157d37ee7875578b5c6c390522463d684727257da785d759cbd5",
+      "size": 313
+    },
+    "result": {
+      "path": "work/simulator/qemu-s9/pcap-worker-318/worker-result.json",
+      "sha256": "d57d1c32b6fe7ff432befd66bf686e1b57953356f419e084097242505893a879",
+      "size": 103176821
+    }
+  },
+  "limitations": [
+    "Selected FPGA logic and exact component identities remain unresolved.",
+    "PCAP status/timing are an explicit reference adaptation. Model315 rejects fixed-source DMA; implementation320 is pending build and validation.",
+    "Native cycle317 remains separate and in progress.",
+    "Independent review agent quota remains blocked."
+  ]
+}

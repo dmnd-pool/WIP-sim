@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-74dfbd5c49c30b8059e8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c5b4961f-4a00-4163-bf2b-97bee7fd8ff5/2026/08/11/11/S21%20Pro%2B%20RoHS%20.pdf",
+  "kind": "document",
+  "title": "S21 Pro+ RoHS .pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:35+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-74dfbd5c49c30b8059e8/S21_Pro+_RoHS_.pdf",
+  "sha256": "7ae818ad39b4f64ba2de71710d956e199a584761e5dea09950e89096a752095a",
+  "size_bytes": 259167,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c5b4961f-4a00-4163-bf2b-97bee7fd8ff5/2026/08/11/11/S21%20Pro%2B%20RoHS%20.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 11 Aug 2026 03:23:43 GMT",
+  "etag": "\"39abc557ba9b517a1186dd6711a61ab5\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 259167,
+      "actual": 259167,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-454a2cb09e7d2536e34e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5e2b4a54-1106-43ce-863b-cda8bb901134/2023/12/13/14/KS3%20RoHS.pdf",
+  "kind": "document",
+  "title": "KS3 RoHS.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:51+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-454a2cb09e7d2536e34e/KS3_RoHS.pdf",
+  "sha256": "61cefc4e1946d1908b04d901c531b6b667de0af7491a3ccf831511b2c1960234",
+  "size_bytes": 291818,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5e2b4a54-1106-43ce-863b-cda8bb901134/2023/12/13/14/KS3%20RoHS.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 06:17:06 GMT",
+  "etag": "\"2a00b300d52051ca220022fb13100461\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 291818,
+      "actual": 291818,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "open-bshepp-bfl-asic",
+  "source_commit": "aa326aad35205b21be9c75f28dbb84b4ba3cf75a",
+  "scope": "supporting-tool",
+  "simulation_level": "host protocol state-machine and synthetic response model",
+  "executed": false,
+  "bfl_nonce_model": "SHA256(SHA256(midstate_bytes || tail_bytes || nonce_big_endian)); accepts first hash byte zero",
+  "bfl_nonce_model_limit": "The code hashes the serialized midstate as message bytes. It does not restore that midstate as SHA-256 compression state. Its one-byte target is synthetic. Do not use these nonces as Bitcoin/ASIC correctness vectors.",
+  "icarus_nonce_model": "Exact golden work returns the predefined golden nonce. Other work returns the first four SHA256(work) bytes.",
+  "icarus_nonce_model_limit": "Deterministic protocol fixture only; not an ASIC nonce search.",
+  "thermal_model": {
+    "initial_c": 35,
+    "rise_c_per_work": 2,
+    "cooling_c_per_idle_status_poll": 0.5,
+    "overheat_c": 85,
+    "model_limit": "Poll-driven temperature updates; no calibrated wall-clock thermal dynamics."
+  },
+  "bfl_default_nonce_scan_count": 1000,
+  "bfl_default_engines": 30,
+  "error_injection": "Optional random response corruption; reproducibility requires control of the random state.",
+  "evidence_files": [
+    "bfl_asic/transport/simulator.py",
+    "bfl_asic/transport/icarus_simulator.py",
+    "bfl_asic/protocol/icarus.py"
+  ],
+  "fixture_index": "catalog/parts/open/bfl-fixtures.jsonl"
+}

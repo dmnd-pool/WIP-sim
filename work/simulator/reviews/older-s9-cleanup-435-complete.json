@@ -1,0 +1,343 @@
+{
+  "schema": "md-sim-owned-preparation-cleanup/1",
+  "state": "completed; exact source/copy verification preceded deletion under exclusive Store locks",
+  "stores": [
+    "work/simulator/older-s9-inputs-435/store",
+    "work/simulator/qemu-s9/older-s9-update-435-frames/inputs",
+    "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs"
+  ],
+  "sources": [
+    {
+      "source": "artifacts/files/firmware/braiins-feed-aee8d7f2ed41b10b2e6f/braiins-os-plus_am1-s9_ssh_2019-02-21-0-572dd48c_2020-03-29-1-6b4a0f46.tar.gz",
+      "guest_path": "/archive.tar.gz",
+      "sha256": "ad2e0119a32b70c790b57afc719d283c66a4bfb9206e1602159071e20c0aece7",
+      "size": 38793347
+    },
+    {
+      "source": "/usr/bin/tar",
+      "guest_path": "/usr/bin/tar",
+      "sha256": "8bd961dfeee3543f158f550566a66e78c713a9ad5b88432bab93b63f2bb9347c",
+      "size": 431840
+    },
+    {
+      "source": "/usr/bin/gzip",
+      "guest_path": "/usr/bin/gzip",
+      "sha256": "b1f9e749ee0809d6e90100218e6bc13cdf3f26f23c243d5f62aae39162297cb1",
+      "size": 109768
+    },
+    {
+      "source": "/usr/lib/libacl.so.1",
+      "guest_path": "/usr/lib/libacl.so.1",
+      "sha256": "ddab84c6479bd486973ba9f608adfe1cb4d1cebef0e5789f4b580a5b518919e9",
+      "size": 42960
+    },
+    {
+      "source": "/usr/lib/libc.so.6",
+      "guest_path": "/usr/lib/libc.so.6",
+      "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "size": 2215072
+    },
+    {
+      "source": "/usr/lib64/ld-linux-x86-64.so.2",
+      "guest_path": "/lib64/ld-linux-x86-64.so.2",
+      "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "size": 263152
+    },
+    {
+      "source": "work/simulator/qemu-s9/older-s9-extract-434/system.bit.gz",
+      "sha256": "9482ef607556a168e5b9e9ecc6de3198578cec9fb2187ed7d16ea451952b8552",
+      "size": 477812
+    },
+    {
+      "source": "work/simulator/check-target-085/release/examples/s9_bitstream_probe",
+      "sha256": "108715e948b013372e02b5479db75c51b42f4b79275f6eb6431b626b66f75d5f",
+      "size": 1853768
+    },
+    {
+      "source": "/usr/lib/libgcc_s.so.1",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "size": 182512
+    },
+    {
+      "source": "fixtures/fpga/xc7z010clg400-1/part.json",
+      "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+      "size": 16801
+    },
+    {
+      "source": "/usr/bin/bash",
+      "guest_path": "/usr/bin/bash",
+      "sha256": "c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+      "size": 1195144
+    },
+    {
+      "source": "/usr/bin/cmp",
+      "guest_path": "/usr/bin/cmp",
+      "sha256": "edcc51a8c7e7e85668f77f9a60b64ac9a771f20d0a2474348174c530ccf09abb",
+      "size": 43248
+    },
+    {
+      "source": "/usr/lib/libreadline.so.8",
+      "guest_path": "/usr/lib/libreadline.so.8",
+      "sha256": "c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+      "size": 371736
+    },
+    {
+      "source": "/usr/lib/libncursesw.so.6",
+      "guest_path": "/usr/lib/libncursesw.so.6",
+      "sha256": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+      "size": 457936
+    },
+    {
+      "source": "artifacts/files/firmware/braiins-feed-5ea46cd9c3bd3d2ec909/firmware_2020-03-29-1-6b4a0f46_arm_cortex-a9_neon.tar",
+      "guest_path": "/update.tar",
+      "sha256": "8c05a3258d857cb51bec2b8a88749fccfa967ca601f3ef29a4784d158c6e1b43",
+      "size": 13158751
+    },
+    {
+      "source": "work/simulator/qemu-s9/older-s9-update-435-fpga/fpga",
+      "sha256": "c606e69af819414148e1d93c4ebf2d3d3d26e9e74db5200c45562cd132f47adf",
+      "size": 157132
+    },
+    {
+      "source": "work/simulator/qemu-s9/older-s9-role-435-stage2-system.bit.gz/system.bit.gz",
+      "sha256": "37cff73235eb7e1236e53612fc6201ee300588a773db9e82b36fce2623ed2b87",
+      "size": 477812
+    }
+  ],
+  "preserve": "Original archives, derived outputs, all result/spec/lock records including the failed compressed comparison, Store policy/lock metadata and unrelated stores",
+  "removed_objects": [
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "source": {
+        "source": "/usr/lib/libc.so.6",
+        "guest_path": "/usr/lib/libc.so.6",
+        "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+        "size": 2215072
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+      "source": {
+        "source": "/usr/lib/libncursesw.so.6",
+        "guest_path": "/usr/lib/libncursesw.so.6",
+        "sha256": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+        "size": 457936
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/8bd961dfeee3543f158f550566a66e78c713a9ad5b88432bab93b63f2bb9347c",
+      "source": {
+        "source": "/usr/bin/tar",
+        "guest_path": "/usr/bin/tar",
+        "sha256": "8bd961dfeee3543f158f550566a66e78c713a9ad5b88432bab93b63f2bb9347c",
+        "size": 431840
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/8c05a3258d857cb51bec2b8a88749fccfa967ca601f3ef29a4784d158c6e1b43",
+      "source": {
+        "source": "artifacts/files/firmware/braiins-feed-5ea46cd9c3bd3d2ec909/firmware_2020-03-29-1-6b4a0f46_arm_cortex-a9_neon.tar",
+        "guest_path": "/update.tar",
+        "sha256": "8c05a3258d857cb51bec2b8a88749fccfa967ca601f3ef29a4784d158c6e1b43",
+        "size": 13158751
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/9482ef607556a168e5b9e9ecc6de3198578cec9fb2187ed7d16ea451952b8552",
+      "source": {
+        "source": "work/simulator/qemu-s9/older-s9-extract-434/system.bit.gz",
+        "sha256": "9482ef607556a168e5b9e9ecc6de3198578cec9fb2187ed7d16ea451952b8552",
+        "size": 477812
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/ad2e0119a32b70c790b57afc719d283c66a4bfb9206e1602159071e20c0aece7",
+      "source": {
+        "source": "artifacts/files/firmware/braiins-feed-aee8d7f2ed41b10b2e6f/braiins-os-plus_am1-s9_ssh_2019-02-21-0-572dd48c_2020-03-29-1-6b4a0f46.tar.gz",
+        "guest_path": "/archive.tar.gz",
+        "sha256": "ad2e0119a32b70c790b57afc719d283c66a4bfb9206e1602159071e20c0aece7",
+        "size": 38793347
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/b1f9e749ee0809d6e90100218e6bc13cdf3f26f23c243d5f62aae39162297cb1",
+      "source": {
+        "source": "/usr/bin/gzip",
+        "guest_path": "/usr/bin/gzip",
+        "sha256": "b1f9e749ee0809d6e90100218e6bc13cdf3f26f23c243d5f62aae39162297cb1",
+        "size": 109768
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+      "source": {
+        "source": "/usr/bin/bash",
+        "guest_path": "/usr/bin/bash",
+        "sha256": "c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+        "size": 1195144
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+      "source": {
+        "source": "/usr/lib/libreadline.so.8",
+        "guest_path": "/usr/lib/libreadline.so.8",
+        "sha256": "c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+        "size": 371736
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/ddab84c6479bd486973ba9f608adfe1cb4d1cebef0e5789f4b580a5b518919e9",
+      "source": {
+        "source": "/usr/lib/libacl.so.1",
+        "guest_path": "/usr/lib/libacl.so.1",
+        "sha256": "ddab84c6479bd486973ba9f608adfe1cb4d1cebef0e5789f4b580a5b518919e9",
+        "size": 42960
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/edcc51a8c7e7e85668f77f9a60b64ac9a771f20d0a2474348174c530ccf09abb",
+      "source": {
+        "source": "/usr/bin/cmp",
+        "guest_path": "/usr/bin/cmp",
+        "sha256": "edcc51a8c7e7e85668f77f9a60b64ac9a771f20d0a2474348174c530ccf09abb",
+        "size": 43248
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/older-s9-inputs-435/store/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "source": {
+        "source": "/usr/lib64/ld-linux-x86-64.so.2",
+        "guest_path": "/lib64/ld-linux-x86-64.so.2",
+        "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+        "size": 263152
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "source": {
+        "source": "/usr/lib/libc.so.6",
+        "guest_path": "/usr/lib/libc.so.6",
+        "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+        "size": 2215072
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/objects/108715e948b013372e02b5479db75c51b42f4b79275f6eb6431b626b66f75d5f",
+      "source": {
+        "source": "work/simulator/check-target-085/release/examples/s9_bitstream_probe",
+        "sha256": "108715e948b013372e02b5479db75c51b42f4b79275f6eb6431b626b66f75d5f",
+        "size": 1853768
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/objects/1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+      "source": {
+        "source": "fixtures/fpga/xc7z010clg400-1/part.json",
+        "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+        "size": 16801
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/objects/c606e69af819414148e1d93c4ebf2d3d3d26e9e74db5200c45562cd132f47adf",
+      "source": {
+        "source": "work/simulator/qemu-s9/older-s9-update-435-fpga/fpga",
+        "sha256": "c606e69af819414148e1d93c4ebf2d3d3d26e9e74db5200c45562cd132f47adf",
+        "size": 157132
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "source": {
+        "source": "/usr/lib/libgcc_s.so.1",
+        "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+        "size": 182512
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "source": {
+        "source": "/usr/lib64/ld-linux-x86-64.so.2",
+        "guest_path": "/lib64/ld-linux-x86-64.so.2",
+        "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+        "size": 263152
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "source": {
+        "source": "/usr/lib/libc.so.6",
+        "guest_path": "/usr/lib/libc.so.6",
+        "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+        "size": 2215072
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/objects/108715e948b013372e02b5479db75c51b42f4b79275f6eb6431b626b66f75d5f",
+      "source": {
+        "source": "work/simulator/check-target-085/release/examples/s9_bitstream_probe",
+        "sha256": "108715e948b013372e02b5479db75c51b42f4b79275f6eb6431b626b66f75d5f",
+        "size": 1853768
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/objects/1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+      "source": {
+        "source": "fixtures/fpga/xc7z010clg400-1/part.json",
+        "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+        "size": 16801
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/objects/37cff73235eb7e1236e53612fc6201ee300588a773db9e82b36fce2623ed2b87",
+      "source": {
+        "source": "work/simulator/qemu-s9/older-s9-role-435-stage2-system.bit.gz/system.bit.gz",
+        "sha256": "37cff73235eb7e1236e53612fc6201ee300588a773db9e82b36fce2623ed2b87",
+        "size": 477812
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "source": {
+        "source": "/usr/lib/libgcc_s.so.1",
+        "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+        "size": 182512
+      },
+      "source_and_copy_verified": true
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "source": {
+        "source": "/usr/lib64/ld-linux-x86-64.so.2",
+        "guest_path": "/lib64/ld-linux-x86-64.so.2",
+        "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+        "size": 263152
+      },
+      "source_and_copy_verified": true
+    }
+  ],
+  "removed_bytes": 67258320,
+  "removed_object_count": 24
+}

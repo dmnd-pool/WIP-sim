@@ -1,0 +1,32 @@
+[
+  {
+    "source": "/usr/bin/bash",
+    "guest_path": "/usr/bin/bash",
+    "sha256": "c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+    "size": 1195144
+  },
+  {
+    "source": "/usr/bin/cmp",
+    "guest_path": "/usr/bin/cmp",
+    "sha256": "edcc51a8c7e7e85668f77f9a60b64ac9a771f20d0a2474348174c530ccf09abb",
+    "size": 43248
+  },
+  {
+    "source": "/usr/lib/libreadline.so.8",
+    "guest_path": "/usr/lib/libreadline.so.8",
+    "sha256": "c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+    "size": 371736
+  },
+  {
+    "source": "/usr/lib/libncursesw.so.6",
+    "guest_path": "/usr/lib/libncursesw.so.6",
+    "sha256": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+    "size": 457936
+  },
+  {
+    "source": "artifacts/files/firmware/braiins-feed-5ea46cd9c3bd3d2ec909/firmware_2020-03-29-1-6b4a0f46_arm_cortex-a9_neon.tar",
+    "guest_path": "/update.tar",
+    "sha256": "8c05a3258d857cb51bec2b8a88749fccfa967ca601f3ef29a4784d158c6e1b43",
+    "size": 13158751
+  }
+]

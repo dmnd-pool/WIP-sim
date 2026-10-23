@@ -1,0 +1,36 @@
+--- a/hw/i2c/meson.build
++++ b/hw/i2c/meson.build
+@@ -22,3 +22,3 @@
+-  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c'), md_core,
++  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c', 'md-sim-fan.c'), md_core,
+     declare_dependency(link_args: ['-Wl,--gc-sections',
+       '-lgcc_s', '-lutil', '-lrt', '-lpthread', '-lm', '-ldl', '-lc'])])
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -0,0 +1,3 @@
++# Fan reference contract with explicit motor fixture
++md_sim_fan_mmio(uint64_t ns, bool write, uint64_t addr, unsigned size, unsigned value, unsigned error) "ns=%" PRIu64 " write=%d addr=0x%" PRIx64 " size=%u value=0x%x error=%u"
++md_sim_fan_input(uint64_t ns, unsigned motor, unsigned mask, unsigned values) "ns=%" PRIu64 " motor=%u mask=%u values=%u"
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -430,2 +430,8 @@
++    if (object_dynamic_cast(OBJECT(machine), MACHINE_TYPE_NAME("md-sim-s9-fan-development"))) {
++        DeviceState *fan = qdev_new("md-sim-fan");
++        object_property_add_child(OBJECT(machine), "fan", OBJECT(fan));
++        sysbus_realize_and_unref(SYS_BUS_DEVICE(fan), &error_fatal);
++        sysbus_mmio_map(SYS_BUS_DEVICE(fan), 0, 0x42800000);
++    }
+     n = zynq_init_spi_flashes(0xE0006000, pic[58 - GIC_INTERNAL], false, 0);
+     n = zynq_init_spi_flashes(0xE0007000, pic[81 - GIC_INTERNAL], false, n);
+@@ -655,3 +661,7 @@
+ static void zynq_machine_register_types(void)
+ {
++    static const TypeInfo fan_fixture = {
++        .name = MACHINE_TYPE_NAME("md-sim-s9-fan-development"),
++        .parent = MACHINE_TYPE_NAME("md-sim-s9-sd2022-io-development"),
++    };
+     static const TypeInfo sd2022_fixture = {
+@@ -682,2 +692,3 @@
+     type_register_static(&sd2022_fixture);
++    type_register_static(&fan_fixture);
+ }

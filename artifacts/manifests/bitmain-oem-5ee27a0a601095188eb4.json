@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5ee27a0a601095188eb4",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fb890bd6-7c6e-432e-acae-aacca9db7259/2024/05/22/17/KA3%20K7%20DR7%20HS3%20D9%20-REACH%20ShenZhen%20Century%20Cloud%20Core.pdf",
+  "kind": "document",
+  "title": "KA3 K7 DR7 HS3 D9 -REACH ShenZhen Century Cloud Core.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-5ee27a0a601095188eb4/KA3_K7_DR7_HS3_D9_-REACH_ShenZhen_Century_Cloud_Core.pdf",
+  "sha256": "ece95d03d8cd17693a6aef38136fdf25c084867cea2c2e0edc3189dc3ecacc4c",
+  "size_bytes": 722064,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fb890bd6-7c6e-432e-acae-aacca9db7259/2024/05/22/17/KA3%20K7%20DR7%20HS3%20D9%20-REACH%20ShenZhen%20Century%20Cloud%20Core.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:12:16 GMT",
+  "etag": "\"9763c6984bd0005e1fa715866c49337b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 722064,
+      "actual": 722064,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

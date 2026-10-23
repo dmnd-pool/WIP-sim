@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-c27ab5e9e5247e94e62d",
+  "url": "https://download.hiveos.farm/asic/s9/recovery-stock/Recovery_S9.img",
+  "kind": "firmware",
+  "title": "Recovery_S9.img",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-c27ab5e9e5247e94e62d/Recovery_S9.img",
+  "sha256": "a26d9b13b5ea1b925e0558d105f7ac33090053761c890f3dbf6c174f3030ae7c",
+  "size_bytes": 116391936,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s9/recovery-stock/Recovery_S9.img",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 05 Feb 2020 12:33:19 GMT",
+  "etag": "\"5e3ab60f-6f00000\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 116391936,
+      "actual": 116391936,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

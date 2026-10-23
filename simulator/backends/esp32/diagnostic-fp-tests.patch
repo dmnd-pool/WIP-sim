@@ -1,0 +1,20 @@
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -1,3 +1,6 @@
++option('mdsim_build_fp_tests', type: 'boolean', value: true,
++       description: 'Build upstream floating-point test executables (disabled only for the recorded diagnostic build)')
++
+ # These options do not correspond to a --enable/--disable-* option
+ # on the configure script command line.  If you add more, list them in
+ # scripts/meson-buildoptions.py's SKIP_OPTIONS constant too.
+--- a/tests/fp/meson.build
++++ b/tests/fp/meson.build
+@@ -1,3 +1,8 @@
++if not get_option('mdsim_build_fp_tests')
++  warning('md-sim diagnostic build: upstream FP test dependencies are absent; FP tests remain untested')
++  subdir_done()
++endif
++
+ if 'CONFIG_TCG' not in config_all_accel
+   subdir_done()
+ endif

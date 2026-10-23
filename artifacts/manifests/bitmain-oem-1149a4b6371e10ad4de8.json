@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1149a4b6371e10ad4de8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/97811229-6a1a-4c76-805e-e50c5dc2b8ef/2024/02/20/14/cTUVus-T21-CN24MEAX%20001-24.02.06_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus-T21-CN24MEAX 001-24.02.06_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:51+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1149a4b6371e10ad4de8/cTUVus-T21-CN24MEAX_001-24.02.06_extsigned.pdf",
+  "sha256": "b7b35ea8996c87c9aaafd9e186b53a30024f64f0ff68f423b1989a3435d8bae7",
+  "size_bytes": 1451376,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/97811229-6a1a-4c76-805e-e50c5dc2b8ef/2024/02/20/14/cTUVus-T21-CN24MEAX%20001-24.02.06_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 20 Feb 2024 06:51:03 GMT",
+  "etag": "\"41e10c6460823a7a26202bd7deff24bc\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1451376,
+      "actual": 1451376,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

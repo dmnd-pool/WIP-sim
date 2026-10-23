@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3ad30da8962b222b5a5f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9b09e95e-4def-4662-90c4-a6d544b58891/2023/11/27/17/S19k%20Pro%20SVHC233%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "S19k Pro SVHC233 Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3ad30da8962b222b5a5f/S19k_Pro_SVHC233_Shenzhen.pdf",
+  "sha256": "743d19689f788921f1aa55f379d33606d3054c10c2831f02d20a438bab79489f",
+  "size_bytes": 227931,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9b09e95e-4def-4662-90c4-a6d544b58891/2023/11/27/17/S19k%20Pro%20SVHC233%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 27 Nov 2023 09:26:45 GMT",
+  "etag": "\"b2602748466d62b8b727720e691607e8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 227931,
+      "actual": 227931,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

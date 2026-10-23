@@ -1,0 +1,24 @@
+{
+  "id": "bitdeer-file-76bc1b286ab5f7ac-installer-trailer",
+  "url": "https://file.bitdeer.com/bd-public-prod/shop/202608270032/Firmware-A3hydro-20260715-000.bin",
+  "kind": "source",
+  "title": "Firmware - A3 Hydro embedded installer trailer",
+  "language": "en",
+  "source_id": "bitdeer-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:29:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/bitdeer-file-76bc1b286ab5f7ac-installer-trailer/installer-trailer.sh",
+  "sha256": "c2cda906a2ca8aa3fc406df80f1cc52270ee3d54b5416b71cf2f38c209c0af42",
+  "size_bytes": 5632,
+  "executed": false,
+  "acquisition_method": "byte-range-extracted-from-downloaded-file",
+  "parent_artifact_id": "bitdeer-file-76bc1b286ab5f7ac",
+  "parent_sha256": "d2b13caf765cd0284679e154142be99ba9302b4c1fdc87bde90a57031f0e3d4a",
+  "byte_offset": 34638915,
+  "content_role": "embedded-readable-installer-code",
+  "notes": [
+    "This is a script contained in a proprietary firmware package. Its readability does not establish an open-source licence.",
+    "Exact bytes include any padding. The script was not executed."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-78d8ecd4ea850f656c50",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/95011636-254a-4f9f-a816-86a04a941d86/2025/03/13/15/S21%2B%20Hyd.%20Product%20Manual_V1.1.1.pdf",
+  "kind": "document",
+  "title": "S21+ Hyd. Product Manual_V1.1.1.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-78d8ecd4ea850f656c50/S21+_Hyd._Product_Manual_V1.1.1.pdf",
+  "sha256": "d5b730a7da0bb57d317b5bad982e0dddbcfdd6f59ff22d82639c038d4093d9d4",
+  "size_bytes": 887906,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/95011636-254a-4f9f-a816-86a04a941d86/2025/03/13/15/S21%2B%20Hyd.%20Product%20Manual_V1.1.1.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 13 Mar 2025 07:06:44 GMT",
+  "etag": "\"5c58a8f1391b1d3627e54dc466b46e60\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 887906,
+      "actual": 887906,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

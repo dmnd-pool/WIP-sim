@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7b276a0a8a1d446b7262",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d1a88bb3-fd9e-4007-95b6-ffb0396038af/2024/12/25/18/CB%202nd%20cert-S21%20XP%20lmm-CN24SUM1%20001-24.11.04_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert-S21 XP lmm-CN24SUM1 001-24.11.04_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:10+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7b276a0a8a1d446b7262/CB_2nd_cert-S21_XP_lmm-CN24SUM1_001-24.11.04_extsigned.pdf",
+  "sha256": "d1a47ae860a00a34e24d6772b4135ce47cafd4c34fe7483f50dae5fc25a687fb",
+  "size_bytes": 328620,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d1a88bb3-fd9e-4007-95b6-ffb0396038af/2024/12/25/18/CB%202nd%20cert-S21%20XP%20lmm-CN24SUM1%20001-24.11.04_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 25 Dec 2024 10:55:34 GMT",
+  "etag": "\"702a2f1720f7822f6149830519aa403d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 328620,
+      "actual": 328620,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a2a6e911e0d1487e2b08",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cgminer-run-windows-20141027.rar",
+  "kind": "tool",
+  "title": "cgminer-run-windows-20141027.rar",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-a2a6e911e0d1487e2b08/cgminer-run-windows-20141027.rar",
+  "sha256": "1ac7cd4020c3c8753985c51de36faf599da54028ca46dcd745276e6aeed1788c",
+  "size_bytes": 1474775,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cgminer-run-windows-20141027.rar",
+  "http_status": 200,
+  "content_type": "binary/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:31 GMT",
+  "etag": "\"579c7ce21630eed2266af0caa5d509fb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1474775,
+      "actual": 1474775,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

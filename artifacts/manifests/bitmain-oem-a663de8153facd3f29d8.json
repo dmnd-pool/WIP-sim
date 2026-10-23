@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-a663de8153facd3f29d8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antiminer%20S11/Firmware/00720181228195846446Fsp1TjBP06B8/Antminer-S11-xilinx-201812082324-autofreq-user-Update2UBI-NF.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S11-xilinx-201812082324-autofreq-user-Update2UBI-NF.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:53+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-a663de8153facd3f29d8/ANTMINER-S11-xilinx-201812082324-autofreq-user-Update2UBI-NF.tar.gz",
+  "sha256": "e2f57fe7fba079085cf52edb95c2998c024c829292c767816799dfb20d4a6ec3",
+  "size_bytes": 44280999,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antiminer%20S11/Firmware/00720181228195846446Fsp1TjBP06B8/Antminer-S11-xilinx-201812082324-autofreq-user-Update2UBI-NF.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:27 GMT",
+  "etag": "\"1e6a44069e24ad185840c77dc8aa53b3-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "af5124c67c74470c5443a023fe69174a",
+      "actual": "af5124c67c74470c5443a023fe69174a",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 44280999,
+      "actual": 44280999,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

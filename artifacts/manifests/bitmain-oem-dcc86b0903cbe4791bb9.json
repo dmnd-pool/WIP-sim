@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-dcc86b0903cbe4791bb9",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a814b34e-c72c-4208-82c3-0004c19f6b60/2024/05/22/16/ACS-E23149-A1Z2209082-CE-EMC.pdf",
+  "kind": "document",
+  "title": "ACS-E23149-A1Z2209082-CE-EMC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-dcc86b0903cbe4791bb9/ACS-E23149-A1Z2209082-CE-EMC.pdf",
+  "sha256": "de41e298b89b22f8e97e89b971912abec15870aaffc4e065027f9ba4967787d6",
+  "size_bytes": 813678,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a814b34e-c72c-4208-82c3-0004c19f6b60/2024/05/22/16/ACS-E23149-A1Z2209082-CE-EMC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:04:27 GMT",
+  "etag": "\"a5e47c22873929dcf6e0e11a92438ae2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 813678,
+      "actual": 813678,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

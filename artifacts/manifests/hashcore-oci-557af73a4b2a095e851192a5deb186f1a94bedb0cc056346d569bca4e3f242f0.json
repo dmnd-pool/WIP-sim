@@ -1,0 +1,22 @@
+{
+  "id": "hashcore-oci-557af73a4b2a095e851192a5deb186f1a94bedb0cc056346d569bca4e3f242f0",
+  "url": "https://public.ecr.aws/v2/k7t2c2k4/stratum-proxy-configurator/blobs/sha256:557af73a4b2a095e851192a5deb186f1a94bedb0cc056346d569bca4e3f242f0",
+  "kind": "tool",
+  "title": "HashCore stratum-proxy-configurator OCI layer",
+  "language": "und",
+  "source_id": "hashcore-proxy-deployment",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:39:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/hashcore-oci-557af73a4b2a095e851192a5deb186f1a94bedb0cc056346d569bca4e3f242f0/layer.tar.gz",
+  "sha256": "557af73a4b2a095e851192a5deb186f1a94bedb0cc056346d569bca4e3f242f0",
+  "size_bytes": 899357,
+  "executed": false,
+  "content_role": "oci-layer",
+  "registry_digest": "sha256:557af73a4b2a095e851192a5deb186f1a94bedb0cc056346d569bca4e3f242f0",
+  "expected_size_bytes": 899357,
+  "auth_method": "Anonymous public ECR pull token; token not saved",
+  "registry_digest_match": true,
+  "http_status": 200,
+  "content_type": "application/octet-stream"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-9f9b844f57fc54d3f254",
+  "url": "https://download.hiveos.farm/asic/custom/f2pool/201222/Antminer-S9-all-Bigminer-1.03@201222-sign-f2pool.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Bigminer-1.03@201222-sign-f2pool.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:08:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-9f9b844f57fc54d3f254/Antminer-S9-all-Bigminer-1.03_201222-sign-f2pool.tar.gz",
+  "sha256": "9888adf67dd0a7dce4e34216b51f3901dd40abd567e4c4ca904a8f67bb940f99",
+  "size_bytes": 23800795,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/f2pool/201222/Antminer-S9-all-Bigminer-1.03@201222-sign-f2pool.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 22 Dec 2020 06:24:42 GMT",
+  "etag": "\"5fe1912a-16b2bdb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23800795,
+      "actual": 23800795,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

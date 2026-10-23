@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-bc52ea0fb6e37d27ea4f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e53da3d1-d86e-4a6b-94f5-cce10f4efc65/2026/06/09/15/E11%20ICES-003%C2%A0.pdf",
+  "kind": "document",
+  "title": "E11 ICES-003\u00a0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-bc52ea0fb6e37d27ea4f/E11_ICES-003_.pdf",
+  "sha256": "d4756c17a35a7576bf583b4cf9d4a0cd471bab8551401dd2cb308e826ec8dd14",
+  "size_bytes": 680141,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e53da3d1-d86e-4a6b-94f5-cce10f4efc65/2026/06/09/15/E11%20ICES-003%C2%A0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 09 Jun 2026 07:12:36 GMT",
+  "etag": "\"8fe52972a12995f36ea83dc9513df8a1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 680141,
+      "actual": 680141,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

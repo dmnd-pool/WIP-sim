@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-6f7027d9b5f5ebdba186",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f125da5a-20fc-4e5c-9efa-1e7590f7252e/2024/05/22/16/CB%2062368%203rd%20cert_CN23HYN2%20001_2023.10.9_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 62368 3rd cert_CN23HYN2 001_2023.10.9_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-6f7027d9b5f5ebdba186/CB_62368_3rd_cert_CN23HYN2_001_2023.10.9_extsigned.pdf",
+  "sha256": "7ddb3603f83565cee69cced09f36170fcdbaeeb222d29c652355961e60feda7e",
+  "size_bytes": 662967,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f125da5a-20fc-4e5c-9efa-1e7590f7252e/2024/05/22/16/CB%2062368%203rd%20cert_CN23HYN2%20001_2023.10.9_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:06:23 GMT",
+  "etag": "\"2b9d40904efc745cc931326eb3febd1a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 662967,
+      "actual": 662967,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

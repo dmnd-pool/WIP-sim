@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b5fe2d53869d431f5159",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e96ec2eb-a019-46f5-88ea-fa39ada277a8/2025/01/17/17/T21%20Product%20Manual.pdf",
+  "kind": "document",
+  "title": "T21 Product Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:53+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-b5fe2d53869d431f5159/T21_Product_Manual.pdf",
+  "sha256": "8fd495766c0b20877c4cdbed1fb661b8774237baeb52a22426dba2ba7b6cffa0",
+  "size_bytes": 544666,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e96ec2eb-a019-46f5-88ea-fa39ada277a8/2025/01/17/17/T21%20Product%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 17 Jan 2025 09:56:10 GMT",
+  "etag": "\"ff52d8433ccd65fc68b1dbabdb0da67b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 544666,
+      "actual": 544666,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

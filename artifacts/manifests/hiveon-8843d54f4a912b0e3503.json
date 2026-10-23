@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-8843d54f4a912b0e3503",
+  "url": "https://download.hiveos.farm/asic/s17/archive/Antminer-S17-S17pro-S17p-Hiveon-1.00-sign.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17-S17pro-S17p-Hiveon-1.00-sign.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:26:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-8843d54f4a912b0e3503/Antminer-S17-S17pro-S17p-Hiveon-1.00-sign.tar.gz",
+  "sha256": "e9546353eea430caa6917cfc873e58803221304a8ae27efda1df31ad45b0c528",
+  "size_bytes": 24225161,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s17/archive/Antminer-S17-S17pro-S17p-Hiveon-1.00-sign.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 22 Jan 2020 21:47:41 GMT",
+  "etag": "\"5e28c2fd-171a589\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 24225161,
+      "actual": 24225161,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-70c1da07527d86b5e9b8",
+  "url": "https://download.hiveos.farm/asic/custom/mskbtc/SD-T17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "kind": "firmware",
+  "title": "SD-T17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:58:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-70c1da07527d86b5e9b8/SD-T17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "sha256": "dcb6b830f153fe3865467b14f2e888ad4712305a4b750cbffd67797c986404f7",
+  "size_bytes": 65270827,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/mskbtc/SD-T17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Wed, 30 Sep 2020 09:18:05 GMT",
+  "etag": "\"5f744d4d-3e3f42b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 65270827,
+      "actual": 65270827,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

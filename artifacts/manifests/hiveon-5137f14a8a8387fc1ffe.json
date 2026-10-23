@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-5137f14a8a8387fc1ffe",
+  "url": "https://download.hiveos.farm/asic/s9/Antminer-S9-all-201812051512-autofreq-user-Update2UBI-NF-Bitmain.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-201812051512-autofreq-user-Update2UBI-NF-Bitmain",
+  "language": "en",
+  "source_id": "hiveon-versions",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-5137f14a8a8387fc1ffe/Antminer-S9-all-201812051512-autofreq-user-Update2UBI-NF-Bitmain.tar.gz",
+  "sha256": "95667e8c4ec66f5e630ad17ce162b67998487e98a44a70031474bc8bd462f19d",
+  "size_bytes": 63898212,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s9/Antminer-S9-all-201812051512-autofreq-user-Update2UBI-NF-Bitmain.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 06 Dec 2018 15:37:04 GMT",
+  "etag": "\"5c094220-3cf0264\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 63898212,
+      "actual": 63898212,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

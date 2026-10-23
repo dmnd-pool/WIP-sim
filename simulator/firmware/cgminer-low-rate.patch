@@ -1,0 +1,398 @@
+--- a/cgminer.c
++++ b/cgminer.c
+@@ -59,6 +59,7 @@
+ 
+ #include "compat.h"
+ #include "miner.h"
++#include "md-sim-adaptation.h"
+ #include "bench_block.h"
+ #ifdef USE_USBUTILS
+ #include "usbutils.h"
+@@ -3964,17 +3965,10 @@
+ 	unsigned char rhash[32];
+ 	char diffdisp[16];
+ 	unsigned long h32;
+-	uint32_t *hash32;
+ 	uint64_t uintdiff;
+-	int ofs;
+ 
+ 	swab256(rhash, work->hash);
+-	for (ofs = 0; ofs <= 28; ofs ++) {
+-		if (rhash[ofs])
+-			break;
+-	}
+-	hash32 = (uint32_t *)(rhash + ofs);
+-	h32 = be32toh(*hash32);
++	h32 = md_sim_hash_prefix(rhash);
+ 	uintdiff = round(work->work_difficulty);
+ 	suffix_string(work->share_diff, diffdisp, sizeof (diffdisp), 0);
+ 	snprintf(hashshow, 64, "%08lx Diff %s/%"PRIu64"%s", h32, diffdisp, uintdiff,
+@@ -7089,6 +7083,8 @@
+ 	struct pool *pool = (struct pool *)userdata;
+ 	uint64_t last_nonce2 = 0;
+ 	uint32_t last_nonce = 0;
++	uint32_t md_sim_last_work = 0;
++	bool md_sim_has_last_work = false;
+ 	char threadname[16];
+ 
+ 	pthread_detach(pthread_self());
+@@ -7105,7 +7101,7 @@
+ 		struct stratum_share *sshare;
+ 		uint32_t *hash32, nonce;
+ 		unsigned char nonce2[8];
+-		uint64_t *nonce2_64;
++		uint64_t nonce2_64;
+ 		struct work *work;
+ 		bool submitted;
+ 
+@@ -7125,17 +7121,22 @@
+ 		}
+ 
+ 		nonce = *((uint32_t *)(work->data + 76));
+-		nonce2_64 = (uint64_t *)nonce2;
+-		*nonce2_64 = htole64(work->nonce2);
++		/* Preserve bytes without an unaligned uint64_t store. */
++		nonce2_64 = htole64(work->nonce2);
++		memcpy(nonce2, &nonce2_64, sizeof(nonce2));
+ 		/* Filter out duplicate shares */
+-		if (unlikely(nonce == last_nonce && *nonce2_64 == last_nonce2)) {
++		if (unlikely(nonce == last_nonce && nonce2_64 == last_nonce2 &&
++		    (!getenv("MD_SIM_LOW_RATE") ||
++		     (md_sim_has_last_work && md_sim_last_work == work->id)))) {
+ 			applog(LOG_INFO, "Filtering duplicate share to pool %d",
+ 			       pool->pool_no);
+ 			free_work(work);
+ 			continue;
+ 		}
+ 		last_nonce = nonce;
+-		last_nonce2 = *nonce2_64;
++		last_nonce2 = nonce2_64;
++		md_sim_last_work = work->id;
++		md_sim_has_last_work = true;
+ 		__bin2hex(noncehex, (const unsigned char *)&nonce, 4);
+ 		__bin2hex(nonce2hex, nonce2, work->nonce2_len);
+ 
+@@ -8114,6 +8115,14 @@
+ 	uint32_t *hash_32 = (uint32_t *)(work->hash + 28);
+ 
+ 	rebuild_nonce(work, nonce);
++	/* md-sim low-rate source variant: validate the programmed device
++	 * filter. submit_tested_work separately applies the pool target. */
++	if (getenv("MD_SIM_LOW_RATE")) {
++		uint64_t aligned_target[4];
++		unsigned char *device_target = (unsigned char *)aligned_target;
++		set_target(device_target, work->device_diff);
++		return fulltest(work->hash, device_target);
++	}
+ 	return (*hash_32 == 0);
+ }
+ 
+@@ -8170,9 +8179,17 @@
+ 
+ /* Rudimentary test to see if cgpu has returned the same nonce twice in a row which is
+  * always going to be a duplicate which should be reported as a hw error. */
+-static bool new_nonce(struct thr_info *thr, uint32_t nonce)
++static bool new_nonce(struct thr_info *thr, struct work *work, uint32_t nonce)
+ {
+ 	struct cgpu_info *cgpu = thr->cgpu;
++	if (getenv("MD_SIM_LOW_RATE")) {
++		bool duplicate = cgpu->md_sim_has_last_nonce &&
++			cgpu->md_sim_last_nonce_work == work->id && cgpu->last_nonce == nonce;
++		cgpu->md_sim_has_last_nonce = true;
++		cgpu->md_sim_last_nonce_work = work->id;
++		cgpu->last_nonce = nonce;
++		return !duplicate;
++	}
+ 
+ 	if (unlikely(cgpu->last_nonce == nonce)) {
+ 		applog(LOG_INFO, "%s %d duplicate share detected as HW error",
+@@ -8187,7 +8204,7 @@
+  * nonce submitted by this device. */
+ bool submit_nonce(struct thr_info *thr, struct work *work, uint32_t nonce)
+ {
+-	if (new_nonce(thr, nonce) && test_nonce(work, nonce))
++	if (new_nonce(thr, work, nonce) && test_nonce(work, nonce))
+ 		submit_tested_work(thr, work);
+ 	else {
+ 		inc_hw_errors(thr);
+--- a/driver-bitmain.c
++++ b/driver-bitmain.c
+@@ -543,7 +543,7 @@
+ 	int cursentcount = 0;
+ #ifdef USE_ANT_S2
+ 	uint8_t version = 0;
+-	int diffbits, lowestdiffbits = -1;
++	int diffbits, lowestdiffbits = 127;
+ 	double workdiff;
+ #endif
+ 	K_ITEM *witem;
+@@ -590,14 +590,15 @@
+ 		k_add_head(info->wbuild, witem);
+ 
+ 		diffbits = (int)floor(log2(DATAW(witem)->work->sdiff));
+-		if (diffbits < 0)
+-			diffbits = 0;
++		/* md-sim protocol adaptation: signed exponent permits low rates. */
++		if (diffbits < (getenv("MD_SIM_LOW_RATE") ? -31 : 0))
++			diffbits = getenv("MD_SIM_LOW_RATE") ? -31 : 0;
+ 		// Limit to 4096 so solo mining has reasonable mining stats
+ 		if (diffbits > 12)
+ 			diffbits = 12;
+ 
+ 		// Must use diffbits <= all work being sent
+-		if (lowestdiffbits == -1 || lowestdiffbits > diffbits)
++		if (lowestdiffbits > diffbits)
+ 			lowestdiffbits = diffbits;
+ #endif
+ 
+@@ -1067,6 +1068,16 @@
+ 
+ 	while (sent < len) {
+ 		amount = write(info->device_fd, buf+sent, len-sent);
++		/* md-sim PTY transport can apply short-lived backpressure. */
++		if (getenv("MD_SIM_LOW_RATE") && amount < 0 &&
++		    (errno == EAGAIN || errno == EINTR)) {
++			fd_set ready;
++			struct timeval deadline = {1, 0};
++			FD_ZERO(&ready);
++			FD_SET(info->device_fd, &ready);
++			if (select(info->device_fd + 1, NULL, &ready, NULL, &deadline) > 0)
++				continue;
++		}
+ 		if (amount < 0) {
+ 			applog(LOG_WARNING, "%s%d: ser_write got err %d",
+ 					    bitmain->drv->name, bitmain->device_id, amount);
+@@ -1255,7 +1266,9 @@
+ 			} else {
+ 				mutex_lock(&info->qlock);
+ 				info->chain_num = rxstatusdata.chain_num;
+-				info->fifo_space = rxstatusdata.fifo_space;
++				info->fifo_space = getenv("MD_SIM_LOW_RATE") ?
++					md_sim_status_credits(&info->md_sim_credits, rxstatusdata.fifo_space, info->fifo_space) :
++					rxstatusdata.fifo_space;
+ 				info->nonce_error = rxstatusdata.nonce_error;
+ 				errordiff = info->nonce_error-info->last_nonce_error;
+ 				applog(LOG_DEBUG, "%s%d: %s() RxStatus Data"
+@@ -1424,7 +1437,11 @@
+ 					}
+ 				}
+ 				mutex_lock(&info->qlock);
+-				info->fifo_space = rxnoncedata.fifo_space;
++				/* A low-rate result can precede completion of queued serial writes.
++				 * Do not restore credits already spent on those writes. Status
++				 * polling still supplies the full controller queue state. */
++				info->fifo_space = getenv("MD_SIM_LOW_RATE") ?
++					MIN(info->fifo_space, rxnoncedata.fifo_space) : rxnoncedata.fifo_space;
+ 				mutex_unlock(&info->qlock);
+ 				applog(LOG_DEBUG, "%s%d: %s() RxNonce Data fifo space=%d",
+ 						  bitmain->drv->name, bitmain->device_id,
+@@ -1493,7 +1510,9 @@
+ 			} else {
+ 				mutex_lock(&info->qlock);
+ 				info->chain_num = rxstatusdata.chain_num;
+-				info->fifo_space = rxstatusdata.fifo_space;
++				info->fifo_space = getenv("MD_SIM_LOW_RATE") ?
++					md_sim_status_credits(&info->md_sim_credits, rxstatusdata.fifo_space, info->fifo_space) :
++					rxstatusdata.fifo_space;
+ 				info->hw_version[0] = rxstatusdata.hw_version[0];
+ 				info->hw_version[1] = rxstatusdata.hw_version[1];
+ 				info->hw_version[2] = rxstatusdata.hw_version[2];
+@@ -1697,7 +1716,11 @@
+ 					}
+ 				}
+ 				mutex_lock(&info->qlock);
+-				info->fifo_space = rxnoncedata.fifo_space;
++				/* A low-rate result can precede completion of queued serial writes.
++				 * Do not restore credits already spent on those writes. Status
++				 * polling still supplies the full controller queue state. */
++				info->fifo_space = getenv("MD_SIM_LOW_RATE") ?
++					MIN(info->fifo_space, rxnoncedata.fifo_space) : rxnoncedata.fifo_space;
+ 				mutex_unlock(&info->qlock);
+ 				applog(LOG_DEBUG, "%s%d: %s() RxNonce Data fifo space=%d",
+ 						  bitmain->drv->name, bitmain->device_id,
+@@ -2578,6 +2601,8 @@
+ 			  __func__);
+ 	info->fill_calls++;
+ 	mutex_lock(&info->qlock);
++	if (getenv("MD_SIM_LOW_RATE") && info->md_sim_credits.pending_clean)
++		info->fifo_space = BITMAIN_MAX_WORK_NUM;
+ 	if (info->fifo_space <= 0) {
+ 		applog(LOG_DEBUG, "%s%d: %s() fifo space empty",
+ 				  bitmain->drv->name, bitmain->device_id,
+@@ -2723,6 +2748,8 @@
+ 				}
+ 				goto out_unlock;
+ 			} else {
++				if (getenv("MD_SIM_LOW_RATE"))
++					md_sim_sent(&info->md_sim_credits, sentcount);
+ 				applog(LOG_DEBUG, "%s%d: send_data ret=%d",
+ 						  bitmain->drv->name, bitmain->device_id,
+ 						  sendret);
+@@ -2741,7 +2768,8 @@
+ 	timediff = now.tv_sec - info->last_status_time.tv_sec;
+ 	if (timediff < 0)
+ 		timediff = -timediff;
+-	if (timediff > BITMAIN_SEND_STATUS_TIME) {
++	if (timediff > BITMAIN_SEND_STATUS_TIME &&
++	    (!getenv("MD_SIM_LOW_RATE") || !info->md_sim_credits.pending_status)) {
+ 		info->fill_sendstatus++;
+ 		applog(LOG_DEBUG, "%s%d: Send RX Status Token fifo_space(%d) timediff(%d)",
+ 				  bitmain->drv->name, bitmain->device_id,
+@@ -2766,6 +2794,8 @@
+ 					bitmain->shutdown = true;
+ 				}
+ 			} else {
++				if (getenv("MD_SIM_LOW_RATE"))
++					md_sim_status_requested(&info->md_sim_credits);
+ 				info->errorcount = 0;
+ 				if (info->fifo_space <= 0) {
+ 					senderror = 1;
+@@ -2845,6 +2875,11 @@
+ 	mutex_lock(&info->qlock);
+ 	/* Will overwrite any work queued */
+ 	info->queued = 0;
++	/* md-sim low-rate variant: a clean-job packet replaces the full
++	 * controller queue. Permit that packet without waiting for 2^32
++	 * nonce searches to release a production-rate FIFO entry. */
++	if (getenv("MD_SIM_LOW_RATE"))
++		md_sim_clean(&info->md_sim_credits);
+ 	k_list_transfer_to_tail(info->work_ready, info->work_list);
+ 	//pthread_cond_signal(&info->qcond);
+ 	mutex_unlock(&info->qlock);
+--- a/util.c
++++ b/util.c
+@@ -1820,7 +1820,7 @@
+ #elif WIN32
+ 		sent = send(pool->sock, s + ssent, len, 0);
+ #else
+-		sent = send(pool->sock, s + ssent, len, MSG_NOSIGNAL);
++		sent = getenv("MD_SIM_STRATUM_FD") ? write(pool->sock, s + ssent, len) : send(pool->sock, s + ssent, len, MSG_NOSIGNAL);
+ #endif
+ 		if (sent < 0) {
+ 			if (!sock_blocks())
+@@ -1908,7 +1908,7 @@
+ 	mutex_lock(&pool->stratum_lock);
+ 	do {
+ 		if (pool->sock)
+-			n = recv(pool->sock, pool->sockbuf, RECVSIZE, 0);
++			n = getenv("MD_SIM_STRATUM_FD") ? read(pool->sock, pool->sockbuf, RECVSIZE) : recv(pool->sock, pool->sockbuf, RECVSIZE, 0);
+ 		else
+ 			n = 0;
+ 	} while (n > 0);
+@@ -1969,7 +1969,7 @@
+ 			ssize_t n;
+ 
+ 			memset(s, 0, RBUFSIZE);
+-			n = recv(pool->sock, s, RECVSIZE, 0);
++			n = getenv("MD_SIM_STRATUM_FD") ? read(pool->sock, s, RECVSIZE) : recv(pool->sock, s, RECVSIZE, 0);
+ 			if (!n) {
+ 				applog(LOG_DEBUG, "Socket closed waiting in recv_line");
+ 				suspend_stratum(pool);
+@@ -3029,6 +3029,27 @@
+ 		CLOSESOCKET(pool->sock);
+ 	pool->sock = 0;
+ 	mutex_unlock(&pool->stratum_lock);
++
++	/* md-sim source adaptation: inherited private Stratum IPC stream. */
++	{
++		const char *descriptor = getenv("MD_SIM_STRATUM_FD");
++		if (descriptor) {
++			char *end;
++			long fd = strtol(descriptor, &end, 10);
++			if (*end || fd < 3 || fd > 65535)
++				return false;
++			sockd = dup((int)fd);
++			if (sockd < 0)
++				return false;
++			if (!pool->sockbuf) {
++				pool->sockbuf = cgcalloc(RBUFSIZE, 1);
++				pool->sockbuf_size = RBUFSIZE;
++			}
++			pool->sock = sockd;
++			applog(LOG_WARNING, "md-sim adapted Stratum transport: inherited private IPC");
++			return true;
++		}
++	}
+ 
+ 	memset(&hints, 0, sizeof(struct addrinfo));
+ 	hints.ai_family = AF_UNSPEC;
+--- a/miner.h
++++ b/miner.h
+@@ -528,6 +528,9 @@
+ 	double last_share_diff;
+ 	time_t last_device_valid_work;
+ 	uint32_t last_nonce;
++	/* md-sim low-rate variant: duplicate identity includes its work. */
++	uint32_t md_sim_last_nonce_work;
++	bool md_sim_has_last_nonce;
+ 
+ 	time_t device_last_well;
+ 	time_t device_last_not_well;
+--- a/driver-bitmain.h
++++ b/driver-bitmain.h
+@@ -1,3 +1,4 @@
++#include "md-sim-adaptation.h"
+ /*
+  * Copyright 2013 BitMain project
+  * Copyright 2013 BitMain <xlc1985@126.com>
+@@ -368,6 +369,7 @@
+ 	int nonces;
+ 	int fifo_space;
+ 	unsigned int last_work_block;
++	struct md_sim_credits md_sim_credits;
+ 	struct timeval last_status_time;
+ 	int send_full_space;
+ #ifdef USE_ANT_S2
+--- /dev/null
++++ b/md-sim-adaptation.h
+@@ -0,0 +1,50 @@
++/* Recorded md-sim source adaptations. Original downloaded files are unchanged. */
++#ifndef MD_SIM_ADAPTATION_H
++#define MD_SIM_ADAPTATION_H
++#include <stdint.h>
++#include <stdbool.h>
++#include <string.h>
++#include <endian.h>
++
++static inline uint32_t md_sim_hash_prefix(const unsigned char hash[32])
++{
++    unsigned ofs = 0;
++    uint32_t word;
++    while (ofs < 28 && hash[ofs] == 0)
++        ++ofs;
++    memcpy(&word, hash + ofs, sizeof(word));
++    return be32toh(word);
++}
++
++struct md_sim_credits {
++    uint64_t sent, requested_sent, generation, requested_generation;
++    bool pending_status, pending_clean;
++};
++static inline void md_sim_clean(struct md_sim_credits *state)
++{
++    ++state->generation;
++    state->pending_clean = true;
++}
++static inline void md_sim_sent(struct md_sim_credits *state, unsigned count)
++{
++    state->sent += count;
++    state->pending_clean = false;
++}
++static inline void md_sim_status_requested(struct md_sim_credits *state)
++{
++    state->pending_status = true;
++    state->requested_sent = state->sent;
++    state->requested_generation = state->generation;
++}
++static inline unsigned md_sim_status_credits(struct md_sim_credits *state,
++                                             unsigned reported, unsigned current)
++{
++    if (!state->pending_status)
++        return current < reported ? current : reported;
++    state->pending_status = false;
++    if (state->requested_generation != state->generation)
++        return current;
++    uint64_t sent_after_request = state->sent - state->requested_sent;
++    return sent_after_request >= reported ? 0 : reported - sent_after_request;
++}
++#endif

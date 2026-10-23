@@ -1,0 +1,122 @@
+{
+  "scope": "CLI behavior checks; expected incomplete results are not completion passes",
+  "cases": [
+    {
+      "name": "doctor",
+      "command": "target/release/md-sim doctor",
+      "expected": 4,
+      "chunk_id": "1adb52",
+      "wall_time_seconds": 0.000010705,
+      "exit_code": 4,
+      "original_token_count": 0,
+      "output": "",
+      "stdout": "work/simulator/reports/final-doctor-stdout.json",
+      "stderr": "work/simulator/reports/final-doctor-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "doctor-selected-core",
+      "command": "target/release/md-sim doctor --bitcoin-core work/simulator/bitcoin-core/source-build-002/bitcoind",
+      "expected": 4,
+      "chunk_id": "3149a6",
+      "wall_time_seconds": 0.000010765,
+      "exit_code": 4,
+      "original_token_count": 0,
+      "output": "",
+      "stdout": "work/simulator/reports/final-doctor-selected-core-stdout.json",
+      "stderr": "work/simulator/reports/final-doctor-selected-core-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "catalog-import",
+      "command": "target/release/md-sim catalog import --path .",
+      "expected": 0,
+      "chunk_id": "68e460",
+      "wall_time_seconds": 0.536428643,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": "",
+      "stdout": "work/simulator/reports/final-catalog-import-stdout.json",
+      "stderr": "work/simulator/reports/final-catalog-import-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "targets",
+      "command": "target/release/md-sim targets list --device bitmain-antminer-s9",
+      "expected": 0,
+      "chunk_id": "576bf6",
+      "wall_time_seconds": 0.173466202,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": "",
+      "stdout": "work/simulator/reports/final-targets-stdout.json",
+      "stderr": "work/simulator/reports/final-targets-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "artifact",
+      "command": "target/release/md-sim catalog verify-artifact open-ckolivas-cgminer-source",
+      "expected": 0,
+      "chunk_id": "e436e3",
+      "wall_time_seconds": 0.168754011,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": "",
+      "stdout": "work/simulator/reports/final-artifact-stdout.json",
+      "stderr": "work/simulator/reports/final-artifact-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "plan",
+      "command": "target/release/md-sim matrix plan --scope all-catalogued --pairing relevant --include-blocked --out work/simulator/final-plan.json",
+      "expected": 0,
+      "chunk_id": "7c73cd",
+      "wall_time_seconds": 1.001744091,
+      "original_token_count": 0,
+      "output": "",
+      "exit_code": 0,
+      "stdout": "work/simulator/reports/final-plan-stdout.json",
+      "stderr": "work/simulator/reports/final-plan-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "matrix",
+      "command": "target/release/md-sim matrix run work/simulator/final-plan.json --workers local --suite conformance --require-complete --out work/simulator/matrix-final",
+      "expected": 3,
+      "chunk_id": "2b69c6",
+      "wall_time_seconds": 0.000011241,
+      "original_token_count": 0,
+      "output": "",
+      "exit_code": 3,
+      "stdout": "work/simulator/reports/final-matrix-stdout.json",
+      "stderr": "work/simulator/reports/final-matrix-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "matrix-html",
+      "command": "target/release/md-sim matrix report work/simulator/matrix-final --format html",
+      "expected": 0,
+      "chunk_id": "475701",
+      "wall_time_seconds": 0.000007535,
+      "original_token_count": 0,
+      "output": "",
+      "exit_code": 0,
+      "stdout": "work/simulator/reports/final-matrix-html-stdout.json",
+      "stderr": "work/simulator/reports/final-matrix-html-stderr.json",
+      "expected_exit_observed": true
+    },
+    {
+      "name": "forged-plan",
+      "command": "target/release/md-sim matrix run work/simulator/reports/forged-empty-plan.json --workers local --suite conformance --require-complete --out work/simulator/matrix-forged-final",
+      "expected": 2,
+      "chunk_id": "bf4e05",
+      "wall_time_seconds": 0.0000056,
+      "original_token_count": 0,
+      "output": "",
+      "exit_code": 2,
+      "stdout": "work/simulator/reports/final-forged-plan-stdout.json",
+      "stderr": "work/simulator/reports/final-forged-plan-stderr.json",
+      "expected_exit_observed": true
+    }
+  ]
+}

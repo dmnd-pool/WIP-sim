@@ -1,0 +1,39 @@
+{
+  "id": "dcent-release-617084142",
+  "url": "https://github.com/DCentralTech/DCENT_OS/releases/download/v0.9.0-beta.1/SHA256SUMS",
+  "kind": "metadata",
+  "title": "SHA256SUMS",
+  "language": "en",
+  "source_id": "dcent-releases",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:00:17+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/dcent-release-617084142/SHA256SUMS",
+  "sha256": "3ee80d9ceb4b3612c6e8269a72bcf31ee47eb201b0963ae96342c425c31d302f",
+  "size_bytes": 10833,
+  "executed": false,
+  "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1206981413/11c89ce4-a104-4f31-a4f3-85844ddfcbc4?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-19T11%3A40%3A23Z&rscd=attachment%3B+filename%3DSHA256SUMS&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-19T10%3A40%3A13Z&ske=2026-10-19T11%3A40%3A23Z&sks=b&skv=2018-11-09&sig=cfr1dbGXW6PZ8QuP89IiSVLpr%2FDxdgMaYxzE7V4hoME%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MjQwNzkxOCwibmJmIjoxNzkyNDA3NjE4LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.twTPfCnozRUxs_Tk53_DFYe6kAJGzu4UpzrR_7W2rj8&response-content-disposition=attachment%3B%20filename%3DSHA256SUMS&response-content-type=application%2Foctet-stream",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 07 Oct 2026 00:39:50 GMT",
+  "etag": "\"0x8DF240B7EF479AA\"",
+  "publisher_sha256": "3ee80d9ceb4b3612c6e8269a72bcf31ee47eb201b0963ae96342c425c31d302f",
+  "matches_publisher_sha256": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 10833,
+      "actual": 10833,
+      "match": true,
+      "source_id": "dcent-releases"
+    },
+    {
+      "field": "sha256",
+      "expected": "3ee80d9ceb4b3612c6e8269a72bcf31ee47eb201b0963ae96342c425c31d302f",
+      "actual": "3ee80d9ceb4b3612c6e8269a72bcf31ee47eb201b0963ae96342c425c31d302f",
+      "match": true,
+      "source_id": "dcent-releases"
+    }
+  ],
+  "upstream_integrity_match": true
+}

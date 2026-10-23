@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4bdc72a666a4d2040e73",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1c51ae65-a40b-4d89-be8b-72afd97b427f/2023/07/27/16/S19j%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S19j Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4bdc72a666a4d2040e73/S19j_Server_Manual.pdf",
+  "sha256": "b8e951ab43e8269e83a29c81a6f94c69962f27c9f1b218c7d263e755b18d2c09",
+  "size_bytes": 1073194,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1c51ae65-a40b-4d89-be8b-72afd97b427f/2023/07/27/16/S19j%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:08:26 GMT",
+  "etag": "\"00144917a9ec8a1777a795608dd71fd5\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1073194,
+      "actual": 1073194,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

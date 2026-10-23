@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-34da7b282eaf67a9c1fb",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fcc7c684-0863-41d7-9aaf-8b8990799494/2026/06/02/10/certificate_E11_BITMAIN_250728.pdf",
+  "kind": "document",
+  "title": "certificate_E11_BITMAIN_250728.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:27+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-34da7b282eaf67a9c1fb/certificate_E11_BITMAIN_250728.pdf",
+  "sha256": "81d832e11d8bb40913fca3989e36dbbfea44cb718152b81bbe5cf37c7d6cc9c9",
+  "size_bytes": 380734,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fcc7c684-0863-41d7-9aaf-8b8990799494/2026/06/02/10/certificate_E11_BITMAIN_250728.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 02 Jun 2026 02:13:33 GMT",
+  "etag": "\"a30003f3b1ed9e9e8fec1cd2a43f74dd\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 380734,
+      "actual": 380734,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

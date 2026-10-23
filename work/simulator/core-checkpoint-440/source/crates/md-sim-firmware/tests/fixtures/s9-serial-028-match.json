@@ -1,0 +1,79 @@
+{
+  "source": {
+    "path": "work/simulator/qemu-s9/sd2022-private-pool-028/submission-audit-001.json",
+    "sha256": "12627a9171fed581e6ec5e6059977e55736c3a6b291e89c19aeddbcb7c402cb5",
+    "scope": "One retained hardware match for regression. This fixed evidence is not a new mining run."
+  },
+  "candidate": {
+    "computation": {
+      "asic_filter_match": true,
+      "chip_position": 1,
+      "core_address": 0,
+      "digest_hex": "571a6edb906adf001189ac2c94f7df111c6334887a2ba989321ba8030f11c407",
+      "job_index": 384,
+      "line": 72080,
+      "link": 8,
+      "midstate_index": 1,
+      "nonce": 4,
+      "ns": 111837852725,
+      "ticket": 252
+    },
+    "serial_reply": {
+      "first_byte_line": 72081,
+      "frame_hex": "0400000000059e",
+      "hash_index": 24652,
+      "last_byte_line": 72087,
+      "last_byte_virtual_ns": 111837897525,
+      "link": 8
+    },
+    "work_packet": {
+      "job_id": 4,
+      "line": 72062,
+      "link": 8,
+      "midstates": [
+        [
+          1906429034,
+          1457526488,
+          359072658,
+          3866431955,
+          4044626520,
+          421219824,
+          2812380998,
+          3002014501
+        ],
+        [
+          1598306206,
+          3404239478,
+          1455713584,
+          999023510,
+          4029526796,
+          2062012255,
+          29693728,
+          1013997176
+        ],
+        [
+          3728627211,
+          3815884214,
+          1704826434,
+          2933601211,
+          1276209382,
+          2716726479,
+          155603379,
+          3107477754
+        ],
+        [
+          428586071,
+          2888931424,
+          2334596411,
+          870993613,
+          4024046705,
+          266930294,
+          3133775363,
+          2821653558
+        ]
+      ],
+      "ns": 111835119605,
+      "tail_hex": "5f682a327711d86affff7f20"
+    }
+  }
+}

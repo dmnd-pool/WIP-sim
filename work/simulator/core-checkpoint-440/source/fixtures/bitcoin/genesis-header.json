@@ -1,0 +1,19 @@
+{
+  "id": "bitcoin-mainnet-genesis-header",
+  "purpose": "Known header for SHA-256d, field serialization, and target comparison tests. This is not an ASIC packet or a pool job.",
+  "network": "bitcoin-mainnet",
+  "header_hex": "0100000000000000000000000000000000000000000000000000000000000000000000003ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a29ab5f49ffff001d1dac2b7c",
+  "version": 1,
+  "previous_block_hash_display": "0000000000000000000000000000000000000000000000000000000000000000",
+  "merkle_root_display": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+  "time": 1231006505,
+  "bits_hex": "1d00ffff",
+  "nonce": 2083236893,
+  "expected_hash_display": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+  "source_artifact_id": "source-bitcoin-core",
+  "source_artifact_sha256": "776f4a708eb1a461872a6f1dba28218f0ed09af04239c29115412eecd3de1bc8",
+  "source_commit": "619334569b44b4278d0155bb8daf4c8535a47367",
+  "source_member": "bitcoin-619334569b44b4278d0155bb8daf4c8535a47367/src/kernel/chainparams.cpp",
+  "source_url": "https://github.com/bitcoin/bitcoin/blob/619334569b44b4278d0155bb8daf4c8535a47367/src/kernel/chainparams.cpp",
+  "evidence_scope": "Bitcoin Core mainnet genesis constants and hash assertion. No external network traffic is required to verify this fixture."
+}

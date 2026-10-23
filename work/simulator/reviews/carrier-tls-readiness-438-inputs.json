@@ -1,0 +1,120 @@
+{
+  "scope": "Actual TLS listener component and lifecycle regression; failed native431 remains failed",
+  "inputs": [
+    {
+      "path": "crates/md-sim-access/src/remote_carrier.rs",
+      "sha256": "b54be996d54ebf96a971d637494f18f0337de9fbe17561336651a753aa6bed73",
+      "size": 19405
+    },
+    {
+      "path": "crates/md-sim-access/src/remote_carrier_readiness.rs",
+      "sha256": "f6f60841311cc318d27270d5ed701a9aaa531c9e89d806ec84264e9d6f1500e4",
+      "size": 12304
+    },
+    {
+      "path": "work/simulator/tls-readiness-vm-438-inputs/manifest.json",
+      "sha256": "9c6a8578ea306b884645c5dbd83770243d97325f608dbe03f8dd334e97ab7d54",
+      "size": 1271
+    },
+    {
+      "path": "work/simulator/tls-readiness-vm-438-inputs/access-tests",
+      "sha256": "0d86bd5bc6a38bb46df725edf2b0350e391906c1f6973c42151eb91196d95816",
+      "size": 7556144
+    },
+    {
+      "path": "work/simulator/tls-readiness-vm-438-inputs/scenario.json",
+      "sha256": "d81217c9b491d9d756b28b4032720d8e12974916869b64f6421743d7f832443f",
+      "size": 752
+    },
+    {
+      "path": "work/simulator/tls-readiness-vm-438-inputs/remote_carrier.rs",
+      "sha256": "b54be996d54ebf96a971d637494f18f0337de9fbe17561336651a753aa6bed73",
+      "size": 19405
+    },
+    {
+      "path": "work/simulator/tls-readiness-vm-438-inputs/remote_carrier_readiness.rs",
+      "sha256": "f6f60841311cc318d27270d5ed701a9aaa531c9e89d806ec84264e9d6f1500e4",
+      "size": 12304
+    },
+    {
+      "path": "work/simulator/network-vm/tls-readiness-438/guest.log",
+      "sha256": "0c79ef2efbd2a8bb755cb28cbb98b01077cb66f53e5fe22447b6a0b12d1d520a",
+      "size": 4450
+    },
+    {
+      "path": "work/simulator/network-vm/tls-readiness-438/result.json",
+      "sha256": "19017d52c2edfa947803e2577fd673541a517dd4d80919fdc4f9dea89c9d3bd8",
+      "size": 9616
+    },
+    {
+      "path": "work/simulator/network-vm/tls-readiness-438/assessment.json",
+      "sha256": "a4d4e1d4df412ed094112a46c941b4540eec66ee807cd29e6cd570f0329539aa",
+      "size": 819
+    },
+    {
+      "path": "work/simulator/network-vm/tls-readiness-438/root-manifest.json",
+      "sha256": "d20e077105b04878bb3c73bab6c388cbfd01f1fb0b421e3a74e95315214bd16c",
+      "size": 6808
+    },
+    {
+      "path": "work/simulator/network-vm/tls-readiness-438/process-spec.json",
+      "sha256": "ecff8bef451511e31df9244cd013d773bf5dcd141077d9b4767bac68668ce688",
+      "size": 14751
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/tls-readiness438-host-tests.log",
+      "sha256": "6de0431fe503ae27fd1d9614f942bc9fc66a2c623e4fe297d4751c7fca84d5f5",
+      "size": 2729
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/tls-readiness439-clippy.log",
+      "sha256": "b0cd3567027e20e1452bcea2dd1accf96936a9e757720b5b7fa114cb343d8223",
+      "size": 139
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/tls-readiness439-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/network-vm/tls-readiness-435/guest.log",
+      "sha256": "f37191080a02b9ff80b5438840461e8f49c60f621f9f3c90d5f37db0571ea79a",
+      "size": 3351
+    },
+    {
+      "path": "work/simulator/network-vm/tls-readiness-437/guest.log",
+      "sha256": "3d5ba5e76e3520f80925b71775bafb3b8df0bf7e35fc5fc05c7bd85cdde8abdc",
+      "size": 5936
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/client/report.json",
+      "sha256": "9c166587d01436c8de693cfed57a9da966d274525548b670e9e0aa1d9cb157af",
+      "size": 7706
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/server-root/carrier-outcome.json",
+      "sha256": "13505aaffe22d336456f835bc001d2e05d38bf75d2918cbd65c3f5b290dc58fe",
+      "size": 98
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/server/gateway/publication.json",
+      "sha256": "de2c5b454caa3769a5667c3e56bdfb272c4707c00f57c67444ce2d7bc603cb8e",
+      "size": 7103
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/server/gateway/tls/startup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/server/gateway/tls/carrier-selected-stop.json",
+      "sha256": "99ca4a1b82e3ced637048909c8dc5724dcd7c5ef0ec307bcdccc1eb8943812ff",
+      "size": 2152
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/client/gateway/stopped.json",
+      "sha256": "9542083fe8bd5217fb88ba9e02081607a0f6abc63dc89c105cd2f6271348715e",
+      "size": 111
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-cf02838076c585ac93bf",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bec4d872-b492-4c7d-bd70-8729b48872a4/2024/05/22/16/ACS-I23111-A1Z2309083-SERVER-D9-Issue-7-Report.pdf",
+  "kind": "document",
+  "title": "ACS-I23111-A1Z2309083-SERVER-D9-Issue-7-Report.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-cf02838076c585ac93bf/ACS-I23111-A1Z2309083-SERVER-D9-Issue-7-Report.pdf",
+  "sha256": "ad90bf1179d26d38c65cb193127b147ddddaed398faec5cca95ce8392bf4adee",
+  "size_bytes": 671115,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bec4d872-b492-4c7d-bd70-8729b48872a4/2024/05/22/16/ACS-I23111-A1Z2309083-SERVER-D9-Issue-7-Report.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:52:24 GMT",
+  "etag": "\"c3b2f2960c6b0dfb6b52e8f1e002683a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 671115,
+      "actual": 671115,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

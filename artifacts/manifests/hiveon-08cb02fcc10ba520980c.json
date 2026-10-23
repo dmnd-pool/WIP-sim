@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-08cb02fcc10ba520980c",
+  "url": "https://download.hiveos.farm/asic/t9-spark/Antminer-T9-all-Hiveon-1.02-unsig.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T9-all-Hiveon-1.02-unsig.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:24:37+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-08cb02fcc10ba520980c/Antminer-T9-all-Hiveon-1.02-unsig.tar.gz",
+  "sha256": "6227184870e9767cf6f9188ea414089aba60999687bb345e10628e19aade911d",
+  "size_bytes": 22558207,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/t9-spark/Antminer-T9-all-Hiveon-1.02-unsig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 28 Aug 2019 10:23:26 GMT",
+  "etag": "\"5d66561e-15835ff\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 22558207,
+      "actual": 22558207,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

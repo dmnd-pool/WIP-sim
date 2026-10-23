@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mining simulation profile proposal",
+  "type": "object",
+  "required": ["schema_version", "id", "mode", "device_id", "firmware", "hardware", "pool", "validation", "unknowns"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "id": {"type": "string"},
+    "mode": {"enum": ["api-model", "source-adapter", "process-emulation", "board-emulation"]},
+    "device_id": {"type": "string"},
+    "firmware": {
+      "type": "object",
+      "required": ["entity_id", "artifact_id", "sha256", "patches", "dependencies"],
+      "properties": {
+        "entity_id": {"type": "string"}, "artifact_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "patches": {"type": "array", "items": {"type": "string"}},
+        "dependencies": {"type": "array", "items": {"type": "string"}},
+        "kernel_artifact_id": {"type": ["string", "null"]},
+        "device_tree_artifact_id": {"type": ["string", "null"]},
+        "bootloader_artifact_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "hardware": {
+      "type": "object",
+      "required": ["control_board_id", "hashboard_ids", "psu_id", "revision", "adapters"],
+      "properties": {
+        "control_board_id": {"type": ["string", "null"]},
+        "hashboard_ids": {"type": "array", "items": {"type": "string"}},
+        "psu_id": {"type": ["string", "null"]},
+        "revision": {"type": ["string", "null"]},
+        "adapters": {"type": "array", "items": {"type": "object", "required": ["interface", "implementation", "source_ids"], "properties": {"interface": {"enum": ["uart", "spi", "i2c", "usb", "mmio", "gpio", "fan", "sensor", "flash", "network"]}, "implementation": {"type": "string"}, "source_ids": {"type": "array", "items": {"type": "string"}}}}}
+      }
+    },
+    "pool": {"type": "object", "required": ["protocol", "algorithm", "local_only", "fixture_sha256"], "properties": {"protocol": {"type": "string"}, "algorithm": {"type": "string"}, "local_only": {"type": "boolean"}, "fixture_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "validation": {"type": "object", "required": ["level", "evidence_ids"], "properties": {"level": {"enum": ["unvalidated", "image-identified", "boot", "enumeration", "functional-mining", "fault-behavior", "timing-calibrated", "physical-calibrated"]}, "evidence_ids": {"type": "array", "items": {"type": "string"}}}},
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "seed": {"type": "integer"},
+    "source_ids": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b02bd210e18aba16b73b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20R4/Manual/00720180813163823862YJt007xV0681/R4%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "R4 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-b02bd210e18aba16b73b/R4_Server_Manual.pdf",
+  "sha256": "3742820ce68a1912c251e5f6c3ff1087113800bffde6ffbf52da6f0beeff74f0",
+  "size_bytes": 1830038,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20R4/Manual/00720180813163823862YJt007xV0681/R4%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:24 GMT",
+  "etag": "\"22ed467cdc0c11fe7d8539ecf9616216\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1830038,
+      "actual": 1830038,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

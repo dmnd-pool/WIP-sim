@@ -1,0 +1,54 @@
+{
+  "id": "bitmain-oem-c69961e88b9bb732851c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-S5-20150107.tar.gz",
+  "kind": "firmware",
+  "title": "SD-S5-20150107.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:18+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-c69961e88b9bb732851c/SD-S5-20150107.tar.gz",
+  "sha256": "f4a52daa260eb55374fe119c1e8d20a26ae4021bb4f4765a0e87b65a602a8e60",
+  "size_bytes": 5750784,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-S5-20150107.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"6e1d0953342040fcfa84e3a8ab22df51\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "0c30d32d68e64f528da06af19b23d859",
+      "actual": "6e1d0953342040fcfa84e3a8ab22df51",
+      "match": false,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 19109718,
+      "actual": 5750784,
+      "match": false,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "content_validity": "truncated-gzip",
+  "payload_available": false,
+  "content_validity_evidence": "A full gzip stream read raises EOFError before the end marker. The primary OEM file and Git-blob-verified mirror have identical 5,750,784-byte contents and SHA256 f4a52daa260eb55374fe119c1e8d20a26ae4021bb4f4765a0e87b65a602a8e60.",
+  "upstream_head_audit": {
+    "artifact_id": "bitmain-oem-c69961e88b9bb732851c",
+    "title": "SD-S5-20150107.tar.gz",
+    "downloaded_size_bytes": 5750784,
+    "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-S5-20150107.tar.gz",
+    "http_status": 200,
+    "content_length": "5750784",
+    "etag": "\"6e1d0953342040fcfa84e3a8ab22df51\"",
+    "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+    "http_size_match": true
+  },
+  "resolved_artifact_id": "bitmain-s5-20150107-wayback",
+  "resolution_note": "The preserved historical OEM download is 19,109,718 bytes and matches the OEM MD5. This damaged copy remains unchanged."
+}

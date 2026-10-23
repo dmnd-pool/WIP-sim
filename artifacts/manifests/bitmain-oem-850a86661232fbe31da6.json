@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-850a86661232fbe31da6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c9bd2efe-b3bc-47ba-98a9-c8ce17529422/2024/05/22/17/D9%20Issue-7%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 Issue-7 Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-850a86661232fbe31da6/D9_Issue-7_Shenzhen.pdf",
+  "sha256": "14cf8baf34812a40b4fb0d48c9073b86afd589aa2ac087d05dfd2041b594a904",
+  "size_bytes": 691219,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c9bd2efe-b3bc-47ba-98a9-c8ce17529422/2024/05/22/17/D9%20Issue-7%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:49:26 GMT",
+  "etag": "\"3fec9f9035caf166b6dd0d729ced9409\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 691219,
+      "actual": 691219,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

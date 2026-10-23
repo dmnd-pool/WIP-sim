@@ -1,0 +1,23 @@
+[package]
+name = "md-sim-firmware"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+hex.workspace = true
+libc.workspace = true
+md-sim-mining = { path = "../md-sim-mining" }
+md-sim-runtime = { path = "../md-sim-runtime" }
+md-sim-coordinator = { path = "../md-sim-coordinator" }
+md-sim-access = { path = "../md-sim-access" }
+flate2 = "=1.1.9"
+tar = "=0.4.45"
+
+[dev-dependencies]
+tempfile.workspace = true
+bitcoin_hashes.workspace = true

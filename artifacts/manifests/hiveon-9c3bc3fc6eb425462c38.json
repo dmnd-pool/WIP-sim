@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-9c3bc3fc6eb425462c38",
+  "url": "https://download.hiveos.farm/asic/custom/xnrt31/Antminer-S17E-Hiveon-2.03@210318-AntminerS17E121-sig-sign-xnrt31.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17E-Hiveon-2.03@210318-AntminerS17E121-sig-sign-xnrt31.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:12:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-9c3bc3fc6eb425462c38/Antminer-S17E-Hiveon-2.03_210318-AntminerS17E121-sig-sign-xnrt31.tar.gz",
+  "sha256": "61bc3e93ecd8ef004ab32db4bcf0ba45c4064b4174508df08bcde4ef784fe00e",
+  "size_bytes": 27875107,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/xnrt31/Antminer-S17E-Hiveon-2.03@210318-AntminerS17E121-sig-sign-xnrt31.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 18 Mar 2021 20:21:50 GMT",
+  "etag": "\"6053b65e-1a95723\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 27875107,
+      "actual": 27875107,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

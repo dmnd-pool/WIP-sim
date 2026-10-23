@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-298c8a06f93bb91bdecc",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2b74535a-1eeb-4f73-8ae7-0785de5ae25e/2023/07/27/16/S9j%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S9j Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:40:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-298c8a06f93bb91bdecc/S9j_Server_Manual.pdf",
+  "sha256": "df61c42b3d5e498d1b689412cc2750185eff0446a157101594b2db127a710945",
+  "size_bytes": 923725,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2b74535a-1eeb-4f73-8ae7-0785de5ae25e/2023/07/27/16/S9j%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:01:48 GMT",
+  "etag": "\"0dde1bbcc451583c3a3429517c4a1c93\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 923725,
+      "actual": 923725,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

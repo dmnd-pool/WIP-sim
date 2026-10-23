@@ -1,0 +1,79 @@
+[
+  {
+    "command": [
+      "target/debug/md-sim",
+      "doctor"
+    ],
+    "exit_code": 4,
+    "expected_exit": 4,
+    "contract_check_passed": true
+  },
+  {
+    "command": [
+      "target/debug/md-sim",
+      "targets",
+      "list",
+      "--device",
+      "bitmain-antminer-s9"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "contract_check_passed": true
+  },
+  {
+    "command": [
+      "target/debug/md-sim",
+      "catalog",
+      "verify-artifact",
+      "open-ckolivas-cgminer-source"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "contract_check_passed": true
+  },
+  {
+    "command": [
+      "target/debug/md-sim",
+      "matrix",
+      "run",
+      "work/simulator/reports/forged-empty-plan.json",
+      "--require-complete",
+      "--out",
+      "work/simulator/forged-result"
+    ],
+    "exit_code": 2,
+    "expected_exit": 2,
+    "contract_check_passed": true
+  },
+  {
+    "command": [
+      "target/debug/md-sim",
+      "matrix",
+      "run",
+      "work/simulator/all-plan.json",
+      "--workers",
+      "local",
+      "--suite",
+      "conformance",
+      "--require-complete",
+      "--out",
+      "work/simulator/matrix-check"
+    ],
+    "exit_code": 3,
+    "expected_exit": 3,
+    "contract_check_passed": true
+  },
+  {
+    "command": [
+      "target/debug/md-sim",
+      "matrix",
+      "report",
+      "work/simulator/matrix-check",
+      "--format",
+      "html"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "contract_check_passed": true
+  }
+]

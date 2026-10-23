@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ac1e5577bf01bdbca82e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4f9ca6c9-8c09-4d12-961b-aad6bd070ff8/2022/01/19/18/S5%2B%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S5+ Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ac1e5577bf01bdbca82e/S5+_Server_Manual.pdf",
+  "sha256": "8617ab1c2c84621c5a6c9f74eefd8ccd7fcd3a3271ac914ca3f3ff3aa8d4d5df",
+  "size_bytes": 2022827,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4f9ca6c9-8c09-4d12-961b-aad6bd070ff8/2022/01/19/18/S5%2B%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:32:20 GMT",
+  "etag": "\"92c9a9017235e171eb843d1f2f84d432\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2022827,
+      "actual": 2022827,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

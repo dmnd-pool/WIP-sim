@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-0bf939a81d59581b5641",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20Z9/Firmware/00720190521104517696Mq8wr6LP06B3/Antminer-Z9-fixed-500M-201905171645.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-Z9-fixed-500M-201905171645.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-0bf939a81d59581b5641/ANTMINER-Z9-fixed-500M-201905171645.tar.gz",
+  "sha256": "f20f773310e34acd3c9bf7a872461553a84c7c463e48688289e9d5aa7581751a",
+  "size_bytes": 16876467,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20Z9/Firmware/00720190521104517696Mq8wr6LP06B3/Antminer-Z9-fixed-500M-201905171645.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:28 GMT",
+  "etag": "\"6d9622bb531b102a67fc0a45a9be3065-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 16876467,
+      "actual": 16876467,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "1e0cc4d310b3bcfaec84af7d89791aa9",
+      "actual": "1e0cc4d310b3bcfaec84af7d89791aa9",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

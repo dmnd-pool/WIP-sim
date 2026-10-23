@@ -1,0 +1,65 @@
+{
+  "scope": "actual local worker CLI and isolated test-guest carrier component, final reviewed test state382; no support VM or firmware conformance claim",
+  "files": [
+    {
+      "path": "crates/md-sim-coordinator/tests/worker_carrier.rs",
+      "sha256": "9ea8227f883c2cfed340cbcd1a8cd57342cca8c2655fd1aa51e6cb4939d9be6a",
+      "size": 19260
+    },
+    {
+      "path": "crates/md-sim-coordinator/tests/support/elf.rs",
+      "sha256": "f4c4ab3f054c1747e735276f6836765cfc4a956b92f7e2c35ea56364cdc9c33c",
+      "size": 1071
+    },
+    {
+      "path": "crates/md-sim-coordinator/tests/queue_behavior.rs",
+      "sha256": "4ddd3411d52dc8e192c8d63042f9a1853f140f8bf851f1da87d9a012ea9e9cd1",
+      "size": 37850
+    },
+    {
+      "path": "crates/md-sim-coordinator/src/bin/md-sim-worker-ipc.rs",
+      "sha256": "dcfc13a19dc43645f1b874c14d81f3d2bc92822a0a43b32c07656498c5fc072f",
+      "size": 4136
+    },
+    {
+      "path": "crates/md-sim-coordinator/src/bin/md-sim-worker-ipc/carrier.rs",
+      "sha256": "d2ac614f95a044ab3500223997f38dfeca7350952a5d63dbcc7e256e51a108ca",
+      "size": 12007
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/actual-worker-carrier379-tests.log",
+      "sha256": "db75354c3d2e6f37231840fb2334e27658686184ecb070f85c0e1317bd632f9d",
+      "size": 13210
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/actual-worker-carrier380-coordinator-tests.log",
+      "sha256": "1466de990bd9d45b90d57b4f5efad1571c60a40ff5ba742eae51a33f4a5bedff",
+      "size": 5141
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/actual-worker-carrier380-clippy.log",
+      "sha256": "efb605b9045c9a00c070ae44be0075e4bdf1970b2e47cab8d18303a296757c2e",
+      "size": 149
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/worker-carrier-cli-test-377.log",
+      "sha256": "49ff114f3f48eff88da76434a8c11fe45a7958015a96623553e336ae8084d374",
+      "size": 738
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/actual-worker-carrier382-reviewed-tests.log",
+      "sha256": "0ab0f4f4a6e0964f83293e80e89203ffb7e1a7a587040a6b02103632a512b192",
+      "size": 13209
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/actual-worker-carrier382-clippy.log",
+      "sha256": "62bd76fe3d77c85921368dcae1b3cfdf0c23316b8d3957fba66e9f53deb3ce38",
+      "size": 149
+    },
+    {
+      "path": "work/simulator/reviews/worker-cli-carrier-independent-382.md",
+      "sha256": "150ccde5698d59b32cec608589a3668f8fb35d2a2ee6d07ccdad907d981778a1",
+      "size": 2012
+    }
+  ]
+}

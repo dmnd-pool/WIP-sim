@@ -1,0 +1,771 @@
+{
+  "artifacts": 13506,
+  "entities": 4354,
+  "payload_verification": "Selected artifact bytes must be verified before preparation.",
+  "snapshot": {
+    "directory": "work/simulator/state/snapshots/9ce76a88bb3287b15d508c14856111f17d418e9ad72e6b2d27fee262c8ba0dcb",
+    "manifest": {
+      "artifact_payloads_verified": false,
+      "catalogue_data_hash": "1747cd00f952108f0dddb429aa85528fc6364afc37d76d6f550adb1e3d21ebb3",
+      "files": [
+        {
+          "path": "catalog/artifacts.jsonl",
+          "sha256": "f22f8b7f53aa2078429d3e38f11e94e81f618ef1cc6f2cd372dd42d457675f38",
+          "size_bytes": 31896361
+        },
+        {
+          "path": "catalog/entities.jsonl",
+          "sha256": "478411a4a80ff6928f265277b83c37c75549b49af5d472434e704b351e139849",
+          "size_bytes": 4255621
+        },
+        {
+          "path": "catalog/gaps.jsonl",
+          "sha256": "f45df14b13219826ac901a243399bd1d6cfd96066e5a4f6bb357222163cf2a52",
+          "size_bytes": 94179
+        },
+        {
+          "path": "catalog/parts/bitmain/additional-download-index.jsonl",
+          "sha256": "290273eecea20e8646e8da74c50475dc2ede5f2163d1c565c4e9f1ac67d4f6a0",
+          "size_bytes": 11175
+        },
+        {
+          "path": "catalog/parts/bitmain/artifact-scope.jsonl",
+          "sha256": "5cdc3ac21ef60be2e003359628fcc7522a2cfb802c9ad4075626b18d37fbcadf",
+          "size_bytes": 1363534
+        },
+        {
+          "path": "catalog/parts/bitmain/awesome-download-index.jsonl",
+          "sha256": "89dbcfc993b6f23e265a97632d4b8d5544df64d7f68b39b117e014b7a0f4971c",
+          "size_bytes": 106429
+        },
+        {
+          "path": "catalog/parts/bitmain/braiins-feed-index.jsonl",
+          "sha256": "c4ed47747955f5a5aefafe00b7bbb7b9696c061b038a998e63d58b7ffded8f1d",
+          "size_bytes": 941520
+        },
+        {
+          "path": "catalog/parts/bitmain/braiins-final-url-status.jsonl",
+          "sha256": "c875ea68d5c119d524c8e3b3f0bcb7b0ab004490228d6a8dc91c5c867b9070e5",
+          "size_bytes": 881015
+        },
+        {
+          "path": "catalog/parts/bitmain/braiins-package-reference-index.jsonl",
+          "sha256": "ceaf7cebea35112cfa3458f1e3446ea000d7f3dac826d115352a3446a6ff767e",
+          "size_bytes": 148014
+        },
+        {
+          "path": "catalog/parts/bitmain/braiins-profiles.jsonl",
+          "sha256": "31b5885ea639c43c6ac532530f9de0d5ccb8f607ccc8d4584cdc853053be3c87",
+          "size_bytes": 49004
+        },
+        {
+          "path": "catalog/parts/bitmain/braiins-published-checksums.jsonl",
+          "sha256": "bb56f313e4a634e3485ffc0bf78abd05da6ae465bd630c3e8cb3286e599429a7",
+          "size_bytes": 318340
+        },
+        {
+          "path": "catalog/parts/bitmain/braiins-release-index.jsonl",
+          "sha256": "1b1dc9bd92236d505fac26a6e6ebdd5d0d9a7d78b6881d4871125fd2b24fec45",
+          "size_bytes": 191880
+        },
+        {
+          "path": "catalog/parts/bitmain/breadth-download-index.jsonl",
+          "sha256": "7b0478ddb4a66b1d3a8807ac26d7df98b1d9b589fe539b0b6e993f4fd35e8f23",
+          "size_bytes": 88917
+        },
+        {
+          "path": "catalog/parts/bitmain/dcent-checksums.jsonl",
+          "sha256": "1f6ec96f4464c2490f3f2ea218ae6e1de355bafdb9c3c7189d9a91805c9ebdee",
+          "size_bytes": 27295
+        },
+        {
+          "path": "catalog/parts/bitmain/dcent-release-index.jsonl",
+          "sha256": "2ee5168d36508bd60d02d585f6220221ad640fa30a2219d09d708bebeac56bb2",
+          "size_bytes": 36193
+        },
+        {
+          "path": "catalog/parts/bitmain/document-languages.jsonl",
+          "sha256": "f1d9f720c9de3c5383a7adb531e7984a4b9a63a46f6a29d85ec71eed71d90496",
+          "size_bytes": 296350
+        },
+        {
+          "path": "catalog/parts/bitmain/document-media-gif-ocr.jsonl",
+          "sha256": "9b8b5691522d9045fcab64b11138e69602f6f0a5047de7576e941619d97db443",
+          "size_bytes": 6579
+        },
+        {
+          "path": "catalog/parts/bitmain/document-media-language-review.jsonl",
+          "sha256": "0b60e6fdae48e83ce8fe6c4c1f26bfe4501338405acfb6b4de9efb07ca312c06",
+          "size_bytes": 17173
+        },
+        {
+          "path": "catalog/parts/bitmain/document-media-ocr.jsonl",
+          "sha256": "6f395149ae6814dcd38c2fe9487a5c4fe67f943e9af53d20e487572493087d62",
+          "size_bytes": 264210
+        },
+        {
+          "path": "catalog/parts/bitmain/emcd-extra-download-index.jsonl",
+          "sha256": "8d4221c6fe3499abf3507d8a3a36721a4f645e96eacbe499c02905a5ba4e0dd9",
+          "size_bytes": 91266
+        },
+        {
+          "path": "catalog/parts/bitmain/entities.jsonl",
+          "sha256": "3ff5f48a0dcb53b0112b45dfbdc7c6f7bfe1098cd913666a5e1f569b17aaa5ad",
+          "size_bytes": 2221115
+        },
+        {
+          "path": "catalog/parts/bitmain/gaps.jsonl",
+          "sha256": "fbb8ce22701a93a18e622c93122572492712838abb9aea824f614c8091579c35",
+          "size_bytes": 12566
+        },
+        {
+          "path": "catalog/parts/bitmain/hiveon-download-index.jsonl",
+          "sha256": "17ab9a0af9c090ca6b55a7dec261fdb0c958cfbf954c594135c807ea224abca0",
+          "size_bytes": 353040
+        },
+        {
+          "path": "catalog/parts/bitmain/hiveon-relocated.jsonl",
+          "sha256": "6a425ba1d3337c0c505132453d138b3e3aa4e09937c7c0b88f88f9d540be8da0",
+          "size_bytes": 1488
+        },
+        {
+          "path": "catalog/parts/bitmain/mskminer-checksums.jsonl",
+          "sha256": "53ae1a012485054ef588e282c9d9a2f36ca8111855bd87d46cb34ebbfbdb05fb",
+          "size_bytes": 3662
+        },
+        {
+          "path": "catalog/parts/bitmain/news-index.jsonl",
+          "sha256": "4e6ec1ab865601652d38c7fb1a285dd02bf2be3c69ecddf4e4d106e042e872b8",
+          "size_bytes": 30846
+        },
+        {
+          "path": "catalog/parts/bitmain/nicehash-bundle-index.jsonl",
+          "sha256": "48362b534ae51d145b7ea1acc887cfd87626cbf42aa5d85afcc2b63e36cdbd81",
+          "size_bytes": 14016
+        },
+        {
+          "path": "catalog/parts/bitmain/ocr-register.jsonl",
+          "sha256": "c3aca067f41e7936b3250db7f84da66252c3a2c0e4e6cfa156906133e47d23f1",
+          "size_bytes": 65869
+        },
+        {
+          "path": "catalog/parts/bitmain/ocr-translations.jsonl",
+          "sha256": "586c4e9d5395aee6a15dfda848694f07c48397bed7f53329643dc3b719d52c8a",
+          "size_bytes": 4422
+        },
+        {
+          "path": "catalog/parts/bitmain/oem-download-index.jsonl",
+          "sha256": "47310cb35551a26af054a1f0e6bf4abd9d9a2ad74d10e763dfe9df7bac055d1a",
+          "size_bytes": 499880
+        },
+        {
+          "path": "catalog/parts/bitmain/oem-integrity-discrepancies.jsonl",
+          "sha256": "700b3da82f3f14e2e0d2fca099b688213370ff1ec22a39aac6ce194444b8074c",
+          "size_bytes": 4739
+        },
+        {
+          "path": "catalog/parts/bitmain/platform-boot-profiles.jsonl",
+          "sha256": "a4314b718606ff85476579da1db79bfd5d43032a8888e674e55596236cb4c04e",
+          "size_bytes": 73232
+        },
+        {
+          "path": "catalog/parts/bitmain/platform-fdt-properties.jsonl",
+          "sha256": "90216e80e6309e8f93810b9e44cc8888beada4f8f5368e8b975796eb1af8d04f",
+          "size_bytes": 438283
+        },
+        {
+          "path": "catalog/parts/bitmain/platform-fit-properties.jsonl",
+          "sha256": "edbb9080168086c5e2552a4cf7db7cfcda2014f09fb3039f142a0c1dfbf9acf9",
+          "size_bytes": 25182
+        },
+        {
+          "path": "catalog/parts/bitmain/platform-image-evidence.jsonl",
+          "sha256": "b587c9db8bc57e1fad4a31a1c8460f1466aa4ffde2a285424763232c28b3c281",
+          "size_bytes": 38701
+        },
+        {
+          "path": "catalog/parts/bitmain/quanthash-bundle-index.jsonl",
+          "sha256": "6823259cc31324c76d8fc4fe159eb833872c84fe16ac3ecbcdab5851115ac27e",
+          "size_bytes": 1675
+        },
+        {
+          "path": "catalog/parts/bitmain/quanthash-model-index.jsonl",
+          "sha256": "de4d74b46f6dd829d026248a1a53681f3236f35921eb623f2c7731ac6b9f053f",
+          "size_bytes": 6124
+        },
+        {
+          "path": "catalog/parts/bitmain/quanthash-package-assignments.jsonl",
+          "sha256": "448dc36722b57d61a0c65405b808190da523ab470b9f04d9b73849556b7d5e54",
+          "size_bytes": 11022
+        },
+        {
+          "path": "catalog/parts/bitmain/relationships.jsonl",
+          "sha256": "fbed95da533d3db342462e648aa413907106ea6c399a6fedb484dc483b8c942c",
+          "size_bytes": 2215430
+        },
+        {
+          "path": "catalog/parts/bitmain/repair-document-index.jsonl",
+          "sha256": "2610a0940994696ed6fce4efe665fe7585b83e89a2c878bce2d694501c83140b",
+          "size_bytes": 25451
+        },
+        {
+          "path": "catalog/parts/bitmain/repair-document-languages.jsonl",
+          "sha256": "a07bcfbfb8bf8b2cf14d713f182859f966a32767498ca0e4b87fdd9f527d3dbc",
+          "size_bytes": 24733
+        },
+        {
+          "path": "catalog/parts/bitmain/repair-english-counterparts.jsonl",
+          "sha256": "aaa913ccea9ad7dec9002b07cd3b3ff067ed075fd8fe8d0555d88871e1819865",
+          "size_bytes": 5762
+        },
+        {
+          "path": "catalog/parts/bitmain/repair-image-index.jsonl",
+          "sha256": "c1792fd4a4f16000582a1300e20f1f679ffee9666a009dffd1b9727b8ddc1b0e",
+          "size_bytes": 409137
+        },
+        {
+          "path": "catalog/parts/bitmain/repair-translations.jsonl",
+          "sha256": "ce9ea65116cbbc94d35e1d002a20c5ae8c0e2122cbe5dc455e70dc8bf8c82646",
+          "size_bytes": 10560
+        },
+        {
+          "path": "catalog/parts/bitmain/source-archive-identity.jsonl",
+          "sha256": "e20d143126ab0184c957936e8c2639c924f9caa2256ab270e39a6abeaa71d794",
+          "size_bytes": 12208
+        },
+        {
+          "path": "catalog/parts/bitmain/sources.jsonl",
+          "sha256": "a9a2138438d4e470fdfe7384debeca783b19dc2122efa894eea54097220d7f99",
+          "size_bytes": 177726
+        },
+        {
+          "path": "catalog/parts/bitmain/translations.jsonl",
+          "sha256": "3db86eb3f1feb68945b57ad8065a137f431295a7370461230423f3781c14bfea",
+          "size_bytes": 72137
+        },
+        {
+          "path": "catalog/parts/bitmain/upstream-integrity.jsonl",
+          "sha256": "c5292ed7ac45b981ef9e855cac935f1570701e65d88f9805946ed14bbe8cdaac",
+          "size_bytes": 793162
+        },
+        {
+          "path": "catalog/parts/bixbit/artifact-scope.jsonl",
+          "sha256": "2e56f32b2712eaed84f6552741444c5b02fc399417468f212be3f0e5951e5985",
+          "size_bytes": 67520
+        },
+        {
+          "path": "catalog/parts/bixbit/entities.jsonl",
+          "sha256": "2b8c1570edddfc5fa361b3b156a8c3ca2b25a72707b1a1690e0eca5cc426bb00",
+          "size_bytes": 281965
+        },
+        {
+          "path": "catalog/parts/bixbit/gaps.jsonl",
+          "sha256": "5e2d5d5057f93491b2d488c8d99909eeff9f19d8628e0bfd0164348d669b8cab",
+          "size_bytes": 1589
+        },
+        {
+          "path": "catalog/parts/bixbit/model-hashboard-claims.jsonl",
+          "sha256": "0e5cbd513c5fda978afc72f5e58eefc1a154647d41cd2b9b4c911c2f533b2115",
+          "size_bytes": 5531
+        },
+        {
+          "path": "catalog/parts/bixbit/relationships.jsonl",
+          "sha256": "e42a34936b51305ce62fb76edcd6ec870629a2a27a30de1763d2e788561f4b64",
+          "size_bytes": 63502
+        },
+        {
+          "path": "catalog/parts/bixbit/sources.jsonl",
+          "sha256": "047cec6b2adb378afe7bebf68d8c8cff6e2fc1d1959f9db82dd31920734e9d2f",
+          "size_bytes": 49280
+        },
+        {
+          "path": "catalog/parts/document-media/artifact-scope.jsonl",
+          "sha256": "feb8de66d5656aa42503f67d1eb92875dbbcad4eb39e81aaba1a806c6bf7bfea",
+          "size_bytes": 52592
+        },
+        {
+          "path": "catalog/parts/document-media/media-index.jsonl",
+          "sha256": "fa0598d562fe56126deb9b2a2912d2eed0b7e90fca6e7e489ff9fc56e9dd4b3a",
+          "size_bytes": 139331
+        },
+        {
+          "path": "catalog/parts/emerging/artifact-scope.jsonl",
+          "sha256": "cff4235d0dc0957e72259b9f2560bcbb9e85aa4890dba1b9f335b88d7d29fb4a",
+          "size_bytes": 46563
+        },
+        {
+          "path": "catalog/parts/emerging/bitdeer-image-layouts.jsonl",
+          "sha256": "879c930495f0bd6eb33685221f7aa9c6dba7350787f171d5b7c2a7cdb7f94c55",
+          "size_bytes": 9341
+        },
+        {
+          "path": "catalog/parts/emerging/entities.jsonl",
+          "sha256": "94279397c6253b415b42e06809204cda8b18de8a495f373bdb19231a8b933375",
+          "size_bytes": 271647
+        },
+        {
+          "path": "catalog/parts/emerging/gaps.jsonl",
+          "sha256": "8204766befd7d6d4accc9cc0a8715eee624b9deae8da41824155bf8d5cdf09f5",
+          "size_bytes": 4279
+        },
+        {
+          "path": "catalog/parts/emerging/relationships.jsonl",
+          "sha256": "b02a0a31b6462beffebf082b967d9f9156b63e76628f366d197d9bf7b4ced292",
+          "size_bytes": 85505
+        },
+        {
+          "path": "catalog/parts/emerging/sources.jsonl",
+          "sha256": "c8b3003e00b65e8c0ca07443f5b698eb8712b1585de97632e4cf15abb44330c1",
+          "size_bytes": 15655
+        },
+        {
+          "path": "catalog/parts/emerging/tool-release-history.jsonl",
+          "sha256": "37fa86937fd4b118198709dbec29095c49e5fca900a1cc4a2a9484d6f5fc5733",
+          "size_bytes": 110203
+        },
+        {
+          "path": "catalog/parts/emerging/translations.jsonl",
+          "sha256": "1bbad60a7a752810d5d15c00eef7f4c07f33a2d678b6b0b9fdac9309c49bdbd0",
+          "size_bytes": 2837
+        },
+        {
+          "path": "catalog/parts/foundation/artifact-scope.jsonl",
+          "sha256": "eef916a5603f450ad427a54cdbcd586556d5dcf2b7e55bad77761c8671b2dfc3",
+          "size_bytes": 86913
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/artifact-scope.jsonl",
+          "sha256": "42e77cdf5b38b68d122b45d81a6758a66e3ffc3b740f9e1c32df69b271144ccd",
+          "size_bytes": 7358
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/entities.jsonl",
+          "sha256": "c0cb10231d2b5b5f7b7411409c8b408d7c662917d8664132e20f0913de3a6925",
+          "size_bytes": 17467
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/gaps.jsonl",
+          "sha256": "4b3dda1fb2645b667b9db5af6bbff28d82623c8de18cb0c18b9f33f410ab7a9c",
+          "size_bytes": 1520
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/layer-file-index.jsonl",
+          "sha256": "cc7e8371c8bde41566c9698507e69a9aea6c8708401ec07773f6e571962a9e55",
+          "size_bytes": 1531800
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/oci-index.jsonl",
+          "sha256": "939d6b8cfeec186fff02c5f135e60211ab888a4ffa6df101fd3ecdece873fdf7",
+          "size_bytes": 19872
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/relationships.jsonl",
+          "sha256": "cde0c493930cac3043457e26bcefd75f9b2957c772607a086688f4e7fb347ce7",
+          "size_bytes": 4228
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/sources.jsonl",
+          "sha256": "3a2ba37c80467712e05457711e7b776996bd3a611bc3fb36aab64687e609b9bc",
+          "size_bytes": 764
+        },
+        {
+          "path": "catalog/parts/hashcore-proxy/translations.jsonl",
+          "sha256": "ba74bf28ef826548dfe9d91ea4426575ff43427e03b81942e4bcb493de8e4779",
+          "size_bytes": 356
+        },
+        {
+          "path": "catalog/parts/hashcore/artifact-scope.jsonl",
+          "sha256": "4235d36f9009643865109b240484ab7b7e093a78cef1004552f84525ad40eef7",
+          "size_bytes": 37934
+        },
+        {
+          "path": "catalog/parts/hashcore/entities.jsonl",
+          "sha256": "328a3e0c01487df1f47a6c58c96af241896b58a2908e161688ec0122577b5a35",
+          "size_bytes": 54716
+        },
+        {
+          "path": "catalog/parts/hashcore/gaps.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size_bytes": 0
+        },
+        {
+          "path": "catalog/parts/hashcore/relationships.jsonl",
+          "sha256": "08c69fba149bf123da5f9b0825a510ff67db70c75f9b5fb9d74d56f89941e44a",
+          "size_bytes": 40633
+        },
+        {
+          "path": "catalog/parts/hashcore/sources.jsonl",
+          "sha256": "71824c0eef9581c5dc67fc0fbe6d3abb05041c6c4bc773fcbb6f8a5b0e1d698d",
+          "size_bytes": 67442
+        },
+        {
+          "path": "catalog/parts/lfs/artifact-scope.jsonl",
+          "sha256": "6d243bc0546aca8ec4ac0a062b9aa2f161ba17b5440f405cdf5abd148cdcb878",
+          "size_bytes": 16629
+        },
+        {
+          "path": "catalog/parts/open/all-archive-lfs-audit.jsonl",
+          "sha256": "5a6402c609258639df8c868f41aa93ca303bf2c126d7b7f6530a78991f058cd1",
+          "size_bytes": 277173
+        },
+        {
+          "path": "catalog/parts/open/all-archive-lfs-pointers.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size_bytes": 0
+        },
+        {
+          "path": "catalog/parts/open/amlogic-git-tree-files.jsonl",
+          "sha256": "5b77aa7f5e3c3817002e717e83bb7e619d0c38ef93782f952c2257223ed7ac4c",
+          "size_bytes": 44919
+        },
+        {
+          "path": "catalog/parts/open/amlogic-interface-contract.json",
+          "sha256": "785dfa7e3d9e047e02485f8be14ddc913e9e92698c9a3a94a1036d153221805a",
+          "size_bytes": 5869
+        },
+        {
+          "path": "catalog/parts/open/amlogic-prebuilt-verification.jsonl",
+          "sha256": "66b9698bc8a7ae6ececd8c14151fdf082c14afa4552fdba81d6c918836b704cf",
+          "size_bytes": 3320
+        },
+        {
+          "path": "catalog/parts/open/apw12-dump-inventory.jsonl",
+          "sha256": "a62f4abe9281752f04eccc61c49f3ca8e73eb5d7eeb0f5bb1f2dbbb99e61870d",
+          "size_bytes": 10042
+        },
+        {
+          "path": "catalog/parts/open/archive-integrity.jsonl",
+          "sha256": "44be3f3ad7f74f8c75373f109c91c1625b95d22d522d67a6a8fd8978dae8ae85",
+          "size_bytes": 286001
+        },
+        {
+          "path": "catalog/parts/open/archive-members.jsonl",
+          "sha256": "0d2dd967564a1f5186bb136ae655b2ae4938140904ac72998f53ad94a5ac631c",
+          "size_bytes": 475600
+        },
+        {
+          "path": "catalog/parts/open/artifact-scope.jsonl",
+          "sha256": "737990af210f6f1f02eb5bbd71c05195620d681da838a7adc064cefee19acc88",
+          "size_bytes": 941055
+        },
+        {
+          "path": "catalog/parts/open/bfl-fixtures.jsonl",
+          "sha256": "7c06ffb1ddfaea9e1cffed48c474ed39517698a2a0e7dbf62bc03e7c8ee7e5ec",
+          "size_bytes": 9144
+        },
+        {
+          "path": "catalog/parts/open/bfl-interface-contract.json",
+          "sha256": "6d6b3fb36b0967144661b74ccf917e67bbb38deaed18df05b09463cad2883799",
+          "size_bytes": 12603
+        },
+        {
+          "path": "catalog/parts/open/bfl-simulator-contract.json",
+          "sha256": "474ea9fb13f95b6cba6175eff57fc0d27e1feb68872679dbbd57bcec000cf48b",
+          "size_bytes": 1461
+        },
+        {
+          "path": "catalog/parts/open/bm13xx-interface-contract.json",
+          "sha256": "feeb81206ee70ad13a3e641257a9d70a82c7dc7e67635afa0d800d1e231e5d82",
+          "size_bytes": 6618
+        },
+        {
+          "path": "catalog/parts/open/board-configurations.jsonl",
+          "sha256": "a6035c68f9f7a2f5e0deeb6368285800d332bc5df4f9371770bb432dd2366334",
+          "size_bytes": 7979
+        },
+        {
+          "path": "catalog/parts/open/eeprom-fixtures.jsonl",
+          "sha256": "78e33042182289e757313fe93c48f692ad35ec9027dcedf8e706f3375ed602d3",
+          "size_bytes": 4437
+        },
+        {
+          "path": "catalog/parts/open/eeprom-topology-claims.jsonl",
+          "sha256": "d4cfd697b782bca954f17c9244c0185bb64672bf1383d62affba30f328a0b8b1",
+          "size_bytes": 651537
+        },
+        {
+          "path": "catalog/parts/open/entities.jsonl",
+          "sha256": "7310b3dba83256dd449753decd3e4c1095b6cc765d3aa339c9a20e9f7347f50b",
+          "size_bytes": 848163
+        },
+        {
+          "path": "catalog/parts/open/esp-image-hash-anomalies.jsonl",
+          "sha256": "926132380e31ce3e95262b8b0b6d41d6a3cddce101d12e9f724bbef200e0b0fb",
+          "size_bytes": 872
+        },
+        {
+          "path": "catalog/parts/open/esp-image-layouts.jsonl",
+          "sha256": "202f6316663cd4cc45fdc2076dd3283f0b7ac21a0fc79b24cd464f20b6f46048",
+          "size_bytes": 9147246
+        },
+        {
+          "path": "catalog/parts/open/extra-firmware-release-assets.jsonl",
+          "sha256": "44283e12cba06a601f68fa75dbb89aaa2141cb52c075234cbd5030378e96b208",
+          "size_bytes": 63204
+        },
+        {
+          "path": "catalog/parts/open/extra-release-source-archives.jsonl",
+          "sha256": "0519a44dbf40fa1aa79355d4979860985913df5213af120fb54d6dea029eb3c0",
+          "size_bytes": 37952
+        },
+        {
+          "path": "catalog/parts/open/firmware-asset-status.jsonl",
+          "sha256": "8a933a448a9c90a56c1e858aa56ded0a5daeac805a083c8995a5d48e15e37a8e",
+          "size_bytes": 4018589
+        },
+        {
+          "path": "catalog/parts/open/firmware-release-assets.jsonl",
+          "sha256": "a8dd817ac81e741429ee9cf330718d242caebfc58b1fa3e7bdd95d92e97eabfa",
+          "size_bytes": 1392498
+        },
+        {
+          "path": "catalog/parts/open/gaps.jsonl",
+          "sha256": "b5ca5327d3f2a549387873bd3bfe475917359fd7486b8762b13dbb28220cb5fb",
+          "size_bytes": 16604
+        },
+        {
+          "path": "catalog/parts/open/gpu-algorithm-matrix.jsonl",
+          "sha256": "3c6f4af76984b758afb29619e9839ba97569efaad989fe93a70c13c3c768aeb0",
+          "size_bytes": 63680
+        },
+        {
+          "path": "catalog/parts/open/hardware-design-dates.jsonl",
+          "sha256": "eaedfc72f8ba0226f46f5df31d612d51dcbd5992f0bd33fd6736dce3b4616411",
+          "size_bytes": 26284
+        },
+        {
+          "path": "catalog/parts/open/hardware-source-dates.jsonl",
+          "sha256": "144b873a63e5d388fdfd4858075b2a2a62cbc3abfdc6b9644988b277755ddc9a",
+          "size_bytes": 24455
+        },
+        {
+          "path": "catalog/parts/open/historical-source-configurations.jsonl",
+          "sha256": "d16b4416756ba4b921a36d47952057474e126db1a6e170e6065cf65cfbc681fd",
+          "size_bytes": 3605273
+        },
+        {
+          "path": "catalog/parts/open/host-miner-binary-releases.jsonl",
+          "sha256": "063da232885545b34092e36bd9fa15ff3d2841ad6a0b6fee44cb0e069145d88f",
+          "size_bytes": 3215
+        },
+        {
+          "path": "catalog/parts/open/jingle-board-configurations.jsonl",
+          "sha256": "d170b38a1edde5cf26a69a609e89f2209acf6ba0fa67f88bcec82234834d8609",
+          "size_bytes": 3787
+        },
+        {
+          "path": "catalog/parts/open/jingle-firmware-release-assets.jsonl",
+          "sha256": "83d49ecf73f36fa05eb726982539930682408e8561b962b59dd1dd0cd4157773",
+          "size_bytes": 2224
+        },
+        {
+          "path": "catalog/parts/open/jingle-interface-contract.json",
+          "sha256": "904fad727ab70422dd678757599847c1a3275d4a726013b010fd55d36f58abc7",
+          "size_bytes": 3198
+        },
+        {
+          "path": "catalog/parts/open/jingle-release-source-archives.jsonl",
+          "sha256": "f37abf5f8af7e6309a803528a852c4eeba2395be8b5d049b768c9907c0899f4d",
+          "size_bytes": 1532
+        },
+        {
+          "path": "catalog/parts/open/language-audit.jsonl",
+          "sha256": "95d79973de90a0a80ef2a6b6ea2aae40465dbf84a62a08a066d01ea696a24e59",
+          "size_bytes": 9822
+        },
+        {
+          "path": "catalog/parts/open/lfs-pointers.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size_bytes": 0
+        },
+        {
+          "path": "catalog/parts/open/nerdminer-targets.jsonl",
+          "sha256": "139e7212154d70d5ba294d27ed13c208c592a90933241b6bf0969e0720c6d0b5",
+          "size_bytes": 4326
+        },
+        {
+          "path": "catalog/parts/open/nmaxe-board-configurations.jsonl",
+          "sha256": "86ab117b04e32870ee78dcabe1b1f07f02386c777a0d2151b1a57f8b0b1a044b",
+          "size_bytes": 18676
+        },
+        {
+          "path": "catalog/parts/open/nmaxe-release-package-members.jsonl",
+          "sha256": "01934511ef087f5af4f24dafca9c4965f31f2491a8b46963eaef2a1280723d35",
+          "size_bytes": 114800
+        },
+        {
+          "path": "catalog/parts/open/other-firmware-release-assets.jsonl",
+          "sha256": "529f13f0f9e4607ef2ac58c5c9d2fc6700c2ea24c0ba738b8df302bb0daae0ac",
+          "size_bytes": 110155
+        },
+        {
+          "path": "catalog/parts/open/other-release-source-archives.jsonl",
+          "sha256": "1bfbf7d1064c2e380c7fd37c1577b286053b0a67f0bfb3b846d286150bacf40d",
+          "size_bytes": 8350
+        },
+        {
+          "path": "catalog/parts/open/rejected-downloads.jsonl",
+          "sha256": "bd3b867cfe6c8dd3f343c32c1ac9a75da0bed6d919fb9300428dfc1153d6f16e",
+          "size_bytes": 655
+        },
+        {
+          "path": "catalog/parts/open/relationships.jsonl",
+          "sha256": "cd8d0e81c521789b130b611fb6ab62b831f865f8154d6d6ed5badd3774ed3c6f",
+          "size_bytes": 973182
+        },
+        {
+          "path": "catalog/parts/open/release-events.jsonl",
+          "sha256": "444c2b4af96e0b09c15d6a70fe3ee8a07cc84305eca1bf081138538fbae1e65d",
+          "size_bytes": 975010
+        },
+        {
+          "path": "catalog/parts/open/release-source-archives.jsonl",
+          "sha256": "f8c49cd4838f90509a019a9f83372f2c7581a48e45123da8d8603e72906935e7",
+          "size_bytes": 136589
+        },
+        {
+          "path": "catalog/parts/open/release-source-plan.jsonl",
+          "sha256": "ac3333df96f43b6a5daa09c220a93501d5bd752ef7bc8301acb63db8cfba1de7",
+          "size_bytes": 113737
+        },
+        {
+          "path": "catalog/parts/open/release-source-status.jsonl",
+          "sha256": "db33244023dfb2da4c9effb825bdb1dccb0e3872307ef2354778cde00a6773ce",
+          "size_bytes": 185540
+        },
+        {
+          "path": "catalog/parts/open/source-identity.jsonl",
+          "sha256": "15ed15a54958dbef3cbeb5452985c0da57628fc89c617d66ffc216019708bf7d",
+          "size_bytes": 81892
+        },
+        {
+          "path": "catalog/parts/open/sources.jsonl",
+          "sha256": "0fb9402b51cd19845b9976f1e36feaa0a237152bb4d3daf2b2b3409e7f9b26a6",
+          "size_bytes": 227205
+        },
+        {
+          "path": "catalog/parts/open/submodule-dependencies.jsonl",
+          "sha256": "2ea31b15edd7803d03175a9de90269740bf4ddfe1b69d84a66d835a6e0e1fd7f",
+          "size_bytes": 8870
+        },
+        {
+          "path": "catalog/parts/open/translation-index.jsonl",
+          "sha256": "c53e878105cecf4925b7735fd3a2eccb450a2df9d77b78ac8d6f6bfe7781047f",
+          "size_bytes": 16443
+        },
+        {
+          "path": "catalog/parts/open/verification-summary.json",
+          "sha256": "254b834f528f6ecbace2fe72bec52fdf72fec896a749fc1d7e59c583d28d495c",
+          "size_bytes": 1895
+        },
+        {
+          "path": "catalog/parts/platforms/artifact-scope.jsonl",
+          "sha256": "49e7d13dd2f2e44d4316f31ce6d6acf7d720a0181ab81fbba1f1efe91a3799c5",
+          "size_bytes": 3424
+        },
+        {
+          "path": "catalog/parts/platforms/entities.jsonl",
+          "sha256": "319d2cb7e836a9ef643792baff4c6d58cd17327d98cb694f2a35827b32e0034c",
+          "size_bytes": 13856
+        },
+        {
+          "path": "catalog/parts/platforms/gaps.jsonl",
+          "sha256": "ab3721e1b0e283ed41470eaf0288177418f6a75d367e603fa624ed913e326345",
+          "size_bytes": 2049
+        },
+        {
+          "path": "catalog/parts/platforms/relationships.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size_bytes": 0
+        },
+        {
+          "path": "catalog/parts/platforms/sources.jsonl",
+          "sha256": "206ed85c345b279438f4284e3a87e5f9fed890a589ac6851b20adb190f4d7c20",
+          "size_bytes": 10426
+        },
+        {
+          "path": "catalog/parts/support-data/artifact-scope.jsonl",
+          "sha256": "20df752acaf2419e679cefad5b1a8b3d44d014e54d4b4b773ac87367abf01ed9",
+          "size_bytes": 64607
+        },
+        {
+          "path": "catalog/parts/support-data/entities.jsonl",
+          "sha256": "8d94bb8b2bef8708ae8794c4a7402292a18bafd2723ab4835f8882178d4564ac",
+          "size_bytes": 59265
+        },
+        {
+          "path": "catalog/parts/support-data/gaps.jsonl",
+          "sha256": "e5d9f429dc87198935c83706b8608cd83ed8fed55a192f3ff940dd1870d7a417",
+          "size_bytes": 1520
+        },
+        {
+          "path": "catalog/parts/support-data/relationships.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size_bytes": 0
+        },
+        {
+          "path": "catalog/parts/support-data/sources.jsonl",
+          "sha256": "3507d427ae87a3c460358c9fd7a45033fc93940ac685ca2a633a88aad7bd95f8",
+          "size_bytes": 204256
+        },
+        {
+          "path": "catalog/parts/vendors/artifact-scope.jsonl",
+          "sha256": "f27523e33f808ae80152f72acfc7532d5b4f69d81878e72fa37657c207d52a9e",
+          "size_bytes": 132945
+        },
+        {
+          "path": "catalog/parts/vendors/entities.jsonl",
+          "sha256": "e9300efbc08da3057d9a9fbfd48a11dd7061bd7b830e8ebc4434f5e7bb497505",
+          "size_bytes": 915371
+        },
+        {
+          "path": "catalog/parts/vendors/gaps.jsonl",
+          "sha256": "3b50a9fa2430f4a7578d0bd072f8a6e456d09a69f8fc0c455598becf2c820539",
+          "size_bytes": 69641
+        },
+        {
+          "path": "catalog/parts/vendors/relationships.jsonl",
+          "sha256": "4d7b589624aa0cfc46a1ac36fb41ad3c4bd09a702b65993eab18ffe00ceecf01",
+          "size_bytes": 409562
+        },
+        {
+          "path": "catalog/parts/vendors/sources.jsonl",
+          "sha256": "844b97be95993b27805e89ec8ed3840f7dde66389fe549c075b7a1220b9baf90",
+          "size_bytes": 152131
+        },
+        {
+          "path": "catalog/relationships.jsonl",
+          "sha256": "95033a4f981ee4bfc154e7a6d4755170a83bf73cd442e0869f153b90ed1cc264",
+          "size_bytes": 3757535
+        },
+        {
+          "path": "catalog/sources.jsonl",
+          "sha256": "e240c37157f6df5d90bb1dd3c55d29dcd5f9b6862c5d882963c495ae635f49ff",
+          "size_bytes": 833550
+        },
+        {
+          "path": "catalog/storage.json",
+          "sha256": "f2e2227a50ebf678fcb1138242204ee0a0b8dd62a372fe31826ad64e7ccbb98d",
+          "size_bytes": 370
+        },
+        {
+          "path": "docs/simulator-specification.md",
+          "sha256": "3927059c63886ebdaabab833e790fe146eebfc3cf56fea38b02ee34841454115",
+          "size_bytes": 57307
+        },
+        {
+          "path": "reports/coverage.md",
+          "sha256": "736cb456f5a17d5da2ae9bf789131a788aa5a9f4bb13485be832b7dcaba4d033",
+          "size_bytes": 16976
+        },
+        {
+          "path": "reports/device-matrix.csv",
+          "sha256": "0b45a05faa39550acb10a05233a9e167dc19f32cc0dd34debfd93ec38bb03671",
+          "size_bytes": 2675866
+        }
+      ],
+      "schema_version": "2.0",
+      "snapshot_hash": "9ce76a88bb3287b15d508c14856111f17d418e9ad72e6b2d27fee262c8ba0dcb"
+    }
+  }
+}

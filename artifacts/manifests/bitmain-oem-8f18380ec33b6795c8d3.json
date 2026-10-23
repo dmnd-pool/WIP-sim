@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8f18380ec33b6795c8d3",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7cf653b9-1a1e-4407-b47d-2dd870157063/2024/12/25/18/DDT-CE24092910-1E02%20S21%20XP%20Imm.%20CE%20EMC%20Certificate-F.pdf",
+  "kind": "document",
+  "title": "DDT-CE24092910-1E02 S21 XP Imm. CE EMC Certificate-F.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:10+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8f18380ec33b6795c8d3/DDT-CE24092910-1E02_S21_XP_Imm._CE_EMC_Certificate-F.pdf",
+  "sha256": "aa4dc7cda7a2e344e30747dadddb13ceaeceb3a60ab2e900229c3ed199e04474",
+  "size_bytes": 282007,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7cf653b9-1a1e-4407-b47d-2dd870157063/2024/12/25/18/DDT-CE24092910-1E02%20S21%20XP%20Imm.%20CE%20EMC%20Certificate-F.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 25 Dec 2024 10:57:53 GMT",
+  "etag": "\"d2a0e465a97f790f86fd6a2a647d7e85\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 282007,
+      "actual": 282007,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

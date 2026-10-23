@@ -1,0 +1,112 @@
+{
+  "schema_version": "2.0",
+  "status": "source-interface-fixture-definition-not-release",
+  "source_artifact": "open-ckolivas-cgminer-source",
+  "source_commit": "b8491c66e7e22f23a9edf095dd1337ee581e88bd",
+  "source_archive_path": "artifacts/files/source/open-ckolivas-cgminer-source/cgminer-b8491c66e7e2.tar.gz",
+  "source_archive_sha256": "4b3515ec072904e81e91182f5f8d5f8b5b87361ef2a7e2131643d8207badb996",
+  "patch_path": "simulator/firmware/cgminer-low-rate.patch",
+  "patch_sha256": "1cc3f80bbd223e9c7fa2c2313a306ce388f9c3c076de8c81360fea4308594f4b",
+  "files": [
+    {
+      "member": "cgminer-b8491c66e7e22f23a9edf095dd1337ee581e88bd/cgminer.c",
+      "original_sha256": "214148c972c380af38cd667c02ccffad5c3a0b2790d5b54eeb0316af455411e4",
+      "adapted_sha256": "cf5fff6a9570cc58615af3b8daab4ec28941fea80cdb49c3453bedb349e8dcc3"
+    },
+    {
+      "member": "cgminer-b8491c66e7e22f23a9edf095dd1337ee581e88bd/driver-bitmain.c",
+      "original_sha256": "3873860b79667641f02781afaff9a50d23edfe6dbe9a5bef132c20eed3918556",
+      "adapted_sha256": "e4dafda42edd84cbb42e5ff469e88c2b7f016f4288b27741bf8e12fc02bfac95"
+    },
+    {
+      "member": "cgminer-b8491c66e7e22f23a9edf095dd1337ee581e88bd/util.c",
+      "original_sha256": "12e1cbeecda3ed89d4d2c1c03163132cc9202bf4938d017414fefea171a531d9",
+      "adapted_sha256": "9b0e3396b3cb2702b1d691066493ce21cdec95f06732b9a58187a6075c8bd5b3"
+    },
+    {
+      "member": "cgminer-b8491c66e7e22f23a9edf095dd1337ee581e88bd/miner.h",
+      "original_sha256": "46975a24967eb0d0d5b0171b210b875b0adc60feba93131e491fc0deeb72745c",
+      "adapted_sha256": "571888904b2f0516635230ff14451d011ae3ef603973dd9a88c40962e0cfa521"
+    },
+    {
+      "member": "cgminer-b8491c66e7e22f23a9edf095dd1337ee581e88bd/driver-bitmain.h",
+      "original_sha256": "3f7f34e2c9062f6136b16019ea934fe8bb47495650cf18b4ab70c14407257ecb",
+      "adapted_sha256": "18825370c3696e61296d473bca2524a41572719a264d9873bcfc8a9b57708c53"
+    },
+    {
+      "member": "cgminer-b8491c66e7e22f23a9edf095dd1337ee581e88bd/md-sim-adaptation.h",
+      "original_sha256": null,
+      "adapted_sha256": "3a9923bec973bd8a27ad9fee493e7c76c71e1527bcdc3c767ba1f070461f71c7"
+    }
+  ],
+  "execution_mode": "source-adapter",
+  "firmware_identity": "rebuilt-source",
+  "boot_entry": "process",
+  "adaptations": [
+    {
+      "component": "util.c",
+      "reason": "Socket bind and network send are prohibited in this execution environment. Use an inherited private IPC descriptor with read/write to the isolated test pool. Stratum JSON messages stay unchanged. This does not test TCP."
+    },
+    {
+      "component": "driver-bitmain.c",
+      "reason": "Interpret work filter byte as signed base-two difficulty exponent in the declared low-rate protocol variant. Original minimum difficulty one would require ~2^32 hashes per result."
+    },
+    {
+      "component": "cgminer.c",
+      "reason": "Recompute each nonce and compare to the programmed device target for the low-rate source variant. The unchanged submission path applies the separate pool target."
+    },
+    {
+      "component": "driver-bitmain.c",
+      "reason": "Retry temporary PTY backpressure with a bounded 1 second readiness wait, without discarding a partial packet."
+    },
+    {
+      "component": "driver-bitmain.c",
+      "reason": "After a clean job, permit one replacement work packet to clear a full low-rate queue. Without this change, the original driver waits for a full nonce range to finish."
+    },
+    {
+      "component": "miner.h and cgminer.c",
+      "reason": "Key consecutive duplicate detection by work ID plus nonce. This permits nonce zero on the first job and equal nonces in different jobs, while preserving same-work duplicate rejection."
+    },
+    {
+      "component": "cgminer.c",
+      "reason": "UBSAN found an original unaligned uint64_t store in Stratum nonce2 serialization. Use memcpy with the same eight bytes. Align the temporary device target. Include work identity in the low-rate pool duplicate check, including an explicit first-result flag."
+    },
+    {
+      "component": "cgminer.c",
+      "reason": "UBSAN found a second original unaligned load in show_hash when the first nonzero display byte has arbitrary offset. memcpy preserves the displayed four bytes."
+    },
+    {
+      "component": "driver-bitmain.c",
+      "reason": "A low-rate early result can carry queue credits from before later writes, while the original receive thread waits for the send mutex. Do not restore spent credits from nonce responses; status polling still reports full queue state. This prevents real queue overflow without changing model readback."
+    },
+    {
+      "component": "md-sim-adaptation.h, cgminer.c and driver-bitmain.c/h",
+      "reason": "Bound hash-prefix reads to the final valid four-byte window. Track pending clean replacement independently of queue reports. Associate at most one outstanding status request with sent-work count and clean generation; deduct later writes and ignore older generations. Exact helpers have bounded C regression cases under UBSAN."
+    }
+  ],
+  "build": [
+    "autoreconf -fi",
+    "./configure --enable-ants2 --disable-curses --without-libudev CFLAGS=\"-O2 -fcommon -Wno-incompatible-pointer-types\"",
+    "make -j2"
+  ],
+  "build_environment": {
+    "cc": "gcc (GCC) 16.2.1 20260810",
+    "libcurl": "8.22.0",
+    "jansson": "2.15.1",
+    "isolation": "Private user, network, mount and PID namespaces; read-only installed /usr toolchain; private bounded /work and /tmp; original source archive read-only; runtime uses only locked file inputs."
+  },
+  "capabilities": {
+    "original_board_boot": "not-run",
+    "exact_hardware_profile": "unknown",
+    "functional_mining": "Requires separately retained per-run firmware, device and independent pool evidence. This input manifest does not declare a passing result.",
+    "native_dashboard": "not-applicable-headless-source-tool"
+  },
+  "limits": [
+    "Source-derived 8 chains x 32 chips fixture matches driver defaults, not a resolved physical S2 board.",
+    "No downstream FPGA interface or individual ASIC serial protocol modeled.",
+    "No calibrated thermal or power claims.",
+    "Controller status timeout/retry recovery is not yet implemented for a missing status reply.",
+    "The PTY interface fixture is not a calibrated serial wire timing model."
+  ],
+  "binary_identity": "Each prepared output input-manifest.json pins the actual compiler mode and binary hash."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a01cc6747c55786b0769",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/865c8665-6b9b-415c-abcf-134f426b234b/2024/02/20/14/WTD24D01001972E_VoC_T21_CE-EMC_exp_3571.pdf",
+  "kind": "document",
+  "title": "WTD24D01001972E_VoC_T21_CE-EMC_exp_3571.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:53+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a01cc6747c55786b0769/WTD24D01001972E_VoC_T21_CE-EMC_exp_3571.pdf",
+  "sha256": "08bf207d80e924b52f12c94abbe72441a7d41394ca9e3332abd092047a2a9397",
+  "size_bytes": 163712,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/865c8665-6b9b-415c-abcf-134f426b234b/2024/02/20/14/WTD24D01001972E_VoC_T21_CE-EMC_exp_3571.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 20 Feb 2024 06:53:34 GMT",
+  "etag": "\"6893f99a289ac944709bb60e6e8ee2ef\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 163712,
+      "actual": 163712,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

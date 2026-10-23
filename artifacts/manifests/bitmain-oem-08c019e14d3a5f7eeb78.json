@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-08c019e14d3a5f7eeb78",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/63c936c2-b65a-4921-a76e-5ab50b23faca/2023/12/01/19/KS3%20Product%20Manual-V1.0.pdf",
+  "kind": "document",
+  "title": "KS3 Product Manual-V1.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:54+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-08c019e14d3a5f7eeb78/KS3_Product_Manual-V1.0.pdf",
+  "sha256": "0bac418617690b46ef16eec1ec65cdb730ffe68c480a757f42bc77d63557fbcf",
+  "size_bytes": 811466,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/63c936c2-b65a-4921-a76e-5ab50b23faca/2023/12/01/19/KS3%20Product%20Manual-V1.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Dec 2023 11:10:32 GMT",
+  "etag": "\"6806000674ffd394b75edc18e2c61ea0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 811466,
+      "actual": 811466,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-09b7296eec4734b0d11a",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-S9-all-Hiveon-1.02-sign-cryptoskull-001.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.02-sign-cryptoskull-001.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:11:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-09b7296eec4734b0d11a/Antminer-S9-all-Hiveon-1.02-sign-cryptoskull-001.tar.gz",
+  "sha256": "685e8213ce6da14e370c43b59b5b5a3e5deef43d1e0967e906c0fdc79e70ac6d",
+  "size_bytes": 23584740,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-S9-all-Hiveon-1.02-sign-cryptoskull-001.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 13 May 2020 13:30:29 GMT",
+  "etag": "\"5ebbf675-167dfe4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23584740,
+      "actual": 23584740,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

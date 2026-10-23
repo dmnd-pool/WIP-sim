@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-78edbdf69263276d9d22",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ab2dfa2f-5e01-429e-93a8-ec8714a4ea06/2025/07/03/17/U3S19XP%2BH%20Product%20Manual-V1.1.3.pdf",
+  "kind": "document",
+  "title": "U3S19XP+H Product Manual-V1.1.3.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:43+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-78edbdf69263276d9d22/U3S19XP+H_Product_Manual-V1.1.3.pdf",
+  "sha256": "7c02b2bc4f8fb955049ada8691fcda57c494388a6985ed4ff66c6822ca8f2cf6",
+  "size_bytes": 968220,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ab2dfa2f-5e01-429e-93a8-ec8714a4ea06/2025/07/03/17/U3S19XP%2BH%20Product%20Manual-V1.1.3.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 03 Jul 2025 09:05:03 GMT",
+  "etag": "\"ced02aba959028f81629282900d4b9af\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 968220,
+      "actual": 968220,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

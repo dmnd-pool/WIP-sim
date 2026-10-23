@@ -1,0 +1,287 @@
+--- a/hw/arm/Kconfig
++++ b/hw/arm/Kconfig
+@@ -260,6 +260,7 @@
+ 
+ config ZYNQ
+     bool
++    select I2C
+     default y
+     depends on TCG && ARM
+     select A9MPCORE
+--- a/hw/i2c/meson.build
++++ b/hw/i2c/meson.build
+@@ -19,4 +19,9 @@
+ i2c_ss.add(when: 'CONFIG_PCA954X', if_true: files('i2c_mux_pca954x.c'))
+ i2c_ss.add(when: 'CONFIG_PMBUS', if_true: files('pmbus_device.c'))
+ i2c_ss.add(when: 'CONFIG_BCM2835_I2C', if_true: files('bcm2835_i2c.c'))
++if config_all_devices.has_key('CONFIG_ZYNQ')
++  md_iic_core = cc.find_library('md_sim_axi_iic', dirs: meson.project_source_root() / 'mdsim', static: true)
++  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c'), md_iic_core,
++    declare_dependency(link_args: ['-Wl,--gc-sections'])])
++endif
+ system_ss.add_all(when: 'CONFIG_I2C', if_true: i2c_ss)
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -61,3 +61,10 @@
+ 
+ imx_i2c_read(const char *id, const char *reg, uint64_t ofs, uint64_t value) "%s:[%s (0x%" PRIx64 ")] -> 0x%02" PRIx64
+ imx_i2c_write(const char *id, const char *reg, uint64_t ofs, uint64_t value) "%s:[%s (0x%" PRIx64 ")] <- 0x%02" PRIx64
++
++# md-sim-axi-iic.c
++md_sim_axi_iic_mmio(bool write, uint64_t addr, unsigned size, uint64_t value, uint64_t faults) "write=%d addr=0x%" PRIx64 " size=%u value=0x%" PRIx64 " faults=%" PRIu64
++md_sim_axi_iic_start(uint8_t address, bool read, int result) "address=0x%02x read=%d result=%d"
++md_sim_axi_iic_send(uint8_t data, int result) "data=0x%02x result=%d"
++md_sim_axi_iic_receive(uint8_t data) "data=0x%02x"
++md_sim_axi_iic_end(void) "STOP"
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -280,6 +280,12 @@
+         pic[n] = qdev_get_gpio_in(dev, n);
+     }
+ 
++    /* Selected archived S9 DTB: AXI IIC at0x41600000, GIC SPI29.
++     * No slave is invented; absent devices produce real I2C NACKs. */
++    if (object_dynamic_cast(OBJECT(machine), MACHINE_TYPE_NAME("md-sim-s9-zynq-a9"))) {
++        sysbus_create_simple("md-sim-axi-iic", 0x41600000, pic[29]);
++    }
++
+     n = zynq_init_spi_flashes(0xE0006000, pic[58 - GIC_INTERNAL], false, 0);
+     n = zynq_init_spi_flashes(0xE0007000, pic[81 - GIC_INTERNAL], false, n);
+     n = zynq_init_spi_flashes(0xE000D000, pic[51 - GIC_INTERNAL], true, n);
+@@ -480,9 +486,22 @@
+     .instance_size = sizeof(ZynqMachineState),
+ };
+ 
++static void md_s9_machine_class_init(ObjectClass *oc, const void *data)
++{
++    MachineClass *mc = MACHINE_CLASS(oc);
++    mc->desc = "md-sim S9 diagnostic Zynq with AXI IIC; incomplete board";
++    mc->default_cpus = 2;
++}
++static const TypeInfo md_s9_machine_type = {
++    .name = MACHINE_TYPE_NAME("md-sim-s9-zynq-a9"),
++    .parent = TYPE_ZYNQ_MACHINE,
++    .class_init = md_s9_machine_class_init,
++};
++
+ static void zynq_machine_register_types(void)
+ {
+     type_register_static(&zynq_machine_type);
++    type_register_static(&md_s9_machine_type);
+ }
+ 
+ type_init(zynq_machine_register_types)
+--- /dev/null
++++ b/hw/i2c/md-sim-axi-iic.c
+@@ -0,0 +1,171 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++/* QEMU binding for the Rust AXI IIC dynamic-master engine.
++ * Exact pinned QEMU source: 11661d857254b27fca5568c6deacf4f6b6f3460f.
++ * No physical bus is opened. QEMU's I2C slave bus supplies ACK and data.
++ */
++#include "qemu/osdep.h"
++#include "qapi/error.h"
++#include "qemu/log.h"
++#include "qemu/timer.h"
++#include "hw/core/sysbus.h"
++#include "hw/core/irq.h"
++#include "hw/core/qdev-properties.h"
++#include "hw/i2c/i2c.h"
++#include "migration/vmstate.h"
++#include "md-sim-axi-iic.h"
++#include "trace.h"
++
++#define TYPE_MD_SIM_AXI_IIC "md-sim-axi-iic"
++OBJECT_DECLARE_SIMPLE_TYPE(MdSimAxiIic, MD_SIM_AXI_IIC)
++struct MdSimAxiIic {
++    SysBusDevice parent_obj;
++    MemoryRegion mmio;
++    qemu_irq irq;
++    I2CBus *bus;
++    MdIicState *state;
++    MdIicBus callbacks;
++    QEMUTimer *timer;
++    uint32_t bus_hz;
++};
++static bool md_start(void *opaque, uint8_t address, bool receive)
++{
++    MdSimAxiIic *s = opaque;
++    int result = i2c_start_transfer(s->bus, address, receive);
++    trace_md_sim_axi_iic_start(address, receive, result);
++    return result == 0;
++}
++static bool md_send(void *opaque, uint8_t data)
++{
++    MdSimAxiIic *s = opaque;
++    int result = i2c_send(s->bus, data);
++    trace_md_sim_axi_iic_send(data, result);
++    return result == 0;
++}
++static uint8_t md_receive(void *opaque)
++{
++    MdSimAxiIic *s = opaque;
++    uint8_t data = i2c_recv(s->bus);
++    trace_md_sim_axi_iic_receive(data);
++    return data;
++}
++static void md_nack(void *opaque)
++{
++    MdSimAxiIic *s = opaque;
++    i2c_nack(s->bus);
++}
++static void md_end(void *opaque)
++{
++    MdSimAxiIic *s = opaque;
++    i2c_end_transfer(s->bus);
++    trace_md_sim_axi_iic_end();
++}
++static void md_update(MdSimAxiIic *s)
++{
++    qemu_set_irq(s->irq, md_iic_irq(s->state));
++    if (md_iic_pending(s->state)) {
++        if (!timer_pending(s->timer)) {
++            /* Nine clocks per address/data byte, including ACK. Calibration
++             * of FPGA timing and analogue clock stretching is still open. */
++            timer_mod_ns(s->timer, qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL) +
++                         DIV_ROUND_UP(9000000000ULL, s->bus_hz));
++        }
++    } else {
++        timer_del(s->timer);
++    }
++}
++static void md_tick(void *opaque)
++{
++    MdSimAxiIic *s = opaque;
++    md_iic_step(s->state, &s->callbacks);
++    md_update(s);
++}
++static uint64_t md_read(void *opaque, hwaddr addr, unsigned size)
++{
++    MdSimAxiIic *s = opaque;
++    uint32_t value = md_iic_read(s->state, addr, size);
++    trace_md_sim_axi_iic_mmio(false, addr, size, value,
++                            md_iic_faults(s->state));
++    md_update(s);
++    return value;
++}
++static void md_write(void *opaque, hwaddr addr, uint64_t value, unsigned size)
++{
++    MdSimAxiIic *s = opaque;
++    md_iic_write(s->state, addr, size, value);
++    trace_md_sim_axi_iic_mmio(true, addr, size, value,
++                            md_iic_faults(s->state));
++    md_update(s);
++}
++static const MemoryRegionOps md_ops = {
++    .read = md_read,
++    .write = md_write,
++    .endianness = DEVICE_LITTLE_ENDIAN,
++    .valid = { .min_access_size = 1, .max_access_size = 4 },
++    .impl = { .min_access_size = 1, .max_access_size = 4 },
++};
++static void md_reset(DeviceState *dev)
++{
++    MdSimAxiIic *s = MD_SIM_AXI_IIC(dev);
++    timer_del(s->timer);
++    md_iic_reset(s->state);
++    /* Complete reset's bus release now. No transaction can survive reset. */
++    if (md_iic_pending(s->state)) {
++        md_iic_step(s->state, &s->callbacks);
++    }
++    md_update(s);
++}
++static void md_realize(DeviceState *dev, Error **errp)
++{
++    MdSimAxiIic *s = MD_SIM_AXI_IIC(dev);
++    if (s->bus_hz == 0 || s->bus_hz > 400000) {
++        error_setg(errp, "md-sim-axi-iic bus-hz must be 1..400000");
++    }
++}
++static void md_init(Object *obj)
++{
++    MdSimAxiIic *s = MD_SIM_AXI_IIC(obj);
++    s->state = g_malloc0(md_iic_size());
++    md_iic_init(s->state);
++    s->callbacks = (MdIicBus) { s, md_start, md_send, md_receive, md_nack, md_end };
++    s->bus = i2c_init_bus(DEVICE(obj), "i2c");
++    s->timer = timer_new_ns(QEMU_CLOCK_VIRTUAL, md_tick, s);
++    memory_region_init_io(&s->mmio, obj, &md_ops, s, TYPE_MD_SIM_AXI_IIC, 0x10000);
++    sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->mmio);
++    sysbus_init_irq(SYS_BUS_DEVICE(obj), &s->irq);
++}
++static void md_finalize(Object *obj)
++{
++    MdSimAxiIic *s = MD_SIM_AXI_IIC(obj);
++    timer_free(s->timer);
++    g_free(s->state);
++}
++static const Property md_properties[] = {
++    DEFINE_PROP_UINT32("bus-hz", MdSimAxiIic, bus_hz, 100000),
++};
++/* Refuse migration until an explicit versioned Rust state format exists. */
++static const VMStateDescription md_vmstate = {
++    .name = TYPE_MD_SIM_AXI_IIC,
++    .unmigratable = 1,
++};
++static void md_class_init(ObjectClass *klass, const void *data)
++{
++    DeviceClass *dc = DEVICE_CLASS(klass);
++    dc->realize = md_realize;
++    device_class_set_legacy_reset(dc, md_reset);
++    device_class_set_props(dc, md_properties);
++    dc->vmsd = &md_vmstate;
++    dc->desc = "md-sim AXI IIC dynamic master (Rust state engine)";
++}
++static const TypeInfo md_type = {
++    .name = TYPE_MD_SIM_AXI_IIC,
++    .parent = TYPE_SYS_BUS_DEVICE,
++    .instance_size = sizeof(MdSimAxiIic),
++    .instance_init = md_init,
++    .instance_finalize = md_finalize,
++    .class_init = md_class_init,
++};
++static void md_register_types(void)
++{
++    type_register_static(&md_type);
++}
++type_init(md_register_types)
+--- /dev/null
++++ b/hw/i2c/md-sim-axi-iic.h
+@@ -0,0 +1,26 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#ifndef MD_SIM_AXI_IIC_H
++#define MD_SIM_AXI_IIC_H
++#include <stdbool.h>
++#include <stddef.h>
++#include <stdint.h>
++
++typedef struct MdIicState MdIicState;
++typedef struct MdIicBus {
++    void *opaque;
++    bool (*start)(void *, uint8_t, bool);
++    bool (*send)(void *, uint8_t);
++    uint8_t (*receive)(void *);
++    void (*nack)(void *);
++    void (*end)(void *);
++} MdIicBus;
++size_t md_iic_size(void);
++void md_iic_init(MdIicState *);
++void md_iic_reset(MdIicState *);
++uint32_t md_iic_read(MdIicState *, uint32_t, uint32_t);
++void md_iic_write(MdIicState *, uint32_t, uint32_t, uint32_t);
++void md_iic_step(MdIicState *, MdIicBus *);
++bool md_iic_pending(const MdIicState *);
++bool md_iic_irq(const MdIicState *);
++uint64_t md_iic_faults(const MdIicState *);
++#endif
+--- /dev/null
++++ b/configs/devices/arm-softmmu/mdsim.mak
+@@ -0,0 +1,8 @@
++# Experimental S9 backend; other boards use separate declared backend profiles.
++CONFIG_ZYNQ=y
++# Pinned ARM CPU code unconditionally references the GICv5 implementation.
++CONFIG_ARM_GICV5=y
++# Existing Zynq machine declares unimplemented peripheral placeholders.
++CONFIG_UNIMP=y
++# Original SPL and project-owned reset probes use QEMU's existing loader.
++CONFIG_GENERIC_LOADER=y

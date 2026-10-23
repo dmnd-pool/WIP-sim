@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c46a720ccba7fa6b50d2",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/55643b57-1a82-4df9-91ee-b719b1d8cdab/2023/12/13/14/KS3%20cTuvus%20%20CU72302232%2001.pdf",
+  "kind": "document",
+  "title": "KS3 cTuvus  CU72302232 01.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:45+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-c46a720ccba7fa6b50d2/KS3_cTuvus__CU72302232_01.pdf",
+  "sha256": "81d6cbf60b308e96ad36a507fc8b3a1a2d20b69517b9eecc1413a83c114b4794",
+  "size_bytes": 783570,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/55643b57-1a82-4df9-91ee-b719b1d8cdab/2023/12/13/14/KS3%20cTuvus%20%20CU72302232%2001.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 06:14:02 GMT",
+  "etag": "\"cc2e5b12c1e4c367a0d3262d02d6d76a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 783570,
+      "actual": 783570,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

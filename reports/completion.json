@@ -1,0 +1,40 @@
+{
+  "completed_at": "2026-10-19T11:45:35+00:00",
+  "scope": "Bitcoin ASIC miners and their support tools",
+  "status": "Research snapshot and archive delivered; explicit access and knowledge gaps remain.",
+  "counts": {
+    "entities": 4354,
+    "relationships": 8708,
+    "sources": 1222,
+    "gaps": 183,
+    "artifacts": 13506,
+    "discovery": 700
+  },
+  "device_records": 400,
+  "downloaded_main_records": 12726,
+  "unique_main_sha256": 11786,
+  "unique_main_bytes": 160629901790,
+  "queued_main_records": 0,
+  "failed_main_records": 779,
+  "english_main_companion_records": 187,
+  "outer_archive_member_paths": 754113,
+  "searchable_text_records": 1661,
+  "checks": {
+    "record_validation": "pass",
+    "all_saved_archive_manifest_hashes": "pass; incremental audit reuses prior checks only for unchanged file identities",
+    "python_tests": "17 passed",
+    "browser_tests": "pass",
+    "guide_links": "268 checked; pass",
+    "document_database": "ok",
+    "archive_member_database": "ok"
+  },
+  "limits": [
+    "Public sources can be incomplete, removed, private, or rate-limited. The catalogue is not proof of Internet-wide completeness.",
+    "Source and vendor compatibility claims have not been tested by booting or flashing firmware.",
+    "Unknown dates, board revisions, historical dependencies, and language coverage remain explicit gaps.",
+    "Some publisher checksum conflicts remain unresolved even though local file-manifest hashes match.",
+    "The simulator design and fixtures are a development foundation. A universal miner emulator is not implemented.",
+    "The guides use ASD-STE100-style writing. Formal word-list conformance is not certified."
+  ],
+  "storage": "Large payloads use /home/user/mnt/small/md-sim-archive-20261019 through workspace links. See README.md."
+}

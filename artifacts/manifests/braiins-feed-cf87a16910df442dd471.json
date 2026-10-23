@@ -1,0 +1,30 @@
+{
+  "id": "braiins-feed-cf87a16910df442dd471",
+  "url": "https://feeds.braiins-os.com/23.10.1/braiins-os_am2-s17_sd-install_2023-11-20-0-b982cd98-23.10.1-plus.img",
+  "kind": "firmware",
+  "title": "braiins-os_am2-s17_sd-install_2023-11-20-0-b982cd98-23.10.1-plus.img",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 112197632,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:29:54+00:00",
+  "status": "failed",
+  "local_path": null,
+  "sha256": null,
+  "size_bytes": null,
+  "final_url": "https://feeds.braiins-os.com/23.10.1/braiins-os_am2-s17_sd-install_2023-11-20-0-b982cd98-23.10.1-plus.img?archive_retry=20261019",
+  "http_status": 403,
+  "etag": "\"655bc0af-6b00000\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 20 Nov 2023 20:25:19 GMT",
+  "error": "HTTP Error 403: Forbidden",
+  "retry_after": null,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/23.10.1/braiins-os_am2-s17_sd-install_2023-11-20-0-b982cd98-23.10.1-plus.img?archive_retry=20261019",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden"
+}

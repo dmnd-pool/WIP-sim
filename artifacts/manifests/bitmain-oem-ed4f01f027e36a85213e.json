@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ed4f01f027e36a85213e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/79b02172-733a-4263-bcb4-51dbbd701a15/2024/11/26/10/CB%202nd%20cert-L9-CN249O5S%20002-24.11.06_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert-L9-CN249O5S 002-24.11.06_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ed4f01f027e36a85213e/CB_2nd_cert-L9-CN249O5S_002-24.11.06_extsigned.pdf",
+  "sha256": "86b1843b32baca8a41e23cd8f883b54ce3e2f3d8e34c1bec179210cfe876d34a",
+  "size_bytes": 329247,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/79b02172-733a-4263-bcb4-51dbbd701a15/2024/11/26/10/CB%202nd%20cert-L9-CN249O5S%20002-24.11.06_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 26 Nov 2024 02:35:21 GMT",
+  "etag": "\"48a4e36e84819b3f73a467223a35aa20\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 329247,
+      "actual": 329247,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "2.0",
+  "checkpoint": "v11",
+  "complete": false,
+  "source_identity": "206c316107d0b9825bc767340afe7dd87a32191c7874260bef337bd5d2cdb7bd",
+  "source_manifest": "source-v11.json",
+  "scope": "Current implementation checkpoint. Component passes do not establish the requested complete simulator.",
+  "checks": [
+    {
+      "command": "cargo build --workspace --release --offline --locked",
+      "exit_code": 0,
+      "log": "build-v11.log"
+    },
+    {
+      "command": "CARGO_HOME=/tmp/md-sim-release-cargo-v11 CARGO_TARGET_DIR=/tmp/md-sim-release-target-v11 cargo build --workspace --release --offline --locked",
+      "exit_code": 0,
+      "log": "clean-build-v11.log",
+      "release_binaries_identical": true
+    },
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0,
+      "log": "format-v11.log"
+    },
+    {
+      "command": "cargo clippy --workspace --all-targets --offline --locked -- -D warnings",
+      "exit_code": 0,
+      "log": "lint-v11.log"
+    },
+    {
+      "command": "cargo test --workspace --all-targets --offline --locked",
+      "exit_code": 0,
+      "passed": 64,
+      "failed": 0,
+      "ignored": 0,
+      "log": "tests-v11.log"
+    },
+    {
+      "command": "python3 scripts/check_guide_links.py",
+      "exit_code": 0,
+      "checked_links": 309,
+      "broken": 0,
+      "log": "guide-links-v11.log"
+    },
+    {
+      "command": "target/release/md-sim inputs verify work/simulator/reports/source-v11.json --path .",
+      "exit_code": 0,
+      "report": "source-verify-v11.json"
+    },
+    {
+      "command": "target/release/md-sim matrix run work/simulator/plan-v11.json --workers local --suite conformance --require-complete --out work/simulator/matrix-v11",
+      "exit_code": 3,
+      "completion_pass": false,
+      "report": "../matrix-v11/result.json"
+    }
+  ],
+  "firmware_evidence": {
+    "source_fixture_cases": 5,
+    "independently_replayed": 5,
+    "accepted_firmware_submissions": 10,
+    "fresh_random_seed_cases": 4,
+    "fixed_seed_regressions": 1,
+    "exact_hardware_targets_passed": 0,
+    "report": "../firmware-progress.md",
+    "replay": "v11-independent-replay.json"
+  },
+  "core_evidence": {
+    "actual_firmware_candidates": 4,
+    "consensus_accepted": 4,
+    "process_restart_persisted": 4,
+    "exact_hardware_target_gate": false,
+    "report": "v11-core-independent-review.json"
+  },
+  "closed_preparation": {
+    "optimized_and_ubsan_replays": 2,
+    "c_regressions_passed": 2,
+    "firmware_bytes_reproduced": true,
+    "report": "../firmware/toolchain-closure-report.json"
+  },
+  "independent_review": {
+    "unresolved_scoped_correctness_findings": 0,
+    "full_release_completion_findings_open": true,
+    "report": "../review.md"
+  },
+  "gates": [
+    {
+      "id": 1,
+      "status": "fail",
+      "requirement": "All implementation work",
+      "reason": "Target dispatch, exact models and required services/suites remain incomplete."
+    },
+    {
+      "id": 2,
+      "status": "fail",
+      "requirement": "Every applicable exact target and original board boot",
+      "reason": "Zero passing exact physical targets. S9 diagnostic requires explicit bypasses."
+    },
+    {
+      "id": 3,
+      "status": "fail",
+      "requirement": "Fresh mining and Core acceptance per exact target",
+      "reason": "Source-fixture evidence exists. It does not establish per-target coverage."
+    },
+    {
+      "id": 4,
+      "status": "blocked",
+      "requirement": "Local/remote workflows and native dashboards",
+      "reason": "Network sockets are denied. Remote transport and native dashboard paths also remain implementation work."
+    },
+    {
+      "id": 5,
+      "status": "fail",
+      "requirement": "Strict complete matrix",
+      "blocked": 1377,
+      "unknown": 71437,
+      "not_applicable": 6785,
+      "executed_exact_targets": 0
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "requirement": "Checks for the implemented Rust/C scope",
+      "reason": "64 Rust tests, formatting, strict lint, release builds, C regressions and full UBSAN source cases pass."
+    },
+    {
+      "id": 7,
+      "status": "fail",
+      "requirement": "All declared per-target suites",
+      "reason": "Full firmware, fault, update/recovery, persistence and isolation suites are not implemented across the matrix."
+    },
+    {
+      "id": 8,
+      "status": "fail",
+      "requirement": "Independent review without completion findings",
+      "reason": "Scoped correctness findings are resolved. Full-release completion findings remain open."
+    },
+    {
+      "id": 9,
+      "status": "pass",
+      "requirement": "Current checkpoint source identity",
+      "reason": "Source manifest verifies. Canonical release binaries match the separate clean build. This is not a complete release."
+    },
+    {
+      "id": 10,
+      "status": "inconclusive",
+      "requirement": "Clean installation of the complete required system",
+      "reason": "Offline Rust build and captured cgminer replay pass. Full target commands remain proposed and Core toolchain is not fully frozen."
+    }
+  ],
+  "blockers": "host-limits-v11.json",
+  "next_action": "Resolve exact S9 reset/storage inputs and implement pinned FPGA I2C/NAND contracts, then extend target execution and suites across the complete matrix. A permitted network environment is required for SSH/TLS and separate network clients."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "braiins-feed-951952fc0fa06d4a75ad",
+  "url": "https://feeds.braiins-os.com/25.01/braiins-os_am3-aml_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz",
+  "kind": "firmware",
+  "title": "transitional am3-aml 25.01",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "executed": false,
+  "retrieved_at": "2026-10-19T10:52:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-951952fc0fa06d4a75ad/braiins-os_am3-aml_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz",
+  "sha256": "81492c033bf74176dde93fc4ca48d1c81d895c3ff4b9c7fe4fbbf45e51edcbdb",
+  "size_bytes": 35602903,
+  "final_url": "https://feeds.braiins-os.com/25.01/braiins-os_am3-aml_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz?archive_retry=20261019",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 21 Feb 2025 20:51:08 GMT",
+  "etag": "\"67b8e73c-21f41d7\"",
+  "http_content_length": 35602903,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/25.01/braiins-os_am3-aml_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "81492c033bf74176dde93fc4ca48d1c81d895c3ff4b9c7fe4fbbf45e51edcbdb",
+      "actual": "81492c033bf74176dde93fc4ca48d1c81d895c3ff4b9c7fe4fbbf45e51edcbdb",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

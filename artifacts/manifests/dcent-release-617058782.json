@@ -1,0 +1,39 @@
+{
+  "id": "dcent-release-617058782",
+  "url": "https://github.com/DCentralTech/DCENT_OS/releases/download/v0.9.0-beta.1/DCENTOS_AML3_S21Pro_beta20261002.tar",
+  "kind": "firmware",
+  "title": "DCENTOS_AML3_S21Pro_beta20261002.tar",
+  "language": "en",
+  "source_id": "dcent-releases",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:39:54+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/dcent-release-617058782/DCENTOS_AML3_S21Pro_beta20261002.tar",
+  "sha256": "f45fecdee089fcb1a15359866f307b9790ae1b1ceb33b86dcd60371fb6609c37",
+  "size_bytes": 43100160,
+  "executed": false,
+  "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1206981413/380f67cc-efbe-4b4e-ac8a-42d75a23bef3?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-19T10%3A34%3A34Z&rscd=attachment%3B+filename%3DDCENTOS_AML3_S21Pro_beta20261002.tar&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-19T09%3A33%3A54Z&ske=2026-10-19T10%3A34%3A34Z&sks=b&skv=2018-11-09&sig=TpG210ZadWS9X25c6DHtwwv93ykur54u2iCvzgP6Yns%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MjQwNDU5NCwibmJmIjoxNzkyNDAyNzk0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.jMYT3VpPbnPuhyk5frpWS7upo1fIqiy-lAoydd4srWc&response-content-disposition=attachment%3B%20filename%3DDCENTOS_AML3_S21Pro_beta20261002.tar&response-content-type=application%2Foctet-stream",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 07 Oct 2026 00:27:20 GMT",
+  "etag": "\"0x8DF2409BFCCEFED\"",
+  "publisher_sha256": "f45fecdee089fcb1a15359866f307b9790ae1b1ceb33b86dcd60371fb6609c37",
+  "matches_publisher_sha256": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 43100160,
+      "actual": 43100160,
+      "match": true,
+      "source_id": "dcent-releases"
+    },
+    {
+      "field": "sha256",
+      "expected": "f45fecdee089fcb1a15359866f307b9790ae1b1ceb33b86dcd60371fb6609c37",
+      "actual": "f45fecdee089fcb1a15359866f307b9790ae1b1ceb33b86dcd60371fb6609c37",
+      "match": true,
+      "source_id": "dcent-releases"
+    }
+  ],
+  "upstream_integrity_match": true
+}

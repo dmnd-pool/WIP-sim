@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-39da53c19f300242e7e8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b0654634-9073-40cb-8745-872570b77fb7/2022/01/19/17/S9i%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S9i Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:41:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-39da53c19f300242e7e8/S9i_Server_Manual.pdf",
+  "sha256": "8764a4b50b16a4e99ca56e405eec8481ed43c60a121ef59b8f66d3d7453cd52d",
+  "size_bytes": 1432421,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b0654634-9073-40cb-8745-872570b77fb7/2022/01/19/17/S9i%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 09:57:33 GMT",
+  "etag": "\"17abaf19bded723251117dc1c17376b0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1432421,
+      "actual": 1432421,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

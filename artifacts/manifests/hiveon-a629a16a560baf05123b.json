@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-a629a16a560baf05123b",
+  "url": "https://download.hiveos.farm/asic/custom/mskbtc/210111/Antminer-T17-v1.2.0h_CRC_SIG-sig-2.03@210111-T17-sign-mskbtc.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17-v1.2.0h_CRC_SIG-sig-2.03@210111-T17-sign-mskbtc.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:59:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-a629a16a560baf05123b/Antminer-T17-v1.2.0h_CRC_SIG-sig-2.03_210111-T17-sign-mskbtc.hive.tar.gz",
+  "sha256": "db9610504e5634d82df0486b7ce0fe05f8bfd4be6b6edf40895b8b15b2f28475",
+  "size_bytes": 25966277,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/mskbtc/210111/Antminer-T17-v1.2.0h_CRC_SIG-sig-2.03@210111-T17-sign-mskbtc.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 11 Jan 2021 15:33:18 GMT",
+  "etag": "\"5ffc6fbe-18c36c5\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 25966277,
+      "actual": 25966277,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-73d3990028f48d4b692b",
+  "url": "https://download.hiveos.farm/asic/custom/wattum/201221/Antminer-S17PLUS-v1.2.0h_CRC_SIG-sig-2.03@201221-S17+-sign-wattum-test3.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17PLUS-v1.2.0h_CRC_SIG-sig-2.03@201221-S17+-sign-wattum-test3.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:11:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-73d3990028f48d4b692b/Antminer-S17PLUS-v1.2.0h_CRC_SIG-sig-2.03_201221-S17+-sign-wattum-test3.hive.tar.gz",
+  "sha256": "0e5822a9a2ae997c73a9d373e803463499e864e806cab4612fb3ec4bf9d6c540",
+  "size_bytes": 35226576,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/wattum/201221/Antminer-S17PLUS-v1.2.0h_CRC_SIG-sig-2.03@201221-S17+-sign-wattum-test3.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 21 Dec 2020 13:37:52 GMT",
+  "etag": "\"5fe0a530-21983d0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 35226576,
+      "actual": 35226576,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-35896dcf86f89acd4a52",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/234aa65a-3740-47ed-94dd-a1bcf4515397/2019/08/08/21/Antminer-S9-xilinx-201907302037-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9-xilinx-201907302037-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:41:11+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-35896dcf86f89acd4a52/ANTMINER-S9-xilinx-201907302037-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "sha256": "2cd6e5142d82950083d3789b8b14d3d045aed238d65acbeb73d3ab8f9c55735f",
+  "size_bytes": 44226207,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/234aa65a-3740-47ed-94dd-a1bcf4515397/2019/08/08/21/Antminer-S9-xilinx-201907302037-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:21 GMT",
+  "etag": "\"ebed809edad6c8591b49318a42a90035-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 44226207,
+      "actual": 44226207,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "fc658783843d512b81efc8ff56db8a3c",
+      "actual": "fc658783843d512b81efc8ff56db8a3c",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

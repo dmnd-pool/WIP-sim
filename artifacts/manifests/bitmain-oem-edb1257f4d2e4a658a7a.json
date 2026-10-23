@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-edb1257f4d2e4a658a7a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/49e085d3-b9bc-454c-aebf-c00a0c76ff3e/2025/01/24/10/S21%2B%20Hyd.%20ICES-003%C2%A0.pdf",
+  "kind": "document",
+  "title": "S21+ Hyd. ICES-003\u00a0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:10+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-edb1257f4d2e4a658a7a/S21+_Hyd._ICES-003_.pdf",
+  "sha256": "9bf3de174849d8d9d8bc0941e4c8c3bcf3831eb88a18cb1d73768a696c050921",
+  "size_bytes": 463745,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/49e085d3-b9bc-454c-aebf-c00a0c76ff3e/2025/01/24/10/S21%2B%20Hyd.%20ICES-003%C2%A0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 24 Jan 2025 02:19:14 GMT",
+  "etag": "\"e3bdc4d666804956352fcac3588edf1c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 463745,
+      "actual": 463745,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

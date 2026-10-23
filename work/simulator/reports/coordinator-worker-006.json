@@ -1,0 +1,20 @@
+{
+  "schema_version": "2.0",
+  "plan_sha256": "43595ba4387c7e840e7cf01cf8f4f4c65da7fdf972e743786f2fed9fc1b51612",
+  "rows": [
+    {
+      "name": "cgminer-source-interface",
+      "run_hash": "c197c45eaf1a9c24f0eb98d9509715bd30363b84f1aff3bff60dc72748decebf",
+      "status": "pass",
+      "reused": false,
+      "attempt": "/home/user/src/md-sim/work/simulator/coordinator/queue-006/jobs/c197c45eaf1a9c24f0eb98d9509715bd30363b84f1aff3bff60dc72748decebf/attempt-000002",
+      "result": {
+        "sha256": "32447262a7395b5b64a9b59a329b3e80553d07ee6c131a8a8751206135c19ac9",
+        "size": 10956
+      }
+    }
+  ],
+  "declared_suite_complete": true,
+  "exact_physical_targets_executed": 0,
+  "complete_hardware_matrix": false
+}

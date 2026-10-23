@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-d883b0d64d5c6d714045",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/892e3e49-1a47-4fe3-a7e1-e3dc6971a505/2024/05/22/17/D9%20CE-LVD%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 CE-LVD Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-d883b0d64d5c6d714045/D9_CE-LVD_Shenzhen.pdf",
+  "sha256": "5d5ce4c81ac39eb4ba968135613170b7750c583a89505db66bcbc21edda5eb8d",
+  "size_bytes": 407410,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/892e3e49-1a47-4fe3-a7e1-e3dc6971a505/2024/05/22/17/D9%20CE-LVD%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:41:20 GMT",
+  "etag": "\"1c51b0a0132c5655276928f04eaedf34\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 407410,
+      "actual": 407410,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

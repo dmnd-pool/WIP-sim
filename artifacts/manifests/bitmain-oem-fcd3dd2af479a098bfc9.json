@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-fcd3dd2af479a098bfc9",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/R3-LTC%20Manual.pdf",
+  "kind": "document",
+  "title": "R3-LTC Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:24+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-fcd3dd2af479a098bfc9/R3-LTC_Manual.pdf",
+  "sha256": "7ccb34eed02d5f66459ac050a2afebebfe304b4828373df2b8c3cc90b36a68ed",
+  "size_bytes": 29081234,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/R3-LTC%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"14a8fcaca891ef9028b6a3f8e3b8b870-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 29081234,
+      "actual": 29081234,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

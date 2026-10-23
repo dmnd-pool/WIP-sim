@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a624c4a4c8b92473413d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a89ec0ca-3648-414c-8ee6-2c564fd1e610/2025/10/13/11/Z15%20Z15%20Pro%20Product%20Datasheet-v1.0.2.pdf",
+  "kind": "document",
+  "title": "Z15 Z15 Pro Product Datasheet-v1.0.2.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:45+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a624c4a4c8b92473413d/Z15_Z15_Pro_Product_Datasheet-v1.0.2.pdf",
+  "sha256": "f0368b5f08ff667abc752fe6424cc3bdcdeb429c2a09fecf36302d58aaa36e19",
+  "size_bytes": 2130919,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a89ec0ca-3648-414c-8ee6-2c564fd1e610/2025/10/13/11/Z15%20Z15%20Pro%20Product%20Datasheet-v1.0.2.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 13 Oct 2025 03:19:07 GMT",
+  "etag": "\"9e9d3e401c77f37447edaea5bdb66376\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2130919,
+      "actual": 2130919,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

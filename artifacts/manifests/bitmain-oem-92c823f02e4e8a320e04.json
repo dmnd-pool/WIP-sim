@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-92c823f02e4e8a320e04",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/APW7/Manual/007201810121123402484V85eL4G0612/APW7%20manual.pdf",
+  "kind": "document",
+  "title": "APW7 manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-92c823f02e4e8a320e04/APW7_manual.pdf",
+  "sha256": "72e66019d859496f339f54271730893b3a9ddf3da4ededbec1d7030eb4258adb",
+  "size_bytes": 436933,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/APW7/Manual/007201810121123402484V85eL4G0612/APW7%20manual.pdf",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"ba14a4cb89006643191766f45e7bb549\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 436933,
+      "actual": 436933,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

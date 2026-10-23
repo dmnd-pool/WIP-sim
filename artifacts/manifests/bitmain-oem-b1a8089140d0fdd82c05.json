@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-b1a8089140d0fdd82c05",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-20160511-700M-2fan-4320.tar.gz",
+  "kind": "firmware",
+  "title": "S7-20160511-700M-2fan-4320.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:43:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-b1a8089140d0fdd82c05/S7-20160511-700M-2fan-4320.tar.gz",
+  "sha256": "87e4a7aa7dff1ea88d756643d8741009926203315767edb7c5462ba6993de9b8",
+  "size_bytes": 19162443,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-20160511-700M-2fan-4320.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"b202c6aead03a7988b5491f244611058-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "8edd19db980f268a1abe95d7a8b0dc30",
+      "actual": "8edd19db980f268a1abe95d7a8b0dc30",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 19162443,
+      "actual": 19162443,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

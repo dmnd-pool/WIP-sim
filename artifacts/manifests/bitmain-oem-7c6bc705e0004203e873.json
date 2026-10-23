@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7c6bc705e0004203e873",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5d2d6571-4c5f-4c27-a484-797e05689c7e/2023/12/17/19/LVD_S21%20Hyd_CN23J34D%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_S21 Hyd_CN23J34D 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7c6bc705e0004203e873/LVD_S21_Hyd_CN23J34D_001_2023.10.11_extsigned.pdf",
+  "sha256": "6dd06fd41d6d467e11fb4faf218dcc5c6028b22a82236a036ac5bb6679dae5ad",
+  "size_bytes": 1683707,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5d2d6571-4c5f-4c27-a484-797e05689c7e/2023/12/17/19/LVD_S21%20Hyd_CN23J34D%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 17 Dec 2023 11:47:49 GMT",
+  "etag": "\"8f898523279d0440e2cafef350b354c2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1683707,
+      "actual": 1683707,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

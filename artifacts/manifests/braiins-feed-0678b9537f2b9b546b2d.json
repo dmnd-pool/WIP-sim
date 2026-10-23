@@ -1,0 +1,48 @@
+{
+  "id": "braiins-feed-0678b9537f2b9b546b2d",
+  "url": "https://feeds.braiins-os.com/stm32mp157c-ii2-bmm1/firmware_2026-09-11-0-7a758742-26.09-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "kind": "firmware",
+  "title": "firmware_2026-09-11-0-7a758742-26.09-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 47002432,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:30:08+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-0678b9537f2b9b546b2d/firmware_2026-09-11-0-7a758742-26.09-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "sha256": "098b40530deab0b05c27e35398daaa00f83905889a92f8441c2c1bfe713b0239",
+  "size_bytes": 47002432,
+  "final_url": "https://feeds.braiins-os.com/stm32mp157c-ii2-bmm1/firmware_2026-09-11-0-7a758742-26.09-plus_arm_cortex-a7_neon-vfpv4.tar?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"6aa480c4-2cd3340\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 11 Sep 2026 22:29:24 GMT",
+  "publisher_sha256": "098b40530deab0b05c27e35398daaa00f83905889a92f8441c2c1bfe713b0239",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/stm32mp157c-ii2-bmm1/firmware_2026-09-11-0-7a758742-26.09-plus_arm_cortex-a7_neon-vfpv4.tar?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "098b40530deab0b05c27e35398daaa00f83905889a92f8441c2c1bfe713b0239",
+      "actual": "098b40530deab0b05c27e35398daaa00f83905889a92f8441c2c1bfe713b0239",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "098b40530deab0b05c27e35398daaa00f83905889a92f8441c2c1bfe713b0239",
+      "actual": "098b40530deab0b05c27e35398daaa00f83905889a92f8441c2c1bfe713b0239",
+      "match": true,
+      "source_id": "braiins-feed-cdc068ac42d342904fb7"
+    }
+  ],
+  "upstream_integrity_match": true
+}

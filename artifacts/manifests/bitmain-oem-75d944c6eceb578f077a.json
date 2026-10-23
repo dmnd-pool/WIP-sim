@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-75d944c6eceb578f077a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BitmainMinerTool-bin.zip",
+  "kind": "tool",
+  "title": "BitmainMinerTool-bin.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-75d944c6eceb578f077a/BitmainMinerTool-bin.zip",
+  "sha256": "aecd34505b5b1ada9ba47e5a4c839202331f2703b2570926e0a7681afe3f23c9",
+  "size_bytes": 700156,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BitmainMinerTool-bin.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"98adb04e1e5f3c24c60498f17c1cdfeb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 700156,
+      "actual": 700156,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

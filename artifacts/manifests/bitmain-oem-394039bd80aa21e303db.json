@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-394039bd80aa21e303db",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cdf60a25-6e98-4806-bb00-1c10ee176cb4/2024/03/28/15/Antminer-K7-release-202403241334.bmu",
+  "kind": "firmware",
+  "title": "Antminer-K7-release-202403241334.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-394039bd80aa21e303db/Antminer-K7-release-202403241334.bmu",
+  "sha256": "946d15898a7d5bd346dd3f69377d6213d3c9a6260d5ea04418a2eb566432e52f",
+  "size_bytes": 18471587,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cdf60a25-6e98-4806-bb00-1c10ee176cb4/2024/03/28/15/Antminer-K7-release-202403241334.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Thu, 28 Mar 2024 07:19:15 GMT",
+  "etag": "\"930abfdb518d019557b3a5868e612bab\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 18471587,
+      "actual": 18471587,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

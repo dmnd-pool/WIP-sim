@@ -1,0 +1,144 @@
+{
+  "schema": "md-sim-browser-startup-checkpoint/1",
+  "status": "paused at user request; no active command or VM",
+  "overall_task_complete": false,
+  "firmware_dashboard_gate": false,
+  "checks": {
+    "namespace_tests": {
+      "passed": 101,
+      "failed": 0,
+      "ignored": 8
+    },
+    "browser_tests": {
+      "passed": 10,
+      "failed": 0
+    },
+    "strict_clippy": "passed",
+    "release_helper_build": "passed",
+    "scoped_format": "passed"
+  },
+  "active": null,
+  "variant458_launched": false,
+  "production_tcg_cache_changed": false,
+  "cleanup455": "staged only; no build/integration/deletion",
+  "next_action": "Only after user resumes: run frozen458b with the same image/backend and256MiB TCG cache; independently compare actual startup/cleanup before any production cache policy change. Current two-profile startup totals404510ms and cannot fit native305-second observation. Preserve failures and deadlines.",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/s9_browser_check.rs",
+      "sha256": "3d268abb21fbc8b4ae783b683b4a0a85dded3b5c21148ddaf1d44450eccb4ec9",
+      "size": 38676
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check.rs",
+      "sha256": "03df3c8266c3c18c80b37b2ed5d7d20ee49d86be2985c12295f809e96afea16d",
+      "size": 81924
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/browser_startup_tests.rs",
+      "sha256": "19341e1cca542401b1570ab62b633ef9b5ad3f1f6e0edcf9894cf471f8ae5d67",
+      "size": 7445
+    },
+    {
+      "path": "work/simulator/browser-startup-456-inputs/manifest.json",
+      "sha256": "7cb40716d744639119d8c1a8626e6cd24a285aa48cad3815151ea785960b4233",
+      "size": 4645
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/browser-startup456-tests.log",
+      "sha256": "8b7a21637edff853f146c075088ff1033369a33b32140236b9961244bfc3d06f",
+      "size": 12579
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/browser-startup456-clippy.log",
+      "sha256": "7937736f49d570e12b6c2cb8980b921cc99f4713af1b8c8b192bc46c33b8eb8c",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/browser-startup456-build.log",
+      "sha256": "f47688263dd102b12c127991ab7cafa1d1e7eaa7097bcb9b15982c2cffdc73b2",
+      "size": 146
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/browser-startup456-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/network-vm/browser-startup-457/result.json",
+      "sha256": "f3112a5f87328acb315db98d05ea465856c8281c7ef3ec2b198aa4557ba11a6a",
+      "size": 1565
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/staged-inputs.json",
+      "sha256": "1cd83585187325a1b1354f74196b60438e3b4a454ca5bd8106da39eff85c6104",
+      "size": 1306
+    },
+    {
+      "path": "work/simulator/network-vm/browser-startup-457b/result.json",
+      "sha256": "9196f3e6978241b5b93bcffab554c1b0f0b626edd21571b950d753bc1aa1897d",
+      "size": 427857
+    },
+    {
+      "path": "work/simulator/network-vm/browser-startup-457b/process-spec.json",
+      "sha256": "20227aa57399eeb5446f7b2f9efb8c1c2b9e182f6def58fc198dae99483273ef",
+      "size": 4767
+    },
+    {
+      "path": "work/simulator/network-vm/browser-startup-457b/guest.log",
+      "sha256": "723875f10e8c27113174264ea7249716bd7f0746fb7d8c40a2d139285ce0078e",
+      "size": 213570
+    },
+    {
+      "path": "work/simulator/network-vm/browser-startup-457b/startup-component.json",
+      "sha256": "3fec0c27074b80ef3fd05c7a95c8d5cc83ae12fcc027166220d5b10c2a7efd08",
+      "size": 73764
+    },
+    {
+      "path": "work/simulator/network-vm/browser-startup-457b/assessment.json",
+      "sha256": "66a43f71967ed2470fda504b11de35ddb15bae2413a50674182255b4ffbc4ec5",
+      "size": 1251
+    }
+  ],
+  "baseline": {
+    "schema": "md-sim-selected-browser-startup-assessment/1",
+    "passed": true,
+    "scope": "Actual selected-client startup component only; no firmware or dashboard acceptance",
+    "firmware_gate": false,
+    "native_dashboard_gate": false,
+    "process_result": {
+      "sha256": "9196f3e6978241b5b93bcffab554c1b0f0b626edd21571b950d753bc1aa1897d",
+      "size": 427857
+    },
+    "process_spec": {
+      "sha256": "20227aa57399eeb5446f7b2f9efb8c1c2b9e182f6def58fc198dae99483273ef",
+      "size": 4767
+    },
+    "guest_log": {
+      "sha256": "723875f10e8c27113174264ea7249716bd7f0746fb7d8c40a2d139285ce0078e",
+      "size": 213570
+    },
+    "component_report": {
+      "sha256": "3fec0c27074b80ef3fd05c7a95c8d5cc83ae12fcc027166220d5b10c2a7efd08",
+      "size": 73764
+    },
+    "role_stdout": {
+      "sha256": "a89c57511989e98875f57d20a2502c34689560de864ccc42267ef657c8841a05",
+      "size": 70794
+    },
+    "startup_milliseconds": [
+      202007,
+      202503
+    ],
+    "outer_wall_milliseconds": 467881,
+    "role_test_seconds": 442.52,
+    "input_manifest": {
+      "sha256": "7cb40716d744639119d8c1a8626e6cd24a285aa48cad3815151ea785960b4233",
+      "size": 4645
+    },
+    "tcg_cache_mib": 64,
+    "support_vcpus": 2,
+    "guest_ram_mib": 4096,
+    "comparison_variant_run": false,
+    "cause_established": false
+  }
+}

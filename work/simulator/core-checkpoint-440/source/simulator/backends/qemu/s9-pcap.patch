@@ -1,0 +1,271 @@
+--- a/hw/dma/xlnx-zynq-devcfg.c
++++ b/hw/dma/xlnx-zynq-devcfg.c
+@@ -32,6 +32,14 @@
+ #include "system/dma.h"
+ #include "qemu/log.h"
+ #include "qemu/module.h"
++#include "qapi/error.h"
++#include "qemu/error-report.h"
++#include "qemu/units.h"
++#include "hw/core/qdev-properties.h"
++#include "system/runstate.h"
++#include "system/qtest.h"
++#include "hw/core/boards.h"
++#include "hw/core/cpu.h"
+ 
+ #define FREQ_HZ 900000000
+ 
+@@ -145,9 +153,18 @@
+     XlnxZynqDevcfg *s = XLNX_ZYNQ_DEVCFG(dev);
+     int i;
+ 
++    if (s->md_pcap) {
++        /* Restore the fresh reference state after an invalid UNLOCK key. */
++        memory_region_set_enabled(&s->iomem, true);
++        md_pcap_reset(s->md_pcap);
++        fprintf(stderr, "md-sim-pcap: reset\n");
++    }
+     for (i = 0; i < XLNX_ZYNQ_DEVCFG_R_MAX; ++i) {
+         register_reset(&s->regs_info[i]);
+     }
++    if (s->md_pcap) {
++        xlnx_zynq_devcfg_update_ixr(s);
++    }
+ }
+ 
+ static void xlnx_zynq_devcfg_dma_go(XlnxZynqDevcfg *s)
+@@ -190,7 +207,9 @@
+ {
+     XlnxZynqDevcfg *s = XLNX_ZYNQ_DEVCFG(reg->opaque);
+ 
+-    s->regs[R_INT_STS] |= R_INT_STS_PCFG_DONE_MASK;
++    if (!s->md_pcap) {
++        s->regs[R_INT_STS] |= R_INT_STS_PCFG_DONE_MASK;
++    }
+ 
+     xlnx_zynq_devcfg_update_ixr(s);
+ }
+@@ -207,6 +226,18 @@
+         }
+     }
+ 
++    if (s->md_pcap) {
++        if (!FIELD_EX32(val, CTRL, PCFG_PROG_B)) {
++            md_pcap_reset(s->md_pcap);
++            s->regs[R_INT_STS] &= ~R_INT_STS_PCFG_DONE_MASK;
++            xlnx_zynq_devcfg_update_ixr(s);
++            fprintf(stderr, "md-sim-pcap: programming-reset\n");
++        } else if (!FIELD_EX32(s->regs[R_CTRL], CTRL, PCFG_PROG_B)) {
++            md_pcap_begin(s->md_pcap);
++            fprintf(stderr, "md-sim-pcap: programming-enable\n");
++        }
++    }
++
+     if (FIELD_EX32(val, CTRL, PCFG_PROG_B)) {
+         s->regs[R_STATUS] |= R_STATUS_PCFG_INIT_MASK;
+     } else {
+@@ -257,9 +288,76 @@
+     return s->regs[R_LOCK] | val;
+ }
+ 
++/* Explicit strict configuration contract. The existing generic QEMU model
++ * remains available, but cannot supply FPGA programming acceptance evidence.
++ * Transfers are synchronous as in upstream; PCAP clock calibration is open. */
++static bool md_pcap_transfer(XlnxZynqDevcfg *s)
++{
++    uint32_t address = s->regs[R_DMA_SRC_ADDR] & ~3u;
++    uint64_t size = (uint64_t)s->regs[R_DMA_SRC_LEN] * 4;
++    bool increment = !FIELD_EX32(s->regs[R_CFG], CFG, DISABLE_SRC_INC);
++    MdPcapProgress progress = {0};
++    uint32_t status = 0;
++    const char *failure = "unsupported PCAP DMA controls or address range";
++    s->regs[R_INT_STS] &= ~(R_INT_STS_DMA_DONE_MASK |
++                            R_INT_STS_DMA_P_DONE_MASK |
++                            R_INT_STS_PCFG_DONE_MASK);
++    if (!size || size > 64 * MiB ||
++        (increment && size > (1ULL << 32) - address) ||
++        s->regs[R_DMA_DST_ADDR] != 0xffffffff ||
++        s->regs[R_DMA_DST_LEN] ||
++        !FIELD_EX32(s->regs[R_CTRL], CTRL, PCAP_MODE) ||
++        !FIELD_EX32(s->regs[R_CTRL], CTRL, PCAP_PR) ||
++        FIELD_EX32(s->regs[R_MCTRL], MCTRL, INT_PCAP_LPBK)) {
++        goto rejected;
++    }
++    for (uint64_t offset = 0; offset < size;) {
++        uint8_t bytes[BTT_MAX];
++        /* DevC uses 32-bit AXI data. Keyhole mode reads the same word on
++         * every beat. Do not cache it: an MMIO source can have side effects. */
++        uint32_t count = increment ? MIN(sizeof(bytes), size - offset) : 4;
++        uint32_t source = address + (increment ? offset : 0);
++        if (dma_memory_read(&address_space_memory, source,
++                            bytes, count, MEMTXATTRS_UNSPECIFIED) != MEMTX_OK) {
++            failure = "PCAP DMA source memory read failed";
++            goto rejected;
++        }
++        status = md_pcap_write(s->md_pcap, bytes, count, &progress);
++        if (!status) {
++            failure = md_pcap_error(s->md_pcap);
++            goto rejected;
++        }
++        offset += count;
++    }
++    s->regs[R_INT_STS] |= R_INT_STS_DMA_DONE_MASK | R_INT_STS_DMA_P_DONE_MASK;
++    if (status == 2) {
++        s->regs[R_INT_STS] |= R_INT_STS_PCFG_DONE_MASK;
++    }
++    fprintf(stderr, "md-sim-pcap: dma address=0x%x bytes=%" PRIu64
++            " received=%" PRIu64 " omitted_preamble=%" PRIu64
++            " complete=%u sha256=%s source_increment=%u\n",
++            address, size, progress.received, progress.omitted_preamble,
++            status == 2, progress.sha256, increment);
++    return true;
++rejected:
++    md_pcap_reject(s->md_pcap);
++    error_report("md-sim-pcap: rejected: %s", failure);
++    qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++    return false;
++}
++
+ static void r_dma_dst_len_post_write(RegisterInfo *reg, uint64_t val)
+ {
+     XlnxZynqDevcfg *s = XLNX_ZYNQ_DEVCFG(reg->opaque);
++    /* Register reset invokes post-write hooks. It is not a DMA command. */
++    if (s->md_pcap && device_is_in_reset(DEVICE(s))) {
++        return;
++    }
++    if (s->md_pcap) {
++        md_pcap_transfer(s);
++        xlnx_zynq_devcfg_update_ixr(s);
++        return;
++    }
+     if ((s->regs[R_DMA_DST_ADDR]) == 0xffffffff) {
+         DB_PRINT("bitstream loading detected\n");
+         s->regs[R_INT_STS] |= R_INT_STS_DMA_DONE_MASK |
+@@ -363,8 +461,20 @@
+     }
+ };
+ 
++static int md_pcap_migration_guard(void *opaque)
++{
++    XlnxZynqDevcfg *s = opaque;
++    if (s->md_pcap) {
++        error_report("Strict PCAP migration is unsupported");
++        return -ENOTSUP;
++    }
++    return 0;
++}
++
+ static const VMStateDescription vmstate_xlnx_zynq_devcfg = {
+     .name = "xlnx_zynq_devcfg",
++    .pre_save = md_pcap_migration_guard,
++    .pre_load = md_pcap_migration_guard,
+     .version_id = 1,
+     .minimum_version_id = 1,
+     .fields = (const VMStateField[]) {
+@@ -401,12 +511,57 @@
+     sysbus_init_mmio(sbd, &s->iomem);
+ }
+ 
++static void md_pcap_realize(DeviceState *dev, Error **errp)
++{
++    XlnxZynqDevcfg *s = XLNX_ZYNQ_DEVCFG(dev);
++    if (!s->md_bitstream && !s->md_part) {
++        return;
++    }
++    if (!s->md_bitstream || !s->md_part) {
++        error_setg(errp, "Strict PCAP needs both md-bitstream and md-part");
++        return;
++    }
++    g_autofree char *bitstream = NULL;
++    g_autofree char *part = NULL;
++    gsize size, part_size;
++    struct stat st;
++    if (stat(s->md_bitstream, &st) || !S_ISREG(st.st_mode) ||
++        st.st_size <= 0 || st.st_size > 64 * MiB ||
++        stat(s->md_part, &st) || !S_ISREG(st.st_mode) ||
++        st.st_size <= 0 || st.st_size > MiB ||
++        !g_file_get_contents(s->md_bitstream, &bitstream, &size, NULL) ||
++        !g_file_get_contents(s->md_part, &part, &part_size, NULL)) {
++        error_setg(errp, "Cannot load bounded PCAP reference inputs");
++        return;
++    }
++    s->md_pcap = md_pcap_new((uint8_t *)bitstream, size,
++                             (uint8_t *)part, part_size);
++    if (!s->md_pcap) {
++        error_setg(errp, "PCAP reference configuration or part validation failed");
++    }
++}
++
++static void md_pcap_unrealize(DeviceState *dev)
++{
++    XlnxZynqDevcfg *s = XLNX_ZYNQ_DEVCFG(dev);
++    md_pcap_free(s->md_pcap);
++    s->md_pcap = NULL;
++}
++
++static const Property md_pcap_properties[] = {
++    DEFINE_PROP_STRING("md-bitstream", XlnxZynqDevcfg, md_bitstream),
++    DEFINE_PROP_STRING("md-part", XlnxZynqDevcfg, md_part),
++};
++
+ static void xlnx_zynq_devcfg_class_init(ObjectClass *klass, const void *data)
+ {
+     DeviceClass *dc = DEVICE_CLASS(klass);
+ 
+     device_class_set_legacy_reset(dc, xlnx_zynq_devcfg_reset);
+     dc->vmsd = &vmstate_xlnx_zynq_devcfg;
++    dc->realize = md_pcap_realize;
++    dc->unrealize = md_pcap_unrealize;
++    device_class_set_props(dc, md_pcap_properties);
+ }
+ 
+ static const TypeInfo xlnx_zynq_devcfg_info = {
+@@ -423,3 +578,29 @@
+ }
+ 
+ type_init(xlnx_zynq_devcfg_register_types)
++
++/* Device-only fixture. Qtest requires a CPU address-space context, but its
++ * accelerator cannot execute firmware. S9 migration guards remain separate. */
++static void md_pcap_test_init(MachineState *machine)
++{
++    if (!qtest_enabled()) {
++        error_report("PCAP contract fixture requires the qtest accelerator");
++        exit(1);
++    }
++    cpu_create("cortex-a9-arm-cpu");
++    sysbus_create_simple(TYPE_XLNX_ZYNQ_DEVCFG, 0xf8007000, NULL);
++}
++
++static void md_pcap_test_class_init(MachineClass *mc)
++{
++    mc->desc = "PCAP reference contract test fixture (qtest only)";
++    mc->init = md_pcap_test_init;
++    mc->max_cpus = 1;
++    mc->default_ram_size = 0;
++    mc->no_serial = 1;
++    mc->no_parallel = 1;
++    mc->no_floppy = 1;
++    mc->no_cdrom = 1;
++}
++
++DEFINE_MACHINE("md-sim-pcap-contract-test", md_pcap_test_class_init)
+--- a/include/hw/dma/xlnx-zynq-devcfg.h
++++ b/include/hw/dma/xlnx-zynq-devcfg.h
+@@ -30,6 +30,7 @@
+ #include "hw/core/register.h"
+ #include "hw/core/sysbus.h"
+ #include "qom/object.h"
++#include "hw/dma/md-sim-pcap.h"
+ 
+ #define TYPE_XLNX_ZYNQ_DEVCFG "xlnx.ps7-dev-cfg"
+ 
+@@ -51,6 +52,8 @@
+ 
+     MemoryRegion iomem;
+     qemu_irq irq;
++    char *md_bitstream, *md_part;
++    MdPcap *md_pcap;
+ 
+     XlnxZynqDevcfgDMACmd dma_cmd_fifo[XLNX_ZYNQ_DEVCFG_DMA_CMD_FIFO_LEN];
+     uint8_t dma_cmd_fifo_num;

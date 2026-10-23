@@ -1,0 +1,30 @@
+{
+  "id": "braiins-feed-46762e88396db41debfa",
+  "url": "https://feeds.braiins-os.com/22.05/braiins-os_am2-s17_ssh_2022-06-20-0-288861e4-22.05-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_am2-s17_ssh_2022-06-20-0-288861e4-22.05-plus.tar.gz",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:37:24+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-46762e88396db41debfa/braiins-os_am2-s17_ssh_2022-06-20-0-288861e4-22.05-plus.tar.gz",
+  "sha256": "0fb9e4e9c3dab8c5d9824665001e63c2622dceb74c3c09dc8e9164b139b103a6",
+  "size_bytes": 35111896,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/22.05/braiins-os_am2-s17_ssh_2022-06-20-0-288861e4-22.05-plus.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 20 Jun 2022 13:40:58 GMT",
+  "etag": "\"62b078ea-217c3d8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "0fb9e4e9c3dab8c5d9824665001e63c2622dceb74c3c09dc8e9164b139b103a6",
+      "actual": "0fb9e4e9c3dab8c5d9824665001e63c2622dceb74c3c09dc8e9164b139b103a6",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

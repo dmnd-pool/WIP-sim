@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a357c9269ad7e2a8d0dd",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/758f2e82-713e-4b54-8bee-03ca8ee9b000/2023/07/27/16/D7%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "D7 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:55+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a357c9269ad7e2a8d0dd/D7_Server_Manual.pdf",
+  "sha256": "b06f0e57605b1e4719586fc44ccca5667d532a7b23de1e55f5abc91f373c2546",
+  "size_bytes": 830853,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/758f2e82-713e-4b54-8bee-03ca8ee9b000/2023/07/27/16/D7%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:30:32 GMT",
+  "etag": "\"3c0a8e824033ba095030fad78525db26\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 830853,
+      "actual": 830853,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-62c07e7684356fd26690",
+  "url": "https://feeds.braiins-os.com/zynq-bm3-am2/firmware_2025-06-25-0-45f356ea-25.05.1-plus_arm_cortex-a9_neon.tar",
+  "kind": "firmware",
+  "title": "firmware_2025-06-25-0-45f356ea-25.05.1-plus_arm_cortex-a9_neon.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:13:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-62c07e7684356fd26690/firmware_2025-06-25-0-45f356ea-25.05.1-plus_arm_cortex-a9_neon.tar",
+  "sha256": "498e8e633f9445bab684a0054302cfdb95eaf26a9fd1b241cbc737a3de877156",
+  "size_bytes": 35707256,
+  "executed": false,
+  "expected_size_bytes": 35707256,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/zynq-bm3-am2/firmware_2025-06-25-0-45f356ea-25.05.1-plus_arm_cortex-a9_neon.tar",
+  "http_status": 206,
+  "etag": "\"685c6fd2-220d978\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 25 Jun 2025 21:53:22 GMT",
+  "publisher_sha256": "498e8e633f9445bab684a0054302cfdb95eaf26a9fd1b241cbc737a3de877156",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-f2e22fe67fe44eb36750",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "498e8e633f9445bab684a0054302cfdb95eaf26a9fd1b241cbc737a3de877156",
+      "actual": "498e8e633f9445bab684a0054302cfdb95eaf26a9fd1b241cbc737a3de877156",
+      "match": true,
+      "source_id": "braiins-feed-f2e22fe67fe44eb36750"
+    },
+    {
+      "field": "sha256",
+      "expected": "498e8e633f9445bab684a0054302cfdb95eaf26a9fd1b241cbc737a3de877156",
+      "actual": "498e8e633f9445bab684a0054302cfdb95eaf26a9fd1b241cbc737a3de877156",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-6f427ff9d3bfb6a5f491",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2074910a-e099-4e00-9133-fde15a6cbfd5/2026/05/11/16/S21%20XP%20User%20Guide-V1.1.3.pdf",
+  "kind": "document",
+  "title": "S21 XP User Guide-V1.1.3.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-6f427ff9d3bfb6a5f491/S21_XP_User_Guide-V1.1.3.pdf",
+  "sha256": "f4c158a99ad22bbdb7d60f1f76bf96b9227248c116aff45cf203bbb8d6ef0d5d",
+  "size_bytes": 2960356,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2074910a-e099-4e00-9133-fde15a6cbfd5/2026/05/11/16/S21%20XP%20User%20Guide-V1.1.3.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 11 May 2026 08:10:03 GMT",
+  "etag": "\"13aa576224247fefcc430b27050c8ec6\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2960356,
+      "actual": 2960356,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

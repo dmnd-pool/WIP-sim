@@ -1,0 +1,1469 @@
+{
+  "audit_binary": {
+    "sha256": "d3b4aa54045f0c69c82244f1a6a49dc92691f06c3b06f0c9245f4b4f7cd5526b",
+    "size": 3022168
+  },
+  "audit_source": {
+    "sha256": "01b0f4fe24429f8a64c8c7dc3039dbc49b96bf6767ea8906fe160c080aa80584",
+    "size": 11618
+  },
+  "result": {
+    "adaptation": {
+      "sha256": "f1a1fafb04a359f65a15ea23ca5167a867e0c6207a80a19d39c1f601ed5e40d1",
+      "size": 16110
+    },
+    "backend_log": {
+      "sha256": "16ba765baacb1bd4ebca01a04b892703c7aacaf5d955230951f47e038a2c66d5",
+      "size": 51573036
+    },
+    "clean_job_transition": true,
+    "clock_scope": "ASIC times are emulator virtual nanoseconds. Pool times are elapsed nanoseconds in a separate Linux VM. No cross-clock ordering is inferred. Identical headers can have several real hardware matches; all are retained.",
+    "difficulty_change": true,
+    "execution_result": {
+      "sha256": "0d8a5f376caca3cf1fdaeb4f09f85f96472be41a91f083c45c66c38f007f65b9",
+      "size": 103542771
+    },
+    "fresh_jobs": 2,
+    "hash_audit_source": {
+      "sha256": "05879ff4e9f28fdee45ce10b4f09f32c52041c66bd521cc9280daedb1940d22e",
+      "size": 30501
+    },
+    "historical_split": {
+      "actual_asic_log": {
+        "sha256": "16ba765baacb1bd4ebca01a04b892703c7aacaf5d955230951f47e038a2c66d5",
+        "size": 51573036
+      },
+      "extraction": "Only exact complete pool result and collection lines, with their newline. Native result and source logs remain unchanged.",
+      "native_guest_log": {
+        "sha256": "1b43e2b2438939575b8c511bf63222302d3081cb0f3ca7f17ef4630d535371e7",
+        "size": 197991
+      },
+      "pool_bytes": {
+        "sha256": "f24fb82c2096f3aa8ad9233cab96299117b7a5fda3b5a5265cd315dd72c06e89",
+        "size": 43048
+      }
+    },
+    "kind": "historical-pool-and-hardware-input-split-regression/1",
+    "matched_computations": 14,
+    "monotonic_grant_rate": {
+      "available": true,
+      "cap_hps": 10.0,
+      "computed_hashes": 1322,
+      "contiguous_grants": true,
+      "last_grant_elapsed_ns": 299922414878,
+      "minimum_observed_interval_ns": 125176667,
+      "required_interval_ns": 100000000,
+      "scope": "Actual monotonic admission timestamps, shared across every chain and reset. Each retained computation has one unique grant. Virtual bus time is separate. This checks the software limit, not physical hashrate calibration."
+    },
+    "pool_input": {
+      "sha256": "efe102c47102e1deb9c4ba6d3ad69d437a6d12fde2c423f059097afe5fa505b0",
+      "size": 1025
+    },
+    "pool_result": {
+      "sha256": "87c79a6fc495b734f47667772bdb4617819ff684d2b4c7a1870b6b47cdfa4f03",
+      "size": 140050
+    },
+    "process_specification": {
+      "sha256": "c04fc696982d4d2a980cf40d815a5ae6006115e9a935f313885bd8933aeea239",
+      "size": 12367
+    },
+    "scope": "Regression using unchanged archived native354 execution and actual pool/ASIC traces. Pool evidence is parsed separately. This is not execution of the new shared-pool path, fresh work at regression time, a remote gate or an exact-board pass.",
+    "selected_session_id": 0,
+    "session_scope": "Only the explicitly selected actual pool connection is replayed. Other connections retain separate results and require their own audits.",
+    "submissions": [
+      {
+        "digest_hex": "23e7060f9ceda05b81f20ff7edffdf63da0de479f26aedc14a3f0c01ebded857",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "23e7060f9ceda05b81f20ff7edffdf63da0de479f26aedc14a3f0c01ebded857",
+              "grant": 123,
+              "job_index": 5607,
+              "line": 72369,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 99950321485,
+              "ticket": 252,
+              "wall_ns": 100051046399
+            },
+            "serial_reply": {
+              "first_byte_line": 72370,
+              "frame_hex": "00000000003487",
+              "hash_index": 122,
+              "last_byte_line": 72376,
+              "last_byte_virtual_ns": 99950366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 52,
+              "line": 72354,
+              "link": 6,
+              "midstates": [
+                [
+                  39956384,
+                  1009638774,
+                  2155469451,
+                  2782965225,
+                  2896093412,
+                  3184622711,
+                  807865076,
+                  3876856331
+                ],
+                [
+                  4267907043,
+                  3796828382,
+                  1092953785,
+                  535771328,
+                  1667105370,
+                  914358602,
+                  1806931033,
+                  3564194842
+                ],
+                [
+                  730640144,
+                  307770824,
+                  3371435311,
+                  4181595964,
+                  2542368254,
+                  1870172074,
+                  1991603963,
+                  4089051044
+                ],
+                [
+                  4023871998,
+                  3212993206,
+                  1868573013,
+                  3917838900,
+                  2989506570,
+                  194040076,
+                  1725446551,
+                  863170297
+                ]
+              ],
+              "ns": 99945886685,
+              "tail_hex": "528b563f35e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0080482a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fae6f04755333b0651c13abaf8cc3b4ed294760b176fee0d5d57dc6ec528b563f35e3da6affff7f2000000000",
+        "pool_elapsed_ns": 32112806446,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-0",
+          "nonce": 0,
+          "time": 1792729909,
+          "version": 709394432
+        },
+        "submission_index": 0,
+        "verdict": {
+          "Accepted": {
+            "block_candidate": true,
+            "hash_display": "57d8deeb010c3f4ac1ed6af279e40dda63dfffedf70ff2815ba0ed9c0f06e723",
+            "header_hex": "0080482a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fae6f04755333b0651c13abaf8cc3b4ed294760b176fee0d5d57dc6ec528b563f35e3da6affff7f2000000000"
+          }
+        },
+        "wire_line": 9
+      },
+      {
+        "digest_hex": "0c17f220ded7974c9469245400cc1b485249a2a8b5778f934e7a2b00aa434855",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "0c17f220ded7974c9469245400cc1b485249a2a8b5778f934e7a2b00aa434855",
+              "grant": 207,
+              "job_index": 10056,
+              "line": 93689,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 113950321485,
+              "ticket": 252,
+              "wall_ns": 114050640372
+            },
+            "serial_reply": {
+              "first_byte_line": 93690,
+              "frame_hex": "00000000006085",
+              "hash_index": 206,
+              "last_byte_line": 93696,
+              "last_byte_virtual_ns": 113950366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 96,
+              "line": 93681,
+              "link": 6,
+              "midstates": [
+                [
+                  3947999638,
+                  3564209630,
+                  37318307,
+                  2782848441,
+                  1057474231,
+                  709877206,
+                  861420615,
+                  2608577920
+                ],
+                [
+                  4051027830,
+                  3474508292,
+                  656674870,
+                  3091802965,
+                  2819125229,
+                  46076419,
+                  1066483712,
+                  1637785842
+                ],
+                [
+                  768558993,
+                  1218275023,
+                  2801070212,
+                  3502520530,
+                  2124615744,
+                  3297363640,
+                  3038015683,
+                  158147456
+                ],
+                [
+                  3347463780,
+                  745851928,
+                  3085255011,
+                  2107663309,
+                  1336234150,
+                  1761618138,
+                  845407208,
+                  4289138889
+                ]
+              ],
+              "ns": 113941224605,
+              "tail_hex": "4358a14d35e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000b62706226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000",
+        "pool_elapsed_ns": 46083666305,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729909,
+          "version": 666238976
+        },
+        "submission_index": 1,
+        "verdict": "LowDifficulty",
+        "wire_line": 13
+      },
+      {
+        "digest_hex": "e82974e728c77112639decfae887fcfbd079f3c9e17fef74598eeb00a49c0f38",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "e82974e728c77112639decfae887fcfbd079f3c9e17fef74598eeb00a49c0f38",
+              "grant": 227,
+              "job_index": 11128,
+              "line": 98751,
+              "link": 8,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 117322176105,
+              "ticket": 252,
+              "wall_ns": 117422419612
+            },
+            "serial_reply": {
+              "first_byte_line": 98752,
+              "frame_hex": "00000000006c93",
+              "hash_index": 226,
+              "last_byte_line": 98758,
+              "last_byte_virtual_ns": 117322220905,
+              "link": 8
+            },
+            "work_packet": {
+              "job_id": 108,
+              "line": 98743,
+              "link": 8,
+              "midstates": [
+                [
+                  3476317630,
+                  2262696492,
+                  1460462861,
+                  2264707104,
+                  1789047250,
+                  1310524267,
+                  1388571323,
+                  3689017337
+                ],
+                [
+                  553929800,
+                  1455538566,
+                  2561848055,
+                  3778432511,
+                  3334923665,
+                  2034289991,
+                  3538126885,
+                  2800603707
+                ],
+                [
+                  760514594,
+                  1841686535,
+                  3686236793,
+                  2296494292,
+                  1918431159,
+                  3512146069,
+                  558975048,
+                  3368972238
+                ],
+                [
+                  14437665,
+                  3233759010,
+                  2240020514,
+                  499876625,
+                  167559188,
+                  1358231994,
+                  2024630853,
+                  367699952
+                ]
+              ],
+              "ns": 117314273025,
+              "tail_hex": "4358a14d35e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000ce2906226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000",
+        "pool_elapsed_ns": 49458229541,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729909,
+          "version": 701366272
+        },
+        "submission_index": 2,
+        "verdict": {
+          "Accepted": {
+            "block_candidate": true,
+            "hash_display": "380f9ca400eb8e5974ef7fe1c9f379d0fbfc87e8faec9d631271c728e77429e8",
+            "header_hex": "0000ce2906226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000"
+          }
+        },
+        "wire_line": 15
+      },
+      {
+        "digest_hex": "7333ba966a26346961aca0eecbdcc57562d477fca8e6ae109c8c1101b9a3b542",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "7333ba966a26346961aca0eecbdcc57562d477fca8e6ae109c8c1101b9a3b542",
+              "grant": 420,
+              "job_index": 21342,
+              "line": 147784,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 149450321485,
+              "ticket": 252,
+              "wall_ns": 149550561055
+            },
+            "serial_reply": {
+              "first_byte_line": 147785,
+              "frame_hex": "0000000000289f",
+              "hash_index": 419,
+              "last_byte_line": 147791,
+              "last_byte_virtual_ns": 149450366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 40,
+              "line": 147767,
+              "link": 6,
+              "midstates": [
+                [
+                  829165981,
+                  4107595814,
+                  897888215,
+                  3420245289,
+                  516642131,
+                  1687379687,
+                  247550757,
+                  3875864199
+                ],
+                [
+                  427142585,
+                  888218098,
+                  4178360296,
+                  3464743276,
+                  2891303273,
+                  2781568173,
+                  2810165148,
+                  1339341567
+                ],
+                [
+                  2517553824,
+                  3621892147,
+                  435391764,
+                  3155644703,
+                  4137828347,
+                  3118938764,
+                  1771923460,
+                  712930231
+                ],
+                [
+                  3916634315,
+                  4065581620,
+                  1323921790,
+                  3274495146,
+                  267239541,
+                  1006004954,
+                  2252371829,
+                  2672449060
+                ]
+              ],
+              "ns": 149443895765,
+              "tail_hex": "4358a14d35e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000c13d06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000",
+        "pool_elapsed_ns": 81584269340,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729909,
+          "version": 1036058624
+        },
+        "submission_index": 3,
+        "verdict": "LowDifficulty",
+        "wire_line": 17
+      },
+      {
+        "digest_hex": "929ada443ee49f9af4f7deba019eb1faabd5ad375c8aff0372267100c9b1d518",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "929ada443ee49f9af4f7deba019eb1faabd5ad375c8aff0372267100c9b1d518",
+              "grant": 435,
+              "job_index": 22137,
+              "line": 151610,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 151950321485,
+              "ticket": 252,
+              "wall_ns": 152050558656
+            },
+            "serial_reply": {
+              "first_byte_line": 151611,
+              "frame_hex": "00000000004c8f",
+              "hash_index": 434,
+              "last_byte_line": 151617,
+              "last_byte_virtual_ns": 151950366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 76,
+              "line": 151602,
+              "link": 6,
+              "midstates": [
+                [
+                  3540715701,
+                  1336275082,
+                  2888130406,
+                  3321216482,
+                  4134308638,
+                  1680621493,
+                  2255277270,
+                  750569666
+                ],
+                [
+                  2342407352,
+                  2641330514,
+                  3633221476,
+                  2451608884,
+                  215316008,
+                  2002616432,
+                  1182039843,
+                  2420543159
+                ],
+                [
+                  3906063610,
+                  1268845377,
+                  3157954,
+                  1130304147,
+                  3472584514,
+                  3801360325,
+                  3360795090,
+                  1743921886
+                ],
+                [
+                  3715495264,
+                  2749967226,
+                  3895062302,
+                  4083044310,
+                  3531696569,
+                  537832212,
+                  3330072028,
+                  1448073535
+                ]
+              ],
+              "ns": 151944748485,
+              "tail_hex": "4358a14d35e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "00804e3f06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000",
+        "pool_elapsed_ns": 84083544833,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729909,
+          "version": 1062109184
+        },
+        "submission_index": 4,
+        "verdict": {
+          "Accepted": {
+            "block_candidate": true,
+            "hash_display": "18d5b1c90071267203ff8a5c37add5abfab19e01badef7f49a9fe43e44da9a92",
+            "header_hex": "00804e3f06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000"
+          }
+        },
+        "wire_line": 19
+      },
+      {
+        "digest_hex": "b6c6a43f9c8b3796a2fa1f85ff6d8c69bcf136167f43799c0c4aab0092c7187d",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "b6c6a43f9c8b3796a2fa1f85ff6d8c69bcf136167f43799c0c4aab0092c7187d",
+              "grant": 438,
+              "job_index": 22296,
+              "line": 152439,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 152450321485,
+              "ticket": 252,
+              "wall_ns": 152551185305
+            },
+            "serial_reply": {
+              "first_byte_line": 152440,
+              "frame_hex": "00000000002098",
+              "hash_index": 437,
+              "last_byte_line": 152446,
+              "last_byte_virtual_ns": 152450366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 32,
+              "line": 152431,
+              "link": 6,
+              "midstates": [
+                [
+                  2956741578,
+                  4222142306,
+                  454138555,
+                  1464749168,
+                  3218527894,
+                  4146246599,
+                  3532676168,
+                  2057383887
+                ],
+                [
+                  980886694,
+                  2503968561,
+                  1614675959,
+                  712977971,
+                  3610498802,
+                  795380195,
+                  1006102915,
+                  1140872971
+                ],
+                [
+                  4255951368,
+                  1906624715,
+                  2543053682,
+                  1053143777,
+                  3085151865,
+                  1235961891,
+                  1756672980,
+                  340423421
+                ],
+                [
+                  3429511064,
+                  4286837390,
+                  3241240830,
+                  4192882516,
+                  61568196,
+                  499133211,
+                  3863858915,
+                  917499244
+                ]
+              ],
+              "ns": 152444919005,
+              "tail_hex": "4358a14d35e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "00809e3f06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000",
+        "pool_elapsed_ns": 84593285649,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729909,
+          "version": 1067352064
+        },
+        "submission_index": 5,
+        "verdict": "LowDifficulty",
+        "wire_line": 21
+      },
+      {
+        "digest_hex": "49afd54d43f5e5c583f60a5229b3908f82a1854609fed7767e7f0c02880eff3b",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "49afd54d43f5e5c583f60a5229b3908f82a1854609fed7767e7f0c02880eff3b",
+              "grant": 501,
+              "job_index": 25635,
+              "line": 168316,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 162950321485,
+              "ticket": 252,
+              "wall_ns": 163050558843
+            },
+            "serial_reply": {
+              "first_byte_line": 168317,
+              "frame_hex": "00000000000495",
+              "hash_index": 500,
+              "last_byte_line": 168323,
+              "last_byte_virtual_ns": 162950366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 4,
+              "line": 168314,
+              "link": 6,
+              "midstates": [
+                [
+                  577426611,
+                  2037488649,
+                  3626602402,
+                  726812796,
+                  442233564,
+                  685172885,
+                  2152559268,
+                  2627837125
+                ],
+                [
+                  3714185845,
+                  1247085230,
+                  3925518886,
+                  165202228,
+                  3136939918,
+                  1102836990,
+                  2590952989,
+                  400897296
+                ],
+                [
+                  3693301935,
+                  2011863676,
+                  698939847,
+                  2484102159,
+                  4149671821,
+                  3275020266,
+                  2246026254,
+                  1811093177
+                ],
+                [
+                  156421244,
+                  1723250615,
+                  636145778,
+                  3363035134,
+                  2740529278,
+                  487973520,
+                  4269916039,
+                  59670432
+                ]
+              ],
+              "ns": 162948500365,
+              "tail_hex": "4358a14d36e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000842506226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000",
+        "pool_elapsed_ns": 95082744867,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729910,
+          "version": 629407744
+        },
+        "submission_index": 6,
+        "verdict": {
+          "Accepted": {
+            "block_candidate": true,
+            "hash_display": "3bff0e88020c7f7e76d7fe094685a1828f90b329520af683c5e5f5434dd5af49",
+            "header_hex": "0000842506226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000"
+          }
+        },
+        "wire_line": 23
+      },
+      {
+        "digest_hex": "77deeb4c70ad00a3b305b2c939614f00d57ab18f4b145cac9f355b012c66221c",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "77deeb4c70ad00a3b305b2c939614f00d57ab18f4b145cac9f355b012c66221c",
+              "grant": 547,
+              "job_index": 28082,
+              "line": 179986,
+              "link": 7,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 170646631155,
+              "ticket": 252,
+              "wall_ns": 170746871393
+            },
+            "serial_reply": {
+              "first_byte_line": 179987,
+              "frame_hex": "0000000000489e",
+              "hash_index": 546,
+              "last_byte_line": 179993,
+              "last_byte_virtual_ns": 170646675955,
+              "link": 7
+            },
+            "work_packet": {
+              "job_id": 72,
+              "line": 179984,
+              "link": 7,
+              "midstates": [
+                [
+                  3008745640,
+                  1446112642,
+                  2438641631,
+                  2744273134,
+                  1780800481,
+                  1236282561,
+                  399333843,
+                  3325495425
+                ],
+                [
+                  2043853641,
+                  2195169684,
+                  2629999924,
+                  3038106490,
+                  1336500458,
+                  428523017,
+                  190721646,
+                  3998415139
+                ],
+                [
+                  459621079,
+                  1923823597,
+                  2852463564,
+                  4171898478,
+                  1345892859,
+                  538613958,
+                  2930738547,
+                  2194382448
+                ],
+                [
+                  722769794,
+                  567716496,
+                  1645993818,
+                  2964977917,
+                  3695773648,
+                  4165717430,
+                  3210523737,
+                  3659904274
+                ]
+              ],
+              "ns": 170643729715,
+              "tail_hex": "4358a14d36e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "00804b2a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000",
+        "pool_elapsed_ns": 102784352003,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729910,
+          "version": 709591040
+        },
+        "submission_index": 7,
+        "verdict": {
+          "Accepted": {
+            "block_candidate": true,
+            "hash_display": "1c22662c015b359fac5c144b8fb17ad5004f6139c9b205b3a300ad704cebde77",
+            "header_hex": "00804b2a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000"
+          }
+        },
+        "wire_line": 25
+      },
+      {
+        "digest_hex": "4072bb5a2c514aaf78392da3adf0c4d0f59516ce5b8090f9029b9100c288622e",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "4072bb5a2c514aaf78392da3adf0c4d0f59516ce5b8090f9029b9100c288622e",
+              "grant": 648,
+              "job_index": 33423,
+              "line": 205690,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 187450321485,
+              "ticket": 252,
+              "wall_ns": 187550559975
+            },
+            "serial_reply": {
+              "first_byte_line": 205691,
+              "frame_hex": "0000000000149b",
+              "hash_index": 647,
+              "last_byte_line": 205697,
+              "last_byte_virtual_ns": 187450366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 20,
+              "line": 205688,
+              "link": 6,
+              "midstates": [
+                [
+                  1915375729,
+                  1823125629,
+                  568272279,
+                  497720069,
+                  4224418266,
+                  694844002,
+                  654296824,
+                  373422842
+                ],
+                [
+                  2214217056,
+                  765015949,
+                  196145789,
+                  2982749510,
+                  2985407265,
+                  2960556853,
+                  2744133198,
+                  2115100504
+                ],
+                [
+                  1992482452,
+                  1228982495,
+                  214538294,
+                  4223743808,
+                  3297471023,
+                  3171537570,
+                  4037291788,
+                  2439035726
+                ],
+                [
+                  2169340164,
+                  183864711,
+                  2431536808,
+                  1020787060,
+                  2522723883,
+                  2995354510,
+                  3796899189,
+                  2197079291
+                ]
+              ],
+              "ns": 187447419645,
+              "tail_hex": "4358a14d36e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000bb3406226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000",
+        "pool_elapsed_ns": 119594874669,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729910,
+          "version": 884670464
+        },
+        "submission_index": 8,
+        "verdict": {
+          "Accepted": {
+            "block_candidate": true,
+            "hash_display": "2e6288c200919b02f990805bce1695f5d0c4f0ada32d3978af4a512c5abb7240",
+            "header_hex": "0000bb3406226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000"
+          }
+        },
+        "wire_line": 27
+      },
+      {
+        "digest_hex": "20e0c595c5989559b070509e2a5b3f6df18b2a398433c636f23458004db46859",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "20e0c595c5989559b070509e2a5b3f6df18b2a398433c636f23458004db46859",
+              "grant": 892,
+              "job_index": 46361,
+              "line": 267503,
+              "link": 7,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 228146631155,
+              "ticket": 252,
+              "wall_ns": 228246869197
+            },
+            "serial_reply": {
+              "first_byte_line": 267504,
+              "frame_hex": "00000000007c9d",
+              "hash_index": 891,
+              "last_byte_line": 267510,
+              "last_byte_virtual_ns": 228146675955,
+              "link": 7
+            },
+            "work_packet": {
+              "job_id": 124,
+              "line": 267501,
+              "link": 7,
+              "midstates": [
+                [
+                  1950635440,
+                  2033934146,
+                  1964544195,
+                  669281884,
+                  491920110,
+                  3676142812,
+                  4231013387,
+                  3780314102
+                ],
+                [
+                  580280279,
+                  3344923438,
+                  243396142,
+                  1317214778,
+                  1012986407,
+                  1874771538,
+                  1135939512,
+                  6852058
+                ],
+                [
+                  2103730669,
+                  915819424,
+                  2625165976,
+                  1942470920,
+                  2927895452,
+                  3433274889,
+                  2718651021,
+                  3840526816
+                ],
+                [
+                  1058964322,
+                  440129659,
+                  1327567528,
+                  1780036661,
+                  1788354375,
+                  3265904238,
+                  4049600269,
+                  2705895754
+                ]
+              ],
+              "ns": 228144467435,
+              "tail_hex": "4358a14d37e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "00805e2d06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d37e3da6affff7f2000000000",
+        "pool_elapsed_ns": 160280080622,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729911,
+          "version": 761167872
+        },
+        "submission_index": 9,
+        "verdict": "LowDifficulty",
+        "wire_line": 29
+      },
+      {
+        "digest_hex": "947716d4d8c09074582b304bf3a58b5ba0298868632c956627307400e136924c",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "947716d4d8c09074582b304bf3a58b5ba0298868632c956627307400e136924c",
+              "grant": 897,
+              "job_index": 46614,
+              "line": 268680,
+              "link": 6,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 228950321485,
+              "ticket": 252,
+              "wall_ns": 229050569874
+            },
+            "serial_reply": {
+              "first_byte_line": 268681,
+              "frame_hex": "0000000000489e",
+              "hash_index": 896,
+              "last_byte_line": 268687,
+              "last_byte_virtual_ns": 228950366285,
+              "link": 6
+            },
+            "work_packet": {
+              "job_id": 72,
+              "line": 268672,
+              "link": 6,
+              "midstates": [
+                [
+                  3383665249,
+                  3760235644,
+                  128488124,
+                  3209272536,
+                  3146567872,
+                  3451891685,
+                  4103888931,
+                  2347719793
+                ],
+                [
+                  3912021423,
+                  3725946382,
+                  2471936247,
+                  2649231642,
+                  2439076872,
+                  50654059,
+                  2523966004,
+                  4269806827
+                ],
+                [
+                  3937711421,
+                  3014494492,
+                  409159173,
+                  3294778501,
+                  1979927511,
+                  1566352795,
+                  2452668272,
+                  3440009259
+                ],
+                [
+                  3231684876,
+                  2861994461,
+                  3641165390,
+                  2871824381,
+                  838850305,
+                  2113911488,
+                  944841911,
+                  1797747924
+                ]
+              ],
+              "ns": 228942700085,
+              "tail_hex": "4358a14d37e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000dd2d06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d37e3da6affff7f2000000000",
+        "pool_elapsed_ns": 161086295572,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729911,
+          "version": 769458176
+        },
+        "submission_index": 10,
+        "verdict": "LowDifficulty",
+        "wire_line": 31
+      },
+      {
+        "digest_hex": "d2fcdaab788c473c5ea6af370d7bf3ebf3b7185e0ded075172876b0193f6296f",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "d2fcdaab788c473c5ea6af370d7bf3ebf3b7185e0ded075172876b0193f6296f",
+              "grant": 997,
+              "job_index": 51923,
+              "line": 294136,
+              "link": 7,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 245646631155,
+              "ticket": 252,
+              "wall_ns": 245746869347
+            },
+            "serial_reply": {
+              "first_byte_line": 294137,
+              "frame_hex": "0000000000749a",
+              "hash_index": 996,
+              "last_byte_line": 294143,
+              "last_byte_virtual_ns": 245646675955,
+              "link": 7
+            },
+            "work_packet": {
+              "job_id": 116,
+              "line": 294131,
+              "link": 7,
+              "midstates": [
+                [
+                  766719494,
+                  3339095657,
+                  2672220707,
+                  634781837,
+                  751595071,
+                  2918657876,
+                  2500842770,
+                  1501350458
+                ],
+                [
+                  3178186219,
+                  3027737783,
+                  2187544839,
+                  3534457380,
+                  3470804456,
+                  1812022272,
+                  3270084097,
+                  948480307
+                ],
+                [
+                  1336946405,
+                  2671614952,
+                  2953978322,
+                  2000257904,
+                  2377982999,
+                  420986616,
+                  182945725,
+                  2872525457
+                ],
+                [
+                  595424666,
+                  2745939543,
+                  3596035599,
+                  2272903981,
+                  4048446023,
+                  596626459,
+                  312594293,
+                  3868218372
+                ]
+              ],
+              "ns": 245640999155,
+              "tail_hex": "4358a14d37e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "00803b3806226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d37e3da6affff7f2000000000",
+        "pool_elapsed_ns": 177787880401,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729911,
+          "version": 943423488
+        },
+        "submission_index": 11,
+        "verdict": "LowDifficulty",
+        "wire_line": 33
+      },
+      {
+        "digest_hex": "857cfedc3c143ee60819cb52f29053cde5e9c970dc4b5bd6ed00b000cb535755",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "857cfedc3c143ee60819cb52f29053cde5e9c970dc4b5bd6ed00b000cb535755",
+              "grant": 1025,
+              "job_index": 53411,
+              "line": 301305,
+              "link": 8,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 250322176105,
+              "ticket": 252,
+              "wall_ns": 250422995892
+            },
+            "serial_reply": {
+              "first_byte_line": 301306,
+              "frame_hex": "00000000002489",
+              "hash_index": 1024,
+              "last_byte_line": 301312,
+              "last_byte_virtual_ns": 250322220905,
+              "link": 8
+            },
+            "work_packet": {
+              "job_id": 36,
+              "line": 301303,
+              "link": 8,
+              "midstates": [
+                [
+                  165747438,
+                  4117300020,
+                  3426978932,
+                  2715278066,
+                  2250955924,
+                  3866458560,
+                  4077169643,
+                  2924531010
+                ],
+                [
+                  2859952624,
+                  2514648278,
+                  390473119,
+                  1916237942,
+                  819486155,
+                  2590660778,
+                  3693362799,
+                  2665743533
+                ],
+                [
+                  3238320442,
+                  524934378,
+                  586808154,
+                  197842708,
+                  3871189972,
+                  1025051843,
+                  4260895718,
+                  1201985610
+                ],
+                [
+                  2129700034,
+                  2255559839,
+                  1081929942,
+                  973440208,
+                  538715823,
+                  3804193228,
+                  3265400788,
+                  4162062884
+                ]
+              ],
+              "ns": 250321887945,
+              "tail_hex": "4358a14d37e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000233b06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d37e3da6affff7f2000000000",
+        "pool_elapsed_ns": 182458310171,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729911,
+          "version": 992149504
+        },
+        "submission_index": 12,
+        "verdict": "LowDifficulty",
+        "wire_line": 35
+      },
+      {
+        "digest_hex": "c6f30bbfa3832444ef2c3e3a2fab42b908acf3fda77e28ecd4a57e0272f95679",
+        "hardware_matches": [
+          {
+            "computation": {
+              "asic_filter_match": true,
+              "chip_position": 0,
+              "core_address": 0,
+              "digest_hex": "c6f30bbfa3832444ef2c3e3a2fab42b908acf3fda77e28ecd4a57e0272f95679",
+              "grant": 1292,
+              "job_index": 67556,
+              "line": 368954,
+              "link": 8,
+              "midstate_index": 0,
+              "nonce": 0,
+              "ns": 294822176105,
+              "ticket": 252,
+              "wall_ns": 294922415755
+            },
+            "serial_reply": {
+              "first_byte_line": 368955,
+              "frame_hex": "00000000005097",
+              "hash_index": 1291,
+              "last_byte_line": 368961,
+              "last_byte_virtual_ns": 294822220905,
+              "link": 8
+            },
+            "work_packet": {
+              "job_id": 80,
+              "line": 368952,
+              "link": 8,
+              "midstates": [
+                [
+                  4187832908,
+                  1395469744,
+                  3597574828,
+                  2984684653,
+                  3183644262,
+                  401472918,
+                  76289243,
+                  396709822
+                ],
+                [
+                  552427452,
+                  3834836027,
+                  1467652515,
+                  2435041789,
+                  1115801592,
+                  2074779575,
+                  618341385,
+                  1271468814
+                ],
+                [
+                  3259949138,
+                  117714741,
+                  934696613,
+                  1027411707,
+                  3405329130,
+                  3524260143,
+                  2812597080,
+                  4151874931
+                ],
+                [
+                  3137041717,
+                  2523101951,
+                  225646315,
+                  1208427987,
+                  1154187936,
+                  184586284,
+                  2056623846,
+                  524101312
+                ]
+              ],
+              "ns": 294818191665,
+              "tail_hex": "4358a14d38e3da6affff7f20"
+            }
+          }
+        ],
+        "header_hex": "0000233606226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d38e3da6affff7f2000000000",
+        "pool_elapsed_ns": 226954379091,
+        "share": {
+          "extra_nonce2": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "job_id": "444f1ec09d3a99c1-1",
+          "nonce": 0,
+          "time": 1792729912,
+          "version": 908263424
+        },
+        "submission_index": 13,
+        "verdict": "LowDifficulty",
+        "wire_line": 37
+      }
+    ],
+    "total_computed_hashes": 1322,
+    "verified_serial_results": 14,
+    "verifier_source": {
+      "sha256": "90737d07d45b5fba85ef1bcdb0c44427a54d4429824ee87de3e594e616ee046c",
+      "size": 36184
+    },
+    "whole_run_rate_bound": {
+      "cap_hps": 10.0,
+      "computed_hashes": 1322,
+      "elapsed_upper_bound_milliseconds": 307190,
+      "scope": "Aggregate whole-run upper bound only. Includes boot and idle time; does not prove per-hash spacing or a physical hashrate.",
+      "wall_milliseconds": 307189
+    }
+  }
+}

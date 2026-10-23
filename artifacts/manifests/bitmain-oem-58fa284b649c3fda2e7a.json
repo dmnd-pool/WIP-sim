@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-58fa284b649c3fda2e7a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-20160511-675M-2fan-4320.tar.gz",
+  "kind": "firmware",
+  "title": "S7-20160511-675M-2fan-4320.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:43:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-58fa284b649c3fda2e7a/S7-20160511-675M-2fan-4320.tar.gz",
+  "sha256": "b3391979b34bcaa595c28780c288f5f2008694f90999f6b55904fc08de99a49f",
+  "size_bytes": 19158375,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-20160511-675M-2fan-4320.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"90dada533767649841bd1ab975db9b49-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19158375,
+      "actual": 19158375,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "f4d644aa243dc6f70e9d0fc445f3e99c",
+      "actual": "f4d644aa243dc6f70e9d0fc445f3e99c",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3756610dad973f0e3900",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3cbe5da6-b476-4f1f-bb41-c149496b6b25/2022/01/19/17/APW12%20Manual.pdf",
+  "kind": "document",
+  "title": "APW12 Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:35+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3756610dad973f0e3900/APW12_Manual.pdf",
+  "sha256": "5c2f38f925178df1c2b3e3b46e1ba0376d0093f996e81f5ab92c16781c4bee8c",
+  "size_bytes": 620162,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3cbe5da6-b476-4f1f-bb41-c149496b6b25/2022/01/19/17/APW12%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 09:50:41 GMT",
+  "etag": "\"8fce5bb72360e699b9642066308374de\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 620162,
+      "actual": 620162,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

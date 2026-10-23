@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e694529b983d2bbdd2f9",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ba880684-c5a1-41cc-9ec6-21efe4e07e43/2026/06/26/17/LVD_U3S21EXPH_CN24JEOI%20003_AN%2050694450%200001_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_U3S21EXPH_CN24JEOI 003_AN 50694450 0001_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:02+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e694529b983d2bbdd2f9/LVD_U3S21EXPH_CN24JEOI_003_AN_50694450_0001_extsigned.pdf",
+  "sha256": "1403e3bb0f841059241ce0b762bc5f878370449fa21c1f4876f9d5262dbd8177",
+  "size_bytes": 1473093,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ba880684-c5a1-41cc-9ec6-21efe4e07e43/2026/06/26/17/LVD_U3S21EXPH_CN24JEOI%20003_AN%2050694450%200001_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 26 Jun 2026 09:59:21 GMT",
+  "etag": "\"e981e3f4cf099052dd6ab0ad7333e588\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1473093,
+      "actual": 1473093,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

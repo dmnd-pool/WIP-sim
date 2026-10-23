@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-446830e04635a2d9b165",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/checksum64.rar",
+  "kind": "firmware",
+  "title": "checksum64.rar",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:14+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-446830e04635a2d9b165/checksum64.rar",
+  "sha256": "59af098e78408d6343a903597a9cd0db402ac8542663c47b1602efdc55c946da",
+  "size_bytes": 1465406,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/checksum64.rar",
+  "http_status": 200,
+  "content_type": "binary/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:31 GMT",
+  "etag": "\"c83e470ebfdce00c1b9b5dce2786073b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1465406,
+      "actual": 1465406,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

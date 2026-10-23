@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-587b5e7763048aa1a261",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/23943fe2-23c1-4a8b-825d-9acbf31e2a20/2023/12/17/19/DDT-CE23092521-1E01%20S21%20Hyd.%20EN%2055032%2635%20EMC-Certificate%20-F.pdf",
+  "kind": "document",
+  "title": "DDT-CE23092521-1E01 S21 Hyd. EN 55032&35 EMC-Certificate -F.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:31+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-587b5e7763048aa1a261/DDT-CE23092521-1E01_S21_Hyd._EN_55032_35_EMC-Certificate_-F.pdf",
+  "sha256": "a20735eabc4ef672a48e8c854e8d8ce453b36a30fd0f651b39fb87ef05c29095",
+  "size_bytes": 439652,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/23943fe2-23c1-4a8b-825d-9acbf31e2a20/2023/12/17/19/DDT-CE23092521-1E01%20S21%20Hyd.%20EN%2055032%2635%20EMC-Certificate%20-F.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 17 Dec 2023 11:45:37 GMT",
+  "etag": "\"46f1a2665526bdaf2173280192a08afa\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 439652,
+      "actual": 439652,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

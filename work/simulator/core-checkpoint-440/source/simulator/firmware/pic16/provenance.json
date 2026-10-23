@@ -1,0 +1,17 @@
+{
+  "kind": "Unchanged extracted application used as a regression input; not a complete PIC flash or bootloader baseline",
+  "member": "lib/antminer/hash_s8_app.txt",
+  "sha256": "ec84da07ef98665c6258cc531dc2d74aa8be7018925c041325ca233aec52b46a",
+  "size": 19200,
+  "source_artifact": "braiins-feed-25bba3b4a505ccbc0e54",
+  "archive_sha256": "469743ebcd5faf3445e4f4209ad8af58cc7adeff37c7df28af3c53a5b255b56e",
+  "fit_sha256": "8b2a32020281aa67490c01633adf99c1a2ca6c9897e4c210bb6d0d001c15caca",
+  "ramdisk_sha256": "2bd49c70b915b7e25f6c01013d95a5ffea8d499b73c6c6ec5539fda4247154b3",
+  "isolated_extraction": "work/simulator/native-s9/pic-extract-002/member.json",
+  "matching_source_archive": "dc5f58721f596d2fc36b50d5049461264986ac339c4b4ff4d383749b98f3a363",
+  "source_member": "braiins-os/package/mining/bosminer/files/hash_s8_app.txt",
+  "load_word_address": 768,
+  "words": 3200,
+  "big_endian_word_bytes_sha256": "d138aefed416e18a7c5f2a374ef99148c745f7d576b3821e615225fffad1d35b",
+  "instruction_execution": false
+}

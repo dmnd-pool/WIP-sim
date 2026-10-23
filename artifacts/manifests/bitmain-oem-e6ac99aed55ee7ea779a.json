@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e6ac99aed55ee7ea779a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5e457a50-7996-4c07-a43b-27dad73a6651/2026/02/06/20/LVD_CN25SKB4%C2%A0001_AN%C2%A050715051%C2%A00001_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_CN25SKB4\u00a0001_AN\u00a050715051\u00a00001_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:47+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e6ac99aed55ee7ea779a/LVD_CN25SKB4_001_AN_50715051_0001_extsigned.pdf",
+  "sha256": "42dee7e19a87aa0d3f206967066cee695d451f9c1a3df44424c044142ad69583",
+  "size_bytes": 1595237,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5e457a50-7996-4c07-a43b-27dad73a6651/2026/02/06/20/LVD_CN25SKB4%C2%A0001_AN%C2%A050715051%C2%A00001_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 06 Feb 2026 12:07:15 GMT",
+  "etag": "\"a190a7fc5c23e60488fa2eb7e81acb05\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1595237,
+      "actual": 1595237,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

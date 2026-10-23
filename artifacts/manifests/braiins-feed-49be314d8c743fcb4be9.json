@@ -1,0 +1,59 @@
+{
+  "id": "braiins-feed-49be314d8c743fcb4be9",
+  "url": "https://feeds.braiins-os.com/21.09.1/am1-s9/firmware_2018-09-22-0-853643de_arm_cortex-a9_neon.ipk",
+  "kind": "metadata",
+  "title": "firmware_2018-09-22-0-853643de_arm_cortex-a9_neon.ipk",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:23:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/braiins-feed-941159c3d6b9b8b949f6/firmware_2018-09-22-0-853643de_arm_cortex-a9_neon.ipk",
+  "sha256": "19205bb52f56e7e4dcbeb938988289d4402117c7279620fea1ee80b6e3b3ee24",
+  "size_bytes": 1461,
+  "executed": false,
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 08 Sep 2020 16:57:58 GMT",
+  "etag": "\"5f57b816-5b5\"",
+  "alias_of": "braiins-feed-941159c3d6b9b8b949f6",
+  "alias_basis": "Identical SHA256 published by Braiins Packages, checksum file or release page",
+  "published_checksum_sources": [
+    "braiins-feed-c9de403938dd2c9ebe06",
+    "braiins-feed-eeeba4d9a963002451ab"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "19205bb52f56e7e4dcbeb938988289d4402117c7279620fea1ee80b6e3b3ee24",
+      "actual": "19205bb52f56e7e4dcbeb938988289d4402117c7279620fea1ee80b6e3b3ee24",
+      "match": true,
+      "source_id": "braiins-feed-eeeba4d9a963002451ab"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 137,
+      "actual": 1461,
+      "match": false,
+      "source_id": "braiins-feed-eeeba4d9a963002451ab"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 137,
+      "actual": 1461,
+      "match": false,
+      "source_id": "braiins-feed-c9de403938dd2c9ebe06"
+    },
+    {
+      "field": "sha256",
+      "expected": "19205bb52f56e7e4dcbeb938988289d4402117c7279620fea1ee80b6e3b3ee24",
+      "actual": "19205bb52f56e7e4dcbeb938988289d4402117c7279620fea1ee80b6e3b3ee24",
+      "match": true,
+      "source_id": "braiins-feed-c9de403938dd2c9ebe06"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "integrity_classification": "publisher-size-inconsistent-sha256-matches",
+  "integrity_explanation": "The exact publisher SHA256 matches the saved payload. The Size field in Packages metadata differs; this is not evidence of transfer truncation."
+}

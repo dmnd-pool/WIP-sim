@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3a4260833603fd355262",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9ea71d05-da9b-43f3-83b0-afba7c982560/2024/09/20/16/D9%20%20Product%20Manual-v1.0.0.pdf",
+  "kind": "document",
+  "title": "D9  Product Manual-v1.0.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:57+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3a4260833603fd355262/D9__Product_Manual-v1.0.0.pdf",
+  "sha256": "a87c85be4c20fe9c6d23e9072e2704a6b247fe0acb426b71753ed7bca62d1b09",
+  "size_bytes": 895536,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9ea71d05-da9b-43f3-83b0-afba7c982560/2024/09/20/16/D9%20%20Product%20Manual-v1.0.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 08:16:17 GMT",
+  "etag": "\"97fc855f3f19153ce3344fab1ded7105\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 895536,
+      "actual": 895536,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "2.0",
+  "kind": "independent-regtest-oracle",
+  "source_artifact": "source-bitcoin-core",
+  "source_commit": "619334569b44b4278d0155bb8daf4c8535a47367",
+  "source_archive_sha256": "776f4a708eb1a461872a6f1dba28218f0ed09af04239c29115412eecd3de1bc8",
+  "source_changed": false,
+  "binary": {
+    "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+    "size": 33824920
+  },
+  "derived_path": "work/simulator/bitcoin-core/source-build-002/bitcoind",
+  "build_result": "exit-zero; upstream bitcoind target completed; exported bytes match hash computed inside preparation",
+  "build_log_sha256": "6ecfca11c759f04c53cbebba3d6e92ddedffce2e0cbc5454828be19e86d3a1b7",
+  "preparation_recipe": "work/simulator/bitcoin-core/source-build-002/recipe.txt",
+  "preparation_recipe_sha256": "a27e5de238b71d064209a80b61f1b94f7cbec276f253deeb1254381c64256888",
+  "preparation_tools": "work/simulator/bitcoin-core/source-build-002/tool-checksums.txt",
+  "preparation_tools_sha256": "3c8eb8630003406eb5daa783f6b9fe37b6157437ab0763c863f79ee0f4c44cce",
+  "preparation_inputs_scope": "Recipe, tool hashes and full build log are separately hashed inputs outside the repository-source manifest. Installed read-only headers and libraries are not all frozen; this is not a reproducible toolchain release claim.",
+  "probe": "crates/md-sim-firmware/examples/node_prerequisite_probe.rs",
+  "execution": "private user/mount/PID/network/IPC/UTS namespaces; locked file inputs; no RPC or external network; fresh run-owned temporary chainstate",
+  "acceptance_requirement": "Matching actual firmware source submission, independent full-header reconstruction, Core UpdateTip from regtest genesis height zero to exact candidate hash at height one, and clean stop after import"
+}

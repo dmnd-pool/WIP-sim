@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-33d02cbd7d0bdabd4d07",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/888e878a-70c0-4147-8901-ad657851d680/2024/05/22/16/cTUVus_D9_CN2349M4%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_D9_CN2349M4 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-33d02cbd7d0bdabd4d07/cTUVus_D9_CN2349M4_001_2023.10.11_extsigned.pdf",
+  "sha256": "0679946e50f69ef02cd58056d7fc69685029d773f7d993044db6db54f803c2a9",
+  "size_bytes": 2388676,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/888e878a-70c0-4147-8901-ad657851d680/2024/05/22/16/cTUVus_D9_CN2349M4%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:54:41 GMT",
+  "etag": "\"0541a93f32a6b2fc052d62b9c6403b79\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2388676,
+      "actual": 2388676,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f691c7c3dbbcd1bf1ab7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/841ff655-b6b4-4442-8319-6519d92d6374/2024/05/22/17/D9%20CE-EMC%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 CE-EMC Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:19+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f691c7c3dbbcd1bf1ab7/D9_CE-EMC_Shenzhen.pdf",
+  "sha256": "eb6ddb3995c4d377fcf6713c082219540ca07f0c85ce7b753ab11cbe5c1f0ab8",
+  "size_bytes": 823826,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/841ff655-b6b4-4442-8319-6519d92d6374/2024/05/22/17/D9%20CE-EMC%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:40:56 GMT",
+  "etag": "\"ca4f03aaf1018ba7dd3ca51308786900\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 823826,
+      "actual": 823826,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

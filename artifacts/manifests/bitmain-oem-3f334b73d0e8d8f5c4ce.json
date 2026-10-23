@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3f334b73d0e8d8f5c4ce",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c6f326e9-c0ee-4a2d-b670-4bc219a58a14/2024/12/25/18/LVD%20CN24ZOH9%20001-24.06.12_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD CN24ZOH9 001-24.06.12_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:55+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3f334b73d0e8d8f5c4ce/LVD_CN24ZOH9_001-24.06.12_extsigned.pdf",
+  "sha256": "38e800ccec3e93b8ea60f79b6d98eb4b9efeb620e68a7027cf125c94a6839aa8",
+  "size_bytes": 1474816,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c6f326e9-c0ee-4a2d-b670-4bc219a58a14/2024/12/25/18/LVD%20CN24ZOH9%20001-24.06.12_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 25 Dec 2024 10:43:47 GMT",
+  "etag": "\"0e13388465f3c76a90670341e9a8868e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1474816,
+      "actual": 1474816,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

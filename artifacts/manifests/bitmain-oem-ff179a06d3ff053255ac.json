@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ff179a06d3ff053255ac",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/090323b1-fe3c-40c2-804d-aa30f2a86e65/2023/12/17/19/cTUVus_S21%20Hyd_CN23J34C%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_S21 Hyd_CN23J34C 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:30+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ff179a06d3ff053255ac/cTUVus_S21_Hyd_CN23J34C_001_2023.10.11_extsigned.pdf",
+  "sha256": "1eea2cf1940690e2d52380e2db592aba388b42e7272b55b9f10e51926b1da355",
+  "size_bytes": 2382683,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/090323b1-fe3c-40c2-804d-aa30f2a86e65/2023/12/17/19/cTUVus_S21%20Hyd_CN23J34C%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 17 Dec 2023 11:45:09 GMT",
+  "etag": "\"585fa0a3f78e750b5ee27a039bdd496a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2382683,
+      "actual": 2382683,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

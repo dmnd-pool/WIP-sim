@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8065aa66deba74eda3fe",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antivirus%20Tools/Tools/00720190709144859719v27EI02v0658/APMinerTool_V1.0.10.zip",
+  "kind": "tool",
+  "title": "APMinerTool_V1.0.10.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-8065aa66deba74eda3fe/APMinerTool_V1.0.10.zip",
+  "sha256": "ba239c79e64dc894a455de23388711638a8a0aa040478e3f7fc19ab0a8e2d860",
+  "size_bytes": 10871112,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antivirus%20Tools/Tools/00720190709144859719v27EI02v0658/APMinerTool_V1.0.10.zip",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"ec87b86d5482f1a9b1627e173e90eb9f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 10871112,
+      "actual": 10871112,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

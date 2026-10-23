@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-4aa7865297fb09d4ea97",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0be2db74-148d-40d0-86fe-10b045302757/2026/04/16/18/FR-1.23(260411-E11).bmu",
+  "kind": "firmware",
+  "title": "FR-1.23(260411-E11).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:35+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-4aa7865297fb09d4ea97/FR-1.23_260411-E11_.bmu",
+  "sha256": "77c5d2a1130f8e59a0f1bac0cc06ff6da15b04e235282600d38a318fbcdf2622",
+  "size_bytes": 19515595,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0be2db74-148d-40d0-86fe-10b045302757/2026/04/16/18/FR-1.23(260411-E11).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Thu, 16 Apr 2026 10:14:19 GMT",
+  "etag": "\"f092dea7522cc010051b043f6ac06c31\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19515595,
+      "actual": 19515595,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "f092dea7522cc010051b043f6ac06c31",
+      "actual": "f092dea7522cc010051b043f6ac06c31",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

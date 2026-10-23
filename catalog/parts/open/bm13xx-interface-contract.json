@@ -1,0 +1,209 @@
+{
+  "id": "open-bm13xx-community-interface-contract",
+  "scope": "bitcoin-asic",
+  "source_ids": [
+    "open-256foundation-mujina"
+  ],
+  "source_commit": "980128574d8bb8b9619b0081b26e18eb4d0c5e31",
+  "reference_path": "work/open/inspect/open-256foundation-mujina/mujina-miner/src/asic/bm13xx/REFERENCE.md",
+  "evidence_status": "community-reported",
+  "contract_status": "research-input; not validated by this archive task",
+  "manufacturer_datasheet": false,
+  "applies_to_documented_models": [
+    "BM1362",
+    "BM1366",
+    "BM1368",
+    "BM1370"
+  ],
+  "exclusions": [
+    "Do not extend this contract to BM1373 or an unlisted stepping without separate evidence.",
+    "BM1397 uses a different host-midstate job format."
+  ],
+  "transport": {
+    "host_frame_preamble_hex": "55aa",
+    "response_frame_preamble_hex": "aa55",
+    "response_length_field": false,
+    "reported_reset_baud": 115740,
+    "baud_note": "A reported ASIC value; host UART tolerance and board clocks need separate validation."
+  },
+  "crc": {
+    "commands_and_responses": {
+      "width_bits": 5,
+      "polynomial_hex": "05",
+      "initial_hex": "1f",
+      "xorout": 0,
+      "reflected": false,
+      "response_type_bits_included": true
+    },
+    "jobs": {
+      "width_bits": 16,
+      "polynomial_hex": "1021",
+      "initial_hex": "ffff",
+      "xorout": 0,
+      "reflected": false,
+      "wire_byte_order": "big-endian"
+    },
+    "preamble_included": false
+  },
+  "command_types": {
+    "0x40": "set-chip-address",
+    "0x41": "write-register-addressed",
+    "0x42": "read-register-addressed",
+    "0x51": "write-register-broadcast",
+    "0x52": "read-register-broadcast",
+    "0x53": "chain-inactive",
+    "0x21": "mining-job"
+  },
+  "full_job": {
+    "total_frame_bytes": 88,
+    "payload_bytes": 82,
+    "length_field_hex": "36",
+    "length_field_is_frame_byte_count": false,
+    "fields": [
+      {
+        "name": "job_header",
+        "bytes": 1,
+        "encoding": "model-specific job ID bits"
+      },
+      {
+        "name": "num_midstates",
+        "bytes": 1,
+        "encoding": "observed value 1"
+      },
+      {
+        "name": "starting_nonce",
+        "bytes": 4,
+        "encoding": "little-endian"
+      },
+      {
+        "name": "nbits",
+        "bytes": 4,
+        "encoding": "little-endian"
+      },
+      {
+        "name": "ntime",
+        "bytes": 4,
+        "encoding": "little-endian"
+      },
+      {
+        "name": "merkle_root",
+        "bytes": 32,
+        "encoding": "reverse order of eight 4-byte words; preserve bytes within each word"
+      },
+      {
+        "name": "prev_block_hash",
+        "bytes": 32,
+        "encoding": "reverse order of eight 4-byte words; preserve bytes within each word"
+      },
+      {
+        "name": "version",
+        "bytes": 4,
+        "encoding": "little-endian"
+      }
+    ]
+  },
+  "register_index": [
+    {
+      "address": "0x00",
+      "name": "CHIP_ID",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x08",
+      "name": "PLL_DIVIDER",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x0C",
+      "name": "CHIP_NONCE_OFFSET",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x10",
+      "name": "HASH_COUNTING_NUMBER",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x14",
+      "name": "TICKET_MASK",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x18",
+      "name": "MISC_CONTROL",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x28",
+      "name": "UART_BAUD",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x2C",
+      "name": "UART_RELAY",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x3C",
+      "name": "CORE_MAILBOX",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x54",
+      "name": "ANALOG_MUX",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x58",
+      "name": "IO_DRIVER_STRENGTH",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0x68",
+      "name": "RING_OSC_PAD_DISABLE",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0xA4",
+      "name": "MIDSTATE_CONFIG",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    },
+    {
+      "address": "0xA8",
+      "name": "SOFT_RESET_CONTROL",
+      "support_note": "Read the model-specific field definitions in the reference. A shared address does not prove identical behaviour."
+    }
+  ],
+  "model_geometry": [
+    {
+      "model": "BM1362",
+      "cores": 65,
+      "subcores_per_core": 8,
+      "chip_nonce_allocation": "chip-address-derived"
+    },
+    {
+      "model": "BM1366",
+      "cores": 112,
+      "subcores_per_core": 8,
+      "chip_nonce_allocation": "chip-address-derived"
+    },
+    {
+      "model": "BM1368",
+      "cores": null,
+      "subcores_per_core": 16,
+      "chip_nonce_allocation": null
+    },
+    {
+      "model": "BM1370",
+      "cores": 128,
+      "subcores_per_core": 16,
+      "chip_nonce_allocation": "CHIP_NONCE_OFFSET register"
+    }
+  ],
+  "required_validation": [
+    "Compare encoded frames with each pinned driver.",
+    "Record known good hardware command and response traces.",
+    "Test each chip stepping and chain topology.",
+    "Keep unknown register bits and timing behaviour explicit."
+  ]
+}

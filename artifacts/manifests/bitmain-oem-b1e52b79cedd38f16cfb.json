@@ -1,0 +1,42 @@
+{
+  "id": "bitmain-oem-b1e52b79cedd38f16cfb",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/multibit-0.5.19.4-windows.zip",
+  "kind": "firmware",
+  "title": "multibit-0.5.19.4-windows.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:31+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-b1e52b79cedd38f16cfb/multibit-0.5.19.4-windows.zip",
+  "sha256": "a42face37892b4aae0b7170af58309a3447dd8cb4d4eeb54528f7cb6dc827ba2",
+  "size_bytes": 121408897,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/multibit-0.5.19.4-windows.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:34 GMT",
+  "etag": "\"fbc8145a752ceba448d6109039a7af4d-8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19,
+      "actual": 121408897,
+      "match": false,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "upstream_head_audit": {
+    "artifact_id": "bitmain-oem-b1e52b79cedd38f16cfb",
+    "title": "multibit-0.5.19.4-windows.zip",
+    "downloaded_size_bytes": 121408897,
+    "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/multibit-0.5.19.4-windows.zip",
+    "http_status": 200,
+    "content_length": "121408897",
+    "etag": "\"fbc8145a752ceba448d6109039a7af4d-8\"",
+    "last_modified": "Thu, 07 Jan 2021 05:08:34 GMT",
+    "http_size_match": true
+  }
+}

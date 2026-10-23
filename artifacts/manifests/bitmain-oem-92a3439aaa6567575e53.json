@@ -1,0 +1,42 @@
+{
+  "id": "bitmain-oem-92a3439aaa6567575e53",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-T9-all-201704270140-autofreq-user-Update2UBI-NF.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-T9-all-201704270140-autofreq-user-Update2UBI-NF.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-92a3439aaa6567575e53/ANTMINER-T9-all-201704270140-autofreq-user-Update2UBI-NF.tar.gz",
+  "sha256": "584bf6c6bb2989902663cfb234061fb32027dff97261ccf8320bbdb0b2f8f456",
+  "size_bytes": 63677783,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-T9-all-201704270140-autofreq-user-Update2UBI-NF.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"c9018a8096b0ab187ffb4f8b15d3f69e-4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 63681558,
+      "actual": 63677783,
+      "match": false,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "upstream_head_audit": {
+    "artifact_id": "bitmain-oem-92a3439aaa6567575e53",
+    "title": "ANTMINER-T9-all-201704270140-autofreq-user-Update2UBI-NF.tar.gz",
+    "downloaded_size_bytes": 63677783,
+    "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-T9-all-201704270140-autofreq-user-Update2UBI-NF.tar.gz",
+    "http_status": 200,
+    "content_length": "63677783",
+    "etag": "\"c9018a8096b0ab187ffb4f8b15d3f69e-4\"",
+    "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+    "http_size_match": true
+  }
+}

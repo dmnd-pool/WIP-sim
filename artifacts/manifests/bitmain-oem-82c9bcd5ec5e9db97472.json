@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-82c9bcd5ec5e9db97472",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b3cd8eb3-65f9-4c15-a8e9-039caf241898/2023/11/27/17/S19k%20Pro%20RoHS%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "S19k Pro RoHS Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-82c9bcd5ec5e9db97472/S19k_Pro_RoHS_Shenzhen.pdf",
+  "sha256": "569a3d320716bc1e6e8b707920809c5a1b7ef83bd124dc161ea637881aade576",
+  "size_bytes": 291460,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b3cd8eb3-65f9-4c15-a8e9-039caf241898/2023/11/27/17/S19k%20Pro%20RoHS%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 27 Nov 2023 09:26:14 GMT",
+  "etag": "\"18ce20f214545fafa1cc899cacaecfff\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 291460,
+      "actual": 291460,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

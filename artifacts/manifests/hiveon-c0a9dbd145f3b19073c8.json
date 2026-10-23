@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-c0a9dbd145f3b19073c8",
+  "url": "https://download.hiveos.farm/asic/custom/devfeecloudy/Antminer-T9-all-Hiveon-1.03@210214-sign-devfeecloudy-10.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T9-all-Hiveon-1.03@210214-sign-devfeecloudy-10.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:10:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-c0a9dbd145f3b19073c8/Antminer-T9-all-Hiveon-1.03_210214-sign-devfeecloudy-10.tar.gz",
+  "sha256": "0d7025ecc34b1009870edf227006ed1ee998a84002a7cf251491ffe1f73f6111",
+  "size_bytes": 23643777,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/devfeecloudy/Antminer-T9-all-Hiveon-1.03@210214-sign-devfeecloudy-10.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sun, 14 Feb 2021 12:26:33 GMT",
+  "etag": "\"602916f9-168c681\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23643777,
+      "actual": 23643777,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

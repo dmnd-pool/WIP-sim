@@ -1,0 +1,15 @@
+{
+  "schema": "md-sim-test-scenario-derivation/1",
+  "parent": {
+    "path": "simulator/scenarios/s9-sensor-manual-recovery.sh",
+    "sha256": "af9603720d5a2698b95c87d8492e5e3ff61f4c1502312a58266c0df208e8ce6b",
+    "size": 4327
+  },
+  "output": {
+    "path": "simulator/scenarios/s9-fan-manual-recovery.sh",
+    "sha256": "8fa22bc67ff70ecd3f0daa6239b28fca19cac6a37e281247ee036015d0e0e6ae",
+    "size": 4315
+  },
+  "transformation": "Change only the framed recovery marker namespace from SENSOR to FAN. Keep original guest service restart and checks.",
+  "scope": "Manual recovery after external motor fault restoration. Native automatic restart attempts remain visible. This script does not claim automatic recovery or physical protection."
+}

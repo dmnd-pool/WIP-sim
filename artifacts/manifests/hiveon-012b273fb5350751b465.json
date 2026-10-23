@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-012b273fb5350751b465",
+  "url": "https://download.hiveos.farm/asic/custom/onemining/210224/Antminer-S17E-Hiveon-2.03@210224-AntminerS17E121-sig-sign-onemining.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17E-Hiveon-2.03@210224-AntminerS17E121-sig-sign-onemining.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:14:02+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-012b273fb5350751b465/Antminer-S17E-Hiveon-2.03_210224-AntminerS17E121-sig-sign-onemining.tar.gz",
+  "sha256": "ac1bab7d34ae38c973ce03d0b393ce3219f28ccc85a7ad80c71b6b29c287f7e5",
+  "size_bytes": 27818295,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/onemining/210224/Antminer-S17E-Hiveon-2.03@210224-AntminerS17E121-sig-sign-onemining.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 23 Feb 2021 22:30:16 GMT",
+  "etag": "\"603581f8-1a87937\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 27818295,
+      "actual": 27818295,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

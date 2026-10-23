@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-6440efcdd77a0ca73ab9",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a7e2472b-3a7e-4b8a-8d08-2f8fc69ea8b5/2026/02/06/20/CB%C2%A03rd%C2%A0cert_CN25SKB1%C2%A0001_JPTUV-183698_extsigned.pdf",
+  "kind": "document",
+  "title": "CB\u00a03rd\u00a0cert_CN25SKB1\u00a0001_JPTUV-183698_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:46+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-6440efcdd77a0ca73ab9/CB_3rd_cert_CN25SKB1_001_JPTUV-183698_extsigned.pdf",
+  "sha256": "f680deb1eaa37b42ed3a27d233aec6a7550cc5d920fe05940230dcf40707f0b0",
+  "size_bytes": 450731,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a7e2472b-3a7e-4b8a-8d08-2f8fc69ea8b5/2026/02/06/20/CB%C2%A03rd%C2%A0cert_CN25SKB1%C2%A0001_JPTUV-183698_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 06 Feb 2026 12:06:26 GMT",
+  "etag": "\"fae75fa4a5f15362fe5bf9b806f7ad3d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 450731,
+      "actual": 450731,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

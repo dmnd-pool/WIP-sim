@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-6dd577ea07baadf9ac1d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bcc34011-3a95-4207-809b-858389310e74/2025/07/10/10/S21%20XP%20Imm.%20User%20Guide-V1.2.8.pdf",
+  "kind": "document",
+  "title": "S21 XP Imm. User Guide-V1.2.8.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-6dd577ea07baadf9ac1d/S21_XP_Imm._User_Guide-V1.2.8.pdf",
+  "sha256": "9c388274fd5ab073783bb2a7fa9f9c0750b0261edb6793c3f9086cbab05bba78",
+  "size_bytes": 4164770,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bcc34011-3a95-4207-809b-858389310e74/2025/07/10/10/S21%20XP%20Imm.%20User%20Guide-V1.2.8.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 10 Jul 2025 02:02:35 GMT",
+  "etag": "\"0c9d54a4ef68c1f4fae05740451635d7\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 4164770,
+      "actual": 4164770,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-7abb39fbc9c3887ea126",
+  "url": "https://download.hiveos.farm/asic/custom/maximFatality/Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03@201216-S17-sign-maximFatality.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03@201216-S17-sign-maximFatality.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:10:55+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-7abb39fbc9c3887ea126/Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03_201216-S17-sign-maximFatality.hive.tar.gz",
+  "sha256": "1f897f9e3b76b2b3cb8cb966615534dbc90712f1c7a5a539cca0f5dd7e2493a0",
+  "size_bytes": 32922472,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/maximFatality/Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03@201216-S17-sign-maximFatality.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 16 Dec 2020 15:31:20 GMT",
+  "etag": "\"5fda2848-1f65b68\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 32922472,
+      "actual": 32922472,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

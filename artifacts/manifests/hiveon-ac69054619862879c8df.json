@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-ac69054619862879c8df",
+  "url": "https://download.hiveos.farm/asic/custom/mskbtc/Antminer-T17+-2.02@200930-T17+-sign-bigminer.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17+-2.02@200930-T17+-sign-bigminer.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:58:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-ac69054619862879c8df/Antminer-T17+-2.02_200930-T17+-sign-bigminer.hive.tar.gz",
+  "sha256": "64d148daf86bca33a03332c1a7fa33062056ed93283d61acdee43dbfc1a7729b",
+  "size_bytes": 33838330,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/mskbtc/Antminer-T17+-2.02@200930-T17+-sign-bigminer.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 30 Sep 2020 08:30:22 GMT",
+  "etag": "\"5f74421e-20454fa\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 33838330,
+      "actual": 33838330,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

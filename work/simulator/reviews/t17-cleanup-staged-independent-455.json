@@ -1,0 +1,59 @@
+{
+  "schema": "md-sim-independent-staged-cleanup-review/1",
+  "state": "Source review only. Build, ordinary tests, explicit real CLI mutation/restoration test, actual-store preflight and any deletion remain pending.",
+  "verdict": "No unresolved source finding in the staged T17 extension after restricting legacy output omission to272.",
+  "staged_manifest": {
+    "sha256": "1cd83585187325a1b1354f74196b60438e3b4a454ca5bd8106da39eff85c6104",
+    "size": 1306
+  },
+  "inputs": [
+    {
+      "path": "work/simulator/cleanup-development-455/base.json",
+      "sha256": "1f92aac97abed77a0c8b134cdf80890d139366a5147c4c35064aa2db430bab58",
+      "size": 246
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/reclaim_qemu_inputs.rs",
+      "sha256": "4a590b2b7a2ab5c68c0339ed6e4b54aae2a9568b9f8f4fe6255c0a18ca306f9b",
+      "size": 54056
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/reclaim_qemu_inputs/t17.rs",
+      "sha256": "655b7c94713e6d32e24db47136baeccc43e9a183b5690eb784988f9648684574",
+      "size": 12193
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/reclaim_qemu_inputs/t17_tests.rs",
+      "sha256": "93e6be755418389b2aebe41215207037bc2710ec02779768465e9d14fed65fd6",
+      "size": 20236
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/README.md",
+      "sha256": "077f3d70aea11aff6f3a969339493bff7687c79456945b6c9e127fed574328fc",
+      "size": 4258
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/declaration-potential.json",
+      "sha256": "2760a92762e17040670518a6516a12d3c4e31c8fb5a05fe99f916840b79d892a",
+      "size": 56563
+    }
+  ],
+  "active_utility": {
+    "sha256": "fce6f9ad044d23a8754e4ea526d9e2b37b7cbe2204a9aa72ab072ffb002d7938",
+    "size": 52322
+  },
+  "checks": {
+    "exact_three_digit_t17_paths_only": true,
+    "canonical274_is_required_and_protected_from_target_deletion": true,
+    "terminal_result_exact_stdout_stderr_tar_binding": true,
+    "bounded_regular_no_link_evidence_reads": true,
+    "known_member_names_types_sparse_expansion_and_trailer_checked": true,
+    "source_and_adjacent_output_identities_bound": true,
+    "legacy_omission_exemption_is272_only": true,
+    "same_complete_evidence_rechecked_under_store_locks": true,
+    "only_duplicate_CAS_objects_enter_deletion_journal": true,
+    "expected_identity_rechecked_for_deleted_and_restore_copy": true,
+    "no_actual_store_object_hashing_or_deletion_by_reviewer": true
+  },
+  "pending": "Candidate byte totals are declarations only. Source review does not establish current eligibility or reclaimed space."
+}

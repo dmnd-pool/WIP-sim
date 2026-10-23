@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-4c07181798b46016ade3",
+  "url": "https://download.hiveos.farm/asic/custom/mskbtc/201222-new/Antminer-S9-all-Hiveon-1.03@201222-sign-mskbtc.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@201222-sign-mskbtc.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:59:46+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-4c07181798b46016ade3/Antminer-S9-all-Hiveon-1.03_201222-sign-mskbtc.tar.gz",
+  "sha256": "9f9db4a33a00b45120b89496a70ec01d6612d6ee34b18b99cea03fb4cc8c7be4",
+  "size_bytes": 23794353,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/mskbtc/201222-new/Antminer-S9-all-Hiveon-1.03@201222-sign-mskbtc.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 22 Dec 2020 15:18:39 GMT",
+  "etag": "\"5fe20e4f-16b12b1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23794353,
+      "actual": 23794353,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

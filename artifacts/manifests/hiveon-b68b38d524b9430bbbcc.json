@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-b68b38d524b9430bbbcc",
+  "url": "https://download.hiveos.farm/asic/S9k/stock+client/S9k-stock+client-20190929.tar.gz",
+  "kind": "firmware",
+  "title": "S9k-stock+client-20190929.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:31+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-b68b38d524b9430bbbcc/S9k-stock+client-20190929.tar.gz",
+  "sha256": "114f32711ac96a2f8655ba34ebad3b921edba01e99b06a3940f23fd02fa09927",
+  "size_bytes": 12570761,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S9k/stock+client/S9k-stock+client-20190929.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 22 Nov 2019 17:16:49 GMT",
+  "etag": "\"5dd81801-bfd089\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 12570761,
+      "actual": 12570761,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

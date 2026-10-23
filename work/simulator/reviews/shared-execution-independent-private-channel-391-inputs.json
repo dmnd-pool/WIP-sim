@@ -1,0 +1,130 @@
+{
+  "scope": "Actual frozen391 adapted S9 reference transport and joined-retention review; exact-target/dashboard/full-release gates remain open",
+  "files": [
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/assessment.json",
+      "sha256": "eded1fc90eb0dd99cf1f65a4f45862e531f81d36c43582e35445b179e465b89b",
+      "size": 21583
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/result.json",
+      "sha256": "080a11271e109129e2f5fa7e4c5e10bd362913f71d94158aae613366d8d7f0c8",
+      "size": 100153995
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/process-spec.json",
+      "sha256": "a53db988be0ba3905decbe8d652411c1d9c171f97769ab6a6d87c525d1ff12a2",
+      "size": 5262
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/provider.json",
+      "sha256": "d435b6b352a9742df06c2a08630f23709749fccbc7475da53b27568317bbd66e",
+      "size": 12090
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/process-spec.json",
+      "sha256": "fd0ecfc7f1c3f627b989000f1f0c1ef2dd52907efd6c776db18a73d336fdd3ad",
+      "size": 11030
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/locked-run.json",
+      "sha256": "ea7a56a35ddaf704a1afd7c5451e7b64c4b89d571c5849014ede75cdf97f1212",
+      "size": 21199
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/worker-request.json",
+      "sha256": "bf56cc0062a5b7ba1be08f4668ff2991ec73966d4155535db795e2a445c97909",
+      "size": 1791
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/worker-run.json",
+      "sha256": "f45e6f30abd577bb4ecaada2afde5a867427a7184a454f65c3f1b01dd9fc16a2",
+      "size": 1641
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/worker-result.json",
+      "sha256": "152ff586fe592184fb801a051fa89d0033a966f01cc0f763d24af84d754f08c2",
+      "size": 105424186
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/worker-cleanup.json",
+      "sha256": "88b3c37965766d80941ab2e7052614726456b3b1e4cfa7867a0fcfe366aa6e67",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/worker-retention.json",
+      "sha256": "c7c8812d838c4339713d41dba26a18973a0f017f4bd1e8a39ce6f8325b71246d",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/host-retention.json",
+      "sha256": "c7c8812d838c4339713d41dba26a18973a0f017f4bd1e8a39ce6f8325b71246d",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/shared-pool/retention-receipt.json",
+      "sha256": "ef9ec6832e353bf1f30bbc80117afb24bae417aaeddf815dcd7fbd237e0df660",
+      "size": 535
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/shared-pool/provider-receipt.json",
+      "sha256": "03e53cc84382651ff2838a47061cfd20fbce943620a6909082c63cdd1335c27e",
+      "size": 2517
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/shared-pool/pool-bundle.json",
+      "sha256": "0c5dcd05f8bf9fad864e69b2419264a0f555548a292d669805d3e025f2410d4c",
+      "size": 105365
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/shared-pool/support-proof.json",
+      "sha256": "07156698563ab83d75b2f5e4cc559476f5da22d6981b5426f15da947d004e774",
+      "size": 1512
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/shared-pool/outer-result.json",
+      "sha256": "84c7d7cb2f215c72a79cad6d97951a76d2fe378b81084c757d63af444cb130fd",
+      "size": 443
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/regtest-audit392.json",
+      "sha256": "ee78f31a3efa3a9168c82e7cfdf581a7850cc008fa0d1d1860e48de62820ec48",
+      "size": 69506
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-391/execution/rate-audit392.json",
+      "sha256": "a18bf429647d41e4aaaa33aafe361131418f9685e040f6660f4407e81bad6802",
+      "size": 6223
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared391-candidate0-392/block-acceptance.json",
+      "sha256": "cbbd45b59ac5ff1059e813439c4ac745443ede62bcf76b0b1d9b97313c30b1cc",
+      "size": 1745
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared391-candidate0-392/firmware-block-record.json",
+      "sha256": "17600132f681c97c16741107310755cd1d70f4fb145f7ae7e97ed0b62946e803",
+      "size": 2280
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared391-candidate0-392/source-run-link.json",
+      "sha256": "eb9fed08ea8b8db69d459dc3ba708c5446b6227f8b9c6b34e5f696edef828f02",
+      "size": 7160
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared391-candidate1-392/block-acceptance.json",
+      "sha256": "d8a314a4032c0e953996a0920ca9621b20fc7d60cb21a18a5834ddfb165b529b",
+      "size": 1745
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared391-candidate1-392/firmware-block-record.json",
+      "sha256": "34b6f58467509b9b1da7904b43d0d355fcece443b9442454b1ba171255b4ca15",
+      "size": 2280
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared391-candidate1-392/source-run-link.json",
+      "sha256": "bcd7f2dccd965e5ae43831a02efac08117c740c31dcb9762b4ac01d68a8f1d16",
+      "size": 7160
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c0ab5ed7d2679cb7ac5f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9512167a-e862-4bee-8723-c2ef972e7a11/2024/05/22/16/ACS-F23167-A1Z2309083-SERVER-D9-FCC%20SDOC-Class%20A.pdf",
+  "kind": "document",
+  "title": "ACS-F23167-A1Z2309083-SERVER-D9-FCC SDOC-Class A.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-c0ab5ed7d2679cb7ac5f/ACS-F23167-A1Z2309083-SERVER-D9-FCC_SDOC-Class_A.pdf",
+  "sha256": "8303ece6f49f5c7e9a83eb017196543a009e563399ad20d6b9c80639b351cd03",
+  "size_bytes": 681930,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9512167a-e862-4bee-8723-c2ef972e7a11/2024/05/22/16/ACS-F23167-A1Z2309083-SERVER-D9-FCC%20SDOC-Class%20A.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:51:56 GMT",
+  "etag": "\"8312f094aa6166d229be901eb7e02d00\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 681930,
+      "actual": 681930,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

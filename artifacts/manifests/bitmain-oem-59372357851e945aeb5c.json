@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-59372357851e945aeb5c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/14739967-c75b-4780-beb8-34d3fc987f9c/2025/03/20/18/S19%20XP%2B%20Hyd.%20Product%20Manual_v1.2.pdf",
+  "kind": "document",
+  "title": "S19 XP+ Hyd. Product Manual_v1.2.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:43:57+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-59372357851e945aeb5c/S19_XP+_Hyd._Product_Manual_v1.2.pdf",
+  "sha256": "522f420718d45fc2cf5ffe4224422090c0e75808060cd55d5a8b1eefd9ce0e75",
+  "size_bytes": 860295,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/14739967-c75b-4780-beb8-34d3fc987f9c/2025/03/20/18/S19%20XP%2B%20Hyd.%20Product%20Manual_v1.2.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 20 Mar 2025 10:06:03 GMT",
+  "etag": "\"ddf00d7ce7017c1ff442e7d76c816f6e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 860295,
+      "actual": 860295,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

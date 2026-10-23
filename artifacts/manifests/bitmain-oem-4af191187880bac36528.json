@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4af191187880bac36528",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b4f17842-aa5e-4a29-acf3-07c9bfc074a1/2024/06/21/19/CB%2062368%202nd%20cert_S19%20XP%20Hyd_CN23LQ2P%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 62368 2nd cert_S19 XP Hyd_CN23LQ2P 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4af191187880bac36528/CB_62368_2nd_cert_S19_XP_Hyd_CN23LQ2P_001_2023.10.11_extsigned.pdf",
+  "sha256": "23496c2aec0b0a743843fcf0a1c9aa30cb72d42e80f6b2675d366aee883f85e9",
+  "size_bytes": 663415,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b4f17842-aa5e-4a29-acf3-07c9bfc074a1/2024/06/21/19/CB%2062368%202nd%20cert_S19%20XP%20Hyd_CN23LQ2P%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 21 Jun 2024 11:05:38 GMT",
+  "etag": "\"cd877c65fc0be55fa57def8f9cba4849\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 663415,
+      "actual": 663415,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

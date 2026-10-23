@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-5ab3a46e1e4b542fb2cd",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-S9-all-Hiveon-1.02-sign-dlbminer.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.02-sign-dlbminer.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:09:53+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-5ab3a46e1e4b542fb2cd/Antminer-S9-all-Hiveon-1.02-sign-dlbminer.tar.gz",
+  "sha256": "39090af8b76aafdbe50e914058de957c7d8dd736adb89461ae9d88f5b5fd9981",
+  "size_bytes": 23584519,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-S9-all-Hiveon-1.02-sign-dlbminer.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sat, 20 Jun 2020 08:28:26 GMT",
+  "etag": "\"5eedc8aa-167df07\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23584519,
+      "actual": 23584519,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

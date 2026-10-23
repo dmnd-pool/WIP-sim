@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4014b9a91c027b6d6c4d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/eebc7cea-334f-4184-9f53-1c096e31db16/2024/04/07/17/WTD23D08172877E%20VoC%20(Model%20S19j%20XP)_CE%20EMC_exp_891.pdf",
+  "kind": "document",
+  "title": "WTD23D08172877E VoC (Model S19j XP)_CE EMC_exp_891.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:18+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4014b9a91c027b6d6c4d/WTD23D08172877E_VoC__Model_S19j_XP__CE_EMC_exp_891.pdf",
+  "sha256": "e0dc9a0fa6a56e7536c2fc19043ac495e57c630bf46c876945e6d078c8f55ae2",
+  "size_bytes": 263299,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/eebc7cea-334f-4184-9f53-1c096e31db16/2024/04/07/17/WTD23D08172877E%20VoC%20(Model%20S19j%20XP)_CE%20EMC_exp_891.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 07 Apr 2024 09:09:09 GMT",
+  "etag": "\"a3e2b613bb411e104144839c4f188bd0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 263299,
+      "actual": 263299,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

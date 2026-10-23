@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b0b570f9de65dd3b517d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cgminer-run-windows-20140324.zip",
+  "kind": "tool",
+  "title": "cgminer-run-windows-20140324.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-b0b570f9de65dd3b517d/cgminer-run-windows-20140324.zip",
+  "sha256": "8aa9032a592bb18f796213a8ee6d3c3aafe24d576af734cc03eb47bef2b0a008",
+  "size_bytes": 1738235,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cgminer-run-windows-20140324.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:31 GMT",
+  "etag": "\"49506b2c960538c58f5921ebf8f0379b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1738235,
+      "actual": 1738235,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

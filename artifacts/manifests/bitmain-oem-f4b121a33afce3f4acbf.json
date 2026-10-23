@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f4b121a33afce3f4acbf",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/be14d91a-4563-4496-a62b-5eb2aded040a/2024/05/22/16/Certification_231011_KO_KC(EMC).pdf",
+  "kind": "document",
+  "title": "Certification_231011_KO_KC(EMC).pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f4b121a33afce3f4acbf/Certification_231011_KO_KC_EMC_.pdf",
+  "sha256": "4d1ddef06b46312c43db2e4e4573278c1449c91604659d8d62dda50c93a3c9f0",
+  "size_bytes": 428527,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/be14d91a-4563-4496-a62b-5eb2aded040a/2024/05/22/16/Certification_231011_KO_KC(EMC).pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:18:57 GMT",
+  "etag": "\"29efb47638b5a7cf0769ae42915d1fae\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 428527,
+      "actual": 428527,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

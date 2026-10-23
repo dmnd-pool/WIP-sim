@@ -1,0 +1,164 @@
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -20,12 +20,14 @@
+ #include "hw/core/sysbus.h"
+ #include "migration/vmstate.h"
+ #include "qemu/log.h"
++#include "qemu/error-report.h"
+ #include "qemu/module.h"
+ #include "hw/core/registerfields.h"
+ #include "hw/core/qdev-clock.h"
+ #include "qom/object.h"
+ #include "hw/core/qdev-properties.h"
+ #include "qapi/error.h"
++#include "trace.h"
+ #include "hw/core/irq.h"
+ 
+ #ifndef ZYNQ_SLCR_ERR_DEBUG
+@@ -208,6 +210,8 @@
+     Clock *cpu_3or2x;
+     Clock *cpu_1x;
+     Clock *swdt_refclk;
++    Clock *fclk[4];
++    qemu_irq fclk_reset_n[4];
+     Clock *uart0_ref_clk;
+     Clock *uart1_ref_clk;
+     uint8_t boot_mode;
+@@ -311,6 +315,23 @@
+     clock_set(s->swdt_refclk, (s->regs[R_WDT_CLK_SEL] & 1) ?
+               0 : clock_get(s->cpu_1x));
+ 
++    /* UG585 and archived Linux clkc.c: IO, IO, ARM, DDR; two
++     * one-based dividers, with zero bypass. THR_CNT bit0 is the static
++     * active-high gate used by Linux. Counted throttle mode is rejected
++     * on write below; it must never be represented as a continuous clock. */
++    for (unsigned n = 0; n < 4; n++) {
++        unsigned base = R_FPGA0_CLK_CTRL + 4 * n;
++        uint32_t ctrl = s->regs[base];
++        unsigned div0 = extract32(ctrl, 8, 6);
++        unsigned div1 = extract32(ctrl, 20, 6);
++        uint64_t period = uart_mux[extract32(ctrl, 4, 2)] *
++                          (div0 ? div0 : 1) * (div1 ? div1 : 1);
++        if ((s->regs[base + 2] & 1) || s->regs[base + 1]) {
++            period = 0;
++        }
++        clock_set(s->fclk[n], period);
++    }
++
+     /* compute uartX reference clocks */
+     clock_set(s->uart0_ref_clk,
+               ZYNQ_COMPUTE_CLK(s, uart_mux, R_UART_CLK_CTRL, CLKACT0));
+@@ -345,6 +366,10 @@
+     clock_propagate(s->cpu_3or2x);
+     clock_propagate(s->cpu_1x);
+     clock_propagate(s->swdt_refclk);
++    for (unsigned n = 0; n < 4; n++) {
++        clock_propagate(s->fclk[n]);
++        trace_md_sim_zynq_fclk(n, clock_get(s->fclk[n]));
++    }
+     clock_propagate(s->uart0_ref_clk);
+     clock_propagate(s->uart1_ref_clk);
+ }
+@@ -393,6 +418,11 @@
+     s->regs[R_DBG_CLK_CTRL]   = 0x00000F03;
+     s->regs[R_PCAP_CLK_CTRL]  = 0x00000F01;
+ 
++    /* The output-control registers must not survive a system reset. */
++    for (unsigned n = 0; n < 4; n++) {
++        s->regs[R_FPGA0_THR_CTRL + 4 * n] = 0;
++        s->regs[R_FPGA0_THR_CNT + 4 * n] = 0;
++    }
+     /* 0x170 - 0x1AC */
+     s->regs[R_FPGA0_CLK_CTRL] = s->regs[R_FPGA1_CLK_CTRL]
+                               = s->regs[R_FPGA2_CLK_CTRL]
+@@ -457,10 +487,21 @@
+     s->regs[R_DDRIOB_DCI_CTRL] = 0x00000020;
+ }
+ 
++static void zynq_slcr_fabric_reset(ZynqSLCRState *s)
++{
++    for (unsigned n = 0; n < 4; n++) {
++        bool high = !device_is_in_reset(DEVICE(s)) &&
++                    !(s->regs[R_FPGA_RST_CTRL] & (1u << n));
++        qemu_set_irq(s->fclk_reset_n[n], high);
++        trace_md_sim_zynq_freset(n, high);
++    }
++}
++
+ static void zynq_slcr_reset_hold(Object *obj, ResetType type)
+ {
+     ZynqSLCRState *s = ZYNQ_SLCR(obj);
+ 
++    zynq_slcr_fabric_reset(s);
+     /* will disable all output clocks */
+     zynq_slcr_compute_clocks_internal(s, 0);
+     zynq_slcr_propagate_clocks(s);
+@@ -470,6 +511,7 @@
+ {
+     ZynqSLCRState *s = ZYNQ_SLCR(obj);
+ 
++    zynq_slcr_fabric_reset(s);
+     /* will compute output clocks according to ps_clk and registers */
+     zynq_slcr_compute_clocks_internal(s, clock_get(s->ps_clk));
+     zynq_slcr_propagate_clocks(s);
+@@ -632,6 +674,9 @@
+     s->regs[offset] = val;
+ 
+     switch (offset) {
++    case R_FPGA_RST_CTRL:
++        zynq_slcr_fabric_reset(s);
++        break;
+     case R_PSS_RST_CTRL:
+         if (FIELD_EX32(val, PSS_RST_CTRL, SOFT_RST)) {
+             qemu_system_reset_request(SHUTDOWN_CAUSE_GUEST_RESET);
+@@ -644,6 +689,15 @@
+     case R_UART_CLK_CTRL:
+     case R_CLK_621_TRUE:
+     case R_WDT_CLK_SEL:
++    case R_FPGA0_CLK_CTRL ... R_FPGA0_THR_CNT:
++    case R_FPGA1_CLK_CTRL ... R_FPGA1_THR_CNT:
++    case R_FPGA2_CLK_CTRL ... R_FPGA2_THR_CNT:
++    case R_FPGA3_CLK_CTRL ... R_FPGA3_THR_CNT:
++        if (offset >= R_FPGA0_CLK_CTRL && offset <= R_FPGA3_THR_CNT &&
++            ((offset - R_FPGA0_CLK_CTRL) % 4 == 1) && val) {
++            error_report("md-sim: counted PL clock throttle is unimplemented");
++            qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++        }
+         zynq_slcr_compute_clocks(s);
+         zynq_slcr_propagate_clocks(s);
+         break;
+@@ -684,6 +738,12 @@
+     sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->iomem);
+ 
+     qdev_init_clocks(DEVICE(obj), zynq_slcr_clocks);
++    for (unsigned n = 0; n < 4; n++) {
++        g_autofree char *name = g_strdup_printf("fclk%u", n);
++        s->fclk[n] = qdev_init_clock_out(DEVICE(obj), name);
++    }
++    qdev_init_gpio_out_named(DEVICE(obj), s->fclk_reset_n,
++                            "fclk-reset-n", 4);
+     qdev_init_gpio_out_named(DEVICE(obj), s->md_cpu_control_out,
+                              "md-cpu-reset-clock", 2);
+ }
+--- a/hw/misc/trace-events
++++ b/hw/misc/trace-events
+@@ -0,0 +1,3 @@
++# Zynq fabric output signals; QEMU period is nanoseconds with32 fractional bits
++md_sim_zynq_fclk(unsigned channel, uint64_t period) "channel=%u period=%" PRIu64
++md_sim_zynq_freset(unsigned channel, bool high) "channel=%u high=%u"
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -474,6 +474,13 @@
+             object_property_add_child(OBJECT(machine), name, OBJECT(io));
+             qdev_prop_set_uint32(io, "link-id", link);
+             qdev_prop_set_uint32(io, "build-id", 0x74657374);
++            /* Archived legacy system.tcl connects FCLK1. The2022 mapping
++             * is not inferred from that older board script. */
++            if (!sd2022 || (asic_budget &&
++                MD_ASIC_MACHINE(machine)->fabric_clock_reference)) {
++                qdev_connect_clock_in(io, "fabric-clk",
++                                      qdev_get_clock_out(slcr, "fclk1"));
++            }
+             if (asic_budget) {
+                 qdev_prop_set_bit(io, "reference-v1-bm1387", true);
+                 qdev_prop_set_bit(io, "bm1387-peer", true);

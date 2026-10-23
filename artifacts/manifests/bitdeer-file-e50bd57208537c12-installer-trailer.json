@@ -1,0 +1,24 @@
+{
+  "id": "bitdeer-file-e50bd57208537c12-installer-trailer",
+  "url": "https://file.bitdeer.com/bd-public-prod/shop/202509121707/Firmware-A2airSingleIN-20250910-001.bin",
+  "kind": "source",
+  "title": "Firmware - A2 Air (Single Input) embedded installer trailer",
+  "language": "en",
+  "source_id": "bitdeer-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:29:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/bitdeer-file-e50bd57208537c12-installer-trailer/installer-trailer.sh",
+  "sha256": "d57ef550555f56b10e44ce5eff63fd546d2da5ff6983a5b75b2a3fa117dfcb21",
+  "size_bytes": 5120,
+  "executed": false,
+  "acquisition_method": "byte-range-extracted-from-downloaded-file",
+  "parent_artifact_id": "bitdeer-file-e50bd57208537c12",
+  "parent_sha256": "55449b82095bd0868ed994dafb05e5166d08567e474f9e2693b03aa2bb4e55fc",
+  "byte_offset": 34015012,
+  "content_role": "embedded-readable-installer-code",
+  "notes": [
+    "This is a script contained in a proprietary firmware package. Its readability does not establish an open-source licence.",
+    "Exact bytes include any padding. The script was not executed."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-4449572b7cfeef2369e7",
+  "url": "https://download.hiveos.farm/asic/s9/recovery-stock/antbuild_v1_recovery_s9.img",
+  "kind": "firmware",
+  "title": "antbuild_v1_recovery_s9.img",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:43+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-4449572b7cfeef2369e7/antbuild_v1_recovery_s9.img",
+  "sha256": "cb063c7cfbc87789432e1bebddb5a2d0e2f2691388c63c190e2b470aff067e16",
+  "size_bytes": 33554432,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s9/recovery-stock/antbuild_v1_recovery_s9.img",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 05 Feb 2020 12:31:09 GMT",
+  "etag": "\"5e3ab58d-2000000\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 33554432,
+      "actual": 33554432,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

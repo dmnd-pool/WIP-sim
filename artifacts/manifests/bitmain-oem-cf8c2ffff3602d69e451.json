@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-cf8c2ffff3602d69e451",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0b70741e-9e77-4419-979e-14e82671ca95/2024/03/01/19/CB%203rd%20cert-KS5-CN24LGLJ%20001-24.02.28_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 3rd cert-KS5-CN24LGLJ 001-24.02.28_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:56+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-cf8c2ffff3602d69e451/CB_3rd_cert-KS5-CN24LGLJ_001-24.02.28_extsigned.pdf",
+  "sha256": "72b14f9c0bd224828fa1e3e7c8145f4a9a282acd9591e61cb693110aec725d0f",
+  "size_bytes": 662118,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0b70741e-9e77-4419-979e-14e82671ca95/2024/03/01/19/CB%203rd%20cert-KS5-CN24LGLJ%20001-24.02.28_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Mar 2024 11:44:08 GMT",
+  "etag": "\"46e898b62f100ee30090ef0de0d20488\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 662118,
+      "actual": 662118,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

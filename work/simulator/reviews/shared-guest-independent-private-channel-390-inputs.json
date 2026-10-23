@@ -1,0 +1,75 @@
+{
+  "scope": "Final independent shared guest source and focused test review; ownership findings closed; actual native integration not yet established",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check.rs",
+      "sha256": "49672957373656bfc7db106a5c8b91c5957697d6beb63ef3ac3d6395bb493154",
+      "size": 78369
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/worker_broker.rs",
+      "sha256": "08fdb87a92d0e47cfbff628e7c3b6b3c257d3672cd123136cf7c63b12e3b02ac",
+      "size": 27994
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/shared_pool.rs",
+      "sha256": "50a77a83472b75987d2d94c37deeee76185e8c95dda068db491e86b0d9dc2887",
+      "size": 16584
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/pool_service.rs",
+      "sha256": "e4d6887228e56e0d08af796eafc727aebea55e046119bbe74fdb69b043851520",
+      "size": 18402
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/shared_run.rs",
+      "sha256": "18831fd5588d1422998c1d38d929c1fd5d3057a8e559cdf2df537854c64c3c54",
+      "size": 13803
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/worker_shared_retention.rs",
+      "sha256": "039e69479fdfc8a79c523abcbf50b45cb43cdadc06f52a55b4caa18dbf13cf5d",
+      "size": 5024
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/worker_retention_frame.rs",
+      "sha256": "e636099ecd745d598eca038733f0f859f7b9d05906c518a47e85a5d1a9e58629",
+      "size": 1852
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_shared_pool_service.rs",
+      "sha256": "f0db6a8fc54ab55089873fafdc9af622658978200659afc4687f16f5f36257e2",
+      "size": 9827
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_pool_guest.rs",
+      "sha256": "039bc77616ee417f8f90b15a310f3199b05d85dae50c426d33cc758a337eb488",
+      "size": 17351
+    },
+    {
+      "path": "crates/md-sim-runtime/src/isolation.rs",
+      "sha256": "e0d2d260be85397cb0b676df53117b4b73a270d9411a8e3abdbbb314de4a787e",
+      "size": 37519
+    },
+    {
+      "path": "work/simulator/channel390b-shared-tests.log",
+      "sha256": "cdcf71720680c28aeb62e62ebd5040bd91f89707b95351c149d82869b7c853ad",
+      "size": 8196
+    },
+    {
+      "path": "work/simulator/channel390b-shared-clippy.log",
+      "sha256": "03a518678027374e4384a9fd51084dd66d618f162774e3288b4274033fba31fa",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/shared-pool-cancel-tests-390.log",
+      "sha256": "d96c3780dbb02ccad9abe8369f99bc7b18703ef4c5f8e6875090f73f35de0270",
+      "size": 2227
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/shared-pool-cancel-clippy-390.log",
+      "sha256": "996d59da1c45d6fee1867998ded6aaaf1fa9682eda1df71c5f9a87efb26332cb",
+      "size": 143
+    }
+  ]
+}

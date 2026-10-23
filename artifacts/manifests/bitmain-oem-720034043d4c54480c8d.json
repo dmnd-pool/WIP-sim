@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-720034043d4c54480c8d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/67912113-3896-476e-9c6e-5fb2e92e1743/2022/04/18/12/CB%2062368%203rd%20cert_APW12_CN229FBT%20001_2022.4.6.pdf",
+  "kind": "document",
+  "title": "CB 62368 3rd cert_APW12_CN229FBT 001_2022.4.6.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:36+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-720034043d4c54480c8d/CB_62368_3rd_cert_APW12_CN229FBT_001_2022.4.6.pdf",
+  "sha256": "a54042ac95a0ad0edd8cc51db41d7e041eb5d0a3fe4a7933a7fe3083c735f4a3",
+  "size_bytes": 628519,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/67912113-3896-476e-9c6e-5fb2e92e1743/2022/04/18/12/CB%2062368%203rd%20cert_APW12_CN229FBT%20001_2022.4.6.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 18 Apr 2022 04:01:09 GMT",
+  "etag": "\"c26385be17df45663770f43fc0bc8ec5\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 628519,
+      "actual": 628519,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

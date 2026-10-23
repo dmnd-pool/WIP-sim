@@ -1,0 +1,59 @@
+{
+  "id": "braiins-feed-5d2e432f690620bb7a18",
+  "url": "https://feeds.braiins-os.com/21.12/am2-s17/firmware_2021-12-21-0-2499d1c2-21.12-plus_arm_cortex-a9_neon.ipk",
+  "kind": "metadata",
+  "title": "firmware_2021-12-21-0-2499d1c2-21.12-plus_arm_cortex-a9_neon.ipk",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:23:56+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/braiins-feed-48a6c36d54bc3d32091a/firmware_2021-12-21-0-2499d1c2-21.12-plus_arm_cortex-a9_neon.ipk",
+  "sha256": "47e6e9fdd3f08d381ce6a8c634d6b60527d4dc430e54dac1bb26f866907d942a",
+  "size_bytes": 2670,
+  "executed": false,
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 21 Dec 2021 09:30:12 GMT",
+  "etag": "\"61c19ea4-a6e\"",
+  "alias_of": "braiins-feed-48a6c36d54bc3d32091a",
+  "alias_basis": "Identical SHA256 published by Braiins Packages, checksum file or release page",
+  "published_checksum_sources": [
+    "braiins-feed-a942d588e83c060466e7",
+    "braiins-feed-b5b74c1da62d7d59e5cc"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 161,
+      "actual": 2670,
+      "match": false,
+      "source_id": "braiins-feed-b5b74c1da62d7d59e5cc"
+    },
+    {
+      "field": "sha256",
+      "expected": "47e6e9fdd3f08d381ce6a8c634d6b60527d4dc430e54dac1bb26f866907d942a",
+      "actual": "47e6e9fdd3f08d381ce6a8c634d6b60527d4dc430e54dac1bb26f866907d942a",
+      "match": true,
+      "source_id": "braiins-feed-a942d588e83c060466e7"
+    },
+    {
+      "field": "sha256",
+      "expected": "47e6e9fdd3f08d381ce6a8c634d6b60527d4dc430e54dac1bb26f866907d942a",
+      "actual": "47e6e9fdd3f08d381ce6a8c634d6b60527d4dc430e54dac1bb26f866907d942a",
+      "match": true,
+      "source_id": "braiins-feed-b5b74c1da62d7d59e5cc"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 161,
+      "actual": 2670,
+      "match": false,
+      "source_id": "braiins-feed-a942d588e83c060466e7"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "integrity_classification": "publisher-size-inconsistent-sha256-matches",
+  "integrity_explanation": "The exact publisher SHA256 matches the saved payload. The Size field in Packages metadata differs; this is not evidence of transfer truncation."
+}

@@ -1,0 +1,346 @@
+{
+  "schema": "md-sim-independent-spl-tables/1",
+  "source": {
+    "sha256": "765efb23844156e976ba785c24a6a753c664504a499c64581d1c356a3f4c02df",
+    "size": 77023
+  },
+  "branches": [
+    {
+      "branch": "revision0",
+      "tables": [
+        {
+          "slot": 0,
+          "start": "0x102a0",
+          "end_exclusive": "0x1071c",
+          "records": 73,
+          "encoded": {
+            "sha256": "48e4509999e813a7f45ae7a5a391df13c405670b364847949f67cd3d2a6cb8b4",
+            "size": 1148
+          },
+          "polls": [],
+          "delays": []
+        },
+        {
+          "slot": 1,
+          "start": "0x10120",
+          "end_exclusive": "0x102a0",
+          "records": 26,
+          "encoded": {
+            "sha256": "aa3ee1ee22142fcee73f5dc86dc2be15c20a8b1ad9219092d3a8a7c4a657de35",
+            "size": 384
+          },
+          "polls": [
+            [
+              4160749836,
+              1
+            ],
+            [
+              4160749836,
+              2
+            ],
+            [
+              4160749836,
+              4
+            ]
+          ],
+          "delays": []
+        },
+        {
+          "slot": 2,
+          "start": "0xed44",
+          "end_exclusive": "0xee10",
+          "records": 14,
+          "encoded": {
+            "sha256": "741e08636cf9195f7c27a543c7b6ac76def7211df2e0aec3925f6a413f173084",
+            "size": 204
+          },
+          "polls": [],
+          "delays": []
+        },
+        {
+          "slot": 3,
+          "start": "0xfc14",
+          "end_exclusive": "0x10120",
+          "records": 82,
+          "encoded": {
+            "sha256": "fcde0a4947d0b96b64f969ba9fe976e644680a7188a7473f19d41694a3cbbcce",
+            "size": 1292
+          },
+          "polls": [
+            [
+              4160752500,
+              8192
+            ],
+            [
+              4160774228,
+              7
+            ]
+          ],
+          "delays": []
+        },
+        {
+          "slot": 4,
+          "start": "0x107ec",
+          "end_exclusive": "0x10918",
+          "records": 22,
+          "encoded": {
+            "sha256": "ca14d3ace4017e65a0caba4ee9217f9a8ad313e9e39ab78903a987706c1e1710",
+            "size": 300
+          },
+          "polls": [],
+          "delays": [
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "revision1",
+      "tables": [
+        {
+          "slot": 0,
+          "start": "0xf628",
+          "end_exclusive": "0xfaa4",
+          "records": 73,
+          "encoded": {
+            "sha256": "23c3c0551120d8dee97f5f22bc57c0d7f318480ba74ba2d0606e4ae01f39955e",
+            "size": 1148
+          },
+          "polls": [],
+          "delays": []
+        },
+        {
+          "slot": 1,
+          "start": "0xf4a8",
+          "end_exclusive": "0xf628",
+          "records": 26,
+          "encoded": {
+            "sha256": "aa3ee1ee22142fcee73f5dc86dc2be15c20a8b1ad9219092d3a8a7c4a657de35",
+            "size": 384
+          },
+          "polls": [
+            [
+              4160749836,
+              1
+            ],
+            [
+              4160749836,
+              2
+            ],
+            [
+              4160749836,
+              4
+            ]
+          ],
+          "delays": []
+        },
+        {
+          "slot": 2,
+          "start": "0x1146c",
+          "end_exclusive": "0x11538",
+          "records": 14,
+          "encoded": {
+            "sha256": "741e08636cf9195f7c27a543c7b6ac76def7211df2e0aec3925f6a413f173084",
+            "size": 204
+          },
+          "polls": [],
+          "delays": []
+        },
+        {
+          "slot": 3,
+          "start": "0xef78",
+          "end_exclusive": "0xf4a4",
+          "records": 84,
+          "encoded": {
+            "sha256": "2056f99b82787a671788ff942316fa679e68d31daaeb51908832be15a6a4629e",
+            "size": 1324
+          },
+          "polls": [
+            [
+              4160752500,
+              8192
+            ],
+            [
+              4160774228,
+              7
+            ]
+          ],
+          "delays": []
+        },
+        {
+          "slot": 4,
+          "start": "0xfaa4",
+          "end_exclusive": "0xfbd0",
+          "records": 22,
+          "encoded": {
+            "sha256": "ca14d3ace4017e65a0caba4ee9217f9a8ad313e9e39ab78903a987706c1e1710",
+            "size": 300
+          },
+          "polls": [],
+          "delays": [
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "fallback",
+      "tables": [
+        {
+          "slot": 0,
+          "start": "0x10fb4",
+          "end_exclusive": "0x11430",
+          "records": 73,
+          "encoded": {
+            "sha256": "0ac8fbe83537fed427be6a3d0410654f07b3087013d5ae34c1f5748fc8c4eab4",
+            "size": 1148
+          },
+          "polls": [],
+          "delays": []
+        },
+        {
+          "slot": 1,
+          "start": "0x10e34",
+          "end_exclusive": "0x10fb4",
+          "records": 26,
+          "encoded": {
+            "sha256": "aa3ee1ee22142fcee73f5dc86dc2be15c20a8b1ad9219092d3a8a7c4a657de35",
+            "size": 384
+          },
+          "polls": [
+            [
+              4160749836,
+              1
+            ],
+            [
+              4160749836,
+              2
+            ],
+            [
+              4160749836,
+              4
+            ]
+          ],
+          "delays": []
+        },
+        {
+          "slot": 2,
+          "start": "0x1071c",
+          "end_exclusive": "0x107e8",
+          "records": 14,
+          "encoded": {
+            "sha256": "741e08636cf9195f7c27a543c7b6ac76def7211df2e0aec3925f6a413f173084",
+            "size": 204
+          },
+          "polls": [],
+          "delays": []
+        },
+        {
+          "slot": 3,
+          "start": "0x10918",
+          "end_exclusive": "0x10e34",
+          "records": 83,
+          "encoded": {
+            "sha256": "33bf07bacd0aff0c5c942cad3756571f48da2395161c24aa3d5094cf9c559ac5",
+            "size": 1308
+          },
+          "polls": [
+            [
+              4160752500,
+              8192
+            ],
+            [
+              4160774228,
+              7
+            ]
+          ],
+          "delays": []
+        },
+        {
+          "slot": 4,
+          "start": "0xee4c",
+          "end_exclusive": "0xef78",
+          "records": 22,
+          "encoded": {
+            "sha256": "f5b4c1a9a0e55793b1f1bf00b25d0263c43596e6424e7d0e25b87092894e5543",
+            "size": 300
+          },
+          "polls": [],
+          "delays": [
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ],
+            [
+              4176478720,
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Independent static byte decoding only. No firmware execution or physical timing claim."
+}

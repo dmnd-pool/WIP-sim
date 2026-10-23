@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-217eca75541a744169fd",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/286a53f2-5f4b-4277-bd78-6054c69c0bc9/2024/12/25/18/CB%203rd%20cert-S21%20XP%20lmm-CN24SUM2%20001-24.11.04_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 3rd cert-S21 XP lmm-CN24SUM2 001-24.11.04_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:10+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-217eca75541a744169fd/CB_3rd_cert-S21_XP_lmm-CN24SUM2_001-24.11.04_extsigned.pdf",
+  "sha256": "fd3f8a6baf21b496ecaa32dd5bea4c7939e2691dedb3dc59e209423fbd102068",
+  "size_bytes": 328608,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/286a53f2-5f4b-4277-bd78-6054c69c0bc9/2024/12/25/18/CB%203rd%20cert-S21%20XP%20lmm-CN24SUM2%20001-24.11.04_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 25 Dec 2024 10:56:08 GMT",
+  "etag": "\"5737aa4bb767f5e81e58966d56ff5a5d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 328608,
+      "actual": 328608,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

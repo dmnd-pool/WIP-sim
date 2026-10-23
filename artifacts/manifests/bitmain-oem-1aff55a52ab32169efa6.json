@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1aff55a52ab32169efa6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a5eb5725-2832-499d-9e9a-834a777b1983/2024/05/22/16/CB%2062368%202nd%20cert_D9_CN2349M1%20001_2023.10.9_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 62368 2nd cert_D9_CN2349M1 001_2023.10.9_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:08+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1aff55a52ab32169efa6/CB_62368_2nd_cert_D9_CN2349M1_001_2023.10.9_extsigned.pdf",
+  "sha256": "592eddb5e38b0172f8b2ce0bee5e4e8b2e7dbfc57cb8d9d50d7350c1ef94eca2",
+  "size_bytes": 662896,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a5eb5725-2832-499d-9e9a-834a777b1983/2024/05/22/16/CB%2062368%202nd%20cert_D9_CN2349M1%20001_2023.10.9_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:52:53 GMT",
+  "etag": "\"80ac7ab00207e8c274b45073b76ebb34\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 662896,
+      "actual": 662896,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

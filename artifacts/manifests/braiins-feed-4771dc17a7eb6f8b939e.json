@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-4771dc17a7eb6f8b939e",
+  "url": "https://feeds.braiins-os.com/am1-s9/firmware_2020-12-17-0-27e4d572-20.12-plus_arm_cortex-a9_neon.tar",
+  "kind": "firmware",
+  "title": "firmware_2020-12-17-0-27e4d572-20.12-plus_arm_cortex-a9_neon.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:02:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-4771dc17a7eb6f8b939e/firmware_2020-12-17-0-27e4d572-20.12-plus_arm_cortex-a9_neon.tar",
+  "sha256": "5d0d0401c47ac50780f07b07ed8601d13e6f711072fc9f84c58abee7debe338c",
+  "size_bytes": 13650271,
+  "executed": false,
+  "expected_size_bytes": 13650271,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/am1-s9/firmware_2020-12-17-0-27e4d572-20.12-plus_arm_cortex-a9_neon.tar",
+  "http_status": 206,
+  "etag": "\"5fdbf87d-d0495f\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 18 Dec 2020 00:31:57 GMT",
+  "publisher_sha256": "5d0d0401c47ac50780f07b07ed8601d13e6f711072fc9f84c58abee7debe338c",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-ba3690d5ed6bf0bc85d8",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "5d0d0401c47ac50780f07b07ed8601d13e6f711072fc9f84c58abee7debe338c",
+      "actual": "5d0d0401c47ac50780f07b07ed8601d13e6f711072fc9f84c58abee7debe338c",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "5d0d0401c47ac50780f07b07ed8601d13e6f711072fc9f84c58abee7debe338c",
+      "actual": "5d0d0401c47ac50780f07b07ed8601d13e6f711072fc9f84c58abee7debe338c",
+      "match": true,
+      "source_id": "braiins-feed-ba3690d5ed6bf0bc85d8"
+    }
+  ],
+  "upstream_integrity_match": true
+}

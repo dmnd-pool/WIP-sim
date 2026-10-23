@@ -1,0 +1,22 @@
+{
+  "id": "hashcore-oci-index-stratum-proxy-configurator",
+  "url": "https://public.ecr.aws/v2/k7t2c2k4/stratum-proxy-configurator/manifests/latest",
+  "kind": "metadata",
+  "title": "HashCore stratum-proxy-configurator OCI index",
+  "language": "und",
+  "source_id": "hashcore-proxy-deployment",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:39:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/hashcore-oci-index-stratum-proxy-configurator/index.json",
+  "sha256": "8b4bd67ff7fb7f466866155e4a880e1ad220a6048451b9da66e1e2f6933b13d9",
+  "size_bytes": 743,
+  "executed": false,
+  "content_role": "oci-index",
+  "registry_digest": null,
+  "expected_size_bytes": null,
+  "auth_method": "Anonymous public ECR pull token; token not saved",
+  "registry_digest_match": null,
+  "http_status": 200,
+  "content_type": "application/vnd.docker.distribution.manifest.list.v2+json"
+}

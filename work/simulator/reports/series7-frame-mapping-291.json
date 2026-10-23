@@ -1,0 +1,272 @@
+{
+  "schema": "md-sim-series7-frame-evidence/1",
+  "time_utc": "2026-10-23T01:41:28.793633+00:00",
+  "scope": "Complete configuration frame addressing, padding, CRC and ECC for two archived-derived S9 bitstreams. Does not reconstruct FPGA logic or close any exact-board gate.",
+  "part": {
+    "path": "fixtures/fpga/xc7z010clg400-1/part.json",
+    "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+    "size": 16801
+  },
+  "source_files": [
+    {
+      "path": "Cargo.toml",
+      "sha256": "da58784bc91761072d1bc17bea20627066dc766872c69cad881924f526ca9e36",
+      "size": 654
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bitstream/series7.rs",
+      "sha256": "fe37136f0f8a78ae7961f97a52cd5cfb7bf494e3d31df3a8091ea9ff15b06698",
+      "size": 9867
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bitstream/series7/frames.rs",
+      "sha256": "e9637f1c5039eb21c1d5f293f4b33652860844b6ee2a2059ab9aecba639cfb09",
+      "size": 10757
+    },
+    {
+      "path": "crates/md-sim-firmware/tests/series7_frames.rs",
+      "sha256": "dfc787760019d2cdf2a2022237d59162352febf8d6b1133a9f18f3d5a5bc45b2",
+      "size": 8371
+    },
+    {
+      "path": "crates/md-sim-firmware/tests/series7.rs",
+      "sha256": "a98deed59964dff8444f48ca8718f0c3b19f832d6eda2faaa7a5e33be7ec43e8",
+      "size": 5075
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_bitstream_probe.rs",
+      "sha256": "167ff3ad7ddf7e019724c30645992d40cbb68164456117d437debeef54481a31",
+      "size": 5799
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_boot_bundle.rs",
+      "sha256": "fb06a31dd4faa3e66a27dfe8bf961e488116c8cca83b4b091be12c65c3e9d6e5",
+      "size": 110992
+    }
+  ],
+  "executables": [
+    {
+      "path": "work/simulator/check-target-085/release/examples/s9_bitstream_probe",
+      "sha256": "864317e03f90f7f0374baefc24ee1613735041db47d13ab3942ffa85e988d466",
+      "size": 1850848
+    },
+    {
+      "path": "work/simulator/check-target-085/release/examples/s9_boot_bundle",
+      "sha256": "df594e7f11d5a786911f69fea42488054804570092bddcd89db4e0bd6b96fa64",
+      "size": 3681264
+    }
+  ],
+  "runs": {
+    "selected": {
+      "expanded_sha256": "980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421",
+      "mapped_data_words": 519544,
+      "padding_words": 808,
+      "frame_count": 5144,
+      "every_ecc_checked": true,
+      "artifacts": [
+        {
+          "path": "work/simulator/qemu-s9/frames-selected-291/spec.json",
+          "sha256": "aef771f770dbfe50a0ab677ae2845efab82c53bccc03654add97b5a60d778b50",
+          "size": 1755
+        },
+        {
+          "path": "work/simulator/qemu-s9/frames-selected-291/result.json",
+          "sha256": "9ccd0ebf1d3bf920f900a7eb64efbc552f80b4b3e49d188d739ed5a60b69263c",
+          "size": 1300561
+        },
+        {
+          "path": "work/simulator/qemu-s9/frames-selected-291/header.json",
+          "sha256": "a5e5a889a42bc929ff5c67cce88d5d60d2ef05c5682a6f1339cf1ec47128acbe",
+          "size": 649924
+        }
+      ]
+    },
+    "sd2020": {
+      "expanded_sha256": "569597aa2f59d69d135b5024016f31232bb2e54b0d2c00f5bdb29853ab564713",
+      "mapped_data_words": 519544,
+      "padding_words": 808,
+      "frame_count": 5144,
+      "every_ecc_checked": true,
+      "artifacts": [
+        {
+          "path": "work/simulator/qemu-s9/frames-sd2020-291/spec.json",
+          "sha256": "2a3488654286a2248814bc8f9decb4e118b869d6c83cbd8a3cb48d7617706e90",
+          "size": 1755
+        },
+        {
+          "path": "work/simulator/qemu-s9/frames-sd2020-291/result.json",
+          "sha256": "d959b869c4385a83c12da6961bbd9005074edb718fa3537d0c33847ffb6250ec",
+          "size": 1301313
+        },
+        {
+          "path": "work/simulator/qemu-s9/frames-sd2020-291/header.json",
+          "sha256": "da88ff9e0f2cb79d8055b38828beb80804960a91cd111938c2d53e2287f163bd",
+          "size": 650300
+        }
+      ]
+    }
+  },
+  "derived_bundle": {
+    "manifest": {
+      "path": "work/simulator/original-zynq/sd-bundle-291/boot/bundle.json",
+      "sha256": "a7f940cb1ee4e690e5027d518768d8be6d98cc3c14e4493f9fbc21d17b4fb129",
+      "size": 7553
+    },
+    "frames": {
+      "path": "work/simulator/original-zynq/sd-bundle-291/boot/fpga-frames.json",
+      "sha256": "b44d39dcd32f4ab0771f5e0e1a506f08f3773e43f08007f492804a4b68611744",
+      "size": 647144
+    },
+    "unchanged_firmware": {
+      "system.bit": {
+        "path": "work/simulator/original-zynq/sd-bundle-291/boot/system.bit",
+        "sha256": "980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421",
+        "size": 2083858
+      },
+      "system.bit.gz": {
+        "path": "work/simulator/original-zynq/sd-bundle-291/boot/system.bit.gz",
+        "sha256": "bdf2b3bff4f5f06169b302ccfac8424e46bb2089b6313e363457bf2ae1d4bd40",
+        "size": 164570
+      },
+      "boot.bin": {
+        "path": "work/simulator/original-zynq/sd-bundle-291/boot/boot.bin",
+        "sha256": "950d19c6e5bfd9d8107def130b19fc9a5f64d824b26c0c493d5fdfe8503edac4",
+        "size": 79263
+      },
+      "u-boot.img": {
+        "path": "work/simulator/original-zynq/sd-bundle-291/boot/u-boot.img",
+        "sha256": "80565aa18fdbdb655dcc5210ad48d036052ac94ac946efece6e4b54b19d0f550",
+        "size": 573276
+      },
+      "fit.itb": {
+        "path": "work/simulator/original-zynq/sd-bundle-291/boot/fit.itb",
+        "sha256": "8b2a32020281aa67490c01633adf99c1a2ca6c9897e4c210bb6d0d001c15caca",
+        "size": 18333708
+      },
+      "spl-payload.bin": {
+        "path": "work/simulator/original-zynq/sd-bundle-291/boot/spl-payload.bin",
+        "sha256": "765efb23844156e976ba785c24a6a753c664504a499c64581d1c356a3f4c02df",
+        "size": 77023
+      },
+      "uboot-payload.bin": {
+        "path": "work/simulator/original-zynq/sd-bundle-291/boot/uboot-payload.bin",
+        "sha256": "ce991c8b0255a287fb78163ac3763d496a5a473ec6810e35976d6ce42d100644",
+        "size": 573212
+      }
+    }
+  },
+  "comparative_result": {
+    "same_addresses": true,
+    "different_frame_hashes": 1977,
+    "compatibility_inferred": false
+  },
+  "negative": {
+    "inputs": {
+      "path": "work/simulator/qemu-s9/series7-inputs-291/provenance.json",
+      "sha256": "4008b3b3e755570952039c83bb994c248c6792d346349188f040ac84b39ebf6d",
+      "size": 969
+    },
+    "result": {
+      "path": "work/simulator/qemu-s9/frames-wrong-ecc-291/result.json",
+      "sha256": "d06925b6cbe6606abbf1d1c25a4a302ae4044b9073e126116082dd6150f43a60",
+      "size": 6539
+    },
+    "header": {
+      "path": "work/simulator/qemu-s9/frames-wrong-ecc-291/header.json",
+      "sha256": "c1e2108add04e9578d075683a69e5bfa876fe3b227726572471fdbb3d6e3ca41",
+      "size": 2845
+    },
+    "packet_crcs_pass": true,
+    "expected_failure": "frame ECC mismatch at 00000000: expected 0001, computed 0000"
+  },
+  "checks": {
+    "tests_passed": 586,
+    "test_binaries": 103,
+    "logs": [
+      {
+        "path": "work/simulator/checks-2026-10-21-001/fmt290.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/clippy290.log",
+        "sha256": "778f8e23c7d060d103d4627340be5ddb14581ad270b10f9773626a4f5091c784",
+        "size": 228
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/test290.log",
+        "sha256": "9dd739a8f378076b41d1a2fc3e2c1350b8a5399a8374845623dfa785d0ef246c",
+        "size": 76680
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/links290.log",
+        "sha256": "a6b8044d9987b9ce1078abdd4b129fc13ee715cb05548c1ca1b0cd0befe70175",
+        "size": 176
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/frames291-build.log",
+        "sha256": "e7f9441009686d9060f81395d121e3aa8fe26ad16898c3dccebc8149b589f616",
+        "size": 145
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/frames291-prepare.log",
+        "sha256": "ac4193459cce676ffdaae9eee278c3b0a9bd3bed0321a9f245cf88f16157bd5a",
+        "size": 197
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/frames291-selected.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/frames291-sd2020.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/frames291-negative.log",
+        "sha256": "c377a3a376056dd54f2c22159e2c9a39fe6db60db4838c8dd85bfc9ff973197f",
+        "size": 44
+      },
+      {
+        "path": "work/simulator/checks-2026-10-21-001/demo-inputs290.log",
+        "sha256": "9c99068089f0f301daca4f607d56404c1f29f4930a701501b36dc7c35b8113ec",
+        "size": 414
+      }
+    ]
+  },
+  "cleanup": {
+    "cache_record": {
+      "path": "work/simulator/reports/build-cache-cleanup-289.json",
+      "sha256": "e1a85472287c5d642fd4bcdba246004a2e8f978358732cd62f25fbb2f523ae05",
+      "size": 920
+    },
+    "duplicate_record": {
+      "path": "work/simulator/reports/duplicate-build-input-cleanup-289.json",
+      "sha256": "7bda2685ffd5d01f34133fd08699ca7920cf362a68eaa5c67b4537fc370e3b93",
+      "size": 96713
+    },
+    "released_cache_bytes": 13105557504,
+    "removed_verified_duplicate_bytes": 2797918529
+  },
+  "review": {
+    "author_review": "completed; numeric sorting, duplicate schema keys, counts, exact payload consumption, CRC-valid negative ECC, bounded execution, source versus logic claims and immutable originals checked",
+    "independent_review": "blocked by unchanged agent usage limit until 2026-10-25 08:48"
+  },
+  "open_dependencies": [
+    {
+      "input": "zynq7/xc7z010/tilegrid.json",
+      "expected_publisher_sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+      "status": "unavailable from checked primary raw and static-host sources; content provider returned cache misses or no file body",
+      "next_action": "Acquire full pinned Project X-Ray tilegrid, tile connectivity and segment feature data or the matching Braiins 2020 source/build inputs. Preserve unknown bits until every feature is accounted for."
+    },
+    {
+      "input": "Legacy RTL simulation backend",
+      "status": "GHDL/NVC/Vivado absent; prior download access blocked. Existing HDL and AXI VIP testbench remain reference inputs."
+    }
+  ],
+  "full_specification_complete": false,
+  "full_exact_target_passes": 0,
+  "matrix_rows": 79599,
+  "next_implementation": "Separate ASIC physical-time scheduling from variable FPGA clock edges. Preserve UART pin ordering, clock gating, actual hashing and fixed-clock regression behavior."
+}

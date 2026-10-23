@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-45905f02bc630b137827",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/09245db8-eba8-43e9-871a-098ad420ff22/2025/10/21/16/S23%20Hyd.%20Product%20Manual_v1.0.7.pdf",
+  "kind": "document",
+  "title": "S23 Hyd. Product Manual_v1.0.7.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-45905f02bc630b137827/S23_Hyd._Product_Manual_v1.0.7.pdf",
+  "sha256": "970030a8182b1f09b3a6dbbe6b68dab91ee7a934ab9270af93914b81d661b62d",
+  "size_bytes": 346235,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/09245db8-eba8-43e9-871a-098ad420ff22/2025/10/21/16/S23%20Hyd.%20Product%20Manual_v1.0.7.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 21 Oct 2025 08:24:50 GMT",
+  "etag": "\"680259ce8200bb16d7110f06ddb44107\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 346235,
+      "actual": 346235,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

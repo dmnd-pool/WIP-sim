@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-74798d5535a9e2aeac28",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/90cfee25-6e33-4ee8-b482-5ecbb3192def/2023/12/13/19/S21-SVHC235.pdf",
+  "kind": "document",
+  "title": "S21-SVHC235.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-74798d5535a9e2aeac28/S21-SVHC235.pdf",
+  "sha256": "4065ff3d16a8849a83b064393ba7cf37a21c6cd163126ac57ec136b378adc354",
+  "size_bytes": 218140,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/90cfee25-6e33-4ee8-b482-5ecbb3192def/2023/12/13/19/S21-SVHC235.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 11:20:40 GMT",
+  "etag": "\"5535c3bd53b5e756d7d8ab960e9d6af8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 218140,
+      "actual": 218140,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

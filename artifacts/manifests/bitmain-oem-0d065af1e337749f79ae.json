@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-0d065af1e337749f79ae",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/48519a94-3be3-4809-ba46-d248929511b1/2023/12/13/19/%EC%A0%81%ED%95%A9%EB%93%B1%EB%A1%9D%ED%95%84%EC%A6%9D__S21%20KC.pdf",
+  "kind": "document",
+  "title": "\uc801\ud569\ub4f1\ub85d\ud544\uc99d__S21 KC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-0d065af1e337749f79ae/________S21_KC.pdf",
+  "sha256": "ab68226dccaebdcdb8cc7e6f3beb84c7542873f0ab5ee0c9b7f25d9be99c4f33",
+  "size_bytes": 425152,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/48519a94-3be3-4809-ba46-d248929511b1/2023/12/13/19/%EC%A0%81%ED%95%A9%EB%93%B1%EB%A1%9D%ED%95%84%EC%A6%9D__S21%20KC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 11:22:48 GMT",
+  "etag": "\"a44e9e60d14bfb49b85f4a22f7d23cc3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 425152,
+      "actual": 425152,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

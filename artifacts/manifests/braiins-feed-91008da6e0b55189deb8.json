@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-91008da6e0b55189deb8",
+  "url": "https://feeds.braiins-os.com/23.09.2/braiins-os_am2-s17_web_2023-10-20-1-974d122b-23.09.2-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_am2-s17_web_2023-10-20-1-974d122b-23.09.2-plus.tar.gz",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:54:54+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-91008da6e0b55189deb8/braiins-os_am2-s17_web_2023-10-20-1-974d122b-23.09.2-plus.tar.gz",
+  "sha256": "541e88ec0b73fa84b0e00ec16e86221ff166ec9bfbf7394657ca5baa72600114",
+  "size_bytes": 38343127,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/23.09.2/braiins-os_am2-s17_web_2023-10-20-1-974d122b-23.09.2-plus.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 20 Oct 2023 14:32:38 GMT",
+  "etag": "\"65328f86-24911d7\"",
+  "vendor_sha256": "541e88ec0b73fa84b0e00ec16e86221ff166ec9bfbf7394657ca5baa72600114",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "541e88ec0b73fa84b0e00ec16e86221ff166ec9bfbf7394657ca5baa72600114",
+      "actual": "541e88ec0b73fa84b0e00ec16e86221ff166ec9bfbf7394657ca5baa72600114",
+      "match": true,
+      "source_id": "braiins-feed-efd3242ceb255d725b33"
+    }
+  ],
+  "upstream_integrity_match": true
+}

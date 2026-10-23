@@ -1,0 +1,54 @@
+{
+  "schema": "md-sim-derived-protocol-vectors/1",
+  "fixture": {
+    "path": "simulator/firmware/fixtures/t17-core-packing-results.bin",
+    "sha256": "7527abdd4015bbafa0dc1121733a9ff20c37799e142e11b6d2c69f57b45745d1",
+    "size": 196608
+  },
+  "original_miner": {
+    "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+    "size": 553247
+  },
+  "source_execution": "work/simulator/bitaxe/t17-core-oracle-274/assessment.json",
+  "source_execution_sha256": "8bab86b7d1c5f8f42ec3cfe301a79383069c761d0222b3ca50fbb63e31e97d71",
+  "exact_function_copies": [
+    {
+      "operation": "read",
+      "oracle_file_offset": 296,
+      "sha256": "57a96a1cf41038322a9ce46cf615bf161fdc528f5089a4c0e50bfeff4266b715",
+      "size": 64,
+      "source_file_offset": 117936
+    },
+    {
+      "operation": "write",
+      "oracle_file_offset": 360,
+      "sha256": "6914a2d19ac20c011eb801a32b04fc859604490ed2b83451968038414a8ecc89",
+      "size": 64,
+      "source_file_offset": 118000
+    }
+  ],
+  "input_order": {
+    "read": {
+      "inner_register_range_exclusive": [
+        0,
+        32
+      ],
+      "outer_core_range_exclusive": [
+        0,
+        1024
+      ]
+    },
+    "word_encoding": "little-endian u32; all read cases followed by all write cases",
+    "write": {
+      "inner_value_range_exclusive": [
+        0,
+        512
+      ],
+      "outer_register_range_exclusive": [
+        0,
+        32
+      ]
+    }
+  },
+  "scope": "Original vendor instruction outputs used for protocol regression. No mining, hardware response or target-conformance result."
+}

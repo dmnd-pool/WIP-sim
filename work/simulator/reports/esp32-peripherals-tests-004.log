@@ -1,0 +1,25 @@
+   Compiling md-sim-esp32s3-sar v0.1.0 (/home/user/src/md-sim/simulator/backends/esp32/sar-adc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
+     Running unittests src/lib.rs (work/simulator/bitaxe/sar-target/debug/deps/md_sim_esp32s3_sar-618a230ac8b8fd4f)
+
+running 17 tests
+test ds4432::tests::output_compliance_and_resistor_limits_are_explicit ... ok
+test ds4432::tests::power_bus_reset_and_read_pointer_have_distinct_behavior ... ok
+test ds4432::tests::unsupported_transactions_do_not_change_other_registers ... ok
+test ds4432::tests::published_example_and_sign_are_independent_of_supply_feedback ... ok
+test i2c::tests::address_and_data_nack_do_not_report_completion_or_later_bytes ... ok
+test i2c::tests::configuration_sync_reset_and_deadline_overflow_do_not_emit_bytes ... ok
+test i2c::tests::active_command_mutation_is_rejected_and_original_sequence_is_retained ... ok
+test i2c::tests::end_retains_bus_and_following_sequence_continues_without_address ... ok
+test i2c::tests::fifo_bounds_bad_commands_and_mode_gaps_are_visible ... ok
+test i2c::tests::repeated_start_read_and_last_nack_keep_transaction_order ... ok
+test i2c::tests::rx_overflow_retains_exact_bytes_and_level_irq_survives_clear ... ok
+test i2c::tests::trm_master_write_has_actual_bytes_timing_done_and_irq ... ok
+test tests::reference_equation_and_saturation ... ok
+test tests::actual_guest_ground_command_is_stateful_and_reset_cancels ... ok
+test tests::clocks_power_missing_inputs_and_invalid_access_do_not_succeed ... ok
+test tests::external_conversion_has_latency_and_readonly_result ... ok
+test tests::stopping_clock_cancels_and_next_start_uses_new_sample ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

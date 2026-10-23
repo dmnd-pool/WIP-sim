@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4e7331f02b7397c7726d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f678b7d3-9681-495e-ab91-3533eb57388c/2025/04/10/14/S21%20Product%20Manual-v4.5.3.pdf",
+  "kind": "document",
+  "title": "S21 Product Manual-v4.5.3.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4e7331f02b7397c7726d/S21_Product_Manual-v4.5.3.pdf",
+  "sha256": "67677ef2b07feb419daa8a754268abbcc5ea2f6e713156c037543a84f76d8b87",
+  "size_bytes": 604608,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f678b7d3-9681-495e-ab91-3533eb57388c/2025/04/10/14/S21%20Product%20Manual-v4.5.3.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 10 Apr 2025 06:39:57 GMT",
+  "etag": "\"45adab1e594a82b0ec60889a0fc85d2a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 604608,
+      "actual": 604608,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

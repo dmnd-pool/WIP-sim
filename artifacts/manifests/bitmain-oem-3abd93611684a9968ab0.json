@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3abd93611684a9968ab0",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/30e2eebc-fcff-41d7-9e2d-72ca9a10266e/2024/05/07/10/Antminer-KS3-CV-release-202404091643.bmu",
+  "kind": "firmware",
+  "title": "Antminer-KS3-CV-release-202404091643.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:54+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-3abd93611684a9968ab0/Antminer-KS3-CV-release-202404091643.bmu",
+  "sha256": "1e1f56c5aebe1c9167e571c157ede7037b1091f8929e8fb72ae2492313bd6fdb",
+  "size_bytes": 13763490,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/30e2eebc-fcff-41d7-9e2d-72ca9a10266e/2024/05/07/10/Antminer-KS3-CV-release-202404091643.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Tue, 07 May 2024 02:52:10 GMT",
+  "etag": "\"29d927d7c49b9b2350867fc8d54798e4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 13763490,
+      "actual": 13763490,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

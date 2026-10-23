@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e662926f0659e1d5eb64",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/40c74a1d-c45d-4fd8-b7de-602e772bb7c8/2025/11/08/13/FR-1.29(251029-U2L9H).bmu",
+  "kind": "firmware",
+  "title": "FR-1.29(251029-U2L9H).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:47+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-e662926f0659e1d5eb64/FR-1.29_251029-U2L9H_.bmu",
+  "sha256": "e49dda3ea5d222df36227ffab8c9880b6f44ac12e66cacf74bfbb3d2026fc68f",
+  "size_bytes": 15477760,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/40c74a1d-c45d-4fd8-b7de-602e772bb7c8/2025/11/08/13/FR-1.29(251029-U2L9H).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Sat, 08 Nov 2025 05:01:57 GMT",
+  "etag": "\"5c6e612b02e225a50a43f014070d7f0f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 15477760,
+      "actual": 15477760,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

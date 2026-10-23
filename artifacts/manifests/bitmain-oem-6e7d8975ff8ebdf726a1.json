@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-6e7d8975ff8ebdf726a1",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3ded5c18-7831-4733-992e-919109319700/2025/02/27/14/Antminer-S19j-XP-merge-release-20250214022253.bmu",
+  "kind": "firmware",
+  "title": "Antminer-S19j-XP-merge-release-20250214022253.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-6e7d8975ff8ebdf726a1/Antminer-S19j-XP-merge-release-20250214022253.bmu",
+  "sha256": "5e27809fabb9a687d1da4c53132d0dd017f63e8b29e822c834f3b24b851a5427",
+  "size_bytes": 45943529,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3ded5c18-7831-4733-992e-919109319700/2025/02/27/14/Antminer-S19j-XP-merge-release-20250214022253.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Thu, 27 Feb 2025 06:24:02 GMT",
+  "etag": "\"7b138f2c5b31e67848dab0a8e30ee8f7\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "7b138f2c5b31e67848dab0a8e30ee8f7",
+      "actual": "7b138f2c5b31e67848dab0a8e30ee8f7",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 45943529,
+      "actual": 45943529,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

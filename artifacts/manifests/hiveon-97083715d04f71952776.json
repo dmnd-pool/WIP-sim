@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-97083715d04f71952776",
+  "url": "https://download.hiveos.farm/asic/S17+/archive/SD-S17Plus_Hiveon_1.00-200403_sig.zip",
+  "kind": "firmware",
+  "title": "SD-S17Plus_Hiveon_1.00-200403_sig.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:21:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-97083715d04f71952776/SD-S17Plus_Hiveon_1.00-200403_sig.zip",
+  "sha256": "4ff38ab7579641e23b1bb387203eababa91af7592cd0d93a26daca98c412399d",
+  "size_bytes": 58750995,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S17+/archive/SD-S17Plus_Hiveon_1.00-200403_sig.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Fri, 03 Apr 2020 15:54:33 GMT",
+  "etag": "\"5e875c39-3807813\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 58750995,
+      "actual": 58750995,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,31 @@
+{
+  "id": "braiins-feed-3d5bdeb11b9114b41697",
+  "url": "https://feeds.braiins-os.com/toolbox/1.16.0/bos-toolbox",
+  "kind": "tool",
+  "title": "bos-toolbox",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 147978936,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:27:57+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/braiins-feed-3d5bdeb11b9114b41697/bos-toolbox",
+  "sha256": "edc68b2716e16aeffb3559025d37883eee9c47b734e157001d150843d91c9863",
+  "size_bytes": 147978936,
+  "final_url": "https://feeds.braiins-os.com/toolbox/1.16.0/bos-toolbox?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"6411d2b5-8d1fab8\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 15 Mar 2023 14:14:13 GMT",
+  "publisher_sha256": null,
+  "matches_publisher_sha256": null,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/toolbox/1.16.0/bos-toolbox?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden"
+}

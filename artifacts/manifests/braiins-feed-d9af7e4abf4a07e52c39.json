@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-d9af7e4abf4a07e52c39",
+  "url": "https://feeds.braiins-os.com/am3-bbb/firmware_2025-04-07-0-424f9a7f-25.03-plus_omap.tar",
+  "kind": "firmware",
+  "title": "sysupgrade am3-bbb nand 25.03",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:40:48+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-d9af7e4abf4a07e52c39/firmware_2025-04-07-0-424f9a7f-25.03-plus_omap.tar",
+  "sha256": "868062603f6a3fe01c78f457505b39976310d3d2f6d032b10c0f733df03a17ed",
+  "size_bytes": 28047360,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/am3-bbb/firmware_2025-04-07-0-424f9a7f-25.03-plus_omap.tar",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 07 Apr 2025 15:49:48 GMT",
+  "etag": "\"67f3f41c-1abf800\"",
+  "vendor_sha256": "868062603f6a3fe01c78f457505b39976310d3d2f6d032b10c0f733df03a17ed",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "868062603f6a3fe01c78f457505b39976310d3d2f6d032b10c0f733df03a17ed",
+      "actual": "868062603f6a3fe01c78f457505b39976310d3d2f6d032b10c0f733df03a17ed",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

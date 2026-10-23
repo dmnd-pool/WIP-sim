@@ -1,0 +1,71 @@
+{
+  "schema_version": "2.0",
+  "argv": [
+    "/usr/bin/tar",
+    "--extract",
+    "--to-stdout",
+    "--file=/archive.tar.gz",
+    "--",
+    "sysupgrade-am1-s9/fpga"
+  ],
+  "inputs": [
+    {
+      "guest_path": "/archive.tar.gz",
+      "object": {
+        "sha256": "8c05a3258d857cb51bec2b8a88749fccfa967ca601f3ef29a4784d158c6e1b43",
+        "size": 13158751
+      }
+    },
+    {
+      "guest_path": "/usr/bin/tar",
+      "object": {
+        "sha256": "8bd961dfeee3543f158f550566a66e78c713a9ad5b88432bab93b63f2bb9347c",
+        "size": 431840
+      }
+    },
+    {
+      "guest_path": "/usr/bin/gzip",
+      "object": {
+        "sha256": "b1f9e749ee0809d6e90100218e6bc13cdf3f26f23c243d5f62aae39162297cb1",
+        "size": 109768
+      }
+    },
+    {
+      "guest_path": "/usr/lib/libacl.so.1",
+      "object": {
+        "sha256": "ddab84c6479bd486973ba9f608adfe1cb4d1cebef0e5789f4b580a5b518919e9",
+        "size": 42960
+      }
+    },
+    {
+      "guest_path": "/usr/lib/libc.so.6",
+      "object": {
+        "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+        "size": 2215072
+      }
+    },
+    {
+      "guest_path": "/lib64/ld-linux-x86-64.so.2",
+      "object": {
+        "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+        "size": 263152
+      }
+    }
+  ],
+  "stdin_object": null,
+  "dashboard": null,
+  "loopback": false,
+  "environment": {
+    "PATH": "/usr/bin",
+    "LC_ALL": "C"
+  },
+  "limits": {
+    "wall_seconds": 20,
+    "cpu_seconds": 10,
+    "memory_bytes": 268435456,
+    "processes": 16,
+    "file_bytes": 1048576,
+    "trace_bytes": 1048576,
+    "tmp_bytes": 1048576
+  }
+}

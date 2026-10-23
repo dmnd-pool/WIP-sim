@@ -1,0 +1,35 @@
+{
+  "scope": "Final independent external pool audit review; strict-success findings resolved; no new shared execution claim",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_external_pool.rs",
+      "sha256": "ddf6362c881515f4c6a5cf0e639c50bc938b4fb483e7667aaa31a246899fe48a",
+      "size": 25545
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_execution_report.rs",
+      "sha256": "0e9205fc151ec484e3913f4299024a49ec8f2fc060e75e635c03f075fcd07c2f",
+      "size": 9090
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_submission_audit.rs",
+      "sha256": "90737d07d45b5fba85ef1bcdb0c44427a54d4429824ee87de3e594e616ee046c",
+      "size": 36184
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_asic_audit.rs",
+      "sha256": "8d2ed2172845ee614cc2d906c80e3595fcb8514a083248db7213a4788c341eda",
+      "size": 12047
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/shared-evidence386-tests.log",
+      "sha256": "ce31ecd0920912ef976eff3c387fab1a05de776c06cbcddddc3cbf1ab1c6ac88",
+      "size": 10803
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/shared-evidence386-clippy.log",
+      "sha256": "1c8f9e443379e16b039c9e5e1ae7a68111b2daa55d3e7b1d26200a6159376845",
+      "size": 143
+    }
+  ]
+}

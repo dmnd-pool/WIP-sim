@@ -1,0 +1,155 @@
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -0,0 +1,4 @@
++# BM1387 reference chain on the same Rust clock timeline as S9IO
++md_sim_bm1387_event(unsigned link, uint64_t ns, unsigned kind, unsigned value, unsigned extra, uint64_t grant, uint64_t wall_ns) "link=%u virtual_ns=%" PRIu64 " kind=%u value=0x%x extra=%u grant=%" PRIu64 " wall_ns=%" PRIu64
++md_sim_bm1387_packet(unsigned link, uint64_t ns, unsigned kind, const char *bytes) "link=%u virtual_ns=%" PRIu64 " kind=%u frame_hex=%s"
++md_sim_bm1387_state(unsigned link, uint64_t ns, unsigned kind, unsigned value, unsigned extra, uint64_t grant, uint64_t wall_ns) "link=%u virtual_ns=%" PRIu64 " kind=%u value=0x%x extra=%u grant=%" PRIu64 " wall_ns=%" PRIu64
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -46,6 +46,70 @@
+ #include "trace.h"
+ #include "qapi/visitor.h"
+ #include "hw/arm/xilinx_zynq.h"
++#include "hw/i2c/md-sim-s9io.h"
++
++#define TYPE_MD_ASIC_MACHINE MACHINE_TYPE_NAME("md-sim-s9-bm1387-development")
++OBJECT_DECLARE_SIMPLE_TYPE(MdAsicMachineState, MD_ASIC_MACHINE)
++struct MdAsicMachineState {
++    ZynqMachineState parent_obj;
++    double hash_cap_hps;
++    bool hash_budget_started, fabric_clock_reference;
++};
++
++static char *md_asic_get_cap(Object *obj, Error **errp)
++{
++    return g_strdup_printf("%.17g", MD_ASIC_MACHINE(obj)->hash_cap_hps);
++}
++
++static void md_asic_set_cap(Object *obj, const char *value, Error **errp)
++{
++    if (MD_ASIC_MACHINE(obj)->hash_budget_started) {
++        error_setg(errp, "Hash cap is immutable after machine startup");
++        return;
++    }
++    char *end;
++    errno = 0;
++    double rate = g_ascii_strtod(value, &end);
++    if (errno || end == value || *end || !(rate > 0 && rate <= 1e9)) {
++        error_setg(errp, "Invalid aggregate hash-cap-hps");
++        return;
++    }
++    MdHashBudget *check = md_hash_budget_new(rate);
++    if (!check) {
++        error_setg(errp, "Hash cap exceeds supported clock range");
++        return;
++    }
++    md_hash_budget_free(check);
++    MD_ASIC_MACHINE(obj)->hash_cap_hps = rate;
++}
++
++static bool md_asic_get_fabric(Object *obj, Error **errp)
++{
++    return MD_ASIC_MACHINE(obj)->fabric_clock_reference;
++}
++
++static void md_asic_set_fabric(Object *obj, bool enabled, Error **errp)
++{
++    if (MD_ASIC_MACHINE(obj)->hash_budget_started) {
++        error_setg(errp, "Fabric fixture selection is immutable after startup");
++        return;
++    }
++    MD_ASIC_MACHINE(obj)->fabric_clock_reference = enabled;
++}
++
++static void md_asic_machine_class_init(ObjectClass *oc, const void *data)
++{
++    ObjectProperty *prop = object_class_property_add_str(oc, "hash-cap-hps",
++                                      md_asic_get_cap, md_asic_set_cap);
++    object_class_property_set_description(oc, "hash-cap-hps",
++        "Aggregate functional hashes per wall second across all three chains");
++    object_property_set_default_str(prop, "10000");
++    prop = object_class_property_add_bool(oc, "fabric-clock-reference",
++                                         md_asic_get_fabric, md_asic_set_fabric);
++    object_class_property_set_description(oc, "fabric-clock-reference",
++        "Explicit FCLK1 reference wiring; not selected firmware FPGA evidence");
++    object_property_set_default_bool(prop, false);
++}
+ 
+ /* board base frequency: 33.333333 MHz */
+ #define PS_CLK_FREQUENCY (100 * 1000 * 1000 / 3)
+@@ -416,6 +461,12 @@
+         static const unsigned sd_interrupts[3][3] = {
+             {62, 63, 64}, {65, 66, 67}, {68, 84, 85},
+         };
++        MdHashBudget *asic_budget = NULL;
++        if (object_dynamic_cast(OBJECT(machine), TYPE_MD_ASIC_MACHINE)) {
++            asic_budget = md_hash_budget_new(MD_ASIC_MACHINE(machine)->hash_cap_hps);
++            assert(asic_budget);
++            MD_ASIC_MACHINE(machine)->hash_budget_started = true;
++        }
+         for (unsigned i = 0; i < 3; i++) {
+             DeviceState *io = qdev_new("md-sim-s9io");
+             unsigned link = i + (sd2022 ? 6 : 5);
+@@ -423,6 +474,11 @@
+             object_property_add_child(OBJECT(machine), name, OBJECT(io));
+             qdev_prop_set_uint32(io, "link-id", link);
+             qdev_prop_set_uint32(io, "build-id", 0x74657374);
++            if (asic_budget) {
++                qdev_prop_set_bit(io, "reference-v1-bm1387", true);
++                qdev_prop_set_bit(io, "bm1387-peer", true);
++                md_s9io_set_hash_budget(io, asic_budget);
++            }
+             sysbus_realize_and_unref(SYS_BUS_DEVICE(io), &error_fatal);
+             sysbus_mmio_map(SYS_BUS_DEVICE(io), 0,
+                             (sd2022 ? 0x43c00000 : 0x43c50000) + i * 0x10000);
+@@ -431,6 +487,7 @@
+                 sysbus_connect_irq(SYS_BUS_DEVICE(io), j, pic[irq - GIC_INTERNAL]);
+             }
+         }
++        md_hash_budget_free(asic_budget);
+     }
+     if (object_dynamic_cast(OBJECT(machine), MACHINE_TYPE_NAME("md-sim-s9-gpio-development"))) {
+         /* Exact archived DT declares9 input pins and13 output pins.
+@@ -455,6 +512,20 @@
+         sysbus_mmio_map(SYS_BUS_DEVICE(fan), 0, 0x42800000);
+     }
+     n = zynq_init_spi_flashes(0xE0006000, pic[58 - GIC_INTERNAL], false, 0);
++    if (object_dynamic_cast(OBJECT(machine), TYPE_MD_ASIC_MACHINE)) {
++        DeviceState *gpio = DEVICE(object_resolve_path("/machine/gpio-output", NULL));
++        for (unsigned i = 0; i < 3; i++) {
++            g_autofree char *io_path = g_strdup_printf("/machine/s9io%u", i + 6);
++            g_autofree char *pic_path = g_strdup_printf("/machine/pic%02x", i + 0x55);
++            DeviceState *io = DEVICE(object_resolve_path(io_path, NULL));
++            DeviceState *voltage = DEVICE(object_resolve_path(pic_path, NULL));
++            assert(gpio && io && voltage);
++            qdev_connect_gpio_out_named(voltage, "power-enable", 0,
++                qdev_get_gpio_in_named(io, "asic-power-reset-n", 0));
++            qdev_connect_gpio_out_named(gpio, "output", i + 9,
++                qdev_get_gpio_in_named(io, "asic-power-reset-n", 1));
++        }
++    }
+     n = zynq_init_spi_flashes(0xE0007000, pic[81 - GIC_INTERNAL], false, n);
+     n = zynq_init_spi_flashes(0xE000D000, pic[51 - GIC_INTERNAL], true, n);
+ 
+@@ -672,6 +743,12 @@
+ 
+ static void zynq_machine_register_types(void)
+ {
++    static const TypeInfo asic_fixture = {
++        .name = TYPE_MD_ASIC_MACHINE,
++        .parent = MACHINE_TYPE_NAME("md-sim-s9-pic-development"),
++        .instance_size = sizeof(MdAsicMachineState),
++        .class_init = md_asic_machine_class_init,
++    };
+     static const TypeInfo pic_fixture = {
+         .name = MACHINE_TYPE_NAME("md-sim-s9-pic-development"),
+         .parent = MACHINE_TYPE_NAME("md-sim-s9-fan-development"),
+@@ -709,6 +786,7 @@
+     type_register_static(&sd2022_fixture);
+     type_register_static(&fan_fixture);
+     type_register_static(&pic_fixture);
++    type_register_static(&asic_fixture);
+ }
+ 
+ type_init(zynq_machine_register_types)

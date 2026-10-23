@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-379a40de22510fa89e94",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c36a5c9a-e9ab-44f0-b5c4-5783f19e066a/2024/05/22/17/D9%20RoHS%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 RoHS Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:24+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-379a40de22510fa89e94/D9_RoHS_Shenzhen.pdf",
+  "sha256": "248d97c41a31e73425b53d13b1c42054e32a0cd425e44443682e878837d4f6ea",
+  "size_bytes": 290419,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c36a5c9a-e9ab-44f0-b5c4-5783f19e066a/2024/05/22/17/D9%20RoHS%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:50:48 GMT",
+  "etag": "\"0e57d91d3649e21fcf6a47dafa078849\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 290419,
+      "actual": 290419,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

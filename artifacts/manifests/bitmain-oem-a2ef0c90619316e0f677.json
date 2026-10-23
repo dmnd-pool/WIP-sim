@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a2ef0c90619316e0f677",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/8cf84b97-308c-4247-a15e-4cd675dfede9/2026/06/09/15/LVD_E11_CN24A3UM%20002_AN%2050694433%200001%20s_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_E11_CN24A3UM 002_AN 50694433 0001 s_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:28+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a2ef0c90619316e0f677/LVD_E11_CN24A3UM_002_AN_50694433_0001_s_extsigned.pdf",
+  "sha256": "cd5f867f94e91fa6db69d3dfe1467440f81678e20c2dffc081437c9d285f10d2",
+  "size_bytes": 1472380,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/8cf84b97-308c-4247-a15e-4cd675dfede9/2026/06/09/15/LVD_E11_CN24A3UM%20002_AN%2050694433%200001%20s_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 09 Jun 2026 07:05:08 GMT",
+  "etag": "\"e1fd72cda06349c570ac9c1b2df461e8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1472380,
+      "actual": 1472380,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

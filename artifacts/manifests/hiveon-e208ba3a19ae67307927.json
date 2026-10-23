@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-e208ba3a19ae67307927",
+  "url": "https://download.hiveos.farm/asic/custom/f2pool/SD-S17-S17pro_Hiveon_2.02-201008_f2pool_sig.zip",
+  "kind": "firmware",
+  "title": "SD-S17-S17pro_Hiveon_2.02-201008_f2pool_sig.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:06:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-e208ba3a19ae67307927/SD-S17-S17pro_Hiveon_2.02-201008_f2pool_sig.zip",
+  "sha256": "243002d10f8f272cce701588ef32db3fdf18d305c9fedf41c3dbae33502c3f74",
+  "size_bytes": 61598401,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/f2pool/SD-S17-S17pro_Hiveon_2.02-201008_f2pool_sig.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 08 Oct 2020 15:10:15 GMT",
+  "etag": "\"5f7f2bd7-3abeac1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 61598401,
+      "actual": 61598401,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

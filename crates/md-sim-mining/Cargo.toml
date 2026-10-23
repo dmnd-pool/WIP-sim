@@ -1,0 +1,15 @@
+[package]
+name = "md-sim-mining"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sha2 = { version = "=0.10.9", features = ["compress"] }
+bitcoin_hashes = "=0.14.1"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = { version = "=1.0.149", features = ["float_roundtrip"] }
+hex = "=0.4.3"
+libc = "=0.2.183"
+
+[dev-dependencies]
+tempfile = "=3.27.0"

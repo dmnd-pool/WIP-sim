@@ -1,0 +1,45 @@
+--- a/hw/i2c/meson.build
++++ b/hw/i2c/meson.build
+@@ -22,3 +22,3 @@
+-  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c'), md_core,
++  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c'), md_core,
+     declare_dependency(link_args: ['-Wl,--gc-sections',
+       '-lgcc_s', '-lutil', '-lrt', '-lpthread', '-lm', '-ldl', '-lc'])])
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -0,0 +1,2 @@
++# Fixed-direction AXI GPIO development binding
++md_sim_gpio_mmio(unsigned direction, bool write, uint64_t addr, unsigned value, unsigned error) "direction=%u write=%d addr=0x%" PRIx64 " value=0x%x error=%u"
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -305,2 +305,18 @@
++    if (object_dynamic_cast(OBJECT(machine), MACHINE_TYPE_NAME("md-sim-s9-gpio-development"))) {
++        /* Exact archived DT declares9 input pins and13 output pins.
++         * Default external inputs are tied low in this development fixture.
++         * No hashboard-presence or power-good success is synthesized. */
++        for (unsigned i = 0; i < 2; i++) {
++            DeviceState *gpio = qdev_new("md-sim-axi-gpio");
++            object_property_add_child(OBJECT(machine),
++                                      i ? "gpio-output" : "gpio-input", OBJECT(gpio));
++            qdev_prop_set_uint32(gpio, "width", i ? 13 : 9);
++            qdev_prop_set_uint32(gpio, "direction", i);
++            qdev_prop_set_uint32(gpio, "reset-data", 0);
++            qdev_prop_set_uint32(gpio, "reset-tri", UINT32_MAX);
++            sysbus_realize_and_unref(SYS_BUS_DEVICE(gpio), &error_fatal);
++            sysbus_mmio_map(SYS_BUS_DEVICE(gpio), 0, 0x41200000 + i * 0x10000);
++        }
++    }
+     n = zynq_init_spi_flashes(0xE0006000, pic[58 - GIC_INTERNAL], false, 0);
+     n = zynq_init_spi_flashes(0xE0007000, pic[81 - GIC_INTERNAL], false, n);
+@@ -498,3 +514,7 @@
+ static void zynq_machine_register_types(void)
+ {
++    static const TypeInfo gpio_fixture = {
++        .name = MACHINE_TYPE_NAME("md-sim-s9-gpio-development"),
++        .parent = MACHINE_TYPE_NAME("md-sim-s9-legacy-io-development"),
++    };
+     static const TypeInfo legacy_io = {
+@@ -537,2 +557,3 @@
+     type_register_static(&legacy_io);
++    type_register_static(&gpio_fixture);
+ }

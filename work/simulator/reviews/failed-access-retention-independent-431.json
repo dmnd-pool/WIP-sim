@@ -1,0 +1,60 @@
+{
+  "schema": "md-sim-independent-failed-access-retention/1",
+  "retention_verified": true,
+  "native_receipt": {
+    "locked_run_hash": "71df5df60c9d499bb01ff98c66e1a36f9ab0cf7d979a87abb9ca1e6921ddf765",
+    "token": "751e79ad4f6e547397b5fd2dcdf2e9d6cbf3f325c2135c1dbbbe1efc4ef5d288",
+    "run_id": "run-751e79ad4f6e547397b5fd2dcdf2e9d6cbf3f325c2135c1dbbbe1efc4ef5d288",
+    "result": {
+      "sha256": "e3aac175299649271bd985c54fd173541864d134c0c5f6bed46bf94776403cb1",
+      "size": 105718948
+    }
+  },
+  "joined_receipt": {
+    "native": {
+      "locked_run_hash": "71df5df60c9d499bb01ff98c66e1a36f9ab0cf7d979a87abb9ca1e6921ddf765",
+      "token": "751e79ad4f6e547397b5fd2dcdf2e9d6cbf3f325c2135c1dbbbe1efc4ef5d288",
+      "run_id": "run-751e79ad4f6e547397b5fd2dcdf2e9d6cbf3f325c2135c1dbbbe1efc4ef5d288",
+      "result": {
+        "sha256": "e3aac175299649271bd985c54fd173541864d134c0c5f6bed46bf94776403cb1",
+        "size": 105718948
+      }
+    },
+    "pool_bundle": {
+      "sha256": "11be68bd9a2838456bab25fda1ccb945553d8bc3d9155b5ee9e9751bb490f52b",
+      "size": 98537
+    },
+    "access_bundle": {
+      "sha256": "d8d56b446cbc8a9b368dce25237d9570dc716ed86f6f1773243dc88040e47b9b",
+      "size": 5516831
+    }
+  },
+  "actual_runtime_stdin_matches": true,
+  "actual_guest_joined_receipt_matches": true,
+  "actual_cleanup_matches": true,
+  "access_files_verified": 181,
+  "pool_sessions_verified": 10,
+  "access_passed": false,
+  "http_passed": true,
+  "overall_assessment_passed": false,
+  "browser_requested": false,
+  "root_cause_observed": "selected carrier TLS listener not reachable",
+  "cause_limit": "Single TCP readiness attempt failed. Its OS error was not retained. A startup race is not proven by this run.",
+  "outer": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 834098,
+    "trace_truncated": false
+  },
+  "assessment": {
+    "sha256": "7e2a3414adf44e83dd02fbe555db978a03d450039d41a2457dbe2d153c3cc082",
+    "size": 48899133
+  },
+  "outer_result": {
+    "sha256": "26d1e4684951cf2066d414583d44a652e3c8dfadac4c73ae90bf9bfa5ccfb9a7",
+    "size": 202410581
+  },
+  "complete_result_exported_flag": false,
+  "flag_limit": "This existing summary field also requires observation success. Exact retained native bytes and receipt chain were verified independently despite its false value.",
+  "scope": "Failed selected native TLS startup. Exact native, pool and access bytes retained before cleanup. Native HTTP passed; TLS, browser, mining/Core and exact-board acceptance are not granted here."
+}

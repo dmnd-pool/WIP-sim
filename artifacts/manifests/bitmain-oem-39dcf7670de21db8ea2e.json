@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-39dcf7670de21db8ea2e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bf93dad1-2c46-4eab-9a46-ad3a9ad07ff1/2024/04/07/16/WTD23D09210761E%20%20S19j%20XP%20%20ICES-003.pdf",
+  "kind": "document",
+  "title": "WTD23D09210761E  S19j XP  ICES-003.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-39dcf7670de21db8ea2e/WTD23D09210761E__S19j_XP__ICES-003.pdf",
+  "sha256": "6e6cc864e5dd71b31bff0dbd8d9f5311706e522e91f418dbc1a72ea8bf3bece8",
+  "size_bytes": 590771,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bf93dad1-2c46-4eab-9a46-ad3a9ad07ff1/2024/04/07/16/WTD23D09210761E%20%20S19j%20XP%20%20ICES-003.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 07 Apr 2024 08:39:40 GMT",
+  "etag": "\"9f342ebfb25ea683870bf7b98c5ef403\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 590771,
+      "actual": 590771,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

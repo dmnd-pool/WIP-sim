@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f096a90953051d61f5f1",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e0242d11-4b6d-4495-9bfd-77cc02604dcf/2022/01/19/18/S9k%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S9k Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:39:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f096a90953051d61f5f1/S9k_Server_Manual.pdf",
+  "sha256": "309b6d3127f4ad946fa1fefec2bd17670a25051f5b8a4009db2052fa765a6cad",
+  "size_bytes": 1653182,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e0242d11-4b6d-4495-9bfd-77cc02604dcf/2022/01/19/18/S9k%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:08:28 GMT",
+  "etag": "\"c92885edc6f58d6b9a7646b08ab9a5ac\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1653182,
+      "actual": 1653182,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

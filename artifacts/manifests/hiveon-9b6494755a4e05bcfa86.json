@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-9b6494755a4e05bcfa86",
+  "url": "https://download.hiveos.farm/asic/custom/tojnet/Antminer-S10-all-Hiveon-1.03@201124-sign-tojnet-10.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S10-all-Hiveon-1.03@201124-sign-tojnet-10.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:13:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-9b6494755a4e05bcfa86/Antminer-S10-all-Hiveon-1.03_201124-sign-tojnet-10.tar.gz",
+  "sha256": "9b082b4c493f507da3ed8562557c9dfdfae34da1e7b153410be8b27b8931b892",
+  "size_bytes": 23537129,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/tojnet/Antminer-S10-all-Hiveon-1.03@201124-sign-tojnet-10.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sat, 28 Nov 2020 15:48:18 GMT",
+  "etag": "\"5fc27142-16725e9\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23537129,
+      "actual": 23537129,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

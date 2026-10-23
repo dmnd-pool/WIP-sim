@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-c693f1daf38424710854",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S5%2B__20150924-325M.tar.gz",
+  "kind": "firmware",
+  "title": "S5+__20150924-325M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-c693f1daf38424710854/S5+__20150924-325M.tar.gz",
+  "sha256": "e1125b928c421e6f459be152693147a5f490c3af71094b6afbc33afb1d0b6ef0",
+  "size_bytes": 19155381,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S5%2B__20150924-325M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"8fcd5a22e6b5ee9b11f9d908601df932-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "e44d0196f16c45b370d09fed7df44342",
+      "actual": "e44d0196f16c45b370d09fed7df44342",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 19155381,
+      "actual": 19155381,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

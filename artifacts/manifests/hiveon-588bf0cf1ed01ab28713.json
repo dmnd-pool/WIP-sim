@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-588bf0cf1ed01ab28713",
+  "url": "https://download.hiveos.farm/asic/S19JPRO/WEB-AIR-Antminer-S19JPRO-amlogic-Hiveon-1.02@230912-core_1.5.0.9.tar.gz",
+  "kind": "firmware",
+  "title": "WEB-AIR-Antminer-S19JPRO-amlogic-Hiveon-1.02@230912-core_1.5.0.9.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:17:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-588bf0cf1ed01ab28713/WEB-AIR-Antminer-S19JPRO-amlogic-Hiveon-1.02_230912-core_1.5.0.9.tar.gz",
+  "sha256": "027cddbea992062b0cfe48c047c205bc3411aaa0d485585aa1dd17b41679b9d6",
+  "size_bytes": 33176506,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S19JPRO/WEB-AIR-Antminer-S19JPRO-amlogic-Hiveon-1.02@230912-core_1.5.0.9.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 12 Sep 2023 18:27:54 GMT",
+  "etag": "\"6500adaa-1fa3bba\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 33176506,
+      "actual": 33176506,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

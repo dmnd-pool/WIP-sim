@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-d39aed1cfb64cb5369d6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/197bbc0b-896c-4677-ba8d-02610d4ac7d6/2024/08/26/16/CB%202nd%20cert-AL1-CN24T9QR%20001-24.08.02_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert-AL1-CN24T9QR 001-24.08.02_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-d39aed1cfb64cb5369d6/CB_2nd_cert-AL1-CN24T9QR_001-24.08.02_extsigned.pdf",
+  "sha256": "5cf49ddd211a79fa493fa261ef35069273f9ebd85cb0a3cadbf3ecaf14b781b8",
+  "size_bytes": 345633,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/197bbc0b-896c-4677-ba8d-02610d4ac7d6/2024/08/26/16/CB%202nd%20cert-AL1-CN24T9QR%20001-24.08.02_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 26 Aug 2024 08:48:04 GMT",
+  "etag": "\"4332903d6e980cc21df89642a6c5476f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 345633,
+      "actual": 345633,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

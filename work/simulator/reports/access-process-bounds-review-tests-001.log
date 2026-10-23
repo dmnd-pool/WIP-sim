@@ -1,0 +1,12 @@
+   Compiling md-sim-access v0.1.0 (/home/user/src/md-sim/crates/md-sim-access)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.31s
+     Running unittests src/lib.rs (target/debug/deps/md_sim_access-1c749713b7460f41)
+
+running 4 tests
+test gateway::tests::config_paths_reject_variables_and_directives ... ok
+test gateway::tests::client_rules_need_real_bounds ... ok
+test credentials::tests::blocked_and_noisy_helpers_are_bounded ... ok
+test gateway::tests::real_certificate_preflight_checks_ip_and_size_limits ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+

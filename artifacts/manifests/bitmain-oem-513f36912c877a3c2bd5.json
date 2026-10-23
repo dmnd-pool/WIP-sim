@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-513f36912c877a3c2bd5",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/47b91202-27d0-464f-828f-57f56b41c4cf/2026/06/26/17/CB%202nd%20cert_U3S21EXPH_CN24JEOF%20003_JPTUV-168478-M2_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert_U3S21EXPH_CN24JEOF 003_JPTUV-168478-M2_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-513f36912c877a3c2bd5/CB_2nd_cert_U3S21EXPH_CN24JEOF_003_JPTUV-168478-M2_extsigned.pdf",
+  "sha256": "65e20032acca67404d000046b2c609bda1e023948aac5412444130889f9ab76d",
+  "size_bytes": 322995,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/47b91202-27d0-464f-828f-57f56b41c4cf/2026/06/26/17/CB%202nd%20cert_U3S21EXPH_CN24JEOF%20003_JPTUV-168478-M2_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 26 Jun 2026 09:57:50 GMT",
+  "etag": "\"23d450ecc11abc02f918449976662776\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 322995,
+      "actual": 322995,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

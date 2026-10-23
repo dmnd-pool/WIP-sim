@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1c654a724667952be064",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3a1ba56c-d160-40be-865a-77b02fb47751/2023/07/27/16/S19%20Pro%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S19 Pro Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:10+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1c654a724667952be064/S19_Pro_Server_Manual.pdf",
+  "sha256": "4a3b801ad92219f4d93b9ff7444c3e1417e7b098dfb0db9f51ee5748a6689291",
+  "size_bytes": 904635,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3a1ba56c-d160-40be-865a-77b02fb47751/2023/07/27/16/S19%20Pro%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:08:53 GMT",
+  "etag": "\"b3f4b9d6afd603bfa6f5c1babce90dc8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 904635,
+      "actual": 904635,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

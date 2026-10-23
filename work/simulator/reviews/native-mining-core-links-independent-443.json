@@ -1,0 +1,96 @@
+{
+  "schema": "md-sim-independent-native-mining-core-links/1",
+  "source_native_run": {
+    "locked_run_hash": "09e19cc31d326fbee7f9d88c8cbaeca636f390d0fc03106850b011fbeea4f5a9",
+    "token": "1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268",
+    "run_id": "run-1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268",
+    "result": {
+      "sha256": "c3faec35da051fb3e14f86eecdae4507f68ec62bc4e6046fc9904de16f872b7d",
+      "size": 105932004
+    }
+  },
+  "independent_wire_header_sha256d_replay": true,
+  "fresh_jobs": 2,
+  "clean_job_transition": true,
+  "difficulty_exponents": [
+    -31,
+    -30
+  ],
+  "hardware_computations_reported_by_frozen_auditor": 1687,
+  "firmware_submissions_independently_replayed": 7,
+  "accepted": 5,
+  "low_difficulty": 2,
+  "selected_session_id": 0,
+  "core": [
+    {
+      "candidate": 0,
+      "source_submission_index": 0,
+      "job_id": "8dc13078cabb185e-0",
+      "block_hash": "756bad500232f33432d1fb307b29420adf3c0177f6ba1b2443c3b3869b467a63",
+      "block_input": {
+        "sha256": "a351818f07d486f3d1ea39bfe7c2f7ae755ed37d2f5ee43bfa98b6942fabb8b5",
+        "size": 192
+      },
+      "accepted": true,
+      "height_sequence": [
+        0,
+        1,
+        1
+      ],
+      "raw_core_transitions_verified": true,
+      "source_result": {
+        "sha256": "c3faec35da051fb3e14f86eecdae4507f68ec62bc4e6046fc9904de16f872b7d",
+        "size": 105932004
+      },
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      }
+    },
+    {
+      "candidate": 1,
+      "source_submission_index": 1,
+      "job_id": "8dc13078cabb185e-1",
+      "block_hash": "21c7823c03e5097c15eb5d705793371216fc3d4dc109ea3fc0679965d000d916",
+      "block_input": {
+        "sha256": "ebccb13c3245dc3a6473daa38f34159aeb23284060f8b62567bfa94dc124033c",
+        "size": 192
+      },
+      "accepted": true,
+      "height_sequence": [
+        0,
+        1,
+        1
+      ],
+      "raw_core_transitions_verified": true,
+      "source_result": {
+        "sha256": "c3faec35da051fb3e14f86eecdae4507f68ec62bc4e6046fc9904de16f872b7d",
+        "size": 105932004
+      },
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      }
+    }
+  ],
+  "frozen_auditor_sources": {
+    "crates/md-sim-firmware/examples/s9_asic_audit.rs": {
+      "sha256": "8d2ed2172845ee614cc2d906c80e3595fcb8514a083248db7213a4788c341eda",
+      "size": 12047
+    },
+    "crates/md-sim-firmware/examples/support/s9_hash_audit.rs": {
+      "sha256": "05879ff4e9f28fdee45ce10b4f09f32c52041c66bd521cc9280daedb1940d22e",
+      "size": 30501
+    },
+    "crates/md-sim-firmware/examples/support/s9_submission_audit.rs": {
+      "sha256": "90737d07d45b5fba85ef1bcdb0c44427a54d4429824ee87de3e594e616ee046c",
+      "size": 36184
+    },
+    "crates/md-sim-firmware/examples/support/s9_external_pool.rs": {
+      "sha256": "ddf6362c881515f4c6a5cf0e639c50bc938b4fb483e7667aaa31a246899fe48a",
+      "size": 25545
+    }
+  },
+  "negative_scope": "Only LowDifficulty rejection was observed in selected session0. Duplicate, stale, invalid and out-of-range rejection are not established by this session. Component negative tests remain separate.",
+  "scope": "Recomputed every selected-session header and SHA256d from raw Stratum wire data, matched frozen independent hardware audit and exact441 input/result identities. Two complete fresh blocks match actual original Core import/restart evidence. Adapted reference execution; no exact-board/full-target or external-host pass."
+}

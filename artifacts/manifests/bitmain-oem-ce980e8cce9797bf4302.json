@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ce980e8cce9797bf4302",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e762f04d-f7cd-4244-b945-deb7be2aa622/2024/07/19/00/LVD-S19e%20XP%20Hyd.-CN24HUV3%20001-24.05.08_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD-S19e XP Hyd.-CN24HUV3 001-24.05.08_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ce980e8cce9797bf4302/LVD-S19e_XP_Hyd.-CN24HUV3_001-24.05.08_extsigned.pdf",
+  "sha256": "11ca008694231da859e55ea9653c0b5887a59727e1c78ad186b220f78787bb74",
+  "size_bytes": 1694289,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e762f04d-f7cd-4244-b945-deb7be2aa622/2024/07/19/00/LVD-S19e%20XP%20Hyd.-CN24HUV3%20001-24.05.08_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 18 Jul 2024 16:32:27 GMT",
+  "etag": "\"80d49b286fa5c47787af53ada8a42934\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1694289,
+      "actual": 1694289,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

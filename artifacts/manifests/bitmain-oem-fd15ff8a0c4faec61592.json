@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-fd15ff8a0c4faec61592",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/aa9c0081-ada4-48a3-8333-4391d87c0150/2024/12/18/09/CB%203rd%20cert-S21%20XP-CN24S25E%20003-24.11.04_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 3rd cert-S21 XP-CN24S25E 003-24.11.04_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-fd15ff8a0c4faec61592/CB_3rd_cert-S21_XP-CN24S25E_003-24.11.04_extsigned.pdf",
+  "sha256": "33f981e00ef162a5f2292077f63795885519dde2dedb47d5201efd7ad5569adc",
+  "size_bytes": 329242,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/aa9c0081-ada4-48a3-8333-4391d87c0150/2024/12/18/09/CB%203rd%20cert-S21%20XP-CN24S25E%20003-24.11.04_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 18 Dec 2024 01:29:42 GMT",
+  "etag": "\"9d7aec41fd226821fb35b53789b33c1b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 329242,
+      "actual": 329242,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

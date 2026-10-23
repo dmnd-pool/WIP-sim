@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-eb3e674f2385a47bc187",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-L3-201704271449-384M.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-L3-201704271449-384M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-eb3e674f2385a47bc187/ANTMINER-L3-201704271449-384M.tar.gz",
+  "sha256": "ac49a6bf78b92b7fe13b02258f7c171468d8a48d87ec9760f388d82de26cb1c8",
+  "size_bytes": 10387342,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-L3-201704271449-384M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"0e3235ea9638aed3adf50bc8261345e3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 10387342,
+      "actual": 10387342,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

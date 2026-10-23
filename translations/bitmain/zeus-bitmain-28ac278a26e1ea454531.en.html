@@ -1,0 +1,703 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Antminer T9+ Hash Board Repair Guide [EN]</title><style>body{max-width:1000px;margin:2em auto;font:17px/1.5 sans-serif}img{max-width:100%;height:auto}table{border-collapse:collapse}td,th{border:1px solid #aaa;padding:.3em}</style><body><h1>English counterpart: Antminer T9+ Hash Board Repair Guide [EN]</h1><p>Chinese original: zeus-bitmain-28ac278a26e1ea454531. English source: <a href="https://www.zeusbtc.com/manuals/Antminer-T9-plus-Hash-Board-Repair-Guide.asp">zeus-bitmain-049be5bc12d458ddd0e0</a>.</p><p>This is the English manual published by Zeus Mining for the corresponding model. The original source images are retained and linked to local archive files. Image-only labels are not newly translated. A complete page-by-page equivalence check has not been made.</p><p>Same explicit version date found in both texts: false.</p><div class="Manuals">
+<h2>How to Repair Antminer T9+ Hash Board?</h2>
+<p></p>
+<p>
+    Doc. Version: 2018.07.18
+</p>
+<p>
+    Doc. Category: Maintenance Guide
+</p>
+<p>
+    Content of This Doc.: mainly about the fault checking and hash board tester pinpointing of Antminer T9+.
+</p>
+<p>
+    ※ The copyright of this article belongs to Bitmaintech Pte.Ltd. (Bitmain). The article shall solely be reprinted, extracted or used in any other ways with the permission of the copyright owner. Please contact Bitmain official customer service if there is any need of reprinting or quoting.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>I. Maintenance Platform Requirements</strong>
+</p>
+<p>
+    1. Thermostat soldering iron at 350-400 degrees Celsius, pointed solder tip for small patches like r-c.
+</p>
+<p>
+    2. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=271" target="_blank" title="heat gun">Heat gun</a> for chip disassembly and soldering, no long time heating in case of PCB blistering.
+</p>
+<p>
+    3. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=61" target="_blank" title="APW3++ power supply">APW3++ power supply</a> with 12V and 133A Max output to test the Hash board.
+</p>
+<p>
+    4. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=99" target="_blank" title="Fluke 15b+ multimeter">Fluke 15b+ Multimeter</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=132" target="_blank" title="tweezer">tweezer</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=212" target="_blank" title="T9+ hash board tester">T9+ hash board tester</a> (<a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=267" target="_blank" title="oscilloscope">oscilloscope</a> preferred).
+</p>
+<p>
+    5. Scaling powder, cleaning water and anhydrous alcohol; cleaning water is used to clean the residue and appearance after maintenance.
+</p>
+<p>
+    6. Tin grinder, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=73" target="_blank" title="Tin tool">tin tool</a>, and tin cream; implant tin for chips upon renewals.
+</p>
+<p>
+    7. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=86" target="_blank" title="Heat-conducting Glue, black">Heat-conducting Glue, black</a> (3461), to glue cooling fin after maintenance.
+</p>
+<p>
+    8. You can also choose the simple and convenient <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=258" target="_blank" title="Bitmain antminer hash board repair bundle">Bitmain antminer hash board repair bundle</a>, which includes the necessary <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Repair-tools/" target="_blank" title="Antminer repair tools">Antminer repair tools</a>.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>II. Maintenance Requirements</strong>
+</p>
+<p>
+    1. Maintenance Personnel in possession of good electronics knowledge, 1 year+ experience and sound mastery of QFN encapsulation and soldering techniques.
+</p>
+<p>
+    2. Check more than two times after maintenance and the result of each time is OK!
+</p>
+<p>
+    3. Watch out for the techniques used, make sure of no obvious PCB deformation after changing any fittings, check for missing/open circuit/short circuit on parts.
+</p>
+<p>
+    4. Check the maintenance target and corresponding test software parameter and hash board tester.
+</p>
+<p>
+    5. Check whether tools and testers can work properly.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>III. Principle and Structure</strong>
+</p>
+<p>
+    <strong>● Principle Introduction</strong>
+</p>
+<p>
+    1. <strong>T9+</strong> has 3 signal chains, and each signal chain has 18 chips; has 18 voltage domains and each domain has 3 BM1387 chips; the entire board has 54 <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=58" target="_blank" title="BM1387 chip">BM1387 chips</a>.
+</p>
+<p>
+    2. BM1387 chip has built-in voltage-reduction diodes, decided by designated pin of the chip.
+</p>
+<p>
+    3. Each of T9+ three signal chains has a <strong>25M</strong> crystal oscillator on the clock, connecting in series and passing on from the 1st chip to the l8thchip.
+</p>
+<p>
+    4. T9+ has independent <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=289" target="_blank" title="cooling fins">cooling fins</a> on the front and back of each chip. SMT paster on the front and the one on the back was fixed on the back of the IC by heat conducting glue after initial testing. Upon completion of every maintenance, it has to be fixed by black heat conducting glue (evenly distributed) on the back of the IC.
+</p>
+<p>
+    <span style="color: rgb(255, 0, 0);">Note:</span>
+</p>
+<p>
+    In the process of maintenance, when changing circuit board fittings or chip, in order to avoid the damage to PCB and chip caused by the heat from the blower gun, cooling fins near the malfunctioning part and the cooling fin on the back of PCB need to be removed firstly before conducting fitting changes.
+</p>
+<p>
+    <strong>PCB</strong> has testing points on both sides, use the front one during maintenance in production before fitting cooling fin on the front; in product maintenance (after-sales maintenance), cooling fins are on both sides of <strong>PCB</strong>, locate fault through the testing points of PCB, and use specially made long and thin pen-shape meter to probe into the gaps of cooling fin for test; because the SMT small cooling fins connect the earth of each voltage domain, watch out the insulation of pen-shape meter, to avoid short circuit caused by pen-shape meter.
+</p>
+<p>
+    <strong>● Key Point Analysis</strong>
+</p>
+<p>
+    1.Below is the Signal Flow Diagram of <strong>T9+ Signal Panel</strong>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-def731114dfd59ead51c/16276977798295027.jpg" title="repair T9+ hash board" alt="repair T9+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 1. Signal Flow
+</p>
+<p>
+    <span style="color: rgb(0, 176, 80);">Green line</span> is CLK signal flow, chain0 is produced by Y5 25M crystal oscillator, transmits from No. 1-1 chip to No. 1-18 chip; chain 1 is produced by Y4 25M crystal oscillator, transmits from No. 2-1 chip to No. 2-18 chip; chain 2 is produced by Y6 25 M crystal oscillator, transmits from No. 3-1 chip to No. 3-18 chip; in standby and operation, voltage is 0.9V. Resistance is 780.
+</p>
+<p>
+    <span style="color: rgb(255, 192, 0);">Orange line</span> is TX (CI, CO) signal flow, IO Mouth Pin 7(TX2)/11(TX0)/17(TX1) in, transmits from No. 1 chip to No. 18 chip; the voltage is 0V when IO wire is not plugged, and the voltage is 1.8V in opearation. Resistance is 580.
+</p>
+<p>
+    <span style="color: rgb(255, 255, 0);">Yellow line</span> is RX (RI, RO) signal flow, returns from No. 18 chip to No. 1 chip, and then returns to control panel from IO mouth pin 8(RX2)/12(RX0)/18(RX1); the voltage is 1.8V when IO signaling wire is not plugged, and the voltage is also 1.8V in opearation. Resistance is 580.
+</p>
+<p>
+    <span style="color: rgb(112, 48, 160);">Purple line</span>&nbsp;is B (BI, BO) signal flow, lowers electrical level from No. 1 chip to No. 18 chip; the voltage is 0V when IO signaling wire is not plugged or in standby, and the singal impluse is about 0.3 in computing. Resistance 580.
+</p>
+<p>
+    <span style="color: rgb(255, 0, 0);">Red line</span> is RST signal flow, IO mouth pin 15(RST0)/21(RST1)/22(RST2) in, transmits from No. 1 chip to No, 18 chip; 0V when IO signaling wire is not plugged or in standby, and 1.8V in computing. Resistance is 440.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-e050cd71330beede04c9/16276978907059614.jpg" title="repair T9+ hash board" alt="repair T9+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 2
+</p>
+<p>
+    2. Fig 4 is the critical circuits on the front of <strong>T9+ Hash board</strong>.
+</p>
+<p>
+    1) Testing points among chips (as below fig 3 after amplification)
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-cce0e916c0a85236e461/16276979759404783.jpg" title="T9+ hash board reapir" alt="T9+ hash board reapir"></img>
+</p>
+<p style="text-align: center;">
+    Fig 3. Testing Points among Chips
+</p>
+<p>
+    In maintenance, the most direct fault-locating method is to test the testing points among chips. The testing point arrangement of T9+ Hash board is as the following:
+</p>
+<p>
+    The sequence of the 9 voltages domains of the lower row: RST, BO, RI(RX), CO(TX), CLK.
+</p>
+<p>
+    The sequence of the 9 voltage domains of the upper row is reverse: CLK, CO(TX), RI(RX), BO, RST.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-c66fe4873cd50039a106/16276981238668699.jpg" title="T9+ hash board reapir" alt="T9+ hash board reapir"></img>
+</p>
+<p style="text-align: center;">
+    In maintenance, the right marks are the positions of testing points of lower row
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-55b3ed2f77e6b86dd7df/16276981417779356.jpg" title="T9+ hash board reapir" alt="T9+ hash board reapir"></img>
+</p>
+<p style="text-align: center;">
+    In maintenance, the left marks are the positions of testing points of upper row
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-f71c469af80eaa94bf73/16276982757005094.jpg" title="The Critical Circuits of T9+ Hash board.jpg" alt="The Critical Circuits of T9+ Hash board.jpg"></img>
+</p>
+<p style="text-align: center;">
+    Fig 4. The Critical Circuits of T9+ Hash board
+</p>
+<p>
+    2) Voltage Domain: the entire board has 18 voltage domains, and each domain has 3 chips. The 3 chips in the same voltage domain are in associated.<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-421aa691686dbd9028b5/16276983258896940.jpg" title="how to repair hash board" alt="how to repair hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 5. The Critical Circuits on the Front of T9+ Hash board<br></br>
+</p>
+<p>
+    3) T9+ IO mouth TX Input and RX Output Circuits
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-f7ab39893f5317f05ae2/16276983672472547.jpg" title="how to repair hash board" alt="how to repair hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 6. TX Input Circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-87b8ac569d09b2636c15/16276983746222868.jpg" title="how to repair hash board" alt="how to repair hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 7. RX Output Circuit
+</p>
+<p>
+    4) 14V Boosted Circuit (some versions have no circuit of this part) as Fig 8:
+</p>
+<p>
+    The responsibility is to boost DC-DC (8.3 - 9.2V) to 14V, and the principle is to boost 9V to 14V through U110 RT8537 switching power supply, the switching signal produced by U110 stores energy via L1 inductance, and then D100 boosted rectifying diode charges and discharges C954, and thereby get the 14V of C954 positive electrode.
+</p>
+<p>
+    The input voltage of external LDO of the last 5 voltages domains of T9+ V1.0, V1.1 is powered by 14 DC-DC booster voltage, and that of V1.2, V1.4, V1.5 is powered by the input 12V of single board.
+</p>
+<p>
+    <span style="color: rgb(255, 0, 0);">Note:</span> the abnormal rise of the voltage of boosted circuit often causes the LDO damage of the last 5 voltage domains of Hash board, and also causes chip damage easily. And the anomaly of boost voltage is often caused by the oxidation of U110, R812 and R811.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-5eab8859879064eae872/16276984645520841.jpg" title="repair guide for T9+ hash board" alt="repair guide for T9+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 8. 14V Boosted Voltage Circuit<br></br>
+</p>
+<p>
+    5) Principle Analysis of Voltage Domain Single Chip (see below Fig 9 and Fig 10):
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-29e3efbf2c4800ea1f96/16276985045802091.jpg" title="repair guide for T9+ hash board" alt="repair guide for T9+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 9. BM1387 Circuit Diagram
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-b4a1ddacdf6dba267739/16276985295058866.jpg" title="repair guide for T9+ hash board" alt="repair guide for T9+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 10. BM1387 Chip Pins
+</p>
+<p>
+    Signal Description
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-bc2d6440b99075a3a6c2/16276988754640424.jpg" title="BM1387 chip pin" alt="BM1387 chip pin"></img>
+</p>
+<p>
+    <strong>● The above is the pin functions of BM1387 chip.</strong><br></br>
+</p>
+<p>
+    In maintenance, mainly test the ten testing points on the front and back of chip (front and back have 5 respectively: CLK, CO, RI, BO, RST); CORE voltage; LDO-1.8V, PLL-0.8V; DC-DC output, and booster voltage 14V.
+</p>
+<p>
+    Test Methods:
+</p>
+<p>
+    1) When IO wire is not plugged and only 12V is plugged: DC-DC output is 0V or so, and booster voltage output is about 0V. PIC power supply 3.3Vmust be powered up. Other test voltages are all about 0;
+</p>
+<p>
+    2) When IO wire is plugged but test key is not pressed, DC-DC and booster voltage have no voltage output; when tool test key is pressed, PIC begins to work. At that moment, DC-DC outputs the voltage set up by PIC tool test program, booster voltage begins to work. Then tool outputs WORK and returns NONC after computing. This moment the normal voltage of each testing point should be:
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">CLK: </span>0.9V
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">CO: </span>1.6-1.8V. When tool just sends WORK, CO is negative polarity, so DC level will be lowered and the transient voltage is about 1.5V.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RI:</span> 1.6-1.8V. In computing, anomaly voltage or low voltage will cause Hash board anomaly or zero hash rate. BO: 0V when there is no computing; and 0.1-0.3V impulse beat in computing.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RST: </span>1.8V. Every time when pressing tool test key, output reset signal again.
+</p>
+<p>
+    When any testing point status or voltage is abnormal, infer fault point according to the signal flow of testing point.
+</p>
+<p>
+    ● It can be seen from above list:
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">CLK signal</span>: Pin 24 in, Pin 6 out, when crossing domains, Pin 6 out, via a 100NF capacitor, enters the Pin 24 of the next chip.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">TX signal</span>: Pin 27 in, Pin 5 out;
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RX signal</span>: Pin 4 returns, Pin 28 out;
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">BO signal</span>: Pin 30 in, Pin 2 out;
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RST signal</span>: Pin 32 in, Pin 1 out.
+</p>
+<p>
+    As shown in below Fig. 10: it is able detect each signal voltage of chip, including CORE voltage, LDO-1.8O, LDO-1.8I, PLL-0.8, LDO- 2.5I, etc.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">CORE: 0.45V </span>— generally the chip CORE short circuit of this voltage domain will cause this voltage anomaly.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">LDO-1.8: 1.8V </span>— LDO-1.8 short circuit or open circuit of this chip will cause this voltage anomaly.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">PLL-0.8: 0.8V</span> — PLL-08 power supply short circuit of a chip of this voltage domain or LDO-1.8 anomaly will cause this voltage anomaly.
+</p>
+<p>
+    3) Determine the operation status of Hash board, hash rate of chip, temperature sensing, etc. according to print window information of test tool.
+</p>
+<p>
+    3. IO Mouth: IO is composed of 2×12 pitch 2.0 PHSD 90°in -line double row. The definition of each pin as below Fig 11:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-d677df192e078e4df31e/16276990592581037.jpg" title="IO mouth" alt="IO mouth"></img>
+</p>
+<p style="text-align: center;">
+    Fig 11. Each Pin Definition of IO Mouth
+</p>
+<p>
+    As shown in above Fig:<br></br>
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 1, 2, 9, 10, 13, 14, 19, 20, 23, 24</span>: GND.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 3 and 4 (SDA, SCL)</span>: the I2C bus wire of DC-DC PIC, connect control panel to communicate with PIC; through which control panel can read and write PIC data, and thereby control the power supply voltage of Hash board.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 5 (PLUG0)</span>: the identification signal of Hash board, this signal raises 10K resistance to 3.3 V by Hash board, so this pin is high level 3V when IO signal is plugged.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 11, 12 (TXD0, RXD0), Pin 17, 18 (TXD1, RXD1), Pin 21, 22 (TXD2, RXD2)</span>: hash rate channel of
+</p>
+<p>
+    Hash board 3.3 end, and changes into TX (CO), RX (RI) signals through resistive voltage division; the electrical level of all IO mouth pin ends is 3.3V, and changes into 1.8V through resistive voltage division.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 15 (RST0), pin 21(RST1), pin 22 (RST2)</span>: reset signal 3.3V end, and changes into 1.8V RST reset signal through resistive voltage division.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 6, 16 (ID)</span>: ID identification pin of Hash board, mainly providing <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=106" target="_blank" title="control panel">control panel</a> with Hash board&nbsp;
+</p>
+<p>
+    <strong>ID. Below Fig 12 shows each pin of IO</strong>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-c1a6a6c8bc98157039ee/16276991275465635.jpg" title="IO signal" alt="IO signal"></img>
+</p>
+<p style="text-align: center;">
+    Fig 12. IO Signal
+</p>
+<p>
+    4. 3.3V Reduction Voltage Circuit: 3.3V power supply for Hash board, mainly providing PIC and EPROM with working voltage.
+</p>
+<p>
+    Responsible for reducing voltage to 3.3V from 12V, and the principle is to reduce 12V to 3.3V through U115 MP1484 switching power supply, the switching signal produced by U150 stores energy via L30 inductance, charges and discharges C1345, gives sampling feedbacks via R1202/R1203 to U150 and thereby controls the voltage of C1345 positive electrode. See Fig 14 and Fig 15:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-a6083a0a1c0495c5718a/16276991813648908.jpg" title="reduction voltage schematic" alt="reduction voltage schematic"></img>
+</p>
+<p style="text-align: center;">
+    Fig 14. 3.3V Reduction Voltage Schematic
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-71167ddcfec176170f51/16276992129475233.jpg" title="reduction voltage PCB" alt="reduction voltage PCB"></img>
+</p>
+<p style="text-align: center;">
+    Fig 15. 3.3V Reduction Voltage PCB
+</p>
+<p>
+    5. DC-PIC: Composed of PIC133EP16 chip and EPROM chip <a href="https://www.zeusbtc.com/Integrated-Circuit/IC-Details.asp?ID=549" target="_blank" title="AT24C02">AT24C02</a>. See Fig 16 and Fig 17:
+</p>
+<p>
+    PIC controls the device in relation to chip frequency information of Hash board and voltage value, through which we can control the DC-DC output voltage of Hash board.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-9549a88d3989f93b19f8/16276993401049268.jpg" title="PIC schematic diagram" alt="PIC schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    Fig 16. PIC Schematic Diagram
+</p>
+<p>
+    When PIC works, it needs to control and send a heartbeat signal every 10 seconds or so. Without heartbeat information, PIC will be closed after 10 seconds. PIC pin 13 is VDD 3.3V, pin 8 is GND, pin 11 and 12 are I²C bus wire that connects IO mouth to control panel, pin 2, 3 and 4 are PIC addresses; pin 4 is PIC 3.3V; pin 24 and 26 are the PWM output of PIC, pin 23 and 25 are the OD output of PIC, and control DC-DC voltage; pin 6 is EN signal that PIC outputs, and controls DC-DC operational status.
+</p>
+<p>
+    EPROM stores information covering chip frequency information, voltage value, etc. Every time before working, PIC firstly read data like computing frequency of Hash board, voltage, etc. of last time from EPROM.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-c45772d5cefa6da25d8f/16276995517069914.jpg" title="EPROM" alt="EPROM"></img>
+</p>
+<p style="text-align: center;">
+    Fig 17. EPROM Locality Map
+</p>
+<p>
+    EPROM stores the information like voltage, frequency, etc. of T9+ Hash board, and Fig 19 is EPROM Schematic
+</p>
+<p>
+    6. DC-DC Circuit: Parallel clamping circuit composed of MAX15026 and <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=84" target="_blank" title="CMOS tube TPHR9003NL">CMOS tube TPHR9003NL</a> as well as MBR0540 and NCP3420D. See Fig 18 and Fig 19
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7c8e92fbe3393df36899/16276996487833464.jpg" title="DC-DC schematic diagram" alt="DC-DC schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    Fig 18. DC-DC Schematic Diagram
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-ed23eabc84c76cc32429/16276996754884596.jpg" title="T9+ hash board repair manual" alt="T9+ hash board repair manual"></img>
+</p>
+<p style="text-align: center;">
+    Fig 19. Clamping Circuit Schematic Diagram
+</p>
+<p>
+    MAX15026 voltage regulator produces PWM switching signal to drive the two pairs of MOS tubes (Q1/Q3, Q4/Q5) of upper and lower bridges, and stores energy via L2 inductance, NCP3420D, driven by PIC, produces PWM switching signal to drive the two pairs of MOS tubes (Q2/Q7, Q6/Q8) of upper and lower bridges, and then filters via C19 and C20 after connection.<br></br>
+</p>
+<p>
+    MAX15026 main function pins:
+</p>
+<p>
+    Pin 1: 12 V power supply
+</p>
+<p>
+    Pin 9: GND
+</p>
+<p>
+    Pin 4: EN control, connect PIC pin 6, and control the operational status of DC-DC circuit via PIC Pin 7: FB feedback, connect VO via R14
+</p>
+<p>
+    Pin 2: VCC
+</p>
+<p>
+    Pin 13: bootstrap capacitor 10V+ Pin 12: switching signal
+</p>
+<p>
+    Pin 11: lower bridge drive Pin 14: upper bridge drive
+</p>
+<p>
+    When the voltage of DC-DC is abnormal, firstly check the consistency of voltage value of PIC and DC-DC output voltage through tool print information; if they are inconsistent, replace the low capacitance aroundLM27402SQ;
+</p>
+<p>
+    If DC-DC has no output, check whether L4/L5 loses material oris burned-out; if L4 loses material, check Q6, Q8 and U90 again to find whether they are damaged; if L5 loses material or is burned-out, check Q2, Q7 and U88 again to find whether they are damaged; try to measure out all damaged materials at a time, and replace them materials at a time, in case that there are still poor materials which might burn out new materials again due to the replacement of part of materials.
+</p>
+<p>
+    7. 25M CLK: Composed of Y 25MHZ passive crystal oscillator and 100nF: See Fig 20 and Fig 21.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-37d0fcac957525f55f91/16276997947612226.jpg" title="T9+ hash board repair manual" alt="T9+ hash board repair manual"></img>
+</p>
+<p style="text-align: center;">
+    Fig 20. 25M CLK Circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-6dda5667739211a8ef0a/16276998209778731.jpg" title="T9+ hash board repair manual" alt="T9+ hash board repair manual"></img>
+</p>
+<p style="text-align: center;">
+    Fig 21. 25M CLK Schematic
+</p>
+<p>
+    8. 1.8V-LDO: Composed of 1.8VLDO SPX5205M5_L_1_8.<br></br>
+</p>
+<p>
+    See below Fig 22 and Fig 23:
+</p>
+<p>
+    SPX5205M5 pin 1 and 3 in, pin 5 1.8V out;
+</p>
+<p>
+    Note: the LDO power supply of T9+ Hash board has two types. The first type is that every voltage domain of Hashboard has an external LDO SPX5205M5, responsible for the LOD of the 3 chips of each voltage domain; the other type is that only the last 5 voltage domains have external LDO, and other voltages are powered by chip built-in LDO; all BM1387 chips have built-in LDO power supply circuit, BM1387 pin 14 (LDO-25I) in, pin 12(LDO-18O) out, and each chip has independent LDO without mutual interference. The LDO-25I power supply of the last 5 voltage domains are from 14V boosted circuit; and the LDO-25I of other voltage domains are from chip itself.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">PLL-08 voltage is from LOD-1.8 via voltage division of two resistances.</span>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-6121e6d6a07863f2d00a/16276998539834761.jpg" title="maintenance guide" alt="maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Fig 22. 1.8V Voltage Stabilizing Circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-144c873cf89b2bdc6736/16276998784631086.jpg" title="maintenance guide" alt="maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Fig 23. 1.8V Voltage Stabilizing Circuit
+</p>
+<p>
+    9. Temperature sensor circuit: two temperature sensors, one is TEMP (PCB), consisting of sensor IC; the other is TEMP (CHIP), and this is composed of chip build-in temperature sensor (BM1387 pin 2 and pin 16). These two temperature sensors collect parameter, and return to FPGA of control panel from RI via BM1387 pin 17 and pin 18. The principle is as Fig 24:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-438b91abca653a70f58d/16276999086132368.jpg" title="maintenance guide" alt="maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Fig 24. Temperature Sensor Schematic Diagram
+</p>
+<p style="text-align: center;">
+    T9+ Temperature Sensor IC connects the first chip (U6) of No. 2 signal chain
+</p>
+<p style="text-align: center;">
+    <strong>IV. The Troubleshooting of T9+ Single Board</strong>
+</p>
+<p style="text-align: center;">
+    <strong><img src="../../artifacts/files/document/zeus-diagram-553e321302f160771657/16277000198369322.jpg" title="maintenance manual" alt="maintenance manual"></img></strong>
+</p>
+<p style="text-align: center;">
+    <span style="color: rgb(255, 0, 0);">Test Results of Normal miner</span>
+</p>
+<p>
+    1: Report 0 or numeral<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-a01c69286d92226c0bcf/16277000696922422.jpg" title="maintenance manual" alt="maintenance manual"></img>
+</p>
+<p>
+    Maintenance method refers to the report of 0 situation of S9. Note: the 3 chips in 1 voltage domain belong to 3 signal chains. If one chip has problem or is not installed properly, it will affect the other two signal chains. For instance, the fault has been located in above Fig. Improper installation of the chip might cause that three signal chains report 0 together.<br></br>
+</p>
+<p>
+    2: low hashing:
+</p>
+<p>
+    Maintenance method refers to the low hashing situation of S9.
+</p>
+<p>
+    <span style="color: rgb(255, 0, 0);">Note: Low hashing of T9+ will cause spam and auto reboot.</span>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-1200dbd06e1d12385d78/16277001194888303.jpg" title="maintenance manual" alt="maintenance manual"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>V. Troubleshooting of Complete miner</strong>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-a24f0b82ac088b347903/16277001436230284.jpg" title="best guide for T9+ hash board" alt="best guide for T9+ hash board"></img>Test Results of Normal miner<strong><br></br></strong>
+</p>
+<p>
+    The fault standard and troubleshooting of T9+ complete miner test refer to S9.
+</p>
+<p>
+    a. Hash board of T9+ is displayed as 3 boards on the background web page.
+</p>
+<p>
+    b. 9 and 10 belong to the first Hash board, 3, 11 and 12 belong to the second Hash board, and 4, 13 and 14 belong to the third Hash board. When which three boards belong to one Hash board can not easily determined, see the temperature behind. The three boards with same temperature belong to one Hash board. For most miners, the temperatures of the three Hash boards are different.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>VI. Maintenance Process</strong>
+</p>
+<p>
+    ● sample:
+</p>
+<p style="text-align: center;">
+    <strong><img src="../../artifacts/files/document/zeus-diagram-4e97eb0f6ea8e4ad80c9/16277002461498609.jpg" title="best guide for T9+ hash board" alt="best guide for T9+ hash board"></img></strong>
+</p>
+<p>
+    1. Regular Check: observe the target board to find cooling fin displacement, deformation or burn? Such issues take priority, displacement can be solved by taking it off, wash off the glue and re-glue it after the maintenance. If there is no problem, then check impedance of each and every voltage domain to see if there is short/open circuit, which then takes priority. Check if every domain reaches 0.45V and voltage different no greater than 0.05. Voltage too high or too low suggests anomalies in the neighboring domains.
+</p>
+<p>
+    2. After regular check (in which short circuit check is a must, in case of burning chips or other fittings when power is on), check the chip with hash board tester, judge and pinpoint based on such result.
+</p>
+<p>
+    3. Based on hash board tester results, check test point from the malfunctioning chip, (<strong>CLK IN OUT/TX IN OUT/RX IN OUT/B IN OUT/RST IN OUT</strong>), and <strong>VDD VDD0V8 VDD1V8 VDD2V5</strong>.
+</p>
+<p>
+    4. Signal flow, apart from RX (No.63 to No.1), are sequential (CLK C0 B0 RST) from No.1 to No.18. So the anomaly can be identified with power sequence.
+</p>
+<p>
+    5. When pinpointed the malfunctioning chip, re-solder the chip: add scaling powder around the chip, heat the chip pin to dissolved state, move and press the chip lightly; have the chip pins and soldering pans re-grinded, finish. Note that if re-soldering does not help, the chip should be changed directly.
+</p>
+<p>
+    6. Run at least twice with hash board tester on fixed Hash board. Test timing: first time should be after changing fittings, with cooled board. The second time should be in a few minutes with fully-cooled board. The gap between two tests will not affect working. Put aside the repaired board and continue with another one, come back to the first one with the fixed second one
+</p>
+<p>
+    7. Log the malfunction type after maintenance, esp. the model, location and reason. This will further improve the feedback to production, CS and R&amp;D.
+</p>
+<p>
+    8. Conduct formal burn-in after logging.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>VII. Malfunction Types</strong>
+</p>
+<p>
+    Typical malfunctions of T9+:
+</p>
+<p>
+    1. <span style="color: rgb(0, 176, 240);">Missing cooling fin or cooling fin displacement/deformation: </span>No cooling fin displacement or touch on the PCB (back side of the board) before power-on, esp. fins in different voltages. Fins of different voltage domains touching will result in possible short circuits. Make sure all fins are in good condition of heat-transitioning and fixed tight. Before replacing or re-implanting fins, clean the residue on the fin and the board first. Residue can be handled with anhydrous alcohol.
+</p>
+<p>
+    2. <span style="color: rgb(0, 176, 240);">Imbalanced impedance among multiple voltage domains:</span> When the impedance of certain domains is deviated from the norm, the anomaly domains could comprise open/short circuits. It is most likely that the chips are the cause. But there are 3 chips in each voltage domain; the problem could be with only one of them. Check and compare the earth impedance of each test point on chips to find the anomaly point and thus locating the problem chip.
+</p>
+<p>
+    Short Circuit: remove the cooling fin from the chips in the same voltage domain and observe chip pin to spot bridging issue. If you cannot find short circuit point by observing, find it by resistivity method or interception method.
+</p>
+<p>
+    3. <span style="color: rgb(0, 176, 240);">Imbalanced voltage among domains: </span>Voltage too high or too low suggests IO signal malfunction in the anomaly domain or the neighboring domain. This cause the next domain to show abnormal status and then: voltage imbalance. Check the signals and voltages in test points to find the anomaly point. Some of the cases may require you to compare the impedance among multiple test points to find the anomaly.
+</p>
+<p>
+    Pay special attention: <strong>CLK signal and RST signal — anomalies of these 2 are most frequently causing voltage imbalance.</strong>
+</p>
+<p>
+    4. <span style="color: rgb(0, 176, 240);">Missing chips:</span> Missing chips means that when conducting hash board tester checks, all 18 chips (three chains display respectively) cannot be found, but only some of them. The actually missing (cannot find by checking) anomaly chips are not in the shown location. You need to pinpoint the anomaly chip by testing. The pinpointing can be conducted by intercepting TX. Pivot the TX signal of a certain chip over the land, such as, after setting the TX output of chip No. 14, over the earth and all previous chips are normal, the hash board tester should show 50 chips. If not, the anomaly exists before No. 14; if it does, the anomaly chip is after No. 14. Repeat this until you locate the anomaly chip bydichotomy.
+</p>
+<p>
+    5. <span style="color: rgb(0, 176, 240);">Broken link:</span> Broken links are similar to missing chips. The difference is that not all missing chips are in anomaly, but only one abnormal chip causing the following chips to fail. Such as, a certain chip is functional, but it does not transmit information from other chips; this signal chain will be broken right here — this is called broken link.
+</p>
+<p>
+    Hash board tester is capable of showing broken links. Such as when checking chips, hash board tester reports only 14 chips; hash board tester cannot start running until it detects pre-set number of chips, so it only shows the number of chips found. Based on the number “14”, check the voltage and impedance at test points right before and after chip No. 14 will help you to locate the problem.
+</p>
+<p>
+    6. <span style="color: rgb(0, 176, 240);">No running:</span>
+</p>
+<p>
+    No running means the hashboard tester cannot detect the chip information of the Hash board and shows “No hash board”; this is the most frequent problem.&nbsp;
+</p>
+<p>
+    1) <span style="color: rgb(112, 48, 160);">Voltage anomaly of a certain voltage domain: </span>check the voltages among multiple domains to locate the problem.
+</p>
+<p>
+    2) <span style="color: rgb(112, 48, 160);">Chip anomaly:</span> Check signals among test points to locate the anomaly.
+</p>
+<p>
+    <strong>CLK signal: 0.9V; </strong>signal is from chip No. 00 to No. 17. But the current edition offers only 1 crystal oscillator, abnormal CLK causes all subsequent signals to show anomaly. Find the target in the sequence of signal transmission.
+</p>
+<p>
+    <strong>TX signal: 1.8V;</strong> this signal is from chip No.00, 01...17, look for previous ones when you hit anomaly at a certain point.
+</p>
+<p>
+    <strong>RX signal: 1.8V;</strong> this signal return from 17...01, 00, identify the malfunction reason by checking signal direction. When no running happens to Hash board, this signal takes priority, check it first.
+</p>
+<p>
+    <strong>BO signal: 0V;</strong> this signal means that when the chip detects RI return signal in a normal state, it can be set down to low level, otherwise it should be high level.
+</p>
+<p>
+    <strong>RST signal: 1.8V;</strong> when the board is powered on and plunged in IO signal, this signal will transmit from 00, 01…17 and till the last chip.
+</p>
+<p>
+    3) <span style="color: rgb(112, 48, 160);">Caused by a certain chip</span>
+</p>
+<p>
+    Check the PD among multiple domains. In normal conditions, the VDD voltage is 0.45V, all the voltages on other test points should be 0.4V5 as well, a balance among multiple domains is necessary.
+</p>
+<p>
+    4) <span style="color: rgb(112, 48, 160);">VDD1V8 voltage anomaly of a certain chip</span>
+</p>
+<p>
+    Check the test points of voltage domains to determine whether or not a certain VDD1V8 is normal. Generally, IO voltage determines the voltage of test points. Therefore, when the IO voltage is 1.8V, the test points have a normal voltage of 1.8V.
+</p>
+<p>
+    5) <span style="color: rgb(112, 48, 160);">VDD2V5 anomaly of a certain chip</span>
+</p>
+<p>
+    Make sure the voltage is normal. Abnormal voltage is related to low VDD voltage.
+</p>
+<p>
+    6) <span style="color: rgb(112, 48, 160);">Buck and Booster Circuit Anomaly</span>
+</p>
+<p>
+    Check the C8 capacitor output (up-left) and see if the voltage is between 8.27V and 9.07V. Those who are not in the scope may be in need of a re- upgrade to the U3 PIC; make sure the PIC voltage is normal, check to see if U100 has an output of 14V; also check the un-checked peripheral parts and U100 per se.
+</p>
+<p>
+    7. <span style="color: rgb(0, 176, 240);">Low hashing:</span>
+</p>
+<p>
+    Low hashing can be divided into:
+</p>
+<p>
+    1) <span style="color: rgb(112, 48, 160);">Hash board tester shows NG due to insufficient Nonce and low hashing.</span> The serial port shows information on the number of Nence each chip returns. Generally, if the Nence number is lower than the pre-set value, you should look for chip malfunction. If it is not due to poor soldering or peripheral reasons, you should just replace the chip.
+</p>
+<p>
+    2) <span style="color: rgb(112, 48, 160);">Hash board tester shows normal status, but after installation the hashing is low. </span>This is generally due to poor cooling of the chips. Pay special attention to the cooling fin glue, and the general ventilation. Another reason could be that the voltage of a certain chip is critical, and after installation, the 12V power supply is different from the test power supply, thus together resulting in a difference between test hashing and actual running hashing. Tune down and test with the hashboard tester, esp. with the DC adjustable 12V power supply. Find the voltage domain that returns the minimum number of Nence.
+</p>
+<p>
+    8. <span style="color: rgb(0, 176, 240);">NG of a certain chip:</span>
+</p>
+<p>
+    Means that when testing with hashboard tester, the port information shows the Nence is insufficient or zero of the return of a certain chip. If it’s not due to poor soldering or peripheral reasons, just replace the chip.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>VIII. Maintenance Notes</strong>
+</p>
+<p>
+    1. The operator should be familiar with the function, flow direction, normal voltage and earth impedance values of each test point.
+</p>
+<p>
+    2. The operator should be familiar with chip soldering to avoid PCB blistering, deformation or pin damage.
+</p>
+<p>
+    3. BM1387 chip is packaged with 16 pins on both sides. Make sure of the polarity and coordinates when soldering.
+</p>
+<p>
+    4. When replacing the chip, clean all the heat-conducting glue on the chip to avoid IC poor soldering or poor cooling (which causes second-time chip damage)
+</p>
+<p>
+    <span style="color: rgb(255, 0, 0);">Other Notes:</span>
+</p>
+<p>
+    1. The Chip’s back side cooling fins are earth connected with the chip, so it is imperative to use a long slim electro probe to check the test points. The probe should be fully insulated with heat-shrink tubes other than the metal on the tip to avoid that the probe touching the cooling fin and the test points at the same time. The voltage difference between upper and lower circuits, so touching the earth of different domains (cooling fins) and test points could cause man-made damage to the chip. Please pay special attention.
+</p>
+<p>
+    2. Soldering. There are cooling fins right next to the PCB on the back side of the chip, thus the cooling is fast. So during soldering, you would need auxiliary heating at the bottom (about 200 degrees Celsius). This improves efficiency and reduces damage to the PCB. Without auxiliary heating device, you need to remove the cooling fins on the PCB on the back side of the chip first before replacing the chip.
+</p>
+<p>
+    <br></br>
+</p>
+</div></body></html>

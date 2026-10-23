@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-abe5232d15bcf5ef8e20",
+  "url": "https://download.hiveos.farm/asic/custom/Reborn-alikas74/210201/Antminer-S9-all-Hiveon-1.03@210201-sign-Reborn.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@210201-sign-Reborn.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:06:11+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-abe5232d15bcf5ef8e20/Antminer-S9-all-Hiveon-1.03_210201-sign-Reborn.tar.gz",
+  "sha256": "de3006985251c3fef9fcdae6688b386e80e9898a5682524aa423181ea12c6698",
+  "size_bytes": 23766734,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Reborn-alikas74/210201/Antminer-S9-all-Hiveon-1.03@210201-sign-Reborn.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 01 Feb 2021 17:02:42 GMT",
+  "etag": "\"60183432-16aa6ce\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23766734,
+      "actual": 23766734,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

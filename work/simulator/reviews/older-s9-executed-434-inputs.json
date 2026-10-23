@@ -1,0 +1,121 @@
+{
+  "schema": "md-sim-research-evidence-inputs/1",
+  "claim": "bounded static extraction and configuration mismatch; no firmware execution or hardware compatibility result",
+  "files": [
+    {
+      "path": "work/simulator/reviews/older-s9-archive-candidate-434.md",
+      "sha256": "31290d4378ad58cbe9dfb1a0dff086a01dac2e54de501a8127dc601ece38a1f4",
+      "size": 4490
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-extract-434-spec.json",
+      "sha256": "89bd4b7344970684f863fe238e9f9c9f94027b1ff97726a0842e4bd2be78b2b7",
+      "size": 1436
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-extract-434-inputs.json",
+      "sha256": "e2f34fe6988e31e13688a975b4a5d9e41d22759a82898b03a8a641da800498f4",
+      "size": 2130
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-expand-434-spec.json",
+      "sha256": "dfc0ec885a4f04b5596425854ffc30de710828716d5d5064df723e20b25c879d",
+      "size": 1232
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-import-434.log",
+      "sha256": "13dd851d6dca35617e5fe35a2420d1a1efb6438e7f239e2a934516191abfb08e",
+      "size": 1688
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-execute-434.log",
+      "sha256": "1b2ea4c4be94732198b191ed667155d37d01aa9aa06f6b433d35796a9e2201a2",
+      "size": 180
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-probe-434.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-expand-import-434.log",
+      "sha256": "6cf6c08d0bd6cbdbfc2f042682bd51b6a57ccd1826d2c932e36cac62b6460e49",
+      "size": 281
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-expand-434.log",
+      "sha256": "62930bb5ddcae3e2f873d61de43295d8cf665937e74910a97d55735f8a8a712d",
+      "size": 179
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-executed-434.json",
+      "sha256": "6861dd72e1522a7275f7f7d78b1792fe11ff9248257d0b81d4021c09e5c35708",
+      "size": 3130
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-cleanup-434.json",
+      "sha256": "78558b49e5dcef7ca4cb8d6a030a15bc9f09ba71d781f96029c5680a58ea8f2c",
+      "size": 2416
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-cleanup-434-complete.json",
+      "sha256": "44c07326ea76cc5bb973bd6fbee6692d8343ef64eac7a06a001cec0c412c6815",
+      "size": 7932
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-extract-434/lock.json",
+      "sha256": "46899fcbe833726e9be5bca85be849902a3250a57389b5d800c24d9535f5a574",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-extract-434/process-spec.json",
+      "sha256": "121757f99227c84cad42ac19582d231f438022d5ba88e96ecad08797e345355a",
+      "size": 1697
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-extract-434/result.json",
+      "sha256": "c1ddf42a58e644fafd43d5245e42b91e6e8e878c1d49b01a917f217019a51dc8",
+      "size": 956338
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-extract-434/system.bit.gz",
+      "sha256": "9482ef607556a168e5b9e9ecc6de3198578cec9fb2187ed7d16ea451952b8552",
+      "size": 477812
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-expand-434/lock.json",
+      "sha256": "8597e40739ea47cb4688b124f4e2fd759889203342c6a3f8e9e920d262c76cfb",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-expand-434/process-spec.json",
+      "sha256": "23a4c8eda32d6f99a42ca5fda63649209664124c5609870e396a07a04b8efbfe",
+      "size": 1190
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-expand-434/result.json",
+      "sha256": "0fe9b79a201f323080a607db89a43ef0a5f4fb7270d6a2294742a595cf6a3dee",
+      "size": 4168417
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-expand-434/system.bit",
+      "sha256": "b147f09919fb40317c27f57e76fd39380a114d6236535068fb4618a28c9e09b5",
+      "size": 2083852
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-frames-434/spec.json",
+      "sha256": "eb8646cfb3de375de76f94ec4fcca79340a048acbd81fbc5bd0a9f0d531429ab",
+      "size": 1755
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-frames-434/result.json",
+      "sha256": "c5898afb0ba03f10f7c17e7e0b2eb67d6743f2e87b6b2da0f9c9e0eaf9dc3f2b",
+      "size": 1301571
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-frames-434/header.json",
+      "sha256": "9c4fc7c2a476ccf3aba205d147b8b6a326ad2e42537af65ac4ae7d6413dffb83",
+      "size": 650429
+    }
+  ]
+}

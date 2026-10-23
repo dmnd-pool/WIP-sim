@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-382ae4fc66320095b58b",
+  "url": "https://download.hiveos.farm/asic/custom/minecoloio/Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03@201124-S17E-sign-minecoloio.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03@201124-S17E-sign-minecoloio.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:11:31+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-382ae4fc66320095b58b/Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03_201124-S17E-sign-minecoloio.hive.tar.gz",
+  "sha256": "98f98ad3cd49a542b5e2b7527b70516db0faf5ed56fd52173af8bf9d3628555d",
+  "size_bytes": 26925535,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/minecoloio/Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03@201124-S17E-sign-minecoloio.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 24 Nov 2020 20:49:04 GMT",
+  "etag": "\"5fbd71c0-19ad9df\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 26925535,
+      "actual": 26925535,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,822 @@
+Air Series
+User Guide
+
+
+
+
+   2026/07/13
+ www.bitdeer.com
+                                                                  Air Series Series User Guide
+
+
+                                  Table of Contents
+1. Product Introduction​                                                                         3
+   1.1 Component Reference​                                                                       3
+2. Server wiring and shelf operation safety reminder​                                            4
+   2.1 Server Wiring​                                                                             4
+   2.2 Power control cable connection​                                                            4
+   2.3 Precautions for connecting the power cable of the control board​                           4
+   2.4 Fan cable connection​                                                                      5
+   2.5 Precautions for connecting the control board and the hash board​                           6
+   2.6 Power Copper Busbar Connection Precautions​                                                6
+   2.7 Machine wiring check​                                                                      7
+   2.8 Precautions for server transportation and racking​                                         7
+3. Server configuration and preparation​                                                         8
+   3.1 Server configuration item list​                                                            8
+   3.2 Server network environment​                                                                8
+4. Server connection and power-on check​                                                          9
+5. Server data configuration​                                                                    10
+   5.1 Query the Dynamic IP Address Assigned to the Server​                                      10
+   5.2 Mining pool & miner data​                                                                 12
+       5.2.1 Mining pool & miner configuration​                                                  12
+   5.3 Configure the server static IP address (optional)​                                        14
+6. Server running status check​                                                                  15
+7. Configuring Server batch data, server status check, upgrading of firmware​                    15
+8. Machine Disassembly and Installation​                                                         16
+   8.1 Disassembly and Installation of the Control Board​                                        16
+       8.1.1 Disassembly of the Control Board​                                                   16
+       8.1.2 Control board installation​                                                         17
+   8.2 Disassembly and Installation of the Power Supply​                                         18
+       8.2.1 Disassembly of the Power Supply​                                                    18
+       8.2.2 Installation of the Power Supply​                                                   19
+   8.3 Disassembly and installation of hashboard​                                                23
+       8.3.1 Disassembly of the Hash Board​                                                      23
+       8.3.2 Installation of the Hash Board​                                                     25
+9. Further Remarks And Considerations​                                                           26
+   9.1 Equipment Care and Maintenance​                                                           26
+10. After-Sales Service​                                                                         27
+11. After-sales warranty Fee terms​                                                              28
+12. Regulatory and Compliance information​                                                       30
+   12.1 United States Federal Communications Commission (FCC)​                                   30
+   12.2 Innovation, Science and Economic Development (ISED) Canada​                              32
+   12.3 European Union (CE) & WEEE​                                                              33
+   12.4 Safety & Power Specifications​                                                           34
+   12.5 Product Identification & Labelling​                                                      35
+                                                Air Series Series User Guide
+
+
+1. Product Introduction
+   Applicable models for this manual: A2 Air, A2 Pro Air, A3 Air, A3
+     Pro Air, A4 Pro Air (The parameters in this guide are applicable to
+     the general conditions of the listed models. If there are differences
+     in technical parameters for specific models, please refer to the
+     latest data on the official Bitdeer website. If you have any
+     questions or need further assistance, please contact the Bitdeer
+     customer support team.)
+
+
+
+
+1.1 Component Reference
+
+This manual applies to the SealMiner AX Air series air-cooled servers.
+① Ethernet port
+② Indicator light
+③ SD card slot
+④ Find IP button
+⑤ Reset button
+⑥ FAN1 port
+⑦ FAN2 port
+⑧ Power port
+                                               Air Series Series User Guide
+
+⑨ FAN3 port
+⑩ FAN4 port
+
+
+2. Server wiring and shelf operation
+safety reminder
+2.1 Server Wiring
+Connect the control board cables to the fan, power supply, and computing
+board correctly according to the instructions. Make sure the connector
+clips are locked. Do not force the cable plugs in backwards. Inserting
+them incorrectly can damage the control board and signal cables when
+you turn on the power.
+
+2.2 Power control cable connection
+The 4-pin power IIC control cable features a locking buckle on the plug.
+Ensure correct orientation during connection as shown in the figure
+below, and verify that the buckle is securely engaged after insertion.
+
+
+
+
+2.3 Precautions for connecting the power cable of the
+control board
+The control board power cable is a 2x3PIN connector with a locking
+buckle. Please refer to the figure below for the correct connection
+                                                Air Series Series User Guide
+
+method. Ensure the insertion direction is accurate and the buckle is
+securely latched after connection.
+
+
+
+
+2.4 Fan cable connection
+The fan cable is a 2*2PIN with a locking buckle. Please refer to the
+illustration below for the correct connection method. Ensure the insertion
+direction is accurate and the buckle is securely latched after connection.
+                                                 Air Series Series User Guide
+
+
+2.5 Precautions for connecting the control board and
+the hash board
+The hashboard cable is a 2*8PIN with a locking buckle. Please refer to
+the illustration below for the correct connection method. Ensure the
+insertion direction is accurate and the buckle is securely latched after
+connection.
+
+
+
+
+2.6 Power Copper Busbar Connection Precautions
+During the installation of the hash board copper busbars, please ensure
+that copper bars of the same polarity are positioned as illustrated below.
+Verify that the copper bars are placed parallel to each other and are not in
+contact. Securely tighten the copper bar fixing screws. After tightening,
+reconfirm that the copper bars remain parallel and without any contact.
+Failure to adhere to these instructions may result in abnormal operation or
+even permanent damage to the machine.
+                                              Air Series Series User Guide
+
+
+
+
+2.7 Machine wiring check
+After connecting the cables and tightening the screws, ensure that the
+cables and screws are installed correctly.
+
+2.8 Precautions for server transportation and racking
+Please wear work gloves when handling and positioning the server onto
+the rack. To prevent accidental drops during transportation, minimize
+manual carrying over long distances. Exercise caution when placing the
+server on the shelf to avoid hand injuries from metal parts, and ensure
+cables are not pulled, which could cause the machine to fall.
+                                                   Air Series Series User Guide
+
+
+3. Server configuration and preparation
+3.1 Server configuration item list
+
+        Item         Qty              Item Use                    Remarks
+        Name
+   1     Computer      1      Configuring server
+                      unit   operations
+
+   2     Network       1     Enabling network            The network switch
+         Switch       unit   communication               must be able to
+                             between the                 connect to the
+                             configuration               external network.
+                             computer and the
+                             server
+   3    DHCP/Ro        1     Providing dynamic IP        The server is
+        uter          unit   address for initial         configured to obtain a
+                             server power-on             dynamic IP address
+                                                         via DHCP by default.
+
+
+3.2 Server network environment
+The factory default setting for the server is to obtain a dynamic IP address
+through DHCP, hence a DHCP server must be configured in the network,
+or the router must enable the DHCP dynamic IP address allocation
+service.
+                                                Air Series Series User Guide
+
+
+4. Server connection and power-on
+check
+  (1)​Prior to connecting any cables and powering on the server,
+      thoroughly inspect it to ensure that no heat sinks or other
+      components have become detached. It is imperative that all heat
+      sinks and components are securely in place before proceeding with
+      wiring and power-up.
+
+  (2)​Connect the power cord to the server and the network cable to the
+      switch. Before powering on the server, verify that the power
+      control cable, fan control cable, control board power supply cable,
+      hash board cables, and fan cables are firmly secured and not loose.
+      Additionally, confirm that the copper busbars are correctly
+      connected.
+
+Note:
+  1)​ When installing the hash board copper busbars, ensure the positive
+      and negative polarity busbars are correctly positioned. Verify that
+      the busbars are placed parallel to each other and are not in contact.
+      The copper busbar fixing screws must be securely tightened. After
+      tightening, reconfirm that the copper bars remain parallel and
+      without any contact. Failure to comply with these instructions may
+      lead to abnormal operation or even permanent damage (burnout) of
+      the machine.
+  2)​ The power control cable between the control board and the power
+      supply must be connected correctly. Incorrect connection may
+      prevent the control of the power supply voltage output, resulting in
+      a lack of hashing power.
+  3)​ The control board must have a reliable connection to the fan cables.
+      If a fan cable becomes detached or poorly connected, the server
+      may be unable to cool down, triggering a protective power-off.
+  4)​ Server Data Configuration (Webpage Configuration) (Software)
+  5)​ Querying the Dynamic IP Address Obtained by the Server
+  6)​ Power Connection: Use the provided 1.2-meter power cord to
+      connect the server to the PDU, ensuring the connector is fully
+      seated in the server's power port (Component 8). The upstream
+                                              Air Series Series User Guide
+
+      PDU circuit breaker acts as the disconnection device and must have
+      a rated breaking current of 20A.
+
+
+
+5. Server data configuration
+5.1 Query the Dynamic IP Address Assigned to the
+Server
+Ensure your computer is connected to the same network segment as the
+server. Utilize the Sealminer management tool and click "Scan、 Detect"
+to discover and open the server's IP address.(Note: The mining pool
+address, miner name, and password in the figure below are
+SEALMINER Demo examples. For actual operations, please refer
+to your own mining pool address, miner name, and password.)
+                                                    Air Series Series User Guide
+
+
+
+
+Scan/Detect Window.
+
+
+Click "Start" on the window to initiate the scan.
+
+IP Reporting Method: After starting the miner, press and hold the IP
+Report button on the miner for 5 seconds. Wait a few seconds, and the
+current device's IP address will be displayed in the software. (Note: The
+PC running the management tool and the miner must be on the same local
+area network).
+
+
+
+
+View the dynamically obtained IP and MAC addresses reported by the
+server in the Sealminer management tool.
+                                                 Air Series Series User Guide
+
+Note:
+  1)​ If none of the indicator lights on the server control board panel are
+      on after powering on, please check the reliability and correctness of
+      the power cable connections.
+  2)​ If the indicator light on the right side of the server control board
+      panel is on, but the network port lights are off or the green light is
+      not flashing, please check if the network switch is functioning
+      correctly, if the network cable connection is reliable, and if there
+      are any issues with the network cable quality.
+  3)​ The computer running the Sealminer management tool and the
+      server must be on the same network segment. Otherwise, the
+      software may not receive the broadcast packets sent by the server,
+      and consequently, the IP address and MAC address information
+      reported by pressing the server's IP Report button will not be
+      found.
+  4)​ If the computer and server are on the same network segment and
+      DHCP service is enabled on the network, but the Sealminer
+      management tool does not find the server's IP after pressing the IP
+      Report button, press and hold the Reset button on the server panel
+      for more than 5 seconds to restore the factory default configuration.
+      Then, power off and then power on the server to restart it. After the
+      server starts normally, press the IP Report button for 5 seconds to
+      detect the server's IP address.
+
+5.2 Mining pool & miner data
+
+5.2.1 Mining pool & miner configuration
+  (1)​Log in to the web page
+        Account: seal, Password: seal
+                                               Air Series Series User Guide
+
+
+
+
+   (2)​In the mining machine configuration interface, modify the mining
+       pool address and miner name. After modification, click "Save"
+       below to save the changes made.(Note: The mining pool
+      address, miner name, and password in the figure below are
+      SEALMINER Demo examples. For actual operations, please
+      refer to your own mining pool address, miner name, and
+      password.)
+
+
+
+
+After the mining pool configuration is modified, it will take effect
+immediately without needing to restart the Miner program or the mining
+machine.
+   (3)​Check whether the configuration changes are effective.
+      In the user panel interface, check whether the configured mining
+      pool and miner data can be seen. (Note: The mining pool
+      address, miner name, and password in the figure below are
+      SEALMINER Demo examples. For actual operations, please
+      refer to your own mining pool address, miner name, and
+                                           Air Series Series User Guide
+
+
+     password.)
+
+
+
+
+5.3 Configure the server static IP address (optional)
+  (1)​Log in to the web page
+     Account: seal, Password: seal
+
+
+
+
+  (2)​On the Network->Settings page, select "Static" in the Network
+      Type option, change the IP address, mask, gateway, and DNS
+      address to the actual miner address, and click "Save".
+                                                  Air Series Series User Guide
+
+After saving the configuration with a newly set static IP address, you will
+need to use this new static IP address to log in to the server. Attempting to
+log in using the previous IP address may result in the page continuously
+loading until it fails.
+
+
+
+6. Server running status check
+Once the server is connected to the operational network, log in to the
+server to check its running status.
+   1)​ Within the server interface, select the "User Panel" option to access
+       the "Miner Running Status" interface.
+   2)​ Here, you can view the server's overall hash rate, connected mining
+       pool, fan status, individual board hash rates, individual board
+       temperatures, and other operational parameters.(Note: The mining
+      pool address, miner name, and password in the figure below
+      are SEALMINER Demo examples. For actual operations,
+      please refer to your own mining pool address, miner name,
+      and password.)
+                                               Air Series Series User Guide
+
+
+7. Configuring Server batch data,
+server status check, upgrading of
+firmware
+The Sealminer management tool can be used for batch server data
+configuration, status monitoring, and firmware upgrades. For detailed
+instructions, please refer to the "Sealminer Management Tool User
+Manual."
+
+
+
+8.     Machine                    Disassembly                          and
+Installation
+8.1 Disassembly and Installation of the Control Board
+
+8.1.1 Disassembly of the Control Board
+  (1)​First, loosen the two cover screws on the back of the control box,
+      as indicated by the circles in the figure below, and then remove the
+      control box cover;
+                                                Air Series Series User Guide
+
+
+
+
+   (2)​Unplug the fan cable, control board power cable, power IIC control
+       cable, and hash board cable, and remove the corresponding screws
+       at the four corners of the control board as seen in the figure below
+       to remove the control board;
+
+
+
+
+8.1.2 Control board installation
+
+As shown in the figure below, place the control board back into place,
+tighten the four corner screws, insert the cable firmly, and install the
+control box cover.
+                                         Air Series Series User Guide
+
+
+
+
+8.2 Disassembly and Installation of the Power Supply
+
+8.2.1 Disassembly of the Power Supply
+
+  (1)​Loosen the two cover screws on the control panel cover and
+      remove the cover;
+                                          Air Series Series User Guide
+
+
+
+
+(2)​Unplug the power cord and IIC wire, and remove the 4 screws of
+    the power copper busbar as shown in the figure below;
+
+
+
+
+(3)​Remove the two fixing screws on the top of the power supply and
+    slide the power supply backward out of the slot;
+                                             Air Series Series User Guide
+
+
+
+
+8.2.2 Installation of the Power Supply
+
+  (1)​Align the power clip with the chassis slide slot as shown in the
+      figure below and gently push it into place.
+Air Series Series User Guide
+Air Series Series User Guide
+                                             Air Series Series User Guide
+
+(2)​Tighten the two screws shown in the figure below;
+
+
+
+
+(3)​Install the power cable and IIC control cable, then tighten the 4
+    screws on the copper busbar, and install and lock the control cover.
+                                              Air Series Series User Guide
+
+
+8.3 Disassembly and installation of hashboard
+
+8.3.1 Disassembly of the Hash Board
+
+  (1)​Loosen the two cover screws on the control panel cover and
+      remove the cover;
+
+
+
+
+  (2)​Remove the six screws on the rear fan fixing plate and remove the
+      rear fan fixing plate as shown in the figure below.
+                                             Air Series Series User Guide
+
+
+
+
+(3)​As shown in the figure below, remove the two fixing screws and
+    the two copper busbar screws, unplug the signal cables, gently pull
+    out the hashboard backwards;
+                                              Air Series Series User Guide
+
+
+
+
+8.3.2 Installation of the Hash Board
+
+  (1)​As shown in the figure below, insert the hash board through the
+      slide slot, tighten the fixing screws on the hashboard and copper
+      bar screws, and connect the cables ;
+                                                 Air Series Series User Guide
+
+
+
+
+   (2)​Install the rear fan fixing plate and tighten the 6 screws as seen in
+       the figure below；
+
+
+
+
+9. Further Remarks And Considerations
+9.1 Equipment Care and Maintenance
+After extended operation (3-6 months), it is important to clean the dust
+from the computing board, control board, wiring, and other components
+to prevent corrosion from dust buildup. Once the machine is powered off,
+ensure that the storage environment maintains humidity levels below
+60%, and regularly clean dust (every 3-6 months) to prevent corrosion
+caused by high humidity and dust accumulation.
+                                                 Air Series Series User Guide
+
+Note: Try to avoid serious corrosion, dust accumulation, humidity and
+other conditions that can affect the performance and functionality of the
+machine.
+
+
+
+10. After-Sales Service
+At Bitdeer, prioritising user experience is our primary objective. We
+actively seek customer feedback to enhance our services and are
+dedicated to assisting customers with their issues. Bitdeer offers a 1-year
+warranty on A2-Air Cooling Series products, including free repair
+services within the warranty coverage. By making a purchase, you agree
+to our warranty terms. However, please note that we will not provide
+repairs for the following situations or failures:
+   1.​ Damage resulting from failure to install, use, maintain, or service
+       the machine according to the requirements outlined in the official
+       documents.
+   2.​ Unauthorised disassembly, modification, assembly, or repair
+       without official written or electronic authorization, leading to
+       damage to the product.
+   3.​ Damage or loss caused by mishandling, misuse, abuse, improper
+       operation, incorrect installation, or maintenance and storage that do
+       not comply with regulations.
+   4.​ Product damage arising from operating the mining machine in
+       environments that do not meet the specified requirements,
+       including but not limited to high humidity, corrosive environments,
+       electrical surges, extreme temperatures, abnormal voltage or
+       current (including surges, impacts, and instability), excessively low
+       or high AC voltage.
+   5.​ Damage to the entire machine, the panel, or components due to
+       crushing, breaking, burning, or falling, resulting from improper
+       operation or similar issues.
+   6.​ Product damage caused by overvoltage, undervoltage, or leakage.
+   7.​ Damage or loss resulting from unforeseen natural disasters,
+       including but not limited to floods, fires, earthquakes, tsunamis,
+       and lightning strikes.
+                                                Air Series Series User Guide
+
+ 8.​ Disassembly or modifications made by anyone other than us or our
+     authorised service agencies.
+ 9.​ Product failure or damage resulting from the use of accessories,
+     parts, or components, such as power supplies, that are not
+     manufactured by us or our authorised agencies and do not meet our
+     specified parameters.
+ 10.​Failure or damage resulting from the use of unauthorised firmware
+     or drivers, including but not limited to unauthorised overclocking
+     firmware.
+ 11.​Altered, defaced, or removed SN labels.
+ 12.​Use of non-original or mixed boards: if some or all of the
+     computing boards, control boards, or power supplies are not
+     original to the machine or if there is any situation preventing us
+     from verifying the authenticity of these components.
+ 13.​Situations not caused by our company that make it impossible for
+     us to determine whether the product is still under warranty.
+
+
+
+11. After-sales warranty Fee terms
+ 1.​ If your product is deemed non-repairable, or if you opt not to repair
+     or return a scrapped or mixed-board product, you will be
+     responsible for the round-trip shipping costs associated with the
+     repair order. Additionally, for products requiring repair, you will be
+     responsible for the shipping costs to send the product to our
+     designated address, while we will cover the shipping costs to send
+     the repaired or replaced product back to your designated address.
+     We do not cover any other costs, such as tariffs.
+
+ 2.​ Please ensure that the product is sent to our designated address via
+     a prepaid postage service. We cannot accept items sent with unpaid
+     postage or to non-designated addresses (including logistics pick-up
+     points), and any consequences of these errors will be borne by you.
+
+ 3.​ The repaired or replaced product will be shipped according to the
+     delivery information you or your designated contact provided in
+     the work order. If the provided delivery information is incorrect or
+     incomplete, you will be responsible for any additional costs
+     incurred.
+                                               Air Series Series User Guide
+
+4.​ In the event of a Dead on Arrival (DOA) situation or secondary
+    repair where the product is non-repairable or not eligible for free
+    repair, you may apply for a freight subsidy after sending the
+    product to us by post. The subsidy amount will not exceed the
+    official logistics fee standard (insurance costs are the customer's
+    responsibility). To qualify, you must provide us with a valid receipt
+    for the shipping costs. The freight receipt must not be forged,
+    altered, smeared, or tampered with in any way, and it must clearly
+    show the total freight amount, which must align with the official
+    logistics fee standard. If the receipt does not meet these
+    requirements, we reserve the right to deny part or all of your freight
+    subsidy request.
+
+5.​ Please ensure that products eligible for a freight subsidy are mailed
+    separately. If you send a package that includes both products
+    eligible for a subsidy and those that are not, we will not be able to
+    calculate the freight for the eligible items individually, and
+    therefore, we will not issue any subsidy for that package.
+
+6.​ The risk of damage or loss during the return process transfers to
+    you once the product is handed over to the logistics company. If
+    any damage or loss occurs during transit, you will be responsible
+    for resolving any disputes directly with the logistics provider.
+
+7.​ Any matters not covered in this clause shall be handled in
+    accordance with the relevant regulations of Bitdeer. Bitdeer
+    reserves the final right of interpretation of this clause.
+                                                   Air Series Series User Guide
+
+
+12. Regulatory and Compliance
+information
+12.1 United   States                Federal           Communications
+Commission (FCC)
+
+FCC Compliance Statement
+
+This device complies with Part 15 of the FCC Rules. Operation is subject
+to the following two conditions:
+
+(1) this device may not cause harmful interference, and
+
+(2) this device must accept any interference received, including
+interference that may cause undesired operation.
+
+Class A Digital Device Notice
+      Note: This equipment has been tested and found to comply with
+      the limits for a Class A digital device, pursuant to Part 15 of the
+      FCC Rules. These limits are designed to provide reasonable
+      protection against harmful interference when the equipment is
+      operated in a commercial environment. This equipment generates,
+      uses, and can radiate radio frequency energy and, if not installed
+      and used in accordance with the instruction manual, may cause
+      harmful interference to radio communications. Operation of this
+      equipment in a residential area is likely to cause harmful
+      interference, in which case the user will be required to correct the
+      interference at their own expense.
+
+Mandatory Shielding & Grounding
+To ensure continued compliance with FCC Class A emission limits,
+shielded cables must be used with this equipment. Use of non-shielded
+                                                      Air Series Series User Guide
+
+cables may result in interference exceeding legal limits. The equipment
+must be connected to a power outlet with a protective earthing
+(grounding) connection.
+
+FCC Caution
+Any changes or modifications not expressly approved by Bitdeer could
+void the user’s authority to operate the equipment.
+
+Supplier’s Declaration of Conformity (SDoC)
+
+            FCC Supplier’s Declaration of Conformity
+
+
+ Trade Name:                    ​
+
+ Model Number: A2 Pro​
+
+ Responsible Part---U.S. Contact Information​
+
+ Company: Bitdeer Sales (USA) Inc.​
+
+ Street Address: 2880 Zanker Rd., Suite 205​
+
+ City, State: San Jose, CA​
+
+ Zip Code: CA 95134​
+
+ Telephone number: +1 408-451-5200​
+
+ Internet contact information: https://www.bitdeer.com/​
+
+ FCC Compliance Statement:​
+
+ This device complies with Part 15 of the FCC Rules. Operation is subject to
+
+ the following two conditions: (1) This device may not cause harmful
+
+ interference, and (2) this device must accept any interference received,
+
+ including interference that may cause undesired operation.
+
+
+The FCC Supplier’s Declaration of Conformity (SDoC) provided herein applies to the
+following models within the Air Series: A2, A2 Pro, A3 Air, A3 Pro Air, A4 Pro Air.
+                                                 Air Series Series User Guide
+
+
+12.2 Innovation, Science and Economic Development
+(ISED) Canada
+
+(English) This Class A digital apparatus complies with Canadian
+ICES-003 Issue 7.
+
+(Français) Cet appareil numérique de la classe A est conforme à la norme
+NMB-003, version 7, du Canada.
+
+Compliance Statement (English):
+This device contains licence-exempt transmitter(s)/receiver(s) that
+comply with Innovation, Science and Economic Development Canada’s
+licence-exempt RSS(s). Operation is subject to the following two
+conditions:
+
+   1.​ This device may not cause interference.
+
+   2.​ This device must accept any interference, including interference
+
+      that may cause undesired operation of the device.
+
+Déclaration de Conformité (Français):
+L’émetteur/récepteur exempt de licence contenu dans le présent appareil
+est conforme aux CNR d’Innovation, Sciences et Développement
+économique Canada applicables aux appareils radio exempts de licence.
+L’exploitation est autorisée aux deux conditions suivantes :
+
+      1. ​ L’appareil ne doit pas produire de brouillage;
+
+      2. ​ L’appareil doit accepter tout brouillage radioélectrique subi,
+         même si le brouillage est susceptible d’en compromettre le
+         fonctionnement.
+
+Labelling Identification:
+CAN ICES-003 (A) / NMB-003 (A)
+                                                     Air Series Series User Guide
+
+
+12.3 European Union (CE) & WEEE
+
+
+
+
+The EU Declaration of Conformity provided in this section is representative of the
+A2 Pro model. For the Declaration of Conformity for other models within the Air
+Series, please contact Bitdeer Customer Support.
+                                                   Air Series Series User Guide
+
+           ​
+WEEE (Waste Electrical and Electronic Equipment)
+The WEEE symbol below indicates that this product must not be
+disposed of with household waste. In accordance with EU Directive
+2012/19/EU, this product must be handed over to an authorized collection
+point for the recycling of electrical and electronic equipment (EEE).
+
+  Symbol       Instructions
+
+
+               The symbol shown (crossed-out wheelie bin) is on the
+               product or its packaging, which indicates that this product
+               must not be disposed of with other waste. Instead, it is the
+               user’s responsibility to dispose of their waste equipment
+               by handing it over to a designated collection point for the
+               recycling of waste electrical and electronic equipment.
+               The separate collection and recycling of your waste
+               equipment at the time of disposal will help to conserve
+               natural resources and ensure that it is recycled in a
+               manner that protects human health and the environment.
+               For more information about where you can drop off your
+               waste equipment for recycling, contact your local waste
+               disposal service or Bitdeer representative for recycling
+               information.
+
+
+
+
+12.4 Safety & Power Specifications
+
+   ●​ Installation: The socket-outlet must be installed near the
+      equipment and remain easily accessible. The upstream circuit
+      breaker in the PDU serves as the disconnection device, and its rated
+      breaking current must be 20A.
+   ●​ Power Cord: Use only the power cords provided or specified by
+      Bitdeer. Connect the server to the PDU using the provided
+                                                 Air Series Series User Guide
+
+      1.2-meter power cord, ensuring the connector is fully seated in the
+      server's power port (labeled as component 8 in the Component
+      Reference). To ensure continued compliance with emission limits,
+      shielded cables must be used.
+   ●​ Earthing: The equipment must be connected to a power outlet
+
+      with a protective earthing (grounding) connection to prevent
+      electric shock.
+   ●​ Operating Environment: Industrial use only. Not intended for use
+
+      in locations where children are likely to be present.
+
+
+12.5 Product Identification & Labelling
+
+The regulatory label is affixed to the chassis of the device (typically on
+the side panel). This label contains critical information including the
+Model Number, Serial Number, and required certification marks (FCC,
+CE, IC, cTUVus & WEEE).
+                                                             Air Series Series User Guide
+
+
+
+
+Sample Regulatory Label: Below is a representation of the compliance
+label found on the device:
+
+ Trademark:
+ Type of Product:
+ Model:
+ Input: [Voltage/Current Specs]
+
+
+ FCC Compliance Statement:
+
+ This device complies with part 15 of the FCC Rules.
+ Operation is subject to the following two conditions: (1)
+ This device may not cause harmful interference. (2) This
+ device must accept any interference received, including
+ interference that may cause undesired operation.
+                                                     Air Series Series User Guide
+
+
+CAN ICES-003 (A) / NMB-003 (A)
+
+[FCC Logo] [CE Logo] [cTUVus Logo]     [WEEE Bin]
+
+
+Manufacturer Name
+Manufacturer Address
+
+EU Authorized Representative Name
+EU Authorized Representative Address
+
+Contact information              Made in [Country]
+​

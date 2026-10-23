@@ -1,0 +1,31 @@
+{
+  "schema": "md-sim-build-cache-cleanup/1",
+  "time_utc": "2026-10-23T01:22:41.365661+00:00",
+  "reason": "User requested continuous cleanup. Remove inactive reproducible Cargo development artifacts. Preserve all release binaries, source, archive, logs, reports, run inputs and run outputs.",
+  "paths": [
+    {
+      "path": "work/simulator/clean-target-210/debug",
+      "file_count": 1109,
+      "logical_bytes": 2854507979,
+      "unique_allocated_bytes": 2652573696,
+      "status": "removed"
+    },
+    {
+      "path": "work/simulator/check-target-085/debug",
+      "file_count": 5711,
+      "logical_bytes": 10785505834,
+      "unique_allocated_bytes": 10452983808,
+      "status": "removed"
+    }
+  ],
+  "disk_before": {
+    "total": 1966713413632,
+    "used": 1760485502976,
+    "free": 106245775360
+  },
+  "disk_after": {
+    "total": 1966713413632,
+    "used": 1747374333952,
+    "free": 119356944384
+  }
+}

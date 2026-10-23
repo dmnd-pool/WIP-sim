@@ -1,0 +1,90 @@
+{
+  "scope": "Final source/component evidence review; private VM with labelled scripted access control; no native dashboard claim",
+  "files": [
+    {
+      "path": "crates/md-sim-access/src/carrier.rs",
+      "sha256": "9e071fc246674b32bb3d8e677b5d16b548c6ba67c1c11c680b1c5f772904f262",
+      "size": 31211
+    },
+    {
+      "path": "crates/md-sim-access/src/carrier_tests.rs",
+      "sha256": "4ab37fd46b29c00a72c4ed2271956d555a18ec77c81c15cc63e8b9eaccae8db6",
+      "size": 22955
+    },
+    {
+      "path": "work/simulator/network-vm/byte-stream-399/guest.log",
+      "sha256": "22a1c3eae297cd0cd951e0e4af72205ddd4c74aeaf1266111d51daa8b91ac1e9",
+      "size": 3094
+    },
+    {
+      "path": "work/simulator/network-vm/byte-stream-399/result.json",
+      "sha256": "952dcd2313cd8dbfec5eb9b7755c41730200b190bb926b264aadc2b1a93e2696",
+      "size": 6903
+    },
+    {
+      "path": "work/simulator/network-vm/byte-stream-399/assessment.json",
+      "sha256": "223e1ce73c0b472c2bcb865eb0986591be2c3817b311548c6e25c1a3c63361cc",
+      "size": 819
+    },
+    {
+      "path": "work/simulator/network-vm/byte-stream-399/process-spec.json",
+      "sha256": "6cee5a945f0fcf8c292d4442d1aebcb522cd1f655e2d9f732d8c086ffeae80a1",
+      "size": 14750
+    },
+    {
+      "path": "work/simulator/network-vm/byte-stream-399/root-manifest.json",
+      "sha256": "b215d84719d557ca6088ab95701e274e829c6c474535e60327455a83dc17880c",
+      "size": 3172
+    },
+    {
+      "path": "work/simulator/network-vm/byte-stream-399/scenario.json",
+      "sha256": "c687799e721384584bd55ed1e64c7cf31ae7e1320b4d19d88de2773f3b49d67c",
+      "size": 631
+    },
+    {
+      "path": "work/simulator/byte-stream-vm-399-inputs/manifest.json",
+      "sha256": "80b47c1e9ac03df3045eff30169cc0352a8c612c61401844733e6a8e5bd76087",
+      "size": 661
+    },
+    {
+      "path": "work/simulator/byte-stream-vm-399-inputs/scenario.json",
+      "sha256": "e6ace1dedc9242df63b0cf4b7ba49f7bd19ef7f381fc556f36a9873bc2f4d63c",
+      "size": 603
+    },
+    {
+      "path": "work/simulator/byte-stream-vm-399-inputs/runtime-tests",
+      "sha256": "6dcecaf14795cfd5bd220603c4e2bc380a12d99bcbdb51b7d49d673cb629ef7d",
+      "size": 5803472
+    },
+    {
+      "path": "work/simulator/byte-stream-vm-399-inputs/access-tests",
+      "sha256": "4faa41f64737f0958e22d8c7aefb541dc04c8663f94337f80ebe360527019397",
+      "size": 4604928
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/byte-stream399-build.jsonl",
+      "sha256": "7651fb468f8c95ba0a0f4548e19705562b9e317218c3d8eb339d21fd26df7509",
+      "size": 36065
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/byte-stream399-build.log",
+      "sha256": "0bc8d1cb28724467b33596e671298ef57e477e8e43bc19b68a9ee9d2b46894ef",
+      "size": 61
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/byte-stream399-vm.log",
+      "sha256": "c3049c7b20b91905bee7a6a765aef5be5230da7fe81b58c624dee1db6b5033ef",
+      "size": 109
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/byte-stream400-host-tests.log",
+      "sha256": "787eab45c68a643388668c76301327a6b76562cb8fbea29d05cf52965943a51c",
+      "size": 5071
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/byte-stream400-clippy.log",
+      "sha256": "e917245c46a82463efda2ebad9696a1c29208a3c40f52509c21446fa0e080a0a",
+      "size": 220
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-fb94256b758b4622efbe",
+  "url": "https://download.hiveos.farm/asic/S19J/recover/Antminer-S19j-Release-sd2nand-BBCtrl-20210622.zip",
+  "kind": "firmware",
+  "title": "Antminer-S19j-Release-sd2nand-BBCtrl-20210622.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:21:27+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-fb94256b758b4622efbe/Antminer-S19j-Release-sd2nand-BBCtrl-20210622.zip",
+  "sha256": "03493871e5884e92620f9cf88d3b3dd620763ffbded516f2520cd5089431206c",
+  "size_bytes": 19568022,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S19J/recover/Antminer-S19j-Release-sd2nand-BBCtrl-20210622.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Mon, 25 Jul 2022 16:35:15 GMT",
+  "etag": "\"62dec643-12a9596\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19568022,
+      "actual": 19568022,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-9d66b9eb545a5e12ce5d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7158952c-22ab-470f-aad2-3ba5e4a2bc09/2025/03/20/18/S21e%20XP%20Hyd.%20User%20Guide-V1.0.2.pdf",
+  "kind": "document",
+  "title": "S21e XP Hyd. User Guide-V1.0.2.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-9d66b9eb545a5e12ce5d/S21e_XP_Hyd._User_Guide-V1.0.2.pdf",
+  "sha256": "e59dd5873a8cd1b433e1aea1b1535453f440caf0dead98a597874c39273d51f6",
+  "size_bytes": 2365729,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7158952c-22ab-470f-aad2-3ba5e4a2bc09/2025/03/20/18/S21e%20XP%20Hyd.%20User%20Guide-V1.0.2.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 20 Mar 2025 10:14:23 GMT",
+  "etag": "\"26a15f1e4032a2b2ee42dab211d49942\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2365729,
+      "actual": 2365729,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

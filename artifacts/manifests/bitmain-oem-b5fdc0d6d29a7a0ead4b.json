@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b5fdc0d6d29a7a0ead4b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b9c3a915-defc-4cbe-b178-b689e7fb4097/2024/09/20/18/KS5%20Product%20Datasheet-v2.0.0.pdf",
+  "kind": "document",
+  "title": "KS5 Product Datasheet-v2.0.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-b5fdc0d6d29a7a0ead4b/KS5_Product_Datasheet-v2.0.0.pdf",
+  "sha256": "5bae5e10f8a7abb3f70071bd25762ace0501be5565dda5a4e3549e6d2fbc0f6f",
+  "size_bytes": 312687,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b9c3a915-defc-4cbe-b178-b689e7fb4097/2024/09/20/18/KS5%20Product%20Datasheet-v2.0.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 10:38:24 GMT",
+  "etag": "\"949706e1cccdb956d32d195abf0d67f2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 312687,
+      "actual": 312687,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

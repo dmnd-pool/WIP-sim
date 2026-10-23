@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b8468875dfff2d52fcac",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/542b338f-dba8-462c-97a8-5aad0101d33d/2026/03/11/17/DDT-CE25071402-1E01%20S21e%20Hyd.%20FCC_IC%20SDOC%20Certificate-F.pdf",
+  "kind": "document",
+  "title": "DDT-CE25071402-1E01 S21e Hyd. FCC_IC SDOC Certificate-F.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-b8468875dfff2d52fcac/DDT-CE25071402-1E01_S21e_Hyd._FCC_IC_SDOC_Certificate-F.pdf",
+  "sha256": "69694b6914a16458d827d69b55323e2b328f2d730ca44ae8209047a2298dc681",
+  "size_bytes": 630775,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/542b338f-dba8-462c-97a8-5aad0101d33d/2026/03/11/17/DDT-CE25071402-1E01%20S21e%20Hyd.%20FCC_IC%20SDOC%20Certificate-F.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 11 Mar 2026 09:47:16 GMT",
+  "etag": "\"1c8d26bd7186f23ca0c718f47391e1a8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 630775,
+      "actual": 630775,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

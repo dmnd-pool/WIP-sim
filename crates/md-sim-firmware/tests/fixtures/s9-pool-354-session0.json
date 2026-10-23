@@ -1,0 +1,727 @@
+{
+  "scope": "Historical regression from retained adapted native-worker-firmware-354. Not an external shared-pool execution or exact-board pass.",
+  "parents": {
+    "work/simulator/network-vm/native-worker-firmware-354/execution/pool-result.json": {
+      "sha256": "87c79a6fc495b734f47667772bdb4617819ff684d2b4c7a1870b6b47cdfa4f03",
+      "size": 140050
+    },
+    "work/simulator/network-vm/native-worker-firmware-354/execution/worker-retention.json": {
+      "sha256": "bfb969ea893385076850744b120a6728df0881b04e0b285a46a48089195eaa02",
+      "size": 378
+    },
+    "work/simulator/network-vm/native-worker-firmware-354/execution/process-spec.json": {
+      "sha256": "c04fc696982d4d2a980cf40d815a5ae6006115e9a935f313885bd8933aeea239",
+      "size": 12367
+    }
+  },
+  "native": {
+    "locked_run_hash": "4c336d4354acb1ab6cc7d1d356c468d71b43b20175efacad4ffcc8f613a1398e",
+    "token": "7678818ef57c2aa628021bacb5efde1b0fc8491ba2a5b8fe4df565dd7fdf8eaa",
+    "run_id": "run-7678818ef57c2aa628021bacb5efde1b0fc8491ba2a5b8fe4df565dd7fdf8eaa",
+    "result": {
+      "sha256": "0d8a5f376caca3cf1fdaeb4f09f85f96472be41a91f083c45c66c38f007f65b9",
+      "size": 103542771
+    }
+  },
+  "pool": {
+    "job_time": 1792729909,
+    "network": "Independent Linux pool VM; private Ethernet stream to miner VM; no external interface or host listener.",
+    "peer": "10.0.2.15:58110",
+    "report": {
+      "budget_exhausted": false,
+      "completed": true,
+      "connection_end": "planned-window-end",
+      "connection_policy": "keep-open",
+      "failure": null,
+      "hash_implementation": "bitcoin_hashes=0.14.1/sha256d",
+      "jobs": [
+        {
+          "bits": 545259519,
+          "coinbase_prefix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255,
+            255,
+            255,
+            255,
+            42,
+            81,
+            32,
+            68,
+            79,
+            30,
+            192,
+            157,
+            58,
+            153,
+            193,
+            201,
+            112,
+            193,
+            156,
+            71,
+            63,
+            74,
+            252,
+            115,
+            91,
+            165,
+            29,
+            206,
+            3,
+            107,
+            147,
+            248,
+            89,
+            239,
+            131,
+            37,
+            135,
+            18,
+            176
+          ],
+          "coinbase_suffix": [
+            255,
+            255,
+            255,
+            255,
+            1,
+            0,
+            242,
+            5,
+            42,
+            1,
+            0,
+            0,
+            0,
+            1,
+            81,
+            0,
+            0,
+            0,
+            0
+          ],
+          "extra_nonce1": [
+            68,
+            79,
+            30,
+            192
+          ],
+          "extra_nonce2_size": 4,
+          "id": "444f1ec09d3a99c1-0",
+          "merkle_branch": [],
+          "nonce_max": 4294967295,
+          "nonce_min": 0,
+          "previous": [
+            6,
+            34,
+            110,
+            70,
+            17,
+            26,
+            11,
+            89,
+            202,
+            175,
+            18,
+            96,
+            67,
+            235,
+            91,
+            191,
+            40,
+            195,
+            79,
+            58,
+            94,
+            51,
+            42,
+            31,
+            199,
+            178,
+            183,
+            60,
+            241,
+            136,
+            145,
+            15
+          ],
+          "share_target": [
+            127,
+            255,
+            128,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "time_max": 1792730261,
+          "time_min": 1792729909,
+          "version": 536870912,
+          "version_mask": 536862720
+        },
+        {
+          "bits": 545259519,
+          "coinbase_prefix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255,
+            255,
+            255,
+            255,
+            42,
+            81,
+            32,
+            69,
+            79,
+            30,
+            192,
+            157,
+            58,
+            153,
+            193,
+            201,
+            112,
+            193,
+            156,
+            71,
+            63,
+            74,
+            252,
+            115,
+            91,
+            165,
+            29,
+            206,
+            3,
+            107,
+            147,
+            248,
+            89,
+            239,
+            131,
+            37,
+            135,
+            18,
+            176
+          ],
+          "coinbase_suffix": [
+            255,
+            255,
+            255,
+            255,
+            1,
+            0,
+            242,
+            5,
+            42,
+            1,
+            0,
+            0,
+            0,
+            1,
+            81,
+            0,
+            0,
+            0,
+            0
+          ],
+          "extra_nonce1": [
+            68,
+            79,
+            30,
+            192
+          ],
+          "extra_nonce2_size": 4,
+          "id": "444f1ec09d3a99c1-1",
+          "merkle_branch": [],
+          "nonce_max": 4294967295,
+          "nonce_min": 0,
+          "previous": [
+            6,
+            34,
+            110,
+            70,
+            17,
+            26,
+            11,
+            89,
+            202,
+            175,
+            18,
+            96,
+            67,
+            235,
+            91,
+            191,
+            40,
+            195,
+            79,
+            58,
+            94,
+            51,
+            42,
+            31,
+            199,
+            178,
+            183,
+            60,
+            241,
+            136,
+            145,
+            15
+          ],
+          "share_target": [
+            63,
+            255,
+            192,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "time_max": 1792730261,
+          "time_min": 1792729909,
+          "version": 536870912,
+          "version_mask": 536862720
+        }
+      ],
+      "limits": {
+        "max_messages": 2048,
+        "max_submissions": 1024,
+        "trace_bytes": 524288
+      },
+      "messages_received": 17,
+      "regtest_anchor": {
+        "bits": 545259519,
+        "candidate_height": 1,
+        "genesis_time": 1296688602,
+        "message_start": [
+          250,
+          191,
+          181,
+          218
+        ],
+        "network": "bitcoin-regtest",
+        "previous_hash": [
+          6,
+          34,
+          110,
+          70,
+          17,
+          26,
+          11,
+          89,
+          202,
+          175,
+          18,
+          96,
+          67,
+          235,
+          91,
+          191,
+          40,
+          195,
+          79,
+          58,
+          94,
+          51,
+          42,
+          31,
+          199,
+          178,
+          183,
+          60,
+          241,
+          136,
+          145,
+          15
+        ]
+      },
+      "response_policy": "json-rpc1-stratum-v1",
+      "stopped": false,
+      "submissions": [
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-0",
+            "nonce": 0,
+            "time": 1792729909,
+            "version": 709394432
+          },
+          "verdict": {
+            "Accepted": {
+              "block_candidate": true,
+              "hash_display": "57d8deeb010c3f4ac1ed6af279e40dda63dfffedf70ff2815ba0ed9c0f06e723",
+              "header_hex": "0080482a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fae6f04755333b0651c13abaf8cc3b4ed294760b176fee0d5d57dc6ec528b563f35e3da6affff7f2000000000"
+            }
+          }
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729909,
+            "version": 666238976
+          },
+          "verdict": "LowDifficulty"
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729909,
+            "version": 701366272
+          },
+          "verdict": {
+            "Accepted": {
+              "block_candidate": true,
+              "hash_display": "380f9ca400eb8e5974ef7fe1c9f379d0fbfc87e8faec9d631271c728e77429e8",
+              "header_hex": "0000ce2906226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000"
+            }
+          }
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729909,
+            "version": 1036058624
+          },
+          "verdict": "LowDifficulty"
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729909,
+            "version": 1062109184
+          },
+          "verdict": {
+            "Accepted": {
+              "block_candidate": true,
+              "hash_display": "18d5b1c90071267203ff8a5c37add5abfab19e01badef7f49a9fe43e44da9a92",
+              "header_hex": "00804e3f06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d35e3da6affff7f2000000000"
+            }
+          }
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729909,
+            "version": 1067352064
+          },
+          "verdict": "LowDifficulty"
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729910,
+            "version": 629407744
+          },
+          "verdict": {
+            "Accepted": {
+              "block_candidate": true,
+              "hash_display": "3bff0e88020c7f7e76d7fe094685a1828f90b329520af683c5e5f5434dd5af49",
+              "header_hex": "0000842506226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000"
+            }
+          }
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729910,
+            "version": 709591040
+          },
+          "verdict": {
+            "Accepted": {
+              "block_candidate": true,
+              "hash_display": "1c22662c015b359fac5c144b8fb17ad5004f6139c9b205b3a300ad704cebde77",
+              "header_hex": "00804b2a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000"
+            }
+          }
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729910,
+            "version": 884670464
+          },
+          "verdict": {
+            "Accepted": {
+              "block_candidate": true,
+              "hash_display": "2e6288c200919b02f990805bce1695f5d0c4f0ada32d3978af4a512c5abb7240",
+              "header_hex": "0000bb3406226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f4c03123725ac52fad497842793f90fd3949b1eb22674342de90961104358a14d36e3da6affff7f2000000000"
+            }
+          }
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729911,
+            "version": 761167872
+          },
+          "verdict": "LowDifficulty"
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729911,
+            "version": 769458176
+          },
+          "verdict": "LowDifficulty"
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729911,
+            "version": 943423488
+          },
+          "verdict": "LowDifficulty"
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729911,
+            "version": 992149504
+          },
+          "verdict": "LowDifficulty"
+        },
+        {
+          "share": {
+            "extra_nonce2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "job_id": "444f1ec09d3a99c1-1",
+            "nonce": 0,
+            "time": 1792729912,
+            "version": 908263424
+          },
+          "verdict": "LowDifficulty"
+        }
+      ],
+      "timed_out": false,
+      "transport": "tcp-stream-posix-io"
+    },
+    "schema": "md-sim-s9-private-pool-session/2",
+    "scope": "Independent pool protocol evidence. No firmware, exact-target or regtest gate is inferred.",
+    "seed_hex": "444f1ec09d3a99c1c970c19c473f4afc735ba51dce036b93f859ef83258712b0",
+    "session_id": 0,
+    "source": {
+      "sha256": "bb3cf478f1597a1fc478346590d51fadb03def2f1649a43b5781691ef355fb41"
+    },
+    "trace": "{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"266477949\",\"message\":{\"id\":0,\"method\":\"mining.configure\",\"params\":[[\"version-rolling\"],{\"version-rolling.mask\":\"1fffe000\",\"version-rolling.min-bit-count\":16}]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"273237606\",\"message\":{\"error\":null,\"id\":0,\"result\":{\"version-rolling\":true,\"version-rolling.mask\":\"1fffe000\"}}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"468679067\",\"message\":{\"id\":1,\"method\":\"mining.subscribe\",\"params\":[\"2022-04-29-0-5eb2c5fe-22.02.4-plus;bosminer-plus-am1-s9 0.9.0-5eb2c5fe\",null,\"10.0.2.100:3333\",null]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"469586424\",\"message\":{\"error\":null,\"id\":1,\"result\":[[[\"mining.notify\",\"md-sim-v1\"],[\"mining.set_difficulty\",\"md-sim-v1\"]],\"444f1ec0\",4]}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"473244022\",\"message\":{\"id\":2,\"method\":\"mining.authorize\",\"params\":[\"simulator\",\"x\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"473565384\",\"message\":{\"error\":null,\"id\":2,\"result\":true}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"476147146\",\"message\":{\"id\":null,\"method\":\"mining.set_difficulty\",\"params\":[4.656612873077393e-10]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"478293131\",\"message\":{\"id\":null,\"method\":\"mining.notify\",\"params\":[\"444f1ec09d3a99c1-0\",\"466e2206590b1a116012afcabf5beb433a4fc3281f2a335e3cb7b2c70f9188f1\",\"01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff2a5120444f1ec09d3a99c1c970c19c473f4afc735ba51dce036b93f859ef83258712b0\",\"ffffffff0100f2052a01000000015100000000\",[],\"20000000\",\"207fffff\",\"6adae335\",true]}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"32112806446\",\"message\":{\"id\":3,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-0\",\"00000000\",\"6adae335\",\"00000000\",\"0a488000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"32118200619\",\"message\":{\"error\":null,\"id\":3,\"result\":true}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"32120384070\",\"message\":{\"id\":null,\"method\":\"mining.set_difficulty\",\"params\":[9.313225746154785e-10]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"32120824075\",\"message\":{\"id\":null,\"method\":\"mining.notify\",\"params\":[\"444f1ec09d3a99c1-1\",\"466e2206590b1a116012afcabf5beb433a4fc3281f2a335e3cb7b2c70f9188f1\",\"01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff2a5120454f1ec09d3a99c1c970c19c473f4afc735ba51dce036b93f859ef83258712b0\",\"ffffffff0100f2052a01000000015100000000\",[],\"20000000\",\"207fffff\",\"6adae335\",true]}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"46083666305\",\"message\":{\"id\":4,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae335\",\"00000000\",\"07b60000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"46084992691\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":4,\"result\":null}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"49458229541\",\"message\":{\"id\":5,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae335\",\"00000000\",\"09ce0000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"49458792711\",\"message\":{\"error\":null,\"id\":5,\"result\":true}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"81584269340\",\"message\":{\"id\":6,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae335\",\"00000000\",\"1dc10000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"81584958116\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":6,\"result\":null}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"84083544833\",\"message\":{\"id\":7,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae335\",\"00000000\",\"1f4e8000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"84083896697\",\"message\":{\"error\":null,\"id\":7,\"result\":true}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"84593285649\",\"message\":{\"id\":8,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae335\",\"00000000\",\"1f9e8000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"84593661834\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":8,\"result\":null}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"95082744867\",\"message\":{\"id\":9,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae336\",\"00000000\",\"05840000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"95083120445\",\"message\":{\"error\":null,\"id\":9,\"result\":true}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"102784352003\",\"message\":{\"id\":10,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae336\",\"00000000\",\"0a4b8000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"102784926485\",\"message\":{\"error\":null,\"id\":10,\"result\":true}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"119594874669\",\"message\":{\"id\":11,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae336\",\"00000000\",\"14bb0000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"119595272156\",\"message\":{\"error\":null,\"id\":11,\"result\":true}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"160280080622\",\"message\":{\"id\":12,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae337\",\"00000000\",\"0d5e8000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"160280335075\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":12,\"result\":null}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"161086295572\",\"message\":{\"id\":13,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae337\",\"00000000\",\"0ddd0000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"161086749212\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":13,\"result\":null}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"177787880401\",\"message\":{\"id\":14,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae337\",\"00000000\",\"183b8000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"177788155223\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":14,\"result\":null}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"182458310171\",\"message\":{\"id\":15,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae337\",\"00000000\",\"1b230000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"182458730331\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":15,\"result\":null}}\n{\"direction\":\"firmware-to-pool\",\"elapsed_ns\":\"226954379091\",\"message\":{\"id\":16,\"method\":\"mining.submit\",\"params\":[\"simulator\",\"444f1ec09d3a99c1-1\",\"00000000\",\"6adae338\",\"00000000\",\"16230000\"]}}\n{\"direction\":\"pool-to-firmware\",\"elapsed_ns\":\"226954887861\",\"message\":{\"error\":[23,\"LowDifficulty\",null],\"id\":16,\"result\":null}}\n"
+  },
+  "pool_input": {
+    "sha256": "efe102c47102e1deb9c4ba6d3ad69d437a6d12fde2c423f059097afe5fa505b0",
+    "size": 1025
+  }
+}

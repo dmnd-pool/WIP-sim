@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f6f3855465aee6403946",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/48eb358e-ebc2-4dfa-9cc6-e49ec9300be2/2024/07/22/22/cTUVus-S21%20Pro-CN249YE4%20001-24.07.10_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus-S21 Pro-CN249YE4 001-24.07.10_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f6f3855465aee6403946/cTUVus-S21_Pro-CN249YE4_001-24.07.10_extsigned.pdf",
+  "sha256": "0bc54d52081618494ee626bcceb3167b010c4bcade258019947f17c2cc86e2b7",
+  "size_bytes": 1470072,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/48eb358e-ebc2-4dfa-9cc6-e49ec9300be2/2024/07/22/22/cTUVus-S21%20Pro-CN249YE4%20001-24.07.10_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 22 Jul 2024 14:15:01 GMT",
+  "etag": "\"f602454a217167ac3f7004f34a3cc83c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1470072,
+      "actual": 1470072,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

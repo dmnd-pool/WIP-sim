@@ -1,0 +1,74 @@
+{
+  "schema": "md-sim-independent-audit-version-review/1",
+  "historical_run": "work/simulator/network-vm/native-access-441/execution",
+  "exact_different_external_join_fields": [
+    "image_verifier_source",
+    "outer_result",
+    "verifier_source"
+  ],
+  "normalized_other_join_fields_equal": true,
+  "outer_result_null_is_the_existing_comparison_normalization": true,
+  "retained_verifier": {
+    "sha256": "ddf6362c881515f4c6a5cf0e639c50bc938b4fb483e7667aaa31a246899fe48a",
+    "size": 25545
+  },
+  "new_verifier": {
+    "sha256": "0e5ae443fa21a6dbb2758750263e6cd28d53117c0f08b807c9ad2b65a8a8a3bb",
+    "size": 26269
+  },
+  "added_image_verifier": {
+    "sha256": "3bd7e5de2834f546b1c1ed29d5cca8e204007d799c7aa526092a5f4741222258",
+    "size": 5261
+  },
+  "new_auditor_identity_matches_frozen450": true,
+  "historical443_reports_unchanged": [
+    "work/simulator/network-vm/native-access-441/execution/regtest-audit443.json",
+    "work/simulator/network-vm/native-access-441/execution/rate-audit443.json",
+    "work/simulator/bitcoin-core/shared441-candidate0-443/block-acceptance.json",
+    "work/simulator/bitcoin-core/shared441-candidate1-443/block-acceptance.json"
+  ],
+  "new_regtest_report_not_created": true,
+  "verdict": "Invalid reuse across verifier identities. The new rate/source-preparation check passed; the new mining audit rejected the old retained join before generating a mining verdict. Old443 mining/Core results retain their own frozen440 validity. No old result or assertion was changed.",
+  "inputs": {
+    "work/simulator/network-vm/native-access-441/execution/pool-result.json": {
+      "sha256": "52c521ab7dde2e76eb39017596dd6c2f23dd1ea3622014e6fbbaf2df03495e15",
+      "size": 123558
+    },
+    "work/simulator/network-vm/native-access-441/execution/rate-audit450.json": {
+      "sha256": "0da76b4606a78abd4b53537707709eaaae6f56d8ada4c602192d24e824cd7905",
+      "size": 6371
+    },
+    "work/simulator/core-checkpoint-440/source/crates/md-sim-firmware/examples/support/s9_external_pool.rs": {
+      "sha256": "ddf6362c881515f4c6a5cf0e639c50bc938b4fb483e7667aaa31a246899fe48a",
+      "size": 25545
+    },
+    "work/simulator/core-checkpoint-450/source/crates/md-sim-firmware/examples/support/s9_external_pool.rs": {
+      "sha256": "0e5ae443fa21a6dbb2758750263e6cd28d53117c0f08b807c9ad2b65a8a8a3bb",
+      "size": 26269
+    },
+    "work/simulator/core-checkpoint-450/source/crates/md-sim-firmware/examples/support/prepared_vm_image.rs": {
+      "sha256": "3bd7e5de2834f546b1c1ed29d5cca8e204007d799c7aa526092a5f4741222258",
+      "size": 5261
+    },
+    "work/simulator/core-checkpoint-450/source/crates/md-sim-firmware/examples/support/s9_submission_audit.rs": {
+      "sha256": "90737d07d45b5fba85ef1bcdb0c44427a54d4429824ee87de3e594e616ee046c",
+      "size": 36184
+    },
+    "work/simulator/channel-target-450/release/examples/s9_asic_audit": {
+      "sha256": "f0b03b6e95c1ff715b6b52c643cabd6554662fd294825d1ef9feebda6607c162",
+      "size": 3106784
+    },
+    "work/simulator/checks-2026-10-21-001/selector-basic450-regtest.log": {
+      "sha256": "cf2f74b45e4b2a24bd1b07e6f7319387cb3b71bed67357bf5633de25cbdd268a",
+      "size": 43
+    },
+    "work/simulator/checks-2026-10-21-001/selector-basic450-rates.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/reviews/selector-basic-audit-version-450.json": {
+      "sha256": "dafed94e60078b07d11b8875c4ec35745f87f9b09825d7640a162767ee1508c2",
+      "size": 599
+    }
+  }
+}

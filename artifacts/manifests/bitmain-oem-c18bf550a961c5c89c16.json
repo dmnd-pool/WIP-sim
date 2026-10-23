@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c18bf550a961c5c89c16",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7b5c567c-7461-4c8e-83a0-3c56df6dfd36/2022/01/19/18/S9%20Hydro%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S9 Hydro Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-c18bf550a961c5c89c16/S9_Hydro_Server_Manual.pdf",
+  "sha256": "8316cd9439cd73ef8bc0808c1b443c595b87c7b8c517d85e5770f0e1c37c7904",
+  "size_bytes": 1409582,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7b5c567c-7461-4c8e-83a0-3c56df6dfd36/2022/01/19/18/S9%20Hydro%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:11:18 GMT",
+  "etag": "\"a21cbbc5c03dd47d1724e5a57edbb449\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1409582,
+      "actual": 1409582,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

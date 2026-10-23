@@ -1,0 +1,107 @@
+{
+  "schema": "md-sim-native-worker-retention-mining/1",
+  "complete_simulator": false,
+  "milestone2_complete": false,
+  "exact_targets_passed": 0,
+  "scope": "Archived S9 firmware on the declared adapted reference model320; native worker beside a disconnected local VM client. No external physical host, SSH or dashboard claim.",
+  "wall_milliseconds": 448537,
+  "mining": {
+    "fresh_jobs": 2,
+    "clean_job_transition": true,
+    "difficulty_change": true,
+    "total_computed_hashes": 1322,
+    "matched_computations": 14,
+    "verified_serial_results": 14
+  },
+  "evidence": [
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/assessment.json",
+      "sha256": "5f4f2c1fe8968de548a646d9c04b4b78f448d46c2b4a6cede5f1c7a8bb2b0ac2",
+      "size": 3518
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/process-spec.json",
+      "sha256": "d65722e78da0537f5402de077fffa24d127417b2f857b4c33af1bf29e96c2590",
+      "size": 5069
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/locked-run.json",
+      "sha256": "180cc1e4a15a7142599a3de0f236ee4c9c54de0e7fdf14cddc31521ee00a9356",
+      "size": 23704
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/process-spec.json",
+      "sha256": "c04fc696982d4d2a980cf40d815a5ae6006115e9a935f313885bd8933aeea239",
+      "size": 12367
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/adaptation.json",
+      "sha256": "f1a1fafb04a359f65a15ea23ca5167a867e0c6207a80a19d39c1f601ed5e40d1",
+      "size": 16110
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/configuration-audit.json",
+      "sha256": "499b8aed4b3f115f545418ab69429031f41cbde0eb32b2a10c1ed31b93303c50",
+      "size": 1107
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/regtest-audit-356.json",
+      "sha256": "328678d0ff6c9085e4fc2371280838bb7a728a0e89ea81afa1ad063343088269",
+      "size": 62333
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/rate-audit-356.json",
+      "sha256": "1af1ea15b8b089c531082babedf27341dcc973414b9943ac01ba104ab56ebf54",
+      "size": 2236
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/host-retention.json",
+      "sha256": "bfb969ea893385076850744b120a6728df0881b04e0b285a46a48089195eaa02",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/worker-retention.json",
+      "sha256": "bfb969ea893385076850744b120a6728df0881b04e0b285a46a48089195eaa02",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/worker-cleanup.json",
+      "sha256": "682f071f707cfd61b989c5b7d67231942c57863d44b92dae2af0c5cbd0cb1bf0",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-firmware-354/execution/worker-result.json",
+      "sha256": "0d8a5f376caca3cf1fdaeb4f09f85f96472be41a91f083c45c66c38f007f65b9",
+      "size": 103542771
+    },
+    {
+      "path": "work/simulator/bitcoin-core/channel354-candidate0-357/block-acceptance.json",
+      "sha256": "c6f1b5a3e0fd17dd5df302c04f877b378b743fc02a975b1824598d498dc928b4",
+      "size": 1745
+    },
+    {
+      "path": "work/simulator/bitcoin-core/channel354-candidate1-357/block-acceptance.json",
+      "sha256": "5148334b0c2054c71e7e149866e495d1b3ff7b58846268d4d74bf246d902c592",
+      "size": 1745
+    }
+  ],
+  "frozen_helpers": {
+    "path": "work/simulator/channel-target-354/manifest.sha256",
+    "sha256": "5d1f8647f1268af03e49c5b2bc08d43b59bd306349c18027aea7f1c311c343cc",
+    "size": 275
+  },
+  "source_checkpoint": {
+    "path": "work/simulator/qemu-s9/core-checkpoint-354/manifest.json",
+    "sha256": "d805792d0c23cbda3b87e6a8d20cd61fead7913e8237d30d8b2d493dd85a1489",
+    "size": 73207
+  },
+  "retention": "The exact result was imported and synchronized outside the client VM before the acknowledgment and worker cleanup. Recorded sent bytes match both saved receipts.",
+  "remaining": [
+    "Active-job reconnect across SSH/client loss",
+    "Whole-client-VM loss",
+    "Outer-worker storage loss",
+    "Selected native SSH/TLS dashboard",
+    "Exact FPGA/controller/hashboard/PSU identities and models",
+    "All remaining full matrix targets"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-5a9baeec6050cf264d50",
+  "url": "https://download.hiveos.farm/asic/custom/mskbtc/SD-S17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "kind": "firmware",
+  "title": "SD-S17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:58:23+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-5a9baeec6050cf264d50/SD-S17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "sha256": "890925bbc65e7089bdb4c6113cdb29c1cbe45716f3584a9edab1d518042fa99a",
+  "size_bytes": 68898269,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/mskbtc/SD-S17+_Hiveon_2.02-200930_bigminer_sig.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Wed, 30 Sep 2020 09:15:35 GMT",
+  "etag": "\"5f744cb7-41b4ddd\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 68898269,
+      "actual": 68898269,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

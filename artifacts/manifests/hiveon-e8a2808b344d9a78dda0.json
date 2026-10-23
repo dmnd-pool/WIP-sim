@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-e8a2808b344d9a78dda0",
+  "url": "https://download.hiveos.farm/asic/custom/REMSIG_S9_190731/S9_31-07-19_remsig.tar.gz",
+  "kind": "firmware",
+  "title": "S9_31-07-19_remsig.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:10:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-e8a2808b344d9a78dda0/S9_31-07-19_remsig.tar.gz",
+  "sha256": "f6cbad23f2c97d180e6fb184630f7a32e4e13ffc4d9789776a346d2d751e7228",
+  "size_bytes": 13824,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/REMSIG_S9_190731/S9_31-07-19_remsig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 05 Nov 2021 12:43:10 GMT",
+  "etag": "\"618526de-3600\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 13824,
+      "actual": 13824,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

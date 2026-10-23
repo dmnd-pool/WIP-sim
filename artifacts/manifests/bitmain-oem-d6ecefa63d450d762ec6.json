@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-d6ecefa63d450d762ec6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/s9_fix_upgrade.tar.gz",
+  "kind": "firmware",
+  "title": "s9_fix_upgrade.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-d6ecefa63d450d762ec6/s9_fix_upgrade.tar.gz",
+  "sha256": "8dee38206e0c212ae56d13894b1813382bda4350aa9ec43a870a6ad90fe3faff",
+  "size_bytes": 40808138,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/s9_fix_upgrade.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:34 GMT",
+  "etag": "\"03fd680f8eedd53378f3ad04eca0caed-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 40808138,
+      "actual": 40808138,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

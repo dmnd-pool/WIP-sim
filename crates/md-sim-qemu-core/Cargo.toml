@@ -1,0 +1,17 @@
+[package]
+name = "md-sim-qemu-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[dependencies]
+md-sim-firmware = { path = "../md-sim-firmware" }
+md-sim-axi-iic = { path = "../../simulator/backends/qemu/axi-iic", features = ["host-std"] }
+serde_json.workspace = true
+
+[dev-dependencies]
+bitcoin_hashes.workspace = true

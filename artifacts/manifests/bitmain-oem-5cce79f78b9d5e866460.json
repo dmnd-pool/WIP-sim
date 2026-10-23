@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-5cce79f78b9d5e866460",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b8d2964e-c029-4695-a85b-2d54989e73ec/2022/12/28/22/Antminer-S19-merge-release-20221227070716.bmu",
+  "kind": "firmware",
+  "title": "Antminer-S19-merge-release-20221227070716.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:45+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-5cce79f78b9d5e866460/Antminer-S19-merge-release-20221227070716.bmu",
+  "sha256": "b1af3d886e5862f9d7c5f054cc04a225c9f02975d9ae63ab1aa298d3051a7b0a",
+  "size_bytes": 155379647,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b8d2964e-c029-4695-a85b-2d54989e73ec/2022/12/28/22/Antminer-S19-merge-release-20221227070716.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Wed, 28 Dec 2022 14:19:29 GMT",
+  "etag": "\"b4a00113b761553a290eed2c17436d50\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "b4a00113b761553a290eed2c17436d50",
+      "actual": "b4a00113b761553a290eed2c17436d50",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 155379647,
+      "actual": 155379647,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

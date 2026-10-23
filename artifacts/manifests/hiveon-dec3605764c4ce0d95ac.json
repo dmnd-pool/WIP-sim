@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-dec3605764c4ce0d95ac",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-S9SE-v1.0.7-sig-1.00@200804-S9-SE-cryptos.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9SE-v1.0.7-sig-1.00@200804-S9-SE-cryptos.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:12:35+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-dec3605764c4ce0d95ac/Antminer-S9SE-v1.0.7-sig-1.00_200804-S9-SE-cryptos.tar.gz",
+  "sha256": "ce52e6d82e1d021c49ab8beac71ef079d0f52b45159efc2d7d0831d983e46ad9",
+  "size_bytes": 20635857,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-S9SE-v1.0.7-sig-1.00@200804-S9-SE-cryptos.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 04 Aug 2020 10:52:18 GMT",
+  "etag": "\"5f293de2-13ae0d1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 20635857,
+      "actual": 20635857,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

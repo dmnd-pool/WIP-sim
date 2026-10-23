@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-673cef4f794f7d1a6a28",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/r1-20170417.bin",
+  "kind": "firmware",
+  "title": "r1-20170417.bin",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-673cef4f794f7d1a6a28/r1-20170417.bin",
+  "sha256": "ee192c92cca09e470deba551690e494d1e2f0c717b5eb64978e0ca29c2329177",
+  "size_bytes": 8126464,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/r1-20170417.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:32 GMT",
+  "etag": "\"6ebbfb3efee80e004ee6d249850efc24\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 8126464,
+      "actual": 8126464,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

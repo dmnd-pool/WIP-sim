@@ -1,0 +1,440 @@
+{
+  "schema": "md-sim-checkpoint-artifact-review/1",
+  "finding": "The old helper lets Cargo inherit CARGO_TARGET_DIR but always copies target/release/libmd_sim_qemu_core.a. Source165 C ABI linking exposed the stale library. Historical copied library bytes and source snapshots remain intact; a source snapshot alone is not proof that its library came from that build.",
+  "correction": "Source166 parses bounded Cargo compiler-artifact output for the exact model source path and staticlib target, requires one absolute library path, retains it with hashes and records the actual Cargo artifact log.",
+  "scope": "Comparison uses currently retained build outputs; it does not infer historical source provenance from filenames or equal behavior. Existing actual firmware and independent hash observations retain their binary identities; unmatched model-build source claims need revalidation.",
+  "first_observed_missing_symbol": "md_s9_temperature_input_plan",
+  "invalid_checkpoint": "work/simulator/qemu-s9/core-checkpoint-165",
+  "corrected_checkpoint": "work/simulator/qemu-s9/core-checkpoint-166",
+  "comparisons": [
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-129/manifest.json",
+      "retained_library": {
+        "sha256": "b51d594b31fea33ec16c25337834e8fd44d3f4776fad292b71ced4c07068d295",
+        "size": 32348794
+      },
+      "candidate_build_output": "work/simulator/ssh-target-129/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-130/manifest.json",
+      "retained_library": {
+        "sha256": "b51d594b31fea33ec16c25337834e8fd44d3f4776fad292b71ced4c07068d295",
+        "size": 32348794
+      },
+      "candidate_build_output": "work/simulator/ssh-target-130/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-131/manifest.json",
+      "retained_library": {
+        "sha256": "df4dfbd81c76b5734f2f38830a1b08b2bbbeea35bbbc840640c851e9fe895616",
+        "size": 32354742
+      },
+      "candidate_build_output": "work/simulator/ssh-target-131/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-132/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-132/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-133/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-133/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-134/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-134/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-135/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-135/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-136/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-136/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-137/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-137/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-138/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-138/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-139/manifest.json",
+      "retained_library": {
+        "sha256": "6c0f65809c2f0b725019ecab525fba1487ca75c4db817c4d8fb9d00696383919",
+        "size": 32350248
+      },
+      "candidate_build_output": "work/simulator/ssh-target-139/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-140/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-140/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-141/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-141/release/libmd_sim_qemu_core.a",
+      "status": "not-present"
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-142/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-142/release/libmd_sim_qemu_core.a",
+      "status": "same-bytes",
+      "current_build_output": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-143/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-143/release/libmd_sim_qemu_core.a",
+      "status": "same-bytes",
+      "current_build_output": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-144/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-144/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "a35c17d6e762a52834d3b1f97743cc78a0af5b0674c25ab6d2646a275d002e62",
+        "size": 32878758
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-145/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-145/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "516059f0408442dbebc0832cdc407c4a7a13652b0ccfb63616d66ed339004de3",
+        "size": 32880600
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-146/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-146/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "516059f0408442dbebc0832cdc407c4a7a13652b0ccfb63616d66ed339004de3",
+        "size": 32880600
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-147/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-147/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "0604f8bcbf1e65ed51954cef540c70520fb433244aed88e467571fb255cf17fc",
+        "size": 32884328
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-148/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-148/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "cba3a26872b859ec28cad2f8e7c5daa600d84ba57853e9c2520353686ea529f6",
+        "size": 33166198
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-149/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-149/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "14207cd56b3413e561d6bdc6450a96773da294de7bdc8be96153003bf7811835",
+        "size": 33180532
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-150/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-150/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "921cc3dd10b8a2740ff0ed279e9435cb0a6119848bde47a65fff208f50ec8226",
+        "size": 33181338
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-151/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-151/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "e684a9df1ba548e76676d8c05b7249d3f8b4081a591b4835206a6b781d070979",
+        "size": 33196934
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-152/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-152/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "5abffea2dd81c2ef41fee8e0689b68833166041be01ba37a53bb391d678c2196",
+        "size": 33185190
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-153/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-153/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "89cb16f6751ba658b881d11e0e2c48697bfcee824f6221ff6f9a182fe9bf81a0",
+        "size": 33185242
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-154/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-154/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "d8368e2d2aff44bef4532751f15e65c9482349f5f8b0cd5fc554967aaacadb00",
+        "size": 33185898
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-155/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-155/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "6f775ed11052393a6f18693b55b93048a93cd85901c14e681d267631af91f331",
+        "size": 33185898
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-156/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-156/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "6f775ed11052393a6f18693b55b93048a93cd85901c14e681d267631af91f331",
+        "size": 33185898
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-157/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-157/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "6f775ed11052393a6f18693b55b93048a93cd85901c14e681d267631af91f331",
+        "size": 33185898
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-158/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-158/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "6f775ed11052393a6f18693b55b93048a93cd85901c14e681d267631af91f331",
+        "size": 33185898
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-159/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-159/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "5b7d1f8cf9528408845286a4db1e8ea11316543da6fb5eca21aee38de629f769",
+        "size": 33186380
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-160/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-160/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "5b7d1f8cf9528408845286a4db1e8ea11316543da6fb5eca21aee38de629f769",
+        "size": 33186380
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-161/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-161/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "5b7d1f8cf9528408845286a4db1e8ea11316543da6fb5eca21aee38de629f769",
+        "size": 33186380
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-162/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-162/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "5b7d1f8cf9528408845286a4db1e8ea11316543da6fb5eca21aee38de629f769",
+        "size": 33186380
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-163/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-163/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "5b7d1f8cf9528408845286a4db1e8ea11316543da6fb5eca21aee38de629f769",
+        "size": 33186380
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-164/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-164/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "147c0bebcbb0f8c363156d816d91558e013c61494b5bf7324e3ad88443ea1288",
+        "size": 33186352
+      }
+    },
+    {
+      "checkpoint": "work/simulator/qemu-s9/core-checkpoint-165/manifest.json",
+      "retained_library": {
+        "sha256": "059969b56556aff84354449fc8ce72eddf85b0886c1af16d3865f52b21f22e06",
+        "size": 32344684
+      },
+      "candidate_build_output": "work/simulator/ssh-target-165/release/libmd_sim_qemu_core.a",
+      "status": "different-bytes",
+      "current_build_output": {
+        "sha256": "b10ac69c3705b15166d09cc44f2781944d73ef9381c4cba6ab23aa1a5553865d",
+        "size": 33254598
+      }
+    }
+  ]
+}

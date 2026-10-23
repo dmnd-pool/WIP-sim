@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-463313ebca3b880f0954",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/8e63b0e0-61b7-4c2b-8476-7c56ec1030b5/2026/06/26/18/DDT-CE25071403-4E01%20U3S21EXPH%20FCC%26IC%20SDoC%20Certificate-F.pdf",
+  "kind": "document",
+  "title": "DDT-CE25071403-4E01 U3S21EXPH FCC&IC SDoC Certificate-F.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-463313ebca3b880f0954/DDT-CE25071403-4E01_U3S21EXPH_FCC_IC_SDoC_Certificate-F.pdf",
+  "sha256": "cc0799aa78135692eb95499bf144c338cedf665e8de94abea2faf203d4fc230a",
+  "size_bytes": 630777,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/8e63b0e0-61b7-4c2b-8476-7c56ec1030b5/2026/06/26/18/DDT-CE25071403-4E01%20U3S21EXPH%20FCC%26IC%20SDoC%20Certificate-F.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 26 Jun 2026 10:02:21 GMT",
+  "etag": "\"4af73d008c23d5d71e3378a636ecfa99\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 630777,
+      "actual": 630777,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

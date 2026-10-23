@@ -1,0 +1,59 @@
+{
+  "scope": "CLI checks; expected incomplete results do not pass the simulator completion gates",
+  "cases": [
+    {
+      "name": "catalog-import",
+      "command": "target/release/md-sim catalog import --path .",
+      "expected": 0,
+      "stdout": "work/simulator/reports/v11-catalog-import-stdout.json",
+      "stderr": "work/simulator/reports/v11-catalog-import-stderr.json",
+      "exit_code": 0,
+      "expected_exit_observed": true
+    },
+    {
+      "name": "targets",
+      "command": "target/release/md-sim targets list --device bitmain-antminer-s9",
+      "expected": 0,
+      "stdout": "work/simulator/reports/v11-targets-stdout.json",
+      "stderr": "work/simulator/reports/v11-targets-stderr.json",
+      "exit_code": 0,
+      "expected_exit_observed": true
+    },
+    {
+      "name": "plan",
+      "command": "target/release/md-sim matrix plan --scope all-catalogued --pairing relevant --include-blocked --out work/simulator/plan-v11.json",
+      "expected": 0,
+      "stdout": "work/simulator/reports/v11-plan-stdout.json",
+      "stderr": "work/simulator/reports/v11-plan-stderr.json",
+      "exit_code": 0,
+      "expected_exit_observed": true
+    },
+    {
+      "name": "matrix",
+      "command": "target/release/md-sim matrix run work/simulator/plan-v11.json --workers local --suite conformance --require-complete --out work/simulator/matrix-v11",
+      "expected": 3,
+      "stdout": "work/simulator/reports/v11-matrix-stdout.json",
+      "stderr": "work/simulator/reports/v11-matrix-stderr.json",
+      "exit_code": 3,
+      "expected_exit_observed": true
+    },
+    {
+      "name": "matrix-html",
+      "command": "target/release/md-sim matrix report work/simulator/matrix-v11 --format html",
+      "expected": 0,
+      "stdout": "work/simulator/reports/v11-matrix-html-stdout.json",
+      "stderr": "work/simulator/reports/v11-matrix-html-stderr.json",
+      "exit_code": 0,
+      "expected_exit_observed": true
+    },
+    {
+      "name": "forged-plan",
+      "command": "target/release/md-sim matrix run work/simulator/reports/forged-empty-plan.json --workers local --suite conformance --require-complete --out work/simulator/matrix-forged-v11",
+      "expected": 2,
+      "stdout": "work/simulator/reports/v11-forged-plan-stdout.json",
+      "stderr": "work/simulator/reports/v11-forged-plan-stderr.json",
+      "exit_code": 2,
+      "expected_exit_observed": true
+    }
+  ]
+}

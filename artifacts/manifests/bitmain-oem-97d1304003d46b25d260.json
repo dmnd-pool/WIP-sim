@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-97d1304003d46b25d260",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/69a150f7-3d48-48e9-8c7a-887c21e3a389/2025/01/24/17/S21%2B%20CE-EMC.pdf",
+  "kind": "document",
+  "title": "S21+ CE-EMC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:43:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-97d1304003d46b25d260/S21+_CE-EMC.pdf",
+  "sha256": "e476ab7444f43a044fceb7cb7d78b09fab083e4c71f726e45620d225d6af5ed7",
+  "size_bytes": 163747,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/69a150f7-3d48-48e9-8c7a-887c21e3a389/2025/01/24/17/S21%2B%20CE-EMC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 24 Jan 2025 09:59:54 GMT",
+  "etag": "\"143d0d8ea9030068eb6bf01c771e1236\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 163747,
+      "actual": 163747,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

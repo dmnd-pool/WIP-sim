@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-d13e09939d879544909b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c6f34889-da20-4e98-951d-04418adee8b8/2024/12/18/09/CB%202nd%20cert-S21%20XP-CN24S25D%20003-24.11.04_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert-S21 XP-CN24S25D 003-24.11.04_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-d13e09939d879544909b/CB_2nd_cert-S21_XP-CN24S25D_003-24.11.04_extsigned.pdf",
+  "sha256": "01fa536a93f068120f9ec7d39e26e004ae7e82573a8d0dc03c14ab3a21526f40",
+  "size_bytes": 329243,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c6f34889-da20-4e98-951d-04418adee8b8/2024/12/18/09/CB%202nd%20cert-S21%20XP-CN24S25D%20003-24.11.04_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 18 Dec 2024 01:29:15 GMT",
+  "etag": "\"b363bfaa50347cfe73b243398429e04b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 329243,
+      "actual": 329243,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

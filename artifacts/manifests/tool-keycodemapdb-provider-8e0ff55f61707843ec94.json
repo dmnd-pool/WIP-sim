@@ -1,0 +1,21 @@
+{
+  "id": "tool-keycodemapdb-provider-8e0ff55f61707843ec94",
+  "url": "https://raw.githubusercontent.com/qemu/keycodemapdb/f5772a62ec52591ff6870b7e8ef32482371f22c6/data/keymaps.csv",
+  "kind": "web",
+  "title": "QEMU pinned keycodemapdb provider response: csv480.txt",
+  "language": "en",
+  "source_id": "tool-keycodemapdb-provider",
+  "license": "Source license text retained in README and generator header",
+  "retrieved_at": "2026-10-19",
+  "status": "downloaded",
+  "local_path": "artifacts/files/web/tool-keycodemapdb-provider-20261019/csv480.txt",
+  "sha256": "8e0ff55f61707843ec94f0c2301bb3ade50705b69923ec614f9d328058196a42",
+  "size_bytes": 18939,
+  "executed": false,
+  "http_status": null,
+  "git_commit": "f5772a62ec52591ff6870b7e8ef32482371f22c6",
+  "acquisition_method": "Available web provider; numbered source lines with cached response metadata",
+  "notes": [
+    "Exact provider response retained. Upstream byte identity not asserted; source views are normalized and joined by numbered lines with exact overlap checks."
+  ]
+}

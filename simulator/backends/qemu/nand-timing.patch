@@ -1,0 +1,338 @@
+--- a/hw/i2c/mdsim/nand.c
++++ b/hw/i2c/mdsim/nand.c
+@@ -19,6 +19,7 @@
+ #ifndef NAND_IO
+ 
+ #include "qemu/osdep.h"
++#include "qemu/timer.h"
+ #include "hw/core/cpu.h"
+ #include "hw/core/qdev-properties.h"
+ #include "hw/core/qdev-properties-system.h"
+@@ -91,6 +92,12 @@
+     bool (*blk_load)(NANDFlashState *s, uint64_t addr, unsigned offset);
+ 
+     uint32_t ioaddr_vmstate;
++    QEMUTimer *md_timer;
++    uint64_t md_deadline;
++    uint64_t md_addr;
++    int md_iolen, md_offset;
++    uint8_t md_pending;
++    uint8_t md_io[MAX_PAGE + MAX_OOB + 0x400];
+ };
+ 
+ #define TYPE_NAND "nand"
+@@ -230,6 +237,11 @@
+ static void nand_reset(DeviceState *dev)
+ {
+     NANDFlashState *s = NAND(dev);
++    if (s->md_timer) {
++        timer_del(s->md_timer);
++    }
++    s->md_deadline = 0;
++    s->md_pending = 0;
+     s->cmd = NAND_CMD_READ0;
+     s->addr = 0;
+     s->addrlen = 0;
+@@ -267,6 +279,75 @@
+     iolen -= offset;
+ 
+     return iolen;
++}
++
++/* Timed adaptation: only the original storage functions modify flash.
++ * Pending data is separate from the live status/read buffer. A NAND RESET
++ * cancels the operation. PL353 register reset does not reset this chip. */
++static void md_nand_commit(void *opaque)
++{
++    NANDFlashState *s = opaque;
++    uint8_t io[sizeof(s->io)];
++    uint64_t addr = s->addr;
++    int iolen = s->iolen, offset = s->offset;
++    if (!s->md_pending) {
++        return;
++    }
++    memcpy(io, s->io, sizeof(io));
++    s->addr = s->md_addr;
++    s->iolen = s->md_iolen;
++    s->offset = s->md_offset;
++    memcpy(s->io, s->md_io, sizeof(s->io));
++    if (s->md_pending == NAND_CMD_PAGEPROGRAM2) {
++        s->blk_write(s);
++    } else {
++        s->blk_erase(s);
++    }
++    memcpy(s->io, io, sizeof(io));
++    s->addr = addr;
++    s->iolen = iolen;
++    s->offset = offset;
++    s->md_pending = 0;
++    s->md_deadline = 0;
++    s->status |= NAND_IOSTATUS_READY;
++    timer_del(s->md_timer);
++}
++
++void md_nand_tick(DeviceState *dev, uint64_t now)
++{
++    NANDFlashState *s = NAND(dev);
++    if (s->md_deadline && now >= s->md_deadline) {
++        md_nand_commit(s);
++    }
++}
++
++uint64_t md_nand_deadline(DeviceState *dev)
++{
++    return NAND(dev)->md_deadline;
++}
++
++static void md_nand_schedule(NANDFlashState *s, uint8_t command, uint64_t delay)
++{
++    s->status &= ~NAND_IOSTATUS_ERROR;
++    if (!s->wp || (s->addr >> s->addr_shift) >= s->pages) {
++        s->status |= NAND_IOSTATUS_ERROR;
++        return;
++    }
++    if (command == NAND_CMD_PAGEPROGRAM2 &&
++            (s->iolen < 0 || s->iolen > sizeof(s->io) || s->offset < 0 ||
++             (s->addr & ((1U << s->addr_shift) - 1)) + s->offset + s->iolen >
++             (1U << s->page_shift) + (1U << s->oob_shift))) {
++        s->status |= NAND_IOSTATUS_ERROR;
++        return;
++    }
++    s->md_addr = s->addr;
++    s->md_iolen = s->iolen;
++    s->md_offset = s->offset;
++    memcpy(s->md_io, s->io, sizeof(s->io));
++    s->md_pending = command;
++    s->md_deadline = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL) + delay;
++    s->status &= ~NAND_IOSTATUS_READY;
++    timer_mod_ns(s->md_timer, s->md_deadline);
+ }
+ 
+ static void nand_command(NANDFlashState *s)
+@@ -309,9 +390,7 @@
+         break;
+ 
+     case NAND_CMD_PAGEPROGRAM2:
+-        if (s->wp) {
+-            s->blk_write(s);
+-        }
++        md_nand_schedule(s, NAND_CMD_PAGEPROGRAM2, 300000);
+         break;
+ 
+     case NAND_CMD_BLOCKERASE1:
+@@ -322,9 +401,7 @@
+         s->addr <<= nand_flash_ids[s->chip_id].options & NAND_SAMSUNG_LP ?
+                                                                     16 : 8;
+ 
+-        if (s->wp) {
+-            s->blk_erase(s);
+-        }
++        md_nand_schedule(s, NAND_CMD_BLOCKERASE2, 2000000);
+         break;
+ 
+     case NAND_CMD_READSTATUS:
+@@ -361,6 +438,7 @@
+ 
+ static const VMStateDescription vmstate_nand = {
+     .name = "nand",
++    .unmigratable = 1, /* Pending chip operations have no migration contract. */
+     .version_id = 1,
+     .minimum_version_id = 1,
+     .pre_save = nand_pre_save,
+@@ -390,7 +468,7 @@
+     NANDFlashState *s = NAND(dev);
+     int ret;
+ 
+-
++    s->md_timer = timer_new_ns(QEMU_CLOCK_VIRTUAL, md_nand_commit, s);
+     s->buswidth = nand_flash_ids[s->chip_id].width >> 3;
+     s->size = nand_flash_ids[s->chip_id].size << 20;
+     if (nand_flash_ids[s->chip_id].options & NAND_SAMSUNG_LP) {
+@@ -462,11 +540,21 @@
+     set_bit(DEVICE_CATEGORY_STORAGE, dc->categories);
+ }
+ 
++static void md_nand_finalize(Object *obj)
++{
++    NANDFlashState *s = NAND(obj);
++    if (s->md_timer) {
++        timer_free(s->md_timer);
++    }
++    g_free(s->storage);
++}
++
+ static const TypeInfo nand_info = {
+     .name          = TYPE_NAND,
+     .parent        = TYPE_DEVICE,
+     .instance_size = sizeof(NANDFlashState),
+     .class_init    = nand_class_init,
++    .instance_finalize = md_nand_finalize,
+ };
+ 
+ static void nand_register_types(void)
+@@ -499,7 +587,7 @@
+ 
+ void nand_getpins(DeviceState *dev, int *rb)
+ {
+-    *rb = 1;
++    *rb = (NAND(dev)->status & NAND_IOSTATUS_READY) != 0;
+ }
+ 
+ void nand_setio(DeviceState *dev, uint32_t value)
+@@ -507,6 +595,11 @@
+     int i;
+     NANDFlashState *s = NAND(dev);
+ 
++    md_nand_tick(dev, qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL));
++    if (s->md_pending && !(s->cle &&
++            (value == NAND_CMD_READSTATUS || value == NAND_CMD_RESET))) {
++        return;
++    }
+     if (!s->ce && s->cle) {
+         if (nand_flash_ids[s->chip_id].options & NAND_SAMSUNG_LP) {
+             if (s->cmd == NAND_CMD_READ0 && value == NAND_CMD_LPREAD2)
+@@ -612,6 +705,13 @@
+     uint32_t x = 0;
+     NANDFlashState *s = NAND(dev);
+ 
++    md_nand_tick(dev, qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL));
++    if (!s->ce && s->cmd == NAND_CMD_READSTATUS) {
++        return s->status;
++    }
++    if (s->md_pending) {
++        return 0;
++    }
+     /* Allow sequential reading */
+     if (!s->iolen && s->cmd == NAND_CMD_READ0) {
+         offset = (int) (s->addr & ((1 << s->addr_shift) - 1)) + s->offset;
+@@ -683,36 +783,37 @@
+         soff = SECTOR_OFFSET(s->addr);
+         if (blk_pread(s->blk, sector << BDRV_SECTOR_BITS,
+                       PAGE_SECTORS << BDRV_SECTOR_BITS, iobuf, 0) < 0) {
++            s->status |= NAND_IOSTATUS_ERROR;
+             printf("%s: read error in sector %" PRIu64 "\n", __func__, sector);
+             return;
+         }
+ 
+-        mem_and(iobuf + (soff | off), s->io, MIN(s->iolen, NAND_PAGE_SIZE - off));
+-        if (off + s->iolen > NAND_PAGE_SIZE) {
++        size_t main = off < NAND_PAGE_SIZE ?
++                      MIN(s->iolen, NAND_PAGE_SIZE - off) : 0;
++        if (main) {
++            mem_and(iobuf + (soff | off), s->io, main);
++        }
++        if (s->iolen > main) {
++            size_t spare_offset = off > NAND_PAGE_SIZE ? off - NAND_PAGE_SIZE : 0;
+             page = PAGE(s->addr);
+-            mem_and(s->storage + (page << OOB_SHIFT), s->io + NAND_PAGE_SIZE - off,
+-                            MIN(OOB_SIZE, off + s->iolen - NAND_PAGE_SIZE));
++            mem_and(s->storage + (page << OOB_SHIFT) + spare_offset,
++                    s->io + main, s->iolen - main);
+         }
+ 
+         if (blk_pwrite(s->blk, sector << BDRV_SECTOR_BITS,
+                        PAGE_SECTORS << BDRV_SECTOR_BITS, iobuf, 0) < 0) {
++            s->status |= NAND_IOSTATUS_ERROR;
+             printf("%s: write error in sector %" PRIu64 "\n", __func__, sector);
+         }
+     } else {
+         off = PAGE_START(s->addr) + (s->addr & PAGE_MASK) + s->offset;
+-        sector = off >> 9;
+-        soff = off & 0x1ff;
+-        if (blk_pread(s->blk, sector << BDRV_SECTOR_BITS,
+-                      (PAGE_SECTORS + 2) << BDRV_SECTOR_BITS, iobuf, 0) < 0) {
+-            printf("%s: read error in sector %" PRIu64 "\n", __func__, sector);
++        if (blk_pread(s->blk, off, s->iolen, iobuf, 0) < 0) {
++            s->status |= NAND_IOSTATUS_ERROR;
+             return;
+         }
+-
+-        mem_and(iobuf + soff, s->io, s->iolen);
+-
+-        if (blk_pwrite(s->blk, sector << BDRV_SECTOR_BITS,
+-                       (PAGE_SECTORS + 2) << BDRV_SECTOR_BITS, iobuf, 0) < 0) {
+-            printf("%s: write error in sector %" PRIu64 "\n", __func__, sector);
++        mem_and(iobuf, s->io, s->iolen);
++        if (blk_pwrite(s->blk, off, s->iolen, iobuf, 0) < 0) {
++            s->status |= NAND_IOSTATUS_ERROR;
+         }
+     }
+     s->offset = 0;
+@@ -740,40 +841,18 @@
+         for (; i < page; i ++)
+             if (blk_pwrite(s->blk, i << BDRV_SECTOR_BITS,
+                            BDRV_SECTOR_SIZE, iobuf, 0) < 0) {
++                s->status |= NAND_IOSTATUS_ERROR;
+                 printf("%s: write error in sector %" PRIu64 "\n", __func__, i);
+             }
+     } else {
+         addr = PAGE_START(addr);
+-        page = addr >> 9;
+-        if (blk_pread(s->blk, page << BDRV_SECTOR_BITS,
+-                      BDRV_SECTOR_SIZE, iobuf, 0) < 0) {
+-            printf("%s: read error in sector %" PRIu64 "\n", __func__, page);
+-        }
+-        memset(iobuf + (addr & 0x1ff), 0xff, (~addr & 0x1ff) + 1);
+-        if (blk_pwrite(s->blk, page << BDRV_SECTOR_BITS,
+-                       BDRV_SECTOR_SIZE, iobuf, 0) < 0) {
+-            printf("%s: write error in sector %" PRIu64 "\n", __func__, page);
+-        }
+-
+-        memset(iobuf, 0xff, 0x200);
+-        i = (addr & ~0x1ff) + 0x200;
+-        for (addr += ((NAND_PAGE_SIZE + OOB_SIZE) << s->erase_shift) - 0x200;
+-                        i < addr; i += 0x200) {
+-            if (blk_pwrite(s->blk, i, BDRV_SECTOR_SIZE, iobuf, 0) < 0) {
+-                printf("%s: write error in sector %" PRIu64 "\n",
+-                       __func__, i >> 9);
+-            }
+-        }
+-
+-        page = i >> 9;
+-        if (blk_pread(s->blk, page << BDRV_SECTOR_BITS,
+-                      BDRV_SECTOR_SIZE, iobuf, 0) < 0) {
+-            printf("%s: read error in sector %" PRIu64 "\n", __func__, page);
+-        }
+-        memset(iobuf, 0xff, ((addr - 1) & 0x1ff) + 1);
+-        if (blk_pwrite(s->blk, page << BDRV_SECTOR_BITS,
+-                       BDRV_SECTOR_SIZE, iobuf, 0) < 0) {
+-            printf("%s: write error in sector %" PRIu64 "\n", __func__, page);
++        uint64_t end = addr + ((NAND_PAGE_SIZE + OOB_SIZE) << s->erase_shift);
++        for (; addr < end; addr += sizeof(iobuf)) {
++            size_t count = MIN(sizeof(iobuf), end - addr);
++            if (blk_pwrite(s->blk, addr, count, iobuf, 0) < 0) {
++                s->status |= NAND_IOSTATUS_ERROR;
++                return;
++            }
+         }
+     }
+ }
+@@ -793,8 +872,10 @@
+         if (s->mem_oob) {
+             if (blk_pread(s->blk, SECTOR(addr) << BDRV_SECTOR_BITS,
+                           PAGE_SECTORS << BDRV_SECTOR_BITS, s->io, 0) < 0) {
++                s->status |= NAND_IOSTATUS_ERROR;
+                 printf("%s: read error in sector %" PRIu64 "\n",
+                                 __func__, SECTOR(addr));
++                return false;
+             }
+             memcpy(s->io + SECTOR_OFFSET(s->addr) + NAND_PAGE_SIZE,
+                             s->storage + (PAGE(s->addr) << OOB_SHIFT),
+@@ -802,12 +883,11 @@
+             s->ioaddr = s->io + SECTOR_OFFSET(s->addr) + offset;
+         } else {
+             if (blk_pread(s->blk, PAGE_START(addr),
+-                          (PAGE_SECTORS + 2) << BDRV_SECTOR_BITS, s->io, 0)
+-                < 0) {
+-                printf("%s: read error in sector %" PRIu64 "\n",
+-                                __func__, PAGE_START(addr) >> 9);
+-            }
+-            s->ioaddr = s->io + (PAGE_START(addr) & 0x1ff) + offset;
++                          NAND_PAGE_SIZE + OOB_SIZE, s->io, 0) < 0) {
++                s->status |= NAND_IOSTATUS_ERROR;
++                return false;
++            }
++            s->ioaddr = s->io + offset;
+         }
+     } else {
+         memcpy(s->io, s->storage + PAGE_START(s->addr) +

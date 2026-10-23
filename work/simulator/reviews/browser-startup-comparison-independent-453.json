@@ -1,0 +1,300 @@
+{
+  "scope": "Read-only comparison of retained 322 and 453 browser startup. Equal manifest identities and actual recommended preference log values do not establish equal resource topology or startup execution. No cause or passing retry is inferred.",
+  "old_browser_helper": {
+    "sha256": "ea7303d66b3170e72f8d9c168e3a3d71f38e97f102759d5c6b663ae8d387fe82",
+    "size": 2165248
+  },
+  "old_startups_ms": [
+    51392,
+    49069
+  ],
+  "old_actual_command": {
+    "argv": [
+      "-machine",
+      "pc",
+      "-accel",
+      "tcg,thread=multi,tb-size=256",
+      "-cpu",
+      "max",
+      "-m",
+      "2048M",
+      "-smp",
+      "4",
+      "-nodefaults",
+      "-no-user-config",
+      "-display",
+      "none",
+      "-monitor",
+      "none",
+      "-serial",
+      "stdio",
+      "-no-reboot",
+      "-L",
+      "/pool-qemu-data",
+      "-bios",
+      "/pool-qemu-data/bios-256k.bin",
+      "-kernel",
+      "/pool-kernel",
+      "-initrd",
+      "/pool-initramfs",
+      "-netdev",
+      "socket,id=private,fd=3,x-md-sim-private-stream=on",
+      "-device",
+      "e1000,netdev=private,mac=52:54:00:12:34:64,romfile=",
+      "-append",
+      "console=ttyS0 rdinit=/init panic=-1 rootfstype=ramfs md_sim_private_guest=1 md_sim_pool_role=server",
+      "-rtc",
+      "base=2026-10-23T04:38:41,clock=host,driftfix=none"
+    ],
+    "network": "inherited Unix socket pair; two QEMU Ethernet endpoints; no host listener",
+    "role": "server"
+  },
+  "shared_outer_argv": [
+    "/probe",
+    "__firmware_ssh_inside"
+  ],
+  "all_33_firefox_manifest_objects_equal": {
+    "/usr/lib/firefox/application.ini": {
+      "sha256": "1ed3f311143d44d4bc625ae2f86d9c73f919f7eec0d1db3e9b0c70c391a367f4",
+      "size": 700
+    },
+    "/usr/lib/firefox/browser/chrome/icons/default/default128.png": {
+      "sha256": "9926bbb47e152c9747c8e7fbe9d7679fbcf221a4aa13400cbf1d2da3210d1b20",
+      "size": 13513
+    },
+    "/usr/lib/firefox/browser/chrome/icons/default/default16.png": {
+      "sha256": "742a5ed5a88075540a018629b6c4ee7f39a6fc89f4d75c2c136e002204ac024b",
+      "size": 722
+    },
+    "/usr/lib/firefox/browser/chrome/icons/default/default32.png": {
+      "sha256": "e4e889d71d93c2a171cbd92ca2fba2fca3a04ab61e6fc8a703683cf4e3d83ba1",
+      "size": 1948
+    },
+    "/usr/lib/firefox/browser/chrome/icons/default/default48.png": {
+      "sha256": "d9df64a49f932e5f7c8e1f5fccc0b998dafb57f9a7ed2ac9a8e4a43bed45eb1a",
+      "size": 3448
+    },
+    "/usr/lib/firefox/browser/chrome/icons/default/default64.png": {
+      "sha256": "12130ce8511f4a348c25380ba9b70b80b2ff0680e4ee801367bf0dbb5e94c00a",
+      "size": 5459
+    },
+    "/usr/lib/firefox/browser/defaults/preferences/vendor.js": {
+      "sha256": "50879baa1b25f003489a41f5bf2d0ca7ae76c971d34c30728229a832799eed9e",
+      "size": 463
+    },
+    "/usr/lib/firefox/browser/omni.ja": {
+      "sha256": "ea66a371d6ecd2e17297820cfbad59b0d9e7cefe2b9648e32e6a8e68cc028099",
+      "size": 56352070
+    },
+    "/usr/lib/firefox/crashhelper": {
+      "sha256": "af0bd5d8eda7c51b4d399c029b9a717bb8ac18e65d8743a68cec30852102bc94",
+      "size": 3202360
+    },
+    "/usr/lib/firefox/crashreporter": {
+      "sha256": "82966aea1fd9e5a88e2e6307d8b557790867af6f59c7ecbd7db3d493c7fdd5a9",
+      "size": 4279736
+    },
+    "/usr/lib/firefox/defaults/pref/channel-prefs.js": {
+      "sha256": "7d9d37eff1dc4e59a6437026602f1953ef58ee46ff3d81dbb8e13b0fd0bec86b",
+      "size": 429
+    },
+    "/usr/lib/firefox/dependentlibs.list": {
+      "sha256": "f5cf625ab9d9ca7b5f2cfdf036c26365b6bda6484707ea252e0e9014b5571c28",
+      "size": 104
+    },
+    "/usr/lib/firefox/distribution/distribution.ini": {
+      "sha256": "80e0667f8db562df7fe0ccc01a21a0c42427f38713491f478df3b50903161836",
+      "size": 176
+    },
+    "/usr/lib/firefox/firefox": {
+      "sha256": "92312d5e210286040a206e1dad369efd6f591bcf6e12d6ace22f2cffa54e8adf",
+      "size": 603104
+    },
+    "/usr/lib/firefox/fonts/TwemojiMozilla.ttf": {
+      "sha256": "6d90152ee0d29e82fe2a87793af5aa4b7ad13e6538360889e141e81ed299ee8e",
+      "size": 1474284
+    },
+    "/usr/lib/firefox/gfxtest": {
+      "sha256": "dccb4193a22bcf42b82351a0e5c0af8a362ee883ab03b6a306881f33375be534",
+      "size": 36552
+    },
+    "/usr/lib/firefox/gmp-clearkey/0.1/libclearkey.so": {
+      "sha256": "7446ecde938aea392dd13f9d30eff950fca17d72033de6ad0032b684fb8ab02f",
+      "size": 69768
+    },
+    "/usr/lib/firefox/gmp-clearkey/0.1/manifest.json": {
+      "sha256": "b7d65e60cccb80ffb2e95b5ae7e355d2c8c37575e886eef4325ca04fa7ba68fc",
+      "size": 225
+    },
+    "/usr/lib/firefox/is-packaged-app": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "/usr/lib/firefox/libgkcodecs.so": {
+      "sha256": "4b1fc1c6342f299fd9b8c5b259bc85e70cdce263a4adf3a0928d988650fd03a1",
+      "size": 9218016
+    },
+    "/usr/lib/firefox/liblgpllibs.so": {
+      "sha256": "91303931c927ac40c8b8f0ff1789aa3a4414d471c58a76438f953433a0ab5d62",
+      "size": 152104
+    },
+    "/usr/lib/firefox/libmozavcodec.so": {
+      "sha256": "cf163480f839f8616db10c8245d033e6f9b7c63e3e53bd746c28456857940309",
+      "size": 4142248
+    },
+    "/usr/lib/firefox/libmozavutil.so": {
+      "sha256": "bdfa5ab6006e9cd2df0dc8259da56b5a8fe9420496522fe4cfe44b8d7e94df19",
+      "size": 675488
+    },
+    "/usr/lib/firefox/libmozgtk.so": {
+      "sha256": "5b1ea560a179bace9621eaf5d82b2c4ba0cfdbbb03d18ab1326be24ba2a88d16",
+      "size": 4488
+    },
+    "/usr/lib/firefox/libmozinference.so": {
+      "sha256": "389ddcdfa3af08a60e1a5443f2826ab636ac37037425dbba9368c452bebe53f9",
+      "size": 2711104
+    },
+    "/usr/lib/firefox/libmozsandbox.so": {
+      "sha256": "cb52e04f704511006d99e475f612c3b36937cb30ea1ce3c71cc3127a4c9de0ba",
+      "size": 246096
+    },
+    "/usr/lib/firefox/libmozsqlite3.so": {
+      "sha256": "f975341d72dc196ee5d9acfa2727650807e3eaa3e0c4e673eddc71d7e802b3c5",
+      "size": 1577552
+    },
+    "/usr/lib/firefox/libmozwayland.so": {
+      "sha256": "21ffecac96972320b4d5cd569729d5415771ab1e09b8303f4cf46fcd9bcf4020",
+      "size": 13096
+    },
+    "/usr/lib/firefox/libxul.so": {
+      "sha256": "1a17d0612724c79a00c7123a182fac0957b315c66e5a6396143f0e3ef497506f",
+      "size": 182137592
+    },
+    "/usr/lib/firefox/omni.ja": {
+      "sha256": "4142e661902eb6421829a7b8e1fd3ac6832fbc79f19d31d00351011665fda92b",
+      "size": 46106979
+    },
+    "/usr/lib/firefox/pingsender": {
+      "sha256": "453dd5a08c1499f4f876172b64981f2b8a30ecc54b594b66ac2cd02db82d385d",
+      "size": 644368
+    },
+    "/usr/lib/firefox/platform.ini": {
+      "sha256": "aae900bcf17601449627b2f93ef60c4870ca0b4a23917b617baf3e902ebbb627",
+      "size": 167
+    },
+    "/usr/lib/firefox/removed-files": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  },
+  "recommended_preference_count": 107,
+  "actual_recommended_preference_values_equal": true,
+  "old_profile0_preferences_reconstructed": {
+    "sha256": "fa57a382173d0f483da2458b582e8902a0f7225a0611b28eae0af37ca104a364",
+    "size": 1152
+  },
+  "453_expected_preferences_from_frozen_source": {
+    "sha256": "d607ab5fb106cf189e6bfe5143ed7c90f723ada2e66814be442b6b865280075d",
+    "size": 1221
+  },
+  "453_user_js_observed_size": 1221,
+  "453_user_js_full_bytes_retained": false,
+  "preference_delta": "Selected TLS profile adds security.default_personal_cert=\"Select Automatically\". Base bytes independently reproduce the passing322 recorded preference hash. The453 full preference file was not retained, so its expected hash is not an observed-file hash.",
+  "inputs": {
+    "work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-1/process-spec.json": {
+      "sha256": "afce52cd0b6fd6a10d61913e71e8fd81041b21acb41845dfab620876211c3f83",
+      "size": 12228
+    },
+    "work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-1/pool-vm-image/root-manifest.json": {
+      "sha256": "d068fdb28da9d92af333ae94535f557ad82ecb25e0c12ae93dbdea15b888f690",
+      "size": 858603
+    },
+    "work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-1/browser-result.json": {
+      "sha256": "b0e2c92de0035f5f8254b966844ef132081605879953f8100834f387753e4364",
+      "size": 220165
+    },
+    "work/simulator/network-vm/native-browser-453/process-spec.json": {
+      "sha256": "0590eca4b0bd6fa90d91381a9e06afc3c9af41dfab13cb0c64bdf579b63ed70f",
+      "size": 5312
+    },
+    "work/simulator/network-vm/native-browser-453/client-image/root-manifest.json": {
+      "sha256": "6535b6e319aa983720a4ea4dafd5c5f37d1228ed0511c6447a145d53e9f1bd95",
+      "size": 874638
+    },
+    "work/simulator/core-checkpoint-452/source/crates/md-sim-firmware/examples/support/browser_driver.rs": {
+      "sha256": "fd28bf51ff04ea3123cea914d98fe4ba5c61e15e1b045ccf27b26a5cfbb42a56",
+      "size": 17100
+    },
+    "work/simulator/core-checkpoint-452/source/crates/md-sim-firmware/examples/support/s9_browser_selected.rs": {
+      "sha256": "ad2b646e7466b2e5c82f866c6a8a7f050e8888d5d9a258b0cdfb70f2e485597d",
+      "size": 4249
+    },
+    "work/simulator/reviews/browser-start-failure-453/0-stdout.log": {
+      "sha256": "1fdd21b93bc4aab40848db9fcbd75f1c84ba1cb8ee166e895e5ba2bbca973da7",
+      "size": 15427
+    },
+    "work/simulator/reviews/browser-start-failure-453/start-failure.json": {
+      "sha256": "287017c93423adec3067a04efe0b4f90d4c4414b956cccbe4a2db1cd7fd93f1b",
+      "size": 86428
+    },
+    "work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-1/guest.log": {
+      "sha256": "384fe72a466e9752a8a9e3a4b273813539089b1fbfc8a1b481b2617222633470",
+      "size": 54484388
+    },
+    "work/simulator/network-vm/native-browser-453/execution/shared-pool/provider-receipt.json": {
+      "sha256": "58d997ccfc6aaab1759596b6b2356edf6b1b1e1f70ef214faf91abab7db91a18",
+      "size": 3833
+    }
+  },
+  "shared_actual_support_vm": {
+    "argv": [
+      "-machine",
+      "pc",
+      "-accel",
+      "tcg,thread=multi,tb-size=64",
+      "-cpu",
+      "max",
+      "-m",
+      "4096M",
+      "-nodefaults",
+      "-no-user-config",
+      "-nic",
+      "none",
+      "-display",
+      "none",
+      "-monitor",
+      "none",
+      "-serial",
+      "file:/work/client-console.log",
+      "-no-reboot",
+      "-L",
+      "/qemu-data",
+      "-bios",
+      "/qemu-data/bios-256k.bin",
+      "-kernel",
+      "/vmlinuz",
+      "-initrd",
+      "/initramfs.cpio.gz",
+      "-append",
+      "console=ttyS0 rdinit=/init panic=-1 rootfstype=ramfs md_sim_private_guest=1",
+      "-chardev",
+      "stdio,id=worker,signal=off",
+      "-device",
+      "virtio-serial-pci,id=serial",
+      "-device",
+      "virtserialport,bus=serial.0,chardev=worker,name=md-sim.worker",
+      "-smp",
+      "2",
+      "-chardev",
+      "pipe,id=retention,path=/work/retention",
+      "-device",
+      "virtserialport,bus=serial.0,chardev=retention,name=md-sim.retention",
+      "-netdev",
+      "socket,id=private,fd=3,x-md-sim-private-stream=on",
+      "-device",
+      "e1000,netdev=private,mac=52:54:00:12:34:64,romfile="
+    ],
+    "browser_requested": true,
+    "scope": "Support VM resources only; selected native job specification unchanged"
+  }
+}

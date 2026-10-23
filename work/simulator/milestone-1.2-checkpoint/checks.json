@@ -1,0 +1,121 @@
+{
+  "schema": "md-sim-milestone-1.2-checks/1",
+  "milestone": "1.2",
+  "scope": "adapted checkpoint only; full simulator and milestone2 incomplete",
+  "fmt": "passed",
+  "clippy": "passed, workspace all-targets -D warnings",
+  "tests": {
+    "suites": 109,
+    "passed": 919,
+    "failed": 0,
+    "ignored": 38
+  },
+  "guide_links": {
+    "checked_links": 547,
+    "broken": [],
+    "result": "pass",
+    "scope": "Local links in README, translation guide, and docs. External URLs and links inside code blocks are excluded."
+  },
+  "additional_local_links": {
+    "passed": true,
+    "count": 16,
+    "links": [
+      {
+        "source": "work/simulator/milestone-1.2-handoff.md",
+        "target": "reports/shared-access-pass-441.md"
+      },
+      {
+        "source": "work/simulator/milestone-1.2-handoff.md",
+        "target": "milestone-1.2-checkpoint/"
+      },
+      {
+        "source": "work/simulator/milestone-1.2-handoff.md",
+        "target": "reviews/native-browser-retention-independent-453.md"
+      },
+      {
+        "source": "work/simulator/milestone-1.2-handoff.md",
+        "target": "reviews/browser-startup-diagnosis-456.md"
+      },
+      {
+        "source": "work/simulator/milestone-1.2-handoff.md",
+        "target": "shared-recovery-development-459/design.md"
+      },
+      {
+        "source": "work/simulator/milestone-1.2-handoff.md",
+        "target": "cleanup-development-455/README.md"
+      },
+      {
+        "source": "work/simulator/milestone-1.2-handoff.md",
+        "target": "reviews/s9-spl-extractor-executed-454.md"
+      },
+      {
+        "source": "work/simulator/milestones.md",
+        "target": "reports/adapted-s9-milestone-284.md"
+      },
+      {
+        "source": "work/simulator/milestones.md",
+        "target": "reports/milestones-at-checkpoint-285.md"
+      },
+      {
+        "source": "work/simulator/milestones.md",
+        "target": "reports/shared-access-pass-441.md"
+      },
+      {
+        "source": "work/simulator/milestones.md",
+        "target": "milestone-1.2-handoff.md"
+      },
+      {
+        "source": "work/simulator/milestones.md",
+        "target": "reports/shared-access-pass-441.md"
+      },
+      {
+        "source": "AGENTS.md",
+        "target": "README.md"
+      },
+      {
+        "source": "AGENTS.md",
+        "target": "docs/simulator-specification.md"
+      },
+      {
+        "source": "AGENTS.md",
+        "target": "docs/simulator-design.md"
+      },
+      {
+        "source": "AGENTS.md",
+        "target": "catalog/storage.json"
+      }
+    ]
+  },
+  "gitignore_cases": 33,
+  "toolchain": {
+    "rustc": "rustc 1.94.1 (e408947bf 2026-03-25)",
+    "cargo": "cargo 1.94.1 (29ea6fb6a 2026-03-24)"
+  },
+  "logs": [
+    {
+      "path": "work/simulator/milestone-1.2-checkpoint/fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/milestone-1.2-checkpoint/clippy.log",
+      "sha256": "cb8cca580ede4d5e0df05fe84fa5a26e183cc6ccde672cf49e80f3a19b41eaf6",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/milestone-1.2-checkpoint/tests.log",
+      "sha256": "d24f816f3283c1461db6561fd0c71250652ebb07e3b16e2408cbdd58836a211c",
+      "size": 114565
+    },
+    {
+      "path": "work/simulator/milestone-1.2-checkpoint/guides.log",
+      "sha256": "85cd1ae10a253a00d2ca2d489bc63ff52d043394caf8f4d9b9f8cb78b9d0735c",
+      "size": 176
+    },
+    {
+      "path": "work/simulator/milestone-1.2-checkpoint/gitignore-check.json",
+      "sha256": "a0f884ffae857189e7ec26629db13da7f109d98530d18bf63bcd2cf8dbde1bb0",
+      "size": 3181
+    }
+  ]
+}

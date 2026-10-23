@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f4a94aee1f39fec1138f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/dd6be281-5029-4d5d-b3e3-d0f2450bd402/2022/01/19/18/Z9%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "Z9 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f4a94aee1f39fec1138f/Z9_Server_Manual.pdf",
+  "sha256": "5d182a7edd6ed4f1ee2772d5c17242cc79e3b8faf0dbfc25ccf134cb078720d3",
+  "size_bytes": 893886,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/dd6be281-5029-4d5d-b3e3-d0f2450bd402/2022/01/19/18/Z9%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:10:30 GMT",
+  "etag": "\"eda54442524bcf5013f6a8b28399c735\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 893886,
+      "actual": 893886,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4cdd9fd19eb0a0b04333",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3f22d3a9-bbc2-4575-9a34-32b64c8eb3af/2024/05/22/17/D9%20FCC%20SDOC%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 FCC SDOC Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4cdd9fd19eb0a0b04333/D9_FCC_SDOC_Shenzhen.pdf",
+  "sha256": "ccdc728f47222b1b8296cdaae13dc2151d9eeb3684955cfa21a639c3af43de20",
+  "size_bytes": 695620,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3f22d3a9-bbc2-4575-9a34-32b64c8eb3af/2024/05/22/17/D9%20FCC%20SDOC%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:48:14 GMT",
+  "etag": "\"c4844900691933ad1e2679f055ba46f6\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 695620,
+      "actual": 695620,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

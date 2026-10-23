@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-5d268e0d5dfed033487e",
+  "url": "https://download.hiveos.farm/asic/S15/stock/Antminer-S15-user-OM-201908201419-sig.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S15-user-OM-201908201419-sig",
+  "language": "en",
+  "source_id": "hiveon-versions",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:37+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-5d268e0d5dfed033487e/Antminer-S15-user-OM-201908201419-sig.tar.gz",
+  "sha256": "895e6fc7a9ec8c349a03e8ff016bab8ae5a8ce5c8d229ad9a6ee4fd16c13a148",
+  "size_bytes": 25063105,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S15/stock/Antminer-S15-user-OM-201908201419-sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 22 Aug 2019 06:25:53 GMT",
+  "etag": "\"5d5e3571-17e6ec1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 25063105,
+      "actual": 25063105,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

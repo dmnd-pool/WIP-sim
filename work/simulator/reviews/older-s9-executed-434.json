@@ -1,0 +1,89 @@
+{
+  "schema": "md-sim-archive-bitstream-comparison/1",
+  "artifact": "braiins-feed-aee8d7f2ed41b10b2e6f",
+  "parent_archive": {
+    "source": "artifacts/files/firmware/braiins-feed-aee8d7f2ed41b10b2e6f/braiins-os-plus_am1-s9_ssh_2019-02-21-0-572dd48c_2020-03-29-1-6b4a0f46.tar.gz",
+    "guest_path": "/archive.tar.gz",
+    "sha256": "ad2e0119a32b70c790b57afc719d283c66a4bfb9206e1602159071e20c0aece7",
+    "size": 38793347
+  },
+  "member": "braiins-os_am1-s9_ssh_2019-02-21-0-572dd48c_2020-03-29-1-6b4a0f46/firmware/system.bit.gz",
+  "extraction": {
+    "status": "exited",
+    "exit_code": 0,
+    "trace_truncated": false,
+    "stdout_bytes": 477812,
+    "stderr_bytes": 0,
+    "wall_milliseconds": 120
+  },
+  "compressed": {
+    "sha256": "9482ef607556a168e5b9e9ecc6de3198578cec9fb2187ed7d16ea451952b8552",
+    "size": 477812
+  },
+  "expanded": {
+    "sha256": "b147f09919fb40317c27f57e76fd39380a114d6236535068fb4618a28c9e09b5",
+    "size": 2083852
+  },
+  "header": {
+    "configuration_offset": 112,
+    "configuration_size": 2083740,
+    "date": "2017/10/28",
+    "design": "design_1_wrapper;UserID=0XFFFFFFFF;Version=2017.2",
+    "part": "7z010clg400",
+    "time": "19:45:06"
+  },
+  "configuration": {
+    "sha256": "361d7083ca761ffb4f57df346caf41c2683c5bbc7b311c2057e2c829fd012166",
+    "offset": 112,
+    "size": 2083740,
+    "method": "SHA256 of the exact complete range from the separately isolated gzip output; expanded hash agrees with isolated Rust probe"
+  },
+  "comparison": {
+    "legacy_9250_configuration": "720d532d79ade36f0a320a03d0e5c114440c33a82933578e641a1ed7cfed5d55",
+    "legacy_matches": false,
+    "selected_2020_configuration": "49d0faa400fbc8bed3f3e651da2c6da5f3184a08f942ec95db59c2526dcbea78",
+    "selected_matches": false
+  },
+  "static_probe": {
+    "status": "exited",
+    "exit_code": 0,
+    "trace_truncated": false,
+    "wall_milliseconds": 91,
+    "inspection_error": null,
+    "crc_checks": [
+      {
+        "byte_offset": 2081648,
+        "computed": 1382670126,
+        "expected": 1382670126
+      },
+      {
+        "byte_offset": 2082120,
+        "computed": 3819798181,
+        "expected": 3819798181
+      }
+    ],
+    "frame_data": {
+      "byte_offset": 236,
+      "initial_far": 0,
+      "sha256": "377eb17eae96919404c53ac1c6877c72558d50bfe9cd5d42a0fbdcd65ac3d497",
+      "words": 520352
+    },
+    "frame_count": 5144,
+    "mapped_data_words": 519544,
+    "checked_padding_words": 808,
+    "part_sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095"
+  },
+  "expansion": {
+    "status": "exited",
+    "exit_code": 0,
+    "trace_truncated": false,
+    "stdout_bytes": 2083852,
+    "stderr_bytes": 0,
+    "wall_milliseconds": 41
+  },
+  "control_inspected": false,
+  "source_association": "not established; this configuration differs from the selected legacy binary, so its source/build link cannot be transferred",
+  "firmware_execution": "not run",
+  "exact_board_gate": "not passed",
+  "limit": "Container identity, packet/CRC checks and optional part-based frame mapping. No frame-to-logic reconstruction, firmware execution or exact physical board pass."
+}

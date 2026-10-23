@@ -1,0 +1,42 @@
+{
+  "id": "bitmain-oem-4db275f221ba32a6344a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-R4-all-201704280718-autofreq-user-Update2UBI-NF.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-R4-all-201704280718-autofreq-user-Update2UBI-NF.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-4db275f221ba32a6344a/ANTMINER-R4-all-201704280718-autofreq-user-Update2UBI-NF.tar.gz",
+  "sha256": "4746c338403446c14dd2e9e299d7f31ad325bf434fb0327bb29d2e48eed4aa6c",
+  "size_bytes": 63666471,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-R4-all-201704280718-autofreq-user-Update2UBI-NF.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:28 GMT",
+  "etag": "\"e500e8e69bddb5f6ff7466c2f2b2b01f-4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 63678133,
+      "actual": 63666471,
+      "match": false,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "upstream_head_audit": {
+    "artifact_id": "bitmain-oem-4db275f221ba32a6344a",
+    "title": "ANTMINER-R4-all-201704280718-autofreq-user-Update2UBI-NF.tar.gz",
+    "downloaded_size_bytes": 63666471,
+    "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-R4-all-201704280718-autofreq-user-Update2UBI-NF.tar.gz",
+    "http_status": 200,
+    "content_length": "63666471",
+    "etag": "\"e500e8e69bddb5f6ff7466c2f2b2b01f-4\"",
+    "last_modified": "Thu, 07 Jan 2021 05:08:28 GMT",
+    "http_size_match": true
+  }
+}

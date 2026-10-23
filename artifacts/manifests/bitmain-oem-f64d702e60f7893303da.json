@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f64d702e60f7893303da",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ce16e74b-7b63-4a48-a025-b846374b5703/2026/02/06/20/ACRT2512202-S21%C2%A0XP%2B%C2%A0Hyd.-SVHC251.pdf",
+  "kind": "document",
+  "title": "ACRT2512202-S21\u00a0XP+\u00a0Hyd.-SVHC251.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f64d702e60f7893303da/ACRT2512202-S21_XP+_Hyd.-SVHC251.pdf",
+  "sha256": "d11fe0507742795cc2d72828b03b5b11fac1de441199a642a2ca7cc368b7259f",
+  "size_bytes": 233299,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ce16e74b-7b63-4a48-a025-b846374b5703/2026/02/06/20/ACRT2512202-S21%C2%A0XP%2B%C2%A0Hyd.-SVHC251.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 06 Feb 2026 12:03:29 GMT",
+  "etag": "\"3faab88734c9c6afa9af74043b219ec2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 233299,
+      "actual": 233299,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

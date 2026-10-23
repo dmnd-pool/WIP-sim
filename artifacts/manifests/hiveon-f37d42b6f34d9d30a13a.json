@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-f37d42b6f34d9d30a13a",
+  "url": "https://download.hiveos.farm/asic/custom/bi2co/Antminer-S17-S17pro-v1.1.1_SIG_CRC-sig-1.02-200604-S17-sign_1.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17-S17pro-v1.1.1_SIG_CRC-sig-1.02-200604-S17-sign_1.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:03:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-f37d42b6f34d9d30a13a/Antminer-S17-S17pro-v1.1.1_SIG_CRC-sig-1.02-200604-S17-sign_1.hive.tar.gz",
+  "sha256": "caee0a032eaa364c135fc6ba23a9debd1ef88be34655a1a7a931cdd0abb9614f",
+  "size_bytes": 32170699,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/bi2co/Antminer-S17-S17pro-v1.1.1_SIG_CRC-sig-1.02-200604-S17-sign_1.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 04 Jun 2020 01:16:51 GMT",
+  "etag": "\"5ed84b83-1eae2cb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 32170699,
+      "actual": 32170699,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

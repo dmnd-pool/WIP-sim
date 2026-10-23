@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1dacbdfa63e5bc758d36",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3efb4fa5-04b1-4dd8-b0b7-f558adfb9d22/2024/07/22/22/RoHS%2010%E9%A0%85-ACRT2405016-S21%20Pro.pdf",
+  "kind": "document",
+  "title": "RoHS 10\u9805-ACRT2405016-S21 Pro.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1dacbdfa63e5bc758d36/RoHS_10_-ACRT2405016-S21_Pro.pdf",
+  "sha256": "5418e82340a5ec2b981ddafec62a110d9e816a32eb22118617b0650c3a5e4dbb",
+  "size_bytes": 283016,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3efb4fa5-04b1-4dd8-b0b7-f558adfb9d22/2024/07/22/22/RoHS%2010%E9%A0%85-ACRT2405016-S21%20Pro.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 22 Jul 2024 14:16:48 GMT",
+  "etag": "\"c9425e9545de84950ea393856a538e3f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 283016,
+      "actual": 283016,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

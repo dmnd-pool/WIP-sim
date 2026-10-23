@@ -1,0 +1,609 @@
+{
+  "schema": "md-sim-independent-spl-contract-review/1",
+  "scope": "Read-only review of selected SPL byte ranges and prior translated trace. No firmware execution, model, timeout experiment, physical calibration or exact target pass.",
+  "inputs": {
+    "work/simulator/original-zynq/sd-bundle-291/boot/spl-payload.bin": {
+      "sha256": "765efb23844156e976ba785c24a6a753c664504a499c64581d1c356a3f4c02df",
+      "size": 77023
+    },
+    "work/simulator/original-zynq/sd-bundle-291/boot/boot.bin": {
+      "sha256": "950d19c6e5bfd9d8107def130b19fc9a5f64d824b26c0c493d5fdfe8503edac4",
+      "size": 79263
+    },
+    "work/simulator/original-zynq/spl-boot-006/backend.log": {
+      "sha256": "8c663e5be47359da8a8be4fb8aee83fa1a42e0ac923275a43195b5739d422f0a",
+      "size": 234567
+    },
+    "work/simulator/original-zynq/sd-bundle-291/boot/bundle.json": {
+      "sha256": "a7f940cb1ee4e690e5027d518768d8be6d98cc3c14e4493f9fbc21d17b4fb129",
+      "size": 7553
+    }
+  },
+  "ranges": [
+    {
+      "start": "0x4ac",
+      "end_exclusive": "0x5c0",
+      "sha256": "e5dac9552205e2a27d8da3fa113f5e83c99945cb35afa3507ab02a4a90a5da1b",
+      "size": 276
+    },
+    {
+      "start": "0x5f4",
+      "end_exclusive": "0x734",
+      "sha256": "4b47742567604ce254bda655676cd7e0400442039f535496a2425c43d8db9666",
+      "size": 320
+    },
+    {
+      "start": "0x1071c",
+      "end_exclusive": "0x107e8",
+      "sha256": "741e08636cf9195f7c27a543c7b6ac76def7211df2e0aec3925f6a413f173084",
+      "size": 204
+    },
+    {
+      "start": "0x10e34",
+      "end_exclusive": "0x10fb4",
+      "sha256": "aa3ee1ee22142fcee73f5dc86dc2be15c20a8b1ad9219092d3a8a7c4a657de35",
+      "size": 384
+    },
+    {
+      "start": "0xee4c",
+      "end_exclusive": "0xef78",
+      "sha256": "f5b4c1a9a0e55793b1f1bf00b25d0263c43596e6424e7d0e25b87092894e5543",
+      "size": 300
+    }
+  ],
+  "boot_suffix_offset": 2240,
+  "poll": {
+    "predicate": "any selected bit nonzero",
+    "initial_failed_read_budget": 100000001,
+    "exhausted_return": 2,
+    "timeout_return_present_in_retained_trace": false
+  },
+  "timer": {
+    "first_multiplier": 666666660,
+    "first_result_bits": 32,
+    "second_multiplier": 274877907,
+    "unsigned_product_bits": 64,
+    "shift": 39,
+    "argument_1_ticks": 333333,
+    "peripheral_argument_1_calls": 6,
+    "physical_tick_period_measured": false
+  },
+  "decoded_tables": {
+    "clock": [
+      {
+        "offset": "0x1071c",
+        "code": "0x22",
+        "arguments": [
+          "0xf8000008",
+          "0xdf0d"
+        ]
+      },
+      {
+        "offset": "0x10728",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000128",
+          "0x3f03f01",
+          "0x700f01"
+        ]
+      },
+      {
+        "offset": "0x10738",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000138",
+          "0x11",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0x10748",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000140",
+          "0x3f03f71",
+          "0x100801"
+        ]
+      },
+      {
+        "offset": "0x10758",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000148",
+          "0x3f31",
+          "0xa01"
+        ]
+      },
+      {
+        "offset": "0x10768",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000150",
+          "0x3f33",
+          "0x2801"
+        ]
+      },
+      {
+        "offset": "0x10778",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000154",
+          "0x3f33",
+          "0xa02"
+        ]
+      },
+      {
+        "offset": "0x10788",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000168",
+          "0x3f31",
+          "0x501"
+        ]
+      },
+      {
+        "offset": "0x10798",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000170",
+          "0x3f03f30",
+          "0x200500"
+        ]
+      },
+      {
+        "offset": "0x107a8",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000180",
+          "0x3f03f30",
+          "0x200500"
+        ]
+      },
+      {
+        "offset": "0x107b8",
+        "code": "0x33",
+        "arguments": [
+          "0xf80001c4",
+          "0x1",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0x107c8",
+        "code": "0x33",
+        "arguments": [
+          "0xf800012c",
+          "0x1ffcccd",
+          "0x16c044d"
+        ]
+      },
+      {
+        "offset": "0x107d8",
+        "code": "0x22",
+        "arguments": [
+          "0xf8000004",
+          "0x767b"
+        ]
+      },
+      {
+        "offset": "0x107e4",
+        "code": "0x0",
+        "arguments": []
+      }
+    ],
+    "pll": [
+      {
+        "offset": "0x10e34",
+        "code": "0x22",
+        "arguments": [
+          "0xf8000008",
+          "0xdf0d"
+        ]
+      },
+      {
+        "offset": "0x10e40",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000110",
+          "0x3ffff0",
+          "0xfa220"
+        ]
+      },
+      {
+        "offset": "0x10e50",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000100",
+          "0x7f000",
+          "0x28000"
+        ]
+      },
+      {
+        "offset": "0x10e60",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000100",
+          "0x10",
+          "0x10"
+        ]
+      },
+      {
+        "offset": "0x10e70",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000100",
+          "0x1",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0x10e80",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000100",
+          "0x1",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0x10e90",
+        "code": "0x42",
+        "arguments": [
+          "0xf800010c",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0x10e9c",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000100",
+          "0x10",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0x10eac",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000120",
+          "0x1f003f30",
+          "0x1f000200"
+        ]
+      },
+      {
+        "offset": "0x10ebc",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000114",
+          "0x3ffff0",
+          "0x12c220"
+        ]
+      },
+      {
+        "offset": "0x10ecc",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000104",
+          "0x7f000",
+          "0x20000"
+        ]
+      },
+      {
+        "offset": "0x10edc",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000104",
+          "0x10",
+          "0x10"
+        ]
+      },
+      {
+        "offset": "0x10eec",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000104",
+          "0x1",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0x10efc",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000104",
+          "0x1",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0x10f0c",
+        "code": "0x42",
+        "arguments": [
+          "0xf800010c",
+          "0x2"
+        ]
+      },
+      {
+        "offset": "0x10f18",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000104",
+          "0x10",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0x10f28",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000124",
+          "0xfff00003",
+          "0xc200003"
+        ]
+      },
+      {
+        "offset": "0x10f38",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000118",
+          "0x3ffff0",
+          "0x1452c0"
+        ]
+      },
+      {
+        "offset": "0x10f48",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000108",
+          "0x7f000",
+          "0x1e000"
+        ]
+      },
+      {
+        "offset": "0x10f58",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000108",
+          "0x10",
+          "0x10"
+        ]
+      },
+      {
+        "offset": "0x10f68",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000108",
+          "0x1",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0x10f78",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000108",
+          "0x1",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0x10f88",
+        "code": "0x42",
+        "arguments": [
+          "0xf800010c",
+          "0x4"
+        ]
+      },
+      {
+        "offset": "0x10f94",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000108",
+          "0x10",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0x10fa4",
+        "code": "0x22",
+        "arguments": [
+          "0xf8000004",
+          "0x767b"
+        ]
+      },
+      {
+        "offset": "0x10fb0",
+        "code": "0x0",
+        "arguments": []
+      }
+    ],
+    "peripheral": [
+      {
+        "offset": "0xee4c",
+        "code": "0x22",
+        "arguments": [
+          "0xf8000008",
+          "0xdf0d"
+        ]
+      },
+      {
+        "offset": "0xee58",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000b48",
+          "0x180",
+          "0x180"
+        ]
+      },
+      {
+        "offset": "0xee68",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000b4c",
+          "0x180",
+          "0x180"
+        ]
+      },
+      {
+        "offset": "0xee78",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000b50",
+          "0x180",
+          "0x180"
+        ]
+      },
+      {
+        "offset": "0xee88",
+        "code": "0x33",
+        "arguments": [
+          "0xf8000b54",
+          "0x180",
+          "0x180"
+        ]
+      },
+      {
+        "offset": "0xee98",
+        "code": "0x22",
+        "arguments": [
+          "0xf8000004",
+          "0x767b"
+        ]
+      },
+      {
+        "offset": "0xeea4",
+        "code": "0x33",
+        "arguments": [
+          "0xe0001034",
+          "0xff",
+          "0x6"
+        ]
+      },
+      {
+        "offset": "0xeeb4",
+        "code": "0x33",
+        "arguments": [
+          "0xe0001018",
+          "0xffff",
+          "0x7c"
+        ]
+      },
+      {
+        "offset": "0xeec4",
+        "code": "0x33",
+        "arguments": [
+          "0xe0001000",
+          "0x1ff",
+          "0x17"
+        ]
+      },
+      {
+        "offset": "0xeed4",
+        "code": "0x33",
+        "arguments": [
+          "0xe0001004",
+          "0x3ff",
+          "0x20"
+        ]
+      },
+      {
+        "offset": "0xeee4",
+        "code": "0x33",
+        "arguments": [
+          "0xe000d000",
+          "0x80000",
+          "0x80000"
+        ]
+      },
+      {
+        "offset": "0xeef4",
+        "code": "0x33",
+        "arguments": [
+          "0xf8007000",
+          "0x20000000",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0xef04",
+        "code": "0x22",
+        "arguments": [
+          "0xe000e014",
+          "0x229133"
+        ]
+      },
+      {
+        "offset": "0xef10",
+        "code": "0x33",
+        "arguments": [
+          "0xe000e018",
+          "0x3",
+          "0x0"
+        ]
+      },
+      {
+        "offset": "0xef20",
+        "code": "0x22",
+        "arguments": [
+          "0xe000e010",
+          "0x2400000"
+        ]
+      },
+      {
+        "offset": "0xef2c",
+        "code": "0x52",
+        "arguments": [
+          "0xf8f00200",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0xef38",
+        "code": "0x52",
+        "arguments": [
+          "0xf8f00200",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0xef44",
+        "code": "0x52",
+        "arguments": [
+          "0xf8f00200",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0xef50",
+        "code": "0x52",
+        "arguments": [
+          "0xf8f00200",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0xef5c",
+        "code": "0x52",
+        "arguments": [
+          "0xf8f00200",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0xef68",
+        "code": "0x52",
+        "arguments": [
+          "0xf8f00200",
+          "0x1"
+        ]
+      },
+      {
+        "offset": "0xef74",
+        "code": "0x0",
+        "arguments": []
+      }
+    ]
+  },
+  "verdict": "Narrow interpreter, poll, timer and selected-table facts agree with exact bytes and bounded trace excerpts. The report correctly keeps requested sequencing distinct from actual hardware timing and reuses existing fabric/clock/reset work."
+}

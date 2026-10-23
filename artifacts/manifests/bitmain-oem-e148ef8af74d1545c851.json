@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e148ef8af74d1545c851",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/74f82c13-c097-4b86-974b-0a623804ea2e/2026/01/16/17/S21%20XP%2B%20Hyd.%20Product%20Manual.pdf",
+  "kind": "document",
+  "title": "S21 XP+ Hyd. Product Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:47+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e148ef8af74d1545c851/S21_XP+_Hyd._Product_Manual.pdf",
+  "sha256": "f447b31ebdaea41000f3f4ec2d84dc143b891071dbb00fcc8840324bdcf65ff3",
+  "size_bytes": 885220,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/74f82c13-c097-4b86-974b-0a623804ea2e/2026/01/16/17/S21%20XP%2B%20Hyd.%20Product%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 16 Jan 2026 09:00:58 GMT",
+  "etag": "\"1edbbdeeb9ad22d64ce82f3abaf421fe\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 885220,
+      "actual": 885220,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

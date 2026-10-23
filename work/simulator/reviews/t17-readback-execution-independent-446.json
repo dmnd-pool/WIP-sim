@@ -1,0 +1,72 @@
+{
+  "scope": "Read-only verification of retained actual isolated oracle evidence; no miner or ASIC readiness claim",
+  "passed": true,
+  "runs": [
+    {
+      "run": "t17-readback-oracle-446",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "wall_milliseconds": 138,
+      "computed_words": 196,
+      "evidence_tar": {
+        "sha256": "b050e2b09141dafea53db91af54a2b25aabd442e34a3bfa5a567359572ce1af4",
+        "size": 36352
+      },
+      "result": {
+        "sha256": "a241bb23a63f68e413c118fea6ec94caf15513fbca4a5e6f285d431ea6931708",
+        "size": 73418
+      },
+      "spec": {
+        "sha256": "e13107903992843070e39dfd502e48e3ff2c3232cd5babd8c49c49c2e423b75b",
+        "size": 9509
+      },
+      "assessment": {
+        "sha256": "ad04591f7c19f3b7d49994e5114b0aaa41067c6905dc47703aea867267a57253",
+        "size": 6970
+      },
+      "oracle": {
+        "sha256": "ee5667dde6661fc776298d8a48211e00964d60ce225fec9dcdd3c9993a833ca4",
+        "size": 91548
+      },
+      "execution": {
+        "sha256": "2db7274bed8e9a8a90ac28af2c86b52613a7341c74357a6514a9417869d6b4bd",
+        "size": 784
+      },
+      "verified_tar_members": 13
+    },
+    {
+      "run": "t17-core-oracle-447",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "wall_milliseconds": 123,
+      "computed_words": 49152,
+      "evidence_tar": {
+        "sha256": "2fdfa9d2a38ab2575932e8c168a2079113289cde5a4653f675776530cd3243ee",
+        "size": 208896
+      },
+      "result": {
+        "sha256": "c7e20ec1bc0c032f2d924e2341283ca5a27e34b1fc28c97e205c8efdde25ed54",
+        "size": 418506
+      },
+      "spec": {
+        "sha256": "7a0ae39710cd740f27d875218f96048f24f728be9373247e166876f747d06785",
+        "size": 9131
+      },
+      "assessment": {
+        "sha256": "8bab86b7d1c5f8f42ec3cfe301a79383069c761d0222b3ca50fbb63e31e97d71",
+        "size": 1800
+      },
+      "oracle": {
+        "sha256": "250d4fe9a95220e5f3b23b4e36478bcf144075b1613df42ea10a7bd786886fa8",
+        "size": 1456
+      },
+      "execution": {
+        "sha256": "7527abdd4015bbafa0dc1121733a9ff20c37799e142e11b6d2c69f57b45745d1",
+        "size": 196608
+      },
+      "verified_tar_members": 12
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-aca87e7a3056a6e8dbb8",
+  "url": "https://download.hiveos.farm/asic/s17/stock/Bitmain_Antminer-S17-user-OM-201908201041-sig.tar.gz",
+  "kind": "firmware",
+  "title": "Bitmain_Antminer-S17-user-OM-201908201041-sig",
+  "language": "en",
+  "source_id": "hiveon-versions",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:36+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-aca87e7a3056a6e8dbb8/Bitmain_Antminer-S17-user-OM-201908201041-sig.tar.gz",
+  "sha256": "650ace274e4301350204ccf7a3e1474343d1716c9606d13273f67ae17d883d58",
+  "size_bytes": 17369856,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s17/stock/Bitmain_Antminer-S17-user-OM-201908201041-sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 29 Aug 2019 06:15:35 GMT",
+  "etag": "\"5d676d87-1090b00\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 17369856,
+      "actual": 17369856,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

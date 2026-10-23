@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-cb05e6f4ebd63625e3b9",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6a961469-3d0d-4048-ad45-347a3221629d/2022/01/19/18/S2%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S2 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:18+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-cb05e6f4ebd63625e3b9/S2_Server_Manual.pdf",
+  "sha256": "6a9dca4e06ed55b96e2a38de72efdd2bbde2adf5083c1b7bc0c3b1870f3b6e9c",
+  "size_bytes": 1394847,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6a961469-3d0d-4048-ad45-347a3221629d/2022/01/19/18/S2%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:38:40 GMT",
+  "etag": "\"668e43f8a45b5d7179c9e50673c56d7e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1394847,
+      "actual": 1394847,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b6261841173f8a9be630",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/99544ae0-4e75-47a3-bbf1-3acead9f6b66/2024/06/12/16/Antminer-KA3-release-202405280928.bmu",
+  "kind": "firmware",
+  "title": "Antminer-KA3-release-202405280928.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:23+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-b6261841173f8a9be630/Antminer-KA3-release-202405280928.bmu",
+  "sha256": "fe745390e5713a2bf7d7342655e88368d26df4a20d64462d95d4ad96e155cec1",
+  "size_bytes": 18510707,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/99544ae0-4e75-47a3-bbf1-3acead9f6b66/2024/06/12/16/Antminer-KA3-release-202405280928.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Wed, 12 Jun 2024 08:23:12 GMT",
+  "etag": "\"ea40cbdbb873ca062295c13af7c50596\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 18510707,
+      "actual": 18510707,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

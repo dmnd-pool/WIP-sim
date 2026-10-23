@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-0b58d306ea78fc3b14fe",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a2fe6736-f14d-4f39-9c7a-4d1a700ed850/2023/12/13/19/WTD23D09210751E%20VoC%20(Model%20S21)_CE%20EMC_exp_1512.pdf",
+  "kind": "document",
+  "title": "WTD23D09210751E VoC (Model S21)_CE EMC_exp_1512.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-0b58d306ea78fc3b14fe/WTD23D09210751E_VoC__Model_S21__CE_EMC_exp_1512.pdf",
+  "sha256": "f0416702fce63ef930caba4a7f39434e3192883bd185bbcd013f5901df868545",
+  "size_bytes": 263283,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a2fe6736-f14d-4f39-9c7a-4d1a700ed850/2023/12/13/19/WTD23D09210751E%20VoC%20(Model%20S21)_CE%20EMC_exp_1512.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 11:21:08 GMT",
+  "etag": "\"ac3ca2018a77abc8e9952f268d70de67\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 263283,
+      "actual": 263283,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

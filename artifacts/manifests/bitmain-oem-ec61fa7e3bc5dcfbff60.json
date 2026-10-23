@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ec61fa7e3bc5dcfbff60",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0791593e-7f47-4338-ae8b-0c9323e1d2be/2024/02/20/14/LVD_CN240PR4%20001_T21_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_CN240PR4 001_T21_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:51+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ec61fa7e3bc5dcfbff60/LVD_CN240PR4_001_T21_extsigned.pdf",
+  "sha256": "d598221a2f82d79fda1ba36baa6d1e8e76d6899c9491751672049ce7a5c5615f",
+  "size_bytes": 1693417,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0791593e-7f47-4338-ae8b-0c9323e1d2be/2024/02/20/14/LVD_CN240PR4%20001_T21_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 20 Feb 2024 06:52:37 GMT",
+  "etag": "\"27b38a9e47a1475f723ebae8522d8bf2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1693417,
+      "actual": 1693417,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

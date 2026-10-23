@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-4526f01407c608804bc1",
+  "url": "https://download.hiveos.farm/asic/custom/onemining/Antminer-S9-all-Hiveon-1.03@210119-sign-OneMining.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@210119-sign-OneMining.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:13:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-4526f01407c608804bc1/Antminer-S9-all-Hiveon-1.03_210119-sign-OneMining.tar.gz",
+  "sha256": "b81b9c8eee90d65f66f0ede1e66f72c561ae8e9c84050bffab83de48776a6712",
+  "size_bytes": 23758443,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/onemining/Antminer-S9-all-Hiveon-1.03@210119-sign-OneMining.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 19 Jan 2021 18:34:14 GMT",
+  "etag": "\"60072626-16a866b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23758443,
+      "actual": 23758443,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

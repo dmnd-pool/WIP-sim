@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-12bb9db891b52b9df407",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/25c787c8-2867-416d-a82a-25c68a2726f5/2025/09/02/17/U2L9H%20Product%20Manual_V1.3.1.pdf",
+  "kind": "document",
+  "title": "U2L9H Product Manual_V1.3.1.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-12bb9db891b52b9df407/U2L9H_Product_Manual_V1.3.1.pdf",
+  "sha256": "c51f2579df72e2610ad2ebc84b30188156d74fde16f9be542a3fc156f7221de3",
+  "size_bytes": 869617,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/25c787c8-2867-416d-a82a-25c68a2726f5/2025/09/02/17/U2L9H%20Product%20Manual_V1.3.1.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 02 Sep 2025 09:30:31 GMT",
+  "etag": "\"6bde4ed5d42d0f523bc3a9092526bcbd\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 869617,
+      "actual": 869617,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-bc51da083755994a2b4c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/44df0f5a-ed7b-4fb4-9a8c-1176c939a1d7/2024/12/26/18/S19%20XP%2B%20Hyd.%20%20REACH%20SVHC.pdf",
+  "kind": "document",
+  "title": "S19 XP+ Hyd.  REACH SVHC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-bc51da083755994a2b4c/S19_XP+_Hyd.__REACH_SVHC.pdf",
+  "sha256": "2d1bd3b272d65eaf171b5eeafe6b0689f3d939256815f50cfc66572e9d794754",
+  "size_bytes": 226000,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/44df0f5a-ed7b-4fb4-9a8c-1176c939a1d7/2024/12/26/18/S19%20XP%2B%20Hyd.%20%20REACH%20SVHC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 26 Dec 2024 10:56:10 GMT",
+  "etag": "\"6286e43319fb34021fb8acad4b0cf198\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 226000,
+      "actual": 226000,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-941756bfb113b1da8b62",
+  "url": "https://download.hiveos.farm/asic/custom/alikas74/Antminer-T9-all-Hiveon-1.03@210215-sign-alikas74.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T9-all-Hiveon-1.03@210215-sign-alikas74.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:58:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-941756bfb113b1da8b62/Antminer-T9-all-Hiveon-1.03_210215-sign-alikas74.tar.gz",
+  "sha256": "9875efe991e66263bfc5f3cee7356e5a24ce0515987cc88d0ec26650448d0911",
+  "size_bytes": 23643299,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/alikas74/Antminer-T9-all-Hiveon-1.03@210215-sign-alikas74.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 15 Feb 2021 07:03:53 GMT",
+  "etag": "\"602a1cd9-168c4a3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23643299,
+      "actual": 23643299,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

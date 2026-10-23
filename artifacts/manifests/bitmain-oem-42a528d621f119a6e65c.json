@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-42a528d621f119a6e65c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/16fbdefc-eb31-4f94-ab33-5098ab63c58c/2022/01/19/18/X3%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "X3 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:21+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-42a528d621f119a6e65c/X3_Server_Manual.pdf",
+  "sha256": "372ab47729d1a1d711de382c644a7403b89f64060303c65de3053b7c4f46e1d4",
+  "size_bytes": 1001900,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/16fbdefc-eb31-4f94-ab33-5098ab63c58c/2022/01/19/18/X3%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:13:16 GMT",
+  "etag": "\"67e8ea683376037d13c105759caa3a9f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1001900,
+      "actual": 1001900,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

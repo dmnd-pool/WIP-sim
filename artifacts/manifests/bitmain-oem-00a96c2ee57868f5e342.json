@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-00a96c2ee57868f5e342",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d6d5a1a3-5940-4cf4-96c4-5c1a198e598f/2022/03/18/15/L7%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "L7 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:11+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-00a96c2ee57868f5e342/L7_Server_Manual.pdf",
+  "sha256": "6b0c8c53e8139cfd8e86eec12f77cd2990e6ad3ed58b55e90081d0e270e6c7ca",
+  "size_bytes": 1819074,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d6d5a1a3-5940-4cf4-96c4-5c1a198e598f/2022/03/18/15/L7%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 18 Mar 2022 07:42:17 GMT",
+  "etag": "\"dcf5f2fb7b0c2783da7a413a47b770da\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1819074,
+      "actual": 1819074,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

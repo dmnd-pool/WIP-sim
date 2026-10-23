@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-9f88bfa87154f8d70f70",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7c6e9e65-ea5f-4156-b901-e4ea87d8a695/2020/04/14/17/Antminer-S17%2B-user-OM-202004071411-sig_5755.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S17+-user-OM-202004071411-sig_5755.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:45+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-9f88bfa87154f8d70f70/Antminer-S17+-user-OM-202004071411-sig_5755.tar.gz",
+  "sha256": "5045e8639c40526e9215930b9b5fd81f36932c8a9c5f444f02fd56f24c797902",
+  "size_bytes": 17463956,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7c6e9e65-ea5f-4156-b901-e4ea87d8a695/2020/04/14/17/Antminer-S17%2B-user-OM-202004071411-sig_5755.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:22 GMT",
+  "etag": "\"d983b298211a72e19b3d30949511801d-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 17463956,
+      "actual": 17463956,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

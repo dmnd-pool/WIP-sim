@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-41254c738be22142fe3c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ba3899f0-50f9-4771-890c-d58e0c1398cb/2022/01/19/18/A3%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "A3 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-41254c738be22142fe3c/A3_Server_Manual.pdf",
+  "sha256": "8e5be30d1345975e95de50405d2a126826c21bf40944c5954f698fc047d9982e",
+  "size_bytes": 11355068,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ba3899f0-50f9-4771-890c-d58e0c1398cb/2022/01/19/18/A3%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:14:04 GMT",
+  "etag": "\"afe7baf832dbaa13796a42ec77a65980\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 11355068,
+      "actual": 11355068,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

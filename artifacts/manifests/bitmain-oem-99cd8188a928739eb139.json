@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-99cd8188a928739eb139",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/98c203a6-17b0-4401-8053-ef74df2be817/2020/07/15/17/Antminer-Z15-user-800M-202007031139_6134.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-Z15-user-800M-202007031139_6134.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-99cd8188a928739eb139/ANTMINER-Z15-user-800M-202007031139_6134.tar.gz",
+  "sha256": "c13e1b68376e6ef160c12f60af8a702c0d654c7e16ecd3b6d78a0a83209ebf5d",
+  "size_bytes": 17103837,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/98c203a6-17b0-4401-8053-ef74df2be817/2020/07/15/17/Antminer-Z15-user-800M-202007031139_6134.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:27 GMT",
+  "etag": "\"ae57f9937f4ddae01fdc3f78ca653961-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 17103837,
+      "actual": 17103837,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "13468de3626fd6803fa22f180e7c5b2e",
+      "actual": "13468de3626fd6803fa22f180e7c5b2e",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bitdeer-file-8252610d26395d6f-installer-trailer",
+  "url": "https://file.bitdeer.com/bd-public-prod/shop/202509121736/Firmware-A2hydroPro-20250910-001.bin",
+  "kind": "source",
+  "title": "Firmware - A2 Pro Hydro embedded installer trailer",
+  "language": "en",
+  "source_id": "bitdeer-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:29:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/bitdeer-file-8252610d26395d6f-installer-trailer/installer-trailer.sh",
+  "sha256": "9e215880ca4f404d0b758950ef78d1ba740ef0fc60567dfa32776681a49a9f25",
+  "size_bytes": 5120,
+  "executed": false,
+  "acquisition_method": "byte-range-extracted-from-downloaded-file",
+  "parent_artifact_id": "bitdeer-file-8252610d26395d6f",
+  "parent_sha256": "ac7f2f3d81c9fe86d149995678d56a97ee559c56c875549d40fafadebe0cdf4c",
+  "byte_offset": 33979741,
+  "content_role": "embedded-readable-installer-code",
+  "notes": [
+    "This is a script contained in a proprietary firmware package. Its readability does not establish an open-source licence.",
+    "Exact bytes include any padding. The script was not executed."
+  ]
+}

@@ -1,0 +1,301 @@
+   Compiling md-sim-runtime v0.1.0 (/home/user/src/md-sim/crates/md-sim-runtime)
+   Compiling md-sim-mining v0.1.0 (/home/user/src/md-sim/crates/md-sim-mining)
+   Compiling md-sim-coordinator v0.1.0 (/home/user/src/md-sim/crates/md-sim-coordinator)
+   Compiling md-sim-access v0.1.0 (/home/user/src/md-sim/crates/md-sim-access)
+   Compiling md-sim v0.1.0 (/home/user/src/md-sim/crates/md-sim)
+   Compiling md-sim-firmware v0.1.0 (/home/user/src/md-sim/crates/md-sim-firmware)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.28s
+     Running unittests src/main.rs (target/debug/deps/md_sim-589f946cd4d12e18)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_access-cecc72050d22aa98)
+
+running 2 tests
+test gateway::tests::client_rules_need_real_bounds ... ok
+test gateway::tests::config_paths_reject_variables_and_directives ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/md_sim_access-a7e8b1e8978483cb)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_catalog-fc16e7b4b055f423)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/catalog.rs (target/debug/deps/catalog-fe640f8909838b21)
+
+running 15 tests
+test migration_never_promotes_a_legacy_validation_claim ... ok
+test hardware_fields_have_types_and_addresses_have_unique_identities ... ok
+test zero_reset_address_is_valid_but_zero_chip_count_is_unknown ... ok
+test resume_changes_with_every_required_execution_setting ... ok
+test duplicate_ids_cannot_be_published ... ok
+test archive_link_cannot_escape_frozen_storage_roots ... ok
+test payload_checks_read_the_bytes_and_never_accept_lfs_pointers ... ok
+test registry_freeze_does_not_make_target_catalogue_identity_circular ... ok
+test missing_implementation_is_blocked_not_incompatible ... ok
+test source_adapter_requires_real_entry_and_explicit_adaptation ... ok
+test nonexistent_evidence_and_duplicate_components_cannot_resolve ... ok
+test stale_constraint_review_and_wrong_mode_are_rejected ... ok
+test cartesian_rule_accounts_for_pairs_without_candidate_evidence ... ok
+test snapshot_preserves_bytes_and_rejects_tampering ... ok
+test all_inventory_and_all_artifact_aliases_remain_accounted ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/catalog_audit.rs (target/debug/examples/catalog_audit-8b0152b6b68a76fa)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_coordinator-6a7a7281d7a9f631)
+
+running 3 tests
+test ssh_transport::tests::captured_output_is_bounded ... ok
+test ssh_transport::tests::remote_paths_cannot_inject_shell_syntax ... ok
+test ssh_transport::tests::replies_reject_truncation_multiple_messages_and_protocol_errors ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/md-sim-remote.rs (target/debug/deps/md_sim_remote-935fd003d43ce35d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/md-sim-worker-ipc.rs (target/debug/deps/md_sim_worker_ipc-2cdfbe102f9d6d65)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/md-sim-worker-relay.rs (target/debug/deps/md_sim_worker_relay-c008a00f081a0dde)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/queue_behavior.rs (target/debug/deps/queue_behavior-cc2c99d9a7f2e19f)
+
+running 8 tests
+test changed_policy_and_limits_have_different_locked_identity ... ok
+test interrupted_attempt_before_lock_is_retained_then_reexecuted ... ok
+test nonexistent_gate_evidence_and_excessive_export_cannot_pass ... ok
+test local_resume_requires_unchanged_retained_evidence ... ok
+test exhausted_queue_budget_rejects_before_creating_a_new_attempt ... ok
+test cancellation_stops_actual_local_and_worker_processes ... ok
+test a_private_worker_executes_transfers_reuses_and_cleans_actual_results ... ok
+test lost_real_worker_replies_recover_tokens_cleanup_and_partial_history ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 20.05s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_firmware-3076298070fe553e)
+
+running 10 tests
+test bitmain_s2::tests::filter_is_not_replaced_by_pool_target ... ok
+test bitmain_s2::tests::partial_crc_and_unknown_packets ... ok
+test bitmain_s2::tests::modbus_check_vector ... ok
+test schedule::tests::lower_caps_reduce_default_difficulty_and_budget_uses_both_targets ... ok
+test execution_suite::tests::malformed_recipe_is_an_error_not_a_panic ... ok
+test prepare::tests::member_provenance_checks_parent_bytes_and_absent_new_files ... ok
+test execution_suite::tests::clean_job_replay_preserves_stale_and_duplicate_verdicts ... ok
+test lab::tests::reject_unrelated_host_interpreters_before_reading ... ok
+test closure_bundle::tests::closure_identity_and_output_boundary_are_enforced ... ok
+test bitmain_s2::tests::upstream_captured_packets_preserve_queue_and_clean_transition ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-coordinator.rs (target/debug/deps/cgminer_coordinator-978f5d0aaccf493e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-fresh-work.rs (target/debug/deps/cgminer_fresh_work-bcc4f01a0144140d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-lab.rs (target/debug/deps/cgminer_lab-d8938c92033cf603)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_esp_qemu_backend.rs (target/debug/examples/build_esp_qemu_backend-c8854a110743be69)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_qemu_backend.rs (target/debug/examples/build_qemu_backend-bd6ecb205201ae64)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_qemu_tool.rs (target/debug/examples/build_qemu_tool-bc9c13749dad2e46)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/freeze_cgminer_toolchain.rs (target/debug/examples/freeze_cgminer_toolchain-10f033a7d121bbde)
+
+running 4 tests
+test tests::evidence_limit_retains_partial_diagnostics ... ok
+test tests::package_paths_reject_other_roots_and_traversal ... ok
+test tests::replay_rejects_usr_root_symlink_even_with_consistent_manifest ... ok
+test tests::replay_verification_rejects_changed_missing_and_extra_inputs ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/isolated_network_vm.rs (target/debug/examples/isolated_network_vm-27963c4979834dcb)
+
+running 1 test
+test tests::evidence_requires_ordered_unique_markers_and_real_tcp_fields ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/node_prerequisite_probe.rs (target/debug/examples/node_prerequisite_probe-d82777184d59723f)
+
+running 2 tests
+test tests::each_phase_requires_its_own_clean_stop ... ok
+test tests::restart_requires_exact_tip_in_distinct_ordered_phase ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/original_zynq_probe.rs (target/debug/examples/original_zynq_probe-f68f9830d0c1f1aa)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/qemu_s9_backend.rs (target/debug/examples/qemu_s9_backend-16669ecfc3146918)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/remote_transport_check.rs (target/debug/examples/remote_transport_check-b91a150f7e04f399)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_bitstream_probe.rs (target/debug/examples/s9_bitstream_probe-c9740fc583ec44ab)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_boot_bundle.rs (target/debug/examples/s9_boot_bundle-fcdcfec0c12bd08d)
+
+running 2 tests
+test tests::crc_matches_standard_reference ... ok
+test tests::mbr_rejects_bounds_overlap_and_bad_signature ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_native_service.rs (target/debug/examples/s9_native_service-c9311610d654abc5)
+
+running 1 test
+test tests::completion_requires_a_full_guest_output_line_and_keeps_failure_status ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_mining-a1f9364febc2062c)
+
+running 6 tests
+test replay_s2::tests::reference_crc_and_corrupted_packet ... ok
+test replay_s2::tests::trace_order_and_declared_time_budget_are_enforced ... ok
+test regtest::tests::archived_genesis_constants_match_independent_header_hash ... ok
+test stratum::io_tests::rolled_time_covers_long_mining_budget_but_rejects_outside_work_window ... ok
+test stratum::io_tests::regtest_export_preserves_actual_share_and_rejects_forged_verdict ... ok
+test stratum::io_tests::stalled_peer_cannot_block_a_large_inherited_write ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/functional.rs (target/debug/deps/functional-375ba0d5e56d3229)
+
+running 8 tests
+test core_genesis_and_compact_target ... ok
+test rational_pool_target_is_stricter_than_programmed_asic_filter ... ok
+test archived_esp_miner_bm1397_compression_state_vector ... ok
+test pool_deduplicates_identical_headers_across_job_aliases ... ok
+test target_boundaries_and_ticket_intersection_counting ... ok
+test fresh_jobs_clean_transition_difficulty_and_rejections ... ok
+test midstate_and_cgminer_bytes_match_independent_full_header_hashes ... ok
+test engine_preserves_nonce_and_sparse_version_ranges_and_caps ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/stratum.rs (target/debug/deps/stratum-f80a12c3aef8abbd)
+
+running 3 tests
+test trace_budget_stops_without_discarding_report ... ok
+test repeated_unknown_submissions_stop_with_bounded_evidence ... ok
+test private_stratum_two_fresh_jobs_and_negative_submissions ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/replay_s2_trace.rs (target/debug/examples/replay_s2_trace-4e0634d9b65abe59)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_runtime-e38a6f37160e017b)
+
+running 8 tests
+test isolation::tests::guest_mounts_cannot_replace_runtime_mounts ... ok
+test store::tests::paths_and_budgets_are_not_controlled_by_hash_text ... ok
+test worker::ownership_tests::worker_rejects_root_runs_and_lock_symlinks ... ok
+test worker::ownership_tests::restart_finishes_only_acknowledged_token_cleanup ... ok
+test worker::ownership_tests::loss_between_result_and_state_commits_keeps_result_identity ... ok
+test store::tests::rejected_transfer_can_restart_without_deleting_published_bytes ... ok
+test store::tests::transfer_resume_retry_and_destination_verification ... ok
+test worker::ownership_tests::token_reserved_before_spec_commit_is_lost_and_never_launched ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running tests/isolated_worker.rs (target/debug/deps/isolated_worker-930252639b3428b0)
+
+running 11 tests
+test interrupted_run_recovery_retains_failure_evidence_for_acknowledged_cleanup ... ok
+test completed_namespace_drops_descendant_pipe_descriptors ... ok
+test supervisor_loss_terminates_its_live_namespace ... ok
+test isolated_process_has_only_locked_inputs_and_bounded_trace ... ok
+test immutable_stdin_is_a_pipe_and_delivers_exact_binary_bytes ... ok
+test execution_token_survives_reconnect_restart_and_acknowledged_cleanup ... ok
+test timeout_releases_the_namespace ... ok
+test active_run_reserves_unwritten_evidence_bytes ... ok
+test unread_stdin_does_not_prevent_timeout_or_cancellation ... ok
+test worker_admission_preserves_budget_across_restart_and_cleanup ... ok
+test connected_ipc_transfers_reconnects_cancels_and_retains_results ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.28s
+
+     Running tests/store_quota.rs (target/debug/deps/store_quota-0c6b9c87edb6b8aa)
+
+running 6 tests
+test unsafe_entries_fail_closed_and_preserve_external_files ... ok
+test interrupted_publication_counts_once_and_never_overwrites_objects ... ok
+test incomplete_policy_initialization_recovers_without_replacing_valid_policy ... ok
+test concurrent_appends_and_store_handles_cannot_bypass_quota ... ok
+test empty_transfers_consume_slots_across_begin_and_restart ... ok
+test append_retry_abort_publish_and_restart_share_one_quota ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

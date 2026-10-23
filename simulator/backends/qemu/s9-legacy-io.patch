@@ -1,0 +1,57 @@
+--- a/hw/i2c/meson.build
++++ b/hw/i2c/meson.build
+@@ -20,5 +20,6 @@
+ if config_all_devices.has_key('CONFIG_ZYNQ')
+-  md_iic_core = cc.find_library('md_sim_axi_iic', dirs: meson.project_source_root() / 'mdsim', static: true)
+-  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c'), md_iic_core,
+-    declare_dependency(link_args: ['-Wl,--gc-sections'])])
++  md_core = cc.find_library('md_sim_qemu_core', dirs: meson.project_source_root() / 'mdsim', static: true)
++  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c'), md_core,
++    declare_dependency(link_args: ['-Wl,--gc-sections',
++      '-lgcc_s', '-lutil', '-lrt', '-lpthread', '-lm', '-ldl', '-lc'])])
+ endif
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -0,0 +1,3 @@
++# Archived legacy S9IO0.2 development binding
++md_sim_s9io_mmio(unsigned link, bool write, uint64_t addr, unsigned size, uint64_t value, unsigned error) "link=%u write=%d addr=0x%" PRIx64 " size=%u value=0x%" PRIx64 " error=%u"
++md_sim_s9io_event(unsigned link, int64_t ns, unsigned flags, unsigned tx, unsigned rx, unsigned irq, unsigned txd) "link=%u virtual_ns=%" PRId64 " flags=0x%x tx=0x%02x rx=0x%02x irq=%u txd=%u"
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -285,3 +285,23 @@
+ 
++    if (object_dynamic_cast(OBJECT(machine), MACHINE_TYPE_NAME("md-sim-s9-legacy-io-development"))) {
++        /* Exact legacy system.tcl: S9IO IRQ_F2P bits6..14. Zynq maps
++         * bits0..7 to absolute GIC61..68, bits8..15 to GIC84..91.
++         * The README's generic base+2 statement misses this discontinuity. */
++        static const unsigned interrupts[3][3] = {
++            {67, 68, 84}, {85, 86, 87}, {88, 89, 90},
++        };
++        for (unsigned i = 0; i < 3; i++) {
++            DeviceState *io = qdev_new("md-sim-s9io");
++            g_autofree char *name = g_strdup_printf("s9io%u", i + 5);
++            object_property_add_child(OBJECT(machine), name, OBJECT(io));
++            qdev_prop_set_uint32(io, "link-id", i + 5);
++            qdev_prop_set_uint32(io, "build-id", 0x74657374);
++            sysbus_realize_and_unref(SYS_BUS_DEVICE(io), &error_fatal);
++            sysbus_mmio_map(SYS_BUS_DEVICE(io), 0, 0x43c50000 + i * 0x10000);
++            for (unsigned j = 0; j < 3; j++) {
++                sysbus_connect_irq(SYS_BUS_DEVICE(io), j, pic[interrupts[i][j] - GIC_INTERNAL]);
++            }
++        }
++    }
+     n = zynq_init_spi_flashes(0xE0006000, pic[58 - GIC_INTERNAL], false, 0);
+     n = zynq_init_spi_flashes(0xE0007000, pic[81 - GIC_INTERNAL], false, n);
+@@ -480,3 +498,7 @@
+ static void zynq_machine_register_types(void)
+ {
++    static const TypeInfo legacy_io = {
++        .name = MACHINE_TYPE_NAME("md-sim-s9-legacy-io-development"),
++        .parent = MACHINE_TYPE_NAME("md-sim-s9-m69a-development"),
++    };
+     static const TypeInfo onfi_fixture = {
+@@ -515,3 +537,4 @@
+     type_register_static(&fixture);
+     type_register_static(&onfi_fixture);
++    type_register_static(&legacy_io);
+ }

@@ -1,0 +1,115 @@
+{
+  "scope": "Source-fixture consensus acceptance and process-restart persistence only",
+  "full_simulator_complete": false,
+  "method": "Independent raw phase-log and exact artifact/source linkage review",
+  "limits": [
+    "No exact physical board result",
+    "No host-crash durability test",
+    "No network RPC test",
+    "No original board boot gate"
+  ],
+  "checks": [
+    "Three ordered and distinct original Core processes",
+    "Genesis UpdateTip height0 in initialization",
+    "Persisted genesis loaded in import phase",
+    "Exact firmware candidate UpdateTip height1 in import phase",
+    "Exact candidate loaded height1 in third process without loadblock",
+    "One clean import stop and shutdown per phase",
+    "Empty stderr and successful wrapper exit",
+    "Exact source submission record and source index match",
+    "All copied source and report reference hashes match",
+    "All top-level evidence indexes verified"
+  ],
+  "cases": [
+    {
+      "variant": "regtest",
+      "index": 0,
+      "block_hash": "000a2820d8400d95c5d26744cda1315a611ebcf27ae3cf082e80bb9de6f68086",
+      "accepted": true,
+      "persisted_after_restart": true,
+      "wrapper_exit": 0,
+      "phase_tips": [
+        0,
+        1,
+        1
+      ],
+      "source_files_verified": 11,
+      "report_files_verified": 5,
+      "daemon_sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+      "source_run": "work/simulator/firmware/v11-regtest",
+      "core_run": "work/simulator/bitcoin-core/v11-regtest-candidate-0"
+    },
+    {
+      "variant": "regtest",
+      "index": 1,
+      "block_hash": "000378e50038ece131dea055d18a4499f36b21866e7f432df3cd5d3b3d4b842a",
+      "accepted": true,
+      "persisted_after_restart": true,
+      "wrapper_exit": 0,
+      "phase_tips": [
+        0,
+        1,
+        1
+      ],
+      "source_files_verified": 11,
+      "report_files_verified": 5,
+      "daemon_sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+      "source_run": "work/simulator/firmware/v11-regtest",
+      "core_run": "work/simulator/bitcoin-core/v11-regtest-candidate-1"
+    },
+    {
+      "variant": "regtest-ubsan",
+      "index": 0,
+      "block_hash": "00039ab0149a9caf66c02e26208aaa5f44a8a9b7e0ffe957d69a40dc30cbedd9",
+      "accepted": true,
+      "persisted_after_restart": true,
+      "wrapper_exit": 0,
+      "phase_tips": [
+        0,
+        1,
+        1
+      ],
+      "source_files_verified": 11,
+      "report_files_verified": 5,
+      "daemon_sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+      "source_run": "work/simulator/firmware/v11-regtest-ubsan",
+      "core_run": "work/simulator/bitcoin-core/v11-regtest-ubsan-candidate-0"
+    },
+    {
+      "variant": "regtest-ubsan",
+      "index": 1,
+      "block_hash": "0002995074f31c2caa9c9eb32b08f6a8182190c9e612531682f6d9fa5bd1ce2d",
+      "accepted": true,
+      "persisted_after_restart": true,
+      "wrapper_exit": 0,
+      "phase_tips": [
+        0,
+        1,
+        1
+      ],
+      "source_files_verified": 11,
+      "report_files_verified": 5,
+      "daemon_sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+      "source_run": "work/simulator/firmware/v11-regtest-ubsan",
+      "core_run": "work/simulator/bitcoin-core/v11-regtest-ubsan-candidate-1"
+    }
+  ],
+  "evidence_indexes": [
+    {
+      "directory": "work/simulator/bitcoin-core/v11-regtest-candidate-0",
+      "verified_root_files": 11
+    },
+    {
+      "directory": "work/simulator/bitcoin-core/v11-regtest-candidate-1",
+      "verified_root_files": 11
+    },
+    {
+      "directory": "work/simulator/bitcoin-core/v11-regtest-ubsan-candidate-0",
+      "verified_root_files": 11
+    },
+    {
+      "directory": "work/simulator/bitcoin-core/v11-regtest-ubsan-candidate-1",
+      "verified_root_files": 11
+    }
+  ]
+}

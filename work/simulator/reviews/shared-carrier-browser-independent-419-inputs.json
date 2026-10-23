@@ -1,0 +1,29 @@
+{
+  "schema": "md-sim-review-inputs/1",
+  "files": {
+    "crates/md-sim-firmware/examples/support/worker_channel_ssh.rs": {
+      "sha256": "3ac266fdf408e564e379e30ecbd2c66f62636f68893a32d53b0010f6d3ae066f",
+      "size": 16492
+    },
+    "crates/md-sim-firmware/examples/support/worker_shared_access.rs": {
+      "sha256": "45f4992a129e469d1f8cb785d40817bac2014ffc5f211c844db2989e1f4e4009",
+      "size": 10013
+    },
+    "crates/md-sim-firmware/examples/support/s9_browser_target.rs": {
+      "sha256": "d786c4dc406363e53cefdb6cf694e3586c6e48f57946308aaf477bce3cbf94fd",
+      "size": 25776
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board_browser.rs": {
+      "sha256": "5d766d6b456362b607a240c7ce67a14a24b1403c90024d94ff525eb7bdb745fc",
+      "size": 9715
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-browser-retention418-tests.log": {
+      "sha256": "fd3ff23e81b2609b831f77e1b90a42630839824973a7b0a57ba1a8e32b6810bf",
+      "size": 16643
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-browser-retention419-clippy.log": {
+      "sha256": "505ffbe766415edad31df04e6454f5ecd6e694bf9d1aa677cbfc3e631ef4e8a1",
+      "size": 197
+    }
+  }
+}

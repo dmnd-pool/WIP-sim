@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-165fe483153bdcec12dc",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d0c356c9-b165-4168-a56e-e4b206ff992c/2023/07/27/14/E9%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "E9 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-165fe483153bdcec12dc/E9_Server_Manual.pdf",
+  "sha256": "2715f5a9da1794f51040a40fba1af5228ee8506fa4ef71dad00e77e10dbb4ea8",
+  "size_bytes": 1420702,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d0c356c9-b165-4168-a56e-e4b206ff992c/2023/07/27/14/E9%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 06:49:12 GMT",
+  "etag": "\"bfc21af51a5bcb6ef4f2018b9f5b77c1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1420702,
+      "actual": 1420702,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

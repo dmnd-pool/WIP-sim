@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-9f70599343472a63b4fa",
+  "url": "https://download.hiveos.farm/asic/T17E/archive/SD-T17E_Hiveon_1.00-200403_sig.zip",
+  "kind": "firmware",
+  "title": "SD-T17E_Hiveon_1.00-200403_sig.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:17:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-9f70599343472a63b4fa/SD-T17E_Hiveon_1.00-200403_sig.zip",
+  "sha256": "324d23614d9fd0a817d224e427c375bb015798fea6a178c51230c922ce11a747",
+  "size_bytes": 61789333,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/T17E/archive/SD-T17E_Hiveon_1.00-200403_sig.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Fri, 03 Apr 2020 15:56:59 GMT",
+  "etag": "\"5e875ccb-3aed495\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 61789333,
+      "actual": 61789333,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

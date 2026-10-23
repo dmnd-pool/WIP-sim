@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-66501a5b4e65c54ef768",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e7906193-0742-4cb6-b42e-0787075f49ca/2025/09/16/15/S19k%20Pro%20Product%20Manual%20V5.1.pdf",
+  "kind": "document",
+  "title": "S19k Pro Product Manual V5.1.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:34+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-66501a5b4e65c54ef768/S19k_Pro_Product_Manual_V5.1.pdf",
+  "sha256": "80c42c784e819a96623858f30f252426c4a4492b1aeb1a9b5f69982d8b673a38",
+  "size_bytes": 899774,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e7906193-0742-4cb6-b42e-0787075f49ca/2025/09/16/15/S19k%20Pro%20Product%20Manual%20V5.1.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 16 Sep 2025 07:42:49 GMT",
+  "etag": "\"4006169ab6fb1cfba8aea7f490b7445b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 899774,
+      "actual": 899774,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

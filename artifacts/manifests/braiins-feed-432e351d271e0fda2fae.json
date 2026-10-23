@@ -1,0 +1,48 @@
+{
+  "id": "braiins-feed-432e351d271e0fda2fae",
+  "url": "https://feeds.braiins-os.com/am3-bbb/sd-firmware_2023-04-20-0-0ce150e9-23.03-plus_omap.tar",
+  "kind": "firmware",
+  "title": "sd-firmware_2023-04-20-0-0ce150e9-23.03-plus_omap.tar",
+  "source_id": "braiins-feed-root",
+  "executed": false,
+  "language": "und",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:30:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-432e351d271e0fda2fae/sd-firmware_2023-04-20-0-0ce150e9-23.03-plus_omap.tar",
+  "sha256": "ea8eedc50cfa590db866bc304861ed6c6d74a8acdda3a24a8f1ec5e4c4a33f0a",
+  "size_bytes": 20510720,
+  "expected_size_bytes": 20510720,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/am3-bbb/sd-firmware_2023-04-20-0-0ce150e9-23.03-plus_omap.tar?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"644119c0-138f800\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 20 Apr 2023 10:53:52 GMT",
+  "publisher_sha256": "ea8eedc50cfa590db866bc304861ed6c6d74a8acdda3a24a8f1ec5e4c4a33f0a",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/am3-bbb/sd-firmware_2023-04-20-0-0ce150e9-23.03-plus_omap.tar?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "ea8eedc50cfa590db866bc304861ed6c6d74a8acdda3a24a8f1ec5e4c4a33f0a",
+      "actual": "ea8eedc50cfa590db866bc304861ed6c6d74a8acdda3a24a8f1ec5e4c4a33f0a",
+      "match": true,
+      "source_id": "braiins-feed-d7477fde2af804fd9e51"
+    },
+    {
+      "field": "sha256",
+      "expected": "ea8eedc50cfa590db866bc304861ed6c6d74a8acdda3a24a8f1ec5e4c4a33f0a",
+      "actual": "ea8eedc50cfa590db866bc304861ed6c6d74a8acdda3a24a8f1ec5e4c4a33f0a",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

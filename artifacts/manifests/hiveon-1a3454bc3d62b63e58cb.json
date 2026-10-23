@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-1a3454bc3d62b63e58cb",
+  "url": "https://download.hiveos.farm/asic/custom/Reborn-alikas74/210224/Antminer-S17+-Hiveon-2.03@210224-ANTMINERS17PLUS121-sig-sign-Reborn-alikas74-new.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17+-Hiveon-2.03@210224-ANTMINERS17PLUS121-sig-sign-Reborn-alikas74-new.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:05:51+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-1a3454bc3d62b63e58cb/Antminer-S17+-Hiveon-2.03_210224-ANTMINERS17PLUS121-sig-sign-Reborn-alikas74-new.tar.gz",
+  "sha256": "b3b65e4359b8fdcb1bde2b19c176dad1796ccee000505484d5a938725429381f",
+  "size_bytes": 34482880,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Reborn-alikas74/210224/Antminer-S17+-Hiveon-2.03@210224-ANTMINERS17PLUS121-sig-sign-Reborn-alikas74-new.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 23 Feb 2021 22:16:30 GMT",
+  "etag": "\"60357ebe-20e2ac0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 34482880,
+      "actual": 34482880,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

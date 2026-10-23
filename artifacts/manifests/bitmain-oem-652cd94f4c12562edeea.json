@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-652cd94f4c12562edeea",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ltc-r1-300M-20170421-1.bin",
+  "kind": "firmware",
+  "title": "ltc-r1-300M-20170421-1.bin",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:21+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-652cd94f4c12562edeea/ltc-r1-300M-20170421-1.bin",
+  "sha256": "b8ba518bd55b773063827c6cb98a53276a7e5e9152736bf49f48998a98c600b4",
+  "size_bytes": 8126464,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ltc-r1-300M-20170421-1.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:32 GMT",
+  "etag": "\"5c031cb6ab1f047a592c4a99c1bf3911\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 8126464,
+      "actual": 8126464,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

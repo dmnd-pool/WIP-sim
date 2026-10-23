@@ -1,0 +1,37 @@
+{
+  "id": "auradine-fluxos-3-0-0-bin",
+  "url": "https://update.auradine.com/firmware/FluxOS-3.0.0.bin",
+  "kind": "firmware",
+  "title": "FluxOS-3.0.0.bin",
+  "language": "und",
+  "source_id": "auradine-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/auradine-fluxos-3-0-0-bin/FluxOS-3.0.0.bin",
+  "sha256": "a5b0613ed25c50d01a3b0299bc8cb384e15af832df1ab448b2f5d38a5aa744b0",
+  "size_bytes": 100854194,
+  "executed": false,
+  "final_url": "https://update.auradine.com/firmware/FluxOS-3.0.0.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 02 Apr 2026 16:12:08 GMT",
+  "etag": "\"e3f9341e25bb0cc4b37f860e4a0780d0-13\"",
+  "publisher_sha256": "a5b0613ed25c50d01a3b0299bc8cb384e15af832df1ab448b2f5d38a5aa744b0",
+  "matches_publisher_sha256": true,
+  "vendor_models": "AT,AI,AH",
+  "version": "3.0.0",
+  "vendor_created": "2026-04-02 08:48:08.100446",
+  "publisher_checksum_claims": [
+    {
+      "model": "AT,AI,AH",
+      "sha256": "a5b0613ed25c50d01a3b0299bc8cb384e15af832df1ab448b2f5d38a5aa744b0",
+      "size": "100854194",
+      "created": "2026-04-02 08:48:08.100446",
+      "branch": "v3.0.0"
+    }
+  ],
+  "matches_any_publisher_sha256": true,
+  "matches_all_publisher_sha256": true,
+  "matches_any_publisher_size": true
+}

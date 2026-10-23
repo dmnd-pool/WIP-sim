@@ -1,0 +1,42 @@
+{
+  "id": "bitmain-oem-50ca4476065bcb90e108",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntMiner-U3%20user%20guide.pdf",
+  "kind": "document",
+  "title": "AntMiner-U3 user guide.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-50ca4476065bcb90e108/AntMiner-U3_user_guide.pdf",
+  "sha256": "78f473dd722283f535a1cd7815d5c6e1e5c4c6ecbfd08f76b3483fc97ae994da",
+  "size_bytes": 1573084,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntMiner-U3%20user%20guide.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"86b67c401aec15c01693890d5e7d7567\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1184158,
+      "actual": 1573084,
+      "match": false,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "upstream_head_audit": {
+    "artifact_id": "bitmain-oem-50ca4476065bcb90e108",
+    "title": "AntMiner-U3 user guide.pdf",
+    "downloaded_size_bytes": 1573084,
+    "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntMiner-U3%20user%20guide.pdf",
+    "http_status": 200,
+    "content_length": "1573084",
+    "etag": "\"86b67c401aec15c01693890d5e7d7567\"",
+    "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+    "http_size_match": true
+  }
+}

@@ -1,0 +1,13 @@
+[package]
+name = "md-sim"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+md-sim-runtime = { path = "../md-sim-runtime" }
+md-sim-catalog = { path = "../md-sim-catalog" }

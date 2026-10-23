@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-02eb3175380772cb247f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20D3/Firmware/0072018111921254457317zdGGP7065A/Antminer-D3-201811131204-0M.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-D3-201811131204-0M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:47+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-02eb3175380772cb247f/ANTMINER-D3-201811131204-0M.tar.gz",
+  "sha256": "c882cbb63dcd8b8fe824aefdef4ebb18a21fb6a6253cd7106fa42eb684e17d89",
+  "size_bytes": 12305991,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20D3/Firmware/0072018111921254457317zdGGP7065A/Antminer-D3-201811131204-0M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"073b2fe71f394f00296233fd8263af81\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 12305991,
+      "actual": 12305991,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "073b2fe71f394f00296233fd8263af81",
+      "actual": "073b2fe71f394f00296233fd8263af81",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

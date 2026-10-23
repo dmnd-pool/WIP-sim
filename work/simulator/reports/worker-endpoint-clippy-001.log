@@ -1,0 +1,30 @@
+    Checking md-sim-runtime v0.1.0 (/home/user/src/md-sim/crates/md-sim-runtime)
+error: this expression creates a reference which is immediately dereferenced by the compiler
+   --> crates/md-sim-runtime/src/worker.rs:459:30
+    |
+459 |     recover_interrupted_runs(&root)?;
+    |                              ^^^^^ help: change this to: `root`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.94.0/index.html#needless_borrow
+    = note: `-D clippy::needless-borrow` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::needless_borrow)]`
+
+error: this expression creates a reference which is immediately dereferenced by the compiler
+   --> crates/md-sim-runtime/src/worker.rs:463:27
+    |
+463 |             reap_finished(&root, &mut active)?;
+    |                           ^^^^^ help: change this to: `root`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.94.0/index.html#needless_borrow
+
+error: this expression creates a reference which is immediately dereferenced by the compiler
+   --> crates/md-sim-runtime/src/worker.rs:475:29
+    |
+475 |                 handle(req, &root, &store, &mut active, &limits)
+    |                             ^^^^^ help: change this to: `root`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.94.0/index.html#needless_borrow
+
+error: could not compile `md-sim-runtime` (lib) due to 3 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `md-sim-runtime` (lib test) due to 3 previous errors

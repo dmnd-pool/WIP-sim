@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-9e39d038d7fd553d0cb0",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d27079c3-1df8-4ed0-802b-bd0d5844874a/2025/11/26/13/CB%203rd%20cert_Z15%20Pro_CN23VVS5%20002_JPTUV-153171-M1_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 3rd cert_Z15 Pro_CN23VVS5 002_JPTUV-153171-M1_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-9e39d038d7fd553d0cb0/CB_3rd_cert_Z15_Pro_CN23VVS5_002_JPTUV-153171-M1_extsigned.pdf",
+  "sha256": "f9ecf92430820ae8cbeb2903cab8dda8d0c85ec8b1945b28f1668fbd98429799",
+  "size_bytes": 631239,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d27079c3-1df8-4ed0-802b-bd0d5844874a/2025/11/26/13/CB%203rd%20cert_Z15%20Pro_CN23VVS5%20002_JPTUV-153171-M1_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 26 Nov 2025 05:49:19 GMT",
+  "etag": "\"2e6b0fd08d485adea862a4ff1fbec6c2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 631239,
+      "actual": 631239,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

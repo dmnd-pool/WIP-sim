@@ -1,0 +1,22 @@
+{
+  "id": "vendors-canaan-nano3-master-image",
+  "url": "https://static.canaan.io/prod/u_file/2408/06/file/AvalonNano3_Recovery_Tool_V1.0.zip",
+  "title": "Canaan Nano3 heater_nano3_master_image.img",
+  "kind": "firmware",
+  "language": "unknown",
+  "license": "unknown",
+  "source_id": "source-canaan-nano3-recovery",
+  "retrieved_at": "2026-10-19T10:43:43+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/vendors-canaan-nano3-master-image/heater_nano3_master_image.img",
+  "sha256": "b99a2358592224b07b4ef9428181715d0dd8ed15585044a94d01e8c78fb830be",
+  "size_bytes": 134217728,
+  "executed": false,
+  "acquisition_method": "contained-in-downloaded-archive",
+  "parent_artifact_id": "vendors-canaan-nano3-recovery-package",
+  "parent_sha256": "61684655a9e8f9f9e0cd68a8eda4f37c32aa54abaca83aac739655f8bcc4de96",
+  "archive_member": "heater_nano3_master_image.img",
+  "notes": [
+    "Original bytes saved from the official recovery package. No tools or firmware were run."
+  ]
+}

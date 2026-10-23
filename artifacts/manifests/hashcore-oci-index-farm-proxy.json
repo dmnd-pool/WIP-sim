@@ -1,0 +1,22 @@
+{
+  "id": "hashcore-oci-index-farm-proxy",
+  "url": "https://public.ecr.aws/v2/k7t2c2k4/farm-proxy/manifests/latest",
+  "kind": "metadata",
+  "title": "HashCore farm-proxy OCI index",
+  "language": "und",
+  "source_id": "hashcore-proxy-deployment",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:39:37+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/hashcore-oci-index-farm-proxy/index.json",
+  "sha256": "b6ea309d589b7662cd03220571b845e60ab19d596f49c404ce3543e0c1841d37",
+  "size_bytes": 743,
+  "executed": false,
+  "content_role": "oci-index",
+  "registry_digest": null,
+  "expected_size_bytes": null,
+  "auth_method": "Anonymous public ECR pull token; token not saved",
+  "registry_digest_match": null,
+  "http_status": 200,
+  "content_type": "application/vnd.docker.distribution.manifest.list.v2+json"
+}

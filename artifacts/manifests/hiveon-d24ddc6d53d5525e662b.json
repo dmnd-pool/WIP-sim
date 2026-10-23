@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-d24ddc6d53d5525e662b",
+  "url": "https://download.hiveos.farm/asic/custom/182848382/SD-Antminer-S9-all-Hiveon-1.03@210204-sign-182848382.zip",
+  "kind": "firmware",
+  "title": "SD-Antminer-S9-all-Hiveon-1.03@210204-sign-182848382.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:10:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-d24ddc6d53d5525e662b/SD-Antminer-S9-all-Hiveon-1.03_210204-sign-182848382.zip",
+  "sha256": "2c4a49191b691e85dfb0d4b966122a19c0aaf3a7763801614931ca5e7140355c",
+  "size_bytes": 45961695,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/182848382/SD-Antminer-S9-all-Hiveon-1.03@210204-sign-182848382.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 04 Feb 2021 12:51:20 GMT",
+  "etag": "\"601bedc8-2bd51df\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 45961695,
+      "actual": 45961695,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

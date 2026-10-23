@@ -1,0 +1,77 @@
+{
+  "schema": "md-sim-independent-browser-inventory-failure/1",
+  "passed": false,
+  "scope": "Run 451 failed during support identity capture. No native firmware, independent pool, dashboard or browser test ran.",
+  "selected_image": {
+    "sha256": "9fad1790adc558699bd7b9075d378713d189c638859e301f0d14742a55ebae82",
+    "size": 499993033
+  },
+  "selected_image_matches_preparation_and_runtime_mount": true,
+  "support_vm_started": true,
+  "outer_result": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 44051,
+    "trace_truncated": false
+  },
+  "guest_stdout_matches_result": true,
+  "reconstructed_inventory_before_first_shared_input": {
+    "regular_entries": 4619,
+    "link_entries": 1105,
+    "total": 5724,
+    "root_manifest_total_regular": 4632
+  },
+  "failure_cause": "The browser capture used 8192 entries, then first strict shared capture selected 1024 from its per-path false browser flag. The existing inventory already contained 5724 entries.",
+  "no_result_bundle_paths": [
+    "work/simulator/network-vm/native-browser-451/execution/result.json",
+    "work/simulator/network-vm/native-browser-451/execution/worker-result.json",
+    "work/simulator/network-vm/native-browser-451/execution/shared-pool/pool-bundle.json",
+    "work/simulator/network-vm/native-browser-451/execution/shared-access/access-bundle.json"
+  ],
+  "inputs": {
+    "work/simulator/network-vm/native-browser-451/assessment.json": {
+      "sha256": "ee1bbcc9a34b70ad689b925fccf797ea38e94543fd5742f50c00255315d6fedc",
+      "size": 5278
+    },
+    "work/simulator/network-vm/native-browser-451/result.json": {
+      "sha256": "afb6854e78188d7584d07bd353637712f34286faf7bbe0b03db6037405e47a4b",
+      "size": 10044
+    },
+    "work/simulator/network-vm/native-browser-451/guest.log": {
+      "sha256": "fa174074a559679ebb50ae4dbe25964d1bf7ff0b6be6320bfae024798a0ef908",
+      "size": 4595
+    },
+    "work/simulator/network-vm/native-browser-451/process-spec.json": {
+      "sha256": "d539b1d03360bcfe511d60fcab481acdb918a62d8f538bfd61b8e6ad44b97d42",
+      "size": 5312
+    },
+    "work/simulator/network-vm/native-browser-451/scenario.json": {
+      "sha256": "1abbfe24b9ce96c949bce6feeb18d0fbd93643db11f306e97df19b0a8c069c3d",
+      "size": 18306
+    },
+    "work/simulator/network-vm/native-browser-451/client-image/prepared-image.json": {
+      "sha256": "1afb057c1c1ca1fb7f3dc2dc52d2827509002b38396587f93a0d0e4243efdac9",
+      "size": 628
+    },
+    "work/simulator/network-vm/native-browser-451/client-image/root-manifest.json": {
+      "sha256": "ca0a2f3342a1f4c91dbd7f6b18cda1799b1d76890e83ba774c32252c55180c20",
+      "size": 874638
+    },
+    "work/simulator/network-vm/native-browser-451/client-image/payload-manifest.json": {
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    "work/simulator/network-vm/native-browser-451/client-image/payload-report.json": {
+      "sha256": "129342039fd3ca2b132511aed93ad118e113fd3b11b6e5717390f351c4092260",
+      "size": 77773
+    },
+    "work/simulator/core-checkpoint-450/source/crates/md-sim-firmware/examples/remote_namespace_check.rs": {
+      "sha256": "12127bcb2a423de4a8abca1ac61aa2ef7a9591cafef5ce44deaf520e10b233c1",
+      "size": 80940
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-browser-451.log": {
+      "sha256": "d18230a4383363d556b4621f825e0e84786627e4ace69c229d1e8d54b4bd45c0",
+      "size": 60
+    }
+  }
+}

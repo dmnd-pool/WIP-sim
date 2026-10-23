@@ -1,0 +1,44 @@
+--- a/hw/i2c/meson.build
++++ b/hw/i2c/meson.build
+@@ -22,3 +22,3 @@
+-  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c', 'md-sim-fan.c'), md_core,
++  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c', 'md-sim-fan.c', 'md-sim-pic16.c'), md_core,
+     declare_dependency(link_args: ['-Wl,--gc-sections',
+       '-lgcc_s', '-lutil', '-lrt', '-lpthread', '-lm', '-ldl', '-lc'])])
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -0,0 +1,3 @@
++# S9 PIC protocol contract; no PIC instruction execution
++md_sim_pic_event(uint8_t address, const char *event, uint32_t data, uint64_t now, uint32_t result) "address=0x%02x event=%s data=0x%x ns=%" PRIu64 " result=0x%x"
++md_sim_pic_power(uint8_t address, uint32_t state, uint64_t now) "address=0x%02x state=0x%x ns=%" PRIu64
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -20,1 +20,2 @@
+ #include "qemu/osdep.h"
++#include "hw/i2c/i2c.h"
+@@ -300,3 +301,12 @@
+     if (object_dynamic_cast(OBJECT(machine), MACHINE_TYPE_NAME("md-sim-s9-zynq-a9"))) {
+-        sysbus_create_simple("md-sim-axi-iic", 0x41600000, pic[29]);
++        DeviceState *iic = sysbus_create_simple("md-sim-axi-iic", 0x41600000, pic[29]);
++        if (object_dynamic_cast(OBJECT(machine), MACHINE_TYPE_NAME("md-sim-s9-pic-development"))) {
++            I2CBus *bus = I2C_BUS(qdev_get_child_bus(iic, "i2c"));
++            for (unsigned address = 0x55; address <= 0x57; address++) {
++                I2CSlave *slave = i2c_slave_new("md-sim-s9-pic16", address);
++                g_autofree char *name = g_strdup_printf("pic%02x", address);
++                object_property_add_child(OBJECT(machine), name, OBJECT(slave));
++                i2c_slave_realize_and_unref(slave, bus, &error_fatal);
++            }
++        }
+     }
+@@ -655,3 +666,7 @@
+ static void zynq_machine_register_types(void)
+ {
++    static const TypeInfo pic_fixture = {
++        .name = MACHINE_TYPE_NAME("md-sim-s9-pic-development"),
++        .parent = MACHINE_TYPE_NAME("md-sim-s9-fan-development"),
++    };
+     static const TypeInfo fan_fixture = {
+@@ -692,2 +707,3 @@
+     type_register_static(&fan_fixture);
++    type_register_static(&pic_fixture);
+ }

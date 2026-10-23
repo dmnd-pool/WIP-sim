@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-12442f9260a4e6b64a32",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b59dbbfd-15e5-42df-8c7f-40665ffdee76/2020/05/19/19/Antminer-K5-0-202005131621-sig_5872.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-K5-0-202005131621-sig_5872.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:14+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-12442f9260a4e6b64a32/ANTMINER-K5-0-202005131621-sig_5872.tar.gz",
+  "sha256": "5506ded88c01add358995b8007cf89a625ffc2ff83a5384b2fd643b49bb8a4ab",
+  "size_bytes": 21982911,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b59dbbfd-15e5-42df-8c7f-40665ffdee76/2020/05/19/19/Antminer-K5-0-202005131621-sig_5872.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"059e19768e198a5f7ea3a6d7f354c4c3-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 21982911,
+      "actual": 21982911,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "5dc205bebc095fbcf8ca0ee86c803ab0",
+      "actual": "5dc205bebc095fbcf8ca0ee86c803ab0",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

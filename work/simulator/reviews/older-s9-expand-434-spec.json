@@ -1,0 +1,55 @@
+{
+  "schema_version": "2.0",
+  "argv": [
+    "/usr/bin/gzip",
+    "--decompress",
+    "--stdout",
+    "/bitstream.gz"
+  ],
+  "inputs": [
+    {
+      "guest_path": "/usr/bin/gzip",
+      "object": {
+        "sha256": "b1f9e749ee0809d6e90100218e6bc13cdf3f26f23c243d5f62aae39162297cb1",
+        "size": 109768
+      }
+    },
+    {
+      "guest_path": "/usr/lib/libc.so.6",
+      "object": {
+        "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+        "size": 2215072
+      }
+    },
+    {
+      "guest_path": "/lib64/ld-linux-x86-64.so.2",
+      "object": {
+        "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+        "size": 263152
+      }
+    },
+    {
+      "guest_path": "/bitstream.gz",
+      "object": {
+        "sha256": "9482ef607556a168e5b9e9ecc6de3198578cec9fb2187ed7d16ea451952b8552",
+        "size": 477812
+      }
+    }
+  ],
+  "stdin_object": null,
+  "dashboard": null,
+  "loopback": false,
+  "environment": {
+    "PATH": "/usr/bin",
+    "LC_ALL": "C"
+  },
+  "limits": {
+    "wall_seconds": 20,
+    "cpu_seconds": 10,
+    "memory_bytes": 268435456,
+    "processes": 16,
+    "file_bytes": 4194304,
+    "trace_bytes": 4194304,
+    "tmp_bytes": 1048576
+  }
+}

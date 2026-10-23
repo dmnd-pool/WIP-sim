@@ -1,0 +1,37 @@
+{
+  "id": "auradine-fluxos-2-3-0-hotfix-bin",
+  "url": "https://update.auradine.com/firmware/FluxOS-2.3.0-hotfix.bin",
+  "kind": "firmware",
+  "title": "FluxOS-2.3.0-hotfix.bin",
+  "language": "und",
+  "source_id": "auradine-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/auradine-fluxos-2-3-0-hotfix-bin/FluxOS-2.3.0-hotfix.bin",
+  "sha256": "e53bc43ecd43e832cce3e323cbd397878b534223b40eea9efd88fa18240cd7bf",
+  "size_bytes": 94909286,
+  "executed": false,
+  "final_url": "https://update.auradine.com/firmware/FluxOS-2.3.0-hotfix.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 19 Jan 2026 21:52:33 GMT",
+  "etag": "\"82e2fb1541dbb603711bdbedeb62faf8-12\"",
+  "publisher_sha256": "e53bc43ecd43e832cce3e323cbd397878b534223b40eea9efd88fa18240cd7bf",
+  "matches_publisher_sha256": true,
+  "vendor_models": "AT,AI,AH",
+  "version": "2.3.0-hotfix",
+  "vendor_created": "2026-01-19 21:10:31.857015",
+  "publisher_checksum_claims": [
+    {
+      "model": "AT,AI,AH",
+      "sha256": "e53bc43ecd43e832cce3e323cbd397878b534223b40eea9efd88fa18240cd7bf",
+      "size": "94909286",
+      "created": "2026-01-19 21:10:31.857015",
+      "branch": "v2.3.0-hotfix"
+    }
+  ],
+  "matches_any_publisher_sha256": true,
+  "matches_all_publisher_sha256": true,
+  "matches_any_publisher_size": true
+}

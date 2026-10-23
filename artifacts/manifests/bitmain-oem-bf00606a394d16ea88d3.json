@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-bf00606a394d16ea88d3",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d87758fa-5020-42e3-bb49-aa378dcb4570/2024/04/07/17/UKCA_S19j%20XP_CN23D7OL%20001_2023.9.13%20SS_extsigned.pdf",
+  "kind": "document",
+  "title": "UKCA_S19j XP_CN23D7OL 001_2023.9.13 SS_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:18+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-bf00606a394d16ea88d3/UKCA_S19j_XP_CN23D7OL_001_2023.9.13_SS_extsigned.pdf",
+  "sha256": "3513fcc17ead63e194e73e3e90eaf3251f465b46311a9052fb04906496fc392f",
+  "size_bytes": 1675972,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/d87758fa-5020-42e3-bb49-aa378dcb4570/2024/04/07/17/UKCA_S19j%20XP_CN23D7OL%20001_2023.9.13%20SS_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 07 Apr 2024 09:08:39 GMT",
+  "etag": "\"09b7b2f36a103af2422064677dff04b8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1675972,
+      "actual": 1675972,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

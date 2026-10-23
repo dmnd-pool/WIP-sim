@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-439ac955f7645000a3ec",
+  "url": "https://download.hiveos.farm/asic/custom/krok/SD-Antminer-S9-all-Hiveon-1.03@210119-sign-krok.zip",
+  "kind": "firmware",
+  "title": "SD-Antminer-S9-all-Hiveon-1.03@210119-sign-krok.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:12:47+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-439ac955f7645000a3ec/SD-Antminer-S9-all-Hiveon-1.03_210119-sign-krok.zip",
+  "sha256": "fd0bb62ddcccf4a964aee24bcb1aafa2d79a29c00874d561ace5918c427d3f83",
+  "size_bytes": 45954225,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/krok/SD-Antminer-S9-all-Hiveon-1.03@210119-sign-krok.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Tue, 19 Jan 2021 19:28:12 GMT",
+  "etag": "\"600732cc-2bd34b1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 45954225,
+      "actual": 45954225,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

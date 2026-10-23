@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-30a064a49ad205e3191f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4e9ecd45-85e3-43b4-bf22-252cdf8476f9/2020/04/10/13/E3_V540_0327.tar.gz",
+  "kind": "firmware",
+  "title": "E3_V540_0327.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-30a064a49ad205e3191f/E3_V540_0327.tar.gz",
+  "sha256": "4c29857ee57e121c11628b83bc0997eafe024c0120ff06108b10dc3c64fd39f3",
+  "size_bytes": 36527877,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4e9ecd45-85e3-43b4-bf22-252cdf8476f9/2020/04/10/13/E3_V540_0327.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:21 GMT",
+  "etag": "\"762805abe9230c64e9ec831dfe5bce04-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "cd4d93caa5491dcbddf866b746a5a96b",
+      "actual": "cd4d93caa5491dcbddf866b746a5a96b",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 36527877,
+      "actual": 36527877,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

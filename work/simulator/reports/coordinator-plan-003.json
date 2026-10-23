@@ -1,0 +1,527 @@
+{
+  "content": {
+    "schema_version": "2.0",
+    "catalogue_snapshot": null,
+    "limits": {
+      "max_attempts": 4096,
+      "max_evidence_bytes": 4294967296
+    },
+    "runs": [
+      {
+        "name": "cgminer-source-interface",
+        "scope": {
+          "kind": "source-interface-fixture",
+          "fixture": {
+            "sha256": "8165339a7e312b34cdf9f8922dc5b4cee7e4fda78f19ebf69aada8690259d620",
+            "size": 159
+          },
+          "firmware_identity": "rebuilt-source"
+        },
+        "process": {
+          "schema_version": "2.0",
+          "argv": [
+            "/harness",
+            "/firmware",
+            "/work/results",
+            "10000",
+            "59bbff8d0a0f82d75e977afd988eb97675e68f4bcd0d30b2659d0aff6a4d29a0",
+            "1792437708",
+            "-20",
+            "regtest-genesis",
+            "--export"
+          ],
+          "inputs": [
+            {
+              "object": {
+                "sha256": "88602d125e46310d0e61f64622d50be25df285085c2fe09c63070d852c64a90a",
+                "size": 515224
+              },
+              "guest_path": "/firmware"
+            },
+            {
+              "object": {
+                "sha256": "6c31f8ce26492339bee819c90a15a21eed6556c0faece8d9072203f486d5ad85",
+                "size": 1371912
+              },
+              "guest_path": "/harness"
+            },
+            {
+              "object": {
+                "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+                "size": 263152
+              },
+              "guest_path": "/lib64/ld-linux-x86-64.so.2"
+            },
+            {
+              "object": {
+                "sha256": "0126b6046cc17ae3b8a298397a348e43add21dd5c4d84a4d035e785eb2e060f6",
+                "size": 1082984
+              },
+              "guest_path": "/usr/lib/libcurl.so.4"
+            },
+            {
+              "object": {
+                "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+                "size": 104464
+              },
+              "guest_path": "/usr/lib/libz.so.1"
+            },
+            {
+              "object": {
+                "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+                "size": 1268336
+              },
+              "guest_path": "/usr/lib/libm.so.6"
+            },
+            {
+              "object": {
+                "sha256": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+                "size": 457936
+              },
+              "guest_path": "/usr/lib/libncursesw.so.6"
+            },
+            {
+              "object": {
+                "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+                "size": 2215072
+              },
+              "guest_path": "/usr/lib/libc.so.6"
+            },
+            {
+              "object": {
+                "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+                "size": 182512
+              },
+              "guest_path": "/usr/lib/libgcc_s.so.1"
+            },
+            {
+              "object": {
+                "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+                "size": 263152
+              },
+              "guest_path": "/usr/lib/ld-linux-x86-64.so.2"
+            },
+            {
+              "object": {
+                "sha256": "7d826dfe4128cab08a32609c56d67c9ce1383295cbce7ac0fa50449704b7479a",
+                "size": 160768
+              },
+              "guest_path": "/usr/lib/libnghttp3.so.9"
+            },
+            {
+              "object": {
+                "sha256": "867135c8d1f2787c1bd5eca09f204e086d6c2c1e3030613f1b5792d92034fb2f",
+                "size": 47064
+              },
+              "guest_path": "/usr/lib/libngtcp2_crypto_ossl.so.0"
+            },
+            {
+              "object": {
+                "sha256": "524535e51383d20818e3878e0c819cae6249662dcfc168c0bfbb30aa8ba4f2b3",
+                "size": 374768
+              },
+              "guest_path": "/usr/lib/libngtcp2.so.16"
+            },
+            {
+              "object": {
+                "sha256": "dc9f6c8c911dc14aef9585aed5cadf35ae5037175130753cd058d7eb353fb717",
+                "size": 165928
+              },
+              "guest_path": "/usr/lib/libnghttp2.so.14"
+            },
+            {
+              "object": {
+                "sha256": "9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15",
+                "size": 133064
+              },
+              "guest_path": "/usr/lib/libidn2.so.0"
+            },
+            {
+              "object": {
+                "sha256": "8e31bb8758d4f780fd635aa47ca3c0306ccbfbadd7de6c85478a7d712d5ae4b4",
+                "size": 317984
+              },
+              "guest_path": "/usr/lib/libssh2.so.1"
+            },
+            {
+              "object": {
+                "sha256": "b5189c9a4b32b15f0bb1bab989069acd2d0dc89723b990266ad5566cd16f1924",
+                "size": 75640
+              },
+              "guest_path": "/usr/lib/libpsl.so.5"
+            },
+            {
+              "object": {
+                "sha256": "f6409e9f083faae79a622c9534be6ed2456d0102cd8ea2b52eb18c9d72f1f41e",
+                "size": 1015768
+              },
+              "guest_path": "/usr/lib/libssl.so.3"
+            },
+            {
+              "object": {
+                "sha256": "a75a864dcda6ef9e4dc29fad4b7988ca832b904c3915a63c920062c40763dae1",
+                "size": 5926392
+              },
+              "guest_path": "/usr/lib/libcrypto.so.3"
+            },
+            {
+              "object": {
+                "sha256": "db71de39831ad557f7c75fadf772575f1180c4e1e7f83ec7318fabd78e129296",
+                "size": 360736
+              },
+              "guest_path": "/usr/lib/libgssapi_krb5.so.2"
+            },
+            {
+              "object": {
+                "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+                "size": 939976
+              },
+              "guest_path": "/usr/lib/libzstd.so.1"
+            },
+            {
+              "object": {
+                "sha256": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+                "size": 55168
+              },
+              "guest_path": "/usr/lib/libbrotlidec.so.1"
+            },
+            {
+              "object": {
+                "sha256": "ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3",
+                "size": 1992752
+              },
+              "guest_path": "/usr/lib/libunistring.so.5"
+            },
+            {
+              "object": {
+                "sha256": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7",
+                "size": 780768
+              },
+              "guest_path": "/usr/lib/libbrotlienc.so.1"
+            },
+            {
+              "object": {
+                "sha256": "eb8369680ba30529b30abeaca57429b67f9af42ac43efdd5d95ca1901bb9c44c",
+                "size": 845896
+              },
+              "guest_path": "/usr/lib/libkrb5.so.3"
+            },
+            {
+              "object": {
+                "sha256": "e9ea7950674f25a6951b830036f95a595e1fc112247a69d11bc0003124ab7338",
+                "size": 182320
+              },
+              "guest_path": "/usr/lib/libk5crypto.so.3"
+            },
+            {
+              "object": {
+                "sha256": "67ed8a11c44542ffdbaa04b3521f48729afddf936568632b6aa9d04c595316cd",
+                "size": 18376
+              },
+              "guest_path": "/usr/lib/libcom_err.so.2"
+            },
+            {
+              "object": {
+                "sha256": "941f17df15bc3ed160b392dee2930bd68565f445b8fe8d87ad522256c972967f",
+                "size": 55544
+              },
+              "guest_path": "/usr/lib/libkrb5support.so.0"
+            },
+            {
+              "object": {
+                "sha256": "a82e692581b6215475c03538fa4b25681b5c71e8554c67afa7e34074b968b0d7",
+                "size": 22480
+              },
+              "guest_path": "/usr/lib/libkeyutils.so.1"
+            },
+            {
+              "object": {
+                "sha256": "ee828b251a61761a9e529a791758ec8a1fbefd85693e2dc23501fedb8cf2f31d",
+                "size": 67904
+              },
+              "guest_path": "/usr/lib/libresolv.so.2"
+            },
+            {
+              "object": {
+                "sha256": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+                "size": 141264
+              },
+              "guest_path": "/usr/lib/libbrotlicommon.so.1"
+            }
+          ],
+          "limits": {
+            "wall_seconds": 40,
+            "cpu_seconds": 90,
+            "memory_bytes": 1073741824,
+            "processes": 128,
+            "file_bytes": 25165824,
+            "trace_bytes": 67108864,
+            "tmp_bytes": 67108864
+          },
+          "environment": {},
+          "stdin_object": null
+        },
+        "suite": {
+          "id": "cgminer-source-controller-fresh-work",
+          "version": "2.0",
+          "suite": {
+            "sha256": "0bc2b0323309f85cbac0679fb662f29c24fa25ef9ce0c3f9b5eb4dcfb6c6ede8",
+            "size": 20965
+          },
+          "verifier": {
+            "sha256": "3292c0d569e37feb6a5622b02fee2bcf49efc68ffce64629bf67c89394d57379",
+            "size": 3211040
+          },
+          "required_gates": [
+            "G0.locked-inputs",
+            "G1.source-execution",
+            "G2.controller-interface",
+            "G3.fresh-work",
+            "G3.verifier-rejection"
+          ]
+        },
+        "inputs": {
+          "Cargo.lock": {
+            "sha256": "391bc0d72e221ea0ab7f44f3b566d20c0e2f7157d8f1646fbef94ba332eec5cb",
+            "size": 16093
+          },
+          "fixture": {
+            "sha256": "8165339a7e312b34cdf9f8922dc5b4cee7e4fda78f19ebf69aada8690259d620",
+            "size": 159
+          },
+          "harness-source": {
+            "sha256": "0ace7baf19dc51d1457830406ba0664b8bfcd8c268519841c0c415102e0d980e",
+            "size": 5506
+          },
+          "lab:adaptation-manifest.json": {
+            "sha256": "a15914f53d7e6beaca1d362258f83bea8beb157087249c88c5b2eaa35f08ad68",
+            "size": 6471
+          },
+          "lab:execution-identity.json": {
+            "sha256": "09a0558c2f29f93e46f780e3c6d5777d18335f4ec60be34b6653f0aa8116291c",
+            "size": 1209
+          },
+          "lab:input-manifest.json": {
+            "sha256": "282e196c39f65383b6bfdd27f8264a5b85ead8a828ae64bbdf183575ff6375e7",
+            "size": 3704
+          },
+          "lab:run-spec.json": {
+            "sha256": "08f2dce233c43e736ae7a03d492e68ea1a1fb0d66f60e7a156429949af15130e",
+            "size": 6561
+          },
+          "model-source": {
+            "sha256": "5c24e81f1ee1c81fa4f52a47a96bbb86f5dedd9fd927801de45f88dffab55c9d",
+            "size": 13221
+          },
+          "preparation-runner": {
+            "sha256": "3a44a1066bc68239767e87d39fd3ddd6ba7e96b39965505a0f15d1cff20697d1",
+            "size": 24508888
+          },
+          "prepared:adaptation-manifest.json": {
+            "sha256": "a15914f53d7e6beaca1d362258f83bea8beb157087249c88c5b2eaa35f08ad68",
+            "size": 6471
+          },
+          "prepared:adaptation.patch": {
+            "sha256": "1cc3f80bbd223e9c7fa2c2313a306ce388f9c3c076de8c81360fea4308594f4b",
+            "size": 13406
+          },
+          "prepared:build.log": {
+            "sha256": "e1afbb6a24155e364a116a097679b1e9f79d2e591b11c969d8749244b8a71a4a",
+            "size": 48250
+          },
+          "prepared:closure-manifest.json": {
+            "sha256": "e2eabd7bd16c22397c37cfbcfd0115223406f7850b5ad8f0733de6ac79e4d12a",
+            "size": 7144215
+          },
+          "prepared:input-manifest.json": {
+            "sha256": "eecb0e9a09d58805cdba5b2ac71318953c194a810689f7564aa69dd05b619f65",
+            "size": 3703
+          },
+          "prepared:preparation-inputs.json": {
+            "sha256": "30ef7186bdc491dfa660aa02d9c9d35d11b15d0e386d6bd00f34762ed06038b6",
+            "size": 941
+          },
+          "prepared:preparation-status.json": {
+            "sha256": "b1ffb2af0f1474be4651df8d86edf6c4595a50bd83bc8386282c09c27af23453",
+            "size": 345
+          },
+          "prepared:preparation-stderr.log": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size": 0
+          },
+          "runtime:/firmware": {
+            "sha256": "88602d125e46310d0e61f64622d50be25df285085c2fe09c63070d852c64a90a",
+            "size": 515224
+          },
+          "runtime:/harness": {
+            "sha256": "6c31f8ce26492339bee819c90a15a21eed6556c0faece8d9072203f486d5ad85",
+            "size": 1371912
+          },
+          "runtime:/lib64/ld-linux-x86-64.so.2": {
+            "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+            "size": 263152
+          },
+          "runtime:/usr/lib/ld-linux-x86-64.so.2": {
+            "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+            "size": 263152
+          },
+          "runtime:/usr/lib/libbrotlicommon.so.1": {
+            "sha256": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+            "size": 141264
+          },
+          "runtime:/usr/lib/libbrotlidec.so.1": {
+            "sha256": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+            "size": 55168
+          },
+          "runtime:/usr/lib/libbrotlienc.so.1": {
+            "sha256": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7",
+            "size": 780768
+          },
+          "runtime:/usr/lib/libc.so.6": {
+            "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+            "size": 2215072
+          },
+          "runtime:/usr/lib/libcom_err.so.2": {
+            "sha256": "67ed8a11c44542ffdbaa04b3521f48729afddf936568632b6aa9d04c595316cd",
+            "size": 18376
+          },
+          "runtime:/usr/lib/libcrypto.so.3": {
+            "sha256": "a75a864dcda6ef9e4dc29fad4b7988ca832b904c3915a63c920062c40763dae1",
+            "size": 5926392
+          },
+          "runtime:/usr/lib/libcurl.so.4": {
+            "sha256": "0126b6046cc17ae3b8a298397a348e43add21dd5c4d84a4d035e785eb2e060f6",
+            "size": 1082984
+          },
+          "runtime:/usr/lib/libgcc_s.so.1": {
+            "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+            "size": 182512
+          },
+          "runtime:/usr/lib/libgssapi_krb5.so.2": {
+            "sha256": "db71de39831ad557f7c75fadf772575f1180c4e1e7f83ec7318fabd78e129296",
+            "size": 360736
+          },
+          "runtime:/usr/lib/libidn2.so.0": {
+            "sha256": "9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15",
+            "size": 133064
+          },
+          "runtime:/usr/lib/libk5crypto.so.3": {
+            "sha256": "e9ea7950674f25a6951b830036f95a595e1fc112247a69d11bc0003124ab7338",
+            "size": 182320
+          },
+          "runtime:/usr/lib/libkeyutils.so.1": {
+            "sha256": "a82e692581b6215475c03538fa4b25681b5c71e8554c67afa7e34074b968b0d7",
+            "size": 22480
+          },
+          "runtime:/usr/lib/libkrb5.so.3": {
+            "sha256": "eb8369680ba30529b30abeaca57429b67f9af42ac43efdd5d95ca1901bb9c44c",
+            "size": 845896
+          },
+          "runtime:/usr/lib/libkrb5support.so.0": {
+            "sha256": "941f17df15bc3ed160b392dee2930bd68565f445b8fe8d87ad522256c972967f",
+            "size": 55544
+          },
+          "runtime:/usr/lib/libm.so.6": {
+            "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+            "size": 1268336
+          },
+          "runtime:/usr/lib/libncursesw.so.6": {
+            "sha256": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+            "size": 457936
+          },
+          "runtime:/usr/lib/libnghttp2.so.14": {
+            "sha256": "dc9f6c8c911dc14aef9585aed5cadf35ae5037175130753cd058d7eb353fb717",
+            "size": 165928
+          },
+          "runtime:/usr/lib/libnghttp3.so.9": {
+            "sha256": "7d826dfe4128cab08a32609c56d67c9ce1383295cbce7ac0fa50449704b7479a",
+            "size": 160768
+          },
+          "runtime:/usr/lib/libngtcp2.so.16": {
+            "sha256": "524535e51383d20818e3878e0c819cae6249662dcfc168c0bfbb30aa8ba4f2b3",
+            "size": 374768
+          },
+          "runtime:/usr/lib/libngtcp2_crypto_ossl.so.0": {
+            "sha256": "867135c8d1f2787c1bd5eca09f204e086d6c2c1e3030613f1b5792d92034fb2f",
+            "size": 47064
+          },
+          "runtime:/usr/lib/libpsl.so.5": {
+            "sha256": "b5189c9a4b32b15f0bb1bab989069acd2d0dc89723b990266ad5566cd16f1924",
+            "size": 75640
+          },
+          "runtime:/usr/lib/libresolv.so.2": {
+            "sha256": "ee828b251a61761a9e529a791758ec8a1fbefd85693e2dc23501fedb8cf2f31d",
+            "size": 67904
+          },
+          "runtime:/usr/lib/libssh2.so.1": {
+            "sha256": "8e31bb8758d4f780fd635aa47ca3c0306ccbfbadd7de6c85478a7d712d5ae4b4",
+            "size": 317984
+          },
+          "runtime:/usr/lib/libssl.so.3": {
+            "sha256": "f6409e9f083faae79a622c9534be6ed2456d0102cd8ea2b52eb18c9d72f1f41e",
+            "size": 1015768
+          },
+          "runtime:/usr/lib/libunistring.so.5": {
+            "sha256": "ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3",
+            "size": 1992752
+          },
+          "runtime:/usr/lib/libz.so.1": {
+            "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+            "size": 104464
+          },
+          "runtime:/usr/lib/libzstd.so.1": {
+            "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+            "size": 939976
+          },
+          "source-archive": {
+            "sha256": "4b3515ec072904e81e91182f5f8d5f8b5b87361ef2a7e2131643d8207badb996",
+            "size": 2256175
+          },
+          "suite-source": {
+            "sha256": "0bc2b0323309f85cbac0679fb662f29c24fa25ef9ce0c3f9b5eb4dcfb6c6ede8",
+            "size": 20965
+          },
+          "toolchain-bundle": {
+            "sha256": "b5e2138744cd06e148388aac3754f45ad4c5dcc6cfd2a5395c3082816dd51b0d",
+            "size": 719745024
+          },
+          "toolchain-manifest": {
+            "sha256": "e2eabd7bd16c22397c37cfbcfd0115223406f7850b5ad8f0733de6ac79e4d12a",
+            "size": 7144215
+          },
+          "verifier-build": {
+            "sha256": "3292c0d569e37feb6a5622b02fee2bcf49efc68ffce64629bf67c89394d57379",
+            "size": 3211040
+          },
+          "verifier-source": {
+            "sha256": "3e604980e0b66f7a64d1d7bce5e00f54a7ec86e2879c95322fe4376d06250855",
+            "size": 6744
+          }
+        },
+        "backend_tools": {
+          "bubblewrap": {
+            "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+            "size": 84464
+          },
+          "unshare": {
+            "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+            "size": 43408
+          }
+        },
+        "policies": {
+          "hashing": "functional SHA256d",
+          "preparation": "exact captured toolchain bytes transferred; build evidence retained",
+          "resume": "complete locked execution, suite, verifier, inputs and executor identity",
+          "scratch": "fresh isolated tmpfs for every attempt",
+          "transport": "private connected IPC plus PTY"
+        },
+        "capability_limits": [
+          "Source-derived controller interface fixture; no exact physical board target.",
+          "No original-board boot, calibrated physics, native dashboard, SSH, TLS, or external physical worker claim.",
+          "Regtest block export is a candidate; this suite does not run Bitcoin Core."
+        ]
+      }
+    ]
+  },
+  "sha256": "27e606f20132d81ef9c8d695f1a2f81a5353f987606d0f48543f3ab4f9ca4362"
+}

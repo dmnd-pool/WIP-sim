@@ -1,0 +1,25 @@
+{
+  "scope": "Independent source review of shared preparation, retention, provider identity, and descriptor setup; no executed shared-firmware claim",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/support/worker_shared_host.rs",
+      "sha256": "ddf6c98d2a28692ec6c0fb811fb935f18a02a9a24d5e0e0eb1f532c0f14bcef6",
+      "size": 10612
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/worker_channel_ssh.rs",
+      "sha256": "08e755a13ce5f8b989aa8e65f341dc4f7d2f0f5cc8a4613391d3692371c52ca5",
+      "size": 10483
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/worker_channel_retention.rs",
+      "sha256": "b9a5f89b890086a77468342ef136dd51ca84129b9ee2088dd387bb3cf38bbe3e",
+      "size": 8703
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/worker_channel_probe.rs",
+      "sha256": "790d69113f54e3a41ba99e7217c5c4795799bc7e8675422fbccc62bfa1d0e5e9",
+      "size": 34602
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ca5c4c4a646b8947c01a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/74a1c699-6250-467e-aea7-4bb7d21cd368/2024/02/20/17/S19%20XP%20%20ICES-003%20Issue-7%20Cloudic%20Industries.pdf",
+  "kind": "document",
+  "title": "S19 XP  ICES-003 Issue-7 Cloudic Industries.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:36+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ca5c4c4a646b8947c01a/S19_XP__ICES-003_Issue-7_Cloudic_Industries.pdf",
+  "sha256": "127deaac8000d5d15372d26005cce8809f5b3357f1e8f2c95c7ebea6bee1c729",
+  "size_bytes": 679571,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/74a1c699-6250-467e-aea7-4bb7d21cd368/2024/02/20/17/S19%20XP%20%20ICES-003%20Issue-7%20Cloudic%20Industries.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 20 Feb 2024 09:21:02 GMT",
+  "etag": "\"75be202b595e2e9e652a73f33e75621d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 679571,
+      "actual": 679571,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

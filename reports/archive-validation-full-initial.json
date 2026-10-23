@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-19T11:17:42+00:00",
+  "result": "pass",
+  "scope": "Downloaded main and retained supplementary artifacts; queued and failed transfers are excluded.",
+  "downloaded_records": 10681,
+  "unique_physical_paths": 10301,
+  "paths_read": 10301,
+  "prior_checks_reused": 0,
+  "bytes_read": 122077546461,
+  "errors": [],
+  "cache_rule": "A prior hash is reused only when path, size, mtime, ctime, inode, device and expected hash agree. Use no --incremental flag for a fresh read."
+}

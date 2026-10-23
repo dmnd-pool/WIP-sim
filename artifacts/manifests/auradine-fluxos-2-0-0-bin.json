@@ -1,0 +1,37 @@
+{
+  "id": "auradine-fluxos-2-0-0-bin",
+  "url": "https://update.auradine.com/firmware/FluxOS-2.0.0.bin",
+  "kind": "firmware",
+  "title": "FluxOS-2.0.0.bin",
+  "language": "und",
+  "source_id": "auradine-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/auradine-fluxos-2-0-0-bin/FluxOS-2.0.0.bin",
+  "sha256": "74e9d24fb1efd54fff49eaac7a32855bdc6aa6713991cd3ef865662c5734e1ec",
+  "size_bytes": 76930098,
+  "executed": false,
+  "final_url": "https://update.auradine.com/firmware/FluxOS-2.0.0.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 19 Jan 2026 21:52:27 GMT",
+  "etag": "\"f42be54f501d4e21209bf752b4d4c907-10\"",
+  "publisher_sha256": "74e9d24fb1efd54fff49eaac7a32855bdc6aa6713991cd3ef865662c5734e1ec",
+  "matches_publisher_sha256": true,
+  "vendor_models": "AT,AI,AD",
+  "version": "2.0.0",
+  "vendor_created": "2025-02-13 20:39:52.888759",
+  "publisher_checksum_claims": [
+    {
+      "model": "AT,AI,AD",
+      "sha256": "74e9d24fb1efd54fff49eaac7a32855bdc6aa6713991cd3ef865662c5734e1ec",
+      "size": "76930098",
+      "created": "2025-02-13 20:39:52.888759",
+      "branch": "v2.0.0"
+    }
+  ],
+  "matches_any_publisher_sha256": true,
+  "matches_all_publisher_sha256": true,
+  "matches_any_publisher_size": true
+}

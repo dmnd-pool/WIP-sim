@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2f65e3ff2437a56a418e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntRouter%20R1%20user%20guide.pdf",
+  "kind": "document",
+  "title": "AntRouter R1 user guide.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2f65e3ff2437a56a418e/AntRouter_R1_user_guide.pdf",
+  "sha256": "96f8219755d67efd36f1569c4fe9f1cdb27bb9c1a110c7e7be6d7c8a0d22d0a1",
+  "size_bytes": 1840400,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntRouter%20R1%20user%20guide.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"81791e781f05ccd8da6bb481779b83bf\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1840400,
+      "actual": 1840400,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

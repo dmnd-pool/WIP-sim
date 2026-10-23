@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-f162a2fa85a2ace311d0",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f65c5b71-8832-41c8-9d31-1a73262b346a/2026/09/08/15/FR-1.56(260227-S21e%20XP%20Hyd.).bmu",
+  "kind": "firmware",
+  "title": "FR-1.56(260227-S21e XP Hyd.).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-f162a2fa85a2ace311d0/FR-1.56_260227-S21e_XP_Hyd._.bmu",
+  "sha256": "7efcb55bc43bb3d3ae62c58f4b4e0180d53ddca583babcd26b0cb5678424f058",
+  "size_bytes": 18148362,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f65c5b71-8832-41c8-9d31-1a73262b346a/2026/09/08/15/FR-1.56(260227-S21e%20XP%20Hyd.).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Tue, 08 Sep 2026 07:35:57 GMT",
+  "etag": "\"0779eb3ebac10680d76e647e4a44cdb2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "0779eb3ebac10680d76e647e4a44cdb2",
+      "actual": "0779eb3ebac10680d76e647e4a44cdb2",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 18148362,
+      "actual": 18148362,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

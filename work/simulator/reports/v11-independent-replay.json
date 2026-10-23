@@ -1,0 +1,68 @@
+{
+  "scope": "Independent saved source-interface evidence replay; not an exact-board or release pass",
+  "harness_sha256": "90a5a39eb663994a1473385d1ccaad45a123b9c637189b001057f1a28721b1c3",
+  "replay_sha256": "a99ba291058f27c446c78f01fb6eb2b8559f24b7720b0da0c120ab4fb3c527f0",
+  "command": "target/release/examples/replay_s2_trace RUN_DIRECTORY",
+  "hash_oracle": "bitcoin_hashes 0.14.1 sha256d",
+  "checks": [
+    "Independent CRC16/Modbus",
+    "Actual firmware work packet to complete pool header match",
+    "Full-header SHA256d equals returned ASIC nonce result",
+    "Programmed ASIC filter",
+    "Independent pool target",
+    "Exact firmware submission presence",
+    "All pre-existing root evidence hashes unchanged"
+  ],
+  "cases": [
+    {
+      "case": "default",
+      "computed_hashes": 6005,
+      "cap_hps": 10000,
+      "asic_results": 2,
+      "pool_valid_submitted": 2,
+      "asic_valid_pool_rejected": 0,
+      "replay_complete": true,
+      "evidence_directory": "work/simulator/firmware/v11-default"
+    },
+    {
+      "case": "low-cap",
+      "computed_hashes": 171,
+      "cap_hps": 1000,
+      "asic_results": 3,
+      "pool_valid_submitted": 2,
+      "asic_valid_pool_rejected": 1,
+      "replay_complete": true,
+      "evidence_directory": "work/simulator/firmware/v11-low-cap"
+    },
+    {
+      "case": "regtest",
+      "computed_hashes": 10073,
+      "cap_hps": 10000,
+      "asic_results": 3,
+      "pool_valid_submitted": 2,
+      "asic_valid_pool_rejected": 1,
+      "replay_complete": true,
+      "evidence_directory": "work/simulator/firmware/v11-regtest"
+    },
+    {
+      "case": "regtest-ubsan",
+      "computed_hashes": 14071,
+      "cap_hps": 10000,
+      "asic_results": 2,
+      "pool_valid_submitted": 2,
+      "asic_valid_pool_rejected": 0,
+      "replay_complete": true,
+      "evidence_directory": "work/simulator/firmware/v11-regtest-ubsan"
+    },
+    {
+      "case": "zero-nonce",
+      "computed_hashes": 6,
+      "cap_hps": 100,
+      "asic_results": 3,
+      "pool_valid_submitted": 2,
+      "asic_valid_pool_rejected": 1,
+      "replay_complete": true,
+      "evidence_directory": "work/simulator/firmware/v11-zero-nonce"
+    }
+  ]
+}

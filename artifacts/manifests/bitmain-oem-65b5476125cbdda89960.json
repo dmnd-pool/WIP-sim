@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-65b5476125cbdda89960",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5cb4f295-4951-41a5-926f-01666b88c145/2026/08/11/11/CB%C2%A02nd%C2%A0cert_S21%2B%2B_CN24CQL1%C2%A0003_JPTUV-168481-M2_extsigned.pdf",
+  "kind": "document",
+  "title": "CB\u00a02nd\u00a0cert_S21++_CN24CQL1\u00a0003_JPTUV-168481-M2_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-65b5476125cbdda89960/CB_2nd_cert_S21++_CN24CQL1_003_JPTUV-168481-M2_extsigned.pdf",
+  "sha256": "996df34944cbbf180c4d5ddbf654abc8bb1f7828b1c3ff9664cda66476239a39",
+  "size_bytes": 453999,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5cb4f295-4951-41a5-926f-01666b88c145/2026/08/11/11/CB%C2%A02nd%C2%A0cert_S21%2B%2B_CN24CQL1%C2%A0003_JPTUV-168481-M2_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 11 Aug 2026 03:02:14 GMT",
+  "etag": "\"cb2a4ece439918341e38cd613b433e0c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 453999,
+      "actual": 453999,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

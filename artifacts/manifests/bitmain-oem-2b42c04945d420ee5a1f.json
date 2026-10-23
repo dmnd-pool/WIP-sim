@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2b42c04945d420ee5a1f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ed643a73-1dfe-4953-815e-9dfb14157d43/2022/01/19/18/S3%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S3 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2b42c04945d420ee5a1f/S3_Server_Manual.pdf",
+  "sha256": "fcd134a0efdfdab08387267596641cb946c643caa164752a9a78a8d0cfdd0a18",
+  "size_bytes": 1707181,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ed643a73-1dfe-4953-815e-9dfb14157d43/2022/01/19/18/S3%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:38:04 GMT",
+  "etag": "\"cfab87e55f350a3b8ba60efd7a79d8f9\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1707181,
+      "actual": 1707181,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

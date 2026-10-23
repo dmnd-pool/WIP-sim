@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f5e19b53cb844f92cd11",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/IP%20Reporter.zip",
+  "kind": "tool",
+  "title": "IP Reporter.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:43+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-f5e19b53cb844f92cd11/IP_Reporter.zip",
+  "sha256": "7ef208a4a9ce9bd88688e6a41662923a9df3380240dca029338e5a7ef8d350cb",
+  "size_bytes": 980120,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/IP%20Reporter.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"00c3097727893e50275386cecd101c0a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 980120,
+      "actual": 980120,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

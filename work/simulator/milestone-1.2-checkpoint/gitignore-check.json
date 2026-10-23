@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "path": "target/debug/md-sim",
+      "ignored": true
+    },
+    {
+      "path": "simulator/backends/qemu/axi-iic/target/debug/model.a",
+      "ignored": true
+    },
+    {
+      "path": "work/browser-test/node_modules/jsdom/package.json",
+      "ignored": true
+    },
+    {
+      "path": "artifacts/files/firmware/example.img",
+      "ignored": true
+    },
+    {
+      "path": "catalog/catalog.sqlite",
+      "ignored": true
+    },
+    {
+      "path": "catalog/index.html",
+      "ignored": true
+    },
+    {
+      "path": "sources/document-text/example.txt",
+      "ignored": true
+    },
+    {
+      "path": ".aws/credentials",
+      "ignored": true
+    },
+    {
+      "path": ".codex/config.toml",
+      "ignored": true
+    },
+    {
+      "path": ".env",
+      "ignored": true
+    },
+    {
+      "path": "credentials/client.key",
+      "ignored": true
+    },
+    {
+      "path": "work/simulator/access-credentials-001/client.pem",
+      "ignored": true
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/result.json",
+      "ignored": true
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452-execution/inputs/objects/example",
+      "ignored": true
+    },
+    {
+      "path": ".gitignore",
+      "ignored": false
+    },
+    {
+      "path": ".cargo/config.toml",
+      "ignored": false
+    },
+    {
+      "path": "Cargo.lock",
+      "ignored": false
+    },
+    {
+      "path": "vendor/sha2/src/lib.rs",
+      "ignored": false
+    },
+    {
+      "path": "crates/md-sim/src/main.rs",
+      "ignored": false
+    },
+    {
+      "path": "simulator/firmware/fixtures/t17-core-packing-results.bin",
+      "ignored": false
+    },
+    {
+      "path": "catalog/parts/open/esp-image-layouts.jsonl",
+      "ignored": false
+    },
+    {
+      "path": "artifacts/manifests/example.json",
+      "ignored": false
+    },
+    {
+      "path": "reports/device-matrix.csv",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/milestone-1.2-handoff.md",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/reports/shared-access-pass-441.md",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/reviews/milestone-1.2-independent.md",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/reclaim_qemu_inputs/t17.rs",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/shared-recovery-development-459/support/s9_shared_recovery.rs",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/core-checkpoint-440/source/crates/md-sim/src/main.rs",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/core-checkpoint-440/libmd_sim_qemu_core.a",
+      "ignored": true
+    },
+    {
+      "path": "work/simulator/channel-target-440/SHA256SUMS",
+      "ignored": false
+    },
+    {
+      "path": "work/simulator/channel-target-440/release/md-sim-worker-ipc",
+      "ignored": true
+    },
+    {
+      "path": "work/simulator/milestone-1.2-checkpoint/checks.json",
+      "ignored": false
+    }
+  ],
+  "method": "git check-ignore --no-index in a separate temporary empty repository; original root .git untouched"
+}

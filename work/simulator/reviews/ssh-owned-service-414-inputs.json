@@ -1,0 +1,25 @@
+{
+  "schema": "md-sim-review-inputs/1",
+  "files": {
+    "crates/md-sim-coordinator/src/lib.rs": {
+      "sha256": "22f83e7853d7acda05d436d3877b73b20d6b711d0763ba2a7e12e4ab536020c6",
+      "size": 534
+    },
+    "crates/md-sim-coordinator/src/ssh_transport.rs": {
+      "sha256": "bd5823c8afa2ffd97d3443f6944a6b2ffd43c3f07e503a5dfeeb69413b703b2c",
+      "size": 32768
+    },
+    "crates/md-sim-coordinator/src/ssh_transport/stream.rs": {
+      "sha256": "f4796c23ff16a91ab444c5e3978c5afba87bb18cd7981e86f82abe834e89d5d7",
+      "size": 7099
+    },
+    "work/simulator/checks-2026-10-21-001/channel414-ssh-guard-tests.log": {
+      "sha256": "a8841bf067a46522c0361aabd0f6e142976e6c1da19f6eca17d98ac5cf4b9fff",
+      "size": 1509
+    },
+    "work/simulator/checks-2026-10-21-001/channel414-ssh-guard-clippy.log": {
+      "sha256": "dd3d58c6ab5c3799bbdf1518736b342150dd8a607644c2319391ee27d0b9b5a5",
+      "size": 149
+    }
+  }
+}

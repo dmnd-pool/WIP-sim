@@ -1,0 +1,48 @@
+{
+  "id": "braiins-feed-6ee3c3932f6424c94784",
+  "url": "https://feeds.braiins-os.com/23.12.1/braiins-os_cvitek-bm1-am2_ssh_2024-01-15-0-e8253ec1-23.12.1-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_cvitek-bm1-am2_ssh_2024-01-15-0-e8253ec1-23.12.1-plus.tar.gz",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 26411348,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:29:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-6ee3c3932f6424c94784/braiins-os_cvitek-bm1-am2_ssh_2024-01-15-0-e8253ec1-23.12.1-plus.tar.gz",
+  "sha256": "870e3080959da70c5355b930e994001ff9389ae20058edd963176b08717b2d52",
+  "size_bytes": 26411348,
+  "final_url": "https://feeds.braiins-os.com/23.12.1/braiins-os_cvitek-bm1-am2_ssh_2024-01-15-0-e8253ec1-23.12.1-plus.tar.gz?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"65a56f6c-1930154\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 15 Jan 2024 17:46:20 GMT",
+  "publisher_sha256": "870e3080959da70c5355b930e994001ff9389ae20058edd963176b08717b2d52",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/23.12.1/braiins-os_cvitek-bm1-am2_ssh_2024-01-15-0-e8253ec1-23.12.1-plus.tar.gz?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "870e3080959da70c5355b930e994001ff9389ae20058edd963176b08717b2d52",
+      "actual": "870e3080959da70c5355b930e994001ff9389ae20058edd963176b08717b2d52",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "870e3080959da70c5355b930e994001ff9389ae20058edd963176b08717b2d52",
+      "actual": "870e3080959da70c5355b930e994001ff9389ae20058edd963176b08717b2d52",
+      "match": true,
+      "source_id": "braiins-feed-51b207f3eadf2c6f3b10"
+    }
+  ],
+  "upstream_integrity_match": true
+}

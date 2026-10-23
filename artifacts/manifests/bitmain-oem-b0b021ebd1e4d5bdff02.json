@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b0b021ebd1e4d5bdff02",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-S9i-xilinx-201805222008-autofreq-user-UBI-NF.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9i-xilinx-201805222008-autofreq-user-UBI-NF.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:40:24+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-b0b021ebd1e4d5bdff02/ANTMINER-S9i-xilinx-201805222008-autofreq-user-UBI-NF.tar.gz",
+  "sha256": "1db9bbb22ef827c7b2726a1c07ba8429b5b5a21e9c915064e0a80b11f0b9ca5e",
+  "size_bytes": 19779530,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-S9i-xilinx-201805222008-autofreq-user-UBI-NF.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:28 GMT",
+  "etag": "\"390d57cd6f7176e71f01688806340ca6-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19779530,
+      "actual": 19779530,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,102 @@
+{
+  "scope": "actual production Supervisor and child; scripted worker/provider replies; no firmware or HTTP/TLS pass",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard.rs",
+      "sha256": "ee740a8179bf2fd03d9eaa665f97ab9ae3b4e3623486fccfa4b85b7b1d024fbd",
+      "size": 34147
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard_startup.rs",
+      "sha256": "34df11f5473152206140a25d923ec1adb492c221ba0833ff0993965d537b12fa",
+      "size": 11779
+    },
+    {
+      "path": "work/simulator/carrier-startup-vm-426-inputs/manifest.json",
+      "sha256": "5a9ac680689f7bd0e8b2bb14d36396676294e8593d3d8ce6cfefc80e67234972",
+      "size": 1143
+    },
+    {
+      "path": "work/simulator/carrier-startup-vm-426-inputs/namespace-check",
+      "sha256": "44b8bb8ded0aca613e218f5396015f02f71436e058a1396f0e03f57b5dd3c0ea",
+      "size": 12886632
+    },
+    {
+      "path": "work/simulator/carrier-startup-vm-426-inputs/startup-tests",
+      "sha256": "ef4115f2387149291bd527244d294a25c9a46c8ce097b35c6de07547b685f379",
+      "size": 10706688
+    },
+    {
+      "path": "work/simulator/carrier-startup-vm-426-inputs/scenario.json",
+      "sha256": "8fccc77e5bf27614033313beb827e75810a70b87a2339540284d1064999b1303",
+      "size": 1953
+    },
+    {
+      "path": "work/simulator/carrier-startup-vm-426-inputs/carrier_dashboard.captured.rs",
+      "sha256": "ee740a8179bf2fd03d9eaa665f97ab9ae3b4e3623486fccfa4b85b7b1d024fbd",
+      "size": 34147
+    },
+    {
+      "path": "work/simulator/carrier-startup-vm-426-inputs/carrier_dashboard_startup.captured.rs",
+      "sha256": "e086f1ebe1ddbce6e93ce61293c287310ca46bf3a4d3ba35f52ee8f011c071e8",
+      "size": 11759
+    },
+    {
+      "path": "work/simulator/network-vm/carrier-startup-426/guest.log",
+      "sha256": "36ea7015b3ce7e25ff3891ffee45309e5340a0c5048b45338f193fe7cf14bfce",
+      "size": 17830
+    },
+    {
+      "path": "work/simulator/network-vm/carrier-startup-426/result.json",
+      "sha256": "799eb51d8586d1b1e72adce76ff57ad0cbe1a9919586ceaea877ed68446961dc",
+      "size": 36376
+    },
+    {
+      "path": "work/simulator/network-vm/carrier-startup-426/assessment.json",
+      "sha256": "71c15fb33b37634af23c617127f1491b83acf9497ede066c506e00ac5afb91c0",
+      "size": 821
+    },
+    {
+      "path": "work/simulator/network-vm/carrier-startup-426/root-manifest.json",
+      "sha256": "49ae3f078cec89c20a6a7cd698673db7d634e9b91128d9a9881f090d46b2988b",
+      "size": 4044
+    },
+    {
+      "path": "work/simulator/network-vm/carrier-startup-426/process-spec.json",
+      "sha256": "0c7b0980282da3dc2dae009324fce1d6aa1641a070b49d45661282fe00c94438",
+      "size": 14751
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/carrier-startup426-host-tests.log",
+      "sha256": "8dc9d9c8172d21286ae8f1a82be23d150d96cdff582b5d7039d640e9aec8c228",
+      "size": 9478
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/carrier-startup427-clippy.log",
+      "sha256": "baceba1e26fc72a51a1cd850db3ec569d7db094b0181da0ee783bc3fdd1d7d55",
+      "size": 197
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/carrier-startup427-test-clippy.log",
+      "sha256": "946fa246a794607657efb1e7a25291e6516762c6a336a59ab8ceb165784ace9f",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/carrier-startup427-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/network-vm/carrier-startup-424/guest.log",
+      "sha256": "225903daa5765057e65eb734838b36c090cef77123e21b49738f1148b89c34dc",
+      "size": 3686
+    },
+    {
+      "path": "work/simulator/network-vm/carrier-startup-424/result.json",
+      "sha256": "853c84d5cd58e559cdae8050de5720869ca8a68f71c6146c602e181317b267c0",
+      "size": 8088
+    }
+  ],
+  "test_fixture_source_delta": "Current source adds exactly one rustfmt line wrap (20 bytes); reversing it reproduces the captured source SHA exactly. No semantic change.",
+  "broker_exchange_count": 11
+}

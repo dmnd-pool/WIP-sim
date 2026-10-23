@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-bbab30a88b75796c752c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b7f51a03-e4f5-485f-9189-2f1c4f4aee32/2024/05/22/17/D9%20CB%2062368%202nd%20cert%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 CB 62368 2nd cert Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-bbab30a88b75796c752c/D9_CB_62368_2nd_cert_Shenzhen.pdf",
+  "sha256": "5fda0af7b6ae0241cfbda8c02ec152b70818f0be4cdeaadcfde5caa9845daa1b",
+  "size_bytes": 628509,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b7f51a03-e4f5-485f-9189-2f1c4f4aee32/2024/05/22/17/D9%20CB%2062368%202nd%20cert%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:40:05 GMT",
+  "etag": "\"d28b43bac2c96e1401b3cd330b21381a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 628509,
+      "actual": 628509,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

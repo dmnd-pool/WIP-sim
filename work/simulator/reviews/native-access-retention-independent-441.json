@@ -1,0 +1,194 @@
+{
+  "schema": "md-sim-independent-native-access-retention/1",
+  "retention_verified": true,
+  "native_receipt": {
+    "locked_run_hash": "09e19cc31d326fbee7f9d88c8cbaeca636f390d0fc03106850b011fbeea4f5a9",
+    "token": "1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268",
+    "run_id": "run-1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268",
+    "result": {
+      "sha256": "c3faec35da051fb3e14f86eecdae4507f68ec62bc4e6046fc9904de16f872b7d",
+      "size": 105932004
+    }
+  },
+  "joined_receipt": {
+    "native": {
+      "locked_run_hash": "09e19cc31d326fbee7f9d88c8cbaeca636f390d0fc03106850b011fbeea4f5a9",
+      "token": "1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268",
+      "run_id": "run-1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268",
+      "result": {
+        "sha256": "c3faec35da051fb3e14f86eecdae4507f68ec62bc4e6046fc9904de16f872b7d",
+        "size": 105932004
+      }
+    },
+    "pool_bundle": {
+      "sha256": "aa66b980a4ace342f683918caeaa00bf29bcdf1c29870981c44bf226d86f53eb",
+      "size": 93953
+    },
+    "access_bundle": {
+      "sha256": "38260f925109ec16f08718921283e34fb235f85017afde601ea28c59a06a55ef",
+      "size": 15921402
+    }
+  },
+  "access_files_verified": 260,
+  "pool_sessions_verified": 10,
+  "actual_runtime_stdin_and_guest_receipts_match": true,
+  "native_and_outer_raw_logs_match_exact_result_bytes": true,
+  "cleanup_exact_result_acknowledged": true,
+  "native_wall_ms": 305154,
+  "outer_wall_ms": 767202,
+  "browser_requested": false,
+  "overall_assessment_passed": true,
+  "namespace_separation_verified": [
+    "net",
+    "mnt",
+    "pid",
+    "uts",
+    "ipc"
+  ],
+  "access_checks": "independent raw-response and selected endpoint checks passed",
+  "scope": "Actual archived S9 firmware in an adapted reference environment. Separate SSH client/server namespaces in one disconnected support VM; native worker outside VM on same host. No browser, restart-persistence, remote-loss, external physical-host or exact-board pass.",
+  "access_and_retention_verified": true,
+  "raw_http_tls_checks": {
+    "http": {
+      "requests": 15,
+      "origin": "http://127.0.0.1:18090",
+      "uptime_before": {
+        "durationS": 70,
+        "since": 1792613405
+      },
+      "uptime_after": {
+        "durationS": 74,
+        "since": 1792613405
+      },
+      "asset": {
+        "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+        "size": 425409
+      },
+      "authentication_logout_and_expired_session_verified": true,
+      "configuration_changed_read_back_restored": true
+    },
+    "tls": {
+      "requests": 15,
+      "origin": "https://192.0.2.1:9443",
+      "uptime_before": {
+        "durationS": 88,
+        "since": 1792613405
+      },
+      "uptime_after": {
+        "durationS": 91,
+        "since": 1792613405
+      },
+      "asset": {
+        "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+        "size": 425409
+      },
+      "authentication_logout_and_expired_session_verified": true,
+      "configuration_changed_read_back_restored": true
+    }
+  },
+  "distinct_login_sessions": true,
+  "unauthenticated_tls_rejected": {
+    "status": "400",
+    "curl_exit_code": 22
+  },
+  "tls_url": "https://192.0.2.1:9443/",
+  "selected_endpoint": {
+    "schema": "md-sim-carrier-dashboard-endpoint/1",
+    "identity": {
+      "locked_run": {
+        "sha256": "09e19cc31d326fbee7f9d88c8cbaeca636f390d0fc03106850b011fbeea4f5a9",
+        "size": 16425
+      },
+      "process": {
+        "sha256": "555e6e020940c890b8542dce5ef92b639809cbdc8704e3a791b3b688fddef97b",
+        "size": 8303
+      },
+      "policy": {
+        "sha256": "a03f11822ec5f0df21a066c6547fcba560496a6729bc624fd7f90571428cf7ec",
+        "size": 489
+      },
+      "support": {
+        "sha256": "f620fabec3c7345c4d02e0b0a3f4d7bd80e2620f7ab1c625d5362e7b82aab702",
+        "size": 930
+      },
+      "token": "1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268",
+      "run_id": "run-1c963695c1adf0903873ff423ff2f3c4be65537d03241ecd445b4fcef88c3268"
+    },
+    "provider_configuration": {
+      "sha256": "4c96b69f3cf34d9ada0e4a463fbbed78839e3e6d915c782e498d4322a894115c",
+      "size": 37002
+    },
+    "policy": {
+      "schema": "md-sim-carrier-dashboard-policy/1",
+      "source": "adapted-native",
+      "support_identity": {
+        "sha256": "f620fabec3c7345c4d02e0b0a3f4d7bd80e2620f7ab1c625d5362e7b82aab702",
+        "size": 930
+      },
+      "destination": "10.0.2.15:80",
+      "listen_port": 0,
+      "connection_limit": 8,
+      "connection_attempt_limit": 1024,
+      "connection_bytes": 67108864,
+      "run_bytes": 268435456,
+      "connect_milliseconds": 1000,
+      "idle_seconds": 60,
+      "wall_seconds": 360,
+      "lease_milliseconds": 10000
+    },
+    "listen": "127.0.0.1:43837",
+    "local_socket": "/work/access/bridge/http.sock",
+    "firmware_readiness_established": false
+  },
+  "readiness": {
+    "address": "192.0.2.1:9443",
+    "attempts": [
+      {
+        "connect_milliseconds": 5,
+        "connected": false,
+        "elapsed_milliseconds": 2503,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 5,
+        "connected": false,
+        "elapsed_milliseconds": 2565,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 4,
+        "connected": false,
+        "elapsed_milliseconds": 2621,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 8,
+        "connected": false,
+        "elapsed_milliseconds": 2683,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 4,
+        "connected": true,
+        "elapsed_milliseconds": 2737,
+        "error": null,
+        "error_kind": null,
+        "raw_os_error": null
+      }
+    ],
+    "elapsed_milliseconds": 2744,
+    "error": null,
+    "reachable": true,
+    "schema": "md-sim-carrier-tls-listener-readiness/1",
+    "scope": "TCP listener reachability only; TLS authentication and selected native HTTP require their own checks",
+    "startup_budget_milliseconds": 30000
+  }
+}

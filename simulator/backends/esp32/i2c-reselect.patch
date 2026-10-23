@@ -1,0 +1,50 @@
+--- a/include/hw/i2c/i2c.h
++++ b/include/hw/i2c/i2c.h
+@@ -44,6 +44,10 @@
+      * return code is not used and should be zero.
+      */
+     int (*event)(I2CSlave *s, enum i2c_event event);
++
++    /* Optional byte-phase abort on repeated START, distinct from STOP.
++     * Used only by explicit controllers which call the reselect API. */
++    void (*restart)(I2CSlave *s);
+ 
+     /*
+      * Check if this device matches the address provided.  Returns bool of
+@@ -110,6 +114,10 @@
+  * Returns: 0 on success, -1 on error
+  */
+ int i2c_start_transfer(I2CBus *bus, uint8_t address, bool is_recv);
++
++/* Rescan the actual address on each START without sending a STOP event.
++ * Legacy controller calls retain their original behavior. */
++int i2c_start_transfer_reselect(I2CBus *bus, uint8_t address, bool is_recv);
+ 
+ /**
+  * i2c_start_recv: start a 'receive' transfer on an I2C bus.
+--- a/hw/i2c/core.c
++++ b/hw/i2c/core.c
+@@ -225,6 +225,23 @@
+     return i2c_do_start_transfer(bus, address, I2C_START_RECV);
+ }
+ 
++/* Explicit repeated-START selection for controllers with an address phase.
++ * Do not call i2c_end_transfer: STOP can commit data in a slave device and
++ * release bus ownership. The original helper intentionally keeps current_devs
++ * for its existing callers, which is unsuitable for a changed address. */
++int i2c_start_transfer_reselect(I2CBus *bus, uint8_t address, bool is_recv)
++{
++    while (!QLIST_EMPTY(&bus->current_devs)) {
++        I2CNode *node = QLIST_FIRST(&bus->current_devs);
++        I2CSlaveClass *sc = I2C_SLAVE_GET_CLASS(node->elt);
++        if (sc->restart) { sc->restart(node->elt); }
++        QLIST_REMOVE(node, next);
++        g_free(node);
++    }
++    bus->broadcast = false;
++    return i2c_start_transfer(bus, address, is_recv);
++}
++
+ int i2c_start_send(I2CBus *bus, uint8_t address)
+ {
+     return i2c_do_start_transfer(bus, address, I2C_START_SEND);

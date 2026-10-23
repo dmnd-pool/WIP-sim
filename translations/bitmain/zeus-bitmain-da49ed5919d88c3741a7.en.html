@@ -1,0 +1,508 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Antminer S17+ Hash Board Repair Guide [EN]</title><style>body{max-width:1000px;margin:2em auto;font:17px/1.5 sans-serif}img{max-width:100%;height:auto}table{border-collapse:collapse}td,th{border:1px solid #aaa;padding:.3em}</style><body><h1>English counterpart: Antminer S17+ Hash Board Repair Guide [EN]</h1><p>Chinese original: zeus-bitmain-da49ed5919d88c3741a7. English source: <a href="https://www.zeusbtc.com/manuals/Antminer-S17-plus-Hash-Board-Repair-Guide.asp">zeus-bitmain-3f5b6b047ea10d2f432b</a>.</p><p>This is the English manual published by Zeus Mining for the corresponding model. The original source images are retained and linked to local archive files. Image-only labels are not newly translated. A complete page-by-page equivalence check has not been made.</p><p>Same explicit version date found in both texts: true.</p><div class="Manuals">
+<h2>How to Repair Antminer S17+ Hash Board?</h2>
+<p></p>
+<p>
+    <strong>Antminer S17+ Hash Board Repair Guide</strong>
+</p>
+<p>
+    Date of Version: 2019-11-25
+</p>
+<p>
+    File category: Maintenance plan
+</p>
+<p>
+    Contents of this manual: referring to how to troubleshoot the S17+ hash board and how to use hash board tester to accurately locate it.
+</p>
+<p>
+    ※ The copyright of this article belongs to Bitmaintech Pte. Ltd. (Bitmain). The article shall solely be reprinted, extracted or used in any other ways with the permission of the copyright owner. Please contact Bitmain official customer service if there is any need of reprinting or quoting.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>I. Maintenance Platform / Tool Preparation</strong>
+</p>
+<p>
+    1. Platform requirements: rubber sheet <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=181" target="_blank" title="repair workbench">repair workbench</a> (workbench needs to be grounded), <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=174" target="_blank" title="anti-static wrist strap">anti-static wrist strap</a> and grounding.
+</p>
+<p>
+    2. Constant temperature soldering iron (350–360℃), the head of tip soldering iron is used to solder small patches such as chip resistors and <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=365" target="_blank" title="capacitors">capacitors</a>, etc.; <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=271" target="_blank" title="heat gun">heat gun</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=396" target="_blank" title="BGA rework station">BGA rework station</a> for chip / BGA disassembly and soldering; multimeter, soldering steel pin and shrink tubing for easy measurement (<a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=99" target="_blank" title="fluke15b+">Fluke 15b+</a> recommended); <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=267" target="_blank" title="oscilloscope">oscilloscope</a> (Agilent recommended)
+</p>
+<p>
+    3. Testing tool requirements: <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=371" target="_blank" title="APW9+ power supply">APW9 + power supply</a> and <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=70" target="_blank" title="power patch cord">power patch cord</a> for power supply of hash board; 1040 <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=375" target="_blank" title="S17+ hash board">S17+ control board</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=212" target="_blank" title="hash board tester fixture">hash board tester fixture</a>.
+</p>
+<p>
+    4. Requirements for maintenance auxiliary materials / tool: <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=266" target="_blank" title="low-temperature solder paste">low-temperature solder paste</a> Alpha OM550, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=272" target="_blank" title="flux">flux</a>, water for cleaning panel and anhydrous alcohol; water for cleaning panel is used to clean up soldering residues after repair; thermal conductive paste is used to apply on chips / heat sinks after maintenance (some models require <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=86" target="_blank" title="thermal conductive paste">thermal conductive paste</a>); tin-planting steel mesh, ball-planting steel mesh, solder wire, solder ball (ball diameter is recommended to be 0.4mm); when replacing a new chip, you need to plant tin on chip pin and the BSM surface before soldering them to the hash board.
+</p>
+<p>
+    5. Demand for common maintenance spare materials: 0402 resistance (0R, 33R, 1K, 4.7K,); 0201 resistance (0R), 0402 capacitor (0.1uf, 1uf)
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>II. Operation Requirements</strong>
+</p>
+<p>
+    1. Maintenance personnel must have certain electronic knowledge, more than one year of maintenance experience, and be proficient in BGA / QFN / LGA package soldering technology.
+</p>
+<p>
+    2. After repairing, the hash board must be tested to be OK for more than twice, otherwise, it shall be rejected.
+</p>
+<p>
+    3. Please pay attention to the operation method when replacing the chip. There should be no obvious deformation of the PCB board after replacing any accessories. Check whether there are any open or short circuits, or missing parts in the replacement parts and the surroundings.
+</p>
+<p>
+    4. Check the tools, confirm whether the test fixtures can work normally, determine the test software parameters for the maintenance station, and version of test fixtures, etc.
+</p>
+<p>
+    5. After passing the repair and replacement chip test, you need to check the full chip before performing the functional test. The functional test shall ensure that the double-sided <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=289" target="_blank" title="heat sinks">heat sinks</a> are soldered OK and the <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=46" target="_blank" title="cooling fan">cooling fan</a> is at full speed. When using the chassis cooling function, you must put 3 hash boards at the same time to form air duct. The single-sided test of production must also ensure the formation of air ducts (important).
+</p>
+<p>
+    6. When measuring the signal, two fans are used to dissipate heat as assistance measure, and the fans maintain full speed (Recommended using a <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=65" target="_blank" title="laser tachometer">laser tachometer</a> to test the fan speed).
+</p>
+<p>
+    7. For the front and back of the hash board, the steel windshield is under 21V voltage. During the measurement and maintenance, please keep the maintenance table clean and insulated to avoid short circuit during the maintenance.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-a217a5b10f5a90504386/16277020841752805.jpg"></img>
+</p>
+<p>
+    8. When replacing a new chip, apply solder paste on the pins and the BSM surface to ensure that the chip is pre-tinned before soldering to PCBA for maintenance.<br></br>
+</p>
+<p>
+    9. Fixtures at the maintenance end adopt Repair_Mode mode and config configuration files tested in non-scanning mode. After passing the test, the production end starts the production line from test piece; the after-sale end is normally installed and aged (installed at the same level). The test configuration file can be obtained from TE.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>III. Production of Hash board Tester and Precautions</strong>
+</p>
+<p>
+    The supporting clamps of hash board tester should meet the requirements for heat dissipation of the hashboard and facilitate the measurement of signals.
+</p>
+<p>
+    1. Calibrate the hashboard tester.
+</p>
+<p>
+    2. Use the <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=131" target="_blank" title="test fixture SD card">test fixture SD card</a> flash program to update the control board FPGA. After decompression, copy to the SD card and insert the card into the fixture card slot. Power on for about 1 minute and wait for the control board indicator to flash for 3 times, then complete the update.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-f2e2bdaf7629d2bc5658/16277022249778319.jpg" title="repair S17+ hash board" alt="repair S17+ hash board"></img><span style="text-align: center;">Figure 3-1</span>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-6d8ef380c36a7f2987f8/16277021113851606.jpg" title="repair S17+ hash board" alt="repair S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 3-2
+</p>
+<p>
+    3. The test SD card will be produced according to the requirements. The single-sided heat sink uses the file before brushing to make the SD card; the double-sided heat sink uses the file after brushing to make the SD card.<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-f6c5a38bcdcc6a7f7fc4/16277022802831251.jpg" title="repair S17+ hash board" alt="repair S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 3-3
+</p>
+<p>
+    4. The double-sided test at the production end requires a code scanning gun and serial port tools. Please refer to the test process file for details.
+</p>
+<p>
+    5. The after-sale end and outsourced maintenance side does not need to use the code scanning method (hash board tester SD card configuration file needs to be changed, the demand can be submitted to TE and TE will test the config configuration file for hash board tester).
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>IV. Principle Overview</strong>
+</p>
+<p>
+    <strong>1. S17+ hash board working structure:</strong>
+</p>
+<p>
+    The hash board is composed of 65 <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=230" target="_blank" title="BM1397 chip">BM1397 chips</a>, which are divided into 13 groups, each group is composed of 5 ICs; the working voltage of the BM1397 chip used by the S17 hash board is 1.5V; the last 24.5V output by the boost circuit U6 powers the LDO, LDO outputs 1.8V, the last third and third groups are powered by 24.5V DCDC to output 1.8V, and the other groups are powered by 21V divided voltage to provide 1.8V through DCDC. All 0.8V is provided by the 1.8V of this domain via the LDO output, as shown in Figure 4-1.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-f1d2482e6952af63e9f6/16277024625758558.jpg" title="repair manual for S17+ hash board" alt="repair manual for S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-10defaa63b7600ae7eaa/16277024858329496.jpg" title="repair manual for S17+ hash board" alt="repair manual for S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 4-1
+</p>
+<p>
+    <strong>2. S17 hash board boost circuit:</strong><br></br>
+</p>
+<p>
+    The boost is from 21V to 24.5V powered by the power supply, as shown in Figure 4-2.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-e2ef3f5a0802c280e1b2/16277025098628874.jpg" title="repair manual for S17+ hash board" alt="repair manual for S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 4-2
+</p>
+<p>
+    <strong>3. S17 chip signal direction:</strong><br></br>
+</p>
+<p>
+    3.1 <span style="color: rgb(0, 176, 240);">CLK (XIN) signal</span> direction: It is generated by Y1 25M crystal oscillator and transmitted from chip 01 to chip 65. During operation, the voltage is 1.45-1.65V(oscilloscope). Voltage measured by multimeter is about 0.7-0.9V.
+</p>
+<p>
+    3.2. <span style="color: rgb(0, 176, 240);">TX (CI, CO) signal</span> direction: input from pin 7 (3.3V) of IO port, transferred to IC U2 through level conversion, then transmitted from chip 01 to chip 65; the voltage is 0V when the IO line is not inserted, and the voltage during operation is 1.8V.
+</p>
+<p>
+    3.3 <span style="color: rgb(0, 176, 240);">RX (RI, RO) signal</span> direction: from chip 65 to chip 01, return to pin 8 of the signal cable terminal via U1 and return to the control board; the voltage is 0.3V when the IO line is not inserted, and the voltage during operation is 1.8V.
+</p>
+<p>
+    3.4 <span style="color: rgb(0, 176, 240);">BO (BI, BO) signal</span> direction: from chip 01 to chip 65; voltage measured using multimeter is 0V.
+</p>
+<p>
+    3.5 <span style="color: rgb(0, 176, 240);">RST signal </span>direction: input from pin 3 of the IO port, and then transmitted from chip 01 to chip 65; 0V without IO signal or in standby and 1.8V in operation.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-03a86618d545355605e5/16277025664444730.jpg" title="repair manual for S17+ hash board" alt="repair manual for S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 4-3<br></br>
+</p>
+<p>
+    4. Overall architecture:<br></br>
+</p>
+<p>
+    The miner is mainly composed of 3 hash boards, 1 control board, APW9 + power supply, and 4 cooling fans, as shown in Figure 4-4.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-90056d3cc9f0e6e94e66/16277025921037320.jpg" title="S17+ hash board maintenance guide" alt="S17+ hash board maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 4-4
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>V. Common Poor Phenomenon of Hash board and Troubleshooting Procedure</strong>
+</p>
+<p>
+    Phenomenon: during single board test, chip is detected to be 0 (PT1 / PT2 station type)
+</p>
+<p>
+    <strong>Step one:</strong> check the power output first. Please check the circled part in Figure 5-1.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-4adf5c20e84bc6a2f9eb/16277026267968595.jpg" title="S17+ hash board maintenance guide" alt="S17+ hash board maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-1
+</p>
+<p>
+    <strong>Step two:</strong> check the voltage domain voltage output<br></br>
+</p>
+<p>
+    The voltage in each voltage domain is about 1.6V. Generally, there is a domain voltage when power is supplied at 21V. It is preferred to measure the output of the power supply terminal of the hash board and determine whether the MOS is shorted (measure the resistance between pins 1, 4, and 8). If there is power supply at 21V but no domain voltage, continue to check downward.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7b6e321a41d43a1c30f2/16277026621543103.jpg" title="S17+ hash board maintenance guide" alt="S17+ hash board maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-2
+</p>
+<p>
+    <strong>Step three:</strong> check the PIC circuit
+</p>
+<p>
+    Measure whether the second pin of U3 has an output, the voltage is about 3.2V; if yes, please continue to troubleshoot, if there is no 3.3V, please check that the connection status of the fixture cable and the hash board is OK, and re-program the PIC.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-9800377944b190c9d705/16277026941145536.jpg" title="S17+ hash board maintenance guide" alt="S17+ hash board maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-3
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-fb179262cb12b00acac0/16277027201611356.jpg" title="S17+ hash board maintenance guide" alt="S17+ hash board maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-4
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-1fd8723974a48ed99d95/16277027444127775.jpg" title="S17+ hash board maintenance guide" alt="S17+ hash board maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-5
+</p>
+<p>
+    PIC programming procedure:
+</p>
+<p>
+    1. Program the PIC program of the arithmetic board.
+</p>
+<p>
+    Procedure: 20190908-PIC1704-BHB07602-0x88.hex
+</p>
+<p>
+    Download the programming tool: <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=137" target="_blank" title="PICkit 3.5">PICkit3</a>; pin 1 of the PICkit3 cable corresponds to pin 1 of J3 on the PCB, and pins 1, 2, 3, 4, 5, and 6 need to be connected.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-a4aaf26ba0a771b4e5c1/16277027782085416.jpg" title="S17+ hash board maintenance guide" alt="S17+ hash board maintenance guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-6
+</p>
+<p>
+    2. Programming software:<br></br>
+</p>
+<p>
+    Open MPLAB IPE, select device: PIC16F1704, click power to select the power supply method, and then click operate. First step: select the file to find the .HEX file to be programmed. Second step: click connect to connect normally. Third step: click the program button, then click verify after finish. Prompt will be sent to prove that the programming is successful.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-c1684fee5a8e850fec90/16277028175773115.jpg" title="Professional repair guide" alt="Professional repair guide"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-7
+</p>
+<p style="text-align: center;">
+    <strong><img src="../../artifacts/files/document/zeus-diagram-f20642f635ca567b554a/16277028427886885.jpg" title="Professional repair guide" alt="Professional repair guide"></img></strong>
+</p>
+<p style="text-align: center;">
+    <strong><img src="../../artifacts/files/document/zeus-diagram-0c1351fdbeb047c621b6/16277028554139448.jpg" title="Professional repair guide" alt="Professional repair guide"></img></strong>
+</p>
+<p style="text-align: center;">
+    Figure 5-8
+</p>
+<p>
+    <strong>Step four:</strong> check the boost circuit output
+</p>
+<p>
+    Test D5 / D8 in chart 5-9 to measure 23-24.5V voltage.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-271803b8c588e714ed99/16277029124542646.jpg" title="repair guide for S17+ hash board" alt="repair guide for S17+ hash board"></img><img src="../../artifacts/files/document/zeus-diagram-54d808e02821f98dbabf/16277029191381330.jpg" title="repair guide for S17+ hash board" alt="repair guide for S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-9
+</p>
+<p>
+    <strong>Step five:</strong> check the LDO 1.8V or PLL 0.8V output of each group<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-5ceea192b0608c3528e5/16277029658473005.jpg" title="repair guide for S17+ hash board" alt="repair guide for S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-10
+</p>
+<p>
+    <strong>Step six:</strong> check the chip signal output (CLK / CI / RI / BO / RST)<br></br>
+</p>
+<p>
+    Refer to the range of voltage values described by the signal direction. If the measurement encounters a large deviation in voltage value, it can be compared with the measured values of adjacent groups.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-e8fecefd3a2dcc5e94a0/16277030683620893.jpg" title="repair guide for S17+ hash board" alt="repair guide for S17+ hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-11
+</p>
+<p>
+    Assuming that the chip signal pin output voltage is normal, if the chip is still incomplete, for example, if 64 chips are detected, you can troubleshoot by shorting RO pull-up resistor R639. If 64 chips can be detected after shorting, it indicate that chips 1-64 should be normal, and you can troubleshoot the 65th chip at this time. If 63 chips are detected after short-circuiting, conduct troubleshooting forward; it is recommended to adopt the dichotomy method for troubleshooting, that is, test from the middle (starting from the 32<sup>th</sup>).<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-b87017da8aacbb16cfb7/16277031115901106.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-12
+</p>
+<p>
+    Troubleshooting comparison table:<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-ae675e6b3a43324a47b2/16277033534122694.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p>
+    2. Phenomenon: Single board detection chip is incomplete (PT1 / PT2 station)<br></br>
+</p>
+<p>
+    Check the relevant signals (CLK / CI / RI / BO / RST) of the chip in front of and behind the error position, locate the bad position according to the IC with the abnormal signal measured, and refer to the signal direction and voltage range for repair.
+</p>
+<p>
+    3. Phenomenon: single board pattern NG, that is, the response nonce data is incomplete (PT2 station type)
+</p>
+<p>
+    The serial port is connected to the computer, and the computer reads the test log; according to the results displayed in the log, the chip position of insufficient nonce data can be determined; replace the chip at the corresponding position.
+</p>
+<p>
+    4. Phenomenon: Test temperature reading is abnormal (PT2 station)
+</p>
+<p>
+    Check the temperature-sensing power supply VDD and the connection status between the temperature-sensing and the chip (TEMP_P; TEMP_N), and check the soldering quality of the chip connected to the corresponding temperature-sensing.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-4a3b3d90cac94ad0a74a/16277034445305921.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-13
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-62a0de55306820b1142b/16277034774253431.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5-14
+</p>
+<p>
+    Check the quality of the front and back chip heat sinks connected to the temperature sensor. If the heat sink is not welded well, it will affect the temperature difference.<br></br>
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>VI. Problems Caused by Control Board Issues</strong>
+</p>
+<p>
+    1. The whole miner is not running
+</p>
+<p>
+    First step: check whether the voltages at several voltage output points are normal. You can disconnect U8 first if 3.3V short circuit. If the short circuit still exists, you can unplug the CPU for measurement. For other voltage abnormalities, replace the corresponding transformer IC in general.
+</p>
+<p>
+    Second step: if the voltage is normal, please check the welding status of DDR / CPU (X-RAY inspection on the production side).
+</p>
+<p>
+    Third step: try to update the flash program with the SD card.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-8e57ff53f0cd8792d7c3/16277035042020459.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p style="text-align: center;">
+    Figure 6-1
+</p>
+<p>
+    2. The whole miner cannot find the IP<br></br>
+</p>
+<p>
+    Probably the IP is not found due to abnormal operation. Refer to point 1 for troubleshooting. Check the appearance and soldering of the network port, network transformer T1, and CPU.
+</p>
+<p>
+    3. The whole miner cannot be upgraded
+</p>
+<p>
+    Check the appearance and soldering of the network port, network transformer T1, and CPU.
+</p>
+<p>
+    4. The whole miner fails to read the hash board or has fewer chains
+</p>
+<p>
+    A. Check the cable connection
+</p>
+<p>
+    B. Check the parts of corresponding chain on the control board
+</p>
+<p>
+    C. Check the wave soldering quality of the pins and the resistance around the plug-in interface
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-fab15d714a32b2cc6a6e/16277035739952727.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p style="text-align: center;">
+    Figure 6-2
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>VII. Whole Miner Problems</strong>
+</p>
+<p>
+    1. Initial test of the whole miner
+</p>
+<p>
+    With reference to the test process documents, the general problems are assembly process issues and control board process issues.
+</p>
+<p>
+    Common phenomena: IP is not detected, the number of fans is abnormal, and the chain is abnormal.
+</p>
+<p>
+    2. The whole miner sweeping frequency band
+</p>
+<p>
+    Low hashrate caused by aging: Check the hashrate deviation of the corresponding hashboard to see if there is a large difference in hashrate, and take out the hashboard with a large hashrate deviation for test maintenance.
+</p>
+<p>
+    Check whether there&#39;s low average hashrate caused by the network interruption.
+</p>
+<p>
+    Large temperature difference caused by hashrate: check the aging environment; for the hashboard with high temperature, check the welding quality of the heat sink of the hashboard.
+</p>
+<p>
+    Aging miner protection: generally over-temperature protection is required, please control the aging environment temperature to be less than 40 degrees Celsius.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7d5dbf902bb18e77afaf/16277036365941068.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p style="text-align: center;">
+    Figure 7-1
+</p>
+<p>
+    Less chain:<br></br>
+</p>
+<p>
+    If one of the chains cannot be detected, disassemble the miner and test the corresponding hashboard; if it is determined that the hash board is faulty, repair the hash board; if it&#39;s determined that the control board is faulty, repair the control board.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-3f5bd7c3bfdac71805ae/16277036808348173.jpg" title="S17+ hash board repair tutorial" alt="S17+ hash board repair tutorial"></img>
+</p>
+<p style="text-align: center;">
+    Figure 7-2
+</p>
+<p>
+    4. After-sales maintenance
+</p>
+<p>
+    Refer to the above troubleshooting steps for each station. For related test procedures and hash board testers, please communicate with the after-sales engineer for details. After repair, please use non-scanning mode to test PT2.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>VIII. Other Matters Needing Attention</strong>
+</p>
+<p>
+    Maintenance flowchart
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-4c2f9d4734d5be9e6dc3/16277037211377897.jpg" title="S17+ maintencance flowchart" alt="S17+ maintencance flowchart"></img>
+</p>
+<p>
+    • Routine test: first perform visual inspection on the hash board to be repaired, observe whether the PCB is deformed or burnt. If yes, it must be handled first; check whether there are any parts with obvious burn marks, collision offset or missing parts, etc.; secondly, if no problem is found through visual inspection, the impedance of each voltage domain can be tested first to detect whether there is a short circuit or an open circuit. If yes, it must be handled first. Third, check whether the voltage of each domain is about 1.5V.
+</p>
+<p>
+    • After the routine test is OK (in general, the short-circuit test is necessary for the routine test to prevent the chip or other materials from being burned due to short circuit when the power is on), you can use the hash board tester to perform chip detection, and determine the positioning based on the hash board tester test results.
+</p>
+<p>
+    • According to the display result of the test fixture test, test the voltages of chip test points (CO / NRST / RO / XIN / BI), VDD0V8 and VDD1V8, etc. starting from the vicinity of the faulty chip.
+</p>
+<p>
+    • According to the signal direction (the RX signal is passed in the reverse direction (from chip 65 to 1), and several signals CLK CO BO RST are transmitted in the forward direction (from chip 1 to 65), find the abnormal fault point through the power supply sequence.
+</p>
+<p>
+    • When locating to the faulty chip, the chip needs to be re-soldered. The method is to add a flux around the chip (preferably no-clean flux), and heat the solder joints of the chip pins to a dissolved status, so as to promote the chip pins and the pads to re-run, then removing tin finally, thus achieving the effect of re-tinning. If the failure is the same after re-soldering, the chip shall be replaced directly.
+</p>
+<p>
+    • The repaired hash board can be determined to be a good product if it passes the fixture tests for more than twice. For the first time, after the replacement of the accessories is complete, wait for the hash board to cool down and perform fixture test, after passing, set it aside and then cool it down; for the second time, wait for a few minutes until the hash board is completely cooled before testing.
+</p>
+<p>
+    • After the board is repaired, relevant maintenance / analysis records (requirements for maintenance reports: date, SN, PCB version, tag number, bad cause, bad liability attribution, etc.) should be prepared for feedback to production, after-sales, research and development departments.
+</p>
+<p>
+    • After the record is prepared, install the entire miner for conventional aging.
+</p>
+<p>
+    • Good products repaired at the production end should flow production from the first station of production (at least conduct the appearance inspection and start from the PT1 / PT2 test station)
+</p>
+<p>
+    <br></br>
+</p>
+</div></body></html>

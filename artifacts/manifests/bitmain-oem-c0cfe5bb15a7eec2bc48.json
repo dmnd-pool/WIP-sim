@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-c0cfe5bb15a7eec2bc48",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4706444b-ec10-4bd2-b3d0-d1230471c85a/2019/08/19/14/Antminer-S9-c5-201908121158-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9-c5-201908121158-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:41:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-c0cfe5bb15a7eec2bc48/ANTMINER-S9-c5-201908121158-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "sha256": "3bc308460e3889e7498c0a52ddcf6a163414f45c29d0da44be4e8870af0d6242",
+  "size_bytes": 24029179,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4706444b-ec10-4bd2-b3d0-d1230471c85a/2019/08/19/14/Antminer-S9-c5-201908121158-autofreq-user-Update2UBI-NF-sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:21 GMT",
+  "etag": "\"4286ea14f2b478e1c6328392b25a1578-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 24029179,
+      "actual": 24029179,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "10d9d2a114a735ff256a9956f0189bab",
+      "actual": "10d9d2a114a735ff256a9956f0189bab",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

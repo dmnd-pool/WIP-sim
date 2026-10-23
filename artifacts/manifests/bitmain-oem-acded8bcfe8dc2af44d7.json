@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-acded8bcfe8dc2af44d7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6f2265d2-ae62-45b0-9dbc-9189bb7e1532/2023/12/13/14/KS3%20FCC%26%20ICES-003.pdf",
+  "kind": "document",
+  "title": "KS3 FCC& ICES-003.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:48+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-acded8bcfe8dc2af44d7/KS3_FCC__ICES-003.pdf",
+  "sha256": "926d686b5ab368183d804a5e9a275dbab85a660d641abfc3f08e42976d719839",
+  "size_bytes": 529873,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6f2265d2-ae62-45b0-9dbc-9189bb7e1532/2023/12/13/14/KS3%20FCC%26%20ICES-003.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 06:15:27 GMT",
+  "etag": "\"b5a56d7c64d0856161ed276ad9461349\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 529873,
+      "actual": 529873,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-98520631090f34d9b195",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7a833471-73d4-46c9-92bb-eccd0f9f6f4e/2026/06/09/15/cTUVus_E11_CN24A3UL%20002_CU%2072503826%200001_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_E11_CN24A3UL 002_CU 72503826 0001_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:28+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-98520631090f34d9b195/cTUVus_E11_CN24A3UL_002_CU_72503826_0001_extsigned.pdf",
+  "sha256": "be82295f0df800d295972ae31df3f40ce994c93ac38286b75c1c3656a3968be5",
+  "size_bytes": 1240461,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7a833471-73d4-46c9-92bb-eccd0f9f6f4e/2026/06/09/15/cTUVus_E11_CN24A3UL%20002_CU%2072503826%200001_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 09 Jun 2026 07:06:41 GMT",
+  "etag": "\"3d29f920d3419af84de1c11fce16be60\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1240461,
+      "actual": 1240461,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

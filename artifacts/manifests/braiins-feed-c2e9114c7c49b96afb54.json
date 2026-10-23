@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-c2e9114c7c49b96afb54",
+  "url": "https://feeds.braiins-os.com/am3-aml/firmware_2026-09-11-0-7a758742-26.09-plus_aarch64_armv8-a.tar",
+  "kind": "firmware",
+  "title": "sysupgrade am3-aml nand 26.09",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:35:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-c2e9114c7c49b96afb54/firmware_2026-09-11-0-7a758742-26.09-plus_aarch64_armv8-a.tar",
+  "sha256": "4ab1e61446bd73428e4554e8e12097ea4bb67e38952f17783495a4dbb1758ebe",
+  "size_bytes": 28221440,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/am3-aml/firmware_2026-09-11-0-7a758742-26.09-plus_aarch64_armv8-a.tar",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 11 Sep 2026 22:24:12 GMT",
+  "etag": "\"6aa47f8c-1aea000\"",
+  "vendor_sha256": "4ab1e61446bd73428e4554e8e12097ea4bb67e38952f17783495a4dbb1758ebe",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "4ab1e61446bd73428e4554e8e12097ea4bb67e38952f17783495a4dbb1758ebe",
+      "actual": "4ab1e61446bd73428e4554e8e12097ea4bb67e38952f17783495a4dbb1758ebe",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

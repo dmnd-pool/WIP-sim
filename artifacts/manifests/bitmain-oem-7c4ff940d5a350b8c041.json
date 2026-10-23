@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7c4ff940d5a350b8c041",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/update_1000.tar.gz",
+  "kind": "firmware",
+  "title": "update_1000.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-7c4ff940d5a350b8c041/update_1000.tar.gz",
+  "sha256": "6e9ed62896b90189c3d0ad8633032e7370f054013474467e1527fb5a40de0311",
+  "size_bytes": 85885,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/update_1000.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:32 GMT",
+  "etag": "\"87327c6a0a21d64bead2d70541b4c6cb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 85885,
+      "actual": 85885,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

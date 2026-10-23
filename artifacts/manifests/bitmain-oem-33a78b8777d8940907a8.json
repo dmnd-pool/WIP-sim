@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-33a78b8777d8940907a8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/antMiner_openwrt20140207.bin",
+  "kind": "firmware",
+  "title": "antMiner_openwrt20140207.bin",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:08+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-33a78b8777d8940907a8/antMiner_openwrt20140207.bin",
+  "sha256": "3367d2cd28e7ba4fb5031b269193001ed041778be50432697889603131b76df9",
+  "size_bytes": 8126464,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/antMiner_openwrt20140207.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:30 GMT",
+  "etag": "\"c9e05ef08538f4ed017e611b8ec43a56\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 8126464,
+      "actual": 8126464,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

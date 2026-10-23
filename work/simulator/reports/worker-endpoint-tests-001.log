@@ -1,0 +1,19 @@
+   Compiling md-sim-runtime v0.1.0 (/home/user/src/md-sim/crates/md-sim-runtime)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.04s
+     Running unittests src/lib.rs (target/debug/deps/md_sim_runtime-b6404444470dc591)
+
+running 11 tests
+test cgroup::tests::ordinary_directory_cannot_impersonate_delegation ... ok
+test isolation::tests::guest_mounts_cannot_replace_runtime_mounts ... ok
+test worker::endpoint::tests::foreign_files_and_receipts_are_retained ... ok
+test store::tests::paths_and_budgets_are_not_controlled_by_hash_text ... ok
+test worker::ownership_tests::worker_rejects_root_runs_and_lock_symlinks ... ok
+test worker::endpoint::tests::only_exact_recorded_socket_is_recovered ... ok
+test worker::ownership_tests::loss_between_result_and_state_commits_keeps_result_identity ... ok
+test worker::ownership_tests::restart_finishes_only_acknowledged_token_cleanup ... ok
+test store::tests::rejected_transfer_can_restart_without_deleting_published_bytes ... ok
+test store::tests::transfer_resume_retry_and_destination_verification ... ok
+test worker::ownership_tests::token_reserved_before_spec_commit_is_lost_and_never_launched ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.38s
+

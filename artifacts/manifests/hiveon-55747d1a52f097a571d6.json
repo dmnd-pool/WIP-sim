@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-55747d1a52f097a571d6",
+  "url": "https://download.hiveos.farm/asic/client/master.tar.gz",
+  "kind": "firmware",
+  "title": "master.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-55747d1a52f097a571d6/master.tar.gz",
+  "sha256": "2f62975f1e0e2cdff6fbc534ddc4c26e3c8ee7041fd4a8d29ab8db0ff109a8f6",
+  "size_bytes": 2855204,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/client/master.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 12 Sep 2022 14:35:22 GMT",
+  "etag": "\"631f43aa-2b9124\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2855204,
+      "actual": 2855204,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-716f0653964d8b5222f3",
+  "url": "https://download.hiveos.farm/asic/s9-spark/Antminer-S9-all-Hiveon-1.01.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.01.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:46+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-716f0653964d8b5222f3/Antminer-S9-all-Hiveon-1.01.tar.gz",
+  "sha256": "118e44de4b48888f2711cecde70e35dfba19f2aa38907271769fc2eee1de1d75",
+  "size_bytes": 22570845,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s9-spark/Antminer-S9-all-Hiveon-1.01.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 29 May 2019 09:31:00 GMT",
+  "etag": "\"5cee5154-158675d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 22570845,
+      "actual": 22570845,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

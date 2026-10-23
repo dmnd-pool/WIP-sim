@@ -1,0 +1,486 @@
+{
+  "schema": "md-sim-independent-native-access-review/1",
+  "source_run": "work/simulator/network-vm/native-browser-453",
+  "run_id": "run-d7b13b55416780e0443c175955b8ec9dc008b888a58bcb8bedd330e6b5315cc4",
+  "locked_run": {
+    "sha256": "460917fcc32ef1bf7829075124499366e0ba409ff32db4c6f1c690906412b930",
+    "size": 16425
+  },
+  "native_process": {
+    "sha256": "638b406b16f49d81d85c1c1894684647bff36556146db0a1a0fd7e342d8949f6",
+    "size": 8303
+  },
+  "overall_passed": false,
+  "browser_passed": false,
+  "mining_or_core_pass_claim": false,
+  "receipt": {
+    "native": {
+      "locked_run_hash": "460917fcc32ef1bf7829075124499366e0ba409ff32db4c6f1c690906412b930",
+      "token": "d7b13b55416780e0443c175955b8ec9dc008b888a58bcb8bedd330e6b5315cc4",
+      "run_id": "run-d7b13b55416780e0443c175955b8ec9dc008b888a58bcb8bedd330e6b5315cc4",
+      "result": {
+        "sha256": "c18c239c1a3417a3f7573d75a443dce30763a7d38cc5562007fcbb05f87190c7",
+        "size": 105459647
+      }
+    },
+    "pool_bundle": {
+      "sha256": "a86232130a35647f6abe6bc593ed22fd34940fd50e47232301ab24ecb66891f7",
+      "size": 102679
+    },
+    "access_bundle": {
+      "sha256": "b46e64375fc5df3760e2ca2482a54845d60b8567c2deb40b39ad03042b845ffb",
+      "size": 11206012
+    }
+  },
+  "native_milliseconds": 305140,
+  "outer_milliseconds": 759518,
+  "actual_runtime_receipt_matches": true,
+  "all_bundle_bytes_and_extracted_files_match": true,
+  "access_file_count": 251,
+  "pool_sessions": 10,
+  "pool_outcome": {
+    "cancelled": false,
+    "complete": true,
+    "exit_code": 0,
+    "finished_monotonic_ns": 479316184626,
+    "pool_pid": 11,
+    "schema_version": "md-sim-shared-pool-outcome/1",
+    "signal": null,
+    "started_monotonic_ns": 178701637304
+  },
+  "native_carrier": {
+    "end": "guest-eof",
+    "error": null,
+    "guest_to_peer": {
+      "eof": true,
+      "forwarded_bytes": 964583,
+      "forwarded_packets": 927,
+      "forwarded_sha256": "f83c3c8eedb6a6fd191ea942f45d1964f8556cdfcb7c626cf54024d952ef0cf5",
+      "observed_bytes": 964583,
+      "observed_sha256": "f83c3c8eedb6a6fd191ea942f45d1964f8556cdfcb7c626cf54024d952ef0cf5",
+      "pending_bytes": 0,
+      "received_packets": 927
+    },
+    "peer_to_guest": {
+      "eof": false,
+      "forwarded_bytes": 44650,
+      "forwarded_packets": 462,
+      "forwarded_sha256": "2730e969ae4bf00b8d268d7c1bfe8d2eec20a6eafb87ac72b180f1596fdf20f3",
+      "observed_bytes": 44650,
+      "observed_sha256": "2730e969ae4bf00b8d268d7c1bfe8d2eec20a6eafb87ac72b180f1596fdf20f3",
+      "pending_bytes": 0,
+      "received_packets": 462
+    },
+    "policy": {
+      "guest_fd": 3,
+      "max_frame_bytes": 65535,
+      "max_packets": 1048576,
+      "max_wire_bytes": 134217728,
+      "protocol": "qemu-private-ethernet-v1"
+    },
+    "relay_cpu_microseconds": 109050,
+    "scope": "Exact relay reads and writes on private socket pairs. Whole-carrier EOF; no general byte-stream half-close or application delivery claim."
+  },
+  "http_tls": {
+    "http": {
+      "origin": "http://127.0.0.1:18090",
+      "requests": 15,
+      "all_response_body_header_request_files_match": true,
+      "auth_and_config_raw_assertions_pass": true,
+      "asset": {
+        "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+        "size": 425409
+      },
+      "before": {
+        "hostname": "miner-99cdb9",
+        "info": {
+          "version": {
+            "full": "2022-04-29-0-5eb2c5fe-22.02.4-plus"
+          }
+        },
+        "uptime": {
+          "durationS": 85,
+          "since": 1792613405
+        }
+      },
+      "after": {
+        "hostname": "miner-99cdb9",
+        "info": {
+          "version": {
+            "full": "2022-04-29-0-5eb2c5fe-22.02.4-plus"
+          }
+        },
+        "uptime": {
+          "durationS": 90,
+          "since": 1792613405
+        }
+      },
+      "cookie_value_hash": {
+        "sha256": "2aaf9f41be2e146ec71dbb8d44f9dfd99d86eceff76f138c9fee54bdcea862da",
+        "size": 43
+      },
+      "helper": {
+        "sha256": "dbe0016baac184630131db94c702d70ce4cde6a370fc26e120a3803f23659c10",
+        "size": 6151968
+      },
+      "curl": {
+        "sha256": "450474f8939a71e297282400fc83176a9532da9f8ab84524c2f2ed42e96748cc",
+        "size": 223536
+      }
+    },
+    "tls": {
+      "origin": "https://192.0.2.1:9443",
+      "requests": 15,
+      "all_response_body_header_request_files_match": true,
+      "auth_and_config_raw_assertions_pass": true,
+      "asset": {
+        "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+        "size": 425409
+      },
+      "before": {
+        "hostname": "miner-99cdb9",
+        "info": {
+          "version": {
+            "full": "2022-04-29-0-5eb2c5fe-22.02.4-plus"
+          }
+        },
+        "uptime": {
+          "durationS": 132,
+          "since": 1792613405
+        }
+      },
+      "after": {
+        "hostname": "miner-99cdb9",
+        "info": {
+          "version": {
+            "full": "2022-04-29-0-5eb2c5fe-22.02.4-plus"
+          }
+        },
+        "uptime": {
+          "durationS": 138,
+          "since": 1792613405
+        }
+      },
+      "cookie_value_hash": {
+        "sha256": "ec6038df47798eb02c3ddec6e17e0d471875413e678db7370a9a46347805619a",
+        "size": 43
+      },
+      "helper": {
+        "sha256": "dbe0016baac184630131db94c702d70ce4cde6a370fc26e120a3803f23659c10",
+        "size": 6151968
+      },
+      "curl": {
+        "sha256": "450474f8939a71e297282400fc83176a9532da9f8ab84524c2f2ed42e96748cc",
+        "size": 223536
+      }
+    }
+  },
+  "mutual_tls_negative": {
+    "exit_code": 22,
+    "status": "400",
+    "stderr": "curl: (22) The requested URL returned error: 400\n",
+    "url": "https://192.0.2.1:9443/"
+  },
+  "publication_identity": {
+    "locked_run": {
+      "sha256": "460917fcc32ef1bf7829075124499366e0ba409ff32db4c6f1c690906412b930",
+      "size": 16425
+    },
+    "policy": {
+      "sha256": "c144a8dc3ec790f670118df037ac4a0b954e6aed50fc3a5af1a9602302f5ae70",
+      "size": 489
+    },
+    "process": {
+      "sha256": "638b406b16f49d81d85c1c1894684647bff36556146db0a1a0fd7e342d8949f6",
+      "size": 8303
+    },
+    "run_id": "run-d7b13b55416780e0443c175955b8ec9dc008b888a58bcb8bedd330e6b5315cc4",
+    "support": {
+      "sha256": "d7a6f68d6df62be8f9efa682de3686b559a477076c48943c18e21dd1dfa17e2c",
+      "size": 930
+    },
+    "token": "d7b13b55416780e0443c175955b8ec9dc008b888a58bcb8bedd330e6b5315cc4"
+  },
+  "tls_readiness": {
+    "address": "192.0.2.1:9443",
+    "attempts": [
+      {
+        "connect_milliseconds": 43,
+        "connected": false,
+        "elapsed_milliseconds": 5386,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 0,
+        "connected": false,
+        "elapsed_milliseconds": 5449,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 0,
+        "connected": false,
+        "elapsed_milliseconds": 5500,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 126,
+        "connected": false,
+        "elapsed_milliseconds": 5719,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 0,
+        "connected": false,
+        "elapsed_milliseconds": 5801,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 0,
+        "connected": false,
+        "elapsed_milliseconds": 5863,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 3,
+        "connected": false,
+        "elapsed_milliseconds": 5917,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 0,
+        "connected": false,
+        "elapsed_milliseconds": 5968,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 8,
+        "connected": false,
+        "elapsed_milliseconds": 6028,
+        "error": "Connection refused (os error 111)",
+        "error_kind": "ConnectionRefused",
+        "raw_os_error": 111
+      },
+      {
+        "connect_milliseconds": 21,
+        "connected": true,
+        "elapsed_milliseconds": 6105,
+        "error": null,
+        "error_kind": null,
+        "raw_os_error": null
+      }
+    ],
+    "elapsed_milliseconds": 6126,
+    "error": null,
+    "reachable": true,
+    "schema": "md-sim-carrier-tls-listener-readiness/1",
+    "scope": "TCP listener reachability only; TLS authentication and selected native HTTP require their own checks",
+    "startup_budget_milliseconds": 30000
+  },
+  "client_error": "selected native browser process failed",
+  "client_cleanup_observations": [
+    {
+      "gateway_stopped": false,
+      "stop_error": "carrier gateway did not acknowledge listener shutdown"
+    },
+    {
+      "stop_error": null,
+      "tunnel_stopped": true
+    }
+  ],
+  "server_gateway_stop": {
+    "exit": null,
+    "owned_pid": 94,
+    "stopped": true
+  },
+  "selected_gateway_stop_run": "run-d7b13b55416780e0443c175955b8ec9dc008b888a58bcb8bedd330e6b5315cc4",
+  "server_normal_refresh_terminal": true,
+  "browser": {
+    "driver": {
+      "sha256": "e4fa7c16e781adca06276d669bfb36e55c80ddbb45f58fd9716d96313d69bb13",
+      "size": 2640928
+    },
+    "report_count": 0,
+    "report": null,
+    "diagnostic": {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": null,
+      "error": "Firefox NewSession did not complete: browser command deadline",
+      "last_phase": null,
+      "provisional": true,
+      "report_present": false
+    }
+  },
+  "namespace_observations": [
+    {
+      "external_route": false,
+      "interfaces": [
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "linkmode": "DEFAULT",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "address": "d2:c9:61:a4:ef:9b",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 3,
+          "ifname": "worker0",
+          "link_index": 2,
+          "link_netnsid": 1,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "address": "52:54:00:12:34:64",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "NO-CARRIER",
+            "BROADCAST",
+            "MULTICAST",
+            "UP"
+          ],
+          "group": "default",
+          "ifindex": 4,
+          "ifname": "eth0",
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "DOWN",
+          "qdisc": "fq_codel",
+          "txqlen": 1000
+        }
+      ],
+      "namespaces": {
+        "ipc": "ipc:[4026532246]",
+        "mnt": "mnt:[4026532244]",
+        "net": "net:[4026532139]",
+        "pid": "pid:[4026532247]",
+        "uts": "uts:[4026532245]"
+      },
+      "proc_pid_matches": true,
+      "role": "worker",
+      "root_has_only_captured_inputs": true,
+      "routes": "10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.100 linkdown \n192.0.2.0/29 dev worker0 proto kernel scope link src 192.0.2.1 \n",
+      "uid": 0
+    },
+    {
+      "external_route": false,
+      "interfaces": [
+        {
+          "address": "00:00:00:00:00:00",
+          "broadcast": "00:00:00:00:00:00",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 1,
+          "ifname": "lo",
+          "link_type": "loopback",
+          "linkmode": "DEFAULT",
+          "mtu": 65536,
+          "operstate": "UNKNOWN",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        },
+        {
+          "address": "de:6a:40:4d:6f:48",
+          "broadcast": "ff:ff:ff:ff:ff:ff",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "group": "default",
+          "ifindex": 2,
+          "ifname": "client0",
+          "link_index": 3,
+          "link_netnsid": 0,
+          "link_type": "ether",
+          "linkmode": "DEFAULT",
+          "mtu": 1500,
+          "operstate": "UP",
+          "qdisc": "noqueue",
+          "txqlen": 1000
+        }
+      ],
+      "namespaces": {
+        "ipc": "ipc:[4026532251]",
+        "mnt": "mnt:[4026532249]",
+        "net": "net:[4026532189]",
+        "pid": "pid:[4026532252]",
+        "uts": "uts:[4026532250]"
+      },
+      "proc_pid_matches": true,
+      "role": "client",
+      "root_has_only_captured_inputs": true,
+      "routes": "192.0.2.0/29 dev client0 proto kernel scope link src 192.0.2.2 \n",
+      "uid": 0
+    }
+  ],
+  "server_namespace": {
+    "namespaces": {
+      "ipc": "ipc:[4026532259]",
+      "mnt": "mnt:[4026532257]",
+      "net": "net:[4026532139]",
+      "pid": "pid:[4026532260]",
+      "uts": "uts:[4026532258]"
+    },
+    "routes": "10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.100 \n192.0.2.0/29 dev worker0 proto kernel scope link src 192.0.2.1 \n",
+    "external_route": false,
+    "uid": 1000
+  },
+  "scope": "Same execution host with disconnected support VM and separate client/server namespaces. Adapted native execution, not exact-board completion. No browser, restart-persistence, recovery or mining/Core pass granted. Gateway client shutdown acknowledgment failed despite server-owned stop receipt.",
+  "native_argv_and_limits_equal_prepared_452": true,
+  "native_limits": {
+    "wall_seconds": 360,
+    "cpu_seconds": 330,
+    "memory_bytes": 3221225472,
+    "processes": 64,
+    "file_bytes": 67108864,
+    "trace_bytes": 67108864,
+    "tmp_bytes": 134217728
+  },
+  "namespace_separation_asserted": true
+}

@@ -1,0 +1,274 @@
+
+<!-- Version timeline banner -->
+<div class="version-status-banner" *ngIf="latestRelease && (info$ | async) as info">
+  <div class="status-container" [ngClass]="{
+    'update-available': versionStatus === 'behind', 
+    'up-to-date': versionStatus === 'current',
+    'dev-version': versionStatus === 'ahead'
+  }">
+    
+    <div class="status-content-wrapper">
+      <!-- Version sequence display -->
+      <div class="version-chain-container" *ngIf="versionChain.length > 0">
+        <div class="version-chain-header">
+          <span class="version-chain-title behind-title" *ngIf="versionStatus === 'behind'">
+            <i class="pi pi-info-circle"></i>
+            {{ getVersionStatusInfo().description }}
+          </span>
+          <span class="version-chain-title" *ngIf="versionStatus !== 'behind'">Version Timeline</span>
+          <app-help-btn key="update-version-timeline"></app-help-btn>
+        </div>
+        <div class="version-chain">
+          <div *ngFor="let item of versionChain; let i = index" 
+               class="version-node" 
+               [ngClass]="{
+                 'current': item.isCurrent,
+                 'latest': item.isLatest,
+                 'ellipsis': item.type === 'ellipsis',
+                 'gap': item.type === 'gap',
+                 'future': item.type === 'future'
+               }">
+            
+            <!-- Ellipsis -->
+            <div *ngIf="item.type === 'ellipsis'" class="version-content ellipsis-content">
+              <span class="version-text">{{ item.version }}</span>
+              <small class="version-label" *ngIf="i === 0">Older Versions</small>
+            </div>
+              
+            <!-- Arrow spacing -->
+            <div *ngIf="item.type === 'gap'" class="version-content gap-content">
+              <span class="version-text">{{ item.version }}</span>
+            </div>
+            
+            <!-- Current version -->
+            <div *ngIf="item.type === 'current'" class="version-content current-content" (click)="selectVersionInfo(item.version)">
+              
+              <!-- Development version: version number is not clickable -->
+              <span class="version-text" *ngIf="versionStatus === 'ahead'">v{{ item.version }}</span>
+              
+              <!-- Standard version: version number is clickable -->
+              <span class="version-text clickable-version" *ngIf="versionStatus !== 'ahead'" (click)="downloadVersionFiles(item.version); $event.stopPropagation()">v{{ item.version }}</span>
+              
+              <!-- Display when the current version is a development version (ahead of the release) -->
+              <small class="version-label" *ngIf="versionStatus === 'ahead'">
+                You are here now<br>
+                Under develop
+              </small>
+              
+              <!-- Display when the current version is a standard version -->
+              <small class="version-label" *ngIf="versionStatus !== 'ahead'">
+                You are here now
+              </small>
+              
+              <div class="current-indicator" [class.dev-version-indicator]="versionStatus === 'ahead'">
+                <i class="pi pi-map-marker"></i>
+              </div>
+            </div>
+            
+            <!-- Release version -->
+            <div *ngIf="item.type === 'release'" 
+                 class="version-content release-content"
+                 [class.latest-release]="item.isLatest"
+                 [class.current-content]="item.isCurrent"
+                 (click)="selectVersionInfo(item.version)">
+              <span class="version-text clickable-version" (click)="downloadVersionFiles(item.version); $event.stopPropagation()">v{{ item.version }}</span>
+              
+              <!-- Both the latest version and the current version -->
+              <small class="version-label" *ngIf="item.isLatest && item.isCurrent">
+                The Latest<br>
+                You are here now
+              </small>
+              
+              <!-- Latest version only (not the current version) -->
+              <small class="version-label" *ngIf="item.isLatest && !item.isCurrent">
+                Latest Release<br>
+                <span class="release-date">{{ item.publishedAt | date:'MMM d, y' }}</span>
+              </small>
+              
+              <!-- Current version only (not the latest version) -->
+              <small class="version-label" *ngIf="!item.isLatest && item.isCurrent">
+                You are here now
+              </small>
+              
+              <!-- Neither the latest version nor the current version -->
+              <small class="version-label" *ngIf="!item.isLatest && !item.isCurrent">
+                {{ item.publishedAt | date:'MMM d, y' }}
+              </small>
+              <!-- Indicator for both the latest version and the current version -->
+              <div *ngIf="item.isLatest && item.isCurrent" class="latest-current-indicator">
+                <i class="pi pi-star"></i>
+                <i class="pi pi-map-marker"></i>
+              </div>
+              
+              <!-- Indicator for the latest version only -->
+              <div *ngIf="item.isLatest && !item.isCurrent" class="latest-indicator">
+                <i class="pi pi-star"></i>
+              </div>
+              
+              <!-- Indicator for the current version only -->
+              <div *ngIf="!item.isLatest && item.isCurrent" class="current-indicator">
+                <i class="pi pi-map-marker"></i>
+              </div>
+            </div>
+            
+            <!-- Future version -->
+            <div *ngIf="item.type === 'future'" class="version-content future-content">
+              <span class="version-text">{{ item.version }}</span>
+              <small class="version-label">Future</small>
+            </div>
+            
+            <!-- Connecting line -->
+            <div *ngIf="i < versionChain.length - 1" class="version-connector">
+              <div class="connector-line"></div>
+              <div class="connector-arrow">
+                <i class="pi pi-caret-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Special display for a development version -->
+<div class="grid">
+  <div class="col-12">
+    <div class="card modern-card release-info-card development-version-card" *ngIf="isDevelopmentVersionSelected">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="card-icon">🚧</span>
+          <h2 class="card-title">Development Version</h2>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="development-content">
+          <div class="coming-soon-text">Coming Soon...</div>
+          <p class="development-description">
+            This is a development version that's ahead of the latest stable release. 
+            Release notes will be available when this version is officially published.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Release notes for a standard version -->
+<div class="grid">
+  <div class="col-12">
+    <div class="card modern-card release-info-card" *ngIf="selectedRelease && !isDevelopmentVersionSelected">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="card-icon">📋</span>
+          <h2 class="card-title" *ngIf="isLatestSelected">What's New in {{ selectedRelease.name.slice(6) }}?</h2>
+          <h2 class="card-title" *ngIf="!isLatestSelected">What's Changed in {{ selectedRelease.name.slice(6) }}?</h2>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="release-meta">
+          <span class="release-date">Released: {{ selectedRelease.published_at | date:'medium' }}</span>
+          <span class="release-author">by {{ selectedRelease.author.login }}</span>
+        </div>
+        <div class="release-description" [innerHTML]="formatReleaseNotes(selectedRelease.body)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Upgrade card -->
+<div class="grid update-cards-grid">
+  <div class="col-12 lg:col-4 xl:col-4">
+    <div class="card modern-card update-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="card-icon">🔧</span>
+          <h2 class="card-title">Update Firmware</h2>
+        </div>
+        <div class="progress-area" *ngIf="firmwareUpdateProgress != null">
+          <div class="custom-progress-container">
+            <div class="custom-progress-bar">
+              <div class="custom-progress-fill" [style.width.%]="firmwareUpdateProgress"></div>
+            </div>
+            <span class="custom-progress-text">{{ firmwareUpdateProgress }}%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-content">
+        <p-fileUpload #otaFileUploader [customUpload]="true" mode="basic" accept=".bin"
+                      (uploadHandler)="otaUpdate($event)"
+                      [auto]="true" chooseLabel="Browse Firmware"></p-fileUpload>
+        <small class="file-hint">(firmware.bin)</small>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Website upgrade card -->
+  <div class="col-12 lg:col-4 xl:col-4">
+    <div class="card modern-card update-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="card-icon">🌐</span>
+          <h2 class="card-title">Update Website</h2>
+        </div>
+        <div class="progress-area" *ngIf="websiteUpdateProgress != null">
+          <div class="custom-progress-container">
+            <div class="custom-progress-bar">
+              <div class="custom-progress-fill" [style.width.%]="websiteUpdateProgress"></div>
+            </div>
+            <span class="custom-progress-text">{{ websiteUpdateProgress }}%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-content">
+        <p-fileUpload #wwwFileUploader [customUpload]="true" mode="basic" accept=".bin" (uploadHandler)="otaWWWUpdate($event)"
+                      [auto]="true" chooseLabel="Browse Website"></p-fileUpload>
+        <small class="file-hint">(spiffs.bin)</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 lg:col-4 xl:col-4">
+    <div class="card modern-card update-card screensaver-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="card-icon">🖼️</span>
+          <h2 class="card-title">Update Screen Saver GIF</h2>
+        </div>
+        <div class="progress-area" *ngIf="screensaverUpdateProgress != null">
+          <div class="custom-progress-container">
+            <div class="custom-progress-bar">
+              <div class="custom-progress-fill" [style.width.%]="screensaverUpdateProgress"></div>
+            </div>
+            <span class="custom-progress-text">{{ screensaverUpdateProgress }}%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-content screensaver-card-content">
+        <div class="screensaver-upload-row">
+          <div class="screensaver-upload-action">
+            <p-fileUpload #screensaverFileUploader [customUpload]="true" mode="basic" accept=".gif"
+                          (uploadHandler)="uploadScreensaver($event)"
+                          [auto]="true" chooseLabel="Browse GIF"></p-fileUpload>
+            <small class="file-hint screensaver-file-hint">（*.gif，max 400 KB）</small>
+          </div>
+
+          <div class="screensaver-meta">
+            <small class="file-hint screensaver-compact-hint">{{ screensaverResolutionHint }}</small>
+            <span
+              class="screensaver-warning-badge"
+              tabindex="0"
+              role="img"
+              aria-label="Custom GIF will be lost when updating SPIFFS.bin. Please back up your GIF file offline.">
+              ⚠
+            </span>
+            <div class="screensaver-warning-tooltip">Custom GIF will be lost when updating SPIFFS.bin. Please back up your GIF file offline.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

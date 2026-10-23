@@ -1,0 +1,21 @@
+{
+  "status_counts": {
+    "pass": 398,
+    "not-a-checked-container": 491,
+    "stream-valid-trailer-unverified": 11
+  },
+  "unique_sha256": 900,
+  "prefixes": [
+    "epic-asset-",
+    "bixbit-",
+    "lfs-object-",
+    "auradine-",
+    "bitdeer-file-",
+    "luxor-linked-",
+    "asic-to-",
+    "hashcore-toolkit-",
+    "mirror-"
+  ],
+  "scope": "Root-collected downloaded main-scope files. Known invalid payloads are excluded. This checks ZIP CRC and gzip EOF, not firmware execution or authenticity.",
+  "incremental": true
+}

@@ -1,0 +1,132 @@
+{
+  "schema": "md-sim-independent-spl-inspector-review/1",
+  "verdict": "No unresolved correctness or scope finding in the selected static inspector. All654 reported records match independently decoded archived bytes; all15 tables and3 revision branches agree.",
+  "actual_result": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 31,
+    "trace_truncated": false,
+    "stdout_exact_report": true,
+    "stderr_empty": true
+  },
+  "inspector": {
+    "sha256": "ab5d274f85e9bcab47ac5da69978df87e5a9c837c617ea8b86feb113c5d11506",
+    "size": 1793176
+  },
+  "source_files": {
+    "inspect_s9_spl.rs": {
+      "sha256": "66cbd15df5e1413a16b328455650c86a0b539ef89dca5e82a16bc1f636291285",
+      "size": 4442
+    },
+    "support/s9_spl_contract.rs": {
+      "sha256": "c409be69bf3a0c568f2f437aefe27ba8406d6f5068a18d757696a8b37dc89a03",
+      "size": 17531
+    }
+  },
+  "captured_distinct_objects_verified": 6,
+  "record_count": 654,
+  "table_counts": [
+    [
+      73,
+      26,
+      14,
+      82,
+      22
+    ],
+    [
+      73,
+      26,
+      14,
+      84,
+      22
+    ],
+    [
+      73,
+      26,
+      14,
+      83,
+      22
+    ]
+  ],
+  "all_offsets_arguments_effects_hashes_and_terminators_checked": true,
+  "limits": {
+    "wall_seconds": 15,
+    "cpu_seconds": 10,
+    "memory_bytes": 268435456,
+    "processes": 16,
+    "file_bytes": 2097152,
+    "trace_bytes": 1048576,
+    "tmp_bytes": 1048576
+  },
+  "tests": {
+    "final_passed": 8,
+    "final_failed": 0,
+    "final_ignored": 0,
+    "strict_clippy": "passed after equivalent MSRV alignment fix",
+    "format": "passed"
+  },
+  "prior_failures": "Relative retained-input environment path failed from Cargo crate directory. Initial Clippy rejected is_multiple_of for the declared MSRV; changed to equivalent start & 3 == 0. Failed logs retained; final checks cover the changed source.",
+  "inputs": {
+    "work/simulator/original-zynq/spl-contract-454/spec.json": {
+      "sha256": "55eaf4edd1741ca7ee10252882724a209207254465b7b0c10e2eeddeefd673e8",
+      "size": 1672
+    },
+    "work/simulator/original-zynq/spl-contract-454/result.json": {
+      "sha256": "02b75c9875602f3315a43f242b4e35d0562578239a18681819914585f09dca9d",
+      "size": 666581
+    },
+    "work/simulator/original-zynq/spl-contract-454/contract.json": {
+      "sha256": "6e1729c2c4dea8d35475399cb913ae675de05c91f0e3ce921ff12b0b00af21c9",
+      "size": 332934
+    },
+    "work/simulator/original-zynq/spl-contract-454/stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/original-zynq/spl-contract-454/independent-comparison.json": {
+      "sha256": "4f9c8a8a74508cd6e97cc85bcd442570b564c7f3c3f07e9917b5a64bee41956c",
+      "size": 2368
+    },
+    "work/simulator/reviews/spl-table-groups-independent-454.json": {
+      "sha256": "fccfbce47d005da12249243708a256e8720ed4dadbe36a18849b600e5ac5b4d1",
+      "size": 7890
+    },
+    "crates/md-sim-firmware/examples/inspect_s9_spl.rs": {
+      "sha256": "66cbd15df5e1413a16b328455650c86a0b539ef89dca5e82a16bc1f636291285",
+      "size": 4442
+    },
+    "crates/md-sim-firmware/examples/support/s9_spl_contract.rs": {
+      "sha256": "c409be69bf3a0c568f2f437aefe27ba8406d6f5068a18d757696a8b37dc89a03",
+      "size": 17531
+    },
+    "work/simulator/checks-2026-10-21-001/spl-contract454-tests-final.log": {
+      "sha256": "2bddb8cfdc29bdb85a45cb83386654ff2b82c2c3721e0ae4bc1621d128afc8df",
+      "size": 1123
+    },
+    "work/simulator/checks-2026-10-21-001/spl-contract454-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-21-001/spl-contract454-clippy-fixed.log": {
+      "sha256": "7d057511462fb2fec02696f0bf30d5192605cf0982c09d6f50cf0f9b3ab7176a",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-21-001/spl-contract454-build.log": {
+      "sha256": "a037ea7bce194a46c19a6cc5830e87f80bb227a86f92bfc1232e7a622683676d",
+      "size": 145
+    },
+    "work/simulator/checks-2026-10-21-001/spl-contract454-execution.log": {
+      "sha256": "72aed3a2b42df7e8c304579ef5100b4b32e3ec82fa8e56f3ca954e4e08b83005",
+      "size": 94
+    },
+    "work/simulator/checks-2026-10-21-001/spl-contract454-retained-tests.log": {
+      "sha256": "78c20ad0d3b37ecafe69095a1c4860217dfdc5e8f994cb61ca518ed6728b2c1d",
+      "size": 983
+    },
+    "work/simulator/checks-2026-10-21-001/spl-contract454-clippy.log": {
+      "sha256": "35c83503d2168d0160e9cdf0b357e4ee03a03faaab0c1caa69d358dfbeb54839",
+      "size": 740
+    }
+  },
+  "scope": "Actual isolated Rust static inspection only. No ARM instructions executed, no physical revision selected, no timeout execution, boot, mining, FPGA equivalence or physical calibration pass."
+}

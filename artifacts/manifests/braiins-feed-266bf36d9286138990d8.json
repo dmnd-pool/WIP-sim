@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-266bf36d9286138990d8",
+  "url": "https://feeds.braiins-os.com/cvitek-bm1-am2/firmware_2024-09-12-0-9dbf0134-24.04.3-plus_aarch64_armv8-a.tar",
+  "kind": "firmware",
+  "title": "firmware_2024-09-12-0-9dbf0134-24.04.3-plus_aarch64_armv8-a.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:07:34+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-266bf36d9286138990d8/firmware_2024-09-12-0-9dbf0134-24.04.3-plus_aarch64_armv8-a.tar",
+  "sha256": "a6c94946952ee1a1d57f53b93644179ce8ba20ddc648d9205336e4ea07d063be",
+  "size_bytes": 25907200,
+  "executed": false,
+  "expected_size_bytes": 25907200,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/cvitek-bm1-am2/firmware_2024-09-12-0-9dbf0134-24.04.3-plus_aarch64_armv8-a.tar",
+  "http_status": 206,
+  "etag": "\"66e2df03-18b5000\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 12 Sep 2024 12:30:59 GMT",
+  "publisher_sha256": "a6c94946952ee1a1d57f53b93644179ce8ba20ddc648d9205336e4ea07d063be",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-e6af000798bedbc88ad2",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "a6c94946952ee1a1d57f53b93644179ce8ba20ddc648d9205336e4ea07d063be",
+      "actual": "a6c94946952ee1a1d57f53b93644179ce8ba20ddc648d9205336e4ea07d063be",
+      "match": true,
+      "source_id": "braiins-feed-e6af000798bedbc88ad2"
+    },
+    {
+      "field": "sha256",
+      "expected": "a6c94946952ee1a1d57f53b93644179ce8ba20ddc648d9205336e4ea07d063be",
+      "actual": "a6c94946952ee1a1d57f53b93644179ce8ba20ddc648d9205336e4ea07d063be",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

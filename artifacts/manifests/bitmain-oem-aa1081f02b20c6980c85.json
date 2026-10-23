@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-aa1081f02b20c6980c85",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7bcb3ea2-42a2-4c47-b4fc-a54e199c8ce3/2023/11/27/17/S19k%20Pro%20KC%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "S19k Pro KC Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-aa1081f02b20c6980c85/S19k_Pro_KC_Shenzhen.pdf",
+  "sha256": "78860b8881cff3074571ffeae7cc56c5f70aca3532029e39d7f8241b6a5ca609",
+  "size_bytes": 284417,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7bcb3ea2-42a2-4c47-b4fc-a54e199c8ce3/2023/11/27/17/S19k%20Pro%20KC%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 27 Nov 2023 09:46:24 GMT",
+  "etag": "\"2a2364a10c63234a4a11af9ff56778a0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 284417,
+      "actual": 284417,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

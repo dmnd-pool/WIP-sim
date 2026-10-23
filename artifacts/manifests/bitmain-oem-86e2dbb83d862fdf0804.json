@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-86e2dbb83d862fdf0804",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/356c110a-6157-438c-96cd-69508a1534c5/2023/12/13/19/cTUVus_S21_CN23W12R%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_S21_CN23W12R 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-86e2dbb83d862fdf0804/cTUVus_S21_CN23W12R_001_2023.10.11_extsigned.pdf",
+  "sha256": "163c69fd3c97c12c2f6f08a2c979c2480999847c8400de370b91d792b1513744",
+  "size_bytes": 2363202,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/356c110a-6157-438c-96cd-69508a1534c5/2023/12/13/19/cTUVus_S21_CN23W12R%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 11:17:12 GMT",
+  "etag": "\"232abe575a89c1c3bd0bfa0bd27e8645\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2363202,
+      "actual": 2363202,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

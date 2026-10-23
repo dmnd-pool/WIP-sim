@@ -1,0 +1,598 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Antminer S15 T15 Hash Board Repair Guide [EN]</title><style>body{max-width:1000px;margin:2em auto;font:17px/1.5 sans-serif}img{max-width:100%;height:auto}table{border-collapse:collapse}td,th{border:1px solid #aaa;padding:.3em}</style><body><h1>English counterpart: Antminer S15 T15 Hash Board Repair Guide [EN]</h1><p>Chinese original: zeus-bitmain-412e2d38c7374fb4893a. English source: <a href="https://www.zeusbtc.com/manuals/Antminer-S15-T15-Hash-Board-Repair-Guide.asp">zeus-bitmain-4b0186bbec467745aa8a</a>.</p><p>This is the English manual published by Zeus Mining for the corresponding model. The original source images are retained and linked to local archive files. Image-only labels are not newly translated. A complete page-by-page equivalence check has not been made.</p><p>Same explicit version date found in both texts: false.</p><div class="Manuals">
+<h2>How to Repair Antminer S15 T15 Hash Board?</h2>
+<p></p>
+<p style="text-align: center;">
+    <span style="font-size: 20px;"><strong>Antminer S15 T15 Hash Board Repair Guide [EN]</strong></span>
+</p>
+<p>
+    Editor: Li Yan
+</p>
+<p>
+    Doc. Version: 2019.07.02
+</p>
+<p>
+    Doc. Category: Maintenance Guide
+</p>
+<p>
+    Content of This Doc.: mainly about the fault checking and hashboard tester pinpointing of Antminer S15 T15.&nbsp;
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>I. Maintenance Platform Requirements</strong></span>
+</p>
+<p>
+    1. Thermostat soldering iron at 300-350 degrees Celsius, pointed solder tip for small patches like r-c.&nbsp;
+</p>
+<p>
+    2. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=271" target="_blank" title="heat gun">Heat gun</a> for chip disassembly and soldering, no long-time heating in case of PCB blistering (the soldering temperature shall be 260±2 degrees Celsius).
+</p>
+<p>
+    3. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=225" target="_blank" title="APW8 EMC power supply">APW8 power supply</a> with 16.32V-20.04V output to test the hash board.
+</p>
+<p>
+    4. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=99" target="_blank" title="fluke 15b+">Fluke 15b+ Multimeter</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=132" target="_blank" title="tweezer">tweezer</a>, V9-1.2 hash board tester (<a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=267" target="_blank" title="oscilloscope">oscilloscope</a> preferred).&nbsp;
+</p>
+<p>
+    5. Scaling powder, cleaning water and anhydrous alcohol; cleaning water is used to clean the residue and appearance after maintenance.
+</p>
+<p>
+    6. Tin grinder, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=73" target="_blank" title="tin tool">tin stencils</a>, and tin cream (low temperature OM550); implant tin for chips upon renewals.
+</p>
+<p>
+    7. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=86" target="_blank" title="Antminer thermosetting adhesive">Heat-conducting Glue, black</a> (6223), to glue cooling fin after maintenance.
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>II. Maintenance Requirements</strong></span>
+</p>
+<p>
+    1. Maintenance technician in possession of good electronics knowledge, 1 year+ experience and sound mastery of QFN encapsulation and soldering techniques.
+</p>
+<p>
+    2. Check more than two times after maintenance and the result of each time is OK!
+</p>
+<p>
+    3. Watch out for the techniques used, make sure of no obvious PCB deformation after changing any fittings, check for missing/open circuit/short circuit on parts.
+</p>
+<p>
+    4. Check the maintenance target and corresponding test software parameter and hash board tester.&nbsp;
+</p>
+<p>
+    5. Check whether tools and testers can work properly.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>III. Principle and Structure</strong></span>
+</p>
+<p>
+    <strong>● Principle Introduction</strong>
+</p>
+<p>
+    1. Antminer S15 T15 has 12 voltage domains connected in series, each domain has 5 BM1391, and the entire board has 60 <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=89" target="_blank" title="BM1391AE chip">BM1391 chips</a>.
+</p>
+<p>
+    2. BM1391 chip has 3 built-in small voltage domains which are connected in series.&nbsp;
+</p>
+<p>
+    3. BM1391 has <strong>12</strong> voltage domains; S15 T15 has <strong>25M</strong> monocrystal oscillator on the clock, connecting in series and passing on from the 1st chip to the last chip.
+</p>
+<p>
+    4. S15 T15 has independent small <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=289" target="_blank" title="cooling fin">cooling fins</a> on the front and back of each chip. The cooling fin on the front is SMT paster and the cooling fin on the back is fixed on the back of IC by <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=86" target="_blank" title="heat-conducting glue">heat-conducting glue</a> after initial test. Upon completion of every maintenance, it has to be fixed by black heat-conducting glue (evenly distributed) on the back of IC.&nbsp;
+</p>
+<p>
+    5. Power supply of S15 T15 is APW8, the output of it is regulated by the control panel. The normal voltage is 220V, there will be no output of APW8 without a control panel to regulate the voltage.
+</p>
+<p>
+    <span style="color: rgb(255, 0, 0);">Note:&nbsp;</span>
+</p>
+<p>
+    In the process of maintenance, when changing board fittings or chip, in order to avoid the damage to PCB and chip caused by the heat from the blower gun, cooling fins near the malfunctioning part and the cooling fin on the back of PCB need to be removed firstly before conducting fitting changes.
+</p>
+<p>
+    PCB has test points on both sides, use the front one during maintenance in production before fitting cooling fin on the front; in product maintenance (after-sales maintenance), cooling fins are on both sides of PCB, locate fault through test points of PCB, and use specially made long and thin pen-shape meter to probe into the gaps of cooling fin for test; because the SMT small cooling fins connect the ground of each voltage domain, watch out the insulation of pen-shape meter, to avoid short circuit caused by pen-shape meter.
+</p>
+<p>
+    <strong>● Key Point Analysis:&nbsp;</strong>
+</p>
+<p>
+    <span style="color: rgb(112, 48, 160);">2.1 S15 T15 Signal Flow（Fig1）</span>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-21624600a4e83e7a1e5f/16280596094820463.jpg" title="repair T15 hash board" alt="repair T15 hash board"></img>
+</p>
+<p style="text-align: center;">
+    Fig 1. T15 Signal Flow
+</p>
+<p>
+    Red is CLK signal flow, produced by Y1 25M crystal oscillator, transmits from No. 1 chip to No. 60 chip; in standby and computing, both the votalges are 0.9±0.1V.&nbsp;
+</p>
+<p>
+    Red is TX (CI, CO) signal flow, IO mouth pin 7 in, transmits from No. 00 to No. 62; the voltage is 0V when IO signaling wire is not plugged, and the voltage is 1.8V in computing.&nbsp;
+</p>
+<p>
+    Yellow is RX (RI, RO) signal flow, returns from No. 60 to No. 00, and then returns to control panel from IO mouth pin 8; the voltage is 0V when IO signaling wire is not plugged, and the voltage is also 1.8V in computing.&nbsp;
+</p>
+<p>
+    Red is B (BI, BO) signal flow, lowers electrical level from No. 00 to No. 60; the voltage is 0V when IO signaling wire is not plugged or in standby, and the singal impluse is about 0 in computing.&nbsp;
+</p>
+<p>
+    Red is RST singal flow, IO mouth pin 3 in, transmits from No. 00 to No. 62 chip; 0V when IO signaling wire is not plugged or in standby, and 1.8V in computing
+</p>
+<p>
+    <span style="color: rgb(112, 48, 160);">2.2 The key circuit on the front of the hash board (Figure 2)</span>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-26a336857574f3ffec56/16280596709644148.JPG" title="Key circuits on the front of hash board T15" alt="Key circuits on the front of hash board T15"></img>
+</p>
+<p style="text-align: center;">
+    Figure 2 Key circuits on the front of hash board T15
+</p>
+<p>
+    2.2.1 Test points between chips (Figure 3)<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-47fd3ec23cdabe7f554d/16280597716370909.JPG" title="Test points between chips" alt="Test points between chips"></img>
+</p>
+<p style="text-align: center;">
+    Figure 3 Test points between chips
+</p>
+<p>
+    At the time of maintenance, the test points between the test chips are the most direct fault location methods.
+</p>
+<p>
+    The arrangement of the test points on hash board S15 T15 is as shown in the left figure.
+</p>
+<p>
+    2.2.2 Voltage domain
+</p>
+<p>
+    There are 12 voltage domains on the entire board, each with 5 chips. The 5 chips in the same voltage domain are powered by the associated power supply, and then connected with other voltage domains in series. The circuit structure is shown in Figure 4 below:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-1ea75c7eb07460cfda6a/16280598166546003.JPG" title="S15 T15 hash board repair manual" alt="S15 T15 hash board repair manual"></img>
+</p>
+<p style="text-align: center;">
+    Figure 4 Key circuit on the front of hash board S15 T15
+</p>
+<p>
+    Principle analysis of single chip in the voltage domain (see Figure 5 below):<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-bc6553207804bb10ba82/16280598583259031.JPG" title="BM1391 circuit diagram" alt="BM1391 circuit diagram"></img>
+</p>
+<p style="text-align: center;">
+    Figure 5 BM1391 circuit diagram<br></br>
+</p>
+<p>
+    The above is the function of each pin of chip BM1391.<br></br>
+</p>
+<p>
+    At the time of overhaul, the 10 tests before and after the main test chip (five before and five after the chip: CLK, CO, RI, BO, RST).
+</p>
+<p>
+    Test method:&nbsp;
+</p>
+<p>
+    ① When the jig is not tested, APW8 only outputs 12V to the jig’s control board, with no output of 19.2V;
+</p>
+<p>
+    ② When the jig starts testing, APW8 will output 19.2V voltage to the power supply of the control board. During the test, the voltage at each test point of the jig is as follows:
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">CLK: 0.9V</span>
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">CO: 1.6-1.8V</span>, when the jig just sends WORK, since the CO is negative, the DC level will be lowered, and the instantaneous voltage is about 1.5V.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RI: 1.6-1.8V</span>, when computing, if the voltage is abnormal or too low, the hash board will be abnormal or the hashrate will be zero.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">BO: 0V</span>. When not computing, it is 0V; when computing, there will be a pulse jitter between 0.1-0V.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RST: 1.8V.</span> Each time the test button of the jig is pressed, a reset signal will be re-output.
+</p>
+<p>
+    When the above-mentioned test point status or voltage is abnormal, please estimate the fault point based on the circuit before and after the test point. It can be seen from the above list:
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">CLK signal</span>: input from pin 29 of the chip, output from pin 8, when connected across the voltage domain, output from pin 8 and connected to pin 29 of the next chip through the 0 ohm resistor.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">TX signal</span>: input from pin 28 of the chip, and output from pin 9;
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RX signal</span>: returned from pin 10 of the chip, output from 27 pin;
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">BO signal</span>: input from pin 25 of the chip, output from pin 12;
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">RST signal</span>: input from pin 26 of the chip and output from pin 11.
+</p>
+<p>
+    3. IO port
+</p>
+<p>
+    IO consists of 2X9 pitch 2.0 PHSD in 90-degree in-line dual row.
+</p>
+<p>
+    The definition of each pin is shown in Figure 6 below:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-cf9694989a064ff9aa4a/16280600661499021.jpg" title="maintenance guide for S15 T15 hash board" alt="maintenance guide for S15 T15 hash board"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-782133444d3793ce01dd/16280600891745664.JPG" title="maintenance guide for S15 T15 hash board" alt="maintenance guide for S15 T15 hash board"></img>
+</p>
+<p style="text-align: center;">
+    Figure 6 Definition of each pin of IO port
+</p>
+<p>
+    As shown in the figure above:<br></br>
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pins 5.6.17.18</span>: GND.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pins 15.16 (SDA, SCL)</span>: It is the I2C bus of DC-DC PIC, connecting the communication between the control board and the PIC. The control board can read and write the data of the PIC through it to control the running status of the hash board and connect to U6-EPROOM. This IC mainly stores PCB, BOM and chip, and sweeps information.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 13 (PLUG0)</span>: It is the identification signal of the hash board. This signal is pulled from the 10K resistor to 3.3V on the hash board. Therefore, when the IO signal is inserted, the pin should be at high level.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pins 11.12.14 (A2, A1, A0)</span>: PIC address signal. Connect to U6-EPROOM.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pins 7.8 (TXD, RXD)</span>: the channel for hashrate at the end 3.3 of the hash board. After being divided by the resistor, it becomes signals TX (CO) and RX (RI). The level of the IO port pin is 3.3V. After being divided by the resistor, it becomes 1.8V.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 3 (RST)</span>: Reset signal on the 3.3V terminal, and becomes a 1.8V RST reset signal after being divided by the resistor.
+</p>
+<p>
+    <span style="color: rgb(0, 176, 240);">Pin 4 (D3V3)</span>: Supply power 3.3V to the hash board, which is provided by the control board, mainly to provide working voltage to the PIC.
+</p>
+<p>
+    4. 23V boost circuit
+</p>
+<p>
+    It is responsible for boosting DC-DC (19.2v) to 23V. The principle is to increase the voltage from 19.2V to 23V through the U7 switching power supply. The switching signal produced by U7 is the energy storage inductor through L4, and the D4 charges and discharges C73-C75 through boost rectifier diode, and then filtered by EC26 to obtain 23V at EC26 positive electrode. The 23V voltage is output to U170, the u170 outputs 1.8V and then outputs 0.8V through u171, as shown in Figure 7.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-970390586d32e03b43b2/16280601353728696.JPG" title="23V boost circuit" alt="23V boost circuit"></img>
+</p>
+<p style="text-align: center;">
+    Figure 7 23V boost circuit
+</p>
+<p>
+    5. DC-PIC<br></br>
+</p>
+<p>
+    It consists of PIC16(L)F1704 (Figure 8, Figure 9).
+</p>
+<p>
+    A device that stores the frequency information and voltage value of the hash board chip, and also controls the DC-DC output voltage of the hash board.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-4d0ee66bfd2193246d1d/16280602193159192.JPG" title="S15 T15 hashboard repair manual" alt="S15 T15 hashboard repair manual"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-b8148f09572eef0acc12/16280602486237562.JPG" title="S15 T15 hashboard repair manual" alt="S15 T15 hashboard repair manual"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-c1701928b3b867988ec1/16280602619873488.JPG" title="PIC schematic diagram" alt="PIC schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    Figure 9 PIC schematic diagram
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7da16dab1ed272685fa1/16280602958405165.JPG" title="10 PIC circuit" alt="10 PIC circuit"></img>
+</p>
+<p style="text-align: center;">
+    Figure 10 PIC circuit
+</p>
+<p>
+    6. DC-DC circuit<br></br>
+</p>
+<p>
+    It consists of 2N7002 and CMOS tubes (Figure 11, Figure 12).
+</p>
+<p>
+    <img src="../../artifacts/files/document/zeus-diagram-a8efc8ea04f685a74422/16280603235169141.JPG" title="DC-DC schematic diagram" alt="DC-DC schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    Figure 11 DC-DC schematic diagram
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-eee37da15050931b4f60/16280604022782361.JPG" title="DC-DC physical diagram" alt="DC-DC physical diagram"></img>
+</p>
+<p style="text-align: center;">
+    Figure 12 DC-DC physical diagram
+</p>
+<p>
+    When the circuit is not working: PIC-EN9 pin output low level and lowers Q10&#39;s pin 1 to make Q10 non-conducting, and causes high level of pin 4 of Q7-8-9-11MOS tube to cut MOS, and there is no voltage output.<br></br>
+</p>
+<p>
+    7. 25M LCK
+</p>
+<p>
+    It consists of a Y 25MHZ passive crystal oscillator and 12pF (Figure 13 and Figure 14).
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-10e8c7f1ec04ab65aa1c/16280604505170927.JPG" title="25M LCK circuit" alt="25M LCK circuit"></img>
+</p>
+<p style="text-align: center;">
+    Figure 13 25M LCK circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-d1274bdc6be8027da1f1/16280605192352933.JPG" title="25M LCK principle" alt="25M LCK principle"></img>
+</p>
+<p style="text-align: center;">
+    Figure 14 25M LCK principle
+</p>
+<p>
+    When normal, the voltage at the two ends of R1154 is about 1V±0.1.
+</p>
+<p>
+    8. Temperature sensing circuit
+</p>
+<p>
+    There are 4 temperature senses: one is TEMP (PCB), which is composed of sensor IC; the other is TEMP (CHIP), which is the built-in temperature sensor group (BM1391 21st, 22nd pins). After collecting the parameters of these two temperature sensors, they are finally returned by RI to the FPGA of the control board through the 23rd and 24th pins of BM1391. The principle is shown in Figure 15:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-37b1292466c2f24ae0cc/16280606261696912.JPG" title="S15 T15 hashboard repair manual" alt="S15 T15 hashboard repair manual"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7f9874ca8981b2267ebd/16280606529005156.JPG" title="Temperature sensing schematic diagram" alt="Temperature sensing schematic diagram"></img><img src="../../artifacts/files/document/zeus-diagram-f10c7b52b3f00a547f04/16280606791541318.JPG" title="Temperature sensing schematic diagram" alt="Temperature sensing schematic diagram"></img><img src="../../artifacts/files/document/zeus-diagram-70edc0d228b35752f319/16280607172520612.JPG" title="Temperature sensing schematic diagram" alt="Temperature sensing schematic diagram"></img>Figure 15 Temperature sensing schematic diagram
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>IV. Examples for single board test troubleshooting</strong></span>
+</p>
+<p>
+    1. Single board <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=212" target="_blank" title="test jig">jig test</a> ASIC=0
+</p>
+<p>
+    Failure analysis:
+</p>
+<p>
+    1.1 Whether the <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=76" target="_blank" title="test fixture cable 9*2 60CM">jig cable</a> and the hash board are in good contact.
+</p>
+<p>
+    1.2 If it is the S15 T15 hash board, J4-J5 should have a voltage of 18.36V when testing the jig.
+</p>
+<p>
+    1.3 When testing the jig, measure whether there is voltage between the 12 voltage domains.
+</p>
+<p>
+    1.3.1 If there is no voltage in the voltage domain, it is necessary to see whether the normal working voltage of pin 4 of Q7, Q8, Q9, Q11 is 0V. If it is at high level, then see whether pin 1 of Q10 is high or equal to 3.3v, if Q10 does not have a voltage of 3.3V, then the U3-PIC loses firmware or has no power.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-fc5731b6669fc522a965/16280608146548750.JPG" title="PIC schematic diagram" alt="PIC schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    PIC schematic diagram
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-5b62a4ccf15952aea754/16280608509812788.JPG" title="output control circuit" alt="output control circuit"></img>
+</p>
+<p style="text-align: center;">
+    19.2V output control circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7997c9c8d5a1ebab9b6a/16280608724814008.JPG" title="maintenance S15 T15 hashboard" alt="maintenance S15 T15 hashboard"></img>
+</p>
+<p>
+    1.3.2 If the power supply is normal and there is voltage in the voltage domain, then it is necessary to measure the RI signal of the chip to see if the RI signal has a voltage of 1.8V. When measuring the RI signal, it should start from the test point of the last chip. If there is voltage in the last chip, the 36th chip can be measured for whether there is RI -1.8v; when the chip has no RI output voltage, the 1.8V power supply of this chip is measured first, if there is no 1.8V power, then it is necessary to check the 1.8V power supply circuit. The 1.8V obtains 3.2V to supply the LDO pin 1 after being dividing by the voltage domain. The LDO pin 5 outputs 1.8V, (each voltage domain has one chip power supply -1.8V LDO), if there is no output, it should be the problem of this LDO, if 1.8V is normal, the ground resistance of the test point can be measured after the power is off and compared with the OK board to see if there is resistance abnormality. If the resistance is normal, and there is no problem in soldering, the chip should be defective. (Re-solder the removed chip to a good board to verify it. If there is no RI signal, the chip is defective, replace a new chip).<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-35a473ec550a30a6d71a/16280608975312925.JPG" title="maintenance S15 T15 hashboard" alt="maintenance S15 T15 hashboard"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-69e13bee6a53bdd2e4fb/16280609097040388.JPG" title="maintenance S15 T15 hashboard" alt="maintenance S15 T15 hashboard"></img>
+</p>
+<p style="text-align: center;">
+    1.8V power supply circuit
+</p>
+<p>
+    1.3.3 The method described in this article is applicable to the fault caused by some hashrate chips or LDO damage of S15 T15. The insufficiency of ASIC caused by short circuit or poor soldering may also use this method for location.
+</p>
+<p>
+    Step 1: First check the appearance of the faulty hash board for whether the cooling fin is complete, whether the circuit board is burnt, whether the MOS tube is burnt out, and whether the <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=365" target="_blank" title="capacitor 330 30V">capacitor</a> is burnt out, etc.
+</p>
+<p>
+    Step 2: Measure the resistance from the LDO output to this LDO GND without powering. The pin installation of the LDO is shown in Figure 1, which measures the resistance from Pin5 to Pin2.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-141f096c99163e8aef8e/16280609502499875.JPG" title="LDO pin installation" alt="LDO pin installation"></img>
+</p>
+<p style="text-align: center;">
+    Figure 1 LDO pin installation
+</p>
+<p>
+    As measured in Figure 2, 0.868K is the resistance of normal 1.8V LDO, and 41.4 ohms is the resistance of normal 0.8V LDO. The third figure is a bad indication. Under normal circumstances, the LDO has been burned, and the corresponding domain also has power chip damage. In this case, the LDO should be replaced and the resistance should be tested again. If the resistance is normal or the resistance is large, the next step can be operated.<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-1d7a99b4a289b942a42d/16280610471493528.jpg" title="Table 1 LDO list" alt="Table 1 LDO list"></img>Table 1 LDO list
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-33a78e748f1ba7c71637/16280611428114988.jpg" title="fluke 15b+ multimeter" alt="fluke 15b+ multimeter"></img>Figure 2 Multimeter reading
+</p>
+<p>
+    Step 3: Power on and short connect RI to the corresponding 1.8V for single board search chip test.<br></br>
+</p>
+<p>
+    In the case of LDO damage, after replacing the LDO, the check can be started from this domain. When the RI is short connected to 1.8V, the number of chips recovered should be the number of all chips before the short connection point. If the number is correct, continue to look backwards. If it is zero, the chip before the test point has a problem and needs to be replaced.
+</p>
+<p>
+    The way RI is short connected to 1.8V to check the number of chips is divided into two types: cross-domain chip and intra-domain chip. As shown in Figure 3, red is a cross-domain chip. It is recommended to check each red cross-domain chip to quickly determine the domain, and then locate the intra-domain chip. (The second and third cooling fins of the problem domain can be easily checked for problem checking).
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-248dc3470d6a6a424a09/16280611959343397.JPG" title="Chip layout" alt="Chip layout"></img>
+</p>
+<p style="text-align: center;">
+    Figure 3 Chip layout
+</p>
+<p>
+    Here&#39;s how to short connect through PCB:<br></br>
+</p>
+<p>
+    ① Cross-domain short connection
+</p>
+<p>
+    Short connect the RI to 1.8V, run the single board jig to find the chip:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-486716a1028195f0270b/16280612684138074.JPG" title="S15 T15 hashboard repair" alt="S15 T15 hashboard repair"></img>
+</p>
+<p>
+    <img src="../../artifacts/files/document/zeus-diagram-22b53c35817e4e8e2aab/16280614139393522.jpg" title="S15 T15 hashboard repair" alt="S15 T15 hashboard repair"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p>
+    <img src="../../artifacts/files/document/zeus-diagram-12270d080d12c1a3b6de/16280614723303800.jpg" title="S15 T15 hashboard repair" alt="S15 T15 hashboard repair"></img>
+</p>
+<p>
+    ② Intra-domain short connection<br></br>
+</p>
+<p>
+    Note that there are two types of RI locations in the domain, as shown in the following figure:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-db2a481bda0ea5c47557/16280615941006559.jpg" title="RI locations" alt="RI locations"></img>
+</p>
+<p>
+    2. Single board jig test ASIC = 23<br></br>
+</p>
+<p>
+    Failure analysis:
+</p>
+<p>
+    2.1 Single board test can find 23 chips, and can determine that the RI signal is normal; if the 24th chip cannot be found, we will directly measure the 23rd chip’s U33 CLK-RST-CO voltage to see if the power supply is normal, if CLK has no 0.8V voltage, see the power supply circuit of CLK.
+</p>
+<p>
+    2.2 CLK circuit analysis: If CLK does not have 0.8V, first check whether the 0.8V power supply in the bad chip voltage domain is normal, 0.8V power supply circuit is obtained by voltage divider in the voltage domain as the 1.8V power supply mode; pin 5 outputs 0.8V, as for the maintenance method, you can refer to the 1.8V maintenance method (note that S15 T15 has 2 chips among the 6 chips in each domain that outputs 0.8V LDO power supply, and every LDO supplies to 3 chips).
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-6774ebdda9821c7e289b/16280616927249952.JPG" title="power supply schematic diagram" alt="power supply schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-285b0cfef4e235c51f05/16280617154840925.JPG" title="power supply schematic diagram" alt="power supply schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-ae937cbee69fe0e1b6c2/16280617292942487.JPG" title="power supply schematic diagram" alt="power supply schematic diagram"></img>
+</p>
+<p style="text-align: center;">
+    0.8v power supply schematic diagram
+</p>
+<p>
+    If the 0.8V power supply circuit does not output 0.8V, then see if the 0.8V LDO power supply has a supply voltage of about 3.2V. If it has, see if the LDO has pseudo soldering or short circuit. If there is a 0.8V output, check the ground resistance of the chip; if the resistance is correct, it should be a faulty chip.
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>V. Detection and determination of the status of the entire miner</strong></span>
+</p>
+<p>
+    Whether the operation of the entire miner is normal mainly depends on whether the miner can start normally, and whether the hashrate is normal. If the hashrate is normal, first enter the miner IP to see the following parameters:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-f3d7a6b2296355c640c9/16280617939158003.JPG" title="miner test interface diagram" alt="miner test interface diagram"></img>
+</p>
+<p style="text-align: center;">
+    miner test interface diagram
+</p>
+<p>
+    1. Whether 3 chains are detected. If it is not detected enough, see whether the cable is off or the cable is not plugged in, if the chain is still insufficient after upgrading the cable, you can conduct a single board test on the hash board with insufficient chain to see if it is OK.<br></br>
+</p>
+<p>
+    1.1 The hash board is basically OK, it can be determined that the problem lies in the <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Antminer-Parts/Control-Board/" target="_blank" title="control board">control board</a>, and it can be excluded by the substitution method.
+</p>
+<p>
+    1.2 If the hash board tests ASIC0, then repair according to the single board maintenance method.
+</p>
+<p>
+    2. Check whether the number of chips is enough, if the number of chips is not enough, you can directly enter the IP-LOG to see whether the chain can detect the chip, and then repair according to the single chip.
+</p>
+<p>
+    3. See whether the running frequency of the 3 chains is normal, the frequency determines the hashrate; one chain’s hashrate = frequency x chip core number 256x chip number 60; if this theoretical hashrate cannot be reached, it proves that there are a lot of bad cores in the chip of this chain. If you want to improve the hashrate, you can enter IP-LOG to see if the chip&#39;s frequency is low and replace that chip.
+</p>
+<p>
+    4. Generally, in the case of normal operation of a miner, the temperature of the PCB and chip of the 3 chains is between 25 and 95 degrees. If the temperature of a chain is only below 25 degrees, it proves that the hashboard of the chain does not work, and it needs to test the single board to see if the board is normal. If it is higher than 95 degrees, it proves that the heat dissipation is not good, and it needs to check the fan running condition and ventilation, and also pay attention to whether the cooling fin is off.
+</p>
+<p>
+    5. If you can&#39;t see any data after entering IP, but only see the interface as shown below, you need to enter the IPlog to see what information is printed in the log, and repair the miner according to the information; there may be a network outage, or other problem.
+</p>
+<p>
+    6. When the entire miner is repaired, it is repaired according to the mining condition and LOG. Directly replace the piece considered to have problem by a good component and judge.
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>VI. The principle and structure of the control board</strong></span>
+</p>
+<p>
+    <span style="color: rgb(112, 48, 160);">1. Structure of the control board</span>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-9a9f75469fc52be7cc4e/16280619039116942.JPG" title="control board components" alt="control board components"></img><br>Name and distribution of control board components
+</p>
+<p>
+    <span style="color: rgb(112, 48, 160);">2. Circuit diagram of the network port line</span><br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7605bb0db9209e13b8a3/16280619547130613.JPG" title="Circuit diagram" alt="Circuit diagram"></img>
+</p>
+<p>
+    Cannot recognize IP (that is, no network is found): First look at the appearance of the bad board for there there is pseudo soldering with material drop, if the&nbsp;<br></br>
+</p>
+<p>
+    appearance is normal, find an OK network cable (the network cable being used, plug into the J7 network interface) to see if it can find the IP, if you still can&#39;t&nbsp;
+</p>
+<p>
+    find the IP, take an OK control board, and compare the resistance with the bad control board; first measure from pins J7 1, 2, 3, 6, then from T1 1, 2,3,6,7,8,&nbsp;
+</p>
+<p>
+    you can also connect 2 control boards to 12V, compare and measure the voltage of each point, U4 signal is directly connected to the CPU, in general, T1 is&nbsp;
+</p>
+<p>
+    more likely to be bad.
+</p>
+<p>
+    <span style="color: rgb(112, 48, 160);">3. Power supply voltage regulating circuit</span>
+</p>
+<p>
+    In the voltage regulating circuit, the CPU directly reads the signal voltage collected by the PIC of hashboard to directly control the APW8 power supply from the J11 output signal, and adjust the APW8 output to stabilize the required voltage.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-2a70976a19cb06e10034/16280620221429258.JPG" title="Antminer S15 T15 hashboard maintenance" alt="Antminer S15 T15 hashboard maintenance"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-069159d05c364f645628/16280620371318845.JPG" title="Antminer S15 T15 hashboard maintenance" alt="Antminer S15 T15 hashboard maintenance"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-b153fdad1a4887707120/16280620825875288.JPG" title="Antminer S15 T15 hashboard maintenance" alt="Antminer S15 T15 hashboard maintenance"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-35904a47b473fcd328c2/16280620969585371.JPG" title="repair antminer S15 T15 hashboard" alt="repair antminer S15 T15 hashboard"></img>
+</p>
+<p>
+    The IO block circuit is directly connected to the CPU. If there is no problem in appearance and soldering, it is basically a CPU problem.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-62af6a7d44ecabc17da9/16280621155609556.JPG" title="repair antminer S15 T15 hashboard" alt="repair antminer S15 T15 hashboard"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-aa1207761f1f6fffe120/16280621402596555.JPG" title="repair antminer S15 T15 hashboard" alt="repair antminer S15 T15 hashboard"></img>
+</p>
+<p>
+    <span style="color: rgb(112, 48, 160);">4. Small voltage conversion output circuit</span><br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-b22e6e598a7fe4729ed2/16280622043617597.JPG" title="Small voltage conversion output circuit" alt="Small voltage conversion output circuit"></img>
+</p>
+</div></body></html>

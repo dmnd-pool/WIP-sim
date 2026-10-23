@@ -1,0 +1,50 @@
+{
+  "scope": "Independent read-only verification of completed cleanup444; no deletion or restoration performed by reviewer.",
+  "passed": true,
+  "removed_objects": 94,
+  "removed_bytes": 114348280,
+  "distinct_restore_paths_verified": 40,
+  "remaining_files_rehashed": 420,
+  "runs": [
+    {
+      "run": "/home/user/src/md-sim/work/simulator/network-vm/byte-stream-399",
+      "remaining_files_verified": 63
+    },
+    {
+      "run": "/home/user/src/md-sim/work/simulator/network-vm/worker-timeout-406",
+      "remaining_files_verified": 62
+    },
+    {
+      "run": "/home/user/src/md-sim/work/simulator/network-vm/tls-readiness-438",
+      "remaining_files_verified": 75
+    },
+    {
+      "run": "/home/user/src/md-sim/work/simulator/network-vm/tls-readiness-435",
+      "remaining_files_verified": 110
+    },
+    {
+      "run": "/home/user/src/md-sim/work/simulator/network-vm/tls-readiness-437",
+      "remaining_files_verified": 110
+    }
+  ],
+  "journals": [
+    {
+      "path": "/home/user/src/md-sim/work/simulator/reviews/component-cleanup-444/reclaim-from-342.json",
+      "sha256": "e7f3212d5eee7891fc9aada47157369ad8c4d1af73bac2a2fa82bb7904c655ab",
+      "size": 22871
+    },
+    {
+      "path": "/home/user/src/md-sim/work/simulator/reviews/component-cleanup-444/reclaim-from-375-client.json",
+      "sha256": "a98d1dcc3ec40c9a10e2a0fe0daabf6d1117ff2cd6181f6b9961f1539ce379ee",
+      "size": 27157
+    }
+  ],
+  "preflight": {
+    "sha256": "847aa63f25e8d7be61c016baa05ff936d9eab6fc5058b208e59c999a26ebb2c5",
+    "size": 161775
+  },
+  "author_postcheck": {
+    "sha256": "42a1d0caf290d086096322aa517de7ecec08bd42755009d7f60fe36c9f82425c",
+    "size": 2686
+  }
+}

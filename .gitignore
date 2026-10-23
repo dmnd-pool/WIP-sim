@@ -1,0 +1,65 @@
+# Build products and dependency caches. Keep vendor/ for offline Rust builds.
+target/
+node_modules/
+__pycache__/
+*.py[cod]
+/.cache/
+
+# Local agent state and credentials. Keep public sample configurations.
+/.aws/
+/.codex/
+/.agents/
+/.ssh/
+.env
+.env.*
+!.env.example
+!.env.sample
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+
+# Original payloads and derived source extracts stay in the local archive.
+# Keep artifacts/manifests/ and catalog/parts/ as source records.
+/artifacts/files/
+/sources/
+
+# Rebuilt catalogue databases, exports and browser. See README build commands.
+/catalog/*.sqlite
+/catalog/*.sqlite-*
+/catalog/index.html
+/catalog/csv/
+/catalog/artifacts.jsonl
+/catalog/entities.jsonl
+/catalog/gaps.jsonl
+/catalog/relationships.jsonl
+/catalog/sources.jsonl
+/reports/archive-members/
+/reports/*.log
+
+# Run data, disks, downloaded tools and credentials stay local. Allow only
+# durable notes, compact authored reports, paused source work and check logs.
+/work/*
+!/work/simulator/
+/work/simulator/*
+!/work/simulator/*.md
+!/work/simulator/reports/
+!/work/simulator/reviews/
+/work/simulator/reviews/*
+!/work/simulator/reviews/*.md
+!/work/simulator/reviews/*.json
+!/work/simulator/reviews/*.sha256
+!/work/simulator/cleanup-development-455/
+!/work/simulator/shared-recovery-development-459/
+!/work/simulator/milestone-1.2-checkpoint/
+
+# Retain the exact source and build manifests for passed run441. Binaries,
+# static libraries and raw execution data remain in the workspace archive.
+!/work/simulator/core-checkpoint-440/
+/work/simulator/core-checkpoint-440/*
+!/work/simulator/core-checkpoint-440/source/
+!/work/simulator/core-checkpoint-440/manifest.json
+!/work/simulator/channel-target-440/
+/work/simulator/channel-target-440/*
+!/work/simulator/channel-target-440/SHA256SUMS

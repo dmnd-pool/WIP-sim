@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-9aa7c160396f247dc23e",
+  "url": "https://feeds.braiins-os.com/24.04.1/braiins-os_cvitek-bm1-am2_ssh_2024-05-21-0-d5fa91c4-24.04.1-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_cvitek-bm1-am2_ssh_2024-05-21-0-d5fa91c4-24.04.1-plus.tar.gz",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:09:21+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-9aa7c160396f247dc23e/braiins-os_cvitek-bm1-am2_ssh_2024-05-21-0-d5fa91c4-24.04.1-plus.tar.gz",
+  "sha256": "fdc16d3bc81e73e2b11964fc1b2016b6ba1dda789a1c58804ab3dfd87bfa6be8",
+  "size_bytes": 27160810,
+  "executed": false,
+  "expected_size_bytes": 27160810,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/24.04.1/braiins-os_cvitek-bm1-am2_ssh_2024-05-21-0-d5fa91c4-24.04.1-plus.tar.gz",
+  "http_status": 206,
+  "etag": "\"664d06f5-19e70ea\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 21 May 2024 20:41:25 GMT",
+  "publisher_sha256": "fdc16d3bc81e73e2b11964fc1b2016b6ba1dda789a1c58804ab3dfd87bfa6be8",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-4b180d6a6e245f86a18f",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "fdc16d3bc81e73e2b11964fc1b2016b6ba1dda789a1c58804ab3dfd87bfa6be8",
+      "actual": "fdc16d3bc81e73e2b11964fc1b2016b6ba1dda789a1c58804ab3dfd87bfa6be8",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "fdc16d3bc81e73e2b11964fc1b2016b6ba1dda789a1c58804ab3dfd87bfa6be8",
+      "actual": "fdc16d3bc81e73e2b11964fc1b2016b6ba1dda789a1c58804ab3dfd87bfa6be8",
+      "match": true,
+      "source_id": "braiins-feed-4b180d6a6e245f86a18f"
+    }
+  ],
+  "upstream_integrity_match": true
+}

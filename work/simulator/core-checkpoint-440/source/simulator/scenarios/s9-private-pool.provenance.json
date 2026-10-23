@@ -1,0 +1,9 @@
+{
+  "schema": "md-sim-derived-source/1",
+  "source": "work/simulator/qemu-s9/console-private-pool-014.sh",
+  "source_sha256": "b685d698ea6e5e6d136b644815aaa677492e2444116420c6b364d22109fdc24e",
+  "size": 2843,
+  "changes": [],
+  "purpose": "Drive unchanged archived BusyBox and native configuration tools inside the isolated firmware guest. This does not execute on the host.",
+  "language_reason": "The original guest exposes a BusyBox shell. Rust and C test binaries would add executable code to the guest. The Rust coordinator sends these commands through its serial console."
+}

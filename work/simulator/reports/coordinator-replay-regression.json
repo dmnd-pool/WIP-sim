@@ -1,0 +1,48 @@
+{
+  "hash_oracle": "bitcoin_hashes 0.14.1 sha256d",
+  "results": [
+    {
+      "asic_exponent": -20,
+      "asic_valid": true,
+      "extra_nonce2": "08000000",
+      "firmware_pool_submission_present": true,
+      "hash_display": "000a2820d8400d95c5d26744cda1315a611ebcf27ae3cf082e80bb9de6f68086",
+      "header_hex": "0000002006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fca1188f8c4e2789b6c2643e09f3d14d621627ab8378de8b9a1193fefbfc5dfaf434dd66affff7f200f000000",
+      "job_id": "f7aef4ee06772ce1-0",
+      "nonce": 15,
+      "pool_target_met": true,
+      "sequence": 10,
+      "time": 1792429379,
+      "work_id": 452
+    },
+    {
+      "asic_exponent": -19,
+      "asic_valid": true,
+      "extra_nonce2": "01000000",
+      "firmware_pool_submission_present": true,
+      "hash_display": "000378e50038ece131dea055d18a4499f36b21866e7f432df3cd5d3b3d4b842a",
+      "header_hex": "0000002006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910ff93783fd83823380873852fe1e9fdda93d0df1de4faa80690b422a451daa7d6e4e4dd66affff7f2019000000",
+      "job_id": "f7aef4ee06772ce1-1",
+      "nonce": 25,
+      "pool_target_met": true,
+      "sequence": 12,
+      "time": 1792429390,
+      "work_id": 548
+    },
+    {
+      "asic_exponent": -19,
+      "asic_valid": true,
+      "extra_nonce2": "01000000",
+      "firmware_pool_submission_present": false,
+      "hash_display": "0007dbd4ee5260c819ffec81886fc34d22d750d38fc19f3836e7fec4131792e8",
+      "header_hex": "0000002006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910ff93783fd83823380873852fe1e9fdda93d0df1de4faa80690b422a451daa7d6e554dd66affff7f201a000000",
+      "job_id": "f7aef4ee06772ce1-1",
+      "nonce": 26,
+      "pool_target_met": false,
+      "sequence": 13,
+      "time": 1792429397,
+      "work_id": 555
+    }
+  ],
+  "scope": "saved source-interface evidence replay only"
+}

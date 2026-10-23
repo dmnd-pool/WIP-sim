@@ -1,0 +1,54 @@
+{
+  "id": "braiins-feed-acc31efa7ae4de78626d",
+  "url": "https://feeds.braiins-os.com/am2-s17/firmware_2021-06-11-0-feaec278-21.06-plus_arm_cortex-a9_neon.ipk",
+  "kind": "metadata",
+  "title": "firmware_2021-06-11-0-feaec278-21.06-plus_arm_cortex-a9_neon.ipk",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:23:55+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/braiins-feed-acc31efa7ae4de78626d/firmware_2021-06-11-0-feaec278-21.06-plus_arm_cortex-a9_neon.ipk",
+  "sha256": "7457d35a40a24cabebb25d2c9d9e9cd8be501b811c01351a46d82cb9737dddee",
+  "size_bytes": 2701,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/am2-s17/firmware_2021-06-11-0-feaec278-21.06-plus_arm_cortex-a9_neon.ipk",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 11 Jun 2021 09:22:13 GMT",
+  "etag": "\"60c32b45-a8d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "7457d35a40a24cabebb25d2c9d9e9cd8be501b811c01351a46d82cb9737dddee",
+      "actual": "7457d35a40a24cabebb25d2c9d9e9cd8be501b811c01351a46d82cb9737dddee",
+      "match": true,
+      "source_id": "braiins-feed-cb69fbc7a2a5c2a293b5"
+    },
+    {
+      "field": "sha256",
+      "expected": "7457d35a40a24cabebb25d2c9d9e9cd8be501b811c01351a46d82cb9737dddee",
+      "actual": "7457d35a40a24cabebb25d2c9d9e9cd8be501b811c01351a46d82cb9737dddee",
+      "match": true,
+      "source_id": "braiins-feed-fb479317ff63b22ec026"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 161,
+      "actual": 2701,
+      "match": false,
+      "source_id": "braiins-feed-cb69fbc7a2a5c2a293b5"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 161,
+      "actual": 2701,
+      "match": false,
+      "source_id": "braiins-feed-fb479317ff63b22ec026"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "integrity_classification": "publisher-size-inconsistent-sha256-matches",
+  "integrity_explanation": "The exact publisher SHA256 matches the saved payload. The Size field in Packages metadata differs; this is not evidence of transfer truncation."
+}

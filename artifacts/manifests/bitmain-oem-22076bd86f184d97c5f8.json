@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-22076bd86f184d97c5f8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/110c8c49-0051-46f8-91b4-a91cfa36a622/2022/01/19/18/S7%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S7 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:43:59+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-22076bd86f184d97c5f8/S7_Server_Manual.pdf",
+  "sha256": "cdac59ec2fb4684f14542755df7c2f8cb2b8b0dd2c7c9bcabe79251f5b3b361a",
+  "size_bytes": 1645097,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/110c8c49-0051-46f8-91b4-a91cfa36a622/2022/01/19/18/S7%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:26:42 GMT",
+  "etag": "\"55b2c39fb7ea6b8ea7173dc313363719\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1645097,
+      "actual": 1645097,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

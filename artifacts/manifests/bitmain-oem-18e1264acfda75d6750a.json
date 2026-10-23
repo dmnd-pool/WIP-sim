@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-18e1264acfda75d6750a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/73a236d4-9252-45a4-8df7-7f9108420339/2022/01/19/18/Z9mini%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "Z9mini Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-18e1264acfda75d6750a/Z9mini_Server_Manual.pdf",
+  "sha256": "3f40c75ad361ebef44e49aa04de4c2c3a4e3ce63b8e330c208feb09ac731756a",
+  "size_bytes": 1068628,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/73a236d4-9252-45a4-8df7-7f9108420339/2022/01/19/18/Z9mini%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:10:01 GMT",
+  "etag": "\"53e20e8d406dd24e214b65aa77f5c6a6\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1068628,
+      "actual": 1068628,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

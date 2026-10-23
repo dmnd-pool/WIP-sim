@@ -1,0 +1,21 @@
+Diff in /home/user/src/md-sim/crates/md-sim-runtime/src/doctor.rs:63:
+     }
+     let incomplete = !tcp["available"].as_bool().unwrap_or(false)
+         || !namespace["available"].as_bool().unwrap_or(false)
+[31m-        || ["bubblewrap", "unshare", "bitcoind", "ssh"].iter().any(|name| tools[*name].get("error").is_some());
+(B[m[32m+        || ["bubblewrap", "unshare", "bitcoind", "ssh"]
+(B[m[32m+            .iter()
+(B[m[32m+            .any(|name| tools[*name].get("error").is_some());
+(B[m     let mut disk = std::mem::MaybeUninit::<libc::statvfs>::uninit();
+     // The constant path is NUL-terminated; statvfs initializes this structure.
+     let disk = if unsafe { libc::statvfs(c".".as_ptr(), disk.as_mut_ptr()) } == 0 {
+Diff in /home/user/src/md-sim/crates/md-sim-runtime/src/doctor.rs:70:
+         let disk = unsafe { disk.assume_init() };
+         json!({"available_bytes":disk.f_bavail.saturating_mul(disk.f_frsize),"path":"working directory"})
+[31m-    } else { json!({"error":std::io::Error::last_os_error().to_string()}) };
+(B[m[32m+    } else {
+(B[m[32m+        json!({"error":std::io::Error::last_os_error().to_string()})
+(B[m[32m+    };
+(B[m     json!({"schema_version":"2.0", "platform":std::env::consts::OS, "architecture":std::env::consts::ARCH,
+         "infrastructure_incomplete":incomplete, "tcp_loopback":tcp, "unix_sockets":unix, "namespaces":namespace,
+         "tools":tools, "memory":fs::read_to_string("/proc/meminfo").unwrap_or_default(), "disk":disk,

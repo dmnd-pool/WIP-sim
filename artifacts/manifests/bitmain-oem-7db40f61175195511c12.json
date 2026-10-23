@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7db40f61175195511c12",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a44d0574-6b84-469a-8335-91c99dedf328/2022/01/19/18/S17%2C%20S17%20Pro%2C%20T17%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S17, S17 Pro, T17 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7db40f61175195511c12/S17__S17_Pro__T17_Server_Manual.pdf",
+  "sha256": "80632e16cf10c14a9bc29088f9ae40face095ab8776c6bc7d01d8b417cac0063",
+  "size_bytes": 3229672,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a44d0574-6b84-469a-8335-91c99dedf328/2022/01/19/18/S17%2C%20S17%20Pro%2C%20T17%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:07:16 GMT",
+  "etag": "\"1e816c29a5b78d6c5a88b8291c1d59fd\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 3229672,
+      "actual": 3229672,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

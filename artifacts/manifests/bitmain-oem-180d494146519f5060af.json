@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-180d494146519f5060af",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20S9/Firmware/00720181023085051052I1rKLts1068D/Antminer-S9-LPM-20181102.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9-LPM-20181102.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:41:24+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-180d494146519f5060af/ANTMINER-S9-LPM-20181102.tar.gz",
+  "sha256": "56a9d0f4ce5b39bb16d8b5dfeebd2c1af14faef4c4aa0e736f42ae126b420ee8",
+  "size_bytes": 858068,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20S9/Firmware/00720181023085051052I1rKLts1068D/Antminer-S9-LPM-20181102.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:25 GMT",
+  "etag": "\"a14dc339fd002127d8adb006bbf1f647\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "a14dc339fd002127d8adb006bbf1f647",
+      "actual": "a14dc339fd002127d8adb006bbf1f647",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 858068,
+      "actual": 858068,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

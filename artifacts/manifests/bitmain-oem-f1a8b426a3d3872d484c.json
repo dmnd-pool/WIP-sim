@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f1a8b426a3d3872d484c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a9b20943-d9b7-4cb8-84bc-e4a27690e0ff/2019/09/23/15/Antminer-S9%20SE-user-OM-201909181551-sig_4034.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9 SE-user-OM-201909181551-sig_4034.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:59+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-f1a8b426a3d3872d484c/ANTMINER-S9_SE-user-OM-201909181551-sig_4034.tar.gz",
+  "sha256": "0d9216cd42c2f84f0d6888828e03dbbf31cf2c9345b868d161b407e3843587aa",
+  "size_bytes": 12565936,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a9b20943-d9b7-4cb8-84bc-e4a27690e0ff/2019/09/23/15/Antminer-S9%20SE-user-OM-201909181551-sig_4034.tar.gz",
+  "http_status": 200,
+  "content_type": "application/gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:30 GMT",
+  "etag": "\"cb19d4b4dde1be28789a8df1cf5fa84e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 12565936,
+      "actual": 12565936,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

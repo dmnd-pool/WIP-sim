@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-73cea6f11692b59035f5",
+  "url": "https://feeds.braiins-os.com/23.09/braiins-os_stm32mp15-ii1_ssh_2023-09-07-0-022c6ed2-23.09-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_stm32mp15-ii1_ssh_2023-09-07-0-022c6ed2-23.09-plus.tar.gz",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:49:43+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-73cea6f11692b59035f5/braiins-os_stm32mp15-ii1_ssh_2023-09-07-0-022c6ed2-23.09-plus.tar.gz",
+  "sha256": "cb1552c43133efc612c862321a0f0a66c539fd4688b4f4a06d731a4ea8a95af9",
+  "size_bytes": 31157921,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/23.09/braiins-os_stm32mp15-ii1_ssh_2023-09-07-0-022c6ed2-23.09-plus.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 14 Sep 2023 12:15:31 GMT",
+  "etag": "\"6502f963-1db6ea1\"",
+  "vendor_sha256": "cb1552c43133efc612c862321a0f0a66c539fd4688b4f4a06d731a4ea8a95af9",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "cb1552c43133efc612c862321a0f0a66c539fd4688b4f4a06d731a4ea8a95af9",
+      "actual": "cb1552c43133efc612c862321a0f0a66c539fd4688b4f4a06d731a4ea8a95af9",
+      "match": true,
+      "source_id": "braiins-feed-f7c275de5c3a0480f4d7"
+    }
+  ],
+  "upstream_integrity_match": true
+}

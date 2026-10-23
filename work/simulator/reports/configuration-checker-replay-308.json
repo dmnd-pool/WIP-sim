@@ -1,0 +1,66 @@
+{
+  "schema": "md-sim-configuration-checker-replay/1",
+  "scope": "Complete original firmware replay in the same adapted reference process after evidence-checker fixes. No exact board, changed seed, remote or full matrix claim.",
+  "execution": {
+    "path": "work/simulator/qemu-s9/pcap-local-306/result.json",
+    "sha256": "e86ba6bcb7d32280a10de158ca85c12565b8bfa47e4306273251deaa7a006c42",
+    "size": 103287013
+  },
+  "locked_run": {
+    "path": "work/simulator/qemu-s9/pcap-local-306/locked-run.json",
+    "sha256": "833f05ceeed7e412254343197a13e8d7a93a37ce14c3595e00cf726526eeb659",
+    "size": 23704
+  },
+  "input_identity": {
+    "path": "work/simulator/qemu-s9/pcap-local-306/execution-identity.json",
+    "sha256": "17f29a73e7ac551e2804a738ae5d2036f52a5585cd783ad387b6e43722a5d7e7",
+    "size": 309
+  },
+  "configuration": {
+    "path": "work/simulator/qemu-s9/pcap-local-306/configuration-audit.json",
+    "sha256": "dd386401b1b363eff5bc071c514604e8c9af07f4d9804abe189e82bdff78ff38",
+    "size": 1037
+  },
+  "auditor_source": {
+    "path": "crates/md-sim-firmware/examples/support/pcap_audit.rs",
+    "sha256": "1ef0b295bcd988ad5449ce2828be3ae44ff6e2e9a61f8d1bc8eebf522e9f098f",
+    "size": 13553
+  },
+  "rate_audit": {
+    "path": "work/simulator/qemu-s9/pcap-local-306/rate-audit308.json",
+    "sha256": "e7b350dde6f72d6c3dddccd9a4d17c8439e25ddfc611fd574a3cbe18b8b8bef2",
+    "size": 2236
+  },
+  "mining_audit": {
+    "path": "work/simulator/qemu-s9/pcap-local-306/regtest-audit308.json",
+    "sha256": "551e403052084dd00482bd0d6b9586a07a3e63a5c71822b45a083297059d8462",
+    "size": 44931
+  },
+  "counts": {
+    "total_computed_hashes": 1316,
+    "fresh_jobs": 2,
+    "clean_job_transition": true,
+    "difficulty_change": true,
+    "matched_computations": 8,
+    "verified_serial_results": 8
+  },
+  "nodes": [
+    {
+      "report": {
+        "path": "work/simulator/bitcoin-core/pcap-local306-candidate0-308/block-acceptance.json",
+        "sha256": "20c0715e3e3bad8a4ea5bcd69882e67fa6c9e99f395ced3f391bac6973e3a9b2",
+        "size": 1745
+      },
+      "block": "417afa0303b8abd5da360c83035eafd39a6ade06b34bee084325419fed80b487"
+    },
+    {
+      "report": {
+        "path": "work/simulator/bitcoin-core/pcap-local306-candidate1-308/block-acceptance.json",
+        "sha256": "df7c8b32c5627d4dfc93677474b7f01b33079ca7b422c80b018d4490930e1003",
+        "size": 1745
+      },
+      "block": "1f3847bd00a7058045e4876a18c2082b9998cd85c60fcbacb26656fd521bfd02"
+    }
+  ],
+  "subsequent_model_defect": "Test309 found the old backend retained an asserted configuration IRQ after programming reset. That behavior is outside the successful replay path. See qemu-s9/pcap-irq-old-309 and pcap-derived-309. A fixed backend is building; this report does not grant its tests."
+}

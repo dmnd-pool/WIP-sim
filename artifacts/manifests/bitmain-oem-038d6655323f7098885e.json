@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-038d6655323f7098885e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/19d3890d-720b-4916-8086-d1c2a2308b8e/2023/07/27/14/R3-DASH_USER%20GUIDE.pdf",
+  "kind": "document",
+  "title": "R3-DASH_USER GUIDE.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-038d6655323f7098885e/R3-DASH_USER_GUIDE.pdf",
+  "sha256": "72dfa420e069e29538a88ce4a0420a59a4bc57507854f4012f68c5e797880021",
+  "size_bytes": 15444954,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/19d3890d-720b-4916-8086-d1c2a2308b8e/2023/07/27/14/R3-DASH_USER%20GUIDE.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 06:44:21 GMT",
+  "etag": "\"021707036d1d580ce2cfe433c857e3a4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 15444954,
+      "actual": 15444954,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

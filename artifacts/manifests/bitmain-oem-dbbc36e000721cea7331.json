@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-dbbc36e000721cea7331",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5dd9eee1-eed5-40ca-9361-90ac9fb4a3e7/2022/01/19/18/DR5%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "DR5 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:47+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-dbbc36e000721cea7331/DR5_Server_Manual.pdf",
+  "sha256": "2bd5a9adee01cab2454acf92f4a9ad2e26e2c604350c0fc6edbb71935163d62b",
+  "size_bytes": 1534409,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5dd9eee1-eed5-40ca-9361-90ac9fb4a3e7/2022/01/19/18/DR5%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:08:53 GMT",
+  "etag": "\"816f464b35824d97310d74abcb4198c2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1534409,
+      "actual": 1534409,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1fb3e943c2bf63261ff7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/17c1a180-d3a7-4048-a46c-ed7c9dbb0ed4/2024/05/22/16/ACS-I23110-A1Z2209082-Issue-7.pdf",
+  "kind": "document",
+  "title": "ACS-I23110-A1Z2209082-Issue-7.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1fb3e943c2bf63261ff7/ACS-I23110-A1Z2209082-Issue-7.pdf",
+  "sha256": "d3349eb4d75fbfc8f770deedbef664c4320cd28b082610139b7c60345e43932e",
+  "size_bytes": 675303,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/17c1a180-d3a7-4048-a46c-ed7c9dbb0ed4/2024/05/22/16/ACS-I23110-A1Z2209082-Issue-7.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:31:44 GMT",
+  "etag": "\"a13877da20ffda9aeeb21800cd89bdcb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 675303,
+      "actual": 675303,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

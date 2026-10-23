@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-243ac828f30232bc6f5b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/70a02480-5256-4ada-b375-561e665bcec3/2022/01/19/18/E3%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "E3 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-243ac828f30232bc6f5b/E3_Server_Manual.pdf",
+  "sha256": "c9923dcf067b92f7dd9768e7a37d6a6020b59eb557746f1a109487ef3cff93f4",
+  "size_bytes": 1123647,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/70a02480-5256-4ada-b375-561e665bcec3/2022/01/19/18/E3%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:12:17 GMT",
+  "etag": "\"f067464a9ade18aaa380e95ffbd8b221\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1123647,
+      "actual": 1123647,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

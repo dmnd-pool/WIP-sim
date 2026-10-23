@@ -1,0 +1,139 @@
+{
+  "schema": "md-sim-configuration-reset-review/1",
+  "scope": "Strict reference-model reset and transfer integrity. Original-board and full specification gates remain incomplete.",
+  "fix_provenance": [
+    {
+      "path": "work/simulator/qemu-s9/pcap-derived-309/provenance.json",
+      "sha256": "8445923e9e974b4dcde3ba0800b2237184c24b39cea73a39c567d26a1837b2b3",
+      "size": 1585
+    },
+    {
+      "path": "work/simulator/qemu-s9/pcap-derived-312/provenance.json",
+      "sha256": "23cd9980ce8e6d784e4cdd593ffcd10670a304bbcffa3d78866ef91bf3336b57",
+      "size": 1138
+    },
+    {
+      "path": "work/simulator/qemu-s9/pcap-derived-315/provenance.json",
+      "sha256": "a54ec4a0a32aec865192e035a2a79d827c3d1e5dcee32a0050357528c34399bd",
+      "size": 1229
+    }
+  ],
+  "primary_observations": {
+    "path": "work/simulator/qemu-s9/pcap-reference-313.json",
+    "sha256": "f244b1215964544f9580524688c42f15d0ee39b9f6c786dd95edc8310fb814d8",
+    "size": 2194
+  },
+  "negative_cases": [
+    {
+      "path": "work/simulator/qemu-s9/pcap-irq-old-309/assessment.json",
+      "sha256": "d2c193e2affc0641a809757d346c87f53cf6c32ca8d71628e087237062195c30",
+      "size": 1364
+    },
+    {
+      "path": "work/simulator/qemu-s9/pcap-irq-fixed-311/assessment.json",
+      "sha256": "3bd52ec1c13309dbf129f73be8ab6d13fb60840ae45acfbd81d1cf75c14b3980",
+      "size": 1363
+    },
+    {
+      "path": "work/simulator/qemu-s9/pcap-source-old-315/assessment.json",
+      "sha256": "353ed00154ab55afd86c5d57347bc136fa69fbe5eaf6946bea5ce50a1108ab39",
+      "size": 1241
+    }
+  ],
+  "positive_cases": [
+    {
+      "path": "work/simulator/qemu-s9/pcap-irq-fixed-313/assessment.json",
+      "sha256": "e9754617b6cdce9b7c2c1f460567547618bcb67e148f023ad1ec0342cb7f99f5",
+      "size": 2871
+    },
+    {
+      "path": "work/simulator/qemu-s9/pcap-irq-316/assessment.json",
+      "sha256": "0d77d63b018317b5741065dd2cb207e05700f81be358fb0626cfa688e26839bc",
+      "size": 2871
+    },
+    {
+      "path": "work/simulator/qemu-s9/pcap-source-316/assessment.json",
+      "sha256": "8be445b2c761213e82e6fae8ce24f900a55544c058150508f306e7fbae43bb57",
+      "size": 2761
+    }
+  ],
+  "firmware_after_reset_fixes": {
+    "run": "work/simulator/qemu-s9/native-pcap-314",
+    "backend": "work/simulator/qemu-s9/backend-build-312-ubsan",
+    "configuration": {
+      "path": "work/simulator/qemu-s9/native-pcap-314/configuration-audit.json",
+      "sha256": "bf9c6ced133f2a7b7caaa42285a74b921d18d6b8859fdb5a81e865baef76bd17",
+      "size": 1037
+    },
+    "mining": {
+      "path": "work/simulator/qemu-s9/native-pcap-314/regtest-audit315.json",
+      "sha256": "45baf89cd9aa19fda1e7df91f9144687ec3af9d774ba23930eec9af86a90430a",
+      "size": 59286
+    },
+    "rate": {
+      "path": "work/simulator/qemu-s9/native-pcap-314/rate-audit315.json",
+      "sha256": "63e0db7787bc7e154a66783a5fd0d1a4b05cd666ed5cec86da21f6337f104fd2",
+      "size": 2236
+    },
+    "computed_hashes": 1661,
+    "fresh_jobs": 2,
+    "clean_job_transition": true,
+    "difficulty_change": true,
+    "matched": 14,
+    "verified_serial_results": 14,
+    "nodes": [
+      {
+        "report": {
+          "path": "work/simulator/bitcoin-core/pcap314-candidate0-316/block-acceptance.json",
+          "sha256": "9678b1ff2231d006d410e6d1f77e34b4ed4ee59b33413b81dfdc5c5abf1a1c70",
+          "size": 1745
+        },
+        "block": "07ecff5400b1ec4b4b8b0704c14622fdda6a44824df12d00f31c87bd3cb9672e"
+      },
+      {
+        "report": {
+          "path": "work/simulator/bitcoin-core/pcap314-candidate1-316/block-acceptance.json",
+          "sha256": "d8cd9dc42005ab8c4e051d803f25e4b2abc02ab6665cac33bfc333f7e3cf7ec0",
+          "size": 1745
+        },
+        "block": "0792bfdb02fd1c082d514f7a20ddbb9ac5426c25d7f8721e131b9a0a45904746"
+      }
+    ]
+  },
+  "frozen_post_fix_helpers": {
+    "path": "work/simulator/pcap-target-317/manifest.json",
+    "sha256": "fc0041eaf545662ebb8ab88854f73e4c02c5ee5b195b7cb4fbedc769fee7a2ba",
+    "size": 1808
+  },
+  "checks": {
+    "fmt": {
+      "path": "work/simulator/checks-2026-10-21-001/fmt316.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "clippy": {
+      "path": "work/simulator/checks-2026-10-21-001/clippy316.log",
+      "sha256": "1db4237d381227a5a2fa28fbb5c5ae8b4ca7f0711c8bf30d35dfdce2a94cd84e",
+      "size": 143
+    },
+    "test": {
+      "path": "work/simulator/checks-2026-10-21-001/test316.log",
+      "sha256": "81b3e38e8afb4a169817112cfd1568b9e62af67946b9c71bb47baee005514017",
+      "size": 77900
+    },
+    "release": {
+      "path": "work/simulator/checks-2026-10-21-001/release316.log",
+      "sha256": "9576f1f7e73fc2bb1ec2336aae60cb485c591eadc60a1b998573411c34057e08",
+      "size": 62
+    }
+  },
+  "tests_passed": 607,
+  "test_binaries": 104,
+  "remaining": [
+    "The full keyhole/fixed-source DMA model is not implemented. The new guard rejects it instead of silently using incrementing reads.",
+    "Physical initialization/status and timing differ from the strict reference contract.",
+    "Selected FPGA logic and exact board identities remain unresolved.",
+    "Fresh firmware316 and release316/native cycle on the latest guarded model are pending.",
+    "Independent review remains blocked by agent usage quota."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c60aa1d85f8b25d8eb4e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20S4/Manual/00720140930114548480Vff9245I063C/S4%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S4 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-c60aa1d85f8b25d8eb4e/S4_Server_Manual.pdf",
+  "sha256": "d597bfb998657c2ffaba1726aff96b59318d852d499454d70bae29bec7171a70",
+  "size_bytes": 1816855,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20S4/Manual/00720140930114548480Vff9245I063C/S4%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:25 GMT",
+  "etag": "\"8f76800244835e1d4d7d51f2fa67f248\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1816855,
+      "actual": 1816855,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

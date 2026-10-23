@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-88c268419ff252303906",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/25b2741c-ecb2-4a49-b393-5c19a1309b33/2023/12/13/14/KS3%20LVD%20COC.pdf",
+  "kind": "document",
+  "title": "KS3 LVD COC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-88c268419ff252303906/KS3_LVD_COC.pdf",
+  "sha256": "7b952678ee52a456857845cd84c8e90fa7c84ee327ef33e67a067dc22fbd8faa",
+  "size_bytes": 159740,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/25b2741c-ecb2-4a49-b393-5c19a1309b33/2023/12/13/14/KS3%20LVD%20COC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 06:16:32 GMT",
+  "etag": "\"8d3b9a4c9ee2c7896859a25a91af0053\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 159740,
+      "actual": 159740,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

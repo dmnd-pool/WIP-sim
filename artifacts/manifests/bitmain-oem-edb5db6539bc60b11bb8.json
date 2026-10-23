@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-edb5db6539bc60b11bb8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/74d8620d-c376-4b0e-8755-2151e7e1980a/2025/04/08/17/S19%20XP%20Product%20Manual_v1.3.1.pdf",
+  "kind": "document",
+  "title": "S19 XP Product Manual_v1.3.1.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-edb5db6539bc60b11bb8/S19_XP_Product_Manual_v1.3.1.pdf",
+  "sha256": "068c97eac0e1a3c2def27c59b6b2858e8df2a6480b3f0785fb6b90212504c940",
+  "size_bytes": 1154249,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/74d8620d-c376-4b0e-8755-2151e7e1980a/2025/04/08/17/S19%20XP%20Product%20Manual_v1.3.1.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 08 Apr 2025 09:33:53 GMT",
+  "etag": "\"4a3a11a5e7263ab2f4d8adc022bec992\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1154249,
+      "actual": 1154249,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

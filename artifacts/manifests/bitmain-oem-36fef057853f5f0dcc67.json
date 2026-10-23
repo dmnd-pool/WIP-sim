@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-36fef057853f5f0dcc67",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antiminer%20A3/Firmware/00720181119211224881YHgpQJT60698/Antminer-A3-201811131136-0M.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-A3-201811131136-0M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-36fef057853f5f0dcc67/ANTMINER-A3-201811131136-0M.tar.gz",
+  "sha256": "27f672f47cc8be6b6a72b4b244a25ffcb49b41482e21c3aa2365ac478f23fc58",
+  "size_bytes": 12067605,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antiminer%20A3/Firmware/00720181119211224881YHgpQJT60698/Antminer-A3-201811131136-0M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"baf95d2fab7445ae879782eadc928d30\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "baf95d2fab7445ae879782eadc928d30",
+      "actual": "baf95d2fab7445ae879782eadc928d30",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 12067605,
+      "actual": 12067605,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

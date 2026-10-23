@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c31a9a3c52b6b554c59b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c84ed6e4-227d-4550-bc06-887bc1d83a69/2026/03/11/17/DDT-CE25071402-1E02%20S21e%20Hyd.%20CE%20EMC%20Certificate-F.pdf",
+  "kind": "document",
+  "title": "DDT-CE25071402-1E02 S21e Hyd. CE EMC Certificate-F.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-c31a9a3c52b6b554c59b/DDT-CE25071402-1E02_S21e_Hyd._CE_EMC_Certificate-F.pdf",
+  "sha256": "ccb94d2311bf641eaa1a0e55e7ef7f63e7a0f5c746b6ec4cc08c8a982dc0304d",
+  "size_bytes": 634572,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c84ed6e4-227d-4550-bc06-887bc1d83a69/2026/03/11/17/DDT-CE25071402-1E02%20S21e%20Hyd.%20CE%20EMC%20Certificate-F.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 11 Mar 2026 09:45:27 GMT",
+  "etag": "\"73422a078f808b959e5b2232ee1f5137\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 634572,
+      "actual": 634572,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

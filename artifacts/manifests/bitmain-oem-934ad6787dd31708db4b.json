@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-934ad6787dd31708db4b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cced9668-82ec-4e7b-adb2-f05900a540be/2022/01/19/18/Z11%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "Z11 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:08+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-934ad6787dd31708db4b/Z11_Server_Manual.pdf",
+  "sha256": "8aec948b2fbbc97e8e212bdb7f685051b9c3f418a52b8e35ebfa77ea76c77c16",
+  "size_bytes": 1734110,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cced9668-82ec-4e7b-adb2-f05900a540be/2022/01/19/18/Z11%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:09:13 GMT",
+  "etag": "\"0c2edc6641f93114c45e311b828994e6\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1734110,
+      "actual": 1734110,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

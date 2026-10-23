@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-d74046f857991c64f8c5",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20DR3/Firmware/007201907271437364778LxDsS1k06AF/Antminer-DR3-201907161805-410M.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-DR3-201907161805-410M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:48+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-d74046f857991c64f8c5/ANTMINER-DR3-201907161805-410M.tar.gz",
+  "sha256": "22f2f59f9f53974f79e3162b7b3001525bb53aa6309ee037c03c5dd311699733",
+  "size_bytes": 16808222,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20DR3/Firmware/007201907271437364778LxDsS1k06AF/Antminer-DR3-201907161805-410M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:27 GMT",
+  "etag": "\"36dfbd00723dc5125d9ad296a1638818-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "0f128433fb233ffb54ea6acec9e3e654",
+      "actual": "0f128433fb233ffb54ea6acec9e3e654",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 16808222,
+      "actual": 16808222,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

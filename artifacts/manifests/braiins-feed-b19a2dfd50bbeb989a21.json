@@ -1,0 +1,48 @@
+{
+  "id": "braiins-feed-b19a2dfd50bbeb989a21",
+  "url": "https://feeds.braiins-os.com/25.01/braiins-os_zynq-bm3-am2_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_zynq-bm3-am2_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 33688242,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:29:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-b19a2dfd50bbeb989a21/braiins-os_zynq-bm3-am2_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz",
+  "sha256": "5cc852e2d0d7e203f1e781f27b01122e3ec3b2c532a9022560042cf72c956e81",
+  "size_bytes": 33688242,
+  "final_url": "https://feeds.braiins-os.com/25.01/braiins-os_zynq-bm3-am2_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"67b8e994-2020ab2\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 21 Feb 2025 21:01:08 GMT",
+  "publisher_sha256": "5cc852e2d0d7e203f1e781f27b01122e3ec3b2c532a9022560042cf72c956e81",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/25.01/braiins-os_zynq-bm3-am2_ssh_2025-02-21-0-e05df053-25.01-plus.tar.gz?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "5cc852e2d0d7e203f1e781f27b01122e3ec3b2c532a9022560042cf72c956e81",
+      "actual": "5cc852e2d0d7e203f1e781f27b01122e3ec3b2c532a9022560042cf72c956e81",
+      "match": true,
+      "source_id": "braiins-feed-b3007571f3d72096d805"
+    },
+    {
+      "field": "sha256",
+      "expected": "5cc852e2d0d7e203f1e781f27b01122e3ec3b2c532a9022560042cf72c956e81",
+      "actual": "5cc852e2d0d7e203f1e781f27b01122e3ec3b2c532a9022560042cf72c956e81",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-3cd01d6b7b0bf251b4ee",
+  "url": "https://download.hiveos.farm/asic/custom/s17e-hiv-umnus-RU-S17E-master-sig-2.00@200710-S17E-sign-umnus.hive.tar.gz",
+  "kind": "firmware",
+  "title": "s17e-hiv-umnus-RU-S17E-master-sig-2.00@200710-S17E-sign-umnus.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:11:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-3cd01d6b7b0bf251b4ee/s17e-hiv-umnus-RU-S17E-master-sig-2.00_200710-S17E-sign-umnus.hive.tar.gz",
+  "sha256": "3524cee1906ed8da84755bc7ba4f9b186c51c270ff2cfcd94a28889a2d07be1a",
+  "size_bytes": 20910489,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/s17e-hiv-umnus-RU-S17E-master-sig-2.00@200710-S17E-sign-umnus.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 10 Jul 2020 13:38:56 GMT",
+  "etag": "\"5f086f70-13f1199\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 20910489,
+      "actual": 20910489,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

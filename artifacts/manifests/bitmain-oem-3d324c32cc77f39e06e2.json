@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3d324c32cc77f39e06e2",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BM1380_Datasheet_v1.0.pdf",
+  "kind": "document",
+  "title": "BM1380_Datasheet_v1.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:55+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3d324c32cc77f39e06e2/BM1380_Datasheet_v1.0.pdf",
+  "sha256": "06208dc489cef8569f7955f015d7e98d828ec86d319daafc850a2ba1e9afe3e8",
+  "size_bytes": 361354,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BM1380_Datasheet_v1.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"db4f3354990f1d376061c46bbe5d33bf\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 361354,
+      "actual": 361354,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

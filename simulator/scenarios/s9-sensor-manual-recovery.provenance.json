@@ -1,0 +1,20 @@
+{
+  "parent": {
+    "path": "work/simulator/qemu-s9/console-temperature-observation-170.sh",
+    "sha256": "bf1994a2d0efebd57e864285f3e203fbcc898bcbdee06fb5a84d8144e082f79d"
+  },
+  "output": {
+    "path": "simulator/scenarios/s9-sensor-manual-recovery.sh",
+    "sha256": "b7e7d92b1fec8ed1e343555be8720799d034689448dffdb7b76df4ec5c1a5872"
+  },
+  "change": "Observe through sample120. At sample100 after uptime185 seconds, call the original service restart. Require one numeric old PID and wait at most60 seconds for one different numeric PID. Record actual uptime and process identity. Manual recovery only; original thermal thresholds unchanged.",
+  "derived_from": {
+    "path": "work/simulator/qemu-s9/console-sensor-manual-recovery-176.sh",
+    "sha256": "96b92f1a881083e593a0afbe06e039189dd454a4a4dcdebc7daa837055f9faec"
+  },
+  "previous_revision": {
+    "sha256": "96b92f1a881083e593a0afbe06e039189dd454a4a4dcdebc7daa837055f9faec",
+    "size": 3989,
+    "retained_in": "work/simulator/qemu-s9/core-checkpoint-178/source/simulator/scenarios/s9-sensor-manual-recovery.sh"
+  }
+}

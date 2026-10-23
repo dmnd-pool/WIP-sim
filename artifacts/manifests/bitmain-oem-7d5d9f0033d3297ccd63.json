@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7d5d9f0033d3297ccd63",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/330a7c92-7bed-44ed-a4c3-d55cb24dd3fb/2024/07/22/22/LVD-S21%20Pro-CN249YE3%20001-24.06.17_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD-S21 Pro-CN249YE3 001-24.06.17_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7d5d9f0033d3297ccd63/LVD-S21_Pro-CN249YE3_001-24.06.17_extsigned.pdf",
+  "sha256": "90a00b9f6186bc747d670e14f0cd6c4cb621db4a061cc0f20289f1034b894f75",
+  "size_bytes": 1473532,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/330a7c92-7bed-44ed-a4c3-d55cb24dd3fb/2024/07/22/22/LVD-S21%20Pro-CN249YE3%20001-24.06.17_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 22 Jul 2024 14:16:22 GMT",
+  "etag": "\"3a49a275be4328a9703ff1f4ac68a16a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1473532,
+      "actual": 1473532,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

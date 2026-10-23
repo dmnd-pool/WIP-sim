@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4e9daedba177403fa10b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fix_mac.tar.gz",
+  "kind": "firmware",
+  "title": "fix_mac.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:40:23+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-4e9daedba177403fa10b/fix_mac.tar.gz",
+  "sha256": "bc1efb214f8d5f27bff1a7dd0ce48950cebae9840e980d625aabff14a2f81597",
+  "size_bytes": 181,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fix_mac.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:32 GMT",
+  "etag": "\"5309a31f2c1d8c789e39c152797d607e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 181,
+      "actual": 181,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

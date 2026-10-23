@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7c1de526587e336e5f40",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e1d8c5ff-6de0-4d43-9c41-1e60a97a30f3/2024/10/10/12/Antminer-S19-XP-Hyd.-merge-release-20240924062054.bmu",
+  "kind": "firmware",
+  "title": "Antminer-S19-XP-Hyd.-merge-release-20240924062054.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:42+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-7c1de526587e336e5f40/Antminer-S19-XP-Hyd.-merge-release-20240924062054.bmu",
+  "sha256": "1c1ceb5f74cf12b851e7e3c5d00b799bb3c8ec0686a03b0baf7fb422cdea4a3b",
+  "size_bytes": 30881274,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e1d8c5ff-6de0-4d43-9c41-1e60a97a30f3/2024/10/10/12/Antminer-S19-XP-Hyd.-merge-release-20240924062054.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Thu, 10 Oct 2024 04:53:26 GMT",
+  "etag": "\"14d312dcac6819bf959ce4f4c9373119\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 30881274,
+      "actual": 30881274,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

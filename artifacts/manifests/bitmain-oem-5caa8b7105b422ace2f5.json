@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5caa8b7105b422ace2f5",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fe598b7e-0f12-4218-a190-d5382a565512/2025/11/26/13/ACRT2309218-R1-Z15%C2%A0Pro-SVHC233.pdf",
+  "kind": "document",
+  "title": "ACRT2309218-R1-Z15\u00a0Pro-SVHC233.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-5caa8b7105b422ace2f5/ACRT2309218-R1-Z15_Pro-SVHC233.pdf",
+  "sha256": "1c1ed2fd6b4f8049136fe00f1a056f9ae034c28d14a32280aa9bc0d5fbdeef4b",
+  "size_bytes": 221224,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/fe598b7e-0f12-4218-a190-d5382a565512/2025/11/26/13/ACRT2309218-R1-Z15%C2%A0Pro-SVHC233.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 26 Nov 2025 05:51:36 GMT",
+  "etag": "\"b9d961c803a06c77b35c7af442b2f27b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 221224,
+      "actual": 221224,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

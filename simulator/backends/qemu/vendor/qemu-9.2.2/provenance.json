@@ -1,0 +1,10 @@
+{
+  "source_archive": "artifacts/files/source/tool-espressif-qemu/qemu-febae182e132.tar.gz",
+  "source_archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+  "source_commit": "febae182e132e4055529be423a818225ebddaa3a",
+  "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/hw/block/nand.c",
+  "member_sha256": "6ef0d6f3bafea8f37c0d9307b8cc981c0cb08e3273a44f3e1e5d4e3d5c1f1667",
+  "preservation": "This member is unchanged. The build recipe ports include paths and records the adapted output separately. The complete original archive is retained.",
+  "reuse_reason": "The pinned QEMU 11.1.50 source contains no NAND model. Reuse the existing pin-level QEMU 9.2.2 storage engine rather than implement another flash engine. C is required by its existing QEMU interface.",
+  "limits": "This legacy component has no device timing. The new controller supplies explicit virtual busy intervals. A generic NAND fixture is not proof of an exact physical S9 part. No migration claim."
+}

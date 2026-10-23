@@ -1,0 +1,38 @@
+{
+  "id": "braiins-feed-d178bd18d5b5270bfc24",
+  "url": "https://feeds.braiins-os.com/24.04.3/braiins-os_am3-bbb_2024-09-12-0-9dbf0134-24.04.3-plus.img",
+  "kind": "firmware",
+  "title": "braiins-os_am3-bbb_2024-09-12-0-9dbf0134-24.04.3-plus.img",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:18:55+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-d178bd18d5b5270bfc24/braiins-os_am3-bbb_2024-09-12-0-9dbf0134-24.04.3-plus.img",
+  "sha256": "9616914eced46edf6736f11114fe1aa0d697828b3f0c6db912c011b0d2a12fac",
+  "size_bytes": 74448896,
+  "executed": false,
+  "expected_size_bytes": 74448896,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/24.04.3/braiins-os_am3-bbb_2024-09-12-0-9dbf0134-24.04.3-plus.img",
+  "http_status": 206,
+  "etag": "\"66e2e1ca-4700000\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 12 Sep 2024 12:42:50 GMT",
+  "publisher_sha256": "9616914eced46edf6736f11114fe1aa0d697828b3f0c6db912c011b0d2a12fac",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-067ea8d93eb10dea9e3d"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "9616914eced46edf6736f11114fe1aa0d697828b3f0c6db912c011b0d2a12fac",
+      "actual": "9616914eced46edf6736f11114fe1aa0d697828b3f0c6db912c011b0d2a12fac",
+      "match": true,
+      "source_id": "braiins-feed-067ea8d93eb10dea9e3d"
+    }
+  ],
+  "upstream_integrity_match": true
+}

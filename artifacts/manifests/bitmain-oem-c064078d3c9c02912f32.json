@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c064078d3c9c02912f32",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-V9-20180312-600M.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-V9-20180312-600M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-c064078d3c9c02912f32/ANTMINER-V9-20180312-600M.tar.gz",
+  "sha256": "2c4ebcaa049b8d3155e4447045409ddb8c6823b236b838478f68fc4ac02f8f56",
+  "size_bytes": 16853608,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-V9-20180312-600M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"3bb02722871b423bec618b98e2e7a67e-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 16853608,
+      "actual": 16853608,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

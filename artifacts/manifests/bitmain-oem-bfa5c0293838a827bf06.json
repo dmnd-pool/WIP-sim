@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-bfa5c0293838a827bf06",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e4cc7bfd-402a-4e7e-b8fb-8c13b71767cb/2024/07/22/22/ACRT2405210-S21%20Pro-SVHC240.pdf",
+  "kind": "document",
+  "title": "ACRT2405210-S21 Pro-SVHC240.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:14+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-bfa5c0293838a827bf06/ACRT2405210-S21_Pro-SVHC240.pdf",
+  "sha256": "5708df71542ab9f827d7c82d6f072f01c472c9cd12e72d3b3b0bcff76e3b9d4d",
+  "size_bytes": 226276,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e4cc7bfd-402a-4e7e-b8fb-8c13b71767cb/2024/07/22/22/ACRT2405210-S21%20Pro-SVHC240.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 22 Jul 2024 14:13:34 GMT",
+  "etag": "\"c483d3ab4eee36a3d4ceea49c91383f4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 226276,
+      "actual": 226276,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

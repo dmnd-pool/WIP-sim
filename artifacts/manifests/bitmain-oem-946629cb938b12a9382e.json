@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-946629cb938b12a9382e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ff5f7f9f-7a46-4a58-a3a0-1bb5622de355/2025/07/03/17/U3S21EXPH%20Product%20Manual_v1.1.6.pdf",
+  "kind": "document",
+  "title": "U3S21EXPH Product Manual_v1.1.6.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-946629cb938b12a9382e/U3S21EXPH_Product_Manual_v1.1.6.pdf",
+  "sha256": "3644fdeed7e06311cc3a0be059a7dcc663e50f1066382b80a198785596ac098e",
+  "size_bytes": 949660,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ff5f7f9f-7a46-4a58-a3a0-1bb5622de355/2025/07/03/17/U3S21EXPH%20Product%20Manual_v1.1.6.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 03 Jul 2025 09:04:00 GMT",
+  "etag": "\"298e4f3f179a69aa0262831f42cbc4f8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 949660,
+      "actual": 949660,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

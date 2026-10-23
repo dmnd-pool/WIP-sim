@@ -1,0 +1,43 @@
+{
+  "schema": "md-sim-planned-vendor-readback-vectors/1",
+  "state": "Static predictions only; not an executed oracle result",
+  "source_sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+  "ranges": "work/simulator/reviews/t17-readback-ranges-442.json",
+  "scope": "Vendor driver result selection and formatting. No ASIC response, readiness, reset value, timing or mining claim.",
+  "formatter": {
+    "original_virtual_address_hex": "000238f0",
+    "input_structure": "8-byte caller slot: raw little-endian u32 at offset0; software found byte at offset4; other bytes remain padding",
+    "setup": "debug word at0x95820=4; primary log handle pointer at0x95824 nonzero; secondary log pointer at0x2c9010=0; bounded fopen/fprintf/fclose/fputc test callbacks record arguments",
+    "cases": [
+      {"raw_word_hex":"00000000","found":1,"expected_reported_core_hex":"0000","expected_data_hex":"00","expected_fields":[0,0,0,0,0,0]},
+      {"raw_word_hex":"00000074","found":1,"expected_reported_core_hex":"0000","expected_data_hex":"74","expected_fields":[1,3,0,1,0,0]},
+      {"raw_word_hex":"01230074","found":1,"expected_reported_core_hex":"0123","expected_data_hex":"74","expected_fields":[1,3,0,1,0,0]},
+      {"raw_word_hex":"abcdff74","found":1,"expected_reported_core_hex":"abcd","expected_data_hex":"74","expected_fields":[1,3,0,1,0,0]},
+      {"raw_word_hex":"ffffffff","found":1,"expected_reported_core_hex":"ffff","expected_data_hex":"ff","expected_fields":[3,3,1,1,1,1]},
+      {"raw_word_hex":"00010008","found":1,"expected_reported_core_hex":"0001","expected_data_hex":"08","expected_fields":[0,0,1,0,0,0]},
+      {"raw_word_hex":"00010004","found":1,"expected_reported_core_hex":"0001","expected_data_hex":"04","expected_fields":[0,0,0,1,0,0]},
+      {"raw_word_hex":"deadbeef","found":0,"expected_reported_core_hex":"dead","expected_data_hex":"ef","expected_fields":null,"expected_status":"NOT FOUND; no field-detail calls"}
+    ],
+    "field_order": ["CCDLY_SEL[7:6]","PWTH_SEL[5:4]","HASH_CLKEN[3]","MMEN[2]","Reserved[1]","SWPF_MODE[0]"],
+    "planned_exhaustive_inputs": {"low_byte_inclusive":[0,255],"reported_core_fields_hex":["0000","0001","01ff","0200","ffff"],"middle_bytes_hex":["00","ff"],"found":[0,1],"total_calls":5120},
+    "not_inferred": "The printed reported-core field is not a physical core count, selector-to-core mapping, or proof of response provenance. Reserved bits are printed, not rejected by this formatter."
+  },
+  "collector": {
+    "original_virtual_address_hex":"0001c0c4",
+    "setup":"debug word0x95820=0; queue base0xb52588; read index at+4; count at+8; entries at+12 with stride8; fixed nonzero normalization divisor4 at the byte loaded through pointer0x98a18 plus0x4dda; exact original unsigned-division helper at0x75be8; bounded mutex/delay test callbacks",
+    "request":{"chain":2,"normalized_asic_index":3,"register_hex":"40"},
+    "initial_output":{"raw_word_hex":"deadbeef","found":0},
+    "entry_layout":"value:u32 at0; byte4 unused by this collector; logical ASIC address at5; register at6; chain at7",
+    "cases":[
+      {"name":"exact_match","read_index":0,"entries":[{"value_hex":"01230074","logical_address":12,"register_hex":"40","chain":2}],"expected":{"value_hex":"01230074","found":1,"read_index":1,"remaining_count":0}},
+      {"name":"wrong_register","read_index":0,"entries":[{"value_hex":"01230074","logical_address":12,"register_hex":"41","chain":2}],"expected":{"value_hex":"deadbeef","found":0,"read_index":1,"remaining_count":0}},
+      {"name":"same_register_wrong_chain","read_index":0,"entries":[{"value_hex":"01230074","logical_address":12,"register_hex":"40","chain":3}],"expected":{"value_hex":"deadbeef","found":1,"read_index":1,"remaining_count":0},"warning":"Static prediction of vendor selection behavior; must be executed before calling this a confirmed runtime defect."},
+      {"name":"same_register_wrong_asic","read_index":0,"entries":[{"value_hex":"01230074","logical_address":16,"register_hex":"40","chain":2}],"expected":{"value_hex":"deadbeef","found":1,"read_index":1,"remaining_count":0},"warning":"Static prediction only; not acceptable ASIC readiness evidence."},
+      {"name":"wrong_register_then_match","read_index":0,"entries":[{"value_hex":"11111111","logical_address":12,"register_hex":"41","chain":2},{"value_hex":"01230074","logical_address":12,"register_hex":"40","chain":2}],"expected":{"value_hex":"01230074","found":1,"read_index":2,"remaining_count":0}},
+      {"name":"wrong_chain_then_match","read_index":0,"entries":[{"value_hex":"11111111","logical_address":12,"register_hex":"40","chain":3},{"value_hex":"01230074","logical_address":12,"register_hex":"40","chain":2}],"expected":{"value_hex":"deadbeef","found":1,"read_index":1,"remaining_count":1}},
+      {"name":"empty","read_index":0,"entries":[],"expected":{"value_hex":"deadbeef","found":0,"read_index":0,"remaining_count":0}},
+      {"name":"read_index_wrap","read_index":510,"entries":[{"value_hex":"01230074","logical_address":12,"register_hex":"40","chain":2}],"expected":{"value_hex":"01230074","found":1,"read_index":0,"remaining_count":0}}
+    ],
+    "not_inferred":"Driver wait arguments and test callbacks do not establish physical ASIC latency. Queue records are already processed driver records, not raw UART frames. The queue producer has not been traced here."
+  }
+}

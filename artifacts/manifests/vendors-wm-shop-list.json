@@ -1,0 +1,27 @@
+{
+  "id": "vendors-wm-shop-list",
+  "url": "https://www.whatsminer.com/renren-fast/app/v2/mall/getProductList",
+  "kind": "metadata",
+  "title": "Official WhatsMiner public product list",
+  "language": "en",
+  "source_id": "source-wm-shop-list",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:07:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/vendors-wm-shop-list/product-list.json",
+  "sha256": "a7fd0df8770754791a0d9656cb90fb78fcc7d16ccd51a832e2d05c98e6e878e4",
+  "size_bytes": 74095,
+  "executed": false,
+  "request_json": {
+    "model": [],
+    "cooling": [],
+    "type": [],
+    "warehouse": []
+  },
+  "request_method": "POST",
+  "final_url": "https://www.whatsminer.com/renren-fast/app/v2/mall/getProductList",
+  "http_status": 200,
+  "content_type": "application/json",
+  "last_modified": null,
+  "etag": null
+}

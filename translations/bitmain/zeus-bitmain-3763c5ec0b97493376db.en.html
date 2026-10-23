@@ -1,0 +1,187 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Antminer T17 Hash Board Repair Guide [EN]</title><style>body{max-width:1000px;margin:2em auto;font:17px/1.5 sans-serif}img{max-width:100%;height:auto}table{border-collapse:collapse}td,th{border:1px solid #aaa;padding:.3em}</style><body><h1>English counterpart: Antminer T17 Hash Board Repair Guide [EN]</h1><p>Chinese original: zeus-bitmain-3763c5ec0b97493376db. English source: <a href="https://www.zeusbtc.com/manuals/Antminer-T17-Hash-Board-Repair-Guide.asp">zeus-bitmain-0443860704b016bd2f15</a>.</p><p>This is the English manual published by Zeus Mining for the corresponding model. The original source images are retained and linked to local archive files. Image-only labels are not newly translated. A complete page-by-page equivalence check has not been made.</p><p>Same explicit version date found in both texts: false.</p><div class="Manuals">
+<h2>How to Repair Antminer T17 Hash Board?</h2>
+<p></p>
+<p style="text-align: center;">
+    <strong>Antminer T17 Hash Board Repair Guide [EN]</strong>
+</p>
+<p>
+    Editor-in-Chief: Li Yan
+</p>
+<p>
+    Version date: 2019.7.2
+</p>
+<p>
+    File Category: Maintenance Plan
+</p>
+<p>
+    Content of this Volume: It mainly describes the troubleshooting of various faults of T17, and how to use the test&nbsp;
+</p>
+<p>
+    tool for accurate positioning.&nbsp;
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>I. Maintenance Tools</strong></span>
+</p>
+<p>
+    1. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=412" target="_blank" title="Universal electric screwdriver">General electric screwdriver</a>
+</p>
+<p>
+    2. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=99" target="_blank" title="fluke 15b+">Fluke 15b+ Multimeter</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=132" target="_blank" title="tweezer">tweezers</a>, V9-v1.2 <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Repair-tools/Antminer-Test-fixture/" target="_blank" title="Antminer test fixture">test jig</a>, T17 chassis with power set
+</p>
+<p>
+    3. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=127" target="_blank" title="heat air gun">Hot air gun</a> (welding temperature is 260 degrees±2 degrees)
+</p>
+<p>
+    4. Constant temperature soldering iron (welding temperature is 300-350 degrees)
+</p>
+<p>
+    5. Environmentally friendly <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=272" target="_blank" title="flux solder paste">flux solder paste</a>, lead-free low temperature (melting point at 150 degrees) solder wire, anhydrous alcohol, water for cleaning panel,&nbsp;
+</p>
+<p>
+    6. OM550 <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=266" target="_blank" title="low temperature solder paste">low temperature solder paste</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=73" target="_blank" title="BM1397 tin tool">BM1397AE tinning steel mesh</a> jig
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>II. Component Structure of the Hash Board</strong></span>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-acb76992fd5946921547/16280624693280179.jpg" title="repair Antminer T17 hashboard" alt="repair Antminer T17 hashboard"></img>
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>III. Signal Transmission Circuit</strong></span>
+</p>
+<p>
+    1. Signal transmission channel, signal CLK-RST-BO-CO is transmitted from the first chip to the second, and till the 30th, RI signal is reversely transmitted from the 30th chips to the first chip, as the figure below:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-0a2b2b2ff58e15851480/16280624961647611.JPG" title="repair Antminer T17 hashboard" alt="repair Antminer T17 hashboard"></img>
+</p>
+<p>
+    2. Signal test point identification and test point arrangement order (there are a total of 30 chips on the hash board, and 10 voltage domains), as shown below:<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-fd31c3fc9fb0ec85a962/16280625211946988.JPG" title="repair Antminer T17 hashboard" alt="repair Antminer T17 hashboard"></img>
+</p>
+<p style="text-align: center;">
+    Distribution of test points in voltage domain<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-7e262c0853211ead8f92/16280625735811430.JPG" title="maintenance T17 hash board guide" alt="maintenance T17 hash board guide"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-97a6a2d2b9adb2801c95/16280626681136747.JPG" title="maintenance T17 hash board guide" alt="maintenance T17 hash board guide"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-8506b0272d3231a530e2/16280626847967497.JPG" title="Signal communication circuit" alt="Signal communication circuit"></img>
+</p>
+<p>
+    3. Signal communication circuit from IO socket to chip<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-4a18019b196065e8a8bb/16280627099855360.JPG" title="J1-IO socket" alt="J1-IO socket"></img>
+</p>
+<p style="text-align: center;">
+    Picture of J1-IO socket
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-afcbf52cf098032e727e/16280627334186689.JPG" title="Schematic diagram of J1-IO" alt="Schematic diagram of J1-IO"></img>Schematic diagram of J1-IO socket
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-93e2c0af51bc764920b5/16280628288122541.JPG" title="repair manual for T17 hashboard" alt="repair manual for T17 hashboard"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-6d005a210ed1105a5666/16280628413355710.JPG" title="repair manual for T17 hashboard" alt="repair manual for T17 hashboard"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>IV. Power Circuit</strong></span>
+</p>
+<p>
+    1. The power supply voltage of each board is (T17 jig test voltage output is 17V). There are 10 voltage domains, and the voltage of each two voltage domains is 1.7V.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-ba68f44417704aca808e/16280629167841291.JPG" title="power supply voltage" alt="power supply voltage"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <span style="font-size: 18px;"><strong>V. Cases of Single Board Test Troubleshooting</strong></span>
+</p>
+<p>
+    5.1 Single board jig test asic=0
+</p>
+<p>
+    Failure analysis:
+</p>
+<p>
+    1. Whether the <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=76" target="_blank" title="test fixture cable">jig cable</a> and hash board are in good contact.
+</p>
+<p>
+    2. The T17 hash board J6-J7 should have a voltage of 17V when testing the jig.
+</p>
+<p>
+    3. When testing the jig, measure whether there is voltage between the 10 voltage domains.
+</p>
+<p>
+    3.1 If there is no voltage in the voltage domain, it is necessary to see whether the normal working voltage of the pin 4 of Q7, Q8, Q9, Q11 is low level of 0V. If it is high level, then it depends on whether the pin 1 of Q10 is high level of 3.3v, if Q10 does not have 3.3V Voltage, that is, U3-PIC loses firmware or there is no power supply.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-982892c2fa9830482018/16280629354734907.JPG" title="Schematic diagram of PIC" alt="Schematic diagram of PIC"></img>
+</p>
+<p style="text-align: center;">
+    Schematic diagram of PIC
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-a0c62cca6a0395e676aa/16280629911646100.JPG" title="17V output control circuit" alt="17V output control circuit"></img>
+</p>
+<p style="text-align: center;">
+    17V output control circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-11cb81b84e0d96c4de91/16280630202053830.JPG" title="T17 hash board maintenance manual" alt="T17 hash board maintenance manual"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p>
+    3.2. If the power supply is normal and there is voltage in voltage domain, then the RI signal of the chip should be measured to see if the RI signal has a voltage of 1.8V. When measuring the RI signal, it should start from the test point of the last chip. If there is voltage in the last chip, measure whether the 20th chip has RI -1.8v, and the rest can be done in the same manner, when finding the chip that does not have RI output voltage, first measure the 1.8V power supply of this chip, if there is no power supply of 1.8V, then check the 1.8V power supply circuit. The 1.8V power supply circuit is supply powers to the LDO pin 1 through the voltage division of the voltage domain. The pin 5 of LDO outputs voltage of 1.8V. (Each voltage domain has -1.8 V LDO to supply power to chip). If there is no output, this LDO should have a problem. If 1.8V is normal, measure the ground resistance of the test point after the power is cut off and compare with the OK board to see if there is any resistance abnormality; if the resistance value is normal, and there is no problem with soldering. This chip should have a problem. (Re-tin the removed chip and solder it to a good board to verify it. If there is no RI signal, it proves that the chip is damaged, replace the chip.)
+</p>
+<p style="text-align: center;">
+    1.8V power supply circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-1e921c1a7347f889ef2a/16280630991349607.JPG" title="T17 hash board maintenance manual" alt="T17 hash board maintenance manual"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-45f51db25b900c8f2af1/16280631144056638.JPG" title="T17 hash board maintenance manual" alt="T17 hash board maintenance manual"></img>
+</p>
+<p>
+    5.2 Fault phenomenon is ASIC=7<br></br>
+</p>
+<p>
+    Analysis: ASIC=7,
+</p>
+<p>
+    1. In a single board test, 7 chips can be found. It can be judged that the RI signal is normal. If the 8th chip cannot be found, we will directly measure the voltage of the 7th chip U198-CLK-RST-CO to see if the power supply is normal. If CLK does not have a voltage of 0.8V, then it depends on the power supply circuit of CLK.
+</p>
+<p>
+    2-CLK circuit analysis: If CLK does not have 0.8V, first check whether the 0.8V power supply of the bad chip voltage domain is normal, the 0.8V power supply circuit is obtained by voltage domain division, and 1.8V power supply mode is the same, as for the maintenance method for pin 5 output 0.8V, refer to the 1.8V maintenance method (note that there are 2 out of 3 chips outputting 0.8V LDO power supply in each chip in each domain of T17, and each LDO supplies to 2 chips).
+</p>
+<p style="text-align: center;">
+    0.8v power supply schematic
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-cbfe6a6e26dd75e37af5/16280632009238890.JPG" title="power supply circuit" alt="power supply circuit"></img>
+</p>
+<p>
+    <img src="../../artifacts/files/document/zeus-diagram-a8cb8cf15fc1a8211d16/16280632094427839.JPG" title="power supply circuit" alt="power supply circuit"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-e0d0fd9ae3d4a11f0376/16280632872794996.JPG" title="maintenance guide" alt="maintenance guide"></img>
+</p>
+<p>
+    If the 0.8V power supply circuit does not have a 0.8V output, then see if the 0.8V LDO power supply has a supply voltage of about 3.2V. If it has, see if the LDO is soldered insufficiently or short-circuited. If there is a 0.8V output, then see the ground resistance of the chip, if the resistance is correct, it should be a bad chip.<br></br>
+</p>
+</div></body></html>

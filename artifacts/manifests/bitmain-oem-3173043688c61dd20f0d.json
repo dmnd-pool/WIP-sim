@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3173043688c61dd20f0d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/R3-SIA/Manual/00720180813164144569slD5NDok06CA/R3-SIA_USER%20GUIDE.pdf",
+  "kind": "document",
+  "title": "R3-SIA_USER GUIDE.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:23+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3173043688c61dd20f0d/R3-SIA_USER_GUIDE.pdf",
+  "sha256": "69715071889584b3e5a2688b622c64565358f8b3d32d7ac2189a7fe5570aef7f",
+  "size_bytes": 15203751,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/R3-SIA/Manual/00720180813164144569slD5NDok06CA/R3-SIA_USER%20GUIDE.pdf",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"a26e0cbd733b815554d956ccde6a2738\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 15203751,
+      "actual": 15203751,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

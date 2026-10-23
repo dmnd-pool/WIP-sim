@@ -1,0 +1,214 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Antminer S17 Hash Board Repair Guide [EN]</title><style>body{max-width:1000px;margin:2em auto;font:17px/1.5 sans-serif}img{max-width:100%;height:auto}table{border-collapse:collapse}td,th{border:1px solid #aaa;padding:.3em}</style><body><h1>English counterpart: Antminer S17 Hash Board Repair Guide [EN]</h1><p>Chinese original: zeus-bitmain-fb9fa62c844e522d8097. English source: <a href="https://www.zeusbtc.com/manuals/Antminer-S17-Hash-Board-Repair-Guide.asp">zeus-bitmain-bf90c899aa3b13d32ab4</a>.</p><p>This is the English manual published by Zeus Mining for the corresponding model. The original source images are retained and linked to local archive files. Image-only labels are not newly translated. A complete page-by-page equivalence check has not been made.</p><p>Same explicit version date found in both texts: false.</p><div class="Manuals">
+<h2>How to Repair Antminer S17 Hash Board?</h2>
+<p></p>
+<p>
+    <strong>Antminer S17 hash board Maintenance Guide</strong>
+</p>
+<p>
+    Date of the version: 2019.7.2
+</p>
+<p>
+    Document type: Repair plan
+</p>
+<p>
+    Content of this volume: It mainly describes the troubleshooting of S17 various faults, and explains how to use the test tools for accurate positioning.
+</p>
+<p>
+    ※ The copyright of this article belongs to Bitmaintech Pte.Ltd. (Bitmain). The article shall solely be reprinted, extracted or used in any other ways with the permission of the copyright owner. Please contact Bitmain official customer service if there is any need of reprinting or quoting.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>I. Service tools</strong>
+</p>
+<p>
+    1. General <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=166" target="_blank" title="electric screwdriver">electric screwdriver</a>
+</p>
+<p>
+    2. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=99" target="_blank" title="fluke 15b+">Fluke 15b+ Multimeter</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=132" target="_blank" title="Tweezers">Tweezers</a>, V9-v1.2 <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=212" target="_blank" title="test fixture">test fixture</a>, S17 chassis with <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=277" target="_blank" title="APW9 power supply">APW9 power supply</a>&nbsp;
+</p>
+<p>
+    3. <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=127" target="_blank" title="heat gun">Heat gun</a> (welding temperature is 260±2 degrees). <span style="color: rgb(255, 0, 0);">Note: the temperature marked here is the actual temperature</span>
+</p>
+<p>
+    4. Thermostat soldering iron (welding temperature is 300-350 degrees)
+</p>
+<p>
+    5. Environment-friendly scaling powder, lead-free low temperature (melting point 150 degrees) solder stick, anhydrous alcohol, water for cleaning panel;
+</p>
+<p>
+    6. OM550 low temperature solder paste, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=230" target="_blank" title="BM1397 AE">BM1397AE</a> tin planting steel mesh fixture
+</p>
+<p>
+    7.&nbsp;<a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=46" target="_blank" title="cooling fan">Cooling fan</a>;
+</p>
+<p>
+    If you need to repair Antminer S17, in addition to the necessary tools mentioned above, you also need general-purpose <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=125" target="_blank" title="862D-desoldering stations">862D-desoldering stations</a>, <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=370" target="_blank" title="Tin scrapers">tin scrapers</a> and other efficient tools.
+</p>
+<p>
+    Of course, this choice may be more troublesome, you can also choose the convenient <a href="https://www.zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=258" target="_blank" title="Bitmain Antminer hash board repair bundle">Bitmain Antminer hash board repair bundle</a>.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>II. Component structure of hash board</strong>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-4b85600cb4f86110e0a3/16276364411321729.jpg" title="repair S17 hash board" alt="repair S17 hash board"></img>
+</p>
+<p>
+    <strong style="text-align: center;"><br></br></strong>
+</p>
+<p style="text-align: center;">
+    <strong style="text-align: center;">III. Signal transmission circuit</strong>
+</p>
+<p>
+    1. Signal transmission channel, the signal CLK-RST-BO-CO is transmitted from the first chip to the second one, until the 48th; RI signal is transmitted from the 48th chip to the first chip reversely, as shown in following figure:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-c622cbeb005e84bee107/16276364783495374.jpg" title="how to repair S17 hash board" alt="how to repair S17 hash board"></img>
+</p>
+<p>
+    2. Signal test point identification and test point arrangement order (the hash board has a total of 48 chips, and 12 voltage domains) are as shown below:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-e06f60cc10649fad52dd/16276365069272535.jpg" title="hash board repair guide" alt="hash board repair guide"></img>
+</p>
+<p style="text-align: center;">
+    Distribution of voltage domain test points
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-3bc8f67b5a510d72050b/16276365682979703.jpg" title="hash board repair guide" alt="hash board repair guide"></img>
+</p>
+<p style="text-align: center;">
+    Picture of real product
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-cf853964086dd03ffca5/16276366478995680.jpg" title="hash board repair guide" alt="hash board repair guide"></img>
+</p>
+<p>
+    3.Signal communication circuit from IO block to chip<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-4c257bb8b951f36866f5/16276380019153059.jpg" title="J1-IO bloke picture" alt="J1-IO bloke picture"></img>
+</p>
+<p style="text-align: center;">
+    J1-IO block picture　　　　　　　　　　　　　J1-IO block schematic diagram
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>IV. Power circuit</strong>
+</p>
+<p>
+    The power supply voltage of each board (S17 fixture test voltage output is 18.5V). There are 12 voltage domains, and the voltage of every two voltage domains is 1.55v.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-a07f44134f3faa08ef89/16276382121165586.jpg" title="repair S17 hash board" alt="repair S17 hash board"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-83d9459268e6564e1d36/16276382272150510.jpg" title="repair S17 hash board" alt="repair S17 hash board"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-bdfca19dcb03a77784c5/16276382434468076.jpg" title="repair S17 hash board" alt="repair S17 hash board"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-628b89e7ceddfaf82a99/16276382542284543.jpg" title="repair S17 hash board" alt="repair S17 hash board"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>V. Considerations for single board test</strong>
+</p>
+<p>
+    1. The hash board is not attached with cooling fin. The fixture program can only adopt the chip test program. After the chip is found, the cooling fan is attached.
+</p>
+<p>
+    2. If the hash board needs to test parten, the heat dissipation requires 4 fans;
+</p>
+<p>
+    3. After sales, the miner in the condition of the software without sweeping frequency needs to change the repair mode under the fixture config file to 1, that is, the eeprom data is not cleared when testing;
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-e15e7552a14c63a34ab4/16276382786443968.jpg" title="repair S17 hash board" alt="repair S17 hash board"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>VI. Single board test troubleshooting example</strong>
+</p>
+<p>
+    6. 1 single board fixture test ASIC=0&nbsp;
+</p>
+<p>
+    <strong>Failure analysis:</strong>
+</p>
+<p>
+    1. Whether the fixture cable and the hash board are in good contact.
+</p>
+<p>
+    2. If it&#39;s the S17 hash board, J6-J7 should have a voltage of 18.5V when testing the fixture.
+</p>
+<p>
+    3. When the fixture test is performing, whether there is a voltage between the 12 voltage domains, and <span style="color: rgb(255, 0, 0);">the boost circuit is normal</span><span style="color: rgb(255, 0, 0);">:</span>
+</p>
+<p>
+    3.1 If there is no voltage in the voltage domain, it is necessary to check that the normal working voltage of the 4 pin of Q7Q8Q9Q11 is 0V. If it is high level, then check whether the 1 pin of Q10 is high level 3.3v. If Q10 does&nbsp;not have a voltage of 3.3v, it indicates that the U3-PIC loses firmware or is not powered.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-0c10da09b7370cd3db25/16276383393196271.jpg" title="best repair guide for Antminer S17 hash board" alt="best repair guide for Antminer S17 hash board"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-8f7d7b4c6ac5cfe4f390/16276383858164976.jpg" title="best repair guide for Antminer S17 hash board" alt="best repair guide for Antminer S17 hash board"></img>
+</p>
+<p style="text-align: center;">
+    PIC schematic diagram
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-5644c913b569dff2d862/16276384208605116.jpg" title="best repair guide for Antminer S17 hash board" alt="best repair guide for Antminer S17 hash board"></img>
+</p>
+<p style="text-align: center;">
+    18.5V output control circuit
+</p>
+<p>
+    3.2 If the power supply is normal and the voltage of voltage domain is also available, then measure the RI signal of the chip to check if the RI signal has a voltage of 1.8V. When measuring the RI signal, it should be measured from the test point of the last chip, and if the last one has voltage, then measure the 20th chip for RI -1.8v. By analogy, when the chip has no RI output voltage is found, first measure it for the 1.8V power supply, if there is no power supply at 1.8V, then check the 1.8V power supply circuit. The 1.8V power supply circuit is obtained through voltage division by the voltage domain and then supply power to the LDO 1 pin. The LDO&#39;s 5 pin outputs 1.8V, (each voltage domain has one 1.8V LDO supplying power for the chip). If there is no output, there should be a problem with this LDO. If 1.8V is normal, measure the resistance value over the ground of the test point after power is cut off, and compare with the OK board to check if there is any resistance abnormality. If the value is normal and there is no problem in soldering, it should be that the chip has a fault, (weld the removed chip on a good board after planting tin, and then verity it. If there is no RI signal, it proves that the chip is damaged, so please replace the chip).
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-ef2e7d8f123cbc332d4e/16276384752606580.jpg" title="best repair guide for Antminer S17 hash board" alt="best repair guide for Antminer S17 hash board"></img>1.8V supply circuit
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-f2037d40a014f33b503c/16276385233739820.jpg" title="best repair guide for Antminer S17 hash board" alt="best repair guide for Antminer S17 hash board"></img>
+</p>
+<p>
+    <strong>5.2 Fault phenomenon ASIC=7</strong><br></br>
+</p>
+<p>
+    Analysis: ASIC=7,
+</p>
+<p>
+    1. Single board test can find 7 chips, indicating that the RI signal is normal. The 8th chip cannot be found, so we shall directly measure the voltage of the 7th chip U198-CLK-RST-CO to check if the power supply is normal. If CLK does not have a voltage of 0.8V, then check the power supply circuit of CLK.
+</p>
+<p>
+    2. CLK circuit analysis: If CLK does not have 0.8V, first check whether the bad chip voltage domain 0.8V power supply is normal. The 0.8V power supply circuit is obtained by voltage domain divider and then supply power in the same way as 1.8V power supply mode. 5 pin output 0.8V maintenance method can refer to the 1.8V maintenance method (note that every two chips among the 4 chips of each domain of S17 can provide 0.8V LDO power supply, and every LDO supplies 2 chips)
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-d05eeacd635d6eeb069d/16276386492981214.jpg" title="power supply scheme" alt="power supply scheme"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-65a83943799abb021591/16276386617206144.jpg" title="power supply scheme" alt="power supply scheme"></img>
+</p>
+<p style="text-align: center;">
+    0.8v power supply scheme
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-80b7311b19a212410f35/16276386884372770.jpg" title="Antminer S17 hash board maintenance guide" alt="Antminer S17 hash board maintenance guide"></img>
+</p>
+<p>
+    If the 0.8V power supply circuit does not have a 0.8V output, then check if the 0.8V LDO power supply has a supply voltage of about 3.2V. If so, check whether the LDO is cold solder joint or short-circuited. If there is a 0.8V output, check the resistance of the chip over the ground. If the resistance is correct, it indicates the chip is damaged.
+</p>
+</div></body></html>

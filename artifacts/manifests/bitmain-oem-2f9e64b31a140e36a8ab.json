@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2f9e64b31a140e36a8ab",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/df1605a5-7fbc-4f5b-a6e1-66cc43ca0a5b/2025/11/26/13/RoHS%20-ACRT2309217%20.pdf",
+  "kind": "document",
+  "title": "RoHS -ACRT2309217 .pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2f9e64b31a140e36a8ab/RoHS_-ACRT2309217_.pdf",
+  "sha256": "5d45b4706740742327843893598942c99090f72429162a8398a634b236005356",
+  "size_bytes": 259284,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/df1605a5-7fbc-4f5b-a6e1-66cc43ca0a5b/2025/11/26/13/RoHS%20-ACRT2309217%20.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 26 Nov 2025 05:50:51 GMT",
+  "etag": "\"16319ad1e3e95c53a351e3df788812ba\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 259284,
+      "actual": 259284,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7f143280bc2b9a743669",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b6ea1e50-bd76-43c4-9d19-af71b67feb3c/2024/05/22/16/LVD%20_D9_CN2349M5%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD _D9_CN2349M5 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:14+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7f143280bc2b9a743669/LVD__D9_CN2349M5_001_2023.10.11_extsigned.pdf",
+  "sha256": "bb080812c20c374fc5e9d6f997f75a9871cd5887f86bcd2ae4dbdd71a3bbf43f",
+  "size_bytes": 1683997,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b6ea1e50-bd76-43c4-9d19-af71b67feb3c/2024/05/22/16/LVD%20_D9_CN2349M5%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:56:13 GMT",
+  "etag": "\"5c6af3c69d16c9a3f1cdd386ee660d92\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1683997,
+      "actual": 1683997,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

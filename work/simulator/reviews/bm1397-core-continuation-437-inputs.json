@@ -1,0 +1,141 @@
+{
+  "schema": "md-sim-research-evidence-inputs/1",
+  "claim": "Read-only continuation audit; no new build, test, VM or firmware execution",
+  "files": [
+    {
+      "path": "work/simulator/reviews/bm1397-core-continuation-437.md",
+      "sha256": "2c2e1d1b4bd7f36d936c0b87dc67c43146a723030138e776e12e090ce2cc772c",
+      "size": 8584
+    },
+    {
+      "path": "work/simulator/bitaxe/bm1397-progress.md",
+      "sha256": "6ed775224bbc6a6f7e258a1f3b5838649210bb8e3cadf657afe93693a246f6db",
+      "size": 11770
+    },
+    {
+      "path": "work/simulator/bitaxe/bm1397-source-002/references.json",
+      "sha256": "3b81998bc500ccd0d509bca8a15199d9f0225fcf7d132dd36bfd4e48fdf08124",
+      "size": 49254
+    },
+    {
+      "path": "work/simulator/bitaxe/bm1397-pll-source-241/references.json",
+      "sha256": "0593a5206afeed3d4a49acfd87b69f4e9351b6f3d22f235365bb253810c51c8e",
+      "size": 66474
+    },
+    {
+      "path": "work/simulator/bitaxe/bm1397-community-reference-001/provider-response.json",
+      "sha256": "501c855b43ecf49a37575766454d1e4e439d0911f1b0c2f5bd2bef287642fe67",
+      "size": 23571
+    },
+    {
+      "path": "work/simulator/bitaxe/bm1397-community-reference-001/manifest.json",
+      "sha256": "56d786508c8c83c44dcd284ee44dc1e6d29942dd4ff5b50158856c043be293a3",
+      "size": 1210
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/inspection.json",
+      "sha256": "d8bd27292ccbdd799bb0137c309de34e65eca596002858865a630092ca964e7f",
+      "size": 4072
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/core-mailbox-analysis.json",
+      "sha256": "fbb09e6cc06a0c488a3e3ea1ee86c3641e6ced4b5c170b62c34809672deba95f",
+      "size": 5645
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+      "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+      "size": 553247
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/a32.txt",
+      "sha256": "d519092b11da763c50b6aed3cfc1de0f9945ea2a228acc15cbafb5a67817004b",
+      "size": 3506185
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-core-oracle-272/assessment.json",
+      "sha256": "6066975256dee99b0a5ae3b8249300cdadc85df14724666701b9ac9062b67f5b",
+      "size": 1107
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-core-oracle-272/execution.stdout",
+      "sha256": "7527abdd4015bbafa0dc1121733a9ff20c37799e142e11b6d2c69f57b45745d1",
+      "size": 196608
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-core-oracle-274/assessment.json",
+      "sha256": "8bab86b7d1c5f8f42ec3cfe301a79383069c761d0222b3ca50fbb63e31e97d71",
+      "size": 1800
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-core-oracle-274/execution.stdout",
+      "sha256": "7527abdd4015bbafa0dc1121733a9ff20c37799e142e11b6d2c69f57b45745d1",
+      "size": 196608
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-core-oracle-274/oracle",
+      "sha256": "250d4fe9a95220e5f3b23b4e36478bcf144075b1613df42ea10a7bd786886fa8",
+      "size": 1456
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-035/input-identities.json",
+      "sha256": "60c3c32c4335a03efd3b1d9fe8a19286f9e936d408be0c6e778ebfd847dc9390",
+      "size": 2370
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-035/spec.json",
+      "sha256": "28a1d95e9ded05954ecaa3e7ce3d5aa70a559ce62102a281ea6e2b6fd457dfbe",
+      "size": 3919
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-035/result.json",
+      "sha256": "bed8b61a73821458acb3f6b5ced8c1fcc0170a804dc88a917b105321d094b376",
+      "size": 853855
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-035/assessment.json",
+      "sha256": "321781e9a728f699eab092dd89c056972b2e87d33252eb09f1eb829e122a802c",
+      "size": 504
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-035/stage-audit-root.json",
+      "sha256": "3be3cd2abcecaef4f0bbf01f20fcbd1124ca9c1c2ba15f07b0ea7c0fba8a1e31",
+      "size": 4606
+    },
+    {
+      "path": "simulator/firmware/fixtures/t17-core-packing-results.bin",
+      "sha256": "7527abdd4015bbafa0dc1121733a9ff20c37799e142e11b6d2c69f57b45745d1",
+      "size": 196608
+    },
+    {
+      "path": "simulator/firmware/fixtures/t17-core-packing-results.json",
+      "sha256": "a7e6f0543139502d3128b90ee3c52599ca133ea44271dbb34a2ec095491e5921",
+      "size": 1584
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bm1397/core_control.rs",
+      "sha256": "0f25fcaf58c0e3bf3df7f3080bda65c450439283a83da0283f2276a8d47b4a63",
+      "size": 4965
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bm1397/identify.rs",
+      "sha256": "6ef618637a2aedd49788b190ec5aec22f97c5395e229048d8b08cba72725a397",
+      "size": 28131
+    },
+    {
+      "path": "artifacts/files/firmware/bitmain-oem-7adde9c1d9605e5b0521/ANTMINER-T17-user-OM-202004231629-sig_5828.tar.gz",
+      "sha256": "89677e26b8fb4b25cd8b3157b0a73b4df88f10f9994f0e7f8102af9d11f99772",
+      "size": 17123204
+    },
+    {
+      "path": "artifacts/files/source/open-bitaxeorg-esp-miner-release-source-351118297/ESP-Miner-64680f8a4da0b9a3b532051f0aa18429fcf04e82.tar.gz",
+      "sha256": "ccba9a695c3661a7d536cd649c0dcd6935cb0f9d59d24ff667391d65398ce069",
+      "size": 900415
+    },
+    {
+      "path": "artifacts/files/firmware/open-gh-asset-475665897/esp-miner-factory-102-v2.14.2.bin",
+      "sha256": "3fd36298681d7797429dd72610041d731558c5253430902a3c7feeced232557c",
+      "size": 15802368
+    }
+  ]
+}

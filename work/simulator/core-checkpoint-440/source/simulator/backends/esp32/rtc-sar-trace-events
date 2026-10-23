@@ -1,0 +1,3 @@
+# md-sim RTC SAR development model
+md_sim_sar_mmio(bool write, unsigned bank, uint64_t address, unsigned size, uint32_t value, uint64_t faults) "write=%u bank=%u addr=0x%"PRIx64" size=%u value=0x%08x faults=%"PRIu64
+md_sim_sar_complete(uint64_t completed, uint64_t faults) "completed=%"PRIu64" faults=%"PRIu64

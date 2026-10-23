@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ede165386a2f05c72e32",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-S9-all-201705031858-600M-user-Update2UBI-NF.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9-all-201705031858-600M-user-Update2UBI-NF.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:41:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-ede165386a2f05c72e32/ANTMINER-S9-all-201705031858-600M-user-Update2UBI-NF.tar.gz",
+  "sha256": "45e5170a011171000a6dd49741902c1eab06fa22951e9260571c6108abaedbc0",
+  "size_bytes": 63667437,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-S9-all-201705031858-600M-user-Update2UBI-NF.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:28 GMT",
+  "etag": "\"7fcdbf2ac7f1dbbe90f5554ee4595875-4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 63667437,
+      "actual": 63667437,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

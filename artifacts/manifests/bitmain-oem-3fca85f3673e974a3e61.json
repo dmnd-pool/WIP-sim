@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3fca85f3673e974a3e61",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/86c4c98a-36aa-435d-84ca-f328a9388a80/2023/07/27/16/S15%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S15 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:48+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3fca85f3673e974a3e61/S15_Server_Manual.pdf",
+  "sha256": "7f2547de25e69aff9235c4d35b14fdd28e86ed838871745610166e4af77b2831",
+  "size_bytes": 1039685,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/86c4c98a-36aa-435d-84ca-f328a9388a80/2023/07/27/16/S15%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:03:25 GMT",
+  "etag": "\"69b0200a150bff2c94b36f3f6da10a39\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1039685,
+      "actual": 1039685,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

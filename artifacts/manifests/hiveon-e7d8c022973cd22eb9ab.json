@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-e7d8c022973cd22eb9ab",
+  "url": "https://download.hiveos.farm/asic/utility/Win32DiskImager-1.0.0-binary.zip",
+  "kind": "firmware",
+  "title": "Win32DiskImager-1.0.0-binary.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-e7d8c022973cd22eb9ab/Win32DiskImager-1.0.0-binary.zip",
+  "sha256": "d3cae3fff1aa5e74e9f4cd3ca48a6bd9586aa573243f1603fffbc03470033e14",
+  "size_bytes": 16981676,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/utility/Win32DiskImager-1.0.0-binary.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 11 Jun 2020 08:13:13 GMT",
+  "etag": "\"5ee1e799-1031eac\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 16981676,
+      "actual": 16981676,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

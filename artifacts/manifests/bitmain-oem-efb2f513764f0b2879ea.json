@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-efb2f513764f0b2879ea",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1e9d647f-aa36-45e0-8315-7a293abccdcb/2022/05/05/15/cTUVus_APW12_CN2277GA%20001_2022.4.7.pdf",
+  "kind": "document",
+  "title": "cTUVus_APW12_CN2277GA 001_2022.4.7.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:36+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-efb2f513764f0b2879ea/cTUVus_APW12_CN2277GA_001_2022.4.7.pdf",
+  "sha256": "2b7c3b66e6805ff1a36f78c8265c3cb659be4b7a78592a521e8153703a6577c2",
+  "size_bytes": 576457,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1e9d647f-aa36-45e0-8315-7a293abccdcb/2022/05/05/15/cTUVus_APW12_CN2277GA%20001_2022.4.7.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 05 May 2022 07:28:53 GMT",
+  "etag": "\"958f4f4559a4e0ef3565d990484a901b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 576457,
+      "actual": 576457,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

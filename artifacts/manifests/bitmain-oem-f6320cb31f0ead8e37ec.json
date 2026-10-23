@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f6320cb31f0ead8e37ec",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c71de98e-ca22-4302-bada-093df33ff853/2024/08/09/13/Antminer-DR7-release-202405280928.bmu",
+  "kind": "firmware",
+  "title": "Antminer-DR7-release-202405280928.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:46+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-f6320cb31f0ead8e37ec/Antminer-DR7-release-202405280928.bmu",
+  "sha256": "fa1146741782391a47187d31c15e4019b87eb29a902808f90cd7b98588b07d23",
+  "size_bytes": 18511689,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c71de98e-ca22-4302-bada-093df33ff853/2024/08/09/13/Antminer-DR7-release-202405280928.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Fri, 09 Aug 2024 05:05:03 GMT",
+  "etag": "\"54c3d8cbc0f0445b933eb0d82112f514\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 18511689,
+      "actual": 18511689,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

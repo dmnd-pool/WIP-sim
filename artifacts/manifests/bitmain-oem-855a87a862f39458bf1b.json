@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-855a87a862f39458bf1b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9b96e1c4-0858-47b3-9fd8-4c98ab229d55/2019/08/02/14/multibit-0.5.19.4-linux.zip",
+  "kind": "firmware",
+  "title": "multibit-0.5.19.4-linux.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:55:19+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-855a87a862f39458bf1b/multibit-0.5.19.4-linux.zip",
+  "sha256": "b947abd095d4afc402981e310590f10e4798ef1873dd8a22501b780b220ea4c7",
+  "size_bytes": 137854474,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9b96e1c4-0858-47b3-9fd8-4c98ab229d55/2019/08/02/14/multibit-0.5.19.4-linux.zip",
+  "http_status": 200,
+  "content_type": "undefined",
+  "last_modified": "Thu, 07 Jan 2021 05:08:27 GMT",
+  "etag": "\"2d9c15701aed28b3abee47f5b3e6ca73-9\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 137854474,
+      "actual": 137854474,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

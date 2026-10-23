@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-52ff030918bb41dd9f7a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c5c1aa5d-0f7c-4670-ab06-d3af42823672/2024/05/22/17/D9%20KC%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 KC Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:23+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-52ff030918bb41dd9f7a/D9_KC_Shenzhen.pdf",
+  "sha256": "a0f1f31cbbcf133f0e4af58dc58706cb503f83d3fc0d15cfa5d05563c4bb249b",
+  "size_bytes": 283285,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c5c1aa5d-0f7c-4670-ab06-d3af42823672/2024/05/22/17/D9%20KC%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:50:20 GMT",
+  "etag": "\"57fbefd3add24a5529a920a7cbfe434c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 283285,
+      "actual": 283285,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

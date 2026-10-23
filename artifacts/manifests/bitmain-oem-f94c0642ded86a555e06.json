@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f94c0642ded86a555e06",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c7934bd5-fd03-4d96-aadb-0b27922cb2ad/2024/04/07/17/CB%2062368%203rd%20cert_S19j%20XP_CN23CTGD%20001_2023.9.4_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 62368 3rd cert_S19j XP_CN23CTGD 001_2023.9.4_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f94c0642ded86a555e06/CB_62368_3rd_cert_S19j_XP_CN23CTGD_001_2023.9.4_extsigned.pdf",
+  "sha256": "e778fb97e1860ca34cfb54d3ae94114125c941c4ff5068a9e9319bf0a3b0aabe",
+  "size_bytes": 657772,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c7934bd5-fd03-4d96-aadb-0b27922cb2ad/2024/04/07/17/CB%2062368%203rd%20cert_S19j%20XP_CN23CTGD%20001_2023.9.4_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 07 Apr 2024 09:25:01 GMT",
+  "etag": "\"27a27c23c479d71b90aba88ef68ad1b3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 657772,
+      "actual": 657772,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

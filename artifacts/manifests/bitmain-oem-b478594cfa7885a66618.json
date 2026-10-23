@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b478594cfa7885a66618",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/61a51480-b6d7-48e7-9886-35078a167acc/2024/07/22/22/CB%202nd%20cert-S21%20Pro-CN249YE1%20001-24.06.12_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert-S21 Pro-CN249YE1 001-24.06.12_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-b478594cfa7885a66618/CB_2nd_cert-S21_Pro-CN249YE1_001-24.06.12_extsigned.pdf",
+  "sha256": "a40ab927971eca73985bb8db85c55597e75ee67a7ee4524f3da4a39ddbab7f5a",
+  "size_bytes": 384967,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/61a51480-b6d7-48e7-9886-35078a167acc/2024/07/22/22/CB%202nd%20cert-S21%20Pro-CN249YE1%20001-24.06.12_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 22 Jul 2024 14:14:04 GMT",
+  "etag": "\"c99dd4dd53944b8551cd406eea9afbdb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 384967,
+      "actual": 384967,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

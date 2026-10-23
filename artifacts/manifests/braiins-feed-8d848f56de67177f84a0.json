@@ -1,0 +1,41 @@
+{
+  "id": "braiins-feed-8d848f56de67177f84a0",
+  "url": "https://feeds.braiins-os.com/23.12/braiins-os_am2-s17_sd_2023-12-15-0-f43dca21-23.12-plus.img",
+  "kind": "firmware",
+  "title": "braiins-os_am2-s17_sd_2023-12-15-0-f43dca21-23.12-plus.img",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 112197632,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:30:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-8d848f56de67177f84a0/braiins-os_am2-s17_sd_2023-12-15-0-f43dca21-23.12-plus.img",
+  "sha256": "867c5aec119d9e2b98b679506558dcd63e40ea906008c0d3c840fd4cfcb17b2a",
+  "size_bytes": 112197632,
+  "final_url": "https://feeds.braiins-os.com/23.12/braiins-os_am2-s17_sd_2023-12-15-0-f43dca21-23.12-plus.img?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"657bb371-6b00000\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 15 Dec 2023 02:01:21 GMT",
+  "publisher_sha256": "867c5aec119d9e2b98b679506558dcd63e40ea906008c0d3c840fd4cfcb17b2a",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/23.12/braiins-os_am2-s17_sd_2023-12-15-0-f43dca21-23.12-plus.img?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "867c5aec119d9e2b98b679506558dcd63e40ea906008c0d3c840fd4cfcb17b2a",
+      "actual": "867c5aec119d9e2b98b679506558dcd63e40ea906008c0d3c840fd4cfcb17b2a",
+      "match": true,
+      "source_id": "braiins-feed-c4fbf7d5ce08c30f55ec"
+    }
+  ],
+  "upstream_integrity_match": true
+}

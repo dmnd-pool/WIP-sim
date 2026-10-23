@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4149024b1c25a1f911c6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e34fb7cf-ecca-4241-9f21-8e0380712792/2022/01/19/18/T15%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "T15 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4149024b1c25a1f911c6/T15_Server_Manual.pdf",
+  "sha256": "b9b8e1a7774aa35f2f05d9361c148a7c1b8104abba6acfbc522389c5a9f18cec",
+  "size_bytes": 1535760,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e34fb7cf-ecca-4241-9f21-8e0380712792/2022/01/19/18/T15%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:07:34 GMT",
+  "etag": "\"005a55720ca2db25fde9501544acf37c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1535760,
+      "actual": 1535760,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

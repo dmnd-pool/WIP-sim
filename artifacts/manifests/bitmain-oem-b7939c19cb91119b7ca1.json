@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b7939c19cb91119b7ca1",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b6f77f78-98cd-409a-b632-aa2110a17715/2024/07/10/18/Antminer-X5-CV-release-202406221844.bmu",
+  "kind": "firmware",
+  "title": "Antminer-X5-CV-release-202406221844.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:21+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-b7939c19cb91119b7ca1/Antminer-X5-CV-release-202406221844.bmu",
+  "sha256": "0aea416a1a769b6ff6ee5208cb1723bd2c8e412b240fa8135613b897fffefff7",
+  "size_bytes": 21946129,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b6f77f78-98cd-409a-b632-aa2110a17715/2024/07/10/18/Antminer-X5-CV-release-202406221844.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Wed, 10 Jul 2024 10:58:43 GMT",
+  "etag": "\"f3a9ea69d3c76bd3a3e1f8a66a74af0f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 21946129,
+      "actual": 21946129,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

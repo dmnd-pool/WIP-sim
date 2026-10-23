@@ -1,0 +1,84 @@
+{
+  "inputs": [
+    {
+      "path": "work/simulator/network-vm/native-access-431/result.json",
+      "sha256": "26d1e4684951cf2066d414583d44a652e3c8dfadac4c73ae90bf9bfa5ccfb9a7",
+      "size": 202410581
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/assessment.json",
+      "sha256": "7e2a3414adf44e83dd02fbe555db978a03d450039d41a2457dbe2d153c3cc082",
+      "size": 48899133
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/guest.log",
+      "sha256": "786f2fbd14a68cbe0dc989ae6ba1cc88be8aa86b19fd72d4da892d193c267394",
+      "size": 101204292
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/result.json",
+      "sha256": "e3aac175299649271bd985c54fd173541864d134c0c5f6bed46bf94776403cb1",
+      "size": 105718948
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/worker-result.json",
+      "sha256": "e3aac175299649271bd985c54fd173541864d134c0c5f6bed46bf94776403cb1",
+      "size": 105718948
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/host-retention.json",
+      "sha256": "d79883dd8420e11ca7c5fc86e97d420ff2d6308b3dcc6d083613b188e41b4308",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/worker-retention.json",
+      "sha256": "d79883dd8420e11ca7c5fc86e97d420ff2d6308b3dcc6d083613b188e41b4308",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/worker-request.json",
+      "sha256": "0ba1ac4264954809dbcac9087217a1e1a06529a2a317c07d0cfd2be1468d9e6f",
+      "size": 1831
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/worker-cleanup.json",
+      "sha256": "4eefe7b979f7b19bdd23245b9335b3ec1c92916b1989fb2776ee4073b553d243",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/worker-cleanup-response.json",
+      "sha256": "4eefe7b979f7b19bdd23245b9335b3ec1c92916b1989fb2776ee4073b553d243",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-pool/pool-bundle.json",
+      "sha256": "11be68bd9a2838456bab25fda1ccb945553d8bc3d9155b5ee9e9751bb490f52b",
+      "size": 98537
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-pool/retention-receipt.json",
+      "sha256": "7aa31f55ffeef335c3c863d0e76d3580ff241e2bde3abcd9ec57a0a1dfb8c7cc",
+      "size": 662
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/access-bundle.json",
+      "sha256": "d8d56b446cbc8a9b368dce25237d9570dc716ed86f6f1773243dc88040e47b9b",
+      "size": 5516831
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/retention-receipt.json",
+      "sha256": "7aa31f55ffeef335c3c863d0e76d3580ff241e2bde3abcd9ec57a0a1dfb8c7cc",
+      "size": 662
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/client/report.json",
+      "sha256": "9c166587d01436c8de693cfed57a9da966d274525548b670e9e0aa1d9cb157af",
+      "size": 7706
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-431/execution/shared-access/client/http/report.json",
+      "sha256": "b24d7fa9602a3c2eca7d85df0e1991cbf68baae19989d361bbc1a38a47a950a1",
+      "size": 930645
+    }
+  ]
+}

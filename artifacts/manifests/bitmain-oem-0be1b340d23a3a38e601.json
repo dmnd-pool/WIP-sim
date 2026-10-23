@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-0be1b340d23a3a38e601",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BM1384_Datasheet_v2.1.pdf",
+  "kind": "document",
+  "title": "BM1384_Datasheet_v2.1.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:56+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-0be1b340d23a3a38e601/BM1384_Datasheet_v2.1.pdf",
+  "sha256": "6bd079f5b22bb3fb172403e606e538fbff178fae5a51d2da392795ea8c0bd8be",
+  "size_bytes": 555081,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BM1384_Datasheet_v2.1.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"1d779c8f115ab10d5a3fe86079e3aaf4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 555081,
+      "actual": 555081,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

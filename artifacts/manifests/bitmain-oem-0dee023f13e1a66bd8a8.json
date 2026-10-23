@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-0dee023f13e1a66bd8a8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/03d149aa-b028-4d96-ac86-ddcf35645f11/2025/01/24/10/S21%2B%20Hyd.%20REACH%20SVHC242.pdf",
+  "kind": "document",
+  "title": "S21+ Hyd. REACH SVHC242.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-0dee023f13e1a66bd8a8/S21+_Hyd._REACH_SVHC242.pdf",
+  "sha256": "3b8f8fa3b972d10d486425fa1704cd53f6f40fd58a925ae3760a0efac8735b0c",
+  "size_bytes": 232253,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/03d149aa-b028-4d96-ac86-ddcf35645f11/2025/01/24/10/S21%2B%20Hyd.%20REACH%20SVHC242.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 24 Jan 2025 02:19:45 GMT",
+  "etag": "\"0cbfd4a1b3484ed1e71f3d547936c349\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 232253,
+      "actual": 232253,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

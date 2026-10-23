@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-e04f98caeb10b44ef956",
+  "url": "https://feeds.braiins-os.com/24.02.1/braiins-os_zynq-bm3-am2_ssh_2024-03-08-0-0ee56121-24.02.1-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_zynq-bm3-am2_ssh_2024-03-08-0-0ee56121-24.02.1-plus.tar.gz",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:10:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-e04f98caeb10b44ef956/braiins-os_zynq-bm3-am2_ssh_2024-03-08-0-0ee56121-24.02.1-plus.tar.gz",
+  "sha256": "f9e63f55701aeff73180d407d67448c65f7321c571380f308183e0a837501cda",
+  "size_bytes": 31228456,
+  "executed": false,
+  "expected_size_bytes": 31228456,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/24.02.1/braiins-os_zynq-bm3-am2_ssh_2024-03-08-0-0ee56121-24.02.1-plus.tar.gz",
+  "http_status": 206,
+  "etag": "\"65eb2289-1dc8228\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 08 Mar 2024 14:36:57 GMT",
+  "publisher_sha256": "f9e63f55701aeff73180d407d67448c65f7321c571380f308183e0a837501cda",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-e631921754fec20be3af",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "f9e63f55701aeff73180d407d67448c65f7321c571380f308183e0a837501cda",
+      "actual": "f9e63f55701aeff73180d407d67448c65f7321c571380f308183e0a837501cda",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "f9e63f55701aeff73180d407d67448c65f7321c571380f308183e0a837501cda",
+      "actual": "f9e63f55701aeff73180d407d67448c65f7321c571380f308183e0a837501cda",
+      "match": true,
+      "source_id": "braiins-feed-e631921754fec20be3af"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-fdd6cd8c3632dd496b4c",
+  "url": "https://download.hiveos.farm/asic/custom/f2pool/210128/Antminer-S17-Bigminer-2.03@210128-AntminerS17S17PRO121-sig-sign-f2pool.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17-Bigminer-2.03@210128-AntminerS17S17PRO121-sig-sign-f2pool.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:07:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-fdd6cd8c3632dd496b4c/Antminer-S17-Bigminer-2.03_210128-AntminerS17S17PRO121-sig-sign-f2pool.tar.gz",
+  "sha256": "16f6d7410688ea2d20949219821a54f2ffa8668b79f51f8b93bb634ce2af5ec5",
+  "size_bytes": 34645052,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/f2pool/210128/Antminer-S17-Bigminer-2.03@210128-AntminerS17S17PRO121-sig-sign-f2pool.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 28 Jan 2021 12:15:55 GMT",
+  "etag": "\"6012aafb-210a43c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 34645052,
+      "actual": 34645052,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

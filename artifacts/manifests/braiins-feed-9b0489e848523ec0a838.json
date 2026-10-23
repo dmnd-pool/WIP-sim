@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-9b0489e848523ec0a838",
+  "url": "https://feeds.braiins-os.com/stm32mp15-ii1-am2/firmware_2024-09-12-0-4821d892-24.06.2-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "kind": "firmware",
+  "title": "firmware_2024-09-12-0-4821d892-24.06.2-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:15:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-9b0489e848523ec0a838/firmware_2024-09-12-0-4821d892-24.06.2-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "sha256": "5c8fe9e0d5bfcdc17dd986aa99341f692027ae409675bc51b92d0b5ee75b7bbe",
+  "size_bytes": 40039279,
+  "executed": false,
+  "expected_size_bytes": 40039279,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/stm32mp15-ii1-am2/firmware_2024-09-12-0-4821d892-24.06.2-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "http_status": 206,
+  "etag": "\"66e352ca-262f36f\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 12 Sep 2024 20:44:58 GMT",
+  "publisher_sha256": "5c8fe9e0d5bfcdc17dd986aa99341f692027ae409675bc51b92d0b5ee75b7bbe",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-6007939ace4790f24288",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "5c8fe9e0d5bfcdc17dd986aa99341f692027ae409675bc51b92d0b5ee75b7bbe",
+      "actual": "5c8fe9e0d5bfcdc17dd986aa99341f692027ae409675bc51b92d0b5ee75b7bbe",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "5c8fe9e0d5bfcdc17dd986aa99341f692027ae409675bc51b92d0b5ee75b7bbe",
+      "actual": "5c8fe9e0d5bfcdc17dd986aa99341f692027ae409675bc51b92d0b5ee75b7bbe",
+      "match": true,
+      "source_id": "braiins-feed-6007939ace4790f24288"
+    }
+  ],
+  "upstream_integrity_match": true
+}

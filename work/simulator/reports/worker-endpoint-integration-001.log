@@ -1,0 +1,19 @@
+   Compiling md-sim-runtime v0.1.0 (/home/user/src/md-sim/crates/md-sim-runtime)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.67s
+     Running tests/isolated_worker.rs (target/debug/deps/isolated_worker-ec6285cbd18e0cc3)
+
+running 11 tests
+test interrupted_run_recovery_retains_failure_evidence_for_acknowledged_cleanup ... ok
+test completed_namespace_drops_descendant_pipe_descriptors ... ok
+test supervisor_loss_terminates_its_live_namespace ... ok
+test immutable_stdin_is_a_pipe_and_delivers_exact_binary_bytes ... ok
+test isolated_process_has_only_locked_inputs_and_bounded_trace ... ok
+test execution_token_survives_reconnect_restart_and_acknowledged_cleanup ... ok
+test timeout_releases_the_namespace ... ok
+test active_run_reserves_unwritten_evidence_bytes ... ok
+test unread_stdin_does_not_prevent_timeout_or_cancellation ... ok
+test worker_admission_preserves_budget_across_restart_and_cleanup ... ok
+test connected_ipc_transfers_reconnects_cancels_and_retains_results ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.27s
+

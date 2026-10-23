@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8486ea907996c3ff4999",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/24bfee2e-914d-4a9e-bea5-a931c5a97b23/2024/03/01/19/cTUVus-KS5-CN248PGK%20001-24.02.28_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus-KS5-CN248PGK 001-24.02.28_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:56+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8486ea907996c3ff4999/cTUVus-KS5-CN248PGK_001-24.02.28_extsigned.pdf",
+  "sha256": "c7fb8304a96fd5f7045417aa32c2a728c90d3ad77cebe767bc077676d6243233",
+  "size_bytes": 1452819,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/24bfee2e-914d-4a9e-bea5-a931c5a97b23/2024/03/01/19/cTUVus-KS5-CN248PGK%20001-24.02.28_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Mar 2024 11:44:34 GMT",
+  "etag": "\"5289c0e532fbfb8bcdfc712bc3557b30\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1452819,
+      "actual": 1452819,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

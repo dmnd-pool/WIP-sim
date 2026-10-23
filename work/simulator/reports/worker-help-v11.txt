@@ -1,0 +1,8 @@
+Usage: md-sim worker serve [OPTIONS] --socket <SOCKET>
+
+Options:
+      --socket <SOCKET>        
+      --state-dir <STATE_DIR>  [default: work/simulator/state]
+      --json                   Output is always JSON. This option also supports the specified interface
+      --limits <LIMITS>        Frozen JSON policy for input storage and retained run evidence
+  -h, --help                   Print help

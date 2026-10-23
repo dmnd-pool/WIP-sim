@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-27ded0d23003707b08a8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/09d0caea-feab-4b52-a02f-f0cdfb00dce6/2026/08/11/11/ACRT2602202-S21%C2%A0Pro%2B-SVHC251.pdf",
+  "kind": "document",
+  "title": "ACRT2602202-S21\u00a0Pro+-SVHC251.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:46+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-27ded0d23003707b08a8/ACRT2602202-S21_Pro+-SVHC251.pdf",
+  "sha256": "87c11f887461e8576fea6d3091abf926e2343b44ff3a58ab486cf6b48c08901d",
+  "size_bytes": 237768,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/09d0caea-feab-4b52-a02f-f0cdfb00dce6/2026/08/11/11/ACRT2602202-S21%C2%A0Pro%2B-SVHC251.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 11 Aug 2026 03:24:17 GMT",
+  "etag": "\"f684ea01339418614615dd33e1580af3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 237768,
+      "actual": 237768,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

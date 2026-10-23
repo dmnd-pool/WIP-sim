@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-4db60c8231390ed5b452",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6e3335c2-6221-4aed-b412-c06565164d93/2026/07/27/10/FR-1.76(260202-U3S21EXPH).bmu",
+  "kind": "firmware",
+  "title": "FR-1.76(260202-U3S21EXPH).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-4db60c8231390ed5b452/FR-1.76_260202-U3S21EXPH_.bmu",
+  "sha256": "861b0b221638b6218635934f1bdbcfd390ea97dde8436d8c14e626d492d8a7f5",
+  "size_bytes": 18159226,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6e3335c2-6221-4aed-b412-c06565164d93/2026/07/27/10/FR-1.76(260202-U3S21EXPH).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Mon, 27 Jul 2026 02:59:59 GMT",
+  "etag": "\"9bf01df746612194045e522445c40a52\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 18159226,
+      "actual": 18159226,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "9bf01df746612194045e522445c40a52",
+      "actual": "9bf01df746612194045e522445c40a52",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

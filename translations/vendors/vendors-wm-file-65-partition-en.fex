@@ -1,0 +1,80 @@
+; English companion for sys_partition.fex.
+; Scope: all Chinese comments translated; active keys and values are preserved.
+; Source strings are case-sensitive. Change values after '=' only.
+; Do not change the key strings before '='.
+;
+; Firmware download parameter configuration.
+; MBR size is in Kbytes, as stated in the original comment.
+[mbr]
+size = 16384
+;
+; Partition configuration example:
+; [partition] denotes one partition.
+; name = USERFS2 is the partition name.
+; size = 16384 is the partition size in 512-byte sectors.
+; The source states a maximum of 2^31 sectors * 512 bytes = 2T.
+; downloadfile = "123.fex" is the download file path and name.
+; Relative paths are relative to the location of image.cfg.
+; Absolute paths can also be used.
+; keydata = 1 identifies a private data partition. Data is retained
+; when the production flashing process is repeated.
+; encrypt = 1 enables encrypted flashing. It supplies encryption
+; but reduces flashing speed.
+; user_type = ? is reserved for private use.
+; verify = 1 requests a check after production flashing is complete.
+;
+; Notes from the source:
+; 1. Each name must be unique.
+; 2. A name can contain no more than 12 characters.
+; 3. size = 0 creates an empty partition with no size.
+; 4. The source recommends partition sizes that are multiples of
+;    16M bytes for safety and efficiency.
+;
+[partition_start]
+
+[partition]
+    name         = boot-resource
+    size         = 16384
+    downloadfile = "boot-resource.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = env
+    size         = 32768
+    downloadfile = "env.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = boot
+    size         = 65536
+    downloadfile = "fit-image.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = rootfs
+    size         = 131072
+    downloadfile = "rootfs.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = recovery
+    size         = 65536
+    downloadfile = "fit-image.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = data
+    size         = 32768
+    downloadfile = "data.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = data_bak
+    size         = 32768
+    downloadfile = "data.fex"
+    user_type    = 0x8000
+
+[partition]
+    name         = reserved
+    size         = 32768
+    user_type    = 0x8000

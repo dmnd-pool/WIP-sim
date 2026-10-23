@@ -1,0 +1,48 @@
+{
+  "id": "braiins-feed-a653ddf44e192ba5ac75",
+  "url": "https://feeds.braiins-os.com/24.09.1/braiins-os_zynq-bm3-am2_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_zynq-bm3-am2_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 35615803,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:29:36+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-a653ddf44e192ba5ac75/braiins-os_zynq-bm3-am2_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz",
+  "sha256": "c1e791e8e2459221776c09b6a84fc13f5aaccc2d0ac9eee805082921bcbd3aca",
+  "size_bytes": 35615803,
+  "final_url": "https://feeds.braiins-os.com/24.09.1/braiins-os_zynq-bm3-am2_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"674f9e49-21f743b\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 04 Dec 2024 00:11:53 GMT",
+  "publisher_sha256": "c1e791e8e2459221776c09b6a84fc13f5aaccc2d0ac9eee805082921bcbd3aca",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/24.09.1/braiins-os_zynq-bm3-am2_ssh_2024-12-03-0-f4c282cd-24.09.1-plus.tar.gz?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "c1e791e8e2459221776c09b6a84fc13f5aaccc2d0ac9eee805082921bcbd3aca",
+      "actual": "c1e791e8e2459221776c09b6a84fc13f5aaccc2d0ac9eee805082921bcbd3aca",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "c1e791e8e2459221776c09b6a84fc13f5aaccc2d0ac9eee805082921bcbd3aca",
+      "actual": "c1e791e8e2459221776c09b6a84fc13f5aaccc2d0ac9eee805082921bcbd3aca",
+      "match": true,
+      "source_id": "braiins-feed-f74d65d704049e4190a7"
+    }
+  ],
+  "upstream_integrity_match": true
+}

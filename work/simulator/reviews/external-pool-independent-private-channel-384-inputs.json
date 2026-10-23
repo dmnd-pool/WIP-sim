@@ -1,0 +1,25 @@
+{
+  "scope": "Initial independent external pool audit review; two strict-success findings open",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_external_pool.rs",
+      "sha256": "cee144c5dc4260512e0ab9b98457929c66417805410d2ce8a1690a15c3f1d2ed",
+      "size": 25481
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_execution_report.rs",
+      "sha256": "0e9205fc151ec484e3913f4299024a49ec8f2fc060e75e635c03f075fcd07c2f",
+      "size": 9090
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_submission_audit.rs",
+      "sha256": "90737d07d45b5fba85ef1bcdb0c44427a54d4429824ee87de3e594e616ee046c",
+      "size": 36184
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_asic_audit.rs",
+      "sha256": "784357f1f2e4aedbdb1d5c4b816336f952dbaa7806a67ad0beb38721f7c9c3c1",
+      "size": 12025
+    }
+  ]
+}

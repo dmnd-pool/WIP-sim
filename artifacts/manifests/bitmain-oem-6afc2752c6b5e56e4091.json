@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-6afc2752c6b5e56e4091",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b06ef8a4-e51e-4b07-bd3e-0e87f35373bc/2021/11/04/11/Antminer-DR5-202111021517_sig.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-DR5-202111021517_sig.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:47+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-6afc2752c6b5e56e4091/ANTMINER-DR5-202111021517_sig.tar.gz",
+  "sha256": "13353ff582ff6fe540d9c962dc0cdd1d257126bb0e8175d2f2682a6f2be9ee35",
+  "size_bytes": 18290760,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b06ef8a4-e51e-4b07-bd3e-0e87f35373bc/2021/11/04/11/Antminer-DR5-202111021517_sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 04 Nov 2021 03:01:03 GMT",
+  "etag": "\"435477ad25470756169fb45e9298e343\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 18290760,
+      "actual": 18290760,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

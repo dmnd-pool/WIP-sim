@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-31e8b66f0847c26bee96",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ea927985-96c5-48eb-9bce-bcf4d03d4083/2023/12/13/14/KS3%20CE-EMC%20CoC.pdf",
+  "kind": "document",
+  "title": "KS3 CE-EMC CoC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-31e8b66f0847c26bee96/KS3_CE-EMC_CoC.pdf",
+  "sha256": "53801074a42f64aab63cffea1889ace8b3dd192518c3db3cbaba9c9d20a03558",
+  "size_bytes": 262102,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ea927985-96c5-48eb-9bce-bcf4d03d4083/2023/12/13/14/KS3%20CE-EMC%20CoC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 06:13:30 GMT",
+  "etag": "\"4f3c360bae71e49ec1aa237a96b48b9c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 262102,
+      "actual": 262102,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

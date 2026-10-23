@@ -1,0 +1,37 @@
+{
+  "id": "braiins-feed-b99e807d9ecaf52c2d28",
+  "url": "https://feeds.braiins-os.com/23.02/braiins-os_am2-s17_web_2023-03-05-0-8cbe158f-23.02-plus.tar.gz",
+  "kind": "firmware",
+  "title": "braiins-os_am2-s17_web_2023-03-05-0-8cbe158f-23.02-plus.tar.gz",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "retrieved_at": "2026-10-19T10:52:28+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-b99e807d9ecaf52c2d28/braiins-os_am2-s17_web_2023-03-05-0-8cbe158f-23.02-plus.tar.gz",
+  "sha256": "89e90ad68b5a4e0415ebbdbbf8522ed2db755ea294f6e832008b1f01a511578b",
+  "size_bytes": 37313780,
+  "final_url": "https://feeds.braiins-os.com/23.02/braiins-os_am2-s17_web_2023-03-05-0-8cbe158f-23.02-plus.tar.gz?archive_retry=20261019",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sun, 05 Mar 2023 21:36:18 GMT",
+  "etag": "\"64050b52-2395cf4\"",
+  "http_content_length": 37313780,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/23.02/braiins-os_am2-s17_web_2023-03-05-0-8cbe158f-23.02-plus.tar.gz?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "89e90ad68b5a4e0415ebbdbbf8522ed2db755ea294f6e832008b1f01a511578b",
+      "actual": "89e90ad68b5a4e0415ebbdbbf8522ed2db755ea294f6e832008b1f01a511578b",
+      "match": true,
+      "source_id": "braiins-feed-1176b55e83870b396a11"
+    }
+  ],
+  "upstream_integrity_match": true
+}

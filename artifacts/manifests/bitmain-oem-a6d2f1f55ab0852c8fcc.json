@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a6d2f1f55ab0852c8fcc",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/aee2a897-8f2c-43e2-8f96-bab8d66aa24e/2024/05/22/16/cTUVus_CN23HYN3%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_CN23HYN3 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a6d2f1f55ab0852c8fcc/cTUVus_CN23HYN3_001_2023.10.11_extsigned.pdf",
+  "sha256": "34de56eadd5a4007f3febf1bfd4bf3ef1c58895654bc107740a0807c51ed8f67",
+  "size_bytes": 2385250,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/aee2a897-8f2c-43e2-8f96-bab8d66aa24e/2024/05/22/16/cTUVus_CN23HYN3%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:36:21 GMT",
+  "etag": "\"a62d32e3d7dea29a0e85c9d7371818ad\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2385250,
+      "actual": 2385250,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

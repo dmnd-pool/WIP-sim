@@ -1,0 +1,48 @@
+{
+  "id": "braiins-feed-e495b60c4704a5b6aedd",
+  "url": "https://feeds.braiins-os.com/am2-s17/firmware_2021-02-16-0-b0b90680-21.02-plus_arm_cortex-a9_neon.tar",
+  "kind": "firmware",
+  "title": "firmware_2021-02-16-0-b0b90680-21.02-plus_arm_cortex-a9_neon.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "expected_size_bytes": 15339872,
+  "download_method": "Verified HTTP byte ranges",
+  "retrieved_at": "2026-10-19T11:29:14+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-e495b60c4704a5b6aedd/firmware_2021-02-16-0-b0b90680-21.02-plus_arm_cortex-a9_neon.tar",
+  "sha256": "b97d4322793df0c7c9fb355baed847ccc9922087e53f80f72a1dd5c3fa060198",
+  "size_bytes": 15339872,
+  "final_url": "https://feeds.braiins-os.com/am2-s17/firmware_2021-02-16-0-b0b90680-21.02-plus_arm_cortex-a9_neon.tar?archive_retry=20261019",
+  "http_status": 206,
+  "etag": "\"602be8a1-ea1160\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 16 Feb 2021 15:45:37 GMT",
+  "publisher_sha256": "b97d4322793df0c7c9fb355baed847ccc9922087e53f80f72a1dd5c3fa060198",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/am2-s17/firmware_2021-02-16-0-b0b90680-21.02-plus_arm_cortex-a9_neon.tar?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden",
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "b97d4322793df0c7c9fb355baed847ccc9922087e53f80f72a1dd5c3fa060198",
+      "actual": "b97d4322793df0c7c9fb355baed847ccc9922087e53f80f72a1dd5c3fa060198",
+      "match": true,
+      "source_id": "braiins-feed-f449fc3eacf631366f92"
+    },
+    {
+      "field": "sha256",
+      "expected": "b97d4322793df0c7c9fb355baed847ccc9922087e53f80f72a1dd5c3fa060198",
+      "actual": "b97d4322793df0c7c9fb355baed847ccc9922087e53f80f72a1dd5c3fa060198",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

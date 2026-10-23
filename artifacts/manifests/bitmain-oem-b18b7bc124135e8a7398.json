@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-b18b7bc124135e8a7398",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-20160511-700M-1fan-6000.tar.gz",
+  "kind": "firmware",
+  "title": "S7-20160511-700M-1fan-6000.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:43:10+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-b18b7bc124135e8a7398/S7-20160511-700M-1fan-6000.tar.gz",
+  "sha256": "8303f2901586e208aa2b1643579e42c8791b6efb2f017138edf2cfef7808614f",
+  "size_bytes": 19159420,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-20160511-700M-1fan-6000.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"a853be1cc94a831f3df3f9b9e937b9e0-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19159420,
+      "actual": 19159420,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "a7ee18b3dfb7ef9b7b2612e29c0587e2",
+      "actual": "a7ee18b3dfb7ef9b7b2612e29c0587e2",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

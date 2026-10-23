@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8b7f48be4bf465dce19f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b4406abc-e8f6-4b54-8bc7-887ba07fbd4f/2025/04/22/17/KS7%20Product%20Datasheet-v1.0.2.pdf",
+  "kind": "document",
+  "title": "KS7 Product Datasheet-v1.0.2.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:08+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8b7f48be4bf465dce19f/KS7_Product_Datasheet-v1.0.2.pdf",
+  "sha256": "1e97b3d9bfee94e005df84092d67e5fa0df5ee3316a3df67c7ff5bc7737d46c9",
+  "size_bytes": 944841,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b4406abc-e8f6-4b54-8bc7-887ba07fbd4f/2025/04/22/17/KS7%20Product%20Datasheet-v1.0.2.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 22 Apr 2025 09:27:10 GMT",
+  "etag": "\"1981345e4fd11a5753786d49c7cae6b4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 944841,
+      "actual": 944841,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

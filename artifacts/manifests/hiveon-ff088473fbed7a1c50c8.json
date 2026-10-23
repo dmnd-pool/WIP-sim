@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-ff088473fbed7a1c50c8",
+  "url": "https://download.hiveos.farm/asic/custom/devfeecloudy/Antminer-S10-all-Hiveon-1.03@210214-sign-devfeecloudy-5.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S10-all-Hiveon-1.03@210214-sign-devfeecloudy-5.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:10:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-ff088473fbed7a1c50c8/Antminer-S10-all-Hiveon-1.03_210214-sign-devfeecloudy-5.tar.gz",
+  "sha256": "9c8fa124f18e6fde428cf0c557eb23e9c5a99c06602a92edcc9374873d9393f9",
+  "size_bytes": 24809423,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/devfeecloudy/Antminer-S10-all-Hiveon-1.03@210214-sign-devfeecloudy-5.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sun, 14 Feb 2021 12:53:36 GMT",
+  "etag": "\"60291d50-17a8fcf\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 24809423,
+      "actual": 24809423,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-305729ad3787101b5f3d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b3efc6e9-3cc6-4124-bbeb-46213a14f19d/2025/11/19/15/FR-1.27(251009-S19%20XP%2B%20Hyd.).bmu",
+  "kind": "firmware",
+  "title": "FR-1.27(251009-S19 XP+ Hyd.).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-305729ad3787101b5f3d/FR-1.27_251009-S19_XP+_Hyd._.bmu",
+  "sha256": "97d2c285e096040afbc7259fb924a0473cb66c6db0d3cd50e5a8e3ff1a6d5058",
+  "size_bytes": 18170306,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b3efc6e9-3cc6-4124-bbeb-46213a14f19d/2025/11/19/15/FR-1.27(251009-S19%20XP%2B%20Hyd.).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Wed, 19 Nov 2025 07:10:48 GMT",
+  "etag": "\"c7ad3b0df9a4e8ac71b6ca5ac22c2fee\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "c7ad3b0df9a4e8ac71b6ca5ac22c2fee",
+      "actual": "c7ad3b0df9a4e8ac71b6ca5ac22c2fee",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 18170306,
+      "actual": 18170306,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

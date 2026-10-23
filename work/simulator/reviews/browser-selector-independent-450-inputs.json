@@ -1,0 +1,109 @@
+{
+  "schema": "md-sim-independent-browser-selector-review/1",
+  "verdict": "No unresolved source or focused-test finding. Full450 checks and explicit retained445 selector test pass. Native browser execution remains untested by these checks.",
+  "source": {
+    "crates/md-sim-firmware/examples/support/prepared_vm_image.rs": {
+      "sha256": "3bd7e5de2834f546b1c1ed29d5cca8e204007d799c7aa526092a5f4741222258",
+      "size": 5261
+    },
+    "crates/md-sim-firmware/examples/support/prepared_vm_image_tests.rs": {
+      "sha256": "d66cdbb7e2c4f126696999b5144da2bfea6aca705dac9f38520172c9535b6ff0",
+      "size": 15771
+    },
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "e0ae4ea94ef4b6252cef58bfc1ae919e4adc6e686b56a0bb840027c48a8a7b86",
+      "size": 37019
+    },
+    "crates/md-sim-firmware/examples/support/worker_channel_ssh.rs": {
+      "sha256": "e2544c0fd16c3f536f423e5ac1b8514c177fe25111087610268fc6e42c2872f3",
+      "size": 15708
+    },
+    "crates/md-sim-firmware/examples/support/s9_external_pool.rs": {
+      "sha256": "0e5ae443fa21a6dbb2758750263e6cd28d53117c0f08b807c9ad2b65a8a8a3bb",
+      "size": 26269
+    },
+    "crates/md-sim-firmware/examples/s9_asic_audit.rs": {
+      "sha256": "339256b33147986ec364c69c5d1c02b6694624e499102f3f3636b8d2431b9c48",
+      "size": 12111
+    },
+    "crates/md-sim-firmware/examples/s9_boot_bundle.rs": {
+      "sha256": "db39399b68ff2338b3efed2b0ee92fd64feb92c5aae2b4ff959f7622b42043ad",
+      "size": 120366
+    },
+    "crates/md-sim-firmware/examples/s9_retain_evidence.rs": {
+      "sha256": "48afde2e39421cce4bdca23c20a6d417c3b7ead721f64c5e0aebb3b41437f168",
+      "size": 5774
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check.rs": {
+      "sha256": "12127bcb2a423de4a8abca1ac61aa2ef7a9591cafef5ce44deaf520e10b233c1",
+      "size": 80940
+    },
+    "crates/md-sim-firmware/examples/s9_execute_prepared.rs": {
+      "sha256": "0278d459bbb481557499f23ca643b13b03976a1c0d62cfe1a5230f49daa4370d",
+      "size": 4969
+    }
+  },
+  "preliminary_tests": {
+    "work/simulator/checks-2026-10-21-001/browser-selector449-tests.log": {
+      "sha256": "9d6eb07dd3ece0f1b2061f651b5f0bfd53c6a39167570e9e5dc1ef40aabad162",
+      "size": 3532
+    }
+  },
+  "checks": {
+    "original_request_captured_before_preparation": true,
+    "original_path_verified_by_launcher_only": true,
+    "all_three_callers_share_selector": true,
+    "retained_payload_manifest_and_combined_report_bound": true,
+    "kernel_root_and_prepared_image_bound": true,
+    "expected_object_used_for_store_import": true,
+    "extra_or_downgraded_browser_rejected": true,
+    "one_module_per_binary": true,
+    "five_additional_consumers_only_add_root_module_declaration": true,
+    "fixture_checks_real_gzip_newc_store_and_independent_second_marker": true,
+    "original_source_removal_portability_test": true,
+    "no_source_or_firmware_execution_claim_from_fixture": true
+  },
+  "scope": "Image selection and provenance only. Run445 still failed before boot. No browser execution pass, exact-target pass or full completion is granted.",
+  "final_tests": {
+    "work/simulator/checks-2026-10-21-001/carrier-final-450-tests.log": {
+      "sha256": "48ef954e8968a0c9868a1a9e2d4b67b248ef5c168d0e469923c817b11ec8edec",
+      "size": 112543
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-final-450-clippy.log": {
+      "sha256": "a4bad3d56cbcd308cda4ad7e5b09fb6a779b7105a1cd2778606f914445dd6c35",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-final-450-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-final-450-guides.log": {
+      "sha256": "4dfa672f7dc43d1dbf05ed2bb651e4101a44863ae9b8f65d2b208bb1d6c9536e",
+      "size": 176
+    },
+    "work/simulator/checks-2026-10-21-001/browser-selector449-retained445.log": {
+      "sha256": "8d1a540d5bb361e8317b4eae680c096db69017f1da5cab4dcff3aa20828d94da",
+      "size": 1087
+    },
+    "work/simulator/checks-2026-10-21-001/browser-selector449-retained445-absolute.log": {
+      "sha256": "5ccd8b2fc302e3923be61150eff425c7cbd8dffe11ddf6ba2318c3f882fbaa6e",
+      "size": 563
+    }
+  },
+  "final_counts": {
+    "passed": 908,
+    "failed": 0,
+    "ignored": 33,
+    "suites": 108
+  },
+  "retained_test": {
+    "passed": 1,
+    "failed": 0,
+    "ignored": 0,
+    "original_invocation_failed": "Relative MD_SIM_PREPARED_BROWSER_RUN was resolved from the Cargo crate working directory. Retried with an absolute directory; source and assertions unchanged.",
+    "image": {
+      "sha256": "0765830df3072c8f270be2b43baf470b9075b502cf163d7ba7927a71d370b365",
+      "size": 499952513
+    }
+  }
+}

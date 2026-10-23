@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-095dd59a1225911f0921",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/8a36f402-fd49-4a2b-b5ff-dba93dbecfc0/2024/08/26/16/ACRT2407202-AL1-SVHC241.pdf",
+  "kind": "document",
+  "title": "ACRT2407202-AL1-SVHC241.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-095dd59a1225911f0921/ACRT2407202-AL1-SVHC241.pdf",
+  "sha256": "47f756f22e137edfe2255ada4213c0ff443a25e101ae8be0688cd71cb9cca90d",
+  "size_bytes": 229762,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/8a36f402-fd49-4a2b-b5ff-dba93dbecfc0/2024/08/26/16/ACRT2407202-AL1-SVHC241.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 26 Aug 2024 08:47:35 GMT",
+  "etag": "\"23d3cfc44415de1052d518fce0ea9a9a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 229762,
+      "actual": 229762,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

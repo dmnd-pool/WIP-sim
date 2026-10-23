@@ -1,0 +1,75 @@
+{
+  "scope": "runtime carrier, provider, exact worker binding and owned root lease component checkpoint; parent release freeze remains separate",
+  "files": [
+    {
+      "path": "Cargo.toml",
+      "sha256": "da58784bc91761072d1bc17bea20627066dc766872c69cad881924f526ca9e36",
+      "size": 654
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "a478b0a0da662fd5fd554b930fbd08a82ef406de4b96ef36620997e34cf4bcbf",
+      "size": 16515
+    },
+    {
+      "path": "crates/md-sim-runtime/Cargo.toml",
+      "sha256": "6b5aec1baa1cb93ba81f34de315140b5819153e4641e8d7824f16d2477006e0a",
+      "size": 297
+    },
+    {
+      "path": "crates/md-sim-runtime/src/lib.rs",
+      "sha256": "c41350eb6c29968b8e2492a94ce5a7d918a91dfd8b6aa2ec012f29c4d7f2f3c7",
+      "size": 290
+    },
+    {
+      "path": "crates/md-sim-runtime/src/isolation.rs",
+      "sha256": "e0d2d260be85397cb0b676df53117b4b73a270d9411a8e3abdbbb314de4a787e",
+      "size": 37519
+    },
+    {
+      "path": "crates/md-sim-runtime/src/private_channel.rs",
+      "sha256": "7a3e0b08cf4d06d3cd34ecc2495489b2eaae16b589827f77dbd9128e00b8fc8f",
+      "size": 15664
+    },
+    {
+      "path": "crates/md-sim-runtime/src/worker.rs",
+      "sha256": "d7b21557946624af06b3f0b17e7538d914f2d6e3b8644262d48dde0dfdb1cc5a",
+      "size": 55786
+    },
+    {
+      "path": "crates/md-sim-runtime/src/worker_channel.rs",
+      "sha256": "7a6c4146450a21f7a040ac3aca5d4f28220c900354fcc8ebb9b311bb043483fa",
+      "size": 1592
+    },
+    {
+      "path": "crates/md-sim-runtime/tests/private_channel.rs",
+      "sha256": "cc8aba28c752cac97400469cf348c1dc246bb6020ac03b08b4b83d83a6b9fb57",
+      "size": 24469
+    },
+    {
+      "path": "crates/md-sim-runtime/tests/private_channel/worker.rs",
+      "sha256": "638e91983ed44751beb04ecf64cd6965d7ba9a49385b1439bde1eb38138ab5af",
+      "size": 12333
+    },
+    {
+      "path": "crates/md-sim-runtime/tests/private_channel/provider.rs",
+      "sha256": "8680f20bb2d4a677708be21ae663babfe5f41ffb45fdf95919035100636c2332",
+      "size": 2702
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel371-lease.log",
+      "sha256": "78efa99fe031fec710d75d71d54e17803bd530d6aa08384c757c9d8af610184f",
+      "size": 35785
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel372-tests.log",
+      "sha256": "889ea268fdfb39d754ac07917d5dc0a4c1e787ae606143034459f611bd55c757",
+      "size": 5692
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel372-clippy.log",
+      "sha256": "6b3161d04f4d5adacf529dedc2cc5c46ba10acce8299e365bb9c4ac1b53b527c",
+      "size": 141
+    }
+  ]
+}

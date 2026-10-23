@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-24a9b2340035a864b017",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c84efbac-cc7b-4bd9-891b-0339c5592e80/2024/09/20/16/K7%20%20Product%20Manual-v1.0.0.pdf",
+  "kind": "document",
+  "title": "K7  Product Manual-v1.0.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-24a9b2340035a864b017/K7__Product_Manual-v1.0.0.pdf",
+  "sha256": "53d63cd119fe6ed46aec83141716688bfc241ad4772060f63d0fc956451402c0",
+  "size_bytes": 847077,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c84efbac-cc7b-4bd9-891b-0339c5592e80/2024/09/20/16/K7%20%20Product%20Manual-v1.0.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 08:27:23 GMT",
+  "etag": "\"f7547b34aef97ebf29a1e822d338aa23\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 847077,
+      "actual": 847077,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

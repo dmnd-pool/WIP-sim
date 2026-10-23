@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-91962ab9b98043befbd4",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0c9815a1-704e-4c6b-8cb8-ca03852308ff/2026/06/09/15/E11%20RoHS.pdf",
+  "kind": "document",
+  "title": "E11 RoHS.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:33+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-91962ab9b98043befbd4/E11_RoHS.pdf",
+  "sha256": "7655687065f41cf072015075e212a2eea91409793c73ac7d98034290ac6dbca8",
+  "size_bytes": 259201,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0c9815a1-704e-4c6b-8cb8-ca03852308ff/2026/06/09/15/E11%20RoHS.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 09 Jun 2026 07:13:22 GMT",
+  "etag": "\"7052f4d5ba79125782b17c2ce3554610\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 259201,
+      "actual": 259201,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,43 @@
+--- a/util/qemu-timer.c
++++ b/util/qemu-timer.c
+@@ -23,6 +23,7 @@
+  */
+ 
+ #include "qemu/osdep.h"
++#include <dlfcn.h>
+ #include "qemu/main-loop.h"
+ #include "qemu/timer.h"
+ #include "qemu/lockable.h"
+@@ -522,6 +523,8 @@
+     bool progress = false;
+     QEMUTimerCB *cb;
+     void *opaque;
++    uint64_t md_calls = 0;
++    int64_t md_sampled_at = 0;
+ 
+     if (!qatomic_read(&timer_list->active_timers)) {
+         return false;
+@@ -590,6 +593,23 @@
+ 
+         /* run the callback (the timer list can be modified) */
+         qemu_mutex_unlock(&timer_list->active_timers_lock);
++        /* Diagnostic only: identify repeated callbacks in one dispatcher
++         * invocation. Preserve every callback and its original deadline. */
++        if (++md_calls % 65536 == 0) {
++            int64_t real = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
++            if (md_sampled_at && real - md_sampled_at >= 1000000000) {
++                Dl_info info = {0};
++                dladdr((void *)cb, &info);
++                fprintf(stderr, "md-sim-timer: repeated_callbacks clock=%d"
++                        " time=%" PRId64 " calls=%" PRIu64
++                        " callback_offset=0x%" PRIxPTR "\n",
++                        timer_list->clock->type, current_time, md_calls,
++                        (uintptr_t)cb - (uintptr_t)info.dli_fbase);
++                md_sampled_at = real;
++            } else if (!md_sampled_at) {
++                md_sampled_at = real;
++            }
++        }
+         cb(opaque);
+         qemu_mutex_lock(&timer_list->active_timers_lock);
+ 

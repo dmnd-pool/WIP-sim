@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-43b9b50b13a455b91ae3",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ff5cd970-38e4-4a95-855c-a6e0a66605a3/2024/09/20/18/AL1%20Product%20Datasheet-v1.5.0.pdf",
+  "kind": "document",
+  "title": "AL1 Product Datasheet-v1.5.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-43b9b50b13a455b91ae3/AL1_Product_Datasheet-v1.5.0.pdf",
+  "sha256": "99ac7215ce58b7c8515b19d3f405e219ff1299b31862c04296700500edbfc1ba",
+  "size_bytes": 839322,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ff5cd970-38e4-4a95-855c-a6e0a66605a3/2024/09/20/18/AL1%20Product%20Datasheet-v1.5.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 10:43:14 GMT",
+  "etag": "\"6fd28cd8c2643bb289471b890bd146b1\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 839322,
+      "actual": 839322,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

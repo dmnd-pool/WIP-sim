@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1469dc7fa46c14bdb60b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2f62f46b-7038-4ae5-9554-6f656a7dded9/2024/12/25/18/CB%202nd%20cert%20CN24ZOH7%20001-24.06.12_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert CN24ZOH7 001-24.06.12_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:55+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1469dc7fa46c14bdb60b/CB_2nd_cert_CN24ZOH7_001-24.06.12_extsigned.pdf",
+  "sha256": "d7c14cffedef58d58df4980e9dbdbe4e807399af03c7aace7b9ff305d7f0c4ee",
+  "size_bytes": 385440,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2f62f46b-7038-4ae5-9554-6f656a7dded9/2024/12/25/18/CB%202nd%20cert%20CN24ZOH7%20001-24.06.12_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 25 Dec 2024 10:38:46 GMT",
+  "etag": "\"bfe53de429defb5b96bdd07440234193\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 385440,
+      "actual": 385440,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

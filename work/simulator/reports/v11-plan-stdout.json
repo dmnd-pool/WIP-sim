@@ -1,0 +1,19 @@
+{
+  "notice": "Classification does not establish firmware execution or passing tests.",
+  "plan": "work/simulator/plan-v11.json",
+  "plan_hash": "392efc9d21f0cbf4adcfb97aab95fd24b4ace16641be053390bd0a174bbdcc2f",
+  "summary": {
+    "complete": false,
+    "executed_tests": 0,
+    "explicit_rows": 79599,
+    "implicit_cartesian_pairs": 0,
+    "inventory_artifacts": 13506,
+    "inventory_entities": 4354,
+    "passing_firmware_targets": 0,
+    "states": {
+      "blocked": 1377,
+      "not-applicable": 6785,
+      "unknown": 71437
+    }
+  }
+}

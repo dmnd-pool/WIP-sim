@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a743336c7f38c0248e41",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/dcef60a1-f20f-48d0-9a90-f4c66dc74854/2019/09/24/19/Antminer-S9_Hydro-xilinx-201909201034-autofreq-user-Update2UBI-NF-sig_4038.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9_Hydro-xilinx-201909201034-autofreq-user-Update2UBI-NF-sig_4038.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-a743336c7f38c0248e41/ANTMINER-S9_Hydro-xilinx-201909201034-autofreq-user-Update2UBI-NF-sig_4038.tar.gz",
+  "sha256": "1c6d0378f1876fd0ddb415661bce4bcddd8b9f3d47cede0c5033a0d9380d7896",
+  "size_bytes": 44233827,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/dcef60a1-f20f-48d0-9a90-f4c66dc74854/2019/09/24/19/Antminer-S9_Hydro-xilinx-201909201034-autofreq-user-Update2UBI-NF-sig_4038.tar.gz",
+  "http_status": 200,
+  "content_type": "application/gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:34 GMT",
+  "etag": "\"0e505bd328836de7750a804d84e56473-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 44233827,
+      "actual": 44233827,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

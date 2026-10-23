@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2e940db908158ab4df90",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b3ee4ee8-00d2-493a-b0fa-af520ec75d28/2025/01/24/18/S21%2B%20REACH%20SVHC242.pdf",
+  "kind": "document",
+  "title": "S21+ REACH SVHC242.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:28+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2e940db908158ab4df90/S21+_REACH_SVHC242.pdf",
+  "sha256": "6bee94ff683a51a0629ce7eb1e0252d7c12a6f1292f79f5b6b5877d5c265efd1",
+  "size_bytes": 647083,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b3ee4ee8-00d2-493a-b0fa-af520ec75d28/2025/01/24/18/S21%2B%20REACH%20SVHC242.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 24 Jan 2025 10:01:11 GMT",
+  "etag": "\"6047bb8d11289cc9651b69f898367350\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 647083,
+      "actual": 647083,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

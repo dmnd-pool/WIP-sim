@@ -1,0 +1,59 @@
+--- a/hw/timer/cadence_ttc.c
++++ b/hw/timer/cadence_ttc.c
+@@ -387,7 +387,22 @@
+ 
+ static void cadence_timer_reset(CadenceTimerState *s)
+ {
+-   s->reg_count = 0x21;
++    timer_del(s->timer);
++    s->cpu_time = 0;
++    s->cpu_time_valid = 0;
++    cadence_timer_clear_fraction(s);
++    s->reg_clock = 0;
++    s->reg_count = 0x21;
++    s->reg_value = 0;
++    s->reg_interval = 0;
++    memset(s->reg_match, 0, sizeof(s->reg_match));
++    s->reg_intr = 0;
++    s->reg_intr_en = 0;
++    s->reg_event_ctrl = 0;
++    s->reg_event = 0;
++    if (s->irq) {
++        cadence_timer_update(s);
++    }
+ }
+ 
+ static void cadence_timer_init(Clock *pclk, CadenceTimerState *s)
+@@ -395,9 +410,8 @@
+     memset(s, 0, sizeof(CadenceTimerState));
+     s->pclk = pclk;
+ 
++    s->timer = timer_new_ns(QEMU_CLOCK_VIRTUAL, cadence_timer_tick, s);
+     cadence_timer_reset(s);
+-
+-    s->timer = timer_new_ns(QEMU_CLOCK_VIRTUAL, cadence_timer_tick, s);
+ }
+ 
+ static void cadence_ttc_clock_update(void *opaque, ClockEvent event)
+@@ -499,12 +513,21 @@
+     }
+ };
+ 
++static void cadence_ttc_reset(DeviceState *dev)
++{
++    CadenceTTCState *s = CADENCE_TTC(dev);
++    for (int i = 0; i < 3; i++) {
++        cadence_timer_reset(&s->timer[i]);
++    }
++}
++
+ static void cadence_ttc_class_init(ObjectClass *klass, const void *data)
+ {
+     DeviceClass *dc = DEVICE_CLASS(klass);
+ 
+     dc->vmsd = &vmstate_cadence_ttc;
+     dc->realize = cadence_ttc_realize;
++    device_class_set_legacy_reset(dc, cadence_ttc_reset);
+ }
+ 
+ static const TypeInfo cadence_ttc_info = {

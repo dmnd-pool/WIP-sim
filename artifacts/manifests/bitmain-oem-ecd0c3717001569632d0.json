@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ecd0c3717001569632d0",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/97de530a-bd4d-4454-b9d7-94b6ca01c5af/2024/07/19/00/CB%203rd%20cert-S19e%20XP%20Hyd.-CN24HUV2%20001-24.05.08_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 3rd cert-S19e XP Hyd.-CN24HUV2 001-24.05.08_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ecd0c3717001569632d0/CB_3rd_cert-S19e_XP_Hyd.-CN24HUV2_001-24.05.08_extsigned.pdf",
+  "sha256": "31fa7aecb063ee72aac23c3fdb41c86128ef58e4cf80d59514ce3bca76f3fdfb",
+  "size_bytes": 665255,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/97de530a-bd4d-4454-b9d7-94b6ca01c5af/2024/07/19/00/CB%203rd%20cert-S19e%20XP%20Hyd.-CN24HUV2%20001-24.05.08_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 18 Jul 2024 16:28:45 GMT",
+  "etag": "\"2be1d7a1fc8547e93d624da330b1ce3e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 665255,
+      "actual": 665255,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

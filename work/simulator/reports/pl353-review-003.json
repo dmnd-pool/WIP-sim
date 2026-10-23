@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "mining_engine",
+  "scope": "Independent source and retained-output review of compiled generic EC/DA x8 storage fixture; no exact physical board acceptance",
+  "runs": [
+    {
+      "run": "work/simulator/qemu-s9/nand-storage-007",
+      "assessment": {
+        "sha256": "6446a04d91467befd52d74ecad6041b4584b6c3b0019f7b830e7e8dd6242f8e8",
+        "size": 851
+      },
+      "qtest_transactions": 98,
+      "raw_process_output_matches": true,
+      "all_inputs_rehashed": true,
+      "current_harness_source_matches": false
+    },
+    {
+      "run": "work/simulator/qemu-s9/nand-storage-008",
+      "assessment": {
+        "sha256": "a0fb8400ecacbd1048efc60aa58dc2392883d630888326b19730a92c524e30e9",
+        "size": 851
+      },
+      "qtest_transactions": 98,
+      "raw_process_output_matches": true,
+      "all_inputs_rehashed": true,
+      "current_harness_source_matches": true
+    }
+  ],
+  "independent_backing_byte_map_hashes": {
+    "after_program": "ffde1ab70fc40095445be1f00241451dae0e11f55095ddaa5bbe77aa0ec9248f",
+    "after_erase": "063a975755925449b34f882a0e9564315ee99d447640c02ac9517ca6b04caee4"
+  },
+  "checked": [
+    "all264MiB expected byte maps independently hashed",
+    "OOB boundaries and invalid last-byte overrun",
+    "program cannot restore zero bits",
+    "clean process restart preserves programmed bytes and erase",
+    "unsupported geometry and data-only format fail explicitly"
+  ],
+  "unresolved": [
+    "physical power loss behavior",
+    "exact S9 NAND identity",
+    "migration and snapshot acceptance"
+  ],
+  "complete_original_board_gate": false
+}

@@ -1,0 +1,114 @@
+{
+  "inputs": [
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/regtest-audit443.json",
+      "sha256": "81201ce994c11f3699d469e709b6c81bf0dcc067e369668d70da04221fdc6b5d",
+      "size": 42945
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/rate-audit443.json",
+      "sha256": "4c49fec435e8cf8e091e545f1f5d3cb46c33bf9547cab0121906a54dfa8488a8",
+      "size": 6222
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-pool/sessions/session-0.jsonl",
+      "sha256": "4d5fe47d010197927e2cbff7f3f81e1c241f1dbb274d05efb9ada9265efcb203",
+      "size": 4314
+    },
+    {
+      "path": "work/simulator/channel-target-440/release/examples/s9_asic_audit",
+      "sha256": "94863054eba47f15f7abb548d412b6f7627591102acd6b9850700358c7e5b601",
+      "size": 3084752
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/block-acceptance.json",
+      "sha256": "098e1ee9e1e4e4f340af57c15f30e4230661e1069169446b9085b3cb84cdaef0",
+      "size": 1745
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/source-run-link.json",
+      "sha256": "a7faa62004c53b45d71617cb332736ce671b23412bb871ac81c169ce39acedaf",
+      "size": 7140
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/firmware-block-record.json",
+      "sha256": "141155dd4282afb59414794c6bc4b04217d636703934fb66042ce44f7ac5c2cb",
+      "size": 2280
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/firmware-block-origin.json",
+      "sha256": "922ab949c5c22abe92fb1d5a2eaf500f72535b990221837c9d1a512bcab601e1",
+      "size": 211
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/core-backend-identity.json",
+      "sha256": "f5429b2af662ecf292dd989f23a404a78130894088a5e7043cba4192afce78cc",
+      "size": 1977
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/regtest-offline-import-startup-spec.json",
+      "sha256": "d909359b7d79ecc4dda19cc761afd4e00595fec36414e0a9cdd0222aedcacfa8",
+      "size": 2389
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/regtest-offline-import-startup-result.json",
+      "sha256": "1d316c25e26f580bfe95a6e808b2943961526a7c3ca47afd38cc0114a7966d48",
+      "size": 37644
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/regtest-offline-import-startup-stdout.log",
+      "sha256": "fb0b6215b4ba381b303763a7f99a32779c43fbc8efe1225b483decb4ed7b1789",
+      "size": 18465
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate0-443/candidate.blk",
+      "sha256": "a351818f07d486f3d1ea39bfe7c2f7ae755ed37d2f5ee43bfa98b6942fabb8b5",
+      "size": 192
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/block-acceptance.json",
+      "sha256": "5104195d93f12b11c3280a3abb24ca0c3d29031a27919fe210ab9b1c5cdc63db",
+      "size": 1745
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/source-run-link.json",
+      "sha256": "37628e7723175bc01ef150bb1f4bf312b8c8059129686d2213e3f0df4ff4206e",
+      "size": 7140
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/firmware-block-record.json",
+      "sha256": "fd965445739fcf044c8215ee8a8e13803e181913d223da0cd4b6d4d1c18a51fc",
+      "size": 2280
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/firmware-block-origin.json",
+      "sha256": "922ab949c5c22abe92fb1d5a2eaf500f72535b990221837c9d1a512bcab601e1",
+      "size": 211
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/core-backend-identity.json",
+      "sha256": "f5429b2af662ecf292dd989f23a404a78130894088a5e7043cba4192afce78cc",
+      "size": 1977
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/regtest-offline-import-startup-spec.json",
+      "sha256": "40d82fde86d7434d0a5550ad67958596d79c440f12792b2663253b285461d99c",
+      "size": 2389
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/regtest-offline-import-startup-result.json",
+      "sha256": "837f3a1863f21a944816adc7d1b6aef1b868320ccb44ca120e89edeed815617c",
+      "size": 37644
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/regtest-offline-import-startup-stdout.log",
+      "sha256": "efc80409e9e3549709386a71ebb2c7d93a7cac884d4368b86bfde7ba82c3d4a9",
+      "size": 18465
+    },
+    {
+      "path": "work/simulator/bitcoin-core/shared441-candidate1-443/candidate.blk",
+      "sha256": "ebccb13c3245dc3a6473daa38f34159aeb23284060f8b62567bfa94dc124033c",
+      "size": 192
+    }
+  ]
+}

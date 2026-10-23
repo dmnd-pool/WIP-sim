@@ -1,0 +1,600 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Antminer APW9 Power Supply Repair Guide [EN]</title><style>body{max-width:1000px;margin:2em auto;font:17px/1.5 sans-serif}img{max-width:100%;height:auto}table{border-collapse:collapse}td,th{border:1px solid #aaa;padding:.3em}</style><body><h1>English counterpart: Antminer APW9 Power Supply Repair Guide [EN]</h1><p>Chinese original: zeus-bitmain-40260da5a6300aecc5bd. English source: <a href="https://www.zeusbtc.com/manuals/Antminer-APW9-power-supply-repair-guide.asp">zeus-bitmain-5c5938c3b1d66f10d1ff</a>.</p><p>This is the English manual published by Zeus Mining for the corresponding model. The original source images are retained and linked to local archive files. Image-only labels are not newly translated. A complete page-by-page equivalence check has not been made.</p><p>Same explicit version date found in both texts: true.</p><div class="Manuals">
+<h2>Antminer APW9 Power Supply Repair Guide</h2>
+<p></p>
+<p>
+    Version date: 2019.9.5
+</p>
+<p>
+    File Category: Maintenance Plan
+</p>
+<p>
+    Content of this Volume: It mainly describes the troubleshooting of various faults of the power supply APW9 and how to use the test tool for accurate positioning.
+</p>
+<p>
+    ※ The copyright of this article belongs to Bitmaintech Pte. Ltd. (Bitmain). The article shall solely be reprinted, extracted or used in any other ways with the permission of the copyright owner. Don&#39;t hesitate to contact Bitmain official customer service if there is any need for reprinting or quoting.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>I.Requirements on the Maintenance Platform</strong>
+</p>
+<p>
+    1. The constant temperature soldering iron above 80W (soldering temperature: 300-350°C). The tip soldering iron head is used for soldering chip resistors and capacitors. The blade type soldering iron head is used for soldering and replacement of plug-in components (soldering temperature: 380- 420°C).
+</p>
+<p>
+    2. The heat gun is used for chip disassembly and soldering, be careful not to heat for a long time to avoid PCB foaming (soldering temperature: 260°C ±2 °C).
+</p>
+<p>
+    3. The AC controllable power supply voltage regulator (output 200-250V, can limit 0-20A current) is used for APW9 power-on inspection. A 100W ordinary light bulb can also be strung on the AC fire line with mains if there is no such condition.
+</p>
+<p>
+    4. For electronic load (power 3.6KW, meet the voltage 0-50V), if there is no such condition, a resistive load that matches the APW9 can also be made.
+</p>
+<p>
+    5. The multimeter (recommend to use <a href="https://zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=99" target="_blank">Fluke 15b+ multimeter</a>), suction gun, <a href="https://zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=132" target="_blank">tweezers</a>, V9-1.2 test jig and special power test card firmware (if there is a condition, an <a href="https://zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=267" target="_blank">oscilloscope</a> can be configured).
+</p>
+<p>
+    6. <a href="https://zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=272" target="_blank">Flux</a>, lead-free tin wire, water for cleaning panel with anhydrous alcohol; water for cleaning panel is used to clean flux residue and appearance after maintenance.
+</p>
+<p>
+    7. <a href="https://zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=86" target="_blank">Thermally conductive silicone grease</a> (2500) is used to repair the thermal conduction between the MOS and the cooling fin, thermally conductive silicone (704 silica gel) is used for fixing and covering the glue damage at the original after the repair of the PCBA components.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>II.Requirements on Maintenance Operations</strong>
+</p>
+<p>
+    1. The maintenance personnel must have specific electronic knowledge, more than one year of maintenance experience, and a certain understanding of the working principle of switching power supply, and well master the soldering technology.
+</p>
+<p>
+    2. Before the product is opened and the PCBA panel is repaired, the large capacitor must be discharged, and the voltage must be measured with a multimeter (less than 5V discharge), and then the soldering operation can be performed! Be sure to confirm to avoid electric shock.
+</p>
+<p>
+    3. Pay attention to the working method when judging the circuit components. For example, after replacing any device, the PCB panel has no obvious deformation, the soldering of the bonding pad is reliable, and the replacement parts and the surrounding area have no problem, such as defective parts, open circuits or short circuits.
+</p>
+<p>
+    4. After replacing the key components, the primary circuit shall have no short circuit and other obvious abnormalities before the AC voltage test, otherwise there is a hidden danger of explosion.
+</p>
+<p>
+    5. It needs AC220V voltage to judge the circuit signal; pay attention to operational protection.&nbsp;
+</p>
+<p>
+    ● Maintenance personnel qualifications must meet the specified requirements;
+</p>
+<p>
+    ● Instruments and equipment used for maintenance must meet the specified requirements;
+</p>
+<p>
+    ● The instruments and equipment for maintenance must be effectively grounded, and the maintenance environment must comply with anti-static requirements;
+</p>
+<p>
+    ● Materials used for maintenance must meet the specified requirements; to guarantee the accuracy and traceability of the materials used for maintenance, the materials used for maintenance must be the production materials for the corresponding models, and the material replacement must be confirmed;
+</p>
+<p>
+    ● To prevent possible electric shock hazards, non-professionals should not disassemble the enclosure:
+</p>
+<p>
+    ● The maintenance personnel shall use a special enclosure opener to open the enclosure of the power adapter and repair, to avoid damage to the internal components of the product:
+</p>
+<p>
+    ● After the product is opened, it is required to discharge the high voltage capacitor;
+</p>
+<p>
+    ● E-waste waste generated during product maintenance cannot be arbitrarily dropped:
+</p>
+<p>
+    ● Bad products must have a repair process card and indicate the cause of the failure, and be placed separately;
+</p>
+<p>
+    ● The repaired products must be well marked to distinguish.
+</p>
+<p>
+    ● The repaired products must be placed in the repaired area and systematically tested before they can be stored.
+</p>
+<p>
+    <br></br>
+</p>
+<p style="text-align: center;">
+    <strong>III.The Principle and Structure of the Power Supply</strong>
+</p>
+<p>
+    I. Principle overview
+</p>
+<p>
+    1. APW9 is composed of 1 large board, 3 fans and the upper and lower shell. The normal two input channels are connected with AC220V and have two output voltages of DC, which are respectively SB 12V. The primary output voltage is 14.5v-21v, controlled by a PIC port and communication with the miner.
+</p>
+<p>
+    (1) Performance characteristics and range of use are described below:
+</p>
+<p>
+    The <a href="https://zeusbtc.com/ASIC-Miner-Repair/Parts-Tools-Details.asp?ID=277" target="_blank">APW9 power supply</a> is a high-efficiency DC power supply. It has a single-phase AC input and two DC outputs:
+</p>
+<p>
+    1&gt;. 14.5V-21V voltage adjustable output, the maximum current can reach 170A；
+</p>
+<p>
+    2&gt;. 12V voltage fixed output, the current can reach 12A.
+</p>
+<p>
+    The adjustable output part of voltage can meet the everyday DC load use within 170A current of the adjustable voltage range, especially suitable for circumstances with strict requirements for power supply of servers and mining machines; the 12V voltage’s fixed output part can meet the use of control board and cooling fin.
+</p>
+<p>
+    1) The characteristics are as follows:
+</p>
+<p>
+    ●&nbsp;<span style="white-space:pre"></span>200-240V voltage input.
+</p>
+<p>
+    ●&nbsp;<span style="white-space:pre"></span>There is protection for undervoltage, short circuit, overload, over-temperature, with automatic recovery after fault removal.
+</p>
+<p>
+    ●&nbsp;<span style="white-space:pre"></span>The use of high-quality devices ensures stable and reliable products through practical design and can work at full load for a long time in a high-temperature environment at 50°C or lower.
+</p>
+<p>
+    ●&nbsp;<span style="white-space:pre"></span>Small size, high power density.
+</p>
+<p>
+    3) Appearance of APW9 Power Supply
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-15c93eaff4a6cbdd979a/16325489755755125.jpg" title="Appearance of APW9 Power Supply.jpg" alt="Appearance of APW9 Power Supply.jpg"></img>
+</p>
+<p>
+    Note: If you need to turn on the default voltage 21.32V test, you can use the adapter cable to short connect the voltage Pin EN to GND.<br></br>
+</p>
+<p>
+    ● Front panel: 2 AC inputs; 3 high-speed 4028 DC fans
+</p>
+<p>
+    ● Left panel: 4 PCB-33 copper terminals for output 1 4-Pin signal connector; 1 PCIE connector for 12V fixed voltage output.
+</p>
+<p>
+    ● Back panel: heat dissipation air outlet holes.
+</p>
+<p>
+    ● The type of AC input inlet on the front panel is C14, which mating is C13.
+</p>
+<p>
+    ● The 4-PIN signal connector is the interface between the external control board and the power supply. The SDA/SCL is an I2C bus. The output voltage of the power supply can be adjusted through I2C. EN is the ENABLE signal of the power supply. The control board can enable the power supply through EN, active high.
+</p>
+<p>
+    ● 4 PBB-33 copper soldering terminals were used for the main outputs. They are right-angled mounted on the PCB with M4 screws. The two terminals close to the air outlet are the positive output terminals, and the two terminals close to the signal connector are the negative output terminals. The output wire or the output copper strip can be fixed to the terminal by an M4 screw conveniently and flexibly.
+</p>
+<p>
+    ● PCIE connectors are used for 12V fixed voltage output.&nbsp;
+</p>
+<p>
+    The schematic diagram of the PCIE connector is shown as follows:
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-85623e758ce9c4d7a5a0/16325490567193510.jpg" title="PCIE connector.jpg" alt="PCIE connector.jpg"></img>
+</p>
+<p>
+    The PCIE output line consists of two color lines, the 12V positive line is yellow, and the negative line is black.
+</p>
+<p>
+    Definition of 6PIN PCIE terminal positive and negative poles:
+</p>
+<p>
+    Positive pole: yellow 1, yellow 2, yellow 3&nbsp;
+</p>
+<p>
+    Negative poles: black 4, black 5, black 6&nbsp;
+</p>
+<p>
+    4) Parameters of APW9 Power Supply:
+</p>
+<table border="1" width="100%">
+    <tbody>
+        <tr align="center" class="firstRow">
+            <td rowspan="8">
+                OUT1
+            </td>
+            <td>
+                Voltage
+            </td>
+            <td>
+                14.5 V - 21 VDC
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Rated current (@220VAC Input)
+            </td>
+            <td>
+                170A
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Rated power (@220VAC Input)
+            </td>
+            <td>
+                3600W
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Ripple and noise
+            </td>
+            <td>
+                &lt; 1%
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Source regulation
+            </td>
+            <td>
+                &lt; 1%
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Load regulation
+            </td>
+            <td>
+                &lt; 1%
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Startup Time
+            </td>
+            <td>
+                &lt;2S
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Hold-up time
+            </td>
+            <td>
+                &gt;10mS
+            </td>
+        </tr>
+        <tr align="center">
+            <td rowspan="8">
+                OUT2
+            </td>
+            <td>
+                Voltage
+            </td>
+            <td>
+                12.3 V
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Rated current (@220VAC Input)
+            </td>
+            <td>
+                12A
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Ripple and noise
+            </td>
+            <td>
+                &lt; 1%
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Voltage accuracy
+            </td>
+            <td>
+                12.2 V - 12.4 V
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Source regulation
+            </td>
+            <td>
+                &lt; 1%
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Load regulation
+            </td>
+            <td>
+                &lt; 1%
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Startup Time
+            </td>
+            <td>
+                &lt;2S
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Hold-up time
+            </td>
+            <td>
+                &gt;10mS
+            </td>
+        </tr>
+        <tr align="center">
+            <td rowspan="4">
+                Input
+            </td>
+            <td>
+                Voltage
+            </td>
+            <td>
+                200-240V AC (two)
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Frequency
+            </td>
+            <td>
+                47-63Hz
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                PF
+            </td>
+            <td>
+                &gt; 0.99 (full load)
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Leakage current
+            </td>
+            <td>
+                &lt;1.5mA (220V 50Hz)
+            </td>
+        </tr>
+        <tr align="center">
+            <td rowspan="4">
+                Protection
+            </td>
+            <td>
+                Input undervoltage protection
+            </td>
+            <td>
+                80-89V AC
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Output short circuit
+            </td>
+            <td>
+                Yes
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Output overcurrent protection
+            </td>
+            <td>
+                95-130A
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Over temperature protection
+            </td>
+            <td>
+                Yes
+            </td>
+        </tr>
+        <tr align="center">
+            <td rowspan="3">
+                Environment
+            </td>
+            <td>
+                Operating temperature
+            </td>
+            <td>
+                - 20 to 60 ℃
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Operating humidity
+            </td>
+            <td>
+                20%-90%RH(no condensation)
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Altitude
+            </td>
+            <td>
+                &lt; 2000 m
+            </td>
+        </tr>
+        <tr align="center">
+            <td rowspan="2">
+                structure
+            </td>
+            <td>
+                Dimension
+            </td>
+            <td>
+                204.8SSS*157*42.5mm
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                Net weight
+            </td>
+            <td>
+                ~ 3.2 Kg
+            </td>
+        </tr>
+        <tr align="center">
+            <td></td>
+            <td>
+                Cooling way
+            </td>
+            <td>
+                Forced air cooling
+            </td>
+        </tr>
+        <tr align="center">
+            <td></td>
+            <td>
+                Noise
+            </td>
+            <td>
+                67dBA
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <br></br>
+</p>
+<p>
+    II. Maintenance ideas and cases of common faults
+</p>
+<p>
+    1. Block diagram for basic power principle
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-30043c8f6476117e7dd2/16325509969065306.jpg" title="Diagram for power basic principle.jpg" alt="Diagram for power basic principle.jpg"></img>
+</p>
+<p>
+    2. Power PCBA board layout
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-b819730405657c0ec6e7/16325510899560515.jpg" title="Power PCBA board layout.jpg" alt="Power PCBA board layout.jpg"></img>
+</p>
+<p>
+    Layout description:&nbsp;<br></br>
+</p>
+<p>
+    1A -- first AC input and EMI circuit;
+</p>
+<p>
+    1B -- PFC and main shunt MOS circuit;
+</p>
+<p>
+    1C -- 12V auxiliary and VCC circuit;
+</p>
+<p>
+    2A -- second AC input and EMI circuit;
+</p>
+<p>
+    2B -- PFC and main shunt MOS circuit;
+</p>
+<p>
+    2C -- 12V auxiliary and VCC circuit;
+</p>
+<p>
+    2D -- 12V output port and PIC communication port.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-ebe49b3df66b2c6fdae4/16325512098881697.jpg" title="APW9 PSU" alt="APW9 PSU"></img>
+</p>
+<p>
+    Physical picture, there will be slight differences in product versions, but the principle is similar.
+</p>
+<p>
+    (1) Two AC input EMI to PFC circuit schematic diagram, such as AC 1 critical measure F1 insurance, U2 rectifier bridge, whether there is any damage in Q4, D7, D5, D6 (the other check method is the same). Note that if MOS is damaged, the drive resistance and circuit may be damaged synchronously and need to be replaced. During regular operation, it can be judged that the DC voltage at both ends of the large capacitor is 410-420v.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-99c9f7b6e52fb822c3f9/16325512412422010.jpg" title="EMI to PFC circuit schematic diagram.jpg" alt="EMI to PFC circuit schematic diagram.jpg"></img>
+</p>
+<p>
+    (2) Two 12V auxiliary circuit and fan power supply principle, such as 12V 1 channel first to measure whether voltage detection starting resistor R33, 47K and HV connected to D1, D2 are interlinked, and whether there is any damage in F3, Q5, D8, D9, T1 (the same way as the other way). 12V output, the following circuit is converted from front-end two-way 12V series absolute control to output +12V ore feeder control board.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-1a95a63ab58c4bce4eb3/16325512859160887.jpg" title="12V auxiliary circuit.jpg" alt="12V auxiliary circuit.jpg"></img>
+</p>
+<p>
+    Main PWM chip U9 VCC power supply control, attention, the front two PFC should work normally.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-241bf74694bb7ac74ee1/16325513106014265.jpg" title="Main PWM chip.jpg" alt="Main PWM chip.jpg"></img>
+</p>
+<p>
+    (3) The main control PWM drive circuit, PIC control voltage regulation schematic diagram, focuses on the main IC VCC power supply and drive transformer.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-739764e2cbb6bb5eb837/16325513678372206.jpg" title="PWM drive circuit.jpg" alt="PWM drive circuit.jpg"></img>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-290838c5d196c337f0b0/16325513858893232.jpg" title="PIC control voltage.jpg" alt="PIC control voltage.jpg"></img>
+</p>
+<p>
+    (4) LLC circuit two-way main switch MOS and transformer conversion step-down synchronous rectifier DC-filter output circuit, focus on testing the main switch MOS Q14, Q15, Q31, Q32, check if there is a short circuit in output rectifier end patch MOS positive and negative pole, and check over current protection circuit transformer, etc.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-d31f2fbfd86a4acdcec9/16325514303212476.jpg" title="LLC circuit" alt="LLC circuit"></img>
+</p>
+<p>
+    (5) PIC control circuit, J15 communication and recording port.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-c3c33956aae824fe7209/16325514692012494.jpg" title="SMD patch side location.jpg" alt="SMD patch side location.jpg"></img>
+</p>
+<p>
+    (6) Location of A-side of SMD patch and B side of a plug-in.<br></br>
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-ab0583554eef37684905/16325515188699736.jpg" title="Plug-in side location.jpg" alt="Plug-in side location.jpg"></img>
+</p>
+<p>
+    <br></br>
+</p>
+<p>
+    III. Maintenance steps
+</p>
+<p>
+    1. Check whether the appearance of the power supply is seriously damaged or deformed and whether the DC fan and the AC socket are damaged.
+</p>
+<p>
+    2. Power on AC220V, check whether the fan is rotating normally, and use the multimeter to measure whether the output J6 terminal’s voltage is 12V (12.1V-12.50) to eliminate measuring error
+</p>
+<p>
+    3. Open the shell, check the components and solder surface to see whether there is any charring by ignition (The key point is whether D1, D2, D21, D22 are broken and whether the SMT capacitor of the 12V circuit is flaring), use a multimeter to detect F1 fuse at AC input terminal, open or not, U2 rectifier bridge; Check PFC MOS Q4; D7, D5, D6, whether there is a short circuit (in addition, the inspection method of one way is the same), Measure PWM circuit main switch MOS Q31; Q32; Q15.Q16 and output patch MOS Q17; Q18.Q19.Q20 to see whether there is a short circuit, if there is a short circuit, please check and replace the component position, and pay attention to the circuit resistance around the MOS tube. Audion may be damaged and need to be replaced.
+</p>
+<p>
+    4. Detect auxiliary 12V circuit F3, U5; T1; Q5. check whether other components of D8 and D9 are short circuits or open circuits and the surrounding components are burnt out, etc. If any, it needs to be replaced.
+</p>
+<p>
+    5. If the above locations have no abnormity, the circuit of F1 or F2 fuse is normal, the DC fan turns when the two AC lines are switched on (If there is no rotating momentum to measure whether the fan socket has 12V, such as the normal replacement of fan), J6 has 12 v voltage output end, measure large two-way capacitor PFC TEST20 TEST30 or TEST2 - TEST7 gauge point to see both ends are DC410V - 420 - v, otherwise check PFC chip U21 or U1, 7 feet VCC power supply with 12 v or make sure if there is any material damage change, If there is no abnormality, the PWM circuit U9, U10, U24 should be detected.; Power supply VCC has 12V voltage or whether the material is damaged or replaced, and whether the T5 or T7 drive transformer is damaged.
+</p>
+<p>
+    6. Other defects shall be further analyzed and judged according to the skills of maintenance personnel.
+</p>
+<p>
+    After the above inspection, the DC output of a single power supply test main circuit should be short-connected to the 4-5 PIN of J15 PIN to output about dc21.3v, as shown in the figure EN- GND PIN. Note that the short connection error may damage the chip. After the replacement of defective components and welding inspection, the AC220V test can be carried out. Note: if other circuits check that the large capacitance is 420V, if there is no output after a short connection, it can also be considered that PIC chip U12 firmware can be re-recorded or IC can be replaced during recording (generally, there are fewer defects here).
+</p>
+<p>
+    IV. Test diagram of the connection between conditionally available control board V1.2 and APW9 power supply PIC port, Mark 1 is the special card test firmware, 2 is the DC voltage debugging high and low conversion button, 3 is the PIC communication port, 4 is the control board letter socket, 5 is the power supply of 12V; Notice yellow plus black minus. Note: after the repair of general defective power supply products, the power on the PIC communication J15 port EN-GND pin is an only short connection, there is a voltage output of 21V or so is normal, it can be tested separately without the following control board (when the PIC microcontroller is broken, or firmware is abnormal, small board test is required after re-burning), and it can directly install the corresponding miner test.
+</p>
+<p>
+    After the maintenance of the power supply machine, 12V is with 12A load, and the main voltage DC21V with load 170A shall be tested as qualified.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-58c0f9eea71ee6e8f1ea/16325515608332518.jpg" title="APW9 power supply repair.jpg" alt="APW9 power supply repair.jpg"></img>
+</p>
+<p>
+    V. Simple judgment and maintenance of common faults of mine power supply.
+</p>
+<p style="text-align: center;">
+    <img src="../../artifacts/files/document/zeus-diagram-d472f66620d3dcf3468d/16325515976392057.jpg" title="APW9 power supply fault and solution.jpg" alt="APW9 power supply fault and solution.jpg"></img>
+</p>
+<p>
+    VI. After the power supply maintenance test is normal, it is required to operate normally for 2 hours with a rated load of 80% (140A) or more before it can be used by the client.<br></br>
+</p>
+</div></body></html>

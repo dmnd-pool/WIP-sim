@@ -1,0 +1,39 @@
+{
+  "id": "dcent-release-617072976",
+  "url": "https://github.com/DCentralTech/DCENT_OS/releases/download/v0.9.0-beta.1/DCENTOS_XIL2_S17e_beta20261002.README.txt",
+  "kind": "metadata",
+  "title": "DCENTOS_XIL2_S17e_beta20261002.README.txt",
+  "language": "en",
+  "source_id": "dcent-releases",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/dcent-release-617072976/DCENTOS_XIL2_S17e_beta20261002.README.txt",
+  "sha256": "3fe04aee099a139689acc8717c43a1485234a7ec274f632724a9ab464c1ab2fe",
+  "size_bytes": 350,
+  "executed": false,
+  "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1206981413/f0eed7e5-4e72-4068-8dd8-35bf7a066a5b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-19T10%3A31%3A33Z&rscd=attachment%3B+filename%3DDCENTOS_XIL2_S17e_beta20261002.README.txt&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-19T09%3A31%3A31Z&ske=2026-10-19T10%3A31%3A33Z&sks=b&skv=2018-11-09&sig=oQ%2BI9958sBfUdTjqvdMW%2FiRaCaOefC%2FfICxgUP3%2Bd7g%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MjQwMzk1MywibmJmIjoxNzkyNDAzNjUzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.9ceWwyGLDee9QUlTJE26qXY8rp-FC_hNmdbUOX5SFWA&response-content-disposition=attachment%3B%20filename%3DDCENTOS_XIL2_S17e_beta20261002.README.txt&response-content-type=application%2Foctet-stream",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 07 Oct 2026 00:33:35 GMT",
+  "etag": "\"0x8DF240A9F588592\"",
+  "publisher_sha256": "3fe04aee099a139689acc8717c43a1485234a7ec274f632724a9ab464c1ab2fe",
+  "matches_publisher_sha256": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 350,
+      "actual": 350,
+      "match": true,
+      "source_id": "dcent-releases"
+    },
+    {
+      "field": "sha256",
+      "expected": "3fe04aee099a139689acc8717c43a1485234a7ec274f632724a9ab464c1ab2fe",
+      "actual": "3fe04aee099a139689acc8717c43a1485234a7ec274f632724a9ab464c1ab2fe",
+      "match": true,
+      "source_id": "dcent-releases"
+    }
+  ],
+  "upstream_integrity_match": true
+}

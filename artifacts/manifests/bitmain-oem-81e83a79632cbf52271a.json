@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-81e83a79632cbf52271a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/00578935-b639-48fa-922f-328f383aec41/2024/06/19/17/Antminer-D9-release-202405280927.bmu",
+  "kind": "firmware",
+  "title": "Antminer-D9-release-202405280927.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-81e83a79632cbf52271a/Antminer-D9-release-202405280927.bmu",
+  "sha256": "63aea880c6128fc1cfd53ff17eacff9b1e28b50c2093d7cd019295ae9af04d40",
+  "size_bytes": 18512461,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/00578935-b639-48fa-922f-328f383aec41/2024/06/19/17/Antminer-D9-release-202405280927.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Wed, 19 Jun 2024 09:45:15 GMT",
+  "etag": "\"d43c8cb4bd1dadae8654f2784f2723ec\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 18512461,
+      "actual": 18512461,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

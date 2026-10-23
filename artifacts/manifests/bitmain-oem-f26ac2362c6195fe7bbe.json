@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f26ac2362c6195fe7bbe",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/506041a4-a644-4aef-84f5-eee87885114a/2023/11/20/17/S19k%20Pro%20CE-EMC%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "S19k Pro CE-EMC Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:37+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f26ac2362c6195fe7bbe/S19k_Pro_CE-EMC_Shenzhen.pdf",
+  "sha256": "180c80f3ff5d14c446729092907f95f711ec29f5ffb05ebe62e171a33c4900f1",
+  "size_bytes": 828203,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/506041a4-a644-4aef-84f5-eee87885114a/2023/11/20/17/S19k%20Pro%20CE-EMC%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 20 Nov 2023 09:46:21 GMT",
+  "etag": "\"2dd0e47d7203b2a424de2e1561111ed6\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 828203,
+      "actual": 828203,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

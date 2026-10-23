@@ -1,0 +1,36 @@
+{
+  "state": "Formatted staged source only; no build, test, integration or deletion",
+  "inputs": [
+    {
+      "path": "work/simulator/cleanup-development-455/base.json",
+      "sha256": "1f92aac97abed77a0c8b134cdf80890d139366a5147c4c35064aa2db430bab58",
+      "size": 246
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/reclaim_qemu_inputs.rs",
+      "sha256": "4a590b2b7a2ab5c68c0339ed6e4b54aae2a9568b9f8f4fe6255c0a18ca306f9b",
+      "size": 54056
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/reclaim_qemu_inputs/t17.rs",
+      "sha256": "655b7c94713e6d32e24db47136baeccc43e9a183b5690eb784988f9648684574",
+      "size": 12193
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/reclaim_qemu_inputs/t17_tests.rs",
+      "sha256": "93e6be755418389b2aebe41215207037bc2710ec02779768465e9d14fed65fd6",
+      "size": 20236
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/README.md",
+      "sha256": "077f3d70aea11aff6f3a969339493bff7687c79456945b6c9e127fed574328fc",
+      "size": 4258
+    },
+    {
+      "path": "work/simulator/cleanup-development-455/declaration-potential.json",
+      "sha256": "2760a92762e17040670518a6516a12d3c4e31c8fb5a05fe99f916840b79d892a",
+      "size": 56563
+    }
+  ],
+  "active_utility_unchanged": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-dc193d1298f71e3906df",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4cc4cfa1-d1bc-450a-9438-14cf73c10dc8/2025/11/26/13/CB%202nd%20cert_Z15%20Pro_CN235LUU%20002_JPTUV-153173-M1_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 2nd cert_Z15 Pro_CN235LUU 002_JPTUV-153173-M1_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-dc193d1298f71e3906df/CB_2nd_cert_Z15_Pro_CN235LUU_002_JPTUV-153173-M1_extsigned.pdf",
+  "sha256": "08ff94d72ecad49dd710d15ec34ae8cb29d57670036dc73ec777573970881909",
+  "size_bytes": 631239,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4cc4cfa1-d1bc-450a-9438-14cf73c10dc8/2025/11/26/13/CB%202nd%20cert_Z15%20Pro_CN235LUU%20002_JPTUV-153173-M1_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 26 Nov 2025 05:48:47 GMT",
+  "etag": "\"e37927a2ebfe490e28ad15247b6d964c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 631239,
+      "actual": 631239,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

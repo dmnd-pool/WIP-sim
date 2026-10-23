@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2eaaa48a7bbfef1a5e97",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/876b1c41-3c83-4e07-beef-07cc0bbc89f4/2024/09/20/18/KA3%20Product%20Manual.pdf",
+  "kind": "document",
+  "title": "KA3 Product Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:19+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2eaaa48a7bbfef1a5e97/KA3_Product_Manual.pdf",
+  "sha256": "c6f2bbf238980ea6717a9ed0df4093e3a054a5eda38fb6043303ddf2b1aa05b9",
+  "size_bytes": 893831,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/876b1c41-3c83-4e07-beef-07cc0bbc89f4/2024/09/20/18/KA3%20Product%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 10:40:27 GMT",
+  "etag": "\"e4dd57b5f40c1d61d22c95cf37213b8f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 893831,
+      "actual": 893831,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-20e1f02b9a23a3a4f8c7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/71955cbb-cb90-4b49-83c4-eeb501ff679a/2024/09/20/16/X5%20Product%20Manual-v1.0.0.pdf",
+  "kind": "document",
+  "title": "X5 Product Manual-v1.0.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:21+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-20e1f02b9a23a3a4f8c7/X5_Product_Manual-v1.0.0.pdf",
+  "sha256": "703ca7968aebbdc1e6b535d00a60c88433240bf9c08a49b91b8bb5dd19f6c28f",
+  "size_bytes": 800466,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/71955cbb-cb90-4b49-83c4-eeb501ff679a/2024/09/20/16/X5%20Product%20Manual-v1.0.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 08:42:30 GMT",
+  "etag": "\"1ed0c22069f6ffe3da0e80b87dbab2a7\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 800466,
+      "actual": 800466,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

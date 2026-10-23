@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2f57a7e27257e5bb59a6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7ce9b6e6-2c9e-452b-b229-1d8f5a04d234/2025/01/24/10/S21%2B%20Hyd.%20CE-EMC.pdf",
+  "kind": "document",
+  "title": "S21+ Hyd. CE-EMC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2f57a7e27257e5bb59a6/S21+_Hyd._CE-EMC.pdf",
+  "sha256": "f4854716ed8c0bb6ebe86a192dd4c1128e2c5b0b7d358f1bd808bd46f11c5e3d",
+  "size_bytes": 486971,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7ce9b6e6-2c9e-452b-b229-1d8f5a04d234/2025/01/24/10/S21%2B%20Hyd.%20CE-EMC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 24 Jan 2025 02:07:31 GMT",
+  "etag": "\"ce2b25f6c7e8b8c2bff32b978e3f7677\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 486971,
+      "actual": 486971,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

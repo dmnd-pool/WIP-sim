@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-d57f57d8ccce8ab9df7b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20R4/Firmware/0072018111915190019606xL1e6L0640/Antminer-R4-xilinx-201811121649-autofreq-user-UBI-NF.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-R4-xilinx-201811121649-autofreq-user-UBI-NF.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-d57f57d8ccce8ab9df7b/ANTMINER-R4-xilinx-201811121649-autofreq-user-UBI-NF.tar.gz",
+  "sha256": "81fc732125c586f44726e7f1f5eefcdf920d22d8d504f17d7ce0723020bba1b8",
+  "size_bytes": 19827412,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20R4/Firmware/0072018111915190019606xL1e6L0640/Antminer-R4-xilinx-201811121649-autofreq-user-UBI-NF.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:28 GMT",
+  "etag": "\"6281f883fb13a4e5439c68b18a143cc9-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "94d6f3cee5bcc2b097e85046cbcbb7ad",
+      "actual": "94d6f3cee5bcc2b097e85046cbcbb7ad",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 19827412,
+      "actual": 19827412,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

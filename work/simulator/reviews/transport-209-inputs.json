@@ -1,0 +1,41 @@
+{
+  "scope": "Author review only. Independent agent review remains unavailable.",
+  "inputs": {
+    "crates/md-sim-firmware/src/serial_console.rs": {
+      "sha256": "7f4aab4bdbb2c46424ddbda64bb8f73f286ed11c9c8a813ccb89038891a6b650",
+      "size": 43539
+    },
+    "crates/md-sim-firmware/src/confinement.rs": {
+      "sha256": "75cfbb98969a3cf00744e8bc7b47943edcc019ca805f1f5b54b8ab6f93b434c6",
+      "size": 17886
+    },
+    "crates/md-sim-firmware/examples/s9_boot_bundle.rs": {
+      "sha256": "a7b3538dae6da426d7cfd452562d9c7f8a62f746e30a71b66f6fc6e626e980e3",
+      "size": 109606
+    },
+    "crates/md-sim-firmware/examples/support/ssh_artifact_ack_loss.rs": {
+      "sha256": "85f4f50669328c0df19963f95068e6cbf1db8551ad7d7dbddd2f90bac69c7efc",
+      "size": 3319
+    },
+    "crates/md-sim-firmware/examples/remote_transport_check/artifact.rs": {
+      "sha256": "af0fb92b7fb3442693958206c7c52918abd51b58c57f432235dd9bf05abd32bd",
+      "size": 3744
+    },
+    "crates/md-sim-firmware/examples/support/dashboard_transport_report.rs": {
+      "sha256": "4a71a3128b6644a8ac8e2cff5501f8824d1287e7b5406ea46c5cfbf9cd08e0ba",
+      "size": 18334
+    },
+    "work/simulator/network-vm/artifact-ack-loss-209/remote-report.json": {
+      "sha256": "48f56814d8be207d5e110fb05f188f12459834f0ff0666165412d6f3323cf911",
+      "size": 641590
+    },
+    "work/simulator/qemu-s9/core-checkpoint-209/manifest.json": {
+      "sha256": "58b9ad7eae1ae57187f4a2ed7ff666ef8a356130be2d0ac3613d0695133fcc27",
+      "size": 63779
+    },
+    "work/simulator/qemu-s9/interrupted-nand-cycle-207/assessment.json": {
+      "sha256": "fa80311ff0bd9b58b821699c91d7389712fc9ac62e5adf85636fbea076a3202f",
+      "size": 9959
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4003aeabcfb760412f98",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2345a9a3-6e01-4beb-addf-72da2eef9b06/2024/07/19/00/ACRT2404238-S19e%20XP%20Hyd-SVHC224.pdf",
+  "kind": "document",
+  "title": "ACRT2404238-S19e XP Hyd-SVHC224.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4003aeabcfb760412f98/ACRT2404238-S19e_XP_Hyd-SVHC224.pdf",
+  "sha256": "7b99ca1affd5d1e76b99a5b76c8bfb5e61dfa6d761ef4a82737fe00f1f336fbc",
+  "size_bytes": 218803,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2345a9a3-6e01-4beb-addf-72da2eef9b06/2024/07/19/00/ACRT2404238-S19e%20XP%20Hyd-SVHC224.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 18 Jul 2024 16:27:46 GMT",
+  "etag": "\"7ae83fafcaa9af89789448b461ddeaf3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 218803,
+      "actual": 218803,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

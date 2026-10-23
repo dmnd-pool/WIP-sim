@@ -1,0 +1,53 @@
+--- a/hw/timer/cadence_ttc.c
++++ b/hw/timer/cadence_ttc.c
+@@ -132,6 +132,15 @@
+     return x < a && x >= b;
+ }
+ 
++/* A decrementing counter retains the complementary sub-tick phase.
++ * Its integer value changes only after a complete clock edge. Matches use
++ * that same edge, not the opposite end of the fractional count interval. */
++static int64_t cadence_timer_match(CadenceTimerState *s, unsigned index)
++{
++    return ((int64_t)s->reg_match[index] << 16) |
++           ((s->reg_count & COUNTER_CTRL_DEC) ? 0xffff : 0);
++}
++
+ static void cadence_timer_run(CadenceTimerState *s)
+ {
+     int i;
+@@ -150,7 +159,7 @@
+                 (int64_t)s->reg_interval + 1 : 0x10000ULL) << 16;
+         next_value = (s->reg_count & COUNTER_CTRL_DEC) ? -1ULL : interval;
+         for (i = 0; (s->reg_count & COUNTER_CTRL_MATCH) && i < 3; ++i) {
+-            int64_t cand = (uint64_t)s->reg_match[i] << 16;
++            int64_t cand = cadence_timer_match(s, i);
+             if (is_between(cand, (uint64_t)s->reg_value, next_value)) {
+                 next_value = cand;
+             }
+@@ -187,7 +196,7 @@
+     x = (int64_t)s->reg_value + ((s->reg_count & COUNTER_CTRL_DEC) ? -r : r);
+ 
+     for (i = 0; (s->reg_count & COUNTER_CTRL_MATCH) && i < 3; ++i) {
+-        int64_t m = (int64_t)s->reg_match[i] << 16;
++        int64_t m = cadence_timer_match(s, i);
+         if (m > interval) {
+             continue;
+         }
+@@ -324,8 +333,15 @@
+     case 0x10:
+     case 0x14:
+         if (value & COUNTER_CTRL_RST) {
+-            s->reg_value = 0;
++            uint32_t top = (value & COUNTER_CTRL_INT) ?
++                           s->reg_interval : 0xffff;
++            s->reg_value = (value & COUNTER_CTRL_DEC) ?
++                           (top << 16) | 0xffff : 0;
+             cadence_timer_clear_fraction(s);
++        } else if ((value ^ s->reg_count) & COUNTER_CTRL_DEC) {
++            /* Keep both integer count and elapsed sub-tick phase when the
++             * counting direction changes without a counter reset. */
++            s->reg_value ^= 0xffff;
+         }
+         s->reg_count = value & 0x7f & ~COUNTER_CTRL_RST;
+         break;

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-361430205a6cd8057892",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/222fee86-c8cb-4c83-9836-5f6fce36779c/2025/03/11/17/E11%20Product%20Manual_v1.0.5.pdf",
+  "kind": "document",
+  "title": "E11 Product Manual_v1.0.5.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:33+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-361430205a6cd8057892/E11_Product_Manual_v1.0.5.pdf",
+  "sha256": "0754ef67dd8cd73fd9e661374911fe1701d0f0a172a12b59aaa2e81c4503f749",
+  "size_bytes": 864871,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/222fee86-c8cb-4c83-9836-5f6fce36779c/2025/03/11/17/E11%20Product%20Manual_v1.0.5.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 11 Mar 2025 09:56:42 GMT",
+  "etag": "\"b9a58e00b3dc6aca3955e63954e60b4c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 864871,
+      "actual": 864871,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

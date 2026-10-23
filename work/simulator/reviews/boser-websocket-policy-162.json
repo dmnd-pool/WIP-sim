@@ -1,0 +1,24 @@
+{
+  "schema": "md-sim-boser-browser-adaptation-review/1",
+  "application": {
+    "kind": "Exact regular SquashFS member; isolated listing and extracted size agree",
+    "member": "www/boser/app.00964ffb2140d6973b03.js",
+    "object": {
+      "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+      "size": 425409
+    },
+    "parent_ramdisk": {
+      "sha256": "2bd49c70b915b7e25f6c01013d95a5ffea8d499b73c6c6ec5539fda4247154b3",
+      "size": 15491980
+    },
+    "result": {
+      "sha256": "232b1742b7ee48409a4e8eeb6d83742d85a939591ec5d25d28bec2bf16c6891a",
+      "size": 851485
+    }
+  },
+  "observed_code": "graphqlws:\"ws://\"+l+\"/graphql\"",
+  "context": "Module63594 uses window.location.host but fixes the WebSocket scheme to ws. HTTP GraphQL uses window.location.protocol.",
+  "adaptation": "Selected gateway explicitly emits Content-Security-Policy: upgrade-insecure-requests. Original JS and native service authentication remain unchanged. Gateway manifest pins this browser policy.",
+  "required_validation": "Actual captured Firefox must use the selected published URL, authenticate, receive native WebSocket samples, and render live board and pool rows. This source inspection is not browser acceptance.",
+  "review_finding": "Earlier browser suites checked DOM login labels and separate real GraphQL samples, but did not assert that native table rows were populated. Their saved initial DOM can contain placeholders. New suite requires native table values. No earlier result closes full native UI acceptance."
+}

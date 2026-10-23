@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-52ef5933296cd5b635db",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ee826c44-5d45-4d84-82ce-1aa2fccdb580/2026/02/09/22/cTUVus_CU%C2%A072605892%C2%A00001_CN25SKB3%C2%A0001_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_CU\u00a072605892\u00a00001_CN25SKB3\u00a0001_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-52ef5933296cd5b635db/cTUVus_CU_72605892_0001_CN25SKB3_001_extsigned.pdf",
+  "sha256": "5f9473a39026e925b8b19295cad689d5c90423d61f7b87585f34182f49321f83",
+  "size_bytes": 1373898,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ee826c44-5d45-4d84-82ce-1aa2fccdb580/2026/02/09/22/cTUVus_CU%C2%A072605892%C2%A00001_CN25SKB3%C2%A0001_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 09 Feb 2026 14:54:42 GMT",
+  "etag": "\"7358d187edfa813e9fa0b5f7b10b3912\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1373898,
+      "actual": 1373898,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

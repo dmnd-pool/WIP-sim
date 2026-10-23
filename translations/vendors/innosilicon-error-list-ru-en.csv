@@ -1,0 +1,57 @@
+Error code,Error name,Summary,Description,Error information,Resolution steps
+0,ErrSucc,OK,OK,-,Normal
+21,ErrNotPlugged,One or more hashboards were not detected,The hashboard PLUG signal was not detected,"Detected power-board numbers, separated by spaces if there is more than one","1. Check the SPI ribbon connection against a working machine. Disconnect and reconnect the ribbon.
+2. Replace the control board.
+3. Replace the faulty hashboard (rework the puzzle board)."
+22,ErrPsuI2cFail,Abnormal power-control communication,Abnormal power-supply I2C communication,-,"1. Replace the power supply.
+2. Replace the control board."
+23,ErrEncoreAllFail,All hashboards cannot power on,SPI communication fails on all hashboards,-,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Repair the complete machine."
+24,ErrEncoreFail,Some hashboards cannot power on,SPI communication fails on some hashboards,"Hashboard numbers with failed SPI communication, separated by spaces if there is more than one","1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (rework the puzzle board)."
+25,ErrSetPllFail,Hashboard frequency increase failed,Hashboard frequency increase failed,Hashboard number: error frequency,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (rework the puzzle board)."
+26,ErrSetVolFail,Voltage setting failed,Voltage setting failed,Hashboard number: 1/2,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (join)."
+27,ErrBistFail,Chip BIST test failed,Chip BIST test failed,Hashboard number: 1/2,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the faulty hashboard (join the board)."
+28,ErrSpiFail,Abnormal hashboard communication during operation cannot recover automatically,Abnormal hashboard SPI communication during operation cannot recover automatically,Hashboard number,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the faulty hashboard (rework the puzzle board)."
+29,ErrI2cFail,Abnormal power-supply communication during operation cannot recover automatically,Abnormal power-supply I2C communication during operation cannot recover automatically,-,"1. Replace the power supply.
+2. Replace the control board."
+30,ErrNetwork,Connection to the mining pool is interrupted,Connection to the mining pool is interrupted,-,"If many or all miners on the same switch have this problem:
+1. Check the mining-pool settings.
+2. Check the network configuration, such as DHCP, DNS, and ports.
+If only one or a few miners have this problem:
+1. Check the mining-pool settings.
+2. Check the connections to the miner network port.
+3. Replace the network cable with a working mining machine. [The original wording is unclear.]
+4. Replace the control board."
+31,ErrBadChip,Damage to individual chips causes an artificially inflated hash rate,Damage to individual chips causes an artificially inflated hash rate,Damaged chip number: hashboard number; separate multiple entries with spaces,Send for repair.
+32,ErrOverheat,Hashboard overtemperature,Hashboard overtemperature,Hashboard number,"1. Check whether the front and rear fans turn. If they do not, replace the fans first, then replace the control board or power supply.
+2. Check that the front and rear airflow directions agree and match the other machines. If they do not, change the fan direction.
+3. If the miner inlet air temperature is above 40 degrees, improve the mining-facility temperature conditions.
+4. If a particular hashboard frequently overheats, replace the faulty hashboard (rework the puzzle)."
+33,ErrInvTemp,Cannot read the chip temperature,Cannot read the chip temperature,Hashboard number,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (rework the puzzle board)."
+34,ErrMisPlugged,The control-board communication ribbon is connected incorrectly,Abnormal control-board SPI ribbon connection,Hashboard number,"1. Check that the hashboard SPI ribbon connection method and sequence match other machines of the same model.
+2. Replace the control board."
+35,ErrPsuFail,Abnormal power supply,Abnormal power supply,,"1. If the machine hash rate has no obvious abnormality and no board goes offline, restart.
+2. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+3. Replace the power supply."
+36,ErrInvCorenum,Some chips do not operate correctly,The number of good chips is abnormal,Hashboard number: chip number,"1. If the machine hash rate has no obvious abnormality and no board goes offline, restart.
+2. Restart the miner and check whether the same error remains.
+3. Replace the faulty hashboard."
+37,ErrInvVidtype,"Control-board type, firmware version, and chip count do not match","Control-board type, firmware version, and chip count do not match","vidtype, minertype, subtype, chipnum","After more than 10 affected units have accumulated, contact repair service."
+38,ErrBadRearChips,"Finally, some chips have a low hash rate.",Low hash rate on the last few chip stages,,Send for repair.
+39,ErrInvTuneParam,Abnormal aging parameters,The initial aging frequency voltage is incorrect,,Send for repair.

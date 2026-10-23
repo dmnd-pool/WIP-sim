@@ -1,0 +1,36 @@
+--- a/hw/timer/cadence_ttc.c
++++ b/hw/timer/cadence_ttc.c
+@@ -73,14 +73,18 @@
+      * (or overflow can happen below) */
+     assert(timer_steps <= 1ULL << 32);
+ 
+-    uint64_t r = timer_steps * 1000000000ULL;
++    uint64_t numerator = timer_steps * 1000000000ULL;
++    unsigned shift = 16;
+     if (s->reg_clock & CLOCK_CTRL_PS_EN) {
+-        r >>= 16 - (((s->reg_clock & CLOCK_CTRL_PS_V) >> 1) + 1);
+-    } else {
+-        r >>= 16;
+-    }
+-    r /= (uint64_t)s->freq;
+-    return r;
++        shift -= ((s->reg_clock & CLOCK_CTRL_PS_V) >> 1) + 1;
++    }
++    uint64_t denominator = (uint64_t)s->freq << shift;
++
++    /* Deadlines must round upward. Truncating can schedule a callback
++     * before the fractional counter reaches its event. A remaining
++     * fraction shorter than1ns then reschedules at the same timestamp,
++     * preventing icount and qtest clocks from ever advancing. */
++    return numerator / denominator + (numerator % denominator != 0);
+ }
+ 
+ static uint64_t cadence_timer_get_steps(CadenceTimerState *s, uint64_t ns)
+@@ -127,6 +131,7 @@
+     assert(s->cpu_time_valid); /* cadence_timer_sync must be called first */
+ 
+     if (s->reg_count & COUNTER_CTRL_DIS) {
++        timer_del(s->timer);
+         s->cpu_time_valid = 0;
+         return;
+     }

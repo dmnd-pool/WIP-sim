@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-15bceba8b293ccdccbe7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cgminer-run-windows-20150107.zip",
+  "kind": "tool",
+  "title": "cgminer-run-windows-20150107.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:57+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-15bceba8b293ccdccbe7/cgminer-run-windows-20150107.zip",
+  "sha256": "2eca2f74371d757e6f81bcaf83245a94a688eb16e7c5ed0b761889306448d2ae",
+  "size_bytes": 1760145,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cgminer-run-windows-20150107.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:31 GMT",
+  "etag": "\"b6a1ce7d296afcf292052bdd60a8e614\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1760145,
+      "actual": 1760145,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

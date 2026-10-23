@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a87a3b06f6f88fa91b87",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e6858e5c-d63a-4be0-9268-fa0c2ada4612/2026/07/15/11/U3S23H%20Product%20Manual_v1.0.3.pdf",
+  "kind": "document",
+  "title": "U3S23H Product Manual_v1.0.3.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a87a3b06f6f88fa91b87/U3S23H_Product_Manual_v1.0.3.pdf",
+  "sha256": "2a3d9d8cb0566d00b4899728b1c2f8ab1230bfb5cd67fda7e6f1481921799fcb",
+  "size_bytes": 804496,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e6858e5c-d63a-4be0-9268-fa0c2ada4612/2026/07/15/11/U3S23H%20Product%20Manual_v1.0.3.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 15 Jul 2026 03:27:42 GMT",
+  "etag": "\"c105153ef2aa1bdf1478c816f16f7605\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 804496,
+      "actual": 804496,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

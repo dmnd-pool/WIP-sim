@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-279cf2260ee4f7fdd7e8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f9920d47-64c0-405c-8148-f6ed3cec6705/2024/12/18/09/cTUVus-S21%20XP-CN24S25F%20001-24.08.14_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus-S21 XP-CN24S25F 001-24.08.14_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-279cf2260ee4f7fdd7e8/cTUVus-S21_XP-CN24S25F_001-24.08.14_extsigned.pdf",
+  "sha256": "095da7d04c7985f33350c2eea08dfe8ffda0f0977746df31eb2edfbd6541a685",
+  "size_bytes": 1471816,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f9920d47-64c0-405c-8148-f6ed3cec6705/2024/12/18/09/cTUVus-S21%20XP-CN24S25F%20001-24.08.14_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 18 Dec 2024 01:30:09 GMT",
+  "etag": "\"428f42f10600dad39166c82920e6d7c3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1471816,
+      "actual": 1471816,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

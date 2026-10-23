@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-76f6d221deac6f92d139",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0bf6178a-98ac-48a1-aa9d-f15ab45e3d1b/2025/02/11/11/Antminer-KS5-release-202412201447.bmu",
+  "kind": "firmware",
+  "title": "Antminer-KS5-release-202412201447.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-76f6d221deac6f92d139/Antminer-KS5-release-202412201447.bmu",
+  "sha256": "db1355bacc8bf7c39002b728074969b009c4c13c52415668c98a1d1da0556482",
+  "size_bytes": 13757950,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0bf6178a-98ac-48a1-aa9d-f15ab45e3d1b/2025/02/11/11/Antminer-KS5-release-202412201447.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Tue, 11 Feb 2025 03:10:08 GMT",
+  "etag": "\"42b8846e6fbaf2141068fa474b5222da\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "42b8846e6fbaf2141068fa474b5222da",
+      "actual": "42b8846e6fbaf2141068fa474b5222da",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 13757950,
+      "actual": 13757950,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-9f1930b687e2486ae7ad",
+  "url": "https://download.hiveos.farm/asic/s17/recovery-stock/SD_S17-T17_650M.05.06.2019.zip",
+  "kind": "firmware",
+  "title": "SD_S17-T17_650M.05.06.2019.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:24:38+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-9f1930b687e2486ae7ad/SD_S17-T17_650M.05.06.2019.zip",
+  "sha256": "1a9b46baa74494bbb67513539c5b1840c9991adb332700b4914c10824704690a",
+  "size_bytes": 57140810,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s17/recovery-stock/SD_S17-T17_650M.05.06.2019.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Wed, 05 Feb 2020 12:25:23 GMT",
+  "etag": "\"5e3ab433-367e64a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 57140810,
+      "actual": 57140810,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

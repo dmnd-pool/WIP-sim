@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1382b6e83b0c316bf146",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c548018c-5a11-4fe8-a2ed-8b6dc5063b33/2022/01/19/18/S1%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S1 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1382b6e83b0c316bf146/S1_Server_Manual.pdf",
+  "sha256": "14df33c66ccc6e589fb182024139967f06dd913b29f3582ba61677ee71b59c6d",
+  "size_bytes": 1409002,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c548018c-5a11-4fe8-a2ed-8b6dc5063b33/2022/01/19/18/S1%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:40:54 GMT",
+  "etag": "\"49784593148d4eddf601f26de6a9c2fb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1409002,
+      "actual": 1409002,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

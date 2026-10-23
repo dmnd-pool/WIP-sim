@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-f9de3a15d47849379b21",
+  "url": "https://download.hiveos.farm/asic/custom/umnus/Antminer-S9-all-Hiveon-1.03@201002-sign-umnus.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@201002-sign-umnus.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:57:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-f9de3a15d47849379b21/Antminer-S9-all-Hiveon-1.03_201002-sign-umnus.tar.gz",
+  "sha256": "7dbcdacd761a1e64bd28f0b2e2fa57cd825df312753c1c8827eaef95d8ebe934",
+  "size_bytes": 21275744,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/umnus/Antminer-S9-all-Hiveon-1.03@201002-sign-umnus.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 01 Oct 2020 21:20:07 GMT",
+  "etag": "\"5f764807-144a460\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 21275744,
+      "actual": 21275744,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

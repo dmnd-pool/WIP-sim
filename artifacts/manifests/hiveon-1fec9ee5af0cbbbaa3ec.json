@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-1fec9ee5af0cbbbaa3ec",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-T17-MSMINERT17V120SIGCRC-sig-2.02@200916-T17-sign-wattum.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17-MSMINERT17V120SIGCRC-sig-2.02@200916-T17-sign-wattum.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:10:01+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-1fec9ee5af0cbbbaa3ec/Antminer-T17-MSMINERT17V120SIGCRC-sig-2.02_200916-T17-sign-wattum.hive.tar.gz",
+  "sha256": "9f9a5f6307405070670dad5b1365cff4c75306a06472911ed6800e8aeede5727",
+  "size_bytes": 40358125,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-T17-MSMINERT17V120SIGCRC-sig-2.02@200916-T17-sign-wattum.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 15 Sep 2020 14:51:33 GMT",
+  "etag": "\"5f60d4f5-267d0ed\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 40358125,
+      "actual": 40358125,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-b3576916c24393617800",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/db6be90e-596d-4f93-82d0-316280e2a13c/2019/08/28/13/Antminer-D5-mode-350M-201908192031.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-D5-mode-350M-201908192031.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-b3576916c24393617800/ANTMINER-D5-mode-350M-201908192031.tar.gz",
+  "sha256": "4837dfde714934b6518959bb532c0222080b3e749cd58572b7f1b216a7505ef5",
+  "size_bytes": 20105708,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/db6be90e-596d-4f93-82d0-316280e2a13c/2019/08/28/13/Antminer-D5-mode-350M-201908192031.tar.gz",
+  "http_status": 200,
+  "content_type": "application/gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:34 GMT",
+  "etag": "\"b25de5f65388c0884259ec8178f10301-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "49a834ce77773277dbb2e6dbb3eb1e01",
+      "actual": "49a834ce77773277dbb2e6dbb3eb1e01",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 20105708,
+      "actual": 20105708,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

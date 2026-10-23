@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5dc3175d02732706015b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-C1-20141016.tar.gz",
+  "kind": "firmware",
+  "title": "SD-C1-20141016.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:36+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-5dc3175d02732706015b/SD-C1-20141016.tar.gz",
+  "sha256": "ab774bea349c2ce6d06b70914d5c6c40c8193319e06886598422e626fac6144a",
+  "size_bytes": 19126318,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-C1-20141016.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"0e3158a993db4ac223d55b32842892bd-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19126318,
+      "actual": 19126318,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-5e91d7bf95372f736db7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/131b97df-93a9-41f1-81f5-736618e08a60/2026/09/11/15/FR-1.88(260814-S21-Pro%2B).bmu",
+  "kind": "firmware",
+  "title": "FR-1.88(260814-S21-Pro+).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:36+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-5e91d7bf95372f736db7/FR-1.88_260814-S21-Pro+_.bmu",
+  "sha256": "e60fbd13e9c40e2a649a2667ef1ac3aaf98c2e96d8a4213671590fafe3a474ed",
+  "size_bytes": 16811008,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/131b97df-93a9-41f1-81f5-736618e08a60/2026/09/11/15/FR-1.88(260814-S21-Pro%2B).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Fri, 11 Sep 2026 07:35:03 GMT",
+  "etag": "\"187bd481f34b4138d9cc2c4a2a1ec040\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "187bd481f34b4138d9cc2c4a2a1ec040",
+      "actual": "187bd481f34b4138d9cc2c4a2a1ec040",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 16811008,
+      "actual": 16811008,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

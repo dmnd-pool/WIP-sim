@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-eb57c9ef3471c7a78e98",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7f17fd3d-5adb-4f4d-8b0e-d34733d3e4a3/2025/04/08/16/S19j%20XP%20User%20Guide%20V1.1.3.pdf",
+  "kind": "document",
+  "title": "S19j XP User Guide V1.1.3.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-eb57c9ef3471c7a78e98/S19j_XP_User_Guide_V1.1.3.pdf",
+  "sha256": "c3a4f71435519454cec2d5160211e47d86cc434e2d6a377d8e79c5842170aa1c",
+  "size_bytes": 1572397,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7f17fd3d-5adb-4f4d-8b0e-d34733d3e4a3/2025/04/08/16/S19j%20XP%20User%20Guide%20V1.1.3.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 08 Apr 2025 08:31:07 GMT",
+  "etag": "\"e68d1df5744cf760e40231dc36835f45\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1572397,
+      "actual": 1572397,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

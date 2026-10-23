@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5297af18fc190ab2c306",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/97a3e4f3-2de5-4aff-be83-04ecdbc44921/2025/04/08/16/S19j%20XP%20Product%20Manual-v6.2.1.pdf",
+  "kind": "document",
+  "title": "S19j XP Product Manual-v6.2.1.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-5297af18fc190ab2c306/S19j_XP_Product_Manual-v6.2.1.pdf",
+  "sha256": "02e8988a301bb657e370d450c099484c142c08d3f365f391555ce475abf2493a",
+  "size_bytes": 512852,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/97a3e4f3-2de5-4aff-be83-04ecdbc44921/2025/04/08/16/S19j%20XP%20Product%20Manual-v6.2.1.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 08 Apr 2025 08:31:49 GMT",
+  "etag": "\"1f4d943be9746dce34befb6e71e63587\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 512852,
+      "actual": 512852,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

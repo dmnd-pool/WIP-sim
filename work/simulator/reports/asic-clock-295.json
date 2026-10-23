@@ -1,0 +1,227 @@
+{
+  "schema": "md-sim-asic-clock-evidence/1",
+  "time_utc": "2026-10-23T02:09:44.073758+00:00",
+  "scope": "Reference S9 controller and independently timed BM1387 chains. Original archived firmware in its recorded adapted reference environment. No exact physical board acceptance or calibration claim.",
+  "checkpoint": {
+    "path": "work/simulator/qemu-s9/core-checkpoint-294/manifest.json",
+    "sha256": "60e7b89e2243eabdb66e66230b55e5ec2442631d385cbd56c9a8a2eae0050136",
+    "size": 70454
+  },
+  "backend": {
+    "path": "work/simulator/qemu-s9/backend-build-294-ubsan/qemu-system-arm",
+    "sha256": "18aa8274e4c35e639d137279e6ad7b19fb872b161ac5f03fdfa1459412e7844c",
+    "size": 20016824
+  },
+  "build_report": {
+    "path": "work/simulator/qemu-s9/backend-build-294-ubsan/build-report.json",
+    "sha256": "63a3877788e7a20a4771caecaee2bf23d13cc4107383e79cb2aadd2fc7746b50",
+    "size": 2601738
+  },
+  "source_files": [
+    {
+      "path": "crates/md-sim-qemu-core/src/timing.rs",
+      "sha256": "39cfde266bd4d8ea7ab12e7a678297d91274c1d920d4be5e895c699d16b95b47",
+      "size": 7202
+    },
+    {
+      "path": "crates/md-sim-qemu-core/src/lib.rs",
+      "sha256": "1453f1b649a9363b90d4074192b7e7b8ce6f9e07db33d8da7941486ac1300efa",
+      "size": 13200
+    },
+    {
+      "path": "crates/md-sim-qemu-core/src/s9_chain.rs",
+      "sha256": "3c1097c62d7c090d33a457390fcbc25246361983cc3e7eb48feea8ca8ff866f0",
+      "size": 7078
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bm1387/wire.rs",
+      "sha256": "f857e1cb19864c02890415be35538ee9f9c88c6849fc9f2beb2a0f565364ac2a",
+      "size": 10823
+    },
+    {
+      "path": "crates/md-sim-qemu-core/tests/s9_chain.rs",
+      "sha256": "6ea0c4f39623e22d56b72dc4abb7ecbf0be757c0d8fca7f06d981e4642e5c26c",
+      "size": 17712
+    },
+    {
+      "path": "simulator/backends/qemu/md-sim-s9io.c",
+      "sha256": "30ed17b1f7cdb3c07bc79fbf4eea594a60bd4c50c2180a960fc72461a55d2f75",
+      "size": 15723
+    },
+    {
+      "path": "simulator/backends/qemu/md-sim-s9io.h",
+      "sha256": "ebc6cf92be56efdbe6d2aaf03934a0b1ad8d3ee7efa9720373c455f7a2f52d52",
+      "size": 2657
+    },
+    {
+      "path": "simulator/backends/qemu/s9-bm1387.patch",
+      "sha256": "9c21aff88a82c72b483cf9f04d2535cc12375d217065863c3ab279776e3d3446",
+      "size": 6931
+    },
+    {
+      "path": "simulator/backends/qemu/s9-fabric.patch",
+      "sha256": "db0c90eb80d0efe986fd66843ef14f21f8fe8ca45bbbda6631461638ce5fb6f8",
+      "size": 6137
+    }
+  ],
+  "component_results": [
+    {
+      "name": "asic-fabric-294",
+      "expected": "pass",
+      "assessment": {
+        "path": "work/simulator/qemu-s9/asic-fabric-294/assessment.json",
+        "sha256": "35d26b4760d98cb648518b483647b6beb35d168db65c0463d2d1336ae6af8b5e",
+        "size": 64033
+      }
+    },
+    {
+      "name": "asic-fixed-294",
+      "expected": "pass",
+      "assessment": {
+        "path": "work/simulator/qemu-s9/asic-fixed-294/assessment.json",
+        "sha256": "8b9c1e121774a53eb4ef10274b05b3da22a24b4284db08836898373b7711e488",
+        "size": 41346
+      }
+    },
+    {
+      "name": "fabric-uart-294",
+      "expected": "pass",
+      "assessment": {
+        "path": "work/simulator/qemu-s9/fabric-uart-294/assessment.json",
+        "sha256": "0f3dfa365b4a4f4c8df21f5a45ad0945b67c75a8fbd883031dfbf2fd545a933e",
+        "size": 3504
+      }
+    },
+    {
+      "name": "fabric-reset-294",
+      "expected": "pass",
+      "assessment": {
+        "path": "work/simulator/qemu-s9/fabric-reset-294/assessment.json",
+        "sha256": "eabb3a5b70edee93eef799d1f115b52301bf9fcee40192b0da54022eaff6cc9a",
+        "size": 2132
+      }
+    },
+    {
+      "name": "swdt-294",
+      "expected": "pass",
+      "assessment": {
+        "path": "work/simulator/qemu-s9/swdt-294/assessment.json",
+        "sha256": "8eb4bc22aec48922b855abb1938e15db4e7460c5c2c7e00334e8a6a0337f0955",
+        "size": 2534
+      }
+    },
+    {
+      "name": "ttc-294",
+      "expected": "pass",
+      "assessment": {
+        "path": "work/simulator/qemu-s9/ttc-294/assessment.json",
+        "sha256": "3019511ce1a5167f52dc9f54b7007d4f0f02687f6dcdf143c23ef08ab7b12073",
+        "size": 3400
+      }
+    },
+    {
+      "name": "asic-fabric-old-backend-295",
+      "expected": "fail",
+      "assessment": {
+        "path": "work/simulator/qemu-s9/asic-fabric-old-backend-295/assessment.json",
+        "sha256": "d3798f02f5e848387da2ccc6289fa8f033f26f699a6b6c36f18c319a8c8ae012",
+        "size": 33458
+      }
+    }
+  ],
+  "firmware_regression": {
+    "run": "work/simulator/qemu-s9/native-asic-clock-294",
+    "rate_audit": {
+      "path": "work/simulator/qemu-s9/native-asic-clock-294/rate-audit295.json",
+      "sha256": "fcfda9ace575d2bf06fcbbf46803bc716f05e6ec52ea4826dc01635d89a7871f",
+      "size": 2236
+    },
+    "mining_audit": {
+      "path": "work/simulator/qemu-s9/native-asic-clock-294/regtest-audit295.json",
+      "sha256": "8ed8e2d9a0ec20c905dc19a3bddac4795a250103061753d8a0fe4e21a1f6ede3",
+      "size": 38805
+    },
+    "execution_status": "exited",
+    "trace_truncated": false,
+    "cap_hps": 10,
+    "hashes_by_link": {
+      "6": 441,
+      "7": 441,
+      "8": 441
+    },
+    "computed_hashes": 1323,
+    "monotonic_grant_rate": {
+      "available": true,
+      "cap_hps": 10.0,
+      "computed_hashes": 1323,
+      "contiguous_grants": true,
+      "last_grant_elapsed_ns": 299976760289,
+      "minimum_observed_interval_ns": 149633297,
+      "required_interval_ns": 100000000,
+      "scope": "Actual monotonic admission timestamps, shared across every chain and reset. Each retained computation has one unique grant. Virtual bus time is separate. This checks the software limit, not physical hashrate calibration."
+    },
+    "fresh_jobs": 2,
+    "clean_job_transition": true,
+    "difficulty_change": true,
+    "node_results": [
+      {
+        "evidence": {
+          "path": "work/simulator/bitcoin-core/asic-clock294-candidate0-295/block-acceptance.json",
+          "sha256": "06d2285dc9552bde1088a572cc8aa35027abcdee5da5e8085dc0c8380e550363",
+          "size": 1745
+        },
+        "block_hash": "3a789e0f01a0465973dcdfd5ea4bde282bd925a4091e17e9258176bae12b0220",
+        "accepted": true,
+        "heights": [
+          0,
+          1,
+          1
+        ],
+        "node_generated_block": false
+      },
+      {
+        "evidence": {
+          "path": "work/simulator/bitcoin-core/asic-clock294-candidate1-295/block-acceptance.json",
+          "sha256": "e53fc883bf4e6e2de73c36f530bf466614c426ee8a3d3179d94aa61ced892622",
+          "size": 1745
+        },
+        "block_hash": "1134dee70028b7abee3f86fc96651ab2160385d7468c05c7042ce4c6b186c390",
+        "accepted": true,
+        "heights": [
+          0,
+          1,
+          1
+        ],
+        "node_generated_block": false
+      }
+    ],
+    "wiring": "Declared fixed fabric clock; optional FCLK1 reference wiring tested separately by compiled qtest."
+  },
+  "checks": [
+    {
+      "path": "work/simulator/checks-2026-10-21-001/fmt294.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/clippy294.log",
+      "sha256": "99f8d4ec13824ea61fd570e8fc7153fdfc179778ee863382f9490c70a87f1122",
+      "size": 228
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/test294.log",
+      "sha256": "9f7bea3f49f794c5e2d04d928619574ca3c946fbca3018f05a354223510fc6c4",
+      "size": 76169
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/links294.log",
+      "sha256": "c4f051383171545a08881d89bc045c633c4ad61a845de7f64f83cc6e7f2ebd79",
+      "size": 176
+    }
+  ],
+  "review": {
+    "author_review": "Separate Q32 fabric edge phase and physical peer deadlines; simultaneous events sample old levels; clock gating cannot stop the ASIC oscillator or synthesize controller samples. Fresh firmware regression passes after compiled clock and sanitizer tests.",
+    "finding_fixed": "Clock callbacks use one captured time; x86 support build skips ARM-only fabric patch together with its SWDT dependency. The latter helper change still requires a new actual x86 build.",
+    "independent_review": "Open. All three agents are blocked by the unchanged account quota until 25 October 08:48."
+  }
+}

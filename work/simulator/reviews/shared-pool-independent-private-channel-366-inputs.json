@@ -1,0 +1,25 @@
+{
+  "scope": "independent read-only shared runner and serial callback source review",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_shared_pool.rs",
+      "sha256": "acd9ffbe595b7ae8ca1a89e870dfd0b23ccb4a5fc90a3245223bca7e64a30809",
+      "size": 12935
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_boot_bundle.rs",
+      "sha256": "45052da6414cd49012882ee7d9f6094195e84734452aed614522f8d11375c9a3",
+      "size": 117906
+    },
+    {
+      "path": "crates/md-sim-firmware/src/serial_console.rs",
+      "sha256": "beb442bbf8c193eb235af68b79345a7976d33efb4ad0bc93ac56ee9ed4c5a39b",
+      "size": 44837
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/shared-pool366-review-fixed-tests.log",
+      "sha256": "5e1ad7ae667a188480f9ae72e48664145ecc4880efd699b77cf253ee53980afe",
+      "size": 901
+    }
+  ]
+}

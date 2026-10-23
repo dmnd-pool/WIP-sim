@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ee6fbd8290f21a5ace27",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3d825f7f-ae93-4a65-813a-f8a05e58f7e6/2024/12/18/09/WTD24D06152274E_S21%20XP_EN%2055032%20VoC-CE-EMC_exp_6758.pdf",
+  "kind": "document",
+  "title": "WTD24D06152274E_S21 XP_EN 55032 VoC-CE-EMC_exp_6758.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:08+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ee6fbd8290f21a5ace27/WTD24D06152274E_S21_XP_EN_55032_VoC-CE-EMC_exp_6758.pdf",
+  "sha256": "be9d073ef8253fe9f6a19f26aabc6ba460f90f58e89cdb8dae95d34f9d860ac7",
+  "size_bytes": 163646,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3d825f7f-ae93-4a65-813a-f8a05e58f7e6/2024/12/18/09/WTD24D06152274E_S21%20XP_EN%2055032%20VoC-CE-EMC_exp_6758.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 18 Dec 2024 01:33:46 GMT",
+  "etag": "\"80cf5c516300487828dbfb7515b482ba\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 163646,
+      "actual": 163646,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-b84d3f3fb1745fbe01a9",
+  "url": "https://download.hiveos.farm/asic/T17E/Antminer-T17E-Hiveon-2.04@230310-(v1.3.6)-BETA.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17E-Hiveon-2.04@230310-(v1.3.6)-BETA.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:16:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-b84d3f3fb1745fbe01a9/Antminer-T17E-Hiveon-2.04_230310-_v1.3.6_-BETA.tar.gz",
+  "sha256": "846945d313c30126146e38e83c98605aa447e07118542276cb75cdf979ca5772",
+  "size_bytes": 16492944,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/T17E/Antminer-T17E-Hiveon-2.04@230310-(v1.3.6)-BETA.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 10 Mar 2023 08:05:08 GMT",
+  "etag": "\"640ae4b4-fba990\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 16492944,
+      "actual": 16492944,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

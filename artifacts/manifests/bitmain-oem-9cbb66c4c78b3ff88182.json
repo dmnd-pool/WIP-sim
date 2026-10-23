@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-9cbb66c4c78b3ff88182",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5f9449a1-c383-48ed-ac73-a361b28cabdc/2026/06/26/17/DDT-CE25071403-4E02%20U3S21EXPH%20CE%20EMC%20Certificate-F.pdf",
+  "kind": "document",
+  "title": "DDT-CE25071403-4E02 U3S21EXPH CE EMC Certificate-F.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:02+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-9cbb66c4c78b3ff88182/DDT-CE25071403-4E02_U3S21EXPH_CE_EMC_Certificate-F.pdf",
+  "sha256": "d6ace6ee75253175a23de2566fa7509a791dd78923ca49af62afd2c932533f22",
+  "size_bytes": 634572,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5f9449a1-c383-48ed-ac73-a361b28cabdc/2026/06/26/17/DDT-CE25071403-4E02%20U3S21EXPH%20CE%20EMC%20Certificate-F.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 26 Jun 2026 09:58:50 GMT",
+  "etag": "\"be0d8e2af2565058e5030ea5803959a9\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 634572,
+      "actual": 634572,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

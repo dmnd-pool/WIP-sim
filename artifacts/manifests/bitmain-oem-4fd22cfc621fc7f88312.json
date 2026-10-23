@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4fd22cfc621fc7f88312",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/266e685b-47de-404d-b7a8-bfd9d9787319/2023/12/13/19/S21_ICES-003.pdf",
+  "kind": "document",
+  "title": "S21_ICES-003.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4fd22cfc621fc7f88312/S21_ICES-003.pdf",
+  "sha256": "2a24ccabba8c6afc3dddb5f28bf49efe6e7b4bc58612790cae2d8d5d046c8914",
+  "size_bytes": 591527,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/266e685b-47de-404d-b7a8-bfd9d9787319/2023/12/13/19/S21_ICES-003.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 11:20:11 GMT",
+  "etag": "\"5b030523e406f4431f68cad070939231\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 591527,
+      "actual": 591527,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

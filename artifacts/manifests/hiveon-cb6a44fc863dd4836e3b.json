@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-cb6a44fc863dd4836e3b",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00@200622-T17-sign-umnus.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00@200622-T17-sign-umnus.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:11:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-cb6a44fc863dd4836e3b/Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00_200622-T17-sign-umnus.hive.tar.gz",
+  "sha256": "8f3c1c98cf4ca29f7fca01fffad69a900ad960058596f83036df740e66323bdb",
+  "size_bytes": 34722823,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00@200622-T17-sign-umnus.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 26 Jun 2020 22:31:22 GMT",
+  "etag": "\"5ef6773a-211d407\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 34722823,
+      "actual": 34722823,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

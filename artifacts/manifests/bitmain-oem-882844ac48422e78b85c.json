@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-882844ac48422e78b85c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9e713176-1f8d-4131-81ca-887461fefd8d/2022/01/19/18/S4%2B%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S4+ Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-882844ac48422e78b85c/S4+_Server_Manual.pdf",
+  "sha256": "5475bdf434deb2c03edf3236af461024d6ccf9a7d6e09b5c1d61f2e4b8e46d52",
+  "size_bytes": 1507207,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9e713176-1f8d-4131-81ca-887461fefd8d/2022/01/19/18/S4%2B%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:31:41 GMT",
+  "etag": "\"cb7fa0e50f719eb3414235d237563403\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1507207,
+      "actual": 1507207,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

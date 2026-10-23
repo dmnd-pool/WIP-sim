@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-23b6830f5ce3046bf3be",
+  "url": "https://download.hiveos.farm/asic/custom/bandalero/Antminer-S9-all-Hiveon-1.03@210127-sign-bandalero.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@210127-sign-bandalero.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:14:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-23b6830f5ce3046bf3be/Antminer-S9-all-Hiveon-1.03_210127-sign-bandalero.tar.gz",
+  "sha256": "30481d6a2f1d1095c38e0ecc6cc624344352a75782f2c8b087aa59de04afa6b1",
+  "size_bytes": 23757423,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/bandalero/Antminer-S9-all-Hiveon-1.03@210127-sign-bandalero.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 27 Jan 2021 00:22:57 GMT",
+  "etag": "\"6010b261-16a826f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23757423,
+      "actual": 23757423,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

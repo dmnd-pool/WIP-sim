@@ -1,0 +1,211 @@
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -26,6 +26,7 @@
+ #include "qom/object.h"
+ #include "hw/core/qdev-properties.h"
+ #include "qapi/error.h"
++#include "hw/core/irq.h"
+ 
+ #ifndef ZYNQ_SLCR_ERR_DEBUG
+ #define ZYNQ_SLCR_ERR_DEBUG 0
+@@ -207,6 +208,9 @@
+     Clock *uart0_ref_clk;
+     Clock *uart1_ref_clk;
+     uint8_t boot_mode;
++    bool md_cpu_control;
++    qemu_irq md_cpu_control_out[2];
++    uint32_t md_pss_idcode;
+ };
+ 
+ /*
+@@ -386,6 +390,7 @@
+     s->regs[R_RST_REASON]     = 0x00000040;
+ 
+     s->regs[R_BOOT_MODE]      = s->boot_mode & R_BOOT_MODE_BOOT_MODE_MASK;
++    s->regs[R_PSS_IDCODE] = s->md_pss_idcode;
+ 
+     /* 0x700 - 0x7D4 */
+     for (i = 0; i < 54; i++) {
+@@ -591,6 +596,18 @@
+                       "SCLR registers are locked. Unlock them first\n");
+         return;
+     }
++    if (s->md_cpu_control && offset == R_A9_CPU_RST_CTRL) {
++        unsigned old = s->regs[offset];
++        for (unsigned n = 0; n < 2; n++) {
++            unsigned mask = (1u << n) | (0x10u << n);
++            if ((old ^ val) & mask) {
++                /* One output event carries the sampled reset/clock pair.
++                 * Keep target CPU details in the ARM board, not this device. */
++                unsigned flags = ((val >> n) & 1) | ((val >> (n + 3)) & 2);
++                qemu_set_irq(s->md_cpu_control_out[n], flags);
++            }
++        }
++    }
+     s->regs[offset] = val;
+ 
+     switch (offset) {
+@@ -640,6 +657,8 @@
+     sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->iomem);
+ 
+     qdev_init_clocks(DEVICE(obj), zynq_slcr_clocks);
++    qdev_init_gpio_out_named(DEVICE(obj), s->md_cpu_control_out,
++                             "md-cpu-reset-clock", 2);
+ }
+ 
+ static const VMStateDescription vmstate_zynq_slcr = {
+@@ -655,6 +674,8 @@
+ 
+ static const Property zynq_slcr_props[] = {
+     DEFINE_PROP_UINT8("boot-mode", ZynqSLCRState, boot_mode, 1),
++    DEFINE_PROP_BOOL("md-cpu-control", ZynqSLCRState, md_cpu_control, false),
++    DEFINE_PROP_UINT32("md-pss-idcode", ZynqSLCRState, md_pss_idcode, 0),
+ };
+ 
+ static void zynq_slcr_class_init(ObjectClass *klass, const void *data)
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -39,6 +39,10 @@
+ #include "qom/object.h"
+ #include "exec/tswap.h"
+ #include "target/arm/cpu-qom.h"
++#include "target/arm/cpu.h"
++#include "target/arm/internals.h"
++#include "hw/core/irq.h"
++#include "trace.h"
+ #include "qapi/visitor.h"
+ #include "hw/arm/xilinx_zynq.h"
+ 
+@@ -198,6 +202,70 @@
+     sysbus_mmio_map(busdev, 0, base);
+ }
+ 
++/* Target-specific CPU integration for the generic SLCR signal pair. */
++typedef struct MdZynqCpuGate {
++    CPUState *cpu;
++    unsigned flags;
++} MdZynqCpuGate;
++
++static void md_zynq_cpu_work(CPUState *cs, run_on_cpu_data data)
++{
++    unsigned flags = data.host_int;
++    bool halt = flags & 3;
++    if (flags & 4) {
++        cpu_reset(cs);
++        ARMCPU *cpu = ARM_CPU(cs);
++        const struct arm_boot_info *info = cpu->env.boot_info;
++        if (info && info->is_linux) {
++            /* Direct-kernel entry already bypasses boot firmware. Preserve
++             * its declared security state after a secondary reset too.
++             * Raw SPL/ROM entry has no Linux boot_info and keeps reset state. */
++            arm_emulate_firmware_reset(cs, info->secure_boot ? 3 : 1);
++            arm_rebuild_hflags(&cpu->env);
++        }
++    }
++    arm_set_cpu_power_state(ARM_CPU(cs), halt ? PSCI_OFF : PSCI_ON);
++    cs->halted = halt;
++    cs->exception_index = halt ? EXCP_HLT : -1;
++    trace_md_sim_zynq_cpu_control(cs->cpu_index, flags & 1, !!(flags & 2));
++}
++
++static void md_zynq_cpu_gate(void *opaque, int n, int level)
++{
++    MdZynqCpuGate *gate = opaque;
++    unsigned flags = level & 3;
++    if (flags == gate->flags) {
++        return;
++    }
++    /* Reset only on assertion. Clock-only stops retain registers. */
++    if ((flags & 1) && !(gate->flags & 1)) {
++        flags |= 4;
++    }
++    gate->flags = level & 3;
++    async_run_on_cpu(gate->cpu, md_zynq_cpu_work, RUN_ON_CPU_HOST_INT(flags));
++}
++
++static void md_zynq_gate_reset(void *opaque)
++{
++    MdZynqCpuGate *gate = opaque;
++    /* SLCR reset register is zero. The CPU reset hook separately parks CPU1. */
++    gate->flags = 0;
++}
++
++/* Zynq secondary startup is performed through SLCR and the trampoline
++ * copied to address zero by the executing kernel. Do not install the generic
++ * RealView secondary ROM over the primary loader at that address. */
++static void md_zynq_secondary_loader(ARMCPU *cpu,
++                                     const struct arm_boot_info *info)
++{
++}
++static void md_zynq_secondary_reset(ARMCPU *cpu,
++                                    const struct arm_boot_info *info)
++{
++    arm_set_cpu_power_state(cpu, PSCI_OFF);
++    CPU(cpu)->halted = 1;
++}
++
+ static void zynq_init(MachineState *machine)
+ {
+     ZynqMachineState *zynq_machine = ZYNQ_MACHINE(machine);
+@@ -208,6 +276,8 @@
+     qemu_irq pic[GIC_EXT_IRQS];
+     int n;
+     unsigned int smp_cpus = machine->smp.cpus;
++    bool md_s9 = object_dynamic_cast(OBJECT(machine),
++                        MACHINE_TYPE_NAME("md-sim-s9-zynq-a9")) != NULL;
+ 
+     /* max 2GB ram */
+     if (machine->ram_size > 2 * GiB) {
+@@ -223,6 +293,12 @@
+         object_property_set_int(cpuobj, "reset-cbar", MPCORE_PERIPHBASE,
+                                 &error_fatal);
+ 
++        if (md_s9 && n > 0) {
++            /* Explicit BootROM-stage adaptation: park the secondary processor.
++             * Archived SPL/U-Boot/kernel bytes remain unchanged. */
++            object_property_set_bool(cpuobj, "start-powered-off", true,
++                                     &error_fatal);
++        }
+         qdev_realize(DEVICE(cpuobj), NULL, &error_fatal);
+ 
+         zynq_machine->cpu[n] = ARM_CPU(cpuobj);
+@@ -256,8 +332,23 @@
+     slcr = qdev_new("xilinx-zynq_slcr");
+     qdev_connect_clock_in(slcr, "ps_clk", zynq_machine->ps_clk);
+     qdev_prop_set_uint8(slcr, "boot-mode", zynq_machine->boot_mode);
++    qdev_prop_set_bit(slcr, "md-cpu-control", md_s9);
++    if (md_s9) {
++        /* Exact archived FPGA header: 7z010clg400, IDCODE 0x03722093.
++         * This selects the firmware component, not a proved PCB revision. */
++        qdev_prop_set_uint32(slcr, "md-pss-idcode", 0x03722093);
++    }
+     sysbus_realize_and_unref(SYS_BUS_DEVICE(slcr), &error_fatal);
+     sysbus_mmio_map(SYS_BUS_DEVICE(slcr), 0, 0xF8000000);
++    if (md_s9) {
++        for (n = 0; n < smp_cpus; n++) {
++            MdZynqCpuGate *gate = g_new0(MdZynqCpuGate, 1);
++            gate->cpu = CPU(zynq_machine->cpu[n]);
++            qdev_connect_gpio_out_named(slcr, "md-cpu-reset-clock", n,
++                                       qemu_allocate_irq(md_zynq_cpu_gate, gate, n));
++            qemu_register_reset(md_zynq_gate_reset, gate);
++        }
++    }
+ 
+     dev = qdev_new(TYPE_A9MPCORE_PRIV);
+     qdev_prop_set_uint32(dev, "num-cpu", smp_cpus);
+@@ -446,6 +537,10 @@
+     zynq_machine->bootinfo.loader_start = 0;
+     zynq_machine->bootinfo.board_setup_addr = BOARD_SETUP_ADDR;
+     zynq_machine->bootinfo.write_board_setup = zynq_write_board_setup;
++    if (md_s9) {
++        zynq_machine->bootinfo.write_secondary_boot = md_zynq_secondary_loader;
++        zynq_machine->bootinfo.secondary_cpu_reset_hook = md_zynq_secondary_reset;
++    }
+ 
+     arm_load_kernel(zynq_machine->cpu[0], machine,
+                     &zynq_machine->bootinfo);
+--- a/hw/arm/trace-events
++++ b/hw/arm/trace-events
+@@ -0,0 +0,2 @@
++# md-sim SLCR CPU reset and clock-stop integration
++md_sim_zynq_cpu_control(int cpu, bool reset, bool clock_stop) "cpu=%d reset=%d clock_stop=%d"

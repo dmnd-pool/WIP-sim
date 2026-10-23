@@ -1,0 +1,62 @@
+Error code,Error name,Summary,Description,Error information,Resolution steps
+0,ErrSucc,Normal,Normal,-,Normal
+21,ErrNotPlugged,One or more hashboards were not detected,The hashboard PLUG signal was not detected,"Detected hashboard numbers, separated by spaces if there is more than one","1. Check the SPI ribbon connection against a working machine. Disconnect and reconnect the ribbon.
+2. Replace the control board.
+3. Replace the faulty hashboard (return the board assembly for repair)."
+22,ErrPsuI2cFail,Abnormal power-supply communication,Abnormal power-supply I2C communication,-,"1. Replace the power supply.
+2. Replace the control board."
+23,ErrEncoreAllFail,All hashboards cannot power on,SPI communication fails on all hashboards,-,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Return the complete machine for repair."
+24,ErrEncoreFail,Some hashboards cannot power on,SPI communication fails on some hashboards,"Hashboard numbers with failed SPI communication, separated by spaces if there is more than one","1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (return the board assembly for repair)."
+25,ErrSetPllFail,Hashboard frequency increase failed,Hashboard frequency increase failed,Hashboard number: frequency at which the error occurred,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (return the board assembly for repair)."
+26,ErrSetVolFail,Voltage setting failed,Voltage setting failed,Hashboard number: 1/2,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (board assembly)."
+27,ErrBistFail,Chip BIST test failed,Chip BIST test failed,Hashboard number: 1/2,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the faulty hashboard (board assembly)."
+28,ErrSpiFail,Abnormal hashboard communication during operation cannot recover automatically,Abnormal hashboard SPI communication during operation cannot recover automatically,Hashboard number,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the faulty hashboard (return the board assembly for repair)."
+29,ErrI2cFail,Abnormal power-supply communication during operation cannot recover automatically,Abnormal power-supply I2C communication during operation cannot recover automatically,-,"1. Replace the power supply.
+2. Replace the control board."
+30,ErrNetwork,Connection to the mining pool is interrupted,Connection to the mining pool is interrupted,-,"If many or all miners on the same switch have this problem:
+1. Check the mining-pool settings.
+2. Check the network configuration, such as DHCP, DNS, and ports.
+If only one or a few miners have this problem:
+1. Check the mining-pool settings.
+2. Check that the miner network-port connection is secure.
+3. Exchange the network cable with that of a working miner.
+4. Replace the control board."
+31,ErrBadChip,Damage to individual chips causes a falsely high displayed machine hash rate,Damage to individual chips causes a falsely high displayed machine hash rate,Damaged chip number: hashboard number; separate multiple entries with spaces,No action is required.
+32,ErrOverheat,Hashboard overtemperature,Hashboard overtemperature,Hashboard number,"1. Check whether the front and rear fans turn. If they do not, replace the fans first. If this does not help, replace the control board or power supply.
+2. Check that the front and rear airflow directions agree and match the other machines. If they do not, change the fan orientation.
+3. Measure the miner inlet temperature. If it is above 40 degrees, improve the mining-facility temperature conditions.
+4. If one hashboard frequently overheats, replace the faulty hashboard (return the board assembly for repair)."
+33,ErrInvTemp,Cannot read the chip temperature,Cannot read the chip temperature,Hashboard number,"1. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+2. Replace the power supply.
+3. Replace the control board.
+4. Replace the faulty hashboard (return the board assembly for repair)."
+34,ErrMisPlugged,The control-board communication ribbon is connected incorrectly,Abnormal control-board SPI ribbon connection,Hashboard number,"1. Check that the hashboard SPI ribbon connection method and sequence match other machines of the same model.
+2. Replace the control board."
+35,ErrPsuFail,Abnormal power delivery,Abnormal power delivery,,"1. If the machine hash rate has no obvious abnormality and no board goes offline, no action is required.
+2. Check that the screws at both ends of the power terminals and the SPI ribbon connections are not loose.
+3. Replace the power supply."
+36,ErrInvCorenum,Some chips do not operate correctly,Abnormal number of good chip cores,Hashboard number: chip number,"1. If the machine hash rate has no obvious abnormality and no board goes offline, no action is required.
+2. Restart the miner and check whether the same error remains.
+3. Replace the faulty hashboard (return the board assembly for repair)."
+37,ErrInvVidtype,"Control-board type, firmware version, and chip count do not match","Control-board type, firmware version, and chip count do not match","vidtype,minertype,subtype,chipnum","When more than 10 affected machines have accumulated, contact software R&D to resolve them together."
+38,ErrBadRearChips,Low hash rate on the last few chips,Low hash rate on the last few chip stages,,No action is currently required.
+39,ErrInvTuneParam,Abnormal burn-in parameters,The initial burn-in frequency and voltage are incorrect,,No action is currently required.
+,,,,,
+,,,,,"Notes:
+1. After each resolution step, turn the power off and on to check whether normal operation has returned.
+2. If replacement of a part does not resolve the problem, put the removed part back in its original machine.
+3. Attach the error code and a short problem description to every hashboard confirmed for return for repair."

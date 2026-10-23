@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-d2455b93b2f6ddddb603",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-S9-all-Hiveon-1.02-sign-Rosa555_10.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.02-sign-Rosa555_10.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:57:38+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-d2455b93b2f6ddddb603/Antminer-S9-all-Hiveon-1.02-sign-Rosa555_10.tar.gz",
+  "sha256": "559fa4f1a60348d29ea85cd1a6dfe8ca5284cf056a38a87a4ce539e5efbd765a",
+  "size_bytes": 23561155,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-S9-all-Hiveon-1.02-sign-Rosa555_10.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 May 2020 10:09:07 GMT",
+  "etag": "\"5eb3de43-16783c3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23561155,
+      "actual": 23561155,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

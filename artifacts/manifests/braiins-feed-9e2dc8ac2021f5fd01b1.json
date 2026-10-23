@@ -1,0 +1,46 @@
+{
+  "id": "braiins-feed-9e2dc8ac2021f5fd01b1",
+  "url": "https://feeds.braiins-os.com/stm32mp15-ii1-am2/firmware_2024-10-17-0-75912fc7-24.09-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "kind": "firmware",
+  "title": "firmware_2024-10-17-0-75912fc7-24.09-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:15:42+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-9e2dc8ac2021f5fd01b1/firmware_2024-10-17-0-75912fc7-24.09-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "sha256": "065641ca95752eb008801e752c062b8e0b7cc5a57f46be0bff892b747fbba34a",
+  "size_bytes": 41042799,
+  "executed": false,
+  "expected_size_bytes": 41042799,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/stm32mp15-ii1-am2/firmware_2024-10-17-0-75912fc7-24.09-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "http_status": 206,
+  "etag": "\"67110740-272436f\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 17 Oct 2024 12:46:56 GMT",
+  "publisher_sha256": "065641ca95752eb008801e752c062b8e0b7cc5a57f46be0bff892b747fbba34a",
+  "matches_publisher_sha256": true,
+  "reused_prefix_bytes": 0,
+  "published_checksum_sources": [
+    "braiins-feed-0786b462cb91b3911868",
+    "braiins-release-page"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "065641ca95752eb008801e752c062b8e0b7cc5a57f46be0bff892b747fbba34a",
+      "actual": "065641ca95752eb008801e752c062b8e0b7cc5a57f46be0bff892b747fbba34a",
+      "match": true,
+      "source_id": "braiins-release-page"
+    },
+    {
+      "field": "sha256",
+      "expected": "065641ca95752eb008801e752c062b8e0b7cc5a57f46be0bff892b747fbba34a",
+      "actual": "065641ca95752eb008801e752c062b8e0b7cc5a57f46be0bff892b747fbba34a",
+      "match": true,
+      "source_id": "braiins-feed-0786b462cb91b3911868"
+    }
+  ],
+  "upstream_integrity_match": true
+}

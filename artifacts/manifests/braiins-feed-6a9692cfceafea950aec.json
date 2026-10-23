@@ -1,0 +1,29 @@
+{
+  "id": "braiins-feed-6a9692cfceafea950aec",
+  "url": "https://feeds.braiins-os.com/stm32mp15-ii2-am2/firmware_2024-12-10-0-e0d0e70e-24.12-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "kind": "firmware",
+  "title": "firmware_2024-12-10-0-e0d0e70e-24.12-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "language": "und",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:16:41+00:00",
+  "status": "failed",
+  "local_path": null,
+  "sha256": null,
+  "size_bytes": null,
+  "executed": false,
+  "expected_size_bytes": 45077312,
+  "download_method": "Verified HTTP byte ranges",
+  "final_url": "https://feeds.braiins-os.com/stm32mp15-ii2-am2/firmware_2024-12-10-0-e0d0e70e-24.12-plus_arm_cortex-a7_neon-vfpv4.tar",
+  "http_status": 206,
+  "etag": "\"675884f3-2afd340\"",
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 10 Dec 2024 18:14:11 GMT",
+  "error": "HTTP Error 403: Forbidden",
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/stm32mp15-ii2-am2/firmware_2024-12-10-0-e0d0e70e-24.12-plus_arm_cortex-a7_neon-vfpv4.tar?archive_retry=20261019",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden"
+}

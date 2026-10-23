@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e31b33ab2947b5584668",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1d1e9a76-3694-4c6e-88d7-b704ced82fe0/2024/09/20/16/HS3%20%20Product%20Manual-v1.0.0.pdf",
+  "kind": "document",
+  "title": "HS3  Product Manual-v1.0.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e31b33ab2947b5584668/HS3__Product_Manual-v1.0.0.pdf",
+  "sha256": "036fa0960408e3a8d9ba7ee819aed6bf8859f299d63110b85aef8705afb015c7",
+  "size_bytes": 895067,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1d1e9a76-3694-4c6e-88d7-b704ced82fe0/2024/09/20/16/HS3%20%20Product%20Manual-v1.0.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 08:26:29 GMT",
+  "etag": "\"a9c0c483523af72989d87acd3a1c5d6a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 895067,
+      "actual": 895067,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

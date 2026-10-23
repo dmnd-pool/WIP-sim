@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-fe55378b2bf53c0375bf",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/readme.pdf",
+  "kind": "document",
+  "title": "readme.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-fe55378b2bf53c0375bf/readme.pdf",
+  "sha256": "bb3a30214ca1ff082d5b0588f3a08d24e026de9f22018a5c9e2934dda5818876",
+  "size_bytes": 255812,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/readme.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:32 GMT",
+  "etag": "\"053d811cc9d26d84222c98829d8c4a39\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 255812,
+      "actual": 255812,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

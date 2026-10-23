@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1c1a7380deb5f1c625d8",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/291e3644-52ba-4dd9-85fb-2228751807db/2023/12/17/19/CB%2062368%202nd%20cert_S21%20Hyd_CN23J34A%20001_2023.10.9_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 62368 2nd cert_S21 Hyd_CN23J34A 001_2023.10.9_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1c1a7380deb5f1c625d8/CB_62368_2nd_cert_S21_Hyd_CN23J34A_001_2023.10.9_extsigned.pdf",
+  "sha256": "5427a99f8b667b129af191248b2c793856baf19763a7a0f4a90d0b38b25dc236",
+  "size_bytes": 662914,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/291e3644-52ba-4dd9-85fb-2228751807db/2023/12/17/19/CB%2062368%202nd%20cert_S21%20Hyd_CN23J34A%20001_2023.10.9_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 17 Dec 2023 11:44:06 GMT",
+  "etag": "\"ed4a9d1bbe0a2a083811925079aaf325\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 662914,
+      "actual": 662914,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

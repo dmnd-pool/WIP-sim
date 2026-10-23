@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f021210469fa8784e856",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a3d34dee-7d11-4ca9-bed4-91cbda413137/2024/03/01/19/ACRT2402204-KS5-SVHC240.pdf",
+  "kind": "document",
+  "title": "ACRT2402204-KS5-SVHC240.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:54+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f021210469fa8784e856/ACRT2402204-KS5-SVHC240.pdf",
+  "sha256": "d433de755bcc56ba3d04379300705677948f142d258f7353a2856b5a5715533f",
+  "size_bytes": 221221,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a3d34dee-7d11-4ca9-bed4-91cbda413137/2024/03/01/19/ACRT2402204-KS5-SVHC240.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Mar 2024 11:43:07 GMT",
+  "etag": "\"b27433ac2860362c68c84f0fc740ff3b\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 221221,
+      "actual": 221221,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

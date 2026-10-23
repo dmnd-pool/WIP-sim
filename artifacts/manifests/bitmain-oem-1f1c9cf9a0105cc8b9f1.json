@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1f1c9cf9a0105cc8b9f1",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9d4bdc7b-d5f5-4b7d-9143-0d8c0c3da464/2024/08/02/17/S19%20Pro%20Hyd.%20Product%20Manual_v1.0.1.pdf",
+  "kind": "document",
+  "title": "S19 Pro Hyd. Product Manual_v1.0.1.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:51+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1f1c9cf9a0105cc8b9f1/S19_Pro_Hyd._Product_Manual_v1.0.1.pdf",
+  "sha256": "a3d9a3d723908dab6e8b3def89b5f6fd4cfd0bfc715876ce672f52abefa47395",
+  "size_bytes": 756796,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9d4bdc7b-d5f5-4b7d-9143-0d8c0c3da464/2024/08/02/17/S19%20Pro%20Hyd.%20Product%20Manual_v1.0.1.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 02 Aug 2024 09:08:12 GMT",
+  "etag": "\"a810ee7b663d3df8b08576504a64e58e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 756796,
+      "actual": 756796,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

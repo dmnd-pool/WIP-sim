@@ -1,0 +1,220 @@
+{
+  "id": "amlogic-a113d-skot-observed-interface",
+  "source_id": "open-skot-amlogic-cb-tools",
+  "source_commit": "2439d6061c20d0294da66875f2fa6390c25b0ffb",
+  "artifact_id": "open-skot-amlogic-cb-tools-source",
+  "scope": "supporting-tool",
+  "evidence_status": "community-reported",
+  "validation_limit": "This catalogue inspected source and documentation. It did not run the tools or reproduce the upstream hardware observations.",
+  "source_paths": [
+    "README.md",
+    "doc/boot-sequence.md",
+    "src/protocol.rs",
+    "src/bin/apw12-psu-tool.rs",
+    "src/bin/hashboard_s19jpro.rs",
+    "src/bin/fan-tool.rs"
+  ],
+  "controller": {
+    "soc": "Amlogic A113D",
+    "architecture": "AArch64",
+    "dram_mib_observed": 256,
+    "nand_part_observed": "Micron MT29F2G08-A",
+    "nand_capacity_bits": 2147483648,
+    "runtime_board_selector": "axg_s400_v03sbr"
+  },
+  "psu": {
+    "bus": "/dev/i2c-1",
+    "i2c_address": 16,
+    "outbound_byte_write_register": 17,
+    "enable_gpio": 437,
+    "transport": "framed APW12 packets; one byte per I2C transaction",
+    "packet_model": {
+      "source": "src/protocol.rs",
+      "preamble_hex": "55aa",
+      "nak_byte_hex": "f5",
+      "length_field": "payload_length + 4; excludes two preamble bytes",
+      "command_bytes": {
+        "get_firmware_version": 1,
+        "get_hardware_version": 2,
+        "get_dac_setpoint": 3,
+        "measure_voltage": 4,
+        "read_state": 5,
+        "read_calibration": 6,
+        "watchdog": 129,
+        "set_dac_voltage": 131,
+        "write_calibration": 134
+      },
+      "transmit_checksum": "16-bit sum of length + command + all payload bytes, little-endian",
+      "receive_check_in_captured_code": "Only the low checksum byte is compared. The upper checksum byte is not validated.",
+      "dac_voltage_formula_in_code": "15.1084 - 0.013046 * DAC",
+      "adc_voltage_formula_in_code": "(uint16_le(raw) + 0.8615) / 63.017",
+      "calibration_limit": "These constants are source assumptions. They are not validated for every PSU revision.",
+      "response_delay_ms": 500,
+      "response_attempts": 3,
+      "enable_settle_seconds": 2,
+      "set_voltage_fallback": "If the set command reply fails, the tool accepts matching DAC readback as success.",
+      "example_requests": [
+        {
+          "command": "get_firmware_version",
+          "hex": "55aa04010500"
+        },
+        {
+          "command": "get_dac_setpoint",
+          "hex": "55aa04030700"
+        },
+        {
+          "command": "disable_watchdog",
+          "hex": "55aa068100008700"
+        }
+      ]
+    }
+  },
+  "fans": {
+    "pwm_paths": [
+      "/sys/class/pwm/pwmchip0/pwm0",
+      "/sys/class/pwm/pwmchip0/pwm1"
+    ],
+    "period_ns_assumption": 10000,
+    "tach_gpios": [
+      447,
+      448,
+      449,
+      450
+    ],
+    "rpm_method": "sysfs falling-edge polling",
+    "tach_pulses_per_revolution_assumption": 2
+  },
+  "gpio": {
+    "led_green": 453,
+    "led_red": 438,
+    "ip_report_button": 445
+  },
+  "oled": {
+    "bus": "/dev/i2c-2",
+    "pins": [
+      "GPIOZ_8",
+      "GPIOZ_9"
+    ],
+    "target": "SSD1306 128x32",
+    "address": 60
+  },
+  "hashboards": [
+    {
+      "slot": 0,
+      "uart": "/dev/ttyS3",
+      "reset_gpio": 454,
+      "detect_gpio": 439,
+      "temperature_sensor": "TMP75",
+      "temperature_addresses": [
+        72,
+        76
+      ],
+      "eeprom_address": 80,
+      "sensor_eeprom_bus": "/dev/i2c-0"
+    },
+    {
+      "slot": 1,
+      "uart": "/dev/ttyS2",
+      "reset_gpio": 455,
+      "detect_gpio": 440,
+      "temperature_sensor": "TMP75",
+      "temperature_addresses": [
+        77,
+        73
+      ],
+      "eeprom_address": 81,
+      "sensor_eeprom_bus": "/dev/i2c-0"
+    },
+    {
+      "slot": 2,
+      "uart": "/dev/ttyS1",
+      "reset_gpio": 456,
+      "detect_gpio": 441,
+      "temperature_sensor": "TMP75",
+      "temperature_addresses": [
+        78,
+        74
+      ],
+      "eeprom_address": 82,
+      "sensor_eeprom_bus": "/dev/i2c-0"
+    }
+  ],
+  "asic_check": {
+    "observed_target": "S19j Pro BM1362",
+    "reply_frame_bytes": 11,
+    "model_reply_bytes": [
+      3,
+      4
+    ],
+    "baud": 115200,
+    "serial_timeout_ms": 250,
+    "init_frame_hex": "55aa510900a49000ffff1c",
+    "ping_frame_hex": "55aa520500000a",
+    "reply_preamble_hex": "aa55"
+  },
+  "eeprom": {
+    "format": "legacy Antminer v4",
+    "version_byte": 0,
+    "algorithm_key_index_byte": 1,
+    "observed_decode": "XXTEA",
+    "integrity_fields": [
+      "PT1 CRC",
+      "PT2 CRC"
+    ]
+  },
+  "boot": {
+    "directly_observed": [
+      "NAND boot",
+      "BL1, BL2, BL31 then U-Boot messages",
+      "U-Boot loads kernel Image and axg_s400_antminer.dtb from UBIFS on nvdata",
+      "Linux 4.9.241",
+      "SysV init; runlevel 5",
+      "luxminer-init -> luxupdate -> luxminer"
+    ],
+    "inferred": [
+      "BL1 is SoC ROM",
+      "BL2,BL30,BL31,U-Boot reside in vendor NAND boot chain; FIP not unpacked"
+    ],
+    "root": "ubi0:nvdada_log",
+    "config": "ubi1:config_data",
+    "console": "ttyS0,115200",
+    "partitions": [
+      {
+        "name": "bootloader",
+        "start": 0,
+        "end_exclusive": 2097152
+      },
+      {
+        "name": "tpl",
+        "start": 8388608,
+        "end_exclusive": 16777216
+      },
+      {
+        "name": "misc",
+        "start": 16777216,
+        "end_exclusive": 18874368
+      },
+      {
+        "name": "recovery",
+        "start": 18874368,
+        "end_exclusive": 35651584
+      },
+      {
+        "name": "boot",
+        "start": 35651584,
+        "end_exclusive": 69206016
+      },
+      {
+        "name": "config",
+        "start": 69206016,
+        "end_exclusive": 74448896
+      },
+      {
+        "name": "nvdata",
+        "start": 74448896,
+        "end_exclusive": 268435456
+      }
+    ]
+  },
+  "binary_audit": "catalog/parts/open/amlogic-prebuilt-verification.jsonl"
+}

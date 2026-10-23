@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-f71bf9d1b72b82b82203",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-S17-S17pro-v1.2.0_LAZM_CRC_SIG-sig-2.02@200909-S17-sign-LAZM51.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17-S17pro-v1.2.0_LAZM_CRC_SIG-sig-2.02@200909-S17-sign-LAZM51.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:13:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-f71bf9d1b72b82b82203/Antminer-S17-S17pro-v1.2.0_LAZM_CRC_SIG-sig-2.02_200909-S17-sign-LAZM51.hive.tar.gz",
+  "sha256": "e3aed5bf081468e83fd1823b50af12b76855691fdceb6de7c3c746eb601d089d",
+  "size_bytes": 27022656,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-S17-S17pro-v1.2.0_LAZM_CRC_SIG-sig-2.02@200909-S17-sign-LAZM51.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 09 Sep 2020 15:35:57 GMT",
+  "etag": "\"5f58f65d-19c5540\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 27022656,
+      "actual": 27022656,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c1133c40d509d0f65ad1",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7a3077c8-e67b-40f2-ab3e-3a72dbfb0039/2024/04/07/17/cTUVus_S19j%20XP_CN23CTGE%20001_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_S19j XP_CN23CTGE 001_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-c1133c40d509d0f65ad1/cTUVus_S19j_XP_CN23CTGE_001_extsigned.pdf",
+  "sha256": "4f861ba6241a1277b6a7c633fc690acaf82b750749d43e8ef9a8c01e060ccc66",
+  "size_bytes": 824580,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7a3077c8-e67b-40f2-ab3e-3a72dbfb0039/2024/04/07/17/cTUVus_S19j%20XP_CN23CTGE%20001_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 07 Apr 2024 09:25:29 GMT",
+  "etag": "\"acfe9123da12f61ef297c983d09d8748\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 824580,
+      "actual": 824580,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

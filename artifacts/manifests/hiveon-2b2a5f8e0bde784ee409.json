@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-2b2a5f8e0bde784ee409",
+  "url": "https://download.hiveos.farm/asic/custom/alikas74/Antminer-S9-all-Hiveon-1.03@201205-sign-alikas74.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@201205-sign-alikas74.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:58:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-2b2a5f8e0bde784ee409/Antminer-S9-all-Hiveon-1.03_201205-sign-alikas74.tar.gz",
+  "sha256": "71e56371d181b5236e1fe205c5410db4a9bcd57d05d9b6d86b7530bf7fee4b64",
+  "size_bytes": 24854755,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/alikas74/Antminer-S9-all-Hiveon-1.03@201205-sign-alikas74.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sat, 05 Dec 2020 11:50:15 GMT",
+  "etag": "\"5fcb73f7-17b40e3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 24854755,
+      "actual": 24854755,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

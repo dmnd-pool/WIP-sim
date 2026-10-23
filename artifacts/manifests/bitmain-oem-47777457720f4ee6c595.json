@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-47777457720f4ee6c595",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6dcdf522-6a84-4e6f-95f4-9e0092f83654/2024/05/22/16/ACS-E23150-A1Z2309083-SERVER-D9-CE.pdf",
+  "kind": "document",
+  "title": "ACS-E23150-A1Z2309083-SERVER-D9-CE.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:02+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-47777457720f4ee6c595/ACS-E23150-A1Z2309083-SERVER-D9-CE.pdf",
+  "sha256": "6b9fe4b33fa1c16d9176976c1b2eee1c199637984e067c1ebb78ca7b2dbfbcf1",
+  "size_bytes": 805700,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6dcdf522-6a84-4e6f-95f4-9e0092f83654/2024/05/22/16/ACS-E23150-A1Z2309083-SERVER-D9-CE.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:49:56 GMT",
+  "etag": "\"32f1c86ce6e0f5a96152800eb06e5067\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 805700,
+      "actual": 805700,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

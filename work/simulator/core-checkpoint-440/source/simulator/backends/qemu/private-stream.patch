@@ -1,0 +1,113 @@
+--- a/net/socket.c
++++ b/net/socket.c
+@@ -43,6 +43,7 @@
+     IOHandler *send_fn;           /* differs between SOCK_STREAM/SOCK_DGRAM */
+     bool read_poll;               /* waiting to receive data? */
+     bool write_poll;              /* waiting to transmit data? */
++    bool private_stream;          /* explicit inherited Unix stream contract */
+ } NetSocketState;
+ 
+ static void net_socket_accept(void *opaque);
+@@ -94,7 +95,23 @@
+     ssize_t ret;
+ 
+     remaining = iov_size(iov, 2) - s->send_index;
+-    ret = iov_send(s->fd, iov, 2, s->send_index, remaining);
++    if (s->private_stream) {
++        struct iovec slice[2];
++        int count;
++        if (s->send_index < sizeof(len)) {
++            slice[0].iov_base = (uint8_t *)&len + s->send_index;
++            slice[0].iov_len = sizeof(len) - s->send_index;
++            slice[1] = iov[1];
++            count = 2;
++        } else {
++            slice[0].iov_base = (uint8_t *)buf + s->send_index - sizeof(len);
++            slice[0].iov_len = remaining;
++            count = 1;
++        }
++        ret = RETRY_ON_EINTR(writev(s->fd, slice, count));
++    } else {
++        ret = iov_send(s->fd, iov, 2, s->send_index, remaining);
++    }
+ 
+     if (ret == -1 && errno == EAGAIN) {
+         ret = 0; /* handled further down */
+@@ -160,7 +177,8 @@
+     QEMU_UNINITIALIZED uint8_t buf1[NET_BUFSIZE];
+     const uint8_t *buf;
+ 
+-    size = recv(s->fd, buf1, sizeof(buf1), 0);
++    size = s->private_stream ? RETRY_ON_EINTR(read(s->fd, buf1, sizeof(buf1))) :
++                              recv(s->fd, buf1, sizeof(buf1), 0);
+     if (size < 0) {
+         if (errno != EWOULDBLOCK)
+             goto eoc;
+@@ -705,6 +723,12 @@
+     assert(netdev->type == NET_CLIENT_DRIVER_SOCKET);
+     sock = &netdev->u.socket;
+ 
++    if (sock->has_x_md_sim_private_stream && sock->x_md_sim_private_stream &&
++        !sock->fd) {
++        error_setg(errp, "x-md-sim-private-stream requires an inherited fd");
++        return -1;
++    }
++
+     if (!!sock->fd + !!sock->listen + !!sock->connect + !!sock->mcast +
+         !!sock->udp != 1) {
+         error_setg(errp, "exactly one of listen=, connect=, mcast= or udp="
+@@ -724,6 +748,30 @@
+         if (fd == -1) {
+             return -1;
+         }
++        if (sock->has_x_md_sim_private_stream && sock->x_md_sim_private_stream) {
++            struct stat metadata;
++            NetSocketState *s;
++            /*
++             * The md-sim launcher creates AF_UNIX/SOCK_STREAM with socketpair.
++             * No address is opened, queried or invented by this path. fstat
++             * rejects files and pipes; the launch manifest binds the explicit
++             * stream contract. Packet framing and backpressure stay upstream.
++             */
++            if (fstat(fd, &metadata) != 0 || !S_ISSOCK(metadata.st_mode)) {
++                error_setg(errp, "private stream descriptor is not a socket");
++                return -1;
++            }
++            if (!qemu_set_blocking(fd, false, errp)) {
++                return -1;
++            }
++            s = net_socket_fd_init_stream(peer, "socket", name, fd, 1);
++            if (!s) {
++                return -1;
++            }
++            s->private_stream = true;
++            qemu_set_info_str(&s->nc, "md-sim private inherited stream fd=%d", fd);
++            return 0;
++        }
+         so_type = net_socket_fd_check(fd, errp);
+         if (so_type < 0) {
+             return -1;
+--- a/qapi/net.json
++++ b/qapi/net.json
+@@ -494,6 +494,11 @@
+ #
+ # @udp: UDP unicast address and port number
+ #
++# @x-md-sim-private-stream: Explicit inherited Unix socket pair.
++#     Use POSIX read/write with upstream packet framing.
++#     Requires @fd.
++#     The launcher must create a connected AF_UNIX/SOCK_STREAM pair.
++#
+ # Since: 1.2
+ ##
+ { 'struct': 'NetdevSocketOptions',
+@@ -503,7 +508,8 @@
+     '*connect':   'str',
+     '*mcast':     'str',
+     '*localaddr': 'str',
+-    '*udp':       'str' } }
++    '*udp':       'str',
++    '*x-md-sim-private-stream': 'bool' } }
+ 
+ ##
+ # @NetdevL2TPv3Options:

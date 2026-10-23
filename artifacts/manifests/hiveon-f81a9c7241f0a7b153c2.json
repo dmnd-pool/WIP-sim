@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-f81a9c7241f0a7b153c2",
+  "url": "https://download.hiveos.farm/asic/custom/ilyagri/Antminer-S9-all-Hiveon-1.03@210223-sign-ilyagri.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@210223-sign-ilyagri.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:02:48+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-f81a9c7241f0a7b153c2/Antminer-S9-all-Hiveon-1.03_210223-sign-ilyagri.tar.gz",
+  "sha256": "84252a945d6992552a5e4b2b76839aed0f807d9db96ae6cc3922c6529ef35635",
+  "size_bytes": 23746954,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/ilyagri/Antminer-S9-all-Hiveon-1.03@210223-sign-ilyagri.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 23 Feb 2021 20:46:12 GMT",
+  "etag": "\"60356994-16a598a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23746954,
+      "actual": 23746954,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-cf951a2f2da2a81d0774",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bf1000ca-f112-4fc9-9dec-bbd2bd8c31b5/2024/07/22/22/CB%203rd%20cert-S21%20Pro-CN249YE2%20001-24.06.12_extsigned.pdf",
+  "kind": "document",
+  "title": "CB 3rd cert-S21 Pro-CN249YE2 001-24.06.12_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-cf951a2f2da2a81d0774/CB_3rd_cert-S21_Pro-CN249YE2_001-24.06.12_extsigned.pdf",
+  "sha256": "ced616eeea1900ddb31332ce7150ae9d032595d4617b60ca64659720f47b9e74",
+  "size_bytes": 384967,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/bf1000ca-f112-4fc9-9dec-bbd2bd8c31b5/2024/07/22/22/CB%203rd%20cert-S21%20Pro-CN249YE2%20001-24.06.12_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 22 Jul 2024 14:14:32 GMT",
+  "etag": "\"92f0cd2a2e840ef890a1c87a45f2fb6d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 384967,
+      "actual": 384967,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

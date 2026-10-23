@@ -1,0 +1,116 @@
+   Compiling md-sim-mining v0.1.0 (/home/user/src/md-sim/crates/md-sim-mining)
+   Compiling md-sim-coordinator v0.1.0 (/home/user/src/md-sim/crates/md-sim-coordinator)
+   Compiling md-sim-firmware v0.1.0 (/home/user/src/md-sim/crates/md-sim-firmware)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.75s
+     Running unittests src/lib.rs (target/debug/deps/md_sim_coordinator-cc40e1b0143e4bf6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/md-sim-worker-ipc.rs (target/debug/deps/md_sim_worker_ipc-d891506d35d3435b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/queue_behavior.rs (target/debug/deps/queue_behavior-daf6d35837e3fe7c)
+
+running 8 tests
+test changed_policy_and_limits_have_different_locked_identity ... ok
+test interrupted_attempt_before_lock_is_retained_then_reexecuted ... ok
+test local_resume_requires_unchanged_retained_evidence ... ok
+test nonexistent_gate_evidence_and_excessive_export_cannot_pass ... ok
+test exhausted_queue_budget_rejects_before_creating_a_new_attempt ... ok
+test cancellation_stops_actual_local_and_worker_processes ... ok
+test a_private_worker_executes_transfers_reuses_and_cleans_actual_results ... ok
+test lost_real_worker_replies_recover_tokens_cleanup_and_partial_history ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 20.06s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_firmware-87983d29e04c1264)
+
+running 9 tests
+test bitmain_s2::tests::filter_is_not_replaced_by_pool_target ... ok
+test bitmain_s2::tests::modbus_check_vector ... ok
+test bitmain_s2::tests::partial_crc_and_unknown_packets ... ok
+test execution_suite::tests::malformed_recipe_is_an_error_not_a_panic ... ok
+test lab::tests::reject_unrelated_host_interpreters_before_reading ... ok
+test schedule::tests::lower_caps_reduce_default_difficulty_and_budget_uses_both_targets ... ok
+test prepare::tests::member_provenance_checks_parent_bytes_and_absent_new_files ... ok
+test closure_bundle::tests::closure_identity_and_output_boundary_are_enforced ... ok
+test bitmain_s2::tests::upstream_captured_packets_preserve_queue_and_clean_transition ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-coordinator.rs (target/debug/deps/cgminer_coordinator-ade0e3c69af990d1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-fresh-work.rs (target/debug/deps/cgminer_fresh_work-b8de751f67c691d8)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-lab.rs (target/debug/deps/cgminer_lab-b635bc9a2cb6034e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_mining-6b87af33971ebf6f)
+
+running 6 tests
+test replay_s2::tests::reference_crc_and_corrupted_packet ... ok
+test replay_s2::tests::trace_order_and_declared_time_budget_are_enforced ... ok
+test regtest::tests::archived_genesis_constants_match_independent_header_hash ... ok
+test stratum::io_tests::rolled_time_covers_long_mining_budget_but_rejects_outside_work_window ... ok
+test stratum::io_tests::regtest_export_preserves_actual_share_and_rejects_forged_verdict ... ok
+test stratum::io_tests::stalled_peer_cannot_block_a_large_inherited_write ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/functional.rs (target/debug/deps/functional-cf15eca453e41999)
+
+running 8 tests
+test archived_esp_miner_bm1397_compression_state_vector ... ok
+test core_genesis_and_compact_target ... ok
+test rational_pool_target_is_stricter_than_programmed_asic_filter ... ok
+test pool_deduplicates_identical_headers_across_job_aliases ... ok
+test target_boundaries_and_ticket_intersection_counting ... ok
+test fresh_jobs_clean_transition_difficulty_and_rejections ... ok
+test midstate_and_cgminer_bytes_match_independent_full_header_hashes ... ok
+test engine_preserves_nonce_and_sparse_version_ranges_and_caps ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/stratum.rs (target/debug/deps/stratum-473ce5a3d7cf2ba6)
+
+running 3 tests
+test trace_budget_stops_without_discarding_report ... ok
+test repeated_unknown_submissions_stop_with_bounded_evidence ... ok
+test private_stratum_two_fresh_jobs_and_negative_submissions ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests md_sim_coordinator
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests md_sim_firmware
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests md_sim_mining
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

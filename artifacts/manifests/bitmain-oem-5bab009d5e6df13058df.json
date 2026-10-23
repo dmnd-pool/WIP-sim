@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5bab009d5e6df13058df",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b12cc616-1b93-4e10-8784-a884073e961b/2026/04/07/15/S21%20Pro%2B%20Product%20Manual%20V1.0.4.pdf",
+  "kind": "document",
+  "title": "S21 Pro+ Product Manual V1.0.4.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-5bab009d5e6df13058df/S21_Pro+_Product_Manual_V1.0.4.pdf",
+  "sha256": "d5fac9e617d5bee1c7907f554cc11dbe311952d047fe26aadc5075f63f6d5359",
+  "size_bytes": 982879,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b12cc616-1b93-4e10-8784-a884073e961b/2026/04/07/15/S21%20Pro%2B%20Product%20Manual%20V1.0.4.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 07 Apr 2026 07:29:39 GMT",
+  "etag": "\"11a26479b80c59915c17a472fd7cd565\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 982879,
+      "actual": 982879,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

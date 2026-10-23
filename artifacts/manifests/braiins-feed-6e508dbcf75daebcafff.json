@@ -1,0 +1,27 @@
+{
+  "id": "braiins-feed-6e508dbcf75daebcafff",
+  "url": "https://feeds.braiins-os.com/22.02.1/am2-s17/Packages",
+  "kind": "metadata",
+  "title": "Packages",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "executed": false,
+  "retrieved_at": "2026-10-19T10:52:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/braiins-feed-6e508dbcf75daebcafff/Packages",
+  "sha256": "227ddb325e2ac145e11c644024eb9b187795a7583a325f371038a69cf3be9b35",
+  "size_bytes": 759,
+  "final_url": "https://feeds.braiins-os.com/22.02.1/am2-s17/Packages?archive_retry=20261019",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 07 Mar 2022 18:16:29 GMT",
+  "etag": "\"62264bfd-2f7\"",
+  "http_content_length": 759,
+  "public_cache_retry": {
+    "url": "https://feeds.braiins-os.com/22.02.1/am2-s17/Packages?archive_retry=20261019",
+    "status": "downloaded",
+    "error": null
+  },
+  "prior_download_error": "HTTP Error 403: Forbidden"
+}

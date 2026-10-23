@@ -1,0 +1,23 @@
+{
+  "id": "vendors-canaan-nano3s-resource-sysimages-2025012001-21e0e59",
+  "url": "https://codeload.github.com/Canaan-Creative/Avalon_Nano3s/tar.gz/refs/heads/master",
+  "kind": "firmware",
+  "title": "Official Nano3S embedded sysimages_2025012001_21e0e59.tar.gz",
+  "language": "unknown",
+  "source_id": "source-canaan-avalon-nano3s",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/vendors-canaan-nano3s-resource-sysimages-2025012001-21e0e59/sysimages_2025012001_21e0e59.tar.gz",
+  "sha256": "3bdb13a5a2c146a77d199b042158ae74b397f510abb285b1437586c3858a6638",
+  "size_bytes": 27302935,
+  "executed": false,
+  "acquisition_method": "contained-in-downloaded-archive",
+  "parent_artifact_id": "vendors-canaan-avalon-nano3s",
+  "parent_sha256": "433532ae4d9269ef43b5bcb5aeb676f277f352342cd46fc923df22460adb44f6",
+  "archive_member": "Avalon_Nano3s-master/resource/sysimages_2025012001_21e0e59.tar.gz",
+  "git_commit": "04c84d312a4e38c1efa437b086bbcb297749e77a",
+  "notes": [
+    "This byte-identical nested archive was saved from the downloaded official repository. Its binaries were not executed. Source licence terms do not automatically establish a licence for every bundled binary."
+  ]
+}

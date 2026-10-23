@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-19",
+  "scope": "Observed host restrictions; not a passing implementation result",
+  "cgroup_membership": "0::/user.slice/user-1000.slice/session-2.scope",
+  "cgroup_mountinfo": "1156 1153 0:31 / /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime master:9 - cgroup2 cgroup2 rw,nsdelegate,memory_recursiveprot,memory_hugetlb_accounting",
+  "cgroup_delegation": "The accessible mount is read-only. No writable delegated control group is available through this mount.",
+  "aggregate_cgroup_cpu_ram_gate": "incomplete; implementation and a writable delegated test environment are required",
+  "network_evidence": "final-doctor-selected-core-stdout.json",
+  "network_gates": "incomplete; TCP pools, Core RPC, SSH, HTTP and TLS are not tested",
+  "ipc_scope": "Private inherited local channels were tested. They are not a remote physical host or a network listener."
+}

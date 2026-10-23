@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-78e571c229e667e7584c",
+  "url": "https://download.hiveos.farm/asic/S19JPRO/recover/Antminer-S19j-Pro-Release-sd2nand-zynq7007-20210515.zip",
+  "kind": "firmware",
+  "title": "Antminer-S19j-Pro-Release-sd2nand-zynq7007-20210515.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:17:17+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-78e571c229e667e7584c/Antminer-S19j-Pro-Release-sd2nand-zynq7007-20210515.zip",
+  "sha256": "43abfeb4955e64cc90e1d468dbf772abbec6b7ff05cd5fbbc58ff7e0481dc557",
+  "size_bytes": 28165839,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S19JPRO/recover/Antminer-S19j-Pro-Release-sd2nand-zynq7007-20210515.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Mon, 25 Jul 2022 16:34:50 GMT",
+  "etag": "\"62dec62a-1adc6cf\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 28165839,
+      "actual": 28165839,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

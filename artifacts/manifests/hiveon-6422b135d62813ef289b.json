@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-6422b135d62813ef289b",
+  "url": "https://download.hiveos.farm/asic/S19PRO/recover/sd-recover-bmu-S19Pro-fixed-202006012027-release.zip",
+  "kind": "firmware",
+  "title": "sd-recover-bmu-S19Pro-fixed-202006012027-release.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:41+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-6422b135d62813ef289b/sd-recover-bmu-S19Pro-fixed-202006012027-release.zip",
+  "sha256": "bf134f3396d22e55c35aa05bfea20a6f2836cde3e71f93c58e80cab0865aa762",
+  "size_bytes": 28214467,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S19PRO/recover/sd-recover-bmu-S19Pro-fixed-202006012027-release.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 31 Mar 2022 09:45:05 GMT",
+  "etag": "\"62457821-1ae84c3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 28214467,
+      "actual": 28214467,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

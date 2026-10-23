@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-be2aafe610e3a179deae",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/13c66f81-7eac-46b4-b0a4-d3b7e24ed3fa/2026/01/22/16/FR-1.4(251215-U3S19XP%2BH).bmu",
+  "kind": "firmware",
+  "title": "FR-1.4(251215-U3S19XP+H).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-be2aafe610e3a179deae/FR-1.4_251215-U3S19XP+H_.bmu",
+  "sha256": "4418fec8163c073f083405aac68d4a675c5cd9a26123e1fc479ed3acc3784eae",
+  "size_bytes": 12746704,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/13c66f81-7eac-46b4-b0a4-d3b7e24ed3fa/2026/01/22/16/FR-1.4(251215-U3S19XP%2BH).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Thu, 22 Jan 2026 08:54:02 GMT",
+  "etag": "\"238f8c0cac150774568efb70c0122fe8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "238f8c0cac150774568efb70c0122fe8",
+      "actual": "238f8c0cac150774568efb70c0122fe8",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 12746704,
+      "actual": 12746704,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

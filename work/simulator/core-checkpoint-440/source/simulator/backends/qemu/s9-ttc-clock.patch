@@ -1,0 +1,337 @@
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -205,6 +205,7 @@
+ 
+     Clock *ps_clk;
+     Clock *cpu_3or2x;
++    Clock *cpu_1x;
+     Clock *uart0_ref_clk;
+     Clock *uart1_ref_clk;
+     uint8_t boot_mode;
+@@ -296,6 +297,11 @@
+               2 * zynq_slcr_compute_clock(cpu_mux, s->regs[R_ARM_CLK_CTRL],
+                                           25));
+ 
++    /* Kernel clkc6: ARM mux/divider, /4 or /6, then gate27. */
++    clock_set(s->cpu_1x,
++              (4 + 2 * (s->regs[R_CLK_621_TRUE] & 1)) *
++              zynq_slcr_compute_clock(cpu_mux, s->regs[R_ARM_CLK_CTRL], 27));
++
+     /* compute uartX reference clocks */
+     clock_set(s->uart0_ref_clk,
+               ZYNQ_COMPUTE_CLK(s, uart_mux, R_UART_CLK_CTRL, CLKACT0));
+@@ -328,6 +334,7 @@
+ static void zynq_slcr_propagate_clocks(ZynqSLCRState *s)
+ {
+     clock_propagate(s->cpu_3or2x);
++    clock_propagate(s->cpu_1x);
+     clock_propagate(s->uart0_ref_clk);
+     clock_propagate(s->uart1_ref_clk);
+ }
+@@ -612,6 +619,7 @@
+     case R_DDR_PLL_CTRL:
+     case R_ARM_CLK_CTRL:
+     case R_UART_CLK_CTRL:
++    case R_CLK_621_TRUE:
+         zynq_slcr_compute_clocks(s);
+         zynq_slcr_propagate_clocks(s);
+         break;
+@@ -627,6 +635,7 @@
+ static const ClockPortInitArray zynq_slcr_clocks = {
+     QDEV_CLOCK_IN(ZynqSLCRState, ps_clk, zynq_slcr_ps_clk_callback, ClockUpdate),
+     QDEV_CLOCK_OUT(ZynqSLCRState, cpu_3or2x),
++    QDEV_CLOCK_OUT(ZynqSLCRState, cpu_1x),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart0_ref_clk),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart1_ref_clk),
+     QDEV_CLOCK_END
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -306,10 +306,18 @@
+     sysbus_mmio_map(busdev, 0, 0xE0001000);
+     sysbus_connect_irq(busdev, 0, pic[82 - GIC_INTERNAL]);
+ 
+-    sysbus_create_varargs("cadence_ttc", 0xF8001000,
+-            pic[42-GIC_INTERNAL], pic[43-GIC_INTERNAL], pic[44-GIC_INTERNAL], NULL);
+-    sysbus_create_varargs("cadence_ttc", 0xF8002000,
+-            pic[69-GIC_INTERNAL], pic[70-GIC_INTERNAL], pic[71-GIC_INTERNAL], NULL);
++    for (n = 0; n < 2; n++) {
++        const int first_irq = n ? 69 : 42;
++        dev = qdev_new("cadence_ttc");
++        qdev_connect_clock_in(dev, "pclk", qdev_get_clock_out(slcr, "cpu_1x"));
++        busdev = SYS_BUS_DEVICE(dev);
++        sysbus_realize_and_unref(busdev, &error_fatal);
++        sysbus_mmio_map(busdev, 0, 0xF8001000 + n * 0x1000);
++        for (int channel = 0; channel < 3; channel++) {
++            sysbus_connect_irq(busdev, channel,
++                               pic[first_irq + channel - GIC_INTERNAL]);
++        }
++    }
+ 
+     ddr_ctrl_init(0xF8006000);
+ 
+--- a/hw/timer/cadence_ttc.c
++++ b/hw/timer/cadence_ttc.c
+@@ -19,6 +19,7 @@
+ #include "qemu/osdep.h"
+ #include "hw/core/irq.h"
+ #include "hw/core/sysbus.h"
++#include "hw/core/qdev-clock.h"
+ #include "migration/vmstate.h"
+ #include "qemu/module.h"
+ #include "qemu/timer.h"
+@@ -50,6 +51,7 @@
+ 
+ #define CLOCK_CTRL_PS_EN    0x00000001
+ #define CLOCK_CTRL_PS_V     0x0000001e
++#define CLOCK_CTRL_EXT      0x00000020
+ 
+ static void cadence_timer_update(CadenceTimerState *s)
+ {
+@@ -67,50 +69,57 @@
+     return &s->timer[index];
+ }
+ 
++/* The counter retains16 fractional bits. QEMU Clock retains32 fractional
++ * nanoseconds. Keep the division remainder so register polls cannot discard
++ * sub-counter time. All selected Zynq periods and prescalers fit in128bits. */
++static unsigned __int128 cadence_timer_period(CadenceTimerState *s)
++{
++    unsigned shift = (s->reg_clock & CLOCK_CTRL_PS_EN) ?
++        ((s->reg_clock & CLOCK_CTRL_PS_V) >> 1) + 1 : 0;
++    return (unsigned __int128)clock_get(s->pclk) << shift;
++}
++
++static unsigned __int128 cadence_timer_fraction(CadenceTimerState *s)
++{
++    return ((unsigned __int128)s->fraction_high << 64) | s->fraction_low;
++}
++
++static void cadence_timer_clear_fraction(CadenceTimerState *s)
++{
++    s->fraction_high = s->fraction_low = 0;
++}
++
++static bool cadence_timer_running(CadenceTimerState *s)
++{
++    /* External clock pins are unconnected in this board. No external edges
++     * are invented when the guest selects that source. */
++    return !(s->reg_count & COUNTER_CTRL_DIS) &&
++           !(s->reg_clock & CLOCK_CTRL_EXT) && clock_is_enabled(s->pclk);
++}
++
+ static uint64_t cadence_timer_get_ns(CadenceTimerState *s, uint64_t timer_steps)
+ {
+-    /* timer_steps has max value of 0x100000000. double check it
+-     * (or overflow can happen below) */
+-    assert(timer_steps <= 1ULL << 32);
+-
+-    uint64_t numerator = timer_steps * 1000000000ULL;
+-    unsigned shift = 16;
+-    if (s->reg_clock & CLOCK_CTRL_PS_EN) {
+-        shift -= ((s->reg_clock & CLOCK_CTRL_PS_V) >> 1) + 1;
+-    }
+-    uint64_t denominator = (uint64_t)s->freq << shift;
+-
+-    /* Deadlines must round upward. Truncating can schedule a callback
+-     * before the fractional counter reaches its event. A remaining
+-     * fraction shorter than1ns then reschedules at the same timestamp,
+-     * preventing icount and qtest clocks from ever advancing. */
+-    return numerator / denominator + (numerator % denominator != 0);
++    assert(timer_steps > 0 && timer_steps <= 1ULL << 32);
++    unsigned __int128 numerator =
++        timer_steps * cadence_timer_period(s) - cadence_timer_fraction(s);
++    const uint64_t denominator = 1ULL << 48;
++    unsigned __int128 ns = numerator / denominator +
++                          (numerator % denominator != 0);
++    assert(ns <= INT64_MAX - s->cpu_time);
++    return ns;
+ }
+ 
+ static uint64_t cadence_timer_get_steps(CadenceTimerState *s, uint64_t ns)
+ {
+-    uint64_t to_divide = 1000000000ULL;
+-
+-    uint64_t r = ns;
+-     /* for very large intervals (> 8s) do some division first to stop
+-      * overflow (costs some prescision) */
+-    while (r >= 8ULL << 30 && to_divide > 1) {
+-        r /= 1000;
+-        to_divide /= 1000;
+-    }
+-    r <<= 16;
+-    /* keep early-dividing as needed */
+-    while (r >= 8ULL << 30 && to_divide > 1) {
+-        r /= 1000;
+-        to_divide /= 1000;
+-    }
+-    r *= (uint64_t)s->freq;
+-    if (s->reg_clock & CLOCK_CTRL_PS_EN) {
+-        r /= 1 << (((s->reg_clock & CLOCK_CTRL_PS_V) >> 1) + 1);
+-    }
+-
+-    r /= to_divide;
+-    return r;
++    unsigned __int128 period = cadence_timer_period(s);
++    unsigned __int128 numerator = ((unsigned __int128)ns << 48) +
++                                 cadence_timer_fraction(s);
++    unsigned __int128 steps = numerator / period;
++    unsigned __int128 remainder = numerator % period;
++    assert(steps <= INT64_MAX - UINT32_MAX);
++    s->fraction_high = remainder >> 64;
++    s->fraction_low = remainder;
++    return steps;
+ }
+ 
+ /* determine if x is in between a and b, exclusive of a, inclusive of b */
+@@ -130,7 +139,7 @@
+ 
+     assert(s->cpu_time_valid); /* cadence_timer_sync must be called first */
+ 
+-    if (s->reg_count & COUNTER_CTRL_DIS) {
++    if (!cadence_timer_running(s)) {
+         timer_del(s->timer);
+         s->cpu_time_valid = 0;
+         return;
+@@ -168,7 +177,8 @@
+     s->cpu_time = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL);
+     DB_PRINT("cpu time: %lld ns\n", (long long)old_time);
+ 
+-    if (!s->cpu_time_valid || old_time == s->cpu_time) {
++    if (!s->cpu_time_valid || old_time == s->cpu_time ||
++        !cadence_timer_running(s)) {
+         s->cpu_time_valid = 1;
+         return;
+     }
+@@ -304,6 +314,9 @@
+     case 0x00: /* clock control */
+     case 0x04:
+     case 0x08:
++        if (s->reg_clock != (value & 0x3F)) {
++            cadence_timer_clear_fraction(s);
++        }
+         s->reg_clock = value & 0x3F;
+         break;
+ 
+@@ -312,6 +325,7 @@
+     case 0x14:
+         if (value & COUNTER_CTRL_RST) {
+             s->reg_value = 0;
++            cadence_timer_clear_fraction(s);
+         }
+         s->reg_count = value & 0x3f & ~COUNTER_CTRL_RST;
+         break;
+@@ -376,20 +390,43 @@
+    s->reg_count = 0x21;
+ }
+ 
+-static void cadence_timer_init(uint32_t freq, CadenceTimerState *s)
++static void cadence_timer_init(Clock *pclk, CadenceTimerState *s)
+ {
+     memset(s, 0, sizeof(CadenceTimerState));
+-    s->freq = freq;
++    s->pclk = pclk;
+ 
+     cadence_timer_reset(s);
+ 
+     s->timer = timer_new_ns(QEMU_CLOCK_VIRTUAL, cadence_timer_tick, s);
+ }
+ 
++static void cadence_ttc_clock_update(void *opaque, ClockEvent event)
++{
++    CadenceTTCState *s = opaque;
++    if (!DEVICE(s)->realized) {
++        return;
++    }
++    for (int i = 0; i < 3; i++) {
++        CadenceTimerState *timer = &s->timer[i];
++        if (event == ClockPreUpdate) {
++            cadence_timer_sync(timer);
++        } else {
++            /* Keep the16.16 count; restart the smaller source-clock phase.
++             * This explicit transition policy is not physical calibration. */
++            cadence_timer_clear_fraction(timer);
++            timer->cpu_time = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL);
++            timer->cpu_time_valid = 1;
++            cadence_timer_run(timer);
++        }
++    }
++}
++
+ static void cadence_ttc_init(Object *obj)
+ {
+     CadenceTTCState *s = CADENCE_TTC(obj);
+ 
++    s->pclk = qdev_init_clock_in(DEVICE(obj), "pclk", cadence_ttc_clock_update,
++                                s, ClockPreUpdate | ClockUpdate);
+     memory_region_init_io(&s->iomem, obj, &cadence_ttc_ops, s,
+                           "timer", 0x1000);
+     sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->iomem);
+@@ -400,8 +437,11 @@
+     CadenceTTCState *s = CADENCE_TTC(dev);
+     int i;
+ 
++    if (!clock_has_source(s->pclk)) {
++        clock_set_hz(s->pclk, 133000000);
++    }
+     for (i = 0; i < 3; ++i) {
+-        cadence_timer_init(133000000, &s->timer[i]);
++        cadence_timer_init(s->pclk, &s->timer[i]);
+         sysbus_init_irq(SYS_BUS_DEVICE(dev), &s->timer[i].irq);
+     }
+ }
+@@ -426,11 +466,13 @@
+ 
+ static const VMStateDescription vmstate_cadence_timer = {
+     .name = "cadence_timer",
+-    .version_id = 1,
+-    .minimum_version_id = 1,
++    .version_id = 2,
++    .minimum_version_id = 2,
+     .pre_save = cadence_timer_pre_save,
+     .post_load = cadence_timer_post_load,
+     .fields = (const VMStateField[]) {
++        VMSTATE_UINT64(fraction_high, CadenceTimerState),
++        VMSTATE_UINT64(fraction_low, CadenceTimerState),
+         VMSTATE_UINT32(reg_clock, CadenceTimerState),
+         VMSTATE_UINT32(reg_count, CadenceTimerState),
+         VMSTATE_UINT32(reg_value, CadenceTimerState),
+@@ -446,9 +488,10 @@
+ 
+ static const VMStateDescription vmstate_cadence_ttc = {
+     .name = "cadence_TTC",
+-    .version_id = 1,
+-    .minimum_version_id = 1,
++    .version_id = 2,
++    .minimum_version_id = 2,
+     .fields = (const VMStateField[]) {
++        VMSTATE_CLOCK(pclk, CadenceTTCState),
+         VMSTATE_STRUCT_ARRAY(timer, CadenceTTCState, 3, 0,
+                             vmstate_cadence_timer,
+                             CadenceTimerState),
+--- a/include/hw/timer/cadence_ttc.h
++++ b/include/hw/timer/cadence_ttc.h
+@@ -20,10 +20,15 @@
+ 
+ #include "hw/core/sysbus.h"
+ #include "qemu/timer.h"
++#include "hw/core/clock.h"
+ 
+ typedef struct {
+     QEMUTimer *timer;
+-    int freq;
++    Clock *pclk;
++    /* Remainder below the existing16.16 counter precision. Two words
++     * retain the full numerator for a32.32ns clock and16-bit prescaler. */
++    uint64_t fraction_high;
++    uint64_t fraction_low;
+ 
+     uint32_t reg_clock;
+     uint32_t reg_count;
+@@ -48,6 +53,7 @@
+     SysBusDevice parent_obj;
+ 
+     MemoryRegion iomem;
++    Clock *pclk;
+     CadenceTimerState timer[3];
+ };
+ 

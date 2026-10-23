@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-1f091b27a1960a2fb736",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c17a60d7-51c8-41a3-8365-b7e5d1506caa/2025/04/10/14/S21%20User%20Guide-V1.2.5.pdf",
+  "kind": "document",
+  "title": "S21 User Guide-V1.2.5.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-1f091b27a1960a2fb736/S21_User_Guide-V1.2.5.pdf",
+  "sha256": "16549666a187600b51001e7244fbb5da3e5961fa9ae88a939d2e5d694188d019",
+  "size_bytes": 1495300,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c17a60d7-51c8-41a3-8365-b7e5d1506caa/2025/04/10/14/S21%20User%20Guide-V1.2.5.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 10 Apr 2025 06:40:51 GMT",
+  "etag": "\"a2f1f62100846a1ebbfac34d60b6195f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1495300,
+      "actual": 1495300,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

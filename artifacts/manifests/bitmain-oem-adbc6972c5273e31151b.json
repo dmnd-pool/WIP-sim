@@ -1,0 +1,42 @@
+{
+  "id": "bitmain-oem-adbc6972c5273e31151b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BitmainMinerTool-setup.zip",
+  "kind": "tool",
+  "title": "BitmainTools-V0.23.rar",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:42+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-adbc6972c5273e31151b/BitmainTools-V0.23.rar",
+  "sha256": "4312f3904a62cf078ee54a4878907329f57cf09a1f9e503cfc99ab128d3311fe",
+  "size_bytes": 585321,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BitmainMinerTool-setup.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"af6f9c73fdc6d5b4104530ee5c756a49\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 581393,
+      "actual": 585321,
+      "match": false,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "upstream_head_audit": {
+    "artifact_id": "bitmain-oem-adbc6972c5273e31151b",
+    "title": "BitmainTools-V0.23.rar",
+    "downloaded_size_bytes": 585321,
+    "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BitmainMinerTool-setup.zip",
+    "http_status": 200,
+    "content_length": "585321",
+    "etag": "\"af6f9c73fdc6d5b4104530ee5c756a49\"",
+    "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+    "http_size_match": true
+  }
+}

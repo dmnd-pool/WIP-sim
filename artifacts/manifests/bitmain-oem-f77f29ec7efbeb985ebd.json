@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-f77f29ec7efbeb985ebd",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20X3/Firmware/00720181119212925089q3Ps2FkE0693/Antminer-X3-201811131315-0M.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-X3-201811131315-0M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:21+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-f77f29ec7efbeb985ebd/ANTMINER-X3-201811131315-0M.tar.gz",
+  "sha256": "51602a94441c1c1eeaf2637f95649e13298916c8dc9f89360f65571520edefe3",
+  "size_bytes": 12125836,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20X3/Firmware/00720181119212925089q3Ps2FkE0693/Antminer-X3-201811131315-0M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:25 GMT",
+  "etag": "\"22d27cec5f307ca407690a74ae5cd146\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 12125836,
+      "actual": 12125836,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "22d27cec5f307ca407690a74ae5cd146",
+      "actual": "22d27cec5f307ca407690a74ae5cd146",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

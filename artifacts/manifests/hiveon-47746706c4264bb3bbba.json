@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-47746706c4264bb3bbba",
+  "url": "https://download.hiveos.farm/asic/custom/onemining/Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03@201214-S17E-sign-onemining.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03@201214-S17E-sign-onemining.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:13:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-47746706c4264bb3bbba/Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03_201214-S17E-sign-onemining.hive.tar.gz",
+  "sha256": "4805e616df3f8426fe47b62573364e33be3cfc3ccb5293f6ed8e9352bf78eff7",
+  "size_bytes": 26859270,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/onemining/Antminer_S17E-v1.2.0j_CRC_SIG-sig-2.03@201214-S17E-sign-onemining.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 14 Dec 2020 23:53:57 GMT",
+  "etag": "\"5fd7fb15-199d706\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 26859270,
+      "actual": 26859270,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

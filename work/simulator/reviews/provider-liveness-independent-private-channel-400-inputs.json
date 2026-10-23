@@ -1,0 +1,54 @@
+{
+  "crates/md-sim-runtime/src/worker.rs": {
+    "sha256": "b026f620660011f279c768e69266e9bc45cfadac7047f2c4120d09b8dae88870",
+    "size": 56687
+  },
+  "crates/md-sim-runtime/src/worker_channel.rs": {
+    "sha256": "29f3c99eabbed5eeb7b912a93c44f965b60812b2763d3bb1e154b84cdc6d7ba8",
+    "size": 9925
+  },
+  "crates/md-sim-coordinator/src/bin/md-sim-worker-ipc/carrier.rs": {
+    "sha256": "a8649d19feceab42bbc6dee4476070646326b294a136bb76ec0e3a3bfe2c46af",
+    "size": 17731
+  },
+  "crates/md-sim-coordinator/src/ssh_transport.rs": {
+    "sha256": "d793ef582a859d3a875af96cf8e4f849f57457bb5ce5d15db494de90ce25e6b6",
+    "size": 29007
+  },
+  "crates/md-sim-coordinator/tests/worker_carrier.rs": {
+    "sha256": "3f1c7ba7544e64e3b86df26589bb798a1b9f993a1103db9730d03b4da9983a67",
+    "size": 27209
+  },
+  "work/simulator/channel397-provider-unit.log": {
+    "sha256": "e9fdd46c95133e2190cfe4a567e280365849a36486359ff75bc449a623520067",
+    "size": 573
+  },
+  "work/simulator/channel398-provider-cli.log": {
+    "sha256": "580ccf2a29a0244ff227eac8e390bc5e8882309709a5fdfb239f6a4d646f0ecd",
+    "size": 66090
+  },
+  "work/simulator/channel398-provider-runtime-regression.log": {
+    "sha256": "49bc3b61042585173532276420784103c011f2a7f7c0b918947b4d0ad8c69cd7",
+    "size": 1072
+  },
+  "work/simulator/channel398-provider-retry-tests.log": {
+    "sha256": "1dcd5bb2688e84f567492c321d58d923ff2d9b36d2b9a3f3a86aee05b9b02568",
+    "size": 1114
+  },
+  "work/simulator/channel399-provider-config-tests.log": {
+    "sha256": "cf483e9202c171b660c54da5372d1a2f50b9f3830a4698e0fc54910c66e38420",
+    "size": 925
+  },
+  "work/simulator/channel399-provider-clippy.log": {
+    "sha256": "c59b1604aa98309bbea5ef2f2fad75bafc72af86efe6afc9557b840b61fb591a",
+    "size": 149
+  },
+  "crates/md-sim-coordinator/src/bin/md-sim-worker-ipc.rs": {
+    "sha256": "dcfc13a19dc43645f1b874c14d81f3d2bc92822a0a43b32c07656498c5fc072f",
+    "size": 4136
+  },
+  "work/simulator/reviews/provider-liveness-399.md": {
+    "sha256": "7d1a0a46961aa4635a2c51d5ca45b8cc9621acab54e52520c7df1dfbc4d3fc30",
+    "size": 4901
+  }
+}

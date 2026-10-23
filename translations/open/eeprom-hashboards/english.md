@@ -1,0 +1,72 @@
+#  Bitmain Hash Boards
+
+| Type | Name     | ASIC | Chain | VD |Versions |
+|:---  |:---      |:---  |:---:   |:---|:---
+| S17  | BHB91601 | 1391
+|      | BHB91603 | 1391 | | 
+| T17  | BHB91602 | 1391 | 48?
+|      | BHB07601 | 1397 |
+| S19  | BHB??    | 1398 |
+| S19  | NBS1902  | 1398 | 76 | 38
+| S19i | ?        | 1360 |    |
+| S19j    | BHB42801 | 1362 | 88 | 44 |BHB42821, BHB42831, BHB42841
+|         | BHB42811 | 1362 | 88 | 44
+|         | BHB42803 | 1362 | 84 | 42
+| S19j Pro| BHB42601 | 1362 | 126 | 42 | BHB42621, BHB42631, BHB42841, BHB42651
+| S19j Pro| BHB42601 | 1362 | 126 | 42 | BHB42632
+|         | BHB42603 | 1362 | 126 | 42
+|         | BHB42611 | 1362 | 120 | 40
+|         | BHB42621 | 1362 | 126 | 42
+|         | BHB42641 | 1362 | 126 | 42
+| S19j Hyd| HHB42601 | 1362 | 180 | 60 | AWP8
+|         | HHB42631 | 1362 | 180 | 60 | AWP11 
+| S19 Pro Hyd | HHB42701 | | 180 | 60
+|         | HHB42711 | | 180 | 60 | AWP8
+| S19j    | BHB42701 | 1362 | 108 | 36
+| S19k    | BHB56801 | 1366 | 110 | 11 | BM1366AG, S75 
+|         | BHB56802 | 1366 | 110 | 11
+| S19k Pro| BHB56901 | 1366 |  77 | 11
+|         | BHB56902 | 1366 |  77 | 11
+| S19k Pro| BHB56903 | 1366 |  77 | 11
+| S19k Pro| BHB56907 | 1366 |  77 | 11
+| S21     | BHB68601 | 1368 | 108 | 12
+| S21     | BHB68603 | 1368 | 108 | 12
+|         | BHB68606 | 1368 | 108 | 12
+|         | BHB68701 |
+| S21xp   |A3HB70501 | 1370 |  91 | 13
+| S21 Pro |A3HB70601 | 1370 |  65 | 13
+|         |A3HB70601 | 1370 |  65 | 13
+| S21+    |A3HB70701 | 1370 |  
+| S21+ Hyd|H6HB70701 | 1370 |  95 | 19
+|         |H6HB70702 | 1370 |  95 | 19
+|         |H6HB70704 | 1370 |  95 | 19
+|         |M1HB70601 | 1370 |  91 | 13
+| S21+ Imm|M1HB70602 | 1370 |  91 | 13
+| S23     | ?        | 1399 |    | 
+
+* VD: abbreviation for Voltage Domains
+* Check and complete the table.
+
+Sensor variants used: LM75A, TMP451.
+
+* Chip: BM1391AE S15/T15
+* Chip: BM1396AB S17e/T17e
+* Chip: BM1397AD/AI/AG/AH/AF  S17 Pro / S17 / T17 / S17+ / T17+
+* Chip: BM1398AD S19a / S19a Pro
+* Chip: BM1398AC S19a / S19a Pro / S19+
+* Chip: BM1398BB S19 / S19 Pro / T19 / S19 Hyd
+* Chip: BM1360BB S19i / S19j pro
+* Chip: BM1362AA S19j / S19j pro
+* Chip: BM1362AC S19j / S19j pro / S19j Pro Hydro
+* Chip: BM1362AI S19j / S19j pro / S19j pro+ Hydro
+* Chip: BM1362AK S19j / S19j pro / S19j Pro+ Hydro
+* Chip: BM1362BD S19j Pro+
+* Chip: BM1366AG S19xp
+* Chip: BM1366 S19k
+* Chip: BM1368 (TSMC 5 nm class / optimized 7 nm+)
+* Chip: BM1370 S21+
+* Chip: BM1399 (5 nm, 3D-stacked ASIC) 9.5 J/Th Antminer S23 Hydro
+
+## Translation limits
+
+This is a full English prose translation. The table values and question marks are unchanged. The source explicitly says to check and complete the table. Several model and ASIC claims conflict with other evidence. This file preserves those claims; it does not confirm them. Do not use the table as a manufacturer compatibility specification.

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-f8c1ada3606d34c930c5",
+  "url": "https://download.hiveos.farm/asic/S19J/archive/220729/WEB-Antminer-S19J-xilinx_17and19-Hiveon-1.00@220729-core_1.3.3.tar.gz",
+  "kind": "firmware",
+  "title": "WEB-Antminer-S19J-xilinx_17and19-Hiveon-1.00@220729-core_1.3.3.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:23:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-f8c1ada3606d34c930c5/WEB-Antminer-S19J-xilinx_17and19-Hiveon-1.00_220729-core_1.3.3.tar.gz",
+  "sha256": "ab7a38fa6e96aecc0baaa9ed8281633d8e1f6f3e0cf4a4a6289ac4cc2056fc79",
+  "size_bytes": 17073848,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/S19J/archive/220729/WEB-Antminer-S19J-xilinx_17and19-Hiveon-1.00@220729-core_1.3.3.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sat, 30 Jul 2022 09:29:08 GMT",
+  "etag": "\"62e4f9e4-10486b8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 17073848,
+      "actual": 17073848,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

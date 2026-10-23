@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8bc8205a8157e36bfec6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9b32c7a8-4a18-41cd-b4e7-2bbe3bd99cf7/2024/03/01/19/LVD-KS5-CN24T7R5%20001-24.02.28_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD-KS5-CN24T7R5 001-24.02.28_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:59+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8bc8205a8157e36bfec6/LVD-KS5-CN24T7R5_001-24.02.28_extsigned.pdf",
+  "sha256": "e55954bafbe0e1c2ac1b4ab4cbe3aae7b88977f7e1d3315d6756f9a8c809418c",
+  "size_bytes": 1694427,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9b32c7a8-4a18-41cd-b4e7-2bbe3bd99cf7/2024/03/01/19/LVD-KS5-CN24T7R5%20001-24.02.28_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Mar 2024 11:45:36 GMT",
+  "etag": "\"328217b1f98d73be2960a3ec3aae6e39\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1694427,
+      "actual": 1694427,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

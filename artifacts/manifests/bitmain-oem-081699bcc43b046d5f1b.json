@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-081699bcc43b046d5f1b",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1959bb05-2257-47be-8678-02669559055a/2023/12/17/19/ACRT2309212%20S21%20Hyd.%20SVHC233.pdf",
+  "kind": "document",
+  "title": "ACRT2309212 S21 Hyd. SVHC233.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-081699bcc43b046d5f1b/ACRT2309212_S21_Hyd._SVHC233.pdf",
+  "sha256": "864cb92137a5900df7cc0286855d3d6bfdbace46cc4bd1c63a1a9936ba129d89",
+  "size_bytes": 608107,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1959bb05-2257-47be-8678-02669559055a/2023/12/17/19/ACRT2309212%20S21%20Hyd.%20SVHC233.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 17 Dec 2023 11:43:23 GMT",
+  "etag": "\"3b602083c4e02915135a023dfa95dbaa\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 608107,
+      "actual": 608107,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

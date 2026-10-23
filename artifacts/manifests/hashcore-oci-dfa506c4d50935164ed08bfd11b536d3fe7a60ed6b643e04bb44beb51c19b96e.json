@@ -1,0 +1,22 @@
+{
+  "id": "hashcore-oci-dfa506c4d50935164ed08bfd11b536d3fe7a60ed6b643e04bb44beb51c19b96e",
+  "url": "https://public.ecr.aws/v2/k7t2c2k4/farm-proxy/manifests/sha256:dfa506c4d50935164ed08bfd11b536d3fe7a60ed6b643e04bb44beb51c19b96e",
+  "kind": "metadata",
+  "title": "HashCore farm-proxy OCI manifest",
+  "language": "und",
+  "source_id": "hashcore-proxy-deployment",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:39:38+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/hashcore-oci-dfa506c4d50935164ed08bfd11b536d3fe7a60ed6b643e04bb44beb51c19b96e/manifest.json",
+  "sha256": "dfa506c4d50935164ed08bfd11b536d3fe7a60ed6b643e04bb44beb51c19b96e",
+  "size_bytes": 3229,
+  "executed": false,
+  "content_role": "oci-manifest",
+  "registry_digest": "sha256:dfa506c4d50935164ed08bfd11b536d3fe7a60ed6b643e04bb44beb51c19b96e",
+  "expected_size_bytes": 3229,
+  "auth_method": "Anonymous public ECR pull token; token not saved",
+  "registry_digest_match": true,
+  "http_status": 200,
+  "content_type": "application/vnd.docker.distribution.manifest.v2+json"
+}

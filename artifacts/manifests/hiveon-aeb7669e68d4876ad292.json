@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-aeb7669e68d4876ad292",
+  "url": "https://download.hiveos.farm/asic/custom/denbendera/Antminer-S9-all-Hiveon-1.03@200910-sign-dlbhostel-4.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.03@200910-sign-dlbhostel-4.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:03:30+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-aeb7669e68d4876ad292/Antminer-S9-all-Hiveon-1.03_200910-sign-dlbhostel-4.tar.gz",
+  "sha256": "7ea7ca2564820f74275c633eb5cd21c950c06ebaa42aa01408882740820457ba",
+  "size_bytes": 23601967,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/denbendera/Antminer-S9-all-Hiveon-1.03@200910-sign-dlbhostel-4.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 10 Sep 2020 12:02:00 GMT",
+  "etag": "\"5f5a15b8-168232f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23601967,
+      "actual": 23601967,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

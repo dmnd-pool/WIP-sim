@@ -1,0 +1,59 @@
+{
+  "scope": "Parent review of agent-authored transport ownership and retention barrier; not a simulator release review",
+  "author_role": "The parent authored the original prototype and outer retention path. It did not author these transport/barrier fixes. Outer runtime and relay review is separate in native-worker-independent-338.md.",
+  "reviewed_sources": [
+    {
+      "path": "crates/md-sim-coordinator/src/executor.rs",
+      "sha256": "e109f928497195a15f56b8505a59447ac4c71cf12e459ffa165e3ab64122c7d6",
+      "size": 28156
+    },
+    {
+      "path": "crates/md-sim-coordinator/tests/queue_behavior.rs",
+      "sha256": "25c6d43e165a76f341ce2f69ad7a5ebf6025ea40f7c27b19344fcc6b8bc4485a",
+      "size": 38451
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/worker_device_transport.rs",
+      "sha256": "82d91f78f468b487142e78ac6971e560f5022d7fe32b0b71b5ce02236751f527",
+      "size": 8357
+    }
+  ],
+  "checks": [
+    "A failed connected/character request consumes and closes the owned descriptor; no next request can consume a late reply.",
+    "PrivateTransport delegates to the same owned connected implementation.",
+    "Result collection verifies exact bytes, bounds, trace consistency and fsync before external retention callback.",
+    "Cleanup follows exact matching locked hash, token, run ID and result identity; the receipt is synchronized first.",
+    "Persisted external-retention requirement prevents default recovery from bypassing an incomplete barrier. Both cleaned recovery branches invoke a supplied barrier.",
+    "Real-worker tests preserve failures, require a fresh channel after loss, and verify retained bytes before cleanup."
+  ],
+  "unresolved_correctness_findings": [],
+  "completion_gates_open": [
+    "SSH/client active-job survival",
+    "whole-client-VM EOF",
+    "outer-worker storage loss",
+    "selected native dashboard tunnel and TLS",
+    "exact board and full matrix"
+  ],
+  "evidence": [
+    {
+      "path": "work/simulator/checks-2026-10-21-001/channel354-clippy.log",
+      "sha256": "70693138e8d39360c9b4e10b7b759e3259cf9a1a662c55f9e62b7811a6ad1c40",
+      "size": 542
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/channel354-tests.log",
+      "sha256": "df2a70e2364752d6f50e3ebf00955cbd6f953dcd7b644a38e3de02ab8a5d6901",
+      "size": 83761
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-retention-351/assessment.json",
+      "sha256": "84c018ff4d16e30e6d6c0d8a41a2aaf9e3dc138dcc3a2937e7ae8986f2004f26",
+      "size": 3512
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-retention-353/assessment.json",
+      "sha256": "9ed380760a29ca1333796ac704aad51e053090ba474c03073d56196c48dbd790",
+      "size": 2494
+    }
+  ]
+}

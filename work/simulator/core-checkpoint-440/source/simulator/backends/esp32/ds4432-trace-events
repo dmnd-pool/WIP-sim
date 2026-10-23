@@ -1,0 +1,1 @@
+md_sim_ds4432_bus(bool read, int32_t value, int32_t result, uint64_t writes, uint64_t faults) "read=%d value=%d result=%d writes=%"PRIu64" faults=%"PRIu64

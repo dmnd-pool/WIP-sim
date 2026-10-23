@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ec191c9a6a2f93b01890",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/738731f5-8263-4057-ae1d-c7bf7718eda8/2024/07/19/00/DDT-Z21120303-1E05%20Server_S19e%20XP%20Hyd.%20CE%20Certificate.pdf",
+  "kind": "document",
+  "title": "DDT-Z21120303-1E05 Server_S19e XP Hyd. CE Certificate.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ec191c9a6a2f93b01890/DDT-Z21120303-1E05_Server_S19e_XP_Hyd._CE_Certificate.pdf",
+  "sha256": "c727eec27cbfab4cb7de8f2cf7b999237066870e1ab1c94ce5b29cec99bb990c",
+  "size_bytes": 848668,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/738731f5-8263-4057-ae1d-c7bf7718eda8/2024/07/19/00/DDT-Z21120303-1E05%20Server_S19e%20XP%20Hyd.%20CE%20Certificate.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 18 Jul 2024 16:29:45 GMT",
+  "etag": "\"b0cdf357539349b78631c5ea529cc5da\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 848668,
+      "actual": 848668,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

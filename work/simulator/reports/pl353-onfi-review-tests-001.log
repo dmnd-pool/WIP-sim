@@ -1,0 +1,28 @@
+   Compiling md-sim-axi-iic v0.1.0 (/home/user/src/md-sim/simulator/backends/qemu/axi-iic)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.33s
+     Running unittests src/lib.rs (work/simulator/qemu-s9/review-target/debug/deps/md_sim_axi_iic-8cfdb771c9827040)
+
+running 20 tests
+test pl353::tests::controller_reset_does_not_complete_a_pending_chip_operation ... ok
+test onfi::tests::only_real_disabled_feature_contract_is_accepted ... ok
+test onfi::tests::status_resume_preserves_cursor_but_reset_exits_parameter_mode ... ok
+test pl353::tests::onfi_is_explicit_and_features_wait_for_all_four_real_bytes ... ok
+test pl353::tests::invalid_command_tuples_and_data_directions_have_no_bus_effect ... ok
+test pl353::tests::page_program_data_order_end_command_and_reset_abort ... ok
+test pl353::tests::reset_status_timing_and_interrupt_clear ... ok
+test pl353::tests::split_five_address_bytes_and_real_read_completion ... ok
+test pl353::tests::unsupported_modes_are_errors_without_bus_transactions ... ok
+test tests::fifo_bound_and_receive_backpressure_preserve_bytes ... ok
+test tests::fifo_reset_held_stops_tx_and_reset_register_has_documented_default ... ok
+test tests::lane_access_and_toggle_interrupt_semantics ... ok
+test tests::missing_device_and_data_nack_raise_error_and_end_bus ... ok
+test tests::programmed_receive_watermark_stretches_until_drain ... ok
+test tests::repeated_start_read_has_real_data_and_nack ... ok
+test tests::soft_reset_ends_inflight_bus_and_discards_queued_data ... ok
+test tests::unsupported_modes_raise_error_and_need_software_reset ... ok
+test tests::vendor_four_byte_write_sequence_obeys_clock_and_stop ... ok
+test onfi::tests::parameter_geometry_redundancy_and_independent_bit_crc ... ok
+test pl353::tests::hamming_code_locates_each_single_bit_independently ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+

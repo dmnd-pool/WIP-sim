@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-4153ec062068a4750b37",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2e11bb7d-b07c-4397-8c05-272a13702231/2026/07/17/10/FR-1.6(260630-S21%2B%2B).bmu",
+  "kind": "firmware",
+  "title": "FR-1.6(260630-S21++).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:11+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-4153ec062068a4750b37/FR-1.6_260630-S21++_.bmu",
+  "sha256": "c0ab12a69d15de5cc4f1743d6aca946806f0a209e88ca660954e0440d02abfeb",
+  "size_bytes": 17071104,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/2e11bb7d-b07c-4397-8c05-272a13702231/2026/07/17/10/FR-1.6(260630-S21%2B%2B).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Fri, 17 Jul 2026 02:35:04 GMT",
+  "etag": "\"59ad79ea57706989c72bc6520ca0f9cc\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "59ad79ea57706989c72bc6520ca0f9cc",
+      "actual": "59ad79ea57706989c72bc6520ca0f9cc",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 17071104,
+      "actual": 17071104,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

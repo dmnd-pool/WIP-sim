@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-ebfffa48efe3a4900645",
+  "url": "https://download.hiveos.farm/asic/custom/MEG9/SD-Antminer-S9-all-Hiveon-1.03@201211-sign-MEG9.zip",
+  "kind": "firmware",
+  "title": "SD-Antminer-S9-all-Hiveon-1.03@201211-sign-MEG9.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:02:32+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-ebfffa48efe3a4900645/SD-Antminer-S9-all-Hiveon-1.03_201211-sign-MEG9.zip",
+  "sha256": "ea9b6aaec309a1b721c57bb6b22ced9b398f59ced538f6b06e44a73f96178e17",
+  "size_bytes": 45983709,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/MEG9/SD-Antminer-S9-all-Hiveon-1.03@201211-sign-MEG9.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Fri, 11 Dec 2020 22:30:22 GMT",
+  "etag": "\"5fd3f2fe-2bda7dd\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 45983709,
+      "actual": 45983709,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

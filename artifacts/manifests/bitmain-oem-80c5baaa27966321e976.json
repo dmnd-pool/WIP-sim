@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-80c5baaa27966321e976",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7ebc310c-393f-4034-9b9e-ec49f72f1cba/2023/11/06/19/Antminer-S19Pro-Hydro-user-release-20230911140154-6665.bmu",
+  "kind": "firmware",
+  "title": "Antminer-S19Pro-Hydro-user-release-20230911140154-6665.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:47:08+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-80c5baaa27966321e976/Antminer-S19Pro-Hydro-user-release-20230911140154-6665.bmu",
+  "sha256": "0cdd38688a3c362a6b8e879726ef7fd85f8d31822b36fbced1b5d8996a7c245e",
+  "size_bytes": 20766417,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/7ebc310c-393f-4034-9b9e-ec49f72f1cba/2023/11/06/19/Antminer-S19Pro-Hydro-user-release-20230911140154-6665.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Mon, 06 Nov 2023 11:54:13 GMT",
+  "etag": "\"2fbeb4e9c9eda2f97948185eca8b95d0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 20766417,
+      "actual": 20766417,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

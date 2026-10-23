@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8a58e3c83a659827d896",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b7fd2766-2ca3-429a-9e5a-a1d38ddc3e8b/2023/07/27/16/S17e%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S17e Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:57+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8a58e3c83a659827d896/S17e_Server_Manual.pdf",
+  "sha256": "4f93d48b892c6ee91110f216768d15f3a7d3652b348c8be85c6fe56ad7aedb5b",
+  "size_bytes": 1073178,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b7fd2766-2ca3-429a-9e5a-a1d38ddc3e8b/2023/07/27/16/S17e%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:04:38 GMT",
+  "etag": "\"ca1be5711d9d7bc9c937d6ba05b37147\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1073178,
+      "actual": 1073178,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

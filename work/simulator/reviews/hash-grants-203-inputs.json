@@ -1,0 +1,42 @@
+{
+  "crates/md-sim-mining/src/engine.rs": {
+    "sha256": "6109407b30e448d4b9bdca5f770f79e69f5ca1c19df6e3684fb030ec45d1ff8d",
+    "size": 7490
+  },
+  "crates/md-sim-firmware/src/bm1387/budget.rs": {
+    "sha256": "7ec2619a1cd9ebbf6e260acfa50ddf66860b41b472f1d81aa15713793796f10a",
+    "size": 4617
+  },
+  "crates/md-sim-firmware/src/bm1387/chain.rs": {
+    "sha256": "7f87ae50f0cf82b0c2440504d42c3525f7a34123569aa649cdd1fd30244e85bd",
+    "size": 19865
+  },
+  "crates/md-sim-firmware/src/bm1387/wire.rs": {
+    "sha256": "192aabdf692141c2834890726b2b3dea1156d48a01376733de302a5e56117827",
+    "size": 10765
+  },
+  "crates/md-sim-qemu-core/src/s9_chain.rs": {
+    "sha256": "704596e2f6fc05ef26db34473a5d46332a702e6d3ba00c840deb9dac8170d219",
+    "size": 6920
+  },
+  "simulator/backends/qemu/md-sim-s9io.c": {
+    "sha256": "a79c9aaf161c9825a997f8d703f09d13269f21ba0058dd28e104704bb51eebc0",
+    "size": 12824
+  },
+  "simulator/backends/qemu/md-sim-s9io.h": {
+    "sha256": "ba9f7053c5d60fedfbe071e0991852290bd2650280c94f615b28877af97856de",
+    "size": 2155
+  },
+  "simulator/backends/qemu/s9-bm1387.patch": {
+    "sha256": "90ea6d3cfd582d932ccca182b3b2e96d89012e257a0005baf3c436774c0334b6",
+    "size": 6117
+  },
+  "crates/md-sim-firmware/examples/support/s9_hash_audit.rs": {
+    "sha256": "05879ff4e9f28fdee45ce10b4f09f32c52041c66bd521cc9280daedb1940d22e",
+    "size": 30501
+  },
+  "crates/md-sim-firmware/examples/support/s9_cycle_evidence.rs": {
+    "sha256": "2d08d80b585e4dacbadce81441128aa3d6c12b6a6637b35a1d1417e0be58fc99",
+    "size": 8694
+  }
+}

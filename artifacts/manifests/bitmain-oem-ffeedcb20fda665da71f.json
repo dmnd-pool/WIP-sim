@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ffeedcb20fda665da71f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f97dc770-ae78-4dce-bde6-ef0d7808bc5c/2023/07/27/16/S19%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S19 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:45+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ffeedcb20fda665da71f/S19_Server_Manual.pdf",
+  "sha256": "53c24006fd6469252a03ea7371b3e1372746aab3531b5a057d9178dac2c09b31",
+  "size_bytes": 976077,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f97dc770-ae78-4dce-bde6-ef0d7808bc5c/2023/07/27/16/S19%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:09:07 GMT",
+  "etag": "\"589c87df6e0af0673be6bbad76c2ce01\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 976077,
+      "actual": 976077,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

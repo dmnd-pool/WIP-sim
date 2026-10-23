@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7ff1675cccbcd62120d2",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c1e69da8-ca24-4b85-bcf8-537b624ea02e/2024/04/07/16/ACRT2309214-Bitmain-S19j%20XP-SVHC235.pdf",
+  "kind": "document",
+  "title": "ACRT2309214-Bitmain-S19j XP-SVHC235.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7ff1675cccbcd62120d2/ACRT2309214-Bitmain-S19j_XP-SVHC235.pdf",
+  "sha256": "213761fd3dec67fddaae660cf6238291317a718fe46f47eb9d4597a9caa778a1",
+  "size_bytes": 218447,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/c1e69da8-ca24-4b85-bcf8-537b624ea02e/2024/04/07/16/ACRT2309214-Bitmain-S19j%20XP-SVHC235.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Sun, 07 Apr 2024 08:34:36 GMT",
+  "etag": "\"439a33b389ff37c7d27519e97f738741\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 218447,
+      "actual": 218447,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-3eaac46d84bfdde1e7de",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ca8d497d-dff4-4381-a5d8-fdabe7c563d4/2022/04/01/20/240-Cb(S19j%20Pro)%20REACH%20SVHC.pdf",
+  "kind": "document",
+  "title": "240-Cb(S19j Pro) REACH SVHC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:37:30+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-3eaac46d84bfdde1e7de/240-Cb_S19j_Pro__REACH_SVHC.pdf",
+  "sha256": "07f504c5e64061e6e7696b1363afcdad1dc2f0cc6ac38580161ee1f800e7bc4f",
+  "size_bytes": 237358,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ca8d497d-dff4-4381-a5d8-fdabe7c563d4/2022/04/01/20/240-Cb(S19j%20Pro)%20REACH%20SVHC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 01 Apr 2022 12:06:48 GMT",
+  "etag": "\"15b3adbf2dcc082793a56f78121a3c0c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 237358,
+      "actual": 237358,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

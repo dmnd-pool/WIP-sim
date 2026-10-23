@@ -1,0 +1,30 @@
+{
+  "parent_trace_sha256": "ec7e48cd4223ea07a37d8b07b1dcbbe2dae9fb6f03f03a69c263d671ada7a697",
+  "files": [
+    {
+      "path": "simulator/firmware/fixtures/enumeration.hex",
+      "sha256": "b521427e150fe76025d9ff05fb8c44209a1e6498d6fbd10dacf60ae19918c19f",
+      "packet_sha256": "67b62258ab6249861b776af6d3e438156c2b5a5a0e294b5d6606d898dcdb67f1",
+      "source": "work/simulator/firmware/attempt-004/device-transactions.jsonl"
+    },
+    {
+      "path": "simulator/firmware/fixtures/configuration.hex",
+      "sha256": "d4c314b366c39f6c71af6f4a30c4e84ee45175f7307e711b749705f2c9d64a6b",
+      "packet_sha256": "80d9e24329fb625da0bb66f6417333822cbd99c2415641cef0fb2a0a27bd5e53",
+      "source": "work/simulator/firmware/attempt-004/device-transactions.jsonl"
+    },
+    {
+      "path": "simulator/firmware/fixtures/initial-work.hex",
+      "sha256": "f3735269f191fd5be6c633f73efc45f84fec322f1f476279e13dbaf78c49d7ca",
+      "packet_sha256": "b1ede5a0a623a75ffdc16e2bd2bd4d1e48f7e46232fbfcf6beb938b72c737be7",
+      "source": "work/simulator/firmware/attempt-004/device-transactions.jsonl"
+    },
+    {
+      "path": "simulator/firmware/fixtures/clean-work.hex",
+      "sha256": "8fa601a4d7e0c7d3523bb64261974be90df1e3961c0c8c956a086687e01e1747",
+      "packet_sha256": "a9d14c2c91b827a03ac91e13509ffc701aabeeedb020efe885254ef470855eda",
+      "source": "work/simulator/firmware/attempt-004/device-transactions.jsonl"
+    }
+  ],
+  "status": "Captured from archived rebuilt cgminer in source-interface test; not physical-device traces."
+}

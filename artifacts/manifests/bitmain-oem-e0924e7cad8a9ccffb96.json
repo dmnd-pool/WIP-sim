@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e0924e7cad8a9ccffb96",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/39344f9b-8e18-4858-a88b-ed1e18314b44/2024/02/20/14/CB_62368%202ND_T21_CN24MUJQ%20001_extsigned.pdf",
+  "kind": "document",
+  "title": "CB_62368 2ND_T21_CN24MUJQ 001_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e0924e7cad8a9ccffb96/CB_62368_2ND_T21_CN24MUJQ_001_extsigned.pdf",
+  "sha256": "d4bd8b9fcdd72f43202f640f90ff59ad9fff9bf50d0456e8268622a0e613f0cf",
+  "size_bytes": 655461,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/39344f9b-8e18-4858-a88b-ed1e18314b44/2024/02/20/14/CB_62368%202ND_T21_CN24MUJQ%20001_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 20 Feb 2024 06:50:02 GMT",
+  "etag": "\"8fb8c98eb52f25df5a0b14474f4ee161\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 655461,
+      "actual": 655461,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

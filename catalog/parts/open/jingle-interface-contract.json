@@ -1,0 +1,71 @@
+{
+  "source_id": "open-jingleminer-jingle-miner-btc-solo-miner",
+  "source_commit": "4ca43569a938abad52759ab845f4bde56a60d1a1",
+  "scope": "bitcoin-asic",
+  "flash_bytes": 16777216,
+  "controller_target": "ESP32-S3",
+  "psram_mode": "octal,40MHz",
+  "lite": {
+    "device_id": "jingleminer-btc-solo-lite",
+    "source_class": "NerdaxeGamma",
+    "reset_gpio": 1,
+    "default_frequency_mhz": 515,
+    "default_core_mv": 1150,
+    "power_controller": "TPS546",
+    "fan_temperature_controller": "EMC2101",
+    "temperature_target_c": 60,
+    "initialization_sequence": [
+      "set core voltage0",
+      "wait500ms",
+      "assert reset low",
+      "wait250ms",
+      "set max(init_voltage,requested_voltage)",
+      "wait500ms",
+      "release reset high",
+      "wait250ms",
+      "clear serial,enumerate ASICs",
+      "select ASIC max baud",
+      "wait500ms",
+      "set UART baud,clear serial",
+      "wait500ms"
+    ]
+  },
+  "pro": {
+    "device_id": "jingleminer-btc-solo-pro",
+    "source_class": "NerdQaxePlus2 : NerdQaxePlus",
+    "asic_count": 4,
+    "regulator_phases": 3,
+    "default_frequency_mhz": 600,
+    "default_core_mv": 1150,
+    "initial_core_mv": 1200,
+    "temperature_target_c": 55
+  },
+  "telemetry_behaviour": [
+    "Lite getIin() returns TPS546 output current. It is not a separately measured input current.",
+    "Lite getPin() uses regulator output voltage times output current plus a fixed5W offset.",
+    "Lite temperature before initialization uses EMC2101 internal temperature plus5C; after initialization it uses the external sensor.",
+    "Pro temperature adds10C to its inherited board temperature reading. The source says this approximates real chip temperature."
+  ],
+  "partition_table": "# Name,      Type, SubType,   Offset,    Size, Flags\n# Note: if you have increased the bootloader size, make sure to update the offsets to avoid overlap\nnvs,         data, nvs,       0x9000,    0x6000\nphy_init,    data, phy,       0xf000,    0x1000\nfactory,     app,  factory,   0x10000,   4M\nwww,         data, spiffs,    0x410000,  3M\nota_0,       app,  ota_0,     0x710000,  4M\nota_1,       app,  ota_1,     0xb10000,  4M\notadata,     data, ota,       0xf10000,  8k\ncoredump,    data, coredump,          ,  64K\n",
+  "validation_limit": "No firmware or hardware was executed. These values describe captured code, not physical calibration.",
+  "nvs_templates": {
+    "lite": {
+      "path": "config/JingleMiner1.2T.cvs",
+      "artifact_id": "open-jingle-nvs-lite",
+      "asicfrequency": "600",
+      "asicvoltage": "1150",
+      "asicjobinterval": "1200"
+    },
+    "pro": {
+      "path": "config/JingleMiner4.8T.cvs",
+      "artifact_id": "open-jingle-nvs-pro",
+      "asicfrequency": "600",
+      "asicvoltage": "1150",
+      "asicjobinterval": "1200"
+    }
+  },
+  "nvs_template_notes": [
+    "The captured HEAD README names release/ paths that return 404. Both actual templates are present under config/ at the exact pinned HEAD commit.",
+    "Both templates set 600 MHz and 1150 mV. The Lite board constructor defaults to 515 MHz. The simulator must load the actual NVS and configuration precedence; a constructor default alone is insufficient."
+  ]
+}

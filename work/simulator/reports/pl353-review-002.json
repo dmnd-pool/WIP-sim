@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "scope": "Independent incremental source review; compiled NAND storage suite remains pending",
+  "parent_review": "work/simulator/reports/pl353-review-001.json",
+  "inputs": {
+    "simulator/backends/qemu/axi-iic/src/pl353.rs": {
+      "sha256": "ada9197d7f37607aa1e5ba012a180b92cc99fbe64fa0223668ca779e607c9eaa",
+      "size": 24097
+    },
+    "simulator/backends/qemu/md-sim-pl353.c": {
+      "sha256": "c8845134b212c504da17ba4c3469cca07237e041a048353a32cf74421f7578d6",
+      "size": 6541
+    },
+    "simulator/backends/qemu/nand-timing.patch": {
+      "sha256": "74b7a363181a6d5b116e0934669ff2d169125e0993014dc30bc4ce50f2337a47",
+      "size": 11799
+    },
+    "crates/md-sim-firmware/examples/s9_nand_storage.rs": {
+      "sha256": "18b66cda56ebf796b7222e102df1505cdc030f01c8498dc733a65b7d592c809a",
+      "size": 12942
+    }
+  },
+  "findings": [
+    {
+      "prior": "OOB-only mem_oob arithmetic and persistence",
+      "disposition": "Source fixed: spare_offset and main length are separate; realization rejects data-only backing; full data+OOB branch uses exact bounded offsets/lengths."
+    },
+    {
+      "prior": "Unsupported NAND geometry",
+      "disposition": "Source fixed: realization requires explicit EC/DA x8 geometry, exact131072x2112-byte backing if supplied."
+    },
+    {
+      "prior": "Controller reset drops read/reset busy intervals",
+      "disposition": "Source fixed: Rust reset preserves existing busy_until; backend pending operation deadline also restored."
+    }
+  ],
+  "checks": {
+    "rust_tests": 16,
+    "log": "work/simulator/reports/pl353-review-tests-002.log",
+    "passed": true
+  },
+  "remaining": [
+    "Actual compiled OOB/boundary tests",
+    "Whole backing comparison and restart persistence",
+    "Optimized and sanitizer backend runs",
+    "Exact physical NAND chip and board identity remain unresolved"
+  ],
+  "complete_target": false
+}

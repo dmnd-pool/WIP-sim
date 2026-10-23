@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-61e403508a6a7529afa3",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f965213a-8d64-4174-9d82-e88a12145acc/2020/01/02/19/Antminer-T15-user-OM-201912131546-sig_4867.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-T15-user-OM-201912131546-sig_4867.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-61e403508a6a7529afa3/ANTMINER-T15-user-OM-201912131546-sig_4867.tar.gz",
+  "sha256": "7bd2c1105267be53545ffe5a87e75a6049524caab34cb4af8f14700e79eff7b4",
+  "size_bytes": 23696441,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/f965213a-8d64-4174-9d82-e88a12145acc/2020/01/02/19/Antminer-T15-user-OM-201912131546-sig_4867.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:34 GMT",
+  "etag": "\"ae8a3cbe72683680c1bb0396804856f3-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23696441,
+      "actual": 23696441,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

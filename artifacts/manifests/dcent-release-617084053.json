@@ -1,0 +1,39 @@
+{
+  "id": "dcent-release-617084053",
+  "url": "https://github.com/DCentralTech/DCENT_OS/releases/download/v0.9.0-beta.1/DCENTOS_XIL3_T19_beta20261002.img.sig",
+  "kind": "metadata",
+  "title": "DCENTOS_XIL3_T19_beta20261002.img.sig",
+  "language": "en",
+  "source_id": "dcent-releases",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:00:13+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/dcent-release-617084053/DCENTOS_XIL3_T19_beta20261002.img.sig",
+  "sha256": "b40a1d9eb553e9c1cece73294447d669c37b176efc6f1047553b6c2bee57ef6a",
+  "size_bytes": 64,
+  "executed": false,
+  "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/1206981413/e69649ca-5037-413c-9110-c333090e613e?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-19T11%3A49%3A26Z&rscd=attachment%3B+filename%3DDCENTOS_XIL3_T19_beta20261002.img.sig&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-19T10%3A49%3A22Z&ske=2026-10-19T11%3A49%3A26Z&sks=b&skv=2018-11-09&sig=vu0pU1ilt%2BiUDzZJnJTIG7qOqgq5UuITenTtXitOxGE%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MjQwNzkxMywibmJmIjoxNzkyNDA3NjEzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.4kCgakOV1CfUXBoC24puJCED53vTeiVuDR0acCYegiU&response-content-disposition=attachment%3B%20filename%3DDCENTOS_XIL3_T19_beta20261002.img.sig&response-content-type=application%2Foctet-stream",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 07 Oct 2026 00:39:48 GMT",
+  "etag": "\"0x8DF240B7E09E901\"",
+  "publisher_sha256": "b40a1d9eb553e9c1cece73294447d669c37b176efc6f1047553b6c2bee57ef6a",
+  "matches_publisher_sha256": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "b40a1d9eb553e9c1cece73294447d669c37b176efc6f1047553b6c2bee57ef6a",
+      "actual": "b40a1d9eb553e9c1cece73294447d669c37b176efc6f1047553b6c2bee57ef6a",
+      "match": true,
+      "source_id": "dcent-releases"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 64,
+      "actual": 64,
+      "match": true,
+      "source_id": "dcent-releases"
+    }
+  ],
+  "upstream_integrity_match": true
+}

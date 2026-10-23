@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bitcoin ASIC catalogue</title>
+<style>
+body{margin:0;background:#f4f5f2;color:#16242c;font:15px system-ui,sans-serif}header{background:#163c46;color:white;padding:24px 4vw}h1{font-size:28px;margin:0 0 10px}main{padding:20px 4vw}nav{display:flex;gap:8px;flex-wrap:wrap}button,input,select{font:inherit;padding:9px;border:1px solid #aabac0;border-radius:5px;background:white;color:#163c46}button{cursor:pointer}button.active{background:#163c46;color:white}#controls{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}input{min-width:260px;flex:1}table{border-collapse:collapse;width:100%;background:white}th,td{padding:10px;text-align:left;border-bottom:1px solid #dce3e5;vertical-align:top}th{background:#e5eeec}td button{padding:0;border:0;text-align:left}a{color:#086779}#detail{position:fixed;right:0;top:0;width:min(670px,92vw);height:100vh;overflow:auto;background:white;box-shadow:0 0 0 100vw #0006;padding:22px;box-sizing:border-box;display:none;z-index:3}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4f3;padding:12px}#detail p{overflow-wrap:anywhere}.note{max-width:1000px;line-height:1.5}small{color:#4f6267}.count{margin:14px 0}.path{overflow-wrap:anywhere}footer{margin:24px 0}tbody tr:hover{background:#f4f8f7}
+</style>
+<header><h1>Bitcoin ASIC catalogue</h1><div>Hardware · firmware · source code · documents · tools</div></header>
+<main><p class="note">Use this local index to find a model, a board, a firmware file, or a source. Read the support limits before you select a combination. A downloaded file is not proof that the firmware works on a device.</p>
+<nav id="tabs"></nav><div id="controls"><input id="query" placeholder="Search names, uses, boards, dates, or source text" aria-label="Search"><select id="kind" aria-label="Type"></select><select id="maker" aria-label="Maker"></select><select id="year" aria-label="Release year"></select><select id="status" aria-label="Status"></select></div>
+<div id="count" class="count"></div><div style="overflow:auto"><table><thead id="head"></thead><tbody id="body"></tbody></table></div><button id="more">Show 100 more</button>
+<footer><a href="../README.md">Start guide</a> · <a href="../docs/simulator-design.md">Simulator design</a> · <a href="csv/compatibility.csv">Compatibility CSV</a> · <a href="../reports/statistics.json">Collection counts</a></footer></main>
+<aside id="detail"><button id="close">Close</button><h2 id="title"></h2><div id="refs"></div><h3>Record</h3><pre id="record"></pre><h3>Relationships</h3><div id="edges"></div></aside>
+<script>
+const DATA=__CATALOG_DATA__;
+const groups={entities:'Hardware and software',artifacts:'File archive',sources:'Sources',relationships:'Relationships',gaps:'Evidence gaps',discovery:'Discovery queue'};
+let group='entities',limit=100;
+const $=s=>document.querySelector(s), txt=(tag,t)=>{const e=document.createElement(tag);e.textContent=t;return e};
+const maps=Object.fromEntries(Object.entries(DATA).map(([k,rows])=>[k,new Map(rows.map(x=>[x.id,x]))]));
+const recordGroups=new WeakMap(Object.entries(DATA).flatMap(([type,rows])=>rows.map(row=>[row,type])));
+const searchText=new WeakMap(Object.values(DATA).flat().map(row=>[row,JSON.stringify(row).toLowerCase()]));
+function link(label,url){const a=txt('a',label);if(/^(https?:\/\/|\.\.\/)/.test(url))a.href=url;return a}
+function show(row){$('#title').textContent=row.name||row.title||row.id;$('#record').textContent=JSON.stringify(row,null,2);$('#refs').replaceChildren();$('#edges').replaceChildren();
+ const permalink=txt('a','Link to this record');permalink.href='#'+recordGroups.get(row)+'/'+encodeURIComponent(row.id);const permalinkLine=txt('p','');permalinkLine.append(permalink);$('#refs').append(permalinkLine);
+ if(row.content_role==='git-lfs-pointer')$('#refs').append(txt('p','This file is a Git LFS reference. It is not a firmware payload.'));
+ if(row.payload_available===false&&row.content_role!=='git-lfs-pointer')$('#refs').append(txt('p','This saved file is not a usable payload. Read its content validity and inspection notes.'));
+ if(row.esp_image_layout)$('#refs').append(txt('p','ESP image layout: '+row.esp_image_layout.recognition+'. Read the parsed segments and partition offsets in the record. This is not a board compatibility test.'));
+ for(const tr of row.english_companions||[]){if(tr.translation_path){const p=txt('p','');p.append(link('Open English companion','../'+tr.translation_path));p.append(txt('small',' '+(tr.scope||'Read the translation coverage in the record.')));$('#refs').append(p)}}
+ if(row.inspection?.text_path){const p=txt('p','');p.append(link('Read extracted text','../'+row.inspection.text_path));$('#refs').append(p)}
+ if(row.local_path){const p=txt('p','');p.append(link('Open local file','../'+row.local_path));$('#refs').append(p)}
+ if(row.url){const p=txt('p','');p.append(link('Open source URL',row.url));$('#refs').append(p)}
+ for(const [type,ids] of [['artifacts',[...(row.artifact_ids||[]),...(row.resolved_artifact_id?[row.resolved_artifact_id]:[])]],['sources',[...(row.source_ids||[]),...(row.source_id?[row.source_id]:[])]]])for(const id of new Set(ids)){const ref=maps[type].get(id);if(!ref)continue;const p=txt('p','');const b=txt('button',ref?.title||id);b.onclick=()=>show(ref);p.append(b);$('#refs').append(p)}
+ for(const media of DATA.artifacts.filter(a=>(a.parent_artifact_ids||[]).includes(row.id))){const p=txt('p','Image: ');const b=txt('button',media.title||media.id);b.onclick=()=>show(media);p.append(b);$('#refs').append(p)}
+ for(const edge of DATA.relationships.filter(e=>e.from_id===row.id||e.to_id===row.id)){const p=txt('p',`${edge.relation} · ${edge.status} · `);const other=maps.entities.get(edge.from_id===row.id?edge.to_id:edge.from_id);const b=txt('button',other?.name||edge.to_id);b.onclick=()=>other&&show(other);p.append(b);p.append(txt('small',' '+(edge.constraints||[]).join(' ')));$('#edges').append(p)}
+ $('#detail').style.display='block';}
+function options(id,values,label){const s=$(id);s.replaceChildren(new Option(label,''));for(const v of [...new Set(values.filter(x=>x!==null&&x!==undefined&&x!==''))].sort())s.add(new Option(v,v))}
+function render(){const q=$('#query').value.toLowerCase(),kind=$('#kind').value,maker=$('#maker').value,year=$('#year').value,status=$('#status').value;
+ const all=DATA[group].filter(r=>(!q||searchText.get(r).includes(q))&&(!kind||(r.kind||r.source_type||r.relation||r.status)===kind)&&(!maker||r.manufacturer===maker)&&(!year||String(r.release_year??'unknown')===year)&&(!status||r.status===status));
+ $('#count').textContent=`${all.length.toLocaleString()} records. Showing ${Math.min(limit,all.length).toLocaleString()}.`+(group==='discovery'?' Discovery records need verification. Folder labels do not prove compatibility.':'');
+ const fields=group==='entities'?['name','kind','manufacturer','release_year']:group==='artifacts'?['title','kind','status','size_bytes']:group==='sources'?['title','publisher','source_type','language']:group==='relationships'?['from_id','relation','to_id','status']:group==='gaps'?['area','description','reason','priority']:['model','manufacturer','archive_path','evidence_status'];
+ $('#head').replaceChildren();const h=txt('tr','');for(const f of fields)h.append(txt('th',f.replaceAll('_',' ')));$('#head').append(h);$('#body').replaceChildren();
+ for(const r of all.slice(0,limit)){const tr=txt('tr','');fields.forEach((f,i)=>{const td=txt('td','');let value=r[f]??(f==='release_year'?'unknown':'');if(i===0){if(!value)value=r.id;const b=txt('button',String(value));b.onclick=()=>show(r);td.append(b)}else td.textContent=String(value);tr.append(td)});$('#body').append(tr)}$('#more').hidden=limit>=all.length;}
+function tab(name){group=name;limit=100;for(const b of $('#tabs').children)b.classList.toggle('active',b.dataset.group===name);const rs=DATA[group];options('#kind',rs.map(r=>r.kind||r.source_type||r.relation||r.status),'All types');options('#maker',rs.map(r=>r.manufacturer),'All makers');options('#year',rs.map(r=>r.release_year??'unknown'),'All years');options('#status',rs.map(r=>r.status),'All statuses');$('#year').hidden=!rs.some(r=>'release_year'in r);$('#maker').hidden=!rs.some(r=>r.manufacturer);$('#status').hidden=!rs.some(r=>r.status);render()}
+for(const [key,label]of Object.entries(groups)){const b=txt('button',label);b.dataset.group=key;b.onclick=()=>tab(key);$('#tabs').append(b)}
+for(const id of ['#query','#kind','#maker','#year','#status'])$(id).oninput=()=>{limit=100;render()};$('#more').onclick=()=>{limit+=100;render()};$('#close').onclick=()=>$('#detail').style.display='none';document.onkeydown=e=>{if(e.key==='Escape')$('#detail').style.display='none'};tab('entities');
+function openHash(){const match=location.hash.match(/^#([a-z]+)\/(.+)$/);if(!match||!maps[match[1]])return;let id;try{id=decodeURIComponent(match[2])}catch{return}const row=maps[match[1]].get(id);if(row){tab(match[1]);show(row)}}
+window.addEventListener('hashchange',openHash);openHash();
+</script></html>

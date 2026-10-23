@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7fb27381783eb29de6fb",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b4753572-9793-486b-9969-a35722ef1df3/2023/07/27/16/S11%20Server%20Manual%20.pdf",
+  "kind": "document",
+  "title": "S11 Server Manual .pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7fb27381783eb29de6fb/S11_Server_Manual_.pdf",
+  "sha256": "25b01544d4dad78202bbac54459f37157c1fedad67ecc5b39a51347e9aa2b178",
+  "size_bytes": 998933,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b4753572-9793-486b-9969-a35722ef1df3/2023/07/27/16/S11%20Server%20Manual%20.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:02:56 GMT",
+  "etag": "\"02380689ec2f805049489ec517b9cd7c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 998933,
+      "actual": 998933,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

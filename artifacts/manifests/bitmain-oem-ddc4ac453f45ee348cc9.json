@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ddc4ac453f45ee348cc9",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BM1385_Datasheet_v2.0.pdf",
+  "kind": "document",
+  "title": "BM1385_Datasheet_v2.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:57+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-ddc4ac453f45ee348cc9/BM1385_Datasheet_v2.0.pdf",
+  "sha256": "f757d60863f7d4b5f517dece0b45b03a900761b486485e0553ca3311cf2f24a9",
+  "size_bytes": 632659,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/BM1385_Datasheet_v2.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"3fd746c4492aaa502673ff9ef9c3f3eb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 632659,
+      "actual": 632659,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

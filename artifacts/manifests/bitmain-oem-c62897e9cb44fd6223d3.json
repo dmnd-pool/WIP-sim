@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-c62897e9cb44fd6223d3",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6635a067-a59d-4bd2-85b6-f0adc0c8e501/2024/12/25/18/LVD-S21%20XP%20lmm-CN24SUM4%20001-24.11.06%20S_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD-S21 XP lmm-CN24SUM4 001-24.11.06 S_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-c62897e9cb44fd6223d3/LVD-S21_XP_lmm-CN24SUM4_001-24.11.06_S_extsigned.pdf",
+  "sha256": "6fbb0fa059db9476cff7d017f517c9946d800fb744fdd4b91089e2f2e5f24556",
+  "size_bytes": 1458632,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6635a067-a59d-4bd2-85b6-f0adc0c8e501/2024/12/25/18/LVD-S21%20XP%20lmm-CN24SUM4%20001-24.11.06%20S_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 25 Dec 2024 10:59:17 GMT",
+  "etag": "\"5603867420e5189e7f6c3ed26236cc01\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1458632,
+      "actual": 1458632,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

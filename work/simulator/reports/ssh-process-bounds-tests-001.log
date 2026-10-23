@@ -1,0 +1,13 @@
+   Compiling md-sim-coordinator v0.1.0 (/home/user/src/md-sim/crates/md-sim-coordinator)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.74s
+     Running unittests src/lib.rs (target/debug/deps/md_sim_coordinator-61f7cba4ce696d3a)
+
+running 5 tests
+test ssh_transport::tests::captured_output_is_bounded ... ok
+test ssh_transport::tests::remote_paths_cannot_inject_shell_syntax ... ok
+test ssh_transport::tests::replies_reject_truncation_multiple_messages_and_protocol_errors ... ok
+test ssh_transport::tests::exchange_deadline_cleans_up_descendant_that_keeps_a_pipe_open ... ok
+test ssh_transport::tests::exchange_delivers_real_bytes_and_bounds_blocked_or_noisy_children ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+

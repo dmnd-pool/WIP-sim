@@ -1,0 +1,24 @@
+{
+  "id": "bitdeer-file-a68066bcbff44538-installer-trailer",
+  "url": "https://file.bitdeer.com/bd-public-prod/shop/202507221706/Firmware-A2airDoubleIN-20250630-001.bin",
+  "kind": "source",
+  "title": "Firmware - A2 Air (Double Input) embedded installer trailer",
+  "language": "en",
+  "source_id": "bitdeer-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:29:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/bitdeer-file-a68066bcbff44538-installer-trailer/installer-trailer.sh",
+  "sha256": "0a4a4d96c2aac4008f97db0cbb5aa796872ef2569140d732507eceb3e8080d8f",
+  "size_bytes": 5120,
+  "executed": false,
+  "acquisition_method": "byte-range-extracted-from-downloaded-file",
+  "parent_artifact_id": "bitdeer-file-a68066bcbff44538",
+  "parent_sha256": "f5d780b4e6c6ebc634a313703a9beae00fd3ecd91dd88d801ac789f40e53963a",
+  "byte_offset": 34052603,
+  "content_role": "embedded-readable-installer-code",
+  "notes": [
+    "This is a script contained in a proprietary firmware package. Its readability does not establish an open-source licence.",
+    "Exact bytes include any padding. The script was not executed."
+  ]
+}

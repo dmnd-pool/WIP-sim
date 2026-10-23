@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-62dc57d915db1c764cf6",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0bf192ea-c62f-4797-992b-7a35ca3a31d6/2024/12/26/17/S21%20XP%20Imm.%20RoHS.pdf",
+  "kind": "document",
+  "title": "S21 XP Imm. RoHS.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-62dc57d915db1c764cf6/S21_XP_Imm._RoHS.pdf",
+  "sha256": "b78b0615fd1776af57726e4c0a217e77c2702cba7dcb9b164a1b22d1fd7f6d26",
+  "size_bytes": 280569,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0bf192ea-c62f-4797-992b-7a35ca3a31d6/2024/12/26/17/S21%20XP%20Imm.%20RoHS.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 26 Dec 2024 09:26:08 GMT",
+  "etag": "\"479092c11c6271ea721100ad906630cd\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 280569,
+      "actual": 280569,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

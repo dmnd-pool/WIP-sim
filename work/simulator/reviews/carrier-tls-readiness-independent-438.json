@@ -1,0 +1,165 @@
+{
+  "schema": "md-sim-independent-tls-readiness/1",
+  "source_matches_captured_438": true,
+  "all_manifest_inputs_verified": true,
+  "actual_vm_test_passed": true,
+  "guest_test_count": 1,
+  "nginx": {
+    "sha256": "5cafda33449bb441edc63c75191e5e1b0554e80d7871fa5e54db8746be9f5a58",
+    "size": 1630056
+  },
+  "test_helper": {
+    "sha256": "0d86bd5bc6a38bb46df725edf2b0350e391906c1f6973c42151eb91196d95816",
+    "size": 7556144
+  },
+  "evidence": {
+    "delayed": {
+      "address": "127.0.0.1:36431",
+      "attempts": [
+        {
+          "connect_milliseconds": 0,
+          "connected": false,
+          "elapsed_milliseconds": 1,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 55,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 108,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 160,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 212,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 0,
+          "connected": false,
+          "elapsed_milliseconds": 264,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 317,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 2,
+          "connected": true,
+          "elapsed_milliseconds": 370,
+          "error": null,
+          "error_kind": null,
+          "raw_os_error": null
+        }
+      ],
+      "elapsed_milliseconds": 374,
+      "error": null,
+      "reachable": true,
+      "schema": "md-sim-carrier-tls-listener-readiness/1",
+      "scope": "TCP listener reachability only; TLS authentication and selected native HTTP require their own checks",
+      "startup_budget_milliseconds": 10000
+    },
+    "exited_child": {
+      "address": "127.0.0.1:36431",
+      "attempts": [],
+      "elapsed_milliseconds": 0,
+      "error": "carrier SSH child exited before TLS readiness",
+      "reachable": false,
+      "schema": "md-sim-carrier-tls-listener-readiness/1",
+      "scope": "TCP listener reachability only; TLS authentication and selected native HTTP require their own checks",
+      "startup_budget_milliseconds": 2000
+    },
+    "failed_start_drop_reaped": true,
+    "nginx": {
+      "sha256": "5cafda33449bb441edc63c75191e5e1b0554e80d7871fa5e54db8746be9f5a58",
+      "size": 1630056
+    },
+    "remaining_budget_refusal": {
+      "address": "127.0.0.1:36431",
+      "attempts": [
+        {
+          "connect_milliseconds": 0,
+          "connected": false,
+          "elapsed_milliseconds": 29750,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 29802,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 29855,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 29907,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        },
+        {
+          "connect_milliseconds": 1,
+          "connected": false,
+          "elapsed_milliseconds": 29960,
+          "error": "Connection refused (os error 111)",
+          "error_kind": "ConnectionRefused",
+          "raw_os_error": 111
+        }
+      ],
+      "elapsed_milliseconds": 30002,
+      "error": "selected carrier TLS listener startup deadline",
+      "reachable": false,
+      "schema": "md-sim-carrier-tls-listener-readiness/1",
+      "scope": "TCP listener reachability only; TLS authentication and selected native HTTP require their own checks",
+      "startup_budget_milliseconds": 30000
+    },
+    "scope": "Actual delayed nginx and authenticated component TLS; no firmware or native dashboard claim",
+    "test_helper": {
+      "sha256": "0d86bd5bc6a38bb46df725edf2b0350e391906c1f6973c42151eb91196d95816",
+      "size": 7556144
+    },
+    "tls_body": "MD_SIM_TLS_READINESS_COMPONENT"
+  },
+  "scope": "Actual delayed UID1000 nginx and component mutual TLS in an isolated loopback VM. Production wait_listener executed. No selected firmware or full SSH/native TLS pass."
+}

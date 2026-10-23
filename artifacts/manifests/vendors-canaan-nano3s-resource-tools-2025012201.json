@@ -1,0 +1,23 @@
+{
+  "id": "vendors-canaan-nano3s-resource-tools-2025012201",
+  "url": "https://codeload.github.com/Canaan-Creative/Avalon_Nano3s/tar.gz/refs/heads/master",
+  "kind": "tool",
+  "title": "Official Nano3S embedded tools_2025012201.tar.gz",
+  "language": "unknown",
+  "source_id": "source-canaan-avalon-nano3s",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:36:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/vendors-canaan-nano3s-resource-tools-2025012201/tools_2025012201.tar.gz",
+  "sha256": "d3231dedbfcf9a64cc61d6df62d94bc776332ae5439626335be026fef5986515",
+  "size_bytes": 8843105,
+  "executed": false,
+  "acquisition_method": "contained-in-downloaded-archive",
+  "parent_artifact_id": "vendors-canaan-avalon-nano3s",
+  "parent_sha256": "433532ae4d9269ef43b5bcb5aeb676f277f352342cd46fc923df22460adb44f6",
+  "archive_member": "Avalon_Nano3s-master/resource/tools_2025012201.tar.gz",
+  "git_commit": "04c84d312a4e38c1efa437b086bbcb297749e77a",
+  "notes": [
+    "This byte-identical nested archive was saved from the downloaded official repository. Its binaries were not executed. Source licence terms do not automatically establish a licence for every bundled binary."
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "schema": "md-sim-research-evidence-inputs/1",
+  "claim": "Bounded static archive roles and FPGA identities; no firmware execution or hardware compatibility result",
+  "files": [
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-CONTROL/CONTROL",
+      "sha256": "86a9820f260f158919fb31d43c8f4f005d7dc7976feb0b8710e2e7ab578cb12c",
+      "size": 3021
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-CONTROL/lock.json",
+      "sha256": "4266779fe20355fcafe042e93080287acdbb7973e6dcff1cce9005dca16da470",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-CONTROL/process-spec.json",
+      "sha256": "6fabab538a73deedafd666b5412fe7900af33633ecf3d1e3279297ff226c0589",
+      "size": 1691
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-CONTROL/result.json",
+      "sha256": "ff8759feb9d3ce84364d5c4ae9cf135b0895b4290da1a90da7687596136f5cbc",
+      "size": 6756
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-nested-equality/lock.json",
+      "sha256": "c86d5d2c1a52f0ec8e3a088e1dd89b85d373655468deb040755653465caa6265",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-nested-equality/process-spec.json",
+      "sha256": "d19a3e79ff181e9edd065f8b87c28d07c42fab9558fcfc3dc980f3db1a016d45",
+      "size": 2716
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-nested-equality/result.json",
+      "sha256": "f5c59a628c12ba1420e0d0597573e083ee412f797f33c0ab121d314d3e3a58c7",
+      "size": 714
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage1.sh/lock.json",
+      "sha256": "c5553e8b01cb5610100bda812cf90147311d48462007f4d827ad432199a7a4b0",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage1.sh/process-spec.json",
+      "sha256": "95d23eae485774332784acaf825eb9be08249fdd7acca6280b1b1cb2b3acc2dd",
+      "size": 1693
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage1.sh/result.json",
+      "sha256": "d66cf3143e9addce6315a714525b9edc468bf2094ef65f55cc10859048b098bf",
+      "size": 8414
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage1.sh/stage1.sh",
+      "sha256": "60b424106ed0308a3291bf504e781285716146f42982b5858fb782e6a0fd0942",
+      "size": 3850
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-equality/lock.json",
+      "sha256": "ccffd9a65a03c06209ea8d34f406bc9f1e015114687ab44aac77cbeea86a90ce",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-equality/process-spec.json",
+      "sha256": "ea28ac59def3b9d998ed80627370a2d78a6c8adc6d40f5bba892d1c2611ba609",
+      "size": 2758
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-equality/result.json",
+      "sha256": "65824396407488b839f3f66fda75d2ef21882cf4479cc759292300f93b22041f",
+      "size": 713
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/header.json",
+      "sha256": "5a710f1de1b087050ded2796b99369e31a8fa131dc36acf27456c10427a483ba",
+      "size": 650429
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/limits.json",
+      "sha256": "6f0d15ad1abfe4f9caeb5b2fb28dfe678e01e443701558a54c8b29ffbd320419",
+      "size": 93
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/inputs/store.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/result.json",
+      "sha256": "c71d23dc1db515a7f1e652576b16dd76ebddfc0efb64a92cab78c7f10b4efc61",
+      "size": 1301571
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/spec.json",
+      "sha256": "de6b13073b5b1f696c19456737bf3bd32a13d6bd8896c1de83f571afc2b7f154",
+      "size": 1755
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-list/lock.json",
+      "sha256": "73f5af59df4d61ff66c1de2fe888800c6275a753cfbd967a916020e133e1c1e5",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-list/members.txt",
+      "sha256": "d3df32ed7fb0b3f96dc6fa05aadd94fb804e8b53cad605b0167352ffcc9ed465",
+      "size": 426
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-list/process-spec.json",
+      "sha256": "0fba563f0913b7da6e86ea23ed2abb900568cff3657c944940e009e5b1018747",
+      "size": 2330
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-list/result.json",
+      "sha256": "c9be04c984601956d076b65280c42f35e5338466744aba9d7759ea7138c4d225",
+      "size": 1566
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-stage2.sh/lock.json",
+      "sha256": "946515b5d904624d5a9b558c6e03c8b1fc1e8b8d13444557c53e032033c200af",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-stage2.sh/process-spec.json",
+      "sha256": "dc637e64ed86f620d29e1ec0008d4fda1a487ab5d9ae96afcfe0562d30a8e507",
+      "size": 2348
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-stage2.sh/result.json",
+      "sha256": "178ca3b97420cd57e743cecfa3f166896eec0cc017b174f0f78c223e6406e099",
+      "size": 6330
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-stage2.sh/stage2.sh",
+      "sha256": "f0b0390acc3c203e75ea0ebb604ea59b7c6c55b06cb886ce5e82be84a3dddd15",
+      "size": 2808
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-system.bit.gz/lock.json",
+      "sha256": "8de24fc6f7d748688a912081537fc1323ae7e06364b03ee69f88baa2dd6665fd",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-system.bit.gz/process-spec.json",
+      "sha256": "f6d1e9e2fb3e83a9201ad42766c30283c9b42a9943b23de331e2d3ad758710d7",
+      "size": 2352
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-system.bit.gz/result.json",
+      "sha256": "0cf9c138d9bc92bb92f45778b195de39615143fae211bb45d3b711120f2deafc",
+      "size": 956338
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-system.bit.gz/system.bit.gz",
+      "sha256": "37cff73235eb7e1236e53612fc6201ee300588a773db9e82b36fce2623ed2b87",
+      "size": 477812
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage3.sh/lock.json",
+      "sha256": "67208ff8682eb014eae99fe67b81940c014d6ecc09ac9023bae671607c53edd3",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage3.sh/process-spec.json",
+      "sha256": "48373965b6a9885f7bb2e748576d69b7e290da81ffa6f84b695a5fbdb06f28c2",
+      "size": 1697
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage3.sh/result.json",
+      "sha256": "32b0c35cb373dbf53eb7a6c4414ec14506d37bd7bfafcc72fe347efb237c842e",
+      "size": 4094
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage3.sh/stage3.sh",
+      "sha256": "2d32997e4212309cdc0d8563ead22d9c901273a6011fb73971fe593bf482d485",
+      "size": 1690
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-upgrade2bos.py/lock.json",
+      "sha256": "b25f1a9fe2465cb2eb86d528e6d9298363a7b9d9db550c274541738419c5c0b8",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-upgrade2bos.py/process-spec.json",
+      "sha256": "5d8d530158036827469e98eb229099e5d8ce535c4c89cedc10b79a11e55fd625",
+      "size": 1689
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-upgrade2bos.py/result.json",
+      "sha256": "4c59d4f35884e0fe5b764e5427828208a79b3c4b653c1c4faf726e0e12189249",
+      "size": 16944
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-upgrade2bos.py/upgrade2bos.py",
+      "sha256": "5e3a4852d1e1e017f06023f942bac6b183bfa3f8a70dea75432e8126dca160a0",
+      "size": 8115
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-COMMAND/COMMAND",
+      "sha256": "7a3021530478350421b75395c5cdaa4d68529db517bbf2bc2266b89296b45ee1",
+      "size": 8231
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-COMMAND/lock.json",
+      "sha256": "1aba474dd8cf914a9b7b1ecb0c25b8a19de06538be51401ba7b536d279e8f176",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-COMMAND/process-spec.json",
+      "sha256": "75dae809269db0d2e8a2e32eb0fadc644624792914c4275c1e5e6a48c81916db",
+      "size": 1620
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-COMMAND/result.json",
+      "sha256": "a24783dbcb1706b23257dd1f760563760a4c840b56228805dfa84ebbafec83fb",
+      "size": 17175
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-CONTROL/CONTROL",
+      "sha256": "60eace2dededf0595e8703987a99a1dcea18349092af5d1f8bc5770b8ebc27ef",
+      "size": 13
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-CONTROL/lock.json",
+      "sha256": "42bfd0ae88a7efe8429b1f0e72c30c4f5cd8705a94a572758a13e164b0308598",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-CONTROL/process-spec.json",
+      "sha256": "72b7e5ddd5478421c30a8c3341eb0670746d83c4a1cd16eec71693988e3bd779",
+      "size": 1620
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-CONTROL/result.json",
+      "sha256": "e7c78f424b3a1f5cfa6b9392884fb045ebad73f584fa8523cce56fe51ca944d7",
+      "size": 739
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-fpga/fpga",
+      "sha256": "c606e69af819414148e1d93c4ebf2d3d3d26e9e74db5200c45562cd132f47adf",
+      "size": 157132
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-fpga/lock.json",
+      "sha256": "619155d82c94906adcef464ba8711ba5e5ebe508c9dbd6573516a35184cd37be",
+      "size": 383
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-fpga/process-spec.json",
+      "sha256": "1c59cdc15e9634000222df47d01338769a45c8563887d24f29bde0584accac3b",
+      "size": 1617
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-fpga/result.json",
+      "sha256": "d611f2abda94f2f2935ff05ad28b3fb6324db159311fd450a98f5b68d024d1d4",
+      "size": 314977
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/header.json",
+      "sha256": "da88ff9e0f2cb79d8055b38828beb80804960a91cd111938c2d53e2287f163bd",
+      "size": 650300
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/limits.json",
+      "sha256": "6f0d15ad1abfe4f9caeb5b2fb28dfe678e01e443701558a54c8b29ffbd320419",
+      "size": 93
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/inputs/store.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/result.json",
+      "sha256": "d959b869c4385a83c12da6961bbd9005074edb718fa3537d0c33847ffb6250ec",
+      "size": 1301313
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/spec.json",
+      "sha256": "8b76ab3aa5b591244ff9d34a6be9621785f9e57faeb12b52e7c5999076b29e3d",
+      "size": 1755
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-archive-role-435-index.json",
+      "sha256": "d071fdf6253451c71e4bd8e3a7e5cb09345d7a96e79687d3bd69a3d2d776e35e",
+      "size": 317
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-archive-role-435-members.json",
+      "sha256": "1ac2518ba337d1013174633a0d76a59b862f6e9c8b2b4333f1ac96a088797c53",
+      "size": 3847
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-archive-role-435.md",
+      "sha256": "415f71c885c19252914864b8c5d1c80a18748d332075bb85b1bb693764b786a0",
+      "size": 7483
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-cleanup-435-complete.json",
+      "sha256": "2080b146e7f5e442c90b10ef07c79a77c508615eb6b164a95a7d3a16024b1382",
+      "size": 14205
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-cleanup-435.json",
+      "sha256": "b65ca01018362bf52550f14faa2ea1ba4a76f6342f1b95e4283ec0de52ffc4e8",
+      "size": 4020
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-import-435.log",
+      "sha256": "d0438697e7a7d4ffcc77ae7ddfe27f294d3e5cf44c44b10f5a1dab680db4e007",
+      "size": 1688
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-CONTROL-spec.json",
+      "sha256": "71ef1d80135dc9896461d42a7bc289f06dc125e66a0152a31f0c4fbaf8cbd5bb",
+      "size": 1733
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-CONTROL.log",
+      "sha256": "57302e90b8d7ab4ef3c65a695b31787858d81bb54c9b6356d9ce755098dd6094",
+      "size": 185
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-baseline-import.log",
+      "sha256": "9dd516615a6bb00df1583168ac0283b65cc0935d0ddb2cb6593c6321935ad958",
+      "size": 281
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-extra-import.log",
+      "sha256": "90f79b5b26249af35c5599944b3d8b54a2e7474415db32f75c460f208d623d31",
+      "size": 1407
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-extra-inputs.json",
+      "sha256": "6320460a6add6e91bbb81b8201a9fc4fc26baa7b7794240ef63a6858ce7f2d0c",
+      "size": 1028
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-nested-equality-spec.json",
+      "sha256": "659e87371afacb7f0ade4c1fcf274caee418f1ed9576b6183b975aa532fdfa7a",
+      "size": 2758
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-nested-equality.log",
+      "sha256": "794dde4a50f8b622233b2050684382aa32b3eeeef05e13e1a81e2ccac2dd23a9",
+      "size": 193
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-results.json",
+      "sha256": "2e29b411dffdf7ca667a57a6cfadd889e1d6339c721cd0916e196af03358e7c6",
+      "size": 3815
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage1.sh-spec.json",
+      "sha256": "2a8054e5a7e4a04c99f176a9d8f23c24b475eaa1a0c505dbfec2c54235330b3c",
+      "size": 1735
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage1.sh.log",
+      "sha256": "8a3ae1fe31cb010fbf7d04cbf5db96ba412cdf32f320b67739f56cb793b358ea",
+      "size": 187
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-equality-spec.json",
+      "sha256": "38f167ba4aa431093d452699934353247b9cd868d3a7c063e9112c36f48b3762",
+      "size": 2800
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-equality.log",
+      "sha256": "b6d7e521ac97354cae4a454adc22216828f4ed512fe53148d229e532e575e7e6",
+      "size": 193
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-list-spec.json",
+      "sha256": "cae320f35e3a62677ae384afc72814b35949683963eb11fad644fe6d70b2f191",
+      "size": 2372
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-list.log",
+      "sha256": "f259f811941ee7215d16efecadceeafe661e58fd24ea0873eeac72fb733f08f2",
+      "size": 189
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-probe.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-stage2.sh-spec.json",
+      "sha256": "675bf52009fe162d8d3c93a50b6343d70c96a470f9ff414d6976aae6fb5fa1f2",
+      "size": 2390
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-stage2.sh.log",
+      "sha256": "79c10ce1b6c57a4175e98ef280c30ce5d01279b9b20b3bab4a583814d4895dbe",
+      "size": 194
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-system.bit.gz-spec.json",
+      "sha256": "b1e5cfda2e5abfe13ed84e77e200a66aaf91d85c5669d150577c7f12b8785922",
+      "size": 2394
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage2-system.bit.gz.log",
+      "sha256": "290550e030e7900198756e4275feb9364d50b9ccfbb9d193ff288b8a85fa92d3",
+      "size": 198
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage3.sh-spec.json",
+      "sha256": "258f14d7bc781631803b53be2ef58bff99532463d4139d0d04506edf79fc9e92",
+      "size": 1739
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-stage3.sh.log",
+      "sha256": "6fb55017f3c2aeb83fd6a003eec764c1e36e1198d0d7d438859d03c736bd5551",
+      "size": 187
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-upgrade2bos.py-spec.json",
+      "sha256": "df544e7a35a6f13b426efb86ed31130c7e4c4b616f8b2eda483ad4386cda8c36",
+      "size": 1731
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-role-435-upgrade2bos.py.log",
+      "sha256": "45fb9a83e78fe7aecb58b478eb1eeea24c7e4442fc0d64a41a50eec145a6b863",
+      "size": 192
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-update-435-COMMAND-spec.json",
+      "sha256": "1717919e1bc55b23eb4823c3d0b447236300bc50ddf77567669e2c77eb6367fc",
+      "size": 1662
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-update-435-COMMAND.log",
+      "sha256": "c689e158658c5999333e31852a15dea789ada42714e85b81f612ecc6a6914ae1",
+      "size": 187
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-update-435-CONTROL-spec.json",
+      "sha256": "c7b90f558b0e491a9ec48cf65545dcb31db9bdc619b0f51655158730e6383991",
+      "size": 1662
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-update-435-CONTROL.log",
+      "sha256": "28006922c528c89efe7f47e05611bc102501c0f0418558f1cb5817cba1961aec",
+      "size": 187
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-update-435-fpga-spec.json",
+      "sha256": "52fb3dc360736ca6ad69cd736063fa793baa777389c4f09f607485857d981ea1",
+      "size": 1659
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-update-435-fpga.log",
+      "sha256": "259df332bb866e0fe5e0c69f4a91898049fa48434b76baa66228da69be5a1a8d",
+      "size": 184
+    },
+    {
+      "path": "work/simulator/reviews/older-s9-update-435-probe.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  ]
+}

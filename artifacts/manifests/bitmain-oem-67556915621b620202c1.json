@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-67556915621b620202c1",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b030ee60-d889-4f70-adaa-f45ee8d54c31/2020/01/06/19/Antminer-S9k-user-OM-201912131001-sig_4859.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S9k-user-OM-201912131001-sig_4859.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:39:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-67556915621b620202c1/ANTMINER-S9k-user-OM-201912131001-sig_4859.tar.gz",
+  "sha256": "ff41b9e13d305ff3714aea6644ff06c3c0f0daf5af692a23eafba08d1284e3ef",
+  "size_bytes": 31646371,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b030ee60-d889-4f70-adaa-f45ee8d54c31/2020/01/06/19/Antminer-S9k-user-OM-201912131001-sig_4859.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"9fffd3b321ddf3dd405a6261b7ceb8d2-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 31646371,
+      "actual": 31646371,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

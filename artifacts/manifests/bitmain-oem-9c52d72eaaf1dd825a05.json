@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-9c52d72eaaf1dd825a05",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4736ebef-b7d9-45d0-bd53-fb114d94787e/2022/01/19/18/S9%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "S9 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-9c52d72eaaf1dd825a05/S9_Server_Manual.pdf",
+  "sha256": "cb0c40acb8a06b3a367a06149fbbecf94a8b1a2e6b03767e429c7428c32ad52b",
+  "size_bytes": 1355644,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/4736ebef-b7d9-45d0-bd53-fb114d94787e/2022/01/19/18/S9%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:15:41 GMT",
+  "etag": "\"ddc83de80f9966b7af7496d97cd885a4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1355644,
+      "actual": 1355644,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

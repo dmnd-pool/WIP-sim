@@ -1,0 +1,132 @@
+{
+  "schema": "md-sim-bounded-archive-role-results/1",
+  "runs": [
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-CONTROL/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 3021,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 130
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-nested-equality/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 120
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage1.sh/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 3850,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 140
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-equality/result.json",
+      "status": "exited",
+      "exit_code": 1,
+      "trace_truncated": false,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 90
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-frames/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 650429,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 70
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-list/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 426,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 150
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-stage2.sh/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 2808,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 140
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage2-system.bit.gz/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 477812,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 140
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-stage3.sh/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 1690,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 140
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-role-435-upgrade2bos.py/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 8115,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 120
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-COMMAND/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 8231,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 10
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-CONTROL/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 13,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 10
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-fpga/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 157132,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 10
+    },
+    {
+      "path": "work/simulator/qemu-s9/older-s9-update-435-frames/result.json",
+      "status": "exited",
+      "exit_code": 0,
+      "trace_truncated": false,
+      "stdout_bytes": 650300,
+      "stderr_bytes": 0,
+      "wall_milliseconds": 91
+    }
+  ],
+  "limits": "Static extraction, byte comparison and bitstream inspection only. No installer or firmware execution."
+}

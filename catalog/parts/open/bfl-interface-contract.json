@@ -1,0 +1,421 @@
+{
+  "source_id": "open-luke-jr-bitforce-sc",
+  "source_commit": "1d5e2f86b375e6db338f422d38d12190b462248f",
+  "scope": "bitcoin-asic",
+  "executed": false,
+  "mcu": "AT32UC3A1256",
+  "toolchain": "Atmel Studio AVR GCC32 project; ASF version 2.11.1 listed; JTAG debug configuration",
+  "build_defaults": {
+    "platform": "AVR32",
+    "mcu_clock_mhz": 32,
+    "model_macro": "__PRODUCT_MODEL_SINGLE__",
+    "NO_XLINK": true,
+    "TUNE_DOWN_TO_60GH": true,
+    "default_chip_array_slots": 16
+  },
+  "other_conditional_model_macros": [
+    "__PRODUCT_MODEL_JALAPENO__",
+    "__PRODUCT_MODEL_LITTLE_SINGLE__",
+    "__PRODUCT_MODEL_MINIRIG__"
+  ],
+  "conflicts": [
+    "UNIT_FIRMWARE_TYPE contains JALAPENO while the active model macro selects SINGLE. This string cannot identify the physical model.",
+    "One frequency conditional uses __PRODUCT_MODEL_JALAPENO without the final double underscore. The defined model selector is __PRODUCT_MODEL_JALAPENO__. Preserve source behaviour rather than silently correcting it.",
+    "TOTAL_CHIPS_INSTALLED selects 8 slots for Jalapeno/Little Single and 16 otherwise. Do not use this allocation/loop constant as a verified fitted chip count."
+  ],
+  "commands": [
+    {
+      "macro": "PROTOCOL_REQ_INFO_REQUEST",
+      "command": "ZCX",
+      "source_line": 40,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_HANDLE_JOB",
+      "command": "ZDX",
+      "source_line": 41,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_HANDLE_JOB_P2POOL",
+      "command": "ZPX",
+      "source_line": 42,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_GET_STATUS",
+      "command": "ZFX",
+      "source_line": 43,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_ID",
+      "command": "ZGX",
+      "source_line": 44,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_GET_FIRMWARE_VERSION",
+      "command": "ZJX",
+      "source_line": 45,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_TEMPERATURE",
+      "command": "ZLX",
+      "source_line": 46,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_BLINK",
+      "command": "ZMX",
+      "source_line": 47,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_BUF_PUSH_JOB",
+      "command": "ZNX",
+      "source_line": 48,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_BUF_PUSH_JOB_PACK",
+      "command": "ZWX",
+      "source_line": 49,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_BUF_STATUS",
+      "command": "ZOX",
+      "source_line": 50,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_BUF_FLUSH",
+      "command": "ZQX",
+      "source_line": 51,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_BUF_FLUSH_EX",
+      "command": "ZqX",
+      "source_line": 52,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_GET_VOLTAGES",
+      "command": "ZTX",
+      "source_line": 53,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_PRESENCE_DETECTION",
+      "command": "ZRX",
+      "source_line": 54,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_GET_CHAIN_LENGTH",
+      "command": "ZXX",
+      "source_line": 55,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_SET_FREQ_FACTOR",
+      "command": "ZVX",
+      "source_line": 56,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_GET_FREQ_FACTOR",
+      "command": "ZKX",
+      "source_line": 57,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_SET_XLINK_ADDRESS",
+      "command": "ZEX",
+      "source_line": 58,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_XLINK_ALLOW_PASS",
+      "command": "ZHX",
+      "source_line": 59,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_XLINK_DENY_PASS",
+      "command": "ZIX",
+      "source_line": 60,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_ECHO",
+      "command": "ZAX",
+      "source_line": 61,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_TEST_COMMAND",
+      "command": "ZBX",
+      "source_line": 62,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_SAVE_STRING",
+      "command": "ZSX",
+      "source_line": 64,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_LOAD_STRING",
+      "command": "ZUX",
+      "source_line": 65,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_FAN_VERY_SLOW",
+      "command": "Z0X",
+      "source_line": 68,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_FAN_SLOW",
+      "command": "Z1X",
+      "source_line": 69,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_FAN_MEDIUM",
+      "command": "Z2X",
+      "source_line": 70,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_FAN_FAST",
+      "command": "Z3X",
+      "source_line": 71,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_FAN_VERY_FAST",
+      "command": "Z4X",
+      "source_line": 72,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    },
+    {
+      "macro": "PROTOCOL_REQ_FAN_AUTO",
+      "command": "Z9X",
+      "source_line": 73,
+      "note": "Macro definition only; handler availability depends on the dispatcher and build flags."
+    }
+  ],
+  "literal_register_addresses": [
+    {
+      "macro": "AVR32_POSCSR",
+      "literal_address": 4294904916,
+      "source_line": 12
+    },
+    {
+      "macro": "AVR32_PLL0",
+      "literal_address": 4294904864,
+      "source_line": 13
+    },
+    {
+      "macro": "AVR32_PLL1",
+      "literal_address": 4294904868,
+      "source_line": 14
+    },
+    {
+      "macro": "AVR32_OSCCTRL0",
+      "literal_address": 4294904872,
+      "source_line": 15
+    },
+    {
+      "macro": "AVR32_MCCTRL",
+      "literal_address": 4294904832,
+      "source_line": 16
+    },
+    {
+      "macro": "AVR32_CKSEL",
+      "literal_address": 4294904836,
+      "source_line": 17
+    },
+    {
+      "macro": "AVR32_GCCTRL",
+      "literal_address": 4294904928,
+      "source_line": 18
+    },
+    {
+      "macro": "AVR32_PBAMASK",
+      "literal_address": 4294904848,
+      "source_line": 19
+    },
+    {
+      "macro": "AVR32_SPI0_CR",
+      "literal_address": 4294910976,
+      "source_line": 21
+    },
+    {
+      "macro": "AVR32_SPI0_MR",
+      "literal_address": 4294910980,
+      "source_line": 22
+    },
+    {
+      "macro": "AVR32_SPI0_CSR0",
+      "literal_address": 4294911024,
+      "source_line": 23
+    },
+    {
+      "macro": "AVR32_SPI0_TDR",
+      "literal_address": 4294910988,
+      "source_line": 24
+    },
+    {
+      "macro": "AVR32_SPI0_RDR",
+      "literal_address": 4294910984,
+      "source_line": 25
+    },
+    {
+      "macro": "AVR32_SPI0_SR",
+      "literal_address": 4294910992,
+      "source_line": 26
+    },
+    {
+      "macro": "AVR32_SPI1_CR",
+      "literal_address": 4294912000,
+      "source_line": 28
+    },
+    {
+      "macro": "AVR32_SPI1_MR",
+      "literal_address": 4294912004,
+      "source_line": 29
+    },
+    {
+      "macro": "AVR32_SPI1_CSR0",
+      "literal_address": 4294912048,
+      "source_line": 30
+    },
+    {
+      "macro": "AVR32_SPI1_TDR",
+      "literal_address": 4294912012,
+      "source_line": 31
+    },
+    {
+      "macro": "AVR32_SPI1_RDR",
+      "literal_address": 4294912008,
+      "source_line": 32
+    },
+    {
+      "macro": "AVR32_SPI1_SR",
+      "literal_address": 4294912016,
+      "source_line": 33
+    },
+    {
+      "macro": "AVR32_FLASHC_MAIN",
+      "literal_address": 4294841344,
+      "source_line": 35
+    },
+    {
+      "macro": "AVR32_FLASHC_CONTROL",
+      "literal_address": 4294841344,
+      "source_line": 36
+    },
+    {
+      "macro": "AVR32_FLASHC_COMMAND",
+      "literal_address": 4294841348,
+      "source_line": 37
+    },
+    {
+      "macro": "AVR32_FLASHC_STATUS",
+      "literal_address": 4294841352,
+      "source_line": 38
+    },
+    {
+      "macro": "AVR32_A2D_BASE_ADDRESS",
+      "literal_address": 4294917120,
+      "source_line": 56
+    },
+    {
+      "macro": "AVR32_A2D_CONTROL_REGISTER_ADRS",
+      "literal_address": 0,
+      "source_line": 57
+    },
+    {
+      "macro": "AVR32_A2D_MODE_REGISTER_ADRS",
+      "literal_address": 4,
+      "source_line": 58
+    },
+    {
+      "macro": "AVR32_A2D_CHANNEL_ENABLE_REGISTER_ADRS",
+      "literal_address": 16,
+      "source_line": 59
+    },
+    {
+      "macro": "AVR32_A2D_CHANNEL_STATUS_REGISTER_ADRS",
+      "literal_address": 24,
+      "source_line": 60
+    },
+    {
+      "macro": "AVR32_A2D_STATUS_REGISTER_ADRS",
+      "literal_address": 28,
+      "source_line": 61
+    },
+    {
+      "macro": "AVR32_A2D_CDR0_ADRS",
+      "literal_address": 48,
+      "source_line": 62
+    },
+    {
+      "macro": "AVR32_A2D_CDR1_ADRS",
+      "literal_address": 52,
+      "source_line": 63
+    },
+    {
+      "macro": "AVR32_A2D_CDR2_ADRS",
+      "literal_address": 56,
+      "source_line": 64
+    },
+    {
+      "macro": "AVR32_A2D_CDR3_ADRS",
+      "literal_address": 60,
+      "source_line": 65
+    },
+    {
+      "macro": "AVR32_A2D_CDR4_ADRS",
+      "literal_address": 64,
+      "source_line": 66
+    },
+    {
+      "macro": "AVR32_A2D_CDR5_ADRS",
+      "literal_address": 68,
+      "source_line": 67
+    },
+    {
+      "macro": "AVR32_A2D_CDR6_ADRS",
+      "literal_address": 72,
+      "source_line": 68
+    },
+    {
+      "macro": "AVR32_A2D_CDR7_ADRS",
+      "literal_address": 76,
+      "source_line": 69
+    }
+  ],
+  "protocol_limits": [
+    "The Z_X command definitions do not all prove active handlers for every build.",
+    "ZMX is an LED blink command, not a firmware flashing command.",
+    "The NVRAM save/load commands change or return a persistent scratch string.",
+    "STM32 and PIC32 directories are interface placeholders; their presence does not prove working target firmware."
+  ],
+  "license_note": "No project-wide license file was found in the captured source; public availability is not proof of unrestricted reuse.",
+  "source_files": [
+    "BitForce_SC/BitForce_SC.cproj",
+    "BitForce_SC/std_defs.h",
+    "BitForce_SC/HostInteractionProtocols.h",
+    "BitForce_SC/HostInteractionProtocols.c",
+    "BitForce_SC/Main_BitforceSC.c",
+    "BitForce_SC/AVR32X/AVR32_Module.h"
+  ]
+}

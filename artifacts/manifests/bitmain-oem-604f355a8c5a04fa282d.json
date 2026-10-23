@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-604f355a8c5a04fa282d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6a2f3e9b-9cb2-42c2-ab9e-add856d76dfa/2023/07/27/16/S19j%20Pro%2B%20Manual.pdf",
+  "kind": "document",
+  "title": "S19j Pro+ Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-604f355a8c5a04fa282d/S19j_Pro+_Manual.pdf",
+  "sha256": "862401ca1789aea974d4ad8ca89aac2e600f869155f91f2e9af1bc396b96a0fc",
+  "size_bytes": 1018637,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6a2f3e9b-9cb2-42c2-ab9e-add856d76dfa/2023/07/27/16/S19j%20Pro%2B%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:07:26 GMT",
+  "etag": "\"f20bf4daebacff0e4223f3bb5dc85496\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1018637,
+      "actual": 1018637,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

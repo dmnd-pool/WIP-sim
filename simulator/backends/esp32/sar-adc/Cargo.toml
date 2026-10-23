@@ -1,0 +1,17 @@
+[package]
+name = "md-sim-esp32s3-sar"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-2.0-or-later"
+publish = false
+
+[workspace]
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-aff9e872757867c68f71",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/df161e40-5150-4e81-ab43-4054b78be93a/2025/10/27/20/FR-1.42(251016-S21e%20Hyd.).bmu",
+  "kind": "firmware",
+  "title": "FR-1.42(251016-S21e Hyd.).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:28+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-aff9e872757867c68f71/FR-1.42_251016-S21e_Hyd._.bmu",
+  "sha256": "4c8343588ec93ce2395f0ea2fd2cb1d40d2cb88ff222d4d9f91f556a443ba660",
+  "size_bytes": 31518194,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/df161e40-5150-4e81-ab43-4054b78be93a/2025/10/27/20/FR-1.42(251016-S21e%20Hyd.).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Mon, 27 Oct 2025 12:21:06 GMT",
+  "etag": "\"684efb616a07f67730a423c773a5881c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 31518194,
+      "actual": 31518194,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "684efb616a07f67730a423c773a5881c",
+      "actual": "684efb616a07f67730a423c773a5881c",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,527 @@
+{
+  "schema": "md-sim-series7-inspection/1",
+  "scope": "Configuration packet integrity and preparation only. No exact FPGA behavior, original-board, hardware compatibility or new mining pass.",
+  "component_checks_passed": true,
+  "full_specification_complete": false,
+  "full_exact_target_passes": 0,
+  "inspector": "Rust bounded Type1/Type2 writes, explicit unsupported forms, IDCODE, FDRI and startup CRC checks",
+  "cases": [
+    {
+      "name": "selected",
+      "expected_exit_code": 0,
+      "observed_exit_code": 0,
+      "expected_behavior_observed": true,
+      "spec": {
+        "path": "work/simulator/qemu-s9/series7-selected-288/spec.json",
+        "sha256": "94ccc833acaaec015e973555be7bcec560e492f5e25b1f7d1c23f0b1f85395d9",
+        "size": 1502
+      },
+      "result": {
+        "path": "work/simulator/qemu-s9/series7-selected-288/result.json",
+        "sha256": "4ca5f4fb8a28adf53a8aa2878e34a9d7c453b77807c4e6fcce990e3a8401ceaf",
+        "size": 6237
+      },
+      "report": {
+        "path": "work/simulator/qemu-s9/series7-selected-288/header.json",
+        "sha256": "87ea092897ec59ef87c3481bc515766ade70e7205b2108eefcdf1fb007ab63ed",
+        "size": 2762
+      },
+      "expanded_sha256": "980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421",
+      "configuration": {
+        "crc_checks": [
+          {
+            "byte_offset": 2081648,
+            "computed": 376596497,
+            "expected": 376596497
+          },
+          {
+            "byte_offset": 2082120,
+            "computed": 3819798181,
+            "expected": 3819798181
+          }
+        ],
+        "frame_data": {
+          "byte_offset": 236,
+          "initial_far": 0,
+          "sha256": "2b3cb98f401cd97231d71603d080483a36a9d35f917345b2e3bd435892a09905",
+          "words": 520352
+        },
+        "idcode": 57811091,
+        "nop_count": 520,
+        "packet_count": 546,
+        "register_writes": [
+          {
+            "address": 17,
+            "byte_offset": 60,
+            "value": 0
+          },
+          {
+            "address": 16,
+            "byte_offset": 68,
+            "value": 0
+          },
+          {
+            "address": 4,
+            "byte_offset": 76,
+            "value": 0
+          },
+          {
+            "address": 4,
+            "byte_offset": 88,
+            "value": 7
+          },
+          {
+            "address": 19,
+            "byte_offset": 104,
+            "value": 0
+          },
+          {
+            "address": 9,
+            "byte_offset": 112,
+            "value": 33570789
+          },
+          {
+            "address": 14,
+            "byte_offset": 120,
+            "value": 0
+          },
+          {
+            "address": 12,
+            "byte_offset": 128,
+            "value": 57811091
+          },
+          {
+            "address": 4,
+            "byte_offset": 136,
+            "value": 9
+          },
+          {
+            "address": 6,
+            "byte_offset": 148,
+            "value": 1025
+          },
+          {
+            "address": 5,
+            "byte_offset": 156,
+            "value": 1281
+          },
+          {
+            "address": 6,
+            "byte_offset": 164,
+            "value": 0
+          },
+          {
+            "address": 24,
+            "byte_offset": 172,
+            "value": 0
+          },
+          {
+            "address": 1,
+            "byte_offset": 212,
+            "value": 0
+          },
+          {
+            "address": 4,
+            "byte_offset": 220,
+            "value": 1
+          },
+          {
+            "address": 0,
+            "byte_offset": 2081648,
+            "value": 376596497
+          },
+          {
+            "address": 4,
+            "byte_offset": 2081664,
+            "value": 10
+          },
+          {
+            "address": 4,
+            "byte_offset": 2081676,
+            "value": 3
+          },
+          {
+            "address": 4,
+            "byte_offset": 2082084,
+            "value": 5
+          },
+          {
+            "address": 1,
+            "byte_offset": 2082096,
+            "value": 62783488
+          },
+          {
+            "address": 6,
+            "byte_offset": 2082104,
+            "value": 1281
+          },
+          {
+            "address": 5,
+            "byte_offset": 2082112,
+            "value": 1281
+          },
+          {
+            "address": 0,
+            "byte_offset": 2082120,
+            "value": 3819798181
+          },
+          {
+            "address": 4,
+            "byte_offset": 2082136,
+            "value": 13
+          }
+        ],
+        "sync_byte_offset": 48,
+        "zero_padding_words": 0
+      },
+      "inspection_error": null
+    },
+    {
+      "name": "sd2020",
+      "expected_exit_code": 0,
+      "observed_exit_code": 0,
+      "expected_behavior_observed": true,
+      "spec": {
+        "path": "work/simulator/qemu-s9/series7-sd2020-288/spec.json",
+        "sha256": "50506e600cc35c501e7cb34881e6588cb99b0dc5a62908fa1452572ff8710097",
+        "size": 1502
+      },
+      "result": {
+        "path": "work/simulator/qemu-s9/series7-sd2020-288/result.json",
+        "sha256": "a331e5afb35de769eb1fd61b373bddc6e4db222d409893d1ba107347f2d86459",
+        "size": 6243
+      },
+      "report": {
+        "path": "work/simulator/qemu-s9/series7-sd2020-288/header.json",
+        "sha256": "3e4b8c1dbbcea60e9d77b52be3b934b6efe9f3236c808d85eebcdb978aed99db",
+        "size": 2765
+      },
+      "expanded_sha256": "569597aa2f59d69d135b5024016f31232bb2e54b0d2c00f5bdb29853ab564713",
+      "configuration": {
+        "crc_checks": [
+          {
+            "byte_offset": 2081648,
+            "computed": 1710450009,
+            "expected": 1710450009
+          },
+          {
+            "byte_offset": 2082120,
+            "computed": 3819798181,
+            "expected": 3819798181
+          }
+        ],
+        "frame_data": {
+          "byte_offset": 236,
+          "initial_far": 0,
+          "sha256": "0b1e14297eafb61ec2a6d78fcf887ee4d323d1091afb432a5224f116eca33b15",
+          "words": 520352
+        },
+        "idcode": 57811091,
+        "nop_count": 520,
+        "packet_count": 546,
+        "register_writes": [
+          {
+            "address": 17,
+            "byte_offset": 60,
+            "value": 0
+          },
+          {
+            "address": 16,
+            "byte_offset": 68,
+            "value": 0
+          },
+          {
+            "address": 4,
+            "byte_offset": 76,
+            "value": 0
+          },
+          {
+            "address": 4,
+            "byte_offset": 88,
+            "value": 7
+          },
+          {
+            "address": 19,
+            "byte_offset": 104,
+            "value": 0
+          },
+          {
+            "address": 9,
+            "byte_offset": 112,
+            "value": 33570789
+          },
+          {
+            "address": 14,
+            "byte_offset": 120,
+            "value": 0
+          },
+          {
+            "address": 12,
+            "byte_offset": 128,
+            "value": 57811091
+          },
+          {
+            "address": 4,
+            "byte_offset": 136,
+            "value": 9
+          },
+          {
+            "address": 6,
+            "byte_offset": 148,
+            "value": 1025
+          },
+          {
+            "address": 5,
+            "byte_offset": 156,
+            "value": 1281
+          },
+          {
+            "address": 6,
+            "byte_offset": 164,
+            "value": 0
+          },
+          {
+            "address": 24,
+            "byte_offset": 172,
+            "value": 0
+          },
+          {
+            "address": 1,
+            "byte_offset": 212,
+            "value": 0
+          },
+          {
+            "address": 4,
+            "byte_offset": 220,
+            "value": 1
+          },
+          {
+            "address": 0,
+            "byte_offset": 2081648,
+            "value": 1710450009
+          },
+          {
+            "address": 4,
+            "byte_offset": 2081664,
+            "value": 10
+          },
+          {
+            "address": 4,
+            "byte_offset": 2081676,
+            "value": 3
+          },
+          {
+            "address": 4,
+            "byte_offset": 2082084,
+            "value": 5
+          },
+          {
+            "address": 1,
+            "byte_offset": 2082096,
+            "value": 62783488
+          },
+          {
+            "address": 6,
+            "byte_offset": 2082104,
+            "value": 1281
+          },
+          {
+            "address": 5,
+            "byte_offset": 2082112,
+            "value": 1281
+          },
+          {
+            "address": 0,
+            "byte_offset": 2082120,
+            "value": 3819798181
+          },
+          {
+            "address": 4,
+            "byte_offset": 2082136,
+            "value": 13
+          }
+        ],
+        "sync_byte_offset": 48,
+        "zero_padding_words": 0
+      },
+      "inspection_error": null
+    },
+    {
+      "name": "corrupt",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "expected_behavior_observed": true,
+      "spec": {
+        "path": "work/simulator/qemu-s9/series7-corrupt-288/spec.json",
+        "sha256": "e8217ee57a264fce96334bf9e45ea04d9979e825b0981e53ce9cfec4232ad853",
+        "size": 1502
+      },
+      "result": {
+        "path": "work/simulator/qemu-s9/series7-corrupt-288/result.json",
+        "sha256": "bbf58228d0609e7742b533d8cfd1917511c57c07888eb1f441771e1f767aa9d5",
+        "size": 3683
+      },
+      "report": {
+        "path": "work/simulator/qemu-s9/series7-corrupt-288/header.json",
+        "sha256": "3654391df7f8c12e4c82ce9976ec715cba99b876e37e908dafb490f90abffed7",
+        "size": 1360
+      },
+      "expanded_sha256": "5b8d9aacf6559847605cc57556af69d5ed830940ef971e45fc1eea6078eb5374",
+      "configuration": null,
+      "inspection_error": "configuration packet at byte 2081644: configuration CRC mismatch: expected 16726811, computed 9c846657"
+    }
+  ],
+  "preparation": {
+    "result": {
+      "path": "work/simulator/original-zynq/sd-bundle-288/preparation-result.json",
+      "sha256": "e399f7bcfcabc9be6e52b46a7035beea44389edd307aa88e1caa34bc0410584a",
+      "size": 490
+    },
+    "manifest": {
+      "path": "work/simulator/original-zynq/sd-bundle-288/boot/bundle.json",
+      "sha256": "c10f00d38341a45bdb3be081ebf928961067cbcf5855f2b07ac2459920715071",
+      "size": 7073
+    },
+    "unchanged_original_components": [
+      {
+        "path": "work/simulator/original-zynq/sd-bundle-288/boot/system.bit",
+        "sha256": "980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421",
+        "size": 2083858
+      },
+      {
+        "path": "work/simulator/original-zynq/sd-bundle-288/boot/system.bit.gz",
+        "sha256": "bdf2b3bff4f5f06169b302ccfac8424e46bb2089b6313e363457bf2ae1d4bd40",
+        "size": 164570
+      },
+      {
+        "path": "work/simulator/original-zynq/sd-bundle-288/boot/boot.bin",
+        "sha256": "950d19c6e5bfd9d8107def130b19fc9a5f64d824b26c0c493d5fdfe8503edac4",
+        "size": 79263
+      },
+      {
+        "path": "work/simulator/original-zynq/sd-bundle-288/boot/u-boot.img",
+        "sha256": "80565aa18fdbdb655dcc5210ad48d036052ac94ac946efece6e4b54b19d0f550",
+        "size": 573276
+      },
+      {
+        "path": "work/simulator/original-zynq/sd-bundle-288/boot/fit.itb",
+        "sha256": "8b2a32020281aa67490c01633adf99c1a2ca6c9897e4c210bb6d0d001c15caca",
+        "size": 18333708
+      },
+      {
+        "path": "work/simulator/original-zynq/sd-bundle-288/boot/spl-payload.bin",
+        "sha256": "765efb23844156e976ba785c24a6a753c664504a499c64581d1c356a3f4c02df",
+        "size": 77023
+      },
+      {
+        "path": "work/simulator/original-zynq/sd-bundle-288/boot/uboot-payload.bin",
+        "sha256": "ce991c8b0255a287fb78163ac3763d496a5a473ec6810e35976d6ce42d100644",
+        "size": 573212
+      }
+    ]
+  },
+  "inputs": {
+    "path": "work/simulator/qemu-s9/series7-inputs-288/provenance.json",
+    "sha256": "3f5b9f814bf096165bb6c2f98c42d9a9d17f0cb00d6fe42ad968973ad0002327",
+    "size": 2117
+  },
+  "changed_sources": [
+    {
+      "path": "crates/md-sim-firmware/src/bitstream.rs",
+      "sha256": "29087a52596c80a5aa99f7d1ed3c792809e0181ad59443a684d8f62013685f07",
+      "size": 6169
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bitstream/series7.rs",
+      "sha256": "f18f76a97cfb2b00d04ff92120e3a17f84c0b761f0f24ee65358e26135e22915",
+      "size": 9784
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_bitstream_probe.rs",
+      "sha256": "8525c16586d2c7a306e9f06bb47176b7ad864c68c3aecd5512bfe8b963c52ac0",
+      "size": 3982
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_boot_bundle.rs",
+      "sha256": "81871e1890719d57427ae7ad6cff22377cc4bd75bf0247a50c8ad5f5b3a641af",
+      "size": 110161
+    },
+    {
+      "path": "crates/md-sim-firmware/tests/series7.rs",
+      "sha256": "c21b81c5c0a04d5b58ebc1949fc9995a36ecf865340c6151dcd9465019766ed2",
+      "size": 4828
+    }
+  ],
+  "tested_executables": [
+    {
+      "path": "work/simulator/check-target-085/release/examples/s9_bitstream_probe",
+      "sha256": "b14cb8a90611b0cf8a897a5709ea3fa7be8ca053d004810137717b259d61ac94",
+      "size": 1680984
+    },
+    {
+      "path": "work/simulator/check-target-085/release/examples/s9_boot_bundle",
+      "sha256": "fe47f8af98ff6f0585e05b316a3040a3d285a95a3a183f4b7f4075434a925f9e",
+      "size": 3552848
+    }
+  ],
+  "review": {
+    "kind": "author review",
+    "findings": [
+      "Array bounds require aligned input and checked packet lengths. Input and packet counts are bounded.",
+      "The inspector rejects unsupported encrypted/compressed modes, orphan Type2 packets and missing CRC evidence. It does not classify them as hardware incompatibility.",
+      "No CPU model, hardware topology, guest filter, rate or timing changes. Frozen demo284 helpers are unchanged.",
+      "Original bytes remain unchanged; negative corruption exists only as a separate diagnostic fixture.",
+      "Selected2020 FDRI and older2020 FDRI hashes differ. Shared silicon ID and packet counts do not prove logic equivalence."
+    ],
+    "independent_review": "Not performed. Existing agents remain unavailable under their reported account limit."
+  },
+  "checks": {
+    "new_unit_tests": 5,
+    "new_unit_tests_result": "passed",
+    "formatting": "passed",
+    "strict_clippy": "passed",
+    "workspace_tests": "passed",
+    "workspace_test_count": 580,
+    "workspace_test_binaries": 102,
+    "guide_links": "passed; 511 local links",
+    "affected_release_builds": "passed"
+  },
+  "next_action": "Expand configuration frame addresses with the pinned Project X-Ray part database. Validate row padding and complete coverage. Matching logic, reset sequencer parameters, netlist reconstruction and independent HDL execution remain open.",
+  "check_logs": [
+    {
+      "path": "work/simulator/checks-2026-10-21-001/fmt288.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/clippy288.log",
+      "sha256": "fb0db6ba0d9743bcce7a84e69825ff359580c25025b315eedd7a4da78d814f40",
+      "size": 240
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/test288.log",
+      "sha256": "862c963e2b7d662c188d979ae5b6898c7028067389b8774a1aa9a225d97701d3",
+      "size": 75286
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/links288.log",
+      "sha256": "724ea49459fd1a2615b47d5f165e71b4d318f9e109eb5a9955586030e2c7f53e",
+      "size": 176
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/series7-tests288.log",
+      "sha256": "3499f037d99ab13aeda51c8eba8e6d79011f20de0363efcd76279f85f0d87e59",
+      "size": 724
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/series7-build288.log",
+      "sha256": "c7d8a19c3a999964f9575b85cbc59e057d33a1b62c020cb6fcc04d0ac8da5bee",
+      "size": 145
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/series7-prepare288.log",
+      "sha256": "ea3e3ec31d2e6927d848a02e4b6c0b95e114df6d2b0ac896cb3cc2cc12580e9b",
+      "size": 197
+    }
+  ]
+}

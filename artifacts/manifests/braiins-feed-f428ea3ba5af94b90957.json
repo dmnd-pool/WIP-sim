@@ -1,0 +1,56 @@
+{
+  "id": "braiins-feed-f428ea3ba5af94b90957",
+  "url": "https://feeds.braiins-os.com/24.04.3/zynq-bm3-am2/firmware_2024-09-12-0-9dbf0134-24.04.3-plus_arm_cortex-a9_neon.ipk",
+  "kind": "metadata",
+  "title": "firmware_2024-09-12-0-9dbf0134-24.04.3-plus_arm_cortex-a9_neon.ipk",
+  "language": "en",
+  "source_id": "braiins-feed-root",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:24:06+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/braiins-feed-3d6164d9f644b4fb6a8f/firmware_2024-09-12-0-9dbf0134-24.04.3-plus_arm_cortex-a9_neon.ipk",
+  "sha256": "a47d1dfc0bc46078baab362235bd04c2fb5b78e076885a7aa604d4fd780c9871",
+  "size_bytes": 2687,
+  "executed": false,
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 12 Sep 2024 12:54:53 GMT",
+  "etag": "\"66e2e49d-a7f\"",
+  "alias_of": "braiins-feed-3d6164d9f644b4fb6a8f",
+  "alias_basis": "Identical SHA256 published by Braiins Packages, checksum file or release page",
+  "published_checksum_sources": [
+    "braiins-feed-1a832094179291c75fe5",
+    "braiins-feed-72808059b2f7d5b7d3e2"
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 2687,
+      "actual": 2687,
+      "match": true,
+      "source_id": "braiins-feed-1a832094179291c75fe5"
+    },
+    {
+      "field": "sha256",
+      "expected": "a47d1dfc0bc46078baab362235bd04c2fb5b78e076885a7aa604d4fd780c9871",
+      "actual": "a47d1dfc0bc46078baab362235bd04c2fb5b78e076885a7aa604d4fd780c9871",
+      "match": true,
+      "source_id": "braiins-feed-72808059b2f7d5b7d3e2"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 2687,
+      "actual": 2687,
+      "match": true,
+      "source_id": "braiins-feed-72808059b2f7d5b7d3e2"
+    },
+    {
+      "field": "sha256",
+      "expected": "a47d1dfc0bc46078baab362235bd04c2fb5b78e076885a7aa604d4fd780c9871",
+      "actual": "a47d1dfc0bc46078baab362235bd04c2fb5b78e076885a7aa604d4fd780c9871",
+      "match": true,
+      "source_id": "braiins-feed-1a832094179291c75fe5"
+    }
+  ],
+  "upstream_integrity_match": true
+}

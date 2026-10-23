@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-518bc0de2cbacf10ff2e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e3864934-1823-492b-8b18-05ef750c8d1b/2024/12/18/09/LVD-S21%20XP-CN24S25G%20002-24.11.4_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD-S21 XP-CN24S25G 002-24.11.4_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-518bc0de2cbacf10ff2e/LVD-S21_XP-CN24S25G_002-24.11.4_extsigned.pdf",
+  "sha256": "58d5636b94924b3bc33cf35bf3d6536f4103471b22d59eba02b733bf98db60c8",
+  "size_bytes": 1458846,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e3864934-1823-492b-8b18-05ef750c8d1b/2024/12/18/09/LVD-S21%20XP-CN24S25G%20002-24.11.4_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 18 Dec 2024 01:31:37 GMT",
+  "etag": "\"33e80de8435440fe7aa4a66e64bc1c95\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1458846,
+      "actual": 1458846,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

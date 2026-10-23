@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-22a1633d54c8c44f3e9c",
+  "url": "https://download.hiveos.farm/asic/custom/tojnet/Antminer-T9-all-Hiveon-1.03@201126-sign-tojnet-10.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T9-all-Hiveon-1.03@201126-sign-tojnet-10.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:13:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-22a1633d54c8c44f3e9c/Antminer-T9-all-Hiveon-1.03_201126-sign-tojnet-10.tar.gz",
+  "sha256": "b3e43b8c742591b8309e96674a15ddc3d3801734c754ced20084d8cf268f05b0",
+  "size_bytes": 21144733,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/tojnet/Antminer-T9-all-Hiveon-1.03@201126-sign-tojnet-10.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 26 Nov 2020 11:57:16 GMT",
+  "etag": "\"5fbf981c-142a49d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 21144733,
+      "actual": 21144733,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

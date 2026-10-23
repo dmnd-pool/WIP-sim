@@ -1,0 +1,22 @@
+{
+  "id": "hashcore-oci-e156bf0216c2d57bf1e4d411af5f03822a28906388e92a1d4543fc791e894d48",
+  "url": "https://public.ecr.aws/v2/k7t2c2k4/farm-proxy/blobs/sha256:e156bf0216c2d57bf1e4d411af5f03822a28906388e92a1d4543fc791e894d48",
+  "kind": "tool",
+  "title": "HashCore farm-proxy OCI layer",
+  "language": "und",
+  "source_id": "hashcore-proxy-deployment",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:39:43+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/hashcore-oci-e156bf0216c2d57bf1e4d411af5f03822a28906388e92a1d4543fc791e894d48/layer.tar.gz",
+  "sha256": "e156bf0216c2d57bf1e4d411af5f03822a28906388e92a1d4543fc791e894d48",
+  "size_bytes": 150,
+  "executed": false,
+  "content_role": "oci-layer",
+  "registry_digest": "sha256:e156bf0216c2d57bf1e4d411af5f03822a28906388e92a1d4543fc791e894d48",
+  "expected_size_bytes": 150,
+  "auth_method": "Anonymous public ECR pull token; token not saved",
+  "registry_digest_match": true,
+  "http_status": 200,
+  "content_type": "application/octet-stream"
+}

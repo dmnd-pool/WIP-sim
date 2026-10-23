@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-b093f42a66ecc045583c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e2e6b62f-1fbc-4d2e-9b61-f96e5cd8e396/2024/05/22/17/D9%20SVHC224%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "D9 SVHC224 Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:25+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-b093f42a66ecc045583c/D9_SVHC224_Shenzhen.pdf",
+  "sha256": "3855f3edf2e30935b7ee1d0166f0779734f1271ecaddfbe44be274a7272b2b47",
+  "size_bytes": 227477,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/e2e6b62f-1fbc-4d2e-9b61-f96e5cd8e396/2024/05/22/17/D9%20SVHC224%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 09:51:14 GMT",
+  "etag": "\"ef266e245fe36a39ab524fa785525c3d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 227477,
+      "actual": 227477,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

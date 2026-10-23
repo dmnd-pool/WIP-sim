@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-ede21e0d07e15ae2027f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-partition-tool.zip",
+  "kind": "firmware",
+  "title": "SD-partition-tool.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-ede21e0d07e15ae2027f/SD-partition-tool.zip",
+  "sha256": "0faa8c4f1b18f64b356c01b9896f713fb891dd4fe6220acabf7663ed2699178e",
+  "size_bytes": 18980748,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-partition-tool.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"b2bddd196dc7ec01cb85cefa914507ad-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 18980748,
+      "actual": 18980748,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

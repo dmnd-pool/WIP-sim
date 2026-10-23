@@ -1,0 +1,303 @@
+{
+  "frame_number": 4518,
+  "sample": {
+    "__typename": "BosminerInfoSample",
+    "fans": [
+      {
+        "__typename": "FanInfo",
+        "name": "0",
+        "rpm": 0,
+        "speed": 1
+      },
+      {
+        "__typename": "FanInfo",
+        "name": "1",
+        "rpm": 900,
+        "speed": 1
+      },
+      {
+        "__typename": "FanInfo",
+        "name": "2",
+        "rpm": 0,
+        "speed": 1
+      },
+      {
+        "__typename": "FanInfo",
+        "name": "3",
+        "rpm": 0,
+        "speed": 1
+      }
+    ],
+    "poolGroups": [
+      {
+        "__typename": "GroupInfo",
+        "name": "Default",
+        "pools": [
+          {
+            "__typename": "PoolInfo",
+            "active": true,
+            "bestShare": 0,
+            "generatedWork": 81144,
+            "lastDifficulty": 0.0,
+            "shares": {
+              "__typename": "SharesInfo",
+              "acceptedDifficulty": 0,
+              "acceptedSolutions": 16,
+              "rejectedDifficulty": 0,
+              "rejectedRatio": 0.0,
+              "rejectedSolutions": 14,
+              "staleDifficulty": 0,
+              "staleRatio": 0.0,
+              "staleSolutions": 0
+            },
+            "status": "ALIVE",
+            "url": "stratum+tcp://10.0.2.100:3333",
+            "user": "simulator"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "__typename": "SummaryInfo",
+      "bestShare": 0,
+      "dynamicPowerScaling": {
+        "__typename": "DynamicPowerScaling",
+        "status": "DISABLED",
+        "statusMessage": "Disabled"
+      },
+      "foundBlocks": 30,
+      "poolStatus": "ALIVE",
+      "power": {
+        "__typename": "PowerInfo",
+        "approxConsumptionW": 0,
+        "efficiencyWMhs": 0.0,
+        "limitW": 1420
+      },
+      "realHashrate": {
+        "__typename": "RealHashrate",
+        "mhs15M": 9162.59689813334,
+        "mhs1M": 129638.30450928582,
+        "mhs24H": 95.44371768888897,
+        "mhs5M": 27487.790694400017,
+        "mhs5S": 155062.94930709916,
+        "mhsAv": 0.0
+      },
+      "shares": {
+        "__typename": "SharesInfo",
+        "acceptedDifficulty": 0,
+        "acceptedSolutions": 16,
+        "rejectedDifficulty": 0,
+        "rejectedRatio": 0.4666666666666666,
+        "rejectedSolutions": 14,
+        "staleDifficulty": 0,
+        "staleRatio": 0.0,
+        "staleSolutions": 0
+      },
+      "temperature": {
+        "__typename": "Temperature",
+        "degreesC": 65.0,
+        "name": "Chip"
+      },
+      "tunerStatus": "DISABLED"
+    },
+    "tempCtrl": {
+      "__typename": "TempCtrlInfo",
+      "dangerousC": 110.0,
+      "hotC": 100.0,
+      "targetC": 89.0
+    },
+    "timestamp": 1792592001,
+    "workSolver": {
+      "__typename": "WorkSolverInfo",
+      "childSolvers": [
+        {
+          "__typename": "WorkSolverInfo",
+          "hwDetails": {
+            "__typename": "HwDetails",
+            "chips": 63,
+            "frequencyMhz": 100.0,
+            "voltageV": 8.798202514648438
+          },
+          "hwErrorMhs15M": 0.0,
+          "name": "6",
+          "nominalMhs": 718200.0,
+          "power": {
+            "__typename": "PowerInfo",
+            "approxConsumptionW": 0,
+            "efficiencyWMhs": 0.0,
+            "limitW": 0
+          },
+          "realHashrate": {
+            "__typename": "RealHashrate",
+            "mhs15M": 3970.4586558577794,
+            "mhs1M": 56079.055545868934,
+            "mhs24H": 0.0,
+            "mhs5M": 11911.375967573338,
+            "mhs5S": 33796.42082545427,
+            "mhsAv": 0.0
+          },
+          "temperatures": [
+            {
+              "__typename": "Temperature",
+              "degreesC": 25.0,
+              "name": "Board"
+            },
+            {
+              "__typename": "Temperature",
+              "degreesC": 65.0,
+              "name": "Chip"
+            }
+          ],
+          "tuner": {
+            "__typename": "TunerInfo",
+            "iteration": 0,
+            "loadedProfileTimestamp": null,
+            "stageDurationS": 0,
+            "status": "DISABLED",
+            "statusMessages": [
+              "Tuner not running"
+            ],
+            "uptimeS": 0
+          }
+        },
+        {
+          "__typename": "WorkSolverInfo",
+          "hwDetails": {
+            "__typename": "HwDetails",
+            "chips": 63,
+            "frequencyMhz": 100.0,
+            "voltageV": 8.798202514648438
+          },
+          "hwErrorMhs15M": 0.0,
+          "name": "7",
+          "nominalMhs": 718200.0,
+          "power": {
+            "__typename": "PowerInfo",
+            "approxConsumptionW": 0,
+            "efficiencyWMhs": 0.0,
+            "limitW": 0
+          },
+          "realHashrate": {
+            "__typename": "RealHashrate",
+            "mhs15M": 2748.77906944,
+            "mhs1M": 40484.04020220711,
+            "mhs24H": 0.0,
+            "mhs5M": 8246.337208320001,
+            "mhs5S": 39645.14039379938,
+            "mhsAv": 0.0
+          },
+          "temperatures": [
+            {
+              "__typename": "Temperature",
+              "degreesC": 25.0,
+              "name": "Board"
+            },
+            {
+              "__typename": "Temperature",
+              "degreesC": 65.0,
+              "name": "Chip"
+            }
+          ],
+          "tuner": {
+            "__typename": "TunerInfo",
+            "iteration": 0,
+            "loadedProfileTimestamp": null,
+            "stageDurationS": 0,
+            "status": "DISABLED",
+            "statusMessages": [
+              "Tuner not running"
+            ],
+            "uptimeS": 0
+          }
+        },
+        {
+          "__typename": "WorkSolverInfo",
+          "hwDetails": {
+            "__typename": "HwDetails",
+            "chips": 63,
+            "frequencyMhz": 100.0,
+            "voltageV": 8.798202514648438
+          },
+          "hwErrorMhs15M": 0.0,
+          "name": "8",
+          "nominalMhs": 718200.0,
+          "power": {
+            "__typename": "PowerInfo",
+            "approxConsumptionW": 0,
+            "efficiencyWMhs": 0.0,
+            "limitW": 0
+          },
+          "realHashrate": {
+            "__typename": "RealHashrate",
+            "mhs15M": 2443.3591728355555,
+            "mhs1M": 36650.387592533334,
+            "mhs24H": 0.0,
+            "mhs5M": 7330.077518506667,
+            "mhs5S": 99349.64558930474,
+            "mhsAv": 0.0
+          },
+          "temperatures": [
+            {
+              "__typename": "Temperature",
+              "degreesC": 25.0,
+              "name": "Board"
+            },
+            {
+              "__typename": "Temperature",
+              "degreesC": 65.0,
+              "name": "Chip"
+            }
+          ],
+          "tuner": {
+            "__typename": "TunerInfo",
+            "iteration": 0,
+            "loadedProfileTimestamp": null,
+            "stageDurationS": 0,
+            "status": "DISABLED",
+            "statusMessages": [
+              "Tuner not running"
+            ],
+            "uptimeS": 0
+          }
+        }
+      ],
+      "hwDetails": {
+        "__typename": "HwDetails",
+        "chips": 189,
+        "frequencyMhz": 100.0,
+        "voltageV": 8.798202514648438
+      },
+      "hwErrorMhs15M": 0.0,
+      "name": "0",
+      "nominalMhs": 2154600.0,
+      "power": {
+        "__typename": "PowerInfo",
+        "approxConsumptionW": 0,
+        "efficiencyWMhs": 0.0,
+        "limitW": 1420
+      },
+      "realHashrate": {
+        "__typename": "RealHashrate",
+        "mhs15M": 9162.596898133335,
+        "mhs1M": 133213.48334060938,
+        "mhs24H": 0.0,
+        "mhs5M": 27487.790694400006,
+        "mhs5S": 172791.20680855837,
+        "mhsAv": 0.0
+      },
+      "temperatures": [
+        {
+          "__typename": "Temperature",
+          "degreesC": 25.0,
+          "name": "Board"
+        },
+        {
+          "__typename": "Temperature",
+          "degreesC": 65.0,
+          "name": "Chip"
+        }
+      ],
+      "tuner": null
+    }
+  }
+}

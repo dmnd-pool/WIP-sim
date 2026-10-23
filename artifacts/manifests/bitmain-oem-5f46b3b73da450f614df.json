@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-5f46b3b73da450f614df",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b36e8955-a153-4a90-bfde-261c88f98989/2024/05/22/16/ACS-F23166-A1Z2209082-FCC%20SDOC.pdf",
+  "kind": "document",
+  "title": "ACS-F23166-A1Z2209082-FCC SDOC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:18+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-5f46b3b73da450f614df/ACS-F23166-A1Z2209082-FCC_SDOC.pdf",
+  "sha256": "e5a0e1a214b800f0febeff79b111c638d80b4e22b5227a7a8ea7c02888e7f5d0",
+  "size_bytes": 687814,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b36e8955-a153-4a90-bfde-261c88f98989/2024/05/22/16/ACS-F23166-A1Z2209082-FCC%20SDOC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:04:54 GMT",
+  "etag": "\"e1848a9e45eaf12e59e5ca13884207ec\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 687814,
+      "actual": 687814,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

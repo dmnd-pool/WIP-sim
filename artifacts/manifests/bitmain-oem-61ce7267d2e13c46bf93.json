@@ -1,0 +1,42 @@
+{
+  "id": "bitmain-oem-61ce7267d2e13c46bf93",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Tools%20and%20Instructions%20to%20Image%20SD%20card.zip",
+  "kind": "tool",
+  "title": "Tools and Instructions to Image SD card.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/bitmain-oem-61ce7267d2e13c46bf93/Tools_and_Instructions_to_Image_SD_card.zip",
+  "sha256": "a85faa07d957a11244822f301c12df8d28bf46ad67dbae21b09cd979547e081d",
+  "size_bytes": 19791072,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Tools%20and%20Instructions%20to%20Image%20SD%20card.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"f50bcf6cb70cb4fe796aec71b3327703-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19843308,
+      "actual": 19791072,
+      "match": false,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": false,
+  "integrity_review_required": true,
+  "upstream_head_audit": {
+    "artifact_id": "bitmain-oem-61ce7267d2e13c46bf93",
+    "title": "Tools and Instructions to Image SD card.zip",
+    "downloaded_size_bytes": 19791072,
+    "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Tools%20and%20Instructions%20to%20Image%20SD%20card.zip",
+    "http_status": 200,
+    "content_length": "19791072",
+    "etag": "\"f50bcf6cb70cb4fe796aec71b3327703-2\"",
+    "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+    "http_size_match": true
+  }
+}

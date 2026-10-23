@@ -1,0 +1,30 @@
+{
+  "schema": "md-sim-s9-tmp421-reference/2",
+  "controller_direction": "even address reads; odd address writes",
+  "address_helper_sha256": "5cb55313d402cca4d61d1c03d6097a9e807298ea6e8a50335aa33b3cf8135ff1",
+  "chip_position": 61,
+  "bus": {
+    "address_7bit": 76,
+    "clock_hz": 100000,
+    "reset_word": 0,
+    "timing": {
+      "power_start_ns": 50000,
+      "conversion_ns": 115000000,
+      "channel_slot_ns": 125000000
+    },
+    "inputs": {
+      "local_millicelsius": 25000,
+      "remote_millicelsius": 65000,
+      "diode": "Connected",
+      "supply_valid": true
+    }
+  },
+  "kind": "explicit development fixture",
+  "limits": [
+    "The selected physical board sensor identity and wiring are unresolved.",
+    "The source driver addresses chip61 on the bottom bus; this does not prove an exact board.",
+    "The bus clock, controller reset word and busy readback are unmeasured reference policies.",
+    "Temperatures are explicit constant inputs, not a calibrated thermal or power model.",
+    "The sensor has timed state and faults; no native sensor, thermal protection or full-board gate is granted by attachment."
+  ]
+}

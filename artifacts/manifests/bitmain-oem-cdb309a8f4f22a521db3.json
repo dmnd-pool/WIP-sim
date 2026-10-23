@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-cdb309a8f4f22a521db3",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3bf2f432-07c5-4af2-81a4-fbea9833cc6f/2026/04/15/11/FR-1.23(260225-KS7).bmu",
+  "kind": "firmware",
+  "title": "FR-1.23(260225-KS7).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-cdb309a8f4f22a521db3/FR-1.23_260225-KS7_.bmu",
+  "sha256": "12ba2bffdd3887002cbed97e6b0f8f8fefa5c4ca3a562d2a4e26b454ac734718",
+  "size_bytes": 17114112,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3bf2f432-07c5-4af2-81a4-fbea9833cc6f/2026/04/15/11/FR-1.23(260225-KS7).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Wed, 15 Apr 2026 03:25:36 GMT",
+  "etag": "\"44e09b8b46a77dff90567e43b7030864\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 17114112,
+      "actual": 17114112,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "44e09b8b46a77dff90567e43b7030864",
+      "actual": "44e09b8b46a77dff90567e43b7030864",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

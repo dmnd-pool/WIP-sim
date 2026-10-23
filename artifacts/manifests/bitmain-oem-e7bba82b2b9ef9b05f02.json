@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e7bba82b2b9ef9b05f02",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntMiner%20S1%20FAQ.pdf",
+  "kind": "document",
+  "title": "AntMiner S1 FAQ.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:53+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e7bba82b2b9ef9b05f02/AntMiner_S1_FAQ.pdf",
+  "sha256": "8a4590fd577f7f90cd2523c060669b7f4d6870549ddb1cc1fbc47649837332ea",
+  "size_bytes": 622980,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntMiner%20S1%20FAQ.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"8ceaf4df0968085266b81adfd7ea7387\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 622980,
+      "actual": 622980,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

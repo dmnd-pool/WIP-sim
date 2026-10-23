@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e5a57f847db5b18fd1ec",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/54036c8d-1411-4a3e-b4d0-cd424d7c986c/2023/12/13/11/certificate_Z15%20Pro%20KC.pdf",
+  "kind": "document",
+  "title": "certificate_Z15 Pro KC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e5a57f847db5b18fd1ec/certificate_Z15_Pro_KC.pdf",
+  "sha256": "3041e50850ec97708058379490c7cdaea7e60eeaccc82831147b4fffccad462c",
+  "size_bytes": 284479,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/54036c8d-1411-4a3e-b4d0-cd424d7c986c/2023/12/13/11/certificate_Z15%20Pro%20KC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 03:44:38 GMT",
+  "etag": "\"c6654d497025755731ef366b4d2f99f4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 284479,
+      "actual": 284479,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

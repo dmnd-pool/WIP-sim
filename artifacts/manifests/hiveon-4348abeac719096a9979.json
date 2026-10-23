@@ -1,0 +1,34 @@
+{
+  "id": "hiveon-4348abeac719096a9979",
+  "url": "https://download.hiveos.farm/asic/T17+/stock+client/Antminer-T17+-(stock+client)-20191111-sig.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17+-(stock+client)-20191111-sig.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-834749e555fd938e0963/Antminer-T17+-_stock+client_-20191111-sig.tar.gz",
+  "sha256": "002d207c6138f46ba01385673ce19d204be37de6a86f9e7e80cb10c36c4ad50d",
+  "size_bytes": 17517026,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/T17%2B/stock%2Bclient/Antminer-T17%2B-%28stock%2Bclient%29-20191111-sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sat, 04 Apr 2020 18:18:26 GMT",
+  "etag": "\"5e88cf72-10b49e2\"",
+  "alias_of": "hiveon-834749e555fd938e0963",
+  "notes": [
+    "Same decoded public URL as an already downloaded artifact. The local bytes are shared."
+  ],
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 17517026,
+      "actual": 17517026,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

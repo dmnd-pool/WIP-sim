@@ -1,0 +1,18 @@
+{
+  "schema": "md-sim-native-telemetry-fixture/1",
+  "source_run": "/tmp/md-sim-original-boser-050",
+  "source_run_status": "failed",
+  "pcap_sha256": "c74ff1933216d3fbf77549483d7caf2c6ee7ef6b4b2dcbd1a3bbe55c7339e0d3",
+  "decoder": {
+    "path": "/usr/bin/tshark",
+    "sha256": "1b16ce087351eee8c6d04a735183981de1d0e29023c8832d610a4fa8c70487d8",
+    "exit_code": 0,
+    "stderr_empty": true,
+    "command": "tshark -n -r /tmp/md-sim-original-boser-050/pool.pcap -Y 'websocket.opcode == 1 && websocket.payload.text contains \"BosminerInfoSample\"' -T fields -e frame.number -e websocket.payload.text"
+  },
+  "frame_number": 4518,
+  "sample_file": "boser-sample-050.json",
+  "sample_sha256": "b1000d43f73c84c8b4113dd3f4b42c695be119c48d36ef067183b8eac298fa34",
+  "derivation": "First decoded next message with a BosminerInfoSample. Retain the frame number and payload data. No values changed.",
+  "scope": "Real native telemetry regression data only. The source run failed its support deadline. This fixture grants no firmware, mining, dashboard or release pass."
+}

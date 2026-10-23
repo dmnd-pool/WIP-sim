@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-0d8898db496040c113a1",
+  "url": "https://download.hiveos.farm/asic/custom/f2pool/Antminer-T17-2.02@201008-T17-sign-f2pool.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17-2.02@201008-T17-sign-f2pool.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:06:16+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-0d8898db496040c113a1/Antminer-T17-2.02_201008-T17-sign-f2pool.hive.tar.gz",
+  "sha256": "8abe41f6b3c4c731493394a6c3193d5ab7b7b3d12236dc6c665efa35673ad53b",
+  "size_bytes": 27065448,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/f2pool/Antminer-T17-2.02@201008-T17-sign-f2pool.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 08 Oct 2020 14:57:56 GMT",
+  "etag": "\"5f7f28f4-19cfc68\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 27065448,
+      "actual": 27065448,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

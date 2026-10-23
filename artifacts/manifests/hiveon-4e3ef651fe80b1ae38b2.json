@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-4e3ef651fe80b1ae38b2",
+  "url": "https://download.hiveos.farm/asic/custom/kias42/SD-Antminer-S9-all-Hiveon-1.03@210122-sign-kias42.zip",
+  "kind": "firmware",
+  "title": "SD-Antminer-S9-all-Hiveon-1.03@210122-sign-kias42.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:57:20+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-4e3ef651fe80b1ae38b2/SD-Antminer-S9-all-Hiveon-1.03_210122-sign-kias42.zip",
+  "sha256": "bab563f3f146674911f4202fa08cf6c754e7548509c6e3fdd4af5fb31fafa10d",
+  "size_bytes": 45953861,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/kias42/SD-Antminer-S9-all-Hiveon-1.03@210122-sign-kias42.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Fri, 22 Jan 2021 11:02:38 GMT",
+  "etag": "\"600ab0ce-2bd3345\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 45953861,
+      "actual": 45953861,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

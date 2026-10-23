@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-7154da091f36cc065694",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1c68ff10-bee6-4df0-bf82-7349c38cf2fe/2024/04/11/15/KA3%20K7%20DR7%20HS3%20D9%20-UKCA%20ShenZhen%20Century%20Cloud%20Core.pdf",
+  "kind": "document",
+  "title": "KA3 K7 DR7 HS3 D9 -UKCA ShenZhen Century Cloud Core.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:35+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-7154da091f36cc065694/KA3_K7_DR7_HS3_D9_-UKCA_ShenZhen_Century_Cloud_Core.pdf",
+  "sha256": "3396c20c1c4c4ca83002512f80381f6f80462f07f2f15acceaedc2b0fe41efc4",
+  "size_bytes": 1523077,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/1c68ff10-bee6-4df0-bf82-7349c38cf2fe/2024/04/11/15/KA3%20K7%20DR7%20HS3%20D9%20-UKCA%20ShenZhen%20Century%20Cloud%20Core.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 11 Apr 2024 07:45:20 GMT",
+  "etag": "\"24ccd4876e3b48143f08efbd67f869b4\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1523077,
+      "actual": 1523077,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

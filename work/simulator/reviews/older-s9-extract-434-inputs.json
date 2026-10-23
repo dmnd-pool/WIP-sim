@@ -1,0 +1,21 @@
+{
+  "schema": "md-sim-planned-archive-extraction-inputs/1",
+  "state": "not-executed; wait for native431 completion and parent execution instruction",
+  "process_spec": {"path":"work/simulator/reviews/older-s9-extract-434-spec.json","sha256":"89bd4b7344970684f863fe238e9f9c9f94027b1ff97726a0842e4bd2be78b2b7"},
+  "cli": {"path":"work/simulator/check-target-085/release/md-sim","sha256":"0f36a5779b450ca838ed8b2c5f23835fc9bb2e02db15c6229f75fbdf2c624bd6"},
+  "state_directory": "work/simulator/older-s9-inputs-434",
+  "output_directory": "work/simulator/qemu-s9/older-s9-extract-434",
+  "total_input_bytes": 41856139,
+  "inputs": [
+    {"source":"artifacts/files/firmware/braiins-feed-aee8d7f2ed41b10b2e6f/braiins-os-plus_am1-s9_ssh_2019-02-21-0-572dd48c_2020-03-29-1-6b4a0f46.tar.gz","guest_path":"/archive.tar.gz","sha256":"ad2e0119a32b70c790b57afc719d283c66a4bfb9206e1602159071e20c0aece7","size":38793347},
+    {"source":"/usr/bin/tar","guest_path":"/usr/bin/tar","sha256":"8bd961dfeee3543f158f550566a66e78c713a9ad5b88432bab93b63f2bb9347c","size":431840},
+    {"source":"/usr/bin/gzip","guest_path":"/usr/bin/gzip","sha256":"b1f9e749ee0809d6e90100218e6bc13cdf3f26f23c243d5f62aae39162297cb1","size":109768},
+    {"source":"/usr/lib/libacl.so.1","guest_path":"/usr/lib/libacl.so.1","sha256":"ddab84c6479bd486973ba9f608adfe1cb4d1cebef0e5789f4b580a5b518919e9","size":42960},
+    {"source":"/usr/lib/libc.so.6","guest_path":"/usr/lib/libc.so.6","sha256":"02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524","size":2215072},
+    {"source":"/usr/lib64/ld-linux-x86-64.so.2","guest_path":"/lib64/ld-linux-x86-64.so.2","sha256":"f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757","size":263152}
+  ],
+  "expected_stdout_bytes": 477812,
+  "candidate_configuration_sha256": null,
+  "match_configuration_sha256": "720d532d79ade36f0a320a03d0e5c114440c33a82933578e641a1ed7cfed5d55",
+  "cleanup": "Keep original archive and retained results. Reclaim only this completed preparation Store after exact original-source hashes and derived evidence are durable; record deletion identity and preserve unrelated stores."
+}

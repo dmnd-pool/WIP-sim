@@ -1,0 +1,2 @@
+md_sim_ina260_bus(bool read, int32_t value, int result, uint64_t writes, uint64_t faults) "read=%d value=%d result=%d writes=%" PRIu64 " faults=%" PRIu64
+md_sim_ina260_state(uint64_t time, uint64_t conversions, uint64_t faults) "time=%" PRIu64 " conversions=%" PRIu64 " faults=%" PRIu64

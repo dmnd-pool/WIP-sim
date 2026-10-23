@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-1e7b3fc6800e97956518",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/22a4a1b9-ee0b-4c8c-b64b-7bfb96dcc286/2023/05/31/10/Antminer-E9-ETC-release-202305231828.bmu",
+  "kind": "firmware",
+  "title": "Antminer-E9-ETC-release-202305231828.bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:35+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-1e7b3fc6800e97956518/Antminer-E9-ETC-release-202305231828.bmu",
+  "sha256": "91d02fff75ee2d5d8fa3a842ca3e0efce50ed69ee75545ba249b14f50c9ba827",
+  "size_bytes": 11974040,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/22a4a1b9-ee0b-4c8c-b64b-7bfb96dcc286/2023/05/31/10/Antminer-E9-ETC-release-202305231828.bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Wed, 31 May 2023 02:56:58 GMT",
+  "etag": "\"1d8911b54c127a0ebb339e8fb98ad33f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 11974040,
+      "actual": 11974040,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "1d8911b54c127a0ebb339e8fb98ad33f",
+      "actual": "1d8911b54c127a0ebb339e8fb98ad33f",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,529 @@
+--- a/hw/timer/a9gtimer.c
++++ b/hw/timer/a9gtimer.c
+@@ -24,6 +24,7 @@
+ #include "hw/core/hw-error.h"
+ #include "hw/core/irq.h"
+ #include "hw/core/qdev-properties.h"
++#include "hw/core/qdev-clock.h"
+ #include "hw/timer/a9gtimer.h"
+ #include "migration/vmstate.h"
+ #include "qapi/error.h"
+@@ -60,12 +61,12 @@
+     return current_cpu->cpu_index;
+ }
+ 
+-static inline uint64_t a9_gtimer_get_conv(A9GTimerState *s)
++static inline uint64_t a9_gtimer_prescale(A9GTimerState *s)
+ {
+     uint64_t prescale = extract32(s->control, R_CONTROL_PRESCALER_SHIFT,
+                                   R_CONTROL_PRESCALER_LEN);
+ 
+-    return (prescale + 1) * 10;
++    return prescale + 1;
+ }
+ 
+ static A9GTimerUpdate a9_gtimer_get_update(A9GTimerState *s)
+@@ -73,9 +74,32 @@
+     A9GTimerUpdate ret;
+ 
+     ret.now = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL);
+-    ret.new = s->ref_counter +
+-              (ret.now - s->cpu_ref_time) / a9_gtimer_get_conv(s);
++    ret.new = s->ref_counter;
++    if (s->control & R_CONTROL_TIMER_ENABLE) {
++        ret.new += clock_ns_to_ticks(s->periphclk,
++                                     ret.now - s->cpu_ref_time) /
++                   a9_gtimer_prescale(s);
++    }
+     return ret;
++}
++
++/* Use the reference origin, not the last read, to retain fractional periods. */
++static int64_t a9_gtimer_deadline(A9GTimerState *s, uint64_t count)
++{
++    uint64_t ticks, ns, prescale = a9_gtimer_prescale(s);
++    if (count > UINT64_MAX / prescale) {
++        return INT64_MAX;
++    }
++    ticks = count * prescale;
++    ns = clock_ticks_to_ns(s->periphclk, ticks);
++    /* QEMU deadlines are whole ns. Round up so a callback cannot run early. */
++    if (ns < INT64_MAX && clock_ns_to_ticks(s->periphclk, ns) < ticks) {
++        ns++;
++    }
++    if (ns > INT64_MAX - s->cpu_ref_time) {
++        return INT64_MAX;
++    }
++    return s->cpu_ref_time + ns;
+ }
+ 
+ static void a9_gtimer_update(A9GTimerState *s, bool sync)
+@@ -83,29 +107,33 @@
+ 
+     A9GTimerUpdate update = a9_gtimer_get_update(s);
+     int i;
+-    int64_t next_cdiff = 0;
++    uint64_t next_cdiff = 0;
+ 
+     for (i = 0; i < s->num_cpu; ++i) {
+         A9GTimerPerCPU *gtb = &s->per_cpu[i];
+-        int64_t cdiff = 0;
++        uint64_t cdiff;
+ 
+         if ((s->control & R_CONTROL_TIMER_ENABLE) &&
++                clock_is_enabled(s->periphclk) &&
+                 (gtb->control & R_CONTROL_COMP_ENABLE)) {
+             /* R2p0+, where the compare function is >= */
+-            if (gtb->compare < update.new) {
++            if (gtb->compare <= update.new) {
+                 DB_PRINT("Compare event happened for CPU %d\n", i);
+                 gtb->status = 1;
+                 if (gtb->control & R_CONTROL_AUTO_INCREMENT && gtb->inc) {
+                     uint64_t inc =
+-                        QEMU_ALIGN_UP(update.new - gtb->compare, gtb->inc);
++                        ((update.new - gtb->compare) / gtb->inc + 1) *
++                        gtb->inc;
+                     DB_PRINT("Auto incrementing timer compare by %"
+                                                         PRId64 "\n", inc);
+                     gtb->compare += inc;
+                 }
+             }
+-            cdiff = (int64_t)gtb->compare - (int64_t)update.new + 1;
+-            if (cdiff > 0 && (cdiff < next_cdiff || !next_cdiff)) {
+-                next_cdiff = cdiff;
++            if (gtb->compare > update.new) {
++                cdiff = gtb->compare - update.new;
++                if (cdiff < next_cdiff || !next_cdiff) {
++                    next_cdiff = cdiff;
++                }
+             }
+         }
+ 
+@@ -117,7 +145,8 @@
+     if (next_cdiff) {
+         DB_PRINT("scheduling qemu_timer to fire again in %"
+                  PRIx64 " cycles\n", next_cdiff);
+-        timer_mod(s->timer, update.now + next_cdiff * a9_gtimer_get_conv(s));
++        timer_mod(s->timer, a9_gtimer_deadline(s,
++                  update.new - s->ref_counter + next_cdiff));
+     }
+ 
+     if (s->control & R_CONTROL_TIMER_ENABLE) {
+@@ -135,6 +164,26 @@
+     A9GTimerState *s = A9_GTIMER(opaque);
+ 
+     a9_gtimer_update(s, false);
++}
++
++static void a9_gtimer_clock_update(void *opaque, ClockEvent event)
++{
++    A9GTimerState *s = opaque;
++    if (!s->timer) {
++        return;
++    }
++    if (event == ClockPreUpdate) {
++        a9_gtimer_update(s, true);
++    } else {
++        a9_gtimer_update(s, false);
++    }
++}
++
++static void a9_gtimer_init(Object *obj)
++{
++    A9GTimerState *s = A9_GTIMER(obj);
++    s->periphclk = qdev_init_clock_in(DEVICE(obj), "periphclk",
++                        a9_gtimer_clock_update, s, ClockPreUpdate | ClockUpdate);
+ }
+ 
+ static uint64_t a9_gtimer_read(void *opaque, hwaddr addr, unsigned size)
+@@ -202,6 +251,8 @@
+             return;
+         }
+         s->counter = deposit64(s->counter, shift, 32, value);
++        s->ref_counter = s->counter;
++        s->cpu_ref_time = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL);
+         return;
+     case R_CONTROL:
+         a9_gtimer_update(s, (value ^ s->control) & R_CONTROL_NEEDS_SYNC);
+@@ -282,6 +333,8 @@
+     int i;
+ 
+     s->counter = 0;
++    s->ref_counter = 0;
++    s->cpu_ref_time = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL);
+     s->control = 0;
+ 
+     for (i = 0; i < s->num_cpu; i++) {
+@@ -301,6 +354,9 @@
+     SysBusDevice *sbd = SYS_BUS_DEVICE(dev);
+     int i;
+ 
++    if (!clock_has_source(s->periphclk)) {
++        clock_set_hz(s->periphclk, 100000000);
++    }
+     if (s->num_cpu < 1 || s->num_cpu > A9_GTIMER_MAX_CPUS) {
+         error_setg(errp, "%s: num-cpu must be between 1 and %d",
+                    __func__, A9_GTIMER_MAX_CPUS);
+@@ -355,9 +411,10 @@
+ 
+ static const VMStateDescription vmstate_a9_gtimer = {
+     .name = "arm.cortex-a9-global-timer",
+-    .version_id = 1,
+-    .minimum_version_id = 1,
++    .version_id = 2,
++    .minimum_version_id = 2,
+     .fields = (const VMStateField[]) {
++        VMSTATE_CLOCK(periphclk, A9GTimerState),
+         VMSTATE_TIMER_PTR(timer, A9GTimerState),
+         VMSTATE_UINT64(counter, A9GTimerState),
+         VMSTATE_UINT64(ref_counter, A9GTimerState),
+@@ -391,6 +448,7 @@
+     .name          = TYPE_A9_GTIMER,
+     .parent        = TYPE_SYS_BUS_DEVICE,
+     .instance_size = sizeof(A9GTimerState),
++    .instance_init = a9_gtimer_init,
+     .class_init    = a9_gtimer_class_init,
+ };
+ 
+--- a/include/hw/timer/a9gtimer.h
++++ b/include/hw/timer/a9gtimer.h
+@@ -24,6 +24,7 @@
+ #define A9GTIMER_H
+ 
+ #include "hw/core/sysbus.h"
++#include "hw/core/clock.h"
+ #include "qom/object.h"
+ 
+ #define A9_GTIMER_MAX_CPUS 4
+@@ -79,6 +80,7 @@
+     uint32_t num_cpu;
+ 
+     QEMUTimer *timer;
++    Clock *periphclk;
+ 
+     uint64_t counter; /* current timer value */
+ 
+--- a/hw/timer/arm_mptimer.c
++++ b/hw/timer/arm_mptimer.c
+@@ -24,6 +24,7 @@
+ #include "hw/core/irq.h"
+ #include "hw/core/ptimer.h"
+ #include "hw/core/qdev-properties.h"
++#include "hw/core/qdev-clock.h"
+ #include "hw/timer/arm_mptimer.h"
+ #include "migration/vmstate.h"
+ #include "qapi/error.h"
+@@ -58,10 +59,10 @@
+     qemu_set_irq(tb->irq, tb->status && (tb->control & 4));
+ }
+ 
+-/* Return conversion factor from mpcore timer ticks to qemu timer ticks.  */
++/* Peripheral clock prescaler. */
+ static inline uint32_t timerblock_scale(uint32_t control)
+ {
+-    return (((control >> 8) & 0xff) + 1) * 10;
++    return ((control >> 8) & 0xff) + 1;
+ }
+ 
+ /* Must be called within a ptimer transaction block */
+@@ -78,11 +79,12 @@
+ }
+ 
+ /* Must be called within a ptimer transaction block */
+-static inline void timerblock_run(struct ptimer_state *timer,
++static inline void timerblock_run(TimerBlock *tb,
+                                   uint32_t control, uint32_t load)
+ {
+-    if ((control & 1) && ((control & 0xff00) || load != 0)) {
+-        ptimer_run(timer, !(control & 2));
++    tb->armed = (control & 1) && ((control & 0xff00) || load != 0);
++    if (tb->armed && clock_is_enabled(tb->periphclk)) {
++        ptimer_run(tb->timer, !(control & 2));
+     }
+ }
+ 
+@@ -95,6 +97,10 @@
+     if ((tb->control & 2) && (tb->control & 0xff00) == 0 &&
+             ptimer_get_limit(tb->timer) == 0) {
+         ptimer_stop(tb->timer);
++        tb->armed = false;
++    }
++    if (!(tb->control & 2)) {
++        tb->armed = false;
+     }
+     tb->status = 1;
+     timerblock_update_irq(tb);
+@@ -133,7 +139,7 @@
+             ptimer_stop(tb->timer);
+         }
+         ptimer_set_limit(tb->timer, value, 1);
+-        timerblock_run(tb->timer, control, value);
++        timerblock_run(tb, control, value);
+         ptimer_transaction_commit(tb->timer);
+         break;
+     case 4: /* Counter.  */
+@@ -146,7 +152,7 @@
+             ptimer_stop(tb->timer);
+         }
+         timerblock_set_count(tb->timer, control, &value);
+-        timerblock_run(tb->timer, control, value);
++        timerblock_run(tb, control, value);
+         ptimer_transaction_commit(tb->timer);
+         break;
+     case 8: /* Control.  */
+@@ -155,7 +161,8 @@
+             ptimer_stop(tb->timer);
+         }
+         if ((control & 0xff00) != (value & 0xff00)) {
+-            ptimer_set_period(tb->timer, timerblock_scale(value));
++            ptimer_set_period_from_clock(tb->timer, tb->periphclk,
++                                          timerblock_scale(value));
+         }
+         if (value & 1) {
+             uint64_t count = ptimer_get_count(tb->timer);
+@@ -163,10 +170,13 @@
+             if ((value & 2) && count == 0) {
+                 timerblock_set_count(tb->timer, value, &count);
+             }
+-            timerblock_run(tb->timer, value, count);
++            timerblock_run(tb, value, count);
++        } else {
++            tb->armed = false;
+         }
+         tb->control = value;
+         ptimer_transaction_commit(tb->timer);
++        timerblock_update_irq(tb);
+         break;
+     case 12: /* Interrupt status.  */
+         tb->status &= ~value;
+@@ -218,11 +228,12 @@
+ {
+     tb->control = 0;
+     tb->status = 0;
++    tb->armed = false;
+     if (tb->timer) {
+         ptimer_transaction_begin(tb->timer);
+         ptimer_stop(tb->timer);
+         ptimer_set_limit(tb->timer, 0, 1);
+-        ptimer_set_period(tb->timer, timerblock_scale(0));
++        ptimer_set_period_from_clock(tb->timer, tb->periphclk, 1);
+         ptimer_transaction_commit(tb->timer);
+     }
+ }
+@@ -237,10 +248,33 @@
+     }
+ }
+ 
++static void arm_mptimer_clock_update(void *opaque, ClockEvent event)
++{
++    ARMMPTimerState *s = opaque;
++    for (unsigned i = 0; i < s->num_cpu; i++) {
++        TimerBlock *tb = &s->timerblock[i];
++        if (!tb->timer) {
++            continue;
++        }
++        ptimer_transaction_begin(tb->timer);
++        /* PTimer retains its old period until this call. Freeze its count
++         * before replacing that period, including on a clock gate. */
++        ptimer_stop(tb->timer);
++        ptimer_set_period_from_clock(tb->timer, s->periphclk,
++                                      timerblock_scale(tb->control));
++        if (tb->armed && clock_is_enabled(s->periphclk)) {
++            ptimer_run(tb->timer, !(tb->control & 2));
++        }
++        ptimer_transaction_commit(tb->timer);
++    }
++}
++
+ static void arm_mptimer_init(Object *obj)
+ {
+     ARMMPTimerState *s = ARM_MPTIMER(obj);
+ 
++    s->periphclk = qdev_init_clock_in(DEVICE(obj), "periphclk",
++                            arm_mptimer_clock_update, s, ClockUpdate);
+     memory_region_init_io(&s->iomem, obj, &arm_thistimer_ops, s,
+                           "arm_mptimer_timer", 0x20);
+     sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->iomem);
+@@ -252,6 +286,9 @@
+     ARMMPTimerState *s = ARM_MPTIMER(dev);
+     int i;
+ 
++    if (!clock_has_source(s->periphclk)) {
++        clock_set_hz(s->periphclk, 100000000);
++    }
+     if (s->num_cpu < 1 || s->num_cpu > ARM_MPTIMER_MAX_CPUS) {
+         error_setg(errp, "num-cpu must be between 1 and %d",
+                    ARM_MPTIMER_MAX_CPUS);
+@@ -269,6 +306,7 @@
+      */
+     for (i = 0; i < s->num_cpu; i++) {
+         TimerBlock *tb = &s->timerblock[i];
++        tb->periphclk = s->periphclk;
+         tb->timer = ptimer_init(timerblock_tick, tb, PTIMER_POLICY);
+         sysbus_init_irq(sbd, &tb->irq);
+         memory_region_init_io(&tb->iomem, OBJECT(s), &timerblock_ops, tb,
+@@ -279,11 +317,12 @@
+ 
+ static const VMStateDescription vmstate_timerblock = {
+     .name = "arm_mptimer_timerblock",
+-    .version_id = 3,
+-    .minimum_version_id = 3,
++    .version_id = 4,
++    .minimum_version_id = 4,
+     .fields = (const VMStateField[]) {
+         VMSTATE_UINT32(control, TimerBlock),
+         VMSTATE_UINT32(status, TimerBlock),
++        VMSTATE_BOOL(armed, TimerBlock),
+         VMSTATE_PTIMER(timer, TimerBlock),
+         VMSTATE_END_OF_LIST()
+     }
+@@ -291,11 +330,12 @@
+ 
+ static const VMStateDescription vmstate_arm_mptimer = {
+     .name = "arm_mptimer",
+-    .version_id = 3,
+-    .minimum_version_id = 3,
++    .version_id = 4,
++    .minimum_version_id = 4,
+     .fields = (const VMStateField[]) {
++        VMSTATE_CLOCK(periphclk, ARMMPTimerState),
+         VMSTATE_STRUCT_VARRAY_UINT32(timerblock, ARMMPTimerState, num_cpu,
+-                                     3, vmstate_timerblock, TimerBlock),
++                                     4, vmstate_timerblock, TimerBlock),
+         VMSTATE_END_OF_LIST()
+     }
+ };
+--- a/include/hw/timer/arm_mptimer.h
++++ b/include/hw/timer/arm_mptimer.h
+@@ -22,6 +22,7 @@
+ #define HW_TIMER_ARM_MPTIMER_H
+ 
+ #include "hw/core/sysbus.h"
++#include "hw/core/clock.h"
+ #include "qom/object.h"
+ 
+ #define ARM_MPTIMER_MAX_CPUS 4
+@@ -31,6 +32,8 @@
+     uint32_t control;
+     uint32_t status;
+     struct ptimer_state *timer;
++    Clock *periphclk;
++    bool armed;
+     qemu_irq irq;
+     MemoryRegion iomem;
+ } TimerBlock;
+@@ -44,6 +47,7 @@
+     /*< public >*/
+ 
+     uint32_t num_cpu;
++    Clock *periphclk;
+     TimerBlock timerblock[ARM_MPTIMER_MAX_CPUS];
+     MemoryRegion iomem;
+ };
+--- a/include/hw/cpu/a9mpcore.h
++++ b/include/hw/cpu/a9mpcore.h
+@@ -26,6 +26,7 @@
+     /*< public >*/
+ 
+     uint32_t num_cpu;
++    Clock *periphclk;
+     MemoryRegion container;
+     uint32_t num_irq;
+ 
+--- a/hw/cpu/a9mpcore.c
++++ b/hw/cpu/a9mpcore.c
+@@ -14,6 +14,7 @@
+ #include "hw/cpu/a9mpcore.h"
+ #include "hw/core/irq.h"
+ #include "hw/core/qdev-properties.h"
++#include "hw/core/qdev-clock.h"
+ #include "hw/core/cpu.h"
+ #include "target/arm/cpu-qom.h"
+ 
+@@ -30,6 +31,7 @@
+ {
+     A9MPPrivState *s = A9MPCORE_PRIV(obj);
+ 
++    s->periphclk = qdev_init_clock_in(DEVICE(obj), "periphclk", NULL, NULL, 0);
+     memory_region_init(&s->container, obj, "a9mp-priv-container", 0x2000);
+     sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->container);
+ 
+@@ -42,6 +44,9 @@
+     object_initialize_child(obj, "mptimer", &s->mptimer, TYPE_ARM_MPTIMER);
+ 
+     object_initialize_child(obj, "wdt", &s->wdt, TYPE_ARM_MPTIMER);
++    qdev_connect_clock_in(DEVICE(&s->gtimer), "periphclk", s->periphclk);
++    qdev_connect_clock_in(DEVICE(&s->mptimer), "periphclk", s->periphclk);
++    qdev_connect_clock_in(DEVICE(&s->wdt), "periphclk", s->periphclk);
+ }
+ 
+ static void a9mp_priv_realize(DeviceState *dev, Error **errp)
+@@ -56,6 +61,10 @@
+     CPUState *cpu0;
+     Object *cpuobj;
+ 
++    /* Preserve the upstream rate for boards without a clock connection. */
++    if (!clock_has_source(s->periphclk)) {
++        clock_update_hz(s->periphclk, 100000000);
++    }
+     if (s->num_irq < 32 || s->num_irq > 256) {
+         error_setg(errp, "Property 'num-irq' must be between 32 and 256");
+         return;
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -204,6 +204,7 @@
+     uint32_t regs[ZYNQ_SLCR_NUM_REGS];
+ 
+     Clock *ps_clk;
++    Clock *cpu_3or2x;
+     Clock *uart0_ref_clk;
+     Clock *uart1_ref_clk;
+     uint8_t boot_mode;
+@@ -288,6 +289,12 @@
+     uint64_t ddr_pll = zynq_slcr_compute_pll(ps_clk, s->regs[R_DDR_PLL_CTRL]);
+ 
+     uint64_t uart_mux[4] = {io_pll, io_pll, arm_pll, ddr_pll};
++    uint64_t cpu_mux[4] = {arm_pll, arm_pll, ddr_pll, io_pll};
++
++    /* ARM clock mux/divider, then the fixed /2 peripheral branch. */
++    clock_set(s->cpu_3or2x,
++              2 * zynq_slcr_compute_clock(cpu_mux, s->regs[R_ARM_CLK_CTRL],
++                                          25));
+ 
+     /* compute uartX reference clocks */
+     clock_set(s->uart0_ref_clk,
+@@ -320,6 +327,7 @@
+  */
+ static void zynq_slcr_propagate_clocks(ZynqSLCRState *s)
+ {
++    clock_propagate(s->cpu_3or2x);
+     clock_propagate(s->uart0_ref_clk);
+     clock_propagate(s->uart1_ref_clk);
+ }
+@@ -602,6 +610,7 @@
+     case R_IO_PLL_CTRL:
+     case R_ARM_PLL_CTRL:
+     case R_DDR_PLL_CTRL:
++    case R_ARM_CLK_CTRL:
+     case R_UART_CLK_CTRL:
+         zynq_slcr_compute_clocks(s);
+         zynq_slcr_propagate_clocks(s);
+@@ -617,6 +626,7 @@
+ 
+ static const ClockPortInitArray zynq_slcr_clocks = {
+     QDEV_CLOCK_IN(ZynqSLCRState, ps_clk, zynq_slcr_ps_clk_callback, ClockUpdate),
++    QDEV_CLOCK_OUT(ZynqSLCRState, cpu_3or2x),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart0_ref_clk),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart1_ref_clk),
+     QDEV_CLOCK_END
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -260,6 +260,8 @@
+     sysbus_mmio_map(SYS_BUS_DEVICE(slcr), 0, 0xF8000000);
+ 
+     dev = qdev_new(TYPE_A9MPCORE_PRIV);
++    qdev_connect_clock_in(dev, "periphclk",
++                          qdev_get_clock_out(slcr, "cpu_3or2x"));
+     qdev_prop_set_uint32(dev, "num-cpu", smp_cpus);
+     qdev_prop_set_uint32(dev, "num-irq", GIC_EXT_IRQS + GIC_INTERNAL);
+     busdev = SYS_BUS_DEVICE(dev);

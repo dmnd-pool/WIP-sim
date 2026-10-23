@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-bc6de29e8752a1da32a4",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9ff8ad20-b395-4d7f-9e1d-1d114ffa477d/2019/10/15/22/Antminer-B7-xilinx-201910101434-500M-user-Update2UBI-NF_4196.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-B7-xilinx-201910101434-500M-user-Update2UBI-NF_4196.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:22+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-bc6de29e8752a1da32a4/ANTMINER-B7-xilinx-201910101434-500M-user-Update2UBI-NF_4196.tar.gz",
+  "sha256": "020c982c53d64097bb4c3d910cc6497e612a683742f831d247c08ab9f6fd67c9",
+  "size_bytes": 39771270,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/9ff8ad20-b395-4d7f-9e1d-1d114ffa477d/2019/10/15/22/Antminer-B7-xilinx-201910101434-500M-user-Update2UBI-NF_4196.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:27 GMT",
+  "etag": "\"5d6ab64344bbc043ad1dd3e20f93e097-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "a031e02f468d434b8d70c7e46d5d627e",
+      "actual": "a031e02f468d434b8d70c7e46d5d627e",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 39771270,
+      "actual": 39771270,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

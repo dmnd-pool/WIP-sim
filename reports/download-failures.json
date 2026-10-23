@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-19T11:43:27+00:00",
+  "status_counts": {
+    "failed": 779,
+    "downloaded": 2,
+    "superseded": 1
+  },
+  "category_counts": {
+    "denied-or-rate-limited": 150,
+    "transfer-or-format-error": 11,
+    "saved-alternative-available": 7,
+    "url-unavailable": 178,
+    "rate-limited": 425,
+    "server-error": 11
+  },
+  "limits": [
+    "An HTTP failure describes this collection attempt. It does not prove that every public copy is unavailable.",
+    "HTTP 403 can mean several things. Check the saved response and source-specific research notes.",
+    "A rate-limited request is not a completed download. Retry only after the service permits it."
+  ]
+}

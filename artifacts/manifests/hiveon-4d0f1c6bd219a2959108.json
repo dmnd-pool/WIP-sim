@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-4d0f1c6bd219a2959108",
+  "url": "https://download.hiveos.farm/asic/custom/t17e-hiv-umnus-RU-T17E-master-sig-2.00@200710-T17E-sign-umnus.hive.tar.gz",
+  "kind": "firmware",
+  "title": "t17e-hiv-umnus-RU-T17E-master-sig-2.00@200710-T17E-sign-umnus.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:09:56+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-4d0f1c6bd219a2959108/t17e-hiv-umnus-RU-T17E-master-sig-2.00_200710-T17E-sign-umnus.hive.tar.gz",
+  "sha256": "e8926ac008736fd68035251e72a3443a537c94f62a2d12f225ca1c80b0988816",
+  "size_bytes": 20894680,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/t17e-hiv-umnus-RU-T17E-master-sig-2.00@200710-T17E-sign-umnus.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 10 Jul 2020 13:42:57 GMT",
+  "etag": "\"5f087061-13ed3d8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 20894680,
+      "actual": 20894680,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

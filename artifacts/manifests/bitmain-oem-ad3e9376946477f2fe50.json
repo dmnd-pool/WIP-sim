@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-ad3e9376946477f2fe50",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-2.7T_201605181458-600M-2fan-3700.tar.gz",
+  "kind": "firmware",
+  "title": "S7-2.7T_201605181458-600M-2fan-3700.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-ad3e9376946477f2fe50/S7-2.7T_201605181458-600M-2fan-3700.tar.gz",
+  "sha256": "0eb0c7564479da03538b12ed7b1e39fb99c2d4451adcc2ba239106d3435e6ad2",
+  "size_bytes": 19162208,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S7-2.7T_201605181458-600M-2fan-3700.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"af18160c3f0b49d5a477a5990f4c534f-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19162208,
+      "actual": 19162208,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "a59c02dbc1fe4410eb3eed35a6b6ad81",
+      "actual": "a59c02dbc1fe4410eb3eed35a6b6ad81",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

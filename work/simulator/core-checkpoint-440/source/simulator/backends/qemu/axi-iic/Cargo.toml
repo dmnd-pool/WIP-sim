@@ -1,0 +1,20 @@
+[package]
+name = "md-sim-axi-iic"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-2.0-or-later"
+publish = false
+
+[workspace]
+
+[features]
+host-std = []
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-db38e4e931b5bee9a378",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SafePrime%20FAQs%2013102016.pdf",
+  "kind": "document",
+  "title": "SafePrime FAQs 13102016.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-db38e4e931b5bee9a378/SafePrime_FAQs_13102016.pdf",
+  "sha256": "3ed9a491bf0589aa748102f051375af394f36c350575594086d25d6726755e4f",
+  "size_bytes": 182479,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SafePrime%20FAQs%2013102016.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"9e905728d7ebed24a65d3636f1613478\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 182479,
+      "actual": 182479,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

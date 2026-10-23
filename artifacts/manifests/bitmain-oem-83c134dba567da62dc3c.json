@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-83c134dba567da62dc3c",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/45b8d2dc-db31-4829-b7dd-e2c52cf01ca4/2023/07/27/16/D3%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "D3 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:49:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-83c134dba567da62dc3c/D3_Server_Manual.pdf",
+  "sha256": "15965fc6be1068407d3ffa769340b461bd6a0d9f5a2bd102da9a2efa9a76d257",
+  "size_bytes": 1406393,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/45b8d2dc-db31-4829-b7dd-e2c52cf01ca4/2023/07/27/16/D3%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:30:15 GMT",
+  "etag": "\"89f1be8c56cac427e5a708121104a9ff\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1406393,
+      "actual": 1406393,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-700ce2cec0643037fa3e",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-B3-201805232020-750M.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-B3-201805232020-750M.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:23+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-700ce2cec0643037fa3e/ANTMINER-B3-201805232020-750M.tar.gz",
+  "sha256": "dbc57a9a3d4249bc6044fa7333ac19ee8002ff37f87a28b395d2ed20740a068c",
+  "size_bytes": 39453786,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer-B3-201805232020-750M.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:28 GMT",
+  "etag": "\"25eebb5dea2b6ee98dcdb1940e42471f-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 39453786,
+      "actual": 39453786,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

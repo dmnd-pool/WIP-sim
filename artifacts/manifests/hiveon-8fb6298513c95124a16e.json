@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-8fb6298513c95124a16e",
+  "url": "https://download.hiveos.farm/asic/custom/kias42/Antminer-S17-Hiveon-2.03@210122-AntminerS17S17PRO121-sig-sign-kias42.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17-Hiveon-2.03@210122-AntminerS17S17PRO121-sig-sign-kias42.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:56:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-8fb6298513c95124a16e/Antminer-S17-Hiveon-2.03_210122-AntminerS17S17PRO121-sig-sign-kias42.tar.gz",
+  "sha256": "fadcbcaa7fe588b28a2fc9594444d685fa9aee2d3268da08315fdcde1748a5b4",
+  "size_bytes": 34012645,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/kias42/Antminer-S17-Hiveon-2.03@210122-AntminerS17S17PRO121-sig-sign-kias42.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 22 Jan 2021 12:17:47 GMT",
+  "etag": "\"600ac26b-206fde5\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 34012645,
+      "actual": 34012645,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

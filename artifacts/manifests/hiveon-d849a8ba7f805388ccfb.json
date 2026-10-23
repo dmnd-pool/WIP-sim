@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-d849a8ba7f805388ccfb",
+  "url": "https://download.hiveos.farm/asic/custom/f2pool/201222/SD-Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03@201222-S17-sign-f2pool.zip",
+  "kind": "firmware",
+  "title": "SD-Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03@201222-S17-sign-f2pool.zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:08:40+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-d849a8ba7f805388ccfb/SD-Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03_201222-S17-sign-f2pool.zip",
+  "sha256": "cecb518c1cd028404491adadd4a331b73ba4b4e34929e03ca6a34a8017146b6a",
+  "size_bytes": 64426499,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/f2pool/201222/SD-Antminer-S17-S17pro-v1.2.0h_CRC_SIG-sig-2.03@201222-S17-sign-f2pool.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Tue, 22 Dec 2020 03:49:59 GMT",
+  "etag": "\"5fe16ce7-3d71203\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 64426499,
+      "actual": 64426499,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-0272876b51bef6c6f9c0",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a7d76ec1-3e62-4123-b51f-fea8f3232ee0/2026/05/11/16/S21%20XP%20Product%20Manual%20V1.1.5.pdf",
+  "kind": "document",
+  "title": "S21 XP Product Manual V1.1.5.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-0272876b51bef6c6f9c0/S21_XP_Product_Manual_V1.1.5.pdf",
+  "sha256": "af2477e13aca34d28b4047b1524fdc8d71f473b7fe5dd14d8d9f083aacb1677f",
+  "size_bytes": 878125,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a7d76ec1-3e62-4123-b51f-fea8f3232ee0/2026/05/11/16/S21%20XP%20Product%20Manual%20V1.1.5.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 11 May 2026 08:10:34 GMT",
+  "etag": "\"37b711a08564280828b5e8f8ffe559d6\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 878125,
+      "actual": 878125,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

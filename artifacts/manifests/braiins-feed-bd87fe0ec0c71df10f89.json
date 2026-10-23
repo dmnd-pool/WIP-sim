@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-bd87fe0ec0c71df10f89",
+  "url": "https://feeds.braiins-os.com/25.11/braiins-os_am3-bbb_ssh_2025-11-21-0-eb658dcd-25.11-plus.tar.gz",
+  "kind": "firmware",
+  "title": "transitional am3-bbb 25.11",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:38:46+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-bd87fe0ec0c71df10f89/braiins-os_am3-bbb_ssh_2025-11-21-0-eb658dcd-25.11-plus.tar.gz",
+  "sha256": "52318fd2e0182e59d9dd1f6196fb7636874ba8443a0fe5a89a630badf683c45a",
+  "size_bytes": 35176067,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/25.11/braiins-os_am3-bbb_ssh_2025-11-21-0-eb658dcd-25.11-plus.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 21 Nov 2025 09:41:11 GMT",
+  "etag": "\"692033b7-218be83\"",
+  "vendor_sha256": "52318fd2e0182e59d9dd1f6196fb7636874ba8443a0fe5a89a630badf683c45a",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "52318fd2e0182e59d9dd1f6196fb7636874ba8443a0fe5a89a630badf683c45a",
+      "actual": "52318fd2e0182e59d9dd1f6196fb7636874ba8443a0fe5a89a630badf683c45a",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

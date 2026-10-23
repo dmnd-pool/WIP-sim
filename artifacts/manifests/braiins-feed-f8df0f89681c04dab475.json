@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-f8df0f89681c04dab475",
+  "url": "https://feeds.braiins-os.com/am3-bbb/firmware_2024-04-02-0-0de0f2f0-24.03.1-plus_omap.tar",
+  "kind": "firmware",
+  "title": "sysupgrade am3-bbb nand 24.03.1",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:45:14+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-f8df0f89681c04dab475/firmware_2024-04-02-0-0de0f2f0-24.03.1-plus_omap.tar",
+  "sha256": "d68aefa67db0a124feb9299100eed34613fbdd5dddaf7e056627ce5868cd86ea",
+  "size_bytes": 23285760,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/am3-bbb/firmware_2024-04-02-0-0de0f2f0-24.03.1-plus_omap.tar",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 02 Apr 2024 23:53:14 GMT",
+  "etag": "\"660c9a6a-1635000\"",
+  "vendor_sha256": "d68aefa67db0a124feb9299100eed34613fbdd5dddaf7e056627ce5868cd86ea",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "d68aefa67db0a124feb9299100eed34613fbdd5dddaf7e056627ce5868cd86ea",
+      "actual": "d68aefa67db0a124feb9299100eed34613fbdd5dddaf7e056627ce5868cd86ea",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,958 @@
+{
+  "scope": "Remove disposable Rust intermediate libraries from completed clean build210. Retain executables, source, archived evidence and build reports. No active process uses this target.",
+  "files": [
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcfg_if-d1d38aa9bf5da6ad.rlib",
+      "size": 7222
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanyhow-f36515dc2016ce88.rmeta",
+      "size": 437698
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libunicode_ident-fd0bbd1fe10f753b.rlib",
+      "size": 56660
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmemchr-39e829d3658f9d7b.rmeta",
+      "size": 1284804
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libflate2-5914b9c0222738d5.rlib",
+      "size": 1036560
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libunicode_ident-fd0bbd1fe10f753b.rmeta",
+      "size": 34554
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libstrsim-e70d9e7fdfe6664f.rmeta",
+      "size": 69446
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libserde_json-f79579cfa23bd0ee.rlib",
+      "size": 5722386
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libsimd_adler32-7293658a63d1e7ea.rlib",
+      "size": 664680
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_firmware-ec2fc049aed8d2a8.rlib",
+      "size": 21610982
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libtypenum-91e18d342208ea6d.rlib",
+      "size": 2751240
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libversion_check-9859fe56c2d7fed0.rlib",
+      "size": 469346
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libblock_buffer-31c05e86d24a4392.rmeta",
+      "size": 50058
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libserde_json-f79579cfa23bd0ee.rmeta",
+      "size": 1702521
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libbitcoin_hashes-3c22dbd9708883c0.rlib",
+      "size": 2641310
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libgeneric_array-511ca11be105bc49.rlib",
+      "size": 819892
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcpufeatures-618cfa52b580a46a.rmeta",
+      "size": 39016
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libsyn-cf12283643c263f5.rmeta",
+      "size": 2729966
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libadler2-6340a59ff399c382.rlib",
+      "size": 99266
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libfiletime-6d2dded0a898ae23.rmeta",
+      "size": 40545
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libis_terminal_polyfill-b3811f8659ae59ce.rlib",
+      "size": 10946
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcfg_if-d1d38aa9bf5da6ad.rmeta",
+      "size": 5716
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libtypenum-91e18d342208ea6d.rmeta",
+      "size": 2721589
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libarrayvec-9cbe55e7a1fc959c.rlib",
+      "size": 243602
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libis_terminal_polyfill-b3811f8659ae59ce.rmeta",
+      "size": 9395
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libhex_conservative-4c6ed72d21017684.rmeta",
+      "size": 201209
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libheck-f2569b767cf4326e.rlib",
+      "size": 331260
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcolorchoice-294fbc1d050f5762.rlib",
+      "size": 35476
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/liblibc-13da9567e4bf82a2.rmeta",
+      "size": 3880537
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libfastrand-bd174b66751d02e4.rlib",
+      "size": 317718
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstyle_parse-5182c4eaa9933340.rlib",
+      "size": 251530
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstyle-1162de9cbb4f50a9.rlib",
+      "size": 332250
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libtar-c7038060c7b1a542.rmeta",
+      "size": 358224
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libbitcoin_io-fdfd6e9b01dbd6e4.rmeta",
+      "size": 196621
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libquote-e8776cebda2ee1a3.rmeta",
+      "size": 268950
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libxattr-513e64baccd546af.rmeta",
+      "size": 48302
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libquote-e8776cebda2ee1a3.rlib",
+      "size": 487912
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libclap_lex-236175493cb5583a.rlib",
+      "size": 451782
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libblock_buffer-31c05e86d24a4392.rlib",
+      "size": 55890
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libtempfile-811b75569fc85bed.rmeta",
+      "size": 238993
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libminiz_oxide-325e350fa6302642.rmeta",
+      "size": 381875
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstyle_parse-5182c4eaa9933340.rmeta",
+      "size": 164865
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libclap_builder-81498854faa98ebc.rlib",
+      "size": 18940634
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_mining-7f0e184fdd98363b.rlib",
+      "size": 7742290
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_mining-7f0e184fdd98363b.rmeta",
+      "size": 929885
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libtempfile-811b75569fc85bed.rlib",
+      "size": 1499408
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_qemu_core-5b5938918f15a8aa.rlib",
+      "size": 1995828
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libxattr-513e64baccd546af.rlib",
+      "size": 911226
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libdigest-3ac83c797847795b.rmeta",
+      "size": 168924
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmemchr-39e829d3658f9d7b.rlib",
+      "size": 2572508
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libversion_check-9859fe56c2d7fed0.rmeta",
+      "size": 74753
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libsimd_adler32-7293658a63d1e7ea.rmeta",
+      "size": 389892
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstream-6ffc0ed2e5e4f55d.rlib",
+      "size": 747082
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_access-021209bf31ac450d.rmeta",
+      "size": 245370
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libsha2-596a53225dbbebec.rlib",
+      "size": 1181520
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstyle-1162de9cbb4f50a9.rmeta",
+      "size": 206744
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_catalog-7ccab09a2f1e3147.rlib",
+      "size": 13811048
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libgeneric_array-511ca11be105bc49.rmeta",
+      "size": 808019
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstyle_query-54866200dd67e24d.rlib",
+      "size": 21232
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_axi_iic-6b55442bd08d8acc.rlib",
+      "size": 327714
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstream-6ffc0ed2e5e4f55d.rmeta",
+      "size": 223891
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libclap_builder-81498854faa98ebc.rmeta",
+      "size": 2126305
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libhex-e5ec8a81ee0bf6d9.rmeta",
+      "size": 337293
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libarrayvec-9cbe55e7a1fc959c.rmeta",
+      "size": 239719
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libserde-882bb7181c009bfd.rmeta",
+      "size": 828718
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_access-021209bf31ac450d.rlib",
+      "size": 3188644
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcrypto_common-1d2aa6cb014a2918.rmeta",
+      "size": 27622
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libdigest-3ac83c797847795b.rlib",
+      "size": 177804
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libutf8parse-0244b5b6eb527ffa.rlib",
+      "size": 33858
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libfastrand-bd174b66751d02e4.rmeta",
+      "size": 148742
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libclap-b45561ddc26649e5.rmeta",
+      "size": 11865
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libserde_core-641c2570f37b6b5b.rmeta",
+      "size": 4754057
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcrypto_common-1d2aa6cb014a2918.rlib",
+      "size": 33510
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libbitcoin_io-fdfd6e9b01dbd6e4.rlib",
+      "size": 366346
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_catalog-7ccab09a2f1e3147.rmeta",
+      "size": 1148464
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/liblibc-13da9567e4bf82a2.rlib",
+      "size": 3925618
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libadler2-6340a59ff399c382.rmeta",
+      "size": 21655
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_firmware-ec2fc049aed8d2a8.rmeta",
+      "size": 1563210
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libitoa-798eb72370c2dacd.rmeta",
+      "size": 59953
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_coordinator-86034460c8ca8d38.rmeta",
+      "size": 1001880
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libclap-b45561ddc26649e5.rlib",
+      "size": 13370
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libclap_lex-236175493cb5583a.rmeta",
+      "size": 65421
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libonce_cell-03eaad589cd1e9ec.rlib",
+      "size": 282716
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libserde-882bb7181c009bfd.rlib",
+      "size": 1150866
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcpufeatures-618cfa52b580a46a.rlib",
+      "size": 40536
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libflate2-5914b9c0222738d5.rmeta",
+      "size": 552644
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libbitflags-944aa53b8ae2b603.rmeta",
+      "size": 220925
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/librustix-a6f5ba1aba4403ce.rmeta",
+      "size": 3833203
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanyhow-f36515dc2016ce88.rlib",
+      "size": 1586602
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libhex_conservative-4c6ed72d21017684.rlib",
+      "size": 673588
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libminiz_oxide-325e350fa6302642.rlib",
+      "size": 2351404
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_runtime-675449d351a8cd67.rlib",
+      "size": 22738102
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libsha2-596a53225dbbebec.rmeta",
+      "size": 651914
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libgetrandom-68ab08b7a79c6436.rmeta",
+      "size": 78913
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libutf8parse-0244b5b6eb527ffa.rmeta",
+      "size": 29766
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/liblinux_raw_sys-7f0d99c4044a533c.rmeta",
+      "size": 1340135
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libstrsim-e70d9e7fdfe6664f.rlib",
+      "size": 1339992
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libanstyle_query-54866200dd67e24d.rmeta",
+      "size": 11196
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libitoa-798eb72370c2dacd.rlib",
+      "size": 200856
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libbitcoin_hashes-3c22dbd9708883c0.rmeta",
+      "size": 1167784
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libbitflags-944aa53b8ae2b603.rlib",
+      "size": 499292
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/liblinux_raw_sys-7f0d99c4044a533c.rlib",
+      "size": 1366588
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libgetrandom-68ab08b7a79c6436.rlib",
+      "size": 217122
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libfiletime-6d2dded0a898ae23.rlib",
+      "size": 279566
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libhex-e5ec8a81ee0bf6d9.rlib",
+      "size": 396746
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libzmij-584df7364bceb963.rlib",
+      "size": 660886
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libserde_core-641c2570f37b6b5b.rlib",
+      "size": 5282202
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcrc32fast-c7e0c9ccd09f1914.rmeta",
+      "size": 45066
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libsyn-cf12283643c263f5.rlib",
+      "size": 8802644
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libproc_macro2-60789186a606f3df.rlib",
+      "size": 1205920
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libonce_cell-03eaad589cd1e9ec.rmeta",
+      "size": 192531
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcolorchoice-294fbc1d050f5762.rmeta",
+      "size": 12831
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_coordinator-86034460c8ca8d38.rlib",
+      "size": 8477180
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libzmij-584df7364bceb963.rmeta",
+      "size": 414921
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libcrc32fast-c7e0c9ccd09f1914.rlib",
+      "size": 213114
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libheck-f2569b767cf4326e.rmeta",
+      "size": 78171
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libtar-c7038060c7b1a542.rlib",
+      "size": 4056524
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libmd_sim_runtime-675449d351a8cd67.rmeta",
+      "size": 1316596
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/libproc_macro2-60789186a606f3df.rmeta",
+      "size": 341972
+    },
+    {
+      "path": "work/simulator/clean-target-210/debug/deps/librustix-a6f5ba1aba4403ce.rlib",
+      "size": 6668062
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libarrayvec-6c9e895e7b2308e6.rmeta",
+      "size": 345310
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libserde-b7cc8e3999dd190a.rlib",
+      "size": 969126
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libminiz_oxide-075a6c9c9b2375ab.rmeta",
+      "size": 395542
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libclap_lex-588115812a889866.rlib",
+      "size": 108322
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstyle-d5441a0611b5972a.rlib",
+      "size": 251430
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libdigest-6d6a9cd2e4a77835.rmeta",
+      "size": 192996
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libclap_builder-542e15e3b8fc1866.rlib",
+      "size": 3993780
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libsha2-8b678bf6ddb5cead.rmeta",
+      "size": 659168
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcolorchoice-b4766b4b30177b1f.rlib",
+      "size": 16182
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libhex_conservative-cacd0126166ec728.rmeta",
+      "size": 250766
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libtempfile-9b8e4b9c98a52b46.rlib",
+      "size": 433934
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcolorchoice-b4766b4b30177b1f.rmeta",
+      "size": 13547
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libtypenum-e47032cfdaccf988.rlib",
+      "size": 2779462
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libserde_core-99a5d921800d3ae4.rlib",
+      "size": 5374794
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_mining-865ab4136cee4750.rmeta",
+      "size": 1077140
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libclap-778df24ad6cbc2d6.rlib",
+      "size": 13370
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/librustix-fc9a820b5483e78a.rmeta",
+      "size": 4309622
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libclap_builder-542e15e3b8fc1866.rmeta",
+      "size": 2502880
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libtempfile-9b8e4b9c98a52b46.rmeta",
+      "size": 272135
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libgeneric_array-0607fe1e05cac98d.rmeta",
+      "size": 1003606
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libflate2-ba89585f2e458a90.rlib",
+      "size": 680002
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libquote-645e7f50d9d14da7.rlib",
+      "size": 477480
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libbitcoin_hashes-008089b4b6579a74.rmeta",
+      "size": 1277974
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanyhow-2e6b3d8196b16c1c.rmeta",
+      "size": 453976
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libis_terminal_polyfill-3a6c68a24628c3e8.rlib",
+      "size": 11162
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstyle_parse-2d9022ddd35f7538.rmeta",
+      "size": 180276
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstyle_query-42d91cafb3eb5bb6.rlib",
+      "size": 21956
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcrc32fast-06fd8a0b09df4eb9.rmeta",
+      "size": 46439
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libbitcoin_hashes-008089b4b6579a74.rlib",
+      "size": 1407350
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libgetrandom-40d725c6589f9abb.rlib",
+      "size": 100372
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libadler2-35c0823f3642ff67.rmeta",
+      "size": 19806
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libunicode_ident-de252d0a385fca3c.rlib",
+      "size": 54388
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcrypto_common-7a16abcef4b30d7e.rlib",
+      "size": 33158
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libproc_macro2-6e1e45f1cd110484.rlib",
+      "size": 1150802
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libbitcoin_io-3342eb2de7a63407.rmeta",
+      "size": 259476
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libtypenum-e47032cfdaccf988.rmeta",
+      "size": 2775999
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanyhow-2e6b3d8196b16c1c.rlib",
+      "size": 579416
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libzmij-ceeb20a3640da83e.rmeta",
+      "size": 418716
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libfiletime-97bd97138e38e1e8.rmeta",
+      "size": 42818
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libflate2-ba89585f2e458a90.rmeta",
+      "size": 632284
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstream-6f635f94142463a3.rlib",
+      "size": 309380
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libbitflags-b2bbadc8c7f3a7a0.rlib",
+      "size": 260624
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libfiletime-97bd97138e38e1e8.rlib",
+      "size": 55070
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmemchr-07a3b8c87859a9fd.rmeta",
+      "size": 1373743
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_runtime-a07c2ec5a1044784.rmeta",
+      "size": 1502857
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/liblinux_raw_sys-04e1379931eb2a36.rmeta",
+      "size": 1372793
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libversion_check-91583b6c5de75bfc.rlib",
+      "size": 414480
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libbitcoin_io-3342eb2de7a63407.rlib",
+      "size": 275628
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libquote-645e7f50d9d14da7.rmeta",
+      "size": 268950
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libstrsim-9ec8fb3f9165a1d4.rmeta",
+      "size": 77081
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libutf8parse-2d9e69df34622ed4.rmeta",
+      "size": 29125
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libzmij-ceeb20a3640da83e.rlib",
+      "size": 455184
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libgeneric_array-0607fe1e05cac98d.rlib",
+      "size": 1007370
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libxattr-b1f6c16152bf79eb.rlib",
+      "size": 119498
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libserde_json-91f73cac36d09b32.rlib",
+      "size": 2439922
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libserde_json-91f73cac36d09b32.rmeta",
+      "size": 2010383
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcpufeatures-b5f5d8f5e30deb49.rlib",
+      "size": 40536
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libdigest-6d6a9cd2e4a77835.rlib",
+      "size": 196556
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libtar-172edc3caf2113be.rlib",
+      "size": 813326
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_firmware-1b37206af87fcc62.rmeta",
+      "size": 1690479
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libsimd_adler32-7daf4c94d2ff2733.rlib",
+      "size": 529764
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libis_terminal_polyfill-3a6c68a24628c3e8.rmeta",
+      "size": 9616
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_runtime-a07c2ec5a1044784.rlib",
+      "size": 4438106
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libhex-a540e0915e0684c0.rmeta",
+      "size": 399710
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libarrayvec-6c9e895e7b2308e6.rlib",
+      "size": 347674
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libsyn-711e5bf26231bcb6.rmeta",
+      "size": 2727697
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libversion_check-91583b6c5de75bfc.rmeta",
+      "size": 74461
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libfastrand-a43d7af7fada607d.rmeta",
+      "size": 201356
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libsha2-8b678bf6ddb5cead.rlib",
+      "size": 706350
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_catalog-2e28b6be395bddb0.rmeta",
+      "size": 1319549
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_coordinator-a5fbc3cdbafce360.rmeta",
+      "size": 1380687
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcpufeatures-b5f5d8f5e30deb49.rmeta",
+      "size": 39016
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_access-4d5db51ab82a15ea.rlib",
+      "size": 1414254
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/liblinux_raw_sys-04e1379931eb2a36.rlib",
+      "size": 1374324
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libclap_lex-588115812a889866.rmeta",
+      "size": 78069
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libonce_cell-a408c640e8723035.rlib",
+      "size": 239240
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_coordinator-a5fbc3cdbafce360.rlib",
+      "size": 3282256
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libclap-778df24ad6cbc2d6.rmeta",
+      "size": 11865
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libsimd_adler32-7daf4c94d2ff2733.rmeta",
+      "size": 392148
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libtar-172edc3caf2113be.rmeta",
+      "size": 383467
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libblock_buffer-eea7d5dac2dc34f5.rmeta",
+      "size": 63583
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcrc32fast-06fd8a0b09df4eb9.rlib",
+      "size": 75060
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_catalog-2e28b6be395bddb0.rlib",
+      "size": 2645288
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libblock_buffer-eea7d5dac2dc34f5.rlib",
+      "size": 65986
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcfg_if-f85a3e1c459c416a.rmeta",
+      "size": 5716
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_access-4d5db51ab82a15ea.rmeta",
+      "size": 272015
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libserde_core-99a5d921800d3ae4.rmeta",
+      "size": 5286582
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libserde-b7cc8e3999dd190a.rmeta",
+      "size": 943711
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmemchr-07a3b8c87859a9fd.rlib",
+      "size": 1457336
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcfg_if-f85a3e1c459c416a.rlib",
+      "size": 7222
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libheck-4c5e4d47eca92f69.rlib",
+      "size": 289720
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libadler2-35c0823f3642ff67.rlib",
+      "size": 26638
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstyle-d5441a0611b5972a.rmeta",
+      "size": 227790
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libbitflags-b2bbadc8c7f3a7a0.rmeta",
+      "size": 245176
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/liblibc-621fe47ea3d0942c.rmeta",
+      "size": 3957121
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libunicode_ident-de252d0a385fca3c.rmeta",
+      "size": 34554
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libitoa-3f638d8030573992.rlib",
+      "size": 82678
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libproc_macro2-6e1e45f1cd110484.rmeta",
+      "size": 341960
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libxattr-b1f6c16152bf79eb.rmeta",
+      "size": 45072
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libstrsim-9ec8fb3f9165a1d4.rlib",
+      "size": 157530
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_firmware-1b37206af87fcc62.rlib",
+      "size": 5233866
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/liblibc-621fe47ea3d0942c.rlib",
+      "size": 3968348
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/librustix-fc9a820b5483e78a.rlib",
+      "size": 4723750
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libhex_conservative-cacd0126166ec728.rlib",
+      "size": 292580
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libonce_cell-a408c640e8723035.rmeta",
+      "size": 232683
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstyle_query-42d91cafb3eb5bb6.rmeta",
+      "size": 20432
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libgetrandom-40d725c6589f9abb.rmeta",
+      "size": 88423
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libsyn-711e5bf26231bcb6.rlib",
+      "size": 8622296
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstyle_parse-2d9022ddd35f7538.rlib",
+      "size": 189440
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libcrypto_common-7a16abcef4b30d7e.rmeta",
+      "size": 30739
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libanstream-6f635f94142463a3.rmeta",
+      "size": 263140
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libitoa-3f638d8030573992.rmeta",
+      "size": 72727
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libmd_sim_mining-865ab4136cee4750.rlib",
+      "size": 2000652
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libfastrand-a43d7af7fada607d.rlib",
+      "size": 208170
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libheck-4c5e4d47eca92f69.rmeta",
+      "size": 78159
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libhex-a540e0915e0684c0.rlib",
+      "size": 404350
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libminiz_oxide-075a6c9c9b2375ab.rlib",
+      "size": 591776
+    },
+    {
+      "path": "work/simulator/clean-target-210/release/deps/libutf8parse-2d9e69df34622ed4.rlib",
+      "size": 30636
+    }
+  ],
+  "bytes": 317846353
+}

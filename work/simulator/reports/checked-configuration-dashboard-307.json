@@ -1,0 +1,291 @@
+{
+  "schema": "md-sim-strict-transfer-dashboard-cycle/1",
+  "passed_component_cycle": true,
+  "full_specification_complete": false,
+  "original_board_gate": "incomplete",
+  "scope": "Four archived S9 firmware boots with configuration transfer checks, native signed update, native browser, settings write/readback/restore and restart persistence. Adapted reference board only.",
+  "assessment": {
+    "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/assessment.json",
+    "sha256": "f30bab24e3e4e419fd1b3f34b7cb616471cb0ff80e51e08fe64d04d12c67ac29",
+    "size": 13052
+  },
+  "driver_inputs": {
+    "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/driver-input.json",
+    "sha256": "2cfb47990cbd67bbf91fadca956e7db6d061fb9da1d5d2ff355989331b257cd1",
+    "size": 33327
+  },
+  "frozen_helpers": {
+    "path": "work/simulator/pcap-target-307/manifest.json",
+    "sha256": "8563e379e774c9258ec90fe019714ed0f46f85d4dd6d015d578a5136d07c08ae",
+    "size": 1398
+  },
+  "frozen_driver_source": {
+    "path": "work/simulator/pcap-target-307/source/s9_dashboard_cycle.rs",
+    "sha256": "e3ecbaa29adec619b24e31f52b11d6c990fbdb9751e005b343ec1fa1b134fb48",
+    "size": 25833
+  },
+  "backend": "work/simulator/qemu-s9/backend-build-304-release",
+  "phases": [
+    {
+      "name": "provision",
+      "wall_milliseconds": 245412,
+      "identities": {
+        "process-spec.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision/process-spec.json",
+          "sha256": "26e487692588ed4cf3a6d51f71512919a8ad102f30ffd4cb2834a860617a063a",
+          "size": 11848
+        },
+        "adaptation.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision/adaptation.json",
+          "sha256": "ef176529a6517b3a6bd652b700d81c99f293926d992d7400260bee0c930594ad",
+          "size": 15520
+        },
+        "result.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision/result.json",
+          "sha256": "aa222813475a319dca6bb6334fe7341fe1da1bd0608b73841583409c1d70c467",
+          "size": 99083827
+        },
+        "configuration-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision/configuration-audit.json",
+          "sha256": "b4fe4e543c03c9cc39678a53b20ddf22f77f4a1695fcb2b258ef9ed0c256cb05",
+          "size": 1036
+        },
+        "sd-storage.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision/sd-storage.json",
+          "sha256": "af1f69a19775fb665072e26abb4b9438c54296df8a8c6cfa18024a0a7d17e144",
+          "size": 3428
+        },
+        "rate-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision/rate-audit.json",
+          "sha256": "b2eafdd38d17db7a4c8131275c67d795ea61d3774516dedb7ad57ea4e380e53f",
+          "size": 2243
+        },
+        "regtest-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision/regtest-audit.json",
+          "sha256": "09fcabe385fc1deed38b2ee4c3993bd6fbc54c34373cc575c8ae67adf2dcf4fe",
+          "size": 366783
+        }
+      },
+      "hashes": 96323,
+      "fresh_jobs": 2,
+      "clean_transition": true,
+      "difficulty_change": true
+    },
+    {
+      "name": "run-0",
+      "wall_milliseconds": 308519,
+      "identities": {
+        "process-spec.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0/process-spec.json",
+          "sha256": "6b85ce1bc200002d32f791b8a1332cb0b75c356ff569e354116702daa3d895de",
+          "size": 12470
+        },
+        "adaptation.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0/adaptation.json",
+          "sha256": "704fb686a842b4e3ae37e82a7fd637e8555cd0bad8f11f7288d746afc68a557b",
+          "size": 16534
+        },
+        "result.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0/result.json",
+          "sha256": "ae9210ee99abc654e76950f4daaad27cb0bceda5076ae41e6064aa8c460dc144",
+          "size": 172492927
+        },
+        "configuration-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0/configuration-audit.json",
+          "sha256": "7c9a806d66f62d5fa0e1e1fb9658d14890b3360daca89a9190dcf2004d5e8dfa",
+          "size": 1036
+        },
+        "sd-storage.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0/sd-storage.json",
+          "sha256": "01328f321a05a11ea340657acc430fc40f7ded5908b347f5322fdb8233f25eda",
+          "size": 3435
+        },
+        "rate-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0/rate-audit.json",
+          "sha256": "e89185d20a7e3692b692cafcd6557e0fa792b72f8c38fda9754ed0cde5c278af",
+          "size": 2237
+        },
+        "regtest-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0/regtest-audit.json",
+          "sha256": "f7543b73d20a9a59df672190d40cc2342a6147d3aa2932648fc34d8bf15a6f23",
+          "size": 15276
+        }
+      },
+      "hashes": 5685,
+      "fresh_jobs": 2,
+      "clean_transition": true,
+      "difficulty_change": true
+    },
+    {
+      "name": "run-1",
+      "wall_milliseconds": 365432,
+      "identities": {
+        "process-spec.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/process-spec.json",
+          "sha256": "4fce95665fc0050faee96bd03c05e125debcfc0a5566706bc1f44ade85cca649",
+          "size": 12228
+        },
+        "adaptation.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/adaptation.json",
+          "sha256": "45b3e94a6d01f5b3662064097298357779d1a0d5855f427fdc1ced6551e2af1d",
+          "size": 15627
+        },
+        "result.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/result.json",
+          "sha256": "a06eb36fbcdee751d2410b45da27aa772f548c507bd74bec9dcc42c575dd763f",
+          "size": 216056581
+        },
+        "configuration-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/configuration-audit.json",
+          "sha256": "5331f2166b1769a38ccadbd7c41a83696eca23a4d0abfcc7e22eafd0ff9c520c",
+          "size": 1037
+        },
+        "sd-storage.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/sd-storage.json",
+          "sha256": "95ae1cb0a9919b06d74f9c725f164163f0560aaa756a03e91e4e77e6c0b19b68",
+          "size": 3435
+        },
+        "rate-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/rate-audit.json",
+          "sha256": "04981b3c6a818503aca2fc938275c8fb5939fd4b851cee554574484a5934ceab",
+          "size": 2246
+        },
+        "regtest-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/regtest-audit.json",
+          "sha256": "b89c6b774eb0b011d2329245b065dde6a1335202e6328b42a2c29153fbaaef8b",
+          "size": 463778
+        }
+      },
+      "hashes": 114623,
+      "fresh_jobs": 2,
+      "clean_transition": true,
+      "difficulty_change": true
+    },
+    {
+      "name": "run-2",
+      "wall_milliseconds": 246311,
+      "identities": {
+        "process-spec.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2/process-spec.json",
+          "sha256": "61aee6ad9dd60db73958fa02a550f94a136f054598d6fcc349d036aff36727ca",
+          "size": 12225
+        },
+        "adaptation.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2/adaptation.json",
+          "sha256": "946d6a16aa7ad02107a1934bff33714fbc2e33820570008a04b415986455aca8",
+          "size": 15626
+        },
+        "result.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2/result.json",
+          "sha256": "f57c6b803d4e3ef8f146c63c877ffe93c2b391678ea4505ccd53fea3e0f3b47d",
+          "size": 188180739
+        },
+        "configuration-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2/configuration-audit.json",
+          "sha256": "76e3d1218aae87a6d8fbff90292f4cd22052fedd63d69d7155ba965809a55850",
+          "size": 1037
+        },
+        "sd-storage.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2/sd-storage.json",
+          "sha256": "cc303d38bf0c0bc10b32189c557433b9ebae046f9195b46155c51788009586fb",
+          "size": 3435
+        },
+        "rate-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2/rate-audit.json",
+          "sha256": "e5be4de61ae49cc889b699608c0020315f6430ae07d72a9a916bf4a33bd9450f",
+          "size": 2246
+        },
+        "regtest-audit.json": {
+          "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2/regtest-audit.json",
+          "sha256": "69b80f8788135266b4a5b3d81e75edc4e9697907e47f11a0f41aab369e1f1bcd",
+          "size": 458342
+        }
+      },
+      "hashes": 111661,
+      "fresh_jobs": 2,
+      "clean_transition": true,
+      "difficulty_change": true
+    }
+  ],
+  "browser": {
+    "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1/browser-result.json",
+    "sha256": "d054447a83e464be9a487b825abb922e4e4b3518ae94d858c1cc0ee92f34d2e2",
+    "size": 223137
+  },
+  "nodes": [
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-0-0/block-acceptance.json",
+        "sha256": "06c60ed717c16e30be6102a514bdcd525c9377120954302bec815b99cf1bce78",
+        "size": 1745
+      },
+      "block": "09892c030049512c313f26349bb21cb19a8f6a3b20310331b33ce53b877c9156"
+    },
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-0-1/block-acceptance.json",
+        "sha256": "da2ac30bb56322a75e379e78a447a89f2fd4444a3572398e5be7952ef16e90e7",
+        "size": 1745
+      },
+      "block": "02ca4e670070590ab52ce2c9e80c42a202791aa0ecc260d84d473474e236a65a"
+    },
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-1-0/block-acceptance.json",
+        "sha256": "b2395687016c5a9ec7df401ac7ecabbff33ab4a6bbf15828df6db33be3b281ce",
+        "size": 1745
+      },
+      "block": "0f9afde701dbab168c9485d236937d987fc50e3e6a8c7b9994b87a8c7e6e4edd"
+    },
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-1-1/block-acceptance.json",
+        "sha256": "d6eca387e14f7544581b4d7ae026db19a6b7a5ca4afb197bae10bfccc1f7f040",
+        "size": 1745
+      },
+      "block": "0177de8f0011a82aa48ae26da000793bfb3d0c93518e8ee546ee6d5b34d5cd50"
+    },
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-2-0/block-acceptance.json",
+        "sha256": "9d9d1f0817763ae5eae15509342cb09d9afda8b6e42f9ff9a96a4c58fdca2a94",
+        "size": 1745
+      },
+      "block": "02f7538702c5e6642bb274a9d7c640dc1fd93e764f04093ddf8e79d65c656b60"
+    },
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-2-1/block-acceptance.json",
+        "sha256": "e01507c11aae5480a8e1975d2add654c3f7d45120e3b94312ce0b922bd99a0d1",
+        "size": 1745
+      },
+      "block": "020d49aa002521d6b30dca7a4feacaeae7d38049d3244c3707e1a0114f9f4ba8"
+    },
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-provision-0/block-acceptance.json",
+        "sha256": "2edd70a330a89ad8fb58fee76b68ada06e8373f7df929923e8b3045e2b1d678d",
+        "size": 1745
+      },
+      "block": "0ace3d8d00907b8c15fb9b945319470a1d2cd169b6952e9975a7addee3f4b8e5"
+    },
+    {
+      "report": {
+        "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-provision-1/block-acceptance.json",
+        "sha256": "85fbb93d12901411178d076ec8f7d763386dfeac1eba5f61052e0be0688e45fe",
+        "size": 1745
+      },
+      "block": "013f3b160084278cb9fdaef6979652eb06dc41ebad4e0352611c6acf16b5877d"
+    }
+  ],
+  "topology": "Board emulator and separate isolated private client/support VM on this local host. Native dashboard origin http://10.0.2.15 is inside that environment; no external host or published host URL.",
+  "subsequent_findings": "This frozen backend predates programming/system-reset IRQ fixes, reset-triggered empty-DMA suppression and the fixed-source DMA guard. Those are distinct model builds and require their own regression tests. Do not reuse this result as their full native dashboard acceptance.",
+  "source_note": "The captured307 driver source matches its reported source hash. Current source later groups boot policy fields to pass strict Clippy; this historical run retains its exact code identity.",
+  "remaining": [
+    "Exact hardware and FPGA logic",
+    "Physical initialization/status/timing",
+    "SSH and TLS selected-run dashboard",
+    "Independent review",
+    "Complete target matrix"
+  ]
+}

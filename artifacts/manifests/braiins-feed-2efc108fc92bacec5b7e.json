@@ -1,0 +1,32 @@
+{
+  "id": "braiins-feed-2efc108fc92bacec5b7e",
+  "url": "https://feeds.braiins-os.com/am3-aml/firmware_2023-08-08-0-47100d59-23.08-plus_aarch64_armv8-a.tar",
+  "kind": "firmware",
+  "title": "sysupgrade am3-aml nand 23.08",
+  "language": "en",
+  "source_id": "braiins-release-page",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:57:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/braiins-feed-2efc108fc92bacec5b7e/firmware_2023-08-08-0-47100d59-23.08-plus_aarch64_armv8-a.tar",
+  "sha256": "0b6f88afe9000ba4d95d8ad8e4a204b0c9759aebdb83ab56407c7d84ef15f273",
+  "size_bytes": 21626880,
+  "executed": false,
+  "final_url": "https://feeds.braiins-os.com/am3-aml/firmware_2023-08-08-0-47100d59-23.08-plus_aarch64_armv8-a.tar",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Tue, 08 Aug 2023 17:57:00 GMT",
+  "etag": "\"64d281ec-14a0000\"",
+  "vendor_sha256": "0b6f88afe9000ba4d95d8ad8e4a204b0c9759aebdb83ab56407c7d84ef15f273",
+  "vendor_checksum_match": true,
+  "upstream_integrity_checks": [
+    {
+      "field": "sha256",
+      "expected": "0b6f88afe9000ba4d95d8ad8e4a204b0c9759aebdb83ab56407c7d84ef15f273",
+      "actual": "0b6f88afe9000ba4d95d8ad8e4a204b0c9759aebdb83ab56407c7d84ef15f273",
+      "match": true,
+      "source_id": "braiins-release-page"
+    }
+  ],
+  "upstream_integrity_match": true
+}

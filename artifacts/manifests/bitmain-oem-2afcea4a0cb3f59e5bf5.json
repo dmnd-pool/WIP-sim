@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2afcea4a0cb3f59e5bf5",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntMiner%20S1%20Manual_CN.pdf",
+  "kind": "document",
+  "title": "AntMiner S1 Manual_CN.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:57+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2afcea4a0cb3f59e5bf5/AntMiner_S1_Manual_CN.pdf",
+  "sha256": "838f549411495eb6b48137b13d0c46ac6fd9941634a7a2246641ae2871dff8bb",
+  "size_bytes": 984837,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/AntMiner%20S1%20Manual_CN.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"ed9aeb5ea7050eea550b88f904fd9a93\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 984837,
+      "actual": 984837,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

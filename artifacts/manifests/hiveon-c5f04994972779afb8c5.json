@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-c5f04994972779afb8c5",
+  "url": "https://download.hiveos.farm/asic/custom/denbendera/Antminer-S9-all-Hiveon-1.02-sign-denbendera.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-all-Hiveon-1.02-sign-denbendera.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:03:31+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-c5f04994972779afb8c5/Antminer-S9-all-Hiveon-1.02-sign-denbendera.tar.gz",
+  "sha256": "891c0cc11f4dc609df596b2884474c1be7c87353e3f8c5a4c55faf5a3cffde2e",
+  "size_bytes": 23585404,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/denbendera/Antminer-S9-all-Hiveon-1.02-sign-denbendera.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Sat, 20 Jun 2020 08:27:45 GMT",
+  "etag": "\"5eedc881-167e27c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23585404,
+      "actual": 23585404,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

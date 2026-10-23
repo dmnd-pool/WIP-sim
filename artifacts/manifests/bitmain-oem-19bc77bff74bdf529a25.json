@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-19bc77bff74bdf529a25",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/51f431c1-6ff7-48ce-9b93-fd20bd8286a7/2024/12/18/09/ACRT2406286-S21%20XP-SVHC241.pdf",
+  "kind": "document",
+  "title": "ACRT2406286-S21 XP-SVHC241.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:05+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-19bc77bff74bdf529a25/ACRT2406286-S21_XP-SVHC241.pdf",
+  "sha256": "ab75f4e546e7e2f79a0fd234bd028cbba7926d7e8ca87709aea44e2eb36de8ce",
+  "size_bytes": 230652,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/51f431c1-6ff7-48ce-9b93-fd20bd8286a7/2024/12/18/09/ACRT2406286-S21%20XP-SVHC241.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 18 Dec 2024 01:28:24 GMT",
+  "etag": "\"9cc2a356b1b734331bc5787e656c62a2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 230652,
+      "actual": 230652,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

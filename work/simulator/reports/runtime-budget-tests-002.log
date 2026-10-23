@@ -1,0 +1,42 @@
+   Compiling md-sim-runtime v0.1.0 (/home/user/src/md-sim/crates/md-sim-runtime)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.39s
+     Running unittests src/lib.rs (target/debug/deps/md_sim_runtime-b6404444470dc591)
+
+running 5 tests
+test isolation::tests::guest_mounts_cannot_replace_runtime_mounts ... ok
+test store::tests::paths_and_budgets_are_not_controlled_by_hash_text ... ok
+test worker::ownership_tests::worker_rejects_root_runs_and_lock_symlinks ... ok
+test store::tests::rejected_transfer_can_restart_without_deleting_published_bytes ... ok
+test store::tests::transfer_resume_retry_and_destination_verification ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/isolated_worker.rs (target/debug/deps/isolated_worker-ec6285cbd18e0cc3)
+
+running 6 tests
+test completed_namespace_drops_descendant_pipe_descriptors ... ok
+test supervisor_loss_terminates_its_live_namespace ... ok
+test isolated_process_has_only_locked_inputs_and_bounded_trace ... ok
+test timeout_releases_the_namespace ... ok
+test worker_admission_preserves_budget_across_restart_and_cleanup ... ok
+test connected_ipc_transfers_reconnects_cancels_and_retains_results ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.21s
+
+     Running tests/store_quota.rs (target/debug/deps/store_quota-32ef34be9a2003cd)
+
+running 5 tests
+test unsafe_entries_fail_closed_and_preserve_external_files ... ok
+test interrupted_publication_counts_once_and_never_overwrites_objects ... ok
+test concurrent_appends_and_store_handles_cannot_bypass_quota ... ok
+test empty_transfers_consume_slots_across_begin_and_restart ... ok
+test append_retry_abort_publish_and_restart_share_one_quota ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests md_sim_runtime
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-317f3b356a3111f90b87",
+  "url": "https://download.hiveos.farm/asic/t9/stock/Antminer-T9-all-201805270227-550M-user-UBI-NF.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T9-all-201805270227-550M-user-UBI-NF",
+  "language": "en",
+  "source_id": "hiveon-versions",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:51+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-317f3b356a3111f90b87/Antminer-T9-all-201805270227-550M-user-UBI-NF.tar.gz",
+  "sha256": "a482dccfb68697aad50ad43c3c1afe7fbe6df8711820a3508d9cc263a2c3e34b",
+  "size_bytes": 40047290,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/t9/stock/Antminer-T9-all-201805270227-550M-user-UBI-NF.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Fri, 30 Aug 2019 11:09:00 GMT",
+  "etag": "\"5d6903cc-26312ba\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 40047290,
+      "actual": 40047290,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-a0b688864c32363b5894",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ba3a60d1-99d5-4c85-a131-f89ef4fc96c6/2025/11/03/11/FR-1.28(251010-S19k%20Pro).bmu",
+  "kind": "firmware",
+  "title": "FR-1.28(251010-S19k Pro).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:34+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-a0b688864c32363b5894/FR-1.28_251010-S19k_Pro_.bmu",
+  "sha256": "46c6f682e7f0a88a65d5be239409583fdb6d6df59d2e2a92a81e50ce47d56c1c",
+  "size_bytes": 44604212,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ba3a60d1-99d5-4c85-a131-f89ef4fc96c6/2025/11/03/11/FR-1.28(251010-S19k%20Pro).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Mon, 03 Nov 2025 03:03:43 GMT",
+  "etag": "\"791e585679a7de31a446297ed15ece29\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "791e585679a7de31a446297ed15ece29",
+      "actual": "791e585679a7de31a446297ed15ece29",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 44604212,
+      "actual": 44604212,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

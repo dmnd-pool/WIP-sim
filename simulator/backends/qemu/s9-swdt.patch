@@ -1,0 +1,68 @@
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -207,6 +207,7 @@
+     Clock *ps_clk;
+     Clock *cpu_3or2x;
+     Clock *cpu_1x;
++    Clock *swdt_refclk;
+     Clock *uart0_ref_clk;
+     Clock *uart1_ref_clk;
+     uint8_t boot_mode;
+@@ -306,6 +307,10 @@
+               (4 + 2 * (s->regs[R_CLK_621_TRUE] & 1)) *
+               zynq_slcr_compute_clock(cpu_mux, s->regs[R_ARM_CLK_CTRL], 27));
+ 
++    /* External MIO/EMIO watchdog inputs are not connected in this board. */
++    clock_set(s->swdt_refclk, (s->regs[R_WDT_CLK_SEL] & 1) ?
++              0 : clock_get(s->cpu_1x));
++
+     /* compute uartX reference clocks */
+     clock_set(s->uart0_ref_clk,
+               ZYNQ_COMPUTE_CLK(s, uart_mux, R_UART_CLK_CTRL, CLKACT0));
+@@ -339,6 +344,7 @@
+ {
+     clock_propagate(s->cpu_3or2x);
+     clock_propagate(s->cpu_1x);
++    clock_propagate(s->swdt_refclk);
+     clock_propagate(s->uart0_ref_clk);
+     clock_propagate(s->uart1_ref_clk);
+ }
+@@ -637,6 +643,7 @@
+     case R_ARM_CLK_CTRL:
+     case R_UART_CLK_CTRL:
+     case R_CLK_621_TRUE:
++    case R_WDT_CLK_SEL:
+         zynq_slcr_compute_clocks(s);
+         zynq_slcr_propagate_clocks(s);
+         break;
+@@ -653,6 +660,7 @@
+     QDEV_CLOCK_IN(ZynqSLCRState, ps_clk, zynq_slcr_ps_clk_callback, ClockUpdate),
+     QDEV_CLOCK_OUT(ZynqSLCRState, cpu_3or2x),
+     QDEV_CLOCK_OUT(ZynqSLCRState, cpu_1x),
++    QDEV_CLOCK_OUT(ZynqSLCRState, swdt_refclk),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart0_ref_clk),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart1_ref_clk),
+     QDEV_CLOCK_END
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -1,1 +1,8 @@
+-    create_unimplemented_device("zynq.swdt", 0xF8005000, 4 * KiB);
++    dev = qdev_new("md-sim-zynq-swdt");
++    object_property_add_child(OBJECT(machine), "swdt", OBJECT(dev));
++    qdev_connect_clock_in(dev, "refclk", qdev_get_clock_out(slcr, "swdt_refclk"));
++    qdev_connect_clock_in(dev, "pclk", qdev_get_clock_out(slcr, "cpu_1x"));
++    busdev = SYS_BUS_DEVICE(dev);
++    sysbus_realize_and_unref(busdev, &error_fatal);
++    sysbus_mmio_map(busdev, 0, 0xF8005000);
++    sysbus_connect_irq(busdev, 0, pic[41 - GIC_INTERNAL]);
+--- a/hw/i2c/meson.build
++++ b/hw/i2c/meson.build
+@@ -1,1 +1,1 @@
+-  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c', 'md-sim-fan.c', 'md-sim-pic16.c'), md_core,
++  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c', 'md-sim-fan.c', 'md-sim-pic16.c', 'md-sim-swdt.c'), md_core,
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -0,0 +1,3 @@
++# Zynq watchdog register and actual expiry events
++md_sim_swdt_mmio(uint64_t ns, bool write, uint64_t addr, unsigned value, unsigned error) "ns=%" PRIu64 " write=%d addr=0x%" PRIx64 " value=0x%x error=%u"
++md_sim_swdt_event(uint64_t ns, const char *event, unsigned value) "ns=%" PRIu64 " event=%s value=0x%x"

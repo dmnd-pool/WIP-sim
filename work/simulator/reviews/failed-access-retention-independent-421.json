@@ -1,0 +1,50 @@
+{
+  "schema": "md-sim-independent-failed-access-retention/1",
+  "retention_verified": true,
+  "native_receipt": {
+    "locked_run_hash": "e6cdea6f0d59f2b36ce3142f38e098aa023d59903ac753f6ec617f07870dd1af",
+    "token": "4d850e0ab5e4948a70a4ca71e4048bf70b0cc52b5e3c50c29fc5e495fc39e803",
+    "run_id": "run-4d850e0ab5e4948a70a4ca71e4048bf70b0cc52b5e3c50c29fc5e495fc39e803",
+    "result": {
+      "sha256": "c5efb13b5978f36c6a8793e43a9073aa0485ba6cef7104b180ecd896e47e247a",
+      "size": 105141709
+    }
+  },
+  "joined_receipt": {
+    "native": {
+      "locked_run_hash": "e6cdea6f0d59f2b36ce3142f38e098aa023d59903ac753f6ec617f07870dd1af",
+      "token": "4d850e0ab5e4948a70a4ca71e4048bf70b0cc52b5e3c50c29fc5e495fc39e803",
+      "run_id": "run-4d850e0ab5e4948a70a4ca71e4048bf70b0cc52b5e3c50c29fc5e495fc39e803",
+      "result": {
+        "sha256": "c5efb13b5978f36c6a8793e43a9073aa0485ba6cef7104b180ecd896e47e247a",
+        "size": 105141709
+      }
+    },
+    "pool_bundle": {
+      "sha256": "7c9c0be6438e2c7d74d6febb85a7b0f9f0f9de7ea15caf72d892ad8794acc251",
+      "size": 107513
+    },
+    "access_bundle": {
+      "sha256": "fed463a21e71ae5ce984055cbbeab6507111d1275920ae6380099d8e4d77f693",
+      "size": 448850
+    }
+  },
+  "actual_runtime_stdin_matches": true,
+  "actual_guest_joined_receipt_matches": true,
+  "actual_cleanup_matches": true,
+  "access_files_verified": 24,
+  "pool_sessions_verified": 10,
+  "access_passed": false,
+  "overall_assessment_passed": false,
+  "browser_requested": false,
+  "root_cause": "bwrap: Specifying --uid requires --unshare-user or --userns",
+  "assessment": {
+    "sha256": "d4bdd0821c2d3a1434ecdc8517f2f54f0be75c2cc93ba1284e06fd2715373406",
+    "size": 49028278
+  },
+  "outer_result": {
+    "sha256": "1a6329197aeb7027221655121e32732eb628bd528b8c4898a0540925b686eaf3",
+    "size": 198068017
+  },
+  "scope": "Failed native dashboard startup. Actual archived firmware run, pool and failed access bytes retained before the exact cleanup receipt. Mining correctness and Core acceptance are not assessed here."
+}

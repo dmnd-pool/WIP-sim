@@ -1,0 +1,37 @@
+{
+  "id": "auradine-fluxos-3-0-2-zip",
+  "url": "https://update.auradine.com/images/FluxOS-3.0.2.zip",
+  "kind": "firmware",
+  "title": "FluxOS-3.0.2.zip",
+  "language": "und",
+  "source_id": "auradine-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/auradine-fluxos-3-0-2-zip/FluxOS-3.0.2.zip",
+  "sha256": "b657ff15ebbfaf1f0139206febae084781d10aef1cf5652cbe6030635afdde9c",
+  "size_bytes": 104741862,
+  "executed": false,
+  "final_url": "https://update.auradine.com/images/FluxOS-3.0.2.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 15 Oct 2026 20:55:39 GMT",
+  "etag": "\"5dea83d848aefa97a7ef1e6d5430bb41-7\"",
+  "publisher_sha256": "b657ff15ebbfaf1f0139206febae084781d10aef1cf5652cbe6030635afdde9c",
+  "matches_publisher_sha256": true,
+  "vendor_models": "AT,AI,AH",
+  "version": "3.0.2",
+  "vendor_created": "2026-10-15 10:08:54.985118",
+  "publisher_checksum_claims": [
+    {
+      "model": "AT,AI,AH",
+      "sha256": "b657ff15ebbfaf1f0139206febae084781d10aef1cf5652cbe6030635afdde9c",
+      "size": "100850966",
+      "created": "2026-10-15 10:08:54.985118",
+      "branch": "v3.0.2"
+    }
+  ],
+  "matches_any_publisher_sha256": true,
+  "matches_all_publisher_sha256": true,
+  "matches_any_publisher_size": false
+}

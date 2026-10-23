@@ -1,0 +1,49 @@
+{
+  "review": "author only; independent review incomplete",
+  "files": {
+    "crates/md-sim-firmware/src/serial_console.rs": {
+      "sha256": "6a81db5903f2835fad78f12c30fbe54c294c7fd8cf71da73a819ff23a3591929",
+      "size": 39369
+    },
+    "crates/md-sim-firmware/examples/support/s9_boot_storage.rs": {
+      "sha256": "3f2c8b5493d675e8e0dc3d71ae1e91147993877df7afb7b8ead4127affe595f9",
+      "size": 37923
+    },
+    "crates/md-sim-firmware/examples/support/s9_cycle_evidence.rs": {
+      "sha256": "70f848128a2efe6028c944c37cb81e3481f462c185c988cbc47b9035942b113a",
+      "size": 10197
+    },
+    "crates/md-sim-firmware/examples/support/s9_nand_scenario.rs": {
+      "sha256": "97cbc1173b4f7de48e4346db2053dc56c25f05065d27be108b9ae0f2fa904fda",
+      "size": 4792
+    },
+    "crates/md-sim-firmware/examples/s9_boot_bundle.rs": {
+      "sha256": "1203bd84afdc654ddb808eff94b59a705615cb48d79780b710bcf53475169b29",
+      "size": 109339
+    },
+    "crates/md-sim-firmware/examples/s9_nand_cycle.rs": {
+      "sha256": "46d533c9f15f63ecd7bc930e31c448892cfd0424ceb768e81dc365f4cd1af0b8",
+      "size": 10709
+    },
+    "crates/md-sim-firmware/examples/s9_sd_snapshot_inspect.rs": {
+      "sha256": "0348c851a7066cef469204e05ebfcc9a0f7473c3b216b60da23aeaf75b15f58b",
+      "size": 26489
+    },
+    "crates/md-sim-firmware/examples/s9_dashboard_cycle.rs": {
+      "sha256": "8f2a0f084e21d028a449ee663bd6fde4c40f6ae38f52a2cfafd344fad3505d22",
+      "size": 22649
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board_dashboard.rs": {
+      "sha256": "7091ee8ea2ee0667c69cd4fa2398308255ff1d5447c4a99a309fe9bc3c83b07b",
+      "size": 21702
+    },
+    "work/simulator/qemu-s9/core-checkpoint-207/manifest.json": {
+      "sha256": "34da6fc43db5ec505f6c8fcc63f6c736ee4344a2f22a475d0be3c1370407c37e",
+      "size": 63433
+    },
+    "work/simulator/reviews/interruption-207.md": {
+      "sha256": "78c8d155e9741795ba352d485016641b028f327d9aa8dc116610c3923bb802c6",
+      "size": 2672
+    }
+  }
+}

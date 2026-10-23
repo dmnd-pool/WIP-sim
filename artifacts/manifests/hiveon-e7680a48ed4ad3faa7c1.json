@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-e7680a48ed4ad3faa7c1",
+  "url": "https://download.hiveos.farm/asic/custom/bi2co/Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00@200608-T17-sign_bi2co1.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00@200608-T17-sign_bi2co1.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:02:59+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-e7680a48ed4ad3faa7c1/Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00_200608-T17-sign_bi2co1.hive.tar.gz",
+  "sha256": "21ad409c39a4913b04f4dfd79d77d0e9a1daffa0680109ba39986d1680b335c3",
+  "size_bytes": 35607900,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/bi2co/Antminer-T17-v1.1.1_M_SIG_CRC_03_06_2-sig-2.00@200608-T17-sign_bi2co1.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 08 Jun 2020 14:57:07 GMT",
+  "etag": "\"5ede51c3-21f555c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 35607900,
+      "actual": 35607900,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

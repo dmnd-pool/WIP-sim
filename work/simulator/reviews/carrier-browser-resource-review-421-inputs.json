@@ -1,0 +1,52 @@
+{
+  "scope": "Read-only resource estimate, not a browser execution pass",
+  "inputs": [
+    {
+      "path": "work/simulator/network-vm/native-024/browser-report.json",
+      "sha256": "b0fdc14de0168423eba55fa12c30968e6fe0231094ffd1ba0cb2eac784e5ffdc",
+      "size": 312036
+    },
+    {
+      "path": "work/simulator/network-vm/native-024/summary.json",
+      "sha256": "82ed755dc50cc3ab753b9ee3fa12f504347133c2ee0695a9b78e09d8b3ac690b",
+      "size": 2157
+    },
+    {
+      "path": "work/simulator/network-vm/native-024/process-spec.json",
+      "sha256": "5997920b480d5a2f81080d317b53e4525ca5e9f3d3971fea99a3e5ef07bf944d",
+      "size": 14798
+    },
+    {
+      "path": "work/simulator/network-vm/native-024/payload-manifest.json",
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    {
+      "path": "work/simulator/browser/run-022-report.json",
+      "sha256": "c32412900de44016268be7c58e9a163480590a1856e84381099cfac98befea60",
+      "size": 83221
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-421/client-image/root-manifest.json",
+      "sha256": "8eeb03fda2a5f1d2f34e429fca21498f85c817cb4aa459ebb96362658d71dda1",
+      "size": 24801
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-421/process-spec.json",
+      "sha256": "6a041ff09df36482928a5106021e819e289150681a16e9e88299822b9289feb9",
+      "size": 5264
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/browser_groups.rs",
+      "sha256": "118893980dc43f92aaebeb4a900f6032d7bea21b8a487bcd3cfaea95d29b329c",
+      "size": 9304
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/worker_channel_probe.rs",
+      "sha256": "3d4182b5bb5da680af1d230444909e979b331df4fcebd92b075fd9450f584aff",
+      "size": 35294
+    }
+  ],
+  "payload_files": 4548,
+  "payload_bytes": 916647483
+}

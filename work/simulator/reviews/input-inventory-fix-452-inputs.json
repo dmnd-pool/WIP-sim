@@ -1,0 +1,120 @@
+{
+  "scope": "Failed451 retained; actual isolated inventory regression452b and final affected checks. No native firmware/browser pass.",
+  "inputs": [
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check.rs",
+      "sha256": "f826a2338ee1a7320803701735c8ee37a629f6d4483ef8b23da0d22a059b9646",
+      "size": 81824
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/remote_namespace_check/input_inventory_tests.rs",
+      "sha256": "7f003d8aff45aecd28786becd744501a2c7cda58883d2b2fa75c19ccbdd9af82",
+      "size": 8403
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-451/assessment.json",
+      "sha256": "ee1bbcc9a34b70ad689b925fccf797ea38e94543fd5742f50c00255315d6fedc",
+      "size": 5278
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-451/result.json",
+      "sha256": "afb6854e78188d7584d07bd353637712f34286faf7bbe0b03db6037405e47a4b",
+      "size": 10044
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-451/process-spec.json",
+      "sha256": "d539b1d03360bcfe511d60fcab481acdb918a62d8f538bfd61b8e6ad44b97d42",
+      "size": 5312
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-451/guest.log",
+      "sha256": "fa174074a559679ebb50ae4dbe25964d1bf7ff0b6be6320bfae024798a0ef908",
+      "size": 4595
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-451/client-image/root-manifest.json",
+      "sha256": "ca0a2f3342a1f4c91dbd7f6b18cda1799b1d76890e83ba774c32252c55180c20",
+      "size": 874638
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-451/client-image/payload-manifest.json",
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/input-inventory452-tests.log",
+      "sha256": "97049d05feec14ac0a14aafd2d7bbadf65f14825e81c7ff92c94ec6a80479ae3",
+      "size": 1042
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/input-inventory452-isolated.log",
+      "sha256": "73c0e36d51c0aaf0b63fc5d6d871ef6c7e55226db591df0b70ffc4fde27446ec",
+      "size": 812
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/input-inventory452b-all-tests.log",
+      "sha256": "f441675f2a8712c3be1726b8e65b02e1d436d47945dea3ca0ef2715743ce804b",
+      "size": 10977
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/input-inventory452b-isolated.log",
+      "sha256": "25f8ed0b0d92d7894412e0db6c5f2fea1ea4ef00d556a4cd04f058914694c9b3",
+      "size": 895
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/input-inventory452b-clippy.log",
+      "sha256": "b7ec2fdb8f6a12034dd05a4bcd488c5d292211b7c6b0c27e568b65c97a8c632a",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/input-inventory452b-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/process-spec.json",
+      "sha256": "db9a3fa662cd09bb325ab2fdecfd72c348e7f90bf65318b55e47524aa36edba2",
+      "size": 1563
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/result.json",
+      "sha256": "dcddce8c36487e754a4bd1d38f428b9db28b72a4d8e04f939c8a7a618aaf8fb9",
+      "size": 1338
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/guest.stdout",
+      "sha256": "60bb9696936c02bf7bf234af2b06a092522170da238276d3278a3fac62139d46",
+      "size": 312
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/guest.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/inputs/objects/23916e02a8fa3cdcde47bdc7d67e18d57a8a22c0cb9a7870e24bb683cd1341ff",
+      "sha256": "23916e02a8fa3cdcde47bdc7d67e18d57a8a22c0cb9a7870e24bb683cd1341ff",
+      "size": 11847728
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "size": 263152
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/inputs/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "size": 182512
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/inputs/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "size": 2215072
+    },
+    {
+      "path": "work/simulator/reviews/input-inventory-452b-execution/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "size": 263152
+    }
+  ]
+}

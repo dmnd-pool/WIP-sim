@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-eb0cbd7ff3d5f4f744b5",
+  "url": "https://download.hiveos.farm/asic/T19/recover/sd-recover-bmu-T19-fixed-202006012031-fa....zip",
+  "kind": "firmware",
+  "title": "sd-recover-bmu-T19-fixed-202006012031-fa....zip",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:50+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-eb0cbd7ff3d5f4f744b5/sd-recover-bmu-T19-fixed-202006012031-fa....zip",
+  "sha256": "73728d399287341abe97f96f2b62658bf1d05351f47501bec2429f435edfe2f3",
+  "size_bytes": 28217196,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/T19/recover/sd-recover-bmu-T19-fixed-202006012031-fa....zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Thu, 23 Jun 2022 13:50:52 GMT",
+  "etag": "\"62b46fbc-1ae8f6c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 28217196,
+      "actual": 28217196,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

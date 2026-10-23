@@ -1,0 +1,20 @@
+{
+  "id": "vendors-cointerra-fw-index",
+  "url": "https://cointerra.com/firmware-downloads/",
+  "kind": "document",
+  "title": "CoinTerra historical firmware index",
+  "language": "en",
+  "source_id": "source-cointerra-fw-index",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T10:42:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/vendors-cointerra-fw-index/index.html",
+  "sha256": "86329be0c24c9c5540cae65e9a98e81bf1ba23ac5ce5f9507939b9147051336a",
+  "size_bytes": 71875,
+  "executed": false,
+  "http_status": 200,
+  "acquisition_method": "preserved-public-requests-response",
+  "previous_attempt_error": "HTTP Error 403: Forbidden",
+  "content_type": "text/html",
+  "content_note": "Preserved successful ordinary requests GET from discover_historical.py. Later urllib fetch returned 403. No login or credentials used."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-49582e5000fee27eeba2",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20Z9/Firmware/00720180828134924801AEF4xGBj066F/Antminer-Z9-NAND-500M-201809132338.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-Z9-NAND-500M-201809132338.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-49582e5000fee27eeba2/ANTMINER-Z9-NAND-500M-201809132338.tar.gz",
+  "sha256": "4c63ebe2e7f34de1653c320ae0dea83c9a15c0577a06bfba40674a3a0a0ae75d",
+  "size_bytes": 12354037,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20Z9/Firmware/00720180828134924801AEF4xGBj066F/Antminer-Z9-NAND-500M-201809132338.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"a841e4ed206e7a207b884901a3f2b323\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 12354037,
+      "actual": 12354037,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

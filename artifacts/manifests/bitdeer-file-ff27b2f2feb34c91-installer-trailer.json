@@ -1,0 +1,24 @@
+{
+  "id": "bitdeer-file-ff27b2f2feb34c91-installer-trailer",
+  "url": "https://file.bitdeer.com/bd-public-prod/shop/202510311529/Firmware-A2airPro-20251016-001.bin",
+  "kind": "source",
+  "title": "Firmware - A2 Pro Air embedded installer trailer",
+  "language": "en",
+  "source_id": "bitdeer-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T11:29:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/bitdeer-file-ff27b2f2feb34c91-installer-trailer/installer-trailer.sh",
+  "sha256": "25329daf32051aa133047c7d8a7552903792b926773c078372e8b7865d195a00",
+  "size_bytes": 5120,
+  "executed": false,
+  "acquisition_method": "byte-range-extracted-from-downloaded-file",
+  "parent_artifact_id": "bitdeer-file-ff27b2f2feb34c91",
+  "parent_sha256": "8856de04216492a12075385aec79b2a35d7b7022ba98bec34d1098ff5611aacb",
+  "byte_offset": 34009433,
+  "content_role": "embedded-readable-installer-code",
+  "notes": [
+    "This is a script contained in a proprietary firmware package. Its readability does not establish an open-source licence.",
+    "Exact bytes include any padding. The script was not executed."
+  ]
+}

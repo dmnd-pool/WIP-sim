@@ -1,0 +1,38 @@
+{
+  "id": "vendors-spondoolies-bundled-uimage-3-8-13",
+  "url": "https://codeload.github.com/Spondoolies-Tech/sp30-top/tar.gz/57c382eb5addc8829786bb228c2a342dfe523bdb",
+  "title": "Spondoolies bundled legacy uImage Linux 3.8.13",
+  "kind": "firmware",
+  "language": "unknown",
+  "license": "unknown; component licences apply",
+  "source_id": "source-spondoolies-tech-sp30-top",
+  "retrieved_at": "2026-10-19T10:42:09+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/vendors-spondoolies-bundled-uimage-3-8-13/uImage",
+  "sha256": "b9f3351608c073b84c6fe6d04c643e3d529dce3e9dbb5634ceced03bed9570f7",
+  "size_bytes": 9036120,
+  "executed": false,
+  "acquisition_method": "contained-in-downloaded-archive",
+  "parent_artifact_id": "vendors-spondoolies-tech-sp30-top",
+  "parent_sha256": "f7b9879c44fe6e8086fa8f51986c7bbb179ddbe9a86f041aebdaa72624de4684",
+  "archive_member": "sp30-top-57c382eb5addc8829786bb228c2a342dfe523bdb/shar/uImage",
+  "git_commit": "57c382eb5addc8829786bb228c2a342dfe523bdb",
+  "notes": [
+    "Exact bytes saved from the pinned manufacturer repository. No binary or tool was run.",
+    "This older image in the build repository has no established exact SP10/SP30 target mapping. It is not a complete recovery bundle."
+  ],
+  "image_header": {
+    "format": "legacy U-Boot uImage",
+    "name": "Linux-3.8.13-00746-g6bbc94d",
+    "timestamp": 1395233756,
+    "data_size_bytes": 9036056,
+    "load_address": "0x80008000",
+    "entry_address": "0x80008000",
+    "os_code": 5,
+    "arch_code": 2,
+    "image_type_code": 2,
+    "compression_code": 0,
+    "header_crc_valid": true,
+    "data_crc_valid": true
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "scope": "runtime carrier and exact worker binding component checkpoint; no firmware or dashboard conformance claim",
+  "files": [
+    {
+      "path": "crates/md-sim-runtime/src/isolation.rs",
+      "sha256": "e0d2d260be85397cb0b676df53117b4b73a270d9411a8e3abdbbb314de4a787e",
+      "size": 37519
+    },
+    {
+      "path": "crates/md-sim-runtime/src/private_channel.rs",
+      "sha256": "7a3e0b08cf4d06d3cd34ecc2495489b2eaae16b589827f77dbd9128e00b8fc8f",
+      "size": 15664
+    },
+    {
+      "path": "crates/md-sim-runtime/src/worker.rs",
+      "sha256": "01834b84edcde0a62163817c00ee7d338e092a2245accfdc6dcdc23f08cba3e1",
+      "size": 54755
+    },
+    {
+      "path": "crates/md-sim-runtime/src/worker_channel.rs",
+      "sha256": "7a6c4146450a21f7a040ac3aca5d4f28220c900354fcc8ebb9b311bb043483fa",
+      "size": 1592
+    },
+    {
+      "path": "crates/md-sim-runtime/tests/private_channel.rs",
+      "sha256": "cc8aba28c752cac97400469cf348c1dc246bb6020ac03b08b4b83d83a6b9fb57",
+      "size": 24469
+    },
+    {
+      "path": "crates/md-sim-runtime/tests/private_channel/worker.rs",
+      "sha256": "1faf9b08542aa724ee4e08d41634014c974ab6293d647383f40a9b6d54a577bf",
+      "size": 10743
+    },
+    {
+      "path": "crates/md-sim-runtime/tests/private_channel/provider.rs",
+      "sha256": "8680f20bb2d4a677708be21ae663babfe5f41ffb45fdf95919035100636c2332",
+      "size": 2702
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel369-tests.log",
+      "sha256": "d507d2e3fe39999f76d933eee2a5c7bfbdbea3dfd1bb726d7202a229c86eacf7",
+      "size": 5617
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel369-clippy.log",
+      "sha256": "6b3161d04f4d5adacf529dedc2cc5c46ba10acce8299e365bb9c4ac1b53b527c",
+      "size": 141
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel370-evidence.log",
+      "sha256": "bbe25882cd17388d19865c392429f690336136a718f9042e188d9db629db3b6c",
+      "size": 35623
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/private-channel370-workspace-check.log",
+      "sha256": "43c654112885e692471e5b7b7449050f35331cb758ba69577ca9bfe782783b74",
+      "size": 967
+    }
+  ]
+}

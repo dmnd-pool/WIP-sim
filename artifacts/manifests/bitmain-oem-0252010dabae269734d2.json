@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-0252010dabae269734d2",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/157f06ba-4124-46e5-9cf7-6e2fe2b6e3ab/2025/01/24/18/S21%2B%20CE-LVD.pdf",
+  "kind": "document",
+  "title": "S21+ CE-LVD.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:33+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-0252010dabae269734d2/S21+_CE-LVD.pdf",
+  "sha256": "3edd72f539bd1611153a8a5a8369ba042ce80aabfd899d24793bc6608494aa21",
+  "size_bytes": 1457139,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/157f06ba-4124-46e5-9cf7-6e2fe2b6e3ab/2025/01/24/18/S21%2B%20CE-LVD.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 24 Jan 2025 10:00:18 GMT",
+  "etag": "\"8219449dc354075a7065daf9cf985b99\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1457139,
+      "actual": 1457139,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

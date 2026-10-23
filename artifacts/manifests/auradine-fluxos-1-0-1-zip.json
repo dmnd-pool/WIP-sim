@@ -1,0 +1,37 @@
+{
+  "id": "auradine-fluxos-1-0-1-zip",
+  "url": "https://update.auradine.com/images/FluxOS-1.0.1.zip",
+  "kind": "firmware",
+  "title": "FluxOS-1.0.1.zip",
+  "language": "und",
+  "source_id": "auradine-downloads",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:42:58+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/auradine-fluxos-1-0-1-zip/FluxOS-1.0.1.zip",
+  "sha256": "f6e1947cf6a09bfff760d3ec8d1e3caa64afcfc8c5730aa98eb58beef04b972f",
+  "size_bytes": 81603056,
+  "executed": false,
+  "final_url": "https://update.auradine.com/images/FluxOS-1.0.1.zip",
+  "http_status": 200,
+  "content_type": "application/zip",
+  "last_modified": "Mon, 19 Jan 2026 21:52:34 GMT",
+  "etag": "\"886a42f501a80f8aac3852cfb4f9f80c-10\"",
+  "publisher_sha256": "f6e1947cf6a09bfff760d3ec8d1e3caa64afcfc8c5730aa98eb58beef04b972f",
+  "matches_publisher_sha256": true,
+  "vendor_models": "AT1500",
+  "version": "1.0.1",
+  "vendor_created": "2024-10-31 20:10:36.780854",
+  "publisher_checksum_claims": [
+    {
+      "model": "AT1500",
+      "sha256": "f6e1947cf6a09bfff760d3ec8d1e3caa64afcfc8c5730aa98eb58beef04b972f",
+      "size": "81603056",
+      "created": "2024-10-31 20:10:36.780854",
+      "branch": "v1.0.1"
+    }
+  ],
+  "matches_any_publisher_sha256": true,
+  "matches_all_publisher_sha256": true,
+  "matches_any_publisher_size": true
+}

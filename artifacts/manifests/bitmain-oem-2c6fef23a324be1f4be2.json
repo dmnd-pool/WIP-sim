@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-2c6fef23a324be1f4be2",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0052d6ea-9cbb-4f52-b9dc-17658507c874/2023/07/27/16/DR3%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "DR3 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-2c6fef23a324be1f4be2/DR3_Server_Manual.pdf",
+  "sha256": "c0ff0e9ed8cbdc478e1ddb8eee9c9b672b24aac1d97f438880814d6a088ef3f1",
+  "size_bytes": 857034,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/0052d6ea-9cbb-4f52-b9dc-17658507c874/2023/07/27/16/DR3%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 27 Jul 2023 08:31:00 GMT",
+  "etag": "\"660bf9e4e857076b6308834d94356ec0\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 857034,
+      "actual": 857034,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

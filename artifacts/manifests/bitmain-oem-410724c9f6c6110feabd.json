@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-410724c9f6c6110feabd",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S4%20PSU%20AP188A%20User%20Guide.pdf",
+  "kind": "document",
+  "title": "S4 PSU AP188A User Guide.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:49+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-410724c9f6c6110feabd/S4_PSU_AP188A_User_Guide.pdf",
+  "sha256": "97ca39c93fed5eb620b841aca9953709bbfcd0ab0803b1f1b01a49ceea2b96f1",
+  "size_bytes": 171125,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/S4%20PSU%20AP188A%20User%20Guide.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:27 GMT",
+  "etag": "\"e0d958d92925e8b9cd2dee20530dec7e\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 171125,
+      "actual": 171125,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

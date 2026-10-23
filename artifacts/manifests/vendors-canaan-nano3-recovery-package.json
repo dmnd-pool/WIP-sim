@@ -1,0 +1,22 @@
+{
+  "id": "vendors-canaan-nano3-recovery-package",
+  "url": "https://static.canaan.io/prod/u_file/2408/06/file/AvalonNano3_Recovery_Tool_V1.0.zip",
+  "title": "Canaan Nano3 AvalonNano3RecoveryPackage.zip",
+  "kind": "tool",
+  "language": "unknown",
+  "license": "unknown",
+  "source_id": "source-canaan-nano3-recovery",
+  "retrieved_at": "2026-10-19T10:43:43+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/vendors-canaan-nano3-recovery-package/AvalonNano3RecoveryPackage.zip",
+  "sha256": "61684655a9e8f9f9e0cd68a8eda4f37c32aa54abaca83aac739655f8bcc4de96",
+  "size_bytes": 76268550,
+  "executed": false,
+  "acquisition_method": "contained-in-downloaded-archive",
+  "parent_artifact_id": "vendors-canaan-nano3-recovery-v1",
+  "parent_sha256": "99f116182952ce54c1d95a107b1a8186ce72618c8b3c2a7d999480e6584dfadf",
+  "archive_member": "AvalonNano3RecoveryPackage.zip",
+  "notes": [
+    "Original bytes saved from the official recovery package. No tools or firmware were run."
+  ]
+}

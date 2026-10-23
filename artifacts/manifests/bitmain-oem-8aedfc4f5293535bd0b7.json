@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8aedfc4f5293535bd0b7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20C1/Manual/007201411010801107287fH8MF270605/C1%20Manual_EN_2014.10.31.pdf",
+  "kind": "document",
+  "title": "C1 Manual_EN_2014.10.31.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:33+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8aedfc4f5293535bd0b7/C1_Manual_EN_2014.10.31.pdf",
+  "sha256": "cfcb0cd71fa3d2198f3b86d889883fa3c405c83d79bbbadc265718bbbabfc860",
+  "size_bytes": 1920331,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Antminer%20C1/Manual/007201411010801107287fH8MF270605/C1%20Manual_EN_2014.10.31.pdf",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:23 GMT",
+  "etag": "\"d8d46d20d55daf4eac40da1e6f1b7a66\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1920331,
+      "actual": 1920331,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

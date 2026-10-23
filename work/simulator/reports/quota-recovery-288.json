@@ -1,0 +1,21 @@
+{
+  "state": "recovered; cause unresolved",
+  "date": "2026-10-23",
+  "prior_error": "failed to register synthetic bubblewrap mount target /tmp/.git: Quota exceeded (os error 122)",
+  "observed_available": {
+    "repository_filesystem": "100 GiB",
+    "tmpfs": "11 GiB",
+    "free_repository_inodes": 117483909,
+    "free_tmp_inodes": 746048
+  },
+  "workspace_create_write_delete": "passed",
+  "interrupted_files_identical_to_checkpoint285": [
+    "crates/md-sim-firmware/examples/s9_bitstream_probe.rs",
+    "crates/md-sim-firmware/examples/s9_boot_bundle.rs"
+  ],
+  "pending_unverified_edits": [
+    "crates/md-sim-firmware/src/bitstream.rs",
+    "crates/md-sim-firmware/src/bitstream/series7.rs"
+  ],
+  "limits": "Free space now does not establish the cause or scope of the earlier quota failure. No firmware acceptance result changes."
+}

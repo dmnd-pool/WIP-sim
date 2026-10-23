@@ -1,0 +1,42 @@
+--- a/hw/timer/cadence_ttc.c
++++ b/hw/timer/cadence_ttc.c
+@@ -149,7 +149,7 @@
+         int64_t interval = (uint64_t)((s->reg_count & COUNTER_CTRL_INT) ?
+                 (int64_t)s->reg_interval + 1 : 0x10000ULL) << 16;
+         next_value = (s->reg_count & COUNTER_CTRL_DEC) ? -1ULL : interval;
+-        for (i = 0; i < 3; ++i) {
++        for (i = 0; (s->reg_count & COUNTER_CTRL_MATCH) && i < 3; ++i) {
+             int64_t cand = (uint64_t)s->reg_match[i] << 16;
+             if (is_between(cand, (uint64_t)s->reg_value, next_value)) {
+                 next_value = cand;
+@@ -186,7 +186,7 @@
+     r = (int64_t)cadence_timer_get_steps(s, s->cpu_time - old_time);
+     x = (int64_t)s->reg_value + ((s->reg_count & COUNTER_CTRL_DEC) ? -r : r);
+ 
+-    for (i = 0; i < 3; ++i) {
++    for (i = 0; (s->reg_count & COUNTER_CTRL_MATCH) && i < 3; ++i) {
+         int64_t m = (int64_t)s->reg_match[i] << 16;
+         if (m > interval) {
+             continue;
+@@ -314,10 +314,10 @@
+     case 0x00: /* clock control */
+     case 0x04:
+     case 0x08:
+-        if (s->reg_clock != (value & 0x3F)) {
++        if (s->reg_clock != (value & 0x7F)) {
+             cadence_timer_clear_fraction(s);
+         }
+-        s->reg_clock = value & 0x3F;
++        s->reg_clock = value & 0x7F;
+         break;
+ 
+     case 0x0c: /* counter control */
+@@ -327,7 +327,7 @@
+             s->reg_value = 0;
+             cadence_timer_clear_fraction(s);
+         }
+-        s->reg_count = value & 0x3f & ~COUNTER_CTRL_RST;
++        s->reg_count = value & 0x7f & ~COUNTER_CTRL_RST;
+         break;
+ 
+     case 0x24: /* interval register */

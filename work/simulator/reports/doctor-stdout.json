@@ -1,0 +1,77 @@
+{
+  "architecture": "x86_64",
+  "firmware_gate": "not-run",
+  "infrastructure_incomplete": true,
+  "isolation_limits": "Per-process rlimits and bounded scratch tmpfs are implemented. Aggregate cgroup CPU/RAM limits are not implemented.",
+  "memory": "MemTotal:       98619380 kB\nMemFree:         4435112 kB\nMemAvailable:   49021024 kB\nBuffers:         2940460 kB\nCached:         55300120 kB\nSwapCached:            0 kB\nActive:         24220916 kB\nInactive:       63004664 kB\nActive(anon):   18120460 kB\nInactive(anon): 25608808 kB\nActive(file):    6100456 kB\nInactive(file): 37395856 kB\nUnevictable:     3272128 kB\nMlocked:            1328 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:            109804 kB\nWriteback:             0 kB\nAnonPages:      31387256 kB\nMapped:          2533780 kB\nShmem:          15892932 kB\nKReclaimable:    2084548 kB\nSlab:            2910036 kB\nSReclaimable:    2084548 kB\nSUnreclaim:       825488 kB\nKernelStack:       71040 kB\nPageTables:       222572 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    49309688 kB\nCommitted_AS:   71616424 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      115848 kB\nVmallocChunk:          0 kB\nPercpu:            36736 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:  19036160 kB\nShmemHugePages:  1986560 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    684032 kB\nFilePmdMapped:    462848 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      277152 kB\nDirectMap2M:    14159872 kB\nDirectMap1G:    85983232 kB\n",
+  "namespaces": {
+    "available": true,
+    "stderr": ""
+  },
+  "native_dashboard_gate": "not-run",
+  "note": "Installed CPU emulators do not establish support for a miner board. Tool identities are observed hashes, not release authentication.",
+  "original_board_gate": "not-run",
+  "platform": "linux",
+  "schema_version": "2.0",
+  "tcp_loopback": {
+    "available": false,
+    "blocks": [
+      "TCP test pool",
+      "Bitcoin Core RPC",
+      "SSH transport",
+      "HTTP dashboards",
+      "TLS gateway"
+    ],
+    "errno": 1,
+    "error": "Operation not permitted (os error 1)"
+  },
+  "tools": {
+    "bitcoind": {
+      "error": "open /usr/bin/bitcoind",
+      "path": "/usr/bin/bitcoind"
+    },
+    "bubblewrap": {
+      "identity": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "path": "/usr/bin/bwrap"
+    },
+    "qemu-arm": {
+      "identity": {
+        "sha256": "4b7508549dad5fc48fc80ddd731ce8673825dcedf5d6bdea37b7caf501611242",
+        "size": 31097464
+      },
+      "path": "/usr/bin/qemu-system-arm"
+    },
+    "qemu-xtensa": {
+      "identity": {
+        "sha256": "d3f39bcc3b81a6e97bb33de7aa2ebdc020dadfd72ddb2404cc98de12fb21e7f3",
+        "size": 15478712
+      },
+      "path": "/usr/bin/qemu-system-xtensa"
+    },
+    "ssh": {
+      "identity": {
+        "sha256": "0d82109d60d32e5ca4007bd39b4abf213ff037fca99491bc2669a6b52051b74c",
+        "size": 957192
+      },
+      "path": "/usr/bin/ssh"
+    },
+    "unshare": {
+      "identity": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      },
+      "path": "/usr/bin/unshare"
+    }
+  },
+  "unix_sockets": {
+    "errno": 1,
+    "error": "Operation not permitted (os error 1)",
+    "listener_tested": false,
+    "pair_creation": true,
+    "permitted_transport": "Private inherited file-descriptor IPC is tested separately. It is not a network listener.",
+    "standard_socket_timeout": false
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "md-sim-independent-browser-preparation-review/1",
+  "run": "work/simulator/network-vm/native-browser-445",
+  "actual": {
+    "initramfs.cpio.gz": {
+      "sha256": "cd77bdaa9c422d49413799885e0d23b3878a5fe390443ba014ba24fc7487bdb8",
+      "size": 93609485
+    },
+    "payload.cpio.gz": {
+      "sha256": "ecad20133f7e5827ae2995fbbe14ba5f5917f42940a23ed430cda4413326c2dc",
+      "size": 406343028
+    },
+    "combined-initramfs.cpio.gz": {
+      "sha256": "0765830df3072c8f270be2b43baf470b9075b502cf163d7ba7927a71d370b365",
+      "size": 499952513
+    },
+    "root-manifest.json": {
+      "sha256": "89aed860b484f244994917005bce4e6d58b712f5ffa6fffd20954ee3c54f2a88",
+      "size": 874638
+    },
+    "payload-manifest.json": {
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    "payload-report.json": {
+      "sha256": "b9f41d610fd6c9aad89c0b98f806ba4db7d730e7b8b69160496941e47d3bc8fd",
+      "size": 77773
+    },
+    "payload-base-aliases.json": {
+      "sha256": "14103f8b1edcfb2074220cac5a2d9dae28136381be0fc49a6240dddf69997caf",
+      "size": 6484
+    }
+  },
+  "manifest_regular_files": 4548,
+  "manifest_symlinks": 1105,
+  "checks": {
+    "original_payload_matches_actual_append_manifest": true,
+    "all_regular_payload_ids_in_final_root_manifest": true,
+    "combined_exact_base_then_payload_bytes": true,
+    "prepared_image_selects_combined": true,
+    "combined_fits_512MiB_per_object": true,
+    "outer_process_spec_absent": true
+  },
+  "scope": "Preparation evidence only. Run445 failed before boot; no firmware or browser execution pass.",
+  "inputs": {
+    "work/simulator/network-vm/native-browser-445/ssh-inputs.json": {
+      "sha256": "bcbc2f1a22bfcd3eace92c95a6b94fd23699a701f28844b12cb256320b0d7104",
+      "size": 2356
+    },
+    "work/simulator/network-vm/native-browser-445/scenario.json": {
+      "sha256": "651f733ef876b61f8b3a570c5aa098f59cc0887e211b0760f1d199febcc25592",
+      "size": 18306
+    },
+    "work/simulator/network-vm/native-browser-445/client-image/prepared-image.json": {
+      "sha256": "e9c45511e5893c3a890c69a9e8bde8f1663b8372586848fb65ca8e16e1d77e08",
+      "size": 628
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-browser-445.log": {
+      "sha256": "de853c9067fb8fa30355af90d85dfc2e994cc694642730245e497b8f86f3562a",
+      "size": 46
+    }
+  },
+  "reviewed_source": {
+    "crates/md-sim-firmware/examples/isolated_network_vm/payload.rs": {
+      "sha256": "9dd6fcc4e73ccf15202e7119ab982bfa4333c337fa9ddca091b425a9005943e8",
+      "size": 22203
+    },
+    "crates/md-sim-firmware/examples/isolated_network_vm.rs": {
+      "sha256": "3028444cd8d0e89a09de982b40965393bf5cb7306e79e59c1dcec4c520e04343",
+      "size": 38979
+    },
+    "crates/md-sim-firmware/examples/support/worker_channel_ssh.rs": {
+      "sha256": "3ac266fdf408e564e379e30ecbd2c66f62636f68893a32d53b0010f6d3ae066f",
+      "size": 16492
+    },
+    "crates/md-sim-firmware/examples/support/s9_external_pool.rs": {
+      "sha256": "ddf6362c881515f4c6a5cf0e639c50bc938b4fb483e7667aaa31a246899fe48a",
+      "size": 25545
+    },
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "3ade2f8d8cccf38f9b86f777091d8fe872855880cf1bcb578abf13bba91b79a6",
+      "size": 36946
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board_browser.rs": {
+      "sha256": "5d766d6b456362b607a240c7ce67a14a24b1403c90024d94ff525eb7bdb745fc",
+      "size": 9715
+    }
+  }
+}

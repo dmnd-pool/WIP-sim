@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-bed767e51086e2c1ff18",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SafePrime-CE_EMC.pdf",
+  "kind": "document",
+  "title": "SafePrime-CE_EMC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:54+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-bed767e51086e2c1ff18/SafePrime-CE_EMC.pdf",
+  "sha256": "8e6565709c660aae7f5197d6903fc21314c041643d990a8f8e55ab0aea4afb30",
+  "size_bytes": 652742,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SafePrime-CE_EMC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:29 GMT",
+  "etag": "\"336c991826b17937893629553e31f5ae\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 652742,
+      "actual": 652742,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

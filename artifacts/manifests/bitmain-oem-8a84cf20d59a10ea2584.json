@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-8a84cf20d59a10ea2584",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5fd95cc7-8764-436f-9c44-162791192ebc/2022/01/19/17/Z15%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "Z15 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:07+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-8a84cf20d59a10ea2584/Z15_Server_Manual.pdf",
+  "sha256": "ea4542276a88d6986532cf658a6d8ef76fc83be989a082dd267385ba21d705d8",
+  "size_bytes": 1706451,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/5fd95cc7-8764-436f-9c44-162791192ebc/2022/01/19/17/Z15%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 09:51:49 GMT",
+  "etag": "\"61f414d91b1ec1cfeb7b5e4700a3904d\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1706451,
+      "actual": 1706451,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

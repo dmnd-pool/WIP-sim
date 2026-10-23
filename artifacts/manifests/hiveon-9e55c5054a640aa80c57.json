@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-9e55c5054a640aa80c57",
+  "url": "https://download.hiveos.farm/asic/custom/Antminer-S17-S17pro-2.00@200622-S17-sign-Kolyambus.hive.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S17-S17pro-2.00@200622-S17-sign-Kolyambus.hive.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:58:03+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-9e55c5054a640aa80c57/Antminer-S17-S17pro-2.00_200622-S17-sign-Kolyambus.hive.tar.gz",
+  "sha256": "882699efa7404682883df5e39abaa2919d6b494bfd546f5d736eb717a18f4539",
+  "size_bytes": 32172428,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/custom/Antminer-S17-S17pro-2.00@200622-S17-sign-Kolyambus.hive.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Wed, 24 Jun 2020 09:51:34 GMT",
+  "etag": "\"5ef32226-1eae98c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 32172428,
+      "actual": 32172428,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

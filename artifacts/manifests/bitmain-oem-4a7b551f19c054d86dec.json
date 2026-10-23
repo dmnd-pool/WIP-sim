@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4a7b551f19c054d86dec",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cedde91c-1f0c-4c0d-b305-41ff7ceac4b2/2023/12/13/14/KS3%20SVHC235.pdf",
+  "kind": "document",
+  "title": "KS3 SVHC235.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4a7b551f19c054d86dec/KS3_SVHC235.pdf",
+  "sha256": "66d89853061d93916a122ffa812988cf519374bfe1623c2a4a9cea14f3a9a771",
+  "size_bytes": 227507,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cedde91c-1f0c-4c0d-b305-41ff7ceac4b2/2023/12/13/14/KS3%20SVHC235.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 13 Dec 2023 06:17:36 GMT",
+  "etag": "\"68f2d324a25991a9b30d7d43c9c44192\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 227507,
+      "actual": 227507,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

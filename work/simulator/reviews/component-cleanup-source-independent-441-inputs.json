@@ -1,0 +1,51 @@
+{
+  "source_review": "no blocking finding",
+  "tests": "444: 9 ordinary tests pass; exact real CLI test 1 pass/0 ignored; standalone build, strict Clippy and formatting pass; actual retained-store cleanup not performed by reviewer",
+  "inputs": [
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs.rs",
+      "sha256": "fce6f9ad044d23a8754e4ea526d9e2b37b7cbe2204a9aa72ab072ffb002d7938",
+      "size": 52322
+    },
+    {
+      "path": "crates/md-sim-runtime/src/store.rs",
+      "sha256": "9948fd6d6c3cc3f35d96744267b9ce6a1504380a716a49d08c9238125b80e924",
+      "size": 22662
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/component-cleanup444-tests.log",
+      "sha256": "b6de1c0578b753892ea72d44183d0f60a33c5a09312bff57b23eef1f311d0e82",
+      "size": 1339
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/component-cleanup444-cli-test.log",
+      "sha256": "6e826d2eaa4ef5070340af638b750e5418fba5bde73710b4c12a30e62615c787",
+      "size": 553
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/component-cleanup444-build.log",
+      "sha256": "d0a6bbf6e23e1c79ea0812a56b155c5182502a35e24faa2d3581494b6ad94bee",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/component-cleanup444-clippy.log",
+      "sha256": "fea3408b3bc50e203a8bf4f6935039d9c21065860c2ffeb2ff74f0a895680c52",
+      "size": 222
+    },
+    {
+      "path": "work/simulator/checks-2026-10-21-001/component-cleanup444-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/check-target-085/debug/examples/reclaim_qemu_inputs",
+      "sha256": "123ce5eacd668bd3da5c181a02e6ac0c2ba391d1c62a3057b1132890870b01c6",
+      "size": 2400576
+    },
+    {
+      "path": "work/simulator/check-target-085/debug/examples/reclaim_qemu_inputs-8bed7308c8d4ecd3",
+      "sha256": "5eb6492b472cdcd16ba28e8e52eda8c2235cc99989fa100e1de077c37a9af175",
+      "size": 3196760
+    }
+  ]
+}

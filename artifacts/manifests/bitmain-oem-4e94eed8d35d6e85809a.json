@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4e94eed8d35d6e85809a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/743a1a63-754a-4d81-beb2-d55a8935e8c7/2026/08/17/10/S21e%20Hyd.%20Product%20Manual-v1.3.2.pdf",
+  "kind": "document",
+  "title": "S21e Hyd. Product Manual-v1.3.2.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:28+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4e94eed8d35d6e85809a/S21e_Hyd._Product_Manual-v1.3.2.pdf",
+  "sha256": "1db93aeda55edb34af3eccca031dc1b0d4f4f5e3c093e67b7aee13a9b1e4443c",
+  "size_bytes": 299376,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/743a1a63-754a-4d81-beb2-d55a8935e8c7/2026/08/17/10/S21e%20Hyd.%20Product%20Manual-v1.3.2.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 17 Aug 2026 02:27:26 GMT",
+  "etag": "\"3cc883c69efbacb0283f5e55a2a72926\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 299376,
+      "actual": 299376,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

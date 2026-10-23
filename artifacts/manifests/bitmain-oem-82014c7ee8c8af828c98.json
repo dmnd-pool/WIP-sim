@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-82014c7ee8c8af828c98",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b183f6ca-1769-4d1d-887c-bde53ad896b5/2023/11/27/17/S19k%20Pro%20CE-LVD%20Shenzhen.pdf",
+  "kind": "document",
+  "title": "S19k Pro CE-LVD Shenzhen.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:35:37+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-82014c7ee8c8af828c98/S19k_Pro_CE-LVD_Shenzhen.pdf",
+  "sha256": "e5f5d02be6f86443f3ca49fe63f3b599e8bf9988819e3707bb4e1ab38985fc36",
+  "size_bytes": 445347,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/b183f6ca-1769-4d1d-887c-bde53ad896b5/2023/11/27/17/S19k%20Pro%20CE-LVD%20Shenzhen.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Mon, 27 Nov 2023 09:22:30 GMT",
+  "etag": "\"44acd47712e62c5f9b29ee149a8bf5ba\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 445347,
+      "actual": 445347,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

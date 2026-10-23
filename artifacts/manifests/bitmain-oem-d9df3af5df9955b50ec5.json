@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-d9df3af5df9955b50ec5",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3ec728db-ef92-48e6-b5e4-90975dcbe624/2024/09/20/18/L9%20Product%20Datasheet-v1.1.0.pdf",
+  "kind": "document",
+  "title": "L9 Product Datasheet-v1.1.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:48:27+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-d9df3af5df9955b50ec5/L9_Product_Datasheet-v1.1.0.pdf",
+  "sha256": "5a5ea40132de245cb012960b85576492a76a730037d38d637fd76207c445405c",
+  "size_bytes": 966484,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/3ec728db-ef92-48e6-b5e4-90975dcbe624/2024/09/20/18/L9%20Product%20Datasheet-v1.1.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 10:37:48 GMT",
+  "etag": "\"9cc2ee90f1824aeb37ad61d18ad2b55c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 966484,
+      "actual": 966484,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

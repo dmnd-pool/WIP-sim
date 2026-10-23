@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-d4bb21b01a9ed32a0d28",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-S4%2B-20150715.tar.gz",
+  "kind": "firmware",
+  "title": "SD-S4+-20150715.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:54:26+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-d4bb21b01a9ed32a0d28/SD-S4+-20150715.tar.gz",
+  "sha256": "78f4343e374015c65394852b3aea341f7d52a092f3ec5bd299a9e504352adf0f",
+  "size_bytes": 19122974,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-S4%2B-20150715.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"89676b79d62a06857bd1bc9048a4bb70-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19122974,
+      "actual": 19122974,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "f1dde66a3982d694b2c38c1a9f15ce7e",
+      "actual": "f1dde66a3982d694b2c38c1a9f15ce7e",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

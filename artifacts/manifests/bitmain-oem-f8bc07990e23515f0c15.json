@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-f8bc07990e23515f0c15",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/045fb355-933c-4dc6-af6a-ed14c1610fb8/2025/11/26/13/cTUVus_Z15%20Pro_CN23Z4DX%20002_CU%2072503811%200001_extsigned.pdf",
+  "kind": "document",
+  "title": "cTUVus_Z15 Pro_CN23Z4DX 002_CU 72503811 0001_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-f8bc07990e23515f0c15/cTUVus_Z15_Pro_CN23Z4DX_002_CU_72503811_0001_extsigned.pdf",
+  "sha256": "cc75117dea5c603c33424cf9882372b4562fa6bc4c32532519aaf71908d2a21a",
+  "size_bytes": 1240114,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/045fb355-933c-4dc6-af6a-ed14c1610fb8/2025/11/26/13/cTUVus_Z15%20Pro_CN23Z4DX%20002_CU%2072503811%200001_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 26 Nov 2025 05:53:08 GMT",
+  "etag": "\"e2139c825944fbc242d505b687b1a61f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1240114,
+      "actual": 1240114,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

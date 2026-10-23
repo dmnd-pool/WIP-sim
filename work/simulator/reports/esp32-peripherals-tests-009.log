@@ -1,0 +1,44 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
+     Running unittests src/lib.rs (work/simulator/bitaxe/sar-target/debug/deps/md_sim_esp32s3_sar-618a230ac8b8fd4f)
+
+running 37 tests
+test ds4432::tests::output_compliance_and_resistor_limits_are_explicit ... ok
+test ds4432::tests::power_bus_reset_and_read_pointer_have_distinct_behavior ... ok
+test ds4432::tests::unsupported_transactions_do_not_change_other_registers ... ok
+test ds4432::tests::published_example_and_sign_are_independent_of_supply_feedback ... ok
+test emc2101::tests::delayed_real_input_conversion_and_read_interlock ... ok
+test emc2101::tests::datasheet_saturation_distinguishes_temperature_from_short_fault ... ok
+test emc2101::tests::fault_queue_and_single_write_critical_limit_lock ... ok
+test emc2101::tests::open_short_standby_one_shot_and_thermal_limit ... ok
+test emc2101::tests::power_up_aliases_and_host_straps ... ok
+test emc2101::tests::status_clear_preserves_alarm_condition_and_comparator_reasserts ... ok
+test emc2101::tests::volatile_registers_spinup_and_missing_modes_are_visible ... ok
+test i2c::tests::active_command_mutation_is_rejected_and_original_sequence_is_retained ... ok
+test i2c::tests::actual_guest_stop_restart_refreshes_command_without_false_timeout ... ok
+test i2c::tests::address_and_data_nack_do_not_report_completion_or_later_bytes ... ok
+test i2c::tests::configuration_sync_reset_and_deadline_overflow_do_not_emit_bytes ... ok
+test emc2101::tests::tachometer_requires_five_actual_edges_and_latches_high_byte ... ok
+test i2c::tests::end_retains_bus_and_following_sequence_continues_without_address ... ok
+test i2c::tests::fifo_bounds_bad_commands_and_mode_gaps_are_visible ... ok
+test i2c::tests::repeated_start_read_and_last_nack_keep_transaction_order ... ok
+test i2c::tests::trm_master_write_has_actual_bytes_timing_done_and_irq ... ok
+test i2c::tests::rx_overflow_retains_exact_bytes_and_level_irq_survives_clear ... ok
+test ina260::tests::alert_comparisons_use_unaveraged_samples_and_highest_function ... ok
+test ina260::tests::ambiguous_latch_config_clear_is_explicit_and_transparent_flag_is_retained ... ok
+test ina260::tests::averaging_accumulates_each_power_sample_before_output_update ... ok
+test ina260::tests::completed_config_write_cancels_old_conversion_and_readonly_bits_stay_fixed ... ok
+test ina260::tests::fixed_identity_signed_current_and_documented_voltage_example ... ok
+test ina260::tests::latched_alert_read_clear_conversion_ready_and_reset ... ok
+test ina260::tests::partial_write_does_not_commit_and_repeated_start_keeps_pointer ... ok
+test ina260::tests::physical_inputs_are_sampled_per_phase_and_words_do_not_tear ... ok
+test ina260::tests::power_down_preserves_outputs_and_ready_then_recovers_for_forty_us ... ok
+test ina260::tests::voltage_only_power_uses_last_measured_current_and_mask_releases_pin ... ok
+test tests::reference_equation_and_saturation ... ok
+test tests::actual_guest_ground_command_is_stateful_and_reset_cancels ... ok
+test ina260::tests::physical_range_overflow_and_skipped_event_budgets_are_visible ... ok
+test tests::clocks_power_missing_inputs_and_invalid_access_do_not_succeed ... ok
+test tests::external_conversion_has_latency_and_readonly_result ... ok
+test tests::stopping_clock_cancels_and_next_start_uses_new_sample ... ok
+
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

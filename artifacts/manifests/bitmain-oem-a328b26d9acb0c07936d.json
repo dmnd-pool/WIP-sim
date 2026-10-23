@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-a328b26d9acb0c07936d",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/81a19b58-a8bb-4160-bf49-a12af3a0fd18/2024/09/20/16/DR7%20%20Product%20Manual-v1.0.0.pdf",
+  "kind": "document",
+  "title": "DR7  Product Manual-v1.0.0.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:46+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-a328b26d9acb0c07936d/DR7__Product_Manual-v1.0.0.pdf",
+  "sha256": "8303dd4a0abc975c16a60068d7328bc3f698c0810681253693d86993382fd0bc",
+  "size_bytes": 816756,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/81a19b58-a8bb-4160-bf49-a12af3a0fd18/2024/09/20/16/DR7%20%20Product%20Manual-v1.0.0.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Fri, 20 Sep 2024 08:17:13 GMT",
+  "etag": "\"26626f29feda1da8eb2ce368101fda4f\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 816756,
+      "actual": 816756,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

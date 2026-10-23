@@ -1,0 +1,134 @@
+{
+  "inputs": [
+    {
+      "path": "work/simulator/network-vm/native-access-441/result.json",
+      "sha256": "50630da14ef0db3749aecc2fff74ae31e286ecaaf03af287abb0e12c9e8c9fa9",
+      "size": 118755259
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/assessment.json",
+      "sha256": "add93e49b77ac64d15dec56653947c16a081bbfc2c82692268f8ab0f3dba75a9",
+      "size": 23453
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/guest.log",
+      "sha256": "62f652d0f18ad7541fe91750bb34c487571848725d4bbf50aee847d79c5a8e13",
+      "size": 59376630
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/provider.json",
+      "sha256": "4c96b69f3cf34d9ada0e4a463fbbed78839e3e6d915c782e498d4322a894115c",
+      "size": 37002
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/locked-run.json",
+      "sha256": "893b01edf2db48cf1e60c4c1ae990ed7f085161788ce69b05459c1f4db28e5ba",
+      "size": 21841
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/result.json",
+      "sha256": "c3faec35da051fb3e14f86eecdae4507f68ec62bc4e6046fc9904de16f872b7d",
+      "size": 105932004
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/worker-result.json",
+      "sha256": "c3faec35da051fb3e14f86eecdae4507f68ec62bc4e6046fc9904de16f872b7d",
+      "size": 105932004
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/host-retention.json",
+      "sha256": "f2fce23aea7621185df7459a395012de219454be0fb54a0d6732c2b9938e847e",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/worker-retention.json",
+      "sha256": "f2fce23aea7621185df7459a395012de219454be0fb54a0d6732c2b9938e847e",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/worker-cleanup.json",
+      "sha256": "63d84cc15453b9c74c24e04474b189660e38530c2cd8c3d731240fcfc39201b9",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/worker-cleanup-response.json",
+      "sha256": "63d84cc15453b9c74c24e04474b189660e38530c2cd8c3d731240fcfc39201b9",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/worker-request.json",
+      "sha256": "7cbbb9dd34a85d8103d83fb8e10e573ff04ce5f4bed322ff61db9cb43cd970b6",
+      "size": 1831
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/guest.log",
+      "sha256": "4e5cec1586bc6a8ca0bfc256d979b5e22a72adb03bdd40522b33bc8000286f4a",
+      "size": 115082
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/backend.log",
+      "sha256": "c08aae8cdc234f4e6c3d03f286db4059ee3432ff396ebefb42d283854e0e2073",
+      "size": 52849905
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/adaptation.json",
+      "sha256": "cafb9b5d92ed919b0cb3e01112035595554f5f004a64857d9b6d39e034fc4134",
+      "size": 18594
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-pool/pool-bundle.json",
+      "sha256": "aa66b980a4ace342f683918caeaa00bf29bcdf1c29870981c44bf226d86f53eb",
+      "size": 93953
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-pool/retention-receipt.json",
+      "sha256": "5a0177ebe7db305f10a85475f0767330c2b20e66a10dac5e3a01659066b7028b",
+      "size": 663
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/access-bundle.json",
+      "sha256": "38260f925109ec16f08718921283e34fb235f85017afde601ea28c59a06a55ef",
+      "size": 15921402
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/retention-receipt.json",
+      "sha256": "5a0177ebe7db305f10a85475f0767330c2b20e66a10dac5e3a01659066b7028b",
+      "size": 663
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/client/report.json",
+      "sha256": "fa117accc75555a127800be2a39fc887a4caa3282cf45f9a866e721671d08a1a",
+      "size": 1897764
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/client/http/report.json",
+      "sha256": "74e7256601d7347a4c4c496f85040370d95f46e3ffed557d58a12d7cfd2cad78",
+      "size": 930644
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/client/tls/report.json",
+      "sha256": "e817719875bcedea16699a8c30da9d7bb255e27192a90565b3572ee5e20e50f9",
+      "size": 936291
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/client/publication.json",
+      "sha256": "67fa7b896e2f279135541ceed58c07e6c4ed4b5df404cb90a7ba80fbd9ab7ae6",
+      "size": 7103
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/client/gateway/listener-readiness.json",
+      "sha256": "1f17cc20246faf5d34bb05279fe67cd831a5bab566b853d93df2bfb5e8867874",
+      "size": 1423
+    },
+    {
+      "path": "work/simulator/network-vm/native-access-441/execution/shared-access/server/service-outcome.json",
+      "sha256": "cc354705104a0420e46467d90d3a2b647d2127c81a00e547c1deac511d80b7ef",
+      "size": 39394
+    },
+    {
+      "path": "work/simulator/reviews/native-access-inputs-independent-441.json",
+      "sha256": "0f6e533163ebdd6d88e34871dd43b69dea56fb5241feef9f5abd898f29e45a44",
+      "size": 4354
+    }
+  ]
+}

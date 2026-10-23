@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-9bf69bace772c8841b42",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/44cbbced-3b98-4210-ba30-0adee9f8b50d/2026/08/24/07/FR-1.29(260819-S23%20Hyd.).bmu",
+  "kind": "firmware",
+  "title": "FR-1.29(260819-S23 Hyd.).bmu",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:34:44+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-9bf69bace772c8841b42/FR-1.29_260819-S23_Hyd._.bmu",
+  "sha256": "68423441fc33b5b21e74aa190c64d5d5d5b93be134e9a1b7495c071bcf37fdea",
+  "size_bytes": 17218560,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/44cbbced-3b98-4210-ba30-0adee9f8b50d/2026/08/24/07/FR-1.29(260819-S23%20Hyd.).bmu",
+  "http_status": 200,
+  "content_type": null,
+  "last_modified": "Sun, 23 Aug 2026 23:44:37 GMT",
+  "etag": "\"df3250902c09b4abf0422a5431a1678a\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "df3250902c09b4abf0422a5431a1678a",
+      "actual": "df3250902c09b4abf0422a5431a1678a",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 17218560,
+      "actual": 17218560,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

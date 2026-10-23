@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-7ec0196806dc9bc145cd",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cf6e6b57-2749-4466-b10f-5effb116708b/2019/08/08/22/Antminer-S11-all-user-201908011639-sig.tar.gz",
+  "kind": "firmware",
+  "title": "ANTMINER-S11-all-user-201908011639-sig.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:38:52+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-7ec0196806dc9bc145cd/ANTMINER-S11-all-user-201908011639-sig.tar.gz",
+  "sha256": "fe790584647df7bf9efef878b4f473a69f6651c55364f44eb94e7d4f1338677e",
+  "size_bytes": 42265200,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/cf6e6b57-2749-4466-b10f-5effb116708b/2019/08/08/22/Antminer-S11-all-user-201908011639-sig.tar.gz",
+  "http_status": 200,
+  "content_type": "application/gzip",
+  "last_modified": "Thu, 07 Jan 2021 05:08:34 GMT",
+  "etag": "\"cd35eb5feaf25360be73adbeec530b12-3\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "md5",
+      "expected": "672b4551a3c5e275b6797dacf21b1668",
+      "actual": "672b4551a3c5e275b6797dacf21b1668",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "size_bytes",
+      "expected": 42265200,
+      "actual": 42265200,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

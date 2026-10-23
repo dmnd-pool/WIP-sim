@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-d181bc2f228d04206497",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-S5-20150415.tar.gz",
+  "kind": "firmware",
+  "title": "SD-S5-20150415.tar.gz",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:12+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-d181bc2f228d04206497/SD-S5-20150415.tar.gz",
+  "sha256": "9697dfb92feb32b6d9d73741d272d2aa77afe5a79bb1ee6719fc0ba088a9af3b",
+  "size_bytes": 19131659,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/SD-S5-20150415.tar.gz",
+  "http_status": 200,
+  "content_type": "application/x-tar",
+  "last_modified": "Thu, 07 Jan 2021 05:08:33 GMT",
+  "etag": "\"421abfa10f88041d5e44af81628fcdb2-2\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 19131659,
+      "actual": 19131659,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "d0525c428e205c2471ab554cf95d77d3",
+      "actual": "d0525c428e205c2471ab554cf95d77d3",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

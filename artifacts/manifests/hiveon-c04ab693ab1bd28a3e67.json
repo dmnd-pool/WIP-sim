@@ -1,0 +1,30 @@
+{
+  "id": "hiveon-c04ab693ab1bd28a3e67",
+  "url": "https://download.hiveos.farm/asic/s9/test/Antminer-S9-Hiveon-1.03@220221-5v31-sign-test.tar.gz",
+  "kind": "firmware",
+  "title": "Antminer-S9-Hiveon-1.03@220221-5v31-sign-test.tar.gz",
+  "language": "en",
+  "source_id": "hiveon-listing",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:51:00+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/hiveon-c04ab693ab1bd28a3e67/Antminer-S9-Hiveon-1.03_220221-5v31-sign-test.tar.gz",
+  "sha256": "e7fc7dd66979116fb286359f514d611113c4500edf8ee306a584db3fc0767370",
+  "size_bytes": 23779337,
+  "executed": false,
+  "final_url": "https://download.hiveos.farm/asic/s9/test/Antminer-S9-Hiveon-1.03@220221-5v31-sign-test.tar.gz",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Mon, 21 Feb 2022 11:41:34 GMT",
+  "etag": "\"62137a6e-16ad809\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 23779337,
+      "actual": 23779337,
+      "match": true,
+      "source_id": "hiveon-listing"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-6cac39d1f3e9c674c932",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/25758fed-2808-418f-8bd1-bf37fccbe9b6/2026/06/09/15/E11%20CE-EMC.pdf",
+  "kind": "document",
+  "title": "E11 CE-EMC.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:50:29+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-6cac39d1f3e9c674c932/E11_CE-EMC.pdf",
+  "sha256": "681dfec96c4398cfc2215a15c40b63b9fa80a57c555a99e8929f908804de33a7",
+  "size_bytes": 832127,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/25758fed-2808-418f-8bd1-bf37fccbe9b6/2026/06/09/15/E11%20CE-EMC.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 09 Jun 2026 07:11:28 GMT",
+  "etag": "\"2953ae336fb007299922ae2aeb13a5d8\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 832127,
+      "actual": 832127,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-4f91a960fe2cf0a0709f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6b696fb0-bad1-4d9a-9e5d-463a01440baf/2022/01/19/18/B3%20Server%20Manual.pdf",
+  "kind": "document",
+  "title": "B3 Server Manual.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:52:23+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-4f91a960fe2cf0a0709f/B3_Server_Manual.pdf",
+  "sha256": "ed52c1d35649c0ee8032273fb271617a2eb735a4ff087dd5f070b91bd00554c1",
+  "size_bytes": 956834,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/6b696fb0-bad1-4d9a-9e5d-463a01440baf/2022/01/19/18/B3%20Server%20Manual.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 19 Jan 2022 10:12:48 GMT",
+  "etag": "\"cf0a2d265edb35d5eda0243597f260ce\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 956834,
+      "actual": 956834,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-996d181dfe37cf78fe5a",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Guideline%20of%20Soldering%20Capacitor%20to%20S2.pdf",
+  "kind": "document",
+  "title": "Guideline of Soldering Capacitor to S2.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:46:14+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-996d181dfe37cf78fe5a/Guideline_of_Soldering_Capacitor_to_S2.pdf",
+  "sha256": "f138923c4ee03e545ecc5a78384ff29cee12543babdfd75cf460ab32e846f556",
+  "size_bytes": 856761,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/Guideline%20of%20Soldering%20Capacitor%20to%20S2.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Thu, 07 Jan 2021 05:08:26 GMT",
+  "etag": "\"95298092e2e58fe8870ac1ffb21d1a01\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 856761,
+      "actual": 856761,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

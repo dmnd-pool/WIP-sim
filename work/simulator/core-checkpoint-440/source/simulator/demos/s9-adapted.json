@@ -1,0 +1,143 @@
+{
+  "schema": "md-sim-adapted-s9-demo/1",
+  "classification": "original-firmware-adapted-reference-environment",
+  "full_specification_complete": false,
+  "driver": "work/simulator/ssh-target-263/release/examples/s9_dashboard_cycle",
+  "bundle": "work/simulator/original-zynq/sd-bundle-006",
+  "backend": "work/simulator/qemu-s9/backend-build-263-release",
+  "pool_backend": "work/simulator/demos/s9-adapted-inputs-280/pool-backend",
+  "browser_payload": "work/simulator/network-vm/native-driver-024/payload.json",
+  "monitor": "work/simulator/native-s9/original-bosminer-monitor-031/stdout.bin",
+  "inputs": {
+    "work/simulator/ssh-target-263/release/examples/isolated_network_vm": {
+      "sha256": "395c5ec5b651b90cfd3d7b6ac6b86ca3e2c14b5b391595924237777088555550",
+      "size": 2211440
+    },
+    "work/simulator/ssh-target-263/release/examples/node_prerequisite_probe": {
+      "sha256": "83aaefb0e9d4a60ec7226a54acf0e40ca473a99f57d33c3c92b223cbeac84b82",
+      "size": 1969976
+    },
+    "work/simulator/ssh-target-263/release/examples/s9_asic_audit": {
+      "sha256": "2e1f772cb60dc230c873b0a602dbba014977670fa703e79e5655fe922365bf05",
+      "size": 2323496
+    },
+    "work/simulator/ssh-target-263/release/examples/s9_boot_bundle": {
+      "sha256": "cb50e56a3ed1a2ff4d4c6b0942e9195462ad37aaf341346d5c7e5d4bd357496d",
+      "size": 3513808
+    },
+    "work/simulator/ssh-target-263/release/examples/s9_browser_check": {
+      "sha256": "2f88785a5d43eb6d82284bcd126a87c98db3d3f879659e436be3dd9a200b28e6",
+      "size": 2136304
+    },
+    "work/simulator/ssh-target-263/release/examples/s9_pool_guest": {
+      "sha256": "48bdedd54029f0be1edbdadbe55d6c20c326fabf2c469044c74e57362490d071",
+      "size": 2094672
+    },
+    "work/simulator/ssh-target-263/release/examples/s9_sd_snapshot_inspect": {
+      "sha256": "82b03d199738db0677215f00a2ac71019fc8f638a7f180b3e4f93c9cdeb647c7",
+      "size": 1886560
+    },
+    "work/simulator/ssh-target-263/release/examples/s9_update_bundle": {
+      "sha256": "5d3d35781f50c1d6b87c124baf3f0157e4bc9238938f2f3e2605a850013b017c",
+      "size": 1715336
+    },
+    "work/simulator/demos/s9-adapted-inputs-280/pool-backend/build-envelope.json": {
+      "sha256": "66a79977f44ff591c73a474795d67bdea9381eb418b0d79ae9323ddda0f12aaa",
+      "size": 12096446
+    },
+    "work/simulator/demos/s9-adapted-inputs-280/pool-backend/build-report.json": {
+      "sha256": "d4c0ae179fce0b99e09e80e7b2af58861a07252f310f435a8aa0c6b4e1bd90ff",
+      "size": 370162
+    },
+    "work/simulator/demos/s9-adapted-inputs-280/pool-backend/qemu-system-x86_64": {
+      "sha256": "a6b79923e6e111041a7197bf22f9080c4ec125bd64edf8398b47d98ed4505ad2",
+      "size": 19064832
+    },
+    "artifacts/files/firmware/braiins-feed-25bba3b4a505ccbc0e54/sd-firmware_2022-04-29-0-5eb2c5fe-22.02.4-plus_arm_cortex-a9_neon.tar": {
+      "sha256": "469743ebcd5faf3445e4f4209ad8af58cc7adeff37c7df28af3c53a5b255b56e",
+      "size": 19179888
+    },
+    "simulator/scenarios/s9-private-pool.sh": {
+      "sha256": "b685d698ea6e5e6d136b644815aaa677492e2444116420c6b364d22109fdc24e",
+      "size": 2843
+    },
+    "work/simulator/bitcoin-core/source-build-002/bitcoind": {
+      "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+      "size": 33824920
+    },
+    "work/simulator/native-s9/original-bosminer-monitor-031/stdout.bin": {
+      "sha256": "5dd1adc64ed54033c2b9ed6c1998de31c744d133fbb4bfc77f11bef30b3f2a1f",
+      "size": 11880
+    },
+    "work/simulator/network-vm/native-driver-024/payload.json": {
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/bundle.json": {
+      "sha256": "adcc7f9955161b5493819aeb617489219a4d496173b497cd07c60cb1b1fa719f",
+      "size": 3969
+    },
+    "work/simulator/qemu-s9/backend-build-263-release/build-envelope.json": {
+      "sha256": "21c7fa884aa3a1a526c121f1df5ff005892e180d447a5ce24b041530164ff346",
+      "size": 10176502
+    },
+    "work/simulator/qemu-s9/backend-build-263-release/build-report.json": {
+      "sha256": "0925557eec2e794b964dba8e40359200d136266f80b1ca746f529b59e93d34b2",
+      "size": 2435232
+    },
+    "work/simulator/qemu-s9/backend-build-263-release/qemu-system-arm": {
+      "sha256": "a139b1c6afc70e993bd88d009e84d05af3a6d65c96dcd014ef6f6ea23f1a3db1",
+      "size": 9791312
+    },
+    "work/simulator/ssh-target-263/release/examples/s9_dashboard_cycle": {
+      "sha256": "d062d042080b8273bad91aee006101d66b2d31156f016d947ed1c9d05baa095b",
+      "size": 1523016
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/spl-payload.bin": {
+      "sha256": "765efb23844156e976ba785c24a6a753c664504a499c64581d1c356a3f4c02df",
+      "size": 77023
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/partition-3-inspection.json": {
+      "sha256": "81f5c0f236b96094889146858289566805bb0b41fcb1846fa39374873e8e8bff",
+      "size": 556
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/uboot-payload.bin": {
+      "sha256": "ce991c8b0255a287fb78163ac3763d496a5a473ec6810e35976d6ce42d100644",
+      "size": 573212
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/system.bit.gz": {
+      "sha256": "bdf2b3bff4f5f06169b302ccfac8424e46bb2089b6313e363457bf2ae1d4bd40",
+      "size": 164570
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/partition-2-inspection.json": {
+      "sha256": "5cd91032a986c9faac43372c199d5c84d5806d2133d8394b79ba9e074aa1fdd2",
+      "size": 3020
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/fit.itb": {
+      "sha256": "8b2a32020281aa67490c01633adf99c1a2ca6c9897e4c210bb6d0d001c15caca",
+      "size": 18333708
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/uEnv.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/u-boot.img": {
+      "sha256": "80565aa18fdbdb655dcc5210ad48d036052ac94ac946efece6e4b54b19d0f550",
+      "size": 573276
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/boot.bin": {
+      "sha256": "950d19c6e5bfd9d8107def130b19fc9a5f64d824b26c0c493d5fdfe8503edac4",
+      "size": 79263
+    },
+    "work/simulator/original-zynq/sd-bundle-006/boot/system.bit": {
+      "sha256": "980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421",
+      "size": 2083858
+    }
+  },
+  "acceptance": "Four firmware boots, native dashboard browser/API/configuration/persistence, signed update, fresh-work verification and eight separate Core acceptance/restart tests",
+  "limits": [
+    "Exact physical board and FPGA equivalence incomplete",
+    "Dashboard browser runs inside disconnected support VM; no host or remote URL provided by this command",
+    "Only this adapted S9 reference identity is exercised; full matrix remains open"
+  ]
+}

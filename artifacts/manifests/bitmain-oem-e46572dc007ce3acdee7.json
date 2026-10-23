@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e46572dc007ce3acdee7",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ca81d5ab-a679-4310-af45-cf9ed39d23dc/2026/08/11/11/S21%2B%2B%20RoHS%20.pdf",
+  "kind": "document",
+  "title": "S21++ RoHS .pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:24+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-e46572dc007ce3acdee7/S21++_RoHS_.pdf",
+  "sha256": "185944ed754c22fed960ddb62312cb81b32f4ba26a5dff639ca10de44ada8d0a",
+  "size_bytes": 259154,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/ca81d5ab-a679-4310-af45-cf9ed39d23dc/2026/08/11/11/S21%2B%2B%20RoHS%20.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Tue, 11 Aug 2026 03:07:07 GMT",
+  "etag": "\"a42637d7666ed7751d5a568727e9c688\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 259154,
+      "actual": 259154,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

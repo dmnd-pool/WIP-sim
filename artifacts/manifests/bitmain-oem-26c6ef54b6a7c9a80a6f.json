@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-26c6ef54b6a7c9a80a6f",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a3b01bc8-6677-4b8c-b79f-df6427b0a3cf/2024/05/22/16/LVD_CN23HYN4%20001_2023.10.11_extsigned.pdf",
+  "kind": "document",
+  "title": "LVD_CN23HYN4 001_2023.10.11_extsigned.pdf",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:53:04+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/document/bitmain-oem-26c6ef54b6a7c9a80a6f/LVD_CN23HYN4_001_2023.10.11_extsigned.pdf",
+  "sha256": "15e4f5c6c5d1b4a4c1a71b6a2bef8a91c14ce6f62a36c99883b1570cd46d07ca",
+  "size_bytes": 1684094,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/a3b01bc8-6677-4b8c-b79f-df6427b0a3cf/2024/05/22/16/LVD_CN23HYN4%20001_2023.10.11_extsigned.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "last_modified": "Wed, 22 May 2024 08:37:40 GMT",
+  "etag": "\"2e86003a122014e8101eca3e602658fb\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 1684094,
+      "actual": 1684094,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

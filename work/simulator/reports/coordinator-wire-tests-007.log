@@ -1,0 +1,18 @@
+   Compiling md-sim-firmware v0.1.0 (/home/user/src/md-sim/crates/md-sim-firmware)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.46s
+     Running unittests src/lib.rs (target/debug/deps/md_sim_firmware-3660c49f5510eb0c)
+
+running 10 tests
+test bitmain_s2::tests::filter_is_not_replaced_by_pool_target ... ok
+test bitmain_s2::tests::modbus_check_vector ... ok
+test bitmain_s2::tests::partial_crc_and_unknown_packets ... ok
+test execution_suite::tests::malformed_recipe_is_an_error_not_a_panic ... ok
+test lab::tests::reject_unrelated_host_interpreters_before_reading ... ok
+test schedule::tests::lower_caps_reduce_default_difficulty_and_budget_uses_both_targets ... ok
+test prepare::tests::member_provenance_checks_parent_bytes_and_absent_new_files ... ok
+test closure_bundle::tests::closure_identity_and_output_boundary_are_enforced ... ok
+test execution_suite::tests::clean_job_replay_preserves_stale_and_duplicate_verdicts ... ok
+test bitmain_s2::tests::upstream_captured_packets_preserve_queue_and_clean_transition ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

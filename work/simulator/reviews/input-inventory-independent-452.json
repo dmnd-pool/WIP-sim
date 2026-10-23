@@ -1,0 +1,90 @@
+{
+  "schema": "md-sim-independent-input-inventory-review/1",
+  "verdict": "No unresolved correctness, isolation or focused-test finding in the inventory fix. Fresh complete native browser execution remains required.",
+  "source": {
+    "crates/md-sim-firmware/examples/remote_namespace_check.rs": {
+      "sha256": "f826a2338ee1a7320803701735c8ee37a629f6d4483ef8b23da0d22a059b9646",
+      "size": 81824
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/input_inventory_tests.rs": {
+      "sha256": "7f003d8aff45aecd28786becd744501a2c7cda58883d2b2fa75c19ccbdd9af82",
+      "size": 8403
+    }
+  },
+  "checks": {
+    "entry_limit_chosen_once_from_overall_browser_mode": true,
+    "all_root_and_recursive_calls_keep_same_limit": true,
+    "per_path_symlink_and_size_restrictions_preserved": true,
+    "exact_cap_duplicate_and_empty_directory_do_not_consume_entries": true,
+    "new_entry_rejected_before_map_mutation_at_cap": true,
+    "aggregate_bytes_and_native_process_budgets_unchanged": true
+  },
+  "tests": {
+    "ordinary_passed": 101,
+    "ordinary_failed": 0,
+    "ordinary_ignored": 6,
+    "explicit_isolated_outer_passed": 1,
+    "explicit_isolated_outer_ignored": 0,
+    "actual_child_passed": 1,
+    "actual_child_ignored": 0,
+    "actual_child_wall_ms": 180,
+    "exact_captured_objects_verified": 4,
+    "guest_elf": {
+      "sha256": "23916e02a8fa3cdcde47bdc7d67e18d57a8a22c0cb9a7870e24bb683cd1341ff",
+      "size": 11847728
+    },
+    "limits": {
+      "wall_seconds": 30,
+      "cpu_seconds": 20,
+      "memory_bytes": 268435456,
+      "processes": 32,
+      "file_bytes": 269484032,
+      "trace_bytes": 1048576,
+      "tmp_bytes": 67108864
+    }
+  },
+  "inputs": {
+    "crates/md-sim-firmware/examples/remote_namespace_check.rs": {
+      "sha256": "f826a2338ee1a7320803701735c8ee37a629f6d4483ef8b23da0d22a059b9646",
+      "size": 81824
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/input_inventory_tests.rs": {
+      "sha256": "7f003d8aff45aecd28786becd744501a2c7cda58883d2b2fa75c19ccbdd9af82",
+      "size": 8403
+    },
+    "work/simulator/checks-2026-10-21-001/input-inventory452b-all-tests.log": {
+      "sha256": "f441675f2a8712c3be1726b8e65b02e1d436d47945dea3ca0ef2715743ce804b",
+      "size": 10977
+    },
+    "work/simulator/checks-2026-10-21-001/input-inventory452b-isolated.log": {
+      "sha256": "25f8ed0b0d92d7894412e0db6c5f2fea1ea4ef00d556a4cd04f058914694c9b3",
+      "size": 895
+    },
+    "work/simulator/checks-2026-10-21-001/input-inventory452b-clippy.log": {
+      "sha256": "b7ec2fdb8f6a12034dd05a4bcd488c5d292211b7c6b0c27e568b65c97a8c632a",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-21-001/input-inventory452b-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/reviews/input-inventory-452b-execution/process-spec.json": {
+      "sha256": "db9a3fa662cd09bb325ab2fdecfd72c348e7f90bf65318b55e47524aa36edba2",
+      "size": 1563
+    },
+    "work/simulator/reviews/input-inventory-452b-execution/result.json": {
+      "sha256": "dcddce8c36487e754a4bd1d38f428b9db28b72a4d8e04f939c8a7a618aaf8fb9",
+      "size": 1338
+    },
+    "work/simulator/reviews/input-inventory-452b-execution/guest.stdout": {
+      "sha256": "60bb9696936c02bf7bf234af2b06a092522170da238276d3278a3fac62139d46",
+      "size": 312
+    },
+    "work/simulator/reviews/input-inventory-452b-execution/guest.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  },
+  "failure_evidence": "work/simulator/reviews/browser-inventory-failure-independent-451.json",
+  "scope": "Actual isolated input capture regression only. Run451 stays failed before native firmware/browser startup. No target completion is granted."
+}

@@ -1,0 +1,171 @@
+{
+  "schema": "md-sim-adapted-milestone-checkpoint/1",
+  "created_utc": "2026-10-22T17:06:39.495599+00:00",
+  "milestone": "adapted-s9-development",
+  "passed": true,
+  "full_specification_complete": false,
+  "source_identity": "709ee651f273771da75e98ce2315599cd3340fbde3e07390af4893f66285937e",
+  "source_files": 3644,
+  "coverage": {
+    "adapted_reference_profiles": 1,
+    "firmware_boots": 4,
+    "core_acceptance_and_restart_checks": 8,
+    "distinct_block_hashes": 8,
+    "full_exact_target_passes": 0,
+    "frozen_matrix_rows": 79599
+  },
+  "checks": {
+    "rust_tests": 575,
+    "test_binaries": 101,
+    "formatting": "passed",
+    "strict_clippy": "passed",
+    "release_builds": "passed",
+    "guide_links": "passed",
+    "source_verify": "passed",
+    "primary_input_hashes": 31,
+    "independent_review": "blocked by agent usage limit; author review is separate"
+  },
+  "artifacts": {
+    "work/simulator/reports/source-285.json": {
+      "sha256": "351bb6574877928538b4b37448e78ab01df2cbf858850b5273c3c2b22fcbb137",
+      "size": 586604
+    },
+    "README.md": {
+      "sha256": "6222e9963a4e18a0b5259568ff3aef7d0507b4bc6b5d6694b813fd1fb92f30e6",
+      "size": 122124
+    },
+    "simulator/demos/s9-adapted.json": {
+      "sha256": "749e66c593218782c6105b682fb37edc8032cbb03d449adec27f7f5b0cc9b939",
+      "size": 6881
+    },
+    "work/simulator/demos/s9-review-284/input-manifest.json": {
+      "sha256": "749e66c593218782c6105b682fb37edc8032cbb03d449adec27f7f5b0cc9b939",
+      "size": 6881
+    },
+    "work/simulator/demos/s9-review-284/invocation.json": {
+      "sha256": "42e9cff695d90608c8473ef7995fefc3fdfc41e9824dfedd6570332a3fb31cb4",
+      "size": 814
+    },
+    "work/simulator/demos/s9-review-284/assessment.json": {
+      "sha256": "e44e1ab1c96d6f51e02e79740f8a749d1faf73ab52b4507bf6ed2186d28ac0d2",
+      "size": 940
+    },
+    "work/simulator/demos/s9-review-284/run/assessment.json": {
+      "sha256": "e9e8d6780a6f7b921946107a4f6ccf0edd7fd2fbb400495a3b8b306a9ee60a19",
+      "size": 12428
+    },
+    "work/simulator/demos/s9-review-284/run/driver-input.json": {
+      "sha256": "38695e55bfb8636daaee209bf0355c19975943359815aca3f4193ddebd159fd8",
+      "size": 33265
+    },
+    "work/simulator/demos/s9-review-284/run/progress.json": {
+      "sha256": "247e6116469fa1cbefd60b45154caee2a969bd8e9379fcd134df6cc27a57c041",
+      "size": 9635
+    },
+    "work/simulator/demos/s9-review-284/cli-binary": {
+      "sha256": "0f36a5779b450ca838ed8b2c5f23835fc9bb2e02db15c6229f75fbdf2c624bd6",
+      "size": 3833080
+    },
+    "work/simulator/qemu-s9/core-checkpoint-285/manifest.json": {
+      "sha256": "e4cbb478297bd8df7d92150618a87f6b80bcf587b0e3505438170b20bf9ce5af",
+      "size": 69305
+    },
+    "work/simulator/reports/adapted-s9-milestone-284.md": {
+      "sha256": "93267856a7e672bdf5823b532fd19b4bf6617bd65185633c50d261aa8bcaae62",
+      "size": 7261
+    },
+    "work/simulator/reviews/adapted-s9-milestone-283.md": {
+      "sha256": "fc86765aeb020aea132e61c7455bc3e9d322c2b90b76bd490a6190d8dd7031f3",
+      "size": 7382
+    },
+    "work/simulator/milestones.md": {
+      "sha256": "355110cac972684f34f99cf5435233a68765c0123a5dd9a143b0036a011ac829",
+      "size": 4975
+    },
+    "work/simulator/checks-2026-10-21-001/test284.log": {
+      "sha256": "829bc430531f3ca784de65a9a132e2c63dd301552d8ce3e36a7e71c28c2ebc9f",
+      "size": 74532
+    },
+    "work/simulator/checks-2026-10-21-001/clippy284.log": {
+      "sha256": "fc19f420b1e373016f4ba92f920c4248027a5ced6d0fac621bf096033d8564ae",
+      "size": 155
+    },
+    "work/simulator/checks-2026-10-21-001/build284.log": {
+      "sha256": "8afc72660313addbc0d4e13d60eab16e2e4cc3a4af73e2ea29bfd892bd86e869",
+      "size": 145
+    },
+    "work/simulator/checks-2026-10-21-001/demo-build284.log": {
+      "sha256": "9576f1f7e73fc2bb1ec2336aae60cb485c591eadc60a1b998573411c34057e08",
+      "size": 62
+    },
+    "work/simulator/checks-2026-10-21-001/fmt285.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-21-001/links285.json": {
+      "sha256": "f96cb71b90c1fdaf4bdd84b89fa2630279c5c051b4aed42639bfb16688e99885",
+      "size": 176
+    },
+    "work/simulator/checks-2026-10-21-001/demo-check285.json": {
+      "sha256": "9c99068089f0f301daca4f607d56404c1f29f4930a701501b36dc7c35b8113ec",
+      "size": 414
+    },
+    "work/simulator/checks-2026-10-21-001/checkpoint285.log": {
+      "sha256": "cf2671dfe83a24d8b1fa65d29cc321320854301741e759e827fd66f538953a9e",
+      "size": 48
+    },
+    "work/simulator/checks-2026-10-21-001/freeze285.json": {
+      "sha256": "96c5890cf4d3b460775838d3e25da54e99846aeaca19df7d171890f388557ffc",
+      "size": 158
+    },
+    "work/simulator/checks-2026-10-21-001/verify285.json": {
+      "sha256": "f4fa59930a0d1de4a8781aa2354bf297fee732718de94d918e930138e31a2e9e",
+      "size": 150
+    },
+    "work/simulator/checks-2026-10-21-001/export283-test.log": {
+      "sha256": "32c088471df275f29e220bb7f9419b807543a2b03b15d7e0f7c864cf6f77512c",
+      "size": 494
+    },
+    "work/simulator/checks-2026-10-21-001/ssh264-reretain284.log": {
+      "sha256": "ef93dd19fc2abfe7d5fb9efb40153c048061f5eae0602aedf8bc5f617621c7b0",
+      "size": 93
+    },
+    "work/simulator/demos/s9-review-284/run/core-0-0/block-acceptance.json": {
+      "sha256": "f0d57b64dbe10072b7e5c4b9685254227842e4c2940310fb6125b63da9f92d8f",
+      "size": 1745
+    },
+    "work/simulator/demos/s9-review-284/run/core-0-1/block-acceptance.json": {
+      "sha256": "858ff26c0df08f9e71629d478c4e0589afaa68fb659723ea3f013edf8fc229d1",
+      "size": 1745
+    },
+    "work/simulator/demos/s9-review-284/run/core-1-0/block-acceptance.json": {
+      "sha256": "209e87b634f498af1c1712098e8f8e6615b45cc5a15f7441d0dd90a4ee88dbd5",
+      "size": 1745
+    },
+    "work/simulator/demos/s9-review-284/run/core-1-1/block-acceptance.json": {
+      "sha256": "39a33f813e0f1832ef57b731a2c4fa38d632118212558683bf2146f0f09b6a7d",
+      "size": 1745
+    },
+    "work/simulator/demos/s9-review-284/run/core-2-0/block-acceptance.json": {
+      "sha256": "1ce57cd6af08580321091b21fd476f7c8534c2a4f98b3ea948f587260db78f14",
+      "size": 1745
+    },
+    "work/simulator/demos/s9-review-284/run/core-2-1/block-acceptance.json": {
+      "sha256": "d171940b80237aa2b54867901df77cd199719226f6f393b3fc2a842321cbd6c2",
+      "size": 1745
+    },
+    "work/simulator/demos/s9-review-284/run/core-provision-0/block-acceptance.json": {
+      "sha256": "e486c97b70fcfde9145f7fd1fa99d06e99bba9803ef7f5a3449a2e1537f5d822",
+      "size": 1745
+    },
+    "work/simulator/demos/s9-review-284/run/core-provision-1/block-acceptance.json": {
+      "sha256": "3e5a04a3a7d5a6f762c4471e1053b44ccf31eb0611ace554cd233f6635b999d0",
+      "size": 1745
+    },
+    "work/simulator/checks-2026-10-21-001/milestone-links286.json": {
+      "sha256": "2ea26bb5b2c1304a6782f9622e140163fe7ff4728288ee5f30766025d36cb174",
+      "size": 213
+    }
+  },
+  "scope": "Completed adapted milestone only. Stop for user review before the next milestone. Exact FPGA, exact physical targets, selected remote dashboard, clean package installation and full matrix remain open."
+}

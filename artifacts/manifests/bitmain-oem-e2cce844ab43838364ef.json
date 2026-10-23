@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-e2cce844ab43838364ef",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/antMiner_S320140721.bin",
+  "kind": "firmware",
+  "title": "antMiner_S320140721.bin",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:45:17+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-e2cce844ab43838364ef/antMiner_S320140721.bin",
+  "sha256": "1f1a320c96271be9702b487e7fdba3605b2f53fb89a0d83e093b2274bbe47ed3",
+  "size_bytes": 8126464,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/antMiner_S320140721.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:30 GMT",
+  "etag": "\"92d38f16a241cf4b41f897234b76e16c\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 8126464,
+      "actual": 8126464,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

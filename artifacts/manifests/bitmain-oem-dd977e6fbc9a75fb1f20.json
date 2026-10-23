@@ -1,0 +1,37 @@
+{
+  "id": "bitmain-oem-dd977e6fbc9a75fb1f20",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/antMiner_S320150109.bin",
+  "kind": "firmware",
+  "title": "antMiner_S320150109.bin",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:44:56+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-dd977e6fbc9a75fb1f20/antMiner_S320150109.bin",
+  "sha256": "d7de5b6914885700a3fb248a7abfa3d32f9c1ab3a3a2a8e88e3f7980e33cf3b0",
+  "size_bytes": 8126464,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/antMiner_S320150109.bin",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "last_modified": "Thu, 07 Jan 2021 05:08:30 GMT",
+  "etag": "\"3e77fc58e4cf9f6c27810c8154c8b0f9\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 8126464,
+      "actual": 8126464,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    },
+    {
+      "field": "md5",
+      "expected": "3e77fc58e4cf9f6c27810c8154c8b0f9",
+      "actual": "3e77fc58e4cf9f6c27810c8154c8b0f9",
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

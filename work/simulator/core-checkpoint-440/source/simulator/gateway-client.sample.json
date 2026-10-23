@@ -1,0 +1,7 @@
+{
+  "type": "mutual-tls",
+  "run_id": "REPLACE_WITH_SELECTED_RUN_SHA256",
+  "certificate": "/private/client.crt",
+  "private_key": "/private/client.key",
+  "server_ca": "/private/ca.crt"
+}

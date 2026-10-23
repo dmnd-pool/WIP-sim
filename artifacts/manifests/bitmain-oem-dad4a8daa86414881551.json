@@ -1,0 +1,30 @@
+{
+  "id": "bitmain-oem-dad4a8daa86414881551",
+  "url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/80070398-42ca-4175-8b6f-f60d0cc41990/2019/08/02/14/multibit-0.5.19.4-mac.zip",
+  "kind": "firmware",
+  "title": "multibit-0.5.19.4-mac.zip",
+  "language": "und",
+  "source_id": "bitmain-download-api",
+  "license": "unknown",
+  "retrieved_at": "2026-10-19T09:55:19+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/firmware/bitmain-oem-dad4a8daa86414881551/multibit-0.5.19.4-mac.zip",
+  "sha256": "fb96674dba6939bf1c6faa95671d8322549a71b4477d0a554b6deb267a4e185f",
+  "size_bytes": 83204764,
+  "executed": false,
+  "final_url": "https://assets-product.bitmain.com.cn/shop-product-s3/firmware/80070398-42ca-4175-8b6f-f60d0cc41990/2019/08/02/14/multibit-0.5.19.4-mac.zip",
+  "http_status": 200,
+  "content_type": "undefined",
+  "last_modified": "Thu, 07 Jan 2021 05:08:22 GMT",
+  "etag": "\"25b56d47defd7d1038124deb9a5531a5-5\"",
+  "upstream_integrity_checks": [
+    {
+      "field": "size_bytes",
+      "expected": 83204764,
+      "actual": 83204764,
+      "match": true,
+      "source_id": "bitmain-download-api"
+    }
+  ],
+  "upstream_integrity_match": true
+}

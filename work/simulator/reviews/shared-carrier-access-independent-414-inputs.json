@@ -1,0 +1,69 @@
+{
+  "schema": "md-sim-review-inputs/1",
+  "files": {
+    "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard.rs": {
+      "sha256": "6e4622717bc10d73b742f5d32f1520875f93d263d348a93bb8b0680d95ee2c5d",
+      "size": 30651
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard_client.rs": {
+      "sha256": "df821c46985d4d29e8103fae4cf57a2022d933cfa6e4c8279e3927dba4822ff4",
+      "size": 13413
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/carrier_artifacts.rs": {
+      "sha256": "67a0c48efc975a4d0627df3f3d18f212a7353aa14c99b09645dfaa6020ce6ff9",
+      "size": 7707
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/shared_run.rs": {
+      "sha256": "4fd0d8777c0d92f857fae8004ee28c46f47aff3301f1bf7d4af5a65f9bea7323",
+      "size": 15796
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/shared_pool.rs": {
+      "sha256": "d57b0819e5dd7255e143865bc58c63ed5800ddb248383ee6dd2e08db4e1cc796",
+      "size": 17129
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/worker_broker.rs": {
+      "sha256": "855cde764c4754b209e09ac49b7ad84312f0f0d1e0e1bfe47ced34dccb8e3385",
+      "size": 29059
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board_browser.rs": {
+      "sha256": "5d766d6b456362b607a240c7ce67a14a24b1403c90024d94ff525eb7bdb745fc",
+      "size": 9715
+    },
+    "crates/md-sim-firmware/examples/support/s9_browser_target.rs": {
+      "sha256": "1b9f1f69f65c7eda4f16106aa035afc60a67024a52f93cab55911924725d9ce8",
+      "size": 23738
+    },
+    "crates/md-sim-firmware/examples/support/s9_browser_selected.rs": {
+      "sha256": "ad2b646e7466b2e5c82f866c6a8a7f050e8888d5d9a258b0cdfb70f2e485597d",
+      "size": 4249
+    },
+    "crates/md-sim-firmware/examples/support/worker_shared_retention.rs": {
+      "sha256": "e543b9a487a55e4666b3e5d79f0e4967d73f926c96afea095253b96850df481a",
+      "size": 8707
+    },
+    "crates/md-sim-firmware/examples/support/worker_shared_access.rs": {
+      "sha256": "7664c5b299157b679e016676ea8a8bba67603d4f7ab871bd58839bb13a4314e0",
+      "size": 9871
+    },
+    "crates/md-sim-firmware/examples/support/worker_shared_host.rs": {
+      "sha256": "dd879cba5f591bc782f9e664fc20afdfb5bab86e33355f38ecf96daafb81d7a5",
+      "size": 10568
+    },
+    "crates/md-sim-firmware/examples/support/worker_channel_ssh.rs": {
+      "sha256": "b64143adb334352fffdd318fd8880a3cea2417e4ce7726f19f571ff2f4bbc961",
+      "size": 16119
+    },
+    "crates/md-sim-firmware/examples/isolated_network_vm/payload.rs": {
+      "sha256": "9dd6fcc4e73ccf15202e7119ab982bfa4333c337fa9ddca091b425a9005943e8",
+      "size": 22203
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-service-browser411-tests.log": {
+      "sha256": "8c14fa8f2c7b978160ad7a6a9b29960252f9a3e5f647a7a7811c97a2e4642c2c",
+      "size": 10407
+    },
+    "work/simulator/checks-2026-10-21-001/carrier-service-browser409-clippy.log": {
+      "sha256": "4ab6e7b8aa3373d63274422a2772d01a8f992f3f386722294f992fce6a6434a8",
+      "size": 222
+    }
+  }
+}
