@@ -1,0 +1,221 @@
+{
+  "schema": "md-sim-pll-execution-author-audit/1",
+  "status": "passed_independent_execution_review_pending",
+  "scope": "Original T17 arithmetic instruction execution only; no ASIC state, lock, timing, board or mining pass.",
+  "source_files_rehashed": 137,
+  "input_mounts_rehashed": 47,
+  "original_cases": 22134,
+  "zero_stderr_and_no_truncation": true,
+  "process_milliseconds": 158,
+  "rounding_cases_below_rational_floor": [
+    {
+      "case": 2352,
+      "word": "000f0311",
+      "software_divider": 1,
+      "original_integer": 124,
+      "rational_numerator": 125,
+      "rational_denominator": 1
+    },
+    {
+      "case": 2376,
+      "word": "000f0315",
+      "software_divider": 1,
+      "original_integer": 24,
+      "rational_numerator": 25,
+      "rational_denominator": 1
+    },
+    {
+      "case": 2520,
+      "word": "000f0351",
+      "software_divider": 1,
+      "original_integer": 24,
+      "rational_numerator": 25,
+      "rational_denominator": 1
+    },
+    {
+      "case": 2544,
+      "word": "000f0355",
+      "software_divider": 1,
+      "original_integer": 4,
+      "rational_numerator": 5,
+      "rational_denominator": 1
+    }
+  ],
+  "checks": [
+    "9 focused tests passed",
+    "strict scoped Clippy passed",
+    "release build passed",
+    "scoped rustfmt passed",
+    "C wrapper compiled with strict warnings and UBSan traps and ran in captured QEMU ARM",
+    "all13 evidence tar members retained with exact allowed names, regular file type, size bound, and no duplicate names",
+    "process stdout hex equals retained evidence.tar",
+    "all captured source copies and137 current source inputs match their frozen identities after execution"
+  ],
+  "files": [
+    {
+      "path": "work/simulator/bitaxe/t17-pll-driver-496/manifest.json",
+      "size": 41220,
+      "sha256": "57b7a72e84e8585623409e563e348f01a6ed09775a57e93f921419a471657dcc"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-driver-496/build-inputs.json",
+      "size": 39891,
+      "sha256": "c7fafbe76336e30ff64c81a8f98f96d3b4abdf94a3ff92d5d7e3ed15264fdcdf"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-driver-496/t17_core_oracle",
+      "size": 1987896,
+      "sha256": "710e0f9ff4fe75fbe004e85c52e4abf1cedb52fe42ac0ac46afc97fb4a97be09"
+    },
+    {
+      "path": "work/simulator/reviews/t17-pll-source-independent-496.json",
+      "size": 1490,
+      "sha256": "8b53b2970fcb3b27d62086f9699ebef301e1c6af0d209f2759e5e1f6ff02cd3d"
+    },
+    {
+      "path": "work/simulator/t17-pll-oracle-496/integrated.json",
+      "size": 1155,
+      "sha256": "e4cb9a8cb75cabdaf3e53a9a42aaab8e46eb12cff75644ae24bb5a67b58cd954"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+      "size": 553247,
+      "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367"
+    },
+    {
+      "path": "work/simulator/bm1397-write-intent-493/pll_word_to_integer_frequency.a32.txt",
+      "size": 853,
+      "sha256": "73e946ebab579f57b951deeaf5e570c39516c5c14a7985593518b0c84d97256b"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/assessment.json",
+      "size": 2814,
+      "sha256": "1b5798d0bc3cc21e060876610ee8c53848745f8e5b3f896195be9ab332d0affd"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/compile-arguments.json",
+      "size": 545,
+      "sha256": "f9eb09cb4283e3059ee7795909dca8ac8f4ac8ef199832d85cbd216bc0ca8efe"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/compiler-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/compiler-version.stdout",
+      "size": 90,
+      "sha256": "8f6bce609ea50e5ab168d1490c4d7948e65945d8202218ac3d9900761450977f"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/emulator-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/emulator-version.stdout",
+      "size": 96,
+      "sha256": "e8b6ad24de50c95920a8666dc978116a22d16a1ca610b73fa27aafb102054569"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/evidence.tar",
+      "size": 376832,
+      "sha256": "63dec06d30b14de58cd56fccef8b1cfd556f0088f4f8f8ac472115c54c909782"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/execution.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/execution.stdout",
+      "size": 354160,
+      "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/linker-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/linker-version.stdout",
+      "size": 116,
+      "sha256": "c96659054ce2c3ac68a0a6404c2c199e723b64cb9b5c63dcfcd5cad1a2c88d7e"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/oracle",
+      "size": 9024,
+      "sha256": "e96f38a6df508fbbb612343ac2de61fe6cc4fea8862763d354ed6ff10beaf072"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/oracle-abi.h",
+      "size": 580,
+      "sha256": "f1252bc60aab4da94ad15f0a7812b50816f898377b2bf96ceb52ba820e9cec0c"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/oracle.c",
+      "size": 1972,
+      "sha256": "ed2c100242671807eac6a64598a8895e98e002134cba339ba96cfd0125c70e04"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/oracle.ld",
+      "size": 629,
+      "sha256": "2007bb49539ce8fc8072c27f9044255d2f52d51d1187b8b34df60bed10b1be47"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/result.json",
+      "size": 754506,
+      "sha256": "947a09fedbb0acab39cf4efb96e221cbe5731b64bbc52ea438b4b4cc6ff9a981"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/spec.json",
+      "size": 9513,
+      "sha256": "8f726827dfff1584cae3655b5baa365c6bce9cfa2c7e949fac35dfb7796b04c4"
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/stderr.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-pll496-build.log",
+      "size": 146,
+      "sha256": "2e316456bf65ed8d8435e5bd994c08538c108486dadb5b865ceaae9535fde38f"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-pll496-clippy.log",
+      "size": 143,
+      "sha256": "5f43d7b48198aee1d41b7fc427d59b4a6d511f421163345c661402084539a962"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-pll496-execution.log",
+      "size": 88,
+      "sha256": "8aabcc128d0c2961f486f88ff61e47220f28fafa0bc6c87a3bf5f89b520a2035"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-pll496-format.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-pll496-guide-links.log",
+      "size": 176,
+      "sha256": "c6d3245ae5fda7c4c593995525629db78790d27f7b5c84f7d6e4f3c832cdc259"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-pll496-tests.log",
+      "size": 1175,
+      "sha256": "1185be0a5db31a8bf3c3031d52248158b5dea88d998a81a0a5b392a5d59ad2eb"
+    }
+  ]
+}

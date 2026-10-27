@@ -1,0 +1,87 @@
+{
+  "scope": "Actual worker transport rejection cases after separate trace port change. No firmware or dashboard claim.",
+  "passed": true,
+  "cases": [
+    {
+      "fault": "wrong-receipt",
+      "fault_gate_passed": true,
+      "normal_run_pass": false,
+      "wall_ms": 9325,
+      "files": [
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/assessment.json",
+          "sha256": "4294b7894993c5cefeaaf62bb032101bb3e12dd7e25252c92d85cb5867bdaf7b",
+          "size": 4524
+        },
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/result.json",
+          "sha256": "ea5ead8444f273bfa4d17c530f5f1ba8861dda25b354d057bef07714f61d9e4c",
+          "size": 38190
+        },
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/process-spec.json",
+          "sha256": "7aca227d2cbbb938a6da33acc44812442a94a791c779cb0e2e35b1222be8ab49",
+          "size": 5448
+        },
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/guest.log",
+          "sha256": "d03266f5905094854b95c938af852ea94e4ff984b2f70b87a2ebe96cb5b43a61",
+          "size": 16444
+        },
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/backend.log",
+          "sha256": "9c3e41e9244eb11744fde17bbd7b553f05051b8ae0d8a2eea7946f01aaa15a5d",
+          "size": 1823
+        },
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/execution/worker-error.json",
+          "sha256": "d6b2303f4bf5e5540e442ecf5189dc7188186f97817320e9b80d65d2ada62350",
+          "size": 48
+        },
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/execution/injected-wrong-receipt.json",
+          "sha256": "14cc7bb2fe1a657f015e9c1d7bc12d48dddcd6037844ee837e86ef22022fc9e0",
+          "size": 373
+        },
+        {
+          "path": "work/simulator/network-vm/trace-wrong-receipt-490/execution/worker-result.json",
+          "sha256": "c6f2dff191b271f9e7e8b35f19ee01c2ee7f305b37661d5914fc8ac70a34f2a7",
+          "size": 1337
+        }
+      ]
+    },
+    {
+      "fault": "client-disconnect",
+      "fault_gate_passed": true,
+      "normal_run_pass": false,
+      "wall_ms": 7104,
+      "files": [
+        {
+          "path": "work/simulator/network-vm/trace-client-disconnect-490/assessment.json",
+          "sha256": "5da1d137a6f4f99daaa72520f8710f4ddff132ce0b177cd8622ea4130175b9e1",
+          "size": 4285
+        },
+        {
+          "path": "work/simulator/network-vm/trace-client-disconnect-490/result.json",
+          "sha256": "2057e8f7287d6d4c9cbf6a4bcd92561fd9b8ddf73f8be2c258a52decd06a166f",
+          "size": 8741
+        },
+        {
+          "path": "work/simulator/network-vm/trace-client-disconnect-490/process-spec.json",
+          "sha256": "277ac8956e3557928ffc49632f6ea891163bf274f9b562bd60e8eed6a6feb6c0",
+          "size": 5357
+        },
+        {
+          "path": "work/simulator/network-vm/trace-client-disconnect-490/guest.log",
+          "sha256": "748ebe7a2421f9374e57901f1b2e0cd557bdd26c3e132283406a6b7527480b0e",
+          "size": 1931
+        },
+        {
+          "path": "work/simulator/network-vm/trace-client-disconnect-490/backend.log",
+          "sha256": "9cb3664f3b6508646646586ad28e4e4c19637d2ef9b1c89ca4342dd53c38bfcf",
+          "size": 2018
+        }
+      ]
+    }
+  ]
+}

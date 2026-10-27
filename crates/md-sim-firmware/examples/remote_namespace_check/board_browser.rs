@@ -1,6 +1,12 @@
 //! Captured Firefox for the same selected firmware process and publication.
 use super::board_browser_target::{CarrierSelection, Selection};
 use super::*;
+use std::sync::atomic::{AtomicBool, Ordering};
+
+#[path = "board_browser_readiness.rs"]
+mod readiness;
+
+pub(super) const PREPARATION_SECONDS: u64 = 650;
 
 pub(super) fn enabled() -> bool {
     std::env::var("MD_SIM_BOARD_BROWSER").as_deref() == Ok("1")
@@ -82,6 +88,32 @@ impl Client {
             ended: false,
             diagnostic: None,
         }))
+    }
+
+    pub(super) fn wait_prepared(&mut self, cancel: &AtomicBool) -> Result<Value> {
+        let started = Instant::now();
+        // Two existing300s per-profile budgets plus bounded credential setup.
+        // This does not extend native work, boot or page-operation deadlines.
+        let deadline = started + Duration::from_secs(PREPARATION_SECONDS);
+        readiness::await_record(cancel, deadline, || {
+            if let Some(status) = self.child.try_wait()? {
+                self.ended = true;
+                anyhow::bail!("browser ended before worker dispatch: {status}");
+            }
+            let bytes = read_evidence(Path::new("/work/board-browser.stdout"), 4 << 20)?;
+            if let Some(prepared) = readiness::from_log(&bytes, &self.driver)? {
+                readiness::check_owned_processes(&prepared)?;
+                ensure!(
+                    !cancel.load(Ordering::Acquire) && self.child.try_wait()?.is_none(),
+                    "browser cancelled or ended before worker dispatch"
+                );
+                return Ok(Some(json!({"ready":prepared,"helper_pid":self.child.id(),
+                    "elapsed_milliseconds":started.elapsed().as_millis(),
+                    "ready_monotonic_ns":super::shared_pool::monotonic_ns()?,
+                    "deadline_seconds":PREPARATION_SECONDS,"owned_profiles_live":true})));
+            }
+            Ok(None)
+        })
     }
 
     pub(super) fn exercise(&mut self, selection: &Selection) -> Result<Value> {

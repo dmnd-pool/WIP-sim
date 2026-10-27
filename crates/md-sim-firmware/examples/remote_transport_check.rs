@@ -411,6 +411,7 @@ fn client_test(events: &mut Vec<Value>) -> Result<()> {
         });
     }
     let mut spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None, stdin_stream: None,
         namespace_uid: 0,
         dashboard: None,

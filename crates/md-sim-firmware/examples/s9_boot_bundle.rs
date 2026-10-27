@@ -637,15 +637,32 @@ fn main() -> Result<()> {
         } else {
             None
         };
-        let clock = std::env::var(wall_clock::ENVIRONMENT)
+        let fixed_clock = std::env::var(wall_clock::ENVIRONMENT)
             .ok()
             .map(|value| wall_clock::Clock::new(value.parse()?))
             .transpose()?;
+        let host_realtime = match std::env::var(wall_clock::HOST_REALTIME_ENVIRONMENT) {
+            Err(std::env::VarError::NotPresent) => false,
+            Ok(value) if value == "1" => true,
+            _ => anyhow::bail!("invalid execution-host clock adaptation"),
+        };
         ensure!(
-            clock.is_none() || (use_pool_vm && args[1] == "__boot-console"),
+            fixed_clock.is_none() || (use_pool_vm && args[1] == "__boot-console"),
             "wall-clock adaptation requires a pool VM and original guest console"
         );
-        let rtc = clock.as_ref().map(wall_clock::Clock::rtc).transpose()?;
+        ensure!(
+            !host_realtime || (shared && fixed_clock.is_none() && args[1] == "__boot-console"),
+            "execution-host clock adaptation requires the shared console runner without a fixed epoch"
+        );
+        let rtc = fixed_clock
+            .as_ref()
+            .map(wall_clock::Clock::rtc)
+            .transpose()?;
+        let clock = if host_realtime {
+            Some(wall_clock::Clock::from_host_realtime()?)
+        } else {
+            fixed_clock
+        };
         let (mut vm_pool, miner_endpoint) = if use_pool_vm {
             let (pool, endpoint) = pool_vm::MinerPool::start(browser, rtc.as_deref())?;
             pool_vm::attach(&mut command, &endpoint);
@@ -908,6 +925,7 @@ fn main() -> Result<()> {
     )?;
     add(&store, &mut inputs, Path::new(profile.path), "/sd.img")?;
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -987,7 +1005,7 @@ fn main() -> Result<()> {
 fn boot(args: &[std::ffi::OsString]) -> Result<()> {
     ensure!(
         (5..=35).contains(&args.len()),
-        "usage: s9_boot_bundle boot BUNDLE NEW_OUTPUT spl|uboot [trace|nand-instructions|nand-registers|nand-pins] [single-cpu] [nand-fixture|nand-onfi|legacy-io|sd2022-io|sd2022-v1] [backend=BUILD_DIRECTORY] [budget=30..360|nested-tcg budget=1200|1800|2400|4800] [nested-tcg-two-cpu] [pool-seconds=20..300|nested-tcg:20..900] [private-loopback [dashboard-forward] [pool-keep-open]] [batch-console] [console=SCRIPT] [restart-console=SCRIPT] [save-sd] [nand-storage] [nand-state=SNAPSHOT_JSON] [sd-native-reboot|sd-controlled-interruption] [sd-read-only-checkpoint] [sd-state=SNAPSHOT_JSON] [presence-pin-fixture=HEX] [fan-fixture [fan-plan=JSON_FILE]] [pic-contract] [asic-contract] [configuration-contract] [asic-events|asic-packets] [local-pool] [pool-vm=BUILD_DIRECTORY|shared-pool=MANIFEST prepare-only] [shared-dashboard=POLICY] [dashboard-probe] [dashboard-luci] [dashboard-update-validation|dashboard-update-install|dashboard-update-corruption=IMAGE] [dashboard-state=PLAN_JSON] [browser-payload=MANIFEST] [adapt-clock-epoch=UNIX_SECONDS] [adapt-monitor-fan-source=EXTRACTED_MEMBER] [temperature-fixture [temperature-plan=JSON_FILE]] [pool-difficulty=EXPONENT,EXPONENT] [regtest-genesis] [icount-shift=0..6] [hash-cap-hps=RATE] [adapt-fixed-filter-bits=1..31] [prepare-only]"
+        "usage: s9_boot_bundle boot BUNDLE NEW_OUTPUT spl|uboot [trace|nand-instructions|nand-registers|nand-pins] [single-cpu] [nand-fixture|nand-onfi|legacy-io|sd2022-io|sd2022-v1] [backend=BUILD_DIRECTORY] [budget=30..360|nested-tcg budget=1200|1800|2400|4800] [nested-tcg-two-cpu] [pool-seconds=20..300|nested-tcg:20..900] [private-loopback [dashboard-forward] [pool-keep-open]] [batch-console] [console=SCRIPT] [restart-console=SCRIPT] [save-sd] [nand-storage] [nand-state=SNAPSHOT_JSON] [sd-native-reboot|sd-controlled-interruption] [sd-read-only-checkpoint] [sd-state=SNAPSHOT_JSON] [presence-pin-fixture=HEX] [fan-fixture [fan-plan=JSON_FILE]] [pic-contract] [asic-contract] [configuration-contract] [asic-events|asic-packets] [local-pool] [pool-vm=BUILD_DIRECTORY|shared-pool=MANIFEST prepare-only] [shared-dashboard=POLICY] [dashboard-probe] [dashboard-luci] [dashboard-update-validation|dashboard-update-install|dashboard-update-corruption=IMAGE] [dashboard-state=PLAN_JSON] [browser-payload=MANIFEST] [adapt-clock-epoch=UNIX_SECONDS|adapt-clock-host-realtime] [adapt-monitor-fan-source=EXTRACTED_MEMBER] [temperature-fixture [temperature-plan=JSON_FILE]] [pool-difficulty=EXPONENT,EXPONENT] [regtest-genesis] [icount-shift=0..6] [hash-cap-hps=RATE] [adapt-fixed-filter-bits=1..31] [prepare-only]"
     );
     let bundle = PathBuf::from(&args[2]);
     let out = PathBuf::from(&args[3]);
@@ -1072,6 +1090,7 @@ fn boot(args: &[std::ffi::OsString]) -> Result<()> {
             || arg
                 .to_str()
                 .is_some_and(|s| s.starts_with("adapt-clock-epoch="))
+            || arg == "adapt-clock-host-realtime"
             || arg
                 .to_str()
                 .is_some_and(|s| s.starts_with("adapt-monitor-fan-source="))
@@ -1206,13 +1225,28 @@ fn boot(args: &[std::ffi::OsString]) -> Result<()> {
         .first()
         .map(|value| wall_clock::validate(value.parse()?))
         .transpose()?;
+    let host_realtime_count = args[5..]
+        .iter()
+        .filter(|arg| *arg == "adapt-clock-host-realtime")
+        .count();
     ensure!(
-        wall_epoch.is_none()
+        host_realtime_count <= 1
+            && (host_realtime_count == 0 || (shared.is_some() && wall_epoch.is_none())),
+        "one execution-host clock adaptation requires shared-pool without a fixed epoch"
+    );
+    let host_realtime = host_realtime_count == 1;
+    ensure!(
+        (wall_epoch.is_none() && !host_realtime)
             || args[5..]
                 .iter()
                 .any(|arg| arg.to_str().is_some_and(|s| s.starts_with("console="))),
         "wall-clock adaptation requires the original guest console"
     );
+    let wall_clock_identity = if host_realtime {
+        Some(wall_clock::host_realtime_identity())
+    } else {
+        wall_epoch.map(wall_clock::identity)
+    };
     ensure!(
         !dashboard_probe || pool_vm_backend.is_some(),
         "dashboard-probe requires pool-vm"
@@ -2170,6 +2204,7 @@ fn boot(args: &[std::ffi::OsString]) -> Result<()> {
         ]);
     }
     let mut spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: shared.map(|manifest| manifest.carrier.clone()),
         stdin_stream: None,
         namespace_uid: 0,
@@ -2292,6 +2327,10 @@ fn boot(args: &[std::ffi::OsString]) -> Result<()> {
         spec.environment
             .insert(wall_clock::ENVIRONMENT.into(), epoch.to_string());
     }
+    if host_realtime {
+        spec.environment
+            .insert(wall_clock::HOST_REALTIME_ENVIRONMENT.into(), "1".into());
+    }
     if shared.is_some() {
         spec.environment
             .insert(shared_pool::ENVIRONMENT.into(), "1".into());
@@ -2350,7 +2389,7 @@ fn boot(args: &[std::ffi::OsString]) -> Result<()> {
                 "dashboard_update_validation_contract":dashboard_update.then(||hash_file(&out.join("pool-vm-image.update-validation.json"))).transpose()?,
                 "update_packet_capture_limit":dashboard_update.then_some(pool_vm::update_validation::PACKET_BYTES),
                 "browser_payload_manifest":browser_payload.map(hash_file).transpose()?,
-                "wall_clock_adaptation":wall_epoch.map(wall_clock::identity),
+                "wall_clock_adaptation":wall_clock_identity,
                 "monitor_script_adaptation":monitor_identity,
                 "browser_support":browser.then(||json!({"startup_wall_seconds":browser_budget::STARTUP_SECONDS,"support_cpu_seconds":browser_budget::SUPPORT_CPU_SECONDS,"support_address_bytes":browser_budget::SUPPORT_ADDRESS_BYTES,"miner_address_bytes":browser_budget::MINER_ADDRESS_BYTES,"browser_profiles":2,"browser_completion_seconds":browser_budget::COMPLETION_SECONDS,"guest_ram_mib":2048,"guest_cpus":4,"browser_cpus_per_profile":2,"miner_wall_seconds":budget,"miner_cpu_seconds":(budget-10).min(330),"packet_capture_limit":browser_budget::PACKET_BYTES,"browser_uid":1001,"pool_uid":1000,"native_browser_scope":"login, archived asset, advancing HTTP telemetry and WebSocket delivery; remaining dashboard gates stay explicit"})),
                 "sd_snapshot_export":save_sd,
@@ -2503,7 +2542,7 @@ fn boot(args: &[std::ffi::OsString]) -> Result<()> {
     };
     save_json(
         &out.join("adaptation.json"),
-        &json!({"requested_stage":stage,"bundle_manifest":hash_file(&bundle.join("boot/bundle.json"))?,"original_sd":hash_file(image)?,"payload":expected,"parent":object(&parent),"original_payload_bytes":true,"direct_stage_loader":true,"boot_rom_executed":false,"preceding_spl_skipped":stage=="uboot","sd_storage":{"backing":"Original image read-only; private qcow2 overlay,128MiB virtual capacity,zero extension beyond original bytes","cache":"writethrough","snapshot_export":save_sd,"read_only_checkpoint":sd_checkpoint.then(boot_storage::checkpoint_identity),"termination":if dashboard_install {"native-update-restart"} else if sd_native_reboot {"native-reboot"} else if save_sd {"guest-sync-owned-termination"} else {"owned-termination"},"restart_count":restart_scripts.len(),"saved_input":states.first().map(|path|hash_file(path)).transpose()?,"scope":if nand_storage {"Paired SD and NAND overlays persist. Volatile devices reset. No host-crash durability claim."} else {"Only SD writes persist when the snapshot or restart path is selected. NAND and volatile devices reset. No host-crash durability claim."}},"execution_claim":"Requires retained actual guest output; no stage success inferred from launch","sd_strap":5,"cpu_count":cpus,"clock":clock_identity,"wall_clock_adaptation":wall_epoch.map(wall_clock::identity),"single_cpu_diagnostic":single_cpu,"generic_backend":!selected_backend,"configuration_transfer":configuration_identity,"backend_build":backend_identity,"backend_seccomp":!selected_backend,"nand_fixture":nand_identity,"legacy_io":legacy_identity,"isolation":"Required outer namespace and resource isolation applies to both backends.","original_board_gate":"incomplete"}),
+        &json!({"requested_stage":stage,"bundle_manifest":hash_file(&bundle.join("boot/bundle.json"))?,"original_sd":hash_file(image)?,"payload":expected,"parent":object(&parent),"original_payload_bytes":true,"direct_stage_loader":true,"boot_rom_executed":false,"preceding_spl_skipped":stage=="uboot","sd_storage":{"backing":"Original image read-only; private qcow2 overlay,128MiB virtual capacity,zero extension beyond original bytes","cache":"writethrough","snapshot_export":save_sd,"read_only_checkpoint":sd_checkpoint.then(boot_storage::checkpoint_identity),"termination":if dashboard_install {"native-update-restart"} else if sd_native_reboot {"native-reboot"} else if save_sd {"guest-sync-owned-termination"} else {"owned-termination"},"restart_count":restart_scripts.len(),"saved_input":states.first().map(|path|hash_file(path)).transpose()?,"scope":if nand_storage {"Paired SD and NAND overlays persist. Volatile devices reset. No host-crash durability claim."} else {"Only SD writes persist when the snapshot or restart path is selected. NAND and volatile devices reset. No host-crash durability claim."}},"execution_claim":"Requires retained actual guest output; no stage success inferred from launch","sd_strap":5,"cpu_count":cpus,"clock":clock_identity,"wall_clock_adaptation":wall_clock_identity,"single_cpu_diagnostic":single_cpu,"generic_backend":!selected_backend,"configuration_transfer":configuration_identity,"backend_build":backend_identity,"backend_seccomp":!selected_backend,"nand_fixture":nand_identity,"legacy_io":legacy_identity,"isolation":"Required outer namespace and resource isolation applies to both backends.","original_board_gate":"incomplete"}),
     )?;
     if args[5..].iter().any(|arg| arg == "prepare-only") {
         println!(
@@ -2525,6 +2564,26 @@ fn boot(args: &[std::ffi::OsString]) -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn host_clock_adaptation_requires_the_shared_runner() {
+        for options in [
+            vec!["adapt-clock-host-realtime"],
+            vec!["adapt-clock-host-realtime", "adapt-clock-host-realtime"],
+            vec!["local-pool", "pool-vm=/absent", "adapt-clock-host-realtime"],
+        ] {
+            let args: Vec<_> = ["s9_boot_bundle", "boot", "/absent", "/absent", "uboot"]
+                .into_iter()
+                .chain(options)
+                .map(std::ffi::OsString::from)
+                .collect();
+            let error = boot(&args).unwrap_err().to_string();
+            assert!(
+                error.contains("one execution-host clock adaptation requires"),
+                "{error}"
+            );
+        }
+    }
+
     #[test]
     fn shared_dashboard_cannot_be_requested_without_the_selected_carrier() {
         let args = [

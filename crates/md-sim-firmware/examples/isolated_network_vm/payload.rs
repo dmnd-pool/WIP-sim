@@ -456,7 +456,7 @@ mod tests {
                 ("/usr/bin/cpio".into(), "/usr/bin/cpio".into()),
             ],
         )?;
-        let spec=ProcessSpec{private_channel: None, stdin_stream:None,namespace_uid:0,dashboard:None,loopback:false,schema_version:"2.0".into(),stdin_object:Some(stdin),argv:vec!["/usr/bin/sh".into(),"-c".into(),"/usr/bin/cpio -idm --quiet && IFS= read -r a < usr/share/test && IFS= read -r b < usr/share/link && test \"$a\" = payload && test \"$a\" = \"$b\" && test -L usr/share/link && printf 'CPIO_CONTENT_AND_SYMLINK_PASS\\n'".into()],inputs,environment:BTreeMap::new(),limits:Limits{wall_seconds:10,cpu_seconds:5,memory_bytes:256*1024*1024,processes:16,file_bytes:1024*1024,trace_bytes:65536,tmp_bytes:4*1024*1024}};
+        let spec=ProcessSpec{support_virtualization: None, private_channel: None, stdin_stream:None,namespace_uid:0,dashboard:None,loopback:false,schema_version:"2.0".into(),stdin_object:Some(stdin),argv:vec!["/usr/bin/sh".into(),"-c".into(),"/usr/bin/cpio -idm --quiet && IFS= read -r a < usr/share/test && IFS= read -r b < usr/share/link && test \"$a\" = payload && test \"$a\" = \"$b\" && test -L usr/share/link && printf 'CPIO_CONTENT_AND_SYMLINK_PASS\\n'".into()],inputs,environment:BTreeMap::new(),limits:Limits{wall_seconds:10,cpu_seconds:5,memory_bytes:256*1024*1024,processes:16,file_bytes:1024*1024,trace_bytes:65536,tmp_bytes:4*1024*1024}};
         let result = execute(&store, &spec, Arc::new(AtomicBool::new(false)))?;
         ensure!(
             result.exit_code == Some(0) && !result.trace_truncated && result.stderr.is_empty(),

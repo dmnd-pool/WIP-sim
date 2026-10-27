@@ -1,0 +1,141 @@
+{
+  "schema": "md-sim-independent-feature-oracle-execution-inputs/1",
+  "passed": true,
+  "scope": "Independent static feature comparison only; no netlist, firmware execution, physical timing or exact-board acceptance",
+  "files": {
+    "work/simulator/qemu-s9/feature-oracle-driver-476/manifest.json": {
+      "sha256": "0e15f4f6efd00083bfacc461add270510df1942dd1b6dfc3731fd21973ddb42a",
+      "size": 100763
+    },
+    "work/simulator/qemu-s9/feature-oracle-driver-476/s9_feature_oracle": {
+      "sha256": "32f77496b22835e86992220fe060259dbce3c18d98d3ab2e597f2951ad83ce06",
+      "size": 2377912
+    },
+    "work/simulator/reviews/feature-oracle-independent-source-476.json": {
+      "sha256": "e3bd42c5bc912b7082088763118ebb827f9066ad3a2f092d90da71b80317381d",
+      "size": 1766
+    },
+    "work/simulator/reviews/feature-oracle-executed-476.md": {
+      "sha256": "b09ea4a4c2ebc6e316963062ce3a30795a6ab3d70a4ac5fcc5a4b5e21f4f8565",
+      "size": 5270
+    },
+    "simulator/firmware/s9-fpga-feature-inputs.json": {
+      "sha256": "63f929e03e821de40a46d6bf27b2257ce3168ef0f84c4f59a08bae4c878fa8d7",
+      "size": 2732
+    },
+    "simulator/firmware/s9-fpga-feature-inputs-475.json": {
+      "sha256": "977644ea620fbee880b242f1342689ea8425fca2d7efbe5e6f4c3362909fe265",
+      "size": 10459
+    },
+    "work/simulator/qemu-s9/frames-selected-291/header.json": {
+      "sha256": "a5e5a889a42bc929ff5c67cce88d5d60d2ef05c5682a6f1339cf1ec47128acbe",
+      "size": 649924
+    },
+    "work/simulator/qemu-s9/features-selected-474c/features.json": {
+      "sha256": "b23a9995f6e35f962caea9a9f850a109ad7f5cb248e3ec6eff07c93570023a5b",
+      "size": 42184411
+    },
+    "work/simulator/qemu-s9/features-selected-475/features.json": {
+      "sha256": "de5bd2fc59b037ae378d111ffdd9383e95729c30b464f0398efb79ae56dfb23e",
+      "size": 43704960
+    },
+    "work/simulator/checks-2026-10-26-001/feature-oracle476-tests.log": {
+      "sha256": "495337abd9f255b09b6b4d26264fe74e446b149dda0a65a0a7a538dbdad24f82",
+      "size": 701
+    },
+    "work/simulator/checks-2026-10-26-001/feature-oracle476-clippy.log": {
+      "sha256": "a6a39dede58affe5a289efa35f33b2cebf507261095a29748c79b252c54264c8",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-26-001/feature-oracle476-build.log": {
+      "sha256": "981997c4b21d323cfb8a56a5609b231446672f9e745e124e55f1fae02e0c3c12",
+      "size": 145
+    },
+    "work/simulator/checks-2026-10-26-001/feature-oracle476-execution.log": {
+      "sha256": "a078b7de124abe51c46d17a94136cacf566a23eaeecdb2082f06d5b3d0b0e7a6",
+      "size": 117
+    },
+    "work/simulator/checks-2026-10-26-001/feature-oracle476b-execution.log": {
+      "sha256": "a078b7de124abe51c46d17a94136cacf566a23eaeecdb2082f06d5b3d0b0e7a6",
+      "size": 117
+    },
+    "work/simulator/qemu-s9/feature-oracle-476/assessment.json": {
+      "sha256": "6ff9df713fbf99b5e03218a7fba5b9326d1340bd95f43547f7a4e7c7548b8454",
+      "size": 142358
+    },
+    "work/simulator/qemu-s9/feature-oracle-476/comparison-inputs.json": {
+      "sha256": "ba31a6bedd6291bac71a8078cc7ba2207e18f670841eab568ec8dd6348d0e41e",
+      "size": 782
+    },
+    "work/simulator/qemu-s9/feature-oracle-476/spec.json": {
+      "sha256": "47532408ca9c5a683b4feb509800df27a90f96f7df3cfbc2e6233baf97752deb",
+      "size": 151256
+    },
+    "work/simulator/qemu-s9/feature-oracle-476/result.json": {
+      "sha256": "d62f349f0f3e5e2851f6c138446594a6ba0e7c2ca255b928caa76b45115e35b6",
+      "size": 3502575
+    },
+    "work/simulator/qemu-s9/feature-oracle-476/oracle.json": {
+      "sha256": "8eb8ab37aab5af06defd5c3f963890fb464f083a7e30e2c9fb9ceac789c1cdbc",
+      "size": 1750866
+    },
+    "work/simulator/qemu-s9/feature-oracle-476/stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/qemu-s9/feature-oracle-476/oracle.py": {
+      "sha256": "1fcee3ddaad70fa1458259b4b88bd00b828403290869625d37a319d21f50fc5d",
+      "size": 10465
+    },
+    "work/simulator/qemu-s9/feature-oracle-476b/assessment.json": {
+      "sha256": "4ef512e116bcc358c23fb079830eb328ed73dc24f5631b9d78d303a8ed7d1be3",
+      "size": 6554
+    },
+    "work/simulator/qemu-s9/feature-oracle-476b/comparison-inputs.json": {
+      "sha256": "07b906ee5d7f71bf63cc64843e314f312396089a5c23963936569a3c19cfc986",
+      "size": 782
+    },
+    "work/simulator/qemu-s9/feature-oracle-476b/spec.json": {
+      "sha256": "b2567162e81ad0fd516da17ed9866791dcc90e3d69d97f907ee53dc4423158ce",
+      "size": 155457
+    },
+    "work/simulator/qemu-s9/feature-oracle-476b/result.json": {
+      "sha256": "b50e27ab4d5278d2f66053a0af3e69d512c17a8435f1fc304cfffea0c53a5891",
+      "size": 3583255
+    },
+    "work/simulator/qemu-s9/feature-oracle-476b/oracle.json": {
+      "sha256": "6f45d724bf3561b2d2c8a86c3ac4aa43b66a2e27931b144763f78508892fef60",
+      "size": 1791206
+    },
+    "work/simulator/qemu-s9/feature-oracle-476b/stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/qemu-s9/feature-oracle-476b/oracle.py": {
+      "sha256": "1fcee3ddaad70fa1458259b4b88bd00b828403290869625d37a319d21f50fc5d",
+      "size": 10465
+    },
+    "work/simulator/qemu-s9/feature-oracle-driver-476/source-delta/crates/md-sim-firmware/examples/s9_feature_oracle.rs": {
+      "sha256": "83e3c83ebec1e2ec9439cc0701f8f751dd490a87b64acea40b527bac124a8e08",
+      "size": 12696
+    },
+    "work/simulator/qemu-s9/feature-oracle-driver-476/source-delta/crates/md-sim-firmware/examples/support/fpga_feature_comparison.rs": {
+      "sha256": "40821f27570a52ce36a0dd54719ce6d3a51d1ff306c167329598637097537577",
+      "size": 6433
+    },
+    "work/simulator/qemu-s9/feature-oracle-driver-476/source-delta/crates/md-sim-firmware/examples/support/prjxray_feature_oracle.py": {
+      "sha256": "1fcee3ddaad70fa1458259b4b88bd00b828403290869625d37a319d21f50fc5d",
+      "size": 10465
+    },
+    "work/simulator/core-checkpoint-478/source/crates/md-sim-firmware/examples/support/fpga_feature_inputs.rs": {
+      "sha256": "cac47e462e856615e0ebae894c991198e54e218ebf5722d8fc6022059f7078b7",
+      "size": 4555
+    }
+  },
+  "source_locations": {
+    "crates/md-sim-firmware/examples/s9_feature_oracle.rs": "work/simulator/qemu-s9/feature-oracle-driver-476/source-delta/crates/md-sim-firmware/examples/s9_feature_oracle.rs",
+    "crates/md-sim-firmware/examples/support/fpga_feature_comparison.rs": "work/simulator/qemu-s9/feature-oracle-driver-476/source-delta/crates/md-sim-firmware/examples/support/fpga_feature_comparison.rs",
+    "crates/md-sim-firmware/examples/support/prjxray_feature_oracle.py": "work/simulator/qemu-s9/feature-oracle-driver-476/source-delta/crates/md-sim-firmware/examples/support/prjxray_feature_oracle.py",
+    "crates/md-sim-firmware/examples/support/fpga_feature_inputs.rs": "work/simulator/core-checkpoint-478/source/crates/md-sim-firmware/examples/support/fpga_feature_inputs.rs"
+  }
+}

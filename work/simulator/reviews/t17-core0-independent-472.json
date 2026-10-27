@@ -1,0 +1,93 @@
+{
+  "schema": "md-sim-independent-vendor-formatter-review/1",
+  "passed": true,
+  "ranges": [
+    {
+      "address": 145648,
+      "bytes": 1024,
+      "source_offset": 112880,
+      "oracle_offset": 2288,
+      "sha256": "8d3b1b4e80ef91084c23018fc6055b6bd5249b0e0f91119919f2fb20ef0f8245"
+    },
+    {
+      "address": 486368,
+      "bytes": 3,
+      "source_offset": 453600,
+      "oracle_offset": 7136,
+      "sha256": "bcccb27e349c4055db84a303748952d67745230b6628f186cbf76702a4adc724"
+    },
+    {
+      "address": 497676,
+      "bytes": 12,
+      "source_offset": 464908,
+      "oracle_offset": 18444,
+      "sha256": "8588d6d284cad84b69575a2f98562d5b60e887de2845cc7bc3ed6e27954362eb"
+    },
+    {
+      "address": 497736,
+      "bytes": 14,
+      "source_offset": 464968,
+      "oracle_offset": 18504,
+      "sha256": "1c2de057299f5a1d578f60a9ea43a6198632cf9801e010cec5f64a41b88bc070"
+    },
+    {
+      "address": 502480,
+      "bytes": 180,
+      "source_offset": 469712,
+      "oracle_offset": 23248,
+      "sha256": "9f9fbd3b3b32069f5180d91a813476bdc28bb371628418286f74f0f418f68c0a"
+    }
+  ],
+  "cases": 5192,
+  "callbacks": 77574,
+  "checked_header_calls": 5152,
+  "checked_field_calls": 15474,
+  "observed_null_closes": 120,
+  "all_low_bytes_observed": 256,
+  "original_vendor_miner": {
+    "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+    "size": 553247
+  },
+  "execution_stdout": {
+    "sha256": "20fd344da2d2fc0fb4aeb95e252ccc41964d44bff286314dba9817dd0f02c8f9",
+    "size": 2069472
+  },
+  "limitations": [
+    "Formatter and ABI oracle only; no ASIC clock, mailbox completion, firmware boot or mining acceptance.",
+    "Software found input is controlled independently of raw response; not ASIC readiness."
+  ],
+  "review_inputs": {
+    "simulator/firmware/fixtures/bm1397-core0-oracle.c": {
+      "sha256": "1715a46395d3ab8c6c271f694b47568356fe4cb422c6f8d53d5c9a35cb976e0e",
+      "size": 5415
+    },
+    "simulator/firmware/fixtures/bm1397-core0-oracle.ld": {
+      "sha256": "061840f84eee357afb31f9fba4687c132d631a40f0f8f7440a167942f6b29315",
+      "size": 1747
+    },
+    "crates/md-sim-firmware/examples/support/t17_core0_oracle.rs": {
+      "sha256": "149d1de73b0c915676b0afa206ba5372df8224512d8569e72f12844a300aeaad",
+      "size": 12064
+    },
+    "crates/md-sim-firmware/src/bm1397/core_readback.rs": {
+      "sha256": "9b75565eb260adae5209c4735dd742ee8e8b719e2bdbab3073d39f6a70b9b7da",
+      "size": 5178
+    },
+    "work/simulator/bitaxe/t17-core0-oracle-472/assessment.json": {
+      "sha256": "30deef984494f9e6a843e9a1c3078923061f01b9a4959692a880ba66e29e8257",
+      "size": 4345
+    },
+    "work/simulator/bitaxe/t17-core0-oracle-472/spec.json": {
+      "sha256": "6f013cd818f525919ea9ccb49a290b2218fbcedb55ecc53e688b7bdde62ccc22",
+      "size": 9506
+    },
+    "work/simulator/bitaxe/t17-core0-oracle-472/result.json": {
+      "sha256": "90066cc5c97e034338710a2fda7e5a285906f8da4c9edff3c475ade6ff0751d6",
+      "size": 4214602
+    },
+    "work/simulator/reviews/t17-core0-independent-472.md": {
+      "sha256": "a08941a2b2d68b1065ae21f03e9290852658e60519c261adc759dc32a9adc9d5",
+      "size": 1833
+    }
+  }
+}

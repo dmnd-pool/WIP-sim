@@ -1,0 +1,90 @@
+{
+  "status": "integrated; checks and independent review passed; actual128-object cleanup and complete postcheck passed",
+  "parent_stage": "work/simulator/cleanup-development-455/staged-inputs.json",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs.rs",
+      "sha256": "4d86816741673c5dd053c2edb5c0b51ae7bd33d240e6f3b98894b67063ef091d",
+      "size": 54553
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs/t17.rs",
+      "sha256": "dfdeb8bd695dde7155da5dc9bec3be09906abcd5150b5c35d0f065f9c451df6e",
+      "size": 14740
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs/t17_tests.rs",
+      "sha256": "a680d8b6ebe40496e8479e7d1d0e7a1f86d97f70dd9e37c070ffc07e93950abe",
+      "size": 23565
+    },
+    {
+      "path": "work/simulator/cleanup-t17-460/reclaim_qemu_inputs",
+      "sha256": "46b3453ebbc7c28b53091b7bd10449e0b0642fe78cf8d353dfadfeba6eecfcbb",
+      "size": 1554360
+    }
+  ],
+  "checks": [
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-cleanup460b-actual-evidence.log",
+      "sha256": "4e50c73b95a3b5bf797c3fa00715829694c69687f2a79f28181a2541065d431a",
+      "size": 10206
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-cleanup460b-build.log",
+      "sha256": "fffce0f8c054f7f01edbd9bdaa6c57cd9e8737abc45a482ec17b0be6af3f535b",
+      "size": 145
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-cleanup460b-cli.log",
+      "sha256": "bcab13fff4720f59f62a4c909292721865d81b0acf7fc50b7b905940f961044f",
+      "size": 618
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-cleanup460b-clippy.log",
+      "sha256": "0d6ea5b4e0658908730c7141e6ec7c681374a10f47413be4a96712e1ea51bfbd",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-cleanup460b-format.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-cleanup460b-old-cli.log",
+      "sha256": "12dcf3c413901afb65b33d00119d1a5bf89d5845542e13ee5fd4dc4656ef67d8",
+      "size": 554
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/t17-cleanup460b-tests.log",
+      "sha256": "fcb6dd88e3724608fbc7b738db512f0ec9009759aeb11d44ba51677d175a8188",
+      "size": 2268
+    }
+  ],
+  "result_files": [
+    {
+      "path": "work/simulator/cleanup-t17-460/plan.json",
+      "sha256": "8ea8d5ea420c9b3099fc5c35b237c5447aaa1fa7ce4cc37a34ffffd16b47e473",
+      "size": 72155
+    },
+    {
+      "path": "work/simulator/cleanup-t17-460/before.json",
+      "sha256": "187904204051758e505a069c01971b11cc1385ab4f26820c8b18a189259a305b",
+      "size": 62712
+    },
+    {
+      "path": "work/simulator/cleanup-t17-460/cleanup.json",
+      "sha256": "32120bc4ec897d284d436ca7c3ebdf34f4577b02ec3ce18c096deb007f107f41",
+      "size": 72109
+    },
+    {
+      "path": "work/simulator/cleanup-t17-460/postcheck.json",
+      "sha256": "d1d727eef672fa9ad8ba1221dd7ee78e4fd89c1f642aad605b1fd08a3d0c85d7",
+      "size": 36726
+    },
+    {
+      "path": "work/simulator/cleanup-t17-460/tested-inputs.json",
+      "sha256": "23f5729bef4ef7454919dd1714e62eebf53d17f59a1b1f9264dc2416a4e4eba4",
+      "size": 2276
+    }
+  ]
+}

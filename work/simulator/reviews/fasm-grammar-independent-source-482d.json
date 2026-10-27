@@ -1,0 +1,66 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "cleanup_resume",
+  "status": "no_open_source_finding_execution_pending",
+  "scope": "Integrated482d grammar correction only; original archived grammar unchanged. This does not claim selected export or unchanged grammar execution.",
+  "checks": [
+    "The derived grammar is exactly the original bytes plus one backslash in NonEscapeCharacters. The corrected regex excludes both quote and backslash, so the existing EscapeSequences alternative can consume escaped quotes.",
+    "Original failure482c is retained and pinned. The escaped-quote fixture, bounded complete-line parser, memory limit, predicate coverage and complete non-ECC comparison assertions remain unchanged.",
+    "Rust pins the exact new schema2 profile, binds the adapted grammar to its input mount, imports parent/patch/failure objects separately, and checks the full derived bytes against the exact one-byte correction before execution.",
+    "Output tool_adaptations must equal the captured reviewed profile. Labels now state that the parser grammar is adapted. Project X-Ray code is unchanged.",
+    "Production copies after freeze491 match every reviewed staged byte. The separately saved schema2 profile also matches its pinned byte identity.",
+    "Reviewed diagnostic-only update: frame-generation and comparison phase markers plus up to16 traceback filename/line/function records on a caught failure. No source text or frame objects are retained, all original failure and comparison gates remain unchanged. Earlier482b MemoryError was not localized; whole-file parser allocation was a working hypothesis, not established cause."
+  ],
+  "findings": [],
+  "pending": [
+    "Run focused tests, strict Clippy and actual isolated fixture plus selected export. Preserve any new failure.",
+    "Independently review all retained successful execution outputs."
+  ],
+  "files": [
+    {
+      "path": "simulator/tools/fasm/fasm.tx",
+      "size": 1211,
+      "sha256": "fec4847570b5e54d3efda0c41ad9539cb3f596eba98f411f05fa3754e8e93516"
+    },
+    {
+      "path": "simulator/tools/fasm/escaped-quotes.patch",
+      "size": 388,
+      "sha256": "3310ee770aa70c68520b68e71ead53ed7d3cd07281fe277b75b5fe6281bf794e"
+    },
+    {
+      "path": "simulator/tools/fasm/grammar-adaptation.json",
+      "size": 1167,
+      "sha256": "ea4bec621bbdb03a54cb7a818e967105e1be2a983ac42498094ad43d4244d12f"
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/fasm_tool_inputs.rs",
+      "size": 8119,
+      "sha256": "debd15f7f15f9890497ed378504b7a814e19afcd62ec05b582aff84104a961f9"
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_fasm_export.rs",
+      "size": 13016,
+      "sha256": "cf66be0946e43ab14cc3ad7902e5c61c42b45fa8a95c34ec2c4d56541bf31468"
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/prjxray_fasm_export.py",
+      "size": 11506,
+      "sha256": "46fce6ff3ca8bcd30aa2d2ccf71fb0cd68e3a6a4b1e25aac57117c2799fc43bc"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-parser-ffafe82/fasm/parser/fasm.tx",
+      "size": 1210,
+      "sha256": "f8a2addf3ef7411600ce7255abcbf02bae1fa797bce6da77aec705b79e6d1f64"
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482c/stderr.log",
+      "size": 32093,
+      "sha256": "f0b2813237245b22c7b7746dce0d1d9105786622274c2766a0b90169e03ce893"
+    },
+    {
+      "path": "simulator/firmware/s9-fasm-tool-inputs-escaped-quotes.json",
+      "size": 75840,
+      "sha256": "d97ec0ffa30bce77cc88655b13d599a6e5610cdb2cd770f503163b06edc8c8d7"
+    }
+  ]
+}

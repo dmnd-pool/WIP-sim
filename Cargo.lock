@@ -341,10 +341,12 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap",
+ "libc",
  "md-sim-catalog",
  "md-sim-runtime",
  "serde",
  "serde_json",
+ "tempfile",
 ]
 
 [[package]]

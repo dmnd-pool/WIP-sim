@@ -22,8 +22,43 @@ The original-board, per-target Bitcoin Core, native-dashboard, remote-network, a
 
 Milestone 1.2 passed: adapted S9 mining and selected SSH/TLS access.
 See the [handoff and resume steps](work/simulator/milestone-1.2-handoff.md).
-Work stops at this checkpoint at the user's request. The full task remains
-incomplete. The user will initialize Git and make the commit.
+The checkpoint was committed as `b276dd7a`. The user resumed work on
+26 October. The full task remains incomplete. See the
+[current continuation](work/simulator/continuation-2026-10-26.md).
+
+The isolated KVM support guest now passes Linux boot and a fresh private TCP
+exchange. Its pinned x86 backend builds with undefined-behavior checks. See
+the [independent evidence review](work/simulator/reviews/kvm-boot-build-independent-485.json).
+The first selected native run [failed during evidence export](work/simulator/reviews/native-browser-failure-487.json).
+The separate output transport now passes the [KVM stress check](work/simulator/reviews/support-trace-independent-489b.json)
+and [worker receipt check](work/simulator/reviews/worker-trace-independent-490.json).
+The [selected native browser and mining run495 passes](work/simulator/reports/native-browser-mining-pass-495.md).
+It checks the actual dashboard through SSH and authenticated TLS, live native
+telemetry and WebSockets, separate cookie stores, clock bounds, and shutdown.
+The worker and client VM use one execution host. Exact-target and external
+physical-host results are not inferred. Fourteen firmware submissions are
+independently verified. Two resulting blocks pass Core acceptance and restart.
+
+The [full shared CLI test500 also passes](work/simulator/reports/shared-cli-pass-500.md).
+It creates and records fresh pool inputs on each invocation, then runs the
+selected native SSH/TLS browser, independent mining verification and two Core
+acceptance/restart checks. Run500 verifies15 firmware submissions. All1,069
+workspace tests, strict Clippy and formatting pass. The user requested a
+pause after this test. See the [saved checkpoint and resume steps](work/simulator/checkpoint-500.md).
+
+These commands were tested in this prepared workspace:
+
+```sh
+work/simulator/cli-tools-500/md-sim demo s9-shared --check
+work/simulator/cli-tools-500/md-sim demo s9-shared --out work/simulator/demos/s9-shared-500
+```
+
+Use a new output directory for another run; the shown path already exists.
+The check verifies3,579 workspace and43 host files. It requires the pinned
+firmware, helpers, Core, browser and KVM support environment. The report gives
+the tested build command. Building the CLI alone does not install these inputs.
+Dashboard URLs are inside the isolated client and stop with the suite.
+Clean-install packaging and persistent host access remain incomplete.
 
 ### Adapted S9 development milestone
 
@@ -112,8 +147,8 @@ retains its previously tested helpers and execution identity.
 [Frame mapping](work/simulator/reports/series7-frame-mapping-291.json) uses a pinned Project X-Ray part database. It checks all 5,144
 configuration frames, eight zero padding frames and each stored frame error
 code in both retained S9 bitstreams. An error code detects damaged frame data.
-Mapping does not reconstruct the FPGA logic. The next step needs the exact
-tile and feature databases, or the matching source and build inputs.
+Mapping does not reconstruct the FPGA logic. The tile and feature checks
+below use separately pinned databases.
 
 ```sh
 work/simulator/check-target-085/release/examples/s9_bitstream_probe \
@@ -127,6 +162,62 @@ Use a new output path. The frame addresses, offsets, hashes and checked error
 codes are in `header.json`. Bundle preparation also saves `fpga-frames.json`
 and pins it in `bundle.json`. The [database provenance](fixtures/fpga/xc7z010clg400-1/provenance.json)
 records the exact input. Firmware bytes stay unchanged.
+
+The [tile mapping check470](work/simulator/reviews/tilegrid-reconstruction-470.md)
+adds a hash-pinned Project X-Ray tile grid. It associates 5,746 configuration
+ranges with physical FPGA tiles in the selected S9 image. An independent
+byte audit checks every range. The report retains eight aliases and 222,968
+frame words without a tile association. The tested command is in that report.
+This maps configuration words. The [expanded feature probe475](work/simulator/reviews/fpga-next-reconstruction-475.md)
+checks 28 pinned logic and routing feature tables against the selected image.
+It finds 231,546 matching predicates. These account for all 327,095 set data
+bits outside frame error codes. One monitor segment still lacks a table.
+The [unchanged upstream checker476](work/simulator/reviews/feature-oracle-executed-476.md)
+agrees on every full feature record, all eight aliases and all residual bits.
+Complete routing, logic behavior and physical timing remain open.
+
+```sh
+work/simulator/check-target-085/release/examples/s9_feature_probe \
+  simulator/firmware/s9-fpga-feature-inputs-475.json \
+  work/simulator/qemu-s9/features-selected-475
+work/simulator/qemu-s9/feature-oracle-driver-476/s9_feature_oracle \
+  simulator/firmware/s9-fpga-feature-inputs-475.json \
+  work/simulator/qemu-s9/features-selected-475/features.json \
+  work/simulator/qemu-s9/feature-oracle-476b
+```
+
+Both commands passed in isolated processes with 512 MiB memory limits.
+Use new output paths. These are static checks, not firmware execution.
+
+The [FPGA assembly (FASM) export482d](work/simulator/reviews/fasm-export-executed-482d.md)
+also passes. Its existing upstream assembler regenerates all 327,095 non-ECC
+set bits. The original, regenerated and independent Rust bit-set digests agree.
+The run uses a recorded one-byte tool-grammar correction and bounded parser
+calls under a 1 GiB limit. The missing monitor table remains explicit.
+This tested command needs a new output path when repeated:
+
+```sh
+work/simulator/qemu-s9/fasm-export-driver-482d/s9_fasm_export \
+  simulator/firmware/s9-fpga-feature-inputs-475.json \
+  simulator/firmware/s9-fasm-tool-inputs-escaped-quotes.json \
+  work/simulator/qemu-s9/features-selected-475/features.json \
+  work/simulator/qemu-s9/fasm-export-482d
+```
+
+The [selected FPGA converter](work/simulator/reviews/netlist-executed-497.md)
+produces Verilog/XDC from that verified FASM file. This command also ran:
+
+```sh
+work/simulator/qemu-s9/netlist-driver-497/s9_netlist_reconstruct \
+  simulator/firmware/s9-netlist-tool-inputs.json \
+  work/simulator/qemu-s9/netlist-selected-497
+```
+
+Use a new output directory. Conversion does not establish HDL behavior or an
+original-board boot. The next HDL validation gate remains open.
+
+The report lists exact inputs and build commands. Complete netlist behavior,
+physical timing and exact-board acceptance remain open.
 
 Development builds omit debug symbols and incremental compilation to limit
 disk use. To investigate a crash, set `CARGO_PROFILE_DEV_DEBUG=1` for that build.
@@ -298,6 +389,30 @@ submissions. Two isolated Core nodes accept distinct blocks and retain them
 after restart. The report gives the exact tested commands, hashes and access
 boundary. This remains adapted hardware on one execution host. Browser,
 WebSocket, exact-target and full remote-workflow gates remain open.
+
+The [recovered run453 mining evidence](work/simulator/reports/shared-recovery-pass-461.md)
+also passes strict header verification and two Core acceptance/restart checks.
+Recovery keeps the original browser failure unchanged. The report gives the
+tested Rust retention and verification commands, input hashes and the
+namespace startup fixes needed in the current host environment.
+
+The [recovered run492 evidence](work/simulator/reports/shared-recovery-pass-492.md)
+checks 1,660 computations, 12 firmware submissions and two more Core block
+acceptance/restart results. Its browser failed because it sampled telemetry
+before the first accepted share. That failure remains recorded. The next
+run uses the existing native DOM readiness check before sampling, with the
+same deadlines and positive-share assertions.
+
+Both [source preparation paths](work/simulator/reviews/source-preparation-process-limit-467.md)
+also pass with the corrected namespace startup. The installed-tool build and
+the frozen-toolchain replay produce the same cgminer binary. Both pass the
+C regression with the undefined-behavior sanitizer. The report gives the
+tested commands and exact source, toolchain and output identities.
+
+The [T17 cleanup report](work/simulator/reviews/t17-cleanup-resume-460.md)
+records 128 verified duplicate files removed, totaling 1.51 GiB of logical data.
+All 114 remaining files and 43 canonical restore copies passed the post-check.
+Original downloads and unique evidence remain in place.
 
 The [cleanup journal](work/simulator/reports/duplicate-build-input-cleanup-305.json)
 records another 698 MB of removed duplicate build inputs and their restore
@@ -604,6 +719,9 @@ The [v11 source manifest](work/simulator/reports/source-v11.json) pins that chec
 The [v11 test log](work/simulator/reports/tests-v11.log) records 64 passing Rust tests.
 Implementation has continued after that checkpoint. See the [active progress record](work/simulator/progress.md) for current changes and checks.
 The support-image regression tests require GNU cpio at `/usr/bin/cpio`.
+Isolated execution also requires util-linux (`unshare` and `prlimit`) and
+Bubblewrap. Static executable inspection uses `readelf` inside the isolated
+preparation environment. The runtime records the isolation tool hashes.
 
 The BM1397 protocol component also has a verified test command:
 `cargo test -p md-sim-firmware --lib bm1397 --offline --locked`.
@@ -684,6 +802,39 @@ work/simulator/check-target-085/release/examples/t17_core_oracle \
   /home/user/.rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/rust-lld \
   work/simulator/bitaxe/t17-readback-oracle-446 --readback
 ```
+
+The [core0 formatter oracle](work/simulator/reviews/t17-core0-executed-472.md)
+also passes 5,192 cases with unchanged vendor instructions. An
+[independent review](work/simulator/reviews/t17-core0-independent-472.md)
+checks the original bytes, field extraction and all callback records.
+Its C fixture uses the same required ARM32 interface. The new Rust readback
+view checks the pending request and ASIC address. It does not report clock
+readiness or enable the unsupported core-write path. This command was tested:
+
+```bash
+work/simulator/bitaxe/t17-core0-driver-472/t17_core_oracle \
+  work/simulator/bitaxe/t17-static-262/bmminer \
+  /home/user/.rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/rust-lld \
+  work/simulator/bitaxe/t17-core0-oracle-472 --core0
+```
+
+Use a new output directory to repeat it. The report pins the required tools.
+
+The [PLL arithmetic oracle](work/simulator/reviews/t17-pll-executed-496.md)
+passes 22,134 cases with an unchanged 108-byte T17 routine. Its C fixture uses
+the same required ARM32 interface. Rust checks each original result and an
+independent rational bound. This command was tested:
+
+```bash
+work/simulator/bitaxe/t17-pll-driver-496/t17_core_oracle \
+  work/simulator/bitaxe/t17-static-262/bmminer \
+  /home/user/.rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/rust-lld \
+  work/simulator/bitaxe/t17-pll-oracle-496 --pll-frequency
+```
+
+Use a new output directory to repeat it. The report pins its tools, source
+and results. This arithmetic pass does not establish PLL lock, clock timing,
+ASIC state or a valid physical operating range.
 
 The BM1387 packet and hashing checks are:
 `cargo test -p md-sim-firmware --test bm1387_packets --lib --offline --locked`.
@@ -1702,6 +1853,32 @@ Use a new output directory to repeat it. The first two test failures and their
 fixes remain in the [progress record](work/simulator/continuation-2026-10-21.md).
 The existing cgminer program and its necessary source changes are C.
 The existing Bitcoin Core C++ implementation, upstream build tools, and Python catalogue tools retain their languages.
+The independent FPGA feature checker uses a small Python adapter to call the
+unchanged, pinned Project X-Ray matcher and alias APIs. Rust or C would require
+replacing those Python APIs and would remove this independent reference.
+Rust captures the inputs, confines execution, compares the complete results,
+and writes the assessment. The checker passes the two retained feature
+comparisons. It does not establish a complete FPGA model or a board boot.
+The FPGA assembly (FASM) exporter also uses a thin Python adapter. It calls the unchanged,
+pinned Project X-Ray disassembler and assembler, and the existing FASM parser
+and formatter. Rust or C would require replacing these upstream APIs and their
+independent algorithms. Rust pins the complete tool input manifest, confines
+execution, and compares features and configuration bits. The retained export
+matches all positive predicates and passes the full non-ECC configuration
+round trip. The bounded parser invocation keeps the memory cap and rejects
+multiline formatter items. Its whole-parser fixture exposed an escaped-quote
+bug in the original grammar. A [one-byte grammar correction](simulator/tools/fasm/grammar-adaptation.json)
+is recorded as a separate tool adaptation, with parent, patch and result hashes.
+The corrected whole/chunk fixture and selected export pass. See the
+[execution report](work/simulator/reviews/fasm-export-executed-482d.md).
+The next converter uses a thin Python adapter for the pinned fasm2bels APIs.
+Rust or C would require replacing the existing primitive and routing algorithms.
+Rust owns capture, exact input checks, isolation, limits and result retention.
+Four optional imports move to their existing use sites in a separate
+[tool adaptation](simulator/tools/fasm2bels/adaptation.json). The adapter reuses
+the checked bounded parser on the exact verified FASM file. It does not relax
+missing-sink or clock checks. Actual conversion passes and retains Verilog/XDC.
+HDL validation remains pending; see the [execution report](work/simulator/reviews/netlist-executed-497.md).
 The browser tests use small JavaScript expressions for DOM access, button
 events, HTTP requests, WebSocket checks and Firefox preferences. These use the browser's native
 interface. Rust and C cannot replace that interface. Rust controls the test,

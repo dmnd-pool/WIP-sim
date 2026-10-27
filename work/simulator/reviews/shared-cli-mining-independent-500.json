@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "scope": "Independent raw Stratum reconstruction and fresh seed derivation for CLI500. Core and browser results are reviewed separately. No original-board or exact-target gate.",
+  "run_id": "run-ef37c532ac0c1cc8ab3b207299b928eb0ae9878f8da8941a3b6ef994acfd5661",
+  "computed_hashes_checked_by_frozen_rust_auditor": 1346,
+  "submissions": 15,
+  "verified_serial_results": 17,
+  "accepted": 9,
+  "low_difficulty_rejections": 6,
+  "fresh_jobs": 2,
+  "clean_job_transition": true,
+  "difficulty_change": true,
+  "fresh_preparation_seed_matches_executed_session": true,
+  "review_correction": "Initial manual count assertion assumed every verified hardware reply was submitted. The auditor counts all17 CRC-checked replies separately from15 matched submissions. Each retained submission has one complete hardware match. No production code or evidence changed.",
+  "headers": [
+    {
+      "header_hex": "0080a12206226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f7cd18e88d41dba8e483b661ddd86787335f5f7416bf7cb8667ed1f7638a141b861c3df6affff7f2000000000",
+      "hash_display": "4a000d510095095c17ff97588abb679fcc614f43d69edbbe34de8f4cbe6f1b45",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-0",
+      "wire_elapsed_ns": "19886527678"
+    },
+    {
+      "header_hex": "00808c2006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd61c3df6affff7f2000000000",
+      "hash_display": "2a2268ff02fd7801a3d7fba0f36700fe9b21a4035218bfbb94609664acf5c5cb",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "21329846505"
+    },
+    {
+      "header_hex": "0000892306226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd61c3df6affff7f2000000000",
+      "hash_display": "417ca5ad00e21b548b6cde81f87329cb2f3be000f21233123ddb6417107aed0f",
+      "accepted": false,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "26154162831"
+    },
+    {
+      "header_hex": "0000ec3706226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd61c3df6affff7f2000000000",
+      "hash_display": "5391ff7802547d3b1f63398cb0d6353757c3256c9146f67be290a953fb8141eb",
+      "accepted": false,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "59974085976"
+    },
+    {
+      "header_hex": "00801e3b06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd61c3df6affff7f2000000000",
+      "hash_display": "2b1dd48c036f2aedc97ef4e94d138d130b1a9955fab947cac3986bbe2cb71290",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "65136001428"
+    },
+    {
+      "header_hex": "0000392706226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd62c3df6affff7f2000000000",
+      "hash_display": "7bfe2a4b0387d9f3c0a04339e7717148ff70aae68e5fdfbcc2c4a8bc72919fe7",
+      "accepted": false,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "84622116162"
+    },
+    {
+      "header_hex": "0080d23b06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd62c3df6affff7f2000000000",
+      "hash_display": "7c64eeef018485c0bc22253b639b508984c34029093922f07b912b73f1904eb3",
+      "accepted": false,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "118819384191"
+    },
+    {
+      "header_hex": "0080852b06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd63c3df6affff7f2000000000",
+      "hash_display": "6b83dd570125ac547d270bd11764cb44e4e02387bba9ea512df23f789b3d553a",
+      "accepted": false,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "145157508035"
+    },
+    {
+      "header_hex": "00808c3106226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd63c3df6affff7f2000000000",
+      "hash_display": "24df164e0044ce69775b99e0b75c06ef9183f3ac1fcf8f47a071043c51891451",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "154816337860"
+    },
+    {
+      "header_hex": "00806f3406226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd63c3df6affff7f2000000000",
+      "hash_display": "25c635b903c0e59c582c2ee352761898bac07317f13c641844ca1d5c8d2a7f8d",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "159466400423"
+    },
+    {
+      "header_hex": "0000d83406226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd63c3df6affff7f2000000000",
+      "hash_display": "2f9ca6740020eaf9f5a98e2cebd475e5ee1a0b4529155edfc698edf3f69c1013",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "160127514875"
+    },
+    {
+      "header_hex": "00803a2606226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd64c3df6affff7f2000000000",
+      "hash_display": "485ee8d402d74a6327c57945a0fc13065a851098d5d542622c33c0af7663b93f",
+      "accepted": false,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "188143916318"
+    },
+    {
+      "header_hex": "0000352806226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd64c3df6affff7f2000000000",
+      "hash_display": "2ac7bd31020921504ff878f4876505d48675f6d187029181c917ed33c3604ff2",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "191337468463"
+    },
+    {
+      "header_hex": "0000862806226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd64c3df6affff7f2000000000",
+      "hash_display": "0b3628ac008947efcab3f5a5f051448dfe0d0156f7ec139d70f1a0d3e446fcfa",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "191827531963"
+    },
+    {
+      "header_hex": "0080423306226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f514608bab156ca9db744b5b473d09635ba62c3482e370f8b60024cd23cca55fd64c3df6affff7f2000000000",
+      "hash_display": "388b5305035f9bf22f308f3424659efe0555b6842022dc7016c5a0c0e7a4ba60",
+      "accepted": true,
+      "job_id": "66c85640a6c09844-1",
+      "wire_elapsed_ns": "210175960382"
+    }
+  ],
+  "files": {
+    "work/simulator/demos/s9-shared-500/run/execution/demo-regtest-audit.json": {
+      "sha256": "e768097dd6bb5c669c0624a6224d7acf23a73d77eb69d1eddb3587848ea54aa4",
+      "size": 78501
+    },
+    "work/simulator/demos/s9-shared-500/run/execution/demo-rate-audit.json": {
+      "sha256": "85b47ef783e76e087292ba3a51fa2a545dfab642d8ece65e478f88b204d39bee",
+      "size": 6368
+    },
+    "work/simulator/demos/s9-shared-500/run/execution/pool-result.json": {
+      "sha256": "f5e8a1436621410b454a86df6b13f84893e8c05849312a0b0d2b8c6643d83b30",
+      "size": 138036
+    },
+    "work/simulator/demos/s9-shared-500/run/execution/pool-input.json": {
+      "sha256": "38a78aeb2d808cba2d7ac901e6380881393c38dd3c85c98b900d4a5733bd05f1",
+      "size": 1025
+    }
+  }
+}

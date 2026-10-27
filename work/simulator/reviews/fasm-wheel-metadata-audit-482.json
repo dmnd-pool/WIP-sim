@@ -1,0 +1,123 @@
+{
+  "scope": "Read-only ZIP and package metadata audit. No extraction, import or installer execution. Runtime dependencies are supplied as pinned pure wheels; optional extras are not selected.",
+  "wheels": [
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/Arpeggio-2.0.3-py2.py3-none-any.whl",
+      "sha256": "9374d9c531b62018b787635f37fd81c9a6ee69ef2d28c5db3cd18791b1f7db2f",
+      "package": "Arpeggio",
+      "version": "2.0.3",
+      "requires_dist": [
+        "wheel; extra == \"dev\"",
+        "mkdocs; extra == \"dev\"",
+        "mike; extra == \"dev\"",
+        "twine; extra == \"dev\"",
+        "flake8; extra == \"test\"",
+        "coverage; extra == \"test\"",
+        "coveralls; extra == \"test\"",
+        "pytest; extra == \"test\""
+      ],
+      "member_count": 54,
+      "uncompressed_bytes": 164135,
+      "pure_wheel": true
+    },
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/intervaltree-3.2.1-py2.py3-none-any.whl",
+      "sha256": "a8a8381bbd35d48ceebee932c77ffc988492d22fb1d27d0ba1d74a7694eb8f0b",
+      "package": "intervaltree",
+      "version": "3.2.1",
+      "requires_dist": [
+        "sortedcontainers"
+      ],
+      "member_count": 8,
+      "uncompressed_bytes": 98752,
+      "pure_wheel": true
+    },
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/progressbar2-4.6.0-py3-none-any.whl",
+      "sha256": "2d78bdeb1debef92a39dd9042e0689542bd72d6e2f30b13432db371aa9d8ee4e",
+      "package": "progressbar2",
+      "version": "4.6.0",
+      "requires_dist": [
+        "python-utils>=3.8.1",
+        "speedups>=2.1.0; extra == \"fast\"",
+        "sphinx>=1.8.5; extra == \"docs\"",
+        "sphinx-autodoc-typehints>=1.6.0; extra == \"docs\"",
+        "dill>=0.3.6; extra == \"tests\"",
+        "freezegun>=0.3.11; extra == \"tests\"",
+        "pytest-cov>=2.6.1; extra == \"tests\"",
+        "pytest>=4.6.9; extra == \"tests\"",
+        "pywin32; sys_platform == \"win32\" and extra == \"tests\"",
+        "playwright>=1.48.0; extra == \"docs-tests\"",
+        "pytest>=4.6.9; extra == \"docs-tests\""
+      ],
+      "member_count": 26,
+      "uncompressed_bytes": 354191,
+      "pure_wheel": true
+    },
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/python_utils-4.1.4-py3-none-any.whl",
+      "sha256": "009251f6182f872cd4a74225cdf3636f48ee4596532082bd367797c5924d92bf",
+      "package": "python-utils",
+      "version": "4.1.4",
+      "requires_dist": [
+        "typing-extensions>3.10.0.2",
+        "sphinx ; extra == 'docs'",
+        "furo ; extra == 'docs'",
+        "myst-parser ; extra == 'docs'",
+        "loguru ; extra == 'loguru'",
+        "pytest ; extra == 'tests'",
+        "pytest-cov ; extra == 'tests'",
+        "pytest-asyncio ; extra == 'tests'",
+        "loguru ; extra == 'tests'",
+        "blessings ; extra == 'tests'"
+      ],
+      "member_count": 24,
+      "uncompressed_bytes": 160423,
+      "pure_wheel": true
+    },
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/simplejson-4.2.0-py3-none-any.whl",
+      "sha256": "c2a2e5f43287cbe3413f7b73b04d5a6f75c7bd93d783e628f5978853a2ef738d",
+      "package": "simplejson",
+      "version": "4.2.0",
+      "requires_dist": [],
+      "member_count": 50,
+      "uncompressed_bytes": 240032,
+      "pure_wheel": true
+    },
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+      "package": "sortedcontainers",
+      "version": "2.4.0",
+      "requires_dist": [],
+      "member_count": 9,
+      "uncompressed_bytes": 133129,
+      "pure_wheel": true
+    },
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/textx-4.4.0-py3-none-any.whl",
+      "sha256": "f08071316d662d8dbecb0e8322510eeba71e89fa91c69a5278cbebfd1debde42",
+      "package": "textX",
+      "version": "4.4.0",
+      "requires_dist": [
+        "Arpeggio >= 2.0.0",
+        "importlib-metadata; python_version < '3.10'",
+        "click >=7.0, <9.0 ; extra == \"cli\""
+      ],
+      "member_count": 25,
+      "uncompressed_bytes": 254078,
+      "pure_wheel": true
+    },
+    {
+      "path": "artifacts/files/tool/tool-fasm-python-wheels-482/typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "package": "typing_extensions",
+      "version": "4.16.0",
+      "requires_dist": [],
+      "member_count": 5,
+      "uncompressed_bytes": 182767,
+      "pure_wheel": true
+    }
+  ]
+}

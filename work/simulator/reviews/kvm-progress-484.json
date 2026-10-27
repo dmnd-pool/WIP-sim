@@ -1,0 +1,39 @@
+{
+  "schema": "md-sim-support-virtualization-progress/1",
+  "status": "production_source_stable_corrected_integration_scope_pending_tests",
+  "interfaces": [
+    "ProcessSpec.support_virtualization: Option<SupportVirtualization>",
+    "ProcessResult.support_virtualization: Option<SupportVirtualizationReceipt>",
+    "execute_support_vm(store,spec,cancel,trace)",
+    "execute_support_vm_with_streamed_input(store,spec,cancel,trace,input)"
+  ],
+  "scope": "Only fixed KVM character10:232 with actual API12 and fresh host receipt; all ordinary entry points deny declared KVM before device access",
+  "failure": "Initial new fixture required UID1000 zero bounding policy under UID0. Diagnostic proves Prm/Eff0 and only Bnd2199023255551. Root independently reproduced existing behavior. Both failed logs are retained. No production privilege or resource policy changed to fix it.",
+  "corrected_test_contract": "UID1000 requires Inh/Prm/Eff/Bnd/Amb0. UID0 requires Inh/Prm/Eff/Amb0 and KVM bounding mask identical to its ordinary measured baseline. Both require NoNewPrivs1 and actual capset/ambient attempts to regain CAP_SYS_ADMIN fail EPERM.",
+  "next": [
+    "after browser Cargo slot: runtime lib/default integration checks",
+    "explicit ignored actual KVM integration test including both UID profiles and bounded stdin",
+    "strict Clippy/runtime regression including FD3 isolation",
+    "independent review and source pins",
+    "root actual x86 KVM guest boot/TCP prerequisite and custom485backend"
+  ],
+  "deferred_cleanup": "481 duplicate inventory is metadata only; root reports47GiB free and prioritizes KVM",
+  "sources": {
+    "crates/md-sim-runtime/src/support_virtualization.rs": {
+      "sha256": "894ce47f412da824ea25b51fc83114cacbac1f4f0a71d24bca651a8c9c01f481",
+      "size": 7066
+    },
+    "crates/md-sim-runtime/src/isolation.rs": {
+      "sha256": "fb637faa44fa2d05ca9c7a83161502cd2c4ad59242920cd13c850f976cc0639c",
+      "size": 40390
+    },
+    "crates/md-sim-runtime/tests/support_virtualization.rs": {
+      "sha256": "fb33dafac045e483f6e3b0ed3b0cbba42e3082ab35c0183573df818d1669c2bb",
+      "size": 13731
+    },
+    "crates/md-sim-runtime/src/lib.rs": {
+      "sha256": "8a0e8ef1234c518d17b6c06b7f75cc5d90e5b35f6d65755c31e65855cc04c2dd",
+      "size": 339
+    }
+  }
+}

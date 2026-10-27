@@ -1,0 +1,113 @@
+{
+  "schema": "md-sim-support-trace-independent/1",
+  "scope": "Local isolated KVM support transport prerequisite only. No firmware, worker, dashboard, external-host or exact-target acceptance.",
+  "status": "pass",
+  "result": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 1208,
+    "trace_truncated": false
+  },
+  "complete_payload": {
+    "bytes": 8388608,
+    "sha256": "66aeceb7cdc0f54e97d2bb088ba7b58c73de64c62e55cf946b86db20ed4eec59",
+    "fresh_challenge_hex": "735fa052d599543753a153082b44ee69a06f9a6116482426cffc166ec5eab493",
+    "independent_complete_pattern_and_sha256_checked": true
+  },
+  "channels": {
+    "userspace_bytes": 8389409,
+    "kernel_bytes": 972,
+    "exact_challenge_bound_kernel_records": 8,
+    "actual_stderr_marker_in_user_channel": true,
+    "no_cross_channel_markers": true
+  },
+  "input_mapping_count": 71,
+  "input_mapping_bytes": 97508359,
+  "all_input_objects_rehashed": true,
+  "runner_matches_frozen_helper": true,
+  "virtualization": {
+    "kind": "kvm",
+    "api": 12,
+    "cache_eligible": false,
+    "cpu": "Nehalem-v1,enforce",
+    "guest_ram": "256M",
+    "guest_cpus": 1
+  },
+  "limits": {
+    "wall_seconds": 120,
+    "cpu_seconds": 90,
+    "memory_bytes": 3221225472,
+    "processes": 64,
+    "file_bytes": 67108864,
+    "trace_bytes": 16777216,
+    "tmp_bytes": 134217728
+  },
+  "retained_failure": {
+    "attempt": 489,
+    "verdict": "failed; noise records absent",
+    "root_cause": "write_fmt made multiple /dev/kmsg records instead of one complete priority+message write",
+    "fix": "One complete write per record; reject partial writes. Eight-record assertion unchanged."
+  },
+  "receipts": [
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/assessment.json",
+      "sha256": "dc5244acdf7fcd07aa212529fe55cec30b4c8a28a93f66e7874430c7e4d05844",
+      "size": 1310
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/process-spec.json",
+      "sha256": "eab428222c7f08ab221506bbe66d45f3c860065f2c8edf6b2c05aef8c7b3604b",
+      "size": 15095
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/result.json",
+      "sha256": "18dd642f120ae8d279d76e3132570a22fc66a89c4596c4b26b394d5b5343be0a",
+      "size": 16783568
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/guest.log",
+      "sha256": "8f1e3dda73ba7e744ec49e3338e29e96f4a1b512211844bda08ee09664f86005",
+      "size": 8389409
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/backend.log",
+      "sha256": "fb756bf1e0b200a8d26ca6f280e9b7c1b8301335b3853ada55c02f23af32525a",
+      "size": 972
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/root-manifest.json",
+      "sha256": "ccbbf4683703663954006e501ecc96774ffc044c3a1f436252243b87d876a07f",
+      "size": 896
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/preparation-spec.json",
+      "sha256": "5b17cb16ccaaa55e6fa0493dd9d9688779f91b4424a89f56c7439348912423da",
+      "size": 1862
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/preparation-result.json",
+      "sha256": "045efd8e635948f0810f6b2f11f296f7e22ddb574748147056ec05826e02c668",
+      "size": 832
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489b/initramfs-export.json",
+      "sha256": "86ff3d774d8846412501c3607cb57ee81b95a5ca8032d058a9cfdaec5c110604",
+      "size": 262
+    },
+    {
+      "path": "work/simulator/trace-tools-489b/inputs.json",
+      "sha256": "61f3a0d36d9dbd811a042ec465f01cb1054c746ef0f25ef69bae72ddf29d6c66",
+      "size": 2253
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/trace489b-kvm.log",
+      "sha256": "a70327e9e86043043bfa9d2f99a88fe4d4f5a02867be9b5f55598245df4ef600",
+      "size": 121
+    },
+    {
+      "path": "work/simulator/network-vm/kvm-trace-prerequisite-489/failure.json",
+      "sha256": "ea72f9c2c9ba93ae41c29cb94bb0188369c3c45ffe93d76ad00d8d297fb0b84e",
+      "size": 128
+    }
+  ]
+}

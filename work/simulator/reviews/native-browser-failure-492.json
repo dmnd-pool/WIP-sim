@@ -1,0 +1,231 @@
+{
+  "schema": "md-sim-native-browser-review/1",
+  "status": "failed; full browser, clock and complete-export capabilities do not pass",
+  "run_id": "run-219a3defb1256e5ca2570d24ce61ca3e4f3a80a7ecd1ea0b61ed7d5be5f56ad3",
+  "canonical_locked_run_sha256": "efd658546474c118252ccb0ea9e68312c00356be7e89c90beb7057f4006648b6",
+  "outer": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 374947,
+    "trace_truncated": false
+  },
+  "assessment": {
+    "passed": false,
+    "complete_result_exported": false,
+    "observation_error": "shared SSH execution failed: \"shared full-execution client failed: exit status: 1\"",
+    "provider_observation_error": null
+  },
+  "retention": {
+    "access_files_rehashed_and_hex_decoded": 274,
+    "native_pool_access_hashes_joined": true,
+    "outer_process_result_hashes_joined": true,
+    "ack_bytes": 573,
+    "ack_exact_shared_receipt": true,
+    "worker_cleanup_bound_to_ack": true,
+    "note": "Durable retained bytes and cleanup are verified. The logical complete_result_exported verdict remains false because the shared client failed.",
+    "browser_selection_run_endpoint_publication_joined": true
+  },
+  "browser": {
+    "error": "native pool has no accepted solutions",
+    "origins_tested": 1,
+    "origin": "http://127.0.0.1:18090",
+    "http_login_and_native_render_observed": true,
+    "websocket_protocol": "graphql-transport-ws",
+    "websocket_reason": "two samples",
+    "samples": [
+      {
+        "timestamp": 1793045847,
+        "accepted": 0,
+        "boards": 3,
+        "chips": [
+          63,
+          63,
+          63
+        ]
+      },
+      {
+        "timestamp": 1793045848,
+        "accepted": 0,
+        "boards": 3,
+        "chips": [
+          63,
+          63,
+          63
+        ]
+      }
+    ],
+    "clock_gate_reached": false,
+    "tls_browser_gate_reached": false,
+    "fresh_profile_isolation_gate_reached": false,
+    "profiles_started_with_empty_cookies": true,
+    "profile_startup_ms": [
+      1434,
+      1882
+    ],
+    "preparation_ms": 3589,
+    "prepared_before_dispatch": true,
+    "browser_cgroups_empty": true
+  },
+  "native_api": {
+    "http": {
+      "passed": true,
+      "observations": 15,
+      "origin": "http://127.0.0.1:18090"
+    },
+    "tls": {
+      "passed": true,
+      "observations": 15,
+      "origin": "https://192.0.2.1:9443"
+    }
+  },
+  "stop_acknowledgements": {
+    "gateway_stopped": true,
+    "stop_error": null,
+    "tunnel_stopped": true
+  },
+  "causal_timing": {
+    "native_api_snapshots": [
+      {
+        "when": 1793045840,
+        "accepted": 0
+      },
+      {
+        "when": 1793045845,
+        "accepted": 0
+      },
+      {
+        "when": 1793045850,
+        "accepted": 0
+      },
+      {
+        "when": 1793045857,
+        "accepted": 0
+      },
+      {
+        "when": 1793045873,
+        "accepted": 1
+      }
+    ],
+    "first_positive_snapshot": {
+      "when": 1793045873,
+      "accepted": 1
+    },
+    "after_failed_second_sample_seconds": 25,
+    "first_pool_submit_elapsed_ns": "43223666993",
+    "first_pool_true_response_elapsed_ns": "43223689787",
+    "clock_request": {
+      "applied": false,
+      "elapsed_seconds": 27,
+      "policy": {
+        "deterministic_fixed_epoch_replay": false,
+        "firmware_bytes_changed": false,
+        "kind": "explicit-execution-host-wall-clock-environment-adaptation",
+        "limits": "Remote client clock synchronization is not inferred. Compare retained native and client timestamps for each run. Serial delivery and emulation can produce measured skew.",
+        "miner": "The original guest date command sets CLOCK_REALTIME after console activation. The guest must read back that value.",
+        "monotonic_and_device_clocks_changed": false,
+        "ntp_tested": false,
+        "physical_rtc_claim": false,
+        "progression": "Elapsed CLOCK_MONOTONIC time since that sample; subsequent host wall-clock steps do not change the selected epoch.",
+        "sample_record": "MD_SIM_WALL_CLOCK_REQUEST includes the selected epoch, elapsed time, requested time and exact script hash.",
+        "source": "CLOCK_REALTIME on the execution host, sampled when the native runner starts after dispatch"
+      },
+      "readback_maximum_seconds": 1793045786,
+      "requested_unix_seconds": 1793045781,
+      "script_sha256": "cc9ebcffbd6c7f86928f1919ff2cbad6fe9298b80cd10569f74181b33bb37283",
+      "selected_epoch_unix_seconds": 1793045754
+    }
+  },
+  "fix": "Move the existing 60-second actual native DOM readiness gate before the unchanged 20-second/two-sample WebSocket check. Keep both positive-share assertions and all clock/native deadlines. Record the new order in the locked policy.",
+  "receipts": [
+    {
+      "path": "work/simulator/network-vm/native-browser-492/result.json",
+      "sha256": "f22643d1d943fe0a5d12ee0b046fa957e430f6b8d21d2e07e2eb2b98bad82932",
+      "size": 207767990
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/assessment.json",
+      "sha256": "8c725a622d80f59ba698659d45126a16a65e34e44beb2b885ffb0521ac7f0a08",
+      "size": 48644666
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/process-spec.json",
+      "sha256": "2e13b297f8cf83e1c983d714fa78558c093fbd04abfaae5784276f83771bfba1",
+      "size": 5763
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/locked-run.json",
+      "sha256": "684ae43b95fb33ee0fcf86d21dbefeff22bf95f64535ff6ac14e13f2e618742b",
+      "size": 22013
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/host-retention.json",
+      "sha256": "0977f613d798b0b85c082c5ea4d62badad5ef7cb42cfab80e19ce0a1e2f97589",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/worker-retention.json",
+      "sha256": "0977f613d798b0b85c082c5ea4d62badad5ef7cb42cfab80e19ce0a1e2f97589",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/worker-result.json",
+      "sha256": "50ef4b59c677975f7649fd9a8a90fa4575c3d1299c82134b87c03caaf595b600",
+      "size": 104361575
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/worker-cleanup.json",
+      "sha256": "317cc45b9299794b96cfd4864a512d52f274d80a7d1b8129a636e5d64a7b314d",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/access-bundle.json",
+      "sha256": "12f75099dcc84fc0528848836bfd8bea6f7d195df34eb2384f4401adcebae466",
+      "size": 10183750
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/retention-receipt.json",
+      "sha256": "a5aa1a4b2f9e4305561bcf20e2a0f1554b883d9b8bf3001ba71f6aaba80854fe",
+      "size": 664
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/client-observer/board-browser-process.json",
+      "sha256": "fe14e942d44325767be1024157ca1efee82cd52c4a61993203aec6f7a3d792b6",
+      "size": 250336
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/client-observer/board-browser.stderr",
+      "sha256": "ea2a072b0b586a19c9888362a92015bf9e790500a4bf6d360493df36c92e6be6",
+      "size": 45
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/client/browser-preparation.json",
+      "sha256": "7e1b086e73e8ff5e3400b76aec936897bf02a67309927d287226c6206bb7234f",
+      "size": 3953
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/client/dispatch.json",
+      "sha256": "d6682a2f7783c04966e6f20b5a49c992ec114d9c3c083a3943839252ec87e660",
+      "size": 317
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/client/http/report.json",
+      "sha256": "f9972b956be59813040f3397a8b314c689d435e7cc4ab7e6f6ade10defb7b88a",
+      "size": 930641
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-access/client/tls/report.json",
+      "sha256": "b894f4c934fb9ff0abf814422fdf130ea85252e2a62f65b0404fc8babf0a08b8",
+      "size": 936283
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-492/execution/shared-pool/sessions/session-0.jsonl",
+      "sha256": "584d2e8c22da0f7dce1f69f0320e73a075c86aa5d0d5d3a5f8daddcb839580cd",
+      "size": 5908
+    },
+    {
+      "path": "work/simulator/reviews/native-browser-freeze-491.json",
+      "sha256": "3c746060c5d6daca5f43595e25f0ebc3361e047cd2b8c6464e8e206ee733b700",
+      "size": 9758
+    }
+  ]
+}

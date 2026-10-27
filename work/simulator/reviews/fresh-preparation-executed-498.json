@@ -1,0 +1,58 @@
+{
+  "schema": "md-sim-fresh-preparation-execution/1",
+  "passed": true,
+  "scope": "Input derivation and provenance only. No firmware, browser or mining was executed by this preparation check.",
+  "baseline_unchanged_files": 51,
+  "verified_child_mounts": 46,
+  "changed_process_mounts": [
+    "/private-pool.json"
+  ],
+  "changed_pool_fields": [
+    "seed",
+    "time"
+  ],
+  "receipt": {
+    "sha256": "fcf7de1ed43a558636f7ca0e749e3fe1636340735ed58e40a108b6bcde0bc2d5",
+    "size": 995
+  },
+  "parent_run_hash": "6de2484a9bb0d008c4acceb90c496a1435f359f7837bec9ac302f60ba9b0d10a",
+  "parent_process": {
+    "sha256": "a3247419fe950dc9e6353a6adfbfb4ba73e5fd909b1d30d3dcdba3926a4e9b89",
+    "size": 11264
+  },
+  "child_process": {
+    "sha256": "d8609330305e64073d382e4bd5ec126bc89e04263290d67967d5fe6910da5fd8",
+    "size": 11263
+  },
+  "parent_pool": {
+    "sha256": "dddf3927541325363cbe70ca3e1d86defbf1b6ca0577d1d00287e5ebcf9650a6",
+    "size": 1031
+  },
+  "child_pool": {
+    "sha256": "a1f941d72bf2b978e75cfc48dc54a645b559121794121cdf674e2b73020bba94",
+    "size": 1020
+  },
+  "helper": {
+    "path": "work/simulator/fresh-tools-498/s9_fresh_prepared",
+    "object": {
+      "sha256": "ed84d3c7a998c64fc3b06d73d38d6dddf2afa68ef17ba804fd92d81783c0513a",
+      "size": 1869048
+    }
+  },
+  "metadata_unchanged": [
+    "adaptation.json",
+    "console.json",
+    "shared-pool.json",
+    "carrier-dashboard.json"
+  ],
+  "command": "work/simulator/fresh-tools-498/s9_fresh_prepared work/simulator/qemu-s9/native-browser-prepared-494 work/simulator/qemu-s9/fresh-prepared-498",
+  "execution_log": {
+    "sha256": "8e928d45c5fe2616d1a1066c6c9f9551405c7b85912a0ab1992dce5e056b03f9",
+    "size": 857
+  },
+  "inputs_manifest": {
+    "sha256": "6b95c88232d3d4d12f95594eebeef6ba21a0788f5f3d33ae922297215c6c1f88",
+    "size": 15163
+  },
+  "pending": "Full current-source checks and fresh CLI500 execution after helper cohort499 and CLI promotion."
+}

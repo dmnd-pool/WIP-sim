@@ -1,0 +1,23 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "status": "no_open_source_finding_execution_pending",
+  "scope": "Probe-only one-shot exact core0 write-intent observer. No production IdentificationChain change; no ASIC acknowledgement, core state, timing, readback or initialization pass.",
+  "review_evidence": "Parent review message: narrow and visibly adapted; no model changes; no response; readback/default strict; one observation across resets.",
+  "files": [
+    {
+      "path": "work/simulator/bm1397-write-intent-493/bm1397_write_intent.rs",
+      "size": 7205,
+      "sha256": "605d858da4f5b177f59f38e1e52f4d47b06b1691037ab3bbacaef4adecef1b02"
+    },
+    {
+      "path": "work/simulator/bm1397-write-intent-493/esp32_original_probe.rs",
+      "size": 31080,
+      "sha256": "658be079a059fd6580bfe5e64ac346bc50a09675a7ee42f464fc4fbf328289d5"
+    }
+  ],
+  "pending": [
+    "Focused example tests, formatting, strict Clippy, release build after native492 terminates.",
+    "Actual original-firmware probe and independent trace review."
+  ]
+}

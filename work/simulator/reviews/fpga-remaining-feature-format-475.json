@@ -1,0 +1,203 @@
+{
+  "scope": "Static format counts of hash-verified original metadata only; no decoder execution.",
+  "tables": [
+    {
+      "type": "BRAM_L",
+      "bus": "BLOCK_RAM",
+      "rules": 36864,
+      "max_conditions": 1,
+      "unsupported_tokens": [],
+      "max_relative_frame": 127,
+      "max_relative_bit": 319
+    },
+    {
+      "type": "BRAM_L",
+      "bus": "CLB_IO_CLK",
+      "rules": 456,
+      "max_conditions": 3,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 319
+    },
+    {
+      "type": "BRAM_R",
+      "bus": "BLOCK_RAM",
+      "rules": 36864,
+      "max_conditions": 1,
+      "unsupported_tokens": [],
+      "max_relative_frame": 127,
+      "max_relative_bit": 319
+    },
+    {
+      "type": "BRAM_R",
+      "bus": "CLB_IO_CLK",
+      "rules": 456,
+      "max_conditions": 3,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 319
+    },
+    {
+      "type": "CFG_CENTER_MID",
+      "bus": "CLB_IO_CLK",
+      "rules": 11,
+      "max_conditions": 3,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 2207
+    },
+    {
+      "type": "CLK_BUFG_BOT_R",
+      "bus": "CLB_IO_CLK",
+      "rules": 336,
+      "max_conditions": 3,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 255
+    },
+    {
+      "type": "CLK_BUFG_REBUF",
+      "bus": "CLB_IO_CLK",
+      "rules": 128,
+      "max_conditions": 1,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 127
+    },
+    {
+      "type": "CLK_BUFG_TOP_R",
+      "bus": "CLB_IO_CLK",
+      "rules": 336,
+      "max_conditions": 3,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 255
+    },
+    {
+      "type": "CLK_HROW_BOT_R",
+      "bus": "CLB_IO_CLK",
+      "rules": 2804,
+      "max_conditions": 2,
+      "unsupported_tokens": [],
+      "max_relative_frame": 29,
+      "max_relative_bit": 527
+    },
+    {
+      "type": "CLK_HROW_TOP_R",
+      "bus": "CLB_IO_CLK",
+      "rules": 2134,
+      "max_conditions": 2,
+      "unsupported_tokens": [],
+      "max_relative_frame": 29,
+      "max_relative_bit": 527
+    },
+    {
+      "type": "CMT_TOP_L_LOWER_B",
+      "bus": "CLB_IO_CLK",
+      "rules": 403,
+      "max_conditions": 110,
+      "unsupported_tokens": [],
+      "max_relative_frame": 29,
+      "max_relative_bit": 1080
+    },
+    {
+      "type": "CMT_TOP_L_UPPER_T",
+      "bus": "CLB_IO_CLK",
+      "rules": 366,
+      "max_conditions": 106,
+      "unsupported_tokens": [],
+      "max_relative_frame": 29,
+      "max_relative_bit": 847
+    },
+    {
+      "type": "DSP_L",
+      "bus": "CLB_IO_CLK",
+      "rules": 436,
+      "max_conditions": 3,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 318
+    },
+    {
+      "type": "DSP_R",
+      "bus": "CLB_IO_CLK",
+      "rules": 436,
+      "max_conditions": 3,
+      "unsupported_tokens": [],
+      "max_relative_frame": 27,
+      "max_relative_bit": 318
+    },
+    {
+      "type": "HCLK_CMT_L",
+      "bus": "CLB_IO_CLK",
+      "rules": 660,
+      "max_conditions": 4,
+      "unsupported_tokens": [],
+      "max_relative_frame": 29,
+      "max_relative_bit": 234
+    },
+    {
+      "type": "HCLK_IOI3",
+      "bus": "CLB_IO_CLK",
+      "rules": 252,
+      "max_conditions": 10,
+      "unsupported_tokens": [],
+      "max_relative_frame": 41,
+      "max_relative_bit": 31
+    },
+    {
+      "type": "HCLK_L",
+      "bus": "CLB_IO_CLK",
+      "rules": 196,
+      "max_conditions": 2,
+      "unsupported_tokens": [],
+      "max_relative_frame": 5,
+      "max_relative_bit": 31
+    },
+    {
+      "type": "HCLK_R",
+      "bus": "CLB_IO_CLK",
+      "rules": 200,
+      "max_conditions": 2,
+      "unsupported_tokens": [],
+      "max_relative_frame": 5,
+      "max_relative_bit": 31
+    },
+    {
+      "type": "RIOB33",
+      "bus": "CLB_IO_CLK",
+      "rules": 83,
+      "max_conditions": 18,
+      "unsupported_tokens": [],
+      "max_relative_frame": 39,
+      "max_relative_bit": 127
+    },
+    {
+      "type": "RIOI3",
+      "bus": "CLB_IO_CLK",
+      "rules": 364,
+      "max_conditions": 15,
+      "unsupported_tokens": [],
+      "max_relative_frame": 35,
+      "max_relative_bit": 127
+    },
+    {
+      "type": "RIOI3_TBYTESRC",
+      "bus": "CLB_IO_CLK",
+      "rules": 364,
+      "max_conditions": 15,
+      "unsupported_tokens": [],
+      "max_relative_frame": 35,
+      "max_relative_bit": 127
+    },
+    {
+      "type": "RIOI3_TBYTETERM",
+      "bus": "CLB_IO_CLK",
+      "rules": 364,
+      "max_conditions": 15,
+      "unsupported_tokens": [],
+      "max_relative_frame": 35,
+      "max_relative_bit": 127
+    }
+  ]
+}

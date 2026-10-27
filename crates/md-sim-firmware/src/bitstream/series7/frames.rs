@@ -108,6 +108,10 @@ impl Part {
     pub fn idcode(&self) -> u32 {
         self.idcode
     }
+
+    pub fn sha256(&self) -> &str {
+        &self.sha256
+    }
 }
 
 fn index(key: &str, limit: u32) -> Result<u32> {
@@ -285,14 +289,14 @@ struct Column {
     frame_count: u32,
 }
 
-fn unique_map<'de, D: Deserializer<'de>, T: Deserialize<'de>>(
+pub(super) fn unique_map<'de, D: Deserializer<'de>, T: Deserialize<'de>>(
     d: D,
 ) -> std::result::Result<BTreeMap<String, T>, D::Error> {
     struct Visitor<T>(PhantomData<T>);
     impl<'de, T: Deserialize<'de>> serde::de::Visitor<'de> for Visitor<T> {
         type Value = BTreeMap<String, T>;
         fn expecting(&self, f: &mut fmt::Formatter) -> fmt::Result {
-            f.write_str("a part database map with distinct keys")
+            f.write_str("a configuration database map with distinct keys")
         }
         fn visit_map<A: MapAccess<'de>>(
             self,
@@ -301,7 +305,9 @@ fn unique_map<'de, D: Deserializer<'de>, T: Deserialize<'de>>(
             let mut result = BTreeMap::new();
             while let Some((key, value)) = map.next_entry::<String, T>()? {
                 if result.insert(key, value).is_some() {
-                    return Err(serde::de::Error::custom("duplicate part database key"));
+                    return Err(serde::de::Error::custom(
+                        "duplicate configuration database key",
+                    ));
                 }
             }
             Ok(result)

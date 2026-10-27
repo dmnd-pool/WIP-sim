@@ -1,0 +1,112 @@
+{
+  "schema": "md-sim-worker-trace-independent/1",
+  "status": "pass",
+  "scope": "Local isolated worker process transport with TCG client. No firmware, SSH, dashboard or external physical host claim.",
+  "result": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 9519,
+    "trace_truncated": false
+  },
+  "run_id": "run-9653e8353d1cab6e6c7a6fad551aaad8ff0ca05cb8e18ee2b73ce8e6154deef6",
+  "canonical_locked_run_sha256": "01e914cf53c0ba49332c7d300a20aa3baee9fb7d674995e57fbf58675c260ac9",
+  "result_identity": {
+    "sha256": "1212873359ece52d37a71c4803556d5643db655bdb667c70403d445e1bc2c80d",
+    "size": 1337
+  },
+  "payload": {
+    "sha256": "dcfd90ddc9fced5a0288d88af3fa24269c6039fbabdbc88864a84ebaaf8e773a",
+    "size": 1048576
+  },
+  "destination_objects_checked": 5,
+  "all_process_input_mappings_rehashed": 32,
+  "all_process_input_bytes": 78302657,
+  "host_ack_bytes": 341,
+  "ack_bound": 4096,
+  "ack_matches_host_and_worker_receipts": true,
+  "cleanup_matches_acknowledged_result": true,
+  "worker_toolchain_identity_joined": true,
+  "support_trace_channels_explicit": true,
+  "receipts": [
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/assessment.json",
+      "sha256": "ef2ca194df46be16786bd21d06d2369bbf594a7fac7b8e127056c89a676c2799",
+      "size": 5546
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/result.json",
+      "sha256": "4b022ff2706dbafc9aeb3c26b496bea0141899f8d1e4a15b35ac4b485420f260",
+      "size": 41044
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/process-spec.json",
+      "sha256": "a74864d5c4fd6707e2545f0b8212d6c55d9881476ce195017259917520688a18",
+      "size": 5440
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/guest.log",
+      "sha256": "2dddf473f59d7c941f92512b32ed9670b545158e8ae8e9647cdc9e2ad5429e38",
+      "size": 19594
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/backend.log",
+      "sha256": "05358cac37970122c759cbe2319a68f50f697359d16dcd12553fa9369949caff",
+      "size": 100
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/payload.bin",
+      "sha256": "dcfd90ddc9fced5a0288d88af3fa24269c6039fbabdbc88864a84ebaaf8e773a",
+      "size": 1048576
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/locked-run.json",
+      "sha256": "d82b52c3634d2397b0156085037794a5d01bb319e3d83844a0a75660b4e76698",
+      "size": 3760
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/process-spec.json",
+      "sha256": "180a6e4e26936233e7433bc6d55f767b963800fa976d8ac1b3eda6934eddec31",
+      "size": 1509
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/worker-request.json",
+      "sha256": "19d805288b97982f352042895712dc06831c38c1012b1f80cba3fe0f8ee11096",
+      "size": 1415
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/worker-result.json",
+      "sha256": "1212873359ece52d37a71c4803556d5643db655bdb667c70403d445e1bc2c80d",
+      "size": 1337
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/host-retention.json",
+      "sha256": "1b203a7b4b9ab1752e4534d646570d99ed95339e82bfdcf34aaf6c1d705cf727",
+      "size": 373
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/worker-retention.json",
+      "sha256": "1b203a7b4b9ab1752e4534d646570d99ed95339e82bfdcf34aaf6c1d705cf727",
+      "size": 373
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/worker-cleanup.json",
+      "sha256": "cccd4e36873984868b7178a1710c754e5920341baee3abae64251ac11323a19d",
+      "size": 308
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/worker-cleanup-response.json",
+      "sha256": "cccd4e36873984868b7178a1710c754e5920341baee3abae64251ac11323a19d",
+      "size": 308
+    },
+    {
+      "path": "work/simulator/network-vm/native-worker-channel-490/execution/artifact-transfer.json",
+      "sha256": "f9df9d65df3b41ac87110cda3f833ac2e4edf868092476edd466db9e39afd483",
+      "size": 1052
+    },
+    {
+      "path": "work/simulator/transport-tools-490/inputs.json",
+      "sha256": "98447fb1a9dc1912d90e733a73dafd707cf152fa14951346d01647c6f9e0ccb8",
+      "size": 927
+    }
+  ]
+}

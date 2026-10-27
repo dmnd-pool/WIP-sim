@@ -1,0 +1,67 @@
+{
+  "scope": "Static API usage audit only. No tool source modified or executed. These imports are candidates for a minimal lazy-import tool adaptation after FASM export validation.",
+  "uses": [
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+      "source_sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+      "name": "capnp_graph2",
+      "line": 309,
+      "enclosing_scopes": [
+        {
+          "kind": "FunctionDef",
+          "line": 307,
+          "scope": "load_net_list"
+        }
+      ]
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+      "source_sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+      "name": "vpr_io_place",
+      "line": 281,
+      "enclosing_scopes": [
+        {
+          "kind": "If",
+          "line": 280,
+          "scope": "eblif"
+        },
+        {
+          "kind": "FunctionDef",
+          "line": 252,
+          "scope": "load_io_sites"
+        }
+      ]
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+      "source_sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+      "name": "output_interchange",
+      "line": 538,
+      "enclosing_scopes": [
+        {
+          "kind": "If",
+          "line": 530,
+          "scope": "args.logical_netlist"
+        },
+        {
+          "kind": "FunctionDef",
+          "line": 328,
+          "scope": "main"
+        }
+      ]
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/verilog_modeling.py",
+      "source_sha256": "36e791fc75dccd2a8b1510d64ca71057ff68389d49ebaadf6892747f405495fb",
+      "name": "create_site_routing",
+      "line": 1030,
+      "enclosing_scopes": [
+        {
+          "kind": "FunctionDef",
+          "line": 860,
+          "scope": "output_site_routing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "scope": "Actual local KVM Linux/TCP prerequisite and isolated pinned support-backend build. No native browser, external host or exact miner gate.",
+  "linux_boot": {
+    "directory": "work/simulator/network-vm/kvm-prerequisite-484c",
+    "passed": true,
+    "wall_ms": 971,
+    "accelerator": "kvm",
+    "cpu": "Nehalem-v1,enforce",
+    "cache_eligible": false
+  },
+  "backend_build": {
+    "directory": "work/simulator/qemu-s9/backend-build-485-pool-kvm",
+    "passed": true,
+    "wall_ms": 174519,
+    "ubsan": true,
+    "compiled_accelerators": [
+      "tcg",
+      "kvm"
+    ],
+    "configure_build_strip_smoke_exit_codes": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "files": {
+    "work/simulator/network-vm/kvm-prerequisite-484c/result.json": {
+      "sha256": "a82a8ddf3e64d899fbdf54618e1311a2e294e060debf242f53aff805e7b0db3c",
+      "size": 3975
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484c/assessment.json": {
+      "sha256": "c7cc3fe6dd235016ceb86c9700b54e34ebf5af7e1d0bd6bcd188151cb3225b1e",
+      "size": 818
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484c/topology.json": {
+      "sha256": "b1fe3eedc6e308abfec03b36f6d925d9764663264b7e6105e4a126b6ee769c27",
+      "size": 1299
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484c/guest.log": {
+      "sha256": "b5fd72e2511bfcf5e9e20b98702356ad57fdebb1432d2821c28d2a4054c4b3ce",
+      "size": 585
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484c/backend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484c/process-spec.json": {
+      "sha256": "23ebd50a1c2cfa9e120b0b0eaad71ad09214ca788402911f133063619354785e",
+      "size": 14818
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/result.json": {
+      "sha256": "5665f579f14b6629a054e582c24c15cb6e62cb1722b1bc944f8eab237c8c83c3",
+      "size": 29840927
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/spec.json": {
+      "sha256": "9ccfe4cf9ebb0579c1bf6c29e571d12b8a230705ab528776315412ee2a094c76",
+      "size": 16380
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/build-report.json": {
+      "sha256": "72b57d50537e15e8403717b00db3cee0548abb64abd436644c88f285ff520b8c",
+      "size": 2458312
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/input-identities.json": {
+      "sha256": "3e0e3291dd46879a76b131080824634a00f846042a4dccaa80d44ba89e23e699",
+      "size": 467
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/qemu-system-x86_64": {
+      "sha256": "06f21bb63d603b323f36f772c8b288cb044df68e8db88bac46b1f86ae1ff66d6",
+      "size": 20082048
+    }
+  },
+  "failed_prior_attempts": [
+    "network-vm/kvm-prerequisite-484",
+    "network-vm/kvm-prerequisite-484b"
+  ],
+  "next": "Freeze updated source and helpers; run the selected native browser suite using custom support backend485."
+}

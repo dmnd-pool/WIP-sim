@@ -133,7 +133,7 @@ fn fixture(mode: OracleMode) -> Fixture {
         .collect();
     inputs.insert("suite".into(), suite);
     inputs.insert("verifier".into(), verifier);
-    let process=ProcessSpec{private_channel: None, stdin_stream:None,namespace_uid:0,dashboard:None,loopback:false,schema_version:"2.0".into(),argv:vec!["/usr/bin/sh".into(),"-c".into(),"test ! -e /home/user && test ! -e /etc/passwd && printf 'actual isolated queue process\\n'".into()],inputs:runtime_inputs,stdin_object:None,environment:BTreeMap::new(),limits:Limits{trace_bytes:4096,..Limits::default()}};
+    let process=ProcessSpec{support_virtualization: None, private_channel: None, stdin_stream:None,namespace_uid:0,dashboard:None,loopback:false,schema_version:"2.0".into(),argv:vec!["/usr/bin/sh".into(),"-c".into(),"test ! -e /home/user && test ! -e /etc/passwd && printf 'actual isolated queue process\\n'".into()],inputs:runtime_inputs,stdin_object:None,environment:BTreeMap::new(),limits:Limits{trace_bytes:4096,..Limits::default()}};
     let run = LockedRun {
         name: "actual-process".into(),
         scope: ExecutionScope::ProcessPrimitive {

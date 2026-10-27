@@ -1,0 +1,282 @@
+{
+  "scope": "Exact Project X-Ray Python library dependency recorded by the existing fasm2bels source. Reuse identical archived files only after matching the pinned Git blob identity. No downloaded source execution.",
+  "source_commit": "8146f1f2adc5aa2de8fe41886e18a73b57082086",
+  "jobs": [
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/bitfilter.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__bitfilter.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "f7184bd44950c87f615ff9713fe4e93a8fe0689c",
+      "expected_size": 1467,
+      "source_path": "prjxray/bitfilter.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/bitsmaker.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__bitsmaker.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "f29f7887c613ee973d04659790bfe18b4240cc24",
+      "expected_size": 984,
+      "source_path": "prjxray/bitsmaker.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/connections.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__connections.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "fac84b7af2b160c9140e6aba921e9ced01e01395",
+      "expected_size": 3267,
+      "source_path": "prjxray/connections.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/db.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__db.py",
+      "max_bytes": 7792,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "c3e41b34b5b4ba8657bfbfc7e9edd7c1b2fd7363",
+      "expected_size": 7791,
+      "source_path": "prjxray/db.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/fasm_assembler.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__fasm_assembler.py",
+      "max_bytes": 6684,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "2bb1900766117ab28c332cdc6b89b97eaeef45c8",
+      "expected_size": 6683,
+      "source_path": "prjxray/fasm_assembler.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/fasm_disassembler.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__fasm_disassembler.py",
+      "max_bytes": 6691,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "17cf844c755016c09eb5f8ca2c87f03c9778ec2b",
+      "expected_size": 6690,
+      "source_path": "prjxray/fasm_disassembler.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/grid.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__grid.py",
+      "max_bytes": 5145,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "c1632dfa08976d3377a75ca4ad98fbafabf97d4e",
+      "expected_size": 5144,
+      "source_path": "prjxray/grid.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/lib.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__lib.py",
+      "max_bytes": 7111,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "20f1aa7ca3e3920b28fb04d781e3bd56558b5011",
+      "expected_size": 7110,
+      "source_path": "prjxray/lib.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/lms_solver.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__lms_solver.py",
+      "max_bytes": 24457,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e68f56669943caf992727784e494465392090be8",
+      "expected_size": 24456,
+      "source_path": "prjxray/lms_solver.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/lut_maker.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__lut_maker.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "1073aa3046da6ba43e611353f288d3fc65065d2a",
+      "expected_size": 1574,
+      "source_path": "prjxray/lut_maker.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/math_models.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__math_models.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "04ea34fac0005b87910914ba18c40940727d0424",
+      "expected_size": 1736,
+      "source_path": "prjxray/math_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/node_lookup.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__node_lookup.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "a6278efb775328d0f1482711b35cb95b2f8e666a",
+      "expected_size": 3692,
+      "source_path": "prjxray/node_lookup.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/node_model.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__node_model.py",
+      "max_bytes": 5041,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "d187c57adeea60f457affb6dbbf4f57c41d14c3b",
+      "expected_size": 5040,
+      "source_path": "prjxray/node_model.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/overlay.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__overlay.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "64c7cce65bf33b92cfb1bc1094c12181688ee9cc",
+      "expected_size": 885,
+      "source_path": "prjxray/overlay.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/segmaker.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__segmaker.py",
+      "max_bytes": 18652,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "6689d6f23f8a7f71a184a13ffc476a83705cdb8c",
+      "expected_size": 18651,
+      "source_path": "prjxray/segmaker.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/segment_map.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__segment_map.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "87c351d976221489c3efdeb1db90b3b12e4c0a15",
+      "expected_size": 945,
+      "source_path": "prjxray/segment_map.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/site_type.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__site_type.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "c396fd221bfb8b6804fa5938de86351f03d8eea5",
+      "expected_size": 1025,
+      "source_path": "prjxray/site_type.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/state_gen.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__state_gen.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "4a0af6e9bf851c31a68f46e16143097bd281eb6a",
+      "expected_size": 2223,
+      "source_path": "prjxray/state_gen.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/tile.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__tile.py",
+      "max_bytes": 12690,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "68da01167c706b639cac1dae196241eb50a81252",
+      "expected_size": 12689,
+      "source_path": "prjxray/tile.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/timing.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__timing.py",
+      "max_bytes": 16801,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "c14b0b7e4208a7332c15fda7c46867c1e2e0b3c9",
+      "expected_size": 16800,
+      "source_path": "prjxray/timing.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/verilog.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__verilog.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "a24f70917c4db453d504a9395a4b1e0ce9a138bf",
+      "expected_size": 3305,
+      "source_path": "prjxray/verilog.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/prjxray/xjson.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-prjxray__xjson.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "2eb705ee0d0bfb6ea8a6f4f5877adb9a81d0ce04",
+      "expected_size": 2893,
+      "source_path": "prjxray/xjson.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/LICENSE",
+      "destination": "/tmp/md-sim-fasm-prjxray482-LICENSE",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "c180c64ffeed2f15917e5fda7357b60e6ced5bf9",
+      "expected_size": 750,
+      "source_path": "LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/requirements.txt",
+      "destination": "/tmp/md-sim-fasm-prjxray482-requirements.txt",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "54210815e5852c445650a418248700b657b0b507",
+      "expected_size": 227,
+      "source_path": "requirements.txt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray/8146f1f2adc5aa2de8fe41886e18a73b57082086/setup.py",
+      "destination": "/tmp/md-sim-fasm-prjxray482-setup.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "61f4749b259f01c6729ae0ea621a2ec2b451c364",
+      "expected_size": 1243,
+      "source_path": "setup.py"
+    }
+  ],
+  "reuse": [
+    {
+      "source_path": "prjxray/__init__.py",
+      "archived_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "source_path": "prjxray/bitstream.py",
+      "archived_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/bitstream.py",
+      "sha256": "c87a2dce80b5c4edc8b418fb1722d5621c6ae214430517190ca308e5498a6d0f",
+      "size": 3552,
+      "git_blob_sha1": "b120b5e8ba0171a1e9309b4b42879762a5144215"
+    },
+    {
+      "source_path": "prjxray/grid_types.py",
+      "archived_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/grid_types.py",
+      "sha256": "3476c18faeb0169b4b6216051086f0e7055975d42492c7cb6a082906409875ea",
+      "size": 943,
+      "git_blob_sha1": "53758a6e94422c7a9943f0b862f936c8e3487495"
+    },
+    {
+      "source_path": "prjxray/roi.py",
+      "archived_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/roi.py",
+      "sha256": "e67b6beb88624d73e0d084130f4a1c606178bf7e16a2a4959460767c9f55b70b",
+      "size": 1988,
+      "git_blob_sha1": "0627aa677a478d777c152672390dcaa953e23f1a"
+    },
+    {
+      "source_path": "prjxray/tile_segbits.py",
+      "archived_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/tile_segbits.py",
+      "sha256": "e7e43973d9e5f0c72c4f2fe23b0541a2b3be9441bfa473250294c8fec7c556db",
+      "size": 5362,
+      "git_blob_sha1": "5564a4b8dc8da5c4d744854e3ee742a317e50d87"
+    },
+    {
+      "source_path": "prjxray/tile_segbits_alias.py",
+      "archived_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/tile_segbits_alias.py",
+      "sha256": "0cbb861e32baaf11cc242241ee1f6388c604c9e2dd1074b159bb4101de6c4202",
+      "size": 4450,
+      "git_blob_sha1": "2eb536e333f8bc7a13dba81b146639c0b4511f89"
+    },
+    {
+      "source_path": "prjxray/util.py",
+      "archived_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/util.py",
+      "sha256": "a5b3677e39d53a57f6d694c5acb77c0eff98fbfea102a6b83e5e9011423ac1a3",
+      "size": 12609,
+      "git_blob_sha1": "615bf726f2c8b030de13ee3278c746a1fa9fc294"
+    }
+  ]
+}

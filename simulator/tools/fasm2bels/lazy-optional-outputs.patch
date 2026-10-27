@@ -1,0 +1,62 @@
+--- a/fasm2bels/fasm2bels.py
++++ b/fasm2bels/fasm2bels.py
+@@ -31,7 +31,6 @@
+ from fasm import SetFasmFeature
+ from prjxray import fasm_disassembler
+ from prjxray import bitstream
+-from rr_graph.capnp import graph2 as capnp_graph2
+ import prjxray.db
+ 
+ from .net_map import create_net_list
+@@ -55,8 +54,6 @@
+ from .lib.parse_pcf import parse_simple_pcf
+ from .lib.parse_xdc import parse_simple_xdc
+ from .lib import eblif
+-from .lib import vpr_io_place
+-from .lib.interchange import output_interchange
+ """ Converts FASM out into BELs and nets.
+ 
+ If given --bitstream argument, will convert bitstream to FASM first, then
+@@ -278,6 +275,7 @@
+                 top.add_iosettings_from_xdc(xdc_constraint)
+ 
+     if eblif:
++        from .lib import vpr_io_place
+         io_place = vpr_io_place.IoPlace()
+         io_place.read_io_loc_pairs(eblif)
+         for net, pad in io_place.net_to_pad:
+@@ -306,6 +304,7 @@
+ 
+ def load_net_list(conn, vpr_capnp_schema_dir, rr_graph_file, route_file,
+                   vpr_grid_map):
++    from rr_graph.capnp import graph2 as capnp_graph2
+     capnp_graph = capnp_graph2.Graph(
+         rr_graph_schema_fname=os.path.join(vpr_capnp_schema_dir,
+                                            'rr_graph_uxsdcxx.capnp'),
+@@ -528,6 +527,7 @@
+                 print(line, file=f)
+ 
+     if args.logical_netlist:
++        from .lib.interchange import output_interchange
+         assert args.physical_netlist
+         assert args.interchange_capnp_schema_dir
+         assert args.part
+--- a/fasm2bels/models/verilog_modeling.py
++++ b/fasm2bels/models/verilog_modeling.py
+@@ -23,7 +23,6 @@
+ from .utils import make_bus, flatten_wires, unescape_verilog_name, escape_verilog_name
+ from fasm2bels.make_routes import make_routes, ONE_NET, ZERO_NET, prune_antennas
+ from fasm2bels.database.connection_db_utils import get_wire_pkey, create_maybe_get_wire
+-from ..lib.interchange import create_site_routing
+ """ Core classes for modelling a bitstream back into verilog and routes.
+ 
+ There are 3 modelling elements:
+@@ -1025,6 +1024,8 @@
+                 assert bel.final_net_names[cell_pin] == net_name
+             else:
+                 bel.final_net_names[cell_pin] = net_name
++
++        from ..lib.interchange import create_site_routing
+ 
+         # Convert site_routing tree into Physical* object tree.
+         return create_site_routing(self.site, net_roots, self.site_routing,

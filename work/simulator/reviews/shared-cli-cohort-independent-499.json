@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "scope": "Independent499 helper/source and manifest closure review. Not final CLI execution.",
+  "frozen_sources_rehashed": 538,
+  "helper_count": 13,
+  "inherited_494_helpers": 11,
+  "new_helpers": [
+    "worker_channel_probe",
+    "s9_fresh_prepared"
+  ],
+  "baseline_process_unchanged": {
+    "sha256": "a3247419fe950dc9e6353a6adfbfb4ba73e5fd909b1d30d3dcdba3926a4e9b89",
+    "size": 11264
+  },
+  "shared_runner_and_pool_verifier_match": true,
+  "cohort": {
+    "sha256": "190c2174794ccdb87036156bc555f5ae9fbeb41f7fae5e7c291be48d6bca5ef0",
+    "size": 5984
+  },
+  "cli_input_manifest": {
+    "sha256": "dc6cd072546a34ee475474173b5cf4163855d5ac863b13ff1001bc7eaf09ea5d",
+    "size": 865632
+  }
+}

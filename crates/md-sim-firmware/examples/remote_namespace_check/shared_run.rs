@@ -39,6 +39,14 @@ pub fn policy() -> Value {
         "retention_protocol":if super::carrier_dashboard::enabled() {shared_retention::ACCESS_SCHEMA} else {shared_retention::SCHEMA},
         "carrier_access":super::carrier_dashboard::enabled(),
         "carrier_browser":super::board_browser::enabled(),
+        "browser_verification_order":if super::board_browser::enabled() {
+            Some("native-dom-accepted-work-then-websocket-then-fresh-profile-isolation")
+        } else {None},
+        "browser_preparation":if super::board_browser::enabled() {
+            Some(json!({"before_worker_dispatch":true,
+                "deadline_seconds":super::board_browser::PREPARATION_SECONDS,
+                "fresh_profiles":2,"schema":"md-sim-browser-prepared/1"}))
+        } else {None},
         "access_bundle_bytes":if super::carrier_dashboard::enabled() {Some(shared_retention::ACCESS_BUNDLE_BYTES)} else {None},
         "access_compressed_bytes":if super::carrier_dashboard::enabled() {Some(shared_retention::ACCESS_COMPRESSED_BYTES)} else {None},
         "native_process_limits":"unchanged selected ProcessSpec"})
@@ -157,12 +165,23 @@ pub fn client(events: &mut Vec<Value>) -> Result<()> {
         Path::new("/work/attempt/executor.json"),
         &executor.identity()?,
     )?;
-    let mut observer = super::carrier_dashboard_client::Observer::start(&run)?;
+    let cancellation = Arc::new(AtomicBool::new(false));
+    let mut observer =
+        super::carrier_dashboard_client::Observer::start(&run, cancellation.clone())?;
+    if super::board_browser::enabled() {
+        save_json(
+            Path::new("/work/carrier-client/dispatch.json"),
+            &json!({"schema":"md-sim-browser-prepared-dispatch/1",
+                "locked_run":run.object()?,
+                "dispatch_monotonic_ns":super::shared_pool::monotonic_ns()?,
+                "scope":"Client about to transfer and execute the selected native job after browser preparation"}),
+        )?;
+    }
     let mut access = None;
     let result = executor.run_with_retention(
         &store,
         &run,
-        Arc::new(AtomicBool::new(false)),
+        cancellation,
         Path::new("/work/attempt"),
         &mut |request| {
             if let Some(mut observer) = observer.take() {

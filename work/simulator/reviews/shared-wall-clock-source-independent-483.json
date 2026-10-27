@@ -1,0 +1,28 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "subject": "Explicit execution-host realtime adaptation483",
+  "reviewer": "browser agent; reviewed root-authored changes",
+  "status": "no blocking source finding; checks and actual execution pending",
+  "files": {
+    "crates/md-sim-firmware/examples/support/s9_wall_clock.rs": {
+      "sha256": "2e297312859588fd9e8adeefdbf7e4971f98269b380704e9f4a83af2df9aa0bf",
+      "size": 6669
+    },
+    "crates/md-sim-firmware/examples/s9_boot_bundle.rs": {
+      "sha256": "6bf3ffbf4ab2cf78771a22f35d797fbcce9263edfce12bf6e06019d67e8df109",
+      "size": 122612
+    }
+  },
+  "checked": [
+    "Explicit CLI flag requires shared-pool and original console; duplicate or fixed/live combinations fail closed.",
+    "Runtime environment accepts only absent or1 and independently enforces shared console scope.",
+    "Epoch is sampled after dispatch, range checked for archived ARM time_t, and advanced only by monotonic elapsed time.",
+    "Existing guest date and bounded readback execute before selected service script; original archived bytes remain unchanged.",
+    "Manifest and request records identify live clock source, actual sampled epoch, script hash and replay/remote synchronization limits."
+  ],
+  "open_execution_gates": [
+    "Run focused checks and actual adapted guest date/readback.",
+    "Compare native service timestamps with both browser request intervals in the same selected run. The current browser helper performs its existing comparison only when /clock-policy.json is present.",
+    "Do not infer that this clock mismatch caused the469 or479 browser failures."
+  ]
+}

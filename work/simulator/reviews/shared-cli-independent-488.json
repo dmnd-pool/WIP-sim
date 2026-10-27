@@ -1,0 +1,45 @@
+{
+  "schema": "md-sim-shared-cli-independent-review/1",
+  "status": "source and affected checks passed; new cohort promotion and actual full CLI execution pending",
+  "finding": "The native assessment contains embedded artifacts and exceeds the small-reader 16MiB limit.",
+  "resolution": "Dedicated typed streaming reader skips embedded payloads, enforces a regular non-symlink file and a128MiB byte limit, and requires all verdict fields. The CLI joins checked outer process/result identities with native lock/process/worker-run file identities; cache_eligible remainsfalse.",
+  "checks": {
+    "unit_tests": 7,
+    "retained_479_reader_tests": 1,
+    "strict_clippy": true,
+    "actual_failed_report_bytes": 49409766,
+    "retained_failure_remained_failed": true
+  },
+  "reviewed_behaviors": [
+    "The reader requires EOF and retains the read-growth bound after buffered deserialization.",
+    "Duplicate or missing verdict fields fail; unknown payload fields can be skipped.",
+    "Changed support specification or execution bytes fail the identity comparison.",
+    "The native process must match the lock and must not request KVM.",
+    "The original bounded child-process cleanup and stage input rechecks remain intact.",
+    "Both full support and native identities are retained; no prior result is reused."
+  ],
+  "unresolved_source_findings": [],
+  "limits": [
+    "The positive metadata fixture is a verifier regression, not firmware evidence.",
+    "The actual retained479 test proves parsing and preservation of its failure only.",
+    "The selected next cohort must pass before the manifest can be promoted and the full CLI can be tested."
+  ],
+  "files": {
+    "crates/md-sim/src/demo_shared.rs": {
+      "sha256": "f9a75d08af31b6087e0b801ffcefaf29787d02477691000694547bd8cc636b61",
+      "size": 28196
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-tests.log": {
+      "sha256": "a75d048b4768eccff5971e8e7073b4c0bd1d6e612d7195826e6b7ff7acc0ca1b",
+      "size": 1277
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-retained479.log": {
+      "sha256": "be99e1e6b4ab9cbfb825b92dbfda1d71e5863eca980006a64ca4c686110e20cc",
+      "size": 365
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-clippy.log": {
+      "sha256": "27116b1595cd763d484e2763fba679ef4ea8db3b35786e7fd895e45ebc8c5e2b",
+      "size": 206
+    }
+  }
+}

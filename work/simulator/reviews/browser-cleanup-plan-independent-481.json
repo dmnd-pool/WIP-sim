@@ -1,0 +1,15 @@
+{
+  "scope": "Independent read-only content and inode review of actual cleanup481 plan; removal has not yet run.",
+  "plan": {
+    "sha256": "a966c83557e0512795f1cf6f6565df1ba7813c45dc95f45fb12ec0890e8621fd",
+    "size": 3896621
+  },
+  "verified_pairs": 3653,
+  "verified_distinct_files": 7245,
+  "planned_logical_bytes": 1447428871,
+  "unique_retained_objects": 27,
+  "evidence_and_policies": 14,
+  "original_run_assessment_passed": false,
+  "remaining_copies": "Two489byte recovered inspection/gateway copies remain because their stores have no incoming directory. No requirement gate is excluded.",
+  "next": "Use the same frozen helper on the reviewed derived inventory, with a new durable journal; repeat identities under locks and verify postcheck."
+}

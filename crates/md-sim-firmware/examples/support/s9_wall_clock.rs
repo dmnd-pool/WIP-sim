@@ -2,9 +2,10 @@
 //! This never changes CLOCK_MONOTONIC, instruction clocks or device timers.
 use anyhow::{ensure, Result};
 use serde_json::{json, Value};
-use std::time::Instant;
+use std::time::{Instant, SystemTime, UNIX_EPOCH};
 
 pub const ENVIRONMENT: &str = "MD_SIM_S9_WALL_CLOCK_EPOCH";
+pub const HOST_REALTIME_ENVIRONMENT: &str = "MD_SIM_S9_HOST_REALTIME_CLOCK";
 
 pub fn validate(epoch: u64) -> Result<u64> {
     // The archived ARM userspace has a signed 32-bit time_t. Leave room for
@@ -26,16 +27,35 @@ pub fn identity(epoch: u64) -> Value {
         "limits":"Serial delivery, guest scheduling and emulation can produce measured clock skew. This is a recorded environment adaptation, not a model of a physical RTC or network time service."})
 }
 
+pub fn host_realtime_identity() -> Value {
+    json!({"kind":"explicit-execution-host-wall-clock-environment-adaptation",
+        "source":"CLOCK_REALTIME on the execution host, sampled when the native runner starts after dispatch",
+        "progression":"Elapsed CLOCK_MONOTONIC time since that sample; subsequent host wall-clock steps do not change the selected epoch.",
+        "miner":"The original guest date command sets CLOCK_REALTIME after console activation. The guest must read back that value.",
+        "sample_record":"MD_SIM_WALL_CLOCK_REQUEST includes the selected epoch, elapsed time, requested time and exact script hash.",
+        "monotonic_and_device_clocks_changed":false,"firmware_bytes_changed":false,
+        "deterministic_fixed_epoch_replay":false,"ntp_tested":false,"physical_rtc_claim":false,
+        "limits":"Remote client clock synchronization is not inferred. Compare retained native and client timestamps for each run. Serial delivery and emulation can produce measured skew."})
+}
+
 pub struct Clock {
     epoch: u64,
     started: Instant,
+    host_realtime: bool,
 }
 impl Clock {
     pub fn new(epoch: u64) -> Result<Self> {
         Ok(Self {
             epoch: validate(epoch)?,
             started: Instant::now(),
+            host_realtime: false,
         })
+    }
+
+    pub fn from_host_realtime() -> Result<Self> {
+        let mut clock = Self::new(SystemTime::now().duration_since(UNIX_EPOCH)?.as_secs())?;
+        clock.host_realtime = true;
+        Ok(clock)
     }
 
     pub fn rtc(&self) -> Result<String> {
@@ -68,7 +88,8 @@ impl Clock {
         );
         println!(
             "MD_SIM_WALL_CLOCK_REQUEST {}",
-            json!({"policy":identity(self.epoch),
+            json!({"policy":if self.host_realtime {host_realtime_identity()} else {identity(self.epoch)},
+            "selected_epoch_unix_seconds":self.epoch,
             "elapsed_seconds":elapsed,"requested_unix_seconds":target,
             "script_sha256":md_sim_firmware::prepare::hash_bytes(script.as_bytes()),
             "readback_maximum_seconds":target+5,"applied":false})
@@ -97,5 +118,28 @@ mod tests {
         let record = identity(1_709_164_800);
         assert_eq!(record["monotonic_and_device_clocks_changed"], false);
         assert_eq!(record["ntp_tested"], false);
+    }
+
+    #[test]
+    fn delayed_dispatch_uses_the_execution_clock_and_keeps_source_explicit() {
+        let before = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+        let clock = Clock::from_host_realtime().unwrap();
+        let after = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+        assert!((before..=after).contains(&clock.epoch));
+        assert!(clock.host_realtime);
+        let script = String::from_utf8(clock.script().unwrap()).unwrap();
+        assert!(script.contains(&format!("epoch={} ", clock.epoch)));
+        assert!(script.contains("date -u -s @"));
+        assert!(script.contains("actual=$(date -u +%s)"));
+        let policy = host_realtime_identity();
+        assert_eq!(policy["deterministic_fixed_epoch_replay"], false);
+        assert_eq!(policy["monotonic_and_device_clocks_changed"], false);
+        assert_eq!(policy["firmware_bytes_changed"], false);
     }
 }

@@ -31,17 +31,41 @@ pub struct Observer {
 }
 
 impl Observer {
-    pub fn start(run: &LockedRun) -> Result<Option<Self>> {
+    pub fn start(run: &LockedRun, cancel: Arc<AtomicBool>) -> Result<Option<Self>> {
         if run.policies.get("carrier_dashboard").is_none() {
             return Ok(None);
         }
+        ensure!(
+            !cancel.load(Ordering::Acquire),
+            "carrier preparation cancelled before dispatch"
+        );
         fs::create_dir(ROOT)?;
+        for name in ["worker-request.json", "worker-run.json"] {
+            ensure!(
+                !Path::new("/work/attempt").join(name).try_exists()?,
+                "browser preparation started after worker dispatch"
+            );
+        }
+        // Browser startup is support preparation. Finish both fresh sessions
+        // before dispatch starts the native firmware's unchanged lifetime.
+        let mut browser = super::board_browser::Client::start()?;
+        if let Some(browser) = browser.as_mut() {
+            let preparation = browser.wait_prepared(&cancel);
+            save_json(
+                &Path::new(ROOT).join("browser-preparation.json"),
+                &json!({"schema":"md-sim-carrier-browser-preparation/1",
+                    "passed":preparation.is_ok(),"result":preparation.as_ref().ok(),
+                    "error":preparation.as_ref().err().map(|e|format!("{e:#}")),
+                    "before_worker_dispatch":true,"locked_run":run.object()?,
+                    "firmware_gate":false,"native_dashboard_gate":false}),
+            )?;
+            preparation?;
+        }
         let run = run.clone();
-        let cancel = Arc::new(AtomicBool::new(false));
         let cancellation = cancel.clone();
         let join = thread::spawn(move || {
             let mut observations = Vec::new();
-            let outcome = exercise(&run, &cancellation, &mut observations);
+            let outcome = exercise(&run, &cancellation, &mut observations, browser);
             let report = json!({"schema":"md-sim-shared-carrier-client/1",
                 "passed":outcome.is_ok(),"result":outcome.as_ref().ok(),
                 "error":outcome.as_ref().err().map(|error|format!("{error:#}")),
@@ -85,7 +109,12 @@ fn paths<'a>(output: &'a Path) -> CarrierRemotePaths<'a> {
     }
 }
 
-fn exercise(run: &LockedRun, cancel: &AtomicBool, observations: &mut Vec<Value>) -> Result<Value> {
+fn exercise(
+    run: &LockedRun,
+    cancel: &AtomicBool,
+    observations: &mut Vec<Value>,
+    mut browser: Option<super::board_browser::Client>,
+) -> Result<Value> {
     let started = Instant::now();
     let process = run
         .process
@@ -117,7 +146,6 @@ fn exercise(run: &LockedRun, cancel: &AtomicBool, observations: &mut Vec<Value>)
         request["locked_run_hash"] == run.hash()? && run_id == format!("run-{token}"),
         "carrier observer selected another execution"
     );
-    let mut browser = super::board_browser::Client::start()?;
     let inputs = CarrierInputs {
         run,
         policy: Path::new("/carrier-dashboard.json"),

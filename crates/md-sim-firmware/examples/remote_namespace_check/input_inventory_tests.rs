@@ -166,6 +166,7 @@ fn actual_isolated_inventory_regression() -> Result<()> {
         vec![("/inventory-check".into(), std::env::current_exe()?)],
     )?;
     let spec = isolation::ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

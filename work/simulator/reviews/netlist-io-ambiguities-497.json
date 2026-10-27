@@ -1,0 +1,41 @@
+{
+  "scope": "Retained upstream electrical-setting ambiguity. No caller supplied default I/O standard or drive. Conversion can finish without resolving these parameters; this is not electrical validation.",
+  "input_standard_messages": [
+    "IOSTANDARD setting provided for IOB_X0Y12 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y13 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y16 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y17 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y20 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y25 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y28 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y32 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y36 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y40 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y48 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y65 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y68 do not match its counterpart decoded from the fasm",
+    "IOSTANDARD setting provided for IOB_X0Y49 do not match its counterpart decoded from the fasm"
+  ],
+  "output_standard_drive_slew_messages": [
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y5 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y6 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y11 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y14 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y15 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y18 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y19 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y26 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y27 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y31 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y35 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y39 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y43 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y47 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y72 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y82 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y84 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y86 do not match their counterparts decoded from the fasm",
+    "IOSTANDARD+DRIVE+SLEW settings provided for IOB_X0Y88 do not match their counterparts decoded from the fasm"
+  ],
+  "missing_monitor_table": "MONITOR_BOT_PELE1_X67Y79"
+}

@@ -145,7 +145,14 @@ fn validate(seconds: u64, exponents: [i32; 2]) -> Result<()> {
 
 pub fn read(path: &Path) -> Result<PoolInput> {
     ensure!(fs::metadata(path)?.len() <= 4096, "pool input bound");
-    let input: PoolInput = serde_json::from_reader(File::open(path)?.take(4097))?;
+    let mut bytes = Vec::new();
+    File::open(path)?.take(4097).read_to_end(&mut bytes)?;
+    parse(&bytes)
+}
+
+pub fn parse(bytes: &[u8]) -> Result<PoolInput> {
+    ensure!(bytes.len() <= 4096, "pool input bound");
+    let input: PoolInput = serde_json::from_slice(bytes)?;
     input.response_policy()?;
     input.session_limit()?;
     validate(input.seconds, input.difficulty_exponents)?;

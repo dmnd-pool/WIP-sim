@@ -919,6 +919,7 @@ mod tests {
     #[test]
     fn malformed_recipe_is_an_error_not_a_panic() {
         let mut spec = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,

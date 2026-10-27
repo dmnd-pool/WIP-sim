@@ -1,0 +1,26 @@
+{
+  "id": "source-prjxray-c9f02d-bitstream",
+  "url": "https://raw.githubusercontent.com/f4pga/prjxray/c9f02d8576042325425824647ab5555b1bc77833/prjxray/bitstream.py",
+  "kind": "source",
+  "title": "Pinned upstream Project X-Ray feature oracle bitstream.py",
+  "language": "en",
+  "source_id": "prjxray-feature-oracle-c9f02d",
+  "license": "ISC",
+  "retrieved_at": "2026-10-26T17:37:16.446541+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/bitstream.py",
+  "sha256": "c87a2dce80b5c4edc8b418fb1722d5621c6ae214430517190ca308e5498a6d0f",
+  "size_bytes": 3552,
+  "executed": false,
+  "scope": "supporting-tool",
+  "git_commit": "c9f02d8576042325425824647ab5555b1bc77833",
+  "repository": "https://github.com/f4pga/prjxray",
+  "response_headers": {
+    "path": "artifacts/files/source/source-prjxray-oracle-c9f02d/bitstream.py.headers",
+    "sha256": "c6e01d9b51f17c3098441c084fefefdb5432d1534f72e04289464ef68f2b1544",
+    "size": 900
+  },
+  "notes": [
+    "Unmodified upstream reference algorithm. No execution on host. Isolated oracle execution results are separate. The package __init__.py is a valid zero-byte upstream file."
+  ]
+}

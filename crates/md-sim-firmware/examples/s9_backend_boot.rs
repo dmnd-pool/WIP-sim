@@ -90,6 +90,7 @@ fn main() -> Result<()> {
         argv.extend(["-d", "in_asm,int"].into_iter().map(str::to_string));
     }
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

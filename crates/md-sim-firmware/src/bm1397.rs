@@ -6,6 +6,7 @@
 //! chip or board. Shared-engine work conversion is separate from the model.
 use serde::Serialize;
 pub mod core_control;
+pub mod core_readback;
 mod filter;
 mod identify;
 mod reply;

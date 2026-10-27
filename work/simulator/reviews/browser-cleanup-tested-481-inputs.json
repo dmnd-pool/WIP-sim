@@ -1,0 +1,55 @@
+{
+  "schema": "md-sim-browser-cleanup-tested-checkpoint/1",
+  "state": "tested_locked_plan_ready_independent_pair_review_pending",
+  "deletion_executed": false,
+  "files": {
+    "work/simulator/reviews/browser-cleanup-tested-481.md": {
+      "sha256": "9eaa0c0cb0c53b180fa253e8d37211fa6efb94e6c4a9ddbb427fffb56d020073",
+      "size": 3629
+    },
+    "work/simulator/cleanup-browser-tools-481/inputs.json": {
+      "sha256": "fecf96edfc1aeea17d0d9517151815bac52a430cb6b5880f5b28ccacb9008fe6",
+      "size": 3739
+    },
+    "work/simulator/cleanup-browser-481/inventory.json": {
+      "sha256": "45e2daa654a5866cd97b0a7e8ccfad48fe63161378247b8d37a4315f274f9acb",
+      "size": 2008106
+    },
+    "work/simulator/cleanup-browser-481/plan.json": {
+      "sha256": "a966c83557e0512795f1cf6f6565df1ba7813c45dc95f45fb12ec0890e8621fd",
+      "size": 3896621
+    },
+    "work/simulator/cleanup-browser-481/retained-recovered-stores.json": {
+      "sha256": "decc6add6866c18afe9a2c78f442c7f258d1c608b89f4854078c05454a7fbfeb",
+      "size": 2620
+    },
+    "work/simulator/reviews/browser-duplicate-store-inventory-480.json": {
+      "sha256": "3e5255ca5461ce4c9dd20f0287c38642b217f70f30e81fc599577bac49fde836",
+      "size": 2007265
+    },
+    "work/simulator/checks-2026-10-26-001/browser-cleanup481-cli.log": {
+      "sha256": "6e8f3f82e3bf610ed967b335ae9032edf922b35107e2a7e292c053af46c4a87d",
+      "size": 175
+    },
+    "work/simulator/checks-2026-10-26-001/browser-cleanup481-clippy.log": {
+      "sha256": "11947001d0e7c991ec71242c430f66d700b7943a4e1c1c475a0950bb2ab97eec",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-26-001/browser-cleanup481-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-26-001/browser-cleanup481-plan.log": {
+      "sha256": "32e0a3d06876472c860b0dc2a5382714975cb80304930b94afc9d9cbdbbf122e",
+      "size": 121
+    },
+    "work/simulator/checks-2026-10-26-001/browser-cleanup481-release.log": {
+      "sha256": "9295bf0d1d632b132f479913acb846a018dd794d56db4edd9342f76128e133a1",
+      "size": 145
+    },
+    "work/simulator/checks-2026-10-26-001/browser-cleanup481-tests.log": {
+      "sha256": "c8d92f34da8a544e4cf85fe1c493d4abd6e15f013e6fb04ab3f29b17e8aecbd4",
+      "size": 3009
+    }
+  }
+}

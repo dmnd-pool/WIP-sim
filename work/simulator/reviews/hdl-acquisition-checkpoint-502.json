@@ -1,0 +1,180 @@
+{
+  "state": "25 complete HDL source/metadata records, one failed partial gperf transfer and one complete unverified signature preserved. All affected archive/catalogue/index/link checks passed with failed source remaining failed. HDL build/execution has not started; paused after parent finishes freshCLI.",
+  "added_artifact_ids": [
+    "iverilog-tag-v12-0",
+    "iverilog-tag-object-d61ab44",
+    "unisim-head-20261026",
+    "unisim-tree-1c8e05f",
+    "source-unisim-1c8e05f-readme-md",
+    "source-unisim-1c8e05f-verilog-src-glbl-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-bufgctrl-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-carry4-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-fdre-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-fdse-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-ibuf-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-iobuf-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-lut6-2-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-muxf7-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-obuf-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-ps7-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-pulldown-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-pullup-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-ram32m-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-ramb36e1-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-srl16e-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-srlc16e-v",
+    "source-unisim-1c8e05f-verilog-src-unisims-srlc32e-v",
+    "iverilog-tree-4fd5291",
+    "source-iverilog-4fd5291"
+  ],
+  "header_copy_note": "Initial attempt assumed .json.headers; it failed before writing. Actual .headers files were then copied and checked byte for byte.",
+  "next_action": "Read hdl-validation-resume-502.md after the user resumes. Finish only gperf preservation/catalogue checks now. No HDL build or runtime while freshCLI500 runs or the pause remains active.",
+  "selected_vendor_source_bytes": 1239126,
+  "iverilog_archive_bytes": 2997829,
+  "recorded_at": "2026-10-26T21:11:33.066418+00:00",
+  "checks": {
+    "inspect": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-inspect.log",
+      "sha256": "06c887669d31f7f0ac1e23241cb7d2e9402b0ecac6a6bb4279d3d32c5cc94680",
+      "size": 1435,
+      "result": "pass"
+    },
+    "archive": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-archive.log",
+      "sha256": "261995052de9dd9a965fc85b4032bd1c51f639882044a72809b91c6cc4f1e1d1",
+      "size": 1724,
+      "result": "pass"
+    },
+    "coverage": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-coverage.log",
+      "sha256": "64e636fe9e301ced975ad78c65186542b833036ff17396e5680cb494db64b7f3",
+      "size": 95,
+      "result": "pass"
+    },
+    "catalog-build": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-catalog-build.log",
+      "sha256": "09098a76d2a8ca3b120497e2ae050f3d02c68a1977c788e521a846d721ab52b2",
+      "size": 2236,
+      "result": "pass"
+    },
+    "catalog-verify": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-catalog-verify.log",
+      "sha256": "ed10aea9d2a6652606493d86bf867ec76499c06b8e5265cb1c08d4902daffac4",
+      "size": 145,
+      "result": "pass"
+    },
+    "archive-index": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-archive-index.log",
+      "sha256": "f95d52c6295f4284cdd0f7fb1b59c97aead2937608b17f6ce6058e17fceef01e",
+      "size": 270,
+      "result": "pass"
+    },
+    "document-index": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-document-index.log",
+      "sha256": "a231a0e5cd167f80125019e0ab38bf8e1a57320ddcd5d55c5455e00ac4351950",
+      "size": 311,
+      "result": "pass"
+    },
+    "links": {
+      "path": "work/simulator/checks-2026-10-26-001/hdl502-links.log",
+      "sha256": "1bfb8c25b668e64c8824e56bb8583596bb53f842a7c41864d4098a74893e8d85",
+      "size": 176,
+      "result": "pass"
+    }
+  },
+  "catalogue_records": 13984,
+  "incremental_archive_bytes_read": 5835312,
+  "iverilog": {
+    "revision": "4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf",
+    "tag": "v12_0",
+    "tag_object": "d61ab44c8a62d10dc80c3ae219387de04b7217c7",
+    "archive": "artifacts/files/source/source-iverilog-4fd5291/md-sim-iverilog-source-502.tar.gz",
+    "archive_sha256": "690f02e6fd0e0c05e4768bcb65a2c7f1b64d20289344d1ad3ccfb69bae8bd55b",
+    "archive_size": 2997829,
+    "audit": "work/simulator/reviews/iverilog-original-tree-audit-502.json",
+    "blob_count": 5050,
+    "source_bytes": 14836990,
+    "missing": [],
+    "symlinks": []
+  },
+  "vendor_library": {
+    "revision": "1c8e05fd1e9a79ceb8b996a0996674122eed086f",
+    "selected_inputs": "work/simulator/reviews/unisim-selected-results-502.json",
+    "source_files": 19,
+    "source_bytes": 1239126,
+    "models": [
+      "LUT6_2",
+      "FDRE",
+      "FDSE",
+      "CARRY4",
+      "SRLC32E",
+      "SRL16E",
+      "MUXF7",
+      "OBUF",
+      "RAMB36E1",
+      "IBUF",
+      "RAM32M",
+      "PULLDOWN",
+      "SRLC16E",
+      "PULLUP",
+      "IOBUF",
+      "BUFGCTRL",
+      "PS7"
+    ],
+    "ps7_behavior": "Vendor PS7.v line5167 explicitly has no behavioral processor model; structural shell only. QEMU/explicit component AXI test boundary required; no invented drive or tie-off."
+  },
+  "gperf": {
+    "state": "Original source transfer failed_partial; separate signature saved but unverified; no build or retry while paused",
+    "record": "work/simulator/reviews/gperf-original-preserved-502.json",
+    "artifacts": [
+      "source-gperf-3-1-partial-502",
+      "gperf-3-1-signature-502"
+    ],
+    "next_action": "Fetch a fresh complete source archive after user resumes, check original source identity and signature; preserve failed bytes."
+  },
+  "resume_guide": "work/simulator/reviews/hdl-validation-resume-502.md",
+  "gperf_catalogue_checks": {
+    "inspect": {
+      "path": "work/simulator/checks-2026-10-26-001/gperf502-inspect.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "result": "pass"
+    },
+    "archive": {
+      "path": "work/simulator/checks-2026-10-26-001/gperf502-archive.log",
+      "sha256": "2a2e84ecb622a259993912b908ab6bfcf8374f3e2bf1d60bb3b376c4f391d034",
+      "size": 1719,
+      "result": "pass"
+    },
+    "coverage": {
+      "path": "work/simulator/checks-2026-10-26-001/gperf502-coverage.log",
+      "sha256": "ab615e4d59fd79ff1af4d788fb891944e1281b55b97dad77a79f7eb60e3b3153",
+      "size": 95,
+      "result": "pass"
+    },
+    "failures": {
+      "path": "work/simulator/checks-2026-10-26-001/gperf502-failures.log",
+      "sha256": "e84e371a58147e1b7f89a35dbd0b7d7599203e246a7aa174d9aea517c29bc03f",
+      "size": 614,
+      "result": "pass"
+    },
+    "build": {
+      "path": "work/simulator/checks-2026-10-26-001/gperf502-build.log",
+      "sha256": "eb29ca18dc3a46c18f2b9f8bd1ec29cb38e61c09edf25e91b19e6f6427240d3f",
+      "size": 2236,
+      "result": "pass"
+    },
+    "verify": {
+      "path": "work/simulator/checks-2026-10-26-001/gperf502-verify.log",
+      "sha256": "9511714a46270df939c88989c6e6a6182cf354e33e1468d37e50442da1ecc6d7",
+      "size": 145,
+      "result": "pass"
+    },
+    "links": {
+      "path": "work/simulator/checks-2026-10-26-001/gperf502-links.log",
+      "sha256": "1bfb8c25b668e64c8824e56bb8583596bb53f842a7c41864d4098a74893e8d85",
+      "size": 176,
+      "result": "pass"
+    }
+  }
+}

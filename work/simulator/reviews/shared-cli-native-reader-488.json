@@ -1,0 +1,33 @@
+{
+  "scope": "CLI evidence reader correction. The currently pinned CLI native cohort remains failed. No native suite or full CLI pass.",
+  "finding": "Real native479 assessment is49409766bytes and exceeds the generic16MiB smallreport bound.",
+  "change": "Typed streaming assessment reader,128MiB file/read bound,O_NOFOLLOW,regularfile check,duplicate/missingfield rejection. Embedded artifact payloads are skipped. Native completion still requires all verdict flags and matching support spec/result hashes. Final identity joins outer support execution and complete native lock; no cache reuse.",
+  "tests": {
+    "ordinary_passed": 7,
+    "retained_failed_native_report_reader_passed": 1,
+    "clippy": "passed"
+  },
+  "files": {
+    "crates/md-sim/src/demo_shared.rs": {
+      "sha256": "f9a75d08af31b6087e0b801ffcefaf29787d02477691000694547bd8cc636b61",
+      "size": 28196
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-tests.log": {
+      "sha256": "a75d048b4768eccff5971e8e7073b4c0bd1d6e612d7195826e6b7ff7acc0ca1b",
+      "size": 1277
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-retained479.log": {
+      "sha256": "be99e1e6b4ab9cbfb825b92dbfda1d71e5863eca980006a64ca4c686110e20cc",
+      "size": 365
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-clippy.log": {
+      "sha256": "27116b1595cd763d484e2763fba679ef4ea8db3b35786e7fd895e45ebc8c5e2b",
+      "size": 206
+    },
+    "work/simulator/network-vm/native-browser-479/assessment.json": {
+      "sha256": "ac006b66909faffa687f6e14e3ec920ff98ec33a93fd5f0271b514a6c9e3af75",
+      "size": 49409766
+    }
+  },
+  "independent_review": "pending browser agent"
+}

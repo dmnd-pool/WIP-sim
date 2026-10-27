@@ -1,0 +1,53 @@
+{
+  "scope": "Pinned database inputs for selected S9 FPGA logic/routing reconstruction; no broad mirror. Expected hashes from maintainer Info.md; hash match does not prove board behavior.",
+  "jobs": [
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/segbits_clbll_l.db",
+      "destination": "/tmp/md-sim-prjxray471-segbits_clbll_l.db",
+      "max_bytes": 33554432,
+      "expected_sha256": "9bf6bdffdc814569a7da53c696e46207aab23ea66c9dd92c47e50a6211dd739b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/segbits_clbll_r.db",
+      "destination": "/tmp/md-sim-prjxray471-segbits_clbll_r.db",
+      "max_bytes": 33554432,
+      "expected_sha256": "c2ac0aeafc4d1e528e743c49fc00eba3b8b49068f034a4c0ab82df5dd9fb683b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/segbits_clblm_l.db",
+      "destination": "/tmp/md-sim-prjxray471-segbits_clblm_l.db",
+      "max_bytes": 33554432,
+      "expected_sha256": "07dca7c6b00f07a2a255f5178153c42bf16aff202623f2e3bc4bb0f2b974ba41"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/segbits_clblm_r.db",
+      "destination": "/tmp/md-sim-prjxray471-segbits_clblm_r.db",
+      "max_bytes": 33554432,
+      "expected_sha256": "3ddfeca1b01bdc04b4f1b3d0dc73cf39f4230708fbbcb5b6170d5b50dc49ad64"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/segbits_int_l.db",
+      "destination": "/tmp/md-sim-prjxray471-segbits_int_l.db",
+      "max_bytes": 33554432,
+      "expected_sha256": "0ea44e8dfaf97ed200f30b2afe117e94e1a68bdb26af2e09e69e855414779520"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/segbits_int_r.db",
+      "destination": "/tmp/md-sim-prjxray471-segbits_int_r.db",
+      "max_bytes": 33554432,
+      "expected_sha256": "1541c7832dd161c5b3b5745d08fe0ee6f92bfbd372b76c12f54afc032c888556"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/xc7z010/tileconn.json",
+      "destination": "/tmp/md-sim-prjxray471-tileconn.json",
+      "max_bytes": 33554432,
+      "expected_sha256": "e6d0ebf9b27f60f4afdab85a357bff4d7cf2cd77c3a6c0f2d887022cda874066"
+    },
+    {
+      "url": "https://api.github.com/repos/f4pga/prjxray-db/commits?path=zynq7/xc7z010/tilegrid.json&per_page=1",
+      "destination": "/tmp/md-sim-prjxray471-tilegrid-commit.json",
+      "max_bytes": 1048576,
+      "expected_sha256": null
+    }
+  ]
+}

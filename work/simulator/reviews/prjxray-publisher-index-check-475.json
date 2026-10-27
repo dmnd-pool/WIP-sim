@@ -1,0 +1,76 @@
+{
+  "schema": "md-sim-publisher-database-check/1",
+  "database_revision": "0a0addedd73e7e4139d52a6d8db4258763e0f1f3",
+  "index": {
+    "path": "artifacts/files/metadata/prjxray-db-info-0a0addedd73e/Info.md",
+    "sha256": "3bd7c78cd80e32ded5ebc859c58eeec0df57e37eeb4240ffeb0c69ac821bb901",
+    "size": 298881
+  },
+  "files": [
+    {
+      "publisher_path": "zynq7/xc7z010/tilegrid.json",
+      "local_path": "artifacts/files/metadata/prjxray-xc7z010-tilegrid-20261026/tilegrid.json",
+      "sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+      "size": 4351137,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/xc7z010clg400-1/part.json",
+      "local_path": "fixtures/fpga/xc7z010clg400-1/part.json",
+      "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+      "size": 16801,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/xc7z010/tileconn.json",
+      "local_path": "artifacts/files/metadata/prjxray-tileconn-json-20261026/tileconn.json",
+      "sha256": "e6d0ebf9b27f60f4afdab85a357bff4d7cf2cd77c3a6c0f2d887022cda874066",
+      "size": 10241414,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/segbits_clbll_l.db",
+      "local_path": "artifacts/files/metadata/prjxray-segbits-clbll-l-db-20261026/segbits_clbll_l.db",
+      "sha256": "9bf6bdffdc814569a7da53c696e46207aab23ea66c9dd92c47e50a6211dd739b",
+      "size": 27294,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/segbits_clbll_r.db",
+      "local_path": "artifacts/files/metadata/prjxray-segbits-clbll-r-db-20261026/segbits_clbll_r.db",
+      "sha256": "c2ac0aeafc4d1e528e743c49fc00eba3b8b49068f034a4c0ab82df5dd9fb683b",
+      "size": 27294,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/segbits_clblm_l.db",
+      "local_path": "artifacts/files/metadata/prjxray-segbits-clblm-l-db-20261026/segbits_clblm_l.db",
+      "sha256": "07dca7c6b00f07a2a255f5178153c42bf16aff202623f2e3bc4bb0f2b974ba41",
+      "size": 28171,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/segbits_clblm_r.db",
+      "local_path": "artifacts/files/metadata/prjxray-segbits-clblm-r-db-20261026/segbits_clblm_r.db",
+      "sha256": "3ddfeca1b01bdc04b4f1b3d0dc73cf39f4230708fbbcb5b6170d5b50dc49ad64",
+      "size": 28171,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/segbits_int_l.db",
+      "local_path": "artifacts/files/metadata/prjxray-segbits-int-l-db-20261026/segbits_int_l.db",
+      "sha256": "0ea44e8dfaf97ed200f30b2afe117e94e1a68bdb26af2e09e69e855414779520",
+      "size": 164493,
+      "matches_pinned_publisher_index": true
+    },
+    {
+      "publisher_path": "zynq7/segbits_int_r.db",
+      "local_path": "artifacts/files/metadata/prjxray-segbits-int-r-db-20261026/segbits_int_r.db",
+      "sha256": "1541c7832dd161c5b3b5745d08fe0ee6f92bfbd372b76c12f54afc032c888556",
+      "size": 160201,
+      "matches_pinned_publisher_index": true
+    }
+  ],
+  "status": "pass",
+  "limit": "File identity check, not database completeness, reconstructed logic or board acceptance."
+}

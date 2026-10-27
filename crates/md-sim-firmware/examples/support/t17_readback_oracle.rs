@@ -38,7 +38,7 @@ pub struct LoadSegment {
     pub flags: u32,
 }
 
-fn exact_copy(
+pub(super) fn exact_copy(
     executable: &[u8],
     bytes: &[u8],
     address: u32,

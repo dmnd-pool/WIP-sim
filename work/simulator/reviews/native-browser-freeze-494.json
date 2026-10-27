@@ -1,0 +1,223 @@
+{
+  "schema": "md-sim-native-browser-freeze/1",
+  "date": "2026-10-26",
+  "scope": "Final source/helper/prepared-input freeze for selected run495. Execution and browser acceptance are pending.",
+  "sources_verified": 523,
+  "release_helpers_verified": 12,
+  "native_input_mappings_verified": 46,
+  "firmware": "Braiins S9 2022-04-29-0-5eb2c5fe-22.02.4-plus; original SD image; adapted reference environment",
+  "retained_failed_runs": [
+    "work/simulator/network-vm/native-browser-469",
+    "work/simulator/network-vm/native-browser-479",
+    "work/simulator/network-vm/native-browser-487",
+    "work/simulator/network-vm/kvm-trace-prerequisite-489",
+    "work/simulator/network-vm/native-browser-492"
+  ],
+  "native_limits": {
+    "wall_seconds": 360,
+    "cpu_seconds": 330,
+    "memory_bytes": 3221225472,
+    "pool_seconds": 300,
+    "observation_seconds": 305,
+    "hash_cap_hps": 10,
+    "fixed_filter_bits": 1
+  },
+  "support_browser_policy": {
+    "before_worker_dispatch": true,
+    "preparation_seconds": 650,
+    "profiles": 2,
+    "per_profile_startup_seconds": 300,
+    "qemu_vcpus": 2,
+    "qemu_guest_memory_mib": 4096,
+    "outer_memory_gib": 6,
+    "verification_order": "native-dom-accepted-work-then-websocket-then-fresh-profile-isolation",
+    "graph_phase_evidence": "Bounded query SHA-256, phase and timing console records; no query text or credentials.",
+    "qemu_accelerator": "kvm",
+    "qemu_cpu": "Nehalem-v1,enforce",
+    "automatic_accelerator_fallback": false,
+    "cache_eligible": false,
+    "native_clock_policy": "Locked native ProcessSpec MD_SIM_S9_HOST_REALTIME_CLOCK=1; both live and retained checks require all uptime samples within the browser request interval plus/minus5000ms.",
+    "output_transport": "Validated blocking md-sim.trace virtserialport for support guest stdout/stderr; kernel UART retained in separate host stderr. Existing worker/control and receipt ports remain separate.",
+    "receipt_max_bytes": 4096,
+    "native_dom_readiness_seconds": 60,
+    "websocket_seconds": 20,
+    "websocket_delivery_seconds": 25,
+    "positive_accepted_work_assertions_unchanged": true
+  },
+  "run_output": "work/simulator/network-vm/native-browser-495",
+  "command": "work/simulator/channel-target-494/release/examples/worker_channel_probe work/simulator/channel-target-494/release/md-sim-worker-ipc work/simulator/qemu-s9/backend-build-485-pool-kvm work/simulator/network-vm/native-browser-495 prepared=work/simulator/qemu-s9/native-browser-prepared-494 ssh-helper=work/simulator/channel-target-494/release/examples/remote_namespace_check ssh-browser-payload=work/simulator/network-vm/native-driver-024/payload.json support-accel=kvm",
+  "limits": [
+    "Native backend343 remains its separately pinned build. Support backend485 was separately rebuilt with KVM and UBSan from recorded inputs.",
+    "Ignored helper entries are not execution passes. Explicit host KVM and actual retained-reader checks have separate logs.",
+    "The clock adaptation requires actual original guest date/readback and both browser-origin comparisons. These are not inferred from preparation.",
+    "The support accelerator and host receipt join the complete native identity. Neither grants reuse based only on the native lock.",
+    "No original-board, exact physical target, remote physical-host or full-matrix pass is claimed.",
+    "Trace stress and ordinary worker transport pass. Failed487 browser results could not be recovered; they remain unknown. Selected495 must independently pass all browser and mining gates.",
+    "Failed492 retained all joined artifacts but failed the browser positive-share assertion before clock/TLS-browser/isolation gates. Complete-result-exported remains false. The new run must independently pass; source tests do not establish its result."
+  ],
+  "workspace_baseline_checks": {
+    "formatting": "pass",
+    "strict_clippy": "pass",
+    "suites": 116,
+    "passed": 1033,
+    "failed": 0,
+    "ignored_declared_entries": 49,
+    "note": "Final source includes accepted-work DOM readiness before the unchanged WebSocket sample gate. Focused browser/remote/worker checks passed188 tests with11 declared ignored entries. All prior failed attempts remain failures."
+  },
+  "native_comparison_to_491": {
+    "argv_unchanged": true,
+    "limits_unchanged": true,
+    "environment_unchanged": true,
+    "changed_input_mounts": [
+      "/private-pool.json",
+      "/shared-pool.json",
+      "/carrier-dashboard.json"
+    ]
+  },
+  "input_files": {
+    "work/simulator/core-checkpoint-494/manifest.json": {
+      "sha256": "320e690d1aceb0c99c44270af8600259d32a43ec0f275de69ae68c074149f731",
+      "size": 88784
+    },
+    "work/simulator/channel-target-494/SHA256SUMS": {
+      "sha256": "1defe4a6699e79d1dccb5ee750b452d17d751dbb238480fbb14befd9f6f4ad08",
+      "size": 1189
+    },
+    "work/simulator/channel-target-494/shared-pool.json": {
+      "sha256": "c29c72fd463c733537601227b2a45a2ca18fd1353aa24638f3da091ce66e8063",
+      "size": 930
+    },
+    "work/simulator/channel-target-494/carrier-dashboard.json": {
+      "sha256": "b96595c25238ebd5f6216962ce6fc4dde72e299fb1cd5d272039d0866389a053",
+      "size": 489
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/process-spec.json": {
+      "sha256": "a3247419fe950dc9e6353a6adfbfb4ba73e5fd909b1d30d3dcdba3926a4e9b89",
+      "size": 11264
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/adaptation.json": {
+      "sha256": "4637ac92c53fc2a1b814e9e9f2852a38443241c065cb82700aa043b55787ad0c",
+      "size": 19553
+    },
+    "work/simulator/network-vm/native-driver-024/payload.json": {
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    "work/simulator/qemu-s9/backend-build-343-ubsan/build-report.json": {
+      "sha256": "37e935d23b6d80376c782645174fb42fb37f7bb926b928987acac1aa0c1b2226",
+      "size": 2668873
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/build-report.json": {
+      "sha256": "72b57d50537e15e8403717b00db3cee0548abb64abd436644c88f285ff520b8c",
+      "size": 2458312
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/qemu-system-x86_64": {
+      "sha256": "06f21bb63d603b323f36f772c8b288cb044df68e8db88bac46b1f86ae1ff66d6",
+      "size": 20082048
+    },
+    "work/simulator/reviews/native-browser-failure-469.json": {
+      "sha256": "845753db6e3e4393a6f987f45d1849bee9cf4d64f1d40c865cf08d37d7572c07",
+      "size": 4992
+    },
+    "work/simulator/reviews/native-browser-failure-479.json": {
+      "sha256": "b4e75fc25b489628408a4741fe842eb8ac83fa6161a607a81eb1ae901a94c3bd",
+      "size": 9467
+    },
+    "work/simulator/reviews/browser-clock-enforcement-483.json": {
+      "sha256": "9d5cc274817aa940fbe2bdbca58a3d9f9f35a8b6bffc55a3223fe2de56cf9335",
+      "size": 3643
+    },
+    "work/simulator/reviews/support-kvm-independent-484.json": {
+      "sha256": "6999975a7715f295217b9ab41c83b430e0d1a9c1a162d622f2e6da7610e58193",
+      "size": 6062
+    },
+    "work/simulator/reviews/kvm-boot-build-independent-485.json": {
+      "sha256": "b83f154ceae2f85e7aa666713afdb8b5295605cee1c3555524c2efbf2da4c31d",
+      "size": 2789
+    },
+    "work/simulator/reviews/shared-cli-independent-488.json": {
+      "sha256": "d3f979e6758c44f9396171591e4189eba6b0572f702c5d66aa4f62fa1433f722",
+      "size": 2355
+    },
+    "work/simulator/reviews/python-capture-regression-482.json": {
+      "sha256": "b0e1fe8c1bd32970a11932f5c8162631885126130d3f9bf5ddc67d2d2370adb5",
+      "size": 2147
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484e-root-actual.log": {
+      "sha256": "2d87239110ed2d1fd483543f9a42be173632633d044a29c9fb1028ef1e0e2900",
+      "size": 194
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-retained479.log": {
+      "sha256": "be99e1e6b4ab9cbfb825b92dbfda1d71e5863eca980006a64ca4c686110e20cc",
+      "size": 365
+    },
+    "work/simulator/reviews/native-browser-failure-487.json": {
+      "sha256": "f1101f7ab456f90f41b43ba2b08cdc908097dfc8ce2bb74d98a92fe3192b759e",
+      "size": 4742
+    },
+    "work/simulator/reviews/support-trace-independent-489b.json": {
+      "sha256": "997983a6ad2aa09f4d87696dfd89e48533e83bcef3c4bdb1c145c7632ccc9422",
+      "size": 4085
+    },
+    "work/simulator/reviews/worker-trace-independent-490.json": {
+      "sha256": "10dc84b988a5c50991de0cdb98120e0d65da7776e1b0f9e7f08b6fd79e57eb38",
+      "size": 4440
+    },
+    "work/simulator/reviews/trace-transport-independent-source-489.json": {
+      "sha256": "0bb3804d77ea5f9488d9975eac0ae900ac23d00826313e55e3fd34321e69adef",
+      "size": 3236
+    },
+    "work/simulator/reviews/trace-transport-independent-execution-489b.json": {
+      "sha256": "1851da9413870c4e23ae8632d8a412c8f7c3d2b15a7bddf2a40053ae1cf3621c",
+      "size": 2487
+    },
+    "work/simulator/reviews/worker-trace-faults-490.json": {
+      "sha256": "d2942ae4b5bac5d8914a195c7a9cca15a3208daea83c99307f6b6fa5910bc52e",
+      "size": 3365
+    },
+    "work/simulator/checks-2026-10-26-001/common494-bins.log": {
+      "sha256": "90c8a1a69c0155761cff4bfe0e61bbee007961d2b96729d2127c2e0c291489dd",
+      "size": 62
+    },
+    "work/simulator/checks-2026-10-26-001/common494-checkpoint.log": {
+      "sha256": "5368b63cba76fa6a36b5b0909d69dfbdd1b0733caed09d918a361a6a2bdad0f5",
+      "size": 48
+    },
+    "work/simulator/checks-2026-10-26-001/common494-clippy.log": {
+      "sha256": "cb8cca580ede4d5e0df05fe84fa5a26e183cc6ccde672cf49e80f3a19b41eaf6",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-26-001/common494-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-26-001/common494-guides.log": {
+      "sha256": "0147f4e28a41717c25481d246932c510651d163e06a1bcac7e75f3da1673ad12",
+      "size": 176
+    },
+    "work/simulator/checks-2026-10-26-001/common494-helpers.log": {
+      "sha256": "a8d57f655e84887cea3a44b3d73b768484b7b6e204d765b9ef50102a0322791e",
+      "size": 146
+    },
+    "work/simulator/checks-2026-10-26-001/common494-preparation.log": {
+      "sha256": "d884b62f17c327af977fe751aa866b9737aec8e5222ccee31692842f62431b63",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-26-001/common494-tests.log": {
+      "sha256": "2115fdbb5f5cac03fd5cb4d7bf6200f452228dd264801f38b560dfdf4da45a9b",
+      "size": 128410
+    },
+    "work/simulator/checks-2026-10-26-001/browser494-focused-tests.log": {
+      "sha256": "8640be04aa4b6dcf949997100b7ecb45b6174bfb29faa59d2c0aef58f7203ff2",
+      "size": 20894
+    },
+    "work/simulator/reviews/native-browser-failure-492.json": {
+      "sha256": "9de9e344f50e232e2626e4469a6f478cb2195dad1e4588f4e6b1fcbe148a3374",
+      "size": 8608
+    },
+    "work/simulator/reviews/browser-readiness-source-independent-494.json": {
+      "sha256": "6b7ad07cbad0f08a5c3a930c2e7c93748e72ac73edf7fd08840cafc0ea2c0449",
+      "size": 1689
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scope": "recovered mining and Core; original access/browser remain failed; no new firmware execution",
+  "files": [
+    {
+      "path": "work/simulator/reviews/shared-recovery-copy-independent-461.json",
+      "sha256": "87b165559ae9a4539c6243dff80615635b05683d8f959e268e3e7e6d701ebc96",
+      "size": 10433
+    },
+    {
+      "path": "work/simulator/reviews/shared-recovery-mining-independent-461.json",
+      "sha256": "3c69ab722a0dc5238db91e8104ec34da220effe19720dc69e5bae0051fffa84e",
+      "size": 4480
+    },
+    {
+      "path": "work/simulator/reviews/shared-recovery-core-independent-466.json",
+      "sha256": "8bcc01f4c880a47cf7f2a762ea1bb02c8e1cd72f3cdd9b1497f6a760eba36834",
+      "size": 3340
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-453-recovered-461/recovery.json",
+      "sha256": "1ba6f6011b43a287b8cba511ebde0d73e9a62d57782c52f77be84f2e2d3e4590",
+      "size": 11625
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-453-recovered-461/execution/rate-audit461.json",
+      "sha256": "5873483d9dcd316aab116abdf39e755f26cefc16b933a2c36d32ce470b107054",
+      "size": 6372
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-453-recovered-461/execution/regtest-audit461.json",
+      "sha256": "6cb0f1363a702569ebb0411b7b773c5d0134d29e450981c879b6b6fd3c6e959c",
+      "size": 60661
+    },
+    {
+      "path": "work/simulator/bitcoin-core/recovered453-candidate0-466/block-acceptance.json",
+      "sha256": "bb249758e49d9184481dc7b6836b27b0b897a09a7679e0e367066df107f3f080",
+      "size": 1745
+    },
+    {
+      "path": "work/simulator/bitcoin-core/recovered453-candidate1-466/block-acceptance.json",
+      "sha256": "934dd3d3d6a2bb29ebffdb8d0f5a686d9a249c2676876cb8fb1ed3a125ce5a12",
+      "size": 1745
+    }
+  ]
+}

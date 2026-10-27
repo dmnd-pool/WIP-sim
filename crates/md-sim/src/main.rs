@@ -1,5 +1,6 @@
 mod catalog_commands;
 mod demo;
+mod demo_shared;
 mod source_manifest;
 
 use anyhow::{Context, Result};
@@ -80,6 +81,13 @@ enum Command {
 
 #[derive(Subcommand)]
 enum Demo {
+    /// Selected adapted S9: native SSH/TLS browser, fresh work and Core checks.
+    S9Shared {
+        #[arg(long, conflicts_with = "out")]
+        check: bool,
+        #[arg(long)]
+        out: Option<PathBuf>,
+    },
     /// Archived S9 firmware, private native browser, fresh mining and Core checks.
     S9 {
         /// Verify the frozen inputs without starting firmware.
@@ -195,6 +203,9 @@ fn dispatch(cli: Cli) -> Result<(Value, i32)> {
         Command::Demo {
             command: Demo::S9 { check, out },
         } => demo::s9(check, out),
+        Command::Demo {
+            command: Demo::S9Shared { check, out },
+        } => demo_shared::run(check, out),
         Command::Doctor { bitcoin_core } => {
             let report = doctor::inspect_with_core(bitcoin_core.as_deref());
             let code = if report["infrastructure_incomplete"] == true {

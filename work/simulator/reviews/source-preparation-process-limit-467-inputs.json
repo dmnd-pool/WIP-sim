@@ -1,0 +1,136 @@
+{
+  "status": "both actual isolated builds and focused checks passed",
+  "scope": "source-adapted preparation only; no original firmware or exact-target pass",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/src/prepare.rs",
+      "sha256": "7131fb4130b25f41d20e15e8f45507b225cb7a3ac47970cf0af3942dc735d7b3",
+      "size": 16403
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/freeze_cgminer_toolchain.rs",
+      "sha256": "bb668c5663e7c9f2d6f3e4f82105bab053647ade044c67d197058a475e2025a2",
+      "size": 32026
+    },
+    {
+      "path": "work/simulator/prepare-tools-467/cgminer-lab",
+      "sha256": "ed0a80da33952923b013ef8af9535fcd60eff6514dbf56c7dd0bf9c865c3cc41",
+      "size": 2192328
+    },
+    {
+      "path": "work/simulator/prepare-tools-467/freeze_cgminer_toolchain",
+      "sha256": "bc6713c7614e353d5a768ffb96d5302fa49302f375ddd18fcffc578311eb7b94",
+      "size": 1710936
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/prepare467-actual-frozen.log",
+      "sha256": "ae5fdac52651afc85ed33af3bf2eb719b49c01e40e2da856930ff07ab116a81b",
+      "size": 522
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/prepare467-actual-host.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/prepare467-clippy.log",
+      "sha256": "13089ce4652df37321b5a28d7c073c702d1c0d0b62ca5134ca46ce6103f547af",
+      "size": 392
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/prepare467-format.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/prepare467-freezer-tests.log",
+      "sha256": "a0970ec27d6a07c9b4f0d210811f23a8a65e358d7f724c217e3ea8d27fe6292f",
+      "size": 697
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/prepare467-tests.log",
+      "sha256": "4644f4c825733f09952d18f9ae6be1e20ec8e2c4a2b09215de2908b1786e37bd",
+      "size": 705
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/prepare467-build.log",
+      "sha256": "135de5f6deeeadc3af2ac59ca8e4c12575a25fea303db5896b861f37025eefe8",
+      "size": 146
+    },
+    {
+      "path": "work/simulator/firmware/prepared-host-467/adaptation-manifest.json",
+      "sha256": "a15914f53d7e6beaca1d362258f83bea8beb157087249c88c5b2eaa35f08ad68",
+      "size": 6471
+    },
+    {
+      "path": "work/simulator/firmware/prepared-host-467/preparation-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/firmware/prepared-host-467/input-manifest.json",
+      "sha256": "02109172cf93da7dc7d219f413a64ca922a8b5a7391c9d05d926cac99a9da9ef",
+      "size": 3891
+    },
+    {
+      "path": "work/simulator/firmware/prepared-host-467/adaptation.patch",
+      "sha256": "1cc3f80bbd223e9c7fa2c2313a306ce388f9c3c076de8c81360fea4308594f4b",
+      "size": 13406
+    },
+    {
+      "path": "work/simulator/firmware/prepared-host-467/build.log",
+      "sha256": "b15583b3ac855fbf6dcdb1973bb93d5557e6ee7d8d2b88d5266166881d7eb6f1",
+      "size": 48250
+    },
+    {
+      "path": "work/simulator/firmware/prepared-host-467/cgminer",
+      "sha256": "88602d125e46310d0e61f64622d50be25df285085c2fe09c63070d852c64a90a",
+      "size": 515224
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/closure-manifest.json",
+      "sha256": "e2eabd7bd16c22397c37cfbcfd0115223406f7850b5ad8f0733de6ac79e4d12a",
+      "size": 7144215
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/adaptation-manifest.json",
+      "sha256": "a15914f53d7e6beaca1d362258f83bea8beb157087249c88c5b2eaa35f08ad68",
+      "size": 6471
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/preparation-inputs.json",
+      "sha256": "0e0175afc8511df3098903b951a5472068aaa49e2ae626267d6edd14cdaf29a1",
+      "size": 1068
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/preparation-status.json",
+      "sha256": "9bbbf1ae8d564f9c17ee2d49497921b6c8aac8e9822df91b62df0eddb2595165",
+      "size": 345
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/preparation-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/input-manifest.json",
+      "sha256": "eecb0e9a09d58805cdba5b2ac71318953c194a810689f7564aa69dd05b619f65",
+      "size": 3703
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/adaptation.patch",
+      "sha256": "1cc3f80bbd223e9c7fa2c2313a306ce388f9c3c076de8c81360fea4308594f4b",
+      "size": 13406
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/build.log",
+      "sha256": "7dde52280a974431394d50ce9006ef585dc0ab60494fa2f1c8e4d393d5c58ec4",
+      "size": 48250
+    },
+    {
+      "path": "work/simulator/firmware/prepared-closed-467/cgminer",
+      "sha256": "88602d125e46310d0e61f64622d50be25df285085c2fe09c63070d852c64a90a",
+      "size": 515224
+    }
+  ]
+}

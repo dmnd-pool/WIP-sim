@@ -1,0 +1,29 @@
+{
+  "schema": "md-sim-fresh-cli-ready/1",
+  "source_checks_passed": true,
+  "preparation498_passed": true,
+  "cli_input_check_passed": true,
+  "full_cli500_result": "pending actual execution; no pass inferred",
+  "cli_build": {
+    "path": "work/simulator/cli-tools-500/build.json",
+    "object": {
+      "sha256": "9278fee813a7bea8684e0d79bff9c202a9bb59634c4b8f46530d2bc3372af423",
+      "size": 2648
+    }
+  },
+  "cli_check": {
+    "path": "work/simulator/checks-2026-10-26-001/common500-cli-check.json",
+    "object": {
+      "sha256": "dc8283d6dfd74d022609bde06fc3a303ac0a8c1bfce3cdc3d0843d83a79ad727",
+      "size": 986
+    }
+  },
+  "cli_check_stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0
+  },
+  "command_checked": "work/simulator/cli-tools-500/md-sim demo s9-shared --check",
+  "next_command": "work/simulator/cli-tools-500/md-sim demo s9-shared --out NEW_OUTPUT",
+  "next_action": "Execute the full fresh CLI500 suite. Review its fresh receipt, selected native browser run, mining audits and both Core acceptances. Save the requested checkpoint and pause. Do not start unrelated work.",
+  "completion_limit": "The original-board, exact-target and full specification gates remain incomplete."
+}

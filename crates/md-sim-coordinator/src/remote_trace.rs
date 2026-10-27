@@ -152,6 +152,7 @@ mod tests {
 
     fn result(stdout: &[u8], stderr: &[u8]) -> ProcessResult {
         ProcessResult {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             dashboard: None,

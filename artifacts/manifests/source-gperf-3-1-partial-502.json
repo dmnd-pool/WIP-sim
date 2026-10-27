@@ -1,0 +1,27 @@
+{
+  "id": "source-gperf-3-1-partial-502",
+  "url": "https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz",
+  "kind": "source",
+  "title": "Failed partial GNU gperf3.1 source transfer; not a build input",
+  "language": "en",
+  "source_id": "gnu-gperf-3-1",
+  "license": "unknown",
+  "retrieved_at": "2026-10-26T21:09:47.276752+00:00",
+  "status": "failed",
+  "local_path": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.tar.gz.partial",
+  "sha256": "97f6d99dfb0e4c309821ad512a74cb4d350bc15dcce744dec008365430a1e303",
+  "size_bytes": 847474,
+  "executed": false,
+  "scope": "supporting-tool",
+  "response_headers": {
+    "local_path": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.headers",
+    "sha256": "da3811f0207c3cdcc7c8fa5e17140d55e579e478a9e2f94d0c63478f5da34af8",
+    "size_bytes": 718
+  },
+  "signature_verification": "not performed",
+  "expected_size_from_http": 1215925,
+  "curl_exit_code": 28,
+  "error": "Operation timed out after40000 milliseconds with847474 of1215925 bytes received",
+  "complete": false,
+  "executable_build_input": false
+}

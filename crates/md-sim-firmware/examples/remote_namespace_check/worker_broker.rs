@@ -54,6 +54,7 @@ pub fn prepare(out: &Path, lock: &Path, objects: &Path, relay: &Path, veth: &Pat
         "/usr/bin/true",
         "/usr/bin/bwrap",
         "/usr/bin/unshare",
+        "/usr/bin/prlimit",
         "/usr/bin/ip",
         "/usr/bin/insmod",
         "/usr/bin/zstd",

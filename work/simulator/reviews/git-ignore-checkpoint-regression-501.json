@@ -1,0 +1,385 @@
+{
+  "schema": "md-sim-git-ignore-checkpoint-review/1",
+  "passed": true,
+  "scope": "Actual git check-ignore --no-index -q decisions for new source/checkpoint and protected payload/credential paths. No git add or commit. Existing and prospective paths are distinguished; no credential contents are read.",
+  "gitignore": {
+    "path": ".gitignore",
+    "sha256": "9359c62761d72ba9b90400300599f67e6c27c4928ba0f3990de709a01da55eea",
+    "size": 1822
+  },
+  "eligible_count": 14,
+  "excluded_count": 22,
+  "cases": [
+    {
+      "requested_path": "crates/md-sim-firmware/examples/t17_core_oracle.rs",
+      "git_entry_checked": "crates/md-sim-firmware/examples/t17_core_oracle.rs",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "crates/md-sim-firmware/examples/support/t17_pll_oracle.rs",
+      "git_entry_checked": "crates/md-sim-firmware/examples/support/t17_pll_oracle.rs",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "crates/md-sim-firmware/examples/s9_netlist_reconstruct.rs",
+      "git_entry_checked": "crates/md-sim-firmware/examples/s9_netlist_reconstruct.rs",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "crates/md-sim-firmware/src/bm1397/programmed.rs",
+      "git_entry_checked": "crates/md-sim-firmware/src/bm1397/programmed.rs",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "crates/md-sim-firmware/src/bm1397/programmed_tests.rs",
+      "git_entry_checked": "crates/md-sim-firmware/src/bm1397/programmed_tests.rs",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "simulator/firmware/fixtures/bm1397-pll-frequency-oracle.c",
+      "git_entry_checked": "simulator/firmware/fixtures/bm1397-pll-frequency-oracle.c",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "simulator/firmware/fixtures/bm1397-pll-frequency-oracle.ld",
+      "git_entry_checked": "simulator/firmware/fixtures/bm1397-pll-frequency-oracle.ld",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "simulator/firmware/fixtures/t17-pll-frequency-results.json",
+      "git_entry_checked": "simulator/firmware/fixtures/t17-pll-frequency-results.json",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "git_entry_checked": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": ".gitignore:53:!/work/simulator/reviews/bm1397-programmed-501.patch\twork/simulator/reviews/bm1397-programmed-501.patch"
+    },
+    {
+      "requested_path": "work/simulator/reviews/bm1397-programmed-checkpoint-501.json",
+      "git_entry_checked": "work/simulator/reviews/bm1397-programmed-checkpoint-501.json",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": ".gitignore:51:!/work/simulator/reviews/*.json\twork/simulator/reviews/bm1397-programmed-checkpoint-501.json"
+    },
+    {
+      "requested_path": "work/simulator/reviews/t17-pll-executed-496.md",
+      "git_entry_checked": "work/simulator/reviews/t17-pll-executed-496.md",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": ".gitignore:50:!/work/simulator/reviews/*.md\twork/simulator/reviews/t17-pll-executed-496.md"
+    },
+    {
+      "requested_path": "work/simulator/reviews/netlist-conversion-independent-execution-497.json",
+      "git_entry_checked": "work/simulator/reviews/netlist-conversion-independent-execution-497.json",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": ".gitignore:51:!/work/simulator/reviews/*.json\twork/simulator/reviews/netlist-conversion-independent-execution-497.json"
+    },
+    {
+      "requested_path": "simulator/gateway-client.sample.json",
+      "git_entry_checked": "simulator/gateway-client.sample.json",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": null
+    },
+    {
+      "requested_path": ".env.example",
+      "git_entry_checked": ".env.example",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": false,
+      "actual_ignored": false,
+      "exit_code": 1,
+      "matched_rule": ".gitignore:15:!.env.example\t.env.example"
+    },
+    {
+      "requested_path": "artifacts/files/firmware/open-gh-asset-475665897/esp-miner-factory-102-v2.14.2.bin",
+      "git_entry_checked": "artifacts/files/firmware/open-gh-asset-475665897/esp-miner-factory-102-v2.14.2.bin",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:25:/artifacts/files/\tartifacts/files/firmware/open-gh-asset-475665897/esp-miner-factory-102-v2.14.2.bin"
+    },
+    {
+      "requested_path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/lib.rs",
+      "git_entry_checked": "artifacts/files/source/source-bm13xx-d00c086",
+      "ancestor_symlink": "artifacts/files/source/source-bm13xx-d00c086",
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:25:/artifacts/files/\tartifacts/files/source/source-bm13xx-d00c086"
+    },
+    {
+      "requested_path": "work/simulator/bitaxe/t17-pll-oracle-496/result.json",
+      "git_entry_checked": "work/simulator/bitaxe/t17-pll-oracle-496/result.json",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/bitaxe/t17-pll-oracle-496/result.json"
+    },
+    {
+      "requested_path": "work/simulator/bitaxe/t17-pll-oracle-496/inputs/objects/ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+      "git_entry_checked": "work/simulator/bitaxe/t17-pll-oracle-496/inputs/objects/ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/bitaxe/t17-pll-oracle-496/inputs/objects/ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367"
+    },
+    {
+      "requested_path": "work/simulator/bitaxe/esp-qemu-build-017/qemu-system-xtensa",
+      "git_entry_checked": "work/simulator/bitaxe/esp-qemu-build-017/qemu-system-xtensa",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/bitaxe/esp-qemu-build-017/qemu-system-xtensa"
+    },
+    {
+      "requested_path": "work/simulator/bitaxe/t17-pll-driver-496/t17_core_oracle",
+      "git_entry_checked": "work/simulator/bitaxe/t17-pll-driver-496/t17_core_oracle",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/bitaxe/t17-pll-driver-496/t17_core_oracle"
+    },
+    {
+      "requested_path": "work/simulator/qemu-s9/netlist-selected-497/selected.v",
+      "git_entry_checked": "work/simulator/qemu-s9/netlist-selected-497/selected.v",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/qemu-s9/netlist-selected-497/selected.v"
+    },
+    {
+      "requested_path": "work/simulator/bm1397-programmed-501/programmed.rs",
+      "git_entry_checked": "work/simulator/bm1397-programmed-501/programmed.rs",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/bm1397-programmed-501/programmed.rs"
+    },
+    {
+      "requested_path": "work/simulator/bm1397-programmed-501/t17-pll-frequency-results.bin",
+      "git_entry_checked": "work/simulator/bm1397-programmed-501/t17-pll-frequency-results.bin",
+      "ancestor_symlink": null,
+      "exists": true,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/bm1397-programmed-501/t17-pll-frequency-results.bin"
+    },
+    {
+      "requested_path": "work/simulator/browser/profile-regression/Default/Cookies",
+      "git_entry_checked": "work/simulator/browser/profile-regression/Default/Cookies",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/browser/profile-regression/Default/Cookies"
+    },
+    {
+      "requested_path": "work/simulator/browser/profile-regression/Local State",
+      "git_entry_checked": "work/simulator/browser/profile-regression/Local State",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:45:/work/simulator/*\twork/simulator/browser/profile-regression/Local State"
+    },
+    {
+      "requested_path": "work/simulator/reviews/unapproved-arbitrary.patch",
+      "git_entry_checked": "work/simulator/reviews/unapproved-arbitrary.patch",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:49:/work/simulator/reviews/*\twork/simulator/reviews/unapproved-arbitrary.patch"
+    },
+    {
+      "requested_path": ".ssh/id_ed25519",
+      "git_entry_checked": ".ssh/id_ed25519",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:12:/.ssh/\t.ssh/id_ed25519"
+    },
+    {
+      "requested_path": ".aws/credentials",
+      "git_entry_checked": ".aws/credentials",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:9:/.aws/\t.aws/credentials"
+    },
+    {
+      "requested_path": ".codex/state.db",
+      "git_entry_checked": ".codex/state.db",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:10:/.codex/\t.codex/state.db"
+    },
+    {
+      "requested_path": ".env",
+      "git_entry_checked": ".env",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:13:.env\t.env"
+    },
+    {
+      "requested_path": ".env.local",
+      "git_entry_checked": ".env.local",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:14:.env.*\t.env.local"
+    },
+    {
+      "requested_path": "private.key",
+      "git_entry_checked": "private.key",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:17:*.key\tprivate.key"
+    },
+    {
+      "requested_path": "private.pem",
+      "git_entry_checked": "private.pem",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:18:*.pem\tprivate.pem"
+    },
+    {
+      "requested_path": "private.p12",
+      "git_entry_checked": "private.p12",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:19:*.p12\tprivate.p12"
+    },
+    {
+      "requested_path": "private.pfx",
+      "git_entry_checked": "private.pfx",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:20:*.pfx\tprivate.pfx"
+    },
+    {
+      "requested_path": "private.keystore",
+      "git_entry_checked": "private.keystore",
+      "ancestor_symlink": null,
+      "exists": false,
+      "expected_ignored": true,
+      "actual_ignored": true,
+      "exit_code": 0,
+      "matched_rule": ".gitignore:21:*.keystore\tprivate.keystore"
+    }
+  ],
+  "initial_check_error": {
+    "path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/lib.rs",
+    "exit_code": 128,
+    "stderr": "fatal: pathspec is beyond a symbolic link",
+    "resolution": "Git tracks the source archive symlink entry, not paths beyond it. The corrected command checks the exact ancestor symlink entry and requires it to be ignored; original archive contents remain untouched."
+  },
+  "notes": [
+    "The staged501 directory stays ignored. Its exact reviewed patch and compact JSON checkpoint are eligible instead.",
+    "The patch exception is exact: unrelated .patch files under reviews remain ignored.",
+    "Prospective browser cookie/profile and credential names exercise the actual ignore rules without creating private files."
+  ]
+}

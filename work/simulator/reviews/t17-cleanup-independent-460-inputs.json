@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "work/simulator/cleanup-t17-460/plan.json",
+      "sha256": "8ea8d5ea420c9b3099fc5c35b237c5447aaa1fa7ce4cc37a34ffffd16b47e473",
+      "size": 72155
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs.rs",
+      "sha256": "4d86816741673c5dd053c2edb5c0b51ae7bd33d240e6f3b98894b67063ef091d",
+      "size": 54553
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs/t17.rs",
+      "sha256": "dfdeb8bd695dde7155da5dc9bec3be09906abcd5150b5c35d0f065f9c451df6e",
+      "size": 14740
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs/t17_tests.rs",
+      "sha256": "a680d8b6ebe40496e8479e7d1d0e7a1f86d97f70dd9e37c070ffc07e93950abe",
+      "size": 23565
+    }
+  ],
+  "independently_hashed_duplicate_pairs": 128,
+  "bytes": 1623481881,
+  "removal_executed": false
+}

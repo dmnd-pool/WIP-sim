@@ -1,0 +1,25 @@
+{
+  "id": "tool-fasm-progressbar2-4-6-0",
+  "url": "https://files.pythonhosted.org/packages/70/4c/ba64c450164fa4feaa9c4bb1c6445811d89d6a1995bfc58d039273b698af/progressbar2-4.6.0-py3-none-any.whl",
+  "kind": "tool",
+  "title": "Pinned pure Python support dependency: progressbar2 4.6.0",
+  "language": "en",
+  "source_id": "pypi-progressbar2-4-6-0",
+  "license": "BSD-3-Clause",
+  "retrieved_at": "2026-10-26T18:58:35+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/tool-fasm-python-wheels-482/progressbar2-4.6.0-py3-none-any.whl",
+  "sha256": "2d78bdeb1debef92a39dd9042e0689542bd72d6e2f30b13432db371aa9d8ee4e",
+  "size_bytes": 104185,
+  "executed": false,
+  "scope": "supporting-tool",
+  "response_headers": {
+    "local_path": "artifacts/files/tool/tool-fasm-python-wheels-482/progressbar2-4.6.0-py3-none-any.whl.headers",
+    "sha256": "6609f766a73a63a4e909ce418d2bad08a649b4588c08d3212171d00bc16ef069",
+    "size_bytes": 1220
+  },
+  "package": "progressbar2",
+  "version": "4.6.0",
+  "acquisition_record": "work/simulator/reviews/fasm-wheel-results-482.json",
+  "execution_note": "Original wheel retained. No installer or package import ran on the host."
+}

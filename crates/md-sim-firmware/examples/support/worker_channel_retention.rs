@@ -50,9 +50,10 @@ pub fn start_relay() -> Result<()> {
                 .take((ACK_BOUND + 1) as u64)
                 .read_to_end(&mut bytes)?;
             ensure!(
-                !bytes.is_empty() && bytes.len() <= ACK_BOUND,
-                "receipt relay frame bound"
+                !bytes.is_empty(),
+                "receipt relay input ended before an acknowledgment"
             );
+            ensure!(bytes.len() <= ACK_BOUND, "receipt relay frame bound");
             ensure!(
                 bytes.last() == Some(&b'\n')
                     && bytes[..bytes.len() - 1].iter().all(|b| *b != b'\n'),
@@ -165,7 +166,17 @@ pub fn execute_with_receiver(
     std::thread::scope(|scope| {
         let run_cancel = cancel.clone();
         let run = scope.spawn(move || {
-            isolation::execute_with_streamed_input(store, spec, run_cancel, Some(trace), input)
+            if spec.support_virtualization.is_some() {
+                isolation::execute_support_vm_with_streamed_input(
+                    store,
+                    spec,
+                    run_cancel,
+                    Some(trace),
+                    input,
+                )
+            } else {
+                isolation::execute_with_streamed_input(store, spec, run_cancel, Some(trace), input)
+            }
         });
         let observed = (|| -> Result<()> {
             let mut pending = Vec::new();

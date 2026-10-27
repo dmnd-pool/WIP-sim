@@ -264,6 +264,11 @@ pub fn prepare(repo: &Path, out: &Path, ubsan: bool) -> Result<()> {
         "source archive SHA-256 mismatch"
     );
     let executable = std::env::current_exe()?.canonicalize()?;
+    let supervisor = json!({
+        "unshare":hash_file(Path::new("/usr/bin/unshare"))?,
+        "bwrap":hash_file(Path::new("/usr/bin/bwrap"))?,
+        "prlimit":hash_file(Path::new("/usr/bin/prlimit"))?,
+    });
     let mut command = Command::new("/usr/bin/unshare");
     command
         .args([
@@ -273,6 +278,11 @@ pub fn prepare(repo: &Path, out: &Path, ubsan: bool) -> Result<()> {
             "--mount",
             "--fork",
             "--kill-child",
+            // Set NPROC only after the user namespace exists, so unrelated
+            // host processes do not consume the builder's declared limit.
+            "/usr/bin/prlimit",
+            "--nproc=256",
+            "--",
             "/usr/bin/bwrap",
             "--die-with-parent",
             "--unshare-pid",
@@ -338,7 +348,6 @@ pub fn prepare(repo: &Path, out: &Path, ubsan: bool) -> Result<()> {
             for (kind, value) in [
                 (libc::RLIMIT_CPU, 120),
                 (libc::RLIMIT_AS, 2 * 1024 * 1024 * 1024),
-                (libc::RLIMIT_NPROC, 256),
                 (libc::RLIMIT_FSIZE, 64 * 1024 * 1024),
                 (libc::RLIMIT_CORE, 0),
             ] {
@@ -399,7 +408,8 @@ pub fn prepare(repo: &Path, out: &Path, ubsan: bool) -> Result<()> {
         "isolated preparation failed: {status}; {}",
         String::from_utf8_lossy(&stderr)
     );
-    let envelope: serde_json::Value = serde_json::from_slice(&stdout)?;
+    let mut envelope: serde_json::Value = serde_json::from_slice(&stdout)?;
+    envelope["manifest"]["preparation_supervisor"] = supervisor;
     let binary = hex::decode(
         envelope["binary_hex"]
             .as_str()

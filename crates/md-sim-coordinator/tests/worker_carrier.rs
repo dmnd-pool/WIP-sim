@@ -268,6 +268,7 @@ fn actual_worker_cli_carrier() {
             max_packets: 64,
         };
         let process = ProcessSpec {
+            support_virtualization: None,
             schema_version: "2.0".into(),
             namespace_uid: 0,
             argv: vec![
@@ -322,7 +323,7 @@ fn actual_worker_cli_carrier() {
                 .iter()
                 .map(|mount| (mount.guest_path.clone(), mount.object.clone()))
                 .collect(),
-            backend_tools: ["bubblewrap", "unshare"]
+            backend_tools: ["bubblewrap", "unshare", "prlimit"]
                 .into_iter()
                 .map(|name| {
                     (

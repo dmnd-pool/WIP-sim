@@ -1,0 +1,93 @@
+{
+  "schema": "md-sim-tilegrid-byte-audit/1",
+  "passed": true,
+  "method": "Independent Python standard-library SHA-256 and byte/bit counts against exact database, archived bit container and prior checked291 frame offsets. Every old frame hash and current input-store object also checked. No guest firmware or logic equivalence claim.",
+  "segments": 5746,
+  "tiles": 5686,
+  "database_tiles": 13440,
+  "types": {
+    "BRAM_L": 40,
+    "BRAM_R": 20,
+    "CFG_CENTER_MID": 1,
+    "CLBLL_L": 400,
+    "CLBLL_R": 300,
+    "CLBLM_L": 600,
+    "CLBLM_R": 900,
+    "CLK_BUFG_BOT_R": 1,
+    "CLK_BUFG_REBUF": 4,
+    "CLK_BUFG_TOP_R": 1,
+    "CLK_HROW_BOT_R": 1,
+    "CLK_HROW_TOP_R": 1,
+    "CMT_TOP_L_LOWER_B": 2,
+    "CMT_TOP_L_UPPER_T": 2,
+    "DSP_L": 20,
+    "DSP_R": 20,
+    "HCLK_CMT_L": 2,
+    "HCLK_IOI3": 2,
+    "HCLK_L": 32,
+    "HCLK_R": 32,
+    "INT_L": 1600,
+    "INT_R": 1600,
+    "MONITOR_BOT_PELE1": 1,
+    "RIOB33_SING": 4,
+    "RIOB33": 48,
+    "RIOI3_SING": 4,
+    "RIOI3_TBYTESRC": 8,
+    "RIOI3_TBYTETERM": 4,
+    "RIOI3": 36
+  },
+  "alias_segments": 8,
+  "unique_frame_words": 296576,
+  "unmapped_frame_words": 222968,
+  "repeated_word_associations": 177632,
+  "raw_set_bits_including_repeated_ranges_and_ECC": 549330,
+  "inputs": [
+    {
+      "path": "work/simulator/original-zynq/sd-bundle-291/boot/system.bit",
+      "sha256": "980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421",
+      "size": 2083858
+    },
+    {
+      "path": "work/simulator/qemu-s9/frames-selected-291/header.json",
+      "sha256": "a5e5a889a42bc929ff5c67cce88d5d60d2ef05c5682a6f1339cf1ec47128acbe",
+      "size": 649924
+    },
+    {
+      "path": "artifacts/files/metadata/prjxray-xc7z010-tilegrid-20261026/tilegrid.json",
+      "sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+      "size": 4351137
+    },
+    {
+      "path": "work/simulator/qemu-s9/tiles-selected-470/spec.json",
+      "sha256": "df1df797f3199b9e02a0f01227d6362643c2f42b68783183390d99d2cd3294cf",
+      "size": 2014
+    },
+    {
+      "path": "work/simulator/qemu-s9/tiles-selected-470/result.json",
+      "sha256": "f9c5e6cad33add44c87f75bab21684e76a53515bc46e4346ddb27340e4476ade",
+      "size": 5404862
+    },
+    {
+      "path": "work/simulator/qemu-s9/tiles-selected-470/header.json",
+      "sha256": "fa54db0ddafb98a6481ecdb8cc312a6e2c34e033027325338214200c61394ebb",
+      "size": 2702010
+    },
+    {
+      "path": "crates/md-sim-firmware/src/bitstream/series7/tilegrid.rs",
+      "sha256": "76d0cad2cca40815b38af1716c0c1bbd149882157fe5ca5f83ddb70a9dffd913",
+      "size": 12936
+    },
+    {
+      "path": "crates/md-sim-firmware/tests/series7_tilegrid.rs",
+      "sha256": "07aeb859975e708931b10a06a99948badd0fac0bccb31a639ffd43338fdfaf31",
+      "size": 2729
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_bitstream_probe.rs",
+      "sha256": "1272435a055301dbb7da3c92224d1acc0d41db6e70b0b4216121d42e0693c6e8",
+      "size": 7933
+    }
+  ],
+  "firmware_execution_gate": false,
+  "exact_board_gate": false
+}

@@ -101,6 +101,12 @@ fn inspect_elf(source: &Path) -> Result<String> {
             "ALL",
             "--remount-ro",
             "/",
+            // NPROC counts the real UID's processes, including unrelated
+            // host work. Apply it after trusted namespace setup has forked,
+            // but before readelf can parse any acquired bytes.
+            "/usr/bin/prlimit",
+            "--nproc=16",
+            "--",
             "/usr/bin/readelf",
             "--wide",
             "--program-headers",
@@ -110,7 +116,7 @@ fn inspect_elf(source: &Path) -> Result<String> {
         .env_clear()
         .stdin(Stdio::null())
         .stdout(Stdio::piped())
-        .stderr(Stdio::null());
+        .stderr(Stdio::piped());
     unsafe {
         command.pre_exec(|| {
             if libc::setpgid(0, 0) != 0 || libc::prctl(libc::PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0) != 0 {
@@ -119,7 +125,6 @@ fn inspect_elf(source: &Path) -> Result<String> {
             for (kind, value) in [
                 (libc::RLIMIT_CPU, 5),
                 (libc::RLIMIT_AS, 256 * 1024 * 1024),
-                (libc::RLIMIT_NPROC, 16),
                 (libc::RLIMIT_FSIZE, 0),
                 (libc::RLIMIT_CORE, 0),
             ] {
@@ -140,9 +145,19 @@ fn inspect_elf(source: &Path) -> Result<String> {
         .stdout
         .take()
         .context("missing ELF inspector output")?;
+    let stderr = child
+        .0
+        .stderr
+        .take()
+        .context("missing ELF inspector diagnostics")?;
     let reader = std::thread::spawn(move || -> std::io::Result<Vec<u8>> {
         let mut bytes = Vec::new();
         stdout.take(1024 * 1024 + 1).read_to_end(&mut bytes)?;
+        Ok(bytes)
+    });
+    let error_reader = std::thread::spawn(move || -> std::io::Result<Vec<u8>> {
+        let mut bytes = Vec::new();
+        stderr.take(65536 + 1).read_to_end(&mut bytes)?;
         Ok(bytes)
     });
     let start = Instant::now();
@@ -159,9 +174,13 @@ fn inspect_elf(source: &Path) -> Result<String> {
     let bytes = reader
         .join()
         .map_err(|_| anyhow::anyhow!("ELF inspector reader failed"))??;
+    let errors = error_reader
+        .join()
+        .map_err(|_| anyhow::anyhow!("ELF inspector diagnostic reader failed"))??;
     ensure!(
-        bytes.len() <= 1024 * 1024 && status.success(),
-        "ELF inspector failed or exceeded its output limit"
+        bytes.len() <= 1024 * 1024 && errors.len() <= 65536 && status.success(),
+        "ELF inspector failed or exceeded its output limit ({status}): {}",
+        String::from_utf8_lossy(&errors[..errors.len().min(2048)])
     );
     Ok(String::from_utf8(bytes)?)
 }
@@ -331,6 +350,7 @@ fn run_inner(
         hex::encode(seed)
     };
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -502,5 +522,37 @@ mod tests {
         }
         let tmp = tempfile::NamedTempFile::new().unwrap();
         assert!(trusted_library(tmp.path()).is_err());
+    }
+
+    #[test]
+    #[ignore = "requires Linux user/network/mount/PID namespaces, bwrap and readelf"]
+    fn isolated_elf_inspection_works_with_more_host_processes_than_parser_limit() -> Result<()> {
+        struct OwnedProcesses(Vec<std::process::Child>);
+        impl Drop for OwnedProcesses {
+            fn drop(&mut self) {
+                for child in &mut self.0 {
+                    let _ = child.kill();
+                    let _ = child.wait();
+                }
+            }
+        }
+        // Force the original failure even on a quiet CI user account. These
+        // owned trusted host sleepers never read or execute acquired code.
+        let mut owned = OwnedProcesses(Vec::new());
+        for _ in 0..24 {
+            owned
+                .0
+                .push(Command::new("/usr/bin/sleep").arg("30").spawn()?);
+        }
+        let metadata = inspect_elf(&std::env::current_exe()?)?;
+        ensure!(metadata.contains("LOAD"), "ELF program headers absent");
+        let malformed = tempfile::NamedTempFile::new()?;
+        fs::write(malformed.path(), b"not an ELF object")?;
+        let error = inspect_elf(malformed.path()).unwrap_err().to_string();
+        ensure!(
+            error.contains("ELF inspector failed") && error.contains("readelf:"),
+            "bounded tool diagnostic absent: {error}"
+        );
+        Ok(())
     }
 }

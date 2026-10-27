@@ -1,0 +1,26 @@
+{
+  "id": "source-prjxray-c9f02d-roi",
+  "url": "https://raw.githubusercontent.com/f4pga/prjxray/c9f02d8576042325425824647ab5555b1bc77833/prjxray/roi.py",
+  "kind": "source",
+  "title": "Pinned upstream Project X-Ray feature oracle roi.py",
+  "language": "en",
+  "source_id": "prjxray-feature-oracle-c9f02d",
+  "license": "ISC",
+  "retrieved_at": "2026-10-26T17:37:16.872410+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/roi.py",
+  "sha256": "e67b6beb88624d73e0d084130f4a1c606178bf7e16a2a4959460767c9f55b70b",
+  "size_bytes": 1988,
+  "executed": false,
+  "scope": "supporting-tool",
+  "git_commit": "c9f02d8576042325425824647ab5555b1bc77833",
+  "repository": "https://github.com/f4pga/prjxray",
+  "response_headers": {
+    "path": "artifacts/files/source/source-prjxray-oracle-c9f02d/roi.py.headers",
+    "sha256": "b0be29e8bc6175ba935728c32ff407b3935950f4e549d063b41c04e8ed4ae29d",
+    "size": 900
+  },
+  "notes": [
+    "Unmodified upstream reference algorithm. No execution on host. Isolated oracle execution results are separate. The package __init__.py is a valid zero-byte upstream file."
+  ]
+}

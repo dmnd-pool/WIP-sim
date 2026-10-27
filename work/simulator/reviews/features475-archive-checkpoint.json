@@ -1,0 +1,145 @@
+{
+  "schema": "md-sim-fpga-input-extension-checkpoint/1",
+  "manifest": {
+    "path": "simulator/firmware/s9-fpga-feature-inputs-475.json",
+    "sha256": "977644ea620fbee880b242f1342689ea8425fca2d7efbe5e6f4c3362909fe265",
+    "size": 10459
+  },
+  "tables": 28,
+  "new_artifact_records": 24,
+  "new_archive_bytes_checked": 3740859,
+  "archive_result": "pass",
+  "catalogue_artifact_count": 13609,
+  "checks": [
+    {
+      "path": "work/simulator/checks-2026-10-26-001/features475-inspect.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "result": "pass"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/features475-archive.log",
+      "sha256": "1b67d6eab5c93805e14d068836047fd97a541d920324b267d5fa6229923dc2be",
+      "size": 1677,
+      "result": "pass"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/features475-coverage.log",
+      "sha256": "45137306177a342d03dfcbb6b8bc85f31959fca5abea04586d4ec07d3d00ed1b",
+      "size": 95,
+      "result": "pass"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/features475-catalog-build.log",
+      "sha256": "c77f7ec2cf51d9f3c7562289754a76c47816003e8b666a9b66a3ffbd0e8f7b52",
+      "size": 2236,
+      "result": "pass"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/features475-catalog-verify.log",
+      "sha256": "3fff38c87fe4527a209efe5715c0c4f66213d3a990caaa3557cda9e7926be2e8",
+      "size": 145,
+      "result": "pass"
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/features475-guides.log",
+      "sha256": "6fe355501c130e3c1d0ab0d678a21da59620ebb6c733ebf0393a4090bc795d6e",
+      "size": 176,
+      "result": "pass"
+    }
+  ],
+  "execution_status": "static_probe_and_unchanged_upstream_comparison_pass",
+  "limitations": [
+    "Static data input extension only.",
+    "MONITOR_BOT_PELE1 lacks a feature table in the pinned index.",
+    "No firmware, reconstructed netlist, physical timing or exact-board acceptance claim."
+  ],
+  "execution": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 1111,
+    "trace_truncated": false
+  },
+  "command": "work/simulator/check-target-085/release/examples/s9_feature_probe simulator/firmware/s9-fpga-feature-inputs-475.json work/simulator/qemu-s9/features-selected-475",
+  "execution_inputs": {
+    "inspector": {
+      "sha256": "30e7e6cc0f5009b8c0e0930f9964a13795cbbc8bc158bef21ba9c58372c3163f",
+      "size": 2221800
+    },
+    "manifest": {
+      "sha256": "977644ea620fbee880b242f1342689ea8425fca2d7efbe5e6f4c3362909fe265",
+      "size": 10459
+    }
+  },
+  "outputs": [
+    {
+      "path": "work/simulator/qemu-s9/features-selected-475/spec.json",
+      "sha256": "32a169dd40bb1d3a6cdfb6c19b222b9f30c79b83608643940bc39a0390d4aa29",
+      "size": 7395
+    },
+    {
+      "path": "work/simulator/qemu-s9/features-selected-475/result.json",
+      "sha256": "983c773199936303ddf948f1cab0d5320252b663172da69268955970f5cbf82d",
+      "size": 87410763
+    },
+    {
+      "path": "work/simulator/qemu-s9/features-selected-475/features.json",
+      "sha256": "de5bd2fc59b037ae378d111ffdd9383e95729c30b464f0398efb79ae56dfb23e",
+      "size": 43704960
+    },
+    {
+      "path": "work/simulator/qemu-s9/features-selected-475/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  ],
+  "counts": {
+    "matched_features": 231546,
+    "all_zero_condition_matches": 18220,
+    "configuration_set_bits_excluding_ecc": 327095,
+    "set_bits_explained_by_matching_features": 327095,
+    "set_bits_without_matching_features": 0
+  },
+  "decoded_segments": 5745,
+  "real_alias_segments": 8,
+  "unresolved": [
+    {
+      "tile": "MONITOR_BOT_PELE1_X67Y79",
+      "tile_type": "MONITOR_BOT_PELE1",
+      "bus": "CLB_IO_CLK",
+      "required_database_type": "MONITOR_BOT_PELE1",
+      "reason": "missing_pinned_feature_database"
+    }
+  ],
+  "independent_oracle": {
+    "status": "pass",
+    "directory": "work/simulator/qemu-s9/feature-oracle-476b",
+    "outputs": [
+      {
+        "path": "work/simulator/qemu-s9/feature-oracle-476b/spec.json",
+        "sha256": "b2567162e81ad0fd516da17ed9866791dcc90e3d69d97f907ee53dc4423158ce",
+        "size": 155457
+      },
+      {
+        "path": "work/simulator/qemu-s9/feature-oracle-476b/result.json",
+        "sha256": "b50e27ab4d5278d2f66053a0af3e69d512c17a8435f1fc304cfffea0c53a5891",
+        "size": 3583255
+      },
+      {
+        "path": "work/simulator/qemu-s9/feature-oracle-476b/oracle.json",
+        "sha256": "6f45d724bf3561b2d2c8a86c3ac4aa43b66a2e27931b144763f78508892fef60",
+        "size": 1791206
+      },
+      {
+        "path": "work/simulator/qemu-s9/feature-oracle-476b/assessment.json",
+        "sha256": "4ef512e116bcc358c23fb079830eb328ed73dc24f5631b9d78d303a8ed7d1be3",
+        "size": 6554
+      },
+      {
+        "path": "work/simulator/qemu-s9/feature-oracle-476b/comparison-inputs.json",
+        "sha256": "07b906ee5d7f71bf63cc64843e314f312396089a5c23963936569a3c19cfc986",
+        "size": 782
+      }
+    ]
+  }
+}

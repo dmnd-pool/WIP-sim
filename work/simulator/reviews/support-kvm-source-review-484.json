@@ -1,0 +1,50 @@
+{
+  "schema": "md-sim-support-virtualization-source-review/1",
+  "status": "source_review_no_blocking_finding; tests_and_actual_VM_pending",
+  "reviewer": "root reviewed runtime; browser_resume reviewed launcher/confinement",
+  "files": {
+    "crates/md-sim-runtime/src/support_virtualization.rs": {
+      "sha256": "894ce47f412da824ea25b51fc83114cacbac1f4f0a71d24bca651a8c9c01f481",
+      "size": 7066
+    },
+    "crates/md-sim-runtime/src/isolation.rs": {
+      "sha256": "fb637faa44fa2d05ca9c7a83161502cd2c4ad59242920cd13c850f976cc0639c",
+      "size": 40390
+    },
+    "crates/md-sim-firmware/src/confinement.rs": {
+      "sha256": "dc454405244fa805c092e8c215cf8d30307439d08edabf9eeb7af84d6c0b53d8",
+      "size": 22866
+    },
+    "crates/md-sim-firmware/examples/isolated_network_vm.rs": {
+      "sha256": "106e60021a5891922256ac45c1e1a157cb73c9553f8ca0e118378b69f963ec63",
+      "size": 40040
+    },
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "a650554223be99db31a78ee6be02cf1a831c9d83547995cf0af69ccbcc3965a9",
+      "size": 38462
+    },
+    "crates/md-sim-firmware/examples/support/worker_channel_retention.rs": {
+      "sha256": "1f760669f099e2d254c628b21618d106d8aadc30ae20e0b6b76636ebfe41cb18",
+      "size": 9027
+    },
+    "crates/md-sim-firmware/examples/build_qemu_backend.rs": {
+      "sha256": "d87934fb1fbe287a195aa6697ac084d513ae7174fcb632eefcc9ef806dc726a1",
+      "size": 53540
+    }
+  },
+  "observations": [
+    "Only explicit trusted support APIs grant the fixed KVM node. Ordinary worker/firmware paths reject the request before device open.",
+    "The node must be character 10:232, API12; path/device/inode checks repeat before bind. No user path or descriptor exists in the request.",
+    "A fresh host kernel/CPU/boot receipt is retained with cache_eligible=false.",
+    "Support uses explicit kvm and x86-64-v2; there is no automatic fallback. Native ARM jobs retain separate limits and models.",
+    "Root prerequisite and nonroot shared-browser confinement require their existing namespaces, input mounts, process/resource limits and exact one-device capability.",
+    "The x86 support build enables KVM with an explicit report. The previous328 binary and ARM builds are unchanged."
+  ],
+  "open_checks": [
+    "Focused test failure: new fixture incorrectly expected root0 CapBnd=0. Actual root0 Prm/Eff0 and NoNewPrivs1 passed; preserve diagnostic.",
+    "Strict UID1000 capability tests and separate UID0 baseline comparison/denied-regain test are being added. No firmware assertion is relaxed.",
+    "Run actual isolated KVM device/stream tests and real Linux boot/TCP prerequisite.",
+    "Build exact custom x86 backend485 under the existing isolated build recipe and UBSan.",
+    "Run whole native/browser/mining/Core path486; existing failed479 remains failed."
+  ]
+}

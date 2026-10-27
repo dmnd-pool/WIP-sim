@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "scope": "Independent raw Stratum header reconstruction and retained Core acceptance for original failed-access492. No new firmware run, browser, exact target or original-board pass.",
+  "computed_hashes_checked_by_frozen_rust_auditor": 1660,
+  "raw_firmware_submissions_reconstructed": 12,
+  "accepted": 6,
+  "low_difficulty_rejections": 6,
+  "fresh_jobs": 2,
+  "clean_job_transition": true,
+  "difficulty_changes_verified": true,
+  "headers": [
+    {
+      "header_hex": "00008b3006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fe46a6dfa79dce4865de62f55b2ebf9200602a8ba7ae6a10b697b5a9ad81a129dc0b3df6affff7f2000000000",
+      "hash_display": "773aa66b02faa19d37ce6b10f99f17b603b8ed208cfff1e906c81f0248c70c18",
+      "accepted": true,
+      "job_id": "e261278ce90e7a2e-0",
+      "wire_elapsed_ns": "43223666993"
+    },
+    {
+      "header_hex": "0080de2c06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec0b3df6affff7f2000000000",
+      "hash_display": "2cc76361005c7562e83603b76de887ceec2fe3fb59245a796e294f0af7d64c95",
+      "accepted": true,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "64485201573"
+    },
+    {
+      "header_hex": "0000e53206226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec0b3df6affff7f2000000000",
+      "hash_display": "53b916b40164fd13f7f625853962b8147a96ccda9de63a44999151252f055c99",
+      "accepted": false,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "74201762917"
+    },
+    {
+      "header_hex": "00807b3706226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec0b3df6affff7f2000000000",
+      "hash_display": "3de6263101bd900d3e4de8dd63d33bae5dfed095717a92ba67b6f702965e20fc",
+      "accepted": true,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "81581741847"
+    },
+    {
+      "header_hex": "0000522506226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec1b3df6affff7f2000000000",
+      "hash_display": "452e52c502e0c4299ac5c1b2b51afa7f42c19f779b46ab261b81f15cdc4825d4",
+      "accepted": false,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "104883974622"
+    },
+    {
+      "header_hex": "00803c2806226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec1b3df6affff7f2000000000",
+      "hash_display": "0359397c00d5a7b9618546974fabe55d3f2d81052815bbd4b342ea132b06a8cf",
+      "accepted": true,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "109578501185"
+    },
+    {
+      "header_hex": "0080f42c06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec1b3df6affff7f2000000000",
+      "hash_display": "52afb79800e3596576e4424bee11307e55ac090a4404c115389ad13a9e8b8663",
+      "accepted": false,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "117170853087"
+    },
+    {
+      "header_hex": "0000b32d06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec1b3df6affff7f2000000000",
+      "hash_display": "441e00fe006e8fcc1220c2cde105fa1425b10dc50b9b67554c5b10294aeecfab",
+      "accepted": false,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "118375373821"
+    },
+    {
+      "header_hex": "0000312106226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec2b3df6affff7f2000000000",
+      "hash_display": "5e87649a032b8f7d4cdfc94e8d3340bc4a3efc61b1b804d15941ba9f520d9a15",
+      "accepted": false,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "150819981310"
+    },
+    {
+      "header_hex": "0000682f06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec2b3df6affff7f2000000000",
+      "hash_display": "507e212f03a98e0a299be9a2e24d11aaa243f2a2652b1de6bad5d902c7285c3a",
+      "accepted": false,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "173673607627"
+    },
+    {
+      "header_hex": "0080503406226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec2b3df6affff7f2000000000",
+      "hash_display": "1e37712e00c6b12ca162aa88ae455fb790962d6e4670e04dc1878f54965686a8",
+      "accepted": true,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "181576710475"
+    },
+    {
+      "header_hex": "0000de2606226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f96e25b3fbbedeebb02370fc71aabe627832ee5f14dba7133142fb637c84cc09ec3b3df6affff7f2000000000",
+      "hash_display": "10bdc0c60230ab17b83f96b44b57662eec6d3b3e31ecbcb3ceae27eaeb3f01ea",
+      "accepted": true,
+      "job_id": "e261278ce90e7a2e-1",
+      "wire_elapsed_ns": "212480523192"
+    }
+  ],
+  "core": [
+    {
+      "candidate": 0,
+      "block_hash": "773aa66b02faa19d37ce6b10f99f17b603b8ed208cfff1e906c81f0248c70c18",
+      "heights": [
+        0,
+        1,
+        1
+      ],
+      "node_generated_block": false,
+      "acceptance_path": "work/simulator/bitcoin-core/recovered492-candidate0-492/block-acceptance.json"
+    },
+    {
+      "candidate": 1,
+      "block_hash": "2cc76361005c7562e83603b76de887ceec2fe3fb59245a796e294f0af7d64c95",
+      "heights": [
+        0,
+        1,
+        1
+      ],
+      "node_generated_block": false,
+      "acceptance_path": "work/simulator/bitcoin-core/recovered492-candidate1-492/block-acceptance.json"
+    }
+  ],
+  "files": {
+    "work/simulator/network-vm/native-browser-492-recovered-492/execution/regtest-audit492.json": {
+      "sha256": "5b33df6e2c068e82794c30c1d5201b2a7c01f9f0dec8ec41705fc82b51abb98f",
+      "size": 60677
+    },
+    "work/simulator/network-vm/native-browser-492-recovered-492/execution/pool-result.json": {
+      "sha256": "16c8deff6f8d737b6413fc753991fb98a8ddf9c936db1926d2ea4a69d51ad321",
+      "size": 131659
+    },
+    "work/simulator/bitcoin-core/recovered492-candidate0-492/block-acceptance.json": {
+      "sha256": "a5b2f6538c4ae3b427d1ff48b697873aa271a344307ff24a91703b91631253d7",
+      "size": 1745
+    },
+    "work/simulator/bitcoin-core/recovered492-candidate1-492/block-acceptance.json": {
+      "sha256": "f36dece0c93b9fefa9d2b37f11d696db5d5ae97a801fcbd8139aae7bf32fee1b",
+      "size": 1745
+    }
+  }
+}

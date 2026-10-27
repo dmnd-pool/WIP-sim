@@ -1,0 +1,50 @@
+{
+  "schema": "md-sim-shared-cli-independent-review/1",
+  "component_review_passed": true,
+  "full_firmware_cli_execution": false,
+  "exact_target_pass": false,
+  "closed_findings": [
+    "owned descendant cleanup after helper exit",
+    "stage identity checked against frozen manifest",
+    "bounded regular report reads"
+  ],
+  "unresolved_component_findings": [],
+  "inputs": {
+    "crates/md-sim/src/demo_shared.rs": {
+      "sha256": "0365fc623ae91d6a12ef9bbb6dcb556e663edd8bf92845bc65df371457e5ec92",
+      "size": 20617
+    },
+    "crates/md-sim/src/main.rs": {
+      "sha256": "1229d98b79535c7ee9c48d44e58ccdd72879bcb4456f08fdbc36f04872abdab5",
+      "size": 11532
+    },
+    "crates/md-sim/Cargo.toml": {
+      "sha256": "e8286cd0d7eb273f990deb3989267d116d050161e8d342e640a48ebbcffbeffb",
+      "size": 383
+    },
+    "Cargo.lock": {
+      "sha256": "77f38205ee6b83919c36a42067bc2cc3306f0000f0021192175fd31ff24e6086",
+      "size": 16546
+    },
+    "simulator/demos/s9-shared.json": {
+      "sha256": "3d51c0743eee4e6c96eb97a650dfcd6f50c376b528de81fa588c7e27fa3c348f",
+      "size": 864500
+    },
+    "work/simulator/checks-2026-10-26-001/cli473b-tests.log": {
+      "sha256": "c182ee959363fbdc9fe4539f3c492cc462be5987534cef6ccdcecd2e72fd71d7",
+      "size": 738
+    },
+    "work/simulator/checks-2026-10-26-001/cli473b-clippy.log": {
+      "sha256": "012d16295ecea80b985853da517a911a7946cf2bf4d71bdf823ae22b7cf8414a",
+      "size": 125
+    },
+    "work/simulator/checks-2026-10-26-001/cli473b-build.log": {
+      "sha256": "391a31065e7989bb2c3e28073c51618e2af404ef26dc8928281ce2996cef24a4",
+      "size": 127
+    },
+    "work/simulator/reviews/shared-cli-independent-473.md": {
+      "sha256": "4bc88ac690ade33cea6763ae94ed31baccb9f24bf9f3951575870d5c07a7f404",
+      "size": 2872
+    }
+  }
+}

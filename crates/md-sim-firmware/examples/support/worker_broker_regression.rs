@@ -69,6 +69,7 @@ pub fn prepare(out: &Path, worker: &Path) -> Result<()> {
         object: challenge.clone(),
     });
     let process = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -131,7 +132,8 @@ pub fn prepare(out: &Path, worker: &Path) -> Result<()> {
         &out.join("scenario.json"),
         &json!({"programs":{
         "/broker-check":executable,"/md-sim-worker-ipc":worker.canonicalize()?,
-        "/usr/bin/bwrap":"/usr/bin/bwrap","/usr/bin/unshare":"/usr/bin/unshare"},
+        "/usr/bin/bwrap":"/usr/bin/bwrap","/usr/bin/unshare":"/usr/bin/unshare",
+        "/usr/bin/prlimit":"/usr/bin/prlimit"},
         "files":files,"argv":["/broker-check","__test"],"environment":{}}),
     )?;
     Ok(())

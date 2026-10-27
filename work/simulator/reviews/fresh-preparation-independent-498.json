@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "scope": "Independent source/derivation review only. No firmware or mining pass from preparation.",
+  "source_review": "Parent reconstruction, strict descriptors, no-replace atomic publication and exact unchanged closure reviewed. Both permissive reread findings fixed.",
+  "baseline_files_rehashed": 51,
+  "child_mounts_rehashed": 46,
+  "only_changed_mount": [
+    "/private-pool.json"
+  ],
+  "only_changed_pool_fields": [
+    "seed",
+    "time"
+  ],
+  "parent_run_hash": "6de2484a9bb0d008c4acceb90c496a1435f359f7837bec9ac302f60ba9b0d10a",
+  "canonical_lock_domain": "md-sim-locked-run/2",
+  "review_correction": "Initial one-off check omitted the declared lock domain prefix. Corrected to the existing LockedRun::object contract; no simulator or evidence bytes changed.",
+  "receipt": {
+    "sha256": "fcf7de1ed43a558636f7ca0e749e3fe1636340735ed58e40a108b6bcde0bc2d5",
+    "size": 995
+  },
+  "helper": {
+    "sha256": "ed84d3c7a998c64fc3b06d73d38d6dddf2afa68ef17ba804fd92d81783c0513a",
+    "size": 1869048
+  },
+  "source_files": {
+    "crates/md-sim-firmware/examples/s9_fresh_prepared.rs": {
+      "sha256": "efc00ca3ce969d9f6868c7957166dd256ae2faaa8ba7f79ad34dac2f44ec3a1a",
+      "size": 636
+    },
+    "crates/md-sim-firmware/examples/support/fresh_prepared.rs": {
+      "sha256": "84bb34e954e9a1421b695be71348e1d6dd8564d90e7bcfb20332330d872ae998",
+      "size": 13556
+    },
+    "crates/md-sim-firmware/examples/support/fresh_prepared_tests.rs": {
+      "sha256": "e595fd86a992194400070751fc108b44e8a9d4c5b99cc4291ae8a8ae33ee3eef",
+      "size": 8789
+    },
+    "crates/md-sim-firmware/examples/support/prepared_board.rs": {
+      "sha256": "f563fc5f6042c36366855f3519c144016d89a1c657e77c5a5dab51131ff088da",
+      "size": 14902
+    },
+    "crates/md-sim-firmware/examples/support/s9_pool_input.rs": {
+      "sha256": "5e6ede462d0e83fd62ec16f8856ccd240d429083ea041da83db8ebe87c591147",
+      "size": 11060
+    }
+  }
+}

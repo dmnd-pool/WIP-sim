@@ -1,0 +1,132 @@
+{
+  "schema": "md-sim-bm1397-next-boundary-research/1",
+  "status": "staged_observer_no_new_execution",
+  "scope": "Exact original T17 driver control flow and pinned Rust source comparison. No new silicon effects or original-board gate.",
+  "original_factory_boundary": "55aa5109003c8000807410",
+  "original_driver_ranges": [
+    {
+      "name": "core_mailbox_sender",
+      "start_va": "0x3d958",
+      "end_va_exclusive": "0x3d9b4",
+      "file_offset": 219480,
+      "size": 92,
+      "sha256": "0a0d73e5add7f84d96b6f2017c4d6644dc42efa0a71f785f81a8748edefdf994",
+      "disassembly": {
+        "path": "work/simulator/bm1397-write-intent-493/core_mailbox_sender.a32.txt",
+        "sha256": "1f7d630ee9016179ad3f1aed955965d614e885fff69a959418c501d3b76a4ff0",
+        "size": 742
+      }
+    },
+    {
+      "name": "core0_broadcast_initializer",
+      "start_va": "0x3d9b4",
+      "end_va_exclusive": "0x3dbec",
+      "file_offset": 219572,
+      "size": 568,
+      "sha256": "ba180c9206de46c1885e4334d711041ddd3b163efe498f45809d5be9e22f5893",
+      "disassembly": {
+        "path": "work/simulator/bm1397-write-intent-493/core0_broadcast_initializer.a32.txt",
+        "sha256": "01fe2799f58a9aac925902751b87a7ecc00eab84618dbec9aeba41043f566956",
+        "size": 4499
+      }
+    },
+    {
+      "name": "broadcast_register_sender",
+      "start_va": "0x3cdb8",
+      "end_va_exclusive": "0x3cedc",
+      "file_offset": 216504,
+      "size": 292,
+      "sha256": "6f41f0c62e521d517c9a7c03b1fccf9f4595cad5099e170ad519b57c8688e904",
+      "disassembly": {
+        "path": "work/simulator/bm1397-write-intent-493/broadcast_register_sender.a32.txt",
+        "sha256": "cbb3dc31fb38142a02998b4cb73e8b61037b351b1c59e561de0639dc477dca64",
+        "size": 2362
+      }
+    },
+    {
+      "name": "initialization_call_site",
+      "start_va": "0x2bda0",
+      "end_va_exclusive": "0x2be28",
+      "file_offset": 146848,
+      "size": 136,
+      "sha256": "03d5f7176d46e5c0e6a1683f615724c9b5289fdd59422496c24938e505ea72d8",
+      "disassembly": {
+        "path": "work/simulator/bm1397-write-intent-493/initialization_call_site.a32.txt",
+        "sha256": "d2aea92d41dfb746ccf747ca598126ae82905ee1b3f5b5e8b91e94ca7bdb6624",
+        "size": 1029
+      }
+    }
+  ],
+  "findings": [
+    "Original T17 initializer0x3d9b4 forms core0 data as4 | ((arg1 &3)<<4) | ((arg2 &3)<<6). Its local command structure sets broadcast, DO_CMD and WRITE, with core selector0 and register0.",
+    "Sender0x3d958 packs the structure into0x3c;0x3cdb8 builds the broadcast frame and sends through0x6b8fc. No ASIC reply, readback or silicon completion status is consulted by this initializer.",
+    "Startup caller0x2be0c sets arg1=3, derives arg2 from configuration (fallback2), then invokes the driver delay helper with argument5 before ticket-mask setup. A software delay does not establish physical mailbox latency.",
+    "New source d00c086 emits0x800080b4 for its T17-style initialization and explicitly marks all eight core reset values as TODO values requiring actual chip reading.",
+    "Its generic reader differs from the original T17 oracle: bit31 is set, register IDs use5 bits, and core IDs are passed directly. Its core probe example explicitly initializes BM1366. These do not replace the exact BM1397 codec.",
+    "The new shared ClockDelayCtrl setters use !MASK << OFFSET, which also clears lower bits. Their ordered initialization happens to form0xb4, but this is not evidence of a generally state-preserving setter. This source must not be copied without separate behavior review. This is a static source observation, not execution of the acquired crate."
+  ],
+  "existing_execution_evidence": [
+    "simulator/firmware/fixtures/t17-core-packing-results.json",
+    "work/simulator/reviews/t17-core0-executed-472.md",
+    "work/simulator/reviews/t17-core0-independent-472.json"
+  ],
+  "observer_contract": [
+    "Only the example probe can explicitly select bm1397-observe-core0-adc. Production IdentificationChain remains unchanged and strict.",
+    "One exact validated broadcast write may be recorded after the strict chain reports UnsupportedCommand. There is no response, core-register storage, fabricated timing, clock or mining state. Other writes and reads, including PLL3, remain strict failures.",
+    "The allowance is not consumed while power is off or reset is asserted because the strict chain handles those conditions. Repeating the command, even after reset or power cycle, remains unsupported. No observer state persists across separate runs.",
+    "The source and explicit adaptation manifest are pinned in the run input identity. All board/mining gates remain false."
+  ],
+  "pending": [
+    "Independent staged source review",
+    "Integrate after freeze491 (source already released), then focused tests/Clippy/build only after native492 stops",
+    "Run the original unchanged factory firmware in the explicit observer mode, retain all output and identify the next actual unsupported transaction",
+    "Develop real PLL/core effects only from evidence; no observer result can satisfy ASIC or original-board completion"
+  ],
+  "files": [
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+      "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+      "size": 553247
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/a32.txt",
+      "sha256": "d519092b11da763c50b6aed3cfc1de0f9945ea2a228acc15cbafb5a67817004b",
+      "size": 3506185
+    },
+    {
+      "path": "work/simulator/bitaxe/t17-static-262/inspection.json",
+      "sha256": "d8bd27292ccbdd799bb0137c309de34e65eca596002858865a630092ca964e7f",
+      "size": 4072
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/lib.rs",
+      "sha256": "8eb409c1304b30eb35c3cd6229e01d7bafad902a103d7f826e361c3c5ebb7436",
+      "size": 35923
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/core_register.rs",
+      "sha256": "12d587b678e1f9d1169190a8251995a40be709f3f1d76087aa8c35d35be96f69",
+      "size": 4681
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/clock_delay.rs",
+      "sha256": "95f56c2d39cc586c4d702ce520e6124be9fb2e937caac9f8b34b23b4efabd4bf",
+      "size": 9915
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/core_reg_probe.rs",
+      "sha256": "f3db9aecb6edb1e03124e6d058a8d276ebd2435c06ad4eb9a7f6432488a8c7dd",
+      "size": 2858
+    },
+    {
+      "path": "work/simulator/bm1397-write-intent-493/bm1397_write_intent.rs",
+      "sha256": "605d858da4f5b177f59f38e1e52f4d47b06b1691037ab3bbacaef4adecef1b02",
+      "size": 7205
+    },
+    {
+      "path": "work/simulator/bm1397-write-intent-493/esp32_original_probe.rs",
+      "sha256": "658be079a059fd6580bfe5e64ac346bc50a09675a7ee42f464fc4fbf328289d5",
+      "size": 31080
+    }
+  ]
+}

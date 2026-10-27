@@ -1,0 +1,35 @@
+{
+  "scope": "Pinned original pure-Python transitive dependency wheels; no host install.",
+  "jobs": [
+    {
+      "url": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "destination": "/tmp/md-sim-fasm-wheel482-sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "max_bytes": 29576,
+      "expected_sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+      "expected_size": 29575,
+      "package": "sortedcontainers",
+      "version": "2.4.0",
+      "filename": "sortedcontainers-2.4.0-py2.py3-none-any.whl"
+    },
+    {
+      "url": "https://files.pythonhosted.org/packages/3b/97/4dfe369f4e1eed1f50e7cbfaf5ef5e1fa025e8fa29073290d77d7aea89b1/python_utils-4.1.4-py3-none-any.whl",
+      "destination": "/tmp/md-sim-fasm-wheel482-python_utils-4.1.4-py3-none-any.whl",
+      "max_bytes": 49839,
+      "expected_sha256": "009251f6182f872cd4a74225cdf3636f48ee4596532082bd367797c5924d92bf",
+      "expected_size": 49838,
+      "package": "python-utils",
+      "version": "4.1.4",
+      "filename": "python_utils-4.1.4-py3-none-any.whl"
+    },
+    {
+      "url": "https://files.pythonhosted.org/packages/81/23/30bd4ceab44b547f97fd88ce95eeef3f461cf357a49a32cc1c8c582eae8e/textx-4.4.0-py3-none-any.whl",
+      "destination": "/tmp/md-sim-fasm-wheel482-textx-4.4.0-py3-none-any.whl",
+      "max_bytes": 68588,
+      "expected_sha256": "f08071316d662d8dbecb0e8322510eeba71e89fa91c69a5278cbebfd1debde42",
+      "expected_size": 68587,
+      "package": "textx",
+      "version": "4.4.0",
+      "filename": "textx-4.4.0-py3-none-any.whl"
+    }
+  ]
+}

@@ -1458,6 +1458,7 @@ mod ownership_tests {
             Arc::new(Store::open(&temp.path().join("store"), 8 * 1024 * 1024 * 1024).unwrap());
         let mut active = BTreeMap::new();
         let spec = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,

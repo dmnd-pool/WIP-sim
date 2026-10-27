@@ -1,0 +1,23 @@
+{
+  "schema": "md-sim-clock-source-checkpoint/1",
+  "status": "source_ready_unbuilt_pending_native479_stop",
+  "new_option": "adapt-clock-host-realtime",
+  "scope": "Explicit wall-clock environment adaptation for the shared S9 runner. No physical clock or synchronized remote-host claim.",
+  "source": {
+    "crates/md-sim-firmware/examples/s9_boot_bundle.rs": {
+      "sha256": "6bf3ffbf4ab2cf78771a22f35d797fbcce9263edfce12bf6e06019d67e8df109",
+      "size": 122612
+    },
+    "crates/md-sim-firmware/examples/support/s9_wall_clock.rs": {
+      "sha256": "2e297312859588fd9e8adeefdbf7e4971f98269b380704e9f4a83af2df9aa0bf",
+      "size": 6669
+    }
+  },
+  "next": [
+    "Independent source review",
+    "Run affected tests, strict Clippy and release build after479 stops",
+    "Prepare fresh shared inputs with adaptation recorded",
+    "Execute real original guest date/readback and compare retained browser/service timestamps",
+    "Preserve every failure and keep guest timer/hash/deadline contracts unchanged"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "source-prjxray-c9f02d-tile-segbits-alias",
+  "url": "https://raw.githubusercontent.com/f4pga/prjxray/c9f02d8576042325425824647ab5555b1bc77833/prjxray/tile_segbits_alias.py",
+  "kind": "source",
+  "title": "Pinned upstream Project X-Ray feature oracle tile_segbits_alias.py",
+  "language": "en",
+  "source_id": "prjxray-feature-oracle-c9f02d",
+  "license": "ISC",
+  "retrieved_at": "2026-10-26T17:37:16.445951+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-prjxray-oracle-c9f02d/tile_segbits_alias.py",
+  "sha256": "0cbb861e32baaf11cc242241ee1f6388c604c9e2dd1074b159bb4101de6c4202",
+  "size_bytes": 4450,
+  "executed": false,
+  "scope": "supporting-tool",
+  "git_commit": "c9f02d8576042325425824647ab5555b1bc77833",
+  "repository": "https://github.com/f4pga/prjxray",
+  "response_headers": {
+    "path": "artifacts/files/source/source-prjxray-oracle-c9f02d/tile_segbits_alias.py.headers",
+    "sha256": "65ceea67946423119855fc28f41d1ff359c4e274265f2294ea16e12e18d7a18a",
+    "size": 900
+  },
+  "notes": [
+    "Unmodified upstream reference algorithm. No execution on host. Isolated oracle execution results are separate. The package __init__.py is a valid zero-byte upstream file."
+  ]
+}

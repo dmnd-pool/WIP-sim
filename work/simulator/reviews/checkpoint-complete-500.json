@@ -1,0 +1,104 @@
+{
+  "status": "paused_by_user_after_passed_cli_test",
+  "user_instruction": "finish the test than save checpoint and pause",
+  "cli_test_passed": true,
+  "full_specification_complete": false,
+  "milestone_2_complete": false,
+  "matrix_rows": 79599,
+  "full_exact_target_passes": 0,
+  "workspace_tests": {
+    "passed": 1069,
+    "failed": 0,
+    "ignored": 49,
+    "suites": 118
+  },
+  "format_and_strict_clippy": "pass",
+  "final_guide_links": {
+    "checked": 571,
+    "broken": 0
+  },
+  "manual_checkpoint_report_links": {
+    "checked": 21,
+    "broken": 0
+  },
+  "post_test_source_changes": [
+    "README.md documentation only; no simulator code changed"
+  ],
+  "git_head": "b276dd7a34df45bf610874020c267b6684e9266c",
+  "new_commit_created": false,
+  "runtime_processes": "Known CLI/support process IDs absent; child agents report no owned processes; native cleanup and both Core stops independently checked.",
+  "held_work": [
+    "501 reviewed source patch, not integrated or executed",
+    "502 HDL acquisition checkpoint; gperf partial remains failed; no HDL build or execution"
+  ],
+  "files": {
+    "work/simulator/checkpoint-500.md": {
+      "sha256": "fb20596eab90b7e4dc1fc5631a36c6284a233d5ebe39f8652282dbe2b6bf91c0",
+      "size": 4535
+    },
+    "work/simulator/reports/shared-cli-pass-500.md": {
+      "sha256": "bd6934bd4ea94e525eba7de7de695ad0a6809f91100301c32098f435bfba90f8",
+      "size": 5156
+    },
+    "work/simulator/progress.md": {
+      "sha256": "bbb44678c4b8f57aeab8fea976d424bbc70e963ff01faf12815ca2a83d8a9c78",
+      "size": 34435
+    },
+    "work/simulator/continuation-2026-10-26.md": {
+      "sha256": "50f2d5b1238d50f0b9c79d79bee510dac8092937053c44f14fc35b09138706c7",
+      "size": 41632
+    },
+    "README.md": {
+      "sha256": "74ee92a287386746c827a8ce8d6267ed1ebd63e0a9f519af69dd78c306e38ab4",
+      "size": 150282
+    },
+    ".gitignore": {
+      "sha256": "9359c62761d72ba9b90400300599f67e6c27c4928ba0f3990de709a01da55eea",
+      "size": 1822
+    },
+    "simulator/demos/s9-shared.json": {
+      "sha256": "dc6cd072546a34ee475474173b5cf4163855d5ac863b13ff1001bc7eaf09ea5d",
+      "size": 865632
+    },
+    "work/simulator/cli-tools-500/build.json": {
+      "sha256": "9278fee813a7bea8684e0d79bff9c202a9bb59634c4b8f46530d2bc3372af423",
+      "size": 2648
+    },
+    "work/simulator/demos/s9-shared-500/assessment.json": {
+      "sha256": "e95804b1c0bf4ce7d650347309170bbbedf5d970efa0bb4b0678648266ddf2fc",
+      "size": 3703
+    },
+    "work/simulator/reviews/native-browser-pass-500.json": {
+      "sha256": "a0d35afd2a269916a123b17ecde52a48370901f6037c0b46a8ba17523cfd9bf0",
+      "size": 12223
+    },
+    "work/simulator/reviews/shared-cli-build-independent-500.json": {
+      "sha256": "0ac3fdc964f668be1bb391872c462325a9761e659cdc1b98682b635bbd176c6d",
+      "size": 891
+    },
+    "work/simulator/reviews/shared-cli-mining-independent-500.json": {
+      "sha256": "222d6554141521ba658ce1f16819d842edad9abfde462885be21ad92e51c4a1a",
+      "size": 7504
+    },
+    "work/simulator/reviews/shared-cli-core-independent-500.json": {
+      "sha256": "6556f340a3a0f262854ab271338dde43490026c2ea0eccaf330c8dcd1e1b5434",
+      "size": 5553
+    },
+    "work/simulator/reviews/bm1397-programmed-checkpoint-501.json": {
+      "sha256": "06a0f510c424e6fa184db89c204a43fbb861efdd8adf3bc3bca9e8cf5791b4de",
+      "size": 14142
+    },
+    "work/simulator/reviews/hdl-acquisition-checkpoint-502.json": {
+      "sha256": "3a5e157b2ef47ec1fe16bd451d01ae3daea5e4e11d55453a63956c9681937780",
+      "size": 7405
+    },
+    "work/simulator/checks-2026-10-26-001/checkpoint500-guides.log": {
+      "sha256": "6a30d18b8d1dc320f27eb75a0456bf559851288fa1f989fbecbdba381b11ca38",
+      "size": 176
+    },
+    "work/simulator/checks-2026-10-26-001/checkpoint500-final-diff-check.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  }
+}

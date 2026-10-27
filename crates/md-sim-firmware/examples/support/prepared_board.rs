@@ -15,6 +15,8 @@ use std::{
 };
 #[path = "s9_carrier_dashboard.rs"]
 mod carrier_dashboard;
+#[path = "fresh_prepared.rs"]
+pub mod fresh;
 
 pub fn bounded(path: &Path, limit: u64) -> Result<Vec<u8>> {
     let mut bytes = Vec::new();
@@ -133,6 +135,7 @@ pub fn freeze(source: &Path, out: &Path, store: &Store) -> Result<LockedRun> {
             retain_metadata(source, out, store, name)?,
         );
     }
+    fresh::check_pool_mount(&spec, &inputs["evidence:pool-input.json"])?;
     let shared = shared_metadata(source, out, store, &spec)?;
     if let Some(object) = &shared {
         inputs.insert("evidence:shared-pool.json".into(), object.clone());
@@ -166,6 +169,7 @@ pub fn freeze(source: &Path, out: &Path, store: &Store) -> Result<LockedRun> {
     if let Some(object) = dashboard {
         run.policies["carrier_dashboard"] = serde_json::to_value(object)?;
     }
+    fresh::bind(source, out, store, &mut run)?;
     run.validate()?;
     Ok(run)
 }

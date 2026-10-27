@@ -1,0 +1,25 @@
+{
+  "id": "tool-fasm-sortedcontainers-2-4-0",
+  "url": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+  "kind": "tool",
+  "title": "Pinned pure Python support dependency: sortedcontainers 2.4.0",
+  "language": "en",
+  "source_id": "pypi-sortedcontainers-2-4-0",
+  "license": "Apache 2.0",
+  "retrieved_at": "2026-10-26T19:06:27+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/tool/tool-fasm-python-wheels-482/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+  "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+  "size_bytes": 29575,
+  "executed": false,
+  "scope": "supporting-tool",
+  "response_headers": {
+    "local_path": "artifacts/files/tool/tool-fasm-python-wheels-482/sortedcontainers-2.4.0-py2.py3-none-any.whl.headers",
+    "sha256": "c0957accc665409169c5ea11e803582083ce5e79ee6ba79a74348d524c8c2cc7",
+    "size_bytes": 1256
+  },
+  "package": "sortedcontainers",
+  "version": "2.4.0",
+  "acquisition_record": "work/simulator/reviews/fasm-wheel-transitives-results-482.json",
+  "execution_note": "Original wheel retained. No installer or package import ran on the host."
+}

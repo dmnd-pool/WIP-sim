@@ -1,0 +1,57 @@
+{
+  "schema": "md-sim-browser-cleanup-completed/1",
+  "completed": true,
+  "removed_objects": 3653,
+  "removed_logical_bytes": 1447428871,
+  "retained_files_rehashed": 3599,
+  "original_failed_assessment_unchanged": true,
+  "archive_removed": false,
+  "unique_objects_removed": false,
+  "two_recovered_candidate_copies_retained": true,
+  "files": {
+    "work/simulator/reviews/browser-cleanup-completed-481.md": {
+      "sha256": "bf9b83445675e351e6a3854cd3212cbb07fcc151740d98ad0dce7b0face92702",
+      "size": 2098
+    },
+    "work/simulator/cleanup-browser-tools-481/inputs.json": {
+      "sha256": "fecf96edfc1aeea17d0d9517151815bac52a430cb6b5880f5b28ccacb9008fe6",
+      "size": 3739
+    },
+    "work/simulator/cleanup-browser-tools-481/reclaim_qemu_inputs": {
+      "sha256": "d2e2c71c68de741cb5c3e227f2eba0864c17048475e6c181fd842e50e3a24c1d",
+      "size": 1783776
+    },
+    "work/simulator/reviews/browser-cleanup-plan-independent-481.json": {
+      "sha256": "3a0118e662ae5d66c8dab2a30c84b5933c62b8a63f3a69706d8cb678bdcaee34",
+      "size": 758
+    },
+    "work/simulator/cleanup-browser-481/inventory.json": {
+      "sha256": "45e2daa654a5866cd97b0a7e8ccfad48fe63161378247b8d37a4315f274f9acb",
+      "size": 2008106
+    },
+    "work/simulator/cleanup-browser-481/plan.json": {
+      "sha256": "a966c83557e0512795f1cf6f6565df1ba7813c45dc95f45fb12ec0890e8621fd",
+      "size": 3896621
+    },
+    "work/simulator/cleanup-browser-481/reclaim.json": {
+      "sha256": "fa443d35b76aa1c34c9716a21300c32a628a07e82511741b3b156167846d3b6a",
+      "size": 3896622
+    },
+    "work/simulator/cleanup-browser-481/reclaim.completed.json": {
+      "sha256": "ea13b7d9a8f2213ba3f1309dee388386336caa1349e0db0e075680e2f91d4538",
+      "size": 3896630
+    },
+    "work/simulator/cleanup-browser-481/postcheck.json": {
+      "sha256": "7e023d889ac512bb0a475c75753ce5049ede68d979c3a3c53e7e3622e453ffac",
+      "size": 932404
+    },
+    "work/simulator/cleanup-browser-481/retained-recovered-stores.json": {
+      "sha256": "decc6add6866c18afe9a2c78f442c7f258d1c608b89f4854078c05454a7fbfeb",
+      "size": 2620
+    },
+    "work/simulator/checks-2026-10-26-001/browser-cleanup481-reclaim.log": {
+      "sha256": "80ff97e7e5b3acab30d9bddfdd22ead943234dc87a0800815a50f57f0ea59265",
+      "size": 130
+    }
+  }
+}

@@ -54,6 +54,7 @@ pub fn inspect_with_core(bitcoin_core: Option<&Path>) -> Value {
     for (name, path) in [
         ("bubblewrap", Path::new("/usr/bin/bwrap")),
         ("unshare", Path::new("/usr/bin/unshare")),
+        ("prlimit", Path::new("/usr/bin/prlimit")),
         ("qemu-arm", Path::new("/usr/bin/qemu-system-arm")),
         ("qemu-xtensa", Path::new("/usr/bin/qemu-system-xtensa")),
         ("ssh", Path::new("/usr/bin/ssh")),
@@ -72,7 +73,7 @@ pub fn inspect_with_core(bitcoin_core: Option<&Path>) -> Value {
     }
     let incomplete = !tcp["available"].as_bool().unwrap_or(false)
         || !namespace["available"].as_bool().unwrap_or(false)
-        || ["bubblewrap", "unshare", "bitcoind", "ssh"]
+        || ["bubblewrap", "unshare", "prlimit", "bitcoind", "ssh"]
             .iter()
             .any(|name| tools[*name].get("error").is_some());
     let mut disk = std::mem::MaybeUninit::<libc::statvfs>::uninit();

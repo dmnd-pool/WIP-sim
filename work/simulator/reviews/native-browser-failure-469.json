@@ -1,0 +1,117 @@
+{
+  "schema": "md-sim-native-browser-review/1",
+  "status": "failed; no browser or complete-target pass",
+  "run_id": "run-dd9a2c143d7b21d21b989795732901bbf964cfc3478970247f0b2f8b804da1af",
+  "locked_run": {
+    "sha256": "da00f8b8611639b4f53c4424ee68e83964154dad695b0d6251d95d22c0c75d39",
+    "size": 16526
+  },
+  "access_files_verified": 271,
+  "timing_monotonic_ns": {
+    "prepared": 163848288655,
+    "dispatch": 163903194620,
+    "pool_request": 288711912046,
+    "pool_ready": 289185746171,
+    "execute": 289185769364
+  },
+  "browser_preparation_milliseconds": 111994,
+  "profile_startup_milliseconds": [
+    54024,
+    54686
+  ],
+  "browser_error": "browser command WebDriver:ExecuteScript, sequence 22: browser command failed: script timeout: Timed out after 30000 ms",
+  "primary_origin": "http://127.0.0.1:18090",
+  "primary_last_phase": {
+    "diagnostic_only": true,
+    "elapsed_milliseconds": 79859,
+    "origin": "http://127.0.0.1:18090",
+    "phase": "native-dashboard-rendered"
+  },
+  "both_browser_cgroups_empty": true,
+  "api": {
+    "http": {
+      "passed": true,
+      "requests": 15,
+      "origin": "http://127.0.0.1:18090"
+    },
+    "tls": {
+      "passed": true,
+      "requests": 15,
+      "origin": "https://192.0.2.1:9443"
+    }
+  },
+  "gateway_stop_acknowledged": true,
+  "ssh_tunnel_stopped": true,
+  "failed_command": {
+    "sequence": 22,
+    "operation": "WebDriver:ExecuteScript",
+    "request": "subscription-schema GraphQL fetch; not yet the WebSocket probe",
+    "observed_browser_log_ms": 62957,
+    "declared_script_timeout_ms": 30000,
+    "second_profile_navigation_started_ms_later": 244
+  },
+  "limits": [
+    "Native firmware and all existing timeout limits are unchanged.",
+    "No independent mining or Core acceptance claim is added by this browser review.",
+    "Bridge active-limit queuing and browser scheduling contention are not fully distinguished by retained logs; no raw HTTP packet capture exists for this cohort.",
+    "The next change sequences fresh-profile isolation after primary telemetry checks and adds bounded query-hash/phase diagnostics."
+  ],
+  "files": {
+    "work/simulator/network-vm/native-browser-469/process-spec.json": {
+      "sha256": "ad2cab4340ee96690afbee8631a1bef9c36d39ba07aae3e717ddd0f5d09e037a",
+      "size": 5697
+    },
+    "work/simulator/network-vm/native-browser-469/result.json": {
+      "sha256": "7534f84f5ebcd0a793a04c89d26efb5072621ca3b23f5a973902b4a990a072f7",
+      "size": 210071627
+    },
+    "work/simulator/network-vm/native-browser-469/assessment.json": {
+      "sha256": "a27ffb18146a26b8f7969e52b29e65335decd7c923db94bc7bf2f394baa086f9",
+      "size": 49277117
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-pool/retention-receipt.json": {
+      "sha256": "1bc20b84d417c233e19ce03b3c5fcf2dfe47b2044d166a9ad6c380f9b370cb9f",
+      "size": 662
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-pool/pool-bundle.json": {
+      "sha256": "bdb14258273548b7eb7fe4883e4a17b4e3b6800c61f6eb21c67249218179a919",
+      "size": 94195
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-access/access-bundle.json": {
+      "sha256": "67eeaf0f2da0b54b083c42440d3efe2dc29dd04e62d5407a3a95a121649fdb0a",
+      "size": 9759626
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-access/client/browser-preparation.json": {
+      "sha256": "bfd32b320ae4bb598b75eb0d62fcbeea14f3c17942c2d441a628d76e10f19284",
+      "size": 3958
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-access/client/dispatch.json": {
+      "sha256": "31e0c8733db62433b0faf907fcd678930135d55ab038cb68e199b67a35bb0ff4",
+      "size": 318
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-access/client-observer/board-browser-process.json": {
+      "sha256": "d9a7258dee70c81ecdfb74d563d1fd8021f6d6236c934b2b279aa799ca3141d5",
+      "size": 187982
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-access/client/report.json": {
+      "sha256": "3daa207c76731bc0ee34e294ae4018d9076bece3bdf13790ef2858153a2f2702",
+      "size": 8116
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-access/server/bridge/receipt.json": {
+      "sha256": "dbc55a1393c25e6d966c8dd1e00f1cf586d3b3f89d3288aad5675954d8f195e5",
+      "size": 48506
+    },
+    "work/simulator/network-vm/native-browser-469/execution/shared-access/client/gateway/stopped.json": {
+      "sha256": "dc2f402de09a116c82d405c37c18165b0fbe06094d0d71aa48bd15512d01d4bd",
+      "size": 111
+    },
+    "work/simulator/network-vm/native-browser-469/browser-diagnosis/0-stdout.log": {
+      "sha256": "e990e6604193d7d1ce32259072c76b0558f0bf1630b812e72427c74a2cb1ee90",
+      "size": 30452
+    },
+    "work/simulator/network-vm/native-browser-469/browser-diagnosis/1-stdout.log": {
+      "sha256": "3fa402a26e7044c8adfbdf87d656ffc48b572589d19a1f9f7390f6c8e91bb0ff",
+      "size": 15348
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "status": "no_open_source_finding_execution_pending",
+  "scope": "Original108-byte PLL driver arithmetic only. No physical VCO validity, lock, timing, ASIC readiness or mining gate.",
+  "review_evidence": "Parent reviewed Rust/C/linker against exact108-byte disassembly: original VA/hash, soft-float integer ABI, three single-precision operations and truncation match; positive ranges, ignored bits, zero-divisor rejection, rational bound and framing sound.",
+  "files": [
+    {
+      "path": "work/simulator/t17-pll-oracle-496/t17_core_oracle.rs",
+      "size": 21666,
+      "sha256": "7ff92367bdaa09cd8813bf18deb68b3867feba2c6a46ee666e3a21e7d48af70f"
+    },
+    {
+      "path": "work/simulator/t17-pll-oracle-496/t17_pll_oracle.rs",
+      "size": 7540,
+      "sha256": "f70bf0ec130df7f4b635fd7e46a6cc01b76de145862effbdf0d584d014d90265"
+    },
+    {
+      "path": "work/simulator/t17-pll-oracle-496/bm1397-pll-frequency-oracle.c",
+      "size": 1972,
+      "sha256": "ed2c100242671807eac6a64598a8895e98e002134cba339ba96cfd0125c70e04"
+    },
+    {
+      "path": "work/simulator/t17-pll-oracle-496/bm1397-pll-frequency-oracle.ld",
+      "size": 629,
+      "sha256": "2007bb49539ce8fc8072c27f9044255d2f52d51d1187b8b34df60bed10b1be47"
+    }
+  ],
+  "pending": [
+    "Focused Rust tests and strict Clippy; original C UBSan execution after495.",
+    "Independent retained-byte, output tuple and isolation review."
+  ]
+}

@@ -1,0 +1,720 @@
+diff --git a/crates/md-sim-firmware/src/bm1397.rs b/crates/md-sim-firmware/src/bm1397.rs
+--- a/crates/md-sim-firmware/src/bm1397.rs
++++ b/crates/md-sim-firmware/src/bm1397.rs
+@@ -9,9 +9,10 @@
+ pub mod core_readback;
+ mod filter;
+ mod identify;
++pub mod programmed;
+ mod reply;
+ pub use filter::ticket_filter;
+-pub use identify::{IdentificationChain, IdentifyError};
++pub use identify::{ControlWriteSupport, IdentificationChain, IdentifyError};
+ pub use reply::Reply;
+ 
+ const COMMAND_TYPE: u8 = 0x40;
+diff --git a/crates/md-sim-firmware/src/bm1397/identify.rs b/crates/md-sim-firmware/src/bm1397/identify.rs
+--- a/crates/md-sim-firmware/src/bm1397/identify.rs
++++ b/crates/md-sim-firmware/src/bm1397/identify.rs
+@@ -12,7 +12,20 @@
+ //! initialize a mining chip, return a nonce, or establish a board gate.
+ //! Clock-order and enable writes retain per-chip state. Clock routing and
+ //! lock/status remain unsupported; register storage is not a clock model.
++use super::programmed::{ProgrammedControls, Write};
+ use super::{Command, Packet, Reply};
++
++#[cfg(test)]
++#[path = "programmed_tests.rs"]
++mod programmed_tests;
++
++/// An explicit profile capability. RegisterStorage records posted settings;
++/// it does not establish effective core/clock state or enable mining.
++#[derive(Clone, Copy, Debug, PartialEq, Eq, serde::Serialize)]
++pub enum ControlWriteSupport {
++    Unsupported,
++    RegisterStorage,
++}
+ 
+ #[derive(Clone, Copy, Debug, PartialEq, Eq, serde::Serialize)]
+ pub enum IdentifyError {
+@@ -26,6 +39,7 @@
+     addresses: Vec<u8>,
+     clock_registers: Vec<[u32; 3]>,
+     ticket_registers: Vec<u32>,
++    programmed_controls: Option<Vec<ProgrammedControls>>,
+     /// None means normal operation. Some(index) is the next inactive chip.
+     next_address: Option<usize>,
+     powered: bool,
+@@ -34,6 +48,13 @@
+ 
+ impl IdentificationChain {
+     pub fn new(chips: u16) -> Result<Self, IdentifyError> {
++        Self::with_control_support(chips, ControlWriteSupport::Unsupported)
++    }
++
++    pub fn with_control_support(
++        chips: u16,
++        support: ControlWriteSupport,
++    ) -> Result<Self, IdentifyError> {
+         if !(1..=256).contains(&chips) {
+             return Err(IdentifyError::ChipCount);
+         }
+@@ -41,6 +62,8 @@
+             addresses: vec![0; usize::from(chips)],
+             clock_registers: vec![[0xd95c8410, 0xfb73ea62, 0x0000ffff]; usize::from(chips)],
+             ticket_registers: vec![0; usize::from(chips)],
++            programmed_controls: (support == ControlWriteSupport::RegisterStorage)
++                .then(|| vec![ProgrammedControls::default(); usize::from(chips)]),
+             next_address: None,
+             powered: false,
+             reset_asserted: true,
+@@ -66,6 +89,10 @@
+         self.clock_registers
+             .fill([0xd95c8410, 0xfb73ea62, 0x0000ffff]);
+         self.ticket_registers.fill(0);
++        if let Some(banks) = &mut self.programmed_controls {
++            // Loss of programmed knowledge, not a claim of silicon defaults.
++            banks.fill(ProgrammedControls::default());
++        }
+         self.next_address = None;
+     }
+ 
+@@ -79,11 +106,49 @@
+         self.ticket_registers.get(chip).copied()
+     }
+ 
++    /// Diagnostic state by physical chain position. It is not guest readback.
++    /// None means no selected capability, no such chip, power off or reset.
++    /// A bank with absent fields has no known posted configuration.
++    pub fn programmed_controls(&self, chip: usize) -> Option<ProgrammedControls> {
++        if !self.powered || self.reset_asserted {
++            return None;
++        }
++        self.programmed_controls.as_ref()?.get(chip).copied()
++    }
++
+     pub fn receive(&mut self, packet: &Packet) -> Result<Vec<Reply>, IdentifyError> {
+         if !self.powered || self.reset_asserted {
+             return Ok(Vec::new());
+         }
+         match packet {
++            Packet::Command {
++                broadcast,
++                command:
++                    Command::Write {
++                        address,
++                        register,
++                        value,
++                    },
++            } if self.programmed_controls.is_some() && matches!(register, 0x3c | 0x08 | 0x68) => {
++                let write = Write::decode(*register, *value)?;
++                let selected: Vec<_> = self
++                    .addresses
++                    .iter()
++                    .enumerate()
++                    .filter_map(|(index, candidate)| {
++                        (*broadcast || candidate == address).then_some(index)
++                    })
++                    .collect();
++                if !broadcast && selected.len() > 1 {
++                    return Err(IdentifyError::AmbiguousAddress);
++                }
++                let banks = self.programmed_controls.as_mut().unwrap();
++                for index in selected {
++                    write.apply(&mut banks[index]);
++                }
++                // No ACK, ready event, register reply or effective clock follows.
++                Ok(Vec::new())
++            }
+             Packet::Command {
+                 broadcast,
+                 command: Command::Read { address, register },
+diff --git a/crates/md-sim-firmware/src/bm1397/programmed.rs b/crates/md-sim-firmware/src/bm1397/programmed.rs
+new file mode 100644
+--- /dev/null
++++ b/crates/md-sim-firmware/src/bm1397/programmed.rs
+@@ -0,0 +1,148 @@
++//! Programmed control state, separate from effective silicon state.
++//!
++//! Core writes use the executed T17 packing contract. PLL arithmetic uses
++//! the unchanged T17 leaf checked by oracle496. No write proves completion,
++//! internal core fan-out, clock output or PLL lock. These values are diagnostic
++//! state; there is no guest readback until its complete response is known.
++use super::{core_control::Control, IdentifyError};
++
++#[derive(Clone, Copy, Debug, PartialEq, Eq, serde::Serialize)]
++pub enum ArithmeticError {
++    ZeroDivisor,
++}
++
++/// A received parameter word. In particular, written bit31 is not an
++/// observed LOCKED status. No effective-frequency or ready API is provided.
++#[derive(Clone, Copy, Debug, PartialEq, Eq, serde::Serialize)]
++pub struct PllParameter {
++    pub written_word: u32,
++}
++
++impl PllParameter {
++    /// The exact vendor arithmetic with its software-divider argument.
++    /// This is a requested integer MHz value, independent of enable/status
++    /// bits and physical operating ranges. Output-divider register encoding
++    /// is a separate contract; callers must not pass that raw register here.
++    pub fn driver_integer_mhz(self, software_divider: u32) -> Result<u32, ArithmeticError> {
++        let feedback = (self.written_word >> 16) & 0xfff;
++        let reference = (self.written_word >> 8) & 0x3f;
++        let post1 = (self.written_word >> 4) & 7;
++        let post2 = self.written_word & 7;
++        let software = software_divider & 255;
++        if reference == 0 || post1 == 0 || post2 == 0 || software == 0 {
++            return Err(ArithmeticError::ZeroDivisor);
++        }
++        // All inputs fit exact f32 integers. The result is finite and in
++        // 0..=102375. Do not replace the original sequence with one rational
++        // division: oracle496 records four different truncation results.
++        Ok(
++            ((25.0f32 / reference as f32 * feedback as f32) / (post1 * post2 * software) as f32)
++                as u32,
++        )
++    }
++}
++
++#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, serde::Serialize)]
++pub struct ProgrammedControls {
++    /// Exact posted core-register0 byte, not committed per-core state.
++    pub core0_write: Option<u8>,
++    pub pll0_write: Option<PllParameter>,
++    pub pll3_write: Option<PllParameter>,
++}
++
++#[derive(Clone, Copy)]
++pub(crate) enum Write {
++    Core0(u8),
++    Pll0(PllParameter),
++    Pll3(PllParameter),
++}
++
++impl Write {
++    /// Decode before changing any selected chip. Reserved or unknown core
++    /// commands remain errors; raw PLL programming does not validate a VCO.
++    pub(crate) fn decode(register: u8, value: u32) -> Result<Self, IdentifyError> {
++        match register {
++            0x3c => match Control::decode(value).map_err(|_| IdentifyError::InvalidControl)? {
++                Control::Write { register: 0, value } => Ok(Self::Core0(value)),
++                _ => Err(IdentifyError::UnsupportedCommand),
++            },
++            0x08 => Ok(Self::Pll0(PllParameter {
++                written_word: value,
++            })),
++            0x68 => Ok(Self::Pll3(PllParameter {
++                written_word: value,
++            })),
++            _ => Err(IdentifyError::UnsupportedCommand),
++        }
++    }
++
++    pub(crate) fn apply(self, bank: &mut ProgrammedControls) {
++        match self {
++            Self::Core0(value) => bank.core0_write = Some(value),
++            Self::Pll0(value) => bank.pll0_write = Some(value),
++            Self::Pll3(value) => bank.pll3_write = Some(value),
++        }
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn every_retained_original_arithmetic_result_matches() {
++        // Actual original ARM output, not results computed by this model.
++        let bytes =
++            include_bytes!("../../../../simulator/firmware/fixtures/t17-pll-frequency-results.bin");
++        assert_eq!(
++            crate::prepare::hash_bytes(bytes),
++            "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c"
++        );
++        assert_eq!(bytes.len(), 354160);
++        let word = |chunk: &[u8]| u32::from_le_bytes(chunk.try_into().unwrap());
++        let header: Vec<_> = bytes[..16].chunks_exact(4).map(word).collect();
++        assert_eq!(header, [0x504c4c31, 1, 22134, 4]);
++        for (id, row) in bytes[16..].chunks_exact(16).enumerate() {
++            assert_eq!(word(&row[..4]), id as u32);
++            let value = PllParameter {
++                written_word: word(&row[4..8]),
++            };
++            assert_eq!(
++                value.driver_integer_mhz(word(&row[8..12])),
++                Ok(word(&row[12..16]))
++            );
++        }
++    }
++
++    #[test]
++    fn invalid_divisors_remain_errors_and_status_bits_do_not_gate_arithmetic() {
++        for word in [0x00480021, 0x00480201, 0x00480220] {
++            assert_eq!(
++                PllParameter { written_word: word }.driver_integer_mhz(1),
++                Err(ArithmeticError::ZeroDivisor)
++            );
++        }
++        for divisor in [0, 256, 0xffffff00] {
++            assert_eq!(
++                PllParameter {
++                    written_word: 0xc0700111
++                }
++                .driver_integer_mhz(divisor),
++                Err(ArithmeticError::ZeroDivisor)
++            );
++        }
++        for word in [0x00700111, 0x40700111, 0x80700111, 0xc0700111] {
++            assert_eq!(
++                PllParameter { written_word: word }.driver_integer_mhz(1),
++                Ok(2800)
++            );
++        }
++        assert_eq!(
++            PllParameter {
++                written_word: 0x000f0311
++            }
++            .driver_integer_mhz(1),
++            Ok(124)
++        );
++    }
++}
+diff --git a/crates/md-sim-firmware/src/bm1397/programmed_tests.rs b/crates/md-sim-firmware/src/bm1397/programmed_tests.rs
+new file mode 100644
+--- /dev/null
++++ b/crates/md-sim-firmware/src/bm1397/programmed_tests.rs
+@@ -0,0 +1,241 @@
++use super::*;
++use crate::bm1397::{decode, Job};
++
++fn packet(broadcast: bool, command: Command) -> Packet {
++    Packet::Command { broadcast, command }
++}
++
++fn write(address: u8, register: u8, value: u32, broadcast: bool) -> Packet {
++    packet(
++        broadcast,
++        Command::Write {
++            address,
++            register,
++            value,
++        },
++    )
++}
++
++fn configured(addresses: &[u8]) -> IdentificationChain {
++    let mut chain = IdentificationChain::with_control_support(
++        addresses.len() as u16,
++        ControlWriteSupport::RegisterStorage,
++    )
++    .unwrap();
++    chain.power(true);
++    chain.reset_line(false);
++    chain
++        .receive(&packet(
++            true,
++            Command::Inactive {
++                address: 0,
++                reserved: 0,
++            },
++        ))
++        .unwrap();
++    for &address in addresses {
++        chain
++            .receive(&packet(
++                false,
++                Command::SetAddress {
++                    address,
++                    reserved: 0,
++                },
++            ))
++            .unwrap();
++    }
++    chain
++}
++
++#[test]
++fn capability_is_explicit_and_real_frames_change_only_programmed_state() {
++    let core = decode(&[0x55, 0xaa, 0x51, 9, 0, 0x3c, 0x80, 0, 0x80, 0x74, 0x10]).unwrap();
++    let pll = decode(&[0x55, 0xaa, 0x51, 9, 0, 0x68, 0xc0, 0x70, 1, 0x11, 0]).unwrap();
++    let mut strict = IdentificationChain::new(1).unwrap();
++    strict.power(true);
++    strict.reset_line(false);
++    assert_eq!(strict.programmed_controls(0), None);
++    for command in [&core, &pll] {
++        assert_eq!(
++            strict.receive(command),
++            Err(IdentifyError::UnsupportedCommand)
++        );
++    }
++    let mut chain = configured(&[0]);
++    assert_eq!(
++        chain.programmed_controls(0),
++        Some(ProgrammedControls::default())
++    );
++    for command in [&core, &pll, &core, &pll] {
++        assert!(chain.receive(command).unwrap().is_empty());
++    }
++    let state = chain.programmed_controls(0).unwrap();
++    assert_eq!(state.core0_write, Some(0x74));
++    assert_eq!(state.pll0_write, None);
++    let parameter = state.pll3_write.unwrap();
++    assert_eq!(parameter.written_word, 0xc0700111);
++    assert_eq!(parameter.driver_integer_mhz(1), Ok(2800));
++    // No assumed status/readback, even after repeated identical writes.
++    for register in [0x3c, 0x40, 0x08, 0x68] {
++        assert_eq!(
++            chain.receive(&packet(
++                true,
++                Command::Read {
++                    address: 0,
++                    register
++                }
++            )),
++            Err(IdentifyError::UnsupportedCommand)
++        );
++    }
++    let work = Job {
++        id: 4,
++        midstate_count: 1,
++        starting_nonce: [0; 4],
++        nbits: [0; 4],
++        ntime: [0; 4],
++        merkle_tail: [0; 4],
++        midstates: [[0; 32]; 4],
++    };
++    assert_eq!(
++        chain.receive(&Packet::Job {
++            broadcast: false,
++            work
++        }),
++        Err(IdentifyError::UnsupportedCommand)
++    );
++    assert_eq!(
++        chain.receive(&write(0, 0x28, 0x0600000f, true)),
++        Err(IdentifyError::UnsupportedCommand)
++    );
++    assert_eq!(chain.programmed_controls(0), Some(state));
++}
++
++#[test]
++fn addressed_and_broadcast_writes_keep_each_chip_and_unknown_field_distinct() {
++    let mut chain = configured(&[0, 128]);
++    for value in 0..=255u32 {
++        assert!(chain
++            .receive(&write(0, 0x3c, 0x80008000 | value, true))
++            .unwrap()
++            .is_empty());
++        assert_eq!(
++            chain.programmed_controls(0).unwrap().core0_write,
++            Some(value as u8)
++        );
++        assert_eq!(
++            chain.programmed_controls(1).unwrap().core0_write,
++            Some(value as u8)
++        );
++    }
++    chain.receive(&write(128, 0x3c, 0x80008074, false)).unwrap();
++    chain.receive(&write(0, 0x08, 0x40480221, false)).unwrap();
++    chain.receive(&write(128, 0x68, 0xc0700111, false)).unwrap();
++    let first = chain.programmed_controls(0).unwrap();
++    let second = chain.programmed_controls(1).unwrap();
++    assert_eq!(
++        (first.core0_write, second.core0_write),
++        (Some(255), Some(0x74))
++    );
++    assert_eq!(first.pll0_write.unwrap().driver_integer_mhz(1), Ok(450));
++    assert_eq!(first.pll3_write, None);
++    assert_eq!(second.pll0_write, None);
++    assert_eq!(second.pll3_write.unwrap().written_word, 0xc0700111);
++    for register in [0x3c, 0x08, 0x68] {
++        let value = if register == 0x3c { 0x80008000 } else { 0 };
++        assert!(chain
++            .receive(&write(7, register, value, false))
++            .unwrap()
++            .is_empty());
++    }
++    assert_eq!(chain.programmed_controls(0), Some(first));
++    assert_eq!(chain.programmed_controls(1), Some(second));
++    assert_eq!(chain.programmed_controls(2), None);
++    // A supplied bit31 remains only a written bit, including for invalid divisors.
++    chain.receive(&write(128, 0x68, 0x80000000, false)).unwrap();
++    assert_eq!(
++        chain
++            .programmed_controls(1)
++            .unwrap()
++            .pll3_write
++            .unwrap()
++            .driver_integer_mhz(1),
++        Err(super::super::programmed::ArithmeticError::ZeroDivisor)
++    );
++}
++
++#[test]
++fn invalid_controls_and_ambiguous_addresses_do_not_partially_update() {
++    let mut chain = configured(&[0, 0]);
++    for register in [0x3c, 0x08, 0x68] {
++        let value = if register == 0x3c {
++            0x80008074
++        } else {
++            0xc0700111
++        };
++        assert_eq!(
++            chain.receive(&write(0, register, value, false)),
++            Err(IdentifyError::AmbiguousAddress)
++        );
++    }
++    for value in [0x80018074, 0x80000074, 0x00008074, 0x80009074] {
++        assert_eq!(
++            chain.receive(&write(0, 0x3c, value, true)),
++            Err(IdentifyError::InvalidControl)
++        );
++    }
++    for value in [0x80008174, 0xff, 0x1ff00ff] {
++        assert_eq!(
++            chain.receive(&write(0, 0x3c, value, true)),
++            Err(IdentifyError::UnsupportedCommand)
++        );
++    }
++    for chip in 0..2 {
++        assert_eq!(
++            chain.programmed_controls(chip),
++            Some(ProgrammedControls::default())
++        );
++    }
++    assert!(chain
++        .receive(&write(0, 0x3c, 0x80008074, true))
++        .unwrap()
++        .is_empty());
++    for chip in 0..2 {
++        assert_eq!(
++            chain.programmed_controls(chip).unwrap().core0_write,
++            Some(0x74)
++        );
++    }
++}
++
++#[test]
++fn reset_and_power_loss_remove_knowledge_without_creating_reset_values() {
++    for power_loss in [false, true] {
++        let mut chain = configured(&[0, 128]);
++        for (register, value) in [(0x3c, 0x80008074), (0x08, 0x40480221), (0x68, 0xc0700111)] {
++            chain.receive(&write(0, register, value, true)).unwrap();
++        }
++        if power_loss {
++            chain.power(false);
++        } else {
++            chain.reset_line(true);
++        }
++        for chip in 0..2 {
++            assert_eq!(chain.programmed_controls(chip), None);
++        }
++        for (register, value) in [(0x3c, 0x800080b4), (0x08, 0x40480221), (0x68, 0xc0700111)] {
++            assert!(chain
++                .receive(&write(0, register, value, true))
++                .unwrap()
++                .is_empty());
++        }
++        chain.power(true);
++        chain.reset_line(false);
++        for chip in 0..2 {
++            assert_eq!(
++                chain.programmed_controls(chip),
++                Some(ProgrammedControls::default())
++            );
++        }
++    }
++}
+diff --git a/crates/md-sim-firmware/examples/esp32_original_probe.rs b/crates/md-sim-firmware/examples/esp32_original_probe.rs
+--- a/crates/md-sim-firmware/examples/esp32_original_probe.rs
++++ b/crates/md-sim-firmware/examples/esp32_original_probe.rs
+@@ -57,9 +57,20 @@
+         let thread = std::thread::spawn(move || {
+             let start = std::time::Instant::now();
+             let identify = std::env::var_os("MD_SIM_BM1397_IDENTIFY").is_some();
+-            let mut chain = md_sim_firmware::bm1397::IdentificationChain::new(1).unwrap();
++            let control_storage = std::env::var_os("MD_SIM_BM1397_CONTROL_STORAGE").is_some();
++            let support = if control_storage {
++                md_sim_firmware::bm1397::ControlWriteSupport::RegisterStorage
++            } else {
++                md_sim_firmware::bm1397::ControlWriteSupport::Unsupported
++            };
++            let mut chain =
++                md_sim_firmware::bm1397::IdentificationChain::with_control_support(1, support)
++                    .unwrap();
+             let mut observer = std::env::var_os("MD_SIM_BM1397_CORE0_WRITE_INTENT")
+                 .map(|_| write_intent::Observer::default());
++            if control_storage && (!identify || observer.is_some()) {
++                return Err(std::io::Error::other("control storage requires identification and excludes the write-intent observer"));
++            }
+             if identify {
+                 // Explicit development-stage inputs. GPIO, regulator, UART
+                 // timing and mining support are not inferred from this probe.
+@@ -68,7 +79,7 @@
+                 eprintln!(
+                     "md-sim ASIC identification stage: {}",
+                     json!({
+-                        "chips":1,"powered":true,"reset_asserted":false,
++                        "chips":1,"powered":true,"reset_asserted":false,"control_write_support":support,
+                         "pin_binding":"explicit stage input; not connected to GPIO or regulator",
+                         "timing":"host pipe response; no calibrated guest UART timing",
+                         "supported":"register0 identification, INACTIVE/SETADDRESS, per-chip ticket filter and clock-order/enable register storage; clock routing and status unsupported",
+@@ -125,6 +136,25 @@
+                                         eprintln!(
+                                             "md-sim ASIC write-intent adaptation: {}",
+                                             json!({"after_capture_sequence":sequence-1,"intent":intent,"scope":"One posted firmware write observed; no ASIC acknowledgement, state, timing or success inferred."})
++                                        );
++                                    }
++                                    if control_storage
++                                        && matches!(
++                                            packet,
++                                            md_sim_firmware::bm1397::Packet::Command {
++                                                command: md_sim_firmware::bm1397::Command::Write {
++                                                    register: 0x3c | 0x08 | 0x68,
++                                                    ..
++                                                },
++                                                ..
++                                            }
++                                        )
++                                    {
++                                        eprintln!(
++                                            "md-sim ASIC programmed controls: {}",
++                                            json!({"after_capture_sequence":sequence-1,"chip_position":0,
++                                                "state":chain.programmed_controls(0),"effective_clock_known":false,
++                                                "guest_readback_available":false,"response_bytes":0})
+                                         );
+                                     }
+                                     for reply in received.replies {
+@@ -425,6 +455,7 @@
+     identify: bool,
+     sar_input_fixture: bool,
+     core0_write_intent: bool,
++    control_storage: bool,
+ }
+ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<()> {
+     let Options {
+@@ -436,6 +467,7 @@
+         identify,
+         sar_input_fixture,
+         core0_write_intent,
++        control_storage,
+     } = options;
+     ensure!(!out.exists(), "new output required");
+     fs::create_dir_all(out)?;
+@@ -529,7 +561,21 @@
+         );
+         environment.insert("MD_SIM_BM1397_CORE0_WRITE_INTENT".into(), "1".into());
+     }
+-    let adaptation = if core0_write_intent {
++    if control_storage {
++        ensure!(identify && sar_input_fixture && !core0_write_intent,
++            "control storage requires the reference identification/ADC profile and excludes the observer");
++        environment.insert("MD_SIM_BM1397_CONTROL_STORAGE".into(), "1".into());
++    }
++    let adaptation = if control_storage {
++        json!({
++            "id":"bm1397-programmed-control-storage-v1","kind":"reference-device-capability",
++            "capability":md_sim_firmware::bm1397::ControlWriteSupport::RegisterStorage,
++            "scope":"Per-chip posted core0 and PLL0/PLL3 configuration. Reset/power invalidate unknown defaults. No effective core fan-out, clock, lock, completion or guest readback is inferred. No write acknowledgement is sent.",
++            "source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/programmed.rs")),
++            "original_arithmetic_fixture_sha256":"9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
++            "original_board_gate":false,"functional_mining_gate":false
++        })
++    } else if core0_write_intent {
+         json!({
+             "id":write_intent::ADAPTATION,"kind":"reference-environment-observer",
+             "command_hex":"55aa5109003c8000807410","maximum_observations":1,
+@@ -583,7 +629,7 @@
+     save_json(&out.join("spec.json"), &spec)?;
+     save_json(
+         &out.join("input-identities.json"),
+-        &json!({"firmware":original,"source":SOURCE,"recipe":hash_file(&std::env::current_exe()?)?,"backend_build_report":hash_file(&backend.join("build-report.json"))?,"backend_spec":hash_file(&backend.join("spec.json"))?,"scope":"Original archived factory firmware and ROM on an upstream ESP32-S3 machine; no claim of complete Bitaxe device models.","storage_adaptation":"Erase-fill trailing16MiB flash capacity in private scratch; preserve all original factory bytes.","register_diagnostic":registers,"sar_external_fixture":if sar_input_fixture {json!({"unit":1,"channel":1,"microvolts":550000,"scope":"Independent fixed test input; no regulator coupling or physical core-voltage claim."})}else{Value::Null},"ds4432_register_fixture":ds4432,"ds4432_scope":"When selected: explicit 3.3V supply, OUT0 80kOhm FS resistor, OUT1 disconnected. No modeled regulator or ASIC-voltage telemetry; exact Max R14 remains unresolved.","emc2101_register_fixture":emc2101,"emc2101_scope":"When selected: host-load0% strap, explicit internal27C test input, external diode open, no connected fan tachometer. These are declared fixture inputs, not measured physical board telemetry.","ina260_register_fixture":ina260,"ina260_scope":"When selected: explicit5V VIN and0A current diagnostic input. No physical PSU or ASIC load is inferred; no core-voltage measurement.","asic_uart_tx_capture":asic_uart,"asic_uart_scope":if identify {"Identification, addresses and clock-control register storage: one explicitly powered, reset-released reference chip; no GPIO/regulator binding or calibrated guest UART timing. Per-chip state follows writes and reset. Clock routing, status and all other unsupported commands remain visible failures. No mining initialization or nonce response."} else {"When selected: private second UART output capture only; no response bytes or ASIC model. Capture timestamps use host wall time, not calibrated guest UART timing."},"core0_write_intent_adaptation":adaptation,"bm1397_identification_stage":identify,"bm1397_identification_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/identify.rs")),"bm1397_reply_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/reply.rs"))}),
++        &json!({"firmware":original,"source":SOURCE,"recipe":hash_file(&std::env::current_exe()?)?,"backend_build_report":hash_file(&backend.join("build-report.json"))?,"backend_spec":hash_file(&backend.join("spec.json"))?,"scope":"Original archived factory firmware and ROM on an upstream ESP32-S3 machine; no claim of complete Bitaxe device models.","storage_adaptation":"Erase-fill trailing16MiB flash capacity in private scratch; preserve all original factory bytes.","register_diagnostic":registers,"sar_external_fixture":if sar_input_fixture {json!({"unit":1,"channel":1,"microvolts":550000,"scope":"Independent fixed test input; no regulator coupling or physical core-voltage claim."})}else{Value::Null},"ds4432_register_fixture":ds4432,"ds4432_scope":"When selected: explicit 3.3V supply, OUT0 80kOhm FS resistor, OUT1 disconnected. No modeled regulator or ASIC-voltage telemetry; exact Max R14 remains unresolved.","emc2101_register_fixture":emc2101,"emc2101_scope":"When selected: host-load0% strap, explicit internal27C test input, external diode open, no connected fan tachometer. These are declared fixture inputs, not measured physical board telemetry.","ina260_register_fixture":ina260,"ina260_scope":"When selected: explicit5V VIN and0A current diagnostic input. No physical PSU or ASIC load is inferred; no core-voltage measurement.","asic_uart_tx_capture":asic_uart,"asic_uart_scope":if identify {"Identification, addresses and clock-control register storage: one explicitly powered, reset-released reference chip; no GPIO/regulator binding or calibrated guest UART timing. Per-chip state follows writes and reset. Clock routing, status and all other unsupported commands remain visible failures. No mining initialization or nonce response."} else {"When selected: private second UART output capture only; no response bytes or ASIC model. Capture timestamps use host wall time, not calibrated guest UART timing."},"core0_write_intent_adaptation":if core0_write_intent {adaptation.clone()}else{Value::Null},"programmed_control_profile":if control_storage {adaptation.clone()}else{Value::Null},"bm1397_identification_stage":identify,"bm1397_identification_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/identify.rs")),"bm1397_reply_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/reply.rs"))}),
+     )?;
+     let result = execute(&store, &spec, Arc::new(AtomicBool::new(false)))?;
+     save_json(&out.join("result.json"), &result)?;
+@@ -642,8 +688,8 @@
+         return inner(args[1] == "__inside-registers");
+     }
+     ensure!(
+-        args.len() == 4 || (args.len() == 5 && (args[4] == "registers" || args[4] == "ds4432" || args[4] == "emc2101" || args[4] == "asic-trace" || args[4] == "power-asic-trace" || args[4] == "bm1397-identify" || args[4] == "bm1397-identify-registers" || args[4] == "bm1397-identify-adc" || args[4] == "bm1397-observe-core0-adc")),
+-        "usage: esp32_original_probe BACKEND_BUILD FACTORY_FIRMWARE NEW_OUTPUT [registers|ds4432|emc2101|asic-trace|power-asic-trace|bm1397-identify|bm1397-identify-registers|bm1397-identify-adc|bm1397-observe-core0-adc]"
++        args.len() == 4 || (args.len() == 5 && (args[4] == "registers" || args[4] == "ds4432" || args[4] == "emc2101" || args[4] == "asic-trace" || args[4] == "power-asic-trace" || args[4] == "bm1397-identify" || args[4] == "bm1397-identify-registers" || args[4] == "bm1397-identify-adc" || args[4] == "bm1397-observe-core0-adc" || args[4] == "bm1397-control-storage-adc")),
++        "usage: esp32_original_probe BACKEND_BUILD FACTORY_FIRMWARE NEW_OUTPUT [registers|ds4432|emc2101|asic-trace|power-asic-trace|bm1397-identify|bm1397-identify-registers|bm1397-identify-adc|bm1397-observe-core0-adc|bm1397-control-storage-adc]"
+     );
+     let mode = args.get(4).and_then(|a| a.to_str());
+     let identify = matches!(
+@@ -653,6 +699,7 @@
+                 | "bm1397-identify-registers"
+                 | "bm1397-identify-adc"
+                 | "bm1397-observe-core0-adc"
++                | "bm1397-control-storage-adc"
+         )
+     );
+     let asic_uart = identify || matches!(mode, Some("asic-trace" | "power-asic-trace"));
+@@ -671,9 +718,14 @@
+             identify,
+             sar_input_fixture: matches!(
+                 mode,
+-                Some("bm1397-identify-adc" | "bm1397-observe-core0-adc")
++                Some(
++                    "bm1397-identify-adc"
++                        | "bm1397-observe-core0-adc"
++                        | "bm1397-control-storage-adc"
++                )
+             ),
+             core0_write_intent: mode == Some("bm1397-observe-core0-adc"),
++            control_storage: mode == Some("bm1397-control-storage-adc"),
+         },
+     );
+     if let Err(error) = &result {
+diff --git a/simulator/firmware/fixtures/t17-pll-frequency-results.json b/simulator/firmware/fixtures/t17-pll-frequency-results.json
+new file mode 100644
+--- /dev/null
++++ b/simulator/firmware/fixtures/t17-pll-frequency-results.json
+@@ -0,0 +1,42 @@
++{
++  "schema": "md-sim-original-arithmetic-regression/1",
++  "scope": "Actual original T17 frequency arithmetic output. This fixture is not firmware mining or physical clock evidence.",
++  "encoding": "little-endian u32: magic, version, count, words-per-case; then case ID, register word, software-divider argument, original result",
++  "cases": 22134,
++  "output": {
++    "path": "work/simulator/bitaxe/t17-pll-oracle-496/execution.stdout",
++    "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
++    "size": 354160
++  },
++  "original_miner": {
++    "path": "work/simulator/bitaxe/t17-static-262/bmminer",
++    "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
++    "size": 553247
++  },
++  "original_function": {
++    "virtual_address": "0x28b2c",
++    "file_offset": 133932,
++    "size": 108,
++    "sha256": "650ae97e0c4c042e4e89b91d2bdf995ce29433b0e3f7f8bd47cacd986155f4d7"
++  },
++  "driver_manifest": {
++    "path": "work/simulator/bitaxe/t17-pll-driver-496/manifest.json",
++    "sha256": "57b7a72e84e8585623409e563e348f01a6ed09775a57e93f921419a471657dcc",
++    "size": 41220
++  },
++  "execution_result": {
++    "path": "work/simulator/bitaxe/t17-pll-oracle-496/result.json",
++    "sha256": "947a09fedbb0acab39cf4efb96e221cbe5731b64bbc52ea438b4b4cc6ff9a981",
++    "size": 754506
++  },
++  "assessment": {
++    "path": "work/simulator/bitaxe/t17-pll-oracle-496/assessment.json",
++    "sha256": "1b5798d0bc3cc21e060876610ee8c53848745f8e5b3f896195be9ab332d0affd",
++    "size": 2814
++  },
++  "independent_review": {
++    "path": "work/simulator/reviews/t17-pll-independent-execution-496.json",
++    "sha256": "f1511bdb86f40ce190d49ca7bad082fd1aa05ad1ec07dfcf2772c0bbfa15b7b5",
++    "size": 2056
++  }
++}

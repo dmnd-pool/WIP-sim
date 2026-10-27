@@ -1,0 +1,56 @@
+{
+  "blocking_findings": [],
+  "scope": "runtime/coordinator ordering and identity review, not Core acceptance",
+  "files": [
+    {
+      "path": "crates/md-sim-runtime/src/isolation.rs",
+      "sha256": "8cb765bca423de0ae8db69c4211dbe3a0f6ba2f3ac9e5e9c6ec4dede45d33d09",
+      "size": 38050
+    },
+    {
+      "path": "crates/md-sim-runtime/src/doctor.rs",
+      "sha256": "0b26d305d7f24313738c7dd1367580d2c9d6b0231f7afc6fc6bb7156044c9d2f",
+      "size": 4511
+    },
+    {
+      "path": "crates/md-sim-runtime/tests/isolated_worker.rs",
+      "sha256": "62e9a1506ac76a79ece3d8da9fbb44c54cd282c57ea25c8a79df0a102276073e",
+      "size": 44327
+    },
+    {
+      "path": "crates/md-sim-coordinator/src/executor.rs",
+      "sha256": "652f11aefe864d2591d6f9c6c95924ec9d8eca93ef71acfeab7174a57d51334a",
+      "size": 30416
+    },
+    {
+      "path": "crates/md-sim-coordinator/tests/worker_carrier.rs",
+      "sha256": "a481866bcf01301cd6fa786e54d1880d4ccad6d98f27f56e10c1ec47bfcac718",
+      "size": 27220
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/runtime466-isolation-channel.log",
+      "sha256": "42bf031000f44ff7fd8824661f90fda94adb75972cb31e72e834f62117f988b3",
+      "size": 2373
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/runtime466-core-build.log",
+      "sha256": "a889c1431ee6475dc947b14054b0dc8c874a2a6333e50cd6f832a1a4715a340e",
+      "size": 395
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/runtime466-clippy.log",
+      "sha256": "6b42d8b0fbf4968e8bbe0b523e116e9f1f60b37d0c13b97f417777c6d8370b31",
+      "size": 230
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/runtime466-worker-carrier.log",
+      "sha256": "09d3f6df1539e9722a650f61a92d930eb382a8e9c4e46a8a3c5596dbb9853f36",
+      "size": 523
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/runtime466-busy-uid.log",
+      "sha256": "3ae6082bcafae5977a492baad2c7d282c2bfeaa4f17d782514c83d1519804b3c",
+      "size": 441
+    }
+  ]
+}

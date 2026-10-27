@@ -1,0 +1,335 @@
+{
+  "schema": "md-sim-native-browser-review/1",
+  "status": "pass for selected fresh adapted reference browser/access path; exact-target/full specification remain incomplete",
+  "run_id": "run-ef37c532ac0c1cc8ab3b207299b928eb0ae9878f8da8941a3b6ef994acfd5661",
+  "canonical_locked_run": {
+    "sha256": "00f0d48bbde1dba197a078cd83903cbff3830e8771954fed318f77f6dd85c2f5",
+    "size": 17298
+  },
+  "outer": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 373443,
+    "trace_truncated": false
+  },
+  "assessment": {
+    "passed": true,
+    "complete_result_exported": true,
+    "observation_error": null,
+    "provider_observation_error": null
+  },
+  "fresh_preparation": {
+    "receipt": {
+      "sha256": "b6e79141f953f15d1c14a314a9bf6e43a4a479b4e0aea3ca6a5665acf46a2942",
+      "size": 995
+    },
+    "parent_process": {
+      "sha256": "a3247419fe950dc9e6353a6adfbfb4ba73e5fd909b1d30d3dcdba3926a4e9b89",
+      "size": 11264
+    },
+    "child_process": {
+      "sha256": "bb7cc3c11b8324aa02950958dbf6bf145b8eaf6f84c4fe1f348cd89a35024a64",
+      "size": 11263
+    },
+    "parent_pool": {
+      "sha256": "dddf3927541325363cbe70ca3e1d86defbf1b6ca0577d1d00287e5ebcf9650a6",
+      "size": 1031
+    },
+    "child_pool": {
+      "sha256": "38a78aeb2d808cba2d7ac901e6380881393c38dd3c85c98b900d4a5733bd05f1",
+      "size": 1025
+    },
+    "helper": {
+      "sha256": "ed84d3c7a998c64fc3b06d73d38d6dddf2afa68ef17ba804fd92d81783c0513a",
+      "size": 1869048
+    },
+    "only_changed_process_mount": "/private-pool.json",
+    "only_changed_pool_fields": [
+      "seed",
+      "time"
+    ],
+    "verified_runtime_mounts": 46,
+    "executed_lock_and_parent_receipts_joined": true
+  },
+  "retention": {
+    "access_files_rehashed_and_hex_decoded": 275,
+    "native_pool_access_hashes_joined": true,
+    "outer_process_result_hashes_joined": true,
+    "browser_selection_run_endpoint_publication_joined": true,
+    "ack_bytes": 573,
+    "ack_exact_shared_receipt": true,
+    "worker_cleanup_bound_to_ack": true
+  },
+  "browser_origins": [
+    {
+      "origin": "http://127.0.0.1:18090",
+      "passed": true,
+      "elapsed_ms": 10389,
+      "native_dom_readiness_ms": 1012,
+      "accepted_solutions": [
+        2,
+        2
+      ],
+      "websocket_sample_timestamps": [
+        1793049777,
+        1793049778
+      ],
+      "clock": [
+        {
+          "native_ms": 1793049778000,
+          "browser_sent_ms": 1793049781073,
+          "browser_received_ms": 1793049781206,
+          "native_minus_sent_ms": -3073,
+          "native_minus_received_ms": -3206
+        },
+        {
+          "native_ms": 1793049780000,
+          "browser_sent_ms": 1793049783209,
+          "browser_received_ms": 1793049783399,
+          "native_minus_sent_ms": -3209,
+          "native_minus_received_ms": -3399
+        }
+      ],
+      "fresh_profile_rejected": true,
+      "primary_session_still_authenticated": true,
+      "asset": {
+        "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+        "size": 425409
+      }
+    },
+    {
+      "origin": "https://192.0.2.1:9443",
+      "passed": true,
+      "elapsed_ms": 8905,
+      "native_dom_readiness_ms": 508,
+      "accepted_solutions": [
+        2,
+        2
+      ],
+      "websocket_sample_timestamps": [
+        1793049788,
+        1793049789
+      ],
+      "clock": [
+        {
+          "native_ms": 1793049790000,
+          "browser_sent_ms": 1793049792497,
+          "browser_received_ms": 1793049792698,
+          "native_minus_sent_ms": -2497,
+          "native_minus_received_ms": -2698
+        },
+        {
+          "native_ms": 1793049792000,
+          "browser_sent_ms": 1793049794701,
+          "browser_received_ms": 1793049794936,
+          "native_minus_sent_ms": -2701,
+          "native_minus_received_ms": -2936
+        }
+      ],
+      "fresh_profile_rejected": true,
+      "primary_session_still_authenticated": true,
+      "asset": {
+        "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+        "size": 425409
+      }
+    }
+  ],
+  "browser_logs": [
+    {
+      "name": "0-stdout.log",
+      "object": {
+        "sha256": "bc9c0e53c9e1fb65d183e27272a5f3b17094bd7d20388d52611e3d6c46dd50ab",
+        "size": 85748
+      },
+      "complete_bytes_reconstructed": true,
+      "prefix_truncated": true
+    },
+    {
+      "name": "0-stderr.log",
+      "object": {
+        "sha256": "d37095890e41abeb8aa1cae77e628c525ff001e33622b496422c431b4a24aaaf",
+        "size": 38
+      },
+      "complete_bytes_reconstructed": true,
+      "prefix_truncated": false
+    },
+    {
+      "name": "1-stdout.log",
+      "object": {
+        "sha256": "5c43d43ee6a72d34147a5dc0eb070d4e646cf65b43209992cc60a14cde00f5de",
+        "size": 24316
+      },
+      "complete_bytes_reconstructed": true,
+      "prefix_truncated": false
+    },
+    {
+      "name": "1-stderr.log",
+      "object": {
+        "sha256": "d37095890e41abeb8aa1cae77e628c525ff001e33622b496422c431b4a24aaaf",
+        "size": 38
+      },
+      "complete_bytes_reconstructed": true,
+      "prefix_truncated": false
+    }
+  ],
+  "native_api": [
+    {
+      "origin": "http://127.0.0.1:18090",
+      "observations": 15,
+      "configuration_write_read_restore_verified": true,
+      "restart_persistence": "not tested in this run"
+    },
+    {
+      "origin": "https://192.0.2.1:9443",
+      "observations": 15,
+      "configuration_write_read_restore_verified": true,
+      "restart_persistence": "not tested in this run"
+    }
+  ],
+  "stop_acknowledgements": {
+    "gateway_stopped": true,
+    "stop_error": null,
+    "tunnel_stopped": true
+  },
+  "browser_cleanup": {
+    "both_owned_groups_empty": true,
+    "no_oom_or_pids_limit_hits": true
+  },
+  "clock_request": {
+    "applied": false,
+    "elapsed_seconds": 26,
+    "policy": {
+      "deterministic_fixed_epoch_replay": false,
+      "firmware_bytes_changed": false,
+      "kind": "explicit-execution-host-wall-clock-environment-adaptation",
+      "limits": "Remote client clock synchronization is not inferred. Compare retained native and client timestamps for each run. Serial delivery and emulation can produce measured skew.",
+      "miner": "The original guest date command sets CLOCK_REALTIME after console activation. The guest must read back that value.",
+      "monotonic_and_device_clocks_changed": false,
+      "ntp_tested": false,
+      "physical_rtc_claim": false,
+      "progression": "Elapsed CLOCK_MONOTONIC time since that sample; subsequent host wall-clock steps do not change the selected epoch.",
+      "sample_record": "MD_SIM_WALL_CLOCK_REQUEST includes the selected epoch, elapsed time, requested time and exact script hash.",
+      "source": "CLOCK_REALTIME on the execution host, sampled when the native runner starts after dispatch"
+    },
+    "readback_maximum_seconds": 1793049704,
+    "requested_unix_seconds": 1793049699,
+    "script_sha256": "8ada1cc0a41926e18ded810cba4de23b3d4fb636ea12af0934814fd54deea6c0",
+    "selected_epoch_unix_seconds": 1793049673
+  },
+  "original_guest_clock_readback": {
+    "epoch": 1793049673,
+    "elapsed": 26,
+    "target": 1793049699,
+    "actual": 1793049699
+  },
+  "audit_corrections": [
+    "Use the declared serde struct field order for ProcessSpec identity; LockedRun instead uses sorted, domain-prefixed JSON.",
+    "Selection policy_bytes and provider_bytes are UTF-8 strings, while exported access artifact bodies use hex.",
+    "The browser provider object is the carrier configuration. Its process, lease, policy and support manifest identities were joined explicitly.",
+    "The current run has275 access files;278 was the earlier495 count. These audit corrections changed no simulator or retained evidence bytes."
+  ],
+  "scope_limits": [
+    "Original archived S9 firmware in the declared adapted reference environment.",
+    "Worker and isolated KVM client VM use the same execution host; no external physical host claim.",
+    "Dashboard write/read/restore tested within one boot; restart persistence is a separate suite.",
+    "Mining, accepted blocks and functional rates require the independent audits and Core results; dashboard counters alone do not grant those results.",
+    "No exact physical target, original-board boot or full-matrix acceptance is granted."
+  ],
+  "receipts": [
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/result.json",
+      "sha256": "971f6d811f1c3b1375e5978bde22e5dd654149b586046c9e3841fa8226a45722",
+      "size": 124682968
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/assessment.json",
+      "sha256": "48fff3c9edcfb948dc36918a33e57f2c2d0897f718c9a93cc88c9cd3af302c42",
+      "size": 24580
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/process-spec.json",
+      "sha256": "be54dc1855cf933f5c5d5f846e06acde5f4d53c6d0f23c19d8ae2ad42a7a1c56",
+      "size": 5763
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/locked-run.json",
+      "sha256": "1df8e1527e547861bfc19250e77a961d3c0e94aaf272b356a873248654ddd24f",
+      "size": 22911
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/fresh-work.json",
+      "sha256": "b6e79141f953f15d1c14a314a9bf6e43a4a479b4e0aea3ca6a5665acf46a2942",
+      "size": 995
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/fresh-work-parent-lock.json",
+      "sha256": "82d296dc5385805fd695e82c964f8b7097190bd166814090f75bb9ded8aaa9dd",
+      "size": 22012
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/host-retention.json",
+      "sha256": "583a5da9a4404eccedc2aafd1d3ebdb19204d8db2454e8b5bd59e86ded32ced5",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/worker-retention.json",
+      "sha256": "583a5da9a4404eccedc2aafd1d3ebdb19204d8db2454e8b5bd59e86ded32ced5",
+      "size": 378
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/worker-result.json",
+      "sha256": "a1211c4659bf45bc7b0fd8a753c8e3d48c3d78a9ff8115d662aa6dab5b7a71ca",
+      "size": 105042773
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/worker-cleanup.json",
+      "sha256": "2bf696c46b6bdc1c4eee55f51e44ba52af2a693e691f502d8edd7e58c8b856de",
+      "size": 313
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/shared-access/access-bundle.json",
+      "sha256": "f41beedefdd8d6f2ec5abfa717e0880cb29f57cbe6b24f7639a7de3762cbbd79",
+      "size": 21106626
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/shared-access/retention-receipt.json",
+      "sha256": "aeb64b94f00632dd5519a903e0a754c3443d8a8881ceaa210809659348239203",
+      "size": 664
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/shared-access/client-observer/board-browser-process.json",
+      "sha256": "635d79687e06dd12dcfd125f65be1ae2c5db27bc1ad93fbadc635e6ebfdb54d1",
+      "size": 496611
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/shared-access/client/browser-preparation.json",
+      "sha256": "0d5b0db8fc304e1b865cc028c1adf4a3e619c0b592e3ab0e90b5a474c204130e",
+      "size": 3953
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/shared-access/client/dispatch.json",
+      "sha256": "958cb2856a1fc1d4bef0c8d8aa5817654e1ea55ff53494caa0e9c61b721a815b",
+      "size": 317
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/shared-access/client/http/report.json",
+      "sha256": "04d5d9ea621add3b351e85d0d37590b4d0fb5c5cf0eefa1249932ab44cf639c0",
+      "size": 930643
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/shared-access/client/tls/report.json",
+      "sha256": "ac3c94b95f1e03ed449d00b84112a7844b2f0700b9782c61ce258dc25dff40ec",
+      "size": 936289
+    },
+    {
+      "path": "work/simulator/demos/s9-shared-500/run/execution/guest.log",
+      "sha256": "eb5284a90ac5ca634294851e480ac4bf26a3b015d6c91a5ec7ce19dd09ec3816",
+      "size": 136699
+    },
+    {
+      "path": "work/simulator/cli-tools-500/build.json",
+      "sha256": "9278fee813a7bea8684e0d79bff9c202a9bb59634c4b8f46530d2bc3372af423",
+      "size": 2648
+    }
+  ]
+}

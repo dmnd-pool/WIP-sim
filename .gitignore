@@ -50,6 +50,7 @@ __pycache__/
 !/work/simulator/reviews/*.md
 !/work/simulator/reviews/*.json
 !/work/simulator/reviews/*.sha256
+!/work/simulator/reviews/bm1397-programmed-501.patch
 !/work/simulator/cleanup-development-455/
 !/work/simulator/shared-recovery-development-459/
 !/work/simulator/milestone-1.2-checkpoint/
@@ -63,3 +64,21 @@ __pycache__/
 !/work/simulator/channel-target-440/
 /work/simulator/channel-target-440/*
 !/work/simulator/channel-target-440/SHA256SUMS
+
+# Checkpoint500 build identities. Keep executable payloads and source copies local.
+!/work/simulator/core-checkpoint-494/
+/work/simulator/core-checkpoint-494/*
+!/work/simulator/core-checkpoint-494/manifest.json
+!/work/simulator/core-checkpoint-499/
+/work/simulator/core-checkpoint-499/*
+!/work/simulator/core-checkpoint-499/manifest.json
+!/work/simulator/core-checkpoint-500/
+/work/simulator/core-checkpoint-500/*
+!/work/simulator/core-checkpoint-500/manifest.json
+!/work/simulator/channel-target-499/
+/work/simulator/channel-target-499/*
+!/work/simulator/channel-target-499/cohort.json
+!/work/simulator/channel-target-499/SHA256SUMS
+!/work/simulator/cli-tools-500/
+/work/simulator/cli-tools-500/*
+!/work/simulator/cli-tools-500/build.json

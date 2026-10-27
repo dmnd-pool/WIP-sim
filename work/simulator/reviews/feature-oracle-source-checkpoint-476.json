@@ -1,0 +1,44 @@
+{
+  "schema": "md-sim-feature-oracle-source-checkpoint/1",
+  "status": "source_review_closed_unbuilt_waiting_for_browser479",
+  "component": "independent unchanged upstream feature oracle",
+  "upstream_commit": "c9f02d8576042325425824647ab5555b1bc77833",
+  "source": {
+    "crates/md-sim-firmware/examples/s9_feature_oracle.rs": {
+      "sha256": "83e3c83ebec1e2ec9439cc0701f8f751dd490a87b64acea40b527bac124a8e08",
+      "size": 12696
+    },
+    "crates/md-sim-firmware/examples/support/fpga_feature_comparison.rs": {
+      "sha256": "40821f27570a52ce36a0dd54719ce6d3a51d1ff306c167329598637097537577",
+      "size": 6433
+    },
+    "crates/md-sim-firmware/examples/support/prjxray_feature_oracle.py": {
+      "sha256": "1fcee3ddaad70fa1458259b4b88bd00b828403290869625d37a319d21f50fc5d",
+      "size": 10465
+    }
+  },
+  "input_report": "work/simulator/qemu-s9/features-selected-474c/features.json",
+  "input_report_sha256": "b23a9995f6e35f962caea9a9f850a109ad7f5cb248e3ec6eff07c93570023a5b",
+  "next_actions": [
+    "after browser479 stops: focused Rust test, strict Clippy and release build",
+    "freeze helper and source pins",
+    "execute isolated upstream matcher against final474c",
+    "compare every segment digest and residual bit; save failures without weakening assertions",
+    "independent execution review"
+  ],
+  "limits": [
+    "No full logic netlist, firmware boot, physical timing or exact-target acceptance claim",
+    "Do not run acquired Python modules on host",
+    "Hold duplicate cleanup hash scan until browser479 stops; inventory480 is metadata only"
+  ],
+  "metadata_checks": [
+    "All ten required dynamic Python modules each have one installed .so file",
+    "Python3.14 _datetime is built into the interpreter, so no separate native mount is needed",
+    "No stdlib .py symlinks found; acquired modules have not executed"
+  ],
+  "independent_source_review": {
+    "path": "work/simulator/reviews/feature-oracle-independent-source-476.json",
+    "sha256": "e3bd42c5bc912b7082088763118ebb827f9066ad3a2f092d90da71b80317381d",
+    "size": 1766
+  }
+}

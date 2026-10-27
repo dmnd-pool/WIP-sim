@@ -1,0 +1,80 @@
+{
+  "schema": "md-sim-tested-shared-cli-build/1",
+  "scope": "Final promoted CLI and full source checks before actual fresh CLI500. The helper cohort separately records inherited494 binaries and new499 builds. No execution pass from this record.",
+  "source_checkpoint": {
+    "path": "work/simulator/core-checkpoint-500/manifest.json",
+    "object": {
+      "sha256": "9654868276fc33004cf8d4ef37b385d4a4df0883a5fb5b40247e4774fe003827",
+      "size": 91384
+    }
+  },
+  "source_count": 538,
+  "source_bytes": 7018988,
+  "binary": {
+    "path": "work/simulator/cli-tools-500/md-sim",
+    "object": {
+      "sha256": "7c39149aa98bb74dc697f1e7ba64e3e627e276cd93ddf7293f2209c110639ad8",
+      "size": 5173016
+    }
+  },
+  "manifest": {
+    "path": "simulator/demos/s9-shared.json",
+    "object": {
+      "sha256": "dc6cd072546a34ee475474173b5cf4163855d5ac863b13ff1001bc7eaf09ea5d",
+      "size": 865632
+    }
+  },
+  "helper_cohort": {
+    "path": "work/simulator/channel-target-499/cohort.json",
+    "object": {
+      "sha256": "190c2174794ccdb87036156bc555f5ae9fbeb41f7fae5e7c291be48d6bca5ef0",
+      "size": 5984
+    }
+  },
+  "checks": {
+    "format": "pass after two whitespace-only CLI fixes",
+    "clippy": "pass: workspace all-targets -D warnings",
+    "tests": {
+      "passed": 1069,
+      "failed": 0,
+      "ignored": 49,
+      "suites": 118
+    },
+    "guide_links": {
+      "checked": 569,
+      "broken": 0
+    },
+    "release": "pass"
+  },
+  "logs": {
+    "common500-fmt.log": {
+      "sha256": "b8f3d5a8559e520a8333da1345b4e82527f792d47735696c83b95534381bc317",
+      "size": 1162
+    },
+    "common500-fmt-b.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "common500-clippy.log": {
+      "sha256": "05eff094fe1f076fde07d49eb3b1f15e555e16e2af0aa20c56853fe2ac7c1ff2",
+      "size": 293
+    },
+    "common500-tests.log": {
+      "sha256": "64fae4b7d14d65e118286cc4833d1ea9ec15389228479eaa9e7284d4cfcf7bcc",
+      "size": 132503
+    },
+    "common500-guides.log": {
+      "sha256": "1bfb8c25b668e64c8824e56bb8583596bb53f842a7c41864d4098a74893e8d85",
+      "size": 176
+    },
+    "common500-cli-release.log": {
+      "sha256": "a7457f0bd9c5a741de1b88ed5029eb46cdd219b5ff478486ee0cf36621af8aab",
+      "size": 209
+    },
+    "common500-checkpoint.log": {
+      "sha256": "52047c56292f69c0caa0f092e7a1abfc6513b4e3c4842fc54daf579f98295b71",
+      "size": 48
+    }
+  },
+  "build_command": "CARGO_TARGET_DIR=work/simulator/check-target-085 CARGO_INCREMENTAL=0 TMPDIR=/home/user/src/md-sim/work/simulator/test-tmp-227 cargo build -p md-sim --release --offline --locked -j2"
+}

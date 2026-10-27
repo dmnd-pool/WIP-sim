@@ -1,0 +1,92 @@
+{
+  "schema": "md-sim-fpga-feature-inputs/1",
+  "bitstream": {
+    "path": "work/simulator/original-zynq/sd-bundle-291/boot/system.bit.gz",
+    "object": {
+      "sha256": "bdf2b3bff4f5f06169b302ccfac8424e46bb2089b6313e363457bf2ae1d4bd40",
+      "size": 164570
+    }
+  },
+  "part": {
+    "path": "fixtures/fpga/xc7z010clg400-1/part.json",
+    "object": {
+      "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+      "size": 16801
+    }
+  },
+  "tilegrid": {
+    "path": "artifacts/files/metadata/prjxray-xc7z010-tilegrid-20261026/tilegrid.json",
+    "object": {
+      "sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+      "size": 4351137
+    }
+  },
+  "tables": [
+    {
+      "tile_type": "CLBLL_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clbll-l-db-20261026/segbits_clbll_l.db",
+        "object": {
+          "sha256": "9bf6bdffdc814569a7da53c696e46207aab23ea66c9dd92c47e50a6211dd739b",
+          "size": 27294
+        }
+      }
+    },
+    {
+      "tile_type": "CLBLL_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clbll-r-db-20261026/segbits_clbll_r.db",
+        "object": {
+          "sha256": "c2ac0aeafc4d1e528e743c49fc00eba3b8b49068f034a4c0ab82df5dd9fb683b",
+          "size": 27294
+        }
+      }
+    },
+    {
+      "tile_type": "CLBLM_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clblm-l-db-20261026/segbits_clblm_l.db",
+        "object": {
+          "sha256": "07dca7c6b00f07a2a255f5178153c42bf16aff202623f2e3bc4bb0f2b974ba41",
+          "size": 28171
+        }
+      }
+    },
+    {
+      "tile_type": "CLBLM_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clblm-r-db-20261026/segbits_clblm_r.db",
+        "object": {
+          "sha256": "3ddfeca1b01bdc04b4f1b3d0dc73cf39f4230708fbbcb5b6170d5b50dc49ad64",
+          "size": 28171
+        }
+      }
+    },
+    {
+      "tile_type": "INT_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-int-l-db-20261026/segbits_int_l.db",
+        "object": {
+          "sha256": "0ea44e8dfaf97ed200f30b2afe117e94e1a68bdb26af2e09e69e855414779520",
+          "size": 164493
+        }
+      }
+    },
+    {
+      "tile_type": "INT_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-int-r-db-20261026/segbits_int_r.db",
+        "object": {
+          "sha256": "1541c7832dd161c5b3b5745d08fe0ee6f92bfbd372b76c12f54afc032c888556",
+          "size": 160201
+        }
+      }
+    }
+  ]
+}

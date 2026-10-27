@@ -5,9 +5,10 @@ passed all gates. The frozen matrix still has 79,599 rows and zero full
 exact-target passes.
 
 The user asked on 23 October for a smaller milestone 1.2 before milestone 2,
-then a stop to save tokens. The user will initialize Git and make the commit.
-Do not start more implementation or tests after the 1.2 handoff until the user
-asks to resume. This replaces the earlier request for continuous work.
+then a stop to save tokens. The checkpoint was committed as `b276dd7a`.
+On 26 October the user asked to resume and finish the remaining milestones.
+Work continues under that instruction. The historical 1.2 handoff remains
+unchanged.
 
 ## 1. Usable adapted S9 development run — passed; next milestone approved
 
@@ -74,16 +75,17 @@ physical host, host dashboard URL, exact physical board or measured physical
 timing is claimed. Browser run453 failed and its gateway shutdown
 acknowledgment remains incomplete. The separate Firefox startup test457b
 passed, but does not close the native browser gate. All these gates remain
-open in milestone 2.
+open at the1.2 checkpoint. The later adapted run495 passes the selected native
+browser path, with separate evidence below. This does not change run453.
 
 Final current-source checks pass: formatting, strict workspace Clippy and
 919 tests in 109 suites, with zero failures and 38 explicitly ignored
 integration helpers. The ignored helpers do not establish execution passes.
 Git exclusions pass 33 include/exclude checks. The [handoff](milestone-1.2-handoff.md)
-records Git scope and the next actions. No new implementation is to start
-after this checkpoint.
+records the Git scope and next actions at that checkpoint. Work resumed
+on 26 October after the user made the commit.
 
-## 2. One complete exact target and its remote workflow — paused
+## 2. One complete exact target and its remote workflow — in progress
 
 Acceptance: all applicable original-board, exact component, FPGA, timing,
 mining, Core, storage, fault, native dashboard, isolation and remote gates pass
@@ -97,9 +99,12 @@ model behavior. The new native worker beside a private client VM passes
 artifact transfer and process execution. Its original-firmware run354 also
 passes fresh-work verification and two Core acceptance/restart checks. This
 uses adapted reference hardware, not an exact physical target. The selected
-SSH/TLS API path now passes in adapted run441. This topology avoids nested CPU
-emulation. Browser, restart persistence, client-loss survival and the complete
-exact-target remote workflow remain open.
+SSH/TLS API path passes in adapted run441. The later
+[adapted run495](reports/native-browser-mining-pass-495.md) also passes the real
+native browser through both selected origins, separate cookie stores, clock
+bounds, retention and shutdown. It has two independently verified Core blocks.
+The topology avoids nested CPU emulation. Exact-target restart persistence,
+client-loss survival and the complete exact-target remote workflow remain open.
 
 Completed component work: four Zynq fabric clock/reset outputs, system-reset
 correction, legacy S9IO clock connection and mid-byte clock-gating tests pass
@@ -132,5 +137,5 @@ review must pass against the final frozen release inputs.
 
 Blockers: required implementation and missing evidence across the full matrix.
 Estimate: not defensible before exact target model and input gaps are resolved.
-Next action after milestone 2 approval: extend real execution paths by exact
+Next action after milestone 2 completion: extend real execution paths by exact
 hardware/firmware identity, preserve all unresolved rows, and run every suite.

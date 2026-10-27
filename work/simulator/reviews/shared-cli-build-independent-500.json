@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "scope": "Independent final CLI source/build/input/check review before execution; no firmware pass from source checks.",
+  "source_files_rehashed_current_and_frozen": 538,
+  "raw_test_log_totals": {
+    "passed": 1069,
+    "failed": 0,
+    "ignored": 49
+  },
+  "suites": 118,
+  "build": {
+    "sha256": "9278fee813a7bea8684e0d79bff9c202a9bb59634c4b8f46530d2bc3372af423",
+    "size": 2648
+  },
+  "binary": {
+    "path": "work/simulator/cli-tools-500/md-sim",
+    "object": {
+      "sha256": "7c39149aa98bb74dc697f1e7ba64e3e627e276cd93ddf7293f2209c110639ad8",
+      "size": 5173016
+    }
+  },
+  "manifest": {
+    "path": "simulator/demos/s9-shared.json",
+    "object": {
+      "sha256": "dc6cd072546a34ee475474173b5cf4163855d5ac863b13ff1001bc7eaf09ea5d",
+      "size": 865632
+    }
+  },
+  "review_findings": "No open source/build finding. Full run500 is still active."
+}

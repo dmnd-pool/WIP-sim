@@ -1,0 +1,32 @@
+{
+  "scope": "Root review of browser readiness order fix against frozen491; actual next native execution pending.",
+  "source_review_passed": true,
+  "findings": [],
+  "behavior": [
+    "Existing native DOM check runs after real authenticated dashboard navigation and before WebSocket sampling.",
+    "The same60-second DOM bound and exact3x63 topology/private-pool positive accepted-work assertions remain.",
+    "The same20-second two-sample WebSocket check and positive accepted-work assertions remain; all clock, asset, live telemetry and cookie checks remain.",
+    "The warm worker opens no WebSocket until subscription request, so the new DOM wait cannot consume its sampling window.",
+    "Existing primary-profile-before-fresh-profile order remains.",
+    "Added regression requires zero acceptedSolutions to fail even when pool and summary counters agree."
+  ],
+  "cause": "Failed492 sampled zero accepted work; later real native telemetry had one accepted solution25 seconds afterward.",
+  "files": {
+    "crates/md-sim-firmware/examples/s9_browser_check.rs": {
+      "sha256": "92e80f74d237d9706f4dcb7f4dcbae08b2c7368596f705cf4fdfcdbf9bbd3c2d",
+      "size": 40043
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/shared_run.rs": {
+      "sha256": "71e87aff9277ab3d97867734ba646394a952a31f734717be4e02507ea002076a",
+      "size": 16790
+    },
+    "crates/md-sim-firmware/examples/support/s9_browser_telemetry.rs": {
+      "sha256": "41018e59dc2eef1579e96eea255bfa6d73aa116cb26ed2c8cd6e1b18e5f464c3",
+      "size": 7528
+    }
+  },
+  "failure_evidence": {
+    "sha256": "9de9e344f50e232e2626e4469a6f478cb2195dad1e4588f4e6b1fcbe148a3374",
+    "size": 8608
+  }
+}

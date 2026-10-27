@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "scope": "independent hash/byte/phase review of actual Core acceptance and restart for recovered453 mining; original access remains failed",
+  "candidates": [
+    {
+      "candidate": 0,
+      "block_hash": "1c5d5a21017e0d57efd5a80fde5a88f965b65dcd1d97352361538927bdf0aded",
+      "height_sequence": [
+        0,
+        1,
+        1
+      ],
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      },
+      "acceptance": {
+        "sha256": "bb249758e49d9184481dc7b6836b27b0b897a09a7679e0e367066df107f3f080",
+        "size": 1745
+      },
+      "result": {
+        "sha256": "eaf118f0a1605cecd8a3ad7ef0e4c3537aaf5c47885dcc314a55090006163860",
+        "size": 37492
+      },
+      "source_link": {
+        "sha256": "f18c3fb41785251a4a239836cb6c0992234618a4ada40f094cae30ac146162db",
+        "size": 7321
+      },
+      "native_submission_index": 0,
+      "spec": {
+        "sha256": "45b6b500e64a14846fddb887d5c229d6af60e1caecd1274bf54dc457516ad090",
+        "size": 2389
+      },
+      "node_tools": {
+        "bubblewrap": {
+          "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+          "size": 84464
+        },
+        "prlimit": {
+          "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+          "size": 27320
+        },
+        "unshare": {
+          "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+          "size": 43408
+        }
+      }
+    },
+    {
+      "candidate": 1,
+      "block_hash": "06024c0b03f2cb77c1040fcdb38fc05c15013f9f48980aad7f7503ab917403e3",
+      "height_sequence": [
+        0,
+        1,
+        1
+      ],
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      },
+      "acceptance": {
+        "sha256": "934dd3d3d6a2bb29ebffdb8d0f5a686d9a249c2676876cb8fb1ed3a125ce5a12",
+        "size": 1745
+      },
+      "result": {
+        "sha256": "6ab5eca9cfa0977b56ce58ae254b0f43182541285abe04e538ecbe598d449426",
+        "size": 36552
+      },
+      "source_link": {
+        "sha256": "c1305ca794f91f5e104aa44e73d73d21f27324610b103fb0a6fb168189ad3b9d",
+        "size": 7321
+      },
+      "native_submission_index": 1,
+      "spec": {
+        "sha256": "7b7025df0f5b567ead63bb9af66230ebdcbc421d85530070c77cf27a6727efb4",
+        "size": 2389
+      },
+      "node_tools": {
+        "bubblewrap": {
+          "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+          "size": 84464
+        },
+        "prlimit": {
+          "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+          "size": 27320
+        },
+        "unshare": {
+          "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+          "size": 43408
+        }
+      }
+    }
+  ],
+  "audit": {
+    "sha256": "6cb0f1363a702569ebb0411b7b773c5d0134d29e450981c879b6b6fd3c6e959c",
+    "size": 60661
+  },
+  "original_board_gate": "incomplete",
+  "public_network_used": false,
+  "review_note": "Initial review assumptions /bitcoind and explicit loopback:false were corrected to the actual /daemon mount and the documented omitted-false ProcessSpec contract. Evidence was not changed."
+}

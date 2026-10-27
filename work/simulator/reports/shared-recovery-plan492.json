@@ -1,0 +1,182 @@
+{
+  "schema": "md-sim-shared-evidence-recovery-plan/1",
+  "source_execution": "/home/user/src/md-sim/work/simulator/network-vm/native-browser-492/execution",
+  "files": {
+    "assessment.json": {
+      "size": 48644666,
+      "limit": 67108864
+    },
+    "client-image/combined-initramfs.cpio.gz": {
+      "size": 500374057,
+      "limit": 1073741824
+    },
+    "client-image/payload-manifest.json": {
+      "size": 1729217,
+      "limit": 4194304
+    },
+    "client-image/payload-report.json": {
+      "size": 77773,
+      "limit": 4194304
+    },
+    "client-image/prepared-image.json": {
+      "size": 628,
+      "limit": 4194304
+    },
+    "client-image/root-manifest.json": {
+      "size": 874811,
+      "limit": 4194304
+    },
+    "execution/adaptation.json": {
+      "size": 19553,
+      "limit": 4194304
+    },
+    "execution/backend.log": {
+      "size": 52062363,
+      "limit": 134217728
+    },
+    "execution/guest.log": {
+      "size": 117341,
+      "limit": 134217728
+    },
+    "execution/host-retention.json": {
+      "size": 378,
+      "limit": 4096
+    },
+    "execution/locked-run.json": {
+      "size": 22013,
+      "limit": 4194304
+    },
+    "execution/pool-input.json": {
+      "size": 1022,
+      "limit": 4194304
+    },
+    "execution/process-spec.json": {
+      "size": 11264,
+      "limit": 4194304
+    },
+    "execution/result.json": {
+      "size": 104361575,
+      "limit": 269484032
+    },
+    "execution/shared-access/access-bundle.json": {
+      "size": 10183750,
+      "limit": 33554432
+    },
+    "execution/shared-access/client/report.json": {
+      "size": 8382,
+      "limit": 4194304
+    },
+    "execution/shared-access/retention-receipt.json": {
+      "size": 664,
+      "limit": 4096
+    },
+    "execution/shared-pool.json": {
+      "size": 930,
+      "limit": 4194304
+    },
+    "execution/shared-pool/outer-result.json": {
+      "size": 443,
+      "limit": 65536
+    },
+    "execution/shared-pool/pool-bundle.json": {
+      "size": 102851,
+      "limit": 16777216
+    },
+    "execution/shared-pool/pool.stderr": {
+      "size": 0,
+      "limit": 8388608
+    },
+    "execution/shared-pool/pool.stdout": {
+      "size": 41963,
+      "limit": 8388608
+    },
+    "execution/shared-pool/provider-receipt.json": {
+      "size": 4010,
+      "limit": 65536
+    },
+    "execution/shared-pool/retention-receipt.json": {
+      "size": 664,
+      "limit": 4096
+    },
+    "execution/shared-pool/sessions/session-0.jsonl": {
+      "size": 5908,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-1.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-2.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-3.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-4.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-5.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-6.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-7.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-8.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/sessions/session-9.jsonl": {
+      "size": 123,
+      "limit": 2097152
+    },
+    "execution/shared-pool/support-proof.json": {
+      "size": 2247,
+      "limit": 4194304
+    },
+    "execution/worker-request.json": {
+      "size": 1967,
+      "limit": 4194304
+    },
+    "execution/worker-result.json": {
+      "size": 104361575,
+      "limit": 269484032
+    },
+    "execution/worker-retention.json": {
+      "size": 378,
+      "limit": 4096
+    },
+    "execution/worker-run.json": {
+      "size": 1817,
+      "limit": 4194304
+    },
+    "process-spec.json": {
+      "size": 5763,
+      "limit": 4194304
+    },
+    "provider.json": {
+      "size": 37238,
+      "limit": 4194304
+    },
+    "result.json": {
+      "size": 207767990,
+      "limit": 269484032
+    },
+    "scenario.json": {
+      "size": 18350,
+      "limit": 4194304
+    }
+  },
+  "projected_copy_bytes": 1030844658,
+  "maximum_copy_bytes": 2147483648,
+  "maximum_files": 256,
+  "scope": "Metadata-only copy plan. It establishes no provenance, mining, access or target pass. No archive or input-store tree is copied."
+}

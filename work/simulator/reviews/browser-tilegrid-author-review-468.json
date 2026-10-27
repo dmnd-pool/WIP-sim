@@ -1,0 +1,76 @@
+{
+  "schema": "md-sim-source-review/1",
+  "reviewer": "root; independent of the listed agents' implementations",
+  "verdict": "No unresolved source finding in this scope; new native browser integration remains required.",
+  "inputs": {
+    "crates/md-sim-firmware/src/bitstream/series7/tilegrid.rs": {
+      "sha256": "76d0cad2cca40815b38af1716c0c1bbd149882157fe5ca5f83ddb70a9dffd913",
+      "bytes": 12936
+    },
+    "crates/md-sim-firmware/src/bitstream/series7/frames.rs": {
+      "sha256": "034ee682544e3d49279cc4e64e45f35b125dd94ad86dc2c54067cc751e8c91cd",
+      "bytes": 10896
+    },
+    "crates/md-sim-firmware/tests/series7_tilegrid.rs": {
+      "sha256": "07aeb859975e708931b10a06a99948badd0fac0bccb31a639ffd43338fdfaf31",
+      "bytes": 2729
+    },
+    "crates/md-sim-firmware/examples/s9_bitstream_probe.rs": {
+      "sha256": "1272435a055301dbb7da3c92224d1acc0d41db6e70b0b4216121d42e0693c6e8",
+      "bytes": 7933
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board_browser_readiness.rs": {
+      "sha256": "cd66d49f99a774269debc4ee18b1ef4818344d2c37f1e5cdcb7d0611d7dbd843",
+      "bytes": 10175
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board_browser.rs": {
+      "sha256": "3a2a92480e07cbb29cdb4c31475026326618cef6b387810293cd19cbfd26a766",
+      "bytes": 11284
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/carrier_dashboard_client.rs": {
+      "sha256": "d901b916c3e7da66f15a60d40d8e90e38f7b87319c3da28b2fab0a799b58bbfd",
+      "bytes": 14648
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/shared_run.rs": {
+      "sha256": "b46b75da2c88ff73e75ba26be5d0277ab3372bb8d5f297f84ea93c7603e18304",
+      "bytes": 16604
+    },
+    "crates/md-sim-firmware/src/prepare.rs": {
+      "sha256": "7131fb4130b25f41d20e15e8f45507b225cb7a3ac47970cf0af3942dc735d7b3",
+      "bytes": 16403
+    },
+    "crates/md-sim-firmware/examples/freeze_cgminer_toolchain.rs": {
+      "sha256": "bb668c5663e7c9f2d6f3e4f82105bab053647ade044c67d197058a475e2025a2",
+      "bytes": 32026
+    },
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "027b2c329e9204f64e2c749340aecd7eddb48ae09ee28fb34d4fc1c13dc8e2d3",
+      "bytes": 37247
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board.rs": {
+      "sha256": "fc1cae023f77b9eabe33943a7fa61ec152c1fbf6f4a7afba1f68298cab267192",
+      "bytes": 30453
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/worker_broker.rs": {
+      "sha256": "6e151bdceb45373c2303bf9f8665716479176178ffde606fac358a2e55b067d5",
+      "bytes": 29087
+    },
+    "crates/md-sim-firmware/examples/support/worker_broker_regression.rs": {
+      "sha256": "1422c392b594480c0b7a3b3bfec5b5ea0816955a9bdd2bca845039e9f57e56a2",
+      "bytes": 15130
+    },
+    "crates/md-sim-firmware/examples/aggregate_limits_check.rs": {
+      "sha256": "c60b2a396170f97b1311031e6b26b2c1477c93711ea8f3c9a7917955628eff91",
+      "bytes": 17988
+    },
+    "crates/md-sim-firmware/examples/process_vm.rs": {
+      "sha256": "3f5fe350f1842e38718eca7c76e017248bc022e18e707475eca1ab77bff9f8cc",
+      "bytes": 16062
+    }
+  },
+  "limits": [
+    "No original-board or exact-target pass.",
+    "Browser source review does not establish native dashboard behavior.",
+    "Tile-word ranges do not reconstruct logic, connectivity or timing."
+  ]
+}

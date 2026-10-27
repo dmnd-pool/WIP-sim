@@ -1,0 +1,38 @@
+{
+  "schema": "md-sim-native-browser-clock-review/1",
+  "status": "clock mismatch observed; not established as script-stall cause",
+  "run": "469",
+  "native_boot_unix_seconds": 1792613405,
+  "browser_example_request_unix_milliseconds": 1793036275328,
+  "native_wall_clock_adaptation": null,
+  "shared_clock_policy_present": false,
+  "derived_asset": {
+    "schema": "md-sim-derived-http-asset/1",
+    "source": "work/simulator/qemu-s9/sd2022-browser-076/pool.pcap",
+    "source_sha256": "3b02e2187258ab3d03b03ead359cee1c512158e7572b6b604b96c6775f2a3678",
+    "source_size": 7499799,
+    "source_native_image_sha256": "97a257571af4fb9e62f709e2d6b8f36a191fdd07f1cd12ae780bd1c73af7eaef",
+    "stream": 249,
+    "request_frame": 3816,
+    "response_frame": 3866,
+    "request": "/413.51a735efe893383edd72.js",
+    "http_status": 200,
+    "content_length": 48403,
+    "sha256": "f244622121fc84e4e1e8ba6f90065516172b7c976d52fe0feb61764e83e3b51b",
+    "method": "Read-only tshark HTTP reconstruction. Exact request frame selected because this stream also carries GraphQL and a footer asset. This derived asset is not executed.",
+    "tool": {
+      "path": "/usr/bin/tshark",
+      "sha256": "1b16ce087351eee8c6d04a735183981de1d0e29023c8832d610a4fa8c70487d8",
+      "size": 336176,
+      "version": "TShark (Wireshark) 4.7.3."
+    }
+  },
+  "observed_static_contract": {
+    "sample_bound": 150,
+    "sample_bound_source_offset": 11101,
+    "chart_domain_source_offset": 48134,
+    "chart_domain": "Uses the last sample timestamps and a300-second range. No browser-current-time gap expansion occurs in this function.",
+    "system_uptime": "Renders the native uptime.since field through a timestamp/autoUpdate component; source app contains a browser-current-time helper."
+  },
+  "next_action": "Keep this separate from469 fetch scheduling diagnosis. Implement a recorded shared clock contract before asserting complete native dashboard clock consistency; existing pool-vm adaptation needs a common start origin, which shared dispatch does not have."
+}

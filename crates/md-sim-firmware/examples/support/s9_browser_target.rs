@@ -44,12 +44,86 @@ pub enum Selected {
 }
 
 impl Selected {
+    /// The selected process, not a separately supplied file, declares whether
+    /// native and browser wall clocks must agree for this execution.
+    pub fn clock_policy(&self) -> Result<Option<Value>> {
+        let run = match self {
+            Self::Binding(selected) => &selected.run,
+            Self::Carrier(selected) => &selected.run,
+        };
+        let environment = &run
+            .process
+            .as_ref()
+            .context("selected process absent")?
+            .environment;
+        let host = environment.get("MD_SIM_S9_HOST_REALTIME_CLOCK");
+        let fixed = environment.get("MD_SIM_S9_WALL_CLOCK_EPOCH");
+        ensure!(
+            host.is_none() || fixed.is_none(),
+            "conflicting selected clock policies"
+        );
+        if let Some(value) = host {
+            ensure!(value == "1", "invalid selected host clock policy");
+            return Ok(Some(serde_json::json!({
+                "schema":"md-sim-native-browser-clock-check/1",
+                "source":"execution-host-realtime",
+                "selected_environment":{"MD_SIM_S9_HOST_REALTIME_CLOCK":"1"},
+                "request_interval_tolerance_ms":5000
+            })));
+        }
+        fixed.map(|epoch| {
+            let epoch: u64 = epoch.parse().context("invalid selected fixed clock epoch")?;
+            ensure!((1_231_006_505..=2_147_482_000).contains(&epoch), "selected fixed clock epoch outside original userspace range");
+            Ok(serde_json::json!({"schema":"md-sim-private-wall-clock/1","epoch_unix_seconds":epoch}))
+        }).transpose()
+    }
+
     pub fn targets(&self) -> Result<Vec<Target>> {
         match self {
             Self::Binding(selected) => selected.targets(),
             Self::Carrier(selected) => selected.targets(),
         }
     }
+}
+
+/// Compare the native observation with the actual browser request interval.
+/// Five seconds allow RTC and whole-second resolution plus serial delivery.
+/// This is used by both the live producer and the retained-result verifier.
+pub fn verify_clock_observation(observation: &Value, expected: &Value) -> Result<()> {
+    ensure!(
+        observation["clock_policy"] == *expected,
+        "native browser clock policy differs from selected execution"
+    );
+    let samples = observation["telemetry"]
+        .as_array()
+        .context("native clock observations absent")?;
+    ensure!(
+        (2..=16).contains(&samples.len()),
+        "native clock observation count differs"
+    );
+    for sample in samples {
+        let uptime = &sample["body"]["data"]["bos"]["uptime"];
+        let server = uptime["since"]
+            .as_u64()
+            .context("native boot epoch absent")?
+            .checked_add(
+                uptime["durationS"]
+                    .as_u64()
+                    .context("native uptime absent")?,
+            )
+            .context("native time overflow")?
+            .checked_mul(1000)
+            .context("native time overflow")?;
+        let sent = sample["browser_sent_ms"]
+            .as_u64()
+            .context("browser request time absent")?;
+        let received = sample["browser_received_ms"]
+            .as_u64()
+            .context("browser response time absent")?;
+        ensure!(sent <= received && server >= sent.saturating_sub(5000) && server <= received.saturating_add(5000),
+            "native wall clock is outside the browser request interval: server={server}, sent={sent}, received={received}");
+    }
+    Ok(())
 }
 
 impl CarrierSelection {
@@ -260,6 +334,7 @@ impl Selection {
 pub fn verify_report(report: &Value, selection: &Value, driver: &ObjectId) -> Result<()> {
     let selected: Selected = serde_json::from_value(selection.clone())?;
     let targets = selected.targets()?;
+    let clock_policy = selected.clock_policy()?;
     ensure!(
         report["schema"] == "md-sim-original-s9-browser/2"
             && report["passed"] == true
@@ -280,6 +355,14 @@ pub fn verify_report(report: &Value, selection: &Value, driver: &ObjectId) -> Re
         "selected browser origin coverage differs"
     );
     for (origin, target) in origins.iter().zip(targets) {
+        if let Some(policy) = &clock_policy {
+            verify_clock_observation(origin, policy)?;
+        } else {
+            ensure!(
+                origin["clock_policy"].is_null(),
+                "undeclared selected browser clock policy"
+            );
+        }
         ensure!(
             origin["origin"] == target.origin
                 && origin["target"] == serde_json::to_value(&target)?
@@ -315,6 +398,7 @@ mod tests {
             size: 1,
         };
         let process = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,
@@ -388,10 +472,19 @@ mod tests {
     }
 
     fn carrier_selected() -> Result<CarrierSelection> {
+        carrier_selected_with_clock(false)
+    }
+
+    fn carrier_selected_with_clock(host_clock: bool) -> Result<CarrierSelection> {
         use md_sim_access::carrier::{Policy, Selection as Carrier};
         use md_sim_runtime::private_channel;
         let mut run = selected()?.run;
         let process = run.process.as_mut().unwrap();
+        if host_clock {
+            process
+                .environment
+                .insert("MD_SIM_S9_HOST_REALTIME_CLOCK".into(), "1".into());
+        }
         let support = process.inputs[0].object.clone();
         process.dashboard = None;
         process.private_channel = Some(private_channel::Spec {
@@ -513,7 +606,10 @@ mod tests {
 
     #[test]
     fn retained_browser_pass_requires_both_origins_and_actual_observations() -> Result<()> {
-        let selected = carrier_selected()?;
+        let selected = carrier_selected_with_clock(true)?;
+        let policy = Selected::Carrier(Box::new(selected.clone()))
+            .clock_policy()?
+            .unwrap();
         let driver = ObjectId {
             sha256: "f".repeat(64),
             size: 10,
@@ -522,7 +618,7 @@ mod tests {
         let origins = selected.targets()?.into_iter().map(|target|json!({"origin":target.origin,
             "target":target,"passed":true,"error":null,"isolation":{"passed":true},
             "websocket":{"reason":"two samples"},"native_view_verified":{"boards":3,"private_pool_rows_with_accepted_work":1},
-            "live_mining_telemetry":[{},{}]})).collect::<Vec<_>>();
+            "live_mining_telemetry":[{},{}],"clock_policy":policy,"telemetry":clock_samples()})).collect::<Vec<_>>();
         let report = json!({"schema":"md-sim-original-s9-browser/2","passed":true,"error":null,
             "helper":driver,"selection":selection,"fresh_profile":true,"separate_uid":1001,
             "cleanup":{"empty":true},"isolation_cleanup":{"empty":true},"origins":origins});
@@ -535,6 +631,15 @@ mod tests {
             ("/cleanup/empty", json!(false)),
             ("/selection/provider/size", json!(1)),
             ("/origins/1/origin", json!("https://another.invalid")),
+            ("/origins/0/clock_policy", Value::Null),
+            (
+                "/origins/1/clock_policy/request_interval_tolerance_ms",
+                json!(6000),
+            ),
+            (
+                "/origins/1/telemetry/1/body/data/bos/uptime/since",
+                json!(1_709_000_000),
+            ),
         ] {
             let mut changed = report.clone();
             *changed.pointer_mut(pointer).context("test pointer")? = value;
@@ -546,6 +651,106 @@ mod tests {
         let mut missing = report.clone();
         missing["origins"].as_array_mut().unwrap().pop();
         assert!(verify_report(&missing, &selection, &driver).is_err());
+        Ok(())
+    }
+
+    fn clock_samples() -> Value {
+        json!([
+            {"body":{"data":{"bos":{"uptime":{"since":1_709_164_800u64,"durationS":30}}}},
+                "browser_sent_ms":1_709_164_830_000u64,"browser_received_ms":1_709_164_830_900u64},
+            {"body":{"data":{"bos":{"uptime":{"since":1_709_164_800u64,"durationS":32}}}},
+                "browser_sent_ms":1_709_164_832_000u64,"browser_received_ms":1_709_164_832_900u64}
+        ])
+    }
+
+    #[test]
+    fn native_clock_interval_rejects_skew_missing_data_and_overflow() -> Result<()> {
+        let policy = json!({"schema":"test-clock"});
+        let observation = json!({"clock_policy":policy,"telemetry":clock_samples()});
+        verify_clock_observation(&observation, &policy)?;
+        for boundary in [1_709_164_827_000u64, 1_709_164_837_000] {
+            let mut at_bound = observation.clone();
+            at_bound["telemetry"][1]["browser_sent_ms"] = json!(boundary);
+            at_bound["telemetry"][1]["browser_received_ms"] = json!(boundary);
+            verify_clock_observation(&at_bound, &policy)?;
+        }
+        for outside in [1_709_164_826_999u64, 1_709_164_837_001] {
+            let mut skewed = observation.clone();
+            skewed["telemetry"][1]["browser_sent_ms"] = json!(outside);
+            skewed["telemetry"][1]["browser_received_ms"] = json!(outside);
+            assert!(verify_clock_observation(&skewed, &policy).is_err());
+        }
+        for (pointer, value) in [
+            ("/telemetry/1/browser_sent_ms", json!(1_709_164_837_001u64)),
+            (
+                "/telemetry/1/browser_received_ms",
+                json!(1_709_164_826_999u64),
+            ),
+            ("/telemetry/1/browser_sent_ms", Value::Null),
+            ("/telemetry/1/body/data/bos/uptime/since", json!(u64::MAX)),
+            ("/telemetry/1/body/data/bos/uptime/durationS", json!(-1)),
+            ("/clock_policy", Value::Null),
+        ] {
+            let mut changed = observation.clone();
+            *changed.pointer_mut(pointer).context("clock test pointer")? = value;
+            assert!(
+                verify_clock_observation(&changed, &policy).is_err(),
+                "{pointer}"
+            );
+        }
+        let mut single = observation;
+        single["telemetry"].as_array_mut().unwrap().pop();
+        assert!(verify_clock_observation(&single, &policy).is_err());
+        Ok(())
+    }
+
+    #[test]
+    fn selected_clock_is_derived_from_locked_process_and_rejects_conflicts() -> Result<()> {
+        let mut selection = selected()?;
+        assert!(Selected::Binding(Box::new(selection.clone()))
+            .clock_policy()?
+            .is_none());
+        let environment = &mut selection.run.process.as_mut().unwrap().environment;
+        environment.insert("MD_SIM_S9_HOST_REALTIME_CLOCK".into(), "0".into());
+        assert!(Selected::Binding(Box::new(selection.clone()))
+            .clock_policy()
+            .is_err());
+        selection
+            .run
+            .process
+            .as_mut()
+            .unwrap()
+            .environment
+            .insert("MD_SIM_S9_HOST_REALTIME_CLOCK".into(), "1".into());
+        assert_eq!(
+            Selected::Binding(Box::new(selection.clone()))
+                .clock_policy()?
+                .unwrap()["source"],
+            "execution-host-realtime"
+        );
+        selection
+            .run
+            .process
+            .as_mut()
+            .unwrap()
+            .environment
+            .insert("MD_SIM_S9_WALL_CLOCK_EPOCH".into(), "1709164800".into());
+        assert!(Selected::Binding(Box::new(selection.clone()))
+            .clock_policy()
+            .is_err());
+        selection
+            .run
+            .process
+            .as_mut()
+            .unwrap()
+            .environment
+            .remove("MD_SIM_S9_HOST_REALTIME_CLOCK");
+        assert_eq!(
+            Selected::Binding(Box::new(selection))
+                .clock_policy()?
+                .unwrap()["epoch_unix_seconds"],
+            1_709_164_800u64
+        );
         Ok(())
     }
 

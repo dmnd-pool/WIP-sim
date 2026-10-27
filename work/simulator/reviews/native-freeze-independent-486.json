@@ -1,0 +1,43 @@
+{
+  "scope": "Independent root check before native487; no run acceptance inferred.",
+  "passed": true,
+  "captured_sources_rehashed": 509,
+  "helpers_rehashed": 12,
+  "prepared_object_mounts_rehashed": 46,
+  "native_limits_equal478": true,
+  "native_argv_equal478": true,
+  "changed_native_input_paths": [
+    "/boot-runner",
+    "/carrier-dashboard.json",
+    "/private-pool.json",
+    "/shared-pool.json"
+  ],
+  "pool_changes": "Fresh seed/time only; pool difficulty and10H/s cap unchanged.",
+  "clock": "Explicit execution-host realtime sample, original guest date command and bounded readback; no firmwarebytes/device/monotonic changes.",
+  "files": {
+    "work/simulator/core-checkpoint-486/manifest.json": {
+      "sha256": "72df953d01b2eab6b605e28d4e518973b104a5377c49506af4f1f832dd3799b2",
+      "size": 86371
+    },
+    "work/simulator/channel-target-486/SHA256SUMS": {
+      "sha256": "eb4cfdf987ee308ec6c81b2bff4e3f4f6108ec426534a511757914c34adc41c7",
+      "size": 1189
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-486/process-spec.json": {
+      "sha256": "a90bda97da7a98174502a756a5c682941e9dceb46aca7f9f60d0ac014c00ffbf",
+      "size": 11264
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-486/adaptation.json": {
+      "sha256": "41902b7ca86435e49ff7580b1349ace61176dd93ef9588eea6ee58ea97097bb5",
+      "size": 19553
+    },
+    "work/simulator/channel-target-486/shared-pool.json": {
+      "sha256": "cdddbecf23b2155a2fb2a831588c0f790a85daceecdce05c1a749fc61ab364a9",
+      "size": 930
+    },
+    "work/simulator/channel-target-486/carrier-dashboard.json": {
+      "sha256": "e93048d17994f991b14f8c9f72957126983cc71a4a95eec6758874eccad512e2",
+      "size": 489
+    }
+  }
+}

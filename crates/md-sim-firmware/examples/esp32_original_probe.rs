@@ -24,6 +24,8 @@ use std::{
 #[allow(dead_code)]
 #[path = "../src/confinement.rs"]
 mod confinement;
+#[path = "support/bm1397_write_intent.rs"]
+mod write_intent;
 const FIRMWARE: &str = "3fd36298681d7797429dd72610041d731558c5253430902a3c7feeced232557c";
 const SOURCE: &str = "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0";
 
@@ -56,6 +58,8 @@ impl UartCapture {
             let start = std::time::Instant::now();
             let identify = std::env::var_os("MD_SIM_BM1397_IDENTIFY").is_some();
             let mut chain = md_sim_firmware::bm1397::IdentificationChain::new(1).unwrap();
+            let mut observer = std::env::var_os("MD_SIM_BM1397_CORE0_WRITE_INTENT")
+                .map(|_| write_intent::Observer::default());
             if identify {
                 // Explicit development-stage inputs. GPIO, regulator, UART
                 // timing and mining support are not inferred from this probe.
@@ -103,7 +107,12 @@ impl UartCapture {
                                             "ASIC TX decode failed: {error:?}"
                                         ))
                                     })?;
-                                    let replies = chain.receive(&packet).map_err(|error| {
+                                    let received = write_intent::receive(
+                                        &mut chain,
+                                        observer.as_mut(),
+                                        &packet,
+                                    )
+                                    .map_err(|error| {
                                         eprintln!(
                                             "md-sim ASIC identification boundary: {}",
                                             json!({"error":error,"packet":packet})
@@ -112,7 +121,13 @@ impl UartCapture {
                                             "ASIC identification stage boundary: {error:?}"
                                         ))
                                     })?;
-                                    for reply in replies {
+                                    if let Some(intent) = received.intent {
+                                        eprintln!(
+                                            "md-sim ASIC write-intent adaptation: {}",
+                                            json!({"after_capture_sequence":sequence-1,"intent":intent,"scope":"One posted firmware write observed; no ASIC acknowledgement, state, timing or success inferred."})
+                                        );
+                                    }
+                                    for reply in received.replies {
                                         let frame = reply.encode().map_err(|error| {
                                             std::io::Error::other(format!(
                                                 "ASIC reply failed: {error:?}"
@@ -409,6 +424,7 @@ struct Options {
     asic_uart: bool,
     identify: bool,
     sar_input_fixture: bool,
+    core0_write_intent: bool,
 }
 fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<()> {
     let Options {
@@ -419,6 +435,7 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
         asic_uart,
         identify,
         sar_input_fixture,
+        core0_write_intent,
     } = options;
     ensure!(!out.exists(), "new output required");
     fs::create_dir_all(out)?;
@@ -505,7 +522,28 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
         );
         environment.insert("MD_SIM_SAR_INPUT_FIXTURE".into(), "1".into());
     }
+    if core0_write_intent {
+        ensure!(
+            identify && sar_input_fixture,
+            "write-intent observer requires the explicit identification and ADC fixture"
+        );
+        environment.insert("MD_SIM_BM1397_CORE0_WRITE_INTENT".into(), "1".into());
+    }
+    let adaptation = if core0_write_intent {
+        json!({
+            "id":write_intent::ADAPTATION,"kind":"reference-environment-observer",
+            "command_hex":"55aa5109003c8000807410","maximum_observations":1,
+            "response_bytes":0,"silicon_effects_modeled":false,
+            "scope":"Continue once after the exact posted core0 write to discover the next original firmware command. Core state, readback, clock behavior, timing and mining remain unsupported.",
+            "source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/bm1397_write_intent.rs")),
+            "original_board_gate":false,"functional_mining_gate":false
+        })
+    } else {
+        Value::Null
+    };
+    save_json(&out.join("adaptation.json"), &adaptation)?;
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -545,7 +583,7 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
     save_json(&out.join("spec.json"), &spec)?;
     save_json(
         &out.join("input-identities.json"),
-        &json!({"firmware":original,"source":SOURCE,"recipe":hash_file(&std::env::current_exe()?)?,"backend_build_report":hash_file(&backend.join("build-report.json"))?,"backend_spec":hash_file(&backend.join("spec.json"))?,"scope":"Original archived factory firmware and ROM on an upstream ESP32-S3 machine; no claim of complete Bitaxe device models.","storage_adaptation":"Erase-fill trailing16MiB flash capacity in private scratch; preserve all original factory bytes.","register_diagnostic":registers,"sar_external_fixture":if sar_input_fixture {json!({"unit":1,"channel":1,"microvolts":550000,"scope":"Independent fixed test input; no regulator coupling or physical core-voltage claim."})}else{Value::Null},"ds4432_register_fixture":ds4432,"ds4432_scope":"When selected: explicit 3.3V supply, OUT0 80kOhm FS resistor, OUT1 disconnected. No modeled regulator or ASIC-voltage telemetry; exact Max R14 remains unresolved.","emc2101_register_fixture":emc2101,"emc2101_scope":"When selected: host-load0% strap, explicit internal27C test input, external diode open, no connected fan tachometer. These are declared fixture inputs, not measured physical board telemetry.","ina260_register_fixture":ina260,"ina260_scope":"When selected: explicit5V VIN and0A current diagnostic input. No physical PSU or ASIC load is inferred; no core-voltage measurement.","asic_uart_tx_capture":asic_uart,"asic_uart_scope":if identify {"Identification, addresses and clock-control register storage: one explicitly powered, reset-released reference chip; no GPIO/regulator binding or calibrated guest UART timing. Per-chip state follows writes and reset. Clock routing, status and all other unsupported commands remain visible failures. No mining initialization or nonce response."} else {"When selected: private second UART output capture only; no response bytes or ASIC model. Capture timestamps use host wall time, not calibrated guest UART timing."},"bm1397_identification_stage":identify,"bm1397_identification_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/identify.rs")),"bm1397_reply_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/reply.rs"))}),
+        &json!({"firmware":original,"source":SOURCE,"recipe":hash_file(&std::env::current_exe()?)?,"backend_build_report":hash_file(&backend.join("build-report.json"))?,"backend_spec":hash_file(&backend.join("spec.json"))?,"scope":"Original archived factory firmware and ROM on an upstream ESP32-S3 machine; no claim of complete Bitaxe device models.","storage_adaptation":"Erase-fill trailing16MiB flash capacity in private scratch; preserve all original factory bytes.","register_diagnostic":registers,"sar_external_fixture":if sar_input_fixture {json!({"unit":1,"channel":1,"microvolts":550000,"scope":"Independent fixed test input; no regulator coupling or physical core-voltage claim."})}else{Value::Null},"ds4432_register_fixture":ds4432,"ds4432_scope":"When selected: explicit 3.3V supply, OUT0 80kOhm FS resistor, OUT1 disconnected. No modeled regulator or ASIC-voltage telemetry; exact Max R14 remains unresolved.","emc2101_register_fixture":emc2101,"emc2101_scope":"When selected: host-load0% strap, explicit internal27C test input, external diode open, no connected fan tachometer. These are declared fixture inputs, not measured physical board telemetry.","ina260_register_fixture":ina260,"ina260_scope":"When selected: explicit5V VIN and0A current diagnostic input. No physical PSU or ASIC load is inferred; no core-voltage measurement.","asic_uart_tx_capture":asic_uart,"asic_uart_scope":if identify {"Identification, addresses and clock-control register storage: one explicitly powered, reset-released reference chip; no GPIO/regulator binding or calibrated guest UART timing. Per-chip state follows writes and reset. Clock routing, status and all other unsupported commands remain visible failures. No mining initialization or nonce response."} else {"When selected: private second UART output capture only; no response bytes or ASIC model. Capture timestamps use host wall time, not calibrated guest UART timing."},"core0_write_intent_adaptation":adaptation,"bm1397_identification_stage":identify,"bm1397_identification_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/identify.rs")),"bm1397_reply_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/reply.rs"))}),
     )?;
     let result = execute(&store, &spec, Arc::new(AtomicBool::new(false)))?;
     save_json(&out.join("result.json"), &result)?;
@@ -604,13 +642,18 @@ fn main() -> Result<()> {
         return inner(args[1] == "__inside-registers");
     }
     ensure!(
-        args.len() == 4 || (args.len() == 5 && (args[4] == "registers" || args[4] == "ds4432" || args[4] == "emc2101" || args[4] == "asic-trace" || args[4] == "power-asic-trace" || args[4] == "bm1397-identify" || args[4] == "bm1397-identify-registers" || args[4] == "bm1397-identify-adc")),
-        "usage: esp32_original_probe BACKEND_BUILD FACTORY_FIRMWARE NEW_OUTPUT [registers|ds4432|emc2101|asic-trace|power-asic-trace|bm1397-identify|bm1397-identify-registers|bm1397-identify-adc]"
+        args.len() == 4 || (args.len() == 5 && (args[4] == "registers" || args[4] == "ds4432" || args[4] == "emc2101" || args[4] == "asic-trace" || args[4] == "power-asic-trace" || args[4] == "bm1397-identify" || args[4] == "bm1397-identify-registers" || args[4] == "bm1397-identify-adc" || args[4] == "bm1397-observe-core0-adc")),
+        "usage: esp32_original_probe BACKEND_BUILD FACTORY_FIRMWARE NEW_OUTPUT [registers|ds4432|emc2101|asic-trace|power-asic-trace|bm1397-identify|bm1397-identify-registers|bm1397-identify-adc|bm1397-observe-core0-adc]"
     );
     let mode = args.get(4).and_then(|a| a.to_str());
     let identify = matches!(
         mode,
-        Some("bm1397-identify" | "bm1397-identify-registers" | "bm1397-identify-adc")
+        Some(
+            "bm1397-identify"
+                | "bm1397-identify-registers"
+                | "bm1397-identify-adc"
+                | "bm1397-observe-core0-adc"
+        )
     );
     let asic_uart = identify || matches!(mode, Some("asic-trace" | "power-asic-trace"));
     let out = PathBuf::from(&args[3]);
@@ -626,7 +669,11 @@ fn main() -> Result<()> {
             ina260: identify || mode == Some("power-asic-trace"),
             asic_uart,
             identify,
-            sar_input_fixture: mode == Some("bm1397-identify-adc"),
+            sar_input_fixture: matches!(
+                mode,
+                Some("bm1397-identify-adc" | "bm1397-observe-core0-adc")
+            ),
+            core0_write_intent: mode == Some("bm1397-observe-core0-adc"),
         },
     );
     if let Err(error) = &result {

@@ -1,0 +1,45 @@
+{
+  "scope": "Independent root input check before495. No native execution or access pass inferred.",
+  "passed": true,
+  "captured_sources_rehashed": 523,
+  "helpers_rehashed": 12,
+  "prepared_input_mappings_rehashed": 46,
+  "native_limits_argv_environment_equal491": true,
+  "changed_native_mounts": [
+    "/carrier-dashboard.json",
+    "/private-pool.json",
+    "/shared-pool.json"
+  ],
+  "pool_change": "Freshseed/time only",
+  "support_change": "New remote helper records unchanged readiness assertions in new order; carrier policy binds its manifest",
+  "files": {
+    "work/simulator/core-checkpoint-494/manifest.json": {
+      "sha256": "320e690d1aceb0c99c44270af8600259d32a43ec0f275de69ae68c074149f731",
+      "size": 88784
+    },
+    "work/simulator/channel-target-494/SHA256SUMS": {
+      "sha256": "1defe4a6699e79d1dccb5ee750b452d17d751dbb238480fbb14befd9f6f4ad08",
+      "size": 1189
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/process-spec.json": {
+      "sha256": "a3247419fe950dc9e6353a6adfbfb4ba73e5fd909b1d30d3dcdba3926a4e9b89",
+      "size": 11264
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/adaptation.json": {
+      "sha256": "4637ac92c53fc2a1b814e9e9f2852a38443241c065cb82700aa043b55787ad0c",
+      "size": 19553
+    },
+    "work/simulator/channel-target-494/shared-pool.json": {
+      "sha256": "c29c72fd463c733537601227b2a45a2ca18fd1353aa24638f3da091ce66e8063",
+      "size": 930
+    },
+    "work/simulator/channel-target-494/carrier-dashboard.json": {
+      "sha256": "b96595c25238ebd5f6216962ce6fc4dde72e299fb1cd5d272039d0866389a053",
+      "size": 489
+    },
+    "work/simulator/reviews/native-browser-freeze-494.json": {
+      "sha256": "f4a27c02d9a06d53f8cc8a917d5d19cfdd36063bd48a943d87a6b9bf934bb35f",
+      "size": 10929
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "scope": "Exact FASM parser/generator source dependency recorded by the selected Project X-Ray commit. Preserve original pure-Python fallback and grammar. No installer execution on host.",
+  "source_commit": "ffafe821bae68637fe46e36bcfd2a01b97cdf6f2",
+  "jobs": [
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/LICENSE",
+      "destination": "/tmp/md-sim-fasm-parser482-LICENSE",
+      "max_bytes": 11359,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "expected_size": 11358,
+      "source_path": "LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/README.md",
+      "destination": "/tmp/md-sim-fasm-parser482-README.md",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "90d5fe61ff36c383e900e1f621edd13a0e3e9da1",
+      "expected_size": 2639,
+      "source_path": "README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/__init__.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm____init__.py",
+      "max_bytes": 6351,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "9c4c8d3fd83e213f200b5fb44a56a84ba6293419",
+      "expected_size": 6350,
+      "source_path": "fasm/__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/model.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__model.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "7dec24ad454ab94382fc7d3f88a056d778d33645",
+      "expected_size": 3228,
+      "source_path": "fasm/model.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/output.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__output.py",
+      "max_bytes": 12633,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "c0cab8dfaaf12238469e40d9008aa55a37b713f2",
+      "expected_size": 12632,
+      "source_path": "fasm/output.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/parser/__init__.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__parser____init__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "edd02e46ebddf25e002a98ceba83b71e48c6e583",
+      "expected_size": 1518,
+      "source_path": "fasm/parser/__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/parser/antlr.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__parser__antlr.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "2d196a81d8188ad02de2484cbd93b55491ab9b9e",
+      "expected_size": 3386,
+      "source_path": "fasm/parser/antlr.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/parser/antlr_to_tuple.pyx",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__parser__antlr_to_tuple.pyx",
+      "max_bytes": 6148,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "90796cae93a868c53ea7cd065333cd8ec1e0a15f",
+      "expected_size": 6147,
+      "source_path": "fasm/parser/antlr_to_tuple.pyx"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/parser/fasm.tx",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__parser__fasm.tx",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "7bc5c7250167e018d21147ce02d3bf27f281c475",
+      "expected_size": 1210,
+      "source_path": "fasm/parser/fasm.tx"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/parser/textx.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__parser__textx.py",
+      "max_bytes": 5006,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "d40020836f69874efdde8da4a44da6cc5d28b7a9",
+      "expected_size": 5005,
+      "source_path": "fasm/parser/textx.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/tool.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__tool.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "01be9cbb025a0e8fd9cca747747d856fbda954e3",
+      "expected_size": 1924,
+      "source_path": "fasm/tool.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/fasm/version.py",
+      "destination": "/tmp/md-sim-fasm-parser482-fasm__version.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "310a8dd8a9bba17b5840fed587a3660071fdf155",
+      "expected_size": 1298,
+      "source_path": "fasm/version.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/requirements.txt",
+      "destination": "/tmp/md-sim-fasm-parser482-requirements.txt",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e3a9915fc0b3a22d7cba22d8e1768dbca8ab69d2",
+      "expected_size": 71,
+      "source_path": "requirements.txt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/fasm/ffafe821bae68637fe46e36bcfd2a01b97cdf6f2/setup.py",
+      "destination": "/tmp/md-sim-fasm-parser482-setup.py",
+      "max_bytes": 9742,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "cfbaa556440b319d9ea401485b882d3cff915cac",
+      "expected_size": 9741,
+      "source_path": "setup.py"
+    }
+  ]
+}

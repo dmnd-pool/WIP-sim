@@ -1,0 +1,405 @@
+{
+  "scope": "Exact existing converter source and license/metadata for selected Bitcoin S9 FPGA reconstruction. No broad repository mirror or downloaded code execution. Tree lists 104 blobs; these 40 core files total460241 bytes.",
+  "source_commit": "bafbcd8727e0807d6a620d1cf5dd151111c4a322",
+  "tree_sha": "898381e80e6a37199d62a02121eaeaf67f7c21b2",
+  "jobs": [
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/.gitmodules",
+      "destination": "/tmp/md-sim-fasm2bels482-.gitmodules",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "9d09aef596e33a962548029ee900872348b4fbd1",
+      "expected_size": 750,
+      "source_path": ".gitmodules"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/LICENSE",
+      "destination": "/tmp/md-sim-fasm2bels482-LICENSE",
+      "max_bytes": 11359,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "expected_size": 11358,
+      "source_path": "LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/README.md",
+      "destination": "/tmp/md-sim-fasm2bels482-README.md",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "88a4089b60cd8c3cc54fac2e62886b7b9d51c97b",
+      "expected_size": 3245,
+      "source_path": "README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/__init__.py",
+      "destination": "/tmp/md-sim-fasm2bels482-__init__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "expected_size": 0,
+      "source_path": "__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/__main__.py",
+      "destination": "/tmp/md-sim-fasm2bels482-__main__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "7eb0720e9e17a17df102731a085bbff4780d5200",
+      "expected_size": 739,
+      "source_path": "__main__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/__init__.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels____init__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "expected_size": 0,
+      "source_path": "fasm2bels/__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/__main__.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels____main__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "7eb0720e9e17a17df102731a085bbff4780d5200",
+      "expected_size": 739,
+      "source_path": "fasm2bels/__main__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/database/__init__.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__database____init__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "expected_size": 0,
+      "source_path": "fasm2bels/database/__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/database/connection_database.sql",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__database__connection_database.sql",
+      "max_bytes": 7088,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "f09b9ecf4aee195b8505cbd05e4fe0bb6b75a7c1",
+      "expected_size": 7087,
+      "source_path": "fasm2bels/database/connection_database.sql"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/database/connection_database_cache.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__database__connection_database_cache.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "9c353f62685e31cdbafea3c3e8d7ce8f1975af39",
+      "expected_size": 3088,
+      "source_path": "fasm2bels/database/connection_database_cache.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/database/connection_db_utils.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__database__connection_db_utils.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "ea75c1b3b3685c321f294b06e52d90626cb6f0ee",
+      "expected_size": 3207,
+      "source_path": "fasm2bels/database/connection_db_utils.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/database/create_channels.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__database__create_channels.py",
+      "max_bytes": 14401,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "b7bbddf4c04deb2ea1cda27f2b1adfa61a0a4dd8",
+      "expected_size": 14400,
+      "source_path": "fasm2bels/database/create_channels.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/fasm2bels.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__fasm2bels.py",
+      "max_bytes": 18554,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "4154f743ebb9fa008a7850a41eef0f701cca04ea",
+      "expected_size": 18553,
+      "source_path": "fasm2bels/fasm2bels.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/__init__.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib____init__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "expected_size": 0,
+      "source_path": "fasm2bels/lib/__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/eblif.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__eblif.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "c841244cbf421a661e22587a554bed2edb2fb2ad",
+      "expected_size": 2622,
+      "source_path": "fasm2bels/lib/eblif.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/interchange.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__interchange.py",
+      "max_bytes": 30655,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "49dee9ca084dd0deeb73b4852cf6b6abe9ea0762",
+      "expected_size": 30654,
+      "source_path": "fasm2bels/lib/interchange.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/parse_pcf.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__parse_pcf.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "3f7511575c2bd47c424a9a6fea0328627f331d51",
+      "expected_size": 1409,
+      "source_path": "fasm2bels/lib/parse_pcf.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/parse_route.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__parse_route.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "7fca96f1eb69ff40442b75680fa8deaefd278e03",
+      "expected_size": 2213,
+      "source_path": "fasm2bels/lib/parse_route.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/parse_xdc.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__parse_xdc.py",
+      "max_bytes": 4195,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "cf358d6a3189e225d72ff8e432dfba90714de889",
+      "expected_size": 4194,
+      "source_path": "fasm2bels/lib/parse_xdc.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/progressbar_utils.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__progressbar_utils.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "5b7553dbbdc236bd44ead29a6ebb2e5fbf263ba7",
+      "expected_size": 1282,
+      "source_path": "fasm2bels/lib/progressbar_utils.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/utils.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__utils.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "99ce8d57528c0ba4b486b11dab988254da177a96",
+      "expected_size": 796,
+      "source_path": "fasm2bels/lib/utils.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/lib/vpr_io_place.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__lib__vpr_io_place.py",
+      "max_bytes": 7027,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "90808999717baf9a1c0d90e1534dfc395fdb181d",
+      "expected_size": 7026,
+      "source_path": "fasm2bels/lib/vpr_io_place.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/make_routes.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__make_routes.py",
+      "max_bytes": 27329,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "9b419465fd3dc20267120796ee0b30c41bd098c9",
+      "expected_size": 27328,
+      "source_path": "fasm2bels/make_routes.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/__init__.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models____init__.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "expected_size": 0,
+      "source_path": "fasm2bels/models/__init__.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/bram_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__bram_models.py",
+      "max_bytes": 48333,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "4fc8351c32007ef1bfd18c93279eb0f5de161b0d",
+      "expected_size": 48332,
+      "source_path": "fasm2bels/models/bram_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/clb_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__clb_models.py",
+      "max_bytes": 73383,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "7f0a20f1c220f1b75a156df243b84f534ef8f3a2",
+      "expected_size": 73382,
+      "source_path": "fasm2bels/models/clb_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/clk_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__clk_models.py",
+      "max_bytes": 10672,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "e0e3b24fa86502a7d2262b72d97bd47657c42ee3",
+      "expected_size": 10671,
+      "source_path": "fasm2bels/models/clk_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/cmt_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__cmt_models.py",
+      "max_bytes": 17232,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "04298bbcfc163e482885d988a40d562f20c665ac",
+      "expected_size": 17231,
+      "source_path": "fasm2bels/models/cmt_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/gtp_channel_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__gtp_channel_models.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "5f82cf2911c086e1c49049f0006ba90e9d902fb4",
+      "expected_size": 3732,
+      "source_path": "fasm2bels/models/gtp_channel_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/gtp_common_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__gtp_common_models.py",
+      "max_bytes": 4595,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "5e01d830461c1cadca373c22327d0fbad9f6b3d3",
+      "expected_size": 4594,
+      "source_path": "fasm2bels/models/gtp_common_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/hclk_ioi3_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__hclk_ioi3_models.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "f419fdd632e98beecfd3d43fd74b83f860897e16",
+      "expected_size": 2235,
+      "source_path": "fasm2bels/models/hclk_ioi3_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/iob_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__iob_models.py",
+      "max_bytes": 27452,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "5dc9ad359911be225b9b22b9af4883bff10be6fa",
+      "expected_size": 27451,
+      "source_path": "fasm2bels/models/iob_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/ioi_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__ioi_models.py",
+      "max_bytes": 25575,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "3a9ab347571622a7203be62c56967bb0bb845d53",
+      "expected_size": 25574,
+      "source_path": "fasm2bels/models/ioi_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/pcie_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__pcie_models.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "08ad1a63ceb96b347600b59ba40fa0e6e5ba535a",
+      "expected_size": 2079,
+      "source_path": "fasm2bels/models/pcie_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/pss_models.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__pss_models.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "93a2cc14239dc401e5ca185c141aace6a8a3691a",
+      "expected_size": 4009,
+      "source_path": "fasm2bels/models/pss_models.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/utils.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__utils.py",
+      "max_bytes": 7345,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "349578a44c2d265148aee92fa6a7e0590c51786d",
+      "expected_size": 7344,
+      "source_path": "fasm2bels/models/utils.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/models/verilog_modeling.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__models__verilog_modeling.py",
+      "max_bytes": 87989,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "5a11ae6d2ae25eeef01192251e094c6b9106409f",
+      "expected_size": 87988,
+      "source_path": "fasm2bels/models/verilog_modeling.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/fasm2bels/net_map.py",
+      "destination": "/tmp/md-sim-fasm2bels482-fasm2bels__net_map.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "25f469dd94f9f85113d8059c3b57fba1620c651e",
+      "expected_size": 3092,
+      "source_path": "fasm2bels/net_map.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/requirements.txt",
+      "destination": "/tmp/md-sim-fasm2bels482-requirements.txt",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "93b3ed3783967a9c13c47166dd71c0b0d1f10d9b",
+      "expected_size": 210,
+      "source_path": "requirements.txt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chipsalliance/f4pga-xc-fasm2bels/bafbcd8727e0807d6a620d1cf5dd151111c4a322/setup.py",
+      "destination": "/tmp/md-sim-fasm2bels482-setup.py",
+      "max_bytes": 4096,
+      "expected_sha256": null,
+      "expected_git_blob_sha1": "afacd185ba1d65bb6007f0d6d9d9d05f1dad81bb",
+      "expected_size": 1627,
+      "source_path": "setup.py"
+    }
+  ],
+  "submodule_identities": [
+    {
+      "path": "third_party/RapidWright",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "89ccd74ef28b79c25417d82d3d2bf8681e4942f6"
+    },
+    {
+      "path": "third_party/capnproto-java",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "f3e66a6e0b69b8d961dfb017e299683591770b60"
+    },
+    {
+      "path": "third_party/fpga-interchange-schema",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "78abf3f30770ccc6d0e1f5dbfeaef2666f55acf6"
+    },
+    {
+      "path": "third_party/make-env",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "59adb0f248cc4a5d764b6b06224bf6adea7fa36e"
+    },
+    {
+      "path": "third_party/prjxray",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "8146f1f2adc5aa2de8fe41886e18a73b57082086"
+    },
+    {
+      "path": "third_party/prjxray-db",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "8372b58fe62c67f8f5896d78cd1611d01621dfae"
+    }
+  ]
+}

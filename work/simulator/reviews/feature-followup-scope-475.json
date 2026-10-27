@@ -1,0 +1,126 @@
+{
+  "schema": "md-sim-feature-followup-scope/1",
+  "parent": {
+    "path": "work/simulator/qemu-s9/features-selected-474b/features.json",
+    "sha256": "912abe89f79c4a944e7c7ec4cec6203b5d70eeb5769812fdd6d9921334da4d66",
+    "size": 42184411
+  },
+  "scope": "Static prioritization of missing feature tables only. Whole-word associations may overlap. Zero bits do not prove an unused primitive.",
+  "required_tables": {
+    "BRAM_L:BLOCK_RAM": {
+      "segments": 40,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "BRAM_L:CLB_IO_CLK": {
+      "segments": 40,
+      "segments_with_unexplained_bits": 13,
+      "unexplained_bit_associations": 2317
+    },
+    "BRAM_R:BLOCK_RAM": {
+      "segments": 20,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "BRAM_R:CLB_IO_CLK": {
+      "segments": 20,
+      "segments_with_unexplained_bits": 5,
+      "unexplained_bit_associations": 810
+    },
+    "CFG_CENTER_MID:CLB_IO_CLK": {
+      "segments": 1,
+      "segments_with_unexplained_bits": 1,
+      "unexplained_bit_associations": 8
+    },
+    "CLK_BUFG_BOT_R:CLB_IO_CLK": {
+      "segments": 1,
+      "segments_with_unexplained_bits": 1,
+      "unexplained_bit_associations": 7
+    },
+    "CLK_BUFG_REBUF:CLB_IO_CLK": {
+      "segments": 4,
+      "segments_with_unexplained_bits": 4,
+      "unexplained_bit_associations": 8
+    },
+    "CLK_BUFG_TOP_R:CLB_IO_CLK": {
+      "segments": 1,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "CLK_HROW_BOT_R:CLB_IO_CLK": {
+      "segments": 1,
+      "segments_with_unexplained_bits": 1,
+      "unexplained_bit_associations": 12
+    },
+    "CLK_HROW_TOP_R:CLB_IO_CLK": {
+      "segments": 1,
+      "segments_with_unexplained_bits": 1,
+      "unexplained_bit_associations": 9
+    },
+    "CMT_TOP_L_LOWER_B:CLB_IO_CLK": {
+      "segments": 2,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "CMT_TOP_L_UPPER_T:CLB_IO_CLK": {
+      "segments": 2,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "DSP_L:CLB_IO_CLK": {
+      "segments": 20,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "DSP_R:CLB_IO_CLK": {
+      "segments": 20,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "HCLK_CMT_L:CLB_IO_CLK": {
+      "segments": 2,
+      "segments_with_unexplained_bits": 2,
+      "unexplained_bit_associations": 2
+    },
+    "HCLK_IOI3:CLB_IO_CLK": {
+      "segments": 2,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "HCLK_L:CLB_IO_CLK": {
+      "segments": 32,
+      "segments_with_unexplained_bits": 30,
+      "unexplained_bit_associations": 120
+    },
+    "HCLK_R:CLB_IO_CLK": {
+      "segments": 32,
+      "segments_with_unexplained_bits": 0,
+      "unexplained_bit_associations": 0
+    },
+    "MONITOR_BOT_PELE1:CLB_IO_CLK": {
+      "segments": 1,
+      "segments_with_unexplained_bits": 1,
+      "unexplained_bit_associations": 3
+    },
+    "RIOB33:CLB_IO_CLK": {
+      "segments": 52,
+      "segments_with_unexplained_bits": 21,
+      "unexplained_bit_associations": 390
+    },
+    "RIOI3:CLB_IO_CLK": {
+      "segments": 40,
+      "segments_with_unexplained_bits": 15,
+      "unexplained_bit_associations": 277
+    },
+    "RIOI3_TBYTESRC:CLB_IO_CLK": {
+      "segments": 8,
+      "segments_with_unexplained_bits": 4,
+      "unexplained_bit_associations": 77
+    },
+    "RIOI3_TBYTETERM:CLB_IO_CLK": {
+      "segments": 4,
+      "segments_with_unexplained_bits": 2,
+      "unexplained_bit_associations": 36
+    }
+  }
+}

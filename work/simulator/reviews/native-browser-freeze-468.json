@@ -1,0 +1,106 @@
+{
+  "schema": "md-sim-native-browser-freeze/1",
+  "date": "2026-10-26",
+  "scope": "Source, helper and prepared-input freeze before selected run469. It is not execution acceptance.",
+  "sources_verified": 491,
+  "release_helpers_verified": 12,
+  "native_input_mappings_verified": 46,
+  "workspace_checks": {
+    "formatting": "pass",
+    "strict_clippy": "pass",
+    "suites": 111,
+    "passed": 972,
+    "failed": 0,
+    "ignored_declared_entries": 45
+  },
+  "firmware": "Braiins S9 2022-04-29-0-5eb2c5fe-22.02.4-plus; original SD image; adapted reference environment",
+  "input_files": {
+    "work/simulator/core-checkpoint-468/manifest.json": {
+      "sha256": "3ed3a942f004ab872cc36f2c5d3e2b3dba1d65805f1160871bd7ba2cb2417b67",
+      "size": 83272
+    },
+    "work/simulator/channel-target-468/SHA256SUMS": {
+      "sha256": "3ced106f905b1324578539ebe0583b8281d8573129844d9d0ad8f1602837ecbc",
+      "size": 1189
+    },
+    "work/simulator/channel-target-468/shared-pool.json": {
+      "sha256": "a510daf3f471d800b942f8416089423832d9d1c63d28421aedd329703ff98e8e",
+      "size": 930
+    },
+    "work/simulator/channel-target-468/carrier-dashboard.json": {
+      "sha256": "bf36ea1e9b475ea95517e4a5cb368b186023e6b0e085d8e2902bd5d78d718ccc",
+      "size": 489
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-468/process-spec.json": {
+      "sha256": "c4a5777e0632426ee5b7321e4c8957e37334ff57cd737a638a68988904c70cc7",
+      "size": 11222
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-468/adaptation.json": {
+      "sha256": "8e47a925b373f42b5e42493a12e8aff99dfdf5fc2bfe5712a7771e5abef120cd",
+      "size": 18594
+    },
+    "work/simulator/network-vm/native-driver-024/payload.json": {
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    "work/simulator/checks-2026-10-26-001/common468-build-bins.log": {
+      "sha256": "0c7aaf11dd6b23f61d4f3b450d34ebd646352c7c83e2d7c73b645e6650dcaa18",
+      "size": 460
+    },
+    "work/simulator/checks-2026-10-26-001/common468-build-examples.log": {
+      "sha256": "fe1b382a65982b105a9bc1789ff197f0035cde49c917c862d69f802445695dca",
+      "size": 146
+    },
+    "work/simulator/checks-2026-10-26-001/common468-checkpoint.log": {
+      "sha256": "8c36a1c737e004b192d21b6ca1bc3dca369bef25613fa18e656b7cfb4359d954",
+      "size": 48
+    },
+    "work/simulator/checks-2026-10-26-001/common468-clippy.log": {
+      "sha256": "9042b91003d3e74dfd382e0adee3733341ac493c79944bfcd3add305e617a50c",
+      "size": 543
+    },
+    "work/simulator/checks-2026-10-26-001/common468-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-26-001/common468-tests.log": {
+      "sha256": "b4807a6a7e8d66193c96c101918564e2ec032a8aecba7784af0f3c97ffb3fe06",
+      "size": 121573
+    },
+    "work/simulator/checks-2026-10-26-001/native-browser468-prepare.log": {
+      "sha256": "6360a1fec5974ec9a1ed3b87121fc751ef4cf06b55120e31b61b516bc47ccfd3",
+      "size": 143
+    }
+  },
+  "retained_prior_results": [
+    "453 remains a failed native browser result",
+    "457b is the unchanged startup component baseline",
+    "458b passed the separate cache comparison component"
+  ],
+  "native_limits": {
+    "wall_seconds": 360,
+    "cpu_seconds": 330,
+    "memory_bytes": 3221225472,
+    "pool_seconds": 300,
+    "observation_seconds": 305,
+    "hash_cap_hps": 10,
+    "fixed_filter_bits": 1
+  },
+  "support_browser_policy": {
+    "before_worker_dispatch": true,
+    "preparation_seconds": 650,
+    "profiles": 2,
+    "per_profile_startup_seconds": 300,
+    "qemu_vcpus": 2,
+    "qemu_guest_memory_mib": 4096,
+    "qemu_tcg_cache_mib": 256,
+    "outer_memory_gib": 6
+  },
+  "run_output": "work/simulator/network-vm/native-browser-469",
+  "command": "work/simulator/channel-target-468/release/examples/worker_channel_probe work/simulator/channel-target-468/release/md-sim-worker-ipc work/simulator/qemu-s9/backend-build-328-pool work/simulator/network-vm/native-browser-469 prepared=work/simulator/qemu-s9/native-browser-prepared-468 ssh-helper=work/simulator/channel-target-468/release/examples/remote_namespace_check ssh-browser-payload=work/simulator/network-vm/native-driver-024/payload.json",
+  "limits": [
+    "Backend343 and support328 remain their separately pinned builds; this source checkpoint does not claim those backends were rebuilt.",
+    "Ignored helper entries are not test execution passes.",
+    "No original-board or full-matrix pass is claimed."
+  ]
+}

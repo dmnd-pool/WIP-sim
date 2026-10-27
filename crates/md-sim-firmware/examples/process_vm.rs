@@ -254,7 +254,7 @@ fn host(spec_path: &Path, source_store: &Path, out: &Path) -> Result<()> {
         }),
     )?;
     let mut programs = BTreeMap::from([("/process-vm".to_owned(), std::env::current_exe()?)]);
-    for name in ["unshare", "bwrap"] {
+    for name in ["unshare", "bwrap", "prlimit"] {
         programs.insert(
             format!("/usr/bin/{name}"),
             PathBuf::from(format!("/usr/bin/{name}")),
@@ -326,6 +326,7 @@ mod tests {
         fs::create_dir(directory.path().join("vm")).unwrap();
         let path = directory.path().join("spec.json");
         let contract = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,

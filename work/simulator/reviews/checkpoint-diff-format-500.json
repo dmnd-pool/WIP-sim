@@ -1,0 +1,8 @@
+{
+  "scope": "Generated catalogue CSV formatting only",
+  "default_git_diff_check": "One CR-at-EOL warning on new failed-gperf CSV row; existing generator and committed CSV both use CRLF. No data whitespace defect.",
+  "verification": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --check",
+  "result": "pass",
+  "generated_file_unchanged": true,
+  "new_csv_sha256": "56975ae3bea2633d8c6bcd582d448c49a28ac06fdebff844d18102245e74cff6"
+}

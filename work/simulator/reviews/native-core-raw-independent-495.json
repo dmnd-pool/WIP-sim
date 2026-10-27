@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "scope": "Independent original Core logs, isolated input mapping and exact candidate review for selected495. Native firmware headers were independently reconstructed in native-mining-independent-495.json. Adapted reference only; no original-board/full-matrix pass.",
+  "nodes": [
+    {
+      "candidate": 0,
+      "block_hash": "0fa43c6301ac8340b9b51203efedfe5aeb5232c01e89310e9526a33d31333764",
+      "checked_input_mappings": 9,
+      "source_evidence_files_rehashed": 7,
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      },
+      "heights": [
+        0,
+        1,
+        1
+      ],
+      "node_generated_block": false,
+      "raw_core_chain_events": [
+        "2026-10-26T20:54:25Z UpdateTip: new best=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 version=0x00000001 log2_work=1.000000 tx=1 date='2011-02-02T23:16:42Z' progress=0.000002 cache=0.3MiB(0txo)",
+        "2026-10-26T20:54:25Z Loaded best chain: hashBestChain=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 date=2011-02-02T23:16:42Z progress=0.000002",
+        "2026-10-26T20:54:25Z UpdateTip: new best=0fa43c6301ac8340b9b51203efedfe5aeb5232c01e89310e9526a33d31333764 height=1 version=0x20010000 log2_work=2.000000 tx=2 date='2026-10-26T20:36:09Z' progress=1.000000 cache=0.3MiB(1txo)",
+        "2026-10-26T20:54:25Z Loaded best chain: hashBestChain=0fa43c6301ac8340b9b51203efedfe5aeb5232c01e89310e9526a33d31333764 height=1 date=2026-10-26T20:36:09Z progress=1.000000"
+      ],
+      "files": {
+        "work/simulator/bitcoin-core/native495-candidate0-495/block-acceptance.json": {
+          "sha256": "19eb72ab16ad6c4eb3c3129838ed6e119954262cd43acea8f8d50fe58504a3a2",
+          "size": 1745
+        },
+        "work/simulator/bitcoin-core/native495-candidate0-495/regtest-offline-import-startup-spec.json": {
+          "sha256": "137cb1d1aaee4203d3cafc7cb87073d42604eb06496d985d10db929a0d05f193",
+          "size": 2389
+        },
+        "work/simulator/bitcoin-core/native495-candidate0-495/regtest-offline-import-startup-result.json": {
+          "sha256": "afd9682fafa74f5ae3ffc129c2627474034c78d773198b31e35769f904c053bd",
+          "size": 37772
+        },
+        "work/simulator/bitcoin-core/native495-candidate0-495/candidate.blk": {
+          "sha256": "64b5e3abcd02de3df023458db55746122053e52d7e0c9df684044d526b1ec44e",
+          "size": 192
+        },
+        "work/simulator/bitcoin-core/native495-candidate0-495/source-run-link.json": {
+          "sha256": "19ca16df9b6bb7769041e4e8a3f3722b9fda4590f0ccaf1b1947bd25bf5f24c8",
+          "size": 7289
+        },
+        "work/simulator/bitcoin-core/native495-candidate0-495/original-submission-replay.json": {
+          "sha256": "72b70e3aed3d11c0dc0ff4c804e4224bfc73b81d8573c9c6a29248a786fa5225",
+          "size": 69529
+        }
+      }
+    },
+    {
+      "candidate": 1,
+      "block_hash": "303b705e03e9379932a6f860644f3ce4e2eb5aca94ef4b2bfabcc5ff16562bdf",
+      "checked_input_mappings": 9,
+      "source_evidence_files_rehashed": 7,
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      },
+      "heights": [
+        0,
+        1,
+        1
+      ],
+      "node_generated_block": false,
+      "raw_core_chain_events": [
+        "2026-10-26T20:57:24Z UpdateTip: new best=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 version=0x00000001 log2_work=1.000000 tx=1 date='2011-02-02T23:16:42Z' progress=0.000002 cache=0.3MiB(0txo)",
+        "2026-10-26T20:57:24Z Loaded best chain: hashBestChain=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 date=2011-02-02T23:16:42Z progress=0.000002",
+        "2026-10-26T20:57:24Z UpdateTip: new best=303b705e03e9379932a6f860644f3ce4e2eb5aca94ef4b2bfabcc5ff16562bdf height=1 version=0x358b8000 log2_work=2.000000 tx=2 date='2026-10-26T20:36:09Z' progress=1.000000 cache=0.3MiB(1txo)",
+        "2026-10-26T20:57:24Z Loaded best chain: hashBestChain=303b705e03e9379932a6f860644f3ce4e2eb5aca94ef4b2bfabcc5ff16562bdf height=1 date=2026-10-26T20:36:09Z progress=1.000000"
+      ],
+      "files": {
+        "work/simulator/bitcoin-core/native495-candidate1-495/block-acceptance.json": {
+          "sha256": "417b9925fa0c2a5bff7af711fd70a9cd9df1ed7b8a763e3fb275c5609086b441",
+          "size": 1745
+        },
+        "work/simulator/bitcoin-core/native495-candidate1-495/regtest-offline-import-startup-spec.json": {
+          "sha256": "df3d8062dded43dff43f331d2ebd3b4111641df0ba32713b28a01071499ad44c",
+          "size": 2389
+        },
+        "work/simulator/bitcoin-core/native495-candidate1-495/regtest-offline-import-startup-result.json": {
+          "sha256": "4f4a3cf75a051ed9381e9452e5b768ecbf64307d3ed649d1c025dca6d2ffc1c5",
+          "size": 37772
+        },
+        "work/simulator/bitcoin-core/native495-candidate1-495/candidate.blk": {
+          "sha256": "4ba3902e2b0103d9d30efcad254a29a06ce20f8a56208b5d15834f6ffa0cd291",
+          "size": 192
+        },
+        "work/simulator/bitcoin-core/native495-candidate1-495/source-run-link.json": {
+          "sha256": "0b215a711d3ccf976bb430aa57cb39a6a2b8e8fa7ba75e8ba4562d23968df2f6",
+          "size": 7289
+        },
+        "work/simulator/bitcoin-core/native495-candidate1-495/original-submission-replay.json": {
+          "sha256": "72b70e3aed3d11c0dc0ff4c804e4224bfc73b81d8573c9c6a29248a786fa5225",
+          "size": 69529
+        }
+      }
+    }
+  ]
+}

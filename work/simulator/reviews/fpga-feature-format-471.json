@@ -1,0 +1,73 @@
+{
+  "schema": "md-sim-fpga-feature-format-observation/1",
+  "scope": "Static read of acquired metadata only. No selected configuration feature decoding, execution, or gate pass. Original archival/index update pending browser capture hold.",
+  "feature_databases": [
+    {
+      "file": "md-sim-prjxray471-segbits_clbll_l.db",
+      "sha256": "9bf6bdffdc814569a7da53c696e46207aab23ea66c9dd92c47e50a6211dd739b",
+      "bytes": 27294,
+      "features": 680,
+      "all_zero_conditions": 4,
+      "lut_init_features": 512,
+      "max_relative_frame": 35,
+      "max_relative_bit": 63
+    },
+    {
+      "file": "md-sim-prjxray471-segbits_clbll_r.db",
+      "sha256": "c2ac0aeafc4d1e528e743c49fc00eba3b8b49068f034a4c0ab82df5dd9fb683b",
+      "bytes": 27294,
+      "features": 680,
+      "all_zero_conditions": 4,
+      "lut_init_features": 512,
+      "max_relative_frame": 35,
+      "max_relative_bit": 63
+    },
+    {
+      "file": "md-sim-prjxray471-segbits_clblm_l.db",
+      "sha256": "07dca7c6b00f07a2a255f5178153c42bf16aff202623f2e3bc4bb0f2b974ba41",
+      "bytes": 28171,
+      "features": 703,
+      "all_zero_conditions": 7,
+      "lut_init_features": 512,
+      "max_relative_frame": 35,
+      "max_relative_bit": 63
+    },
+    {
+      "file": "md-sim-prjxray471-segbits_clblm_r.db",
+      "sha256": "3ddfeca1b01bdc04b4f1b3d0dc73cf39f4230708fbbcb5b6170d5b50dc49ad64",
+      "bytes": 28171,
+      "features": 703,
+      "all_zero_conditions": 7,
+      "lut_init_features": 512,
+      "max_relative_frame": 35,
+      "max_relative_bit": 63
+    },
+    {
+      "file": "md-sim-prjxray471-segbits_int_l.db",
+      "sha256": "0ea44e8dfaf97ed200f30b2afe117e94e1a68bdb26af2e09e69e855414779520",
+      "bytes": 164493,
+      "features": 3636,
+      "all_zero_conditions": 0,
+      "lut_init_features": 0,
+      "max_relative_frame": 25,
+      "max_relative_bit": 63
+    },
+    {
+      "file": "md-sim-prjxray471-segbits_int_r.db",
+      "sha256": "1541c7832dd161c5b3b5745d08fe0ee6f92bfbd372b76c12f54afc032c888556",
+      "bytes": 160201,
+      "features": 3636,
+      "all_zero_conditions": 0,
+      "lut_init_features": 0,
+      "max_relative_frame": 25,
+      "max_relative_bit": 63
+    }
+  ],
+  "feature_count": 10038,
+  "tileconn_records": 670,
+  "tileconn_wire_pairs": 99248,
+  "tileconn_tile_types": 86,
+  "zero_delta_connections": 0,
+  "tilegrid_last_path_commit_from_api": "c0ac6c19286e31205d2b7c0a5c7ba25fba8cb13e",
+  "commit_scope": "Only a path-history lead; no entire-database revision match inferred."
+}

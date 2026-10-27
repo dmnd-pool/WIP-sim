@@ -1,4 +1,5 @@
 use crate::store::{hash_file, ObjectId, Store};
+pub use crate::support_virtualization::{SupportVirtualization, SupportVirtualizationReceipt};
 use anyhow::{ensure, Context, Result};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
@@ -97,6 +98,10 @@ impl Limits {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct ProcessSpec {
+    /// An explicit support-VM capability. Ordinary execution and worker APIs
+    /// reject this request; only trusted support launch APIs can grant it.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub support_virtualization: Option<SupportVirtualization>,
     /// One runtime-created framed Ethernet link. A matching explicit provider
     /// is required. No host descriptor or listener may be specified here.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -271,6 +276,8 @@ fn validate_guest_path(s: &str) -> Result<()> {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ProcessResult {
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub support_virtualization: Option<SupportVirtualizationReceipt>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub private_channel: Option<crate::private_channel::Receipt>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub stdin_stream: Option<serde_json::Value>,
@@ -327,6 +334,42 @@ pub fn execute_with_trace(
     execute_recorded(store, spec, cancel, trace, None, None)
 }
 
+/// Explicit host grant for a trusted support VM. Never call this on a remote
+/// worker job or untrusted firmware specification. The only permitted device
+/// is a freshly verified KVM node; all other isolation remains unchanged.
+pub fn execute_support_vm(
+    store: &Store,
+    spec: &ProcessSpec,
+    cancel: Arc<AtomicBool>,
+    trace: Option<TraceFiles>,
+) -> Result<ProcessResult> {
+    execute_inner(
+        store, spec, cancel, trace, None, None, None, None, None, true,
+    )
+}
+
+/// The same explicit support grant with the existing bounded stdin protocol.
+pub fn execute_support_vm_with_streamed_input(
+    store: &Store,
+    spec: &ProcessSpec,
+    cancel: Arc<AtomicBool>,
+    trace: Option<TraceFiles>,
+    input: Receiver<Vec<u8>>,
+) -> Result<ProcessResult> {
+    execute_inner(
+        store,
+        spec,
+        cancel,
+        trace,
+        None,
+        None,
+        None,
+        Some(input),
+        None,
+        true,
+    )
+}
+
 /// Run a declared input protocol. A sender must send only bounded frames and
 /// drop its channel when finished. The runtime closes the pipe at process end.
 pub fn execute_with_streamed_input(
@@ -346,6 +389,7 @@ pub fn execute_with_streamed_input(
         None,
         Some(input),
         None,
+        false,
     )
 }
 
@@ -395,6 +439,7 @@ pub fn execute_private_channel_recorded(
         dashboard_receipt,
         input,
         Some(provider),
+        false,
     )
 }
 
@@ -438,6 +483,7 @@ pub fn execute_dashboard_recorded(
         dashboard_receipt,
         None,
         None,
+        false,
     )
 }
 
@@ -453,8 +499,17 @@ fn execute_inner(
     dashboard_receipt: Option<&Path>,
     input: Option<Receiver<Vec<u8>>>,
     provider: Option<SyncSender<File>>,
+    support_grant: bool,
 ) -> Result<ProcessResult> {
     spec.validate()?;
+    ensure!(
+        spec.support_virtualization.is_some() == support_grant,
+        "support virtualization requires an explicit trusted support-VM grant"
+    );
+    ensure!(
+        !support_grant || (spec.private_channel.is_none() && spec.dashboard.is_none()),
+        "support virtualization does not grant a carrier or dashboard capability"
+    );
     ensure!(
         spec.private_channel.is_some() == provider.is_some(),
         "private Ethernet requires an explicit policy and matching supervisor provider"
@@ -463,6 +518,11 @@ fn execute_inner(
         spec.stdin_stream.is_some() == input.is_some(),
         "streamed stdin requires an explicit policy and matching supervisor channel"
     );
+    let virtualization = if support_grant {
+        Some(crate::support_virtualization::Grant::open()?)
+    } else {
+        None
+    };
     let dashboard = spec
         .dashboard
         .as_ref()
@@ -484,9 +544,11 @@ fn execute_inner(
     let attach_fd = group.as_ref().map(crate::cgroup::Group::attach_fd);
     let unshare = tool_path("unshare")?;
     let bwrap = tool_path("bwrap")?;
+    let prlimit = tool_path("prlimit")?;
     let mut tools = BTreeMap::new();
     tools.insert("unshare".into(), hash_file(&unshare)?);
     tools.insert("bubblewrap".into(), hash_file(&bwrap)?);
+    tools.insert("prlimit".into(), hash_file(&prlimit)?);
     let mut command = Command::new(unshare);
     command.arg("--user");
     if spec.namespace_uid == 0 {
@@ -503,28 +565,37 @@ fn execute_inner(
     if spec.private_channel.is_none() {
         command.args(["--fork", "--kill-child"]);
     }
-    // For a carrier, unshare must exec Bubblewrap directly. Its optional fork
+    // For a carrier, unshare must exec the next tool without a fork. Its optional fork
     // monitor retains FD3 and would conceal guest EOF. Bubblewrap already owns
     // PID1/reaping and parent-death propagation, and closes unrelated monitor
     // descriptors. The default process path remains unchanged.
     if !spec.loopback {
         command.arg("--net");
     }
-    command.arg(bwrap).args([
-        "--die-with-parent",
-        "--new-session",
-        // Bubblewrap must create the PID namespace and its proc mount
-        // together. An enclosing unshare PID namespace can leave the
-        // Bubblewrap monitor's outside filesystem reachable through proc.
-        "--unshare-pid",
-        "--unshare-ipc",
-        "--unshare-uts",
-        "--clearenv",
-        "--hostname",
-        "md-sim",
-        "--cap-drop",
-        "ALL",
-    ]);
+    // Create the user namespace before lowering NPROC: the new namespace
+    // must not inherit a small ancestor allowance already consumed by other
+    // host work. prlimit execs Bubblewrap without an extra monitor or fork.
+    // The declared process bound applies before any guest program executes.
+    command
+        .arg(prlimit)
+        .arg(format!("--nproc={}", spec.limits.processes))
+        .arg("--")
+        .arg(bwrap)
+        .args([
+            "--die-with-parent",
+            "--new-session",
+            // Bubblewrap must create the PID namespace and its proc mount
+            // together. An enclosing unshare PID namespace can leave the
+            // Bubblewrap monitor's outside filesystem reachable through proc.
+            "--unshare-pid",
+            "--unshare-ipc",
+            "--unshare-uts",
+            "--clearenv",
+            "--hostname",
+            "md-sim",
+            "--cap-drop",
+            "ALL",
+        ]);
     if spec.loopback {
         // Bubblewrap creates the namespace and enables only its loopback
         // interface before dropping capabilities. Host network policy can
@@ -538,6 +609,14 @@ fn execute_inner(
         .args(["--tmpfs", "/tmp", "--size"])
         .arg(spec.limits.tmp_bytes.to_string())
         .args(["--tmpfs", "/work", "--chdir", "/work"]);
+    if let Some(grant) = &virtualization {
+        grant.verify_path()?;
+        command.args([
+            "--dev-bind",
+            crate::support_virtualization::DEVICE,
+            crate::support_virtualization::DEVICE,
+        ]);
+    }
     for input in &spec.inputs {
         command
             .arg("--ro-bind")
@@ -635,7 +714,6 @@ fn execute_inner(
             for (resource, value) in [
                 (libc::RLIMIT_CPU, limits.cpu_seconds),
                 (libc::RLIMIT_AS, limits.memory_bytes),
-                (libc::RLIMIT_NPROC, limits.processes),
                 (libc::RLIMIT_FSIZE, limits.file_bytes),
                 (libc::RLIMIT_NOFILE, 256),
                 (libc::RLIMIT_CORE, 0),
@@ -853,6 +931,7 @@ fn execute_inner(
         "user+mount+network+PID+IPC+UTS namespaces; read-only locked files; no egress; scratch tmpfs; optional run-owned incoming dashboard socket"
     };
     Ok(ProcessResult {
+        support_virtualization: virtualization.map(|grant| grant.receipt),
         private_channel,
         stdin_stream,
         dashboard,

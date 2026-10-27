@@ -1,0 +1,73 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "cleanup_resume",
+  "status": "no_open_source_finding_execution_pending",
+  "scope": "Staged482e optional output import adaptation only; no selected netlist execution claim.",
+  "findings": [],
+  "checks": [
+    "Recomputed parent/result hashes and independent AST comparison: all non-import AST nodes and the import multiset are identical.",
+    "All four moved imported bindings are used only in the enclosed optional paths. Each import now executes before the same use, without altering argument expressions or converter assertions.",
+    "Selected Verilog/XDC output has no reference to capnp_graph2, vpr_io_place, output_interchange or create_site_routing. The moved modules do not visibly register callbacks required by the selected path.",
+    "Lazy import changes import-time failure and side-effect timing. It is correctly declared as an adaptation, not byte-identical upstream execution. Optional output use must still import the real dependency and fail if it is absent.",
+    "No orphan-sink, missing-feature, route or output assertion is relaxed. Original archived source is unchanged."
+  ],
+  "AST_checks": [
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+      "non_import_AST_equal": true,
+      "import_multiset_equal": true
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/verilog_modeling.py",
+      "non_import_AST_equal": true,
+      "import_multiset_equal": true
+    }
+  ],
+  "pending": [
+    "Keep staged until the FASM export round trip passes.",
+    "Exact derived input profile and parent/patch/output identities must be verified by the Rust capture path.",
+    "Run real module import and selected converter path only in isolation. Optional output APIs are not tested by a Verilog-only run."
+  ],
+  "files": [
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+      "sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+      "size": 18553
+    },
+    {
+      "path": "work/simulator/netlist-import-dev-482e/fasm2bels/fasm2bels.py",
+      "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+      "size": 18573
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/verilog_modeling.py",
+      "sha256": "36e791fc75dccd2a8b1510d64ca71057ff68389d49ebaadf6892747f405495fb",
+      "size": 87988
+    },
+    {
+      "path": "work/simulator/netlist-import-dev-482e/fasm2bels/models/verilog_modeling.py",
+      "sha256": "0835232d83c50ea24bdd7b43a6236674b9ca545d69ac8574ae1083c0d85068d0",
+      "size": 87997
+    },
+    {
+      "path": "work/simulator/netlist-import-dev-482e/adaptation.json",
+      "size": 3234,
+      "sha256": "da02b9224c203e8ef3dcb15b6ee46a9199be4e16d6b8d73e1470f1cdde2919f7"
+    },
+    {
+      "path": "work/simulator/netlist-import-dev-482e/lazy-optional-outputs.patch",
+      "size": 2404,
+      "sha256": "8a6cdbc2932019f6df40ad4d1e65179520a2b4df48bae87d0ba3e68fe69aed69"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/interchange.py",
+      "size": 30654,
+      "sha256": "f1ed89b3a74380db848bc4eb96a5c5d0984dd54a03ffd634359042bd2e42fae0"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/vpr_io_place.py",
+      "size": 7026,
+      "sha256": "28d9eee2a8facba3aa9e69fcf246c413ab5f8a28fc40bc87b9b5dd64f7f15964"
+    }
+  ]
+}

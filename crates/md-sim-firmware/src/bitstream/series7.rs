@@ -5,7 +5,9 @@
 use anyhow::{bail, ensure, Context, Result};
 use serde::Serialize;
 
+pub mod features;
 pub mod frames;
+pub mod tilegrid;
 
 const MAX_BYTES: usize = 64 << 20;
 const MAX_PACKETS: usize = 65536;

@@ -1,0 +1,237 @@
+{
+  "schema": "md-sim-native-browser-review/1",
+  "status": "failed; no browser or complete-target pass",
+  "run_id": "run-2360e47fa0d091b32eb802104a8f52b77de94e1359e05c117937ea7d267218fc",
+  "locked_run": {
+    "sha256": "f2749fdb2b1921bc5a5e84ddf23884a6d11da8b350d3b74b3b7e1912bfa17a7c",
+    "size": 16526
+  },
+  "access_files_verified": 270,
+  "timing_monotonic_ns": {
+    "prepared": 168871942881,
+    "dispatch": 168927272874,
+    "pool_request": 293936472962,
+    "pool_ready": 294389728478,
+    "execute": 294389746918,
+    "pool_finished": 594557695743
+  },
+  "browser_preparation_milliseconds": 116243,
+  "profile_startup_milliseconds": [
+    55147,
+    57683
+  ],
+  "browser_error": "native profile isolation failed: \"browser command WebDriver:Navigate, sequence 7: browser command failed: timeout: Navigation timed out after 90000 ms\"",
+  "primary_origin": "http://127.0.0.1:18090",
+  "primary_phases": [
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 75,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-navigation-started"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 51050,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-navigation-returned"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 54942,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-login-form-present"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 59838,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-login-click-returned"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 84296,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-dashboard-rendered"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 102837,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-websocket-started"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 124087,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-asset-verified"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 140145,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "native-primary-checks-complete"
+    },
+    {
+      "diagnostic_only": true,
+      "elapsed_milliseconds": 0,
+      "origin": "http://127.0.0.1:18090",
+      "phase": "isolation-navigation-started"
+    }
+  ],
+  "primary_checks": {
+    "native_view_verified": {
+      "boards": 3,
+      "chips_per_board": 63,
+      "frequency_mhz": 100,
+      "private_pool_rows_with_accepted_work": 1,
+      "source": "native application DOM; test did not fill or replace telemetry"
+    },
+    "live_mining_telemetry_samples": 2,
+    "websocket_reason": "two samples",
+    "asset": {
+      "path": "/app.00964ffb2140d6973b03.js",
+      "sha256": "1c318483df06a03e460e35f7419d8562c007f5dc4965a20d412c96392ad36423",
+      "size": 425409,
+      "url": "http://127.0.0.1:18090/app.00964ffb2140d6973b03.js"
+    }
+  },
+  "both_browser_cgroups_empty": true,
+  "browser_groups": {
+    "cleanup": {
+      "cpu": "usage_usec 274569627\nuser_usec 238438199\nsystem_usec 36131428\nnice_usec 923\ncore_sched.force_idle_usec 0\nnr_periods 3855\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n",
+      "cpu_limit": "200000 100000\n",
+      "empty": true,
+      "group": "/sys/fs/cgroup/md-sim-browser/profile-0",
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "memory_peak": "442929152\n",
+      "pids_events": "max 0\n",
+      "pids_peak": "185\n",
+      "reaped_helpers": 22
+    },
+    "isolation_cleanup": {
+      "cpu": "usage_usec 147630751\nuser_usec 124430967\nsystem_usec 23199783\nnice_usec 884\ncore_sched.force_idle_usec 0\nnr_periods 2028\nnr_throttled 2\nthrottled_usec 60224\nnr_bursts 0\nburst_usec 0\n",
+      "cpu_limit": "200000 100000\n",
+      "empty": true,
+      "group": "/sys/fs/cgroup/md-sim-browser/profile-1",
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+      "memory_peak": "352813056\n",
+      "pids_events": "max 0\n",
+      "pids_peak": "182\n",
+      "reaped_helpers": 0
+    }
+  },
+  "api": {
+    "http": {
+      "passed": true,
+      "requests": 15,
+      "origin": "http://127.0.0.1:18090"
+    },
+    "tls": {
+      "passed": true,
+      "requests": 15,
+      "origin": "https://192.0.2.1:9443"
+    }
+  },
+  "gateway_stop_acknowledged": false,
+  "gateway_server_reported_stopped": true,
+  "ssh_tunnel_stopped": true,
+  "failed_command": {
+    "sequence": 7,
+    "operation": "WebDriver:Navigate",
+    "profile": 1,
+    "cookies_before_navigation": [],
+    "request_browser_epoch_ms": 1793039189181,
+    "response_browser_epoch_ms": 1793039280047,
+    "observed_browser_log_ms": 90866,
+    "declared_navigation_timeout_ms": 90000
+  },
+  "bridge": {
+    "elapsed_milliseconds": 305357,
+    "accepted_connections": 104,
+    "connected": 60,
+    "completed_streams": 58,
+    "cancelled_streams": 2
+  },
+  "limits": [
+    "The unchanged 305-second shared observation window ended while browser isolation had not passed.",
+    "No TLS browser origin was exercised and no primary-session check after isolation passed.",
+    "The separate client did not receive the gateway shutdown acknowledgment, although the server retained its stopped record.",
+    "Native and browser wall clocks differ; this cohort has no declared clock adaptation and cannot pass the new clock gate.",
+    "No independent mining or Core acceptance claim is added by this browser review.",
+    "All owned support and browser processes stopped. KVM support acceleration is under separate investigation; no timeouts are increased by this review."
+  ],
+  "files": {
+    "work/simulator/network-vm/native-browser-479/process-spec.json": {
+      "sha256": "0269b13a1bdd5d813a048766c0e330dd7af81e7ed499a7e868149751f5a15483",
+      "size": 5697
+    },
+    "work/simulator/network-vm/native-browser-479/result.json": {
+      "sha256": "74c0a7f290bba7dab713aa9b6c66302fd3f65bc844697147637ec8e6342d8a5b",
+      "size": 211029315
+    },
+    "work/simulator/network-vm/native-browser-479/assessment.json": {
+      "sha256": "ac006b66909faffa687f6e14e3ec920ff98ec33a93fd5f0271b514a6c9e3af75",
+      "size": 49409766
+    },
+    "work/simulator/network-vm/native-browser-479/execution/result.json": {
+      "sha256": "899b8f29e639fe3dd255157ab9cd4cae594c18e4784c1f6a4635cc5f60055f63",
+      "size": 105618187
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-pool/retention-receipt.json": {
+      "sha256": "c9f66f5a0b34afd1df0e46dae6e6aaab0f96599d4efcf03d3a536ad9868b0eaf",
+      "size": 663
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-pool/pool-bundle.json": {
+      "sha256": "8e5b6423fd54e14c885e62fd541206ec605619129260510bfdc4b9831021eac1",
+      "size": 94211
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/access-bundle.json": {
+      "sha256": "abe5f8bf575af8e19448d9a6bcc7149634b6e0ddc8b35b17a2e9b87439abc4c9",
+      "size": 10199471
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/client/browser-preparation.json": {
+      "sha256": "b25d07197be3fe4c4b5bce69f6178e34d861d8a6b3f557dfc354c62226510cd5",
+      "size": 3958
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/client/dispatch.json": {
+      "sha256": "87deb8ae919ad0c4555bc8f88318a29ecc2b780e577ba242907b69216e02535a",
+      "size": 318
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/client-observer/board-browser-process.json": {
+      "sha256": "b75460bfbd18970597272e75af15daf12eba8d48aad92fffb2a44b6de8426150",
+      "size": 258524
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/client-observer/board-browser.stdout": {
+      "sha256": "147d5be2512986376d7665be8583eb960aab3b460708b901135696daa0b5a0ca",
+      "size": 349449
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/client/report.json": {
+      "sha256": "191bc1cf07779e6c08d6a003705585ef8ec32226761ad81d1cc3f08970324cfd",
+      "size": 8168
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/server/bridge/receipt.json": {
+      "sha256": "5e8d7b8525e43a5a985f3c46c8950aee1a624f47838bdb78a339382c72525831",
+      "size": 49742
+    },
+    "work/simulator/network-vm/native-browser-479/execution/shared-access/server/gateway/tls/carrier-selected-stop.json": {
+      "sha256": "2bff5750c9a3c114460109e46d9d034e16caa923692b6097710e6c7bc206c9cc",
+      "size": 2155
+    },
+    "work/simulator/network-vm/native-browser-479/browser-diagnosis/0-stderr.log": {
+      "sha256": "d37095890e41abeb8aa1cae77e628c525ff001e33622b496422c431b4a24aaaf",
+      "size": 38
+    },
+    "work/simulator/network-vm/native-browser-479/browser-diagnosis/0-stdout.log": {
+      "sha256": "3018a14f17018dad1c4216cb6c0f955cd8ac16f68e82e4a610be51ad127546df",
+      "size": 46266
+    },
+    "work/simulator/network-vm/native-browser-479/browser-diagnosis/1-stderr.log": {
+      "sha256": "d37095890e41abeb8aa1cae77e628c525ff001e33622b496422c431b4a24aaaf",
+      "size": 38
+    },
+    "work/simulator/network-vm/native-browser-479/browser-diagnosis/1-stdout.log": {
+      "sha256": "7ea3aac6bfb8306e153cf7c7c9c1e1426df9757f2b8f4bcbc98d2d9d5b4d7a3b",
+      "size": 16521
+    }
+  }
+}

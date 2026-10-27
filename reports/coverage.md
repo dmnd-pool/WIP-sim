@@ -1,6 +1,6 @@
 # Coverage and limits
 
-Generated: 2026-10-19T19:36:43+00:00
+Generated: 2026-10-26T21:10:07+00:00
 
 This report describes this collection. It does not measure every file that exists on the Internet.
 
@@ -13,9 +13,9 @@ Other mining algorithms remain outside the main scope.
 | --- | ---: |
 | entities | 4,354 |
 | relationships | 8,708 |
-| sources | 1,224 |
+| sources | 1,254 |
 | gaps | 183 |
-| artifacts | 13,565 |
+| artifacts | 13,984 |
 | discovery | 700 |
 
 ## Hardware evidence
@@ -53,13 +53,13 @@ Source claims and vendor claims are separate from local test evidence.
 | --- | ---: | ---: | ---: |
 | document | 2,321 | 0 | 31 |
 | firmware | 6,514 | 0 | 588 |
-| metadata | 2,206 | 0 | 141 |
-| source | 548 | 0 | 3 |
-| tool | 290 | 0 | 5 |
+| metadata | 2,269 | 0 | 141 |
+| source | 895 | 0 | 4 |
+| tool | 298 | 0 | 5 |
 | web | 906 | 0 | 11 |
 
-Downloaded records: 12,785. Unique SHA-256 values: 11,845.
-Unique content size: 149.60 GiB. Logical record size: 161.71 GiB.
+Downloaded records: 13,203. Unique SHA-256 values: 12,253.
+Unique content size: 149.66 GiB. Logical record size: 161.77 GiB.
 
 Logical size counts duplicate references. Unique content size counts each SHA-256 value once.
 Neither value measures incomplete transfers or temporary working files.

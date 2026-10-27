@@ -1,0 +1,36 @@
+{
+  "blocking_source_findings": [],
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/src/lab.rs",
+      "sha256": "a416983c6a327ebde4db21a2cb62ec7926d28dbb09295fe7c83777a69bf28987",
+      "size": 19258
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/inspector464-regression.log",
+      "sha256": "79e76ac23d18589bda945c8c6caab895369232f49cff184ae9d30738b80426c1",
+      "size": 466
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/inspector464-clippy.log",
+      "sha256": "6733d42c55019be7c734907aa2d8bbb82b90d462f04621eaa50bec3b9869fd2c",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/inspector464-core-build.log",
+      "sha256": "52b84966ee292814f4bf2f909be166b0d7d0a4523cafe65530c907f3604401b7",
+      "size": 146
+    }
+  ],
+  "prlimit": {
+    "path": "/usr/bin/prlimit",
+    "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+    "size": 27320
+  },
+  "independent_option_check": {
+    "stdout": "16 16\n",
+    "stderr": "",
+    "returncode": 0
+  },
+  "scope": "static ELF preparation fix and actual focused test; no firmware or Core acceptance claim"
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "Independent source review only; no compiled tests or removal yet.",
+  "findings_closed": [
+    "Store limits must be parsed and validated, not only hashed; existing StoreLimits validation now applies."
+  ],
+  "source_review": [
+    "Removal limited to six exact historical CAS stores; five distinct restore stores preserved.",
+    "Owned regular one-link files, no final symlinks; normalized parent paths checked.",
+    "Existing exclusive store locks and incomplete transfer/policy rejection.",
+    "Every pair content hashed, source inventory inode checked; unique target objects and original failed evidence retained.",
+    "New durable pair journal and reserved separate completion file precede removal. Pair bytes and state checked again under locks.",
+    "Directory synchronization and unique object, restore copy, policy and original evidence checks follow removal.",
+    "Real CLI restore test is explicit and has not run yet."
+  ],
+  "open_source_findings": [],
+  "files": {
+    "crates/md-sim-firmware/examples/reclaim_qemu_inputs/browser.rs": {
+      "sha256": "770437d1a402cdd7fdce1d4c0e110d1da7c5030155de3cc026ed55fe0b8181e4",
+      "size": 17619
+    },
+    "crates/md-sim-firmware/examples/reclaim_qemu_inputs/browser_tests.rs": {
+      "sha256": "641eeaf00c63a61ccb7afe28322be43ebb15c4fb4c92d7a8581ae13640ea8c56",
+      "size": 11240
+    },
+    "crates/md-sim-firmware/examples/reclaim_qemu_inputs.rs": {
+      "sha256": "5c85347328ca9561a098c46ce4e78bc2b3b92498904aac0b527764e2aebd10dd",
+      "size": 54673
+    }
+  },
+  "next": "After native487 stops, run focused checks, freeze helper, run explicit CLI fixture, produce locked actual plan, independently hash all actual pairs, then remove only verified duplicates."
+}

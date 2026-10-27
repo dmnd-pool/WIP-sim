@@ -1,0 +1,148 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "reviewer": "cleanup_resume",
+  "status": "no_open_conversion_finding",
+  "scope": "Retained static conversion execution and provenance only; HDL parsing, primitive semantics, electrical constraints, timing and FPGA/firmware gates remain open.",
+  "checks": {
+    "process_exit": 0,
+    "wall_milliseconds": 89218,
+    "trace_untruncated": true,
+    "raw_stdout_and_stderr_match_retained_files": true,
+    "source_closure_rehashed": 271,
+    "input_mounts_rehashed": 1017,
+    "source_delta_joined_to_rehashed_base": true,
+    "exact_helper_and_input_profile_bound": true,
+    "retained_verilog_xdc_equal_complete_embedded_output_text": true,
+    "complete_original_fasm_consumed": {
+      "chunks": 19,
+      "lines": 115981,
+      "maximum_chunk_bytes": 262144,
+      "chunk_limit_bytes": 262144,
+      "consumed_bytes": 4719842,
+      "consumed_sha256": "3654907a9bb4de393c8d0a40fab86d2d04555461f2e2b80d1ce5a38c7b3283e4"
+    },
+    "canonical_names_independently_recomputed_from_prior_raw_minus_removed_defaults": {
+      "count": 219702,
+      "sha256": "a1d84b29b9b0cc8029b02008698e4489b0203618f44b2daba1dfde5ddd3a2f8d"
+    },
+    "no_relaxed_route_or_clock_arguments": true,
+    "parser_and_converter_adaptations_match_exact_profile": true,
+    "namespace_limits_and_no_network_preserved": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 16,
+      "file_bytes": 1073741824,
+      "trace_bytes": 134217728,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "graph_receipt": {
+    "sha256": "445d0ce61f65017aeac7db082c3928cca04b10b2fc90d44accf352f07cc8514f",
+    "size": 271196160,
+    "quick_check": [
+      "ok"
+    ],
+    "counts": {
+      "tile_type": 90,
+      "site_type": 40,
+      "phy_tile": 13440,
+      "site_pin": 6422,
+      "site": 169,
+      "site_instance": 8460,
+      "wire_in_tile": 96705,
+      "node": 1200074,
+      "wire": 3607498
+    },
+    "unassigned_wires": 0,
+    "missing_node_references": 0,
+    "missing_tile_references": 0
+  },
+  "unresolved_predicate_segments": [
+    {
+      "bus": "CLB_IO_CLK",
+      "reason": "missing_pinned_feature_database",
+      "required_database_type": "MONITOR_BOT_PELE1",
+      "tile": "MONITOR_BOT_PELE1_X67Y79",
+      "tile_type": "MONITOR_BOT_PELE1"
+    }
+  ],
+  "limitations": [
+    "The271196160-byte temporary SQLite graph is not retained. This review verifies its recorded checks and exact code, not a second independent query of that graph.",
+    "The31,502-byte stderr is retained. It includes the declared fallback to the pure Python parser and33 electrical-setting ambiguity messages:14 IOSTANDARD input messages and19 IOSTANDARD+DRIVE+SLEW output/bidirectional messages. No external I/O constraints were supplied. Those messages prevent any claim of resolved electrical constraints; they do not establish HDL validity.",
+    "The converter has produced actual Verilog/XDC text. A separate isolated HDL parser/primitive validation must check it before simulation or netlist correctness is claimed."
+  ],
+  "review_correction": "The first independent digest check used newline concatenation and failed. The documented versioned length-prefixed name digest was then applied to the same independently selected219702 names and matched. No source, output or assertion was changed.",
+  "files": [
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/spec.json",
+      "size": 210121,
+      "sha256": "f1822540e097fd0e008ac3b0ea4350c207ae82146f0d70b5145089639079119c"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/result.json",
+      "size": 42297200,
+      "sha256": "7ad3f32e5e5c3cab69106c9f05cc8a2f609b8e8cab6afa839dd98bb10b9c4be5"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/assessment.json",
+      "size": 862,
+      "sha256": "2ee24a502564947cbe03762c88c0ca2c7677f4a38eec0d352956e70dcd6533d0"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/conversion.json",
+      "size": 21116676,
+      "sha256": "83e2263fa6fe6724c412c0de83a3e7cebcaed9262d6ac6e1d728cad1dd90d481"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/comparison-inputs.json",
+      "size": 511,
+      "sha256": "9de2d3bd05c3bfe838f87c85c9555986260f008ae9b1576a60642416c9d25fdb"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/selected.v",
+      "size": 12538532,
+      "sha256": "31bef35aaa1e18af42fdd0c01d1045a5d56ae031c569adf9440eab5fa416e848"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/selected.xdc",
+      "size": 8065912,
+      "sha256": "96abe81a11f36f77f3ebcb2e236e829a8d8ae96ddacd6308362354afc3146b27"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/stderr.log",
+      "size": 31502,
+      "sha256": "7015b9d53c453cab6f777ed77d25a188977b0d88e1450dd16dbfa047933d4652"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-driver-497/manifest.json",
+      "size": 45563,
+      "sha256": "148bb6f4b4d4c8a4305db555a63194094852aab8eddb031d59251f986bd4dde2"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-driver-497/s9_netlist_reconstruct",
+      "size": 2262704,
+      "sha256": "913c85d28559f26b89308d180f416ee4f8188c4195cec8a71c4e972e6b4f7d2d"
+    },
+    {
+      "path": "simulator/firmware/s9-netlist-tool-inputs.json",
+      "size": 17522,
+      "sha256": "ceaff7522bb00b6914a8ee409405b15bc81b9ae80f82c740bf069e7eafb534fc"
+    },
+    {
+      "path": "work/simulator/reviews/netlist-conversion-independent-source-497.json",
+      "size": 4435,
+      "sha256": "99adc7d61f79cb263bbb3a82cf46d12f380b29d039035da4f0544c3629373495"
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/export.json",
+      "size": 13425197,
+      "sha256": "6df29390d76051213c9b7bff907628aff4adf287c4cfd7392914d9b589eb1e37"
+    },
+    {
+      "path": "work/simulator/reviews/netlist-io-ambiguities-497.json",
+      "size": 3928,
+      "sha256": "47132045954c0c6f9c0281a8968c8ee586e32664d6dfd608955293afef5184a5"
+    }
+  ]
+}

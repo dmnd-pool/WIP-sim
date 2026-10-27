@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "scope": "Independent raw Stratum header reconstruction for selected native495. Core acceptance is checked separately. Adapted reference only.",
+  "run_id": "run-2d806d4f216edd3a517e68f5c4de9df129aef9a63219b994fa14a0bd166d9b56",
+  "computed_hashes_checked_by_frozen_rust_auditor": 1664,
+  "raw_firmware_submissions_reconstructed": 14,
+  "accepted": 7,
+  "low_difficulty_rejections": 7,
+  "fresh_jobs": 2,
+  "clean_job_transition": true,
+  "difficulty_changes_verified": true,
+  "review_correction": "Initial one-off review assumed false on a rejected share. The captured JSON-RPC1 contract returns null with code23; the corrected review checks that exact error tuple. No firmware, pool, simulator or retained result changed.",
+  "headers": [
+    {
+      "header_hex": "0000012006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f281aefc6fa6f7cb8703c0daf69939838b05143cc26680bc223baa0d76d49a959b9b9df6affff7f2000000000",
+      "hash_display": "0fa43c6301ac8340b9b51203efedfe5aeb5232c01e89310e9526a33d31333764",
+      "accepted": true,
+      "job_id": "fdff2701d0613c33-0",
+      "wire_elapsed_ns": "15690700275"
+    },
+    {
+      "header_hex": "00808b3506226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095deb9b9df6affff7f2000000000",
+      "hash_display": "303b705e03e9379932a6f860644f3ce4e2eb5aca94ef4b2bfabcc5ff16562bdf",
+      "accepted": true,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "51935762415"
+    },
+    {
+      "header_hex": "00800b3606226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095deb9b9df6affff7f2000000000",
+      "hash_display": "42f0d688000c79742b52c43f3dd4f8e1263a6b4ed55e331181db157ebd41298f",
+      "accepted": false,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "52702502075"
+    },
+    {
+      "header_hex": "0000782206226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debab9df6affff7f2000000000",
+      "hash_display": "4883d0400053cdbc9e429cd06c598500ce2df69706df473462f7cf2491a8dbcf",
+      "accepted": false,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "72701324639"
+    },
+    {
+      "header_hex": "0000562a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debab9df6affff7f2000000000",
+      "hash_display": "1725e39b00b9d0cf0fa96a2bb6aab365c3a331298e77daef2c938d24ba6eb90d",
+      "accepted": true,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "85374695856"
+    },
+    {
+      "header_hex": "0000d33d06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debab9df6affff7f2000000000",
+      "hash_display": "51f3e4bd007da4ddd188307ee52d83ef9755f5199be937f7461754e5fb496a08",
+      "accepted": false,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "117777252191"
+    },
+    {
+      "header_hex": "0000253f06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debab9df6affff7f2000000000",
+      "hash_display": "658b2dd70126e8d4f54fc436ae44806a3e7f010a1dfb669067bdfb0090444621",
+      "accepted": false,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "119909463435"
+    },
+    {
+      "header_hex": "0000382e06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debbb9df6affff7f2000000000",
+      "hash_display": "70747c4d0197daa7b1f40a1e01665feff7728e2471200255ec8d5df236072e14",
+      "accepted": false,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "145201683205"
+    },
+    {
+      "header_hex": "0080f92e06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debbb9df6affff7f2000000000",
+      "hash_display": "04dca6f20337c1e9978d2b20adf6ef026e93dc7fa301d3302a5f9537572d39b1",
+      "accepted": true,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "146401039318"
+    },
+    {
+      "header_hex": "0000203406226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debbb9df6affff7f2000000000",
+      "hash_display": "645705d701b3fb99b0887d4d5e18e1d022c3cf129feca6288f4d2da9ed273aa3",
+      "accepted": false,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "154695238240"
+    },
+    {
+      "header_hex": "0000843806226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debbb9df6affff7f2000000000",
+      "hash_display": "65be3c3001e976d9a0f783fe57a3ecb95f08271c6a674c3b299d3bc78f78c40c",
+      "accepted": false,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "161791475351"
+    },
+    {
+      "header_hex": "0000163906226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debbb9df6affff7f2000000000",
+      "hash_display": "0832b44e03102a70cd13214bac1c5104a0f9e0670d66336c79ff4945c7fcc145",
+      "accepted": true,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "162695316455"
+    },
+    {
+      "header_hex": "0000703606226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debcb9df6affff7f2000000000",
+      "hash_display": "369a3b8501761b06ffd3bbf74b0afd24373611d6b1b26ee2da281980ec32f7ba",
+      "accepted": true,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "210969896385"
+    },
+    {
+      "header_hex": "00008d3a06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910fd6f89e13dde244e6e69ac83e24be0d7ec098238e9571081108e645bf851095debcb9df6affff7f2000000000",
+      "hash_display": "03414cd300e823e22e2003f51cd619c580f0aa96bb27db6892d5faabfc732747",
+      "accepted": true,
+      "job_id": "fdff2701d0613c33-1",
+      "wire_elapsed_ns": "217598771943"
+    }
+  ],
+  "files": {
+    "work/simulator/network-vm/native-browser-495/execution/regtest-audit495.json": {
+      "sha256": "72b70e3aed3d11c0dc0ff4c804e4224bfc73b81d8573c9c6a29248a786fa5225",
+      "size": 69529
+    },
+    "work/simulator/network-vm/native-browser-495/execution/pool-result.json": {
+      "sha256": "2c5fbbad8ebd1c951e523cbc124d1240291956a9d1e21c09e5c95dbc82d9cb9b",
+      "size": 135214
+    },
+    "work/simulator/network-vm/native-browser-495/execution/rate-audit495.json": {
+      "sha256": "c1dabf68994cf910b4282805e81e179f47f8cacb5c2a9b568f9ed08def8e8f01",
+      "size": 6368
+    }
+  }
+}

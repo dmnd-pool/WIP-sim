@@ -1,0 +1,947 @@
+{
+  "schema": "md-sim-source-acquisition/1",
+  "retrieved_at": "2026-10-26T20:06:31.368203+00:00",
+  "git_commit": "d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d",
+  "repository": "https://github.com/GPTechinno/bm13xx-rs",
+  "scope": "Bitcoin ASIC source reference, no tested hardware compatibility claim",
+  "files": [
+    {
+      "path": "Cargo.toml",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/Cargo.toml",
+      "sha256": "b30bbd7b7590ce5fea43a71deb59b47f9a3144562f06c46b3c6edbbecc408866",
+      "size_bytes": 396,
+      "git_blob_sha1": "ece783b6c7ee28d6236d184e3435019465a6c160",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/Cargo.toml.headers",
+        "sha256": "6c7295efc22a6f58391d069ebedccbecde319eb994065409a182c6259a67cb8c",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "LICENSE-APACHE",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/LICENSE-APACHE",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/LICENSE-APACHE",
+      "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+      "size_bytes": 10850,
+      "git_blob_sha1": "11069edd79019f7dafbe3138841cf289209270dd",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/LICENSE-APACHE.headers",
+        "sha256": "ee4213263ad2ce074fcfd7dc93cbe36a9ca1c77cc6206d90ae0e81e0b7edfbfe",
+        "size_bytes": 901
+      },
+      "executed": false
+    },
+    {
+      "path": "LICENSE-MIT",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/LICENSE-MIT",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/LICENSE-MIT",
+      "sha256": "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652",
+      "size_bytes": 1022,
+      "git_blob_sha1": "468cd79a8f6e50f2b24558c41ed3abafa5bb40ae",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/LICENSE-MIT.headers",
+        "sha256": "e958ecfb65e80f930c82061767875f9f1757f0548f131b60b2062b59cb0416ce",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "README.md",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/README.md",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/README.md",
+      "sha256": "7fea02470119e97821d93ad8e1d153ad4615fe5a87364b9982e91b787ebada43",
+      "size_bytes": 1214,
+      "git_blob_sha1": "552e0dc1f8df4e99cb657b74928c9977dcb4a922",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/README.md.headers",
+        "sha256": "14993e9aa125551447445204c63a4ab165e01b3db82fcac5ace93e57fb89aef2",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm1397/Cargo.toml",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm1397/Cargo.toml",
+      "sha256": "967534716406cd65ea1c83e026522218a281fa8e6dcf7a2b43ba3fa4b08825df",
+      "size_bytes": 521,
+      "git_blob_sha1": "cabdf19e6ad0e9fccee67fb3c2e8e8ece8d02981",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/Cargo.toml.headers",
+        "sha256": "52faac7c38d1daca3f86006a63e6169b6a0148fe4b752319fe1f2f57d0b25125",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm1397/src/fmt.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/fmt.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm1397/src/fmt.rs",
+      "sha256": "a0be5566e2fbf97d3ca0fb8d9ef79efc4af075beb43d4bfcd636b60eac4c743e",
+      "size_bytes": 5372,
+      "git_blob_sha1": "96fc26bbe94d98a008ced41f51fd32d31878dcf7",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/fmt.rs.headers",
+        "sha256": "1ffc2398926f3187378366033cf6e8961e135446245f2d109a6a75e908f552d5",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm1397/src/lib.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/lib.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm1397/src/lib.rs",
+      "sha256": "8eb409c1304b30eb35c3cd6229e01d7bafad902a103d7f826e361c3c5ebb7436",
+      "size_bytes": 35923,
+      "git_blob_sha1": "be1d434cfb56e0c7e3cbacf59655e25a8653b0fe",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/lib.rs.headers",
+        "sha256": "49ce70dc63b7767aa0b649206187a5d28305a36fb421541e1476535a152dd9a5",
+        "size_bytes": 901
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/Cargo.toml",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/Cargo.toml",
+      "sha256": "15dd90c6c99eac700785afa648c8af50c8f591a6fa3546d0a01ad37f095ddc1b",
+      "size_bytes": 477,
+      "git_blob_sha1": "17f23650e49695fd51b2916f1052a91c5a98509e",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/Cargo.toml.headers",
+        "sha256": "da7935b0a630b6a2072e73eec20c043d14d8ffc283d9f02613e86a0c8126f9f7",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/clock_delay.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/clock_delay.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/clock_delay.rs",
+      "sha256": "95f56c2d39cc586c4d702ce520e6124be9fb2e937caac9f8b34b23b4efabd4bf",
+      "size_bytes": 9915,
+      "git_blob_sha1": "a8f68ed3dbeb9e8f5ba79d9cb016e1ed2c47bd65",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/clock_delay.rs.headers",
+        "sha256": "c46f8f87df8912f4433046841fac5451f96b87b32ff8c662c046b169f54a2036",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/core_enable.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_enable.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/core_enable.rs",
+      "sha256": "0e69e7fbb1000e7c8fa813b19cfaf21fb84516e987ae2c7c8564a6e524a84297",
+      "size_bytes": 670,
+      "git_blob_sha1": "92e85bf4f352e24ed6f24e8a4d5c1e640847b8fd",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_enable.rs.headers",
+        "sha256": "4f12a66db0559a5e2fc5227bbf2e9bad5d4ebc9763b070880e42052f9a29b34f",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/core_error.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_error.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/core_error.rs",
+      "sha256": "c7934964881c248f9094ab2357eb3696e03dc873723fb6be021889192cb1504e",
+      "size_bytes": 1859,
+      "git_blob_sha1": "d08ae8d9bbb15a9718526341e70429386d217db1",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_error.rs.headers",
+        "sha256": "ed9cbac6d46ab850748e676f0b0a6fcf5f4df4cbf0e74d0c8b09aaf50f54f303",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/core_reg11.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg11.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/core_reg11.rs",
+      "sha256": "5f7fb51333560ceef782b0ba7b32ca261dcf702d5f8c03b9ce86f0e12a7b70e2",
+      "size_bytes": 728,
+      "git_blob_sha1": "86f6c76b478c839a86614e0529d85261d8dd223f",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg11.rs.headers",
+        "sha256": "9b987bdb9bce79a35b0e4eaa48397d8d0a8f548779e7e41e920e02a56066840d",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/core_reg2.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg2.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/core_reg2.rs",
+      "sha256": "7b48d2c9d117f3c358b019a6a273d30800b54d4db3e0830dc2b2ef20afc2ac0f",
+      "size_bytes": 580,
+      "git_blob_sha1": "5b5a335fb36cd56e1abaeca68afa718edffe36bf",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg2.rs.headers",
+        "sha256": "a4aaab88035f97ee17b2e35763d697ba63d87db240ec3f2c6b79c68866707ae4",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/core_reg22.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg22.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/core_reg22.rs",
+      "sha256": "9c942d3ea40917729bc41c4eb6c3b391771c05b6c6506597940c62739fde7a22",
+      "size_bytes": 1434,
+      "git_blob_sha1": "1510e919cbede9b5bd9a3f3e91e275446996b878",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg22.rs.headers",
+        "sha256": "97613c9424ef45dc2bbb867b3164e3878f23795cbb76069f7c82ad88dccf8e16",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/core_reg8.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg8.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/core_reg8.rs",
+      "sha256": "e23ddcbfc6e93c68b46570206a81b06236c2555f5b5e84d36b6ad296b920b3ff",
+      "size_bytes": 720,
+      "git_blob_sha1": "f91fbb048c8a3a663afc1b7a5c243f9037af9b48",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/core_reg8.rs.headers",
+        "sha256": "f96d46e85386c60b6aba442e1a611e511574214fb67d087d4162ef749b1a60b8",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/hash_clock.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/hash_clock.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/hash_clock.rs",
+      "sha256": "e7b3e3c7a997a46044081354ab6325ce23a9bc77c0fc6e0cd21e5f1410ad284f",
+      "size_bytes": 3174,
+      "git_blob_sha1": "60073e6bca9ce252efb762c539de5318a649a71c",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/hash_clock.rs.headers",
+        "sha256": "f059d2049625184039a3edc621efa7ce6b2e50355921ecb8821d7c96062c7ec0",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/mod.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/mod.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/mod.rs",
+      "sha256": "eefa739010e9562910f2b974580a24d25d14bb4ef8628b49f821e5e42872d045",
+      "size_bytes": 1258,
+      "git_blob_sha1": "4e5f4cf3a6a0ce8e66e7d118bcec5914a25ea962",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/mod.rs.headers",
+        "sha256": "19183b453d3cb486eaf87d6b9d738909a653fc1cd72de7a6d7283163b0f39605",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/process_monitor.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/process_monitor.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/process_monitor.rs",
+      "sha256": "00a1b8ce7a24abff63c9382b3dbc0407d2434bed076378e7f413803adc5d8a0d",
+      "size_bytes": 5739,
+      "git_blob_sha1": "57b9cd2cbb12f2a24abc45dc74cd81457f16a300",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/process_monitor.rs.headers",
+        "sha256": "3673bbd3559869b5b4759793534e4ea77a4752faa92a5db4935deb2b78db25c4",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/core_register/sweep_clock.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/sweep_clock.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/core_register/sweep_clock.rs",
+      "sha256": "389c4791b23de7f396a3d3942073d97c301f3f27750507c64a40e0ca64061a13",
+      "size_bytes": 779,
+      "git_blob_sha1": "db30d3cf584f37818eebf6277106658072f9ea60",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/core_register/sweep_clock.rs.headers",
+        "sha256": "d794beca0979f6da529b8395c039b3fe379f19c13db488dd6b75df89b0beda38",
+        "size_bytes": 898
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/error.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/error.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/error.rs",
+      "sha256": "db5f198d633908408f4ce8f87b56f75fd865394114178399689a96e01cfec83b",
+      "size_bytes": 486,
+      "git_blob_sha1": "a51a7e59c8ec5e0f4589c586402261a2c793df01",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/error.rs.headers",
+        "sha256": "c8e193d57f017c7dc4dd5504f327c5df074afa97257258d6d2c423e18f125b50",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/fmt.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/fmt.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/fmt.rs",
+      "sha256": "a0be5566e2fbf97d3ca0fb8d9ef79efc4af075beb43d4bfcd636b60eac4c743e",
+      "size_bytes": 5372,
+      "git_blob_sha1": "96fc26bbe94d98a008ced41f51fd32d31878dcf7",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/fmt.rs.headers",
+        "sha256": "fb1cc220e8347bf41d49e9dbf7c6943a257ada204a1c999df209df61236189e1",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/lib.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/lib.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/lib.rs",
+      "sha256": "4c04654474be827ff7686539a90ef0bb30f17404cf49936817e6e3a68073decd",
+      "size_bytes": 1647,
+      "git_blob_sha1": "279c778b0d0e06cfe249790a261accd03a8a6527",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/lib.rs.headers",
+        "sha256": "9bec914d46b3905dc3da67b23b8800184bb7c310ed7f98b73c096c3d1e304e3e",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/pll.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/pll.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/pll.rs",
+      "sha256": "63064bf5c5938580efd4be85504f8065e3bef84a8f0f7c1d485b198a53e3d192",
+      "size_bytes": 13276,
+      "git_blob_sha1": "0ce78198785bb8e779daeaf9c6281ba6eab80d9d",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/pll.rs.headers",
+        "sha256": "3ca8887c8f9f0a8e112becf0e0c08ddbd504d25e624f4d15e2d3c90e339c6f5d",
+        "size_bytes": 901
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/analog_mux.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/analog_mux.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/analog_mux.rs",
+      "sha256": "c7e577be478baa739c8d577282227741a34715d32a54e2e642bb97b166213909",
+      "size_bytes": 3906,
+      "git_blob_sha1": "ac0e5af64d3a9e817f5a1e5ae6b84d33210e733d",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/analog_mux.rs.headers",
+        "sha256": "92a1378c1c7b04769faf71732eb43c270edefbbcf1df3e78d9902545db074b4a",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/chip_identification.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/chip_identification.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/chip_identification.rs",
+      "sha256": "86808a1c7d8fb0881cb83e092e750c85c5437ebceb2c8dd539756278261036dc",
+      "size_bytes": 2441,
+      "git_blob_sha1": "11ea40a1fbf869095066bb2052c92395b24b722a",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/chip_identification.rs.headers",
+        "sha256": "174534e2d8312c403c4445ae4722f068aecab683c2458de1189457cd478d4905",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/chip_nonce_offset.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/chip_nonce_offset.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/chip_nonce_offset.rs",
+      "sha256": "ec4c26bd8b4cf2ff00de4593bb2f815b3f832f1f785a51fba8e8179e464a6571",
+      "size_bytes": 3060,
+      "git_blob_sha1": "9d350d6298516767e6357d26782d1354c04c426a",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/chip_nonce_offset.rs.headers",
+        "sha256": "e5ae220b3d4df5a1492479fe6c5c6476bf41d704d99d80659547deab88c4f8c7",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/clock_order.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/clock_order.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/clock_order.rs",
+      "sha256": "ab6105c637f6fbcc07145ab8a36744b137828c53ae6eda72e87d544707f8cc46",
+      "size_bytes": 15902,
+      "git_blob_sha1": "6aac67b179d0459bae7cf3cf8ca1243fcbaafa0d",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/clock_order.rs.headers",
+        "sha256": "2397efc4dcc7993dc2d77984454aec97d82d63f59b4174956ab6421f2522a560",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/core_register.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/core_register.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/core_register.rs",
+      "sha256": "12d587b678e1f9d1169190a8251995a40be709f3f1d76087aa8c35d35be96f69",
+      "size_bytes": 4681,
+      "git_blob_sha1": "85678c29e596d5b9dd77324416133240f7774998",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/core_register.rs.headers",
+        "sha256": "7c127c7171d920a3a2fa565a2e77a00c1a515cd4942e5096d16cf7e8d8f9db9a",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/error_flag.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/error_flag.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/error_flag.rs",
+      "sha256": "edaeabe1eda73cc58ef045c63ad324158113e00eb4a03acfe631828058cd3de6",
+      "size_bytes": 821,
+      "git_blob_sha1": "77ffb174c9c74c5344e957c7bb28f4a4b4000d8a",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/error_flag.rs.headers",
+        "sha256": "4389e55abe7c8e2ee1ff985af5c654f786b3cab72e65fe9108a23a58fcac1afd",
+        "size_bytes": 898
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/external_temperature_sensor.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/external_temperature_sensor.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/external_temperature_sensor.rs",
+      "sha256": "c0b6bd0f9e945461b0b5b74a996e4ea4f49b40c34aa06ea46e2ab60ef3403411",
+      "size_bytes": 1109,
+      "git_blob_sha1": "3956a0cf0a4947aef5e1127b9f59d9bbb681c3e9",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/external_temperature_sensor.rs.headers",
+        "sha256": "3d838fcec8b706c5cb3dc58cb6424eec5456444623efbcc7ed424b18cc35028e",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/fast_uart.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/fast_uart.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/fast_uart.rs",
+      "sha256": "fb321a0c379ecb2555e40620aa6d980160104a7709c7b2cd8552dbbaeebd158a",
+      "size_bytes": 8681,
+      "git_blob_sha1": "b41a7079818dc30d359d429d7ed487eaccf4a77e",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/fast_uart.rs.headers",
+        "sha256": "dfdb89d367ec803e990d1df9020a1831f6945b91aacfc7f359291582314ade27",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/frequency_sweep.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/frequency_sweep.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/frequency_sweep.rs",
+      "sha256": "dc14a9c6344098ed1f7e6012688d4380395c3375c601afbf042ced79cd79dffd",
+      "size_bytes": 1495,
+      "git_blob_sha1": "c49ccc0b68101e1cade7df62a58926676d5cf0ef",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/frequency_sweep.rs.headers",
+        "sha256": "cc86abbfae41cbcc60bb70379635e6254f006bcda8126c4013c99e41bcdc445e",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/hash_counting_number.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/hash_counting_number.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/hash_counting_number.rs",
+      "sha256": "4f38d7de21998ee55fd3e51b1151858a739753175a856313b0eed5934071ad01",
+      "size_bytes": 709,
+      "git_blob_sha1": "0f08f4666ded0fa474140c9b2444b4c484ffa81f",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/hash_counting_number.rs.headers",
+        "sha256": "cade30583eaaf94def8370eaef9e0f1061c118fd2ccd7fb7002f7b8c0f563201",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/hash_rate.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/hash_rate.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/hash_rate.rs",
+      "sha256": "aad02a598eba472deabd51b99ef9b9c8fab502ac21005a3b8fcef8388982a3e9",
+      "size_bytes": 708,
+      "git_blob_sha1": "4e3fe56ca6ed814df8c0281237f0344c39b6f5e0",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/hash_rate.rs.headers",
+        "sha256": "5be978570482d92e2137525a1affc568fb43f5184fb823aaf223033f4bdef836",
+        "size_bytes": 898
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/i2c.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/i2c.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/i2c.rs",
+      "sha256": "6d16c1762603625ab62ae2b30c5975c3e618b1c2a37e959391ef1f031e03e70d",
+      "size_bytes": 1034,
+      "git_blob_sha1": "23cc5214bd3d1c2e91cf6bf04c5d3282161c6a2c",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/i2c.rs.headers",
+        "sha256": "f3d8b575bd58bb4d45ddd844faa1076b537a7e63a28b0eea934678c241f16361",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/io_driver_strenght.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/io_driver_strenght.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/io_driver_strenght.rs",
+      "sha256": "50625ddfc6488c26501a4397aebc45fe43e6734707fcf6b9ea6f6b4cf51e2961",
+      "size_bytes": 8750,
+      "git_blob_sha1": "015063171f058205c954531a9e9049f440c485f1",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/io_driver_strenght.rs.headers",
+        "sha256": "312e1e55e4247edad110dca278be7107653de4a58dc7a1efbea0fdd4398cf797",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/midstate_calc.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/midstate_calc.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/midstate_calc.rs",
+      "sha256": "8e3643b6cfdab2486f7509f4a3a2b6448c4f69652c5bdb10d005f2d640be5611",
+      "size_bytes": 2369,
+      "git_blob_sha1": "5bf7513a569ba06d30943fc211b7699355f1d90b",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/midstate_calc.rs.headers",
+        "sha256": "aac3ffabb43f0196716070c7f65d7e027924a0e950f9e6b58198eebcb62dfb8a",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/misc.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/misc.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/misc.rs",
+      "sha256": "1af15bf11c141a7a9ba504ef191e0f6b9c62fc6aa04f7529978176261a6b6655",
+      "size_bytes": 9670,
+      "git_blob_sha1": "115afc8b7f539921e8ddf28382fbc4651d937906",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/misc.rs.headers",
+        "sha256": "66e312ab7748d6fd6a139dc1cf90fc3758712b5dc7085eb8c6ebc2f0ea3bf6b3",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/mod.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/mod.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/mod.rs",
+      "sha256": "9a1b76fa8359ec9981e728d95f3e132ffc1934c0de5db1c69505b7cb37499650",
+      "size_bytes": 2889,
+      "git_blob_sha1": "03bf663883b6f7baf23c8f403419157d80575a4e",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/mod.rs.headers",
+        "sha256": "57e78dbde1814ab4085e14e4bd3050fa9cad0325bbad19148ef4bdeca108899c",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/nonce_counter.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/nonce_counter.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/nonce_counter.rs",
+      "sha256": "71ae8dbec54d573b6447a452ff32241e907618cef992ae9c3154727defc139cd",
+      "size_bytes": 1413,
+      "git_blob_sha1": "e2c69183bfe56e849d17e04046cd23a8d0f1b93a",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/nonce_counter.rs.headers",
+        "sha256": "885064f1fec3053711d446bd3f5e52ce74056dacb930a45a60b108a047b8b4fd",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/nonce_returned_timeout.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/nonce_returned_timeout.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/nonce_returned_timeout.rs",
+      "sha256": "db99d44dcac1cb45d349000c266fd3f7e6f6d060f770f575dcb9634f6718dad9",
+      "size_bytes": 740,
+      "git_blob_sha1": "823b8b9c07572ab743d52655b527f4ecd44b8efd",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/nonce_returned_timeout.rs.headers",
+        "sha256": "03f967522bf1e47163b88683060e21c129de64a2e24e0af0497e757d2d216f3c",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/pll_divider.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/pll_divider.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/pll_divider.rs",
+      "sha256": "b5317fbb68b01a3f33b88d3fd7ca6a845eeb87b14b7bff3460b39a8beb3afaa0",
+      "size_bytes": 1713,
+      "git_blob_sha1": "1ab8c27bdd29735d7049dd3c4c1f2323bb22e73d",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/pll_divider.rs.headers",
+        "sha256": "23b022ffb1b26857db7530300dbbd78f1a84f212d0414bf571db34b2b1e11833",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/pll_parameter.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/pll_parameter.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/pll_parameter.rs",
+      "sha256": "0a1d3a6c0d5d4fa2914173ad741d8d98a2b26c5566cb2179636434010459fb0b",
+      "size_bytes": 817,
+      "git_blob_sha1": "040db5c887c34975ab5e2f2181aa6322eaf99e06",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/pll_parameter.rs.headers",
+        "sha256": "5e73b0a9e0dad0b97cc963149f7736f20a75a75d084949d1b6d62232f4d71d82",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/return_group_pattern_status.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/return_group_pattern_status.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/return_group_pattern_status.rs",
+      "sha256": "7d8eca4e6ef291e74527b736bf995bacc3d7a9f0b2ca899284b086fb4bc8bbef",
+      "size_bytes": 997,
+      "git_blob_sha1": "bd2fce91980af42027a6b9fbab4a5bc6c3942e3b",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/return_group_pattern_status.rs.headers",
+        "sha256": "38ea6b463ab5287c091fac3aa77718c283965c200976e08076e1b25f6d4fc939",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/returned_single_pattern_status.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/returned_single_pattern_status.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/returned_single_pattern_status.rs",
+      "sha256": "e60d36b5b049fcf66883dea62c82f9066d32b8febd33d13a749ccce26581bae8",
+      "size_bytes": 784,
+      "git_blob_sha1": "be0adfdc436d090573258a7ba0296ac4ba6c7658",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/returned_single_pattern_status.rs.headers",
+        "sha256": "2d4a45a27e3148b3f2db450388c22e73becbe8a7d79a9df3180d8e1661088755",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/soft_reset.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/soft_reset.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/soft_reset.rs",
+      "sha256": "e2f91da7f016a91c5e6f722ebe1e98b483ae567c6b8d3328a2e88272d305b60f",
+      "size_bytes": 4006,
+      "git_blob_sha1": "e192d0f112cee05993902a8ea830a0749cf6ff57",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/soft_reset.rs.headers",
+        "sha256": "1dece849f3d8649242d0d01a46b4889421430af6eec2d57d32e244039b641461",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/ticket_mask.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/ticket_mask.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/ticket_mask.rs",
+      "sha256": "3c5753680d1944a7f4693d4e2dcba44552abf1726c467ec88bb782511bf219fd",
+      "size_bytes": 2006,
+      "git_blob_sha1": "69fa443d4d802ab3ad8085e478309d8f9e162c1a",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/ticket_mask.rs.headers",
+        "sha256": "fb7be31738482c266cfab02fd56361a45f7b97d1652de32385fec734776ecbcd",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/timeout.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/timeout.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/timeout.rs",
+      "sha256": "bda1ae7a471bb399189f95f11c357bb553550e2fcbea92892341b37ed89b1802",
+      "size_bytes": 619,
+      "git_blob_sha1": "57a23fc2056762bf9edd0476b41c54565e292cff",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/timeout.rs.headers",
+        "sha256": "a655b836fc735e35d3532bfbf13e8641854e5156334bcc409124996771af7ddd",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/uart_relay.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/uart_relay.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/uart_relay.rs",
+      "sha256": "8427c203ee9b7e119cad5c9a64c3298d7a967e172bda745657e659975f92912d",
+      "size_bytes": 3238,
+      "git_blob_sha1": "c94f8bd79e1ff3c866240cbeea8427d888df8f85",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/uart_relay.rs.headers",
+        "sha256": "480765507e194ece83969e3f1ec8af8e34277374322a0c0526bce9e0b93b277c",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/register/unknown.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/unknown.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/register/unknown.rs",
+      "sha256": "77150d2a4ff36ea6e783193e00fb3a81b2dc59a7032949aff520d815d34507bd",
+      "size_bytes": 1397,
+      "git_blob_sha1": "aaea4be20fd25fb132a7c95e3afea8bf9280de09",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/unknown.rs.headers",
+        "sha256": "7ff6bfda0ea7b6f76dc628666e352d54cbc17be8746a68693bc570e6f8af74ec",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-asic/src/sha.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/sha.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-asic/src/sha.rs",
+      "sha256": "0dc906ecec2f0f177edfa78d89fbfe12683d9a65d346628b5fc5dc2f89e80dea",
+      "size_bytes": 2787,
+      "git_blob_sha1": "7a834b5d3682d1fe6c660cac5adddc85b224fb29",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/sha.rs.headers",
+        "sha256": "b83ccc2ab160d0432e07ef62ec9650cb17a2c4352374dbd35c0072ca6e62c98f",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-chain/Cargo.toml",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-chain/Cargo.toml",
+      "sha256": "ae00b5c11b3aeec627d4944663180889ce288499cd74ed5d900f83fd7087bc7a",
+      "size_bytes": 1159,
+      "git_blob_sha1": "d07e18e96844308b0ebe0542da0de94e79c6adfa",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/Cargo.toml.headers",
+        "sha256": "32ee5e5f0ff7093ac00ca5806d4d9d54ba874c42d2231694ac1a3c00123d49e1",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-chain/examples/cli.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/examples/cli.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-chain/examples/cli.rs",
+      "sha256": "7979605831c29711f97438c395654e719163f685dbf2c1adc58035f21d5ff161",
+      "size_bytes": 4812,
+      "git_blob_sha1": "768de925127ca6ccc08a64bba30919e89e6d9ce4",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/examples/cli.rs.headers",
+        "sha256": "703ed18a9af0bb57c31896dc872b05a2295dffe6f62bba2b5a277c43fb995ddb",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-chain/src/error.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/src/error.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-chain/src/error.rs",
+      "sha256": "0ed8f9d0c3c2e4a0d2af3e25482ee929faee875a6c71a4b21f6ee1fd42946975",
+      "size_bytes": 2914,
+      "git_blob_sha1": "853b2c916bf7a1953b8d1abd3592986850039716",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/src/error.rs.headers",
+        "sha256": "a60c026bb9e2ee8632057324b9ca1af3824dd89504cc9526bab4dd6565469e5e",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-chain/src/fmt.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/src/fmt.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-chain/src/fmt.rs",
+      "sha256": "a0be5566e2fbf97d3ca0fb8d9ef79efc4af075beb43d4bfcd636b60eac4c743e",
+      "size_bytes": 5372,
+      "git_blob_sha1": "96fc26bbe94d98a008ced41f51fd32d31878dcf7",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/src/fmt.rs.headers",
+        "sha256": "8749004b933c90bb6898336240e5239311e4101a34b3e7bb01ea76154d888ee5",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-chain/src/lib.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/src/lib.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-chain/src/lib.rs",
+      "sha256": "38f21c37bd0a29a30e2b894043769ca26522917ae5e90ecece74620f314bbfeb",
+      "size_bytes": 17546,
+      "git_blob_sha1": "b1386feeebb3dcc83e4e1eb0ae4364ea038f63c4",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-chain/src/lib.rs.headers",
+        "sha256": "28ce01fb5d1c34f1552962b8dbc8ed5826c4c4ff056a6a15b04c0370201243c0",
+        "size_bytes": 901
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/Cargo.toml",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/Cargo.toml",
+      "sha256": "e1401519480a6ab7fff8c38bc2b6fa54497adcde1856a4c864504cf73db8ee9f",
+      "size_bytes": 813,
+      "git_blob_sha1": "8954ec1190a856339b6c2e5dfc64866b7d1e4fc9",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/Cargo.toml.headers",
+        "sha256": "14eb0ad92c844dde0e08cda5352d8c059bb389af0f1cd0110cca9aa1c5610321",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/examples/chain_enum.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/chain_enum.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/examples/chain_enum.rs",
+      "sha256": "245142c7967b20a6c1617e09495977e24ff4e787805098816216588bb188f2f7",
+      "size_bytes": 1171,
+      "git_blob_sha1": "db7cd27db0c0a3a64ebb64d6ffe7fd703c014e3a",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/chain_enum.rs.headers",
+        "sha256": "6354f8660d71cc991744f874099b1d05ae86c7e30628068da91897fb44e6fca6",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/examples/core_reg_probe.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/core_reg_probe.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/examples/core_reg_probe.rs",
+      "sha256": "f3db9aecb6edb1e03124e6d058a8d276ebd2435c06ad4eb9a7f6432488a8c7dd",
+      "size_bytes": 2858,
+      "git_blob_sha1": "ac2f91c770a7e121a6596fbc25bad35c531c660e",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/core_reg_probe.rs.headers",
+        "sha256": "759b21678407b084776ac45e5156651a8326028a583a45a5e95252ca9bed7051",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/examples/reg_probe.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/reg_probe.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/examples/reg_probe.rs",
+      "sha256": "fdd268e8f143489e7d3b029694706ec871a27d748658a6d3064bef4c8e59f412",
+      "size_bytes": 1252,
+      "git_blob_sha1": "b8755cbac8a1fbc2c72e3ab63f16bf7fdf36f679",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/reg_probe.rs.headers",
+        "sha256": "735b87613b5a5d5d09360534bf6c669ddef3166d2207335d50b61a85f8125ed5",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/examples/version_rolling.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/version_rolling.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/examples/version_rolling.rs",
+      "sha256": "7ebdcc915a32207625d2d187419a59c040d521d69b36e953e45a1e9f6147b122",
+      "size_bytes": 1956,
+      "git_blob_sha1": "8cdfde5b59404032d585a56fca7c41a6af2694ca",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/examples/version_rolling.rs.headers",
+        "sha256": "8789be388b70bccd72aaf1ce2ad4c5b61aa415319970b4064b613af14af7a097",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/src/command.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/command.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/src/command.rs",
+      "sha256": "93831beb25a14feb472161371c1681672420e55e712defac85ec8e11eb928772",
+      "size_bytes": 12578,
+      "git_blob_sha1": "0de3b625a398be5d83f8a2294b2d1f57e8f96488",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/command.rs.headers",
+        "sha256": "aad7f49915530ce02df422ba3e0e14027b3c680d72c894b1597d1b8f65ea71ae",
+        "size_bytes": 901
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/src/crc.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/crc.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/src/crc.rs",
+      "sha256": "451801015aa6cc9e9f029f0a8e7ed2fe6207ec3aaf7c8ae163735ee94d68f283",
+      "size_bytes": 6141,
+      "git_blob_sha1": "ea3cc8b58591717a3d2f54f31f8c1465ef7b6154",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/crc.rs.headers",
+        "sha256": "8e6d08b9bb1af7d8fe4a80178c72ed1f4f2e29a1dd5b2aaa0be2b6a2cc3dd5fd",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/src/error.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/error.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/src/error.rs",
+      "sha256": "6dba09a4a14288c30d49162b22683a523016544f21dd52dd45d550b7c6f201df",
+      "size_bytes": 547,
+      "git_blob_sha1": "66a8b478994e3325dab98b480001207f0e676e46",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/error.rs.headers",
+        "sha256": "ce1fc02efd49282c56cfe7d3a16dbed970caa8b7ac150565210e2f5a966c8418",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/src/fmt.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/fmt.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/src/fmt.rs",
+      "sha256": "a0be5566e2fbf97d3ca0fb8d9ef79efc4af075beb43d4bfcd636b60eac4c743e",
+      "size_bytes": 5372,
+      "git_blob_sha1": "96fc26bbe94d98a008ced41f51fd32d31878dcf7",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/fmt.rs.headers",
+        "sha256": "05bcf283b603d0a387d7402f83cac6569b764ae54fad65695fd7473db8abc2df",
+        "size_bytes": 900
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/src/lib.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/lib.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/src/lib.rs",
+      "sha256": "21b95107fd7aa7c9e0c7c9599e7c8e349e42918321d804d784c510a9cdb063b9",
+      "size_bytes": 163,
+      "git_blob_sha1": "fa902e53567ddc3f6585a81675a3c19684677236",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/lib.rs.headers",
+        "sha256": "751ccda403c8af4f69fa2a7bc74d88ff8358859f830c1f46773c05377bbce2c8",
+        "size_bytes": 899
+      },
+      "executed": false
+    },
+    {
+      "path": "bm13xx-protocol/src/response.rs",
+      "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/response.rs",
+      "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/bm13xx-protocol/src/response.rs",
+      "sha256": "a63ae5e1854bb8a59cf666f27bd11e17bc77c69c3c70f9d6c8ac0902d248652a",
+      "size_bytes": 9988,
+      "git_blob_sha1": "1140a3520dafd425359885653d670c5cdc975848",
+      "response_headers": {
+        "local_path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-protocol/src/response.rs.headers",
+        "sha256": "87ab3cbd2f72f51905b141c1455a197cabd5156ac6190e7e9cdbdeeac6455f8a",
+        "size_bytes": 900
+      },
+      "executed": false
+    }
+  ]
+}

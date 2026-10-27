@@ -1,0 +1,83 @@
+{
+  "id": "fasm2bels-lazy-optional-outputs-v1",
+  "component": "fasm2bels optional VPR and interchange imports",
+  "reason": "The selected Verilog/XDC API does not use the four VPR/interchange bindings. Move the existing imports to their existing use sites. This changes import failure and side-effect timing. No converter algorithm, assertion or import statement is removed.",
+  "source_revision": "bafbcd8727e0807d6a620d1cf5dd151111c4a322",
+  "files": [
+    {
+      "parent": {
+        "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+        "object": {
+          "sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+          "size": 18553
+        }
+      },
+      "result": {
+        "path": "simulator/tools/fasm2bels/fasm2bels/fasm2bels.py",
+        "object": {
+          "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+          "size": 18573
+        }
+      },
+      "changes": [
+        {
+          "from": "from rr_graph.capnp import graph2 as capnp_graph2\n",
+          "to": ""
+        },
+        {
+          "from": "from .lib import vpr_io_place\n",
+          "to": ""
+        },
+        {
+          "from": "from .lib.interchange import output_interchange\n",
+          "to": ""
+        },
+        {
+          "from": "    if eblif:\n        io_place = vpr_io_place.IoPlace()",
+          "to": "    if eblif:\n        from .lib import vpr_io_place\n        io_place = vpr_io_place.IoPlace()"
+        },
+        {
+          "from": "    capnp_graph = capnp_graph2.Graph(",
+          "to": "    from rr_graph.capnp import graph2 as capnp_graph2\n    capnp_graph = capnp_graph2.Graph("
+        },
+        {
+          "from": "    if args.logical_netlist:\n        assert args.physical_netlist",
+          "to": "    if args.logical_netlist:\n        from .lib.interchange import output_interchange\n        assert args.physical_netlist"
+        }
+      ]
+    },
+    {
+      "parent": {
+        "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/verilog_modeling.py",
+        "object": {
+          "sha256": "36e791fc75dccd2a8b1510d64ca71057ff68389d49ebaadf6892747f405495fb",
+          "size": 87988
+        }
+      },
+      "result": {
+        "path": "simulator/tools/fasm2bels/fasm2bels/models/verilog_modeling.py",
+        "object": {
+          "sha256": "0835232d83c50ea24bdd7b43a6236674b9ca545d69ac8574ae1083c0d85068d0",
+          "size": 87997
+        }
+      },
+      "changes": [
+        {
+          "from": "from ..lib.interchange import create_site_routing\n",
+          "to": ""
+        },
+        {
+          "from": "        # Convert site_routing tree into Physical* object tree.\n",
+          "to": "        from ..lib.interchange import create_site_routing\n\n        # Convert site_routing tree into Physical* object tree.\n"
+        }
+      ]
+    }
+  ],
+  "patch": {
+    "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+    "object": {
+      "sha256": "8a6cdbc2932019f6df40ad4d1e65179520a2b4df48bae87d0ba3e68fe69aed69",
+      "size": 2404
+    }
+  }
+}

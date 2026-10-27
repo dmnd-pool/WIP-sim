@@ -109,6 +109,7 @@ fn check_recovery(event: &Value, inputs: &[Mount]) -> Result<()> {
         "lost run identity differs"
     );
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -339,6 +340,7 @@ mod tests {
         let result = json!({"status":"exited","exit_code":0,"wall_milliseconds":1,"stdout":hex::encode(log),
             "stderr":"","trace_truncated":false,"isolation":"test","limits_scope":"test","tools":{}});
         let mut spec = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,

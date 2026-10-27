@@ -1,0 +1,84 @@
+{
+  "scope": "Independent staged-source review only. No production integration or execution pass.",
+  "status": "closed; no source finding",
+  "stage": {
+    "schema": "md-sim-source-stage/1",
+    "scope": "One explicit programmed-state capability in the existing chain. No acknowledgement, effective silicon state, guest readback, lock or mining. Production not integrated.",
+    "files": [
+      {
+        "path": "work/simulator/bm1397-programmed-501/programmed.rs",
+        "sha256": "47a02091c4cb5e2a5e914ac821bac04f18b735f3894ab5a6bc8aef37251f5946",
+        "size": 5619
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/programmed_tests.rs",
+        "sha256": "83caadd2a579a4f8918b4b3ca900fd12a1335d6b1970c6980f33893d404f4eab",
+        "size": 7498
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/identify.rs",
+        "sha256": "fc85ca0dfdac3e555553eca08f19694bfd6b9a22e32624ba4cb5cf1a93e444c7",
+        "size": 30810
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/bm1397.rs",
+        "sha256": "8d1a819f603ed88e51db479d4489613ac5891aabaf0c7b18e119c2cbdc6411a8",
+        "size": 20286
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/esp32_original_probe.rs",
+        "sha256": "d4c62e92652a6501ebb466f3b320469708eef915395b9bdc003ba1bfb2b1b461",
+        "size": 34528
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/t17-pll-frequency-results.bin",
+        "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+        "size": 354160
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/t17-pll-frequency-results.json",
+        "sha256": "55a65f5712d26eaadd96c93f89ddc194c78b5b40a5d044efab9d7d26b443a8c6",
+        "size": 1717
+      }
+    ],
+    "checks": "Scoped Rust formatting passed. Cargo/build/actual original probe pending root source review and common499 release."
+  },
+  "base": {
+    "schema": "md-sim-source-base/1",
+    "files": [
+      {
+        "path": "crates/md-sim-firmware/src/bm1397.rs",
+        "sha256": "454de615a797108d6301aa20a8c9735d8674d7adddb81509bc7a390f7c21ded0",
+        "size": 20245
+      },
+      {
+        "path": "crates/md-sim-firmware/src/bm1397/identify.rs",
+        "sha256": "6ef618637a2aedd49788b190ec5aec22f97c5395e229048d8b08cba72725a397",
+        "size": 28131
+      },
+      {
+        "path": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+        "sha256": "658be079a059fd6580bfe5e64ac346bc50a09675a7ee42f464fc4fbf328289d5",
+        "size": 31080
+      }
+    ]
+  },
+  "checked_behavior": [
+    "Existing chain, packet decoder and topology reused; new capability is explicit.",
+    "Posted core0/PLL0/PLL3 values are distinct from effective silicon state.",
+    "No write ACK, clock lock, guest readback or nonce response is invented.",
+    "Ambiguous addressing and invalid controls fail before state change.",
+    "Power/reset clear recorded knowledge to None, not silicon reset defaults.",
+    "Exact f32 operation sequence follows independently reviewed original oracle496; all original outputs are retained for regression."
+  ],
+  "required_next": [
+    "Check base identities again before integration.",
+    "Run focused state/original arithmetic regressions and strict Clippy.",
+    "Execute unchanged original ESP firmware in recorded control-storage profile; retain actual next unsupported command."
+  ],
+  "limits": [
+    "No effective frequency, lock timing, core fan-out or physical board inference.",
+    "No original-board or mining gate."
+  ],
+  "reviewer": "root"
+}

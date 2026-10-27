@@ -1,0 +1,20 @@
+{
+  "id": "prjxray-xc7z010-tilegrid-20261026",
+  "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/xc7z010/tilegrid.json",
+  "kind": "metadata",
+  "title": "Project X-Ray XC7Z010 configuration tile grid",
+  "language": "en",
+  "source_id": "prjxray-xc7z010-tilegrid-20261026",
+  "license": "CC0-1.0",
+  "retrieved_at": "2026-10-26T17:08:15+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/prjxray-xc7z010-tilegrid-20261026/tilegrid.json",
+  "sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+  "size_bytes": 4351137,
+  "executed": false,
+  "scope": "supporting-tool",
+  "acquisition": "Root agent fetched exact public URL with bounded curl. Original response bytes preserved. No immutable Git revision inferred from a moving endpoint.",
+  "notes": [
+    "S9 controller FPGA reconstruction support only. No FPGA mining target or board-compatibility claim."
+  ]
+}

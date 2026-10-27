@@ -1,0 +1,149 @@
+{
+  "scope": "Read-only lexical classification of already retained formatter output, joined to exact tilegrid and upstream dispatch AST. This is not a FASM parse, netlist, physical usage proof, or passed round trip.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482b/selected.fasm",
+      "sha256": "3654907a9bb4de393c8d0a40fab86d2d04555461f2e2b80d1ce5a38c7b3283e4",
+      "size": 4719842
+    },
+    {
+      "path": "artifacts/files/metadata/prjxray-xc7z010-tilegrid-20261026/tilegrid.json",
+      "sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+      "size": 4351137
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+      "sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+      "size": 18553
+    }
+  ],
+  "rows": [
+    {
+      "tile_type": "BRAM_L",
+      "formatted_feature_lines": 1241,
+      "physical_tiles": 13,
+      "upstream_dispatch": "process_bram"
+    },
+    {
+      "tile_type": "BRAM_R",
+      "formatted_feature_lines": 470,
+      "physical_tiles": 5,
+      "upstream_dispatch": "process_bram"
+    },
+    {
+      "tile_type": "CFG_CENTER_MID",
+      "formatted_feature_lines": 3,
+      "physical_tiles": 1,
+      "upstream_dispatch": "null_process"
+    },
+    {
+      "tile_type": "CLBLL_L",
+      "formatted_feature_lines": 4001,
+      "physical_tiles": 132,
+      "upstream_dispatch": "process_clb"
+    },
+    {
+      "tile_type": "CLBLL_R",
+      "formatted_feature_lines": 4209,
+      "physical_tiles": 138,
+      "upstream_dispatch": "process_clb"
+    },
+    {
+      "tile_type": "CLBLM_L",
+      "formatted_feature_lines": 8092,
+      "physical_tiles": 245,
+      "upstream_dispatch": "process_clb"
+    },
+    {
+      "tile_type": "CLBLM_R",
+      "formatted_feature_lines": 10883,
+      "physical_tiles": 339,
+      "upstream_dispatch": "process_clb"
+    },
+    {
+      "tile_type": "CLK_BUFG_BOT_R",
+      "formatted_feature_lines": 37,
+      "physical_tiles": 1,
+      "upstream_dispatch": "process_bufg"
+    },
+    {
+      "tile_type": "CLK_BUFG_REBUF",
+      "formatted_feature_lines": 8,
+      "physical_tiles": 4,
+      "upstream_dispatch": "null_process"
+    },
+    {
+      "tile_type": "CLK_HROW_BOT_R",
+      "formatted_feature_lines": 9,
+      "physical_tiles": 1,
+      "upstream_dispatch": "process_hrow"
+    },
+    {
+      "tile_type": "CLK_HROW_TOP_R",
+      "formatted_feature_lines": 7,
+      "physical_tiles": 1,
+      "upstream_dispatch": "process_hrow"
+    },
+    {
+      "tile_type": "HCLK_CMT_L",
+      "formatted_feature_lines": 2,
+      "physical_tiles": 2,
+      "upstream_dispatch": "null_process"
+    },
+    {
+      "tile_type": "HCLK_L",
+      "formatted_feature_lines": 75,
+      "physical_tiles": 30,
+      "upstream_dispatch": "null_process"
+    },
+    {
+      "tile_type": "INT_L",
+      "formatted_feature_lines": 33064,
+      "physical_tiles": 779,
+      "upstream_dispatch": "null_process"
+    },
+    {
+      "tile_type": "INT_R",
+      "formatted_feature_lines": 35269,
+      "physical_tiles": 734,
+      "upstream_dispatch": "null_process"
+    },
+    {
+      "tile_type": "RIOB33",
+      "formatted_feature_lines": 169,
+      "physical_tiles": 20,
+      "upstream_dispatch": "process_iobs"
+    },
+    {
+      "tile_type": "RIOB33_SING",
+      "formatted_feature_lines": 5,
+      "physical_tiles": 1,
+      "upstream_dispatch": "process_iobs"
+    },
+    {
+      "tile_type": "RIOI3",
+      "formatted_feature_lines": 193,
+      "physical_tiles": 14,
+      "upstream_dispatch": "process_ioi"
+    },
+    {
+      "tile_type": "RIOI3_SING",
+      "formatted_feature_lines": 6,
+      "physical_tiles": 1,
+      "upstream_dispatch": "process_ioi"
+    },
+    {
+      "tile_type": "RIOI3_TBYTESRC",
+      "formatted_feature_lines": 54,
+      "physical_tiles": 4,
+      "upstream_dispatch": "process_ioi"
+    },
+    {
+      "tile_type": "RIOI3_TBYTETERM",
+      "formatted_feature_lines": 27,
+      "physical_tiles": 2,
+      "upstream_dispatch": "process_ioi"
+    }
+  ],
+  "missing_dispatch": []
+}

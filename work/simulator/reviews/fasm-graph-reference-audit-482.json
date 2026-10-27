@@ -1,0 +1,16 @@
+{
+  "schema": "md-sim-selected-graph-reference-audit/1",
+  "scope": "Static reference closure only. No upstream converter, logic netlist, firmware execution, measured timing or exact-board acceptance.",
+  "database_revision": "8372b58fe62c67f8f5896d78cd1611d01621dfae",
+  "grid_sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+  "tile_types": 90,
+  "generic_sites": 299,
+  "referenced_site_types": 41,
+  "generic_wire_definitions": 96965,
+  "generic_pips": 35208,
+  "connection_records": 670,
+  "connection_wire_pairs": 99248,
+  "missing_site_types": [],
+  "invalid_references": [],
+  "passed": true
+}

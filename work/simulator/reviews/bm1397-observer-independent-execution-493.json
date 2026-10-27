@@ -1,0 +1,61 @@
+{
+  "scope": "Independent original factory036 diagnostic review. Expected next unsupported boundary; no initialization, mining, physical timing or board gate.",
+  "diagnostic_evidence_verified": true,
+  "native_result": "exited1; complete trace",
+  "source_files_rehashed": 127,
+  "captured_mounts_rehashed": 17,
+  "independently_crc_checked_tx_frames": [
+    "55aa520500000a",
+    "55aa5305000003",
+    "55aa400500001c",
+    "55aa51090080000000001c",
+    "55aa510900840000000011",
+    "55aa510900200000000102",
+    "55aa5109003c8000807410",
+    "55aa51090014000000f01e",
+    "55aa51090068c070011100"
+  ],
+  "only_reply": "existing identification reply before exact core0 write",
+  "next_unimplemented_command": {
+    "error": "UnsupportedCommand",
+    "packet": {
+      "Command": {
+        "broadcast": true,
+        "command": {
+          "Write": {
+            "address": 0,
+            "register": 104,
+            "value": 3228565777
+          }
+        }
+      }
+    }
+  },
+  "review_note": "Initial review script supplied two incorrect literal CRC bytes. All actual raw frames passed the independent CRC5 calculation. Literals were corrected to those actual independently checked bytes; firmware and probe evidence were unchanged.",
+  "files": {
+    "work/simulator/bitaxe/original-probe-036/result.json": {
+      "sha256": "24a71e329ba5e98a17f0bc132de025e02b81d43b0cca308bb7cdf1401245dd74",
+      "size": 851743
+    },
+    "work/simulator/bitaxe/original-probe-036/backend.log": {
+      "sha256": "70ac4a5cc48cee3377456230a53af29a62b37961185873a8d844d2edf5ab56ef",
+      "size": 415369
+    },
+    "work/simulator/bitaxe/original-probe-036/guest.log": {
+      "sha256": "32798fd09ec2b8d27c9000888cbe07dddda11ff7d588daa50b0834b341b456f9",
+      "size": 10081
+    },
+    "work/simulator/bitaxe/original-probe-036/spec.json": {
+      "sha256": "a9d2f86a5f0830cef7be7c24ec08bafffa08518b7f3a683f7c1202ecbacfd2d4",
+      "size": 3964
+    },
+    "work/simulator/bitaxe/original-probe-036/adaptation.json": {
+      "sha256": "73bf44026ced9df9ded014b8626ea09503888573bec0f18e93200de1619b58c0",
+      "size": 570
+    },
+    "work/simulator/bm1397-probe-tools-493/inputs.json": {
+      "sha256": "395647a7f514df41c0dddbed487b5072c55e0d3f8c173ee99d3fb5e7bad949ce",
+      "size": 37531
+    }
+  }
+}

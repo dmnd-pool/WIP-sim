@@ -59,9 +59,18 @@ fn stage(evidence: &mut Value, phase: &str, start: Instant) {
 }
 
 fn graph_response(session: &mut Session, target: &Target, query: &str) -> Result<Value> {
+    // Record only timing and response metadata. This excludes query text,
+    // credentials and cookies. Console receipts survive a blocked page task.
     let response = value(session.execute(
-        "const sent=Date.now();return fetch('/graphql',{method:'POST',credentials:'same-origin',cache:'no-store',redirect:'error',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:arguments[0]})}).then(async r=>{const text=await r.text();let body=null,parse_error=null;if(text.length<=262144){try{body=JSON.parse(text)}catch(e){parse_error=String(e)}}else{parse_error='body bound'}return {status:r.status,url:r.url,selected_run:r.headers.get('x-md-sim-run'),connection:r.headers.get('connection'),body,raw_body:text.slice(0,262144),raw_length:text.length,parse_error,browser_sent_ms:sent,browser_received_ms:Date.now()}})",
-        vec![json!(query)],
+        r#"const sent=Date.now(),identity=arguments[1];
+        const trace=(phase,extra={})=>console.info('MD_SIM_GRAPH_PHASE',JSON.stringify({schema:'md-sim-browser-graph-phase/1',query_sha256:identity,phase,at:Date.now(),...extra}));
+        trace('fetch-start');
+        return fetch('/graphql',{method:'POST',credentials:'same-origin',cache:'no-store',redirect:'error',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:arguments[0]})}).then(async r=>{
+          trace('headers',{status:r.status});const text=await r.text();trace('body',{bytes:text.length});
+          let body=null,parse_error=null;if(text.length<=262144){try{body=JSON.parse(text)}catch(e){parse_error=String(e)}}else{parse_error='body bound'}
+          return {status:r.status,url:r.url,selected_run:r.headers.get('x-md-sim-run'),connection:r.headers.get('connection'),body,raw_body:text.slice(0,262144),raw_length:text.length,parse_error,browser_sent_ms:sent,browser_received_ms:Date.now()}
+        }).catch(error=>{trace('failed',{name:String(error.name).slice(0,64)});throw error})"#,
+        vec![json!(query), json!(md_sim_firmware::prepare::hash_bytes(query.as_bytes()))],
     )?);
     target.check_response("/graphql", &response)?;
     Ok(response)
@@ -199,6 +208,7 @@ fn dashboard(
     target: &Target,
     evidence: &mut Value,
     authenticated: Sender<()>,
+    selected_clock_policy: Option<&Value>,
 ) -> Result<()> {
     let start = Instant::now();
     if target.selected_run.is_none() {
@@ -299,9 +309,13 @@ fn dashboard(
             == "VoidResult",
         "native browser session was not authenticated"
     );
-    authenticated
-        .send(())
-        .context("isolation browser stopped before authenticated session")?;
+    // A fast support browser can reach Boser before the low-rate miner has
+    // returned its first solution. Use the existing native DOM readiness
+    // check before sampling. It requires real accepted work and keeps its
+    // original 60-second bound; the WebSocket assertions stay unchanged.
+    stage(evidence, "native-dom-readiness-started", start);
+    native_view(session, evidence)?;
+    stage(evidence, "native-dom-ready", start);
     subscription(session, target, evidence, start)?;
     evidence["asset"] = asset(
         session,
@@ -335,7 +349,9 @@ fn dashboard(
             break;
         }
     }
-    if Path::new("/clock-policy.json").exists() {
+    let clock_policy = if let Some(policy) = selected_clock_policy {
+        Some(policy.clone())
+    } else if target.selected_run.is_none() && Path::new("/clock-policy.json").exists() {
         ensure!(
             fs::metadata("/clock-policy.json")?.len() <= 4096,
             "clock policy exceeds bound"
@@ -346,32 +362,13 @@ fn dashboard(
                 && policy["epoch_unix_seconds"].as_u64().is_some(),
             "invalid clock policy"
         );
-        evidence["clock_policy"] = policy;
-        for sample in evidence["telemetry"].as_array().unwrap() {
-            let uptime = &sample["body"]["data"]["bos"]["uptime"];
-            let server = uptime["since"]
-                .as_u64()
-                .context("native boot epoch absent")?
-                .checked_add(
-                    uptime["durationS"]
-                        .as_u64()
-                        .context("native uptime absent")?,
-                )
-                .context("native time overflow")?
-                .checked_mul(1000)
-                .context("native time overflow")?;
-            let sent = sample["browser_sent_ms"]
-                .as_u64()
-                .context("browser request time absent")?;
-            let received = sample["browser_received_ms"]
-                .as_u64()
-                .context("browser response time absent")?;
-            // Compare the native observation with the actual request interval,
-            // not with a later WebDriver response. Five seconds allow RTC and
-            // native whole-second resolution plus bounded serial delivery.
-            ensure!(sent <= received && server >= sent.saturating_sub(5000) && server <= received.saturating_add(5000),
-                "native wall clock is outside the browser request interval: server={server}, sent={sent}, received={received}");
-        }
+        Some(policy)
+    } else {
+        None
+    };
+    if let Some(policy) = clock_policy {
+        evidence["clock_policy"] = policy.clone();
+        browser_target::verify_clock_observation(evidence, &policy)?;
     }
     let first = &evidence["telemetry"][0]["body"]["data"]["bos"];
     ensure!(
@@ -391,7 +388,13 @@ fn dashboard(
         md_sim_firmware::s9_telemetry::uptime_progress(first, second)?,
         "native uptime did not advance"
     );
-    native_view(session, evidence)?;
+    // Run 469 stalled a GraphQL fetch while the second profile loaded the
+    // native application. Keep that independent navigation after this
+    // profile's checks, with the first authenticated session still live.
+    stage(evidence, "native-primary-checks-complete", start);
+    authenticated
+        .send(())
+        .context("isolation browser stopped before authenticated session")?;
     evidence["elapsed_milliseconds"] = json!(start.elapsed().as_millis());
     Ok(())
 }
@@ -456,6 +459,8 @@ fn native_view(session: &mut Session, evidence: &mut Value) -> Result<()> {
             evidence["native_view_verified"] = json!({"boards":boards,"chips_per_board":63,
                 "frequency_mhz":100,"private_pool_rows_with_accepted_work":pools,
                 "source":"native application DOM; test did not fill or replace telemetry"});
+            evidence["native_view_observation"] = json!({"elapsed_milliseconds":start.elapsed().as_millis(),
+                "deadline_seconds":60,"before_websocket_sampling":true});
             return Ok(());
         }
         ensure!(
@@ -666,7 +671,16 @@ fn run() -> Result<()> {
             credentials,
         );
     }
+    let initial_profiles = if selected {
+        vec![
+            fresh_profile_state(&mut session, 0)?,
+            fresh_profile_state(&mut other_session, 1)?,
+        ]
+    } else {
+        vec![]
+    };
     let mut evidence = json!({"schema":"md-sim-original-s9-browser/2",
+        "verification_order":"native-dom-accepted-work-then-websocket-then-fresh-profile-isolation",
         "selection_wait_seconds":if selected {Some(if long_boot {4900} else {2500})} else {None},
         "startup":startup,"isolation_startup":other_startup,"helper":hash_file(&std::env::current_exe()?)?,
         "source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("s9_browser_check.rs")),
@@ -674,16 +688,21 @@ fn run() -> Result<()> {
         "scope":"Actual selected native UI, archived assets, live HTTP and WebSocket telemetry, isolated profiles. Restart persistence and complete dashboard acceptance require separate evidence."});
     println!(
         "MD_SIM_BOSER_BROWSER_READY {}",
-        json!({"selected":selected,"origin":if selected {None} else {Some("http://10.0.2.15")},"startup":evidence["startup"]})
+        json!({"schema":"md-sim-browser-prepared/1","selected":selected,
+            "origin":if selected {None} else {Some("http://10.0.2.15")},
+            "helper":evidence["helper"],"startup":evidence["startup"],
+            "isolation_startup":evidence["isolation_startup"],"profiles":initial_profiles,
+            "firmware_gate":false,"native_dashboard_gate":false})
     );
     let mut result = (|| -> Result<()> {
-        let targets = if selected {
+        let (targets, clock_policy) = if selected {
             let selection = browser_selected::wait_selection(long_boot)?;
             let targets = selection.targets()?;
+            let clock_policy = selection.clock_policy()?;
             evidence["selection"] = serde_json::to_value(selection)?;
-            targets
+            (targets, clock_policy)
         } else {
-            vec![Target::reference()]
+            (vec![Target::reference()], None)
         };
         evidence["origins"] = json!([]);
         for target in targets {
@@ -692,7 +711,13 @@ fn run() -> Result<()> {
             let isolation =
                 std::thread::spawn(move || isolated_profile(other_session, other_target, receiver));
             let mut observation = json!({"origin":target.origin,"target":target});
-            let mut checked = dashboard(&mut session, &target, &mut observation, authenticated);
+            let mut checked = dashboard(
+                &mut session,
+                &target,
+                &mut observation,
+                authenticated,
+                clock_policy.as_ref(),
+            );
             session.set_timeout(Duration::from_secs(5))?;
             if checked.is_err() {
                 if let Ok(page) = session.execute(DOM, vec![]) {
@@ -783,6 +808,19 @@ fn run() -> Result<()> {
     result
 }
 
+fn fresh_profile_state(session: &mut Session, index: usize) -> Result<Value> {
+    let cookies = value(session.cookies()?);
+    let page = value(session.execute(
+        "return {url:location.href,title:document.title,ready:document.readyState}",
+        vec![],
+    )?);
+    ensure!(
+        cookies == json!([]) && page["url"] == "about:blank" && page["ready"] == "complete",
+        "fresh startup profile state differs"
+    );
+    Ok(json!({"index":index,"cookies":cookies,"page":page}))
+}
+
 /// This explicit component mode uses the selected client's complete startup
 /// path. It never selects a miner, contacts a dashboard, or grants those gates.
 fn startup_check(
@@ -811,19 +849,10 @@ fn startup_check(
             "selected startup requires two verified credential profiles"
         );
         for (index, session) in sessions.into_iter().enumerate() {
-            let cookies = value(session.cookies()?);
-            let page = value(session.execute(
-                "return {url:location.href,title:document.title,ready:document.readyState}",
-                vec![],
-            )?);
             report["profiles"]
                 .as_array_mut()
                 .unwrap()
-                .push(json!({"index":index,"cookies":cookies,"page":page}));
-            ensure!(
-                cookies == json!([]) && page["url"] == "about:blank" && page["ready"] == "complete",
-                "fresh startup profile state differs"
-            );
+                .push(fresh_profile_state(session, index)?);
             session.close()?;
         }
         Ok(())

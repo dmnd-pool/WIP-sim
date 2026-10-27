@@ -9,5 +9,9 @@ anyhow.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 clap.workspace = true
+libc.workspace = true
 md-sim-runtime = { path = "../md-sim-runtime" }
 md-sim-catalog = { path = "../md-sim-catalog" }
+
+[dev-dependencies]
+tempfile.workspace = true

@@ -40,6 +40,7 @@ fn extract(
         guest_path: "/sd.img".into(),
     });
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

@@ -1,0 +1,147 @@
+{
+  "revision": "1c8e05fd1e9a79ceb8b996a0996674122eed086f",
+  "tree": "4c4d164046a4eec53b56845372f27884e5a9d448",
+  "scope": "Only17 primitive names emitted by selected497 Verilog, global signal model and README. Inspect transitive includes/modules next; no placeholder primitive may satisfy HDL execution.",
+  "files": [
+    {
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/README.md",
+      "destination": "/tmp/md-sim-unisim502-README.md",
+      "expected_size": 159,
+      "expected_git_blob_sha1": "f11608b33b03affdf2d6774c1b639d73072535c7"
+    },
+    {
+      "source_path": "verilog/src/glbl.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/glbl.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-glbl.v",
+      "expected_size": 2548,
+      "expected_git_blob_sha1": "398a19dd4e82ec5d1ac4cdcc1a9eec42b7332b55"
+    },
+    {
+      "source_path": "verilog/src/unisims/BUFGCTRL.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/BUFGCTRL.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-BUFGCTRL.v",
+      "expected_size": 25482,
+      "expected_git_blob_sha1": "b165fbbc5b0f385aaa41c7f37e7eaf19df9ad937"
+    },
+    {
+      "source_path": "verilog/src/unisims/CARRY4.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/CARRY4.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-CARRY4.v",
+      "expected_size": 5713,
+      "expected_git_blob_sha1": "37ebe7a65164bc423cfa11c1cc2cca14aaeb54c4"
+    },
+    {
+      "source_path": "verilog/src/unisims/FDRE.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/FDRE.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-FDRE.v",
+      "expected_size": 6665,
+      "expected_git_blob_sha1": "6f3fb7ff550c39d56960ffc7077de6aefd9965f8"
+    },
+    {
+      "source_path": "verilog/src/unisims/FDSE.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/FDSE.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-FDSE.v",
+      "expected_size": 6664,
+      "expected_git_blob_sha1": "023391205dd95879d033e09e676c40bf7b3aa7ca"
+    },
+    {
+      "source_path": "verilog/src/unisims/IBUF.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/IBUF.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-IBUF.v",
+      "expected_size": 3640,
+      "expected_git_blob_sha1": "3dab1043670aa5a46ef3c8930cda15a415511596"
+    },
+    {
+      "source_path": "verilog/src/unisims/IOBUF.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/IOBUF.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-IOBUF.v",
+      "expected_size": 2724,
+      "expected_git_blob_sha1": "25df0d041665dab31ec33809f416fd2765b3bb95"
+    },
+    {
+      "source_path": "verilog/src/unisims/LUT6_2.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/LUT6_2.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-LUT6_2.v",
+      "expected_size": 6115,
+      "expected_git_blob_sha1": "77349a44b70eea5225e93c2e136a417b50ea40e8"
+    },
+    {
+      "source_path": "verilog/src/unisims/MUXF7.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/MUXF7.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-MUXF7.v",
+      "expected_size": 2179,
+      "expected_git_blob_sha1": "5a9b5d317f80ea7ba8f0676e68bab0a1c0b236e7"
+    },
+    {
+      "source_path": "verilog/src/unisims/OBUF.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/OBUF.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-OBUF.v",
+      "expected_size": 2219,
+      "expected_git_blob_sha1": "3ab659b92e0e8422971a77a60686c21a7da7f4ae"
+    },
+    {
+      "source_path": "verilog/src/unisims/PS7.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/PS7.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-PS7.v",
+      "expected_size": 848916,
+      "expected_git_blob_sha1": "84efd82805cda17e98ddf8bff18f6a755d428e85"
+    },
+    {
+      "source_path": "verilog/src/unisims/PULLDOWN.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/PULLDOWN.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-PULLDOWN.v",
+      "expected_size": 1528,
+      "expected_git_blob_sha1": "cf0f68668b602a146cbaf1a2f181699038853c2f"
+    },
+    {
+      "source_path": "verilog/src/unisims/PULLUP.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/PULLUP.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-PULLUP.v",
+      "expected_size": 1524,
+      "expected_git_blob_sha1": "7a89f2c07634f14647c7e9b3d46d4815125273ab"
+    },
+    {
+      "source_path": "verilog/src/unisims/RAM32M.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/RAM32M.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-RAM32M.v",
+      "expected_size": 12374,
+      "expected_git_blob_sha1": "0b8fa821ac1f44b7f0ec97989c7544c2c49a9102"
+    },
+    {
+      "source_path": "verilog/src/unisims/RAMB36E1.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/RAMB36E1.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-RAMB36E1.v",
+      "expected_size": 295535,
+      "expected_git_blob_sha1": "c91f764bf8b36eb09e617b17fb381e61e7f6dc3c"
+    },
+    {
+      "source_path": "verilog/src/unisims/SRL16E.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/SRL16E.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-SRL16E.v",
+      "expected_size": 4958,
+      "expected_git_blob_sha1": "d84c6133ec12f1c05717f4a726f6889d291c63be"
+    },
+    {
+      "source_path": "verilog/src/unisims/SRLC16E.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/SRLC16E.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-SRLC16E.v",
+      "expected_size": 5056,
+      "expected_git_blob_sha1": "3ba735b06bd89cfa4a5842b95ead1e7b3849f38f"
+    },
+    {
+      "source_path": "verilog/src/unisims/SRLC32E.v",
+      "url": "https://raw.githubusercontent.com/Xilinx/XilinxUnisimLibrary/1c8e05fd1e9a79ceb8b996a0996674122eed086f/verilog/src/unisims/SRLC32E.v",
+      "destination": "/tmp/md-sim-unisim502-verilog-src-unisims-SRLC32E.v",
+      "expected_size": 5127,
+      "expected_git_blob_sha1": "be5660bbf37f34841518713d142e1d3755d7b97f"
+    }
+  ],
+  "total_bytes": 1239126,
+  "license_reuse": {
+    "source_path": "LICENSE",
+    "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+    "path": "artifacts/files/source/source-fasm-parser-ffafe82/LICENSE",
+    "reason": "Exact same publisher tree Git blob; retain existing original copy, not another duplicate."
+  }
+}

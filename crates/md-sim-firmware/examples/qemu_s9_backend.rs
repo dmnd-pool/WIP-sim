@@ -604,6 +604,7 @@ fn probe_tool(path: &Path, out: &Path) -> Result<()> {
     let inputs =
         md_sim_firmware::lab::elf_closure(&store, vec![("/tool".into(), path.to_path_buf())])?;
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -776,6 +777,7 @@ fn main() -> Result<()> {
         guest_path: "/source.tar.gz".into(),
     });
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

@@ -8,5 +8,6 @@ pub mod file_lock;
 pub mod isolation;
 pub mod private_channel;
 pub mod store;
+mod support_virtualization;
 pub mod worker;
 mod worker_budget;

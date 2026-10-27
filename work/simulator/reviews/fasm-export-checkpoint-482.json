@@ -1,0 +1,114 @@
+{
+  "recorded_at": "2026-10-26T20:32:42.283042+00:00",
+  "state": "482d static FASM export and complete non-ECC frame-bit round trip passed under unchanged limits; independent source and execution review passed",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/s9_fasm_export.rs",
+      "sha256": "cf66be0946e43ab14cc3ad7902e5c61c42b45fa8a95c34ec2c4d56541bf31468",
+      "size": 13016
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/fasm_comparison.rs",
+      "sha256": "7d14048ef93a7697bad6c72e51e3e518e21dbe7ff34e8d8e400e184879884c7f",
+      "size": 9523
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/fasm_tool_inputs.rs",
+      "sha256": "debd15f7f15f9890497ed378504b7a814e19afcd62ec05b582aff84104a961f9",
+      "size": 8119
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/prjxray_fasm_export.py",
+      "sha256": "46fce6ff3ca8bcd30aa2d2ccf71fb0cd68e3a6a4b1e25aac57117c2799fc43bc",
+      "size": 11506
+    },
+    {
+      "path": "simulator/firmware/s9-fasm-tool-inputs-escaped-quotes.json",
+      "sha256": "d97ec0ffa30bce77cc88655b13d599a6e5610cdb2cd770f503163b06edc8c8d7",
+      "size": 75840
+    },
+    {
+      "path": "simulator/firmware/s9-fasm-tool-inputs.json",
+      "sha256": "87f5648dda7427b5d7a5d97af83c40920ea73f8252f9e94641dc84d057f54839",
+      "size": 74558
+    },
+    {
+      "path": "simulator/tools/fasm/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "size": 11358
+    },
+    {
+      "path": "simulator/tools/fasm/escaped-quotes.patch",
+      "sha256": "3310ee770aa70c68520b68e71ead53ed7d3cd07281fe277b75b5fe6281bf794e",
+      "size": 388
+    },
+    {
+      "path": "simulator/tools/fasm/fasm.tx",
+      "sha256": "fec4847570b5e54d3efda0c41ad9539cb3f596eba98f411f05fa3754e8e93516",
+      "size": 1211
+    },
+    {
+      "path": "simulator/tools/fasm/grammar-adaptation.json",
+      "sha256": "ea4bec621bbdb03a54cb7a818e967105e1be2a983ac42498094ad43d4244d12f",
+      "size": 1167
+    }
+  ],
+  "review_findings_fixed": [
+    "Bind upstream original and assembled frame-bit digests to independent Rust asserted-bit union; reject ECC positions and mismatched count",
+    "Pin complete tool manifest identity, not only revision labels; test an equal-length source-hash substitution"
+  ],
+  "scope": "Static reconstruction support only; no netlist, timing or firmware gate passed.",
+  "source_syntax_checks": "Rustfmt passed; Python harness parsed with ast.parse only. No upstream code import or execution on host.",
+  "duplicate_staging": "Five byte-identical staging files removed after production copy verification.",
+  "checks": {
+    "focused_tests": "9 passed",
+    "strict_scoped_clippy": "passed",
+    "release": "passed",
+    "frozen_helper": "work/simulator/qemu-s9/fasm-export-driver-482d/manifest.json",
+    "actual_execution": "work/simulator/reviews/fasm-export-executed-482d-inputs.json",
+    "independent_execution_review": "work/simulator/reviews/fasm-export-independent-execution-482d.json"
+  },
+  "initial_failure": {
+    "run": "work/simulator/qemu-s9/fasm-export-482",
+    "assessment": "work/simulator/qemu-s9/fasm-export-482/assessment.json",
+    "error": "MemoryError while encoding FASM text for output after parser/assembler phase",
+    "input_profile_unchanged": true,
+    "memory_cap_bytes": 1073741824,
+    "limits_will_remain_unchanged": true
+  },
+  "next_action": "Stage isolated conversion to primitive cells and connections with the pinned existing fasm2bels converter. Bind the verified482d FASM and recorded lazy optional-import adaptation. Hold production changes through common494 capture and heavy execution during495.",
+  "second_failure": {
+    "run": "work/simulator/qemu-s9/fasm-export-482b",
+    "assessment": "work/simulator/qemu-s9/fasm-export-482b/assessment.json",
+    "fasm_sha256": "3654907a9bb4de393c8d0a40fab86d2d04555461f2e2b80d1ce5a38c7b3283e4",
+    "fasm_bytes": 4719842,
+    "raw_features": 221975,
+    "formatted_features": 219702,
+    "positive_predicate_comparison": "pass",
+    "unknown_non_ecc": 0,
+    "roundtrip": "failed MemoryError; no pass claimed",
+    "allocation_localization": "MemoryError in the parser/assembler/frame-comparison block; no exact traceback was retained. Whole-file syntax-tree demand is a hypothesis, not a proven allocation site."
+  },
+  "third_failure": {
+    "run": "work/simulator/qemu-s9/fasm-export-482c",
+    "assessment": "work/simulator/qemu-s9/fasm-export-482c/assessment.json",
+    "stage": "unchanged whole-parser escaped-quote fixture before selected export",
+    "error": "TextXSyntaxError at fixture line4 column36",
+    "no_assertion_removed": true
+  },
+  "adaptation": "simulator/tools/fasm/grammar-adaptation.json",
+  "diagnostic_change": "Execution retains up to16 primitive traceback records and emits phases around frame generation/comparison; no traceback frame objects survive cleanup.",
+  "temporary_cleanup_journal": "work/simulator/reviews/fasm-acquisition-temporary-cleanup-journal-482.jsonl",
+  "success": {
+    "run": "work/simulator/qemu-s9/fasm-export-482d",
+    "duration_ms": 29469,
+    "non_ecc_set_bits": 327095,
+    "original_regenerated_rust_bit_digest": "d375439df482fbe33e496cc00e2892dd00bf9fd11b32292544673193653258b2",
+    "fasm_sha256": "3654907a9bb4de393c8d0a40fab86d2d04555461f2e2b80d1ce5a38c7b3283e4",
+    "fasm_bytes": 4719842,
+    "parsed_chunks": 19,
+    "parsed_lines": 115981,
+    "missing_monitor_table_retained": true,
+    "fixed_whole_and_chunk_tuple_fixture": "pass"
+  }
+}

@@ -880,6 +880,7 @@ mod tests {
             json!({"snapshot":state,"gzip_hex":hex::encode(&bytes)})
         );
         let mut result = ProcessResult {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             dashboard: None,

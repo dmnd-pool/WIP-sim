@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-19T19:36:47.312013+00:00",
+  "generated_at": "2026-10-26T21:10:11.774980+00:00",
   "scope": "Bitcoin ASIC miners only",
   "counts": {
     "entities": 4354,
     "relationships": 8708,
-    "sources": 1224,
+    "sources": 1254,
     "gaps": 183,
-    "artifacts": 13565,
+    "artifacts": 13984,
     "discovery": 700
   },
   "entity_kinds": {
@@ -78,15 +78,15 @@
     "MicroBT": 75
   },
   "download_status": {
-    "downloaded": 12785,
-    "failed": 779,
+    "downloaded": 13203,
+    "failed": 780,
     "superseded": 1
   },
   "git_lfs_pointer_files": 98,
   "firmware_payload_files": 6420,
-  "unique_downloaded_sha256": 11845,
-  "downloaded_bytes": 173634577748,
-  "unique_downloaded_bytes": 160630402527,
+  "unique_downloaded_sha256": 12253,
+  "downloaded_bytes": 173700124695,
+  "unique_downloaded_bytes": 160695921261,
   "known_device_release_years": 118,
   "locally_tested_compatibility_edges": 0,
   "supplementary_counts": {

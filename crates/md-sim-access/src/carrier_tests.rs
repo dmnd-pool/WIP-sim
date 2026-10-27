@@ -31,6 +31,7 @@ pub(crate) fn fixture(policy: &Policy) -> Result<(LockedRun, ObjectId, Vec<u8>, 
     let policy_bytes = serde_json::to_vec(policy)?;
     let policy_id = object(&policy_bytes);
     let process = ProcessSpec {
+        support_virtualization: None,
         schema_version: "2.0".into(),
         argv: vec!["/program".into()],
         inputs: vec![

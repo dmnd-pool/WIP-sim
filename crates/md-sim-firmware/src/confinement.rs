@@ -18,6 +18,14 @@ pub(crate) fn require(preparation: bool) -> Result<()> {
     )
 }
 
+/// Existing FPGA converter builds maps for3.61 million physical wire instances
+/// and an in-memory SQLite graph. This preparation-only budget leaves ordinary
+/// firmware and export limits unchanged; all namespace/mount checks still apply.
+#[allow(dead_code)]
+pub(crate) fn require_netlist_preparation() -> Result<()> {
+    require_with_memory_limit(true, 4 << 30, 600, 1 << 30)
+}
+
 /// Read-only filesystem inspection needs room for an expanded firmware disk.
 /// Acquired programs remain data; only captured host analysis tools execute.
 #[allow(dead_code)]
@@ -62,6 +70,19 @@ pub(crate) fn require_native_firmware_worker_host() -> Result<()> {
 pub(crate) fn require_native_firmware_browser_worker_host() -> Result<()> {
     require_with_identity(true, 6 << 30, 2000, 256 << 20, 1000)?;
     require_native_worker_privileges()
+}
+
+/// Only the trusted x86 support launcher can request the runtime's KVM grant.
+/// The native miner runs in its own ordinary process namespace without KVM.
+#[allow(dead_code)]
+pub(crate) fn require_native_browser_kvm_host() -> Result<()> {
+    require_with_identity_capability(true, 6 << 30, 2000, 256 << 20, 1000, true)?;
+    require_native_worker_privileges()
+}
+
+#[allow(dead_code)]
+pub(crate) fn require_kvm_prerequisite() -> Result<()> {
+    require_with_identity_capability(true, 3 << 30, 120, 64 << 20, 0, true)
 }
 
 /// A private client image can contain a captured firmware object above64MiB.
@@ -309,6 +330,24 @@ fn require_with_identity(
     file_limit: u64,
     namespace_uid: u32,
 ) -> Result<()> {
+    require_with_identity_capability(
+        preparation,
+        address_limit,
+        cpu_limit,
+        file_limit,
+        namespace_uid,
+        false,
+    )
+}
+
+fn require_with_identity_capability(
+    preparation: bool,
+    address_limit: u64,
+    cpu_limit: u64,
+    file_limit: u64,
+    namespace_uid: u32,
+    kvm: bool,
+) -> Result<()> {
     let status = fs::read_to_string("/proc/self/stat")?;
     let proc_pid: u32 = status
         .split_whitespace()
@@ -332,6 +371,24 @@ fn require_with_identity(
         "private single-user namespace identity differs"
     );
     let mountinfo = fs::read_to_string("/proc/self/mountinfo")?;
+    let kvm_mounts = mountinfo
+        .lines()
+        .filter(|line| line.split_whitespace().nth(4) == Some("/dev/kvm"))
+        .count();
+    ensure!(
+        kvm_mounts == usize::from(kvm),
+        "KVM mount differs from support grant"
+    );
+    if kvm {
+        use std::os::unix::fs::{FileTypeExt, MetadataExt};
+        let device = fs::symlink_metadata("/dev/kvm")?;
+        ensure!(
+            device.file_type().is_char_device()
+                && libc::major(device.rdev()) == 10
+                && libc::minor(device.rdev()) == 232,
+            "support KVM device identity differs"
+        );
+    }
     let bridge = md_sim_runtime::dashboard::guest_mount_expected()?;
     let bridge_mounts = mountinfo
         .lines()
@@ -376,6 +433,7 @@ fn require_with_identity(
                 validate_proc_protection(&fields, filesystem, &proc_mounts[0])?;
             }
             "/dev/pts" => ensure!(filesystem == "devpts", "private PTY mount required"),
+            "/dev/kvm" if kvm => {}
             md_sim_runtime::dashboard::SOCKET_PATH => {
                 ensure!(
                     bridge

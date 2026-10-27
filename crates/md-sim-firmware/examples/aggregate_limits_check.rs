@@ -165,6 +165,7 @@ fn guest() -> Result<()> {
     let mut events = Vec::new();
     for kind in ["ok", "cpu", "memory", "pids", "cancel"] {
         let spec = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,
@@ -328,6 +329,7 @@ fn worker_loss(inputs: &[Mount], parent: &Path) -> Result<serde_json::Value> {
     let mut child = Children(vec![start_worker()?]);
     let token = "c3".repeat(32);
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -434,7 +436,7 @@ fn prepare(directory: &Path) -> Result<()> {
         "/aggregate-inputs.json".into(),
         json!({"path":directory.join("inputs.json"),"mode":292}),
     );
-    let scenario = json!({"programs":{"/aggregate-check":directory.join("driver"),"/probe":directory.join("driver"),"/usr/bin/bwrap":"/usr/bin/bwrap","/usr/bin/unshare":"/usr/bin/unshare"},"files":files,"argv":["/aggregate-check","guest"],"environment":{}});
+    let scenario = json!({"programs":{"/aggregate-check":directory.join("driver"),"/probe":directory.join("driver"),"/usr/bin/bwrap":"/usr/bin/bwrap","/usr/bin/unshare":"/usr/bin/unshare","/usr/bin/prlimit":"/usr/bin/prlimit"},"files":files,"argv":["/aggregate-check","guest"],"environment":{}});
     fs::write(
         directory.join("scenario.json"),
         serde_json::to_vec_pretty(&scenario)?,

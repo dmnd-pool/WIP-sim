@@ -1,0 +1,153 @@
+{
+  "schema": "md-sim-fresh-cli-helper-cohort/1",
+  "scope": "Two reviewed preparation/transport helper builds plus eleven unchanged helpers inherited from tested494. Native firmware process and support policies retain494 inputs. This is not the final CLI source capture.",
+  "source_checkpoint": {
+    "path": "work/simulator/core-checkpoint-499/manifest.json",
+    "object": {
+      "sha256": "40c2cc37fff346f0553d135e228abc2e20184f842e59db14c112faeaf72547be",
+      "size": 91385
+    }
+  },
+  "source_count": 538,
+  "source_bytes": 7017857,
+  "inherited_checkpoint": {
+    "path": "work/simulator/core-checkpoint-494/manifest.json",
+    "object": {
+      "sha256": "320e690d1aceb0c99c44270af8600259d32a43ec0f275de69ae68c074149f731",
+      "size": 88784
+    }
+  },
+  "helpers": {
+    "release/md-sim-access": {
+      "object": {
+        "sha256": "d24dbf463dd6734e2caec963d41cda7b3b465f249674f0cb0103df0e3763dc85",
+        "size": 2271528
+      },
+      "source": "work/simulator/channel-target-494/release/md-sim-access",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/md-sim-worker-ipc": {
+      "object": {
+        "sha256": "be5181be32f8708ebb5f1c52673811de7a7e9816a08971bb6f319aa83693c7fe",
+        "size": 2609240
+      },
+      "source": "work/simulator/channel-target-494/release/md-sim-worker-ipc",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/md-sim-worker-relay": {
+      "object": {
+        "sha256": "de4a31194bfad9b318c9fa522ee2e577ef9f45b9fc0bb1d850dd088c5094bfae",
+        "size": 1216744
+      },
+      "source": "work/simulator/channel-target-494/release/md-sim-worker-relay",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/isolated_network_vm": {
+      "object": {
+        "sha256": "5cc94d0d2a4db2dd49f42cabcdbe5f06278a26c8da59de25c6ed4e13dd3fb8d9",
+        "size": 2584208
+      },
+      "source": "work/simulator/channel-target-494/release/examples/isolated_network_vm",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/node_prerequisite_probe": {
+      "object": {
+        "sha256": "93efaa9d84651ac07e025940c6a52bcd9cfa77cdc73c4b45c57595b854afd703",
+        "size": 2211544
+      },
+      "source": "work/simulator/channel-target-494/release/examples/node_prerequisite_probe",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/remote_namespace_check": {
+      "object": {
+        "sha256": "ffb93884af8f8a814c53d46b5137acac865e201e6a5f1e03a48bb6eea271e37c",
+        "size": 6280312
+      },
+      "source": "work/simulator/channel-target-494/release/examples/remote_namespace_check",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/s9_asic_audit": {
+      "object": {
+        "sha256": "99a1d608d8a5f999075783814b514f10238177312f7bf15ec29e6ddb80cda15c",
+        "size": 3145184
+      },
+      "source": "work/simulator/channel-target-494/release/examples/s9_asic_audit",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/s9_boot_bundle": {
+      "object": {
+        "sha256": "d5437004e96295c898f1e967fec60183e7e5950a84b0826c0bec50946d52ef95",
+        "size": 4804296
+      },
+      "source": "work/simulator/channel-target-494/release/examples/s9_boot_bundle",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/s9_browser_check": {
+      "object": {
+        "sha256": "e1caa0f5405d20c5e74c5b16cbffdfe624ee25ff2e1c361a1fb21a6528a97fee",
+        "size": 2668832
+      },
+      "source": "work/simulator/channel-target-494/release/examples/s9_browser_check",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/s9_execute_prepared": {
+      "object": {
+        "sha256": "bda5ef6bc39ab90a1604c23185fe370bad370211a0e0472735e675d67dc332d4",
+        "size": 3483488
+      },
+      "source": "work/simulator/channel-target-494/release/examples/s9_execute_prepared",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/s9_pool_guest": {
+      "object": {
+        "sha256": "0ac7792fdaf43c4d7b414ceb9a723f4e2c34ed5ddb1575cf5c8b1d08b17bd489",
+        "size": 2155800
+      },
+      "source": "work/simulator/channel-target-494/release/examples/s9_pool_guest",
+      "source_checkpoint": "core-checkpoint-494",
+      "inherited_unchanged": true
+    },
+    "release/examples/worker_channel_probe": {
+      "object": {
+        "sha256": "72bef33479774d5979b79d5e86b723f4d6cb618e34543d1e46462b78bfd4cf4f",
+        "size": 4994024
+      },
+      "source": "work/simulator/check-target-085/release/examples/worker_channel_probe",
+      "source_checkpoint": "core-checkpoint-499",
+      "inherited_unchanged": false
+    },
+    "release/examples/s9_fresh_prepared": {
+      "object": {
+        "sha256": "ed84d3c7a998c64fc3b06d73d38d6dddf2afa68ef17ba804fd92d81783c0513a",
+        "size": 1869048
+      },
+      "source": "work/simulator/fresh-tools-498/s9_fresh_prepared",
+      "source_checkpoint": "core-checkpoint-499",
+      "inherited_unchanged": false
+    }
+  },
+  "shared_pool": {
+    "sha256": "c29c72fd463c733537601227b2a45a2ca18fd1353aa24638f3da091ce66e8063",
+    "size": 930
+  },
+  "carrier_dashboard": {
+    "sha256": "b96595c25238ebd5f6216962ce6fc4dde72e299fb1cd5d272039d0866389a053",
+    "size": 489
+  },
+  "baseline_prepared": "work/simulator/qemu-s9/native-browser-prepared-494",
+  "baseline_process": {
+    "sha256": "a3247419fe950dc9e6353a6adfbfb4ba73e5fd909b1d30d3dcdba3926a4e9b89",
+    "size": 11264
+  },
+  "checks": "Final current-source formatting, Clippy, workspace tests and CLI build follow CLI manifest promotion before500."
+}

@@ -82,6 +82,7 @@ pub fn local_tools() -> Result<BTreeMap<String, ObjectId>> {
     Ok(BTreeMap::from([
         ("bubblewrap".into(), hash_file(Path::new("/usr/bin/bwrap"))?),
         ("unshare".into(), hash_file(Path::new("/usr/bin/unshare"))?),
+        ("prlimit".into(), hash_file(Path::new("/usr/bin/prlimit"))?),
     ]))
 }
 
@@ -413,7 +414,7 @@ impl<T: WorkerTransport> Executor for WorkerExecutor<T> {
             "worker lacks bounded live-log status support"
         );
         let mut tools = BTreeMap::new();
-        for name in ["bubblewrap", "unshare"] {
+        for name in ["bubblewrap", "unshare", "prlimit"] {
             tools.insert(
                 name.into(),
                 serde_json::from_value(probe["doctor"]["tools"][name]["identity"].clone())?,

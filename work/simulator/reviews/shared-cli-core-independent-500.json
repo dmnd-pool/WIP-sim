@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "scope": "Independent original Core logs, exact candidate bytes, source joins and CLI terminal status. Selected adapted reference only; full specification remains incomplete.",
+  "cli_exit_code": 0,
+  "all_six_stages_exit_zero": true,
+  "cli_assessment": {
+    "sha256": "e95804b1c0bf4ce7d650347309170bbbedf5d970efa0bb4b0678648266ddf2fc",
+    "size": 3703
+  },
+  "nodes": [
+    {
+      "candidate": 0,
+      "block_hash": "4a000d510095095c17ff97588abb679fcc614f43d69edbbe34de8f4cbe6f1b45",
+      "checked_input_mappings": 9,
+      "source_evidence_files_rehashed": 7,
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      },
+      "heights": [
+        0,
+        1,
+        1
+      ],
+      "node_generated_block": false,
+      "raw_core_chain_events": [
+        "2026-10-26T21:30:44Z UpdateTip: new best=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 version=0x00000001 log2_work=1.000000 tx=1 date='2011-02-02T23:16:42Z' progress=0.000002 cache=0.3MiB(0txo)",
+        "2026-10-26T21:30:44Z Loaded best chain: hashBestChain=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 date=2011-02-02T23:16:42Z progress=0.000002",
+        "2026-10-26T21:30:44Z UpdateTip: new best=4a000d510095095c17ff97588abb679fcc614f43d69edbbe34de8f4cbe6f1b45 height=1 version=0x22a18000 log2_work=2.000000 tx=2 date='2026-10-26T21:17:21Z' progress=1.000000 cache=0.3MiB(1txo)",
+        "2026-10-26T21:30:44Z Loaded best chain: hashBestChain=4a000d510095095c17ff97588abb679fcc614f43d69edbbe34de8f4cbe6f1b45 height=1 date=2026-10-26T21:17:21Z progress=1.000000"
+      ],
+      "files": {
+        "work/simulator/demos/s9-shared-500/core-0/block-acceptance.json": {
+          "sha256": "61dde74743d8002dee30ef81871d93029e4af2f805f3a0f22ee79c38ec1f06dd",
+          "size": 1745
+        },
+        "work/simulator/demos/s9-shared-500/core-0/regtest-offline-import-startup-spec.json": {
+          "sha256": "015833b9cebda0f1710b2e0a2a35c24e62e39d075bf93f25a68075bd4d61a7d2",
+          "size": 2389
+        },
+        "work/simulator/demos/s9-shared-500/core-0/regtest-offline-import-startup-result.json": {
+          "sha256": "cdaf7e8c5cf2893fbd5a4989b2b06ba35fd0861c8b032e376cbaa18bdfd300cf",
+          "size": 36832
+        },
+        "work/simulator/demos/s9-shared-500/core-0/candidate.blk": {
+          "sha256": "56b396ae63f7137ff86de3e63d22b174bd10309d08e634d12c7cc2a6018eea51",
+          "size": 192
+        },
+        "work/simulator/demos/s9-shared-500/core-0/source-run-link.json": {
+          "sha256": "14c909277a8810bedf68bca7f881a5ef73fbb060db39dffa1d34f3ce658b9635",
+          "size": 7277
+        },
+        "work/simulator/demos/s9-shared-500/core-0/original-submission-replay.json": {
+          "sha256": "e768097dd6bb5c669c0624a6224d7acf23a73d77eb69d1eddb3587848ea54aa4",
+          "size": 78501
+        }
+      }
+    },
+    {
+      "candidate": 1,
+      "block_hash": "2a2268ff02fd7801a3d7fba0f36700fe9b21a4035218bfbb94609664acf5c5cb",
+      "checked_input_mappings": 9,
+      "source_evidence_files_rehashed": 7,
+      "core_binary": {
+        "sha256": "a22238f0a1ea0b0a67a17032d2df0039e9d3ac946f2e86e0634ea47448692fae",
+        "size": 33824920
+      },
+      "heights": [
+        0,
+        1,
+        1
+      ],
+      "node_generated_block": false,
+      "raw_core_chain_events": [
+        "2026-10-26T21:31:55Z UpdateTip: new best=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 version=0x00000001 log2_work=1.000000 tx=1 date='2011-02-02T23:16:42Z' progress=0.000002 cache=0.3MiB(0txo)",
+        "2026-10-26T21:31:55Z Loaded best chain: hashBestChain=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 height=0 date=2011-02-02T23:16:42Z progress=0.000002",
+        "2026-10-26T21:31:55Z UpdateTip: new best=2a2268ff02fd7801a3d7fba0f36700fe9b21a4035218bfbb94609664acf5c5cb height=1 version=0x208c8000 log2_work=2.000000 tx=2 date='2026-10-26T21:17:21Z' progress=1.000000 cache=0.3MiB(1txo)",
+        "2026-10-26T21:31:56Z Loaded best chain: hashBestChain=2a2268ff02fd7801a3d7fba0f36700fe9b21a4035218bfbb94609664acf5c5cb height=1 date=2026-10-26T21:17:21Z progress=1.000000"
+      ],
+      "files": {
+        "work/simulator/demos/s9-shared-500/core-1/block-acceptance.json": {
+          "sha256": "a7666132fa2897ff122313d48cc9ceab7f794b74899ec18587fea78b21294799",
+          "size": 1745
+        },
+        "work/simulator/demos/s9-shared-500/core-1/regtest-offline-import-startup-spec.json": {
+          "sha256": "8d820752beb609560da93affb33dcd7102f55857bf807bcafa4a72d6ccfb7cd2",
+          "size": 2389
+        },
+        "work/simulator/demos/s9-shared-500/core-1/regtest-offline-import-startup-result.json": {
+          "sha256": "822867a84b3bfdf86d28b06c352ce994556a0983eb462d71e4fc9c5d4c83d424",
+          "size": 37772
+        },
+        "work/simulator/demos/s9-shared-500/core-1/candidate.blk": {
+          "sha256": "00f3b1baef90c1e1dd50a5a400dcdc96a2aa45b4df564b4485df11470f79083c",
+          "size": 192
+        },
+        "work/simulator/demos/s9-shared-500/core-1/source-run-link.json": {
+          "sha256": "e1dd56a90c7cc327a7e54774b8c9ff8180a591ce07829b58b169a0465e9b5cac",
+          "size": 7277
+        },
+        "work/simulator/demos/s9-shared-500/core-1/original-submission-replay.json": {
+          "sha256": "e768097dd6bb5c669c0624a6224d7acf23a73d77eb69d1eddb3587848ea54aa4",
+          "size": 78501
+        }
+      }
+    }
+  ]
+}

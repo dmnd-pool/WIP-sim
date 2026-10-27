@@ -1,0 +1,48 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "cleanup_resume",
+  "status": "no_open_source_finding_actual489b_and490_pending",
+  "scope": "Separate support-guest userspace trace transport from kernel UART output. No firmware/browser acceptance follows from source review.",
+  "findings": [],
+  "checks": [
+    "Worker protocol remains on its existing private md-sim.worker stream. Userspace trace has a distinct fixed md-sim.trace file backend; kernel UART uses a separate run-owned file.",
+    "The host relays userspace to stdout and kernel UART to stderr with checked byte counts. It observes child exit before the last drain and preserves partial JSON across live polls.",
+    "Exact kernel flags reject duplicate, invalid and near-match values. Guest output is redirected before the init/scenario records.",
+    "Named port selection checks unique kernel sysfs identity and matching character-device major/minor. Both inherited stdout/stderr descriptors are set to blocking and read back. The original stdin/private worker channel is not replaced.",
+    "The stress uses fresh guest entropy, an8MiB payload, independently checked SHA256 and exact repeated challenge bytes. Eight acknowledged writes to kmsg occur between output chunks. All noise records and channel separation are required.",
+    "Reviewed489b correction after retained actual489 failure: kernel_record preformats one complete record and calls File::write once. A partial write is an error. The new observable record-boundary test checks one write and refusal to retry a partial record.",
+    "The4096-byte ACK limit and180-second ACK deadline are unchanged. Empty-ACK and oversized-ACK diagnostics are separated without altering either refusal.",
+    "Original worker/miner wall, mining and browser deadlines and acceptance assertions remain unchanged. Stress is an explicitly separate support test with recorded inputs and limits."
+  ],
+  "pending": [
+    "Actual489b fresh KVM stress under the declared limits",
+    "Actual490 ordinary worker transfer/retention/cleanup regression",
+    "Selected native browser retry with a new complete identity"
+  ],
+  "files": {
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "eacbc3f64d1c539a51aec304fce1c4d7509762b54e2bbcdedb23eeffbc2fbf7f",
+      "size": 41683
+    },
+    "crates/md-sim-firmware/examples/support/worker_channel_retention.rs": {
+      "sha256": "c26fe15c518a4923d52b41fe62fb0035fee7e20546a5515d7453339d903ec6f9",
+      "size": 9100
+    },
+    "crates/md-sim-firmware/examples/support/worker_virtual_port.rs": {
+      "sha256": "4d56d0f67132a7677ecdb2773d4f20e6244bbc2c68036d01cc714a1d4da9e3ca",
+      "size": 1806
+    },
+    "crates/md-sim-firmware/examples/isolated_network_vm.rs": {
+      "sha256": "9ff91020b5de997b75f398a400abe49be9b5f1f85f58e78eed3ef9eba0dfe2db",
+      "size": 43742
+    },
+    "crates/md-sim-firmware/examples/isolated_network_vm/trace_port.rs": {
+      "sha256": "74c66a460c7021950c3aa19a17bee7d7637af59ca23d6a6b9d8d6b4d9cb23678",
+      "size": 10064
+    },
+    "work/simulator/trace-tools-489b/inputs.json": {
+      "sha256": "61f3a0d36d9dbd811a042ec465f01cb1054c746ef0f25ef69bae72ddf29d6c66",
+      "size": 2253
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "recorded_at": "2026-10-26T20:58:12.648876+00:00",
+  "state": "Actual isolated selected conversion and independent source/execution reviews passed; HDL and electrical validation remain open",
+  "files": [
+    {
+      "path": "work/simulator/netlist-dev-497/confinement-addition.rs",
+      "sha256": "44bfe7759245a14375cabac605a909c0bbea6818957c07f2c9c02462e30bf9f2",
+      "size": 384
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/resource-plan.json",
+      "sha256": "853a5b19b753f863a93b678fbc510e53b5e10c22d17a4a96db68295c89958095",
+      "size": 1240
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/s9-netlist-tool-inputs.json",
+      "sha256": "ceaff7522bb00b6914a8ee409405b15bc81b9ae80f82c740bf069e7eafb534fc",
+      "size": 17522
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/s9_netlist_reconstruct.rs",
+      "sha256": "8f98d9e75da8ca2410ba3ab8b9cc72b240d52fc66d61cc68e4f28bbc2c4ba028",
+      "size": 13941
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/support/fasm_netlist.py",
+      "sha256": "948171b40e980c8db17d9c6aa12010953a650da0a46975eb66b5691cf8110062",
+      "size": 7132
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/support/netlist_inputs.rs",
+      "sha256": "33b0339a6da5cbcb7ef40f2c66289f1b852ddfccd506097debdf2e00d07f4bc2",
+      "size": 8130
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/tools/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "size": 11358
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/tools/adaptation.json",
+      "sha256": "a1cdb5f8f0368a4f2f69ef950eb173147a1c09f159dc1f25424aada056f1dd7f",
+      "size": 3109
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/tools/fasm2bels/fasm2bels.py",
+      "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+      "size": 18573
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/tools/fasm2bels/models/verilog_modeling.py",
+      "sha256": "0835232d83c50ea24bdd7b43a6236674b9ca545d69ac8574ae1083c0d85068d0",
+      "size": 87997
+    },
+    {
+      "path": "work/simulator/netlist-dev-497/tools/lazy-optional-outputs.patch",
+      "sha256": "8a6cdbc2932019f6df40ad4d1e65179520a2b4df48bae87d0ba3e68fe69aed69",
+      "size": 2404
+    }
+  ],
+  "baseline": "work/simulator/reviews/fasm-export-independent-execution-482d.json",
+  "source_adaptation_review": "work/simulator/reviews/netlist-import-independent-source-482e.json",
+  "resource_plan": "work/simulator/netlist-dev-497/resource-plan.json",
+  "fixed_review_findings": [
+    "Ordinary preparation guard is smaller than declared graph workload: driver now calls staged require_netlist_preparation with4GiB/600CPU/1GiB maxima through unchanged namespace and mount validation. Production integration awaits review."
+  ],
+  "next_action": "Independently review actual converter evidence. Acquire pinned Icarus and exact vendor primitive closure for independent HDL parsing/elaboration and behavior validation (502).",
+  "limits": "Conversion artifacts only; independent HDL parsing/execution, missing monitor behavior, source/build identity, physical timing and original-board gates remain open.",
+  "review": "work/simulator/reviews/netlist-conversion-independent-source-497.json",
+  "integration": "work/simulator/reviews/netlist-integration-497.json",
+  "production_sources": [
+    {
+      "path": "crates/md-sim-firmware/examples/s9_netlist_reconstruct.rs",
+      "sha256": "8f98d9e75da8ca2410ba3ab8b9cc72b240d52fc66d61cc68e4f28bbc2c4ba028",
+      "size": 13941
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/netlist_inputs.rs",
+      "sha256": "33b0339a6da5cbcb7ef40f2c66289f1b852ddfccd506097debdf2e00d07f4bc2",
+      "size": 8130
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/fasm_netlist.py",
+      "sha256": "948171b40e980c8db17d9c6aa12010953a650da0a46975eb66b5691cf8110062",
+      "size": 7132
+    },
+    {
+      "path": "simulator/firmware/s9-netlist-tool-inputs.json",
+      "sha256": "ceaff7522bb00b6914a8ee409405b15bc81b9ae80f82c740bf069e7eafb534fc",
+      "size": 17522
+    },
+    {
+      "path": "simulator/tools/fasm2bels/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "size": 11358
+    },
+    {
+      "path": "simulator/tools/fasm2bels/adaptation.json",
+      "sha256": "a1cdb5f8f0368a4f2f69ef950eb173147a1c09f159dc1f25424aada056f1dd7f",
+      "size": 3109
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "sha256": "8a6cdbc2932019f6df40ad4d1e65179520a2b4df48bae87d0ba3e68fe69aed69",
+      "size": 2404
+    },
+    {
+      "path": "simulator/tools/fasm2bels/fasm2bels/fasm2bels.py",
+      "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+      "size": 18573
+    },
+    {
+      "path": "simulator/tools/fasm2bels/fasm2bels/models/verilog_modeling.py",
+      "sha256": "0835232d83c50ea24bdd7b43a6236674b9ca545d69ac8574ae1083c0d85068d0",
+      "size": 87997
+    }
+  ],
+  "confinement": {
+    "path": "crates/md-sim-firmware/src/confinement.rs",
+    "sha256": "4a5bff6e3d661e8e2635923e7ebaa73ad1541b28668ced6ad29471f632ed15ae",
+    "size": 23250
+  },
+  "source_review": "work/simulator/reviews/netlist-conversion-independent-source-497.json",
+  "source_review_status": "closed with no open source finding; focused tests and actual execution pending",
+  "guide_links": {
+    "checked": 565,
+    "broken": 0
+  },
+  "checks": {
+    "focused_tests": 7,
+    "strict_scoped_clippy": "pass",
+    "release": "pass",
+    "formatting": "pass",
+    "actual_exit": 0,
+    "wall_milliseconds": 89218
+  },
+  "actual_report": "work/simulator/reviews/netlist-executed-497.md",
+  "actual_inputs": "work/simulator/reviews/netlist-executed-497-inputs.json",
+  "independent_execution_review": "work/simulator/reviews/netlist-conversion-independent-execution-497.json",
+  "io_ambiguities": "work/simulator/reviews/netlist-io-ambiguities-497.json"
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scope": "Independent byte check of recovered492 copies only. Original and copied failed access verdicts stay false; no new firmware execution.",
+  "copies_rehashed": 43,
+  "copied_bytes": 1030844658,
+  "methods": [
+    "bounded-stream-copy"
+  ],
+  "recovery": {
+    "sha256": "43581a1c41fcdb14b262ab369ad5b1cd383097a3e69a39cc1d93335414b0a171",
+    "size": 11625
+  }
+}

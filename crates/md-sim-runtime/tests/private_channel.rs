@@ -171,6 +171,7 @@ fn policy() -> Spec {
 
 fn spec(store: &Store, host_marker: &str) -> ProcessSpec {
     ProcessSpec {
+        support_virtualization: None,
         private_channel: Some(policy()),
         stdin_stream: None,
         namespace_uid: 0,

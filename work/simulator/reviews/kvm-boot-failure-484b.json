@@ -1,0 +1,31 @@
+{
+  "scope": "Failed KVM prerequisite before Linux boot; invalid CPU model name is an implementation defect, not host incompatibility. Runtime API12 and grant passed.",
+  "status": "failed",
+  "next": "Use an explicit actual versioned QEMU CPU model, then rerun in a new directory.",
+  "files": {
+    "work/simulator/network-vm/kvm-prerequisite-484b/result.json": {
+      "sha256": "b2583b9c89d34a8db03e0ae0957fadb75cd8e201f2b78c18239c836d1a7c3367",
+      "size": 3220
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484b/process-spec.json": {
+      "sha256": "819daa2292045d7572b19c76432ae60fd23d9babd0654b7033964ced621fb9d9",
+      "size": 14809
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484b/backend.log": {
+      "sha256": "0bf00dc722f56c82e82d0067a8923c3119f041a6f83d0671acbc97a04ff699ac",
+      "size": 84
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484b/guest.log": {
+      "sha256": "acfc8797887fc743d6fb55802e67dce07f0606e9c35a466fd18d2c27a9fbb67f",
+      "size": 124
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484b/assessment.json": {
+      "sha256": "e69babdc5b1cf6a0f15a318f57de5739ec5d12a1d6e958158c67e8af425fc077",
+      "size": 192
+    },
+    "work/simulator/network-vm/kvm-prerequisite-484b/failure.json": {
+      "sha256": "e4031146c706e2b3124bd63080facb2c98ccc796b819ac49544538e7784f1ca0",
+      "size": 130
+    }
+  }
+}

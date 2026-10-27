@@ -165,6 +165,7 @@ fn host(out: &Path) -> Result<()> {
         ],
     )?;
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

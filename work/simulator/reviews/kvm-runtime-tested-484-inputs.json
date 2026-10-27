@@ -1,0 +1,107 @@
+{
+  "schema": "md-sim-support-virtualization-checks/1",
+  "component_checks_passed": true,
+  "actual_device_test_topology": "Parent exposed-device host; child sandbox has no /dev/kvm",
+  "firmware_or_exact_target_pass": false,
+  "source_locations": {
+    "crates/md-sim-runtime/src/support_virtualization.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/src/support_virtualization.rs",
+    "crates/md-sim-runtime/src/isolation.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/src/isolation.rs",
+    "crates/md-sim-runtime/src/lib.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/src/lib.rs",
+    "crates/md-sim-runtime/tests/support_virtualization.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/tests/support_virtualization.rs",
+    "crates/md-sim-firmware/src/confinement.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/src/confinement.rs",
+    "crates/md-sim-firmware/examples/isolated_network_vm.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/isolated_network_vm.rs",
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/worker_channel_probe.rs",
+    "crates/md-sim-firmware/examples/support/worker_channel_retention.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/support/worker_channel_retention.rs",
+    "crates/md-sim-firmware/examples/build_qemu_backend.rs": "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/build_qemu_backend.rs"
+  },
+  "files": {
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/src/support_virtualization.rs": {
+      "sha256": "8a2537ac0980e365c8463ec37e6f095325822f1d6faef5b1828a0fe7ac076a62",
+      "size": 7232
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/src/isolation.rs": {
+      "sha256": "fb637faa44fa2d05ca9c7a83161502cd2c4ad59242920cd13c850f976cc0639c",
+      "size": 40390
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/src/lib.rs": {
+      "sha256": "8a0e8ef1234c518d17b6c06b7f75cc5d90e5b35f6d65755c31e65855cc04c2dd",
+      "size": 339
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-runtime/tests/support_virtualization.rs": {
+      "sha256": "eccac635b589b5815125203697a4ba2858395bb42ba2655bbcb7b142bfce2b6e",
+      "size": 14407
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/src/confinement.rs": {
+      "sha256": "dc454405244fa805c092e8c215cf8d30307439d08edabf9eeb7af84d6c0b53d8",
+      "size": 22866
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/isolated_network_vm.rs": {
+      "sha256": "0caba63c11be965e203daaaba22a086c81f4de48aa4f88c58303eae6dd166c58",
+      "size": 40201
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "226e8f6f23cae8238c765071afc3e70b5816d3ff70f47b907b2fea0e21397fee",
+      "size": 38623
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/support/worker_channel_retention.rs": {
+      "sha256": "1f760669f099e2d254c628b21618d106d8aadc30ae20e0b6b76636ebfe41cb18",
+      "size": 9027
+    },
+    "work/simulator/kvm-runtime-484/source/crates/md-sim-firmware/examples/build_qemu_backend.rs": {
+      "sha256": "d87934fb1fbe287a195aa6697ac084d513ae7174fcb632eefcc9ef806dc726a1",
+      "size": 53540
+    },
+    "work/simulator/kvm-runtime-484/support_virtualization-test": {
+      "sha256": "a2cf846ea5def6302374f977918dbec3020b4322aa4cd2f2c32e9a3682de30fc",
+      "size": 4280136
+    },
+    "work/simulator/reviews/kvm-runtime-tested-484.md": {
+      "sha256": "28743904371fadd069dcb79f6b110bda9d7599b9861215bd2812b7476fa8c0d7",
+      "size": 5436
+    },
+    "work/simulator/kvm-tools-484b/inputs.json": {
+      "sha256": "ac0d4f876cbdcc794ec17405bc6f1773982fd0dc2925f6d76d62eca3ed543e39",
+      "size": 3414
+    },
+    "work/simulator/reviews/kvm-constructor-edits-484.json": {
+      "sha256": "a48132c0fcf00feb8da1b1f91cf6c6d807f17125c9eaf9c55ac11fb4644e9063",
+      "size": 3660
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484-tests.log": {
+      "sha256": "1146f6038b946e6896e30a54c9666cc7833c687f0fd5fdebb21c065b6e4f18d8",
+      "size": 5768
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484b-diagnostic.log": {
+      "sha256": "4c06649ad7b52a9084fd4c7a3765ccb60d5fd410ae2bbb20ed4b01d4def60a2a",
+      "size": 1298
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484c-tests.log": {
+      "sha256": "08f81de6363f3b1f80461a6acd542d4a49a51fee0e71688016f61ed7f66e7d1c",
+      "size": 5756
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-tests.log": {
+      "sha256": "b45855d1a5637b8025cee5b1f8558a3bd9bc6c7936d7290c939f03bae915d18d",
+      "size": 4944
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-actual.log": {
+      "sha256": "47b514fcf9e966451ce47d5eb633be0bca6ecb6c70e89bd90e3a3804e7bb7032",
+      "size": 965
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-clippy.log": {
+      "sha256": "fb3a904e2d7b704271e4db14c568fa03ef29f69c8e7fd14fdb1262c212618b6d",
+      "size": 141
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-regression.log": {
+      "sha256": "0259f01508453feca4413bae3f72036f56a3b242c7db5c1bd7e436a9d8206caf",
+      "size": 2373
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-release.log": {
+      "sha256": "ae2606d3add1591ffc54e0212b9d6bf9b1bcd2f3591d2a8be8355592a0eee2c0",
+      "size": 395
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484e-root-actual.log": {
+      "sha256": "2d87239110ed2d1fd483543f9a42be173632633d044a29c9fb1028ef1e0e2900",
+      "size": 194
+    }
+  }
+}

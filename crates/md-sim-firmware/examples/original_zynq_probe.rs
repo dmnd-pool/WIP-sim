@@ -163,6 +163,7 @@ fn save_reference_source(repo: &Path, out: &Path) -> Result<()> {
         add_input(&store, &mut inputs, &repo.join(relative), guest)?;
     }
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -231,6 +232,7 @@ fn main() -> Result<()> {
     )?;
     add_input(&store, &mut inputs, &archive, "/source.tar")?;
     let preparation = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -393,6 +395,7 @@ fn main() -> Result<()> {
             argv.extend(["-d".into(), "int,guest_errors,unimp".into()]);
         }
         let spec = ProcessSpec {
+            support_virtualization: None,
             private_channel: None, stdin_stream: None,
             namespace_uid: 0,
             dashboard: None,

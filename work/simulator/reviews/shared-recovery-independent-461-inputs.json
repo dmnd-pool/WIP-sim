@@ -1,0 +1,54 @@
+{
+  "scope": "independent source review; no new execution or target acceptance",
+  "blocking_source_findings": [],
+  "source_files": [
+    {
+      "path": "crates/md-sim-firmware/examples/s9_retain_shared_evidence.rs",
+      "sha256": "7ffb94c6c7cb8ebba310f5172e1582b4075046ad8288f6509d3c15d3518117ac",
+      "size": 1311
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_shared_recovery.rs",
+      "sha256": "6ab9022f1102a748b4ee262d54b9d538702c4e71b804a86594e815e55a3c001c",
+      "size": 25940
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_external_pool.rs",
+      "sha256": "0e5ae443fa21a6dbb2758750263e6cd28d53117c0f08b807c9ad2b65a8a8a3bb",
+      "size": 26269
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_submission_audit.rs",
+      "sha256": "90737d07d45b5fba85ef1bcdb0c44427a54d4429824ee87de3e594e616ee046c",
+      "size": 36184
+    }
+  ],
+  "parent_check_logs": [
+    {
+      "path": "work/simulator/checks-2026-10-26-001/shared-recovery461-plan-test.log",
+      "sha256": "7f0f6c08ea820c5702b728037f318b4dd1beac609a2909184bb4e7f49957578f",
+      "size": 328
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/shared-recovery461-clippy.log",
+      "sha256": "47bd7ccc943080cd7f68e8b46dc9f3e56819b1e2b24df2662ec933b4df02ee0d",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/shared-recovery461-tests.log",
+      "sha256": "2fbfa0e141874385672272103daadd7763cc442be775de180d4397522226a1ee",
+      "size": 4468
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/shared-recovery461-plan-test-qualified.log",
+      "sha256": "64f93a8cb11cd9b76ab4fdc8466730b2aef7dd681707f5c5394934ee48723235",
+      "size": 410
+    },
+    {
+      "path": "work/simulator/checks-2026-10-26-001/shared-recovery461-build.log",
+      "sha256": "15201ea76a40cc19c0b8da4739215a5d25fc2e71d8e3c41fef426cbcef441af5",
+      "size": 145
+    }
+  ],
+  "check_boundary": "The initial unqualified plan-test filter ran zero tests; only plan-test-qualified establishes the actual plan test. Retain is outside this source review."
+}

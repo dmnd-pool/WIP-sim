@@ -1,0 +1,113 @@
+{
+  "recorded_at": "2026-10-26T20:27:03.623009+00:00",
+  "passed": true,
+  "wall_milliseconds": 29469,
+  "exit_code": 0,
+  "trace_truncated": false,
+  "mounts_rehashed": 997,
+  "unique_objects_rehashed": 959,
+  "captured_bytes": 89740217,
+  "limits": {
+    "wall_seconds": 180,
+    "cpu_seconds": 120,
+    "memory_bytes": 1073741824,
+    "processes": 16,
+    "file_bytes": 33554432,
+    "trace_bytes": 67108864,
+    "tmp_bytes": 67108864
+  },
+  "files": [
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/spec.json",
+      "sha256": "a2428e5d41a019e33c7b389644fd60452c1a35e554f154f1f849b58af436c309",
+      "size": 205386
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/comparison-inputs.json",
+      "sha256": "37b5b19f1b708f19dbdf7619d5fc4427776e6e4428a187259a9b57ffe97a076e",
+      "size": 898
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/result.json",
+      "sha256": "5c909e04126edc607b83d2781de1534706952e177bdd47460e67892e45c5b6fa",
+      "size": 26853188
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/assessment.json",
+      "sha256": "8161bd3dce17341a84932bfb625c48b896abeb82b5127c85272a07d0e9d91219",
+      "size": 3942
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/export.json",
+      "sha256": "6df29390d76051213c9b7bff907628aff4adf287c4cfd7392914d9b589eb1e37",
+      "size": 13425197
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/selected.fasm",
+      "sha256": "3654907a9bb4de393c8d0a40fab86d2d04555461f2e2b80d1ce5a38c7b3283e4",
+      "size": 4719842
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/stderr.log",
+      "sha256": "a6f7feeccd12a64b05217327a609fc077aac04d2974dcf82c09a777229c9ae3b",
+      "size": 975
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/export.py",
+      "sha256": "46fce6ff3ca8bcd30aa2d2ccf71fb0cd68e3a6a4b1e25aac57117c2799fc43bc",
+      "size": 11506
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/prjxray_feature_oracle.py",
+      "sha256": "1fcee3ddaad70fa1458259b4b88bd00b828403290869625d37a319d21f50fc5d",
+      "size": 10465
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-driver-482d/manifest.json",
+      "sha256": "173d8914686519ab3e74b4ecc937b759b352ac80f83d0310fcc968c4cb921e3d",
+      "size": 135477
+    },
+    {
+      "path": "work/simulator/qemu-s9/fasm-export-driver-482d/s9_fasm_export",
+      "sha256": "2a9cbdc6e827866ee06c7dc3c2535381b3c76f6db2fee60fb8eafa34c3a94e99",
+      "size": 2218936
+    },
+    {
+      "path": "simulator/firmware/s9-fpga-feature-inputs-475.json",
+      "sha256": "977644ea620fbee880b242f1342689ea8425fca2d7efbe5e6f4c3362909fe265",
+      "size": 10459
+    },
+    {
+      "path": "simulator/firmware/s9-fasm-tool-inputs-escaped-quotes.json",
+      "sha256": "d97ec0ffa30bce77cc88655b13d599a6e5610cdb2cd770f503163b06edc8c8d7",
+      "size": 75840
+    },
+    {
+      "path": "simulator/tools/fasm/grammar-adaptation.json",
+      "sha256": "ea4bec621bbdb03a54cb7a818e967105e1be2a983ac42498094ad43d4244d12f",
+      "size": 1167
+    },
+    {
+      "path": "simulator/tools/fasm/escaped-quotes.patch",
+      "sha256": "3310ee770aa70c68520b68e71ead53ed7d3cd07281fe277b75b5fe6281bf794e",
+      "size": 388
+    },
+    {
+      "path": "simulator/tools/fasm/fasm.tx",
+      "sha256": "fec4847570b5e54d3efda0c41ad9539cb3f596eba98f411f05fa3754e8e93516",
+      "size": 1211
+    },
+    {
+      "path": "work/simulator/qemu-s9/features-selected-475/features.json",
+      "sha256": "de5bd2fc59b037ae378d111ffdd9383e95729c30b464f0398efb79ae56dfb23e",
+      "size": 43704960
+    },
+    {
+      "path": "work/simulator/qemu-s9/frames-selected-291/header.json",
+      "sha256": "a5e5a889a42bc929ff5c67cce88d5d60d2ef05c5682a6f1339cf1ec47128acbe",
+      "size": 649924
+    }
+  ],
+  "prior_formatted_text_identical": true,
+  "scope": "Static export and complete non-ECC configuration bit round trip only. Tool grammar and bounded invocation adaptations are explicit. No netlist, physical timing or firmware execution gate."
+}

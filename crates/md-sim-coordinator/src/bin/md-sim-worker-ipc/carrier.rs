@@ -295,6 +295,7 @@ mod tests {
             wall_seconds: 20,
             lease: None,
             process: ProcessSpec {
+                support_virtualization: None,
                 schema_version: "2.0".into(),
                 namespace_uid: 0,
                 argv: vec!["/fixture".into()],

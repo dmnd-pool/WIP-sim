@@ -1,0 +1,114 @@
+{
+  "schema": "md-sim-native-browser-failure-review/1",
+  "attempt": 487,
+  "status": "failed",
+  "scope": "Original archived S9 firmware in adapted reference environment. Exact physical target and browser acceptance are not established.",
+  "result": {
+    "status": "cancelled",
+    "exit_code": null,
+    "wall_milliseconds": 397456,
+    "trace_truncated": false
+  },
+  "host_retention_error": {
+    "error": "control character (\\u0000-\\u001F) found while parsing a string at line 1 column 5033150"
+  },
+  "secondary_stderr": "receipt relay failed: receipt relay frame bound\n",
+  "outer_assessment": {
+    "passed": false,
+    "complete_result_exported": false,
+    "observation_error": "SSH result export absent or duplicated",
+    "provider_observation_error": "native provider host receipt absent or duplicated"
+  },
+  "partial_identity": {
+    "value": {
+      "native": {
+        "locked_run_hash": "1e7bfbb8f054e924995edd28819b5c76c189eec1fd208c30541421e89ec0627a",
+        "token": "03b6619efb06d698a225caed41566320a4382e248a4fac2aca1644b2c6864e4e",
+        "run_id": "run-03b6619efb06d698a225caed41566320a4382e248a4fac2aca1644b2c6864e4e",
+        "result": {
+          "sha256": "f15e022d684e649a6738c7431db5e00a832088e775eca02183a08cb54c8fdd19",
+          "size": 105867853
+        }
+      },
+      "pool_bundle": {
+        "sha256": "b56951d281867f88c0bfd033f74625c356c72cf96e7a21ca0cb22f16cb3b4238",
+        "size": 93495
+      },
+      "access_bundle": {
+        "sha256": "5fd439c1c0c0fa1f3e32e7f2abfe964c609b2af20f181c634534042769a60ad1",
+        "size": 21084892
+      }
+    },
+    "source": "guest.log",
+    "byte_offset": 44271,
+    "byte_length": 571,
+    "is_unacknowledged_guest_declaration": true
+  },
+  "recovery": {
+    "request_markers": 1,
+    "complete_access_export_found": false,
+    "pool_payload_reached": false,
+    "access_payload_reached": false,
+    "native_browser_verdict": "unknown; retained access bytes did not reach host",
+    "mining_acceptance": "not reconstructed from partial UART output",
+    "failed_inputs_unchanged": true
+  },
+  "findings": [
+    {
+      "cause": "Kernel UART diagnostics interleaved inside the long userspace retention JSON string. The decoder correctly rejected a control character.",
+      "evidence": "CPU1 soft-lockup diagnostics identify IRQ4 hard-IRQ saturation near support guest second396. The request is interrupted before pool/access payloads."
+    },
+    {
+      "cause": "Host sent no receipt after failed import. The relay then reported its existing nonempty-frame bound on EOF.",
+      "evidence": "stdin_stream sent_hex is empty; ACK bound remains4096 and is not the cause."
+    }
+  ],
+  "next_action": "Use a separately named md-sim.trace virtio port for userspace output. Preserve UART kernel logs separately. Pass a fresh8MiB JSON plus concurrent kernel-noise stress test and ordinary worker transport regression before another selected native attempt.",
+  "receipts": [
+    {
+      "path": "work/simulator/network-vm/native-browser-487/guest.log",
+      "sha256": "afd930b6fe3c703963afd980921e7de5dbdb009f60c224f5f45379eec371afb7",
+      "size": 5079584
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-487/backend.log",
+      "sha256": "86be5687ecf8e7648f514974fc67e4f0310cb8ff69f8d2f09e868895f8d50dcb",
+      "size": 48
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-487/result.json",
+      "sha256": "5b814cea5f9f40acb305f265b5d38faeac90bf4a8a035cc73cbab9486d18b66b",
+      "size": 10162216
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-487/assessment.json",
+      "sha256": "ac77bb4aca34b3f89cb1c71b7dd9c7b376360610ff16506cb9325472ab122637",
+      "size": 2398
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-487/process-spec.json",
+      "sha256": "8fe945a38ebfd292543c89fad438a9ff664e716dea0faa4083d6574984f529c3",
+      "size": 5763
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-487/execution/host-retention-error.json",
+      "sha256": "7708fad2927fe24560ba82732d31a82298c04bca9e0808261d3df7527e974939",
+      "size": 107
+    },
+    {
+      "path": "work/simulator/network-vm/native-browser-487/execution/locked-run.json",
+      "sha256": "28ecd5d0fcef2815098d571dd7cb2089a3eff742db6944737e4fab2252daa667",
+      "size": 22013
+    },
+    {
+      "path": "work/simulator/reviews/native-browser-freeze-486.json",
+      "sha256": "685cdd3643b86596a070b4a809b5545ce44c3e30ee823eaabba48e1a7c322310",
+      "size": 8656
+    },
+    {
+      "path": "work/simulator/channel-target-486/release/examples/worker_channel_probe",
+      "sha256": "b17f66916a7a35bef75f5b468d04b583f824f365f05c23aee42a888402f1f6c3",
+      "size": 4942984
+    }
+  ]
+}

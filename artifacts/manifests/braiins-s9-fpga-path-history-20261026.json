@@ -1,0 +1,20 @@
+{
+  "id": "braiins-s9-fpga-path-history-20261026",
+  "url": "https://api.github.com/repos/braiins/zynq-io-bin/commits?path=am1-s9/system.bit&per_page=100",
+  "kind": "metadata",
+  "title": "Braiins S9 FPGA binary path history",
+  "language": "en",
+  "source_id": "braiins-s9-fpga-path-history-20261026",
+  "license": "unknown",
+  "retrieved_at": "2026-10-26T17:07:39+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/braiins-s9-fpga-path-history-20261026/commits.json",
+  "sha256": "63c7b3e23552a12e2c7cef2807ca79a04d92b7dec1d136bdf302d23bae9cd73c",
+  "size_bytes": 23302,
+  "executed": false,
+  "scope": "supporting-tool",
+  "acquisition": "Root agent fetched exact public URL with bounded curl. Original response bytes preserved. No immutable Git revision inferred from a moving endpoint.",
+  "notes": [
+    "S9 controller FPGA reconstruction support only. No FPGA mining target or board-compatibility claim."
+  ]
+}

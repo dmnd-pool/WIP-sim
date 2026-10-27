@@ -13,6 +13,7 @@ use std::{
     fs,
     io::{Read, Write},
     net::{TcpListener, TcpStream},
+    os::fd::AsFd,
     os::unix::{fs::PermissionsExt, process::ExitStatusExt},
     path::{Path, PathBuf},
     process::{Command, Stdio},
@@ -23,6 +24,10 @@ use std::{
 mod confinement;
 #[path = "isolated_network_vm/payload.rs"]
 mod payload;
+#[path = "isolated_network_vm/trace_port.rs"]
+mod trace_port;
+#[path = "support/worker_virtual_port.rs"]
+mod virtual_port;
 const KERNEL: &str = "/usr/lib/modules/7.2.9-arch1-1/vmlinuz";
 const KERNEL_SHA: &str = "d02afb36d5f99390fdd8d04dedf8894354f4bbdc5e7d44afa5b897639bb3707c";
 const EXPORT_HALF: usize = 64 * 1024 * 1024;
@@ -75,10 +80,20 @@ fn guest() -> Result<()> {
     }
     mount("proc", "/proc", "proc")?;
     mount("sysfs", "/sys", "sysfs")?;
+    let cmdline = fs::read_to_string("/proc/cmdline")?;
     ensure!(
-        fs::read_to_string("/proc/cmdline")?.contains("md_sim_private_guest=1"),
+        trace_port::selected(&cmdline, "md_sim_private_guest")?,
         "guest kernel marker missing"
     );
+    let trace_selected = trace_port::selected(&cmdline, "md_sim_trace_port")?;
+    let trace_stress = trace_port::selected(&cmdline, "md_sim_trace_stress")?;
+    ensure!(
+        !trace_stress || trace_selected,
+        "trace stress requires the private port"
+    );
+    if trace_selected {
+        trace_port::redirect()?;
+    }
     println!("MD_SIM_VM_INIT actual Rust PID 1 started");
     println!(
         "MD_SIM_VM_KERNEL {}",
@@ -136,6 +151,13 @@ fn guest() -> Result<()> {
         "MD_SIM_VM_TCP {}",
         json!({"listener":address,"client":peer,"challenge_hex":hex::encode(challenge),"actual_roundtrip":true,"interfaces":names,"external_network":false})
     );
+    if trace_stress {
+        ensure!(
+            !Path::new("/scenario.json").exists(),
+            "trace prerequisite cannot execute a scenario"
+        );
+        trace_port::guest_stress()?;
+    }
     if Path::new("/scenario.json").exists() {
         let scenario: Scenario = serde_json::from_slice(&fs::read("/scenario.json")?)?;
         ensure!(!scenario.argv.is_empty(), "scenario command is missing");
@@ -308,7 +330,15 @@ fn main() -> Result<()> {
             || s == "__long_boot_browser_qemu"
             || s == "__long_boot_process_qemu"
     }) {
-        if args[1] == "__long_boot_browser_qemu" || args[1] == "__long_boot_process_qemu" {
+        let kvm = match std::env::var("MD_SIM_SUPPORT_KVM") {
+            Err(std::env::VarError::NotPresent) => false,
+            Ok(value) if value == "1" => true,
+            _ => anyhow::bail!("invalid support virtualization selection"),
+        };
+        if kvm {
+            ensure!(args[1] == "__qemu", "KVM prerequisite profile differs");
+            confinement::require_kvm_prerequisite()?;
+        } else if args[1] == "__long_boot_browser_qemu" || args[1] == "__long_boot_process_qemu" {
             confinement::require_long_boot_process_vm(args[1] == "__long_boot_browser_qemu")?;
         } else if args[1] == "__board_browser_qemu" {
             confinement::require_board_browser_vm()?;
@@ -331,13 +361,39 @@ fn main() -> Result<()> {
         } else {
             confinement::require_board()?;
         }
+        let trace_stress = match std::env::var("MD_SIM_TRACE_STRESS") {
+            Err(std::env::VarError::NotPresent) => false,
+            Ok(value) if value == "1" => true,
+            _ => anyhow::bail!("invalid trace prerequisite selection"),
+        };
+        ensure!(
+            !trace_stress || kvm,
+            "trace prerequisite requires explicit KVM mode"
+        );
         let began = std::time::Instant::now();
-        let mut child = Command::new("/qemu")
-            .args(&args[2..])
-            .stdin(Stdio::null())
-            .spawn()?;
+        let mut command = Command::new("/qemu");
+        command.args(&args[2..]).stdin(Stdio::null());
+        if trace_stress {
+            command.stdout(Stdio::from(std::io::stderr().as_fd().try_clone_to_owned()?));
+        }
+        let mut child = command.spawn()?;
         let pid = child.id();
         let status = child.wait()?;
+        if trace_stress {
+            let mut trace = fs::File::open("/work/guest-trace.log")?;
+            ensure!(
+                trace.metadata()?.len() <= 16 * 1024 * 1024,
+                "guest trace prerequisite file bound"
+            );
+            let copied = std::io::copy(
+                &mut Read::by_ref(&mut trace).take(16 * 1024 * 1024 + 1),
+                &mut std::io::stdout().lock(),
+            )?;
+            ensure!(
+                copied <= 16 * 1024 * 1024,
+                "guest trace prerequisite grew beyond bound"
+            );
+        }
         let mut usage: libc::rusage = unsafe { std::mem::zeroed() };
         ensure!(
             unsafe { libc::getrusage(libc::RUSAGE_CHILDREN, &mut usage) } == 0,
@@ -357,14 +413,26 @@ fn main() -> Result<()> {
         ensure!(status.success(), "QEMU guest failed: {status}");
         return Ok(());
     }
+    let trace_stress = args.len() == 3 && args[2] == "--kvm-trace-stress";
+    let kvm = args.len() == 3 && (args[2] == "--kvm" || trace_stress);
     ensure!(
         (2..=3).contains(&args.len()) || (args.len() == 4 && args[3] == "--prepare-only"),
-        "usage: isolated_network_vm NEW_OUTPUT [SCENARIO_JSON [--prepare-only]]"
+        "usage: isolated_network_vm NEW_OUTPUT [SCENARIO_JSON [--prepare-only] | --kvm | --kvm-trace-stress]"
     );
     let out = PathBuf::from(&args[1]);
     ensure!(!out.exists(), "output must be new");
     fs::create_dir_all(&out)?;
-    let result = run(&out, args.get(2).map(Path::new), args.len() == 4);
+    let result = run(
+        &out,
+        if kvm {
+            None
+        } else {
+            args.get(2).map(Path::new)
+        },
+        args.len() == 4,
+        kvm,
+        trace_stress,
+    );
     if let Err(error) = &result {
         let full = format!("{error:#}");
         let bounded: String = full.chars().take(8192).collect();
@@ -379,7 +447,13 @@ fn main() -> Result<()> {
     }
     result
 }
-fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<()> {
+fn run(
+    out: &Path,
+    scenario_path: Option<&Path>,
+    prepare_only: bool,
+    kvm: bool,
+    trace_stress: bool,
+) -> Result<()> {
     let description: Option<Scenario> = scenario_path
         .map(|path| -> Result<_> {
             ensure!(
@@ -491,6 +565,7 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
     }
     add(&store, &mut inputs, &manifest, "/root-manifest.json")?;
     let prep = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -653,7 +728,7 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
         !board_process || (captured_process && browser && !nested),
         "board transport requires captured process VM and payload"
     );
-    let argv = [
+    let mut argv: Vec<String> = [
         "/runner",
         if selected_browser && long_boot {
             "__long_boot_browser_qemu"
@@ -681,7 +756,9 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
         "-machine",
         "pc",
         "-accel",
-        if captured_process || (browser && nested) {
+        if kvm {
+            "kvm"
+        } else if captured_process || (browser && nested) {
             "tcg,thread=multi,tb-size=256"
         } else if browser {
             "tcg,thread=single,tb-size=64"
@@ -689,7 +766,9 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
             "tcg,thread=single"
         },
         "-cpu",
-        "max",
+        // Versioned QEMU model with the captured userspace's x86-64-v2
+        // instructions. Refuse unavailable features instead of filtering them.
+        if kvm { "Nehalem-v1,enforce" } else { "max" },
         "-m",
         if selected_browser {
             // Captured archive and worker/client stores, nested1GiB firmware,
@@ -741,7 +820,9 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
         "-initrd",
         "/initramfs.cpio.gz",
         "-append",
-        if browser {
+        if trace_stress {
+            "console=ttyS0 rdinit=/init panic=-1 md_sim_private_guest=1 md_sim_trace_port=1 md_sim_trace_stress=1"
+        } else if browser {
             // The captured browser runtime exceeds the default tmpfs rootfs size.
             // Its files are read-only; guest RAM and outer process limits still bind it.
             "console=ttyS0 rdinit=/init panic=-1 md_sim_private_guest=1 rootfstype=ramfs"
@@ -754,7 +835,23 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
     .into_iter()
     .map(str::to_string)
     .collect();
+    if trace_stress {
+        argv.extend(
+            [
+                "-device",
+                "virtio-serial-pci,id=trace-bus",
+                "-chardev",
+                "file,id=trace,path=/work/guest-trace.log",
+                "-device",
+                "virtserialport,bus=trace-bus.0,chardev=trace,name=md-sim.trace",
+            ]
+            .into_iter()
+            .map(str::to_string),
+        );
+    }
     let spec = ProcessSpec {
+        support_virtualization: kvm
+            .then_some(md_sim_runtime::isolation::SupportVirtualization::Kvm),
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -764,7 +861,15 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
         stdin_object: None,
         argv,
         inputs,
-        environment: BTreeMap::new(),
+        environment: if kvm {
+            let mut environment = BTreeMap::from([("MD_SIM_SUPPORT_KVM".into(), "1".into())]);
+            if trace_stress {
+                environment.insert("MD_SIM_TRACE_STRESS".into(), "1".into());
+            }
+            environment
+        } else {
+            BTreeMap::new()
+        },
         limits: Limits {
             wall_seconds: if long_boot {
                 5400
@@ -828,7 +933,9 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
             processes: 64,
             file_bytes: 64 * 1024 * 1024,
             // Retain both SD snapshots and all HTTP/reset evidence.
-            trace_bytes: if board_process {
+            trace_bytes: if trace_stress {
+                16
+            } else if board_process {
                 128
             } else if captured_process {
                 64
@@ -844,28 +951,39 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
     save_json(&out.join("process-spec.json"), &spec)?;
     save_json(
         &out.join("topology.json"),
-        &json!({"host":"local restricted environment","backend":"QEMU x86 system under strict ProcessSpec isolation","guest_kernel":hash_file(Path::new(KERNEL))?,"guest_initramfs":hash_file(&image)?,"root_filesystem":if browser {"explicit ramfs for captured browser payload; bounded by the declared guest RAM and outer process limits"} else {"kernel default rootfs"},"guest_ram":spec.argv.windows(2).find(|pair|pair[0]=="-m").context("guest RAM argument absent")?[1],"guest_cpus":spec.argv.windows(2).find(|pair|pair[0]=="-smp").context("guest CPU argument absent")?[1],"accelerator":spec.argv.windows(2).find(|pair|pair[0]=="-accel").context("guest accelerator argument absent")?[1],"process_limits":spec.limits,"network":"outer VM starts with loopback only; QEMU has no virtual network device and no host network backend; scenario may add internal guest namespaces","client":"Rust guest TCP prerequisite; scenario report identifies further clients","worker":"Rust guest TCP prerequisite; scenario report identifies further workers","external_physical_host":false,"simulator_worker_exercised":false,"ssh_tls_exercised":false,"source":{"sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("isolated_network_vm.rs")),"size":include_bytes!("isolated_network_vm.rs").len(),"binding":"compiled include_bytes source"}}),
+        &json!({"host":"local restricted environment","backend":"QEMU x86 system under strict ProcessSpec isolation","guest_kernel":hash_file(Path::new(KERNEL))?,"guest_initramfs":hash_file(&image)?,"root_filesystem":if browser {"explicit ramfs for captured browser payload; bounded by the declared guest RAM and outer process limits"} else {"kernel default rootfs"},"guest_ram":spec.argv.windows(2).find(|pair|pair[0]=="-m").context("guest RAM argument absent")?[1],"guest_cpus":spec.argv.windows(2).find(|pair|pair[0]=="-smp").context("guest CPU argument absent")?[1],"accelerator":spec.argv.windows(2).find(|pair|pair[0]=="-accel").context("guest accelerator argument absent")?[1],"process_limits":spec.limits,"trace_transport":if trace_stress {json!({"guest_userspace":"md-sim.trace virtserialport","kernel_console":"UART to backend.log","stress_bytes":trace_port::PAYLOAD_BYTES,"source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("isolated_network_vm/trace_port.rs")),"port_opener_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/worker_virtual_port.rs"))})} else {json!({"guest_userspace":"UART","kernel_console":"UART"})},"network":"outer VM starts with loopback only; QEMU has no virtual network device and no host network backend; scenario may add internal guest namespaces","client":"Rust guest TCP prerequisite; scenario report identifies further clients","worker":"Rust guest TCP prerequisite; scenario report identifies further workers","external_physical_host":false,"simulator_worker_exercised":false,"ssh_tls_exercised":false,"source":{"sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("isolated_network_vm.rs")),"size":include_bytes!("isolated_network_vm.rs").len(),"binding":"compiled include_bytes source"}}),
     )?;
     let traces = TraceFiles {
         stdout: fs::File::create(out.join("guest.log"))?,
         stderr: fs::File::create(out.join("backend.log"))?,
     };
-    let result = execute_with_trace(
+    let execute_vm = if kvm {
+        md_sim_runtime::isolation::execute_support_vm
+    } else {
+        execute_with_trace
+    };
+    let result = execute_vm(
         &store,
         &spec,
         Arc::new(AtomicBool::new(false)),
         Some(traces),
     )?;
     let stdout = hex::decode(&result.stdout)?;
+    let stderr = hex::decode(&result.stderr)?;
     save_json(&out.join("result.json"), &result)?;
     ensure!(
         result.status == "exited"
             && result.exit_code == Some(0)
             && !result.trace_truncated
-            && result.stderr.is_empty(),
+            && (trace_stress || result.stderr.is_empty()),
         "guest did not exit cleanly with complete traces"
     );
     let tcp = verify_guest_log(&stdout)?;
+    let trace_stress_evidence = if trace_stress {
+        Some(trace_port::verify(&stdout, &stderr)?)
+    } else {
+        None
+    };
     if scenario.is_some() {
         ensure!(
             std::str::from_utf8(&stdout)?
@@ -879,7 +997,7 @@ fn run(out: &Path, scenario_path: Option<&Path>, prepare_only: bool) -> Result<(
     }
     save_json(
         &out.join("assessment.json"),
-        &json!({"guest_boot_and_tcp_probe":true,"actual_tcp_record":tcp,"actual_firmware_gate":false,"worker_transport_gate":false,"external_host_gate":false,"ssh_tls_gate":false,"guest_log":hash_file(&out.join("guest.log"))?,"process_spec":hash_file(&out.join("process-spec.json"))?,"process_result":hash_file(&out.join("result.json"))?}),
+        &json!({"guest_boot_and_tcp_probe":true,"actual_tcp_record":tcp,"trace_stress":trace_stress_evidence,"actual_firmware_gate":false,"worker_transport_gate":false,"external_host_gate":false,"ssh_tls_gate":false,"guest_log":hash_file(&out.join("guest.log"))?,"backend_log":hash_file(&out.join("backend.log"))?,"process_spec":hash_file(&out.join("process-spec.json"))?,"process_result":hash_file(&out.join("result.json"))?}),
     )?;
     println!(
         "{}",

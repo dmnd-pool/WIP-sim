@@ -1,0 +1,25 @@
+{
+  "id": "prjxray-tileconn-json-20261026",
+  "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/xc7z010/tileconn.json",
+  "kind": "metadata",
+  "title": "Project X-Ray selected S9 reconstruction input tileconn.json",
+  "language": "en",
+  "source_id": "prjxray-tileconn-json-20261026",
+  "license": "CC0-1.0",
+  "retrieved_at": "2026-10-26T17:23:32.836372+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/prjxray-tileconn-json-20261026/tileconn.json",
+  "sha256": "e6d0ebf9b27f60f4afdab85a357bff4d7cf2cd77c3a6c0f2d887022cda874066",
+  "size_bytes": 10241414,
+  "executed": false,
+  "scope": "supporting-tool",
+  "acquisition": "Bounded public fetch by root agent; original body and response headers retained. Expected file hashes checked against publisher Info.md where available.",
+  "response_headers": {
+    "path": "artifacts/files/metadata/prjxray-tileconn-json-20261026/tileconn.json.headers",
+    "sha256": "28fb34a1cfd9bfba58b27c50a7913c0503de245d823b6fe2c64ac97aeb85e4c7",
+    "size": 905
+  },
+  "notes": [
+    "Metadata only for selected S9 controller FPGA reconstruction. A matching checksum is not a completed logic, original-board, or physical timing validation."
+  ]
+}

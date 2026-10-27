@@ -1,0 +1,112 @@
+{
+  "schema": "md-sim-checkpoint-git-preparation/1",
+  "date": "2026-10-27",
+  "user_request": "Commit the saved checkpoint for pushing to another repository. Keep implementation paused.",
+  "parent": "b276dd7a34df45bf610874020c267b6684e9266c",
+  "scope": "Simulator source, acquisition/provenance records, reports, paused source patch and compact build manifests. Original downloads, executables, disks, browser profiles and raw run evidence remain excluded.",
+  "checks": {
+    "cargo_fmt": "pass",
+    "guide_links": "pass",
+    "simulator_code_matches_tested500": true,
+    "tested500_workspace_tests": {
+      "passed": 1069,
+      "failed": 0,
+      "ignored": 49
+    },
+    "candidate_text_files_before_this_record": 770,
+    "candidate_bytes_before_this_record": 23619612,
+    "files_over_10MiB": 0,
+    "binary_payloads": 0,
+    "private_key_or_common_token_pattern_hits": 0,
+    "explicit_allowed_metadata_paths": 7,
+    "explicit_ignored_payload_private_paths": 8,
+    "staged_whitespace": "Pass for source/docs/records;13 required blank context prefixes in3 hash-pinned patch files are preserved and checked separately."
+  },
+  "files": {
+    ".gitignore": {
+      "sha256": "02c017c73142c003ae172a48e7f9b4458c495e634d04b837033dce34b3fb06d2",
+      "size": 2563
+    },
+    "work/simulator/checkpoint-500.md": {
+      "sha256": "79ee446c6b2014d1a009bbaf699c3dc7075467d4324df1edfac612bcc3ee98a2",
+      "size": 4972
+    },
+    "work/simulator/cli-tools-500/build.json": {
+      "sha256": "9278fee813a7bea8684e0d79bff9c202a9bb59634c4b8f46530d2bc3372af423",
+      "size": 2648
+    },
+    "work/simulator/core-checkpoint-500/manifest.json": {
+      "sha256": "9654868276fc33004cf8d4ef37b385d4a4df0883a5fb5b40247e4774fe003827",
+      "size": 91384
+    }
+  },
+  "full_specification_complete": false,
+  "implementation_status": "paused_by_user",
+  "patch_context_lines": [
+    {
+      "path": "simulator/tools/fasm/escaped-quotes.patch",
+      "line": 5,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "line": 9,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "line": 18,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "line": 22,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "line": 29,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "line": 38,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "line": 52,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "line": 60,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "line": 14,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "line": 37,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "line": 49,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "line": 81,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "line": 85,
+      "reason": "Required unified-diff context prefix for an unchanged empty source line."
+    }
+  ]
+}

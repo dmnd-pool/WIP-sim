@@ -1,0 +1,317 @@
+{
+  "passed": true,
+  "scope": "independent rehash of43 source/destination files and failed verdict preservation; strict mining and Core results reviewed separately",
+  "source": "/home/user/src/md-sim/work/simulator/network-vm/native-browser-453",
+  "derived": "/home/user/src/md-sim/work/simulator/network-vm/native-browser-453-recovered-461",
+  "copied_bytes": 1038030428,
+  "original_access_passed": false,
+  "original_overall_passed": false,
+  "original_pool_observation_absent": true,
+  "pool_result": {
+    "sha256": "87cdd021361bb0860467bbe1c341ebf244e123200a77b391e08c7716df7ceab5",
+    "size": 131573
+  },
+  "files": [
+    {
+      "path": "assessment.json",
+      "sha256": "b369efcbdf3160a014e28e3bc884f0ad51c4cc33892c0e9c8d5d5bb5d55876cc",
+      "size": 49300800,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "client-image/combined-initramfs.cpio.gz",
+      "sha256": "04a8ffa153b70d2fe888fcf83e263614a1c93d698df77fb45d514e11d58a329a",
+      "size": 499985342,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "client-image/payload-manifest.json",
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "client-image/payload-report.json",
+      "sha256": "a46186523c82e9c3d35c54c4b773ff516bbad9841a74bed60a6f041698dd00de",
+      "size": 77773,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "client-image/prepared-image.json",
+      "sha256": "7b582f2e29817d6d3cced2111675d3e86d73d101612ab98ea103f44a3f97984c",
+      "size": 628,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "client-image/root-manifest.json",
+      "sha256": "6535b6e319aa983720a4ea4dafd5c5f37d1228ed0511c6447a145d53e9f1bd95",
+      "size": 874638,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/adaptation.json",
+      "sha256": "8744a55ddc31ab959810ccf1ae707d943c8979e8772b2843e2474cae02dfa496",
+      "size": 18594,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/backend.log",
+      "sha256": "6e5c1ec2b0bb962712cd2dca1c83b7381ea840c40a4e3757f8112acfdd99de1e",
+      "size": 52617036,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/guest.log",
+      "sha256": "0d1103d222659e8f492556b3713683180df1fe86823951d0ff4eb456f7e49120",
+      "size": 111772,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/host-retention.json",
+      "sha256": "5db431e16bc1233bb28ef94fe4f53715639f31beddf3b26a1bd19133ac895e2d",
+      "size": 378,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/locked-run.json",
+      "sha256": "b1ef32171e89228eaa858a4937ccbb10826a4128a7149851ac79be588b8aba4f",
+      "size": 21841,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/pool-input.json",
+      "sha256": "14f7f924c41b69780fd233af7adf85e749b9f6b98138b00cf5a342cd912b2c38",
+      "size": 1025,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/process-spec.json",
+      "sha256": "efd259f7b144af74a71c89b2886a36af0a5ce5924cebc9acd714f9883cf505cf",
+      "size": 11222,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/result.json",
+      "sha256": "c18c239c1a3417a3f7573d75a443dce30763a7d38cc5562007fcbb05f87190c7",
+      "size": 105459647,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-access/access-bundle.json",
+      "sha256": "b46e64375fc5df3760e2ca2482a54845d60b8567c2deb40b39ad03042b845ffb",
+      "size": 11206012,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-access/client/report.json",
+      "sha256": "1e689cbdfdce043d6d3cd161d4faeaead35467f2ca53a41bf700852535b4cdd4",
+      "size": 6655,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-access/retention-receipt.json",
+      "sha256": "62bb98fbde3f5dc25bd339d4b370f20edc9803e6b5fbc2e361af2cecbe8eb6ed",
+      "size": 664,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool.json",
+      "sha256": "d7a6f68d6df62be8f9efa682de3686b559a477076c48943c18e21dd1dfa17e2c",
+      "size": 930,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/outer-result.json",
+      "sha256": "dc6e5fb6c8dda8e390f3d0adc0d21a0e5871d6b221d1caefb383121e3e9a7e96",
+      "size": 443,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/pool-bundle.json",
+      "sha256": "a86232130a35647f6abe6bc593ed22fd34940fd50e47232301ab24ecb66891f7",
+      "size": 102679,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/pool.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/pool.stdout",
+      "sha256": "cdad676463bd3476ca97c2a189e6dab9a8a674a2f0678fd3aee84fc88b5a3a7d",
+      "size": 41877,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/provider-receipt.json",
+      "sha256": "58d997ccfc6aaab1759596b6b2356edf6b1b1e1f70ef214faf91abab7db91a18",
+      "size": 3833,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/retention-receipt.json",
+      "sha256": "62bb98fbde3f5dc25bd339d4b370f20edc9803e6b5fbc2e361af2cecbe8eb6ed",
+      "size": 664,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-0.jsonl",
+      "sha256": "e74477b482666822ac5f45ee19b3a4fac26e422939d533a4da4905136909ddd8",
+      "size": 5906,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-1.jsonl",
+      "sha256": "66c1ccea43f8b732187354591d5d5ab753441c9b4fa6aef16d6786936fa45333",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-2.jsonl",
+      "sha256": "6d4e540355675fdca01bd5d165e73a50d99e15299b4aac6d55c499b0a4a886d8",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-3.jsonl",
+      "sha256": "22c900fb5f20f9e345f9ccbc00c2d6b987240f5313cccce6baf7fe54e8b1a397",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-4.jsonl",
+      "sha256": "a4714bb9b378a2862c42615fd416bc7f3f0938392a94d3e82f5bc06eb8638548",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-5.jsonl",
+      "sha256": "13bb517c79296187ae1db3275ff49e0181e85f6a171a7ac7d9e9a817d5b3702c",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-6.jsonl",
+      "sha256": "4cfc76363a122dbe4c1255841958b112677b697fb564a57f695ef366e6bb8efe",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-7.jsonl",
+      "sha256": "8ba53d11aa204c84269786edc2b39638f201f60cc2a11ea81258708198f33057",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-8.jsonl",
+      "sha256": "b7368af3b87e93ff2ca4ea4268d2f8b0c8c897662545400965ce115a32d96566",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/sessions/session-9.jsonl",
+      "sha256": "51b0d56296d928b314888b047fb9e20b4c96ebd6d5d25fbf9f9115d31a2d437d",
+      "size": 123,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/shared-pool/support-proof.json",
+      "sha256": "5fafd75c22424fef859252165909634144595fd2ee064ab8fd2abb9b5809a70b",
+      "size": 2247,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/worker-request.json",
+      "sha256": "aff327bc457a34a67b7c8f51268bcfb689c52389a8059c16fc12d8162250c662",
+      "size": 1831,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/worker-result.json",
+      "sha256": "c18c239c1a3417a3f7573d75a443dce30763a7d38cc5562007fcbb05f87190c7",
+      "size": 105459647,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/worker-retention.json",
+      "sha256": "5db431e16bc1233bb28ef94fe4f53715639f31beddf3b26a1bd19133ac895e2d",
+      "size": 378,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "execution/worker-run.json",
+      "sha256": "9eb5969c9f359f8c4f0687e2ca42366ad89da54882a6b19f0d66f31edfa87f71",
+      "size": 1681,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "process-spec.json",
+      "sha256": "0590eca4b0bd6fa90d91381a9e06afc3c9af41dfab13cb0c64bdf579b63ed70f",
+      "size": 5312,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "provider.json",
+      "sha256": "6bc0e2d699ab6d37851232440fce4593e478a90f6e4b54b04a1a4e650c434582",
+      "size": 37002,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "result.json",
+      "sha256": "3fcb690196c2d3ee6d2ae82ff0c5cba11625a166fd7d547a46913e197f072c92",
+      "size": 210923341,
+      "destination_links": 1,
+      "distinct_inode": true
+    },
+    {
+      "path": "scenario.json",
+      "sha256": "fc91c1b8b97fca05f5d75a10bd3697a209484cecc57a6411dc6e4d07ccdeba0a",
+      "size": 18306,
+      "destination_links": 1,
+      "distinct_inode": true
+    }
+  ]
+}

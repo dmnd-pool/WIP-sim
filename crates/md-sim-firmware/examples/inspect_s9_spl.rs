@@ -90,6 +90,7 @@ fn main() -> Result<()> {
         });
     }
     let spec = ProcessSpec {
+        support_virtualization: None,
         schema_version: "2.0".into(),
         private_channel: None,
         stdin_stream: None,

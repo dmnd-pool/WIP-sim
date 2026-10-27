@@ -1,0 +1,25 @@
+{
+  "id": "prjxray-segbits-int-l-db-20261026",
+  "url": "https://raw.githubusercontent.com/f4pga/prjxray-db/master/zynq7/segbits_int_l.db",
+  "kind": "metadata",
+  "title": "Project X-Ray selected S9 reconstruction input segbits_int_l.db",
+  "language": "en",
+  "source_id": "prjxray-segbits-int-l-db-20261026",
+  "license": "CC0-1.0",
+  "retrieved_at": "2026-10-26T17:23:32.816453+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/prjxray-segbits-int-l-db-20261026/segbits_int_l.db",
+  "sha256": "0ea44e8dfaf97ed200f30b2afe117e94e1a68bdb26af2e09e69e855414779520",
+  "size_bytes": 164493,
+  "executed": false,
+  "scope": "supporting-tool",
+  "acquisition": "Bounded public fetch by root agent; original body and response headers retained. Expected file hashes checked against publisher Info.md where available.",
+  "response_headers": {
+    "path": "artifacts/files/metadata/prjxray-segbits-int-l-db-20261026/segbits_int_l.db.headers",
+    "sha256": "b69a21a51a06715bd74e272c750e5a4990eedb80c017768241e4fd4bb196ef1e",
+    "size": 902
+  },
+  "notes": [
+    "Metadata only for selected S9 controller FPGA reconstruction. A matching checksum is not a completed logic, original-board, or physical timing validation."
+  ]
+}

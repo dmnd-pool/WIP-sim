@@ -1,0 +1,46 @@
+{
+  "scope": "Independent root byte/identity check of actual FASM482d and raw frame non-ECC bit set using the same declared frame map. This is not a second packet parser, netlist, timing or firmware gate.",
+  "passed": true,
+  "input_mappings_rehashed": 997,
+  "frames_rehashed": 5144,
+  "original_non_ecc_bits": 327095,
+  "ecc_set_bits": 11859,
+  "raw_frame_bit_digest": "d375439df482fbe33e496cc00e2892dd00bf9fd11b32292544673193653258b2",
+  "full_non_ecc_roundtrip": true,
+  "wall_ms": 29469,
+  "missing_monitor_table_still_unresolved": [
+    {
+      "bus": "CLB_IO_CLK",
+      "reason": "missing_pinned_feature_database",
+      "required_database_type": "MONITOR_BOT_PELE1",
+      "tile": "MONITOR_BOT_PELE1_X67Y79",
+      "tile_type": "MONITOR_BOT_PELE1"
+    }
+  ],
+  "files": {
+    "work/simulator/qemu-s9/fasm-export-482d/assessment.json": {
+      "sha256": "8161bd3dce17341a84932bfb625c48b896abeb82b5127c85272a07d0e9d91219",
+      "size": 3942
+    },
+    "work/simulator/qemu-s9/fasm-export-482d/result.json": {
+      "sha256": "5c909e04126edc607b83d2781de1534706952e177bdd47460e67892e45c5b6fa",
+      "size": 26853188
+    },
+    "work/simulator/qemu-s9/fasm-export-482d/spec.json": {
+      "sha256": "a2428e5d41a019e33c7b389644fd60452c1a35e554f154f1f849b58af436c309",
+      "size": 205386
+    },
+    "work/simulator/qemu-s9/fasm-export-482d/export.json": {
+      "sha256": "6df29390d76051213c9b7bff907628aff4adf287c4cfd7392914d9b589eb1e37",
+      "size": 13425197
+    },
+    "work/simulator/qemu-s9/fasm-export-482d/selected.fasm": {
+      "sha256": "3654907a9bb4de393c8d0a40fab86d2d04555461f2e2b80d1ce5a38c7b3283e4",
+      "size": 4719842
+    },
+    "work/simulator/qemu-s9/fasm-export-482d/comparison-inputs.json": {
+      "sha256": "37b5b19f1b708f19dbdf7619d5fc4427776e6e4428a187259a9b57ffe97a076e",
+      "size": 898
+    }
+  }
+}

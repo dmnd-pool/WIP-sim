@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "scope": "independent review replay from raw session0 using Python standard hashlib and exact rational difficulty; not a new firmware execution or Core result",
+  "audit": {
+    "sha256": "6cb0f1363a702569ebb0411b7b773c5d0134d29e450981c879b6b6fd3c6e959c",
+    "size": 60661
+  },
+  "raw_session": {
+    "sha256": "e74477b482666822ac5f45ee19b3a4fac26e422939d533a4da4905136909ddd8",
+    "size": 5906
+  },
+  "submissions": [
+    {
+      "request_id": 3,
+      "job_id": "1b50f15b4cffce93-0",
+      "wire_line": 9,
+      "hash_display": "1c5d5a21017e0d57efd5a80fde5a88f965b65dcd1d97352361538927bdf0aded",
+      "accepted": true,
+      "pool_target_hex": "7fff800000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 4,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 13,
+      "hash_display": "06024c0b03f2cb77c1040fcdb38fc05c15013f9f48980aad7f7503ab917403e3",
+      "accepted": true,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 5,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 15,
+      "hash_display": "5c688dcf010c136c0a9ba7a3b1a962c0426810b49ab9bcebae797942ca47d051",
+      "accepted": false,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 6,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 17,
+      "hash_display": "1954a54c0037fa3012396467affe95a8238db08ef39c7b34bb41b435640cc784",
+      "accepted": true,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 7,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 19,
+      "hash_display": "134659c301608be621dc66d870977ddf43ca33b7a175995604c3007d261b56c0",
+      "accepted": true,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 8,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 21,
+      "hash_display": "2fed4098010a7909becd3201e1d387be3469b1e074b5f183fa062489edc32612",
+      "accepted": true,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 9,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 23,
+      "hash_display": "1df1506902819f922fae49ec32df5c2fef2ddfe285cd54dd5846ab48dd40388c",
+      "accepted": true,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 10,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 25,
+      "hash_display": "53128ee703e7418969ce5861bae03ca3b931f479758cc894d6389736475e9c81",
+      "accepted": false,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 11,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 27,
+      "hash_display": "7e017d24018b1ee2c7c5276d0e66ef87b808fcfc019241f579e2d246218aa9d2",
+      "accepted": false,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 12,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 29,
+      "hash_display": "64a4044203181d74bc46634beb48928d7ae077e7c0a4d74107ab621747912adc",
+      "accepted": false,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 13,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 31,
+      "hash_display": "4af1185e021d4a72c6e0ad26fb9c566c491ca58b8cdd8954d6375bb3d9e0634c",
+      "accepted": false,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "request_id": 14,
+      "job_id": "1b50f15b4cffce93-1",
+      "wire_line": 33,
+      "hash_display": "69716f2d0009b342f6803570058bcef1ff41bd38a4ff714e1f8481de6ae88de1",
+      "accepted": false,
+      "pool_target_hex": "3fffc00000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "accepted": 6,
+  "low_difficulty": 6,
+  "fresh_jobs": 2,
+  "clean_transition": true,
+  "difficulty_change": true,
+  "computed_hashes_reported_by_rust_audit": 1349,
+  "candidate_hashes": [
+    "1c5d5a21017e0d57efd5a80fde5a88f965b65dcd1d97352361538927bdf0aded",
+    "06024c0b03f2cb77c1040fcdb38fc05c15013f9f48980aad7f7503ab917403e3"
+  ],
+  "core_acceptance": "pending separate review"
+}

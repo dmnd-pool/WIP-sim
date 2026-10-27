@@ -1,0 +1,55 @@
+{
+  "schema": "md-sim-independent-trace-execution-review/1",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "run": "work/simulator/network-vm/kvm-trace-prerequisite-489b",
+  "exit_code": 0,
+  "wall_milliseconds": 1208,
+  "captured_mounts_rehashed": 71,
+  "payload_bytes": 8388608,
+  "payload_sha256": "66aeceb7cdc0f54e97d2bb088ba7b58c73de64c62e55cf946b86db20ed4eec59",
+  "challenge_hex": "735fa052d599543753a153082b44ee69a06f9a6116482426cffc166ec5eab493",
+  "kernel_noise_records": 8,
+  "stderr_redirect_checked": true,
+  "source_and_helper_pins_verified": true,
+  "all_acceptance_gates_preserved": true,
+  "scope": "Actual isolated local KVM support transport and TCP prerequisite. No firmware, native dashboard, worker transport or external physical host acceptance. Failed489 remains failed.",
+  "files": {
+    "work/simulator/network-vm/kvm-trace-prerequisite-489b/process-spec.json": {
+      "sha256": "eab428222c7f08ab221506bbe66d45f3c860065f2c8edf6b2c05aef8c7b3604b",
+      "size": 15095
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489b/result.json": {
+      "sha256": "18dd642f120ae8d279d76e3132570a22fc66a89c4596c4b26b394d5b5343be0a",
+      "size": 16783568
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489b/assessment.json": {
+      "sha256": "dc5244acdf7fcd07aa212529fe55cec30b4c8a28a93f66e7874430c7e4d05844",
+      "size": 1310
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489b/topology.json": {
+      "sha256": "7897a818d9b44f0f02b188850955a39b4dc0297d06e2a7e358004567ad20fe4e",
+      "size": 1638
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489b/guest.log": {
+      "sha256": "8f1e3dda73ba7e744ec49e3338e29e96f4a1b512211844bda08ee09664f86005",
+      "size": 8389409
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489b/backend.log": {
+      "sha256": "fb756bf1e0b200a8d26ca6f280e9b7c1b8301335b3853ada55c02f23af32525a",
+      "size": 972
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489b/root-manifest.json": {
+      "sha256": "ccbbf4683703663954006e501ecc96774ffc044c3a1f436252243b87d876a07f",
+      "size": 896
+    },
+    "work/simulator/trace-tools-489b/inputs.json": {
+      "sha256": "61f3a0d36d9dbd811a042ec465f01cb1054c746ef0f25ef69bae72ddf29d6c66",
+      "size": 2253
+    },
+    "work/simulator/reviews/trace-transport-independent-source-489.json": {
+      "sha256": "0bb3804d77ea5f9488d9975eac0ae900ac23d00826313e55e3fd34321e69adef",
+      "size": 3236
+    }
+  }
+}

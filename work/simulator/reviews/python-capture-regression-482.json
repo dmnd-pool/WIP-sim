@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-10-26T19:18:03.318686+00:00",
+  "passed": true,
+  "oracle_bytes_identical": true,
+  "captured_inputs_identical_except_guard": true,
+  "captured_mounts": 745,
+  "prior_output": {
+    "path": "work/simulator/qemu-s9/feature-oracle-476b/oracle.json",
+    "sha256": "6f45d724bf3561b2d2c8a86c3ac4aa43b66a2e27931b144763f78508892fef60",
+    "size": 1791206
+  },
+  "new_output": {
+    "path": "work/simulator/qemu-s9/feature-oracle-capture482b/oracle.json",
+    "sha256": "6f45d724bf3561b2d2c8a86c3ac4aa43b66a2e27931b144763f78508892fef60",
+    "size": 1791206
+  },
+  "assessment": {
+    "path": "work/simulator/qemu-s9/feature-oracle-capture482b/assessment.json",
+    "sha256": "4ef512e116bcc358c23fb079830eb328ed73dc24f5631b9d78d303a8ed7d1be3",
+    "size": 6554
+  },
+  "spec": {
+    "path": "work/simulator/qemu-s9/feature-oracle-capture482b/spec.json",
+    "sha256": "934cad037796a2d1c2b1251f84f8ce5193d5ee94cc7caf4f0ca084975764b1f9",
+    "size": 155457
+  },
+  "result": {
+    "path": "work/simulator/qemu-s9/feature-oracle-capture482b/result.json",
+    "sha256": "eb01a77bca796ae066979df8407569984b11afc729eb3eb004f6a59fdc0c972e",
+    "size": 3583255
+  },
+  "runner": {
+    "path": "work/simulator/check-target-085/release/examples/s9_feature_oracle",
+    "sha256": "2aac4099557686865a6f0359288deb31d4aac99b006612787444e65f894da356",
+    "size": 2453096
+  },
+  "source": [
+    {
+      "path": "crates/md-sim-firmware/examples/support/python_tool_inputs.rs",
+      "sha256": "1b59a2c7906a2f8ab7ca3580f9e8c586466eede6cb1d43cecca8aec866a6c1f2",
+      "size": 3879
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_feature_oracle.rs",
+      "sha256": "be61ca54c829dddb7b69fa517c0b1ffe0cda7f04d0d323213a01887efc3e6629",
+      "size": 9718
+    }
+  ],
+  "scope": "Shared Python input capture refactor; same independent static predicates. No netlist or firmware execution gate.",
+  "retained_first_failure": "work/simulator/checks-2026-10-26-001/python-capture482-actual.log",
+  "failure_fix": "Removed _datetime from the dynamic module list. It is built into the pinned interpreter; frozen476 used ten dynamic modules."
+}

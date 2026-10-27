@@ -1,0 +1,140 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "cleanup_resume",
+  "status": "no_open_source_finding_execution_pending",
+  "scope": "Pinned unchanged upstream FASM disassembly, format/parser and assembly; Rust semantic comparison and independent non-ECC positive-bit union. Static checks only.",
+  "findings": [],
+  "checks": [
+    "Exact tool profile byte identity binds all source/database/wheel identities before capture; source revision labels alone are insufficient.",
+    "Feature manifest tables, part and tilegrid must match the corresponding tool database objects.",
+    "Original non-ECC set is saved before the upstream disassembler mutates its data argument.",
+    "Every positive Rust predicate must occur in raw upstream names; unknown names and duplicates fail. Formatting may remove only zero-only defaults.",
+    "Parsed formatted names, formatted semantic digest/count, complete original/regenerated non-ECC sets and Rust asserted-bit union digest/count must agree.",
+    "Original checked frame map is reused with its known limitation: no second independent packet parser. ECC and missing-table records remain explicit.",
+    "Only captured inputs enter ordinary isolated execute; no KVM grant, network or host filesystem access is requested. Output truncation, nonzero exit and comparison failure remain failures.",
+    "Reviewed equivalent is_some_and form for canonical-name conflict detection after the initial source review. No semantic change.",
+    "Reviewed explicit _csv capture: unchanged prjxray db imports tile, tile imports lib, and lib imports csv unconditionally. Exact csv.py imports native _csv. The explicit extra uses the existing ELF closure and leaves the default capture unchanged.",
+    "Reviewed post-failure memory fix: hashes are computed before the heavy parse; completed disassembly tuples/data are released; unchanged assembler callback records the actual saved file parser semantics in its existing parse pass; completed frame/database intermediates are released before streamed JSON. All comparison assertions and the1GiB limit remain unchanged.",
+    "Reviewed bounded saved-text parser adapter after482b MemoryError, with whole-file textX allocation as the leading hypothesis. Pinned FasmFile grammar repeats independent FasmLine entries; formatter items containing CR/LF are explicitly rejected before writing, so multiline annotation semantics cannot cross a chunk boundary. Unchanged parser consumes complete <=256KiB line chunks, accumulated unchanged assembler errors remain fatal, and consumed-byte hash/size bind the complete saved text. A fixed155-byte fixture compares full meaningful parsed tuples including annotations/comments/ranges/zero values against whole parsing. All previous predicate and non-ECC bit-set assertions remain unchanged."
+  ],
+  "resolved_review_questions": [
+    {
+      "question": "simplejson decimal fallback requires contextvars",
+      "resolution": "The exact captured Python3.14 reports _contextvars and _datetime as built-in modules. Captured _pydecimal can use built-in contextvars. No extra native module is demonstrated.",
+      "checked_command": "/usr/bin/python3.14 -I -S -B -c 'import sys; print(sys.builtin_module_names)'"
+    },
+    {
+      "question": "textX metadata imports require _csv",
+      "resolution": "Exact Python3.14 importlib.metadata imports csv lazily in Distribution.files(). Selected version()/entry_points() paths do not demonstrate that use. Actual confined imports remain required."
+    },
+    {
+      "question": "Unconditional native CSV dependency",
+      "resolution": "Added only _csv through explicit capture arguments after tracing db -> tile -> lib -> csv. Actual confined execution still required."
+    },
+    {
+      "question": "Initial confined482 exporter ran out of memory while retaining output",
+      "resolution": "Failure is retained. The reviewed482b patch removes redundant object lifetimes and a second parse, and streams JSON; actual execution under the same limits remains required."
+    },
+    {
+      "question": "482b still reports MemoryError under1GiB without an exact failing frame",
+      "resolution": "The whole-file parser was the leading allocation hypothesis. Use a declared bounded complete-line invocation, require the same correctness gates, and retain bounded traceback diagnostics in the next run to establish its actual failing phase."
+    }
+  ],
+  "pending": [
+    "Focused Rust tests and strict Clippy",
+    "Actual confined exporter execution with fresh retained failure evidence if it fails",
+    "Complete independent retained output review after the real run"
+  ],
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/examples/s9_fasm_export.rs",
+      "sha256": "971931ef2fc7685ba127303fb56aeb4065c408b50c0ec667b83a397f188cda40",
+      "size": 12715
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/fasm_comparison.rs",
+      "sha256": "7d14048ef93a7697bad6c72e51e3e518e21dbe7ff34e8d8e400e184879884c7f",
+      "size": 9523
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/fasm_tool_inputs.rs",
+      "sha256": "5b829a0199727e4242b36cf1d33980b6dd37d039751db8676c6fca645c1c5d0e",
+      "size": 5248
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/prjxray_fasm_export.py",
+      "sha256": "50cf35e27f980b0566a6d0761db2465081ff9d28b7c100a6056524a7dbcea469",
+      "size": 10953
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/python_tool_inputs.rs",
+      "sha256": "1b59a2c7906a2f8ab7ca3580f9e8c586466eede6cb1d43cecca8aec866a6c1f2",
+      "size": 3879
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/prjxray_feature_oracle.py",
+      "sha256": "1fcee3ddaad70fa1458259b4b88bd00b828403290869625d37a319d21f50fc5d",
+      "size": 10465
+    },
+    {
+      "path": "simulator/firmware/s9-fasm-tool-inputs.json",
+      "sha256": "87f5648dda7427b5d7a5d97af83c40920ea73f8252f9e94641dc84d057f54839",
+      "size": 74558
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-prjxray-8146f1f/prjxray/fasm_disassembler.py",
+      "sha256": "6efa4ccfdbbcb88d706b44eecb7ee7ceabe1a74f15d1afc987937f33fee92494",
+      "size": 6690
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-prjxray-8146f1f/prjxray/fasm_assembler.py",
+      "sha256": "f17b2e86e7609be8614637798782ec74d39196d40ff1a4a004d9b877419cd019",
+      "size": 6683
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-prjxray-8146f1f/prjxray/db.py",
+      "sha256": "451c0723b0f9be2373db1ed25e803225c223929b7cd04265e8b2be81d3dd07bb",
+      "size": 7791
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-parser-ffafe82/fasm/__init__.py",
+      "sha256": "280131b984ce15c3da6f4deb30526d3fd3479cff1307c2d1978b4174ba6d09c9",
+      "size": 6350
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-parser-ffafe82/fasm/output.py",
+      "sha256": "358d4c79372ffe8ecfaabfcbdc062f5a080b2a3a5f0dcbb6969243944e5602c3",
+      "size": 12632
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-parser-ffafe82/fasm/parser/textx.py",
+      "sha256": "676809d3bacd0c6c444e3147354ea4dd1e092e91b09ce5c6640169280e472167",
+      "size": 5005
+    },
+    {
+      "path": "/usr/lib/python3.14/importlib/metadata/__init__.py",
+      "sha256": "5476c7c22a65f9e8b5a07b799336d87fa70e792758fd95b161b53b530e3b2654",
+      "size": 34091
+    },
+    {
+      "path": "/usr/lib/python3.14/decimal.py",
+      "sha256": "af29fa99aa720a68cab5a6384c7beba4c8e9480a6c1d53a512efeeb5a7e5c781",
+      "size": 2826
+    },
+    {
+      "path": "/usr/lib/python3.14/_pydecimal.py",
+      "sha256": "b9da2f4c7c740b8ff0d9fa57a0c567898569e5ee740b83c8aef7222fe953e103",
+      "size": 229312
+    },
+    {
+      "path": "/usr/lib/python3.14/contextvars.py",
+      "sha256": "cf0d77b49a9cde369bb6fc3e5c3e51658e8878cb9dab64a883b70caa86119007",
+      "size": 198
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-parser-ffafe82/fasm/parser/fasm.tx",
+      "sha256": "f8a2addf3ef7411600ce7255abcbf02bae1fa797bce6da77aec705b79e6d1f64",
+      "size": 1210
+    }
+  ]
+}

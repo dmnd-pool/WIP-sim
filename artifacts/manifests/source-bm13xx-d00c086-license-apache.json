@@ -1,0 +1,26 @@
+{
+  "id": "source-bm13xx-d00c086-license-apache",
+  "url": "https://raw.githubusercontent.com/GPTechinno/bm13xx-rs/d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d/LICENSE-APACHE",
+  "kind": "source",
+  "title": "Pinned BM1397 source reference: LICENSE-APACHE",
+  "language": "en",
+  "source_id": "bm13xx-rust-d00c086bc66e",
+  "license": "MIT OR Apache-2.0",
+  "retrieved_at": "2026-10-26T20:06:31.368203+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-bm13xx-d00c086/LICENSE-APACHE",
+  "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+  "size_bytes": 10850,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "response_headers": {
+    "local_path": "artifacts/files/source/source-bm13xx-d00c086/LICENSE-APACHE.headers",
+    "sha256": "ee4213263ad2ce074fcfd7dc93cbe36a9ca1c77cc6206d90ae0e81e0b7edfbfe",
+    "size_bytes": 901
+  },
+  "git_commit": "d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d",
+  "git_blob_sha1": "11069edd79019f7dafbe3138841cf289209270dd",
+  "notes": [
+    "Source reference only. No exact hardware compatibility, reset-value, physical timing or firmware execution claim."
+  ]
+}

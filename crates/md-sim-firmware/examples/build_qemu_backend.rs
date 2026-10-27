@@ -644,6 +644,13 @@ fn inner() -> Result<()> {
             "--cc=/work/toolchain/usr/bin/gcc --sysroot=/work/toolchain -B/work/toolchain/usr/bin",
             "--cxx=/work/toolchain/usr/bin/g++ --sysroot=/work/toolchain -B/work/toolchain/usr/bin",
         ]);
+        if pool_x86 {
+            config.arg("--enable-kvm");
+            report["support_accelerators"] = json!({
+                "compiled":["tcg","kvm"],
+                "selection":"Explicit runtime policy; no automatic fallback",
+                "scope":"Only the x86 support environment. ARM miner execution and device models are unchanged."});
+        }
         let sanitizer = if ubsan {
             " -fsanitize=undefined -fno-sanitize-recover=all"
         } else {
@@ -1097,6 +1104,7 @@ fn main() -> Result<()> {
         }
     }
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

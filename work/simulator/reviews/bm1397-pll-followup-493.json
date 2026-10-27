@@ -1,0 +1,87 @@
+{
+  "schema": "md-sim-source-comparison/1",
+  "scope": "Read-only preparation for the next original factory boundary. No newly executed firmware or chip clock behavior.",
+  "predicted_next_commands": [
+    {
+      "register": "0x14",
+      "purpose": "ticket mask; already strict register storage",
+      "actual_value": "must be observed from original firmware"
+    },
+    {
+      "register": "0x68",
+      "word": "0xc0700111",
+      "source_line": 224,
+      "purpose": "PLL3; still UnsupportedCommand"
+    },
+    {
+      "register": "0x28",
+      "word": "0x0600000f",
+      "source_line": 227,
+      "purpose": "Fast UART; not reached yet"
+    }
+  ],
+  "conflicts": [
+    {
+      "field": "PLL post divider formula",
+      "archived_ESP": "pll_get_parameters uses refdiv * postdiv1 * postdiv2; BM1397_send_hash_frequency writes both postdiv values directly into the nibbles. Its450MHz source test expects72,2,2,1.",
+      "new_reference": "Pll::frequency divides by(post1_div+1)*(post2_div+1)*(out_div+1). This cannot be imported as a proven BM1397 equation without resolving the conflicting driver representation."
+    },
+    {
+      "field": "PLL locked status",
+      "new_reference": "Pll::set_parameter copies bit31 into locked and vco_freq requires it. This is software state, not proof that a write causes physical lock.",
+      "required_behavior": "Guest-supplied LOCKED bit must not manufacture lock/timing/clock success. Keep current unsupported state until an explicit supported or adapted contract exists."
+    }
+  ],
+  "next_action": [
+    "Execute original probe036 with the reviewed exact core0 write observer. Preserve its actual next command and failed boundary.",
+    "Execute the108-byte original T17 PLL integer-frequency routine as the next independent arithmetic oracle after probe036. Its direct-divisor formula resolves the new generic source conflict only for this driver representation.",
+    "Use separate measured or evidenced clock completion behavior; software delay and field labels do not establish physical timing."
+  ],
+  "files": [
+    {
+      "path": "work/simulator/bitaxe/bm1397-source-002/references.json",
+      "sha256": "3b81998bc500ccd0d509bca8a15199d9f0225fcf7d132dd36bfd4e48fdf08124",
+      "size": 49254
+    },
+    {
+      "path": "work/simulator/bitaxe/bm1397-pll-source-241/references.json",
+      "sha256": "0593a5206afeed3d4a49acfd87b69f4e9351b6f3d22f235365bb253810c51c8e",
+      "size": 66474
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/pll.rs",
+      "sha256": "63064bf5c5938580efd4be85504f8065e3bef84a8f0f7c1d485b198a53e3d192",
+      "size": 13276
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/pll_parameter.rs",
+      "sha256": "0a1d3a6c0d5d4fa2914173ad741d8d98a2b26c5566cb2179636434010459fb0b",
+      "size": 817
+    }
+  ],
+  "original_T17_PLL_ranges": [
+    {
+      "name": "get_pllparam_divider",
+      "start_va": "0x286d0",
+      "end_va_exclusive": "0x28b2c",
+      "size": 1116,
+      "file_offset": 132816,
+      "sha256": "d6277a3f34637940cfbddbdee93ff3acca6fab89ab037abe5f14bd38d441731b",
+      "disassembly": "work/simulator/bm1397-write-intent-493/get_pllparam_divider.a32.txt"
+    },
+    {
+      "name": "pll_word_to_integer_frequency",
+      "start_va": "0x28b2c",
+      "end_va_exclusive": "0x28b98",
+      "size": 108,
+      "file_offset": 133932,
+      "sha256": "650ae97e0c4c042e4e89b91d2bdf995ce29433b0e3f7f8bd47cacd986155f4d7",
+      "disassembly": "work/simulator/bm1397-write-intent-493/pll_word_to_integer_frequency.a32.txt"
+    }
+  ],
+  "original_T17_static_findings": [
+    "0x286d0 accepts target frequency in VFPs0 and output pointers inr0/r1/r2. It computes the direct-divisor equation and packs the same post-divider fields without subtracting1.",
+    "0x28b2c is a108-byte leaf routine that extracts FBDIV12bits, REFDIV6bits and both3-bit post-dividers fromr0, uses low8bits ofr1 as user divider, computes25*FBDIV/REFDIV/(POSTDIV1*POSTDIV2*user_divider) with ARM single-precision instructions, converts to signed integer and returnsr0. It does not inspect PLLEN or LOCKED.",
+    "The leaf routine offers a small next original-code oracle. Copy unchanged bytes at originalVA and call under existing isolated QEMU ARM. Compare legal input results with independent arithmetic and explicit floating-point rounding bounds; preserve zero-divisor/invalid forms as characterization, not valid ASIC clock behavior."
+  ]
+}

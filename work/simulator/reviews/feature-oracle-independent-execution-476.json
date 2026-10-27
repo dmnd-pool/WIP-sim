@@ -1,0 +1,48 @@
+{
+  "schema": "md-sim-independent-feature-oracle-review/1",
+  "reviewer": "root",
+  "passed": true,
+  "pinned_files_verified": 32,
+  "input_manifest": {
+    "sha256": "7063673aa5b97c1f447481489949dc33aedfffd30f7ed3686c0575cb37e70052",
+    "size": 6982
+  },
+  "runs": [
+    {
+      "run": "476",
+      "matched_features": 223128,
+      "segments": 5400,
+      "set_bits_explained": 323417,
+      "unexplained_bits": 3678,
+      "unresolved_segments": 346,
+      "verified_mounts": 724,
+      "oracle": {
+        "sha256": "8eb8ab37aab5af06defd5c3f963890fb464f083a7e30e2c9fb9ceac789c1cdbc",
+        "size": 1750866
+      },
+      "passed": true
+    },
+    {
+      "run": "476b",
+      "matched_features": 231546,
+      "segments": 5745,
+      "set_bits_explained": 327095,
+      "unexplained_bits": 0,
+      "unresolved_segments": 1,
+      "verified_mounts": 746,
+      "oracle": {
+        "sha256": "6f45d724bf3561b2d2c8a86c3ac4aa43b66a2e27931b144763f78508892fef60",
+        "size": 1791206
+      },
+      "passed": true
+    }
+  ],
+  "findings": [],
+  "review_notes": [
+    "First audit command assumed an explicit loopback key; runtime serialization omits false. Corrected read uses the declared default. No product change."
+  ],
+  "limits": [
+    "Independent static predicates over pinned prior frame map only.",
+    "No netlist, monitor behavior, firmware execution, physical timing or exact-target gate."
+  ]
+}

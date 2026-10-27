@@ -1,0 +1,457 @@
+{
+  "schema": "md-sim-fasm-netlist-inputs/1",
+  "converter_revision": "bafbcd8727e0807d6a620d1cf5dd151111c4a322",
+  "fasm_tools": {
+    "path": "simulator/firmware/s9-fasm-tool-inputs-escaped-quotes.json",
+    "object": {
+      "sha256": "d97ec0ffa30bce77cc88655b13d599a6e5610cdb2cd770f503163b06edc8c8d7",
+      "size": 75840
+    }
+  },
+  "inputs": [
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/.gitmodules",
+      "object": {
+        "sha256": "05ce73743e0fd75d1165b9246644ae1bd8f6f5b3ea0bccdfb644149382bc464e",
+        "size": 750
+      },
+      "guest_path": "/converter/.gitmodules"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/LICENSE",
+      "object": {
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "size": 11358
+      },
+      "guest_path": "/converter/LICENSE"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/README.md",
+      "object": {
+        "sha256": "953f0ed3c9e482102b49a8e97a0bff0c94a37c8a7bfec84c718962e6aa2f2dd7",
+        "size": 3245
+      },
+      "guest_path": "/converter/README.md"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/__init__.py",
+      "object": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      "guest_path": "/converter/__init__.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/__main__.py",
+      "object": {
+        "sha256": "e84627a03e7e6522db5ce397659e0e93f56db380919bf2e7a105865e3ef65af3",
+        "size": 739
+      },
+      "guest_path": "/converter/__main__.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/__init__.py",
+      "object": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      "guest_path": "/converter/fasm2bels/__init__.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/__main__.py",
+      "object": {
+        "sha256": "e84627a03e7e6522db5ce397659e0e93f56db380919bf2e7a105865e3ef65af3",
+        "size": 739
+      },
+      "guest_path": "/converter/fasm2bels/__main__.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/database/__init__.py",
+      "object": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      "guest_path": "/converter/fasm2bels/database/__init__.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/database/connection_database.sql",
+      "object": {
+        "sha256": "0bc9364b4fde8f8e9a9883a303f3d607c39f73561187973d6cb2be843d4e411b",
+        "size": 7087
+      },
+      "guest_path": "/converter/fasm2bels/database/connection_database.sql"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/database/connection_database_cache.py",
+      "object": {
+        "sha256": "cd6361653dab50218e340185ee65d22e6ecfd44ea4c0d59d0464ba05fdee99dd",
+        "size": 3088
+      },
+      "guest_path": "/converter/fasm2bels/database/connection_database_cache.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/database/connection_db_utils.py",
+      "object": {
+        "sha256": "307efec8bdc34fbb323dca06dd1a60cfbc2f8d2dae74cd3f0aee9811544aa25f",
+        "size": 3207
+      },
+      "guest_path": "/converter/fasm2bels/database/connection_db_utils.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/database/create_channels.py",
+      "object": {
+        "sha256": "00774a425c7512aa613c290709b368581bf739cb3305b9c9f8377fc23085a5cd",
+        "size": 14400
+      },
+      "guest_path": "/converter/fasm2bels/database/create_channels.py"
+    },
+    {
+      "path": "simulator/tools/fasm2bels/fasm2bels/fasm2bels.py",
+      "object": {
+        "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+        "size": 18573
+      },
+      "guest_path": "/converter/fasm2bels/fasm2bels.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/__init__.py",
+      "object": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      "guest_path": "/converter/fasm2bels/lib/__init__.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/eblif.py",
+      "object": {
+        "sha256": "79731032bb059d6048fd7bc30e2922d829f83907f395b68f1a764ad16d288baa",
+        "size": 2622
+      },
+      "guest_path": "/converter/fasm2bels/lib/eblif.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/interchange.py",
+      "object": {
+        "sha256": "f1ed89b3a74380db848bc4eb96a5c5d0984dd54a03ffd634359042bd2e42fae0",
+        "size": 30654
+      },
+      "guest_path": "/converter/fasm2bels/lib/interchange.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/parse_pcf.py",
+      "object": {
+        "sha256": "45ff94950af33b33a32177df02541c9fccdcb7b30a3f2cdfe74257d22e20903d",
+        "size": 1409
+      },
+      "guest_path": "/converter/fasm2bels/lib/parse_pcf.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/parse_route.py",
+      "object": {
+        "sha256": "c49c9994583fd0ce98a77188a2376759043f85b14d6d1aa2bad2c02d8987344e",
+        "size": 2213
+      },
+      "guest_path": "/converter/fasm2bels/lib/parse_route.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/parse_xdc.py",
+      "object": {
+        "sha256": "c954f13209a11221c10ed04540d9abdab11869e7479926291a0eb5a404cabc4a",
+        "size": 4194
+      },
+      "guest_path": "/converter/fasm2bels/lib/parse_xdc.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/progressbar_utils.py",
+      "object": {
+        "sha256": "9e848922e56f5acf2d8b33d25ee186a54da54688b68d87f656cbc5a287350ab5",
+        "size": 1282
+      },
+      "guest_path": "/converter/fasm2bels/lib/progressbar_utils.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/utils.py",
+      "object": {
+        "sha256": "7f14c7d16edeb23890f7b72eb5df18f021960954da234107cf7b575cb16642e4",
+        "size": 796
+      },
+      "guest_path": "/converter/fasm2bels/lib/utils.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/lib/vpr_io_place.py",
+      "object": {
+        "sha256": "28d9eee2a8facba3aa9e69fcf246c413ab5f8a28fc40bc87b9b5dd64f7f15964",
+        "size": 7026
+      },
+      "guest_path": "/converter/fasm2bels/lib/vpr_io_place.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/make_routes.py",
+      "object": {
+        "sha256": "0ff090d893c352b4548ad0fb940c8d5d3fb4f965cfed9cd46bd3dbed8e7f10c9",
+        "size": 27328
+      },
+      "guest_path": "/converter/fasm2bels/make_routes.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/__init__.py",
+      "object": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      "guest_path": "/converter/fasm2bels/models/__init__.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/bram_models.py",
+      "object": {
+        "sha256": "726d5255751954cc43ef41e8db447e341f809096b454231dc135cc61ced82483",
+        "size": 48332
+      },
+      "guest_path": "/converter/fasm2bels/models/bram_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/clb_models.py",
+      "object": {
+        "sha256": "9714f3cf2d2fad71a8caf62421cbd3adc281e28206cac0008fa0ad5016d67cd3",
+        "size": 73382
+      },
+      "guest_path": "/converter/fasm2bels/models/clb_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/clk_models.py",
+      "object": {
+        "sha256": "5e41d5228b6c283cf9089fa988b1ae3fb13d8dd1032ede05f2b60bf76ba482bf",
+        "size": 10671
+      },
+      "guest_path": "/converter/fasm2bels/models/clk_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/cmt_models.py",
+      "object": {
+        "sha256": "d7286becf5e2d4b297aec8ea1fe34413e50cb2a566de5ef87f8f4237669ff75e",
+        "size": 17231
+      },
+      "guest_path": "/converter/fasm2bels/models/cmt_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/gtp_channel_models.py",
+      "object": {
+        "sha256": "788f5122afe8455fabe859bd4ca4a8b38aaaf8611677d3738168bf574a29777a",
+        "size": 3732
+      },
+      "guest_path": "/converter/fasm2bels/models/gtp_channel_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/gtp_common_models.py",
+      "object": {
+        "sha256": "ff31e3402d031aae2bc9d75b7a7f634754e2cc8ea423655cbf7bad99e4f13c74",
+        "size": 4594
+      },
+      "guest_path": "/converter/fasm2bels/models/gtp_common_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/hclk_ioi3_models.py",
+      "object": {
+        "sha256": "d6eb457e1326744ac3faf476603ae3f36d3f9e613c5ec33864a147f3184e3663",
+        "size": 2235
+      },
+      "guest_path": "/converter/fasm2bels/models/hclk_ioi3_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/iob_models.py",
+      "object": {
+        "sha256": "e2e632407e06d684c3ad39a43ea33a4bc646c28431e96ab04c8e3dd5eadb454a",
+        "size": 27451
+      },
+      "guest_path": "/converter/fasm2bels/models/iob_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/ioi_models.py",
+      "object": {
+        "sha256": "f23a6b1a894d71d7a35ed55a82c87620dd8a91b753f29cd8ca297c5c58526740",
+        "size": 25574
+      },
+      "guest_path": "/converter/fasm2bels/models/ioi_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/pcie_models.py",
+      "object": {
+        "sha256": "2985379682dac9ad891ffa170bf497b631fb92558e886c1084982e8b2374d09b",
+        "size": 2079
+      },
+      "guest_path": "/converter/fasm2bels/models/pcie_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/pss_models.py",
+      "object": {
+        "sha256": "fca5245d36980aea673552e91350de6dddad7846d3f1587d75669eca339d121a",
+        "size": 4009
+      },
+      "guest_path": "/converter/fasm2bels/models/pss_models.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/utils.py",
+      "object": {
+        "sha256": "e3d884e7e2e1e8e416b3e13d8a0cf4ad5c35794089368f13b7085bdac83132fd",
+        "size": 7344
+      },
+      "guest_path": "/converter/fasm2bels/models/utils.py"
+    },
+    {
+      "path": "simulator/tools/fasm2bels/fasm2bels/models/verilog_modeling.py",
+      "object": {
+        "sha256": "0835232d83c50ea24bdd7b43a6236674b9ca545d69ac8574ae1083c0d85068d0",
+        "size": 87997
+      },
+      "guest_path": "/converter/fasm2bels/models/verilog_modeling.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/net_map.py",
+      "object": {
+        "sha256": "99f685f4986ef4f834543eba77463f1e13cdc2cd0d6d9f1bcfe4b27931bb9265",
+        "size": 3092
+      },
+      "guest_path": "/converter/fasm2bels/net_map.py"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/requirements.txt",
+      "object": {
+        "sha256": "e31610609c44cf805a49965369beca910b9c030a3e6f69ac512787c1a8b08499",
+        "size": 210
+      },
+      "guest_path": "/converter/requirements.txt"
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/setup.py",
+      "object": {
+        "sha256": "c59ca06ed7b3287400893cdf79dfea819536f5e991647e9bd6943df458aeafe9",
+        "size": 1627
+      },
+      "guest_path": "/converter/setup.py"
+    }
+  ],
+  "adaptation": {
+    "id": "fasm2bels-lazy-optional-outputs-v1",
+    "component": "fasm2bels optional VPR and interchange imports",
+    "reason": "The selected Verilog/XDC API does not use the four VPR/interchange bindings. Move the existing imports to their existing use sites. This changes import failure and side-effect timing. No converter algorithm, assertion or import statement is removed.",
+    "source_revision": "bafbcd8727e0807d6a620d1cf5dd151111c4a322",
+    "files": [
+      {
+        "parent": {
+          "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+          "object": {
+            "sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+            "size": 18553
+          }
+        },
+        "result": {
+          "path": "simulator/tools/fasm2bels/fasm2bels/fasm2bels.py",
+          "object": {
+            "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+            "size": 18573
+          }
+        },
+        "changes": [
+          {
+            "from": "from rr_graph.capnp import graph2 as capnp_graph2\n",
+            "to": ""
+          },
+          {
+            "from": "from .lib import vpr_io_place\n",
+            "to": ""
+          },
+          {
+            "from": "from .lib.interchange import output_interchange\n",
+            "to": ""
+          },
+          {
+            "from": "    if eblif:\n        io_place = vpr_io_place.IoPlace()",
+            "to": "    if eblif:\n        from .lib import vpr_io_place\n        io_place = vpr_io_place.IoPlace()"
+          },
+          {
+            "from": "    capnp_graph = capnp_graph2.Graph(",
+            "to": "    from rr_graph.capnp import graph2 as capnp_graph2\n    capnp_graph = capnp_graph2.Graph("
+          },
+          {
+            "from": "    if args.logical_netlist:\n        assert args.physical_netlist",
+            "to": "    if args.logical_netlist:\n        from .lib.interchange import output_interchange\n        assert args.physical_netlist"
+          }
+        ]
+      },
+      {
+        "parent": {
+          "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/verilog_modeling.py",
+          "object": {
+            "sha256": "36e791fc75dccd2a8b1510d64ca71057ff68389d49ebaadf6892747f405495fb",
+            "size": 87988
+          }
+        },
+        "result": {
+          "path": "simulator/tools/fasm2bels/fasm2bels/models/verilog_modeling.py",
+          "object": {
+            "sha256": "0835232d83c50ea24bdd7b43a6236674b9ca545d69ac8574ae1083c0d85068d0",
+            "size": 87997
+          }
+        },
+        "changes": [
+          {
+            "from": "from ..lib.interchange import create_site_routing\n",
+            "to": ""
+          },
+          {
+            "from": "        # Convert site_routing tree into Physical* object tree.\n",
+            "to": "        from ..lib.interchange import create_site_routing\n\n        # Convert site_routing tree into Physical* object tree.\n"
+          }
+        ]
+      }
+    ],
+    "patch": {
+      "path": "simulator/tools/fasm2bels/lazy-optional-outputs.patch",
+      "object": {
+        "sha256": "8a6cdbc2932019f6df40ad4d1e65179520a2b4df48bae87d0ba3e68fe69aed69",
+        "size": 2404
+      }
+    }
+  },
+  "export": {
+    "assessment": {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/assessment.json",
+      "object": {
+        "sha256": "8161bd3dce17341a84932bfb625c48b896abeb82b5127c85272a07d0e9d91219",
+        "size": 3942
+      }
+    },
+    "summary": {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/export.json",
+      "object": {
+        "sha256": "6df29390d76051213c9b7bff907628aff4adf287c4cfd7392914d9b589eb1e37",
+        "size": 13425197
+      }
+    },
+    "comparison_inputs": {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/comparison-inputs.json",
+      "object": {
+        "sha256": "37b5b19f1b708f19dbdf7619d5fc4427776e6e4428a187259a9b57ffe97a076e",
+        "size": 898
+      }
+    },
+    "fasm": {
+      "path": "work/simulator/qemu-s9/fasm-export-482d/selected.fasm",
+      "object": {
+        "sha256": "3654907a9bb4de393c8d0a40fab86d2d04555461f2e2b80d1ce5a38c7b3283e4",
+        "size": 4719842
+      }
+    }
+  },
+  "expected": {
+    "part": "xc7z010clg400-1",
+    "configuration_sha256": "49d0faa400fbc8bed3f3e651da2c6da5f3184a08f942ec95db59c2526dcbea78",
+    "non_ecc_bits_sha256": "d375439df482fbe33e496cc00e2892dd00bf9fd11b32292544673193653258b2",
+    "non_ecc_set_bits": 327095,
+    "formatted_features": 219702,
+    "formatted_names_sha256": "a1d84b29b9b0cc8029b02008698e4489b0203618f44b2daba1dfde5ddd3a2f8d",
+    "unknown_ecc_bits": 11859
+  },
+  "parser_adaptation": "Reuse the checked bounded complete-line FASM parser API on the exact previously round-trip-verified file. Validate all canonical feature names before supplying original parsed tuples to the unchanged converter. Only the selected filename is allowed, once; no feature is added or skipped.",
+  "scope": "Static primitive-netlist conversion only. The missing monitor table remains unresolved. Conversion is not HDL simulation, physical timing, FPGA build identity, original-board boot or exact-target acceptance."
+}

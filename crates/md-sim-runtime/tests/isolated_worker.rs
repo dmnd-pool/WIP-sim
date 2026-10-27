@@ -43,11 +43,67 @@ fn input_closure(store: &Store, programs: &[&str]) -> Vec<Mount> {
 }
 
 #[test]
+fn guest_process_bound_is_preserved_when_host_uid_exceeds_it() {
+    struct OwnedProcesses(Vec<std::process::Child>);
+    impl Drop for OwnedProcesses {
+        fn drop(&mut self) {
+            for child in &mut self.0 {
+                let _ = child.kill();
+                let _ = child.wait();
+            }
+        }
+    }
+    let mut owned = OwnedProcesses(Vec::new());
+    for _ in 0..24 {
+        owned.0.push(
+            std::process::Command::new("/usr/bin/sleep")
+                .arg("30")
+                .spawn()
+                .unwrap(),
+        );
+    }
+    let tmp = tempfile::tempdir().unwrap();
+    let store = Store::open(&tmp.path().join("store"), 16 << 20).unwrap();
+    let mut spec = ProcessSpec {
+        support_virtualization: None,
+        private_channel: None,
+        stdin_stream: None,
+        namespace_uid: 0,
+        schema_version: "2.0".into(),
+        argv: vec!["/usr/bin/sh".into(), "-c".into(),
+            "test ! -e /home/user && test ! -e /etc/passwd && /usr/bin/true && while read a b soft hard rest; do if [ \"$a $b\" = 'Max processes' ]; then test \"$soft\" = 16 && test \"$hard\" = 16 || exit 2; echo limit-16; fi; done < /proc/self/limits".into()],
+        inputs: input_closure(&store, &["/usr/bin/sh", "/usr/bin/true"]),
+        stdin_object: None,
+        environment: BTreeMap::new(),
+        loopback: false,
+        dashboard: None,
+        limits: Limits { processes: 16, ..Limits::default() },
+    };
+    for uid in [0, 1000] {
+        spec.namespace_uid = uid;
+        let result = execute(&store, &spec, Arc::new(AtomicBool::new(false))).unwrap();
+        assert_eq!(
+            result.exit_code,
+            Some(0),
+            "{}",
+            String::from_utf8_lossy(&hex::decode(&result.stderr).unwrap())
+        );
+        assert_eq!(hex::decode(result.stdout).unwrap(), b"limit-16\n");
+        assert!(!result.trace_truncated);
+        assert_eq!(
+            result.tools["prlimit"],
+            hash_file(std::path::Path::new("/usr/bin/prlimit")).unwrap()
+        );
+    }
+}
+
+#[test]
 fn nonroot_namespace_identity_keeps_isolation_and_the_default_wire_contract() {
     let tmp = tempfile::tempdir().unwrap();
     let store = Store::open(&tmp.path().join("store"), 16 << 20).unwrap();
     let inputs = input_closure(&store, &["/usr/bin/sh", "/usr/bin/id"]);
     let mut spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None, stdin_stream: None,
         namespace_uid: 0,
         schema_version: "2.0".into(),
@@ -95,6 +151,7 @@ fn isolated_process_has_only_locked_inputs_and_bounded_trace() {
     let store = Store::open(&tmp.path().join("store"), 16 * 1024 * 1024).unwrap();
     let inputs = input_closure(&store, &["/usr/bin/sh"]);
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None, stdin_stream: None,
         namespace_uid: 0,
         dashboard: None,
@@ -152,6 +209,7 @@ fn immutable_stdin_is_a_pipe_and_delivers_exact_binary_bytes() {
     let object = hash_file(&source).unwrap();
     store.import(&source, &object).unwrap();
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -187,6 +245,7 @@ fn streamed_stdin_is_a_bounded_recorded_pipe_and_legacy_execution_stays_closed()
     let tmp = tempfile::tempdir().unwrap();
     let store = Store::open(&tmp.path().join("store"), 16 << 20).unwrap();
     let mut spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: Some(StdinStream {
             protocol: "test-receipt/1".into(),
@@ -254,6 +313,7 @@ fn unread_or_idle_streamed_stdin_cannot_hold_the_namespace_after_timeout() {
     let tmp = tempfile::tempdir().unwrap();
     let store = Store::open(&tmp.path().join("store"), 16 << 20).unwrap();
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: Some(StdinStream {
             protocol: "test-receipt/1".into(),
@@ -301,6 +361,7 @@ fn unread_stdin_does_not_prevent_timeout_or_cancellation() {
     let object = hash_file(&source).unwrap();
     store.import(&source, &object).unwrap();
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -347,6 +408,7 @@ fn execution_token_survives_reconnect_restart_and_acknowledged_cleanup() {
     drop(worker_store);
     let token = "a1".repeat(32);
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -503,6 +565,7 @@ fn connected_ipc_transfers_reconnects_cancels_and_retains_results() {
         .unwrap();
     }
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -655,6 +718,7 @@ fn connected_ipc_transfers_reconnects_cancels_and_retains_results() {
     // bytes in bounded chunks, then check its independently read identity.
     let line = "x".repeat(128);
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -737,6 +801,7 @@ fn timeout_releases_the_namespace() {
     let tmp = tempfile::tempdir().unwrap();
     let store = Store::open(tmp.path(), 16 * 1024 * 1024).unwrap();
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -763,6 +828,7 @@ fn completed_namespace_drops_descendant_pipe_descriptors() {
     let tmp = tempfile::tempdir().unwrap();
     let store = Store::open(tmp.path(), 16 * 1024 * 1024).unwrap();
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -799,6 +865,7 @@ fn worker_admission_preserves_budget_across_restart_and_cleanup() {
         ..WorkerLimits::default()
     };
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
@@ -875,6 +942,7 @@ fn supervisor_loss_terminates_its_live_namespace() {
         let root = PathBuf::from(root);
         let store = Store::open(&root.join("store"), 16 * 1024 * 1024).unwrap();
         let spec = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,
@@ -1061,6 +1129,7 @@ fn active_run_reserves_unwritten_evidence_bytes() {
         ..WorkerLimits::default()
     };
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

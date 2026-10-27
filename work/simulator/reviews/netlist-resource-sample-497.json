@@ -1,0 +1,24 @@
+{
+  "unix_time": 1793048085.5961673,
+  "scope": "One live read-only process sample. VmHWM is kernel process high-water mark at this time; not a final aggregate memory measurement.",
+  "command": "/usr/bin/python3.14 -I -S -B /convert.py ",
+  "status": {
+    "Name": "python3.14",
+    "State": "R (running)",
+    "Pid": "852617",
+    "PPid": "852616",
+    "NSpid": "852617\t189\t2",
+    "VmPeak": "2028092 kB",
+    "VmSize": "391032 kB",
+    "VmHWM": "2005356 kB",
+    "VmRSS": "383892 kB",
+    "RssAnon": "368972 kB",
+    "RssFile": "14920 kB",
+    "RssShmem": "0 kB",
+    "Threads": "1",
+    "NoNewPrivs": "1",
+    "Seccomp": "2"
+  },
+  "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              600                  600                  seconds   \nMax file size             1073741824           1073741824           bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        0                    0                    bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             16                   16                   processes \nMax open files            256                  256                  files     \nMax locked memory         unlimited            unlimited            bytes     \nMax address space         4294967296           4294967296           bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       385088               385088               signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     99                   99                   \nMax realtime timeout      unlimited            unlimited            us        \n",
+  "stat": "852617 (python3.14) R 852616 852616 852616 0 -1 4194304 652060 0 0 0 5112 113 0 0 20 0 1 0 244574895 400416768 95213 18446744073709551615 94566328188928 94566328189241 140724504142048 0 0 0 0 16781312 8194 0 0 0 17 11 0 0 0 0 0 94566328200632 94566328201232 94567102316544 140724504145841 140724504145882 140724504145882 140724504145892 0\n"
+}

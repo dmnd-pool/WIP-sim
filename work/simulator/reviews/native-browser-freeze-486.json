@@ -1,0 +1,186 @@
+{
+  "schema": "md-sim-native-browser-freeze/1",
+  "date": "2026-10-26",
+  "scope": "Final source/helper/prepared-input freeze for selected run487. Execution and browser acceptance are pending.",
+  "sources_verified": 509,
+  "release_helpers_verified": 12,
+  "native_input_mappings_verified": 46,
+  "workspace_baseline_checks": {
+    "formatting": "pass",
+    "strict_clippy": "pass",
+    "suites": 115,
+    "passed": 1009,
+    "failed": 0,
+    "ignored_declared_entries": 48,
+    "note": "Full tests and final formatting/Clippy include both missed compact ProcessSpec constructor fixes. Explicit host KVM and retained479 reader executions are pinned separately."
+  },
+  "firmware": "Braiins S9 2022-04-29-0-5eb2c5fe-22.02.4-plus; original SD image; adapted reference environment",
+  "input_files": {
+    "work/simulator/core-checkpoint-486/manifest.json": {
+      "sha256": "72df953d01b2eab6b605e28d4e518973b104a5377c49506af4f1f832dd3799b2",
+      "size": 86371
+    },
+    "work/simulator/channel-target-486/SHA256SUMS": {
+      "sha256": "eb4cfdf987ee308ec6c81b2bff4e3f4f6108ec426534a511757914c34adc41c7",
+      "size": 1189
+    },
+    "work/simulator/channel-target-486/shared-pool.json": {
+      "sha256": "cdddbecf23b2155a2fb2a831588c0f790a85daceecdce05c1a749fc61ab364a9",
+      "size": 930
+    },
+    "work/simulator/channel-target-486/carrier-dashboard.json": {
+      "sha256": "e93048d17994f991b14f8c9f72957126983cc71a4a95eec6758874eccad512e2",
+      "size": 489
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-486/process-spec.json": {
+      "sha256": "a90bda97da7a98174502a756a5c682941e9dceb46aca7f9f60d0ac014c00ffbf",
+      "size": 11264
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-486/adaptation.json": {
+      "sha256": "41902b7ca86435e49ff7580b1349ace61176dd93ef9588eea6ee58ea97097bb5",
+      "size": 19553
+    },
+    "work/simulator/network-vm/native-driver-024/payload.json": {
+      "sha256": "e0bbf3d513f489df55b8838dc2b972a1340d27c4ba2e7fddf25d6336ddafc9a5",
+      "size": 1729217
+    },
+    "work/simulator/qemu-s9/backend-build-343-ubsan/build-report.json": {
+      "sha256": "37e935d23b6d80376c782645174fb42fb37f7bb926b928987acac1aa0c1b2226",
+      "size": 2668873
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/build-report.json": {
+      "sha256": "72b57d50537e15e8403717b00db3cee0548abb64abd436644c88f285ff520b8c",
+      "size": 2458312
+    },
+    "work/simulator/qemu-s9/backend-build-485-pool-kvm/qemu-system-x86_64": {
+      "sha256": "06f21bb63d603b323f36f772c8b288cb044df68e8db88bac46b1f86ae1ff66d6",
+      "size": 20082048
+    },
+    "work/simulator/reviews/native-browser-failure-469.json": {
+      "sha256": "845753db6e3e4393a6f987f45d1849bee9cf4d64f1d40c865cf08d37d7572c07",
+      "size": 4992
+    },
+    "work/simulator/reviews/native-browser-failure-479.json": {
+      "sha256": "b4e75fc25b489628408a4741fe842eb8ac83fa6161a607a81eb1ae901a94c3bd",
+      "size": 9467
+    },
+    "work/simulator/reviews/browser-clock-enforcement-483.json": {
+      "sha256": "9d5cc274817aa940fbe2bdbca58a3d9f9f35a8b6bffc55a3223fe2de56cf9335",
+      "size": 3643
+    },
+    "work/simulator/reviews/support-kvm-independent-484.json": {
+      "sha256": "6999975a7715f295217b9ab41c83b430e0d1a9c1a162d622f2e6da7610e58193",
+      "size": 6062
+    },
+    "work/simulator/reviews/kvm-boot-build-independent-485.json": {
+      "sha256": "b83f154ceae2f85e7aa666713afdb8b5295605cee1c3555524c2efbf2da4c31d",
+      "size": 2789
+    },
+    "work/simulator/reviews/shared-cli-independent-488.json": {
+      "sha256": "d3f979e6758c44f9396171591e4189eba6b0572f702c5d66aa4f62fa1433f722",
+      "size": 2355
+    },
+    "work/simulator/reviews/python-capture-regression-482.json": {
+      "sha256": "b0e1fe8c1bd32970a11932f5c8162631885126130d3f9bf5ddc67d2d2370adb5",
+      "size": 2147
+    },
+    "work/simulator/checks-2026-10-26-001/common486-bins.log": {
+      "sha256": "e34a966cb9371c1a02c08d17a59941f415c1af1a469a858bd7d3cdb1e3b32555",
+      "size": 460
+    },
+    "work/simulator/checks-2026-10-26-001/common486-checkpoint.log": {
+      "sha256": "2154c7cfa16426840f0ea3794ea943df86e31b9b58e0a67553367fbd2b66db08",
+      "size": 48
+    },
+    "work/simulator/checks-2026-10-26-001/common486-clippy.log": {
+      "sha256": "ad256cf692c3571e82c0e6ee4a6fc8ff89ddfa0d1da55599b7f9dc83d4201f2f",
+      "size": 926
+    },
+    "work/simulator/checks-2026-10-26-001/common486-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-26-001/common486-helpers.log": {
+      "sha256": "31a219c08575ac1dae9d481eb1547cf6b4c0290e13565df921ce0e487f4a552b",
+      "size": 146
+    },
+    "work/simulator/checks-2026-10-26-001/common486-preparation.log": {
+      "sha256": "03c14733ff1810e9f944dd50fdcdbad9040a22cab510a83a85fcd550923922c5",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-26-001/common486-tests.log": {
+      "sha256": "043c6253d689ca2de823828bfd6795359a2bbf2096ba527a978e85e5daffc3b4",
+      "size": 1089
+    },
+    "work/simulator/checks-2026-10-26-001/common486b-clippy.log": {
+      "sha256": "97aacd59829b0153d9fcc205738fd35d8397b62d26aacd3f53ab123164d52f85",
+      "size": 396
+    },
+    "work/simulator/checks-2026-10-26-001/common486b-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-26-001/common486b-tests.log": {
+      "sha256": "26c5544c604c01b161be828876ed00b73600d0bc65eceb9867ee66c560d7e855",
+      "size": 126127
+    },
+    "work/simulator/checks-2026-10-26-001/common486c-clippy.log": {
+      "sha256": "2ad5289750fcde0f854564b0502b56e4bad743a89eac2db4942931823d69e348",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-26-001/common486c-fmt.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484e-root-actual.log": {
+      "sha256": "2d87239110ed2d1fd483543f9a42be173632633d044a29c9fb1028ef1e0e2900",
+      "size": 194
+    },
+    "work/simulator/checks-2026-10-26-001/cli488-retained479.log": {
+      "sha256": "be99e1e6b4ab9cbfb825b92dbfda1d71e5863eca980006a64ca4c686110e20cc",
+      "size": 365
+    }
+  },
+  "retained_failed_runs": [
+    "453",
+    "457b",
+    "469",
+    "479",
+    "kvm-prerequisite-484",
+    "kvm-prerequisite-484b"
+  ],
+  "native_limits": {
+    "wall_seconds": 360,
+    "cpu_seconds": 330,
+    "memory_bytes": 3221225472,
+    "pool_seconds": 300,
+    "observation_seconds": 305,
+    "hash_cap_hps": 10,
+    "fixed_filter_bits": 1
+  },
+  "support_browser_policy": {
+    "before_worker_dispatch": true,
+    "preparation_seconds": 650,
+    "profiles": 2,
+    "per_profile_startup_seconds": 300,
+    "qemu_vcpus": 2,
+    "qemu_guest_memory_mib": 4096,
+    "outer_memory_gib": 6,
+    "verification_order": "primary-checks-then-fresh-profile-isolation",
+    "graph_phase_evidence": "Bounded query SHA-256, phase and timing console records; no query text or credentials.",
+    "qemu_accelerator": "kvm",
+    "qemu_cpu": "Nehalem-v1,enforce",
+    "automatic_accelerator_fallback": false,
+    "cache_eligible": false,
+    "native_clock_policy": "Locked native ProcessSpec MD_SIM_S9_HOST_REALTIME_CLOCK=1; both live and retained checks require all uptime samples within the browser request interval plus/minus5000ms."
+  },
+  "run_output": "work/simulator/network-vm/native-browser-487",
+  "command": "work/simulator/channel-target-486/release/examples/worker_channel_probe work/simulator/channel-target-486/release/md-sim-worker-ipc work/simulator/qemu-s9/backend-build-485-pool-kvm work/simulator/network-vm/native-browser-487 prepared=work/simulator/qemu-s9/native-browser-prepared-486 ssh-helper=work/simulator/channel-target-486/release/examples/remote_namespace_check ssh-browser-payload=work/simulator/network-vm/native-driver-024/payload.json support-accel=kvm",
+  "limits": [
+    "Native backend343 remains its separately pinned build. Support backend485 was separately rebuilt with KVM and UBSan from recorded inputs.",
+    "Ignored helper entries are not execution passes. Explicit host KVM and actual retained-reader checks have separate logs.",
+    "The clock adaptation requires actual original guest date/readback and both browser-origin comparisons. These are not inferred from preparation.",
+    "The support accelerator and host receipt join the complete native identity. Neither grants reuse based only on the native lock.",
+    "No original-board, exact physical target, remote physical-host or full-matrix pass is claimed."
+  ]
+}

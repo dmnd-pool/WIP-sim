@@ -17,6 +17,10 @@ use std::{
 #[allow(dead_code)]
 #[path = "../src/confinement.rs"]
 mod confinement;
+#[path = "support/t17_core0_oracle.rs"]
+mod core0;
+#[path = "support/t17_pll_oracle.rs"]
+mod pll;
 #[path = "support/t17_readback_oracle.rs"]
 mod readback;
 const MINER_SHA: &str = "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367";
@@ -26,10 +30,10 @@ const LINKER_SHA: &str = "4739514e3484915747c34b35007cd990235cc6b490b2d0525a61ac
 const LLVM_NAME: &str = "libLLVM.so.23.1-rust-1.99.0-stable";
 const LLVM_SHA: &str = "7c2c7ebb79211f07e3b32e408a1a65b4d205656792f9c51bdbefcb21c0868cbd";
 
-fn run(program: &str, args: &[&str], name: &str) -> Result<()> {
+fn run(program: &str, args: &[&str], name: &str, stdout_limit: usize) -> Result<()> {
     let result = Command::new(program).args(args).output()?;
     ensure!(
-        result.stdout.len() <= 1 << 20 && result.stderr.len() <= 1 << 20,
+        result.stdout.len() <= stdout_limit && result.stderr.len() <= 1 << 20,
         "oracle tool output bound"
     );
     fs::write(format!("/work/{name}.stdout"), result.stdout)?;
@@ -42,7 +46,8 @@ fn run(program: &str, args: &[&str], name: &str) -> Result<()> {
     Ok(())
 }
 
-fn inside(readback_mode: bool) -> Result<()> {
+fn inside(readback_mode: bool, core0_mode: bool, pll_mode: bool) -> Result<()> {
+    let fixed_addresses = readback_mode || core0_mode || pll_mode;
     confinement::require_arm_protocol_oracle()?;
     ensure!(
         hash_file(Path::new("/miner"))?
@@ -52,15 +57,26 @@ fn inside(readback_mode: bool) -> Result<()> {
             },
         "vendor executable differs"
     );
-    let driver = if readback_mode {
+    let driver = if pll_mode {
+        pll::DRIVER
+    } else if core0_mode {
+        core0::DRIVER
+    } else if readback_mode {
         readback::DRIVER
     } else {
         DRIVER
     };
     ensure!(fs::read("/oracle.c")? == driver, "oracle wrapper differs");
-    if readback_mode {
+    if fixed_addresses {
         ensure!(
-            fs::read("/oracle.ld")? == readback::LINK_SCRIPT,
+            fs::read("/oracle.ld")?
+                == if pll_mode {
+                    pll::LINK_SCRIPT
+                } else if core0_mode {
+                    core0::LINK_SCRIPT
+                } else {
+                    readback::LINK_SCRIPT
+                },
             "oracle link script differs"
         );
         ensure!(
@@ -70,10 +86,17 @@ fn inside(readback_mode: bool) -> Result<()> {
     }
     let mut function_copies = Vec::new();
     let mut readback_cases = Vec::new();
+    let mut core0_summary = serde_json::Value::Null;
+    let mut pll_summary = serde_json::Value::Null;
     let result = (|| -> Result<usize> {
-        run("/tools/clang", &["--version"], "compiler-version")?;
-        run(LINKER, &["--version"], "linker-version")?;
-        run("/tools/qemu-arm", &["--version"], "emulator-version")?;
+        run("/tools/clang", &["--version"], "compiler-version", 1 << 20)?;
+        run(LINKER, &["--version"], "linker-version", 1 << 20)?;
+        run(
+            "/tools/qemu-arm",
+            &["--version"],
+            "emulator-version",
+            1 << 20,
+        )?;
         let mut compile_args = vec![
             "--target=armv7a-linux-gnueabi",
             "-march=armv7-a",
@@ -99,11 +122,11 @@ fn inside(readback_mode: bool) -> Result<()> {
             "-o",
             "/work/oracle",
         ];
-        if readback_mode {
+        if fixed_addresses {
             compile_args.push("-Wl,-T,/oracle.ld,-z,max-page-size=4096");
             save_json(Path::new("/work/compile-arguments.json"), &compile_args)?;
         }
-        run("/tools/clang", &compile_args, "compile")?;
+        run("/tools/clang", &compile_args, "compile", 1 << 20)?;
         ensure!(
             fs::metadata("/work/compile.stderr")?.len() == 0,
             "compiler diagnostic output must be reviewed"
@@ -112,7 +135,7 @@ fn inside(readback_mode: bool) -> Result<()> {
         let original = fs::read("/miner")?;
         for (name, start) in [("read", 117936), ("write", 118000)]
             .into_iter()
-            .filter(|_| !readback_mode)
+            .filter(|_| !fixed_addresses)
         {
             let bytes = &original[start..start + 64];
             let offsets: Vec<_> = executable
@@ -171,8 +194,12 @@ fn inside(readback_mode: bool) -> Result<()> {
                 });
             }
         }
-        if readback_mode {
+        if pll_mode {
+            function_copies = pll::verify_copies(&executable, &original, &segments)?;
+        } else if readback_mode {
             function_copies = readback::verify_copies(&executable, &original, &segments)?;
+        } else if core0_mode {
+            function_copies = core0::verify_copies(&executable, &original, &segments)?;
         }
         // QEMU11.1.2 reserves the full ARM range, including its high helper
         // page. The separate6GiB address-space bound permits that reservation.
@@ -180,10 +207,17 @@ fn inside(readback_mode: bool) -> Result<()> {
             "/tools/qemu-arm",
             &["-s", "1048576", "/work/oracle"],
             "execution",
+            if core0_mode { 3 << 20 } else { 1 << 20 },
         )?;
         let bytes = fs::read("/work/execution.stdout")?;
-        if readback_mode {
+        if pll_mode {
+            pll_summary = pll::verify_output(&bytes)?;
+            return Ok(bytes.len() / 4);
+        } else if readback_mode {
             readback_cases = readback::verify_output(&bytes)?;
+            return Ok(bytes.len() / 4);
+        } else if core0_mode {
+            core0_summary = core0::verify_output(&bytes)?;
             return Ok(bytes.len() / 4);
         }
         ensure!(
@@ -220,7 +254,16 @@ fn inside(readback_mode: bool) -> Result<()> {
         }
     };
     let mut report = json!({"schema":"md-sim-vendor-core-packing-oracle/1","passed":result.is_ok(),"error":result.as_ref().err().map(|e|format!("{e:#}")),"computed_words":result.as_ref().ok(),"original_function_copies":function_copies,"oracle_executable":optional_object("oracle")?,"output_words":optional_object("execution.stdout")?,"input_order":{"read":{"outer_core_range_exclusive":[0,1024],"inner_register_range_exclusive":[0,32]},"write":{"outer_register_range_exclusive":[0,32],"inner_value_range_exclusive":[0,512]},"word_encoding":"little-endian u32; all read cases followed by all write cases"},"wrapper_ubsan":"undefined-behavior traps; original instruction bytes are not instrumented","vendor_miner":hash_file(Path::new("/miner"))?,"wrapper":hash_file(Path::new("/oracle.c"))?,"scope":"Two original ARM routines execute under captured QEMU ARM in an adapted test ELF. No original-board boot, complete miner execution, ASIC behavior, nonce or mining pass is claimed."});
-    if readback_mode {
+    if pll_mode {
+        report["schema"] = json!("md-sim-vendor-pll-frequency-oracle/1");
+        report["input_order"] = json!({"word_encoding":"little-endian u32; four header words, then case ID, register word, divider argument and original integer result per case"});
+        report["summary"] = pll_summary;
+        report["link_script"] = json!(hash_file(Path::new("/oracle.ld"))?);
+        report["abi_header"] = json!(hash_file(Path::new("/oracle-abi.h"))?);
+        report["compile_arguments"] = json!(optional_object("compile-arguments.json")?);
+        report["adaptations"] = json!({"caller_inputs":"controlled register words and nonzero encoded divisors", "execution":"original108-byte function at original virtual address in static ARM ABI wrapper", "floating_point":"captured QEMU ARM default single-precision environment; no physical clock model"});
+        report["scope"] = json!("Original T17 frequency arithmetic instructions execute unchanged. No PLL lock, timing, readiness, actual clock output, original-board or mining gate is claimed.");
+    } else if readback_mode {
         report["schema"] = json!("md-sim-vendor-core-readback-oracle/1");
         report["input_order"] = json!({"word_encoding":"little-endian u32; four header words and eight cases of24 words",
             "expectation_basis":"t17-readback-vectors-442.json and exact retained collector disassembly",
@@ -234,6 +277,22 @@ fn inside(readback_mode: bool) -> Result<()> {
             "delay_callbacks":"record requests1 and300 without sleeping; no physical timing claim",
             "division":"exact original nonzero-divisor path; zero-divisor behavior is outside this oracle"});
         report["scope"] = json!("Original collector and division instructions execute at their original virtual addresses in an adapted ARM test ELF. Software FOUND and returned data are checked separately. No ASIC effects, readiness, original-board boot, full miner execution or mining pass is claimed.");
+    } else if core0_mode {
+        report["schema"] = json!("md-sim-vendor-core0-formatter-oracle/1");
+        report["input_order"] = json!({"word_encoding":"little-endian u32; four header words, then ten metadata words and bounded six-word callback records per case",
+            "exhaustive_order":"data0..255, reported core[0,1,511,512,65535], middle byte[0,255], found[0,1]",
+            "explicit_raw_words":[0,0x74u32,0x01230074u32,0xabcdff74u32,0xffffffffu32,0x10008u32,0x10004u32,0xdeadbeefu32],
+            "control_order":"debug[0,3,4,5], secondary[0,1], open failure mask0..3, found[0,255]",
+            "expectation_basis":"t17-readback-vectors-442.json and exact retained formatter disassembly"});
+        report["summary"] = core0_summary;
+        report["link_script"] = json!(hash_file(Path::new("/oracle.ld"))?);
+        report["abi_header"] = json!(hash_file(Path::new("/oracle-abi.h"))?);
+        report["compile_arguments"] = json!(optional_object("compile-arguments.json")?);
+        report["adaptations"] = json!({"stdio_callbacks":"bounded argument capture with explicit open success/failure; no actual log filesystem",
+            "caller_data":"controlled raw register word and independent software found byte; no hardware response",
+            "globals":"explicit debug and optional secondary-log settings",
+            "null_fclose":"recorded vendor call after fopen failure; does not invoke libc fclose"});
+        report["scope"] = json!("Original core0 formatter and literals execute at original virtual addresses in an adapted ARM test ELF. No ASIC write effects, reset values, readiness, original-board boot or mining pass is claimed.");
     }
     fs::write("/work/assessment.json", serde_json::to_vec_pretty(&report)?)?;
     let mut archive = tar::Builder::new(std::io::stdout());
@@ -265,16 +324,25 @@ fn main() -> Result<()> {
     let args: Vec<_> = std::env::args_os().collect();
     if args.get(1).is_some_and(|a| a == "__inside") {
         ensure!(
-            args.len() == 2 || (args.len() == 3 && args[2] == "readback"),
+            args.len() == 2
+                || (args.len() == 3
+                    && (args[2] == "readback" || args[2] == "core0" || args[2] == "pll-frequency")),
             "invalid inner oracle mode"
         );
-        return inside(args.len() == 3);
+        return inside(
+            args.get(2).is_some_and(|a| a == "readback"),
+            args.get(2).is_some_and(|a| a == "core0"),
+            args.get(2).is_some_and(|a| a == "pll-frequency"),
+        );
     }
     ensure!(
-        args.len() == 4 || (args.len() == 5 && args[4] == "--readback"),
-        "usage: t17_core_oracle EXTRACTED_MINER RUST_LLD NEW_OUTPUT [--readback]"
+        args.len() == 4 || (args.len() == 5 && (args[4] == "--readback" || args[4] == "--core0" || args[4] == "--pll-frequency")),
+        "usage: t17_core_oracle EXTRACTED_MINER RUST_LLD NEW_OUTPUT [--readback|--core0|--pll-frequency]"
     );
-    let readback_mode = args.len() == 5;
+    let readback_mode = args.get(4).is_some_and(|a| a == "--readback");
+    let core0_mode = args.get(4).is_some_and(|a| a == "--core0");
+    let pll_mode = args.get(4).is_some_and(|a| a == "--pll-frequency");
+    let fixed_addresses = readback_mode || core0_mode || pll_mode;
     let out = Path::new(&args[3]);
     fs::create_dir(out)?;
     let miner = Path::new(&args[1]);
@@ -285,14 +353,27 @@ fn main() -> Result<()> {
     );
     fs::write(
         out.join("oracle.c"),
-        if readback_mode {
+        if pll_mode {
+            pll::DRIVER
+        } else if core0_mode {
+            core0::DRIVER
+        } else if readback_mode {
             readback::DRIVER
         } else {
             DRIVER
         },
     )?;
-    if readback_mode {
-        fs::write(out.join("oracle.ld"), readback::LINK_SCRIPT)?;
+    if fixed_addresses {
+        fs::write(
+            out.join("oracle.ld"),
+            if pll_mode {
+                pll::LINK_SCRIPT
+            } else if core0_mode {
+                core0::LINK_SCRIPT
+            } else {
+                readback::LINK_SCRIPT
+            },
+        )?;
         fs::write(out.join("oracle-abi.h"), readback::abi_header(DRIVER)?)?;
     }
     let store = Store::open(&out.join("inputs"), 1 << 30)?;
@@ -337,7 +418,7 @@ fn main() -> Result<()> {
         ("/miner", miner.to_path_buf()),
         ("/oracle.c", out.join("oracle.c")),
     ];
-    if readback_mode {
+    if fixed_addresses {
         source_inputs.extend([
             ("/oracle.ld", out.join("oracle.ld")),
             ("/oracle-abi.h", out.join("oracle-abi.h")),
@@ -352,13 +433,22 @@ fn main() -> Result<()> {
         });
     }
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,
         schema_version: "2.0".into(),
         dashboard: None,
         loopback: false,
-        argv: if readback_mode {
+        argv: if pll_mode {
+            vec![
+                "/oracle-check".into(),
+                "__inside".into(),
+                "pll-frequency".into(),
+            ]
+        } else if core0_mode {
+            vec!["/oracle-check".into(), "__inside".into(), "core0".into()]
+        } else if readback_mode {
             vec!["/oracle-check".into(), "__inside".into(), "readback".into()]
         } else {
             vec!["/oracle-check".into(), "__inside".into()]
@@ -393,7 +483,11 @@ fn main() -> Result<()> {
     );
     println!(
         "Original {} routines passed the isolated protocol oracle.",
-        if readback_mode {
+        if pll_mode {
+            "PLL integer-frequency arithmetic"
+        } else if core0_mode {
+            "core0 formatter"
+        } else if readback_mode {
             "driver collector and division"
         } else {
             "core packing"

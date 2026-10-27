@@ -1,0 +1,38 @@
+{
+  "scope": "Actual ordinary TCG worker/private VM component with the separate userspace trace port. No firmware, SSH, dashboard or exact-target pass.",
+  "passed": true,
+  "wall_ms": 9519,
+  "verified_transfer_bytes_each_direction": 1048576,
+  "acknowledgment_bytes": 341,
+  "ack_matches_both_durable_receipts": true,
+  "files": {
+    "work/simulator/network-vm/native-worker-channel-490/assessment.json": {
+      "sha256": "ef2ca194df46be16786bd21d06d2369bbf594a7fac7b8e127056c89a676c2799",
+      "size": 5546
+    },
+    "work/simulator/network-vm/native-worker-channel-490/result.json": {
+      "sha256": "4b022ff2706dbafc9aeb3c26b496bea0141899f8d1e4a15b35ac4b485420f260",
+      "size": 41044
+    },
+    "work/simulator/network-vm/native-worker-channel-490/process-spec.json": {
+      "sha256": "a74864d5c4fd6707e2545f0b8212d6c55d9881476ce195017259917520688a18",
+      "size": 5440
+    },
+    "work/simulator/network-vm/native-worker-channel-490/execution/host-retention.json": {
+      "sha256": "1b203a7b4b9ab1752e4534d646570d99ed95339e82bfdcf34aaf6c1d705cf727",
+      "size": 373
+    },
+    "work/simulator/network-vm/native-worker-channel-490/execution/worker-retention.json": {
+      "sha256": "1b203a7b4b9ab1752e4534d646570d99ed95339e82bfdcf34aaf6c1d705cf727",
+      "size": 373
+    },
+    "work/simulator/network-vm/native-worker-channel-490/execution/worker-cleanup.json": {
+      "sha256": "cccd4e36873984868b7178a1710c754e5920341baee3abae64251ac11323a19d",
+      "size": 308
+    },
+    "work/simulator/network-vm/native-worker-channel-490/execution/worker-cleanup-response.json": {
+      "sha256": "cccd4e36873984868b7178a1710c754e5920341baee3abae64251ac11323a19d",
+      "size": 308
+    }
+  }
+}

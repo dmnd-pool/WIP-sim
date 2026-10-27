@@ -150,6 +150,7 @@ fn host(output: &Path) -> Result<()> {
     }
     let inputs = md_sim_firmware::lab::elf_closure(&store, roots)?;
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

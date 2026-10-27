@@ -284,6 +284,7 @@ fn main() -> Result<()> {
             arguments.into_iter().map(str::to_string).collect()
         };
         let spec = ProcessSpec {
+            support_virtualization: None,
             private_channel: None,
             stdin_stream: None,
             namespace_uid: 0,

@@ -1,0 +1,139 @@
+{
+  "schema": "md-sim-support-kvm-independent-review/1",
+  "status": "runtime source and actual grant checks passed; corrected CPU helpers passed Clippy/build; independent Linux boot and custom backend485 review passed; selected native/browser run pending",
+  "findings": [],
+  "actual_runtime_test": {
+    "path": "work/simulator/checks-2026-10-26-001/kvm484e-root-actual.log",
+    "passed": 1,
+    "failed": 0,
+    "cases": [
+      "uid1000-direct",
+      "uid1000-stream",
+      "uid0-direct",
+      "uid0-stream"
+    ],
+    "checks": [
+      "fixed character10:232/API12",
+      "host files and physical devices absent",
+      "no routes or external interface",
+      "unrelated descriptors closed",
+      "memory/file/process limits",
+      "no effective/permitted/inheritable/ambient capabilities",
+      "UID1000 bounding set zero",
+      "UID0 bounding set unchanged from ordinary baseline",
+      "CAP_SYS_ADMIN regain and ambient raise rejected with EPERM",
+      "exact streamed input and KVM host receipt"
+    ]
+  },
+  "resolved_findings": [
+    "KVM_GET_API_VERSION requires an explicit zero variadic third argument; failures now retain errno.",
+    "The initial all-zero UID0 bounding-mask assertion was unsupported. The final test retains zero active privileges, proves no regain, compares the ordinary UID0 baseline and still requires UID1000 bounding zero.",
+    "The x86-64-v2 ABI label is not a QEMU model name. Both KVM launchers now select the real versioned Nehalem-v1 model with enforce."
+  ],
+  "retained_failures": [
+    "kvm484-tests.log",
+    "kvm484b-diagnostic.log",
+    "kvm484d-actual.log",
+    "kvm484-boot.log"
+  ],
+  "cpu_selection": {
+    "argument": "Nehalem-v1,enforce",
+    "qemu_archive": {
+      "sha256": "2a40e6705e59fd8807012631bc6b2c0877f10481b12768f78e4f9d7b88376cce",
+      "size": 38413148
+    },
+    "archive_member": "qemu-11661d857254b27fca5568c6deacf4f6b6f3460f/target/i386/cpu.c",
+    "member_identity": {
+      "sha256": "336b395fc76d01e531b535fead25c357863b42b93c7016bccf75154f03694b5a",
+      "size": 420882
+    },
+    "required_v2_features": [
+      "CPUID_EXT_CX16",
+      "CPUID_EXT3_LAHF_LM",
+      "CPUID_EXT_POPCNT",
+      "CPUID_EXT_SSE3",
+      "CPUID_EXT_SSSE3",
+      "CPUID_EXT_SSE41",
+      "CPUID_EXT_SSE42"
+    ],
+    "version": 1,
+    "enforce_effect": "x86_cpu_realizefn rejects filtered CPU features when enforce_cpuid is true",
+    "reference": "https://www.qemu.org/docs/master/system/qemu-cpu-models.html",
+    "abi_reference": "https://gitlab.com/x86-psABIs/x86-64-ABI/blob/master/x86-64-ABI/low-level-sys-info.tex"
+  },
+  "scope": [
+    "Only the x86 support VM may receive the explicit host capability.",
+    "Ordinary runtime and worker APIs reject the grant; the ARM firmware has no KVM device.",
+    "KVM requires explicit CLI selection, the selected shared browser profile, and no fault mode.",
+    "No implicit TCG fallback and no cache reuse from this receipt.",
+    "The outer support identity and native identity must both be retained.",
+    "No firmware, browser, mining or external physical-host pass follows from this prerequisite."
+  ],
+  "files": {
+    "crates/md-sim-runtime/src/support_virtualization.rs": {
+      "sha256": "8a2537ac0980e365c8463ec37e6f095325822f1d6faef5b1828a0fe7ac076a62",
+      "size": 7232
+    },
+    "crates/md-sim-runtime/src/isolation.rs": {
+      "sha256": "fb637faa44fa2d05ca9c7a83161502cd2c4ad59242920cd13c850f976cc0639c",
+      "size": 40390
+    },
+    "crates/md-sim-runtime/tests/support_virtualization.rs": {
+      "sha256": "eccac635b589b5815125203697a4ba2858395bb42ba2655bbcb7b142bfce2b6e",
+      "size": 14407
+    },
+    "crates/md-sim-firmware/src/confinement.rs": {
+      "sha256": "dc454405244fa805c092e8c215cf8d30307439d08edabf9eeb7af84d6c0b53d8",
+      "size": 22866
+    },
+    "crates/md-sim-firmware/examples/isolated_network_vm.rs": {
+      "sha256": "0caba63c11be965e203daaaba22a086c81f4de48aa4f88c58303eae6dd166c58",
+      "size": 40201
+    },
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "226e8f6f23cae8238c765071afc3e70b5816d3ff70f47b907b2fea0e21397fee",
+      "size": 38623
+    },
+    "crates/md-sim-firmware/examples/support/worker_channel_retention.rs": {
+      "sha256": "1f760669f099e2d254c628b21618d106d8aadc30ae20e0b6b76636ebfe41cb18",
+      "size": 9027
+    },
+    "crates/md-sim-firmware/examples/build_qemu_backend.rs": {
+      "sha256": "d87934fb1fbe287a195aa6697ac084d513ae7174fcb632eefcc9ef806dc726a1",
+      "size": 53540
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484e-root-actual.log": {
+      "sha256": "2d87239110ed2d1fd483543f9a42be173632633d044a29c9fb1028ef1e0e2900",
+      "size": 194
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-tests.log": {
+      "sha256": "b45855d1a5637b8025cee5b1f8558a3bd9bc6c7936d7290c939f03bae915d18d",
+      "size": 4944
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-regression.log": {
+      "sha256": "0259f01508453feca4413bae3f72036f56a3b242c7db5c1bd7e436a9d8206caf",
+      "size": 2373
+    },
+    "work/simulator/checks-2026-10-26-001/kvm484d-clippy.log": {
+      "sha256": "fb3a904e2d7b704271e4db14c568fa03ef29f69c8e7fd14fdb1262c212618b6d",
+      "size": 141
+    },
+    "work/simulator/checks-2026-10-26-001/kvm-cpu484c-clippy.log": {
+      "sha256": "9053a5a9ace053d3608c5f265d3f93053065d70ef5502a04aa73fbf1eb5eb1de",
+      "size": 392
+    },
+    "work/simulator/checks-2026-10-26-001/kvm-cpu484c-build.log": {
+      "sha256": "2d1db1d7e719f93a89490a4f9cd5d3e4559d9794d1cb2773385db3124edbaefd",
+      "size": 146
+    },
+    "work/simulator/check-target-085/release/examples/isolated_network_vm": {
+      "sha256": "9beaad6e8487ebac8ff77860cfb28dba3dbafb9b7e07ede82004fd683ca03039",
+      "size": 2424976
+    },
+    "work/simulator/check-target-085/release/examples/worker_channel_probe": {
+      "sha256": "b17f66916a7a35bef75f5b468d04b583f824f365f05c23aee42a888402f1f6c3",
+      "size": 4942984
+    }
+  },
+  "subsequent_execution_review": "work/simulator/reviews/kvm-boot-build-independent-485.json"
+}

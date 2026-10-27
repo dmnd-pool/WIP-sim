@@ -14,6 +14,11 @@ use std::{
     path::{Component, Path, PathBuf},
 };
 
+#[path = "reclaim_qemu_inputs/browser.rs"]
+mod browser;
+#[path = "reclaim_qemu_inputs/t17.rs"]
+mod t17;
+
 fn cycle_member(path: &Path, repository: &Path, core: bool) -> bool {
     let Some(run) = path.parent() else {
         return false;
@@ -195,9 +200,16 @@ fn component_store<'a>(path: &'a Path, repository: &Path) -> Option<&'a Path> {
 
 fn component_directories(path: &Path, repository: &Path) -> Result<()> {
     ensure!(
-        component_store(path, repository).is_some()
-            && !path.components().any(|part| part == Component::ParentDir),
+        component_store(path, repository).is_some(),
         "component cleanup path is outside the declared scope"
+    );
+    real_directories(path, repository)
+}
+
+fn real_directories(path: &Path, repository: &Path) -> Result<()> {
+    ensure!(
+        !path.components().any(|part| part == Component::ParentDir),
+        "cleanup directory contains a parent traversal"
     );
     let mut directory = repository.to_path_buf();
     ensure!(
@@ -414,6 +426,7 @@ fn eligible(path: &Path, repository: &Path) -> bool {
         || pool_preparation(path, repository)
         || channel_store(path, repository).is_some()
         || component_store(path, repository).is_some()
+        || t17::selected(path, repository).is_some()
 }
 
 fn input_store(path: &Path) -> Result<PathBuf> {
@@ -437,6 +450,11 @@ fn input_store_in(path: &Path, repository: &Path) -> Result<PathBuf> {
         );
         component_directories(&supplied, repository)?;
     }
+    if t17::selected(&supplied, repository).is_some() || t17::selected(&path, repository).is_some()
+    {
+        ensure!(supplied == path, "oracle store path must not be an alias");
+        t17::directories(&supplied, repository)?;
+    }
     ensure!(
         eligible(&path, repository),
         "only declared local QEMU or original-S9 Core input stores are eligible"
@@ -448,7 +466,9 @@ fn input_store_in(path: &Path, repository: &Path) -> Result<PathBuf> {
             "the complete cycle must have stopped before cleanup"
         );
     }
-    if let Some(run) = component_store(&path, repository) {
+    if t17::selected(&path, repository).is_some() {
+        t17::finished(&path, repository)?;
+    } else if let Some(run) = component_store(&path, repository) {
         require_finished_component(run)?;
     } else if let Some(run) = channel_store(&path, repository) {
         require_finished_channel(run)?;
@@ -529,10 +549,17 @@ fn reclaim_object(object: &serde_json::Value) -> Result<()> {
 }
 
 fn main() -> Result<()> {
-    let args: Vec<_> = std::env::args_os().collect();
+    let mut args: Vec<_> = std::env::args_os().collect();
+    if browser::dispatch(&args)? {
+        return Ok(());
+    }
+    let plan_only = args.get(1).is_some_and(|arg| arg == "--plan");
+    if plan_only {
+        args.remove(1);
+    }
     ensure!(
         args.len() >= 4,
-        "usage: reclaim_qemu_inputs CANONICAL_STORE NEW_JOURNAL FINISHED_STORE..."
+        "usage: reclaim_qemu_inputs [--plan] CANONICAL_STORE NEW_JOURNAL FINISHED_STORE..."
     );
     let canonical = input_store(Path::new(&args[1]))?;
     let repository = std::env::current_dir()?.canonicalize()?;
@@ -544,6 +571,10 @@ fn main() -> Result<()> {
     if let Some(evidence) = locked_component_evidence(&canonical, &repository)? {
         component_evidence.push(evidence);
     }
+    let mut oracle_evidence = Vec::new();
+    if let Some(evidence) = t17::finished(&canonical, &repository)? {
+        oracle_evidence.push(evidence);
+    }
     let mut locks = Vec::new();
     let mut objects = Vec::new();
     let mut total = 0u64;
@@ -552,9 +583,17 @@ fn main() -> Result<()> {
         ensure!(root != canonical, "canonical store cannot be reclaimed");
         locks.push(open_store(&root)?);
         let component = locked_component_evidence(&root, &repository)?;
-        let component_only = component.is_some();
+        let oracle = t17::finished(&root, &repository)?;
+        let component_only = component.is_some() || oracle.is_some();
         if let Some(evidence) = component {
             component_evidence.push(evidence);
+        }
+        if let Some(evidence) = oracle {
+            ensure!(
+                canonical == t17::canonical(&repository),
+                "T17 reclamation requires the protected274 canonical store"
+            );
+            oracle_evidence.push(evidence);
         }
         for entry in fs::read_dir(root.join("objects"))? {
             let entry = entry?;
@@ -665,10 +704,24 @@ fn main() -> Result<()> {
             "component evidence changed while preparing cleanup"
         );
     }
+    for evidence in &oracle_evidence {
+        ensure!(
+            t17::finished(&evidence.run.join("inputs"), &repository)?.as_ref() == Some(evidence),
+            "oracle evidence changed while preparing cleanup"
+        );
+    }
     let mut report = json!({"scope":"Finished build/run/Core-check CAS, derived build archives and Core evidence copies. Original run evidence is retained. Restore with copies, never hard links",
         "objects":objects,"removed_bytes":total,"completed":false,
         "component_cas_only_evidence":component_evidence,
         "tool":hash_file(Path::new("/proc/self/exe"))?});
+    if !oracle_evidence.is_empty() {
+        report["oracle_cas_only_evidence"] = serde_json::to_value(&oracle_evidence)?;
+    }
+    if plan_only {
+        report["mode"] = json!("plan-only");
+        report["planned_bytes"] = json!(total);
+        report["removed_bytes"] = json!(0);
+    }
     let mut file = OpenOptions::new()
         .write(true)
         .create_new(true)
@@ -680,6 +733,14 @@ fn main() -> Result<()> {
         .filter(|p| !p.as_os_str().is_empty())
         .unwrap_or(Path::new("."));
     fs::File::open(journal_parent)?.sync_all()?;
+    if plan_only {
+        println!(
+            "Verified {} duplicate inputs, {} bytes; plan only, no files removed",
+            objects.len(),
+            total
+        );
+        return Ok(());
+    }
     for object in &objects {
         reclaim_object(object)?;
     }
@@ -704,6 +765,11 @@ fn main() -> Result<()> {
 
 fn open_store(path: &Path) -> Result<Store> {
     let repository = std::env::current_dir()?.canonicalize()?;
+    if t17::selected(path, &repository).is_some() {
+        // Original oracle stores use1GiB/object and the standard aggregate
+        // limits. Do not expand their persisted policy during cleanup.
+        return Store::open(path, 1 << 30);
+    }
     if coordinator_store(path, &repository).is_some()
         || browser_capture(path, &repository)
         || pool_preparation(path, &repository)

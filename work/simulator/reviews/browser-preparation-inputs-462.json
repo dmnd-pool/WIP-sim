@@ -1,0 +1,59 @@
+{
+  "schema": "md-sim-browser-preparation-checkpoint/1",
+  "scope": "458b component pass;462 source checks and preparation only; no native463 execution",
+  "files": {
+    "work/simulator/reviews/browser-startup-resume-458.md": {
+      "sha256": "3029af41a2a140611904f3084cea046aadee1cc8ecfd6b68a66583d98e7e7d69",
+      "size": 2692
+    },
+    "work/simulator/network-vm/browser-startup-458b/assessment.json": {
+      "sha256": "9c8d7c3052afa353c6d3fa3ff124a0e44b442c917735edebb7789362c4f1c53d",
+      "size": 1397
+    },
+    "work/simulator/network-vm/browser-startup-458b/result.json": {
+      "sha256": "98ef3b90ff3de7b81f4a8e3367c5a5aa0c4b706f365b2412cc6cca65aa23caa5",
+      "size": 415749
+    },
+    "work/simulator/network-vm/browser-startup-458b/process-spec.json": {
+      "sha256": "b9001fbbde07a94e35fd10e6bd30135884df8699408f5c95a5e539c4593eeb64",
+      "size": 4768
+    },
+    "work/simulator/reviews/browser-preparation-462.md": {
+      "sha256": "6d87a6f88c4dadc94fae87786c98a7ef298af9bf27f92045b25397bb40337820",
+      "size": 2908
+    },
+    "work/simulator/core-checkpoint-462/manifest.json": {
+      "sha256": "dbac7a2f30ba1618a7bb447fc3a1f0bcd5f11ec19ff7138dda31f3ef356385fb",
+      "size": 82926
+    },
+    "work/simulator/channel-target-462/SHA256SUMS": {
+      "sha256": "c987a17f75b44b1bd842e01329ae4808b5e4f4e73ea70e4a0f1e86dee6428b5b",
+      "size": 1189
+    },
+    "work/simulator/channel-target-462/shared-pool.json": {
+      "sha256": "e70d55cfefc4a335c0f3ebdb8c8240df156b19c804524396f8f19224fbb2fe57",
+      "size": 930
+    },
+    "work/simulator/channel-target-462/carrier-dashboard.json": {
+      "sha256": "b0370c3059e281e506726e64b24d6ed242dbad0ad49f7bf17aee4b77475fc566",
+      "size": 489
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-462/process-spec.json": {
+      "sha256": "d99f6ecf2b0348e46c67a9fd54cdc652142b0a04dc315c5227404914ff05310d",
+      "size": 11222
+    },
+    "work/simulator/checks-2026-10-21-001/browser-preparation462c-tests.log": {
+      "sha256": "124adaaf66c915db58e5bc6d0be77c4ef0856caadfc5eece5a577c5cf66cc434",
+      "size": 19850
+    },
+    "work/simulator/checks-2026-10-21-001/browser-preparation462c-clippy.log": {
+      "sha256": "46a072e4601c78b8b07f7d5e23a16fa43d4ce04bb4ee30c22da3f480f44a3bea",
+      "size": 143
+    },
+    "work/simulator/checks-2026-10-21-001/browser-preparation462c-build.log": {
+      "sha256": "3aa83701c5829311b64a451352cdcf25f005505b905d1d06ab177264d4af56da",
+      "size": 146
+    }
+  },
+  "pending": "Root fixes independent lab-tool process-count placement after resumed host environment exposed fork failure. Freeze462 is preserved, no run463 launched. Refresh affected binaries/source before actual selected-run test."
+}

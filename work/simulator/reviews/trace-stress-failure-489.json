@@ -1,0 +1,36 @@
+{
+  "scope": "Failed explicit KVM trace stress. No trace or firmware gate passed.",
+  "status": "failed",
+  "process_exit": 0,
+  "wall_ms": 1191,
+  "trace_truncated": false,
+  "failed_assertion": "kernel noise count, identity or order differs",
+  "diagnosis": "The formatted /dev/kmsg writer can issue several writes. Each kernel write is a separate record, so the intended labelled message was not emitted atomically. Preserve all eight original noise checks.",
+  "next": "Preformat each bounded kernel message and write it in one call, reject partial writes, rerun new489b output.",
+  "files": {
+    "work/simulator/network-vm/kvm-trace-prerequisite-489/result.json": {
+      "sha256": "46dd404ee486a25c2a4c831449f08429752808f1d7209bcec0989bf399a9fe1d",
+      "size": 16781892
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489/assessment.json": {
+      "sha256": "e69babdc5b1cf6a0f15a318f57de5739ec5d12a1d6e958158c67e8af425fc077",
+      "size": 192
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489/failure.json": {
+      "sha256": "ea72f9c2c9ba93ae41c29cb94bb0188369c3c45ffe93d76ad00d8d297fb0b84e",
+      "size": 128
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489/guest.log": {
+      "sha256": "397a650d6d5c108ec52b0d7b26997aa3887f9412182236fe27f7b11ea48e7250",
+      "size": 8389409
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489/backend.log": {
+      "sha256": "70a7af449bb82ca1ad94c13aba6ead86c1730da39ffb3005980d7e32d4b16dc2",
+      "size": 134
+    },
+    "work/simulator/network-vm/kvm-trace-prerequisite-489/process-spec.json": {
+      "sha256": "e551ca57fae987fce01e9b0ed8c618724d0ac21ac0a2a86c9651754a86f12637",
+      "size": 15095
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "scope": "Independent source and actual execution review of Python capture extraction. Same upstream static predicates; no FPGA logic or firmware gate.",
+  "passed": true,
+  "matching_non_guard_input_mounts": 745,
+  "verified_new_input_mounts": 746,
+  "oracle_output_byte_identity": {
+    "sha256": "6f45d724bf3561b2d2c8a86c3ac4aa43b66a2e27931b144763f78508892fef60",
+    "size": 1791206
+  },
+  "source_review": "Bounded explicit native module names; deterministic sorted source traversal; no site-packages tree or downloaded host execution; exact ten-module baseline restored. No open finding.",
+  "review_retry": "First audit used the wrong store subdirectory; corrected to the source-defined inputs directory. No product check failed.",
+  "files": {
+    "work/simulator/qemu-s9/feature-oracle-capture482b/spec.json": {
+      "sha256": "934cad037796a2d1c2b1251f84f8ce5193d5ee94cc7caf4f0ca084975764b1f9",
+      "size": 155457
+    },
+    "work/simulator/qemu-s9/feature-oracle-capture482b/result.json": {
+      "sha256": "eb01a77bca796ae066979df8407569984b11afc729eb3eb004f6a59fdc0c972e",
+      "size": 3583255
+    },
+    "work/simulator/qemu-s9/feature-oracle-capture482b/oracle.json": {
+      "sha256": "6f45d724bf3561b2d2c8a86c3ac4aa43b66a2e27931b144763f78508892fef60",
+      "size": 1791206
+    },
+    "work/simulator/qemu-s9/feature-oracle-capture482b/assessment.json": {
+      "sha256": "4ef512e116bcc358c23fb079830eb328ed73dc24f5631b9d78d303a8ed7d1be3",
+      "size": 6554
+    },
+    "crates/md-sim-firmware/examples/support/python_tool_inputs.rs": {
+      "sha256": "1b59a2c7906a2f8ab7ca3580f9e8c586466eede6cb1d43cecca8aec866a6c1f2",
+      "size": 3879
+    },
+    "crates/md-sim-firmware/examples/s9_feature_oracle.rs": {
+      "sha256": "be61ca54c829dddb7b69fa517c0b1ffe0cda7f04d0d323213a01887efc3e6629",
+      "size": 9718
+    }
+  }
+}

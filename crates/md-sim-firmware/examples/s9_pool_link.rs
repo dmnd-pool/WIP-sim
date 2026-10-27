@@ -79,6 +79,7 @@ fn host(out: &Path, backend: &Path) -> Result<()> {
     )?;
     pool_vm::capture(&store, &mut inputs, &image, backend, false)?;
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

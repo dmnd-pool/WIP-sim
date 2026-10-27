@@ -1,0 +1,25 @@
+{
+  "id": "prjxray-tilegrid-commit-json-20261026",
+  "url": "https://api.github.com/repos/f4pga/prjxray-db/commits?path=zynq7/xc7z010/tilegrid.json&per_page=1",
+  "kind": "metadata",
+  "title": "Project X-Ray selected S9 reconstruction input tilegrid-commit.json",
+  "language": "en",
+  "source_id": "prjxray-tilegrid-commit-json-20261026",
+  "license": "unknown",
+  "retrieved_at": "2026-10-26T17:23:32.852195+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/metadata/prjxray-tilegrid-commit-json-20261026/tilegrid-commit.json",
+  "sha256": "f1ddf1d79972e1781733fc8920c877acbe006d30cdd7bc726889e36ff303f2dc",
+  "size_bytes": 3969,
+  "executed": false,
+  "scope": "supporting-tool",
+  "acquisition": "Bounded public fetch by root agent; original body and response headers retained. Expected file hashes checked against publisher Info.md where available.",
+  "response_headers": {
+    "path": "artifacts/files/metadata/prjxray-tilegrid-commit-json-20261026/tilegrid-commit.json.headers",
+    "sha256": "fad9e8efc9699ba474579c352958479ec4a9d29aa27fd635a06f0baad7a151c1",
+    "size": 1575
+  },
+  "notes": [
+    "Metadata only for selected S9 controller FPGA reconstruction. A matching checksum is not a completed logic, original-board, or physical timing validation."
+  ]
+}

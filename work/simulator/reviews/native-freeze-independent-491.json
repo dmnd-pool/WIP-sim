@@ -1,0 +1,43 @@
+{
+  "scope": "Independent root check before native492; no runtime acceptance inferred.",
+  "passed": true,
+  "captured_sources_rehashed": 517,
+  "helpers_rehashed": 12,
+  "prepared_object_mounts_rehashed": 46,
+  "native_limits_argv_environment_equal486": true,
+  "changed_native_input_paths": [
+    "/private-pool.json"
+  ],
+  "pool_changes": "Fresh seed/time only; difficulty and10H/s cap unchanged.",
+  "clock": "Explicit execution-host realtime sample, original guest date/readback.",
+  "files": {
+    "work/simulator/core-checkpoint-491/manifest.json": {
+      "sha256": "50c036818c27435e0506b85a217b0eae46a47c76f2b1735796442175c965090d",
+      "size": 87802
+    },
+    "work/simulator/channel-target-491/SHA256SUMS": {
+      "sha256": "be0910c521029b6d0a45cdb861a9920eebbdf503316af3c3e585dd563a669565",
+      "size": 1189
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-491/process-spec.json": {
+      "sha256": "28806779aeacb54b5c455bdf2d835819aad5b92120af05cb363a93b2b67edd86",
+      "size": 11264
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-491/adaptation.json": {
+      "sha256": "41902b7ca86435e49ff7580b1349ace61176dd93ef9588eea6ee58ea97097bb5",
+      "size": 19553
+    },
+    "work/simulator/channel-target-491/shared-pool.json": {
+      "sha256": "cdddbecf23b2155a2fb2a831588c0f790a85daceecdce05c1a749fc61ab364a9",
+      "size": 930
+    },
+    "work/simulator/channel-target-491/carrier-dashboard.json": {
+      "sha256": "e93048d17994f991b14f8c9f72957126983cc71a4a95eec6758874eccad512e2",
+      "size": 489
+    },
+    "work/simulator/reviews/worker-trace-faults-490.json": {
+      "sha256": "d2942ae4b5bac5d8914a195c7a9cca15a3208daea83c99307f6b6fa5910bc52e",
+      "size": 3365
+    }
+  }
+}

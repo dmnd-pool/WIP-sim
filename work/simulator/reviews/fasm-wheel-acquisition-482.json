@@ -1,0 +1,35 @@
+{
+  "scope": "Original pure-Python wheels for unchanged upstream converter dependencies. Pin publisher hashes; no host installation or execution. Direct archive mounting can avoid extraction.",
+  "jobs": [
+    {
+      "url": "https://files.pythonhosted.org/packages/83/7f/8a80a1c7c2ed05822b5a2b312d2995f30c533641f8198366ba2e26a7bb03/intervaltree-3.2.1-py2.py3-none-any.whl",
+      "destination": "/tmp/md-sim-fasm-wheel482-intervaltree-3.2.1-py2.py3-none-any.whl",
+      "max_bytes": 25930,
+      "expected_sha256": "a8a8381bbd35d48ceebee932c77ffc988492d22fb1d27d0ba1d74a7694eb8f0b",
+      "expected_size": 25929,
+      "package": "intervaltree",
+      "version": "3.2.1",
+      "filename": "intervaltree-3.2.1-py2.py3-none-any.whl"
+    },
+    {
+      "url": "https://files.pythonhosted.org/packages/e9/4c/9acdf4ae4f41c09a09ad17427e5ee912f35aa56ea1d1723a9d927d659d4e/simplejson-4.2.0-py3-none-any.whl",
+      "destination": "/tmp/md-sim-fasm-wheel482-simplejson-4.2.0-py3-none-any.whl",
+      "max_bytes": 72827,
+      "expected_sha256": "c2a2e5f43287cbe3413f7b73b04d5a6f75c7bd93d783e628f5978853a2ef738d",
+      "expected_size": 72826,
+      "package": "simplejson",
+      "version": "4.2.0",
+      "filename": "simplejson-4.2.0-py3-none-any.whl"
+    },
+    {
+      "url": "https://files.pythonhosted.org/packages/70/4c/ba64c450164fa4feaa9c4bb1c6445811d89d6a1995bfc58d039273b698af/progressbar2-4.6.0-py3-none-any.whl",
+      "destination": "/tmp/md-sim-fasm-wheel482-progressbar2-4.6.0-py3-none-any.whl",
+      "max_bytes": 104186,
+      "expected_sha256": "2d78bdeb1debef92a39dd9042e0689542bd72d6e2f30b13432db371aa9d8ee4e",
+      "expected_size": 104185,
+      "package": "progressbar2",
+      "version": "4.6.0",
+      "filename": "progressbar2-4.6.0-py3-none-any.whl"
+    }
+  ]
+}

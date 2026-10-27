@@ -1,0 +1,274 @@
+{
+  "schema": "md-sim-fresh-preparation-inputs/1",
+  "helper": {
+    "path": "work/simulator/fresh-tools-498/s9_fresh_prepared",
+    "object": {
+      "sha256": "ed84d3c7a998c64fc3b06d73d38d6dddf2afa68ef17ba804fd92d81783c0513a",
+      "size": 1869048
+    }
+  },
+  "baseline": "work/simulator/qemu-s9/native-browser-prepared-494",
+  "baseline_inputs": {
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/be5b22536955634b5c0e9609d000d0e0c982c5d1707dc39b3cc8b1b564c49274": {
+      "sha256": "be5b22536955634b5c0e9609d000d0e0c982c5d1707dc39b3cc8b1b564c49274",
+      "size": 20189720
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/3a57bce6765bfb73a75591dba2ac40d985cccde97d371e95537ecbf16d949d30": {
+      "sha256": "3a57bce6765bfb73a75591dba2ac40d985cccde97d371e95537ecbf16d949d30",
+      "size": 2558936
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/d5437004e96295c898f1e967fec60183e7e5950a84b0826c0bec50946d52ef95": {
+      "sha256": "d5437004e96295c898f1e967fec60183e7e5950a84b0826c0bec50946d52ef95",
+      "size": 4804296
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757": {
+      "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+      "size": 263152
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397": {
+      "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+      "size": 104464
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8": {
+      "sha256": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "size": 714800
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/91ebce3a6429ccb3bf5331fdb06360ad2229d28c59cf0d43ae48e251535b4068": {
+      "sha256": "91ebce3a6429ccb3bf5331fdb06360ad2229d28c59cf0d43ae48e251535b4068",
+      "size": 148656
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92": {
+      "sha256": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+      "size": 1449352
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d": {
+      "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "size": 1268336
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524": {
+      "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+      "size": 2215072
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a": {
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "size": 182512
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/a3ecad741b53e3c86322ad993a772292485d9f0004d0c904a3d93f091bf980c1": {
+      "sha256": "a3ecad741b53e3c86322ad993a772292485d9f0004d0c904a3d93f091bf980c1",
+      "size": 43032
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/e4e587e5f7f66b0a7b9c358d6b4d4d73147e5546d83669033de704026f958c44": {
+      "sha256": "e4e587e5f7f66b0a7b9c358d6b4d4d73147e5546d83669033de704026f958c44",
+      "size": 516752
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/a5f547ec7c5c6e5ec814f2596b47f68d5948e7be18c6254b0b2e5cd55cbda7eb": {
+      "sha256": "a5f547ec7c5c6e5ec814f2596b47f68d5948e7be18c6254b0b2e5cd55cbda7eb",
+      "size": 71704
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8": {
+      "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+      "size": 939976
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/15cfed3ce7e472de5b87849812d4fc91271a81a0bc64c99e0971d02b11343685": {
+      "sha256": "15cfed3ce7e472de5b87849812d4fc91271a81a0bc64c99e0971d02b11343685",
+      "size": 14208
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/b01799e8295bc119d614bf061baad1f2a2a494a0787a057f49997244daf110c5": {
+      "sha256": "b01799e8295bc119d614bf061baad1f2a2a494a0787a057f49997244daf110c5",
+      "size": 25904
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/34fb5f09418585343efa342a2a4b57904544d6f562d7179a5eeaca60b0abd0c6": {
+      "sha256": "34fb5f09418585343efa342a2a4b57904544d6f562d7179a5eeaca60b0abd0c6",
+      "size": 2254952
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51": {
+      "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51",
+      "size": 55632
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/9acc4b380b291cbc5f4098d04689c6933879d0a85b039ef62088fde935f65e83": {
+      "sha256": "9acc4b380b291cbc5f4098d04689c6933879d0a85b039ef62088fde935f65e83",
+      "size": 22464
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58": {
+      "sha256": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+      "size": 727336
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e": {
+      "sha256": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e",
+      "size": 2939928
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/16813308197ab091526836d4d9ee79b7780a49e63a0ee1d7e01da2b662d057c3": {
+      "sha256": "16813308197ab091526836d4d9ee79b7780a49e63a0ee1d7e01da2b662d057c3",
+      "size": 157648
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/6f7c44d5854ca7af86556bb300efdda8346f316e652d3f7e7ee0bf5cf55b41c4": {
+      "sha256": "6f7c44d5854ca7af86556bb300efdda8346f316e652d3f7e7ee0bf5cf55b41c4",
+      "size": 2845224
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/1b87739328f0b11906554145ab4e506281644d94a5b6195cd11594aad5e310b8": {
+      "sha256": "1b87739328f0b11906554145ab4e506281644d94a5b6195cd11594aad5e310b8",
+      "size": 1708192
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15": {
+      "sha256": "9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15",
+      "size": 133064
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3": {
+      "sha256": "ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3",
+      "size": 1992752
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/37c55560d3f3a76a039e78e3394e4ab0e17b1d0f68d8a9b9c5916f9842aa4ca1": {
+      "sha256": "37c55560d3f3a76a039e78e3394e4ab0e17b1d0f68d8a9b9c5916f9842aa4ca1",
+      "size": 88088
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/93c5553921f308f65488a9877a3dce1284adeff729a011f7b4522ea6b4181a87": {
+      "sha256": "93c5553921f308f65488a9877a3dce1284adeff729a011f7b4522ea6b4181a87",
+      "size": 284696
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/5cfa2daa591d62161d2f26aa4b8347e3704da1b830e9aba0a312ed1b5f0c7a38": {
+      "sha256": "5cfa2daa591d62161d2f26aa4b8347e3704da1b830e9aba0a312ed1b5f0c7a38",
+      "size": 370824
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49": {
+      "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+      "size": 678528
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/bc91f6b0794de524f4e155cf04a40470e9e53cb2a38fb0d84aaea05e09c61d11": {
+      "sha256": "bc91f6b0794de524f4e155cf04a40470e9e53cb2a38fb0d84aaea05e09c61d11",
+      "size": 34896
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c": {
+      "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "size": 51432
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421": {
+      "sha256": "980532de5eb666508dafb111466f30169a70b8b6ea662bdda61e17dbd55a4421",
+      "size": 2083858
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095": {
+      "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+      "size": 16801
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/0524f3c26a171130ef1878c5fed2a04c29aab93aca6e148b1bff15a910be0ad7": {
+      "sha256": "0524f3c26a171130ef1878c5fed2a04c29aab93aca6e148b1bff15a910be0ad7",
+      "size": 1203
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/765efb23844156e976ba785c24a6a753c664504a499c64581d1c356a3f4c02df": {
+      "sha256": "765efb23844156e976ba785c24a6a753c664504a499c64581d1c356a3f4c02df",
+      "size": 77023
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/97a257571af4fb9e62f709e2d6b8f36a191fdd07f1cd12ae780bd1c73af7eaef": {
+      "sha256": "97a257571af4fb9e62f709e2d6b8f36a191fdd07f1cd12ae780bd1c73af7eaef",
+      "size": 112197632
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/3ab9726f783cd3995c6708b78868acdc3d104dd44c31a020a01e2f6aa0fec8c6": {
+      "sha256": "3ab9726f783cd3995c6708b78868acdc3d104dd44c31a020a01e2f6aa0fec8c6",
+      "size": 1113
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/f4fb5a8b6980ac7f6e220f604bc1d6c981e08ed7ccc877d5a956a80c0fadd6b1": {
+      "sha256": "f4fb5a8b6980ac7f6e220f604bc1d6c981e08ed7ccc877d5a956a80c0fadd6b1",
+      "size": 154015
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/dddf3927541325363cbe70ca3e1d86defbf1b6ca0577d1d00287e5ebcf9650a6": {
+      "sha256": "dddf3927541325363cbe70ca3e1d86defbf1b6ca0577d1d00287e5ebcf9650a6",
+      "size": 1031
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/c29c72fd463c733537601227b2a45a2ca18fd1353aa24638f3da091ce66e8063": {
+      "sha256": "c29c72fd463c733537601227b2a45a2ca18fd1353aa24638f3da091ce66e8063",
+      "size": 930
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/b96595c25238ebd5f6216962ce6fc4dde72e299fb1cd5d272039d0866389a053": {
+      "sha256": "b96595c25238ebd5f6216962ce6fc4dde72e299fb1cd5d272039d0866389a053",
+      "size": 489
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/ec84da07ef98665c6258cc531dc2d74aa8be7018925c041325ca233aec52b46a": {
+      "sha256": "ec84da07ef98665c6258cc531dc2d74aa8be7018925c041325ca233aec52b46a",
+      "size": 19200
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/input-store/objects/c7cbba85e2eb96bc3ebde8e3eb56901f930db3179b53a102246029bb8c50502e": {
+      "sha256": "c7cbba85e2eb96bc3ebde8e3eb56901f930db3179b53a102246029bb8c50502e",
+      "size": 3301
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/process-spec.json": {
+      "sha256": "a3247419fe950dc9e6353a6adfbfb4ba73e5fd909b1d30d3dcdba3926a4e9b89",
+      "size": 11264
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/pool-input.json": {
+      "sha256": "dddf3927541325363cbe70ca3e1d86defbf1b6ca0577d1d00287e5ebcf9650a6",
+      "size": 1031
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/adaptation.json": {
+      "sha256": "4637ac92c53fc2a1b814e9e9f2852a38443241c065cb82700aa043b55787ad0c",
+      "size": 19553
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/console.json": {
+      "sha256": "3fd0baafc6a0b273c20a8b76dcbead7feda0d8f9fb9720ecdedadb8e4e5c2c93",
+      "size": 4501
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/shared-pool.json": {
+      "sha256": "c29c72fd463c733537601227b2a45a2ca18fd1353aa24638f3da091ce66e8063",
+      "size": 930
+    },
+    "work/simulator/qemu-s9/native-browser-prepared-494/carrier-dashboard.json": {
+      "sha256": "b96595c25238ebd5f6216962ce6fc4dde72e299fb1cd5d272039d0866389a053",
+      "size": 489
+    }
+  },
+  "sources": {
+    "crates/md-sim-firmware/examples/s9_fresh_prepared.rs": {
+      "sha256": "efc00ca3ce969d9f6868c7957166dd256ae2faaa8ba7f79ad34dac2f44ec3a1a",
+      "size": 636
+    },
+    "crates/md-sim-firmware/examples/support/fresh_prepared.rs": {
+      "sha256": "84bb34e954e9a1421b695be71348e1d6dd8564d90e7bcfb20332330d872ae998",
+      "size": 13556
+    },
+    "crates/md-sim-firmware/examples/support/fresh_prepared_tests.rs": {
+      "sha256": "e595fd86a992194400070751fc108b44e8a9d4c5b99cc4291ae8a8ae33ee3eef",
+      "size": 8789
+    },
+    "crates/md-sim-firmware/examples/support/prepared_board.rs": {
+      "sha256": "f563fc5f6042c36366855f3519c144016d89a1c657e77c5a5dab51131ff088da",
+      "size": 14902
+    },
+    "crates/md-sim-firmware/examples/support/s9_pool_input.rs": {
+      "sha256": "5e6ede462d0e83fd62ec16f8856ccd240d429083ea041da83db8ebe87c591147",
+      "size": 11060
+    }
+  },
+  "checks": {
+    "fresh498-tests.log": {
+      "sha256": "b542a538ffe284a165b81cb89fdc62f43dd0752b79ee1e2c8fd136facb5e967a",
+      "size": 542
+    },
+    "fresh498-tests-b.log": {
+      "sha256": "965500a950f7dd88b8a3ca29da543d5331eb411a57ccf0cad217ba3adba91d27",
+      "size": 1789
+    },
+    "fresh498-tests-c.log": {
+      "sha256": "19dfe339193ee05de38560b9c10bf7b9d334e2853daecdfa099c158c4fa91e1b",
+      "size": 17195
+    },
+    "fresh498-tests-d.log": {
+      "sha256": "a7a69d426947064dbb3a3ce8884c3135dc095c80dcdd49b0456667f9f6849bfc",
+      "size": 16201
+    },
+    "fresh498-clippy.log": {
+      "sha256": "2853b7d175cda32ed01dc863147cc68c05e470b54a7b050a5b25fae96fc4c148",
+      "size": 766
+    },
+    "fresh498-clippy-b.log": {
+      "sha256": "f9ec4d2b304f9c03b0e878ea637b35836a3aae7a88e372fd20602181d4ee50f0",
+      "size": 143
+    },
+    "fresh498-clippy-c.log": {
+      "sha256": "0cd065c0e6fd02e7ce86605ae81a1c9230167ef1202e24fca5fab068c46da272",
+      "size": 143
+    },
+    "fresh498-release.log": {
+      "sha256": "66d26b2d4e6cd1bd4a4d4b7bb0d45dccf2bdfca5610aa3efb4854afeb39bca58",
+      "size": 146
+    }
+  },
+  "tested_scope": "Preparation and provenance only; no firmware or mining execution."
+}

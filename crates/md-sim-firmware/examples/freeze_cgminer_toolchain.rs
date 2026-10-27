@@ -502,6 +502,10 @@ fn build(repo: &Path, snapshot: &Path, out: &Path, ubsan: bool) -> Result<()> {
             "--mount",
             "--fork",
             "--kill-child",
+            // Keep the guest process bound, after trusted user-namespace setup.
+            "/usr/bin/prlimit",
+            "--nproc=256",
+            "--",
             "/usr/bin/bwrap",
             "--die-with-parent",
             "--unshare-pid",
@@ -573,7 +577,6 @@ fn build(repo: &Path, snapshot: &Path, out: &Path, ubsan: bool) -> Result<()> {
             for (kind, value) in [
                 (libc::RLIMIT_CPU, 120),
                 (libc::RLIMIT_AS, 2 * 1024 * 1024 * 1024),
-                (libc::RLIMIT_NPROC, 256),
                 (libc::RLIMIT_FSIZE, 64 * 1024 * 1024),
                 (libc::RLIMIT_NOFILE, 256),
                 (libc::RLIMIT_CORE, 0),
@@ -597,7 +600,7 @@ fn build(repo: &Path, snapshot: &Path, out: &Path, ubsan: bool) -> Result<()> {
     fs::write(
         out.join("preparation-inputs.json"),
         serde_json::to_vec_pretty(
-            &json!({"toolchain_closure":closure,"recipe_build":bounded_identity(&executable)?,"source":bounded_identity(&archive)?,"ubsan":ubsan,"read_only_usr_source":"captured tree only; no installed /usr mount","limits":{"wall_seconds":180,"cpu_seconds":120,"address_bytes":2u64*1024*1024*1024,"scratch_bytes":536870912,"temporary_bytes":67108864,"max_processes":256},"supervisor":{"unshare":bounded_identity(Path::new("/usr/bin/unshare"))?,"bwrap":bounded_identity(Path::new("/usr/bin/bwrap"))?}}),
+            &json!({"toolchain_closure":closure,"recipe_build":bounded_identity(&executable)?,"source":bounded_identity(&archive)?,"ubsan":ubsan,"read_only_usr_source":"captured tree only; no installed /usr mount","limits":{"wall_seconds":180,"cpu_seconds":120,"address_bytes":2u64*1024*1024*1024,"scratch_bytes":536870912,"temporary_bytes":67108864,"max_processes":256},"supervisor":{"unshare":bounded_identity(Path::new("/usr/bin/unshare"))?,"bwrap":bounded_identity(Path::new("/usr/bin/bwrap"))?,"prlimit":bounded_identity(Path::new("/usr/bin/prlimit"))?}}),
         )?,
     )?;
     let mut child = Child(

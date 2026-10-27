@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.tar.gz.partial",
+      "sha256": "97f6d99dfb0e4c309821ad512a74cb4d350bc15dcce744dec008365430a1e303",
+      "size": 847474,
+      "headers": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.headers",
+      "temporary": "/tmp/md-sim-gperf-3.1-502.tar.gz",
+      "download_status": "failed_partial",
+      "expected_size_from_http": 1215925,
+      "curl_exit_code": 28,
+      "error": "Operation timed out after40000 milliseconds with847474 of1215925 bytes received"
+    },
+    {
+      "path": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.sig",
+      "sha256": "0554c9102d257d266bb4d9fb4bf76737abcecfc84a06884de84f8f8ff21c23e0",
+      "size": 543,
+      "headers": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.sig.headers",
+      "temporary": "/tmp/md-sim-gperf-3.1-502.sig"
+    }
+  ],
+  "signature_verification": "not yet performed; detached signature presence alone does not prove authenticity",
+  "execution": "none; acquired archive remains unexecuted",
+  "status": "gperf source download incomplete; not an executable build input",
+  "next_action": "Fetch complete official source to a new path, verify size/archive and detached signature against a trusted publisher key. Preserve this failed transfer."
+}

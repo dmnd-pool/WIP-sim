@@ -317,6 +317,7 @@ fn main() -> Result<()> {
     let stdin = hash_file(&out.join("transactions.qtest"))?;
     store.import(&out.join("transactions.qtest"), &stdin)?;
     let spec = ProcessSpec {
+        support_virtualization: None,
         private_channel: None,
         stdin_stream: None,
         namespace_uid: 0,

@@ -2,21 +2,36 @@
 
 Status: **incomplete**. Started 19 October 2026. Current checkpoint: v11.
 
-23 October: [milestone 1.2 passed](milestone-1.2-handoff.md). Work is stopped
-at the user's request to save tokens. The user will initialize Git and commit.
-Read that handoff before older continuation notes. No simulator VM remains
-active. Milestone 2 and the full matrix remain incomplete.
+23 October: [milestone 1.2 passed](milestone-1.2-handoff.md). The user committed
+the checkpoint as `b276dd7a` and resumed work on 26 October. Read the
+[current continuation](continuation-2026-10-26.md) before the older records.
+Milestone 2 and the full matrix remain incomplete.
 
-Implementation has continued after v11. The active run, recent fixes, evidence
-locations and current agent work are in
-[the active continuation record](continuation-2026-10-21.md).
-The [earlier record](continuation-2026-10-20.md) retains the prior experiments.
+Latest instruction: finish the full CLI test, save a checkpoint and pause.
+CLI500 passed. Work is now paused. Read
+[checkpoint500](checkpoint-500.md) before resuming. It records the tested
+commands, independent mining/Core/browser evidence and the staged501/502 work.
+
+Latest26 October result: [adapted S9 run495 passes](reports/native-browser-mining-pass-495.md)
+the selected SSH/TLS native browser checks, fresh mining, independent header
+verification and two Core block acceptance/restart checks. The topology uses
+one execution host with an isolated worker and KVM client VM. Original-board
+and exact-target gates remain open. The PLL arithmetic oracle496 and FPGA
+netlist conversion497 also pass their limited component checks. Fresh CLI
+preparation498, HDL validation502 and BM1397 configuration state501 are in
+progress. Read the current continuation for exact source and test identities.
+
+Implementation has continued after v11. The
+[21 October record](continuation-2026-10-21.md) and
+[20 October record](continuation-2026-10-20.md) retain the earlier experiments.
+Use the 26 October continuation above for current work and next actions.
 The [BM1397 component record](bitaxe/bm1397-progress.md) covers the new Rust
 packet decoder and independent job-hash regressions. No exact physical target
 has passed all required gates.
 
-The user now requires a stop after each completed milestone for review and
-approval before the next milestone. See [the milestone record](milestones.md).
+On 26 October, the user resumed all milestone work and said to continue.
+The earlier milestone pause is no longer active. See
+[the milestone record](milestones.md).
 The adapted S9 start command passes its fresh demonstration in demo284. Its
 four boots produce eight different Core-accepted blocks, all retained after
 node restart. Native browser, signed update, settings restoration and restart

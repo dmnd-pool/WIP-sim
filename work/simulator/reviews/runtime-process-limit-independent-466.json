@@ -1,0 +1,100 @@
+{
+  "schema": "md-sim-independent-runtime-review/1",
+  "scope": "Root-authored process-limit placement and runtime tool identity; capture additions authored by this reviewer and not independently accepted by this review",
+  "source_review": "no unresolved finding for inspected root-authored change",
+  "checked_suites": [
+    [
+      15,
+      0,
+      0
+    ],
+    [
+      6,
+      0,
+      3
+    ],
+    [
+      1,
+      0,
+      1
+    ]
+  ],
+  "explicit_busy_uid_repetition": "one passed test, zero ignored",
+  "namespace_uid_cases": [
+    0,
+    1000
+  ],
+  "declared_guest_process_soft_hard_limit": 16,
+  "owned_host_sleepers": 24,
+  "source_inputs_and_logs": {
+    "crates/md-sim-runtime/src/isolation.rs": {
+      "sha256": "8cb765bca423de0ae8db69c4211dbe3a0f6ba2f3ac9e5e9c6ec4dede45d33d09",
+      "size": 38050
+    },
+    "crates/md-sim-runtime/src/doctor.rs": {
+      "sha256": "0b26d305d7f24313738c7dd1367580d2c9d6b0231f7afc6fc6bb7156044c9d2f",
+      "size": 4511
+    },
+    "crates/md-sim-runtime/tests/isolated_worker.rs": {
+      "sha256": "62e9a1506ac76a79ece3d8da9fbb44c54cd282c57ea25c8a79df0a102276073e",
+      "size": 44327
+    },
+    "crates/md-sim-runtime/tests/private_channel.rs": {
+      "sha256": "cc8aba28c752cac97400469cf348c1dc246bb6020ac03b08b4b83d83a6b9fb57",
+      "size": 24469
+    },
+    "crates/md-sim-coordinator/src/executor.rs": {
+      "sha256": "652f11aefe864d2591d6f9c6c95924ec9d8eca93ef71acfeab7174a57d51334a",
+      "size": 30416
+    },
+    "crates/md-sim-coordinator/tests/worker_carrier.rs": {
+      "sha256": "a481866bcf01301cd6fa786e54d1880d4ccad6d98f27f56e10c1ec47bfcac718",
+      "size": 27220
+    },
+    "crates/md-sim-firmware/examples/worker_channel_probe.rs": {
+      "sha256": "027b2c329e9204f64e2c749340aecd7eddb48ae09ee28fb34d4fc1c13dc8e2d3",
+      "size": 37247
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/worker_broker.rs": {
+      "sha256": "6e151bdceb45373c2303bf9f8665716479176178ffde606fac358a2e55b067d5",
+      "size": 29087
+    },
+    "crates/md-sim-firmware/examples/remote_namespace_check/board.rs": {
+      "sha256": "fc1cae023f77b9eabe33943a7fa61ec152c1fbf6f4a7afba1f68298cab267192",
+      "size": 30453
+    },
+    "crates/md-sim-firmware/examples/support/worker_broker_regression.rs": {
+      "sha256": "1422c392b594480c0b7a3b3bfec5b5ea0816955a9bdd2bca845039e9f57e56a2",
+      "size": 15130
+    },
+    "crates/md-sim-firmware/examples/aggregate_limits_check.rs": {
+      "sha256": "c60b2a396170f97b1311031e6b26b2c1477c93711ea8f3c9a7917955628eff91",
+      "size": 17988
+    },
+    "crates/md-sim-firmware/examples/process_vm.rs": {
+      "sha256": "3f5fe350f1842e38718eca7c76e017248bc022e18e707475eca1ab77bff9f8cc",
+      "size": 16062
+    },
+    "work/simulator/checks-2026-10-26-001/runtime466-busy-uid.log": {
+      "sha256": "3ae6082bcafae5977a492baad2c7d282c2bfeaa4f17d782514c83d1519804b3c",
+      "size": 441
+    },
+    "work/simulator/checks-2026-10-26-001/runtime466-isolation-channel.log": {
+      "sha256": "42bf031000f44ff7fd8824661f90fda94adb75972cb31e72e834f62117f988b3",
+      "size": 2373
+    },
+    "work/simulator/checks-2026-10-26-001/runtime466-worker-carrier.log": {
+      "sha256": "09d3f6df1539e9722a650f61a92d930eb382a8e9c4e46a8a3c5596dbb9853f36",
+      "size": 523
+    },
+    "work/simulator/checks-2026-10-26-001/runtime466-clippy.log": {
+      "sha256": "6b42d8b0fbf4968e8bbe0b523e116e9f1f60b37d0c13b97f417777c6d8370b31",
+      "size": 230
+    }
+  },
+  "limits": [
+    "No firmware, browser, Core or exact-target pass from these component tests.",
+    "Capture additions need common refreshed helper/image execution.",
+    "Historical results and frozen inputs remain unchanged."
+  ]
+}

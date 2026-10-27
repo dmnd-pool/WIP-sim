@@ -155,7 +155,7 @@ mod tests {
         .unwrap();
         let sample = fixture["sample"].clone();
         assert_eq!(assess(&sample).unwrap()["accepted_solutions"], 16);
-        for mode in 0..8 {
+        for mode in 0..9 {
             let mut changed = sample.clone();
             match mode {
                 0 => changed["workSolver"]["childSolvers"][0]["hwDetails"]["chips"] = json!(62),
@@ -171,7 +171,11 @@ mod tests {
                 }
                 5 => changed["poolGroups"][0]["pools"][0]["active"] = json!(false),
                 6 => changed["fans"][1]["name"] = json!("0"),
-                _ => changed["tempCtrl"]["targetC"] = json!(120),
+                7 => changed["tempCtrl"]["targetC"] = json!(120),
+                _ => {
+                    changed["poolGroups"][0]["pools"][0]["shares"]["acceptedSolutions"] = json!(0);
+                    changed["summary"]["shares"]["acceptedSolutions"] = json!(0);
+                }
             }
             assert!(assess(&changed).is_err(), "changed native sample {mode}");
         }

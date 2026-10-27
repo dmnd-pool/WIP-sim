@@ -612,6 +612,7 @@ pub(super) fn restore(directory: &Path, client_events: &[Value], spec: &Value) -
     for (name, path) in [
         ("bubblewrap", "/usr/bin/bwrap"),
         ("unshare", "/usr/bin/unshare"),
+        ("prlimit", "/usr/bin/prlimit"),
     ] {
         ensure!(
             serde_json::to_value(run.backend_tools.get(name).context("board tool absent")?)?

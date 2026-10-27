@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "scope": "Independent retained-byte, original ARM mapping and arithmetic review. No physical lock, timing, board or mining claim.",
+  "mounts_rehashed": 47,
+  "frozen_sources_rehashed": 137,
+  "retained_tar_files_joined": 13,
+  "original_leaf_unchanged_at_virtual_address": "0x28b2c",
+  "execution": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 158,
+    "trace_truncated": false
+  },
+  "raw_cases_checked": 22134,
+  "distinct_inputs": 22110,
+  "reference": "Independent Python struct single-precision rounding after each operation, with exact Fraction rational error bound. One-off review, not simulator code.",
+  "below_rational_floor": [
+    {
+      "case": 2352,
+      "actual": 124,
+      "rational": "125"
+    },
+    {
+      "case": 2376,
+      "actual": 24,
+      "rational": "25"
+    },
+    {
+      "case": 2520,
+      "actual": 24,
+      "rational": "25"
+    },
+    {
+      "case": 2544,
+      "actual": 4,
+      "rational": "5"
+    }
+  ],
+  "inputs": {
+    "work/simulator/bitaxe/t17-pll-oracle-496/spec.json": {
+      "sha256": "8f726827dfff1584cae3655b5baa365c6bce9cfa2c7e949fac35dfb7796b04c4",
+      "size": 9513
+    },
+    "work/simulator/bitaxe/t17-pll-oracle-496/result.json": {
+      "sha256": "947a09fedbb0acab39cf4efb96e221cbe5731b64bbc52ea438b4b4cc6ff9a981",
+      "size": 754506
+    },
+    "work/simulator/bitaxe/t17-pll-oracle-496/assessment.json": {
+      "sha256": "1b5798d0bc3cc21e060876610ee8c53848745f8e5b3f896195be9ab332d0affd",
+      "size": 2814
+    },
+    "work/simulator/bitaxe/t17-pll-oracle-496/execution.stdout": {
+      "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+      "size": 354160
+    },
+    "work/simulator/bitaxe/t17-pll-oracle-496/oracle": {
+      "sha256": "e96f38a6df508fbbb612343ac2de61fe6cc4fea8862763d354ed6ff10beaf072",
+      "size": 9024
+    },
+    "work/simulator/bitaxe/t17-pll-driver-496/manifest.json": {
+      "sha256": "57b7a72e84e8585623409e563e348f01a6ed09775a57e93f921419a471657dcc",
+      "size": 41220
+    }
+  }
+}

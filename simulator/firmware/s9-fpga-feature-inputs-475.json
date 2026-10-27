@@ -1,0 +1,334 @@
+{
+  "schema": "md-sim-fpga-feature-inputs/1",
+  "bitstream": {
+    "path": "work/simulator/original-zynq/sd-bundle-291/boot/system.bit.gz",
+    "object": {
+      "sha256": "bdf2b3bff4f5f06169b302ccfac8424e46bb2089b6313e363457bf2ae1d4bd40",
+      "size": 164570
+    }
+  },
+  "part": {
+    "path": "fixtures/fpga/xc7z010clg400-1/part.json",
+    "object": {
+      "sha256": "1754ec1c7a8e0447a116984505cc422819d3be06389527de96bf192c5175d095",
+      "size": 16801
+    }
+  },
+  "tilegrid": {
+    "path": "artifacts/files/metadata/prjxray-xc7z010-tilegrid-20261026/tilegrid.json",
+    "object": {
+      "sha256": "db16874f2827fc05248ad4a7ef5769deaa8e70158a60c8dd40194c48713479ee",
+      "size": 4351137
+    }
+  },
+  "tables": [
+    {
+      "tile_type": "CLBLL_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clbll-l-db-20261026/segbits_clbll_l.db",
+        "object": {
+          "sha256": "9bf6bdffdc814569a7da53c696e46207aab23ea66c9dd92c47e50a6211dd739b",
+          "size": 27294
+        }
+      }
+    },
+    {
+      "tile_type": "CLBLL_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clbll-r-db-20261026/segbits_clbll_r.db",
+        "object": {
+          "sha256": "c2ac0aeafc4d1e528e743c49fc00eba3b8b49068f034a4c0ab82df5dd9fb683b",
+          "size": 27294
+        }
+      }
+    },
+    {
+      "tile_type": "CLBLM_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clblm-l-db-20261026/segbits_clblm_l.db",
+        "object": {
+          "sha256": "07dca7c6b00f07a2a255f5178153c42bf16aff202623f2e3bc4bb0f2b974ba41",
+          "size": 28171
+        }
+      }
+    },
+    {
+      "tile_type": "CLBLM_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clblm-r-db-20261026/segbits_clblm_r.db",
+        "object": {
+          "sha256": "3ddfeca1b01bdc04b4f1b3d0dc73cf39f4230708fbbcb5b6170d5b50dc49ad64",
+          "size": 28171
+        }
+      }
+    },
+    {
+      "tile_type": "INT_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-int-l-db-20261026/segbits_int_l.db",
+        "object": {
+          "sha256": "0ea44e8dfaf97ed200f30b2afe117e94e1a68bdb26af2e09e69e855414779520",
+          "size": 164493
+        }
+      }
+    },
+    {
+      "tile_type": "INT_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-int-r-db-20261026/segbits_int_r.db",
+        "object": {
+          "sha256": "1541c7832dd161c5b3b5745d08fe0ee6f92bfbd372b76c12f54afc032c888556",
+          "size": 160201
+        }
+      }
+    },
+    {
+      "tile_type": "BRAM_L",
+      "bus": "BLOCK_RAM",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-bram-l-block-ram-db-0a0addedd73e/segbits_bram_l.block_ram.db",
+        "object": {
+          "sha256": "8a2136e564ac92c06b226ef8715a122050fcabbb063f69eeaf46cfee5c89670f",
+          "size": 1363328
+        }
+      }
+    },
+    {
+      "tile_type": "BRAM_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-bram-l-db-0a0addedd73e/segbits_bram_l.db",
+        "object": {
+          "sha256": "3957476dee60377d1050b3c2ad7c2fcdfc8319e3b8243f3ab61646c3596e02de",
+          "size": 24706
+        }
+      }
+    },
+    {
+      "tile_type": "BRAM_R",
+      "bus": "BLOCK_RAM",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-bram-r-block-ram-db-0a0addedd73e/segbits_bram_r.block_ram.db",
+        "object": {
+          "sha256": "a635577b55878c69df492c16b67a1dfbd1d4b786a695abe3e95a62d9540ecea5",
+          "size": 1363328
+        }
+      }
+    },
+    {
+      "tile_type": "BRAM_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-bram-r-db-0a0addedd73e/segbits_bram_r.db",
+        "object": {
+          "sha256": "0d491a52d82a694c927bc1112e657d8b40d93abf8a12426d47f5ca7106473ab0",
+          "size": 24826
+        }
+      }
+    },
+    {
+      "tile_type": "CFG_CENTER_MID",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-cfg-center-mid-db-0a0addedd73e/segbits_cfg_center_mid.db",
+        "object": {
+          "sha256": "1cb97b31823973edf1fd439e677573ad37318c697e06588d3c63ab50229b7ed4",
+          "size": 514
+        }
+      }
+    },
+    {
+      "tile_type": "CLK_BUFG_BOT_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clk-bufg-bot-r-db-0a0addedd73e/segbits_clk_bufg_bot_r.db",
+        "object": {
+          "sha256": "8d43bd09b2f7127ff9ed4803b92303d72c827d10b8b8d943c295343257b3e818",
+          "size": 22913
+        }
+      }
+    },
+    {
+      "tile_type": "CLK_BUFG_REBUF",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clk-bufg-rebuf-db-0a0addedd73e/segbits_clk_bufg_rebuf.db",
+        "object": {
+          "sha256": "d094c55a62408bd79c2606a8fc10839b23d979e4e924ced0d4276d285db7810f",
+          "size": 7900
+        }
+      }
+    },
+    {
+      "tile_type": "CLK_BUFG_TOP_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clk-bufg-top-r-db-0a0addedd73e/segbits_clk_bufg_top_r.db",
+        "object": {
+          "sha256": "6da9671e724a74e370b805ddd47e04eefd89daa0af4331e841720f7586d7eb2a",
+          "size": 22923
+        }
+      }
+    },
+    {
+      "tile_type": "CLK_HROW_BOT_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clk-hrow-bot-r-db-0a0addedd73e/segbits_clk_hrow_bot_r.db",
+        "object": {
+          "sha256": "dc4fc20f5ffdddefde25b7490dfc03d4b19785de3b8d2dc3ab7a02107eb5ab26",
+          "size": 205266
+        }
+      }
+    },
+    {
+      "tile_type": "CLK_HROW_TOP_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-clk-hrow-top-r-db-0a0addedd73e/segbits_clk_hrow_top_r.db",
+        "object": {
+          "sha256": "4c9c9effdaa6039eaa0df3c44056be0ceeaa1a34eab9134821f9f3e85f46738c",
+          "size": 155046
+        }
+      }
+    },
+    {
+      "tile_type": "CMT_TOP_L_LOWER_B",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-cmt-top-l-lower-b-db-0a0addedd73e/segbits_cmt_top_l_lower_b.db",
+        "object": {
+          "sha256": "a27bb7c254f63ac3cb9498e070d31f81b5763a31c395e94ad83f669692d18fa3",
+          "size": 26600
+        }
+      }
+    },
+    {
+      "tile_type": "CMT_TOP_L_UPPER_T",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-cmt-top-l-upper-t-db-0a0addedd73e/segbits_cmt_top_l_upper_t.db",
+        "object": {
+          "sha256": "84747f20186b10b07c4d0e1ec18f2753a0d6c7d8cb71d55373b0b306e81721d9",
+          "size": 23540
+        }
+      }
+    },
+    {
+      "tile_type": "DSP_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-dsp-l-db-0a0addedd73e/segbits_dsp_l.db",
+        "object": {
+          "sha256": "81e0623ff13a253e3f9303de3d5dfbcf2fc92cf5cba277bd7de69e70c3c527e3",
+          "size": 15815
+        }
+      }
+    },
+    {
+      "tile_type": "DSP_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-dsp-r-db-0a0addedd73e/segbits_dsp_r.db",
+        "object": {
+          "sha256": "5297906aaafefd3be356682dc03cc4f8c85d0ec238a7d66bafc8b1b50a6c0c96",
+          "size": 15815
+        }
+      }
+    },
+    {
+      "tile_type": "HCLK_CMT_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-hclk-cmt-l-db-0a0addedd73e/segbits_hclk_cmt_l.db",
+        "object": {
+          "sha256": "92eab3f79b39609fcd131300a63ddca51200ff4bd23b7b759d1e9bbf99543862",
+          "size": 42038
+        }
+      }
+    },
+    {
+      "tile_type": "HCLK_IOI3",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-hclk-ioi3-db-0a0addedd73e/segbits_hclk_ioi3.db",
+        "object": {
+          "sha256": "2ed495d6971c191c355614847839adf2590bbce598b5effabde9bac58712b675",
+          "size": 16236
+        }
+      }
+    },
+    {
+      "tile_type": "HCLK_L",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-hclk-l-db-0a0addedd73e/segbits_hclk_l.db",
+        "object": {
+          "sha256": "1c2c7229781a4a1d51bbbdeea76238b10497c043aaadf2a76de783041a201878",
+          "size": 11338
+        }
+      }
+    },
+    {
+      "tile_type": "HCLK_R",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-hclk-r-db-0a0addedd73e/segbits_hclk_r.db",
+        "object": {
+          "sha256": "51288ec0be63172fcb2a12a92853150c62a21e894c2d42a2586046c462bf57a9",
+          "size": 11296
+        }
+      }
+    },
+    {
+      "tile_type": "RIOB33",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-riob33-db-0a0addedd73e/segbits_riob33.db",
+        "object": {
+          "sha256": "327992e6b38faaeb0ddf948e8b42b8ce082a662f83f0dac14ebac901b3aeb909",
+          "size": 8258
+        }
+      }
+    },
+    {
+      "tile_type": "RIOI3",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-rioi3-db-0a0addedd73e/segbits_rioi3.db",
+        "object": {
+          "sha256": "712cc4b66ff35ea6033cb76e41d8dde1225857836f4b799834925ab5c3e8575a",
+          "size": 22213
+        }
+      }
+    },
+    {
+      "tile_type": "RIOI3_TBYTESRC",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-rioi3-tbytesrc-db-0a0addedd73e/segbits_rioi3_tbytesrc.db",
+        "object": {
+          "sha256": "6823106be1cdccae2cf0c1332c7a36ee11a1a86c31376100f16921b6b579ea19",
+          "size": 25489
+        }
+      }
+    },
+    {
+      "tile_type": "RIOI3_TBYTETERM",
+      "bus": "CLB_IO_CLK",
+      "input": {
+        "path": "artifacts/files/metadata/prjxray-segbits-rioi3-tbyteterm-db-0a0addedd73e/segbits_rioi3_tbyteterm.db",
+        "object": {
+          "sha256": "dcec55e405772728cf8c4dd2d981e76d25e9e3aed5142b5a78164a2959ad4d1a",
+          "size": 25853
+        }
+      }
+    }
+  ]
+}

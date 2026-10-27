@@ -1,0 +1,230 @@
+{
+  "schema": "md-sim-paused-source-checkpoint/1",
+  "scope": "Reviewed501 source staged only. Patch verified in a private temporary copy, not applied to production. No build or execution pass.",
+  "patch": {
+    "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+    "sha256": "5445f5c5df9f6f6d358522f61116474cd627e29a791c9d997fe254b55732f7af",
+    "size": 34366
+  },
+  "original_stage_manifest": {
+    "schema": "md-sim-source-stage/1",
+    "scope": "One explicit programmed-state capability in the existing chain. No acknowledgement, effective silicon state, guest readback, lock or mining. Production not integrated.",
+    "files": [
+      {
+        "path": "work/simulator/bm1397-programmed-501/programmed.rs",
+        "sha256": "47a02091c4cb5e2a5e914ac821bac04f18b735f3894ab5a6bc8aef37251f5946",
+        "size": 5619
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/programmed_tests.rs",
+        "sha256": "83caadd2a579a4f8918b4b3ca900fd12a1335d6b1970c6980f33893d404f4eab",
+        "size": 7498
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/identify.rs",
+        "sha256": "fc85ca0dfdac3e555553eca08f19694bfd6b9a22e32624ba4cb5cf1a93e444c7",
+        "size": 30810
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/bm1397.rs",
+        "sha256": "8d1a819f603ed88e51db479d4489613ac5891aabaf0c7b18e119c2cbdc6411a8",
+        "size": 20286
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/esp32_original_probe.rs",
+        "sha256": "d4c62e92652a6501ebb466f3b320469708eef915395b9bdc003ba1bfb2b1b461",
+        "size": 34528
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/t17-pll-frequency-results.bin",
+        "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+        "size": 354160
+      },
+      {
+        "path": "work/simulator/bm1397-programmed-501/t17-pll-frequency-results.json",
+        "sha256": "55a65f5712d26eaadd96c93f89ddc194c78b5b40a5d044efab9d7d26b443a8c6",
+        "size": 1717
+      }
+    ],
+    "checks": "Scoped Rust formatting passed. Cargo/build/actual original probe pending root source review and common499 release."
+  },
+  "original_base_manifest": {
+    "schema": "md-sim-source-base/1",
+    "files": [
+      {
+        "path": "crates/md-sim-firmware/src/bm1397.rs",
+        "sha256": "454de615a797108d6301aa20a8c9735d8674d7adddb81509bc7a390f7c21ded0",
+        "size": 20245
+      },
+      {
+        "path": "crates/md-sim-firmware/src/bm1397/identify.rs",
+        "sha256": "6ef618637a2aedd49788b190ec5aec22f97c5395e229048d8b08cba72725a397",
+        "size": 28131
+      },
+      {
+        "path": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+        "sha256": "658be079a059fd6580bfe5e64ac346bc50a09675a7ee42f464fc4fbf328289d5",
+        "size": 31080
+      }
+    ]
+  },
+  "resume": {
+    "schema": "md-sim-agent-resume-checkpoint/1",
+    "status": "staged_not_built_not_executed",
+    "instruction": "User directed the parent to finish the full fresh CLI500 test, then save a checkpoint and pause. Keep501 staged. Do not integrate, compile or execute501 until the user resumes work and the parent releases the hold.",
+    "completed": [
+      "496 original arithmetic oracle and independent execution review pass",
+      "497 independent conversion execution review closed with electrical/HDL limits explicit",
+      "501 staged source reviewed by parent with no source finding; scoped formatting passed",
+      "All seven staged input identities and three current production base identities rechecked at this checkpoint"
+    ],
+    "source_review": {
+      "path": "work/simulator/reviews/bm1397-programmed-independent-source-501.json",
+      "sha256": "1cc6214eb0b9bc4e639231323e664e3678e284f484d8b1a56bb48fba630a911e",
+      "size": 3601
+    },
+    "production_mapping": {
+      "bm1397.rs": "crates/md-sim-firmware/src/bm1397.rs",
+      "identify.rs": "crates/md-sim-firmware/src/bm1397/identify.rs",
+      "programmed.rs": "crates/md-sim-firmware/src/bm1397/programmed.rs",
+      "programmed_tests.rs": "crates/md-sim-firmware/src/bm1397/programmed_tests.rs",
+      "esp32_original_probe.rs": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+      "t17-pll-frequency-results.bin": "simulator/firmware/fixtures/t17-pll-frequency-results.bin",
+      "t17-pll-frequency-results.json": "simulator/firmware/fixtures/t17-pll-frequency-results.json"
+    },
+    "environment": {
+      "CARGO_TARGET_DIR": "work/simulator/check-target-085",
+      "CARGO_INCREMENTAL": "0",
+      "CARGO_BUILD_JOBS": "1",
+      "TMPDIR": "/home/user/src/md-sim/work/simulator/test-tmp-227"
+    },
+    "next_commands_after_review_integration_and_hold_release": [
+      "cargo test -p md-sim-firmware --lib bm1397 --offline --locked",
+      "cargo test -p md-sim-firmware --example esp32_original_probe --offline --locked",
+      "cargo clippy -p md-sim-firmware --lib --example esp32_original_probe --offline --locked -- -D warnings",
+      "cargo build -p md-sim-firmware --example esp32_original_probe --release --offline --locked",
+      "cargo fmt --all -- --check",
+      "FROZEN_HELPER/esp32_original_probe work/simulator/bitaxe/esp-qemu-build-017 artifacts/files/firmware/open-gh-asset-475665897/esp-miner-factory-102-v2.14.2.bin work/simulator/bitaxe/original-probe-037 bm1397-control-storage-adc"
+    ],
+    "next_actions": [
+      "Rehash all staged files and existing production bases before copying; preserve any intervening source edits.",
+      "Integrate all seven mappings, preserving original output and original firmware.",
+      "Run the listed affected checks and preserve failure logs; fix only demonstrated issues.",
+      "Freeze helper plus complete source/input identity before the new original probe.",
+      "Run original-probe-037. Predicted next0x28 failure is not success. Verify actual output and retain all raw state/TX/RX/error evidence.",
+      "Obtain independent source/execution review and update README only with verified commands."
+    ],
+    "owned_processes_running": [],
+    "useful_reports": [
+      "work/simulator/reviews/t17-pll-executed-496.md",
+      "work/simulator/reviews/t17-pll-independent-execution-496.json",
+      "work/simulator/reviews/netlist-conversion-independent-execution-497.json"
+    ]
+  },
+  "staged_readme": "# BM1397 programmed control state 501\n\nStatus: source staged for review. No build or original probe has run.\nProduction remains unchanged during common freeze499.\n\nThe next step adds `ControlWriteSupport::RegisterStorage` to the existing\n`IdentificationChain`. Its normal constructor retains the former strict\ncapability. The explicit capability adds a bounded bank for each existing\nchip. Addressing, power, reset, ticket filters, clock-order storage and packet\ndecoding continue through the same model. There is no second device model.\n\nThe new bank stores the posted core0 data byte and PLL0/PLL3 words. Core writes\nmust match the original T17 packing form. Other core registers, unsupported\nforms, core reads, PLL reads, status and jobs remain errors. No write emits a\nreply. Ambiguous addressed writes fail before any chip changes. Valid writes\nwith no selected chip leave every bank unchanged. Repeated writes update the\nsame state and have no one-shot bypass.\n\nReset or power loss removes knowledge of all three values. Each returns to\n`None`, not a guessed silicon value. Access to this diagnostic state is\nseparate from guest readback. A written PLL bit31 is never treated as observed\nlock. Internal core fan-out, clock polarity, completion and physical timing\nremain unknown. This work does not establish a working ASIC or mining path.\n\nThe production arithmetic view follows original oracle496. Its regression\ncompares all22,134 results against the retained original output, including\nthe four results below the rational floor. Zero divisors return an explicit\nerror. Raw register storage does not reject or repair an invalid physical\nconfiguration; the model makes no effective-clock claim for it.\n\nThe explicit `bm1397-control-storage-adc` probe selects this capability and\nexcludes the earlier one-shot observer. It retains the existing one-chip,\npower, reset, ADC and UART fixture assumptions. Its profile, model source hash\nand programmed state changes are recorded. All original-board and mining\ngates remain false. The expected next unknown command is register0x28, the\nfast UART configuration. That is a source prediction until actual execution.\n\nEvidence:\n\n- Original T17 packing oracle272/274 fixes the core0 command format.\n- Original formatter472 fixes field extraction, not core effects.\n- Exact archived ESP driver `9bd28dff43cb3c07a63c4843dba2704f7e071b1bfc7fb310cfd925cb35be2f56`\n  posts core0, ticket, PLL3, fast UART and baud commands without a completion read.\n- Original factory probe036 reaches the PLL3 write after the separate observer.\n- Original arithmetic oracle496 and its independent review prove the direct\n  divisor arithmetic. New source493 has conflicts and is not used to infer\n  lock or reset defaults.\n\nNext: root source review, exact base-hash check, integration after499 capture,\nfocused tests/Clippy/release, then a fresh original factory probe. Keep failed\ntraces and unknown commands explicit. No lower deadline, filter override or\nfabricated return value is part of this change.\n",
+  "source_review": {
+    "path": "work/simulator/reviews/bm1397-programmed-independent-source-501.json",
+    "sha256": "1cc6214eb0b9bc4e639231323e664e3678e284f484d8b1a56bb48fba630a911e",
+    "size": 3601
+  },
+  "fixture_restore": {
+    "original_output": {
+      "path": "work/simulator/bitaxe/t17-pll-oracle-496/execution.stdout",
+      "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+      "size": 354160
+    },
+    "staged_copy": {
+      "path": "work/simulator/bm1397-programmed-501/t17-pll-frequency-results.bin",
+      "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+      "size": 354160
+    },
+    "destination": "simulator/firmware/fixtures/t17-pll-frequency-results.bin",
+    "provenance": {
+      "schema": "md-sim-original-arithmetic-regression/1",
+      "scope": "Actual original T17 frequency arithmetic output. This fixture is not firmware mining or physical clock evidence.",
+      "encoding": "little-endian u32: magic, version, count, words-per-case; then case ID, register word, software-divider argument, original result",
+      "cases": 22134,
+      "output": {
+        "path": "work/simulator/bitaxe/t17-pll-oracle-496/execution.stdout",
+        "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+        "size": 354160
+      },
+      "original_miner": {
+        "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+        "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+        "size": 553247
+      },
+      "original_function": {
+        "virtual_address": "0x28b2c",
+        "file_offset": 133932,
+        "size": 108,
+        "sha256": "650ae97e0c4c042e4e89b91d2bdf995ce29433b0e3f7f8bd47cacd986155f4d7"
+      },
+      "driver_manifest": {
+        "path": "work/simulator/bitaxe/t17-pll-driver-496/manifest.json",
+        "sha256": "57b7a72e84e8585623409e563e348f01a6ed09775a57e93f921419a471657dcc",
+        "size": 41220
+      },
+      "execution_result": {
+        "path": "work/simulator/bitaxe/t17-pll-oracle-496/result.json",
+        "sha256": "947a09fedbb0acab39cf4efb96e221cbe5731b64bbc52ea438b4b4cc6ff9a981",
+        "size": 754506
+      },
+      "assessment": {
+        "path": "work/simulator/bitaxe/t17-pll-oracle-496/assessment.json",
+        "sha256": "1b5798d0bc3cc21e060876610ee8c53848745f8e5b3f896195be9ab332d0affd",
+        "size": 2814
+      },
+      "independent_review": {
+        "path": "work/simulator/reviews/t17-pll-independent-execution-496.json",
+        "sha256": "f1511bdb86f40ce190d49ca7bad082fd1aa05ad1ec07dfcf2772c0bbfa15b7b5",
+        "size": 2056
+      }
+    },
+    "instruction": "Restore the354160 exact bytes from either retained object only after SHA256 verification. If the local derived archive is absent, rerun the recorded original496 oracle with its exact pinned inputs; never regenerate these vectors from the new model."
+  },
+  "verification": {
+    "git_apply_check_exit": 0,
+    "git_apply_exit": 0,
+    "all_seven_results_match_staged_bytes": [
+      {
+        "target": "crates/md-sim-firmware/src/bm1397.rs",
+        "sha256": "8d1a819f603ed88e51db479d4489613ac5891aabaf0c7b18e119c2cbdc6411a8",
+        "size": 20286
+      },
+      {
+        "target": "crates/md-sim-firmware/src/bm1397/identify.rs",
+        "sha256": "fc85ca0dfdac3e555553eca08f19694bfd6b9a22e32624ba4cb5cf1a93e444c7",
+        "size": 30810
+      },
+      {
+        "target": "crates/md-sim-firmware/src/bm1397/programmed.rs",
+        "sha256": "47a02091c4cb5e2a5e914ac821bac04f18b735f3894ab5a6bc8aef37251f5946",
+        "size": 5619
+      },
+      {
+        "target": "crates/md-sim-firmware/src/bm1397/programmed_tests.rs",
+        "sha256": "83caadd2a579a4f8918b4b3ca900fd12a1335d6b1970c6980f33893d404f4eab",
+        "size": 7498
+      },
+      {
+        "target": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+        "sha256": "d4c62e92652a6501ebb466f3b320469708eef915395b9bdc003ba1bfb2b1b461",
+        "size": 34528
+      },
+      {
+        "target": "simulator/firmware/fixtures/t17-pll-frequency-results.json",
+        "sha256": "55a65f5712d26eaadd96c93f89ddc194c78b5b40a5d044efab9d7d26b443a8c6",
+        "size": 1717
+      },
+      {
+        "target": "simulator/firmware/fixtures/t17-pll-frequency-results.bin",
+        "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+        "size": 354160
+      }
+    ],
+    "temporary_source_copy_only": true,
+    "cargo_or_firmware_executed": false
+  },
+  "notes": "The exact .patch ignore exception and this .json receipt are eligible for Git. Ignored large work stores remain excluded. Original archive and retained evidence were not modified."
+}

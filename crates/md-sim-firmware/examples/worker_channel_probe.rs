@@ -225,6 +225,11 @@ fn guest(disconnect: bool, stall: bool) -> Result<()> {
 
 fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: bool) -> Result<()> {
     let shared = firmware && ssh;
+    let kvm = match std::env::var("MD_SIM_SUPPORT_KVM") {
+        Err(std::env::VarError::NotPresent) => false,
+        Ok(value) if value == "1" => true,
+        _ => anyhow::bail!("invalid support virtualization selection"),
+    };
     let browser = match std::env::var("MD_SIM_CARRIER_BROWSER_SUPPORT") {
         Ok(value) if value == "1" => true,
         Err(std::env::VarError::NotPresent) => false,
@@ -234,7 +239,13 @@ fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: boo
         !browser || shared,
         "browser support requires selected shared firmware"
     );
-    if browser {
+    ensure!(
+        !kvm || (browser && shared),
+        "KVM requires the selected browser support profile"
+    );
+    if kvm {
+        confinement::require_native_browser_kvm_host()?;
+    } else if browser {
         confinement::require_native_firmware_browser_worker_host()?;
     } else if firmware {
         confinement::require_native_firmware_worker_host()?;
@@ -261,13 +272,19 @@ fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: boo
         "-machine",
         "pc",
         "-accel",
-        if browser {
-            "tcg,thread=multi,tb-size=64"
+        if kvm {
+            "kvm"
+        } else if browser {
+            // Captured selected-client comparison458b starts both Firefox
+            // profiles within their existing budgets with this cache size.
+            "tcg,thread=multi,tb-size=256"
         } else {
             "tcg,thread=single"
         },
         "-cpu",
-        "max",
+        // Versioned QEMU model with the captured userspace's x86-64-v2
+        // instructions. Refuse unavailable features instead of filtering them.
+        if kvm { "Nehalem-v1,enforce" } else { "max" },
         "-m",
         if browser {
             "4096M"
@@ -299,9 +316,9 @@ fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: boo
         "/initramfs.cpio.gz",
         "-append",
         if browser {
-            "console=ttyS0 rdinit=/init panic=-1 rootfstype=ramfs md_sim_private_guest=1"
+            "console=ttyS0 rdinit=/init panic=-1 rootfstype=ramfs md_sim_private_guest=1 md_sim_trace_port=1"
         } else {
-            "console=ttyS0 rdinit=/init panic=-1 md_sim_private_guest=1"
+            "console=ttyS0 rdinit=/init panic=-1 md_sim_private_guest=1 md_sim_trace_port=1"
         },
         "-chardev",
         "stdio,id=worker,signal=off",
@@ -309,6 +326,10 @@ fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: boo
         "virtio-serial-pci,id=serial",
         "-device",
         "virtserialport,bus=serial.0,chardev=worker,name=md-sim.worker",
+        "-chardev",
+        "file,id=trace,path=/work/client-userspace.log",
+        "-device",
+        "virtserialport,bus=serial.0,chardev=trace,name=md-sim.trace",
     ]);
     if browser {
         command.args(["-smp", "2"]);
@@ -339,7 +360,8 @@ fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: boo
     // receives a host network interface. No extra seccomp layer is claimed.
     // QEMU's ordinary stdio character backend uses read/write on this private
     // stream. Its socket character backend needs host-denied getsockopt calls.
-    // Guest console bytes use a separate run-owned file, never this channel.
+    // Guest protocol output uses a dedicated virtual port. Kernel console
+    // bytes stay in a separate file and cannot interrupt a JSON frame.
     let input: OwnedFd = vm_end.try_clone()?.into();
     let output: OwnedFd = vm_end.into();
     command
@@ -353,44 +375,36 @@ fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: boo
     // Command retains the configured standard descriptors after spawn.
     // Release them so the worker sees EOF if the VM fails before Shutdown.
     drop(command);
-    // Retain console bytes while the VM runs. A wall-limit kill must not
+    // Retain both streams while the VM runs. A wall-limit kill must not
     // discard all guest evidence with the private temporary filesystem.
+    let mut userspace = None;
+    let mut userspace_bytes = 0usize;
     let mut console = None;
     let mut console_bytes = 0usize;
-    let mut buffer = [0u8; 65536];
     let status = loop {
-        if console.is_none() {
-            match File::open("/work/client-console.log") {
-                Ok(file) => console = Some(file),
-                Err(error) if error.kind() == std::io::ErrorKind::NotFound => {}
-                Err(error) => return Err(error.into()),
-            }
-        }
         // Read the process status before draining the file. If the process
         // exited, all bytes it wrote are present before the final drain.
         let status = vm.0.try_wait()?;
-        if let Some(file) = &mut console {
-            loop {
-                let count = file.read(&mut buffer)?;
-                if count == 0 {
-                    break;
-                }
-                console_bytes += count;
-                ensure!(
-                    console_bytes
-                        <= (if firmware {
-                            120
-                        } else if ssh {
-                            8
-                        } else {
-                            4
-                        }) << 20,
-                    "client console exceeds trace bound"
-                );
-                std::io::stdout().write_all(&buffer[..count])?;
-            }
-            std::io::stdout().flush()?;
-        }
+        relay_vm_trace(
+            Path::new("/work/client-userspace.log"),
+            &mut userspace,
+            &mut userspace_bytes,
+            (if firmware {
+                120
+            } else if ssh {
+                8
+            } else {
+                4
+            }) << 20,
+            &mut std::io::stdout(),
+        )?;
+        relay_vm_trace(
+            Path::new("/work/client-console.log"),
+            &mut console,
+            &mut console_bytes,
+            4 << 20,
+            &mut std::io::stderr(),
+        )?;
         if let Some(status) = status {
             break status;
         }
@@ -440,6 +454,111 @@ fn inside(disconnect: bool, firmware: bool, stall: bool, bad_ack: bool, ssh: boo
         "transport":"inherited connected Unix socket; no listener or host directory shared with VM"})
     );
     Ok(())
+}
+
+fn relay_vm_trace(
+    path: &Path,
+    reader: &mut Option<File>,
+    bytes: &mut usize,
+    limit: usize,
+    output: &mut impl Write,
+) -> Result<()> {
+    if reader.is_none() {
+        match File::open(path) {
+            Ok(file) => *reader = Some(file),
+            Err(error) if error.kind() == std::io::ErrorKind::NotFound => return Ok(()),
+            Err(error) => return Err(error.into()),
+        }
+    }
+    let file = reader.as_mut().context("VM trace file absent")?;
+    let mut buffer = [0u8; 65536];
+    loop {
+        let count = file.read(&mut buffer)?;
+        if count == 0 {
+            break;
+        }
+        *bytes = bytes
+            .checked_add(count)
+            .context("VM trace count overflow")?;
+        ensure!(
+            *bytes <= limit,
+            "VM trace exceeds bound: {}",
+            path.display()
+        );
+        output.write_all(&buffer[..count])?;
+    }
+    output.flush()?;
+    Ok(())
+}
+
+#[cfg(test)]
+mod trace_tests {
+    use super::*;
+
+    #[test]
+    fn partial_json_and_kernel_noise_remain_separate_across_live_polls() -> Result<()> {
+        let root = tempfile::tempdir()?;
+        let user = root.path().join("userspace");
+        let kernel = root.path().join("kernel");
+        let payload = "a".repeat(70_000);
+        fs::write(&user, format!("{{\"payload\":\"{payload}"))?;
+        fs::write(&kernel, b"labelled kernel noise\n")?;
+        let (mut user_reader, mut kernel_reader) = (None, None);
+        let (mut user_count, mut kernel_count) = (0, 0);
+        let (mut stdout, mut stderr) = (Vec::new(), Vec::new());
+        relay_vm_trace(
+            &user,
+            &mut user_reader,
+            &mut user_count,
+            100_000,
+            &mut stdout,
+        )?;
+        relay_vm_trace(
+            &kernel,
+            &mut kernel_reader,
+            &mut kernel_count,
+            4096,
+            &mut stderr,
+        )?;
+        fs::OpenOptions::new()
+            .append(true)
+            .open(&user)?
+            .write_all(b"\"}\n")?;
+        relay_vm_trace(
+            &user,
+            &mut user_reader,
+            &mut user_count,
+            100_000,
+            &mut stdout,
+        )?;
+        assert_eq!(
+            serde_json::from_slice::<Value>(&stdout)?["payload"],
+            payload
+        );
+        assert_eq!(stderr, b"labelled kernel noise\n");
+        assert_eq!(user_count, stdout.len());
+        assert_eq!(kernel_count, stderr.len());
+        Ok(())
+    }
+
+    #[test]
+    fn delayed_trace_creation_and_growth_keep_the_original_byte_bound() -> Result<()> {
+        let root = tempfile::tempdir()?;
+        let path = root.path().join("trace");
+        let (mut reader, mut count, mut output) = (None, 0, Vec::new());
+        relay_vm_trace(&path, &mut reader, &mut count, 3, &mut output)?;
+        assert_eq!(count, 0);
+        fs::write(&path, b"abc")?;
+        relay_vm_trace(&path, &mut reader, &mut count, 3, &mut output)?;
+        assert_eq!(output, b"abc");
+        fs::OpenOptions::new()
+            .append(true)
+            .open(&path)?
+            .write_all(b"d")?;
+        assert!(relay_vm_trace(&path, &mut reader, &mut count, 3, &mut output).is_err());
+        assert_eq!(output, b"abc");
+        Ok(())
+    }
 }
 
 fn add(store: &Store, inputs: &mut Vec<Mount>, path: &Path, guest: &str) -> Result<()> {
@@ -500,12 +619,13 @@ fn main() -> Result<()> {
             args[1] == "__inside_ssh" || args[1] == "__firmware_ssh_inside",
         );
     }
-    ensure!((4..=7).contains(&args.len()),
-        "usage: worker_channel_probe WORKER_IPC QEMU_BUILD NEW_OUTPUT [prepared=DIRECTORY] [ssh-helper=REMOTE_NAMESPACE_CHECK] [ssh-browser-payload=MANIFEST] [fault=client-disconnect|client-stall|wrong-receipt]");
+    ensure!((4..=8).contains(&args.len()),
+        "usage: worker_channel_probe WORKER_IPC QEMU_BUILD NEW_OUTPUT [prepared=DIRECTORY] [ssh-helper=REMOTE_NAMESPACE_CHECK] [ssh-browser-payload=MANIFEST] [support-accel=kvm] [fault=client-disconnect|client-stall|wrong-receipt]");
     let mut prepared_source = None;
     let mut ssh_helper = None;
     let mut browser_payload = None;
     let mut fault = None;
+    let mut support_kvm = false;
     for option in &args[4..] {
         let (key, value) = option
             .to_str()
@@ -513,6 +633,10 @@ fn main() -> Result<()> {
             .context("invalid channel option")?;
         ensure!(!value.is_empty(), "empty channel option");
         match key {
+            "support-accel" if value == "kvm" => {
+                ensure!(!support_kvm, "duplicate support accelerator");
+                support_kvm = true;
+            }
             "prepared" => ensure!(
                 prepared_source.replace(Path::new(value)).is_none(),
                 "duplicate prepared source"
@@ -550,6 +674,10 @@ fn main() -> Result<()> {
     ensure!(
         browser_payload.is_none() || (shared && fault.is_none()),
         "browser capture requires selected shared firmware execution"
+    );
+    ensure!(
+        !support_kvm || (shared && browser_payload.is_some() && fault.is_none()),
+        "KVM requires selected shared browser support without fault injection"
     );
     let worker = Path::new(&args[1]).canonicalize()?;
     let backend = Path::new(&args[2]);
@@ -643,6 +771,7 @@ fn main() -> Result<()> {
             ("/worker".into(), worker),
             ("/qemu".into(), qemu),
             ("/usr/bin/unshare".into(), PathBuf::from("/usr/bin/unshare")),
+            ("/usr/bin/prlimit".into(), PathBuf::from("/usr/bin/prlimit")),
             ("/usr/bin/bwrap".into(), PathBuf::from("/usr/bin/bwrap")),
         ],
     )?;
@@ -670,6 +799,8 @@ fn main() -> Result<()> {
         )?;
     }
     let spec = ProcessSpec {
+        support_virtualization: support_kvm
+            .then_some(md_sim_runtime::isolation::SupportVirtualization::Kvm),
         private_channel: None,
         stdin_stream: if disconnect || stall || (ssh && !shared) {
             None
@@ -709,10 +840,15 @@ fn main() -> Result<()> {
         ],
         inputs,
         stdin_object: None,
-        environment: if browser_payload.is_some() {
-            BTreeMap::from([("MD_SIM_CARRIER_BROWSER_SUPPORT".into(), "1".into())])
-        } else {
-            BTreeMap::new()
+        environment: {
+            let mut environment = BTreeMap::new();
+            if browser_payload.is_some() {
+                environment.insert("MD_SIM_CARRIER_BROWSER_SUPPORT".into(), "1".into());
+            }
+            if support_kvm {
+                environment.insert("MD_SIM_SUPPORT_KVM".into(), "1".into());
+            }
+            environment
         },
         dashboard: None,
         loopback: false,

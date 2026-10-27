@@ -1,0 +1,94 @@
+{
+  "schema": "md-sim-browser-clock-enforcement-review/1",
+  "status": "source reviewed; affected tests, strict Clippy and release builds passed; actual execution pending",
+  "independent_source_review": "Parent reviewed selected policy derivation, live check, retained verifier and negative tests; no blocking source finding.",
+  "scope": "Only declared clock adaptations; selected policy derives from the locked process, with the same five-second request interval comparison at both origins.",
+  "files": {
+    "crates/md-sim-firmware/examples/s9_browser_check.rs": {
+      "sha256": "af5898be53d4f1a6a9f1ebb4a526420c0da6a1a487d326ba051202d6d8610919",
+      "size": 39428
+    },
+    "crates/md-sim-firmware/examples/support/s9_browser_target.rs": {
+      "sha256": "d21b91e597032752badcb878594541a47b4333d645c88c5f88aa132f5edadabf",
+      "size": 34256
+    },
+    "crates/md-sim-firmware/examples/support/s9_wall_clock.rs": {
+      "sha256": "2e297312859588fd9e8adeefdbf7e4971f98269b380704e9f4a83af2df9aa0bf",
+      "size": 6669
+    },
+    "crates/md-sim-firmware/examples/s9_boot_bundle.rs": {
+      "sha256": "19aaf786d935faf31b3387d5df0cc1df6ee4b99cfae62ba3b7207f381e4f88d7",
+      "size": 122688
+    },
+    "work/simulator/checks-2026-10-26-001/browser-clock483-tests.log": {
+      "sha256": "ebe8ab20b90a05da44ed53799d27b38ffb0dfb55f77b069d7158afd06bc7750e",
+      "size": 20966
+    },
+    "work/simulator/checks-2026-10-26-001/browser-clock483-clippy.log": {
+      "sha256": "1846711b27fe517af032ac44f1183a9aec8738c2b030905d492a423cccfb166d",
+      "size": 392
+    },
+    "work/simulator/checks-2026-10-26-001/browser-clock483-build.log": {
+      "sha256": "db6c4fa6c6a1e64ef4e2be669e0f06b53860418a0d4a65e84d3d3dc8ab9f276b",
+      "size": 395
+    },
+    "work/simulator/check-target-085/release/examples/s9_browser_check": {
+      "sha256": "499a1694289a866b6c6bf2f6b4895df9336fd2471cd26311d7cd7a9f155a4419",
+      "size": 2666720
+    },
+    "work/simulator/check-target-085/release/examples/remote_namespace_check": {
+      "sha256": "4bb8aba79b43e9a68f43b159d28ee3d5f253eef55db0374fc233fc029dcf3149",
+      "size": 6277872
+    },
+    "work/simulator/check-target-085/release/examples/worker_channel_probe": {
+      "sha256": "62e89adb4962e1b9709c0c2f7f8c46dd6fa519bc290fa3b5294888495b3b313a",
+      "size": 4940208
+    },
+    "work/simulator/check-target-085/release/examples/isolated_network_vm": {
+      "sha256": "24cd7e7804c30d49b4bb979320e7ebddb805e08a44647804b6e75397b08c3e88",
+      "size": 2423240
+    },
+    "work/simulator/check-target-085/release/examples/build_qemu_backend": {
+      "sha256": "b3b80478b8672155f99f9aed5e5d6d87850c39a2d527e558e16ece54dd47eafa",
+      "size": 2625176
+    },
+    "work/simulator/check-target-085/release/examples/s9_boot_bundle": {
+      "sha256": "3bc9750196870e67f075f9dfbd8d235a904f1f95ab3662b0be1d88a5b56f4b23",
+      "size": 4802624
+    }
+  },
+  "checks": {
+    "tests": {
+      "passed": 186,
+      "failed": 0,
+      "ignored": 11,
+      "targets": [
+        "s9_browser_check",
+        "remote_namespace_check",
+        "worker_channel_probe"
+      ]
+    },
+    "strict_clippy": {
+      "passed": true,
+      "targets": [
+        "s9_browser_check",
+        "remote_namespace_check",
+        "worker_channel_probe",
+        "isolated_network_vm",
+        "build_qemu_backend",
+        "s9_boot_bundle"
+      ]
+    },
+    "release_build": {
+      "passed": true,
+      "targets": [
+        "s9_browser_check",
+        "remote_namespace_check",
+        "worker_channel_probe",
+        "isolated_network_vm",
+        "build_qemu_backend",
+        "s9_boot_bundle"
+      ]
+    }
+  }
+}
