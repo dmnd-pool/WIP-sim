@@ -1,0 +1,28 @@
+{
+  "schema": "md-sim-independent-source-fix-review/1",
+  "recorded_at": "2026-10-28T16:56:51.722540+00:00",
+  "reviewer": "cleanup_resume",
+  "parent_failure": "work/simulator/qemu-s9/live-selected-512d/hdl-report.json",
+  "old_source": {
+    "path": "work/simulator/qemu-s9/live-driver-512d/source/crates/md-sim-firmware/examples/support/s9_live_wrapper.rs",
+    "sha256": "324e94b9606a199d798890498d169b44ac78e9173fdfdd34da26355d762d735b",
+    "size": 4548
+  },
+  "new_source": {
+    "path": "crates/md-sim-firmware/examples/support/s9_live_wrapper.rs",
+    "sha256": "ee99393387da06d7e559f8fefa7674eb839f89e86393a9ddc600cb0c66972b0a",
+    "size": 5163
+  },
+  "source_review_passed": true,
+  "finding": "Actual Icarus compilation reports14 procedural-force bit-select RHS values would only be sampled once. Strict diagnostics correctly rejected the model before execution.",
+  "fix": "Insert md_inputs declaration after exactly one generated module header. Replace exactly one default-Z top instance connection for each of14 ordinary inputs with its corresponding md_inputs bit. This uses normal HDL input connectivity.2 inouts retain resolved continuous drivers and19 outputs remain observations.",
+  "preserved": [
+    "Same pin ordering,16-bit four-state input vector and initial allZ value.",
+    "Only declared30 PS7 output ports remain forced. No selected internal response or output is forced.",
+    "Original shared generate_shell and benchmark unchanged; retained511e generator regression runs1/pass.",
+    "No warning suppression, timing shift, changed assertion or resource limit."
+  ],
+  "actual_selected_live_rerun_pending": true,
+  "cpu_synchronization_complete": false,
+  "original_board_gate": false
+}

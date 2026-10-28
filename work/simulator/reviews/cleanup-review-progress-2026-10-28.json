@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "agent": "cleanup_resume",
-  "updated_at": "2026-10-28T15:37:54.508999+00:00",
+  "updated_at": "2026-10-28T17:47:21.852163+00:00",
   "status": "Assigned cleanup and ADC checkpoint audits complete. Continue S9 first; all other miner implementation is deferred by latest user instruction.",
   "reports": [
     {
@@ -172,13 +172,51 @@
     "Audit actual508 original-firmware reference run when browser/root provides retained output."
   ],
   "ownership": [
-    "No source file edit, compiler or runtime process is active for this agent.",
-    "No new cleanup is authorized by the current parent instruction.",
-    "Parent owns510 controller view and current run scheduling; browser owns508 reference implementation; exact_target_resume owns the next HDL/FPGA path."
+    "No compiler/runtime process owned by this agent",
+    "Browser owns CVC516 and CPU/PL514 implementation; exact agent owns Zynq ROM/SLCR513; parent owns scheduling/full checks",
+    "No new cleanup/deletion authorized or needed"
   ],
-  "priority": "Complete S9 before other miners. No new ADC/Bitaxe work. No new cleanup or deletion.",
+  "priority": "Complete S9 first; no other-miner implementation or new deletion",
   "next_actions": [
     "Review browser agent live HDL/Rust transport512 stage, especially event-region handoff, bounded framing, four-state values, time and cancellation.",
     "S9 is the active implementation priority. No other-miner implementation or new deletion."
-  ]
+  ],
+  "latest_closed_audit": "work/simulator/reviews/live-pl-cohort-independent-512e.json",
+  "active_stage": "Next QEMU/PL bridge source stage owned by browser agent; not yet reviewed or executed.",
+  "next_action": "Independent review of S9 bridge synchronization/isolation once source is ready. No new deletion or non-S9 work.",
+  "next_work": [
+    "Audit actual small Icarus/CVC RW comparison when terminal; expected CVC contract mismatch remains a failure",
+    "Audit513h build/register tests and next actual original-ROM diagnostic after owner run",
+    "Review separately recorded CVC scheduler/HDL compatibility adaptation before selected equivalence run",
+    "Review browser514 CPU/PL coordinator when source is stable"
+  ],
+  "new_reference_reviews": [
+    "work/simulator/reviews/s9-measured-reference-independent-512.json",
+    "work/simulator/reviews/s9-measured-reference-correction-independent-512.json",
+    "work/simulator/reviews/s9-controller-donor-independent-515.json",
+    "work/simulator/reviews/qemu-virtual-clock-independent-reference-514.json"
+  ],
+  "current_status": "S9 only. Verilator5.052 source lacks required four-state execution/VPI contract; no acquired execution or target incompatibility classification. CVC516 actual isolated tool build/restore audit passed with all253 source warnings preserved. Exact RW comparison runner source findings fixed.513h reset-reason reference source review closed; actual checks pending. No compiler/runtime/deletion owned.",
+  "closed_reviews_latest": [
+    "work/simulator/reviews/live-selected-independent-execution-514.json",
+    "work/simulator/reviews/live-throughput-independent-execution-514.json",
+    "work/simulator/reviews/zynq-rom-reset-independent-execution-513g.json",
+    "work/simulator/reviews/cvc-scheduler-independent-reference-516.json",
+    "work/simulator/reviews/cvc-builder-independent-source-516.json",
+    "work/simulator/reviews/s9-controller-markings-independent-515.json",
+    "work/simulator/reviews/verilator-fourstate-independent-reference-516.json",
+    "work/simulator/reviews/cvc-build-independent-execution-516.json",
+    "work/simulator/reviews/cvc-rw-runner-independent-source-516.json",
+    "work/simulator/reviews/zynq-reset-reason-independent-source-513h-cleanup.json"
+  ],
+  "temporary_audit_scripts": [
+    "/tmp/md-sim-audit513c.py",
+    "/tmp/md-sim-rom-map-audit513.py",
+    "/tmp/md-sim-audit513e.py",
+    "/tmp/md-sim-live514-audit.py",
+    "/tmp/md-sim-throughput514-audit.py",
+    "/tmp/md-sim-audit513g.py",
+    "/tmp/md-sim-audit-cvc516.py"
+  ],
+  "no_new_deletion": true
 }

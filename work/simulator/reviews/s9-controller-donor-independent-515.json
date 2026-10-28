@@ -1,0 +1,130 @@
+{
+  "schema": "md-sim-independent-donor-reference-review/1",
+  "reviewer": "cleanup_resume",
+  "input_pins": [
+    {
+      "path": "work/simulator/reviews/s9-controller-donor-identity-515.json",
+      "sha256": "ee567b446e5b75d8a9bc4b688ddd16bedb7b9668c8224d66a54dced120139b0a",
+      "size": 8586
+    },
+    {
+      "path": "catalog/parts/s9-controller-reference/sources.jsonl",
+      "sha256": "f1c3b42919face55a3af1e21595324798b5bec8a63c8a042234f47bbf736263f",
+      "size": 1361
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-bom.json",
+      "sha256": "8752ffbfa17fe50e15d4aa23592333624131d62043ded524da65229739816195",
+      "size": 1025
+    },
+    {
+      "path": "artifacts/files/source/source-s9-donor-components-20261028-bom/s9-donor-components.ods",
+      "sha256": "5e1631aeb1732029d69692f2c903024629b5e6e50193fd9316c48891a70a1c2f",
+      "size": 45970
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-commit.json",
+      "sha256": "bbb5687601b47357f0130a59ceee80620c9d734c5f7e2cd4c69f57fef16d69f4",
+      "size": 943
+    },
+    {
+      "path": "artifacts/files/metadata/source-s9-donor-components-20261028-commit/commit.json",
+      "sha256": "dc1a0bed7b7b901be032280aa76d80b0f640f9814b1b9e9dbdbf3699d7444a52",
+      "size": 64086
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-donor-b.json",
+      "sha256": "1c580bc7565949947aff758246bcf3a525d771b1d4095b9d0d01856c10c3e336",
+      "size": 1012
+    },
+    {
+      "path": "artifacts/files/source/source-s9-donor-components-20261028-donor-b/before_disassembly_b.jpg",
+      "sha256": "6f98f49ed43733d0ab0e5217371db1feef02060a6b3635ce7b3fab2ad6bf7ca0",
+      "size": 2580167
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-donor-f.json",
+      "sha256": "0d55db5e0f3b64a34e49a4283f38b594d6236b39531c6df8296d7ebfc6035280",
+      "size": 1012
+    },
+    {
+      "path": "artifacts/files/source/source-s9-donor-components-20261028-donor-f/before_disassembly_f.jpg",
+      "sha256": "fc3837b5eb9e21a63e713b88c21428ba27e3cdffef9614ab3b7e3427e1c32d6c",
+      "size": 2728837
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-hardware-tree.json",
+      "sha256": "2ad8e9f45fed3532251b0b2bfb0993479ac31ec20af302135b27b3eb93e0e587",
+      "size": 1021
+    },
+    {
+      "path": "artifacts/files/metadata/source-s9-donor-components-20261028-hardware-tree/hardware-tree.json",
+      "sha256": "8c23068bd3caec341b9e737c7923493591a45e74160c27f20d5df41703d13695",
+      "size": 7246
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-images-tree.json",
+      "sha256": "c0c57da02ca9b8ffa501839767cb54a939ae1b6c40744bdc0ae2d7c64655fdd2",
+      "size": 1013
+    },
+    {
+      "path": "artifacts/files/metadata/source-s9-donor-components-20261028-images-tree/images-tree.json",
+      "sha256": "59576e478a286121991129353c6b4514898bb9c3b6011032ebb7509bef34d430",
+      "size": 7876
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-readme.json",
+      "sha256": "8a12241a7b1ffc17c76453ea6bc6cc1727d7dd01f7bec14f52209cb3293d6065",
+      "size": 965
+    },
+    {
+      "path": "artifacts/files/source/source-s9-donor-components-20261028-readme/README.md",
+      "sha256": "c1595bfc2bdba1fea556bbdb488870bb0a83105079dfbfeb020e2c54e3e4ba65",
+      "size": 41080
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-root-tree.json",
+      "sha256": "163d85b16048e9e24d817c0d44ae5baecabe02379e766a922475ba84a83e12bd",
+      "size": 998
+    },
+    {
+      "path": "artifacts/files/source/source-s9-donor-components-20261028-root-tree/root-tree.json",
+      "sha256": "94f86aefd2c20f67d16a5d59b853894bb0bf1df6f5406ebde1be1da989b46849",
+      "size": 1493
+    },
+    {
+      "path": "artifacts/manifests/source-s9-donor-components-20261028-tree.json",
+      "sha256": "e6c6b43820bd1ebd975069613f87f4cb81a086cc7ec54f3749c9b539522558cc",
+      "size": 911
+    }
+  ],
+  "verified_downloaded_files": 8,
+  "preserved_failed_acquisitions": 1,
+  "git_trees_recomputed": 3,
+  "git_blobs_recomputed": 4,
+  "bom_rows_checked": 11,
+  "direct_original_image_observations": {
+    "donor-f": [
+      "Silkscreen reads Antminer_ControlBoard_XC7Z010_V1.0",
+      "Paper label reads Model: Ctrl_C41 Ver:1.20; assembly label differs from bare-board silkscreen revision",
+      "XILINX/ZYNQ and NANYA brands visible; full speed, package, temperature suffixes and stepping are not independently established from photos"
+    ],
+    "donor-b": [
+      "Annotated original back-board photograph; no extra IC or revision identity inferred"
+    ]
+  },
+  "limits": [
+    "Only donor-reference BOM column relates the new-board parts list to the original board. It is an author mapping, not an independent measured identification of each IC.",
+    "Red circles and arrows are already present in archived originals. No review image was altered.",
+    "This donor is not proven identical to selected firmware hardware or public ROM silicon. Storage, hashboards, PSU and cooling identities remain open."
+  ],
+  "gates": {
+    "exact_complete_target": false,
+    "original_boot": false,
+    "physical_timing": false,
+    "power_thermal_calibration": false,
+    "firmware_mining": false
+  },
+  "finding": null,
+  "passed": true
+}

@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Source-only review of exact Verilatorv5.052 as an alternative existing HDL backend. No acquired code executed, no build or catalogue reclassification.",
+  "source_revision": "ea338be98e1e838d3518809ce8899f85a009963c",
+  "version": "v5.052",
+  "archive": {
+    "path": "artifacts/files/source/source-verilator-5052-20261028/verilator-ea338be98e1e.tar.gz",
+    "sha256": "8ba141528710c835bd39f6d4c573cac72b39c46a4d69258dd470b07a3a58fada",
+    "size": 7063155
+  },
+  "source_manifest": {
+    "path": "work/simulator/verilator-516/reference-review/inputs.json",
+    "sha256": "e9d9e284d0682c81c017d67a4c0de6da9af0c182f7275edacad4f57347383330",
+    "size": 10696
+  },
+  "original_member_byte_comparisons": 34,
+  "tag_identity": {
+    "ref": "refs/tags/v5.052",
+    "tag_object": "efa4927be48e75c3cd08fc848b198d1d9d237f00",
+    "commit": "ea338be98e1e838d3518809ce8899f85a009963c",
+    "signed": false,
+    "proof": "Pinned GitHub ref/tag API records agree; this is not a verified signed-tag claim."
+  },
+  "metadata": [
+    {
+      "path": "artifacts/manifests/source-verilator-5052-20261028.json",
+      "sha256": "3c5ce1462459416b5a4baf2c96909c73f7fc3a511b5bddb8739122d6a0b9007f",
+      "size": 951
+    },
+    {
+      "path": "artifacts/files/source/source-verilator-5052-20261028/verilator-ea338be98e1e.tar.gz",
+      "sha256": "8ba141528710c835bd39f6d4c573cac72b39c46a4d69258dd470b07a3a58fada",
+      "size": 7063155
+    },
+    {
+      "path": "artifacts/manifests/source-verilator-5052-tag-20261028.json",
+      "sha256": "9d017927def9d4105c4f65339c17ae8509591a2244810105bc09b1978aa5b14f",
+      "size": 896
+    },
+    {
+      "path": "artifacts/files/metadata/source-verilator-5052-tag-20261028/tag.json",
+      "sha256": "f16281238ff98c9dcb82e7ac776959bf4cdebfa4bb8a38f7ac4865cd7fe07b14",
+      "size": 341
+    },
+    {
+      "path": "artifacts/manifests/source-verilator-5052-tag-object-20261028.json",
+      "sha256": "014adfa2ec34beb932a19357c2d4af6a045ce837392d5142ccc329b9179a6fe8",
+      "size": 981
+    },
+    {
+      "path": "artifacts/files/metadata/source-verilator-5052-tag-object-20261028/tag-object.json",
+      "sha256": "b0fb80b9cbc57c9e2df14874cdfa769c7474c87bbfad28775ea32477eefa9183",
+      "size": 662
+    }
+  ],
+  "licenses": {
+    "project_declaration": "LGPL-3.0-only OR Artistic-2.0, per original README and per-source SPDX headers. Test Verilog files declare CC0-1.0 where stated. No package-wide legal audit claimed.",
+    "files": [
+      {
+        "path": "work/simulator/verilator-516/reference-review/LICENSE",
+        "sha256": "996af0513df21f7496288951c41428a03c174e9e4a9d63665c57d670f845ccb1",
+        "size": 42098
+      },
+      {
+        "path": "work/simulator/verilator-516/reference-review/LICENSES/Artistic-2.0.txt",
+        "sha256": "bae466ac8d7100c304fe76632ccc627203a3897d3f7166f3cce00fb9df8c2074",
+        "size": 8764
+      },
+      {
+        "path": "work/simulator/verilator-516/reference-review/README.rst",
+        "sha256": "79d0d8029334aeea4e745656c2896d2050d93d3ac8d3b095d4203728a7dd4915",
+        "size": 7455
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "fourstate-option-not-implementation",
+      "severity": "backend-capability-gap",
+      "sources": [
+        "docs/guide/exe_verilator.rst:846-852",
+        "src/V3Options.cpp:1061-1067",
+        "src/Verilator.cpp:309-318",
+        "src/V3Unknown.cpp:173-187",
+        "src/V3Unknown.cpp:335-367",
+        "src/V3AstNodeExpr.h:3263-3276",
+        "src/V3AstNodeExpr.h:3837-3849"
+      ],
+      "finding": "The documented option is experimental/developer-only. This release emits a FUTURE warning that it is unsupported and rejects hierarchical use. The ordinary generation pipeline still unconditionally invokes unknown conversion, replacing X/Z constants with configured known/random values. The few option-dependent expression branches are incomplete wildcard-operator stubs, not full four-state execution.",
+      "required": "Do not suppress the warning and label a selected run four-state. A different implemented backend or separately evidenced existing-backend development is required."
+    },
+    {
+      "id": "array-tests-do-not-prove-unknown-memory",
+      "severity": "backend-capability-gap",
+      "sources": [
+        "test_regress/t/t_fourstate_assign.py",
+        "test_regress/t/t_fourstate_assign.v",
+        "test_regress/t/t_fourstate_assign_bad.out",
+        "test_regress/t/t_fourstate_fourstate_unsup.py",
+        "test_regress/t/t_fourstate_fourstate_unsup.out"
+      ],
+      "finding": "The array assignment test uses known8-bit constants only and does not enable --fourstate. It checks declared type compatibility, not retention of X/Z in RAM. The explicit --fourstate regression expects failure. The archive has12 files with t_fourstate in their path.",
+      "required": "Selected RAM unknown/reset observations remain mandatory; ordinary array support is insufficient."
+    },
+    {
+      "id": "vpi-loses-xz",
+      "severity": "blocks-current-raw-transport",
+      "sources": [
+        "include/verilated_vpi.cpp:3411-3439",
+        "include/verilated_vpi.cpp:3782-3797",
+        "include/verilated_vpi.cpp:4015-4076"
+      ],
+      "finding": "Scalar/vector VPI reads write bval=0; writes consume aval only. Array vector reads also zero bval, and array writes explicitly ignore the fourState argument. The current simulator transport requires raw X/Z values, which this interface cannot preserve unchanged."
+    },
+    {
+      "id": "tristate-transformation",
+      "severity": "requires-different-contract",
+      "sources": [
+        "docs/guide/languages.rst:288-318",
+        "src/V3Tristate.cpp"
+      ],
+      "finding": "The documented implementation converts supported tristate structures to two-state input/output/enable signals and requires external resolution for external drivers. It does not establish the current resolved-X/Z inout contract."
+    },
+    {
+      "id": "callback-boundary",
+      "severity": "requires-custom-scheduler-proof",
+      "sources": [
+        "include/verilated_vpi.cpp:2448-2490",
+        "include/verilated_vpi.cpp:1258-1289",
+        "src/V3EmitCMain.cpp:119-145"
+      ],
+      "finding": "Future relative RW/RO callbacks can be registered. The generated main evaluates once, polls value-change callbacks, then calls RW and immediately RO without re-evaluating changed HDL. The source therefore does not establish settled RO after a drive. Value-change polling after eval also does not prove every same-time delta transition is retained.",
+      "inference": "Our current exact NBA/X/Z sequence and clock-boundary tests cannot be assumed to pass from callback names alone. A custom harness could address scheduling, but does not supply missing four-state storage."
+    }
+  ],
+  "decision": "Do not spend a selected-model build on unchanged5.052 for the required four-state contract. Keep it as an explicitly limited candidate; pursue the compiled CVC path and its separately reviewed scheduler adaptation/equivalence tests. This is not evidence that any S9 hardware or firmware target is incompatible.",
+  "required_equivalence_gates": [
+    "all582 primitive assertions",
+    "two510-case RAM suites including unknown/parity/reset behavior",
+    "raw X/Z event order and time-zero NBA settling",
+    "same-edge input/clock ordering and split/unsplit equality",
+    "72selected AXI operations and2resets",
+    "bounded failure/cancellation and honest measured throughput"
+  ],
+  "executed": false,
+  "selected_hdl_equivalence": false,
+  "target_incompatible": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

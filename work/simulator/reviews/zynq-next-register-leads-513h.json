@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T18:23:11.792399+00:00",
+  "scope": "Read-only leads after actual513g reset trace; no model implementation or gate pass",
+  "original_pdf": {
+    "path": "artifacts/files/source/source-zynq-ug585-v1-bdtic-513h/ug585-v1.pdf",
+    "sha256": "15bc69f0aaa6e94f4c9191278279c3e9070382760851874df10596e1f9bd758a",
+    "size": 37471135
+  },
+  "derived_text": {
+    "path": "work/simulator/boot-dev-513/ug585-v1-full-513h.txt",
+    "sha256": "7c0fb4915ded97c7a8f81051909735c43e65f4f260742f0fdbad84c71fad07e3",
+    "size": 5037322
+  },
+  "LVTTL": {
+    "address": "0xf8000b10",
+    "name": "GPIOB_CFG_LVTTL",
+    "field_page": 1516,
+    "reset": 0,
+    "access": "rw",
+    "reserved_high_nibble": "writes ignored, reads zero",
+    "lower28bits": "rw, reserved Do not modify",
+    "boot_value_table": "0x0c301166 at source text line7816",
+    "excerpt": {
+      "path": "work/simulator/boot-dev-513/ug585-v1-lvttl-513h.txt",
+      "sha256": "b7dd379c78d9e47b904d2211548196b5ed8e8ef1954a73a2e6dcd1fab7790608",
+      "size": 2186
+    },
+    "next_action": "After observedCLR path passes, implement actual register state with source-defined masks/reset and separate declared analog limitations; test without treating electrical calibration as known."
+  },
+  "debug": {
+    "address": "0xf8000500",
+    "identity": "CoreSight SoC debug control (old/current manufacturer SLCR group map)",
+    "field_layout": "unresolved",
+    "original_rom": "write0 at0x1704..1710; static r9=0 from surrounding original routine, not yet retained actual value trace",
+    "primary_urls": [
+      "https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM/SLCR-Registers",
+      "https://lists.nongnu.org/archive/html/qemu-devel/2014-04/msg00415.html"
+    ],
+    "upstream_history": "Older QEMU stored dbg_ctrl as a register.2014rewrite removes it. This is a reusable implementation lead, not proof of physical semantics.",
+    "next_action": "Acquire exact primary source/field contract or validated existing component before removing the strict unsupported-access failure."
+  },
+  "nonclaims": [
+    "No new firmware, CPU or board execution",
+    "No exact S9 silicon/ROM binding",
+    "No public debug endpoint or physical miner access"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "md-sim-zynq-rom-attempt/1",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/rom-reset-driver-513f/manifest.json",
+    "sha256": "97cb22ff61d941d84c167298c8761abc82203881f5d74603f62b2313c1e23ece",
+    "size": 100294
+  },
+  "files": [
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513f/assessment.json",
+      "sha256": "f4c7ac321f1d95852a1cb39ee1da30092fdac45569fb8868db5ef96f5df64d69",
+      "size": 3405
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513f/result.json",
+      "sha256": "234c1b708bf85e2f2da9e55eff87f1d884cc7e738cc8405585218ffca9bfc054",
+      "size": 28084
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513f/spec.json",
+      "sha256": "a7231ebcc16db9a173fb6abe15311d442f170864c95e38ceb235949df653192c",
+      "size": 7949
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513f/input-identities.json",
+      "sha256": "fabb8636d743d70f5b006603fab75f800c60d996d921e3d91965d5f6e976e902",
+      "size": 1338
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513f/first-diagnostic.json",
+      "sha256": "f7f9eb7300e2ce4ca24b7f6319d4828a3b7137e0d531f33a1bba7573a3d2297c",
+      "size": 227
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513f/serial.stdout",
+      "sha256": "36b0f7abe4e012a6b9b5565d4955cbe2d5c4c113df96d2d5b60272910676d041",
+      "size": 366
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513f/instruction-trace.log",
+      "sha256": "cecfa416191f055dce59291c98c4c9d4917ece4cdcc462e6aa2596dcd6feeadf",
+      "size": 13252
+    }
+  ],
+  "status": "Cancelled by strict observer on source-defined raw target disassembly representation. All7 startup phase records matched. No hardware incompatibility inferred.",
+  "translated_block_headers": 153,
+  "direct_original_ROM_match": {
+    "spans": 162,
+    "bytes": 2436,
+    "report": {
+      "path": "work/simulator/reviews/zynq-rom-raw-trace-stage-513g.json",
+      "sha256": "d042118ea8c2b67534354c71691ee86ab6b2147c71664d79ce06ed74179f4721",
+      "size": 24041
+    }
+  },
+  "report_field_correction": "Immutable assessment/1 names its block-header count translated_instruction_lines. That is a legacy label; it must not be read as153 instructions or an execution count. Newschema2 uses translated_block_address_headers.",
+  "original_board_gate": false,
+  "firmware_boot_gate": false,
+  "functional_mining_gate": false
+}

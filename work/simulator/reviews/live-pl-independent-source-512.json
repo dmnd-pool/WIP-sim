@@ -1,0 +1,134 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "recorded_at": "2026-10-28T16:37:55.271913+00:00",
+  "reviewer": "cleanup_resume",
+  "status": "source_review_passed_execution_pending",
+  "stage": {
+    "path": "work/simulator/s9-cosim-512/stage.json",
+    "sha256": "f820c9cf16bca79a1d6ea165d2e6ddecca5158e7539f9b3ee2ce078ad0c39ccc",
+    "size": 4811
+  },
+  "reviewed_files": [
+    {
+      "sha256": "ab37f4a053a0695a500e7e09562e40947c8dfc46d0ccfb8d499b3248f601ff1d",
+      "size": 34893,
+      "stage_path": "work/simulator/s9-cosim-512/s9_hdl_validate.rs",
+      "destination": "crates/md-sim-firmware/examples/s9_hdl_validate.rs"
+    },
+    {
+      "sha256": "35450539848266d186db80c1c89c51a641ab0a7c971b61369b7a0dacce48902e",
+      "size": 29392,
+      "stage_path": "work/simulator/s9-cosim-512/s9_axi_vectors.rs",
+      "destination": "crates/md-sim-firmware/examples/support/s9_axi_vectors.rs"
+    },
+    {
+      "sha256": "a602a856003eb5ea181584b85be39aa8cc116ee05a8b6717b71190173f7738d4",
+      "size": 18923,
+      "stage_path": "work/simulator/s9-cosim-512/live_protocol.rs",
+      "destination": "crates/md-sim-firmware/examples/support/s9_live_protocol.rs"
+    },
+    {
+      "sha256": "324e94b9606a199d798890498d169b44ac78e9173fdfdd34da26355d762d735b",
+      "size": 4548,
+      "stage_path": "work/simulator/s9-cosim-512/live_wrapper.rs",
+      "destination": "crates/md-sim-firmware/examples/support/s9_live_wrapper.rs"
+    },
+    {
+      "sha256": "756b8f6ecf232bceae9457a17a2a799eba6d80d61916a8f8df61d6e9ea67c661",
+      "size": 14898,
+      "stage_path": "work/simulator/s9-cosim-512/live_scenario.rs",
+      "destination": "crates/md-sim-firmware/examples/support/s9_live_scenario.rs"
+    },
+    {
+      "sha256": "a8198c3a10114e950bd6b85f6cdfda6fad84340b80b69bbb1c316a90ed0c1b06",
+      "size": 11437,
+      "stage_path": "work/simulator/s9-cosim-512/mdsim_live.c",
+      "destination": "simulator/backends/icarus/mdsim_live.c"
+    },
+    {
+      "sha256": "c688667aa1f387a061b77482065a137e08127d0abb0ef4e5aa311e2e026cd3da",
+      "size": 5822,
+      "stage_path": "work/simulator/s9-cosim-512/live-control.v",
+      "destination": "simulator/backends/icarus/live-control.v"
+    },
+    {
+      "sha256": "0222563a4e40f27608c88eefc6083c794b95a93b087b64d82514773d0da645bc",
+      "size": 1050,
+      "stage_path": "work/simulator/s9-cosim-512/vpi-order-fixture.v",
+      "destination": "simulator/backends/icarus/vpi-order-fixture.v"
+    },
+    {
+      "sha256": "47dc7c50b5eb0e89ce0836f2ae33e617fa6e6050028b7a09db9c94d2966b95b1",
+      "size": 11692,
+      "stage_path": "work/simulator/s9-cosim-512/s9-hdl-inputs-512.json",
+      "destination": "simulator/firmware/s9-hdl-inputs-512.json"
+    },
+    {
+      "stage_path": "work/simulator/s9-cosim-512/clock-order-fixture.v",
+      "destination": "simulator/backends/icarus/clock-order-fixture.v",
+      "sha256": "2f7e49f674ba375e2c618192aa718934c18cb5c5805589988769c0c008d3d201",
+      "size": 943
+    }
+  ],
+  "owned_component_independent_review": "work/simulator/reviews/live-child-independent-source-512-root.json",
+  "scope": "Independent review of browser agent protocol/C VPI/HDL wrapper/scenarios/driver changes. Supervisor was authored by this reviewer and separately reviewed by root and browser. No runtime or whole-S9 acceptance is inferred.",
+  "references": [
+    "work/simulator/reviews/icarus-scheduler-independent-reference-512.json",
+    "work/simulator/reviews/icarus-rw-order-independent-reference-512.json",
+    "work/simulator/reviews/maxigp0-independent-execution-511e.json"
+  ],
+  "closed_findings": [
+    {
+      "id": "interval-events",
+      "fix": "Order retains interval events after prior completion and before the requested future input; completion still cannot predate its request."
+    },
+    {
+      "id": "completion-args8",
+      "fix": "Explicit actual AXI posedge count1..1024 for bus operations;0 for other operations. Reserved words remain checked."
+    },
+    {
+      "id": "typed-response-bypass",
+      "fix": "Public typed responses are validated through the shared strict frame decoder before ordering acceptance."
+    },
+    {
+      "id": "active-event-blocking",
+      "fix": "Value-change callback only captures bounded4096-event FIFO entries. RO callbacks transmit; Ready/Complete explicitly flush prior events before receipt/admission."
+    },
+    {
+      "id": "same-time-clock-input-race",
+      "fix": "Strictly future cbReadWriteSynch gives old active/inactive/NBA work before the input batch; no time adjustment. The exact live-control code is reused by the split/unsplit clock oracle."
+    },
+    {
+      "id": "scratch-and-retention-growth",
+      "fix": "Separate current-cohort baseline and live invocations retain their own actual programs. The temporary compiler tree is removed only after successful compilation, clean diagnostics and plugin hash. No VVP equality/reuse or artifact normalization is assumed."
+    }
+  ],
+  "checked_contracts": [
+    "Fixed128-byte private inherited FD3 frames; stdout/stderr remain vendor logs. Actual four-state X/Z vectors retained; no supplied bus reply.",
+    "C VPI handle widths/types and request argument/reserved-bit bounds match Rust. Initialization receipt is transport-only.",
+    "Absolute Q32 half-clock edges round up to1ps without repeated rounding drift. First enable low, gating holds, rephase preserves level; digital phase policy is explicit.",
+    "All72 register/strobe/reset checks operate on live observed responses. Wire and text observations are joined exactly, including the known PS7 no-CPU notice.",
+    "Old profile uses original benchmark and unchanged handshake task. Shared primitive/RAM/strict elaboration/original-firmware-contract checks stay in both modes.",
+    "Live profile is pinned to exact shim and compiler/archive manifest hashes. Outer success checks require actual live result and current capture references.",
+    "Same900s/600CPU/4GiB/32process/1GiBscratch/96MiBtrace bounds. No new runtime device/network grant.",
+    "Source contains no original-board, CPU synchronization or physical calibration upgrade.",
+    "Final cleanup removes unused blocking write_request and compiles peer-side decode/packing/read/edge-reference helpers only in tests. Actual supervisor framing and validators are unchanged."
+  ],
+  "resource_preflight": {
+    "compiler_regular_files": 22383,
+    "compiler_logical_bytes": 697927858,
+    "old_and_live_vvp_together_exceed_scratch": true,
+    "resolution": "separate runs; each actual model retained, compiler scratch removed before live VVP compile"
+  },
+  "required_checks": [
+    "Focused real-process supervisor and protocol tests, strict Clippy and format.",
+    "Retained511e generator-byte identity regression for unchanged baseline.",
+    "Actual confined UBSan C plugin build plus NBA/X/Z/same-time events and duplicate-completion rejection.",
+    "Actual split and unsplit clock-input collision comparisons, including raw event timelines and later reset/input sampling.",
+    "Fresh baseline and live selected72-transaction runs with the same frozen helper; retain both program identities and all failures."
+  ],
+  "unresolved_source_findings": [],
+  "cpu_synchronization_complete": false,
+  "original_board_gate": false,
+  "firmware_execution_gate": false
+}

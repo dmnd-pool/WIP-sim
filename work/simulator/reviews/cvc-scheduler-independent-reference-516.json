@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "date": "2026-10-28",
+  "scope": "Independent static review of exact existing CVC scheduler and VPI interface; no acquired code executed. S9 completion is the current priority.",
+  "source_revision": "1c5e043ec33ef6f1fdbf38565501c944893a83cf",
+  "archive": {
+    "path": "artifacts/files/source/source-cvc-mirror-1c5e043-20261028/open-src-cvc-1c5e043ec33e.tar.gz",
+    "sha256": "bb9d8acd54f168db608b4a16a6bebc758cca59836fdfacebd89d0b635aa2cf13",
+    "size": 5409351
+  },
+  "reference_manifest": {
+    "path": "work/simulator/s9-cvc-516/reference-review/inputs.json",
+    "sha256": "99d547e5cb8fd601feb375697e30a43b0bb2ac5254f9cd618f462a6b3181e628",
+    "size": 2566
+  },
+  "all_reference_members_byte_equal_to_archive": true,
+  "reference_files": 17,
+  "findings": [
+    {
+      "id": "rw-before-nba",
+      "severity": "blocks-unchanged-Icarus-adapter-equivalence",
+      "evidence": [
+        "src/v_vpi.c:2578-2586",
+        "src/v_vpi.c:2609-2612",
+        "src/v_vpi.c:2743-2765",
+        "src/v_sim.c:630-707",
+        "src/v_asmlnk.c:7043-7167"
+      ],
+      "finding": "Future cbReadWriteSynch is rescheduled onto the pending #0 queue. Both interpreted scheduling and generated64-bit scheduling drain that queue before the NBA queue. This differs from the pinned Icarus adapter contract, which applies future input batches after existing active/inactive/NBA work. Equal callback names do not prove equal boundary semantics.",
+      "required": "Preserve the actual same-edge/NBA, split/unsplit and four-state fixtures. Any adapter or scheduler correction needs separate provenance and independent tests; do not silently change input timing."
+    },
+    {
+      "id": "finish-status",
+      "severity": "requires-explicit-portability-adapter",
+      "evidence": [
+        "src/v_vpi3.c:6737-6756",
+        "src/v_tf.c:4304-4335",
+        "simulator/backends/icarus/mdsim_live.c:44-51"
+      ],
+      "finding": "CVC vpiFinish argument is a diagnostic level. The exit code is1 only when its internal error count is nonzero. The current shim uses Icarus-specific vpip_set_return_value, absent from this CVC VPI interface.",
+      "required": "Explicit process-failure handling and a real negative fixture must prove nonzero exit and retained diagnostics."
+    },
+    {
+      "id": "compiled-pli-access",
+      "severity": "required-build-option",
+      "evidence": [
+        "tests_and_examples/examples.vpi/README:10-29",
+        "src/v_bbgen.c:1666-1673"
+      ],
+      "finding": "Compiled value-change support and generated read-only synchronization machinery require access level at least2. +acc or +acc+1 is insufficient. Compiled vpiAddDriver is unsupported; the current shim does not use it.",
+      "required": "Pin +acc+2 for the actual compiled proof; do not infer callback behavior from an interpreted-only test."
+    }
+  ],
+  "supported_source_properties": [
+    {
+      "evidence": [
+        "src/v_vpi3.c:2783-2806",
+        "src/v_vpi3.c:4433-4461"
+      ],
+      "property": "VPI vector get/put retain aval and bval;64-bit native words are split into32-bit VPI words. This supports representing X/Z, but does not establish whole-model equivalence."
+    },
+    {
+      "evidence": [
+        "src/v_vpi.c:2549-2570",
+        "src/v_vpi.c:2743-2765",
+        "src/v_vpi.c:2673-2695",
+        "src/v_asmlnk.c:8030-8240",
+        "src/v_vpi3.c:2941-2949"
+      ],
+      "property": "Read-only callbacks are queued for end-of-slot processing and set the read-only flag. Same-time put_value is rejected there; future changes may be scheduled. Retain the no-write-in-RO rule."
+    }
+  ],
+  "current_shim": {
+    "path": "simulator/backends/icarus/mdsim_live.c",
+    "sha256": "a8198c3a10114e950bd6b85f6cdfda6fad84340b80b69bbb1c316a90ed0c1b06",
+    "size": 11437
+  },
+  "required_actual_gates": [
+    "compiled build and standalone restore smoke",
+    "fatal/EOF/cancel/partial-frame failure status",
+    "time-zero NBA settling and same-time IRQ X/Z order",
+    "old clock edge versus future input boundary; split/unsplit event equality",
+    "unknown clock startup case",
+    "all582 primitive and2x510 RAM observations",
+    "selected72 AXI transactions and2resets through strict transport",
+    "measured throughput with failures retained"
+  ],
+  "executed": false,
+  "cvc_drop_in_equivalence": false,
+  "selected_hdl_pass": false,
+  "cpu_execution_pass": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "physical_timing_claim": false
+}

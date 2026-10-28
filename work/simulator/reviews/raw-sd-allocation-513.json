@@ -1,0 +1,96 @@
+{
+  "schema": "md-sim-raw-sd-observation/1",
+  "method": "Read-only Python standard-library byte audit; no acquired source executed. Separate from the staged Rust inspector and not an independent reviewer verdict.",
+  "image": {
+    "path": "artifacts/files/firmware/braiins-feed-4366569e66ab54bc0d15/braiins-os_am1-s9_sd_2022-04-29-0-5eb2c5fe-22.02.4-plus.img",
+    "sha256": "97a257571af4fb9e62f709e2d6b8f36a191fdd07f1cd12ae780bd1c73af7eaef",
+    "size": 112197632
+  },
+  "partition_start": 1048576,
+  "bpb": {
+    "bytes_per_sector": 512,
+    "sectors_per_cluster": 4,
+    "reserved_sectors": 4,
+    "fat_copies": 2,
+    "root_entries": 512,
+    "sectors_per_fat": 80
+  },
+  "fat_copies_equal": true,
+  "directory": {
+    "image_offset": 1132768,
+    "bytes": "424f4f542020202042494e20180090509d549d54000090509d5464249f350100"
+  },
+  "chain": [
+    9316,
+    9317,
+    9318,
+    9319,
+    9320,
+    9321,
+    9322,
+    9323,
+    9324,
+    9325,
+    9326,
+    9327,
+    9328,
+    9329,
+    9330,
+    9331,
+    9332,
+    9333,
+    9334,
+    9335,
+    9336,
+    9337,
+    9338,
+    9339,
+    9340,
+    9341,
+    9342,
+    9343,
+    9344,
+    9345,
+    9346,
+    9347,
+    9348,
+    9349,
+    9350,
+    9351,
+    9352,
+    9353,
+    9354
+  ],
+  "end_marker": 65535,
+  "allocated": {
+    "sha256": "e433dda4e773f5728280e626ca2031a78526f2e30e4c01ba690bbec5791dbcca",
+    "size": 79872
+  },
+  "logical": {
+    "sha256": "950d19c6e5bfd9d8107def130b19fc9a5f64d824b26c0c493d5fdfe8503edac4",
+    "size": 79263
+  },
+  "seven_zip_extraction_equal": "work/simulator/original-zynq/sd-bundle-291/boot/boot.bin",
+  "allocated_slack": {
+    "sha256": "02ec92eaa8544eb9bae9662622c1eb58b25818695b593d90b45413428d84daeb",
+    "size": 609,
+    "nonzero": 0
+  },
+  "following_physical_bytes": {
+    "offset": 20303872,
+    "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+    "size": 4096,
+    "nonzero": 0,
+    "is_file_data": false
+  },
+  "header": {
+    "source_offset": 2240,
+    "length": 79263,
+    "stored_length": 79263,
+    "sum32_header_words": 4294967295,
+    "logical_suffix_size": 77023,
+    "overrun_logical_if_full_length_copied": 2240,
+    "overrun_allocated_chain_if_full_length_copied": 1631
+  },
+  "scope": "Observed allocation and header only. No inferred BootROM EOF handling, padding, reset, or original-board pass."
+}

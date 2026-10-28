@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "priority": "Complete S9 first",
+  "scope": "Independent source framing and actual public-ROM diagnostic audit. Not a successful boot.",
+  "source_freeze_entries": 585,
+  "before_after_equal": true,
+  "mounts": 36,
+  "actual_result": {
+    "status": "cancelled",
+    "exit_code": null,
+    "wall_milliseconds": 217,
+    "trace_truncated": false
+  },
+  "raw_bytes": {
+    "address_headers": 169,
+    "spans": 180,
+    "bytes": 2736,
+    "all_match_archived_original_rom": true
+  },
+  "first_diagnostic": {
+    "byte_offset": 4648,
+    "text": "7a796e715f736c63723a20496e76616c69642077726974652061636365737320746f206164647220323534",
+    "decoded": "zynq_slcr: Invalid write access to addr 254",
+    "line_sha256": "c47c9232716c51f98c3c89bf89dbc1e9d9a55e86031c843029d43b27e78083d5"
+  },
+  "independent_a32_decode": {
+    "original_offset": 5872,
+    "words": [
+      "0xe3a00f95",
+      "0xe3a01001",
+      "0xe34f0800",
+      "0xeb00263f"
+    ],
+    "r0_address": "0xf8000254",
+    "r1_value": 1,
+    "call_target": "0xb000",
+    "target_word": "e5801000",
+    "target_meaning": "STR r1,[r0]",
+    "claim": "The original translated sequence supplies address0xf8000254/value1 to the actual store helper. The retained QEMU MMIO diagnostic independently proves a write reached this unsupported model offset. Translation headers alone do not establish every block executed."
+  },
+  "source_review": {
+    "findings_open": 0,
+    "checks": [
+      "Only fixed ARM32 low-ROM/high-handoff windows and aligned1..32byte raw chunks accepted",
+      "Raw bytes require preceding address; continuation only after full32byte chunk",
+      "Missing first byte line at stream end fails",
+      "Source-defined memory-read errors and unexpected MMIO diagnostics remain fatal",
+      "Original7-line startup boundary remains exact/newline-complete"
+    ]
+  },
+  "prior_failure_preserved": "513f first classifier error was OBJD-T framing. Its asynchronously retained tail already includes the same SLCR254 diagnostic.513g changes the accepted trace format, not the firmware or SLCR model.",
+  "backend": {
+    "sha256": "3f9e913272f0013f4d1b57991ccbbfd1fbc02181e5192da5e8e395a941f18a07",
+    "size": 20194360
+  },
+  "proof_limits": [
+    "Public ROM is not tied to selected S9 silicon revision.",
+    "Serial output is storage-preparation metadata, not a firmware boot message.",
+    "The process is cancelled and all firmware/board/mining acceptance flags remainfalse.",
+    "No physical clock, reset-retention, watchdog or successful initialization claim."
+  ],
+  "evidence_audit_passed": true,
+  "firmware_boot_gate": false,
+  "original_board_gate": false,
+  "functional_mining_gate": false,
+  "inputs": {
+    "path": "work/simulator/reviews/zynq-rom-reset-independent-execution-513g-inputs.json",
+    "sha256": "e4d641a728adf5617a508aa5390d0cc073b344c6c8e2af67fd31c920b3f439f0",
+    "size": 175389
+  }
+}

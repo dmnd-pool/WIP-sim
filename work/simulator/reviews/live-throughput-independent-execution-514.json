@@ -1,0 +1,69 @@
+{
+  "schema": "md-sim-independent-throughput-review/1",
+  "reviewer": "cleanup_resume",
+  "scope": "Actual selected512e program timing through extracted raw transport; failure preserved",
+  "source_pins": 423,
+  "mounts_rehashed": 14,
+  "helpers_and_check_logs_verified": true,
+  "nine_real_process_tests_passed": true,
+  "actual_program": {
+    "sha256": "f74b392bab34563977af775fa02eeebb4dd60d67efd71c031d6a1788d43a3705",
+    "size": 212950005
+  },
+  "actual_plugin": {
+    "sha256": "c2515601182797cf5a9b5ac096db7541b41e140f0f88e11e796d15b3bdc032ad",
+    "size": 24464
+  },
+  "result": {
+    "status": "exited",
+    "exit_code": 1,
+    "wall_milliseconds": 26778,
+    "trace_truncated": false
+  },
+  "cases": [
+    {
+      "interval_ns": 10000,
+      "startup_host_wall_ns": 6489062673,
+      "measured_advance_wall_ns": 2471832034,
+      "interval_completed": true,
+      "sent_frames": 5,
+      "received_frames": 69,
+      "complete_receipts": 5,
+      "exit": {
+        "code": 0,
+        "signal": null
+      },
+      "failure": null
+    },
+    {
+      "interval_ns": 100000,
+      "startup_host_wall_ns": 6537661269,
+      "measured_advance_wall_ns": 10073347928,
+      "interval_completed": false,
+      "sent_frames": 4,
+      "received_frames": 67,
+      "complete_receipts": 3,
+      "exit": {
+        "code": null,
+        "signal": 9
+      },
+      "failure": "live child command deadline"
+    }
+  ],
+  "monotonic_measurement_source": "Frozen s9_live_benchmark::command uses Instant around actual transact; startup is measured separately. Sum of recorded wall intervals is within actual outer process elapsed time.",
+  "clock_check": "Actual sent period is10ns at1ps phase; every complete receipt has independently recomputed next5000ps edge. No clock rescale or CPU-time measurement.",
+  "unattempted_interval_ns": 1000000,
+  "benchmark_passed": false,
+  "audit_passed": true,
+  "limitations": [
+    "100us interval did not complete; no simulated end timestamp or throughput is manufactured for it.",
+    "The1ms case was not attempted after failure.",
+    "These host wall measurements are not physical timing or calibrated hardware performance.",
+    "No CPU synchronization, firmware execution, board or mining gate closes."
+  ],
+  "inputs": {
+    "path": "work/simulator/reviews/live-throughput-independent-execution-514-inputs.json",
+    "sha256": "fc4a22a04296726f494d8f436ab25de450020a4c2f7c04c318da6fa27b6e7425",
+    "size": 101449
+  }
+}

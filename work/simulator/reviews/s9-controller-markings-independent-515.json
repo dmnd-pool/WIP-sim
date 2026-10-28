@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Independent direct visual inspection of original removed-donor component photograph, plus byte/Git-blob identity check",
+  "source_report": {
+    "path": "work/simulator/reviews/s9-controller-markings-supplement-515.json",
+    "sha256": "42a60dbcfd76f4575799dab3fadfe4ca31d0969cc30a8cccd3ad3b61f67a4097",
+    "size": 2083
+  },
+  "input": {
+    "path": "artifacts/files/source/source-s9-donor-components-20261028-removed/disassembly_components.jpg",
+    "sha256": "ae6d782f744d6feb5a654516da2a336e79d1d2552a204e53cd35dc0cbcdb439d",
+    "size": 2306940,
+    "git_blob": "d29d6ca4fbc51fa4a546f6bdd4a46e7ec9b3b537"
+  },
+  "visual_readings_agree": {
+    "two_ram_packages": [
+      "NANYA",
+      "NT5CC128M16IP-DI"
+    ],
+    "soc": [
+      "XILINX",
+      "ZYNQ",
+      "XC7Z010",
+      "CLG400ABX1733",
+      "D5464245A",
+      "1C"
+    ]
+  },
+  "uncertainty": [
+    "The small RAM text is less sharp than the SoC marking; the readable part line agrees with the author BOM. No extra date/lot suffix is asserted.",
+    "The photograph shows removed components. Original donor association comes from the pinned author source, not proof of connectivity.",
+    "The A in package/lot text does not establish silicon stepping or public-ROM compatibility.",
+    "No unseen small-package identifiers or measured clock/timing are inferred."
+  ],
+  "source_identity_verified": true,
+  "no_finding": true,
+  "exact_target_complete": false,
+  "physical_calibration": false,
+  "original_board_gate": false
+}

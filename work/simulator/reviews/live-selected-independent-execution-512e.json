@@ -1,0 +1,330 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "recorded_at": "2026-10-28T17:01:05.403649+00:00",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Actual selected S9 programmable-logic component through live private Rust/VPI transport. No CPU or firmware master, ASIC work routing, original board, mining or physical timing acceptance.",
+  "pins": [
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512e/manifest.json",
+      "sha256": "9bf7b0bdc4c83d02f8980081f576d543b4f489713c850d8114e4f1c9f47e3bc3",
+      "size": 71740
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512e/source-before-build.json",
+      "sha256": "f77b3b270b1e0598ac6075787c4a812d28fb1e4fb914fc88711c0306c8a359a1",
+      "size": 66472
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512e/source-after-build.json",
+      "sha256": "f77b3b270b1e0598ac6075787c4a812d28fb1e4fb914fc88711c0306c8a359a1",
+      "size": 66472
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512e/spec.json",
+      "sha256": "87a2de9509923b0f545c99e77fd38d7d13adecf62c6dd6b740fd5385ea30d723",
+      "size": 9772
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512e/result.json",
+      "sha256": "3ff4c8bf3352ea7fceca1ab4c4dc3073f201fa6dc85d7dc2d18ae2c30a029e53",
+      "size": 103362822
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512e/hdl-envelope.json",
+      "sha256": "9f48ee99fe2d1616e4b2a6aef2a53120d686cdd1f0b837a109d144eed54c5a48",
+      "size": 51680989
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512e/hdl-report.json",
+      "sha256": "e9cdf412cb9a2946106265605f6ea1712088e1f20967e0e95ed447fc61523868",
+      "size": 730701
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512e/selected-vvp.tar.gz",
+      "sha256": "ce125b6729eb056bb0b537da036ebae2a2dc1c545e742992b11e8cb18f54890c",
+      "size": 25512922
+    }
+  ],
+  "identity": {
+    "source_copies": 421,
+    "before_after_equal": true,
+    "helper": {
+      "path": "work/simulator/qemu-s9/live-driver-512e/s9_hdl_validate",
+      "sha256": "1b386c34d3e0a300a283543c042806e4e47a8767359d537a2b83fef71fc13025",
+      "size": 2569232
+    },
+    "mounts_rehashed": 49,
+    "supervisor_tools_rehashed": {
+      "bubblewrap": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "prlimit": {
+        "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+        "size": 27320
+      },
+      "unshare": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      }
+    },
+    "selected_program": {
+      "sha256": "f74b392bab34563977af775fa02eeebb4dd60d67efd71c031d6a1788d43a3705",
+      "size": 212950005
+    },
+    "vpi_plugin": {
+      "sha256": "c2515601182797cf5a9b5ac096db7541b41e140f0f88e11e796d15b3bdc032ad",
+      "size": 24464
+    },
+    "wrapper": {
+      "sha256": "7cc72ba96afc87d300a6c18ed7cf593f4d1a2553281253654d5e2cfee1100b65",
+      "size": 17723
+    },
+    "captured_c_matches_frozen_source": true
+  },
+  "execution": {
+    "exit_code": 0,
+    "wall_milliseconds": 31218,
+    "trace_truncated": false,
+    "outer_stderr_empty": true,
+    "owned_live_exit0": true,
+    "all_child_descriptors_closed": true,
+    "live_stderr_empty": true,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    },
+    "child_limits": {
+      "command_timeout_ms": 10000,
+      "frame_limit": 8192,
+      "shutdown_timeout_ms": 5000,
+      "stderr_limit": 1048576,
+      "stdout_limit": 1048576
+    },
+    "compiler_removed_only_after_clean_plugin_build": true
+  },
+  "checked": {
+    "actual_sent_frames": 81,
+    "actual_received_frames": 145,
+    "raw_events": 63,
+    "complete_receipts": 81,
+    "all_frame_values_times_ids_and_reserved_fields_checked": true,
+    "bus_clock_edge_counts_independently_recomputed": true,
+    "next_owned_clock_edges_independently_recomputed": true,
+    "read_transactions": 48,
+    "write_transactions": 24,
+    "resets": 2,
+    "full_register_strobe_reset_sequence_checked": true,
+    "exact_text_wire_join": true,
+    "native_vendor_notice_exact_once_first": true,
+    "ps7_output_forces_only": 30,
+    "normal_input_connections": 14,
+    "resolved_inouts": 2,
+    "event_nba_xz_and_duplicate_oracles_rechecked": true,
+    "clock_cases": {
+      "clock_unsplit": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_split": {
+        "records": 16,
+        "commands": 5,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_unknown": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5201,
+            3,
+            1
+          ],
+          [
+            5201,
+            3,
+            3
+          ],
+          [
+            10201,
+            3,
+            2
+          ],
+          [
+            15201,
+            3,
+            3
+          ],
+          [
+            15201,
+            3,
+            5
+          ],
+          [
+            25201,
+            3,
+            4
+          ],
+          [
+            35201,
+            3,
+            5
+          ],
+          [
+            35201,
+            3,
+            7
+          ],
+          [
+            35201,
+            3,
+            71
+          ],
+          [
+            35201,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      }
+    },
+    "primitive_assertions": 582,
+    "ram_assertions_each": 510
+  },
+  "separate_baseline_required": "Use this exact helper in axi-baseline-512e; old512 baseline is a distinct cohort.",
+  "preserved_failures": [
+    "512",
+    "512b",
+    "512c",
+    "512d"
+  ],
+  "unresolved_correctness_findings": [],
+  "remaining_limits": [
+    "Only common register/strobe/reset paths were exercised.",
+    "Known next clock edge is not the HDL earliest event and does not authorize CPU run-ahead.",
+    "Clock/reset/input order is an explicit digital reference policy, not measured physical timing.",
+    "Missing monitor feature table and33 electrical ambiguities remain open."
+  ],
+  "firmware_execution_gate": false,
+  "cpu_synchronization_complete": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "md-sim-independent-failure-and-fix-review/1",
+  "recorded_at": "2026-10-28T16:43:29.977947+00:00",
+  "reviewer": "cleanup_resume",
+  "failure_run": "work/simulator/qemu-s9/live-selected-512",
+  "actual_exit_code": 1,
+  "actual_wall_milliseconds": 10427,
+  "trace_truncated": false,
+  "failure": "SystemVerilog fixture uses reserved sequence identifier; actual compile exits6 with retained syntax diagnostics. No VPI event execution or selected live pass.",
+  "completed_prerequisite": "C VPI plugin compilation passes strict warnings and UBSan traps with clean complete diagnostics; temporary compiler tree removed only afterward.",
+  "source_delta": "Exactly three whole identifier occurrences renamed sequence to request_sequence. No event, expected value, time, limit, or assertion changed.",
+  "old_fixture": {
+    "path": "work/simulator/qemu-s9/live-driver-512/source/simulator/backends/icarus/vpi-order-fixture.v",
+    "sha256": "0222563a4e40f27608c88eefc6083c794b95a93b087b64d82514773d0da645bc",
+    "size": 1050
+  },
+  "new_fixture": {
+    "path": "simulator/backends/icarus/vpi-order-fixture.v",
+    "sha256": "83d4b2f3d94398c7c1b1ed4d232dfcf24c897af70df20abb3dfc0b604df6da06",
+    "size": 1074
+  },
+  "evidence": {
+    "work/simulator/qemu-s9/live-selected-512/result.json": {
+      "sha256": "49dfb1550b600182c1a03bc02a37081983cd350e93327663a0284d13e7b0d8a6",
+      "size": 1072722
+    },
+    "work/simulator/qemu-s9/live-selected-512/hdl-envelope.json": {
+      "sha256": "05be86abd3f8f3db0a3a37079772ec46b45c3d087b307ac9c500b60c89a0a525",
+      "size": 535899
+    },
+    "work/simulator/qemu-s9/live-selected-512/hdl-report.json": {
+      "sha256": "6478ed3c12ed92fb5925d20727ed17421509a5b69f35366dfe802747cec4db6c",
+      "size": 550063
+    },
+    "work/simulator/qemu-s9/live-selected-512/spec.json": {
+      "sha256": "5e5e56c1a99ec5b9293b06f99ebf23e761759f843576c7a33b1e80f08ae2bc55",
+      "size": 9772
+    }
+  },
+  "fix_source_review_passed": true,
+  "rerun_pending": true,
+  "original_board_gate": false
+}

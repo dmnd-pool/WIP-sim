@@ -1,0 +1,450 @@
+{
+  "schema": "md-sim-zynq-rom-read-path-executed/1",
+  "date": "2026-10-28T16:25:02.251520+00:00",
+  "objects": [
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/spec.json",
+      "sha256": "c9ae19f08fa19ccfb993edc0863462893d886c80f8a8cefbafcabe3846a4aa3d",
+      "size": 9673
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/result.json",
+      "sha256": "bd95d316e14332da483e0be540e5ed5e2e642514b3e8b8fc239279035a97db67",
+      "size": 393034
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/evidence.tar",
+      "sha256": "6b5f255f3f7a802dbc2805e9c8306b1544c642e627c700e123ceed023531d862",
+      "size": 196096
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/assessment.json",
+      "sha256": "acc99dedc21d2634da72420f8a357a1a05954d02e374b6a7f186546b24a9e2be",
+      "size": 24049
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/execution.stdout",
+      "sha256": "c68325f38226f1654aab9c6d322fb131cdde27b12f1dbc88568178686ab870c0",
+      "size": 15136
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/execution.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/execution.status.json",
+      "sha256": "4af0a032c4f9b0e4e42e67ab5fc54ec96809eb0832d8704ce5fb36e637db82a3",
+      "size": 273
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/oracle",
+      "sha256": "cb4d9b2ae347e988a1bdd1329be165f1ad7951d79eab9ffbef6d432d44527572",
+      "size": 140172
+    },
+    {
+      "path": "work/simulator/original-zynq/rom-eof-513b/last-sector.bin",
+      "sha256": "ae54199d6263a2e504e4d953377bd0faebd50224b96e86c47cd85496df139520",
+      "size": 512
+    },
+    {
+      "path": "work/simulator/qemu-s9/bootrom-driver-513/manifest.json",
+      "sha256": "e5b21e1be0432ec5c5235be923a0b7d8dc98c10c18a64e2b23991ec99794f3d0",
+      "size": 69942
+    },
+    {
+      "path": "work/simulator/reviews/zynq-rom-read-path-independent-source-513-root.json",
+      "sha256": "433b5482f42c119c0c5d58eb6d8da1f17ffc28ce23460fbd8533e19bc5464a23",
+      "size": 3175
+    },
+    {
+      "path": "work/simulator/reviews/raw-sd-allocation-513.json",
+      "sha256": "167c398973ce9aca52983c782d7119ce490c2450dfb6c5eff2f5c7e19f63024f",
+      "size": 2350
+    }
+  ],
+  "inputs": [
+    {
+      "object": {
+        "sha256": "61a2382e7fdb9d02faa17548fd05ed1a396869701fe171e41ff497dbfca38f1f",
+        "size": 1921656
+      },
+      "guest_path": "/oracle-check"
+    },
+    {
+      "object": {
+        "sha256": "939a882527432ec23b094c289e7f170bf2d6ec282e74dde75e31b08602fa3eae",
+        "size": 174288
+      },
+      "guest_path": "/tools/clang"
+    },
+    {
+      "object": {
+        "sha256": "a49118a3d371699ad87fb67b134dfad4508b6e26eabf581e00e53c6225e488be",
+        "size": 3914528
+      },
+      "guest_path": "/tools/qemu-arm"
+    },
+    {
+      "object": {
+        "sha256": "e06e12b8a78494908d08376838c380fb3817bfd7d54f6a86ef050016f7ade5f8",
+        "size": 14424
+      },
+      "guest_path": "/usr/lib/librt.so.1"
+    },
+    {
+      "object": {
+        "sha256": "839b91403f89fa4c6888d50deb2b59cd0612f8cfe3d57dd9d6314832b4cb31ab",
+        "size": 14360
+      },
+      "guest_path": "/usr/lib/libpthread.so.0"
+    },
+    {
+      "object": {
+        "sha256": "9b3812e7f6b766e2d0a1d9eeca1a58c1272392859e8b04f708b2f86b2256d03c",
+        "size": 14352
+      },
+      "guest_path": "/usr/lib/libdl.so.2"
+    },
+    {
+      "object": {
+        "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+        "size": 263152
+      },
+      "guest_path": "/lib64/ld-linux-x86-64.so.2"
+    },
+    {
+      "object": {
+        "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+        "size": 182512
+      },
+      "guest_path": "/usr/lib/libgcc_s.so.1"
+    },
+    {
+      "object": {
+        "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+        "size": 2215072
+      },
+      "guest_path": "/usr/lib/libc.so.6"
+    },
+    {
+      "object": {
+        "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+        "size": 263152
+      },
+      "guest_path": "/usr/lib/ld-linux-x86-64.so.2"
+    },
+    {
+      "object": {
+        "sha256": "ee7a19393accfabf756dbb8ccd68012e12a4cee18cff68575b017337998c61a7",
+        "size": 77552688
+      },
+      "guest_path": "/usr/lib/libclang-cpp.so.23.1"
+    },
+    {
+      "object": {
+        "sha256": "a97595f25e9a6eea1a9cd6017c546116eb0d8cd7525eaaa47c2772a78db76a49",
+        "size": 172592256
+      },
+      "guest_path": "/usr/lib/libLLVM.so.23.1"
+    },
+    {
+      "object": {
+        "sha256": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e",
+        "size": 2939928
+      },
+      "guest_path": "/usr/lib/libstdc++.so.6"
+    },
+    {
+      "object": {
+        "sha256": "682d8f1d8dbad76b2748ca55f2e5ddbbdf23ab61f5c5933aecfbbf07a3e546b9",
+        "size": 7411696
+      },
+      "guest_path": "/usr/lib/libcapstone.so.5"
+    },
+    {
+      "object": {
+        "sha256": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+        "size": 104464
+      },
+      "guest_path": "/usr/lib/libz.so.1"
+    },
+    {
+      "object": {
+        "sha256": "14a4563f6fce1ce85c449ee79f0d877984ecb16c71b18103b72b2b4f57dc8786",
+        "size": 662568
+      },
+      "guest_path": "/usr/lib/libdw.so.1"
+    },
+    {
+      "object": {
+        "sha256": "847c5f5afbe586c2a7592c344080caf3268846af1f3be90175447e12791fad51",
+        "size": 55632
+      },
+      "guest_path": "/usr/lib/libnuma.so.1"
+    },
+    {
+      "object": {
+        "sha256": "b01799e8295bc119d614bf061baad1f2a2a494a0787a057f49997244daf110c5",
+        "size": 25904
+      },
+      "guest_path": "/usr/lib/liburing.so.2"
+    },
+    {
+      "object": {
+        "sha256": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+        "size": 1449352
+      },
+      "guest_path": "/usr/lib/libglib-2.0.so.0"
+    },
+    {
+      "object": {
+        "sha256": "9acc4b380b291cbc5f4098d04689c6933879d0a85b039ef62088fde935f65e83",
+        "size": 22464
+      },
+      "guest_path": "/usr/lib/libgmodule-2.0.so.0"
+    },
+    {
+      "object": {
+        "sha256": "34fb5f09418585343efa342a2a4b57904544d6f562d7179a5eeaca60b0abd0c6",
+        "size": 2254952
+      },
+      "guest_path": "/usr/lib/libgnutls.so.30"
+    },
+    {
+      "object": {
+        "sha256": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+        "size": 1268336
+      },
+      "guest_path": "/usr/lib/libm.so.6"
+    },
+    {
+      "object": {
+        "sha256": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+        "size": 51432
+      },
+      "guest_path": "/usr/lib/libffi.so.8"
+    },
+    {
+      "object": {
+        "sha256": "0bb14cee691695fd88a63c3cea14030ba4973c725239e15c1cd637c39d6a2007",
+        "size": 227440
+      },
+      "guest_path": "/usr/lib/libedit.so.0"
+    },
+    {
+      "object": {
+        "sha256": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+        "size": 939976
+      },
+      "guest_path": "/usr/lib/libzstd.so.1"
+    },
+    {
+      "object": {
+        "sha256": "5ff12cee1e6992555ba638190cce88a0aab40acad51d5c826f6487888a0160ab",
+        "size": 1326024
+      },
+      "guest_path": "/usr/lib/libxml2.so.16"
+    },
+    {
+      "object": {
+        "sha256": "13d3e3cb54d6120d87a0569ac67be05c029f8cd2e4bf44e75936b2721c8e08af",
+        "size": 116824
+      },
+      "guest_path": "/usr/lib/libelf.so.1"
+    },
+    {
+      "object": {
+        "sha256": "6e4dae5b099ec0e40a56beead2e51f858535aa794b5a8574a6723dfc1da8a3c1",
+        "size": 219344
+      },
+      "guest_path": "/usr/lib/liblzma.so.5"
+    },
+    {
+      "object": {
+        "sha256": "3265f0647d9157aaa820c5094eba03c5be0f101c49e9ffd21289978b8e1875af",
+        "size": 74720
+      },
+      "guest_path": "/usr/lib/libbz2.so.1.0"
+    },
+    {
+      "object": {
+        "sha256": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+        "size": 727336
+      },
+      "guest_path": "/usr/lib/libpcre2-8.so.0"
+    },
+    {
+      "object": {
+        "sha256": "6f7c44d5854ca7af86556bb300efdda8346f316e652d3f7e7ee0bf5cf55b41c4",
+        "size": 2845224
+      },
+      "guest_path": "/usr/lib/libleancrypto.so.1.9"
+    },
+    {
+      "object": {
+        "sha256": "1b87739328f0b11906554145ab4e506281644d94a5b6195cd11594aad5e310b8",
+        "size": 1708192
+      },
+      "guest_path": "/usr/lib/libp11-kit.so.0"
+    },
+    {
+      "object": {
+        "sha256": "9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15",
+        "size": 133064
+      },
+      "guest_path": "/usr/lib/libidn2.so.0"
+    },
+    {
+      "object": {
+        "sha256": "ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3",
+        "size": 1992752
+      },
+      "guest_path": "/usr/lib/libunistring.so.5"
+    },
+    {
+      "object": {
+        "sha256": "37c55560d3f3a76a039e78e3394e4ab0e17b1d0f68d8a9b9c5916f9842aa4ca1",
+        "size": 88088
+      },
+      "guest_path": "/usr/lib/libtasn1.so.6"
+    },
+    {
+      "object": {
+        "sha256": "93c5553921f308f65488a9877a3dce1284adeff729a011f7b4522ea6b4181a87",
+        "size": 284696
+      },
+      "guest_path": "/usr/lib/libhogweed.so.7"
+    },
+    {
+      "object": {
+        "sha256": "5cfa2daa591d62161d2f26aa4b8347e3704da1b830e9aba0a312ed1b5f0c7a38",
+        "size": 370824
+      },
+      "guest_path": "/usr/lib/libnettle.so.9"
+    },
+    {
+      "object": {
+        "sha256": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+        "size": 678528
+      },
+      "guest_path": "/usr/lib/libgmp.so.10"
+    },
+    {
+      "object": {
+        "sha256": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+        "size": 457936
+      },
+      "guest_path": "/usr/lib/libncursesw.so.6"
+    },
+    {
+      "object": {
+        "sha256": "c99f0dd0c797c07f9ab64413d36c595393cdded6fa04cc4edd6f6a521fd155ca",
+        "size": 2144304
+      },
+      "guest_path": "/usr/lib/libicuuc.so.78"
+    },
+    {
+      "object": {
+        "sha256": "d72003b08760852bee4c80cff32c1e6248ae6b1fda5bd313482733a4d5e70dc9",
+        "size": 33112920
+      },
+      "guest_path": "/usr/lib/libicudata.so.78"
+    },
+    {
+      "object": {
+        "sha256": "4739514e3484915747c34b35007cd990235cc6b490b2d0525a61ac402ca16af9",
+        "size": 11879600
+      },
+      "guest_path": "/toolchain/lib/rustlib/x86_64-unknown-linux-gnu/bin/ld.lld"
+    },
+    {
+      "object": {
+        "sha256": "7c2c7ebb79211f07e3b32e408a1a65b4d205656792f9c51bdbefcb21c0868cbd",
+        "size": 208094144
+      },
+      "guest_path": "/toolchain/lib/libLLVM.so.23.1-rust-1.99.0-stable"
+    },
+    {
+      "object": {
+        "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+        "size": 131072
+      },
+      "guest_path": "/rom.bin"
+    },
+    {
+      "object": {
+        "sha256": "97a257571af4fb9e62f709e2d6b8f36a191fdd07f1cd12ae780bd1c73af7eaef",
+        "size": 112197632
+      },
+      "guest_path": "/sd.img"
+    },
+    {
+      "object": {
+        "sha256": "950d19c6e5bfd9d8107def130b19fc9a5f64d824b26c0c493d5fdfe8503edac4",
+        "size": 79263
+      },
+      "guest_path": "/boot.bin"
+    },
+    {
+      "object": {
+        "sha256": "c48e1a4e60f9a42aee5953957eca160cdee37f089802b38bcbc8f32ee49e3fec",
+        "size": 2863
+      },
+      "guest_path": "/oracle.c"
+    },
+    {
+      "object": {
+        "sha256": "b27202aefe2f2c3788ab29f3330881de2e901644602af86ba985ef4a1725363a",
+        "size": 796
+      },
+      "guest_path": "/oracle.ld"
+    }
+  ],
+  "result": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 217,
+    "trace_truncated": false,
+    "isolation": "user+mount+network+PID+IPC+UTS namespaces; read-only locked files; no egress; scratch tmpfs; optional run-owned incoming dashboard socket",
+    "limits_scope": "rlimits apply per process; process count applies to mapped user; each scratch tmpfs is bounded; no aggregate cgroup CPU/RAM claim",
+    "tools": {
+      "bubblewrap": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "prlimit": {
+        "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+        "size": 27320
+      },
+      "unshare": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      }
+    }
+  },
+  "limits": {
+    "wall_seconds": 90,
+    "cpu_seconds": 60,
+    "memory_bytes": 6442450944,
+    "processes": 16,
+    "file_bytes": 2097152,
+    "trace_bytes": 8388608,
+    "tmp_bytes": 33554432
+  },
+  "observed_cases": 28,
+  "passed": true,
+  "failed_preparation": {
+    "path": "work/simulator/original-zynq/rom-eof-513",
+    "log": {
+      "path": "work/simulator/boot-dev-513/run.log",
+      "sha256": "d2cbaf8487975d7014ed516c05a71225192152e28ec311c046c3d35e8c2c38f3",
+      "size": 46
+    },
+    "cause": "Caller selected stable1.94 LLD path; helper pins1.99 LLVM closure. Required1.99 library was absent at that path. No process spec or firmware execution occurred.513b changes only the caller linker path."
+  },
+  "scope": "Public XC7Z010-CLG400A ROM routine oracle in an adapted ARM ELF. Exact S9 silicon/ROM equivalence is unproved. No reset, complete SD transfer, firmware boot, original board, physical timing or mining pass.",
+  "original_board_gate": false,
+  "reset_execution": false,
+  "next_action": "Independent execution audit; stage separate original-ROM reset mapping with existing QEMU. Exact S9 silicon/ROM identity is still unresolved."
+}

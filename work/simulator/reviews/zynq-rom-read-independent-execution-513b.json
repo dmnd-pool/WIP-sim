@@ -1,0 +1,141 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "reviewer": "cleanup_resume",
+  "recorded_at": "2026-10-28T16:26:23.112861+00:00",
+  "passed": true,
+  "scope": "Independent evidence audit of original public ROM cached f_read routine. No original reset, complete SD transfer, exact S9 ROM compatibility, board, physical timing or mining gate.",
+  "run": "work/simulator/original-zynq/rom-eof-513b",
+  "freeze": "work/simulator/qemu-s9/bootrom-driver-513",
+  "checked": {
+    "frozen_sources": 412,
+    "explicit_before_after_equal": true,
+    "source_bytes_rehashed": true,
+    "helper": {
+      "path": "work/simulator/qemu-s9/bootrom-driver-513/s9_bootrom_oracle",
+      "sha256": "61a2382e7fdb9d02faa17548fd05ed1a396869701fe171e41ff497dbfca38f1f",
+      "size": 1921656
+    },
+    "mounts": 48,
+    "unique_mount_objects": 47,
+    "supervisor_tools": {
+      "bubblewrap": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "prlimit": {
+        "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+        "size": 27320
+      },
+      "unshare": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      }
+    },
+    "archive_members": 19,
+    "raw_result_archive_equal": true,
+    "all_tool_exit_zero_and_stderr_empty": true,
+    "original_rom_full_load_copy": {
+      "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+      "size": 131072
+    },
+    "original_instruction_words_compared": 220,
+    "independent_fat_clusters": 39,
+    "file": {
+      "sha256": "950d19c6e5bfd9d8107def130b19fc9a5f64d824b26c0c493d5fdfe8503edac4",
+      "size": 79263
+    },
+    "allocated_bytes": 79872,
+    "zero_slack_bytes": 609,
+    "raw_cases": 28,
+    "maximum_actual_bytes": 414,
+    "error_statuses": [
+      9,
+      7,
+      2,
+      3
+    ],
+    "per_case_return_position_and_all512output_bytes_checked": true,
+    "sentinel_after_actual_count_unchanged": true,
+    "ubsan_trap_flags_present": true
+  },
+  "actual_result": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 217,
+    "trace_truncated": false
+  },
+  "limits": {
+    "wall_seconds": 90,
+    "cpu_seconds": 60,
+    "memory_bytes": 6442450944,
+    "processes": 16,
+    "file_bytes": 2097152,
+    "trace_bytes": 8388608,
+    "tmp_bytes": 33554432
+  },
+  "interpretation": [
+    "The original f_read routine clamps request length to logical file bytes remaining. EOF returns status0/count0 in these cached-sector cases.",
+    "The selected header declares2240 source offset and79263 transfer bytes for a79263-byte file. The logical suffix is77023bytes. Its609zero slack bytes cannot establish ROM wrapper behavior.",
+    "All test positions with nonzero data are within one explicitly supplied cached sector; sector-boundary hardware I/O and complete SD wrapper were not executed.",
+    "Public ROM author attributes XC7Z010-CLG400A. Exact selectedS9 ROM and silicon identity remain unproved.",
+    "513 initial wrong-LLD preparation failure is retained separately; only513b passes."
+  ],
+  "pins": {
+    "work/simulator/qemu-s9/bootrom-driver-513/manifest.json": {
+      "sha256": "e5b21e1be0432ec5c5235be923a0b7d8dc98c10c18a64e2b23991ec99794f3d0",
+      "size": 69942
+    },
+    "work/simulator/qemu-s9/bootrom-driver-513/source-before-build.json": {
+      "sha256": "9d2ea0455fc6abb72cb3e18aae8306f17a438a61c7503752e15c84544ab3be7c",
+      "size": 65016
+    },
+    "work/simulator/qemu-s9/bootrom-driver-513/source-after-build.json": {
+      "sha256": "9d2ea0455fc6abb72cb3e18aae8306f17a438a61c7503752e15c84544ab3be7c",
+      "size": 65016
+    },
+    "work/simulator/original-zynq/rom-eof-513b/spec.json": {
+      "sha256": "c9ae19f08fa19ccfb993edc0863462893d886c80f8a8cefbafcabe3846a4aa3d",
+      "size": 9673
+    },
+    "work/simulator/original-zynq/rom-eof-513b/result.json": {
+      "sha256": "bd95d316e14332da483e0be540e5ed5e2e642514b3e8b8fc239279035a97db67",
+      "size": 393034
+    },
+    "work/simulator/original-zynq/rom-eof-513b/assessment.json": {
+      "sha256": "acc99dedc21d2634da72420f8a357a1a05954d02e374b6a7f186546b24a9e2be",
+      "size": 24049
+    },
+    "work/simulator/original-zynq/rom-eof-513b/evidence.tar": {
+      "sha256": "6b5f255f3f7a802dbc2805e9c8306b1544c642e627c700e123ceed023531d862",
+      "size": 196096
+    },
+    "work/simulator/original-zynq/rom-eof-513b/execution.stdout": {
+      "sha256": "c68325f38226f1654aab9c6d322fb131cdde27b12f1dbc88568178686ab870c0",
+      "size": 15136
+    },
+    "work/simulator/original-zynq/rom-eof-513b/oracle": {
+      "sha256": "cb4d9b2ae347e988a1bdd1329be165f1ad7951d79eab9ffbef6d432d44527572",
+      "size": 140172
+    },
+    "work/simulator/original-zynq/rom-eof-513b/oracle.c": {
+      "sha256": "c48e1a4e60f9a42aee5953957eca160cdee37f089802b38bcbc8f32ee49e3fec",
+      "size": 2863
+    },
+    "work/simulator/original-zynq/rom-eof-513b/oracle.ld": {
+      "sha256": "b27202aefe2f2c3788ab29f3330881de2e901644602af86ba985ef4a1725363a",
+      "size": 796
+    },
+    "work/simulator/original-zynq/rom-eof-513b/compile-arguments.json": {
+      "sha256": "e2fc7fdd9e3228206b7aeba8d50b994b0c0da5a1f494f5c23723b2134314e7cf",
+      "size": 545
+    },
+    "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/zynq_bootrom.bin": {
+      "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+      "size": 131072
+    },
+    "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/bootrom.txt": {
+      "sha256": "a5ecc81788d17b521bbee8aeb9df000276fbb3ee75e95d16c238950dbedbfd0e",
+      "size": 647743
+    }
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "recorded_at": "2026-10-28T17:43:45.331164+00:00",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Actual selected S9 programmable-logic component through live private Rust/VPI transport. No CPU or firmware master, ASIC work routing, original board, mining or physical timing acceptance.",
+  "pins": [
+    {
+      "path": "work/simulator/qemu-s9/live-driver-514/manifest.json",
+      "sha256": "aef2eba5246202105520296db5789e2b080f4262719acdaa59dfdac5a2dd5164",
+      "size": 72000
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-514/source-before-build.json",
+      "sha256": "a28bc37872bfff7f45309bc021467ef21c1d916aee1a7dbd77a4b345862725a4",
+      "size": 66805
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-514/source-after-build.json",
+      "sha256": "a28bc37872bfff7f45309bc021467ef21c1d916aee1a7dbd77a4b345862725a4",
+      "size": 66805
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-514/spec.json",
+      "sha256": "e6d4fc433709a45f80b27ba60e52d87dd1f6b7343d3f0a997e7af016080256c5",
+      "size": 9772
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-514/result.json",
+      "sha256": "e04c49f588084853a47baa36a52e93cb16abc25a6706c200f424f50548b55769",
+      "size": 103330506
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-514/hdl-envelope.json",
+      "sha256": "078d6725f6dd0a63c7dabeb2f0b0da976840ac1f5fdbfe403628b4df0e51e1ee",
+      "size": 51664831
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-514/hdl-report.json",
+      "sha256": "8dbdf3c0a7cb77409c285d2f216333e1cebd116952ef2e775056a0182e1ff5ce",
+      "size": 730701
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-514/selected-vvp.tar.gz",
+      "sha256": "2ded3f34c3c7e43a31763cb7ac17677dbd1ef45b5a6f9620325aba7354c7233b",
+      "size": 25504843
+    }
+  ],
+  "identity": {
+    "source_copies": 423,
+    "before_after_equal": true,
+    "helper": {
+      "built_mtime_ns": 1793209061494996968,
+      "path": "work/simulator/qemu-s9/live-driver-514/s9_hdl_validate",
+      "sha256": "e31bd5a99d7ce22f59700046e6c69eba344f4c75c023374c4592aab7b94af13e",
+      "size": 2576984
+    },
+    "mounts_rehashed": 49,
+    "supervisor_tools_rehashed": {
+      "bubblewrap": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "prlimit": {
+        "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+        "size": 27320
+      },
+      "unshare": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      }
+    },
+    "selected_program": {
+      "sha256": "ac139dc2f9462e3b80a3ead240faec8342c45029a9f0d4dd44481f483ab1dab4",
+      "size": 212950005
+    },
+    "vpi_plugin": {
+      "sha256": "c2515601182797cf5a9b5ac096db7541b41e140f0f88e11e796d15b3bdc032ad",
+      "size": 24464
+    },
+    "wrapper": {
+      "sha256": "7cc72ba96afc87d300a6c18ed7cf593f4d1a2553281253654d5e2cfee1100b65",
+      "size": 17723
+    },
+    "captured_c_matches_frozen_source": true
+  },
+  "execution": {
+    "exit_code": 0,
+    "wall_milliseconds": 31669,
+    "trace_truncated": false,
+    "outer_stderr_empty": true,
+    "owned_live_exit0": true,
+    "all_child_descriptors_closed": true,
+    "live_stderr_empty": true,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    },
+    "child_limits": {
+      "command_timeout_ms": 10000,
+      "frame_limit": 8192,
+      "shutdown_timeout_ms": 5000,
+      "stderr_limit": 1048576,
+      "stdout_limit": 1048576
+    },
+    "compiler_removed_only_after_clean_plugin_build": true
+  },
+  "checked": {
+    "actual_sent_frames": 81,
+    "actual_received_frames": 145,
+    "raw_events": 63,
+    "complete_receipts": 81,
+    "all_frame_values_times_ids_and_reserved_fields_checked": true,
+    "bus_clock_edge_counts_independently_recomputed": true,
+    "next_owned_clock_edges_independently_recomputed": true,
+    "read_transactions": 48,
+    "write_transactions": 24,
+    "resets": 2,
+    "full_register_strobe_reset_sequence_checked": true,
+    "exact_text_wire_join": true,
+    "native_vendor_notice_exact_once_first": true,
+    "ps7_output_forces_only": 30,
+    "normal_input_connections": 14,
+    "resolved_inouts": 2,
+    "event_nba_xz_and_duplicate_oracles_rechecked": true,
+    "clock_cases": {
+      "clock_unsplit": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_split": {
+        "records": 16,
+        "commands": 5,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_unknown": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5201,
+            3,
+            1
+          ],
+          [
+            5201,
+            3,
+            3
+          ],
+          [
+            10201,
+            3,
+            2
+          ],
+          [
+            15201,
+            3,
+            3
+          ],
+          [
+            15201,
+            3,
+            5
+          ],
+          [
+            25201,
+            3,
+            4
+          ],
+          [
+            35201,
+            3,
+            5
+          ],
+          [
+            35201,
+            3,
+            7
+          ],
+          [
+            35201,
+            3,
+            71
+          ],
+          [
+            35201,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      }
+    },
+    "primitive_assertions": 582,
+    "ram_assertions_each": 510
+  },
+  "baseline_scope": "This is the affected live-transport regression. No new native baseline invocation is claimed; the earlier512e same-cohort baseline remains separately retained.",
+  "preserved_failures": [
+    "512",
+    "512b",
+    "512c",
+    "512d"
+  ],
+  "unresolved_correctness_findings": [],
+  "remaining_limits": [
+    "Only common register/strobe/reset paths were exercised.",
+    "Known next clock edge is not the HDL earliest event and does not authorize CPU run-ahead.",
+    "Clock/reset/input order is an explicit digital reference policy, not measured physical timing.",
+    "Missing monitor feature table and33 electrical ambiguities remain open."
+  ],
+  "firmware_execution_gate": false,
+  "cpu_synchronization_complete": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

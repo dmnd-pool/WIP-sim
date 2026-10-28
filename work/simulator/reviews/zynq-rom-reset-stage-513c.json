@@ -1,0 +1,56 @@
+{
+  "schema": "md-sim-public-rom-reset-stage/1",
+  "updated_at": "2026-10-28T16:58:38.003683+00:00",
+  "sources": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/s9-rom-reset.patch",
+      "sha256": "980230ce36a4c184cba3c195f9762708351f0f3bf968f9ba755b36b1f0008ef1",
+      "size": 10015
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/ROM-RESET.md",
+      "sha256": "ce2bfee0f979cf82eb9f357766a875f5e5246bc441bba87663d5198a51821b09",
+      "size": 4543
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/build_qemu_backend.rs",
+      "sha256": "f54a22bfee086740d3fa512c1323716317da17ab5a00e146255aa1d03c80d04f",
+      "size": 56329
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/qemu_ttc_reset.rs",
+      "sha256": "88059496b644d9b3de4a739f8eca555629482d02a96a6737bbea058371f8d01f",
+      "size": 22930
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/rom_reset_qtest.rs",
+      "sha256": "dda64fc0ccf832c0c2ed2bfd089766d119c52ca79d3f270039611068d7df8a8c",
+      "size": 5750
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/s9_rom_reset_probe.rs",
+      "sha256": "7840af113f1d4132fc14588fb25a9f953c4f5399debf25126339b9bbeb4dd52e",
+      "size": 7817
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/source-identities.json",
+      "sha256": "b70e68750ebd6f6e2ea7c11d2dada19699478da37cdee89c1e8151f2e4b328e7",
+      "size": 901
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/rom_trace.rs",
+      "sha256": "5f96b00cf7eb49b493273e66832bf3cfbe090e893a9cd8c66ba0274b0b47998f",
+      "size": 5378
+    }
+  ],
+  "production_integrated": false,
+  "build_and_execution": "pending independent source review and512 runtime release",
+  "scope": "Public original ROM reset reference, no exact S9 ROM binding. Private OCM SWAP is explicitly unsupported. No board acceptance.",
+  "review_additions": [
+    "Original ROM first-level table and reset instructions prove identity mapping for selected early addresses.",
+    "ROM-mode CPU memory transaction failure suppression is disabled.",
+    "Bounded raw trace observer cancels at first unexpected diagnostic and retains rawline/offset/hash.",
+    "CompleteROM read assertions retain response identities to fit unchanged2MiB qtest trace bound; mismatch retains rawresponse.",
+    "Mirrored manufacturer manual acquired with internalversion+hash; cataloguechecksheld forrootcoordination."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "reviewer": "cleanup_resume",
+  "scope": "513c backend build and separate fabric regression; preserved failed ROM-map attempt",
+  "frozen_source_entries": 474,
+  "core_source_entries": 600,
+  "source_before_after_equal": true,
+  "mount_counts": {
+    "backend-build-513c-ubsan": 82,
+    "rom-fabric-513c": 15,
+    "rom-map-513c": 16
+  },
+  "result_summaries": {
+    "backend-build-513c-ubsan": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 182633,
+      "trace_truncated": false
+    },
+    "rom-fabric-513c": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-map-513c": {
+      "status": "exited",
+      "exit_code": 1,
+      "wall_milliseconds": 991,
+      "trace_truncated": false
+    }
+  },
+  "backend": {
+    "sha256": "b2e2d4cf33fcabc3de4bc27d352c05ff12a31894a983439416e810867bf73d2c",
+    "size": 20194360
+  },
+  "sanitizer_flags": [
+    "CFLAGS                          : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all -g -O2",
+    "LDFLAGS                         : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all"
+  ],
+  "actual_fabric_oracle": {
+    "transactions": 128,
+    "reads": 103,
+    "writes": 20,
+    "qmp_resets": 2,
+    "clock_end_ns": 4000000,
+    "raw_commands_and_responses_joined": true
+  },
+  "preserved_failure": {
+    "attempt": "rom-map-513c",
+    "failure": "QEMU DEVICE(owner) assertion before QMP or any qtest transaction",
+    "rom_mapping_gate_passed": false
+  },
+  "conditional_field_limit": "rom-fabric-513c rom_verified/pcap_verified/uart_verified are inherited conditional validators for unselected modes, not exercised passes. Only observations.test_kind=fabric and its128 transactions count; author confirmed and next helper adds explicit exercised fields.",
+  "limits": [
+    "Public ROM identity is not bound to selected S9 silicon.",
+    "Fabric qtest is a component regression, with no ARM firmware execution.",
+    "Actual mapping/reset/CPU boot, complete board, mining and calibrated timing gates remain open."
+  ],
+  "passed": true,
+  "meaning_of_pass": "Independent evidence audit passed; ROM-map attempt remains failed.",
+  "inputs": {
+    "path": "work/simulator/reviews/zynq-rom-build-independent-execution-513c-inputs.json",
+    "sha256": "6bfdf1b4930c9867a6fa05d7e13acc8084da6403384c3fb0cffd1fd0dff6c7dc",
+    "size": 287817
+  }
+}

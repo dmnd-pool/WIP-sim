@@ -1,0 +1,35 @@
+{
+  "created": "2026-10-28T18:04:48.911017+00:00",
+  "originals": [
+    {
+      "manifest": "artifacts/manifests/source-zynq-reset-reason-api-513h-52030-solution.json",
+      "original": "artifacts/files/source/source-zynq-reset-reason-api-513h/52030-solution.html",
+      "sha256": "3758538aebdfbd42afb1a4b87c6a2d6d39207f520c54aedae5cf989716579e4d",
+      "size": 7670
+    },
+    {
+      "manifest": "artifacts/manifests/source-zynq-reset-reason-api-513h-52030-metadata.json",
+      "original": "artifacts/files/source/source-zynq-reset-reason-api-513h/52030-metadata.json",
+      "sha256": "c60145b9a2480fa52ce5c6a611953497c3f2c96639d58e9e0bfba34983457e9e",
+      "size": 4730
+    },
+    {
+      "manifest": "artifacts/manifests/source-zynq-reset-reason-api-513h-47916-solution.json",
+      "original": "artifacts/files/source/source-zynq-reset-reason-api-513h/47916-solution.html",
+      "sha256": "ce8d3b27fd4b03322db5a8a63e26e2e372405167e71e46b09fd617ba9ddee3e7",
+      "size": 79065
+    },
+    {
+      "manifest": "artifacts/manifests/source-zynq-reset-reason-api-513h-52030-search.json",
+      "original": "artifacts/files/source/source-zynq-reset-reason-api-513h/52030-search.json",
+      "sha256": "eb8b17f3e569dc92c41a26352969e0f8d7deafa3e147e648ccbab8b9d882e5b1",
+      "size": 33141
+    }
+  ],
+  "total_original_bytes": 124606,
+  "catalogue_state": "source record registration staged until rootfullworkspacehold releases",
+  "source_api_documentation": [
+    "https://docs.fluidtopics.com/r/Fluid-Topics-API-Reference-Guide/Knowledge-Hub-web-services-for-everyone/Topics/Search-topics",
+    "https://docs.fluidtopics.com/r/Fluid-Topics-API-Reference-Guide/Knowledge-Hub-web-services-for-everyone/Maps/Topics-of-a-map/Get-a-topic-s-content"
+  ]
+}

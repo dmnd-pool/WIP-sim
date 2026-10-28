@@ -1,0 +1,67 @@
+{
+  "schema": "md-sim-workspace-check/1",
+  "date": "2026-10-28T18:04:15.576938+00:00",
+  "status": "PASS workspace checks; S9milestone2 remains incomplete",
+  "source_before": {
+    "path": "work/simulator/checks-2026-10-28-002/workspace-after513g-before.json",
+    "sha256": "bd81195444a4c384ac0ba219e707611a0d54754c8c69adecc311575d0341c259",
+    "size": 102534
+  },
+  "source_after": {
+    "path": "work/simulator/checks-2026-10-28-002/workspace-after513g-after.json",
+    "sha256": "bd81195444a4c384ac0ba219e707611a0d54754c8c69adecc311575d0341c259",
+    "size": 102534
+  },
+  "identical_source_inputs": 595,
+  "source_set_identical": true,
+  "suites": 128,
+  "passed": 1230,
+  "failed": 0,
+  "ignored": 55,
+  "commands": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-002/fmt.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      }
+    },
+    {
+      "command": "cargo clippy --workspace --all-targets --offline --locked -- -D warnings",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-002/clippy.log",
+        "sha256": "7ddd487b58f05ff6996e19583b7424a162ee2aefd07a1d202aae58e79ab8c58a",
+        "size": 1346
+      }
+    },
+    {
+      "command": "cargo test --workspace --all-targets --offline --locked",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-002/tests.log",
+        "sha256": "acfdd2ee2f1b7235e3aca8f1faf25a5151424bb5be92e5624ee502ad496fd27e",
+        "size": 147907
+      }
+    }
+  ],
+  "toolchain": [
+    {
+      "path": "work/simulator/checks-2026-10-28-002/rustc-version.log",
+      "sha256": "a834181975ab3494d51a1a01e4a9d4321fecd674a52e3db3cf93b3b84b6fc2c1",
+      "size": 196
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-002/cargo-version.log",
+      "sha256": "f53c9c2502e421a5a8d0c7948809c3de6e6d41a0189ddc23dfe4c661b11f7806",
+      "size": 36
+    }
+  ],
+  "limits": [
+    "Ignored fixture/environment tests are explicit, not counted as firmware acceptance.",
+    "Original ROM and actual HDL/VPI/backend checks have separate frozen execution identities and independent reports.",
+    "CVC/CPU bridge and Verilator feasibility work remain staged or source-only and are not covered as implemented execution capabilities."
+  ]
+}

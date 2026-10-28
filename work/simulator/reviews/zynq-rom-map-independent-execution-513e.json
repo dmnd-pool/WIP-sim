@@ -1,0 +1,235 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "reviewer": "cleanup_resume",
+  "scope": "513d backend and final513e component tests; failed CPU reset probes preserved",
+  "source_freezes": {
+    "rom-reset-driver-513d": 428,
+    "rom-reset-driver-513e": 585
+  },
+  "before_after_equal": true,
+  "backend": {
+    "sha256": "3f9e913272f0013f4d1b57991ccbbfd1fbc02181e5192da5e8e395a941f18a07",
+    "size": 20194360
+  },
+  "sanitizer_flags": [
+    "CFLAGS                          : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all -g -O2",
+    "LDFLAGS                         : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all"
+  ],
+  "mount_counts": {
+    "backend-build-513d-ubsan": 82,
+    "rom-map-513d": 16,
+    "rom-swap-reject-513d": 16,
+    "rom-reset-513d": 16,
+    "rom-map-513e": 16,
+    "rom-swap-reject-513e": 16,
+    "rom-fabric-513e": 15,
+    "rom-reset-513e": 36
+  },
+  "results": {
+    "backend-build-513d-ubsan": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 188550,
+      "trace_truncated": false
+    },
+    "rom-map-513d": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false
+    },
+    "rom-swap-reject-513d": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false
+    },
+    "rom-reset-513d": {
+      "status": "exited",
+      "exit_code": 1,
+      "wall_milliseconds": 20,
+      "trace_truncated": false
+    },
+    "rom-map-513e": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 130,
+      "trace_truncated": false
+    },
+    "rom-swap-reject-513e": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 130,
+      "trace_truncated": false
+    },
+    "rom-fabric-513e": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 100,
+      "trace_truncated": false
+    },
+    "rom-reset-513e": {
+      "status": "cancelled",
+      "exit_code": null,
+      "wall_milliseconds": 185,
+      "trace_truncated": false
+    }
+  },
+  "map_oracles": [
+    {
+      "name": "rom-map-513d",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": false,
+      "transactions": 340,
+      "complete_rom_blocks": 96,
+      "rom_bytes_compared": 393216,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 0,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    },
+    {
+      "name": "rom-swap-reject-513d",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": false,
+      "transactions": 383,
+      "complete_rom_blocks": 128,
+      "rom_bytes_compared": 524288,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 1,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    },
+    {
+      "name": "rom-map-513e",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 340,
+      "complete_rom_blocks": 96,
+      "rom_bytes_compared": 393216,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 0,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    },
+    {
+      "name": "rom-swap-reject-513e",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 383,
+      "complete_rom_blocks": 128,
+      "rom_bytes_compared": 524288,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 1,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    }
+  ],
+  "final_fabric": {
+    "transactions": 128,
+    "qmp_resets": 2,
+    "current_raw_wire_joined": true,
+    "register_oracle_reference": "work/simulator/reviews/zynq-rom-build-independent-execution-513c.json"
+  },
+  "failed_cpu_probes": [
+    {
+      "name": "rom-reset-513d",
+      "process_status": "exited",
+      "first_diagnostic": "qemu: -accel tcg,thread=single: allocate 1073741824 bytes for jit buffer: Cannot allocate memory",
+      "retained_instruction_lines": 0
+    },
+    {
+      "name": "rom-reset-513e",
+      "process_status": "cancelled",
+      "first_diagnostic": "uart_event: uart is unclocked or in reset",
+      "retained_instruction_lines": 0
+    }
+  ],
+  "review_procedure_note": "The first audit run expected different prose in the conditional-policy field. It stopped before creating a report. The exact retained policy was read and pinned; structured applicability, transactions and verdict checks were unchanged.",
+  "proof_limits": [
+    "ROM reads retain actual response lengths and SHA256, not full response bodies; all hashes independently match canonical original bytes. Other memory transactions retain actual values.",
+    "Final513e applicability metadata separates non-applicable conditional checks from executed tests.",
+    "513d component outer verdicts remain failed despite their completed transactions; final513e reruns are the passing component results.",
+    "The CPU reset serial file contains preparation metadata, not firmware output. Zero retained instruction lines do not prove a boot.",
+    "Public ROM has no exact selected-S9 silicon binding. No firmware, board, mining, physical timing or OCM physical-retention gate closes."
+  ],
+  "passed": true,
+  "meaning_of_pass": "Independent final component evidence audit; complete S9 remains incomplete.",
+  "inputs": {
+    "path": "work/simulator/reviews/zynq-rom-map-independent-execution-513e-inputs.json",
+    "sha256": "5b49ff041bb87f0ef2b7678c898b0f063fe3078d432e67f54294e93c70cb73bc",
+    "size": 306453
+  }
+}

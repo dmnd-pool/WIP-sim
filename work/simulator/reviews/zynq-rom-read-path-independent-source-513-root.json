@@ -1,0 +1,59 @@
+{
+  "schema": "md-sim-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28",
+  "stage": {
+    "path": "work/simulator/reviews/zynq-rom-read-path-stage-513.json",
+    "sha256": "54a8e398b0a0213663bfac3a9655f15fcd7e551d343731d344838e88ce48d710",
+    "size": 2780
+  },
+  "status": "PASS source review; tests and actual original-ROM routine execution pending",
+  "source_files": [
+    {
+      "path": "work/simulator/boot-dev-513/zynq-rom-eof-513.c",
+      "sha256": "c48e1a4e60f9a42aee5953957eca160cdee37f089802b38bcbc8f32ee49e3fec",
+      "size": 2863
+    },
+    {
+      "path": "work/simulator/boot-dev-513/s9_fat16.rs",
+      "sha256": "89948ee0ff0922c9a7bc3fbeb78f86f259fc33b8e57cc8951ab731c8fb2f078f",
+      "size": 10285
+    },
+    {
+      "path": "work/simulator/boot-dev-513/zynq-rom-eof-513.ld",
+      "sha256": "b27202aefe2f2c3788ab29f3330881de2e901644602af86ba985ef4a1725363a",
+      "size": 796
+    },
+    {
+      "path": "work/simulator/boot-dev-513/s9_bootrom_oracle.rs",
+      "sha256": "ba2930fc7f043cdc9402d446d894543149e0a827d1ca9c0e96a7ed7e1b012ffd",
+      "size": 19043
+    }
+  ],
+  "rom": {
+    "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/zynq_bootrom.bin",
+    "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+    "size": 131072
+  },
+  "original_ranges_verified": 4,
+  "fixed_findings": [
+    "Use bounded run-owned regular tool-output files, not unbounded Command::output allocation. Preserve exit/signal, stream identity and failed diagnostics.",
+    "Reject PT_DYNAMIC/PT_INTERP, overlapping load segments, changed original-ROM bytes and a non-executable ABI harness entry.",
+    "Retain the MBR FAT32-label/BPB FAT16 conflict explicitly; derive FAT width from checked BPB cluster count. Neither label nor parser success establishes physical compatibility."
+  ],
+  "reviewed_behavior": [
+    "Exact whole SD/BOOT/ROM hashes checked inside isolated preparation. FAT file bytes independently compared with existing7zip extraction.",
+    "Follow bounded root8.3 FAT16 chain with matching FAT mirrors; reject loops, short/excess chains, invalid clusters, duplicate names, malformed geometry and truncation.",
+    "Keep logical file, allocated slack, final logical sector and physically adjacent unallocated bytes separate.",
+    "Link complete unchanged128KiB ROM atVA0. Explicit caller filesystem/OCM/cache inputs, no callback or patched ROM instruction.",
+    "Check28 original routine calls, statuses, actual returned byte counts, file positions, exact selected file bytes and untouched0xa5 tails.",
+    "Compiler UBSan traps cover the ABI adapter, not the copied original ROM instructions. Existing captured ARM emulator is reused."
+  ],
+  "unresolved_source_findings": [],
+  "limits": [
+    "Public dump identifies XC7Z010-CLG400A; selectedS9 silicon/ROM equivalence remains unproved.",
+    "Cached-sector routine fixture does not exercise full SD hardware, reset, complete transfer or board boot."
+  ],
+  "original_board_gate": false,
+  "next_action": "Coordinate with512 for integration/focused checks/source freeze, then run actual unchanged-ROM routine oracle. Preserve any failure."
+}

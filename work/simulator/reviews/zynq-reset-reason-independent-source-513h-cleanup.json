@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Second independent source/evidence review of original-ROM reference reset-reason model increment. No firmware or tool execution.",
+  "stage": {
+    "path": "work/simulator/reviews/zynq-reset-reason-stage-513h.json",
+    "sha256": "03d9f11814ec44b9b5a3914270efc17c25af56a664b1532f2273feb53581fe3c",
+    "size": 4785
+  },
+  "all17declared_file_pins_verified": true,
+  "parent_patch": {
+    "exact_parent_files": 4,
+    "applied_with_zero_fuzz": true,
+    "all4derived_files_byte_equal": true,
+    "source_identities": {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/source-identities.json",
+      "sha256": "0d9399e88ac3ebaaf518620703e24c9514f47b588243ae7f1ffbf55ea91d03da",
+      "size": 901
+    }
+  },
+  "source_review_passed": true,
+  "findings_open": 0,
+  "reference_checks": [
+    "Viewed the actual retained rendering of original2012UG585page1442; cause bits6..0 and write-one clear/read-zero fields agree with the model",
+    "Original AMD52030 narrative confirms accumulated causes and non-POR persistence; inconsistent summary mapping remains explicit",
+    "REBOOT_STATUS32-bit software state and POR-zero reference basis are distinct from production-specific BootROM-managed cause fields",
+    "QEMU reset labels are not treated as physicalPOR; only device realization sets initialPOR"
+  ],
+  "behavior_checks": [
+    "Reference mode only: read-only RST_REASON ignores writes and masks reserved bits; CLR reads0 and bit0 clears causes; reserved/zero writes do not clear",
+    "PSS_SOFT_RST1 records SLC_RST bit3 before actual existing guest-reset request; PSS_SOFT_RST0 does not create a cause",
+    "System reset leaves cause and reboot state intact and clears PSS control; default non-reference behavior is unchanged",
+    "QMP reset adds no fabricated hardware reset cause",
+    "Existing migrated register array contains persistent fields; no second duplicate persistence store",
+    "New qtest requires44actual transactions, two guest-reset events and two control-plane warm-reset events, with exact source/count checks",
+    "Unsupported partial/unaligned reason accesses remain visible model-stop errors, not successful documented readbacks"
+  ],
+  "limits": [
+    "Actual C build/sanitizer checks and qtest/reference-ROM run are pending",
+    "Partial/unaligned failure branch still needs an actual negative test before that branch is claimed exercised",
+    "Watchdog/external/debug reset-source wiring is not implemented by this increment",
+    "Reference old-register semantics do not resolve exact selectedS9 silicon/publicROM identity",
+    "No physical power-cycle, complete firmware boot, watchdog, mining or board gate is passed"
+  ],
+  "production_changed_by_reviewer": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

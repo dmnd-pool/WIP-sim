@@ -1,0 +1,170 @@
+{
+  "commit": "3f64d2fd828e706a8023d308a8370fad1c76a34a",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/LICENSE",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-LICENSE",
+      "size_bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "git_blob": "d159169d1050894d3ea3b98e1c965c4058208fe1",
+      "retrieved_at": "2026-10-28T15:46:26.105396+00:00"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/README.md",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-README.md",
+      "size_bytes": 651,
+      "sha256": "7ef869dc572aa258fe246aa35f852ef489b84504a8a5ac14b846fdd7562fda8f",
+      "git_blob": "f87c6b61170083155cb2f9a14b0e833577b99fb8",
+      "retrieved_at": "2026-10-28T15:46:26.449062+00:00"
+    },
+    {
+      "path": "bootrom/README.md",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/README.md",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_README.md",
+      "size_bytes": 243,
+      "sha256": "4aed0bb40e1e0870babb6de8ba5c196a740a538484c725f094d73288b8b0a031",
+      "git_blob": "bb3a38faefd217206fec113d94706726a1f990ae",
+      "retrieved_at": "2026-10-28T15:46:26.779265+00:00"
+    },
+    {
+      "path": "bootrom/Makefile",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/Makefile",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_Makefile",
+      "size_bytes": 840,
+      "sha256": "fcc8a44ec3b52e508f06315c11d62e0e242fe3f5577f34a286302a3c5bcd5a10",
+      "git_blob": "e8d8b689a32a83d09766712e96336fa78555f472",
+      "retrieved_at": "2026-10-28T15:46:27.106141+00:00"
+    },
+    {
+      "path": "bootrom/zynq_bootrom.bin",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/zynq_bootrom.bin",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_zynq_bootrom.bin",
+      "size_bytes": 131072,
+      "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+      "git_blob": "f6e934355532cb4c66d21117ecbf9db2613e1b86",
+      "retrieved_at": "2026-10-28T15:46:27.482068+00:00"
+    },
+    {
+      "path": "bootrom/bootrom.txt",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/bootrom.txt",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_bootrom.txt",
+      "size_bytes": 647743,
+      "sha256": "a5ecc81788d17b521bbee8aeb9df000276fbb3ee75e95d16c238950dbedbfd0e",
+      "git_blob": "d3e50aa10d5b4c1731dabdf7ce3f8863ec316564",
+      "retrieved_at": "2026-10-28T15:46:28.044754+00:00"
+    },
+    {
+      "path": "bootrom/romtags",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/romtags",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_romtags",
+      "size_bytes": 3268,
+      "sha256": "6813b7ff9fd32cbf6a0e6ee25fb21fe24f635b80d010e7a8b2487da1c51b5f9d",
+      "git_blob": "2ede56706ec7d8d130c319bb112a6c4715c91945",
+      "retrieved_at": "2026-10-28T15:46:28.345029+00:00"
+    },
+    {
+      "path": "bootrom/wrap.c",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/wrap.c",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_wrap.c",
+      "size_bytes": 12797,
+      "sha256": "a213579ef2a4d0d52068d18892b916f7d5eacb45a6d66a2ca9ca82d81e457bd2",
+      "git_blob": "c256764f3edd8c6ebc913a512704ef52c0f6da50",
+      "retrieved_at": "2026-10-28T15:46:28.668708+00:00"
+    },
+    {
+      "path": "bootrom/unicorn/README.md",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/unicorn/README.md",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_unicorn_README.md",
+      "size_bytes": 211,
+      "sha256": "6d6954380e2c526d6f36056d91e3c836aa760182580de350e3803b0ac184480d",
+      "git_blob": "062b022a344dc5487d76930aa39ff2a272329ddb",
+      "retrieved_at": "2026-10-28T15:46:28.980527+00:00"
+    },
+    {
+      "path": "bootrom/unicorn/corn",
+      "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/unicorn/corn",
+      "temporary_path": "/tmp/md-sim-zynq-rom513-bootrom_unicorn_corn",
+      "size_bytes": 5954,
+      "sha256": "037bf63b0bf68c60ca555e72563bb22540e7621e817d8136a6bb7a000edc5e6f",
+      "git_blob": "ce6778381572467bfb4a856eadf703a55fc7a1ce",
+      "retrieved_at": "2026-10-28T15:46:29.281639+00:00"
+    }
+  ],
+  "executed": false,
+  "archived_files": [
+    {
+      "id": "source-zynq-bootrom-3f64d2f-license",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/LICENSE",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "size_bytes": 18092
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-readme-md",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/README.md",
+      "sha256": "7ef869dc572aa258fe246aa35f852ef489b84504a8a5ac14b846fdd7562fda8f",
+      "size_bytes": 651
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-readme-md",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/README.md",
+      "sha256": "4aed0bb40e1e0870babb6de8ba5c196a740a538484c725f094d73288b8b0a031",
+      "size_bytes": 243
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-makefile",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/Makefile",
+      "sha256": "fcc8a44ec3b52e508f06315c11d62e0e242fe3f5577f34a286302a3c5bcd5a10",
+      "size_bytes": 840
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-zynq-bootrom-bin",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/zynq_bootrom.bin",
+      "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+      "size_bytes": 131072
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-bootrom-txt",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/bootrom.txt",
+      "sha256": "a5ecc81788d17b521bbee8aeb9df000276fbb3ee75e95d16c238950dbedbfd0e",
+      "size_bytes": 647743
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-romtags",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/romtags",
+      "sha256": "6813b7ff9fd32cbf6a0e6ee25fb21fe24f635b80d010e7a8b2487da1c51b5f9d",
+      "size_bytes": 3268
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-wrap-c",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/wrap.c",
+      "sha256": "a213579ef2a4d0d52068d18892b916f7d5eacb45a6d66a2ca9ca82d81e457bd2",
+      "size_bytes": 12797
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-unicorn-readme-md",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/unicorn/README.md",
+      "sha256": "6d6954380e2c526d6f36056d91e3c836aa760182580de350e3803b0ac184480d",
+      "size_bytes": 211
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-bootrom-unicorn-corn",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/unicorn/corn",
+      "sha256": "037bf63b0bf68c60ca555e72563bb22540e7621e817d8136a6bb7a000edc5e6f",
+      "size_bytes": 5954
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-commit-json",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/commit.json",
+      "sha256": "fbd879f1404daeadc50d6d1ce523127a5350225d3b0d3e4bffe895945d5ed819",
+      "size_bytes": 4860
+    },
+    {
+      "id": "source-zynq-bootrom-3f64d2f-tree-json",
+      "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/tree.json",
+      "sha256": "41ded669bc20868bfd1e81e41b1627b453fa215ecf36457307001e30e0362cbd",
+      "size_bytes": 71892
+    }
+  ]
+}

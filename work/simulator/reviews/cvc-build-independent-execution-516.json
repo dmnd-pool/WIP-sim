@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Actual existing CVC tool build, compiled smoke, invalid HDL rejection and restored-tool smoke. Selected HDL execution is not established.",
+  "source_entries": 596,
+  "before_after_equal": true,
+  "captured_mounts": 32,
+  "process": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 52916,
+    "trace_truncated": false
+  },
+  "tool_binary": {
+    "sha256": "6416f929f7dd354caca9f76d3d933c03f40ee92c5cd525a55105203e2959fabb",
+    "size": 10784928
+  },
+  "tool_archive": {
+    "sha256": "03078829c3f9f64e9615f9ba9b9aaee582a61527e668ca88006028ff45454c7b",
+    "size": 5019771
+  },
+  "steps_checked": [
+    "build",
+    "help",
+    "invalid_compile",
+    "original_compile",
+    "original_execute",
+    "restored_compile",
+    "restored_execute"
+  ],
+  "sanitizer": {
+    "actual_CC_commands_checked": 57,
+    "hexasm_instrumented": true,
+    "runtime_C_instrumented": true,
+    "generated_assembly_not_C_instrumentation": true,
+    "flags": [
+      "-fsanitize=undefined",
+      "-fsanitize-undefined-trap-on-error",
+      "-fno-sanitize-recover=all"
+    ]
+  },
+  "source_build_diagnostics": {
+    "bytes": 85046,
+    "warning_occurrences": 253,
+    "retained_in_full": true,
+    "claimed_warning_free": false
+  },
+  "smoke_oracles": {
+    "unsigned_wrap": 0,
+    "unknown_word": "x101",
+    "rising_edges_ns": [
+      3,
+      7
+    ],
+    "completion_ns": 8,
+    "both_compiled_runs_pass": true,
+    "compiler_and_runtime_stderr_empty": true
+  },
+  "negative_syntax": {
+    "exit_code": 1,
+    "location": "/work/invalid.v(1)",
+    "diagnostic": "right hand side expression missing"
+  },
+  "restore": {
+    "source_and_initial_install_renamed_before_unpack": true,
+    "fresh_compilation_and_execution_passed": true,
+    "compiler_closure_still_required": true
+  },
+  "export_members_checked": 12,
+  "artifact_limit": "The exported tool/header/license archive is retained. Smoke program identities are retained; their full executable bytes are not in this tool archive. No cross-build binary reproducibility claim.",
+  "evidence_audit_passed": true,
+  "selected_hdl_equivalence": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "next": "Run exact RW-order comparison, then separately reviewed scheduling/HDL compatibility work and all unchanged selected equivalence gates.",
+  "inputs": {
+    "path": "work/simulator/reviews/cvc-build-independent-execution-516-inputs.json",
+    "sha256": "0f8ecff48ed7d535b91c10e8e166d1e378867cd20272545bd2d631367e62a803",
+    "size": 148557
+  }
+}

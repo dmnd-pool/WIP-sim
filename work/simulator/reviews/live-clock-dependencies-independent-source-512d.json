@@ -1,0 +1,37 @@
+{
+  "schema": "md-sim-independent-source-fix-review/1",
+  "recorded_at": "2026-10-28T16:51:57.941445+00:00",
+  "reviewer": "cleanup_resume",
+  "parent_failure_audit": "work/simulator/reviews/live-vpi-events-independent-execution-512c.json",
+  "source_pins": {
+    "simulator/backends/icarus/live-control.v": {
+      "sha256": "d49f6ca3274cfa9a72a739021a0e96efb4fb7bcbe06551f95d03dcaff8a1b1c6",
+      "size": 6080
+    },
+    "simulator/backends/icarus/clock-order-fixture.v": {
+      "sha256": "3384177c3b9e4b4042c7290a4b295f6443432a451b6f799996674ca58250a924",
+      "size": 1228
+    },
+    "crates/md-sim-firmware/examples/support/s9_live_scenario.rs": {
+      "sha256": "a9a0a9609fa71b6e34ae774101265e25dfdeee9138176aa67c8febb93f52428a",
+      "size": 15396
+    },
+    "crates/md-sim-firmware/examples/s9_hdl_validate.rs": {
+      "sha256": "0da6655e84c1225f7a90b851f98b379aa56f40eb8b3707e6b9b61e67027f38c8",
+      "size": 35439
+    }
+  },
+  "source_review_passed": true,
+  "changes": [
+    "Implicit next-edge sensitivity becomes exactly all four period words and all four next-scaled words; the combinational body is unchanged.",
+    "Each wait predicate is preserved using while((original_predicate)!==1'b1) followed by an event on the exact source array word. Unknown does not bypass the wait.",
+    "A new independent unknown-start fixture adds a real time0 NBA toX and writes0 at100ps; its first valid enabled period arrives201ps. It must produce no early output transition and retain the exact5/103 later sampled values.",
+    "Original split/unsplit cases retain their1/15001/35001 timestamps and full raw timeline comparison. Unknown-start offset applies only to the added explicit fixture.",
+    "New clock-unknown compile selects its separate output path and macro; all compile diagnostics must remain empty. No warnings are disabled."
+  ],
+  "reason": "Actual512c produced10 strict implicit-array-sensitivity warnings. Explicit dependencies remove ambiguity and preserve the original known-true semantics, without scalar aliases or added delays.",
+  "retained_bounds": "No process/time/memory/trace limit changed. Same private channel and actual response requirements.",
+  "actual_rerun_pending": true,
+  "cpu_synchronization_complete": false,
+  "original_board_gate": false
+}

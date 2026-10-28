@@ -1,0 +1,229 @@
+{
+  "schema": "md-sim-s9-donor-board-identity-evidence/1",
+  "date": "2026-10-28T17:10:43.078351+00:00",
+  "project": "cropinghigh/zynq_a9_mb",
+  "commit": "c5d2ee4914de58c700add9690681628b307a7608",
+  "commit_api_original": {
+    "id": "source-s9-donor-components-20261028-commit",
+    "url": "https://api.github.com/repos/cropinghigh/zynq_a9_mb/commits/master",
+    "kind": "metadata",
+    "title": "S9 donor component reference repository commit identity",
+    "language": "en",
+    "source_id": "s9-donor-components-reference",
+    "license": "unknown",
+    "retrieved_at": "2026-10-28T17:06:13+00:00",
+    "status": "downloaded",
+    "local_path": "artifacts/files/metadata/source-s9-donor-components-20261028-commit/commit.json",
+    "sha256": "dc1a0bed7b7b901be032280aa76d80b0f640f9814b1b9e9dbdbf3699d7444a52",
+    "size_bytes": 64086,
+    "executed": false,
+    "final_url": "https://api.github.com/repos/cropinghigh/zynq_a9_mb/commits/master",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": "Mon, 26 Jan 2026 21:02:55 GMT",
+    "etag": "W/\"e237546f208249b637304e0aa57323d12435cf2c3d5032586b74f0af6679ae0f\"",
+    "http_content_length": null
+  },
+  "trees": [
+    {
+      "artifact_id": "source-s9-donor-components-20261028-root-tree",
+      "sha256": "94f86aefd2c20f67d16a5d59b853894bb0bf1df6f5406ebde1be1da989b46849",
+      "git_tree": "e709fcf3441e9bc69388d74a8eb81706a046fefa"
+    },
+    {
+      "artifact_id": "source-s9-donor-components-20261028-images-tree",
+      "sha256": "59576e478a286121991129353c6b4514898bb9c3b6011032ebb7509bef34d430",
+      "git_tree": "c0b0b8e69d2cf81f352d53382f98c48e957c7937"
+    },
+    {
+      "artifact_id": "source-s9-donor-components-20261028-hardware-tree",
+      "sha256": "8c23068bd3caec341b9e737c7923493591a45e74160c27f20d5df41703d13695",
+      "git_tree": "7e9091a05d6aed6e5d631537ff93a4319524e864"
+    }
+  ],
+  "verified_blobs": [
+    {
+      "artifact_id": "source-s9-donor-components-20261028-readme",
+      "git_blob": "4f2e9a22b56f162e590260a84fd0b00631929217",
+      "sha256": "c1595bfc2bdba1fea556bbdb488870bb0a83105079dfbfeb020e2c54e3e4ba65",
+      "bytes": 41080,
+      "tree": "e709fcf3441e9bc69388d74a8eb81706a046fefa",
+      "member": "README.md"
+    },
+    {
+      "artifact_id": "source-s9-donor-components-20261028-bom",
+      "git_blob": "0cc74c970cb32730db78e0e8f3e87892b1b42e9d",
+      "sha256": "5e1631aeb1732029d69692f2c903024629b5e6e50193fd9316c48891a70a1c2f",
+      "bytes": 45970,
+      "tree": "7e9091a05d6aed6e5d631537ff93a4319524e864",
+      "member": "zynq_test_components_1.2.ods"
+    },
+    {
+      "artifact_id": "source-s9-donor-components-20261028-donor-f",
+      "git_blob": "d503305d66311f763ade6d452478f1d38fec07e9",
+      "sha256": "fc3837b5eb9e21a63e713b88c21428ba27e3cdffef9614ab3b7e3427e1c32d6c",
+      "bytes": 2728837,
+      "tree": "c0b0b8e69d2cf81f352d53382f98c48e957c7937",
+      "member": "before_disassembly_f.jpg"
+    },
+    {
+      "artifact_id": "source-s9-donor-components-20261028-donor-b",
+      "git_blob": "7dd29d7cbe5ce818b87ef374bc515706537b2de9",
+      "sha256": "6f98f49ed43733d0ab0e5217371db1feef02060a6b3635ce7b3fab2ad6bf7ca0",
+      "bytes": 2580167,
+      "tree": "c0b0b8e69d2cf81f352d53382f98c48e957c7937",
+      "member": "before_disassembly_b.jpg"
+    }
+  ],
+  "ods_content_xml_sha256": "cf3e0cf109c06742ad4116dd62ebad4e187e7c5de7a0f9e15e39f55d60ff3e38",
+  "donor_component_rows": [
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 38,
+      "new_board_reference": "J7",
+      "value": "RJ45",
+      "donor_references": "J13"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 71,
+      "new_board_reference": "TR1",
+      "value": "G2405CG",
+      "donor_references": "T1"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 72,
+      "new_board_reference": "U1, U2, U3, U4, U5",
+      "value": "TLV62130RGTR",
+      "donor_references": "U9, U10, U11, U12, U13"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 73,
+      "new_board_reference": "U6",
+      "value": "TPS51200DRC",
+      "donor_references": "U14"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 74,
+      "new_board_reference": "U7, U16, U17",
+      "value": "LSF0102DCTR",
+      "donor_references": "U2, U7"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 75,
+      "new_board_reference": "U8, U9",
+      "value": "nt5cc128m16ip-di",
+      "donor_references": "U3, U4"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 76,
+      "new_board_reference": "U10",
+      "value": "XC7Z010-1CLG400C",
+      "donor_references": "U1"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 79,
+      "new_board_reference": "U13",
+      "value": "B50612",
+      "donor_references": "U8"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 81,
+      "new_board_reference": "U15",
+      "value": "TXS02612RTW",
+      "donor_references": "U6"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 84,
+      "new_board_reference": "Y1",
+      "value": "33.333M",
+      "donor_references": "Y1"
+    },
+    {
+      "sheet": "zynq_test",
+      "row_one_based": 85,
+      "new_board_reference": "Y2",
+      "value": "25M",
+      "donor_references": "Y4"
+    }
+  ],
+  "root_visual_observations": [
+    {
+      "input": "donor-f",
+      "location": "silkscreen below ANTMINER title",
+      "text": "Antminer_ControlBoard_XC7Z010_V1.0",
+      "confidence": "legible; independent review pending"
+    },
+    {
+      "input": "donor-f",
+      "location": "upside-down paper label above J4/J5",
+      "text": "Model: Ctrl_C41 Ver:1.20",
+      "confidence": "legible; independent review pending"
+    },
+    {
+      "input": "donor-f",
+      "location": "U1 package",
+      "text": "XILINX ZYNQ and 7Z010CLG400 family text",
+      "confidence": "family readable; do not infer full speed, temperature or silicon stepping"
+    },
+    {
+      "input": "donor-f",
+      "location": "U3/U4 packages",
+      "text": "NANYA",
+      "confidence": "vendor readable; full suffix not independently legible"
+    },
+    {
+      "input": "donor-b",
+      "location": "back of board",
+      "text": null,
+      "confidence": "source annotations and footprints visible; no additional revision or NAND suffix inferred"
+    }
+  ],
+  "limits": [
+    "The source project builds a different development board. Only explicitly identified original S9 donor photos and donor-reference BOM mappings are evidence about S9.",
+    "BOM component values are author mappings. New-board quantities and specifications must not be copied as measured original-board facts.",
+    "Paper assembly version and bare PCB silkscreen version are separate identities.",
+    "No original firmware hash, full NAND suffix, SD card identity, hashboard revisions, PSU PCB, cooling set or calibrated measurement fixture is tied to this donor.",
+    "The ROM source and this board are not proven to have the same silicon revision.",
+    "No runnable target or passing gate is created by this record."
+  ],
+  "failed_acquisition": {
+    "id": "source-s9-donor-components-20261028-tree",
+    "url": "https://api.github.com/repos/cropinghigh/zynq_a9_mb/git/trees/e709fcf3441e9bc69388d74a8eb81706a046fefa?recursive=1",
+    "kind": "source",
+    "title": "S9 donor component reference tree",
+    "language": "en",
+    "source_id": "s9-donor-components-reference",
+    "license": "unknown",
+    "retrieved_at": "2026-10-28T17:06:31+00:00",
+    "status": "failed",
+    "local_path": null,
+    "sha256": null,
+    "size_bytes": null,
+    "executed": false,
+    "final_url": "https://api.github.com/repos/cropinghigh/zynq_a9_mb/git/trees/e709fcf3441e9bc69388d74a8eb81706a046fefa?recursive=1",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": "Fri, 23 Oct 2026 07:05:05 GMT",
+    "etag": "W/\"0b2cd0269e6b83444998af8adbe867e8421fd98f27364eb6704077aa3b84ce99\"",
+    "http_content_length": null,
+    "error": "File exceeds limit 2097152."
+  },
+  "failure_handling": "Recursive tree exceeded2MiB; no unchanged retry. Captured bounded nonrecursive root and relevant subtrees instead; all relevant Git tree/blob hashes verified.",
+  "gates": {
+    "exact_complete_target": false,
+    "original_boot": false,
+    "physical_timing": false,
+    "power_thermal_calibration": false,
+    "firmware_mining": false
+  },
+  "next_action": "Independently review legible donor labels, then bind component evidence to a complete ordered target before execution acceptance."
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "md-sim-public-document-acquisition/1",
+  "date": "2026-10-28T16:50:16.527664+00:00",
+  "files": [
+    {
+      "path": "artifacts/files/source/source-zynq-ug585-1122-mirror/ug585-Zynq-7000-TRM-v1.12.2.pdf",
+      "sha256": "e24b2574c52110f351e6aee0375b97f62556d2decd957e006646367ca43b7a66",
+      "size": 20474087
+    },
+    {
+      "path": "artifacts/files/source/source-zynq-ug585-1122-mirror/response.headers",
+      "sha256": "e30855d1223e70d7799b552e31cf0781b13d6b60343b4f5e5e804a105ef4332d",
+      "size": 253
+    }
+  ],
+  "manifest": "artifacts/manifests/source-zynq-ug585-1122-mirror.json",
+  "transfer": "curl HTTPS-only, fail-on-error,60s/30MB bounds; actualcomplete20474087bytes",
+  "internal_identity": "UG585v1.12.2 July1,2018; PDF Author/ProducerXilinx, Inc.",
+  "derived_text": "work/simulator/boot-dev-513/ug585-1122.txt",
+  "source_scope": [
+    "Internal cover and PDF metadata identify UG585v1.12.2 July1,2018; do not infer version from filename.",
+    "Official current PDF attempts failed; this separate mirror transfer succeeded. Original PDF/header preserved.",
+    "Relevant only to Bitcoin ASIC S9 Zynq reset, OCM and SD interfaces. Does not establish exact S9 silicon revision or physical timing.",
+    "PDF parsed as document data; no acquired code executed."
+  ],
+  "derived_text_identity": {
+    "sha256": "6be50c5be29490766dd6bf313de88378a1aa96556c48768eb8820dcb087675d3",
+    "size": 5840304,
+    "process": "Installedpdftotext -layout; document data only. OriginalPDFunchanged."
+  }
+}

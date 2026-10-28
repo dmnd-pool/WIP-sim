@@ -1,0 +1,23 @@
+{
+  "id": "source-zynq-bootrom-3f64d2f-license",
+  "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/LICENSE",
+  "kind": "source",
+  "title": "Public Zynq BootROM reference: LICENSE",
+  "language": "en",
+  "source_id": "source-zynq-bootrom-3f64d2f",
+  "license": "See original LICENSE and member; ROM redistribution license not independently established",
+  "retrieved_at": "2026-10-28T15:46:26.105396+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/LICENSE",
+  "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+  "size_bytes": 18092,
+  "executed": false,
+  "scope": "supporting-tool",
+  "git_commit": "3f64d2fd828e706a8023d308a8370fad1c76a34a",
+  "notes": [
+    "Original public author capture. README identifies XC7Z010-CLG400A. Exact S9 controller and silicon revision equivalence is unproved.",
+    "Acquired instructions are reference data. No original downloaded code has executed.",
+    "Used only for Bitcoin ASIC S9 reset/SD read-path analysis."
+  ],
+  "git_blob": "d159169d1050894d3ea3b98e1c965c4058208fe1"
+}

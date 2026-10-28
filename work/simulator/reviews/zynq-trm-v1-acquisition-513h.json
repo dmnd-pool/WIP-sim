@@ -1,0 +1,15 @@
+{
+  "url": "https://www.bdtic.com/download/XILINX/ug585.pdf",
+  "attempt": "exact_target_resume bounded HTTPS curl",
+  "status": "HTTP403/curl22; noPDFdownloaded",
+  "headers": {
+    "path": "work/simulator/boot-dev-513/ug585-v1-child-failure-513h.headers",
+    "sha256": "4ad6dd0e7a126407cced02da57d0608150cb5fbd4e54e202da9c921759c68d56",
+    "size": 495
+  },
+  "bounds": {
+    "wall_seconds": 60,
+    "maximum_bytes": 31457280
+  },
+  "next_action": "One separately recorded root network attempt; otherwise independent primary-document mirror. Do not retry unchanged failure repeatedly."
+}

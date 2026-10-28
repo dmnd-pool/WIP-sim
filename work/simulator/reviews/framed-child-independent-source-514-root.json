@@ -1,0 +1,48 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:23:34.924351+00:00",
+  "component": "514 raw framed-child extraction",
+  "manifest": {
+    "path": "work/simulator/s9-cosim-514/framed-child/inputs.json",
+    "sha256": "2495ac69082725f8e5a4cb541d93f7e5dc69b0ddc7a705ac2b2902964fe53fe8"
+  },
+  "files": [
+    {
+      "input": {
+        "path": "work/simulator/s9-cosim-514/framed-child/framed_child.rs",
+        "sha256": "1be04ddea0107dd40ce0f73d318ff522cac5c0783b468fac6239ba69e5f56ea6",
+        "size": 29193
+      },
+      "destination": "crates/md-sim-firmware/examples/support/framed_child.rs"
+    },
+    {
+      "input": {
+        "path": "work/simulator/s9-cosim-514/framed-child/s9_live_child.rs",
+        "sha256": "5c2d7bcddc8446d122b29a9a7bfec8362a5fef88d17523e10ad127c416e5e2c9",
+        "size": 12454
+      },
+      "destination": "crates/md-sim-firmware/examples/support/s9_live_child.rs"
+    }
+  ],
+  "reviewed_behavior": [
+    "Checked private inheritedFD3 and independent logs; same setsid/group ownership and PID held until kill/reap. Existing private PID namespace remains required.",
+    "Checked bounded pending queue shares total retained frame budget; frames pumped while sending are retained and can be received in order. Full writes are observations of transport writes, not guest acknowledgments.",
+    "Checked cancellation/deadline before work and after completion acceptance. Operation timeout is constrained to configured maximum. Multi-frame coordinator must enforce its overall deadline separately.",
+    "Checked strict512 wrapper retains codec/order/terminal-receipt semantics. All frames in each completed pump are observed, and extra/partial shutdown frames fail.",
+    "Checked nonblocking I/O, bounded pump loops and EOF handling. Overflow/error retains raw evidence and invokes owned cleanup.",
+    "Checked existing five actual child fixtures remain; new actual peer fixtures cover child requests, multiple responses, batching, partial/extra shutdown and invalid timeout."
+  ],
+  "result": "pass-for-integration-and-tests",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "Compile/fmt/strictClippy",
+    "Run preserved512 child tests and new raw transport tests",
+    "Run affected actual512 or514 HDL path with new frozen helper",
+    "Review CPU coordinator overall deadline and timestamp contract separately"
+  ],
+  "limits": [
+    "No firmware or CPU synchronization claim from process fixtures.",
+    "No source review can replace actual runtime regression."
+  ]
+}

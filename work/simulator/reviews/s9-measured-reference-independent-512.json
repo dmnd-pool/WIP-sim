@@ -1,0 +1,139 @@
+{
+  "schema": "md-sim-independent-reference-review/1",
+  "reviewer": "cleanup_resume",
+  "scope": "Archived physical-reference provenance and direct image observations; no simulator execution",
+  "input_pins": [
+    {
+      "path": "work/simulator/reviews/s9-measured-reference-inspection-512.json",
+      "sha256": "10befe11790797b15414303ed6923667d0a516e879fd9f92f87aa817f2a0bbb7",
+      "size": 7789
+    },
+    {
+      "path": "catalog/parts/s9-psu-identity/sources.jsonl",
+      "sha256": "90a466acf49067cb3a16b8c397904458cb1620f9e470a3df8b45fa3425f6a14a",
+      "size": 2343
+    },
+    {
+      "path": "artifacts/files/web/eastshore-s9-bench-20261028-html/evaluation.html",
+      "sha256": "13759f114b084b1b64543401bb243c91e402d7a4d5d0824cdc01f700391f3dc6",
+      "size": 92842
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-html.json",
+      "sha256": "21c1c83ba2f9f323e2c37f1a1ced0fb86ba5360a159c40d587262fedf6aaae6f",
+      "size": 834
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img02/original-02.jpg",
+      "sha256": "edc0f4b76ddb57d6ece268de146a326cb278f36d6d1e0306a7f8e4c53cec5711",
+      "size": 91067
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img02.json",
+      "sha256": "d76e1e69cfd7bf924d8f690a5a737f069dabdcad478038ac23a2285a39f7ed8e",
+      "size": 913
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img11/original-11.png",
+      "sha256": "f9f07cfb728bbd60b0906f368248023b94b443258afa77fffc8f910bcb284733",
+      "size": 11238
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img11.json",
+      "sha256": "32be0dea742e6575c22386cc5f6ee9c63ac2add97152868e61bfc3600f485b4b",
+      "size": 912
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img12/original-12.jpg",
+      "sha256": "454ac4abeced38c19110a65cc7a303b877a217bfa2279db985bede182e7a4408",
+      "size": 82004
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img12.json",
+      "sha256": "0f97aab3a7231b7f81522dcfd682eaa650f8439b062b35bd095b2b9f2dd1d3e6",
+      "size": 913
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img14/original-14.png",
+      "sha256": "3830608558b0d52a6c2931126b31101ae4a99fb84b2eb7f61e4dca88ec1d5a7d",
+      "size": 5549
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img14.json",
+      "sha256": "ba6ff70ac428465667d2bc03c77b8d8884016c3a4d2877d87767901749a983c1",
+      "size": 910
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img15/original-15.jpg",
+      "sha256": "5ff46657fd77ba339cd0ede8e32b29bc7654ca3f8b3a8f94ba29c6d0e876aef8",
+      "size": 100781
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img15.json",
+      "sha256": "04deb766bf52e966bac703dcad0837d111e802943b9ff8d9544c75a57e4e56ab",
+      "size": 915
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img20/original-20.jpg",
+      "sha256": "370fd64736da101f8b2a2c3762eaf23fa00e05936819bc52ea9c475bd10dbd5b",
+      "size": 74244
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img20.json",
+      "sha256": "b450497c8dc58c2c357d398905e745fe9e550a3cedafae54d12004df9fcb69f9",
+      "size": 913
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img21/original-21.jpg",
+      "sha256": "a8192423e9953447b93e97c0448254ed288ef4ad352a36540c92831e4418e68d",
+      "size": 103766
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img21.json",
+      "sha256": "db1ea96b433634b4225aa0ab0665ce6c82a43418d2e7777381417a984748fec3",
+      "size": 915
+    },
+    {
+      "path": "artifacts/files/document/eastshore-s9-bench-20261028-img22/original-22.jpg",
+      "sha256": "f03fb98aa152a060786cf09e457f3bdebc9fc86d8f8664aa1561cd0df186009b",
+      "size": 91947
+    },
+    {
+      "path": "artifacts/manifests/eastshore-s9-bench-20261028-img22.json",
+      "sha256": "042f0299522042a4218033d7a252684cb19d1fa81b897b7172b464a39853e9c5",
+      "size": 913
+    }
+  ],
+  "verified_original_files": 9,
+  "verified_original_bytes": 653438,
+  "visual_method": "Viewed all eight original images independently with view_image, without altered images or OCR.",
+  "observations_checked": [
+    "02 exterior and supplied document; exact component revisions unreadable",
+    "11 1D 11.84TH/s and tooltip2016-09-10 21:00:00",
+    "12 wall meter1317.8W and63#550M sticker",
+    "14 elapsed1h12m3s;12223.85GH/s realtime;12228.18GH/s average",
+    "15 wall meter1362.4W",
+    "20 infrared display36.3C",
+    "21 contact display32.8C",
+    "22 contact display44.9C"
+  ],
+  "html_context_checked": [
+    "2019-04-07 publication distinct from2016 screenshot",
+    "S9-11.85TH, APW3-12-1600-B2, indoor29C, default550 and changed568.75, dashboardchip63C",
+    "Publisher inlet/outlet labels retained as claims; photographs do not establish exact sensor positions",
+    "Malformed389dBa remains unnormalized"
+  ],
+  "finding": {
+    "id": "uncertain-meter-brand",
+    "detail": "The report initially spelled TECHMAN; lettering appears TECMAN but is not needed. Root accepted removing the uncertain brand while preserving TM9+ and the readings.",
+    "status": "No measurement conclusion depends on brand; pin above records reviewed version."
+  },
+  "gates": {
+    "exact_target_identity": false,
+    "physical_timing": false,
+    "power_thermal_calibration": false,
+    "firmware_execution": false,
+    "mining": false
+  },
+  "conclusion": "Provenance and numeric observations verified. No exact-target identity, physical timing, calibrated power/thermal, firmware or mining gate is closed."
+}

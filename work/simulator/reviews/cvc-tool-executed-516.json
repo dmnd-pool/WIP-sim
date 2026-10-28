@@ -1,0 +1,101 @@
+{
+  "schema": "md-sim-cvc-tool-execution/1",
+  "status": "PASS tool prerequisite only; selected logic and CPU acceptance remain false",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516/spec.json",
+      "sha256": "b4a4222c83556dd01d1e3060b3fdf6935978cfb1a71e5bc491cd83f1aaa0d00a",
+      "size": 6637
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516/result.json",
+      "sha256": "4c3a8c9582c3843ce6da7499e000296ba3ee94759a00c208ebf2463768f51343",
+      "size": 20401220
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516/build-report.json",
+      "sha256": "a3a1500b10c4bf32fe9f0a87bbdc596dcb815b3212135058d1e43cad05239749",
+      "size": 161752
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516/cvc-tools.tar.gz",
+      "sha256": "03078829c3f9f64e9615f9ba9b9aaee582a61527e668ca88006028ff45454c7b",
+      "size": 5019771
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516/input-identities.json",
+      "sha256": "b1a57ef035e0a275f0a852d91db9d19534e07c23a1229f92661408ac4a9eb1e4",
+      "size": 1548
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-driver-516/manifest.json",
+      "sha256": "a9c8d7146a30ca5103f15efea441387d72e7673d67695dab2c379a680faee649",
+      "size": 102009
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/acquisition.json",
+      "sha256": "825cca3ac2e9cc2b4ad81a4cf212768089ebd209a10b516b34b8049d187d10d9",
+      "size": 3675
+    },
+    {
+      "path": "work/simulator/reviews/cvc-builder-independent-source-516.json",
+      "sha256": "f2db0bb351b264a2796ae160a57a4a5284dd2e5cd9a97bb7d468b0397adf597b",
+      "size": 3897
+    },
+    {
+      "path": "work/simulator/reviews/cvc-scheduler-independent-reference-516.json",
+      "sha256": "6df41388a01376e9e5feadc34dca8d67fe846dd02366e731520ce990c968df76",
+      "size": 4524
+    }
+  ],
+  "actual": {
+    "exit_code": 0,
+    "wall_milliseconds": 52916,
+    "trace_truncated": false,
+    "binary": {
+      "sha256": "6416f929f7dd354caca9f76d3d933c03f40ee92c5cd525a55105203e2959fabb",
+      "size": 10784928
+    },
+    "tools": {
+      "sha256": "03078829c3f9f64e9615f9ba9b9aaee582a61527e668ca88006028ff45454c7b",
+      "size": 5019771
+    },
+    "smoke_pass": true,
+    "restored_smoke_pass": true,
+    "invalid_hdl_exit": 1,
+    "selected_hdl_equivalence": false
+  },
+  "upstream_c_diagnostics": {
+    "warning_lines": 253,
+    "warning_option_occurrences": {
+      "-Wunused-but-set-variable=": 82,
+      "-Wunused-function": 41,
+      "-Wunused-const-variable=": 2,
+      "-Wunused-variable": 2,
+      "-Wstringop-truncation": 2,
+      "-Wmisleading-indentation": 11,
+      "-Wformat-overflow=": 74,
+      "-Wrestrict": 3,
+      "-Wmaybe-uninitialized": 14,
+      "-Wdeprecated": 4,
+      "-Wpointer-to-int-cast": 2,
+      "-Warray-bounds=": 2,
+      "-Wdiscarded-qualifiers": 5,
+      "-Wint-to-pointer-cast": 1,
+      "-Wpointer-sign": 2,
+      "-Wformat=": 1
+    },
+    "full_stderr_identity": {
+      "sha256": "382ba15739d41eaac6383ceb862df36348d97a838851bbc641f3f4cc3aef891d",
+      "size": 85046
+    },
+    "warning_free_claim": false,
+    "risk": "Uninitialized/array/format/pointer warnings remain upstream review items. Smoke coverage does not prove these paths safe or equivalent."
+  },
+  "next": "Run unchanged compiled RW/NBA oracle alongside pinned Icarus. Retain a negative CVC result before any scheduler patch."
+}

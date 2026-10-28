@@ -1,0 +1,46 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:19:20.249979+00:00",
+  "component": "513d QEMU ROM owner correction",
+  "sources": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513d/s9-rom-reset.patch",
+      "sha256": "5b174b20c449a69941dfb74fcf0da344a435936dce190b407c86c78098c557ef",
+      "bytes": 10004,
+      "parent_sha256": "980230ce36a4c184cba3c195f9762708351f0f3bf968f9ba755b36b1f0008ef1"
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513d/build_qemu_backend.rs",
+      "sha256": "92aeac8563598afbb177bdaf516c52174c2d0b271c07e7fb8c45c2774fcff4b8",
+      "bytes": 56329,
+      "parent_sha256": "f54a22bfee086740d3fa512c1323716317da17ab5a00e146255aa1d03c80d04f"
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513d/derived/hw/arm/xilinx_zynq.c",
+      "sha256": "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+      "bytes": 37768,
+      "parent_sha256": "a52356f72927810157aeca814a9066c3466517fbfbdeb903afe6c5521e34e8c6"
+    }
+  ],
+  "upstream_basis": {
+    "archive": "artifacts/files/source/tool-qemu/qemu-11661d857254.tar.gz",
+    "member": "qemu-11661d857254b27fca5568c6deacf4f6b6f3460f/system/memory.c",
+    "sha256": "ec1106c0249bf8f9f7a33f9756962d689bebcdd9c95c36876be2336d1044f5cc",
+    "bytes": 116900,
+    "lines": [
+      3569,
+      3580
+    ]
+  },
+  "finding": "Actual513c qtest startup failed before guest execution because ROM RAM registration rejects MachineState as an owner. Root initial source review missed this upstream restriction.",
+  "correction": "Use NULL for the global board ROM, matching the upstream global RAM ownership interface. Keep alias owners, memory identity, exactROM bytes, mapping, reset behavior and assertions unchanged. Refresh builder expected hash.",
+  "result": "pass-for-rebuild; no runtime claim",
+  "required_checks": [
+    "Rebuild exactbackend with sanitizers",
+    "Run ROM protection/remap/reset and private SWAP rejection tests",
+    "Re-run prior fabric behavior",
+    "Execute bounded original ROM reset diagnostic"
+  ],
+  "failed_parent_preserved": true
+}

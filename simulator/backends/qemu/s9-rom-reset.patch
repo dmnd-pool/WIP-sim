@@ -1,0 +1,260 @@
+--- a/include/hw/arm/xilinx_zynq.h
++++ b/include/hw/arm/xilinx_zynq.h
+@@ -26,6 +26,7 @@
+     Clock *ps_clk;
+     ARMCPU *cpu[ZYNQ_MAX_CPUS];
+     uint8_t boot_mode;
++    bool md_bootrom_reference;
+     struct arm_boot_info bootinfo;
+ };
+ 
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -313,7 +313,8 @@
+ static void md_zynq_gate_reset(void *opaque)
+ {
+     MdZynqCpuGate *gate = opaque;
+-    /* SLCR reset register is zero. The CPU reset hook separately parks CPU1. */
++    /* SLCR reset register is zero. Direct-SPL mode parks CPU1;
++     * original-ROM mode lets both CPUs execute their reset instructions. */
+     gate->flags = 0;
+ }
+ 
+@@ -329,6 +330,71 @@
+ {
+     arm_set_cpu_power_state(cpu, PSCI_OFF);
+     CPU(cpu)->halted = 1;
++}
++
++/* Public-ROM diagnostic mapping. This is separate from direct-SPL entry.
++ * The original ROM uses0x40000..0x7ffff before handoff. RAM_HI moves each
++ *64KiB bank to the documented high window. Private SWAP is not inferred. */
++typedef struct MdZynqRomMap {
++    MemoryRegion rom;
++    MemoryRegion bank[4];
++} MdZynqRomMap;
++
++static bool md_zynq_get_bootrom(Object *obj, Error **errp)
++{
++    return ZYNQ_MACHINE(obj)->md_bootrom_reference;
++}
++
++static void md_zynq_set_bootrom(Object *obj, bool value, Error **errp)
++{
++    ZynqMachineState *s = ZYNQ_MACHINE(obj);
++    if (s->cpu[0]) {
++        error_setg(errp, "bootrom-reference is immutable after initialization");
++        return;
++    }
++    s->md_bootrom_reference = value;
++}
++
++static void md_zynq_rom_map(void *opaque, int line, int value)
++{
++    MdZynqRomMap *s = opaque;
++    assert(value >= 0 && value <= 15);
++    memory_region_transaction_begin();
++    for (unsigned n = 0; n < 4; n++) {
++        hwaddr base = value & (1u << n) ? 0xfffc0000ULL : 0x40000ULL;
++        memory_region_set_address(&s->bank[n], base + n * 64 * KiB);
++    }
++    memory_region_transaction_commit();
++    trace_md_sim_zynq_rom_map(value);
++}
++
++static void md_zynq_rom_reset(void *opaque)
++{
++    /* Restore mapping only. Do not manufacture RAM contents on warm reset. */
++    md_zynq_rom_map(opaque, 0, 0);
++}
++
++static MdZynqRomMap *md_zynq_rom_init(MachineState *machine,
++                                    MemoryRegion *ocm)
++{
++    MdZynqRomMap *s = g_new0(MdZynqRomMap, 1);
++    MemoryRegion *memory = get_system_memory();
++    memory_region_init_rom(&s->rom, NULL, "md-sim.zynq.rom",
++                           128 * KiB, &error_fatal);
++    memory_region_add_subregion_overlap(memory, 0, &s->rom, 2);
++    if (load_image_mr(machine->firmware, &s->rom) != 128 * KiB) {
++        error_report("bootrom-reference requires a complete128KiB ROM");
++        exit(EXIT_FAILURE);
++    }
++    for (unsigned n = 0; n < 4; n++) {
++        g_autofree char *name = g_strdup_printf("md-sim.zynq.rom-ocm%u", n);
++        memory_region_init_alias(&s->bank[n], OBJECT(machine), name,
++                                 ocm, n * 64 * KiB, 64 * KiB);
++        memory_region_add_subregion_overlap(memory, 0x40000 + n * 64 * KiB,
++                                            &s->bank[n], 2);
++    }
++    qemu_register_reset(md_zynq_rom_reset, s);
++    return s;
+ }
+ 
+ static void zynq_init(MachineState *machine)
+@@ -341,8 +407,18 @@
+     qemu_irq pic[GIC_EXT_IRQS];
+     int n;
+     unsigned int smp_cpus = machine->smp.cpus;
++    bool md_rom = zynq_machine->md_bootrom_reference;
++    MdZynqRomMap *rom_map = NULL;
+     bool md_s9 = object_dynamic_cast(OBJECT(machine),
+                         MACHINE_TYPE_NAME("md-sim-s9-zynq-a9")) != NULL;
++
++    if (md_rom && (!md_s9 || smp_cpus != 2 || !machine->firmware ||
++        machine->kernel_filename || machine->initrd_filename || machine->dtb ||
++        (machine->kernel_cmdline && machine->kernel_cmdline[0]))) {
++        error_report("bootrom-reference requires the S9 reference machine, twoCPUs,"
++                     " -bios, and no direct kernel/initrd/DTB/command line");
++        exit(EXIT_FAILURE);
++    }
+ 
+     /* max 2GB ram */
+     if (machine->ram_size > 2 * GiB) {
+@@ -370,13 +446,18 @@
+         object_property_set_int(cpuobj, "reset-cbar", MPCORE_PERIPHBASE,
+                                 &error_fatal);
+ 
+-        if (md_s9 && n > 0) {
++        if (md_s9 && !md_rom && n > 0) {
+             /* Explicit BootROM-stage adaptation: park the secondary processor.
+              * Archived SPL/U-Boot/kernel bytes remain unchanged. */
+             object_property_set_bool(cpuobj, "start-powered-off", true,
+                                      &error_fatal);
+         }
+         qdev_realize(DEVICE(cpuobj), NULL, &error_fatal);
++        if (md_rom) {
++            /* Do not turn bus decode failures into successful zero reads.
++             * The generic board policy remains unchanged. */
++            CPU(cpuobj)->ignore_memory_transaction_failures = false;
++        }
+ 
+         zynq_machine->cpu[n] = ARM_CPU(cpuobj);
+     }
+@@ -387,7 +468,11 @@
+     /* 256K of on-chip memory */
+     memory_region_init_ram(ocm_ram, NULL, "zynq.ocm_ram", 256 * KiB,
+                            &error_fatal);
+-    memory_region_add_subregion(address_space_mem, 0xFFFC0000, ocm_ram);
++    if (md_rom) {
++        rom_map = md_zynq_rom_init(machine, ocm_ram);
++    } else {
++        memory_region_add_subregion(address_space_mem, 0xFFFC0000, ocm_ram);
++    }
+ 
+     DriveInfo *dinfo = drive_get(IF_PFLASH, 0, 0);
+ 
+@@ -410,6 +495,7 @@
+     qdev_connect_clock_in(slcr, "ps_clk", zynq_machine->ps_clk);
+     qdev_prop_set_uint8(slcr, "boot-mode", zynq_machine->boot_mode);
+     qdev_prop_set_bit(slcr, "md-cpu-control", md_s9);
++    qdev_prop_set_bit(slcr, "md-rom-reference", md_rom);
+     if (md_s9) {
+         /* Exact archived FPGA header: 7z010clg400, IDCODE 0x03722093.
+          * This selects the firmware component, not a proved PCB revision. */
+@@ -417,6 +503,10 @@
+     }
+     sysbus_realize_and_unref(SYS_BUS_DEVICE(slcr), &error_fatal);
+     sysbus_mmio_map(SYS_BUS_DEVICE(slcr), 0, 0xF8000000);
++    if (md_rom) {
++        qdev_connect_gpio_out_named(slcr, "md-rom-ocm", 0,
++                                   qemu_allocate_irq(md_zynq_rom_map, rom_map, 0));
++    }
+     if (md_s9) {
+         for (n = 0; n < smp_cpus; n++) {
+             MdZynqCpuGate *gate = g_new0(MdZynqCpuGate, 1);
+@@ -732,7 +822,13 @@
+     zynq_machine->bootinfo.loader_start = 0;
+     zynq_machine->bootinfo.board_setup_addr = BOARD_SETUP_ADDR;
+     zynq_machine->bootinfo.write_board_setup = zynq_write_board_setup;
+-    if (md_s9) {
++    if (md_rom) {
++        /* Keep the upstream reset handler, with boot_info NULL and PC0.
++         * No direct entry, boot stub, DTB injection or CPU1 parking. */
++        zynq_machine->bootinfo.firmware_loaded = true;
++        zynq_machine->bootinfo.skip_dtb_autoload = true;
++        zynq_machine->bootinfo.write_board_setup = NULL;
++    } else if (md_s9) {
+         zynq_machine->bootinfo.write_secondary_boot = md_zynq_secondary_loader;
+         zynq_machine->bootinfo.secondary_cpu_reset_hook = md_zynq_secondary_reset;
+     }
+@@ -755,6 +851,10 @@
+     mc->ignore_memory_transaction_failures = true;
+     mc->valid_cpu_types = valid_cpu_types;
+     mc->default_ram_id = "zynq.ext_ram";
++    object_class_property_add_bool(oc, "bootrom-reference",
++                                    md_zynq_get_bootrom, md_zynq_set_bootrom);
++    object_class_property_set_description(oc, "bootrom-reference",
++        "Public128KiB ROM reset diagnostic; private remap and S9 identity unresolved");
+     prop = object_class_property_add_str(oc, "boot-mode", NULL,
+                                          zynq_set_boot_mode);
+     object_class_property_set_description(oc, "boot-mode",
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -216,6 +216,8 @@
+     Clock *uart1_ref_clk;
+     uint8_t boot_mode;
+     bool md_cpu_control;
++    bool md_rom_reference;
++    qemu_irq md_rom_ocm;
+     qemu_irq md_cpu_control_out[2];
+     uint32_t md_pss_idcode;
+ };
+@@ -392,6 +394,9 @@
+     s->ddriob_dci_ctrl_reset_toggled = false;
+ 
+     s->regs[R_LOCKSTA] = 1;
++    if (s->md_rom_reference) {
++        s->regs[R_OCM_CFG] = 0;
++    }
+     /* 0x100 - 0x11C */
+     s->regs[R_ARM_PLL_CTRL]   = 0x0001A008;
+     s->regs[R_DDR_PLL_CTRL]   = 0x0001A008;
+@@ -599,6 +604,7 @@
+                           uint64_t val, unsigned size)
+ {
+     ZynqSLCRState *s = (ZynqSLCRState *)opaque;
++    hwaddr byte_offset = offset;
+     offset /= 4;
+ 
+     DB_PRINT("addr: %08" HWADDR_PRIx " data: %08" PRIx64 "\n", offset * 4, val);
+@@ -670,6 +676,14 @@
+                 qemu_set_irq(s->md_cpu_control_out[n], flags);
+             }
+         }
++    }
++    if (s->md_rom_reference && offset == R_OCM_CFG) {
++        if (size != 4 || (byte_offset & 3) || (val & ~0xfull)) {
++            error_report("md-sim: unsupported ROM OCM configuration0x%" PRIx64, val);
++            qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++            return;
++        }
++        qemu_set_irq(s->md_rom_ocm, val);
+     }
+     s->regs[offset] = val;
+ 
+@@ -738,6 +752,7 @@
+     sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->iomem);
+ 
+     qdev_init_clocks(DEVICE(obj), zynq_slcr_clocks);
++    qdev_init_gpio_out_named(DEVICE(obj), &s->md_rom_ocm, "md-rom-ocm", 1);
+     for (unsigned n = 0; n < 4; n++) {
+         g_autofree char *name = g_strdup_printf("fclk%u", n);
+         s->fclk[n] = qdev_init_clock_out(DEVICE(obj), name);
+@@ -762,6 +777,7 @@
+ static const Property zynq_slcr_props[] = {
+     DEFINE_PROP_UINT8("boot-mode", ZynqSLCRState, boot_mode, 1),
+     DEFINE_PROP_BOOL("md-cpu-control", ZynqSLCRState, md_cpu_control, false),
++    DEFINE_PROP_BOOL("md-rom-reference", ZynqSLCRState, md_rom_reference, false),
+     DEFINE_PROP_UINT32("md-pss-idcode", ZynqSLCRState, md_pss_idcode, 0),
+ };
+ 
+--- a/hw/arm/trace-events
++++ b/hw/arm/trace-events
+@@ -98,3 +98,6 @@
+ 
+ # bcm2838.c
+ bcm2838_gic_set_irq(int irq, int level) "gic irq:%d lvl:%d"
++
++# Original-ROM reference mapping, not a guest boot message
++md_sim_zynq_rom_map(unsigned ram_hi) "ram_hi=0x%x private_swap=unsupported"

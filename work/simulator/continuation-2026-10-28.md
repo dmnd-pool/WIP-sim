@@ -294,3 +294,108 @@ only into temporary staging so far. No selectedS9 silicon compatibility is
 proved. Its actual read instructions appear to clamp at EOF; a confined
 unchanged-code oracle and independent revision binding are next. Do not infer
 this behavior from generic producer code or a filename.
+
+## Live PL512e and ROM513b continuation
+
+Live512e and its separate same-helper baseline pass actual execution. The
+live link retains81 requests/completions,53 output changes and10 interrupt
+changes. All72 bus operations and two resets pass. Strict compilation,
+sanitizer, event-order, unknown-signal and clock tests pass. Independent
+source and execution reviews close this component. See
+`reviews/live-pl-executed-512e.md` and
+`reviews/live-pl-cohort-independent-512e.json`. The original CPU/firmware and
+mining gates stay open. Browser agent stages a separate QEMU-to-PL bridge.
+Keep atomic memory-mapped operations distinct from timed CPU bus stalls.
+
+ROM513b executes the unchanged original public ROM file-read routine across28
+cases and confirms its logical EOF behavior. This uses a wrapper and prepared
+file state, not a complete reset boot. Inputs and independent execution audit
+are in `reviews/zynq-rom-read-path-executed-513b.md` and
+`reviews/zynq-rom-read-independent-execution-513b.json`. The originals are now
+in the archive, not temporary staging. Selected S9 ROM equivalence remains
+unproved. Root reviewed the optional513c architectural-reset and OCM alias
+patch. Its actual build, mapping/reset tests and bounded CPU diagnostic are
+next. Private OCM SWAP and ROM_SHADOW handoff behavior remain unsupported.
+
+Root retained one small publisher bench reference: nine original HTML/image
+inputs,653438bytes. See `reviews/s9-measured-reference-inspection-512.json`.
+The wall-plug and temperature photos narrow the search but lack matched PCB
+revisions, measurement error bounds and selected firmware identity. They do
+not calibrate the simulator or pass physical timing/power/thermal gates.
+Exact agent batches shared archive/catalogue/index checks after these inputs.
+
+Last full checked source commit is `e6fb96cf`. New512/513 code has focused
+checks; it still needs full workspace checks after integration. Keep the
+current S9-only scope. Stop only after complete S9 milestone2 passes.
+
+## Original ROM reset tests513e and next source boundary
+
+The optional ROM backend builds with undefined-behavior checks. Run513c failed
+before guest execution because QEMU requires a device or null owner for its
+ROM memory. Root's first source review missed this restriction. The narrow
+513d correction uses null for global board ROM ownership. Source/build pins
+and the original failure are retained. Actual513e component tests pass340
+ROM-map transactions,383 private-SWAP rejection transactions and128 existing
+fabric transactions, each with two QMP resets. An outer checker had wrongly
+applied TTC's24-interrupt expectation to the ROM test; the reviewed correction
+requires zero, consistent with the inner test. Failed assessments remain.
+
+The bounded CPU diagnostic has not yet produced an instruction trace. First,
+the default TCG translation cache exceeded the unchanged1GiB address-space
+limit. The new probe explicitly selects64MiB. It also reuses the existing
+isolated128MiB copy-on-write SD fixture. The original112197632-byte backing
+stays immutable; extension is outside the entire image, not inside BOOT.BIN
+or its FAT chain. This is a reference capacity, not a physical SD identity.
+The next attempt starts QEMU but its observer stops on initialization notices.
+Exact agent is checking their original emitters and the existing QEMU
+`vm_state_notify` boundary before CPU resume. Guest access diagnostics must
+remain fatal. No warning waiver, CPU boot or firmware gate is claimed.
+
+Root source reviews and all exact failures are in `reviews/`. Cleanup agent
+has closed the first513c build/fabric/failure audit; later actual audits are
+pending. Browser agent has integrated the reviewed shared child transport
+and benchmark. Its27 focused tests and strict Clippy pass. Actual throughput
+and72-operation bus regression are next, followed by full workspace checks.
+The CPU/PL bridge remains staged separately.
+
+The donor-board reference now has an independent photo and Git-object audit:
+`reviews/s9-controller-donor-independent-515.json`. The bare PCB is marked
+`Antminer_ControlBoard_XC7Z010_V1.0`; its paper label is `Ctrl_C41 Ver:1.20`.
+These are different revision fields. Exact NAND, SD, hashboard, PSU/cooling
+and matched calibration data still need resolution. The source project is
+a new development board; only its original donor photos and explicitly
+mapped donor components are S9 evidence.
+
+## Checked513g source and faster HDL work
+
+Full workspace checks pass:1230 tests,0 failures,55 explicit ignored tests,
+128 suites. Formatting and strict all-target Clippy pass. All595 source
+inputs match before/after. Logs, compiler versions and hashes are in
+`checks-2026-10-28-002/` and `reviews/workspace-check-after513g.json`.
+
+The reset probe now captures the original ROM's real write toF8000254,
+value1, from original instructions16f0..16fc and the write helper atb000.
+The missing SLCR behavior cancels the run;180 translated spans/2736bytes
+match the original ROM. See `reviews/zynq-rom-reset-independent-execution-513g.json`.
+Raw fallback traces are parsed with bounds, exact address framing and ARM32
+alignment. Read-memory errors and unsupported guest diagnostics remain fatal.
+Exact agent is tracing the manufacturer'sRST_REASON_CLR contract. Its
+register name must not be guessed asREBOOT_STATUS, which is at258.
+
+Transport regression514 passes72 actual bus operations and two resets after
+the shared supervisor extraction. The actual throughput benchmark fails:
+10us takes2.471832034s;100us times out after10.073s;1ms is not run. No clock
+rescale or result extrapolation. This is a real practical boot-path issue.
+Browser owns an isolated CVC source build with a reviewed Rust builder;
+its seven focused tests pass. The CVC fork is source-available under its
+retained modified Artistic license. It is not labelledGPL. Its future RW
+callback runs before NBA in the checked scheduler, so unchanged Icarus VPI
+semantics cannot be assumed. The independent actual collision oracle must
+run before any recorded tool correction. Original vendor logic stays unchanged.
+
+Root has also acquired exact Verilator5.052 source as a separate alternative.
+Itsfourstate flag is experimental. No build or simulation has run. Default
+two-state execution cannot substitute for the required X/Z behavior. The
+CPU/PL bridge remains staged. CVC owns the next heavy runtime slot; exact
+agent stages the SLCR correction and root reviews source and provenance.
+Only S9 work continues. The full S9 milestone remains incomplete.

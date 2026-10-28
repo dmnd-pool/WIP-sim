@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Static review of actual future-RW versus NBA scheduling oracle; pending isolated execution",
+  "inputs": [
+    {
+      "path": "work/simulator/s9-cvc-516/rw-order.c",
+      "sha256": "d8c7d961d4e17fb175c9b01dd41813836d9a9094b65d699262d5ba97dd733905",
+      "size": 2863
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-order.v",
+      "sha256": "d44bb7fb157664681d134ce5116cceb7db6a8f4b0ffbf06ba131a9bebc08dfcc",
+      "size": 470
+    }
+  ],
+  "source_review_passed": true,
+  "findings_open": 0,
+  "independent_expected_order": "At5ps clock rises. First NBA sets edge_seen=1; its event schedules second NBA sampled=incoming. The required post-NBA RW boundary changes incoming from0 to1 only after sampled=0 is committed. RO must observe time5,input1,edge1,sampled0. CVC pre-NBA #0 callback should instead make sampled1 and fail this contract.",
+  "properties": [
+    "C uses the existing VPI ABI only and preserves unknown values as explicit -1 failure",
+    "No fabricated clock delay or polling-loop workaround",
+    "Exact actual-value line is emitted before assertion",
+    "Failure flushes retained streams and uses explicit process exit1, independent of vpiFinish diagnostic argument",
+    "No CPU, FPGA behavior or mining model is implemented by the fixture"
+  ],
+  "runner_requirements": [
+    "Run the same C/HDL source bytes under isolated Icarus and compiled CVC with+acc+2",
+    "Retain compiler flags, plugin/program identities, output and numeric process status",
+    "Require exact once observation plus exact success marker for pass; reject HDL fallback MD_RW_ORACLE_MISSING_CALLBACK even if $finish returns0",
+    "Keep CVC mismatch as failed boundary equivalence until a separately reviewed adaptation passes unchanged assertions"
+  ],
+  "executed": false,
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false
+}

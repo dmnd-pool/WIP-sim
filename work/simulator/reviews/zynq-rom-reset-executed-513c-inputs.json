@@ -1,0 +1,100 @@
+{
+  "schema": "md-sim-zynq-reset-attempt/1",
+  "created": "2026-10-28T17:22:41.631983+00:00",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/rom-reset-driver-513c/manifest.json",
+    "sha256": "537eb65d6c65bc1384fddaf0c082558bb27c9b66950722b63a86a823f0bfc2de",
+    "size": 83369
+  },
+  "build": {
+    "path": "work/simulator/qemu-s9/backend-build-513c-ubsan/build-report.json",
+    "sha256": "006ca78f08c16fa6b3f4c44bfb4d7c0ae129be41aeb21c2bb6055bd53df7ff19",
+    "size": 2670788
+  },
+  "build_result": {
+    "path": "work/simulator/qemu-s9/backend-build-513c-ubsan/result.json",
+    "sha256": "1b51c516376b32204f1fc9cc0d972ffc485af791a40e09cbb0f53def17bc7ee3",
+    "size": 32130991
+  },
+  "cases": [
+    {
+      "name": "rom-fabric-513c",
+      "exercised": "existing fabric reset",
+      "passed": true,
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513c/assessment.json",
+          "sha256": "e099010a072e94ea05347ea0fde60047cccaa2cae6387d983c8852ec3bf0aa57",
+          "size": 2466
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513c/result.json",
+          "sha256": "981376d883d451d3f3ea6bad20043c3bdb4f4bc5aa6ccae34f7c7d913967ec5c",
+          "size": 60980
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513c/transactions.log",
+          "sha256": "857b7410bf59cc08e301f102404e98d43cae403ca824a8cd9c68ff84d2855735",
+          "size": 16941
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513c/backend.log",
+          "sha256": "755085bba17084169e390b1c24b594ca84528472b7fe03e2f0533d341bb368f7",
+          "size": 13128
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513c/spec.json",
+          "sha256": "b6b7d7336c95d0a16ed7773bcc618503774a1740cdb517934f09bab2d42eb5eb",
+          "size": 3242
+        }
+      ]
+    },
+    {
+      "name": "rom-map-513c",
+      "exercised": "new ROM initialization, failed before QMP",
+      "passed": false,
+      "exit_code": 1,
+      "wall_milliseconds": 991,
+      "trace_truncated": false,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513c/assessment.json",
+          "sha256": "8797b9e6bcee47dce58088ec3ddeb617c70274b58988c10d74b08053eaccee39",
+          "size": 1486
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513c/result.json",
+          "sha256": "d0e27ee939b6bccccce0d6a89ebcd8a4498e440b8c638750757bfc902c426d3b",
+          "size": 1214
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513c/transactions.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513c/backend.log",
+          "sha256": "3f8c8698767e636bef8e675a74838c3cd029ceb9b82b493923da86db060392f1",
+          "size": 186
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513c/spec.json",
+          "sha256": "5b10a9c899248c412c29b08838a32077b4dc3c4b717eb3b7a5e92222f37b7af3",
+          "size": 3430
+        }
+      ]
+    }
+  ],
+  "gate_status": {
+    "backend_build": true,
+    "existing_fabric_reset": true,
+    "new_ROM_mapping": false,
+    "reset_to_archived_firmware": false,
+    "exact_S9_ROM_identity": false,
+    "original_board": false
+  },
+  "assessment_field_policy": "rom_verified/pcap_verified/uart_verified are inherited conditional validator fields; for an inapplicable case they may be true without execution. Only test_kind and the declared case observations identify what was exercised. This attempt exercised old fabric and attempted ROM-map only; no UART or PCAP acceptance is inferred."
+}

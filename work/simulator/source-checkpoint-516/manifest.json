@@ -1,0 +1,100 @@
+{
+  "schema": "md-sim-workspace-check/1",
+  "date": "2026-10-28T18:19:30.379578+00:00",
+  "status": "Verified component checkpoint; exact S9 milestone2 incomplete",
+  "source_before": {
+    "path": "work/simulator/checks-2026-10-28-002/workspace-after516-before.json",
+    "sha256": "dd88f180275646323453fb669631ddef5bd5b1e5c23dda892aa081e468873f94",
+    "size": 102708
+  },
+  "source_after": {
+    "path": "work/simulator/checks-2026-10-28-002/workspace-after516-after.json",
+    "sha256": "dd88f180275646323453fb669631ddef5bd5b1e5c23dda892aa081e468873f94",
+    "size": 102708
+  },
+  "identical_source_inputs": 596,
+  "source_set_identical": true,
+  "suites": 129,
+  "passed": 1237,
+  "failed": 0,
+  "ignored": 55,
+  "commands": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-002/after516-fmt.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      }
+    },
+    {
+      "command": "cargo clippy --workspace --all-targets --offline --locked -- -D warnings",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-002/after516-clippy.log",
+        "sha256": "f392bf36d2e2485e09b1c88b6df85cfe247ae7b2c00ef64db7bf96c7b3f39ef5",
+        "size": 143
+      }
+    },
+    {
+      "command": "cargo test --workspace --all-targets --offline --locked",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-002/after516-tests.log",
+        "sha256": "ada5930c9579a906684a1f92971a36bc9bd7529abc2ad1b2553b9ee4f9aef825",
+        "size": 147513
+      }
+    }
+  ],
+  "toolchain": [
+    {
+      "path": "work/simulator/checks-2026-10-28-002/rustc-version.log",
+      "sha256": "a834181975ab3494d51a1a01e4a9d4321fecd674a52e3db3cf93b3b84b6fc2c1",
+      "size": 196
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-002/cargo-version.log",
+      "sha256": "f53c9c2502e421a5a8d0c7948809c3de6e6d41a0189ddc23dfe4c661b11f7806",
+      "size": 36
+    }
+  ],
+  "separate_execution_audits": [
+    "work/simulator/reviews/cvc-build-independent-execution-516.json",
+    "work/simulator/reviews/zynq-rom-reset-independent-execution-513g.json",
+    "work/simulator/reviews/live-selected-independent-execution-514.json",
+    "work/simulator/reviews/live-throughput-independent-execution-514.json"
+  ],
+  "limits": [
+    "Ignored fixture/environment tests remain explicit.",
+    "CVC scheduler equivalence, selectedmodel andCPUbridge remain unimplemented or staged.",
+    "Actual full-board firmware boot and exacttarget acceptance remain open."
+  ],
+  "checkpoint_copy": [
+    {
+      "path": "work/simulator/source-checkpoint-516/clippy.log",
+      "sha256": "f392bf36d2e2485e09b1c88b6df85cfe247ae7b2c00ef64db7bf96c7b3f39ef5",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/source-checkpoint-516/fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/source-checkpoint-516/guide-links.log",
+      "sha256": "1f60eac11a62c59350bd7a7fdbc6fb28d95142c700a3c2028432fee47723d604",
+      "size": 176
+    },
+    {
+      "path": "work/simulator/source-checkpoint-516/source-inputs.json",
+      "sha256": "dd88f180275646323453fb669631ddef5bd5b1e5c23dda892aa081e468873f94",
+      "size": 102708
+    },
+    {
+      "path": "work/simulator/source-checkpoint-516/tests.log",
+      "sha256": "ada5930c9579a906684a1f92971a36bc9bd7529abc2ad1b2553b9ee4f9aef825",
+      "size": 147513
+    }
+  ]
+}

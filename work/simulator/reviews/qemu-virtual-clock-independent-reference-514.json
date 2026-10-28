@@ -1,0 +1,149 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "cleanup_resume",
+  "scope": "Pinned QEMU11661d857254 virtual-clock API; read-only source analysis",
+  "input_pins": [
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference-inputs.json",
+      "sha256": "c05ab0f86afb2ab0f61d98ca4bf9d73aa6138bf7b4c54896a8d9390adb82b210",
+      "size": 2462
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/accel/tcg/cpu-exec.c",
+      "sha256": "6d6a48d279777905b27ee9ab529df6ba2a5a0995377f0a28796dca5ad7382c4c",
+      "size": 34087
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/accel/tcg/icount-common.c",
+      "sha256": "1e75ed69fa6cf45701e631db75b71d859af865ea78b06a3f7358f496b225bc7d",
+      "size": 16411
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/accel/tcg/tcg-accel-ops-icount.c",
+      "sha256": "30b346cf51c21fd3488195f8141ed58450b5e9ac9570ab7eeda3011459f03e88",
+      "size": 5047
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/hw/arm/xilinx_zynq.c",
+      "sha256": "b0461f9663a7c926155a7e80301f904c8e4d73cc2adf13b66eb117c01583b4f5",
+      "size": 18049
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/hw/misc/zynq_slcr.c",
+      "sha256": "8aca0a07bd9b4ebf7f332729bd64ec8122403c49ecbbdd7d214e70813850b8ba",
+      "size": 20418
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/exec/cpu-common.h",
+      "sha256": "30973add8de06b2b5e9a386bbb8b4eee158235badf05478652229aae6977f4cd",
+      "size": 3434
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/exec/memattrs.h",
+      "sha256": "cf65c7334c8e9367e35ccac1a73bda5227d5aa58c1290689cc7b1f2d284fe1cf",
+      "size": 3204
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/hw/core/clock.h",
+      "sha256": "8e43731157aaf5f019c3c5c16cf355076b1fab10d49a47aba9217f257ff99ac4",
+      "size": 11374
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/hw/core/qdev-clock.h",
+      "sha256": "0a9ba75243a21aedab43fb51fb35e997649ba91e641a973bca614e932e431f7c",
+      "size": 5219
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/hw/core/sysbus.h",
+      "sha256": "0ee0714477509f135aba94d2d3ab859eb6b047276681b67cda7292b882108bc9",
+      "size": 3534
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/qemu/timer.h",
+      "sha256": "58d9a9bb95575e5d4d7ff6cadd531671bfd3ccb2a4630bfc6426497ea4f41cfb",
+      "size": 26731
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/system/cpus.h",
+      "sha256": "b6daacc9acab1bfdc17c5ba7bc610a52683982dad2dacb021f637743ca69fa63",
+      "size": 1189
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/include/system/memory.h",
+      "sha256": "70d3a02ee98ddd42ea1e83340d796ac261415df53a4f83c0a1fa6f77517a248f",
+      "size": 106198
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/system/cpus.c",
+      "sha256": "bf3692c8c7a0e6122f696ab4e06a6167971e78b693ffb5cc44ad0213aece375b",
+      "size": 15013
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-reference/util/qemu-timer.c",
+      "sha256": "2b8436271d4638cf97927981c1ab26934488c3c819e44d6aa5b870fa0621317c",
+      "size": 20456
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-clock-review/inputs.json",
+      "sha256": "7de0e168525d2fa9ab4433777bcfd6bb332322b1c562c228ce00859731240d7a",
+      "size": 1136
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-clock-review/accel/qtest/qtest.c",
+      "sha256": "9166ffb57ab61b6ccdf9766f5952c072be67f08825a0e9cdf9ebc5d5994257f0",
+      "size": 2147
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-clock-review/accel/tcg/tcg-accel-ops-rr.c",
+      "sha256": "ef8f8bc6ff5e4d54a8805bb8c953a9b6bffa745eb727973ad71ea241d0e84107",
+      "size": 9963
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-clock-review/accel/tcg/tcg-accel-ops.c",
+      "sha256": "90b0ba7f875a5e920f3324c87a20e67c14375f9cff84e92ae1c9aa26f33fc546",
+      "size": 7154
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-clock-review/docs/devel/tcg-icount.rst",
+      "sha256": "59f5b3a1db0493125ac673bd14675ca8565090f232a0b4a12bdcda928451e53d",
+      "size": 3591
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-clock-review/include/accel/accel-ops.h",
+      "sha256": "9651b43732497faa7f8836c9a53f6063492be8a32569fa573e7a79c0e64a7822",
+      "size": 1488
+    },
+    {
+      "path": "work/simulator/s9-cosim-514/qemu-clock-review/system/qtest.c",
+      "sha256": "f05f7a77702c0f1f96e7facea504d03d348f9f76be52ab5eb24ceebc14b01fbd",
+      "size": 30493
+    }
+  ],
+  "findings": [
+    {
+      "files": [
+        "accel/tcg/tcg-accel-ops.c:212",
+        "accel/qtest/qtest.c:69",
+        "system/cpus.c:232"
+      ],
+      "result": "TCG icount installs get_virtual_clock but no set_virtual_clock callback. Qtest installs both. cpus_set_virtual_clock is a no-op if the callback is absent."
+    },
+    {
+      "file": "util/qemu-timer.c:701",
+      "result": "qemu_clock_advance_virtual_time repeatedly calls the optional setter and timer handlers until the clock reaches dest. With TCG icount paused inside MMIO and no working setter, it cannot by itself advance to a future time or model a CPU bus stall. Calling arbitrary timer handlers from that context also lacks a demonstrated reentrancy contract."
+    },
+    {
+      "file": "docs/devel/tcg-icount.rst",
+      "result": "Instruction counting is explicitly not cycle-accurate. MMIO restores unexecuted budget and uses a single-instruction translation to obtain current icount. The docs do not provide a timed bus-stall API."
+    },
+    {
+      "file": "accel/tcg/icount-common.c:293",
+      "result": "The existing warp path applies idle/runstate/replay and sequence-lock rules; it is not evidence that a device callback may edit clock bias."
+    }
+  ],
+  "recommendation": "Keep atomic MMIO reference timing explicit. Do not call qemu_clock_advance_virtual_time from the new MMIO callback as a simulated stall. A later conservative CPU/PL scheduler needs its own proven event/budget/IRQ contract.",
+  "runtime_tested": false,
+  "physical_timing_gate": false,
+  "cpu_synchronization_gate": false,
+  "procedure_note": "Initial reference extraction expected include/system/accel-ops.h, which is absent. Exact archive enumeration located include/accel/accel-ops.h; no source was executed."
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "md-sim-s9-donor-markings-supplement/1",
+  "source_report": "work/simulator/reviews/s9-controller-donor-identity-515.json",
+  "input": {
+    "id": "source-s9-donor-components-20261028-removed",
+    "url": "https://raw.githubusercontent.com/cropinghigh/zynq_a9_mb/c5d2ee4914de58c700add9690681628b307a7608/images/disassembly_components.jpg",
+    "kind": "source",
+    "title": "Original S9 donor components after removal",
+    "language": "en",
+    "source_id": "s9-donor-components-reference",
+    "license": "unknown",
+    "retrieved_at": "2026-10-28T17:36:25+00:00",
+    "status": "downloaded",
+    "local_path": "artifacts/files/source/source-s9-donor-components-20261028-removed/disassembly_components.jpg",
+    "sha256": "ae6d782f744d6feb5a654516da2a336e79d1d2552a204e53cd35dc0cbcdb439d",
+    "size_bytes": 2306940,
+    "executed": false,
+    "final_url": "https://raw.githubusercontent.com/cropinghigh/zynq_a9_mb/c5d2ee4914de58c700add9690681628b307a7608/images/disassembly_components.jpg",
+    "http_status": 200,
+    "content_type": "image/jpeg",
+    "last_modified": null,
+    "etag": "\"00217c92a86283939ef77e21a21a0e9d8d9b4536a9aa78e7b42f59a285eb6aa5\"",
+    "http_content_length": 2306940
+  },
+  "git_blob": "d29d6ca4fbc51fa4a546f6bdd4a46e7ec9b3b537",
+  "direct_visual_readings": {
+    "two_ram_packages": [
+      "NANYA",
+      "NT5CC128M16IP-DI"
+    ],
+    "soc": [
+      "XILINX",
+      "ZYNQ",
+      "XC7Z010",
+      "CLG400ABX1733",
+      "D5464245A",
+      "1C"
+    ]
+  },
+  "limits": [
+    "Original author identifies these as removed donor components; photograph does not independently prove soldered connections or bus behavior.",
+    "Do not interpret the letterA in package/lot marking as proof of silicon revision or an exact match to the public ROM.",
+    "This image does not resolve the NAND part, SD fixture, hashboards, PSU/cooling, selected firmware compatibility or physical timing.",
+    "No current target profile or gate is changed."
+  ],
+  "status": "Root image inspection and exact Git blob match; independent visual check pending."
+}

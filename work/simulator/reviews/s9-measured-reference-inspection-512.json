@@ -1,0 +1,154 @@
+{
+  "schema": "md-sim-s9-measured-reference-inspection/1",
+  "source": {
+    "id": "eastshore-s9-bench-20261028",
+    "url": "https://www.eastshoremining.com/evaluation-on-antminer-s9-16nm-bitcoin-miner/",
+    "title": "Measured S9-11.85 TH example with APW3-12-1600-B2 supply",
+    "publisher": "EastShore Mining Devices",
+    "source_type": "vendor",
+    "language": "en",
+    "retrieved_at": "2026-10-28T16:53:25+00:00",
+    "artifact_ids": [
+      "eastshore-s9-bench-20261028-html",
+      "eastshore-s9-bench-20261028-img02",
+      "eastshore-s9-bench-20261028-img11",
+      "eastshore-s9-bench-20261028-img12",
+      "eastshore-s9-bench-20261028-img14",
+      "eastshore-s9-bench-20261028-img15",
+      "eastshore-s9-bench-20261028-img20",
+      "eastshore-s9-bench-20261028-img21",
+      "eastshore-s9-bench-20261028-img22"
+    ],
+    "scope": "bitcoin-asic",
+    "notes": [
+      "Publisher reports its own S9 bench observations. Preserved HTML and eight original images total less than1MiB. The page date and photographed operating dates are separate.",
+      "The article names APW3-12-1600-B2. The images show wall-plug power and temperature displays; they do not prove exact controller, hashboard, fan or PSU PCB revisions.",
+      "Image12 shows1317.8W and image15 shows1362.4W; article text rounds these to1317W and1362W. No stated meter accuracy or calibration certificate.",
+      "Image11 pool chart shows a2016-09-10 tooltip although the HTML page date is2019. No selected2022 firmware execution or compatibility is established.",
+      "Physical reference lead only. No simulator power/thermal calibration or G7/G8 gate passes from this record."
+    ]
+  },
+  "inputs": [
+    {
+      "id": "eastshore-s9-bench-20261028-html",
+      "url": "https://www.eastshoremining.com/evaluation-on-antminer-s9-16nm-bitcoin-miner/",
+      "local_path": "artifacts/files/web/eastshore-s9-bench-20261028-html/evaluation.html",
+      "sha256": "13759f114b084b1b64543401bb243c91e402d7a4d5d0824cdc01f700391f3dc6",
+      "size_bytes": 92842
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img02",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-02.jpg",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img02/original-02.jpg",
+      "sha256": "edc0f4b76ddb57d6ece268de146a326cb278f36d6d1e0306a7f8e4c53cec5711",
+      "size_bytes": 91067
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img11",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-11.png",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img11/original-11.png",
+      "sha256": "f9f07cfb728bbd60b0906f368248023b94b443258afa77fffc8f910bcb284733",
+      "size_bytes": 11238
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img12",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-12.jpg",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img12/original-12.jpg",
+      "sha256": "454ac4abeced38c19110a65cc7a303b877a217bfa2279db985bede182e7a4408",
+      "size_bytes": 82004
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img14",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-14.png",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img14/original-14.png",
+      "sha256": "3830608558b0d52a6c2931126b31101ae4a99fb84b2eb7f61e4dca88ec1d5a7d",
+      "size_bytes": 5549
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img15",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-15.jpg",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img15/original-15.jpg",
+      "sha256": "5ff46657fd77ba339cd0ede8e32b29bc7654ca3f8b3a8f94ba29c6d0e876aef8",
+      "size_bytes": 100781
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img20",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-20.jpg",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img20/original-20.jpg",
+      "sha256": "370fd64736da101f8b2a2c3762eaf23fa00e05936819bc52ea9c475bd10dbd5b",
+      "size_bytes": 74244
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img21",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-21.jpg",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img21/original-21.jpg",
+      "sha256": "a8192423e9953447b93e97c0448254ed288ef4ad352a36540c92831e4418e68d",
+      "size_bytes": 103766
+    },
+    {
+      "id": "eastshore-s9-bench-20261028-img22",
+      "url": "https://www.eastshoremining.com/wp-content/uploads/2019/04/Evaluation-on-Antminer-S9-16nm-Bitcoin-Miner-IMG-22.jpg",
+      "local_path": "artifacts/files/document/eastshore-s9-bench-20261028-img22/original-22.jpg",
+      "sha256": "f03fb98aa152a060786cf09e457f3bdebc9fc86d8f8664aa1561cd0df186009b",
+      "size_bytes": 91947
+    }
+  ],
+  "inspection": "Original images viewed directly with view_image. No image enhancement or undocumented OCR inference.",
+  "observations": [
+    {
+      "image": "02",
+      "result": "Exterior S9 and supplied document; exact component revisions unreadable."
+    },
+    {
+      "image": "11",
+      "result": "Pool chart shows one-day11.84TH/s and tooltip2016-09-10. This is pool telemetry, not a calibrated hash measurement."
+    },
+    {
+      "image": "12",
+      "result": "Wall-plug meter displays1317.8W. Sticker shows63#550M. Meter model text reads TM9+; brand lettering is uncertain. Measurement uncertainty and calibration not supplied."
+    },
+    {
+      "image": "14",
+      "result": "Miner dashboard crop shows elapsed1h12m3s, realtime12223.85GH/s, average12228.18GH/s. Exact firmware hash absent."
+    },
+    {
+      "image": "15",
+      "result": "Wall-plug meter displays1362.4W; same exterior label/sticker. No transient capture."
+    },
+    {
+      "image": "20",
+      "result": "Infrared instrument displays36.3C at the chassis. Emissivity, calibration and target position not established."
+    },
+    {
+      "image": "21",
+      "result": "Contact display reads32.8C. Publisher identifies inlet, but probe placement and uncertainty are not measured here."
+    },
+    {
+      "image": "22",
+      "result": "Contact display reads44.9C. Publisher identifies outlet, but probe placement and uncertainty are not measured here."
+    }
+  ],
+  "publisher_reported_context": {
+    "miner": "S9-11.85 TH",
+    "power_supply": "APW3-12-1600-B2",
+    "ambient_c": 29,
+    "default_clock_mhz": 550,
+    "changed_clock_mhz": 568.75,
+    "dashboard_chip_temperature_c": 63
+  },
+  "limits": [
+    "No exact selected controller, RAM, storage, ordered hashboard, PSU PCB or cooling revisions.",
+    "No selected2022 firmware hash, clock waveform, error bounds, load-step waveform or matched timing traces.",
+    "Wall-plug AC input includes the power supply. It cannot directly specify ASIC DC power or a thermal transfer function.",
+    "Noise text is malformed and is not normalized into a measurement.",
+    "Reference observations do not close exact-target calibration gates."
+  ],
+  "gates": {
+    "exact_target_identity": false,
+    "physical_timing": false,
+    "power_thermal_calibration": false,
+    "firmware_execution": false,
+    "mining": false
+  },
+  "next_action": "Find original revision labels and uncertainty-bearing measured reference data; keep these observations distinct from simulator calibration."
+}

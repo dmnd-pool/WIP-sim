@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Independent static review of bounded CVC tool-build prerequisite. No foreign code executed by reviewer.",
+  "stage": {
+    "path": "work/simulator/s9-cvc-516/inputs.json",
+    "sha256": "db8ad19e643cf134e8afde2f56cda6d15e23082afd4a14dffd50929fb6116b54",
+    "size": 1175
+  },
+  "builder": {
+    "path": "work/simulator/s9-cvc-516/build_cvc_tool.rs",
+    "object": {
+      "sha256": "d4fef652039acc361985831abe1fb8e50a053349781ed6bc6f489a5d5e39b689",
+      "size": 18138
+    }
+  },
+  "production_dependencies": [
+    {
+      "path": "crates/md-sim-firmware/examples/support/qemu_build.rs",
+      "object": {
+        "sha256": "f6010fb91d4a5ab246e4e378614a11a9c2e6745e69b90418b31fef97451efbb1",
+        "size": 10167
+      }
+    },
+    {
+      "path": "crates/md-sim-firmware/src/confinement.rs",
+      "object": {
+        "sha256": "69a8e5d49dc35d5326cc915c533f6859b35fb84251fa5f97c48863d9f140a9ed",
+        "size": 24181
+      }
+    }
+  ],
+  "findings_open": 0,
+  "closed_findings": [
+    {
+      "finding": "Compiler manifest was hashed then parsed from a separate read.",
+      "fix": "parse_manifest hashes and parses the same byte buffer; capture checks exact expected identity again before import. Regression rejects substituted bytes."
+    },
+    {
+      "finding": "A successful compiler exit could retain ignored warnings while runtime smoke passed.",
+      "fix": "One diagnostic_free gate rejects compiler/runtime warning/error markers and stderr. Invalid-syntax oracle requires numeric nonzero exit, exact invalid.v(1) location plus semantic syntax/expression text; no output executable."
+    },
+    {
+      "finding": "Outer stderr was retained but did not prevent pass.",
+      "fix": "Final exit/report gate now also requires empty outer stderr."
+    },
+    {
+      "finding": "Upstream hexasm CC recipe omitted CVCCFLGS, so a broad C sanitizer claim was incomplete.",
+      "fix": "UBSan trap/no-recovery flags are in the fixed CC command itself; source/runtime/hexasm invocations get them. Generated assembly remains explicitly outside C instrumentation."
+    }
+  ],
+  "reviewed_behavior": [
+    "Exact original source archive, license and frozen compiler archive/manifest identities; six selected tool roots checked before and after closure capture",
+    "Acquired code executes only inside existing closed HDL-build profile; no network, KVM, dashboard or private control channel granted",
+    "Fixed run-owned source/compiler paths, no arbitrary guest flags; two make jobs within existing1200s wall/600CPU/3GiB/128process/2GiBtmp bounds",
+    "Every build/smoke step rejects truncated logs and retains commands/output identity",
+    "Original compiled smoke and fresh restored compiled smoke check wrap, X propagation and two actual clock edges",
+    "Archive restoration occurs after original source and installed tree are renamed away; restored binary identity must match",
+    "Runtime still requires the pinned compiler closure; no standalone executable claim",
+    "Bounded24MiB tool archive exported and checked against consumed result bytes; failed attempts retain raw report/stderr/results"
+  ],
+  "pending": [
+    "Focused Rust tests, formatting, strict Clippy and release build",
+    "Actual isolated unchanged-source build with retained compiler commands and sanitizer outcome",
+    "Real positive/negative/restore smoke under the declared limits",
+    "Separate CVC VPI scheduler adaptation/equivalence tests before selected HDL use"
+  ],
+  "scheduler_review": {
+    "path": "work/simulator/reviews/cvc-scheduler-independent-reference-516.json",
+    "sha256": "6df41388a01376e9e5feadc34dca8d67fe846dd02366e731520ce990c968df76",
+    "size": 4524
+  },
+  "source_review_passed": true,
+  "tool_build_passed": false,
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

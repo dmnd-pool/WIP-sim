@@ -1,0 +1,110 @@
+{
+  "schema": "md-sim-independent-partial-execution-review/1",
+  "recorded_at": "2026-10-28T16:50:13.197666+00:00",
+  "reviewer": "cleanup_resume",
+  "audit_passed": true,
+  "overall_run_passed": false,
+  "scope": "Actual isolated VPI C adapter event-order and duplicate-completion component tests. The run still fails strict clock compilation and never reaches selected live logic.",
+  "pins": [
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512c/manifest.json",
+      "sha256": "9be0c7abcbb1a3a6c4c4ce07c3d94e6c8f25af3ce52cba14d1610ac21465d722",
+      "size": 71351
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512c/source-before-build.json",
+      "sha256": "e5ccf53efade012b38ed914eecae7ee8aaab8da982818f7ce571bbef291a3a9e",
+      "size": 66471
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512c/source-after-build.json",
+      "sha256": "e5ccf53efade012b38ed914eecae7ee8aaab8da982818f7ce571bbef291a3a9e",
+      "size": 66471
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512c/spec.json",
+      "sha256": "2c4f3479102cfb8997885819a8b9d680961b1204a71b92f327e7905f44e55b10",
+      "size": 9772
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512c/result.json",
+      "sha256": "2aa566247f1bfc785b352001cfaf28eabbdb089e4d254c24792b5a80db28b935",
+      "size": 1135932
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512c/hdl-envelope.json",
+      "sha256": "6edc076375e0f213caf0fc7f98da145fccaa61945f6240d33798f21438daf543",
+      "size": 567465
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512c/hdl-report.json",
+      "sha256": "8075668895fd571456708912fd09346309c34e224c6e26e7b7750143f9731d96",
+      "size": 558331
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512c/selected-vvp.tar.gz",
+      "sha256": "56d4b2171e9ed28d6f406ab90de026cc368cc591fc1286e95011e6a32bee013d",
+      "size": 21823
+    }
+  ],
+  "checked": {
+    "frozen_sources": 421,
+    "mounts": 49,
+    "supervisor_tool_hashes": true,
+    "archive_members": [
+      "compiled",
+      "compiled/mdsim_live.vpi",
+      "compiled/vpi-order-fixture.v",
+      "compiled/event_regions.vvp",
+      "compiled/duplicate_completion.vvp",
+      "compiled/clock-order-fixture.v",
+      "compiled/clock-order.vvp"
+    ],
+    "ubsan_plugin": {
+      "sha256": "c2515601182797cf5a9b5ac096db7541b41e140f0f88e11e796d15b3bdc032ad",
+      "size": 24464
+    },
+    "complete_stdout_archive_binding": true,
+    "event_raw_records": 8,
+    "ready_at0": 85,
+    "completion_at1000": 72,
+    "same_time_irq_aval_bval": [
+      [
+        5,
+        6
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    "irq_events_precede_completion": true,
+    "no_extra_time_ps": true,
+    "actual_stop_exit0_and_descriptors_closed": true,
+    "duplicate_completion_actual_exit1": true,
+    "duplicate_diagnostic_exact": true,
+    "no_duplicate_complete_frame": true,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "failure": {
+    "outer_exit_code": 1,
+    "wall_milliseconds": 10544,
+    "trace_truncated": false,
+    "clock_compiler_exit_code": 0,
+    "strict_rejected_warnings": 10,
+    "component_live_selected_reached": false
+  },
+  "source_review": "work/simulator/reviews/live-pl-independent-source-512.json",
+  "clock_warning_reference": "work/simulator/reviews/icarus-array-sensitivity-independent-reference-512.json",
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "cpu_synchronization_complete": false
+}

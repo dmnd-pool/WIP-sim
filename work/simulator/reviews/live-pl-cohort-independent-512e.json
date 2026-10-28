@@ -1,0 +1,77 @@
+{
+  "schema": "md-sim-independent-cohort-review/1",
+  "recorded_at": "2026-10-28T17:02:52.096323+00:00",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Separate baseline and live programmable-logic component runs, with the same final frozen helper and421-source build. No full S9 execution acceptance.",
+  "helper": {
+    "path": "work/simulator/qemu-s9/live-driver-512e/s9_hdl_validate",
+    "sha256": "1b386c34d3e0a300a283543c042806e4e47a8767359d537a2b83fef71fc13025",
+    "size": 2569232
+  },
+  "freeze": {
+    "path": "work/simulator/qemu-s9/live-driver-512e/manifest.json",
+    "sha256": "9bf7b0bdc4c83d02f8980081f576d543b4f489713c850d8114e4f1c9f47e3bc3",
+    "size": 71740
+  },
+  "reviews": [
+    {
+      "path": "work/simulator/reviews/maxigp0-baseline-independent-execution-512e.json",
+      "sha256": "f720dc3df077c2fa816408cd4067985ce6da2fb31e2669164da9ba1982f596b7",
+      "size": 5292
+    },
+    {
+      "path": "work/simulator/reviews/live-selected-independent-execution-512e.json",
+      "sha256": "deb9d0fd765881b994e3626472bb8c82c02c2156e8566208c69845bd8bcf105d",
+      "size": 8177
+    }
+  ],
+  "runs": [
+    {
+      "path": "work/simulator/qemu-s9/axi-baseline-512e",
+      "result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 27328,
+        "trace_truncated": false
+      }
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512e",
+      "result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 31218,
+        "trace_truncated": false
+      }
+    }
+  ],
+  "identity_checks": {
+    "same_helper_object": true,
+    "same421_source_cohort": true,
+    "all45_common_nonprofile_mounts_identical": true,
+    "different_explicit_profiles": true,
+    "only_live_additional_mounts": [
+      "/vpi-shim.c",
+      "/compiler.tar.gz",
+      "/compiler-manifest.json"
+    ],
+    "same_per_invocation_limits": true,
+    "each_actual_compiled_model_retained": true,
+    "no_compiled_model_byte_reuse": true
+  },
+  "checks": "Both independently pass72 register/strobe/reset operations and2 resets,582 primitive and2x510 RAM assertions. Live adds actual private transport, NBA/XZ ordering, duplicate rejection, split/unsplit clock phase and unknown-clock tests. Every live raw frame, response, clock count and text join was independently checked.",
+  "prior_failures_preserved": [
+    "live-selected-512",
+    "live-selected-512b",
+    "live-selected-512c",
+    "live-selected-512d"
+  ],
+  "review_procedure_note": "The first final-baseline report write safely refused an old output filename with create-new semantics. The audit output path was corrected and all checks rerun; historical512 report was unchanged. This was an audit-script naming error, not a simulator execution failure.",
+  "unresolved_correctness_findings": [],
+  "cpu_synchronization_complete": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "next_action": "Implement and verify the QEMU-to-live-PL boundary without unproved CPU run-ahead or IRQ timing claims; continue S9 original-board work."
+}

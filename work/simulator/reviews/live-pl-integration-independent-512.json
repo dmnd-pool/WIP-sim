@@ -1,0 +1,79 @@
+{
+  "schema": "md-sim-independent-integration-review/1",
+  "recorded_at": "2026-10-28T16:40:14.517322+00:00",
+  "reviewer": "cleanup_resume",
+  "parent_review": "work/simulator/reviews/live-pl-independent-source-512.json",
+  "production_files": {
+    "crates/md-sim-firmware/examples/s9_hdl_validate.rs": {
+      "sha256": "ab37f4a053a0695a500e7e09562e40947c8dfc46d0ccfb8d499b3248f601ff1d",
+      "size": 34893
+    },
+    "crates/md-sim-firmware/examples/support/s9_axi_vectors.rs": {
+      "sha256": "35450539848266d186db80c1c89c51a641ab0a7c971b61369b7a0dacce48902e",
+      "size": 29392
+    },
+    "crates/md-sim-firmware/examples/support/s9_live_protocol.rs": {
+      "sha256": "92787c1395522509473ac22313ece3d408e024bf28bc53c888665d559a7f0f52",
+      "size": 19053
+    },
+    "crates/md-sim-firmware/examples/support/s9_live_child.rs": {
+      "sha256": "d4c5812ace0cd87a5286ecc55e3649ac03a072082a937c00fd757a12a133a230",
+      "size": 30501
+    },
+    "crates/md-sim-firmware/examples/support/s9_live_wrapper.rs": {
+      "sha256": "324e94b9606a199d798890498d169b44ac78e9173fdfdd34da26355d762d735b",
+      "size": 4548
+    },
+    "crates/md-sim-firmware/examples/support/s9_live_scenario.rs": {
+      "sha256": "756b8f6ecf232bceae9457a17a2a799eba6d80d61916a8f8df61d6e9ea67c661",
+      "size": 14898
+    },
+    "simulator/backends/icarus/mdsim_live.c": {
+      "sha256": "a8198c3a10114e950bd6b85f6cdfda6fad84340b80b69bbb1c316a90ed0c1b06",
+      "size": 11437
+    },
+    "simulator/backends/icarus/live-control.v": {
+      "sha256": "c688667aa1f387a061b77482065a137e08127d0abb0ef4e5aa311e2e026cd3da",
+      "size": 5822
+    },
+    "simulator/backends/icarus/vpi-order-fixture.v": {
+      "sha256": "0222563a4e40f27608c88eefc6083c794b95a93b087b64d82514773d0da645bc",
+      "size": 1050
+    },
+    "simulator/firmware/s9-hdl-inputs-512.json": {
+      "sha256": "47dc7c50b5eb0e89ce0836f2ae33e617fa6e6050028b7a09db9c94d2966b95b1",
+      "size": 11692
+    },
+    "simulator/backends/icarus/clock-order-fixture.v": {
+      "sha256": "2f7e49f674ba375e2c618192aa718934c18cb5c5805589988769c0c008d3d201",
+      "size": 943
+    }
+  },
+  "reviewed_delta": "The allowed Drive mask is now the OR of existing0x0f/0x10/0x20/0x40 named constants, exactly0x7f. This removes an unused constant without changing accepted frames. Other10 files equal reviewed stage bytes.",
+  "checks_read": {
+    "work/simulator/s9-cosim-512/tests-final.log": {
+      "sha256": "f699fb15308f1dda6ad1aeb6a6939dbc9d3088408ce5f8c74fbf4cb6c9a14a2c",
+      "size": 2623
+    },
+    "work/simulator/s9-cosim-512/clippy.log": {
+      "sha256": "2558278f3e13ad8147234d4b8f3fffecd98463a9b9d64b21c14bca749419ca47",
+      "size": 143
+    },
+    "work/simulator/s9-cosim-512/clippy-tests.log": {
+      "sha256": "a11a1de8037a032bda7e33f88e31dc898d0129cfe94956add639cd289d2ce985",
+      "size": 60
+    },
+    "work/simulator/s9-cosim-512/retained-511e.log": {
+      "sha256": "f596648df4905962804accd2df44940bcd55dd0375d64645d1ed21e256ff2bb7",
+      "size": 385
+    },
+    "work/simulator/s9-cosim-512/retained-511e-filter-miss.log": {
+      "sha256": "347382c9060b9c97df739958222304ac495127a7d1077e09a10e42b547302004",
+      "size": 308
+    }
+  },
+  "observed_checks": "23 focused tests pass, including5 real-process supervisor cases. Full-name retained511e generator regression runs1/pass. Earlier0-match filter miss remains explicit. Scoped Clippy passed.",
+  "source_review_passed": true,
+  "actual_vpi_execution_pending": true,
+  "original_board_gate": false
+}

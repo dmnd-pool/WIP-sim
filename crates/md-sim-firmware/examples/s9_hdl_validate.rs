@@ -19,14 +19,27 @@ mod axi;
 #[allow(dead_code)]
 #[path = "../src/confinement.rs"]
 mod confinement;
+// Different callers use either strict PL transactions or raw QEMU requests.
+#[allow(dead_code)]
+#[path = "support/framed_child.rs"]
+mod framed_child;
+#[path = "support/s9_live_child.rs"]
+mod live_child;
+#[path = "support/s9_live_protocol.rs"]
+mod live_protocol;
+#[path = "support/s9_live_scenario.rs"]
+mod live_scenario;
+#[path = "support/s9_live_wrapper.rs"]
+mod live_wrapper;
 #[allow(dead_code)]
 #[path = "support/qemu_build.rs"]
 mod qemu_build;
 #[path = "support/s9_ram_vectors.rs"]
 mod ram;
-const PROFILES: [&str; 2] = [
+const PROFILES: [&str; 3] = [
     "d6d730231227a2f6d299f4900b6868b858768459f9cceec07aa675269731658c",
     "f137f1e433e80074ecb539b8173bd993ce825ca5f1ccfe7f892f90eb0512f25b",
+    "47dc7c50b5eb0e89ce0836f2ae33e617fa6e6050028b7a09db9c94d2966b95b1",
 ];
 #[derive(Deserialize)]
 struct Input {
@@ -44,6 +57,14 @@ struct Profile {
     provenance: Vec<Input>,
     #[serde(default)]
     axi: Option<Axi>,
+    #[serde(default)]
+    live: Option<Live>,
+}
+#[derive(Deserialize)]
+struct Live {
+    shim: NamedInput,
+    compiler_archive: NamedInput,
+    compiler_manifest: NamedInput,
 }
 #[derive(Deserialize)]
 struct Axi {
@@ -196,6 +217,290 @@ fn ram_differential(report: &mut Value, profile: &Profile) -> Result<()> {
     Ok(())
 }
 
+fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
+    qemu_build::unpack("/compiler.tar.gz", "/work")?;
+    let compiler_args = [
+        "--sysroot=/work/toolchain",
+        "-B/work/toolchain/usr/bin",
+        "-std=c11",
+        "-O2",
+        "-fPIC",
+        "-shared",
+        "-nostdlib",
+        "-fno-builtin",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=undefined",
+        "-fsanitize-undefined-trap-on-error",
+        "-fno-sanitize-recover=all",
+        "-Wl,-z,noexecstack",
+        "-I/work/iverilog-install/include/iverilog",
+        "/vpi-shim.c",
+        "-o",
+        "/work/compiled/mdsim_live.vpi",
+    ];
+    let mut compiler = Command::new("/work/toolchain/usr/bin/gcc");
+    compiler
+        .args(compiler_args)
+        .env("LD_LIBRARY_PATH", "/work/toolchain/usr/lib")
+        .current_dir("/work");
+    let built = qemu_build::step(report, "vpi_compile", compiler)?;
+    report["vpi_compile"]["argv"] = json!(compiler_args);
+    report["vpi_compile"]["environment_override"] =
+        json!({"LD_LIBRARY_PATH":"/work/toolchain/usr/lib"});
+    ensure!(built, "VPI adapter compile failed");
+    ensure!(
+        report["vpi_compile"]["stdout_truncated"] == false
+            && report["vpi_compile"]["stderr_truncated"] == false,
+        "VPI compiler output incomplete"
+    );
+    clean_diagnostics(&report["vpi_compile"])?;
+    report["vpi_adapter"] = json!(hash_file(Path::new("/work/compiled/mdsim_live.vpi"))?);
+    // This isolated compiler tree is temporary. The pinned archive and full
+    // compile diagnostics remain inputs/evidence; the actual plugin is retained.
+    fs::remove_dir_all("/work/toolchain")?;
+    report["temporary_compiler_removed_after_build"] = json!(true);
+    run_vpi_oracles(report)?;
+    let (source, inventory) = live_wrapper::generate(
+        &fs::read_to_string("/selected.v")?,
+        &fs::read("/axi-ports.json")?,
+    )?;
+    report["live_wrapper"] = inventory;
+    report["live_wrapper"]["source"] = json!(source);
+    fs::write("/work/compiled/live-probe.v", source)?;
+    let mut args = compile_args(
+        profile,
+        "/work/compiled/live-probe.v",
+        "axi_probe",
+        Some("/work/compiled/live.vvp"),
+    );
+    args.push("/selected.v".into());
+    ensure!(
+        run_step(report, "live_compile", &args)?,
+        "live selected compilation failed"
+    );
+    clean_diagnostics(&report["live_compile"])?;
+    report["selected_program"] = json!(hash_file(Path::new("/work/compiled/live.vvp"))?);
+    report["selected_vvp_compile_pass"] = json!(true);
+    let mut command = Command::new("/work/iverilog-install/bin/vvp");
+    command
+        .args([
+            "-M/work/compiled",
+            "-mmdsim_live",
+            "/work/compiled/live.vvp",
+        ])
+        .current_dir("/work");
+    let mut child = live_child::LiveChild::launch(
+        command,
+        live_child::ChildLimits {
+            command_timeout_ms: 10_000,
+            shutdown_timeout_ms: 5_000,
+            stdout_limit: 1 << 20,
+            stderr_limit: 1 << 20,
+            frame_limit: 8192,
+        },
+        Arc::new(AtomicBool::new(false)),
+    )?;
+    let contract = serde_json::from_slice(&fs::read("/axi-contract.json")?)?;
+    let result = live_scenario::selected(&mut child, &contract);
+    if let Err(error) = &result {
+        let _ = child.abort(&format!("selected live assertion: {error:#}"));
+    }
+    report["live_child_evidence"] = serde_json::to_value(child.evidence())?;
+    report["live_child_argv"] = json!([
+        "/work/iverilog-install/bin/vvp",
+        "-M/work/compiled",
+        "-mmdsim_live",
+        "/work/compiled/live.vvp"
+    ]);
+    match result {
+        Ok(scenario) => {
+            let evidence = &report["live_child_evidence"];
+            ensure!(
+                evidence["stderr_hex"] == "",
+                "unexpected live VPI/runtime diagnostic"
+            );
+            let stdout = String::from_utf8(hex::decode(
+                evidence["stdout_hex"].as_str().context("live stdout")?,
+            )?)?;
+            live_scenario::verify_stdout(&stdout, &scenario)?;
+            report["live_scenario"] = scenario;
+            report["selected_live_pass"] = json!(true);
+            report["selected_axi_pass"] = json!(true);
+        }
+        Err(error) => {
+            report["live_scenario_error"] = json!(format!("{error:#}"));
+            return Err(error);
+        }
+    }
+
+    Ok(())
+}
+
+fn live_command(model: &str) -> Command {
+    let mut command = Command::new("/work/iverilog-install/bin/vvp");
+    command
+        .args(["-M/work/compiled", "-mmdsim_live", model])
+        .current_dir("/work");
+    command
+}
+
+fn run_vpi_oracles(report: &mut Value) -> Result<()> {
+    const FIXTURE: &str = include_str!("../../../simulator/backends/icarus/vpi-order-fixture.v");
+    fs::write("/work/compiled/vpi-order-fixture.v", FIXTURE)?;
+    report["vpi_fixture_source_sha256"] =
+        json!(md_sim_firmware::prepare::hash_bytes(FIXTURE.as_bytes()));
+    for (label, negative) in [("event_regions", false), ("duplicate_completion", true)] {
+        let model = format!("/work/compiled/{label}.vvp");
+        let mut args = vec![
+            "/work/iverilog-install/bin/iverilog".to_string(),
+            "-g2012".into(),
+            "-Wall".into(),
+            "-s".into(),
+            "vpi_order".into(),
+            "-o".into(),
+            model.clone(),
+            "/work/compiled/vpi-order-fixture.v".into(),
+        ];
+        if negative {
+            args.insert(1, "-DMD_DUPLICATE_COMPLETE".into());
+        }
+        let compile = format!("{label}_compile");
+        ensure!(
+            run_step(report, &compile, &args)?,
+            "VPI event fixture compile failed"
+        );
+        clean_diagnostics(&report[&compile])?;
+        let mut child = live_child::LiveChild::launch(
+            live_command(&model),
+            live_child::ChildLimits {
+                command_timeout_ms: 5_000,
+                shutdown_timeout_ms: 5_000,
+                stdout_limit: 64 << 10,
+                stderr_limit: 64 << 10,
+                frame_limit: 256,
+            },
+            Arc::new(AtomicBool::new(false)),
+        )?;
+        if negative {
+            child.ready()?;
+            let response = child.transact(&live_protocol::Request {
+                sequence: 1,
+                at_ps: 1000,
+                operation: live_protocol::Op::Advance,
+                args: [0; 12],
+            });
+            if response.is_ok() {
+                let _ = child.abort("duplicate completion was incorrectly accepted");
+            }
+            let evidence = serde_json::to_value(child.evidence())?;
+            report[label] = json!({"expected_rejection":true,"request_failed":response.is_err(),"evidence":evidence});
+            ensure!(
+                response.is_err(),
+                "VPI duplicate completion incorrectly passed"
+            );
+            let error = String::from_utf8(hex::decode(
+                evidence["stderr_hex"]
+                    .as_str()
+                    .context("negative fixture stderr")?,
+            )?)?;
+            ensure!(
+                error.contains("reason=unexpected-completion-task"),
+                "negative failed for an unrelated reason"
+            );
+            ensure!(
+                evidence["cleanup_error"].is_null()
+                    && evidence["exit"]["code"] == 1
+                    && evidence["exit"]["signal"].is_null(),
+                "negative VPI failure or cleanup differs"
+            );
+            report[label]["passed"] = json!(true);
+        } else {
+            let result = live_scenario::event_regions(&mut child);
+            if let Err(error) = &result {
+                let _ = child.abort(&format!("VPI event assertion: {error:#}"));
+            }
+            report[label] = json!({"evidence":child.evidence()});
+            report[label]["assessment"] = result?;
+            let evidence = &report[label]["evidence"];
+            ensure!(
+                evidence["stderr_hex"] == "" && evidence["stdout_hex"] == "",
+                "VPI event fixture diagnostic"
+            );
+        }
+    }
+    run_clock_oracle(report)
+}
+
+fn run_clock_oracle(report: &mut Value) -> Result<()> {
+    let source = live_wrapper::clock_fixture();
+    fs::write("/work/compiled/clock-order-fixture.v", &source)?;
+    report["clock_fixture_source_sha256"] =
+        json!(md_sim_firmware::prepare::hash_bytes(source.as_bytes()));
+    let model = "/work/compiled/clock-order.vvp";
+    let args = [
+        "/work/iverilog-install/bin/iverilog",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "clock_order",
+        "-o",
+        model,
+        "/work/compiled/clock-order-fixture.v",
+    ]
+    .map(str::to_string);
+    ensure!(
+        run_step(report, "clock_compile", &args)?,
+        "clock fixture compile failed"
+    );
+    clean_diagnostics(&report["clock_compile"])?;
+    let unknown_model = "/work/compiled/clock-unknown.vvp";
+    let mut unknown_args = args.to_vec();
+    unknown_args[6] = unknown_model.into();
+    unknown_args.insert(1, "-DMD_UNKNOWN_CLOCK".into());
+    ensure!(
+        run_step(report, "clock_unknown_compile", &unknown_args)?,
+        "unknown clock fixture compile failed"
+    );
+    clean_diagnostics(&report["clock_unknown_compile"])?;
+    for (label, split, unknown_start) in [
+        ("clock_unsplit", false, false),
+        ("clock_split", true, false),
+        ("clock_unknown", false, true),
+    ] {
+        let mut child = live_child::LiveChild::launch(
+            live_command(if unknown_start { unknown_model } else { model }),
+            live_child::ChildLimits {
+                command_timeout_ms: 5_000,
+                shutdown_timeout_ms: 5_000,
+                stdout_limit: 64 << 10,
+                stderr_limit: 64 << 10,
+                frame_limit: 256,
+            },
+            Arc::new(AtomicBool::new(false)),
+        )?;
+        let result = live_scenario::clock_boundary(&mut child, split, unknown_start);
+        if let Err(error) = &result {
+            let _ = child.abort(&format!("clock boundary assertion: {error:#}"));
+        }
+        report[label] = json!({"evidence":child.evidence()});
+        report[label]["assessment"] = result?;
+        ensure!(
+            report[label]["evidence"]["stderr_hex"] == ""
+                && report[label]["evidence"]["stdout_hex"] == "",
+            "clock fixture diagnostic"
+        );
+    }
+    ensure!(
+        report["clock_unsplit"]["assessment"]["events"]
+            == report["clock_split"]["assessment"]["events"],
+        "clock/input behavior changes with Advance partitioning"
+    );
+    report["clock_chunk_invariant"] = json!(true);
+    Ok(())
+}
+
 fn inner() -> Result<()> {
     confinement::require_netlist_preparation()?;
     let raw = fs::read("/profile.json")?;
@@ -225,6 +530,15 @@ fn inner() -> Result<()> {
             );
         }
     }
+    if let Some(live) = &profile.live {
+        for (path, id) in [
+            ("/vpi-shim.c", &live.shim.object),
+            ("/compiler.tar.gz", &live.compiler_archive.object),
+            ("/compiler-manifest.json", &live.compiler_manifest.object),
+        ] {
+            ensure!(hash_file(Path::new(path))? == *id, "live PL input differs");
+        }
+    }
     for input in profile.files.iter().chain(&profile.provenance) {
         ensure!(
             hash_file(Path::new(&input.guest_path))? == input.object,
@@ -246,7 +560,7 @@ fn inner() -> Result<()> {
     );
     qemu_build::unpack("/tools.tar.gz", "/work")?;
     let mut report = json!({"schema":1,"profile_sha256":md_sim_firmware::prepare::hash_bytes(&raw),"selected_axi_pass":false,"primitive_vectors_pass":false,"ram_omission_differential_pass":false,"selected_elaboration_pass":false,"selected_vvp_compile_pass":false,"original_board_gate":false,"diagnostic_policy":"Every nonempty selected compiler output is unresolved and prevents structural pass; no warning whitelist. Timing/model warnings are not timing acceptance.","min_typ_max_policy":"Explicit Icarus -Ttyp selects its existing default; selected PS7 values are100:100:100. No XIL_TIMING or physical calibration claim.","limits":["Vendor PS7 has no behavioral CPU model; compiler resolution is not AXI execution.","Missing monitor feature table and33 electrical ambiguities remain open.","Digital simulation delays are vendor model semantics, not physical timing calibration."]});
-    let result = (|| -> Result<()> {
+    let mut result = (|| -> Result<()> {
         diagnostic_oracles(&mut report)?;
         ram_differential(&mut report, &profile)?;
         ensure!(
@@ -302,82 +616,117 @@ fn inner() -> Result<()> {
         clean_diagnostics(&report["selected_elaborate"])?;
         report["selected_elaboration_pass"] = json!(true);
         fs::create_dir("/work/compiled")?;
-        let selected_args = if profile.axi.is_some() {
+        if profile.axi.is_some() {
             axi::verify_notice_source(&fs::read_to_string("/vendor/PS7.v")?)?;
             axi::verify_contract(
                 &fs::read("/axi-contract.json")?,
                 &fs::read("/provenance/bosminer.elf")?,
                 &fs::read("/provenance/bosminer-board.dtb")?,
             )?;
-            let (source, inventory) = axi::generate(
-                &fs::read_to_string("/selected.v")?,
-                &fs::read("/axi-ports.json")?,
-                &fs::read("/axi-contract.json")?,
+        }
+        if profile.live.is_none() {
+            let selected_args = if profile.axi.is_some() {
+                let (source, inventory) = axi::generate(
+                    &fs::read_to_string("/selected.v")?,
+                    &fs::read("/axi-ports.json")?,
+                    &fs::read("/axi-contract.json")?,
+                )?;
+                report["axi_vectors"] = inventory;
+                report["axi_vectors"]["source"] = json!(source);
+                fs::write("/work/compiled/axi-probe.v", source)?;
+                let mut args = compile_args(
+                    &profile,
+                    "/work/compiled/axi-probe.v",
+                    "axi_probe",
+                    Some("/work/compiled/selected.vvp"),
+                );
+                args.push("/selected.v".into());
+                args
+            } else {
+                compile_args(
+                    &profile,
+                    "/selected.v",
+                    "top",
+                    Some("/work/compiled/selected.vvp"),
+                )
+            };
+            ensure!(
+                run_step(&mut report, "selected_compile", &selected_args)?,
+                "selected VVP compile failed"
+            );
+            clean_diagnostics(&report["selected_compile"])?;
+            report["selected_program"] =
+                serde_json::to_value(hash_file(Path::new("/work/compiled/selected.vvp"))?)?;
+            qemu_build::pack_dir(
+                Path::new("/work/compiled"),
+                "compiled",
+                Path::new("/work/selected-vvp.tar.gz"),
             )?;
-            report["axi_vectors"] = inventory;
-            report["axi_vectors"]["source"] = json!(source);
-            fs::write("/work/compiled/axi-probe.v", source)?;
-            let mut args = compile_args(
-                &profile,
-                "/work/compiled/axi-probe.v",
-                "axi_probe",
-                Some("/work/compiled/selected.vvp"),
-            );
-            args.push("/selected.v".into());
-            args
-        } else {
-            compile_args(
-                &profile,
-                "/selected.v",
-                "top",
-                Some("/work/compiled/selected.vvp"),
-            )
-        };
-        ensure!(
-            run_step(&mut report, "selected_compile", &selected_args)?,
-            "selected VVP compile failed"
-        );
-        clean_diagnostics(&report["selected_compile"])?;
-        report["selected_program"] =
-            serde_json::to_value(hash_file(Path::new("/work/compiled/selected.vvp"))?)?;
-        qemu_build::pack_dir(
-            Path::new("/work/compiled"),
-            "compiled",
-            Path::new("/work/selected-vvp.tar.gz"),
-        )?;
-        let archive = hash_file(Path::new("/work/selected-vvp.tar.gz"))?;
-        ensure!(archive.size <= 32 << 20, "compiled model archive bound");
-        report["compiled_archive"] = serde_json::to_value(archive)?;
-        report["compiled_archive_hex"] = json!(hex::encode(fs::read("/work/selected-vvp.tar.gz")?));
-        report["selected_vvp_compile_pass"] = json!(true);
-        if profile.axi.is_some() {
-            ensure!(
-                run_step(
-                    &mut report,
-                    "selected_axi_execute",
-                    &[
-                        "/work/iverilog-install/bin/vvp".into(),
-                        "/work/compiled/selected.vvp".into()
-                    ]
-                )?,
-                "selected AXI execution failed"
-            );
-            ensure!(
-                report["selected_axi_execute"]["stderr"]
+            let archive = hash_file(Path::new("/work/selected-vvp.tar.gz"))?;
+            ensure!(archive.size <= 32 << 20, "compiled model archive bound");
+            report["compiled_archive"] = serde_json::to_value(archive)?;
+            report["compiled_archive_hex"] =
+                json!(hex::encode(fs::read("/work/selected-vvp.tar.gz")?));
+            report["selected_vvp_compile_pass"] = json!(true);
+            if profile.axi.is_some() {
+                ensure!(
+                    run_step(
+                        &mut report,
+                        "selected_axi_execute",
+                        &[
+                            "/work/iverilog-install/bin/vvp".into(),
+                            "/work/compiled/selected.vvp".into()
+                        ]
+                    )?,
+                    "selected AXI execution failed"
+                );
+                ensure!(
+                    report["selected_axi_execute"]["stderr"]
+                        .as_str()
+                        .context("AXI stderr")?
+                        .is_empty(),
+                    "selected AXI runtime diagnostic"
+                );
+                let trace = report["selected_axi_execute"]["stdout"]
                     .as_str()
-                    .context("AXI stderr")?
-                    .is_empty(),
-                "selected AXI runtime diagnostic"
+                    .context("AXI stdout")?;
+                report["axi_trace_validation"] =
+                    axi::check_trace(trace, &fs::read("/axi-contract.json")?)?;
+                report["selected_axi_pass"] = json!(true);
+            }
+        }
+        if profile.live.is_some() {
+            ensure!(
+                profile.axi.is_some(),
+                "live selected mode requires checked AXI contract"
             );
-            let trace = report["selected_axi_execute"]["stdout"]
-                .as_str()
-                .context("AXI stdout")?;
-            report["axi_trace_validation"] =
-                axi::check_trace(trace, &fs::read("/axi-contract.json")?)?;
-            report["selected_axi_pass"] = json!(true);
+            report["selected_execution_mode"] = json!("live-private-vpi");
+            report["native_baseline_reused"] = json!(false);
+            run_live(&mut report, &profile)?;
         }
         Ok(())
     })();
+    if profile.live.is_some() && Path::new("/work/compiled").is_dir() {
+        let retention = (|| -> Result<()> {
+            qemu_build::pack_dir(
+                Path::new("/work/compiled"),
+                "compiled",
+                Path::new("/work/selected-vvp.tar.gz"),
+            )?;
+            let archive = hash_file(Path::new("/work/selected-vvp.tar.gz"))?;
+            ensure!(archive.size <= 32 << 20, "compiled model archive bound");
+            report["compiled_archive"] = json!(archive);
+            report["compiled_archive_hex"] =
+                json!(hex::encode(fs::read("/work/selected-vvp.tar.gz")?));
+            Ok(())
+        })();
+        if let Err(error) = retention {
+            report["live_retention_error"] = json!(format!("{error:#}"));
+            if result.is_ok() {
+                result = Err(error);
+            }
+        }
+    }
     if let Err(error) = &result {
         report["error"] = json!(format!("{error:#}"));
     }
@@ -404,7 +753,14 @@ fn main() -> Result<()> {
     );
     let profile: Profile = serde_json::from_slice(&raw)?;
     fs::create_dir_all(&out)?;
-    let store = Store::open(&out.join("inputs"), 128 << 20)?;
+    let store = Store::open(
+        &out.join("inputs"),
+        if profile.live.is_some() {
+            512 << 20
+        } else {
+            128 << 20
+        },
+    )?;
     // Capture explicit candidate runtime libraries. The selected isolated
     // compilation and primitive execution are the actual closure test.
     let mut inputs = md_sim_firmware::lab::elf_closure(
@@ -464,6 +820,19 @@ fn main() -> Result<()> {
         for (name, input) in [
             ("axi-ports.json", &axi.ports),
             ("axi-contract.json", &axi.contract),
+        ] {
+            add(
+                repo.join(&input.path),
+                format!("/{name}"),
+                Some(&input.object),
+            )?;
+        }
+    }
+    if let Some(live) = &profile.live {
+        for (name, input) in [
+            ("vpi-shim.c", &live.shim),
+            ("compiler.tar.gz", &live.compiler_archive),
+            ("compiler-manifest.json", &live.compiler_manifest),
         ] {
             add(
                 repo.join(&input.path),
@@ -541,6 +910,10 @@ fn main() -> Result<()> {
     ensure!(
         profile.axi.is_none() || report["selected_axi_pass"] == true,
         "selected AXI gate incomplete"
+    );
+    ensure!(
+        profile.live.is_none() || report["selected_live_pass"] == true,
+        "selected live PL gate incomplete"
     );
     for m in &spec.inputs {
         store.verified_path(&m.object)?;

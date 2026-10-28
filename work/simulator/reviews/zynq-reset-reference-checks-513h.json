@@ -1,0 +1,86 @@
+{
+  "status": "pass",
+  "time": "2026-10-28T18:17:11.422475+00:00",
+  "scope": "New513h primary reset reference originals and their catalogue records; incremental archive validation, not firmware acceptance",
+  "logs": [
+    {
+      "path": "work/simulator/boot-dev-513/artifact-inspection-513h.log",
+      "sha256": "99c67498d1e279a9053e86b7cd6a55c41541a5301dfd15a89c90599a86d32419",
+      "size": 508,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/archive-incremental-513h.log",
+      "sha256": "a6411e9087f287fd8efe2a682945c2b8a6459325e65f2809c8f6d1bd30f9690b",
+      "size": 1724,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/coverage-513h.log",
+      "sha256": "6fb1204bc0fc509b995f16cfa51891a133059a3e825be165a27e42df4d285708",
+      "size": 95,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/catalog-build-513h.log",
+      "sha256": "9e1bd41da716edc2fdb923c867d10f821973314fc03df5950b83afdcf6739ee4",
+      "size": 2236,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/catalog-verify-513h.log",
+      "sha256": "afd0aa98d0c3cd5a25cdfadabbe8d428e2b69cef9b32fbbab804e1a7facae23a",
+      "size": 145,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/download-failures-513h.log",
+      "sha256": "a2f1238b946f4753e9f556cdd252da99d1918c31203492855b9fbd4013784589",
+      "size": 614,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/archive-index-513h.log",
+      "sha256": "e9dd75f17373021eb2b08cdf1e5016076cefb76998d1515712ed5c53163d46c6",
+      "size": 270,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/document-index-513h.log",
+      "sha256": "44aff09b171511e65b99a00e8998f311595382ccc711bb46dd74e95bbed00580",
+      "size": 311,
+      "exit_code": 0
+    },
+    {
+      "path": "work/simulator/boot-dev-513/guide-links-513h.log",
+      "sha256": "6531e0e90316432dd4aa9faf01c1a537fae0edce184455d2c3b89d1300435e05",
+      "size": 176,
+      "exit_code": 0
+    }
+  ],
+  "archive_summary": {
+    "checked_at": "2026-10-28T18:14:31+00:00",
+    "result": "pass",
+    "scope": "Downloaded main and retained supplementary artifacts; queued and failed transfers are excluded.",
+    "downloaded_records": 14076,
+    "unique_physical_paths": 13696,
+    "paths_read": 6,
+    "prior_checks_reused": 13690,
+    "bytes_read": 37598316,
+    "errors": [],
+    "cache_rule": "A prior hash is reused only when path, size, mtime, ctime, inode, device and expected hash agree. Use no --incremental flag for a fresh read."
+  },
+  "catalogue_summary": {
+    "checked_at": "2026-10-28T18:15:25.854664+00:00",
+    "sha256_checked": false,
+    "errors": [],
+    "artifact_count": 14089,
+    "result": "pass"
+  },
+  "remaining_limits": [
+    "Initial30MiB PDF failure preserved",
+    "GUI response is shell only; actual API content separate",
+    "Inconsistent summary register labels retained",
+    "No physical S9 calibration or silicon/ROM compatibility pass"
+  ]
+}

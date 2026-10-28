@@ -1,0 +1,59 @@
+{
+  "schema": "md-sim-zynq-rom-owner-failure/1",
+  "passed": false,
+  "stage": "machine initialization before QMP greeting",
+  "build": {
+    "path": "work/simulator/qemu-s9/backend-build-513c-ubsan/build-report.json",
+    "sha256": "006ca78f08c16fa6b3f4c44bfb4d7c0ae129be41aeb21c2bb6055bd53df7ff19",
+    "size": 2670788
+  },
+  "result": {
+    "path": "work/simulator/qemu-s9/rom-map-513c/result.json",
+    "sha256": "d0e27ee939b6bccccce0d6a89ebcd8a4498e440b8c638750757bfc902c426d3b",
+    "size": 1214
+  },
+  "diagnostic": {
+    "path": "work/simulator/qemu-s9/rom-map-513c/backend.log",
+    "sha256": "3f8c8698767e636bef8e675a74838c3cd029ceb9b82b493923da86db060392f1",
+    "size": 186
+  },
+  "assessment": {
+    "path": "work/simulator/qemu-s9/rom-map-513c/assessment.json",
+    "sha256": "8797b9e6bcee47dce58088ec3ddeb617c70274b58988c10d74b08053eaccee39",
+    "size": 1486
+  },
+  "cause": {
+    "upstream_source": {
+      "path": "work/simulator/boot-dev-513/system-memory.c",
+      "sha256": "ec1106c0249bf8f9f7a33f9756962d689bebcdd9c95c36876be2336d1044f5cc",
+      "size": 116900
+    },
+    "source_archive": {
+      "path": "artifacts/files/source/tool-qemu/qemu-11661d857254.tar.gz",
+      "sha256": "2a40e6705e59fd8807012631bc6b2c0877f10481b12768f78e4f9d7b88376cce",
+      "size": 38413148
+    },
+    "range": "memory_region_register_ram, lines3569..3580; memory_region_init_rom, lines3609..3620",
+    "constraint": "RAM migration registration accepts NULL or a DeviceState. MachineState is neither.",
+    "fix": "Use NULL ownership for the global board ROM, as for the existing global OCM backing. Alias owner is unchanged."
+  },
+  "new_inputs": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513d/s9-rom-reset.patch",
+      "sha256": "5b174b20c449a69941dfb74fcf0da344a435936dce190b407c86c78098c557ef",
+      "size": 10004
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513d/build_qemu_backend.rs",
+      "sha256": "92aeac8563598afbb177bdaf516c52174c2d0b271c07e7fb8c45c2774fcff4b8",
+      "size": 56329
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513d/derived/hw/arm/xilinx_zynq.c",
+      "sha256": "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+      "size": 37768
+    }
+  ],
+  "limits_unchanged": true,
+  "board_gate": false
+}

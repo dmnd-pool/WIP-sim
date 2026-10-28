@@ -1,0 +1,70 @@
+{
+  "schema": "md-sim-zynq-rom-read-path-stage/1",
+  "source_files": {
+    "work/simulator/boot-dev-513/zynq-rom-eof-513.c": {
+      "sha256": "c48e1a4e60f9a42aee5953957eca160cdee37f089802b38bcbc8f32ee49e3fec",
+      "size": 2863
+    },
+    "work/simulator/boot-dev-513/s9_fat16.rs": {
+      "sha256": "89948ee0ff0922c9a7bc3fbeb78f86f259fc33b8e57cc8951ab731c8fb2f078f",
+      "size": 10285
+    },
+    "work/simulator/boot-dev-513/zynq-rom-eof-513.ld": {
+      "sha256": "b27202aefe2f2c3788ab29f3330881de2e901644602af86ba985ef4a1725363a",
+      "size": 796
+    },
+    "work/simulator/boot-dev-513/s9_bootrom_oracle.rs": {
+      "sha256": "ba2930fc7f043cdc9402d446d894543149e0a827d1ca9c0e96a7ed7e1b012ffd",
+      "size": 19043
+    }
+  },
+  "rom": {
+    "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/zynq_bootrom.bin",
+    "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+    "size": 131072
+  },
+  "ranges": [
+    {
+      "start": 33600,
+      "end_exclusive": 33752,
+      "sha256": "9f20fb07e07f7d3b086ae9ff7a134b603ec32cf24ec21101c1be3cf5a844e6ce",
+      "size": 152,
+      "role": "filesystem validity and buffered sector access"
+    },
+    {
+      "start": 36732,
+      "end_exclusive": 37312,
+      "sha256": "420e8d706da28de68954d3bf42e0d7294814cfc196e0fc313d4b4223198167e2",
+      "size": 580,
+      "role": "read with file-size clamp"
+    },
+    {
+      "start": 39640,
+      "end_exclusive": 39668,
+      "sha256": "905406a310685bba5a4e1ffe906882ba46bb14340ed89057e6ecc088e1243946",
+      "size": 28,
+      "role": "disk-status global"
+    },
+    {
+      "start": 41220,
+      "end_exclusive": 41340,
+      "sha256": "c3e7bc2d475d1f0930e8f83a12484f4434881c3eb917b77f30575cd827ea3541",
+      "size": 120,
+      "role": "SD wrapper ignores returned count and read status; not yet executed"
+    }
+  ],
+  "source_scope": "Public author identifies XC7Z010-CLG400A. Exact selected S9 silicon revision and ROM identity remain unproved.",
+  "execution": "Pending isolated QEMU ARM original f_read routine fixture. No patch or function stub. Explicit filesystem globals and cached final physical SD sector; no hardware I/O is represented.",
+  "actual_cases": 28,
+  "compiler": "Existing captured clang+Rust LLD+QEMU ARM closure, standard ARM protocol oracle confinement. No acquired code executes on host.",
+  "next_action": "Independent source review, integrate, focused tests and actual confined run. Then original-ROM reset integration using existing board backend with separately declared reference identity.",
+  "limits": {
+    "wall_seconds": 90,
+    "cpu_seconds": 60,
+    "address_space_bytes": 6442450944,
+    "processes": 16,
+    "per_file_bytes": 2097152,
+    "trace_bytes": 8388608,
+    "scratch_bytes": 33554432
+  }
+}

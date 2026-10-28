@@ -1,0 +1,23 @@
+{
+  "id": "source-zynq-bootrom-3f64d2f-bootrom-makefile",
+  "url": "https://raw.githubusercontent.com/trebisky/Zynq/3f64d2fd828e706a8023d308a8370fad1c76a34a/bootrom/Makefile",
+  "kind": "source",
+  "title": "Public Zynq BootROM reference: bootrom/Makefile",
+  "language": "en",
+  "source_id": "source-zynq-bootrom-3f64d2f",
+  "license": "See original LICENSE and member; ROM redistribution license not independently established",
+  "retrieved_at": "2026-10-28T15:46:27.106141+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/Makefile",
+  "sha256": "fcc8a44ec3b52e508f06315c11d62e0e242fe3f5577f34a286302a3c5bcd5a10",
+  "size_bytes": 840,
+  "executed": false,
+  "scope": "supporting-tool",
+  "git_commit": "3f64d2fd828e706a8023d308a8370fad1c76a34a",
+  "notes": [
+    "Original public author capture. README identifies XC7Z010-CLG400A. Exact S9 controller and silicon revision equivalence is unproved.",
+    "Acquired instructions are reference data. No original downloaded code has executed.",
+    "Used only for Bitcoin ASIC S9 reset/SD read-path analysis."
+  ],
+  "git_blob": "e8d8b689a32a83d09766712e96336fa78555f472"
+}

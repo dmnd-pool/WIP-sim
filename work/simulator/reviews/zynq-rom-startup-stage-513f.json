@@ -1,0 +1,75 @@
+{
+  "schema": "md-sim-zynq-startup-classification/1",
+  "archive": {
+    "path": "artifacts/files/source/tool-qemu/qemu-11661d857254.tar.gz",
+    "sha256": "2a40e6705e59fd8807012631bc6b2c0877f10481b12768f78e4f9d7b88376cce",
+    "size": 38413148
+  },
+  "sources": {
+    "hw-char-cadence_uart.c": {
+      "path": "work/simulator/boot-dev-513/hw-char-cadence_uart.c",
+      "sha256": "88c4a7bb4cd41619fb954d6eb04ac9e9e561fcd6e10cabdc7609689d29d93878",
+      "size": 18834
+    },
+    "hw-sd-sdhci.c": {
+      "path": "work/simulator/boot-dev-513/hw-sd-sdhci.c",
+      "sha256": "3584935c9c6db46c00f7330db3ed8ca4e55fe1db3d57ce805cae4c9bfe80dd48",
+      "size": 69341
+    },
+    "net-net.c": {
+      "path": "work/simulator/boot-dev-513/net-net.c",
+      "sha256": "db7dc502662f6d8c390aa9227d14814ce2ed57bc791e24f513890589825f7f06",
+      "size": 60133
+    },
+    "system-runstate.c": {
+      "path": "work/simulator/boot-dev-513/system-runstate.c",
+      "sha256": "9b0b8d6b8b5c026a32d69be1201b92d9b69bb324a6c46fc11cafbba8ac08f01f",
+      "size": 34570
+    },
+    "system-trace-events": {
+      "path": "work/simulator/boot-dev-513/system-trace-events",
+      "sha256": "af802a34f14cc0c25c565b24f63585b400b8bbaae7614b072e38985c56765929",
+      "size": 4233
+    },
+    "qapi-run-state.json": {
+      "path": "work/simulator/boot-dev-513/qapi-run-state.json",
+      "sha256": "8610f9e6609e2fb9bbb4ada6a720062583133a5ad1f149d6655a43bf509eff53",
+      "size": 18910
+    }
+  },
+  "stage": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513f/rom_trace.rs",
+      "sha256": "5c773642d064630f9f8915d18237d6201a4edca1b533f2e115e01f92da68a338",
+      "size": 10168
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513f/s9_rom_reset_probe.rs",
+      "sha256": "cc49f575d2a7e742d5151398afbfe16357f7caaf9ebbedd7dadb18c9c9b29427",
+      "size": 9879
+    }
+  ],
+  "observed_failure": {
+    "path": "work/simulator/qemu-s9/rom-reset-513e/instruction-trace.log",
+    "sha256": "e18f609055b4f6733f16c3d9362b4c6b1fdbef5181853441400f42d3a237ca79",
+    "size": 280
+  },
+  "basis": {
+    "uart": "cadence_uart_realize sets chardev callbacks before board clocks connect; uart_event logs initial chardev event at lines374..383. Guest read/write diagnostics are different function names and remain fatal.",
+    "sdhci": "sdhci_init_readonly_registers calls sdhci_check_capareg during model realization, lines1496..1514; exact unknown configured-bit mask logged at207..210. Existing board sets spec2 and capareg0x69ec0080. These unsupported mask bits remain a model limitation.",
+    "network": "net_check_clients warns for each NIC with no peer at1805..1821; exactly the two declared disconnected GEM ports. No public network is enabled.",
+    "phase": "vm_state_notify emits source-defined trace in vm_prepare_start at522; vm_start resumes CPUs only after it returns at529..530. RUN_STATE_RUNNING is enum ordinal9. Startup whitelist closes at that explicit boundary, not at first translation."
+  },
+  "invariants": [
+    "exact five initialization notices in exact order/count, then ROMmap0 and startup phase boundary",
+    "missing, duplicate, changed or late startup notices fail",
+    "unsupported guest MMIO logs remain fatal",
+    "all raw startup records and source limitations retained",
+    "no CPU, board or firmware boot pass from this classification"
+  ],
+  "limits_unchanged": true,
+  "review_fixes": [
+    "Startup metadata counts only newline-terminated records, like the observer; truncated final boundary regression added.",
+    "All duplicate startup prefix records, including ROMmap0 before the phase boundary, must fail; a legitimate post-boundary ROM mapping trace remains allowed."
+  ]
+}

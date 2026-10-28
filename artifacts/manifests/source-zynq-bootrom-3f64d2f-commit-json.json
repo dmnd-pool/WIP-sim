@@ -1,0 +1,23 @@
+{
+  "id": "source-zynq-bootrom-3f64d2f-commit-json",
+  "url": "https://api.github.com/repos/trebisky/Zynq/commits/master",
+  "kind": "source",
+  "title": "Public Zynq BootROM reference: commit.json",
+  "language": "en",
+  "source_id": "source-zynq-bootrom-3f64d2f",
+  "license": "See original LICENSE and member; ROM redistribution license not independently established",
+  "retrieved_at": "2026-10-28T15:45:39.521524+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/commit.json",
+  "sha256": "fbd879f1404daeadc50d6d1ce523127a5350225d3b0d3e4bffe895945d5ed819",
+  "size_bytes": 4860,
+  "executed": false,
+  "scope": "supporting-tool",
+  "git_commit": "3f64d2fd828e706a8023d308a8370fad1c76a34a",
+  "notes": [
+    "Original public author capture. README identifies XC7Z010-CLG400A. Exact S9 controller and silicon revision equivalence is unproved.",
+    "Acquired instructions are reference data. No original downloaded code has executed.",
+    "Used only for Bitcoin ASIC S9 reset/SD read-path analysis.",
+    "The discovery request used master; response identity and all payload requests are pinned to the returned exact commit."
+  ]
+}

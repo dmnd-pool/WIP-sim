@@ -1,0 +1,138 @@
+{
+  "schema": "md-sim-rom-reset-static-address-basis/1",
+  "date": "2026-10-28T16:50:49.601788+00:00",
+  "rom_sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+  "instructions_and_literals": [
+    {
+      "offset": "0xa4",
+      "word": "0xe59fd0b8"
+    },
+    {
+      "offset": "0xb0",
+      "word": "0xe59f00b0"
+    },
+    {
+      "offset": "0xb4",
+      "word": "0xee020f10"
+    },
+    {
+      "offset": "0xb8",
+      "word": "0xee020f30"
+    },
+    {
+      "offset": "0xbc",
+      "word": "0xe3a00001"
+    },
+    {
+      "offset": "0xc0",
+      "word": "0xee010f10"
+    },
+    {
+      "offset": "0x164",
+      "word": "0x7d4a0"
+    },
+    {
+      "offset": "0x168",
+      "word": "0x10000"
+    },
+    {
+      "offset": "0xfcdc",
+      "word": "0xe3a04000"
+    },
+    {
+      "offset": "0xfce0",
+      "word": "0xee014f10"
+    },
+    {
+      "offset": "0xfd2c",
+      "word": "0xe59f51f0"
+    },
+    {
+      "offset": "0xfd30",
+      "word": "0xe3a06008"
+    },
+    {
+      "offset": "0xfd34",
+      "word": "0xe5856000"
+    },
+    {
+      "offset": "0xfd38",
+      "word": "0xe3a06018"
+    }
+  ],
+  "first_level_table": {
+    "offset": 65536,
+    "bytes": 16384,
+    "sha256": "c1d4fcb682540d01433df6a400be6e1f0ee38565a36ff7f621f6ccf48eb33fd6",
+    "entries": 4096,
+    "identity_section_entries": 402
+  },
+  "translations": [
+    {
+      "virtual_address": "0x0",
+      "descriptor_rom_offset": "0x10000",
+      "descriptor": "0xc02",
+      "physical_address": "0x0"
+    },
+    {
+      "virtual_address": "0x10000",
+      "descriptor_rom_offset": "0x10000",
+      "descriptor": "0xc02",
+      "physical_address": "0x10000"
+    },
+    {
+      "virtual_address": "0x40000",
+      "descriptor_rom_offset": "0x10000",
+      "descriptor": "0xc02",
+      "physical_address": "0x40000"
+    },
+    {
+      "virtual_address": "0x70000",
+      "descriptor_rom_offset": "0x10000",
+      "descriptor": "0xc02",
+      "physical_address": "0x70000"
+    },
+    {
+      "virtual_address": "0x7d4a0",
+      "descriptor_rom_offset": "0x10000",
+      "descriptor": "0xc02",
+      "physical_address": "0x7d4a0"
+    },
+    {
+      "virtual_address": "0xffff0000",
+      "descriptor_rom_offset": "0x13ffc",
+      "descriptor": "0xfff00c02",
+      "physical_address": "0xffff0000"
+    },
+    {
+      "virtual_address": "0xf8000000",
+      "descriptor_rom_offset": "0x13e00",
+      "descriptor": "0xf8000c02",
+      "physical_address": "0xf8000000"
+    },
+    {
+      "virtual_address": "0xe0100000",
+      "descriptor_rom_offset": "0x13804",
+      "descriptor": "0xe0100c02",
+      "physical_address": "0xe0100000"
+    }
+  ],
+  "interpretation": "ROM loads TTBR0 andTTBR1 with10000 then writes SCTLR1. MMU enabled with cache bits clear. The checked section descriptors map the observed low stack/FSBL addresses identically to physical memory. Caches/MMU disabled again atfce0 before handoff. No instruction was changed. Full reset execution still pending.",
+  "mirror_pdf_sha256": "e24b2574c52110f351e6aee0375b97f62556d2decd957e006646367ca43b7a66",
+  "document_pdf_pages_one_based": {
+    "write-once devcfg.ROM_SHADOW": [
+      159
+    ],
+    "0xF800_7028     ROM_SHADOW": [
+      205
+    ],
+    "Always write the value that is read.": [
+      1689
+    ]
+  },
+  "limits": [
+    "RegisterOCM_CFG definesRAM_HI andSWAPreset0 but no full privateSWAP function.",
+    "ROM_SHADOW is named write-once ROM disable; exact disable trigger semantics and reset lifetime must be checked before implementation.",
+    "SelectedS9silicon/ROMbinding stillunknown."
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:54:02.927184+00:00",
+  "component": "513g bounded raw instruction-byte trace parser",
+  "stage_manifest": {
+    "path": "work/simulator/reviews/zynq-rom-raw-trace-stage-513g.json",
+    "sha256": "d042118ea8c2b67534354c71691ee86ab6b2147c71664d79ce06ed74179f4721"
+  },
+  "sources": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513g/rom_trace.rs",
+      "sha256": "357176d05f6efd3d871b5d848c2edb16c148f547f9e59eb75e472c10301bb547",
+      "size": 15507
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513g/s9_rom_reset_probe.rs",
+      "sha256": "ce890fa233b40e564a71675c4c984f9fdb1363e8d54439138606c0a3ab6667ef",
+      "size": 9893
+    },
+    {
+      "path": "work/simulator/boot-dev-513/disas-objdump.c",
+      "sha256": "6889bc5fa700daee7a14ed514c07b1564582ca4de875085e038662c59f786617",
+      "size": 988
+    },
+    {
+      "path": "work/simulator/boot-dev-513/disas-disas-target.c",
+      "sha256": "7e0f4a4121443bdb6a5c688c75b9027dc3cf7131ecf48a0eb9827afda5abdda4",
+      "size": 2914
+    }
+  ],
+  "actual_raw_trace": {
+    "path": "work/simulator/qemu-s9/rom-reset-513f/instruction-trace.log",
+    "sha256": "cecfa416191f055dce59291c98c4c9d4917ece4cdcc462e6aa2596dcd6feeadf",
+    "size": 13252
+  },
+  "original_rom": {
+    "path": "artifacts/files/source/source-zynq-bootrom-3f64d2f/bootrom/zynq_bootrom.bin",
+    "sha256": "c58e2bc1d837654457ed47064accb26c4fb48307737e60d6c2d05253e7ee3aea",
+    "size": 131072
+  },
+  "independent_actual_byte_audit": {
+    "spans": 162,
+    "bytes": 2436,
+    "all_match_original_rom": true,
+    "unique_addresses": 158,
+    "scope": "Translated block bytes; not a count of executed instructions."
+  },
+  "reviewed_behavior": [
+    "Exact objdump fallback dumps memory-order bytes in chunks of up to32bytes. Raw target tag only, not host disassembly.",
+    "Requires preceding aligned empty-tail address header, valid low-ROM/high-handoff window, lowercase complete hexadecimal ARM32 words and bounded span. Only full32-byte chunks permit continuation.",
+    "Rejects orphan, nonhex, odd, overbound, unaligned, cross-window and short-continuation frames. Missing initial bytes and incomplete newline fail at EOF.",
+    "Exact read-memory failure text on an address line is rejected. No generic address acceptance remains in metadata-only helper.",
+    "Startup exact-prefix boundary and guest-error cancellation preserved. Result schema/2 correctly calls address counts translated-block headers."
+  ],
+  "result": "pass-for-integration-and-actual-diagnostic",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "Focusedtests,fmt,strictClippy,release",
+    "Stable source/helper freeze",
+    "Fresh actual reset diagnostic and independent first-unsupported-operation audit"
+  ],
+  "gate_changes": []
+}

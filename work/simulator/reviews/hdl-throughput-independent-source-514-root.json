@@ -1,0 +1,26 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:23:34.924351+00:00",
+  "component": "514 selected HDL throughput diagnostic",
+  "source": {
+    "path": "work/simulator/s9-cosim-514/s9_live_benchmark.rs",
+    "sha256": "b6c3842fad3635d7fc391be1805dbeb7c3038a627abb36e088befa0459eb9a89",
+    "bytes": 12632
+  },
+  "reviewed_behavior": [
+    "Exact archived512e VVP/plugin and Icarus identities checked before isolated execution; restored only bounded exact regular tar members with output hashes.",
+    "Each case starts fresh child. Startup and each command use monotonic host wall time. No CPU-time or physical-timing measurement is claimed.",
+    "ExplicitFCLK1 period10ns enabled at1ps; reset release selects only reset fields, leaving clock unchanged. Each completion must report exact next5000ps half-edge, with clock active.",
+    "All command/result raw evidence, child exit, EOF, limits and exact original vendor notice checked. Failure retains actual result and does not advance to larger interval.",
+    "No clock rescaling, idle freeze, boot extrapolation, CPU or board pass."
+  ],
+  "finding_resolved": "Root requested clock-active/phase checks so a gated PL cannot create a false throughput pass; added explicit wall-only measurement scope.",
+  "result": "pass-for-integration-and-bounded-execution",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "Focusedchecks and strictClippy",
+    "Actual bounded10us/100us/1ms runs after513runtime release",
+    "Independent actual event/phase/evidence audit"
+  ]
+}

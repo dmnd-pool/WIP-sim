@@ -1,0 +1,275 @@
+{
+  "schema": "md-sim-independent-partial-execution-review/1",
+  "recorded_at": "2026-10-28T16:56:34.626773+00:00",
+  "reviewer": "cleanup_resume",
+  "audit_passed": true,
+  "overall_run_passed": false,
+  "scope": "Actual isolated VPI event tests and clock phase/input-order oracles. Selected live compilation still fails strict procedural-force diagnostics; no selected live execution occurred.",
+  "pins": [
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512d/manifest.json",
+      "sha256": "8c28a9f7b36dbfe433965150c27c246dca749f23cc2da8311cdf27481a4e74b8",
+      "size": 71538
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512d/source-before-build.json",
+      "sha256": "922a138dff0bde230138ee509b0306a195b04142fe3266a4bc7e7dde1322c8c6",
+      "size": 66472
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512d/source-after-build.json",
+      "sha256": "922a138dff0bde230138ee509b0306a195b04142fe3266a4bc7e7dde1322c8c6",
+      "size": 66472
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512d/spec.json",
+      "sha256": "82bb78fcdcde1e6d94432a6886740f32773ef102c10c05d53b7c6e59e4eb196e",
+      "size": 9772
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512d/result.json",
+      "sha256": "6cdee31ac372c09cdef3f038b798a8242e6ba0460fd7619a6ca3a944f8e8294e",
+      "size": 103180256
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512d/hdl-envelope.json",
+      "sha256": "07c8426128f74df3628efdea7b98f0eb68328dfbda37bc2c9840380a9e891576",
+      "size": 51589627
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512d/hdl-report.json",
+      "sha256": "796ac98b248f63793e35661c2b3f73c9369cd6b8a7e7c328723a9adfda7e1a88",
+      "size": 611818
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-selected-512d/selected-vvp.tar.gz",
+      "sha256": "24cbdac1a7980d61124cf61a367f33e229ac27333ede9bd3f7ef046684ab9128",
+      "size": 25509731
+    }
+  ],
+  "checked": {
+    "frozen_sources": 421,
+    "mounts": 49,
+    "supervisor_tool_hashes": true,
+    "ubsan_plugin": {
+      "sha256": "c2515601182797cf5a9b5ac096db7541b41e140f0f88e11e796d15b3bdc032ad",
+      "size": 24464
+    },
+    "archive_members": [
+      "compiled",
+      "compiled/mdsim_live.vpi",
+      "compiled/vpi-order-fixture.v",
+      "compiled/event_regions.vvp",
+      "compiled/duplicate_completion.vvp",
+      "compiled/clock-order-fixture.v",
+      "compiled/clock-order.vvp",
+      "compiled/clock-unknown.vvp",
+      "compiled/live-probe.v",
+      "compiled/live.vvp"
+    ],
+    "event_and_duplicate_tests_rechecked": true,
+    "clock_results": {
+      "clock_unsplit": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_split": {
+        "records": 16,
+        "commands": 5,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_unknown": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5201,
+            3,
+            1
+          ],
+          [
+            5201,
+            3,
+            3
+          ],
+          [
+            10201,
+            3,
+            2
+          ],
+          [
+            15201,
+            3,
+            3
+          ],
+          [
+            15201,
+            3,
+            5
+          ],
+          [
+            25201,
+            3,
+            4
+          ],
+          [
+            35201,
+            3,
+            5
+          ],
+          [
+            35201,
+            3,
+            7
+          ],
+          [
+            35201,
+            3,
+            71
+          ],
+          [
+            35201,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      }
+    },
+    "raw_split_unsplit_timelines_equal": true,
+    "no_extra_settling_time": true,
+    "unknown_initial_period_produces_no_early_edge": true,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "failure": {
+    "outer_exit_code": 1,
+    "wall_milliseconds": 19714,
+    "trace_truncated": false,
+    "selected_compiler_exit_code": 0,
+    "strict_rejected_procedural_force_diagnostics": 14,
+    "selected_live_executed": false
+  },
+  "source_review": "work/simulator/reviews/live-clock-dependencies-independent-source-512d.json",
+  "original_board_gate": false,
+  "firmware_execution_gate": false,
+  "cpu_synchronization_complete": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "md-sim-independent-reference-review/1",
+  "recorded_at": "2026-10-28T16:48:04.469975+00:00",
+  "reviewer": "cleanup_resume",
+  "archive": {
+    "path": "artifacts/files/source/source-iverilog-4fd5291/md-sim-iverilog-source-502.tar.gz",
+    "sha256": "690f02e6fd0e0c05e4768bcb65a2c7f1b64d20289344d1ad3ccfb69bae8bd55b"
+  },
+  "members": [
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/driver/main.c",
+      "sha256": "4c5db0a3e8ab312581f989d4bb54ee464039ffd83a5f4e0a01f68285a44449c6",
+      "size": 42322
+    },
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/net_nex_input.cc",
+      "sha256": "9ac8055d2348ce003b200c158560540471ec838945d9dde330b50270da680beb",
+      "size": 17684
+    }
+  ],
+  "finding": "Pinned driver/main.c535 enables sensitivity-entire-array under-Wall. net_nex_input.cc220 emits a warning for variable-index array reads in always@*. Live clock next-edge combinational body has these accesses, so current strict diagnostic policy must reject it.",
+  "proposed_source_fix": "Replace implicit always@* with the exact eight-word explicit sensitivity list: md_period_q32[0..3] and md_next_scaled[0..3]. Keep body, clock phase, assertions and -Wall unchanged. Intermediate scratch/result variables are assigned only by this block.",
+  "actual_compile_not_claimed": true,
+  "next_action": "Preserve active run output; review exact explicit-list patch and rerun all clock/event assertions."
+}

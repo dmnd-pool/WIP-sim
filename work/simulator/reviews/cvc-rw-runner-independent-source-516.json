@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Independent source review of small isolated actual Icarus/CVC future-RW comparison runner",
+  "stage": {
+    "path": "work/simulator/s9-cvc-516/rw-probe-stage.json",
+    "sha256": "7dd0e10229cf0c2839363e9edc6472b3216a6fcd54d20e51cc683acbdb386d81",
+    "size": 1529
+  },
+  "sources": [
+    {
+      "path": "work/simulator/s9-cvc-516/rw-order.c",
+      "object": {
+        "sha256": "d8c7d961d4e17fb175c9b01dd41813836d9a9094b65d699262d5ba97dd733905",
+        "size": 2863
+      }
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-order.v",
+      "object": {
+        "sha256": "d44bb7fb157664681d134ce5116cceb7db6a8f4b0ffbf06ba131a9bebc08dfcc",
+        "size": 470
+      }
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/cvc_rw_probe.rs",
+      "object": {
+        "sha256": "cce537f537b57b2d80b5c4de29dc16dc52a77e50db45ccc68f7c9832cc91a814",
+        "size": 13010
+      }
+    }
+  ],
+  "production_dependencies": [
+    {
+      "path": "crates/md-sim-firmware/src/confinement.rs",
+      "object": {
+        "sha256": "69a8e5d49dc35d5326cc915c533f6859b35fb84251fa5f97c48863d9f140a9ed",
+        "size": 24181
+      }
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/qemu_build.rs",
+      "object": {
+        "sha256": "f6010fb91d4a5ab246e4e378614a11a9c2e6745e69b90418b31fef97451efbb1",
+        "size": 10167
+      }
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/bounded_file.rs",
+      "object": {
+        "sha256": "725a1d9682b92e7a7f9548ca266c6ef7b29908bd1e50d9b6e413183f7c754ea2",
+        "size": 3045
+      }
+    }
+  ],
+  "loader_reference": {
+    "archive": {
+      "path": "artifacts/files/source/source-iverilog-4fd5291/md-sim-iverilog-source-502.tar.gz",
+      "sha256": "690f02e6fd0e0c05e4768bcb65a2c7f1b64d20289344d1ad3ccfb69bae8bd55b",
+      "size": 2997829
+    },
+    "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/vvp/vpi_modules.cc",
+    "copy": {
+      "path": "work/simulator/s9-cvc-516/icarus-vpi-loader.cc",
+      "sha256": "6ba7e061d48147d2134dc753f2ad6c15328e30a14c12d7f73dd2c5ab712c12ce",
+      "size": 7455
+    }
+  },
+  "source_review_passed": true,
+  "findings_open": 0,
+  "closed_findings": [
+    {
+      "finding": "Bare-m Icarus module name searched.vpi/.vpl while output was.so.",
+      "fix": "Explicit-m/work/rw_icarus.so selects the exact file; original vvp/vpi_modules.cc145-218 confirms path behavior."
+    },
+    {
+      "finding": "An expected observation could coexist with another contradictory observation.",
+      "fix": "All MD_RW_ lines must exactly equal ordered[EXPECTED,PASS]; duplicate, reordered, contradictory and failure markers reject."
+    }
+  ],
+  "reviewed_contract": [
+    "Exact successful CVC tools and Icarus archive identities; fixed prior compiler closure spec captured through bounded_file and parsed from those exact bytes",
+    "Same embedded C/HDL fixtures for both engines; existing C VPI ABI only, no new simulator kernel",
+    "C plugin compiled separately against each exact header with warnings-as-errors, UBSan trap/no-recovery, non-executable stack",
+    "Compiled CVC uses+acc+2; no two-state option or warning waiver",
+    "Both actual engines must satisfy unchanged time5,input1,edge1,sampled0 contract to pass; expected CVC mismatch retains failing exit",
+    "CVC expected mismatch still exports both actual programs/plugins and exact fixtures before returning failure",
+    "Existing private namespaces/resource limits; no network/device/control-listener grant; outer stderr and truncation reject pass",
+    "New run-only outputs, verified inputs after execution and exported bytes checked against consumed result identities"
+  ],
+  "pending": [
+    "Focused Rust tests/Clippy/format/release",
+    "Actual isolated comparison and independent raw-output/compiled-artifact audit"
+  ],
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

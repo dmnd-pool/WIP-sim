@@ -1,0 +1,177 @@
+{
+  "schema": "md-sim-hdl-throughput-assessment/1",
+  "recorded_at": "2026-10-28T17:43:45.672166+00:00",
+  "throughput_suite_passed": false,
+  "actual_live_regression_passed": true,
+  "physical_timing_calibrated": false,
+  "cpu_synchronization_complete": false,
+  "firmware_executed": false,
+  "freeze": {
+    "path": "work/simulator/qemu-s9/live-driver-514/manifest.json",
+    "sha256": "aef2eba5246202105520296db5789e2b080f4262719acdaa59dfdac5a2dd5164",
+    "size": 72000
+  },
+  "benchmark": {
+    "spec.json": {
+      "path": "work/simulator/qemu-s9/live-throughput-514/spec.json",
+      "sha256": "bf94e1bb392effde3bcf777b89433635ff250a463c82a4d5e78c874f65c0b44a",
+      "size": 3092
+    },
+    "result.json": {
+      "path": "work/simulator/qemu-s9/live-throughput-514/result.json",
+      "sha256": "ee837f40566ffa2f30c3bbf31d1202b0403b50c95fc45099dac6e5f1b9d3846d",
+      "size": 84044
+    },
+    "report.json": {
+      "path": "work/simulator/qemu-s9/live-throughput-514/report.json",
+      "sha256": "51f9b153fe492c2580874cca46a30f5036c588feb6fd324743db21b90b158329",
+      "size": 45091
+    },
+    "stderr.log": {
+      "path": "work/simulator/qemu-s9/live-throughput-514/stderr.log",
+      "sha256": "3e06498fc2705e32f7d721ab13f4a9dff0db2a2747a71799180a15090cc48907",
+      "size": 136
+    }
+  },
+  "live_regression": {
+    "spec.json": {
+      "path": "work/simulator/qemu-s9/live-selected-514/spec.json",
+      "sha256": "e6d4fc433709a45f80b27ba60e52d87dd1f6b7343d3f0a997e7af016080256c5",
+      "size": 9772
+    },
+    "result.json": {
+      "path": "work/simulator/qemu-s9/live-selected-514/result.json",
+      "sha256": "e04c49f588084853a47baa36a52e93cb16abc25a6706c200f424f50548b55769",
+      "size": 103330506
+    },
+    "hdl-report.json": {
+      "path": "work/simulator/qemu-s9/live-selected-514/hdl-report.json",
+      "sha256": "8dbdf3c0a7cb77409c285d2f216333e1cebd116952ef2e775056a0182e1ff5ce",
+      "size": 730701
+    },
+    "selected-vvp.tar.gz": {
+      "path": "work/simulator/qemu-s9/live-selected-514/selected-vvp.tar.gz",
+      "sha256": "2ded3f34c3c7e43a31763cb7ac17677dbd1ef45b5a6f9620325aba7354c7233b",
+      "size": 25504843
+    },
+    "stderr.log": {
+      "path": "work/simulator/qemu-s9/live-selected-514/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  },
+  "cases": [
+    {
+      "interval_ns": 10000,
+      "startup_host_wall_ns": 6489062673,
+      "passed": true,
+      "error": null,
+      "commands": [
+        {
+          "actual_next_clock_ps": 5001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 112558,
+          "operation": 4,
+          "requested_time_ps": 1,
+          "sequence": 1
+        },
+        {
+          "actual_next_clock_ps": 1005001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 258309387,
+          "operation": 3,
+          "requested_time_ps": 1000001,
+          "sequence": 2
+        },
+        {
+          "actual_next_clock_ps": 1005001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 34116,
+          "operation": 4,
+          "requested_time_ps": 1000002,
+          "sequence": 3
+        },
+        {
+          "actual_next_clock_ps": 11005001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 2471832034,
+          "operation": 3,
+          "requested_time_ps": 11000002,
+          "sequence": 4
+        },
+        {
+          "actual_next_clock_ps": 11005001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 70642340,
+          "operation": 5,
+          "requested_time_ps": 11000003,
+          "sequence": 5
+        }
+      ],
+      "exit": {
+        "code": 0,
+        "signal": null
+      },
+      "failure": null,
+      "cleanup_error": null
+    },
+    {
+      "interval_ns": 100000,
+      "startup_host_wall_ns": 6537661269,
+      "passed": false,
+      "error": "live child command deadline",
+      "commands": [
+        {
+          "actual_next_clock_ps": 5001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 118906,
+          "operation": 4,
+          "requested_time_ps": 1,
+          "sequence": 1
+        },
+        {
+          "actual_next_clock_ps": 1005001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 282355183,
+          "operation": 3,
+          "requested_time_ps": 1000001,
+          "sequence": 2
+        },
+        {
+          "actual_next_clock_ps": 1005001,
+          "clock_progress_checked": true,
+          "completed": true,
+          "host_wall_ns": 35130,
+          "operation": 4,
+          "requested_time_ps": 1000002,
+          "sequence": 3
+        },
+        {
+          "completed": false,
+          "host_wall_ns": 10073347928,
+          "operation": 3,
+          "requested_time_ps": 101000002,
+          "sequence": 4
+        }
+      ],
+      "exit": {
+        "code": null,
+        "signal": 9
+      },
+      "failure": "live child command deadline",
+      "cleanup_error": null
+    }
+  ],
+  "live_wall_milliseconds": 31669,
+  "unrun_interval_ns": [
+    1000000
+  ],
+  "decision": "Do not scale or freeze the fabric clock. Investigate a suitable existing compiled four-state backend or independently proved optimization before full CPU boot. No linear boot-time extrapolation is asserted."
+}

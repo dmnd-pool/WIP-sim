@@ -1,0 +1,41 @@
+{
+  "schema": "md-sim-independent-reference-review/1",
+  "recorded_at": "2026-10-28T16:33:12.697110+00:00",
+  "reviewer": "cleanup_resume",
+  "parent_reference": "work/simulator/reviews/icarus-scheduler-independent-reference-512.json",
+  "scope": "Pinned Icarus future read-write synchronization supports an explicit digital event ordering; not CPU synchronization or physical timing.",
+  "source_pins": {
+    "work/simulator/s9-cosim-512/icarus-review/vvp-vpi_callback.cc": {
+      "sha256": "024dc7a1598ffbe5b0278982a671c10b8e5f43ca3316994b6e4782c9286d1a98",
+      "size": 24201
+    },
+    "work/simulator/s9-cosim-512/icarus-review/vvp-schedule.cc": {
+      "sha256": "75478e9600a7d2f9ec0acdd3444db3912abd84bbd0f8233a42ab0a4b57b71590",
+      "size": 33204
+    }
+  },
+  "checked_source": [
+    {
+      "file": "vvp-vpi_callback.cc",
+      "lines": "311-358",
+      "finding": "sync_cb marks non-read-only synchronized callbacks as writable; make_sync uses supplied relative time and schedules sync=true/readonly=false."
+    },
+    {
+      "file": "vvp-schedule.cc",
+      "lines": "1210-1234",
+      "finding": "At a given timestamp, active then inactive then NBA queues drain before rwsync. After rwsync creates more active/NBA work, the main scheduler loop drains that work before RO."
+    }
+  ],
+  "supported_contract": [
+    "Schedule input application with cbReadWriteSynch at strictly positive requested-time minus current-time.",
+    "Already scheduled clock edges and their sequential delta updates settle before the input batch at the same timestamp.",
+    "New input-triggered active/NBA work settles before the complete RO observation.",
+    "Blocking reads and binary response writes remain confined to RO callbacks.",
+    "No extra picosecond, altered clock frequency, or CPU lookahead grant is implied."
+  ],
+  "required_actual_regression": "Compare complete raw event time/kind/four-state timelines for unsplit Drive15001 and Advance12001 followed by Drive15001. Require old rising-edge sampling, preserved clock level/new phase and later input/reset sampling.",
+  "source_review_passed": true,
+  "actual_execution_pending": true,
+  "cpu_synchronization_complete": false,
+  "original_board_gate": false
+}

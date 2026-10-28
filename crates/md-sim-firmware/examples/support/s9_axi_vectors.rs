@@ -7,7 +7,7 @@ use std::{collections::BTreeMap, fmt::Write};
 
 const PS7: &str = "PSS2_X13Y53_PS7_X0Y0_PS7";
 const PS7_ABSENCE_NOTICE: &str = "The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.";
-fn expected_notice() -> String {
+pub fn expected_notice() -> String {
     format!("Warning on instance axi_probe.dut.{PS7} : {PS7_ABSENCE_NOTICE}")
 }
 pub fn verify_notice_source(source: &str) -> Result<()> {
@@ -121,16 +121,13 @@ fn identifier(name: &str) -> bool {
     !name.is_empty() && name.bytes().all(|b| b.is_ascii_alphanumeric() || b == b'_')
 }
 
-pub fn generate(netlist: &str, port_data: &[u8], contract_data: &[u8]) -> Result<(String, Value)> {
+pub fn generate_shell(netlist: &str, port_data: &[u8]) -> Result<(String, Value)> {
     ensure!(
-        netlist.len() <= 32 << 20
-            && port_data.len() <= 128 << 10
-            && contract_data.len() <= 64 << 10,
+        netlist.len() <= 32 << 20 && port_data.len() <= 128 << 10,
         "AXI input bound"
     );
     let ports: BTreeMap<String, Port> = serde_json::from_slice(port_data)?;
     validate_ports(&ports)?;
-    let contract: Contract = serde_json::from_slice(contract_data)?;
     ensure!(
         netlist.matches(&format!("  PS7 #(\n  ) {PS7} (\n")).count() == 1,
         "selected PS7 instance absent"
@@ -145,6 +142,7 @@ pub fn generate(netlist: &str, port_data: &[u8], contract_data: &[u8]) -> Result
     let mut connections = Vec::new();
     let mut external_inputs = Vec::new();
     let mut external_outputs = Vec::new();
+    let mut external_ports = Vec::new();
     for line in header.lines() {
         let (direction, name) = line
             .trim()
@@ -152,6 +150,7 @@ pub fn generate(netlist: &str, port_data: &[u8], contract_data: &[u8]) -> Result
             .split_once(' ')
             .context("top port form")?;
         ensure!(identifier(name), "invalid top port identifier");
+        external_ports.push(json!({"name":name,"direction":direction}));
         match direction {
             "input" => {
                 connections.push(format!(".{name}(1'bz)"));
@@ -211,6 +210,31 @@ pub fn generate(netlist: &str, port_data: &[u8], contract_data: &[u8]) -> Result
     source.push_str("initial begin\n");
     source.push_str(&force);
     source.push_str("end\n");
+    let inventory = json!({"driven_ports":driven,"observed_ports":observed,
+        "external_inputs_high_impedance":external_inputs,
+        "external_outputs_observed_by_fabric_only":external_outputs, "external_ports":external_ports});
+    Ok((source, inventory))
+}
+
+/// Add observations only. The handshake task source remains a single fixture.
+/// The original benchmark still includes that fixture byte for byte.
+pub fn observed_tasks() -> Result<String> {
+    let mut tasks = TASKS.to_owned();
+    for (from, to) in [
+        ("reg [31:0] last_read;", "reg [31:0] last_read;\nreg [11:0] last_id;\nreg [1:0] last_response;"),
+        ("    last_read=saved; transactions=transactions+1;", "    last_id=saved_id; last_response=saved_response;\n    last_read=saved; transactions=transactions+1;"),
+        ("    transactions=transactions+1;", "    last_id=saved_id; last_response=saved_response;\n    transactions=transactions+1;"),
+    ] {
+        ensure!(tasks.matches(from).count()==1, "shared AXI task observer insertion differs");
+        tasks=tasks.replacen(from,to,1);
+    }
+    Ok(tasks)
+}
+
+pub fn generate(netlist: &str, port_data: &[u8], contract_data: &[u8]) -> Result<(String, Value)> {
+    ensure!(contract_data.len() <= 64 << 10, "AXI contract bound");
+    let (mut source, shell) = generate_shell(netlist, port_data)?;
+    let contract: Contract = serde_json::from_slice(contract_data)?;
     source.push_str(TASKS);
     source.push_str("reg [31:0] bases[0:2]; reg [31:0] initial_baud[0:2],initial_control[0:2],initial_version[0:2],initial_build[0:2];\nreg [31:0] base,saved_control; integer chain;\ninitial begin #5000;src_FCLKCLK[1]=0;forever #5000 src_FCLKCLK[1]=~src_FCLKCLK[1];end\ninitial begin #50000000;$fatal(1,\"AXI global simulation deadline transactions=%0d\",transactions);end\n");
     // The clock is external stimulus at100MHz. No internal clock or response
@@ -303,7 +327,7 @@ pub fn generate(netlist: &str, port_data: &[u8], contract_data: &[u8]) -> Result
     source.push_str("if(last_read!==initial_baud[chain])$fatal(1,\"baud reset value differs\");\n");
     read(&mut source, o.control)?;
     source.push_str("if(last_read!==initial_control[chain])$fatal(1,\"control reset value differs\");end\nif(transactions!==72)$fatal(1,\"transaction count differs\");\n$display(\"MD_SIM_SELECTED_AXI_PASS transactions=72 resets=2\");$finish;end\nendmodule\n");
-    let metadata = json!({"scope":"Component stimulus at declared PS7 output ports only. No processor or firmware execution.","driven_ports":driven,"observed_ports":observed,"external_inputs_high_impedance":external_inputs,"external_outputs_observed_by_fabric_only":external_outputs,"clock_stimulus_hz":100000000,"clock_output_index":1,"fabric_reset_output_index":0,"physical_timing_calibrated":false,"expected_transactions":72,"expected_reset_sequences":2,"source_sha256":md_sim_firmware::prepare::hash_bytes(source.as_bytes()),"task_source_sha256":md_sim_firmware::prepare::hash_bytes(TASKS.as_bytes())});
+    let metadata = json!({"scope":"Component stimulus at declared PS7 output ports only. No processor or firmware execution.","driven_ports":shell["driven_ports"],"observed_ports":shell["observed_ports"],"external_inputs_high_impedance":shell["external_inputs_high_impedance"],"external_outputs_observed_by_fabric_only":shell["external_outputs_observed_by_fabric_only"],"clock_stimulus_hz":100000000,"clock_output_index":1,"fabric_reset_output_index":0,"physical_timing_calibrated":false,"expected_transactions":72,"expected_reset_sequences":2,"source_sha256":md_sim_firmware::prepare::hash_bytes(source.as_bytes()),"task_source_sha256":md_sim_firmware::prepare::hash_bytes(TASKS.as_bytes())});
     Ok((source, metadata))
 }
 
@@ -540,6 +564,46 @@ mod tests {
         include_str!("../../../../simulator/firmware/fixtures/s9-axi-trace-511d.txt");
     const RETAINED_CONTRACT: &[u8] =
         include_bytes!("../../../../simulator/firmware/s9-bosminer-mmio-511.json");
+    #[test]
+    fn observer_adds_no_timing_control_or_assertion_change() {
+        let tasks = observed_tasks().unwrap();
+        assert_eq!(
+            tasks
+                .matches("last_id=saved_id; last_response=saved_response;")
+                .count(),
+            2
+        );
+        let restored = tasks
+            .replace("\nreg [11:0] last_id;\nreg [1:0] last_response;", "")
+            .replace("    last_id=saved_id; last_response=saved_response;\n", "");
+        assert_eq!(restored, TASKS);
+    }
+    #[test]
+    #[ignore = "read-only retained511e generator identity; set MD_SIM_AXI_511E_ROOT"]
+    fn extracted_shell_preserves_actual_511e_benchmark_bytes() {
+        let root = std::path::PathBuf::from(std::env::var_os("MD_SIM_AXI_511E_ROOT").unwrap());
+        let netlist = std::fs::read_to_string(
+            root.join("work/simulator/qemu-s9/netlist-selected-502k/selected.v"),
+        )
+        .unwrap();
+        let ports = std::fs::read(
+            root.join("artifacts/files/source/source-fasm-graph-8372b58/zynq7/ps7_ports.json"),
+        )
+        .unwrap();
+        let (source, _) = generate(&netlist, &ports, RETAINED_CONTRACT).unwrap();
+        let old = std::fs::read_to_string(
+            root.join("work/simulator/qemu-s9/axi-selected-511e/axi-probe.v"),
+        )
+        .unwrap();
+        assert_eq!(source, old);
+        let (prefix, inventory) = generate_shell(&netlist, &ports).unwrap();
+        assert!(old.starts_with(&prefix));
+        assert_eq!(
+            inventory["driven_ports"].as_array().unwrap().len()
+                + inventory["observed_ports"].as_array().unwrap().len(),
+            42
+        );
+    }
     #[test]
     fn exact_absent_cpu_notice_is_retained_without_relaxing_bus_checks() {
         let result = check_trace(RETAINED_TRACE, RETAINED_CONTRACT).unwrap();

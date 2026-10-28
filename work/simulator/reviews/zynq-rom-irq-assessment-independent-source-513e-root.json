@@ -1,0 +1,27 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:26:42.238197+00:00",
+  "component": "513e ROM outer IRQ assessment correction",
+  "input": {
+    "path": "work/simulator/boot-dev-513/reset-stage-513e/qemu_ttc_reset.rs",
+    "sha256": "e58a506614c92091bca81af49423aaea4c907f15c00bdea1f901cfd3f634ce45",
+    "bytes": 23172
+  },
+  "parent_sha256": "88059496b644d9b3de4a739f8eca555629482d02a96a6737bbea058371f8d01f",
+  "inner_rom_assertion": {
+    "path": "crates/md-sim-firmware/examples/support/rom_reset_qtest.rs",
+    "sha256": "dda64fc0ccf832c0c2ed2bfd089766d119c52ca79d3f270039611068d7df8a8c"
+  },
+  "finding": "ROM actual mapping tests return no GIC input edges, as separately asserted by the inner ROM suite. Outer count selector omitted ROM and incorrectly applied the TTC case count24.",
+  "review": "Select zero IRQ events for ROM just as for fabric/UART fixtures. All exactROM/protection/bank/anti-alias/reset/transaction/SWAP-state/diagnostic checks stay unchanged. Added test_kind and conditional-verifier applicability prevents unused true booleans from claiming exercised behavior.",
+  "result": "pass-for-integration-and-actual-rerun",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "Focused helper checks",
+    "Re-run same-backend map and privateSWAP tests",
+    "Re-run prior fabric regression",
+    "Retain failed513d outer assessments and independently audit both outcomes"
+  ],
+  "gate_changes": []
+}

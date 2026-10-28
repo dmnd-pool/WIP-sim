@@ -1,0 +1,72 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:44:26.903250+00:00",
+  "component": "513f exact pre-vCPU-start model diagnostics",
+  "stage": {
+    "path": "work/simulator/reviews/zynq-rom-startup-stage-513f.json",
+    "sha256": "82cb8dc32315425df1faf3f2854bc0ff526037cf381587f9a5c1cb218be02b65"
+  },
+  "pinned_sources": {
+    "hw-char-cadence_uart.c": {
+      "path": "work/simulator/boot-dev-513/hw-char-cadence_uart.c",
+      "sha256": "88c4a7bb4cd41619fb954d6eb04ac9e9e561fcd6e10cabdc7609689d29d93878",
+      "size": 18834
+    },
+    "hw-sd-sdhci.c": {
+      "path": "work/simulator/boot-dev-513/hw-sd-sdhci.c",
+      "sha256": "3584935c9c6db46c00f7330db3ed8ca4e55fe1db3d57ce805cae4c9bfe80dd48",
+      "size": 69341
+    },
+    "net-net.c": {
+      "path": "work/simulator/boot-dev-513/net-net.c",
+      "sha256": "db7dc502662f6d8c390aa9227d14814ce2ed57bc791e24f513890589825f7f06",
+      "size": 60133
+    },
+    "system-runstate.c": {
+      "path": "work/simulator/boot-dev-513/system-runstate.c",
+      "sha256": "9b0b8d6b8b5c026a32d69be1201b92d9b69bb324a6c46fc11cafbba8ac08f01f",
+      "size": 34570
+    },
+    "system-trace-events": {
+      "path": "work/simulator/boot-dev-513/system-trace-events",
+      "sha256": "af802a34f14cc0c25c565b24f63585b400b8bbaae7614b072e38985c56765929",
+      "size": 4233
+    },
+    "qapi-run-state.json": {
+      "path": "work/simulator/boot-dev-513/qapi-run-state.json",
+      "sha256": "8610f9e6609e2fb9bbb4ada6a720062583133a5ad1f149d6655a43bf509eff53",
+      "size": 18910
+    }
+  },
+  "inputs": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513f/rom_trace.rs",
+      "sha256": "5c773642d064630f9f8915d18237d6201a4edca1b533f2e115e01f92da68a338",
+      "size": 10168
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513f/s9_rom_reset_probe.rs",
+      "sha256": "cc49f575d2a7e742d5151398afbfe16357f7caaf9ebbedd7dadb18c9c9b29427",
+      "size": 9879
+    }
+  ],
+  "reviewed_behavior": [
+    "Checked exact UART initial chardev callback, SDHCI realization capability-mask diagnostic and two intentionally disconnected NIC diagnostics against pinned source. Their limitations remain recorded, not accepted as physical target behavior.",
+    "Checked vm_state_notify is called before resume_all_vcpus; exact running ordinal9 and event text are pinned. Acceptance closes at that source-defined phase boundary, not first translated instruction.",
+    "Exactly seven terminated startup lines required in exact order/count. Missing/altered/duplicate notices and premature instruction or absent boundary cancel the owned run.",
+    "After boundary, initialization notices remain fatal. Ordinary source-defined mapping trace and instruction translation lines remain allowed; unsupported guest access logs remain fatal.",
+    "Full stream, exact offsets, first diagnostic and recognized prefix retained. Boot/mining/physical-board gates stay false."
+  ],
+  "findings_resolved": [
+    "Root and cleanup found startup_evidence incorrectly counted an unterminated final boundary; fixed with negative regression.",
+    "Root required duplicate ROMmap prefix case without exclusion; test now rejects all duplicate prefix indices, with separate legitimate post-boundary mapping positive."
+  ],
+  "result": "pass-for-focused-checks-and-bounded-rerun",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "Focused tests,strictClippy,format,release",
+    "Stable source/helper identity freeze",
+    "Actual bounded reset diagnostic and independent raw-log/control-flow review"
+  ]
+}

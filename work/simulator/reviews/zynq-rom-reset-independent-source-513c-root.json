@@ -1,0 +1,97 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:02:56.773469+00:00",
+  "component": "513c public ROM reset diagnostic",
+  "stage": {
+    "path": "work/simulator/reviews/zynq-rom-reset-stage-513c.json",
+    "sha256": "e49b091bfc8c3eb84f4d4f82c1137011f4ecdd5818a0955b9a269805fd19b6fd"
+  },
+  "checked_sources": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/s9-rom-reset.patch",
+      "sha256": "980230ce36a4c184cba3c195f9762708351f0f3bf968f9ba755b36b1f0008ef1",
+      "size": 10015
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/ROM-RESET.md",
+      "sha256": "ce2bfee0f979cf82eb9f357766a875f5e5246bc441bba87663d5198a51821b09",
+      "size": 4543
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/build_qemu_backend.rs",
+      "sha256": "f54a22bfee086740d3fa512c1323716317da17ab5a00e146255aa1d03c80d04f",
+      "size": 56329
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/qemu_ttc_reset.rs",
+      "sha256": "88059496b644d9b3de4a739f8eca555629482d02a96a6737bbea058371f8d01f",
+      "size": 22930
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/rom_reset_qtest.rs",
+      "sha256": "dda64fc0ccf832c0c2ed2bfd089766d119c52ca79d3f270039611068d7df8a8c",
+      "size": 5750
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/s9_rom_reset_probe.rs",
+      "sha256": "7840af113f1d4132fc14588fb25a9f953c4f5399debf25126339b9bbeb4dd52e",
+      "size": 7817
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/source-identities.json",
+      "sha256": "b70e68750ebd6f6e2ea7c11d2dada19699478da37cdee89c1e8151f2e4b328e7",
+      "size": 901
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage/rom_trace.rs",
+      "sha256": "5f96b00cf7eb49b493273e66832bf3cfbe090e893a9cd8c66ba0274b0b47998f",
+      "size": 5378
+    }
+  ],
+  "derived_qemu_sources": [
+    {
+      "path": "include/hw/arm/xilinx_zynq.h",
+      "parent_sha256": "293904617a00c991e264e640bd58da0f192d7fbc31bcd4ae62c601a7d68d87b6",
+      "derived_sha256": "fc6bf9d4b15419ab8f643bfeb323ded68f4bf04c7c5a07dd577984412678fd49"
+    },
+    {
+      "path": "hw/arm/xilinx_zynq.c",
+      "parent_sha256": "943b7cf7ac9f2b93b246b0ca4e073c4f442ee43ab4cb10172027056be03bcd21",
+      "derived_sha256": "a52356f72927810157aeca814a9066c3466517fbfbdeb903afe6c5521e34e8c6"
+    },
+    {
+      "path": "hw/misc/zynq_slcr.c",
+      "parent_sha256": "d28d0a65580b353dc3664418cd4656fb567479c260ba7f9017394a4e718c797f",
+      "derived_sha256": "8285286d0338af77a41a35c7c2d1bd28173281b7e58781eafd0b7d541610a66e"
+    },
+    {
+      "path": "hw/arm/trace-events",
+      "parent_sha256": "40f9c13e75844e755b910ea82964a66b30ae17b8df578b7d00cce8d6e65b3bde",
+      "derived_sha256": "f28abcb79a79acaebd3dc5d92638d55dbc73a004b35a934ce7d51880dc6ac277"
+    }
+  ],
+  "checks": [
+    "Checked optional mode validation: two CPUs, BIOS-only entry; direct kernel/initrd/DTB/command-line rejected. Default direct-SPL path stays separate.",
+    "Checked unchanged ROM region, exact128KiB load requirement, four alias backings, atomic remap, RAM_HI range and explicit rejection before OCM_CFG mutation of unsupported private SWAP.",
+    "Checked cached CPU memory-failure policy after realize; only optional ROM CPUs disable ignore-memory-transaction-failures.",
+    "Checked full raw diagnostic observer, bounded buffers/deadline, cancellation on first unexpected message and retained raw offset/hash. Observer/read failures do not become boot passes.",
+    "Checked qtest fullROM comparisons and write rejection; all16 RAM_HI masks, independent per-bank sentinel values, anti-alias write at old low addresses without assuming DDR initial values, two real QMP resets and retained OCM values.",
+    "Checked upstream architectural reset selection and absence of direct stage payload/secondary bootstrap in ROM mode; existing SLCR CPU gate applies actual reset rather than recording boot success.",
+    "Checked builder parent/derived source hashes and no-fuzz patch; exact original ROM/SD/backend identity checks in Rust probe.",
+    "Checked probe always records incomplete boot and fails acceptance; instruction translation logs explicitly do not prove every instruction executed."
+  ],
+  "findings_resolved": [
+    "Root required strict unmapped access diagnostics. Agent disabled the cached per-CPU failure bypass only in ROM mode and added observer cancellation.",
+    "Root required remap anti-alias tests. Agent added explicit writes at old addresses and retained high-bank checks before remap, without assumed DDR defaults.",
+    "Root requested correction of CPU1 parking comment. ROM-mode comment now states its distinct architectural reset path."
+  ],
+  "limits": [
+    "Source review only; build, focused checks, actual qtests and reset diagnostic execution remain required.",
+    "Private SWAP/ROM_SHADOW handoff implementation remains open. Partial/unaligned OCM_CFG reject branches are not claimed as executed.",
+    "Acquired ROM silicon identity is not linked to exact selected S9 revision. This cannot close the original-board gate.",
+    "Existing other support devices remain reference models. Physical timing/power/thermal acceptance remains open."
+  ],
+  "result": "pass-for-integration-and-bounded-diagnostic; no firmware-boot or board acceptance",
+  "unresolved_correctness_findings": []
+}

@@ -599,6 +599,62 @@ fn inner() -> Result<()> {
             "limits":["No reconstructed logic or exact board claim", "Synchronous upstream DMA timing; PCAP calibration open", "Unsupported data stops with a model error", "Migration rejected when strict PCAP is selected"]
         });
     }
+    if success && !pool_x86 {
+        let identities = [
+            (
+                "hw/arm/xilinx_zynq.c",
+                "943b7cf7ac9f2b93b246b0ca4e073c4f442ee43ab4cb10172027056be03bcd21",
+                "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+            ),
+            (
+                "hw/misc/zynq_slcr.c",
+                "d28d0a65580b353dc3664418cd4656fb567479c260ba7f9017394a4e718c797f",
+                "8285286d0338af77a41a35c7c2d1bd28173281b7e58781eafd0b7d541610a66e",
+            ),
+            (
+                "include/hw/arm/xilinx_zynq.h",
+                "293904617a00c991e264e640bd58da0f192d7fbc31bcd4ae62c601a7d68d87b6",
+                "fc6bf9d4b15419ab8f643bfeb323ded68f4bf04c7c5a07dd577984412678fd49",
+            ),
+            (
+                "hw/arm/trace-events",
+                "40f9c13e75844e755b910ea82964a66b30ae17b8df578b7d00cce8d6e65b3bde",
+                "f28abcb79a79acaebd3dc5d92638d55dbc73a004b35a934ce7d51880dc6ac277",
+            ),
+        ];
+        for (member, parent, _) in identities {
+            ensure!(
+                hash_file(&src.join(member))?.sha256 == parent,
+                "ROM reset parent differs: {member}"
+            );
+        }
+        let mut patch = Command::new("/work/toolchain/usr/bin/patch");
+        patch.current_dir(&src).args([
+            "-p1",
+            "--fuzz=0",
+            "--batch",
+            "--forward",
+            "--input=/rom-reset.patch",
+        ]);
+        success = step(&mut report, "rom_reset_patch", patch)?;
+        let mut sources = BTreeMap::new();
+        for (member, _, derived) in identities {
+            let object = hash_file(&src.join(member))?;
+            ensure!(
+                !success || object.sha256 == derived,
+                "ROM reset derived source differs: {member}"
+            );
+            sources.insert(member, object);
+        }
+        report["rom_reset_reference"] = json!({
+            "contract":"md-sim-public-zynq-rom-reset/1",
+            "patch":hash_file(Path::new("/rom-reset.patch"))?,
+            "basis":hash_file(Path::new("/rom-reset-contract.md"))?,
+            "sources":sources,"default_enabled":false,
+            "scope":"Read-only public ROM, architectural CPU reset and internal OCM mapping. No direct stage entry. Private SWAP is rejected.",
+            "limits":["Exact S9 silicon and ROM binding unresolved","Other support devices remain reference models","No physical timing, complete reset-to-firmware, board or mining pass"]
+        });
+    }
     if success {
         if pool_x86 {
             let devices = src.join("configs/devices/x86_64-softmmu/mdsim-pool.mak");
@@ -913,6 +969,14 @@ fn main() -> Result<()> {
         (
             "/cpu-reset.patch",
             repo.join("simulator/backends/qemu/s9-cpu-reset.patch"),
+        ),
+        (
+            "/rom-reset.patch",
+            repo.join("simulator/backends/qemu/s9-rom-reset.patch"),
+        ),
+        (
+            "/rom-reset-contract.md",
+            repo.join("simulator/backends/qemu/ROM-RESET.md"),
         ),
         (
             "/cpu-timers.patch",

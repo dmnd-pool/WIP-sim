@@ -1,0 +1,33 @@
+{
+  "schema": "md-sim-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28",
+  "component": "512-live-child",
+  "stage": {
+    "path": "work/simulator/s9-cosim-512/live-child-stage.json",
+    "sha256": "eacf3e13974e7461b9ebf5313afe3a7c4ef42e1ba81e655a5654936a4d824dbc",
+    "size": 1341
+  },
+  "file": {
+    "stage_path": "work/simulator/s9-cosim-512/live_child.rs",
+    "destination": "crates/md-sim-firmware/examples/support/s9_live_child.rs",
+    "sha256": "d4c5812ace0cd87a5286ecc55e3649ac03a072082a937c00fd757a12a133a230",
+    "size": 30501
+  },
+  "status": "PASS source review; focused and real VPI execution pending",
+  "fixed_finding": "Recheck cancellation/deadline at the completed-receipt acceptance point after pumping and decoding. Retain late frames but fail the operation.",
+  "reviewed_behavior": [
+    "Private Unix duplex fd3; native stdout/stderr remain separate bounded pipes. No host listener.",
+    "Fixed-size partial write/read evidence, literal wire framing, bounded log/frame storage, poll deadlines and cancellation.",
+    "Keep leader PID allocated with waitidWNOWAIT before owned-group kill; reap leader afterward. Avoid killing a reused unrelated PID/group.",
+    "Drain and bound late logs/frames at normal stop; truncated protocol/logs and incomplete EOF fail.",
+    "Error cleanup and Drop cleanup remain bounded; failures retain their reason and cleanup error.",
+    "Real Rust child fixtures test fragmentation/XZ data, malformed/partial messages, deadline/cancel, late output and an owned descendant. They are not firmware/FPGA acceptance."
+  ],
+  "reuse_basis": "Existing runtime private_channel is a length-prefixed Ethernet carrier with different bounds/relay semantics. Reuse Unix/process primitives; do not change that carrier for fixed128-byte command frames.",
+  "scope": "Caller must execute acquired programs only within the existing isolated preparation/private PID environment. This module alone is not hostile-process containment.",
+  "unresolved_findings": [],
+  "cpu_synchronization_gate": false,
+  "original_board_gate": false,
+  "next_action": "Integrate with reviewed512 protocol/C/HDL cohort, run focused real-process tests and actual Icarus cases under the frozen isolated profile."
+}

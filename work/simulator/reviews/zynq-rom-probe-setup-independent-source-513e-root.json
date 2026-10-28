@@ -1,0 +1,74 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T17:30:46.483049+00:00",
+  "component": "513e bounded TCG cache and private SD fixture",
+  "input": {
+    "path": "work/simulator/boot-dev-513/reset-stage-513e/s9_rom_reset_probe.rs",
+    "sha256": "dbe86de0221055fa34f7e86df6ccba881c3779f23c0417d5da061953bd6ad347",
+    "bytes": 9701
+  },
+  "upstream_basis": [
+    {
+      "path": "work/simulator/boot-dev-513/accel-tcg-tcg-all.c",
+      "sha256": "1ee271f6ca533080047a67f49bce57d7f54acb0ba0a0c319f7a199e673ed5388",
+      "bytes": 9214,
+      "reviewed_lines": [
+        [
+          160,
+          170
+        ]
+      ]
+    },
+    {
+      "path": "work/simulator/boot-dev-513/hw-sd-sd.c",
+      "sha256": "057427f10ea5f6ff9fb48f769230cf19b21e9d5f97ad3bf78afbc7f8fa78f657",
+      "bytes": 104879,
+      "reviewed_lines": [
+        [
+          3114,
+          3142
+        ]
+      ]
+    },
+    {
+      "path": "work/simulator/boot-dev-513/tcg-region.c",
+      "sha256": "466f430bb52f1be9224d5339cc36ff6bae2769ca1f85e688ca2dfbacdf6cdc81",
+      "bytes": 27208,
+      "reviewed_lines": [
+        [
+          500,
+          505
+        ],
+        [
+          764,
+          770
+        ]
+      ]
+    }
+  ],
+  "storage_helper": {
+    "path": "crates/md-sim-firmware/examples/support/s9_boot_storage.rs",
+    "sha256": "5d571b67d7ee1fe3ccf826fe020f86d0ee6d651b3dfc5e9f1d73536e2c531540"
+  },
+  "reviewed_behavior": [
+    "Explicit TCG64MiB translation cache replaces machine-dependent default; guest icount and all runtime resource limits unchanged. New argv participates in execution identity.",
+    "Original112197632-byte image remains immutable and hash-checked. Reused confined helper creates new128MiB copy-on-write fixture and verifies actual qcow2 geometry/backing via captured qemu-img.",
+    "Only bytes beyond original whole-image end are zero-extended. No logical BOOT file or FAT chain padding is performed. Capacity remains an explicit reference assumption.",
+    "Runtime captures current Rust helper and exact qemu-img ELF/library closure. Wrapper requires existing namespace confinement, creates overlay there, emits labelled tool metadata then execs captured QEMU.",
+    "ROM, firmware and device logic unchanged. Storage creation marker is a tool observation, not a guest boot line or proof of CPU execution."
+  ],
+  "result": "pass-for-focused-checks-and-actual-rerun",
+  "unresolved_correctness_findings": [],
+  "limits": [
+    "Source review only; actual startup and first executed instructions remain to be tested.",
+    "Selected physical SD identity/capacity and exact complete target remain unresolved.",
+    "Probe boot/mining gates must stay false."
+  ],
+  "required_checks": [
+    "Focused helper tests/strictClippy/release",
+    "Fresh source/driver identity freeze",
+    "Actual same-backend reset diagnostic with complete raw evidence",
+    "Independent audit of first unsupported operation and no hidden zero-read progress"
+  ]
+}

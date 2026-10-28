@@ -1,0 +1,79 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "cleanup_resume",
+  "scope": "Exact513f startup-phase classifier; no acquired code execution during review",
+  "input_pins": [
+    {
+      "path": "work/simulator/reviews/zynq-rom-startup-stage-513f.json",
+      "sha256": "82cb8dc32315425df1faf3f2854bc0ff526037cf381587f9a5c1cb218be02b65",
+      "size": 3715
+    },
+    {
+      "path": "work/simulator/boot-dev-513/hw-char-cadence_uart.c",
+      "sha256": "88c4a7bb4cd41619fb954d6eb04ac9e9e561fcd6e10cabdc7609689d29d93878",
+      "size": 18834
+    },
+    {
+      "path": "work/simulator/boot-dev-513/hw-sd-sdhci.c",
+      "sha256": "3584935c9c6db46c00f7330db3ed8ca4e55fe1db3d57ce805cae4c9bfe80dd48",
+      "size": 69341
+    },
+    {
+      "path": "work/simulator/boot-dev-513/net-net.c",
+      "sha256": "db7dc502662f6d8c390aa9227d14814ce2ed57bc791e24f513890589825f7f06",
+      "size": 60133
+    },
+    {
+      "path": "work/simulator/boot-dev-513/system-runstate.c",
+      "sha256": "9b0b8d6b8b5c026a32d69be1201b92d9b69bb324a6c46fc11cafbba8ac08f01f",
+      "size": 34570
+    },
+    {
+      "path": "work/simulator/boot-dev-513/system-trace-events",
+      "sha256": "af802a34f14cc0c25c565b24f63585b400b8bbaae7614b072e38985c56765929",
+      "size": 4233
+    },
+    {
+      "path": "work/simulator/boot-dev-513/qapi-run-state.json",
+      "sha256": "8610f9e6609e2fb9bbb4ada6a720062583133a5ad1f149d6655a43bf509eff53",
+      "size": 18910
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513f/rom_trace.rs",
+      "sha256": "5c773642d064630f9f8915d18237d6201a4edca1b533f2e115e01f92da68a338",
+      "size": 10168
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513f/s9_rom_reset_probe.rs",
+      "sha256": "cc49f575d2a7e742d5151398afbfe16357f7caaf9ebbedd7dadb18c9c9b29427",
+      "size": 9879
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513e/instruction-trace.log",
+      "sha256": "e18f609055b4f6733f16c3d9362b4c6b1fdbef5181853441400f42d3a237ca79",
+      "size": 280
+    }
+  ],
+  "archive_members_byte_equal": [
+    "hw/char/cadence_uart.c",
+    "hw/sd/sdhci.c",
+    "net/net.c",
+    "qapi/run-state.json",
+    "system/runstate.c",
+    "system/trace-events"
+  ],
+  "checks": [
+    "Exact seven terminated records before phase close: one UART event,two configured SDHCI mask notices,two disconnected GEM notices,ROM map0 and vm_state_notify running1 reason9.",
+    "Exact vm_state_notify emitter is called from vm_prepare_start before vm_start resumes vCPUs; its trace occurs before device callbacks too. This is a source-defined phase boundary, not proof of instruction execution.",
+    "After boundary, initial UART/SDHCI/GEM or repeated boundary messages fail. Guest read/write/unsupported-interface diagnostics remain fatal; legitimate subsequent ROM mapping traces remain separately accepted.",
+    "Caller adds only vm_state_notify trace enable and retained startup metadata. Limits, original ROM bytes, instruction trace range and all false acceptance gates remain.",
+    "No initial-state substitute, inferred hardware ACK or clock change is added. Unsupported configured SDHCI bits and disconnected network remain stated limitations."
+  ],
+  "closed_finding": {
+    "problem": "startup_evidence previously accepted exact final boundary bytes without their newline, unlike watch.",
+    "fix": "split_inclusive plus required newline now agrees with observer; truncated final-record negative added. All seven duplicate prefix cases are also exercised."
+  },
+  "unit_and_actual_execution": "Pending owner checks after integration; source review alone is not a runtime pass.",
+  "open_findings": [],
+  "passed": true
+}

@@ -1,9 +1,9 @@
 {
   "schema": "md-sim-review-progress/1",
   "agent": "cleanup_resume",
-  "updated_at": "2026-10-28T15:53:46.125538+00:00",
+  "updated_at": "2026-10-28T17:03:51.540736+00:00",
   "priority": "S9 first; no new other-miner work or deletion",
-  "status": "Draft live transport review; no implementation or execution pass claimed",
+  "status": "512e selected live programmable-logic component and separate same-helper baseline both pass independent execution review. All four failed live attempts remain failed. No whole-S9 or firmware/mining pass.",
   "sources": [
     "work/simulator/s9-cosim-512/live_protocol.rs",
     "work/simulator/s9-cosim-512/mdsim_live.c"
@@ -29,7 +29,12 @@
       "id": "active-region-blocking-and-ro-order",
       "finding": "cbValueChange calls blocking response transfer. A later RO event flush could be overtaken by completion/next-sequence admission if buffering is added without an explicit drain barrier.",
       "requested_fix": "Bounded FIFO of complete raw event frames with captured sequence/time/four-state bits; emit only at RO; drain before Ready/Complete and before receive_future; overflow fails.",
-      "status": "Sent to owner; pending updated C stage."
+      "status": "Fixed in staged C with4096-entry raw FIFO and explicit drain before Ready/Complete/admission. Actual same-time NBA/X/Z regression staged; execution pending."
+    },
+    {
+      "id": "same-time-clock-input-race",
+      "finding": "Future active Drive callback can race an existing owned clock edge; relative queue order changes with Advance chunking.",
+      "status": "Closed in final source: strictly future RW synchronization after old edge/delta work, before new work and RO completion. Exact live clock code has split/unsplit collision fixture; actual execution pending."
     }
   ],
   "checked_details": [
@@ -38,11 +43,34 @@
     "Future active input application followed by RO completion avoids illegal same-slot writes; current code rejects equal/past times and does not add1ps."
   ],
   "next_actions": [
-    "Review updated event FIFO and HDL wrapper once staged.",
-    "Review source-final Rust deadline/cancel/child ownership and exact binary/C ABI contract.",
-    "Only after source review, execute meaningful isolated delta/NBA/four-state/time/EOF/cancel regressions and then fresh selected-S9 transactions."
+    "Review the next QEMU-to-live-PL boundary when staged, with explicit CPU/IRQ scheduling limits.",
+    "Keep original-board reset/firmware, ASIC work routing, fresh mining and physical timing gates open."
   ],
   "cpu_synchronization_proven": false,
   "firmware_execution_gate": false,
-  "original_board_gate": false
+  "original_board_gate": false,
+  "supervisor": {
+    "stage_manifest": "work/simulator/s9-cosim-512/live-child-stage.json",
+    "independent_root_review": "work/simulator/reviews/live-child-independent-source-512-root.json",
+    "source_sha256": "d4c5812ace0cd87a5286ecc55e3649ac03a072082a937c00fd757a12a133a230",
+    "completion_deadline_cancel_recheck": "Fixed before receipt acceptance. Current source stable.",
+    "isolation_scope": "Existing private PID namespace and isolated preparation required; not standalone hostile-process containment."
+  },
+  "source_review": "work/simulator/reviews/live-pl-independent-source-512.json",
+  "resource_fix": "Separate current-cohort baseline and live invocations preserve both actual compiled programs and existing bounds; remove temporary compiler only after VPI build/hash.",
+  "actual_reviews": [
+    "work/simulator/reviews/maxigp0-baseline-independent-execution-512.json",
+    "work/simulator/reviews/live-vpi-events-independent-execution-512c.json",
+    "work/simulator/reviews/live-clock-independent-execution-512d.json"
+  ],
+  "preserved_failed_attempts": [
+    "512: reserved fixture identifier compile error",
+    "512b: static initializer produced actualReady88 instead of required85",
+    "512c: strict array sensitivity diagnostics",
+    "512d: strict procedural-force bit-select diagnostics"
+  ],
+  "latest_source_fix_review": "work/simulator/reviews/live-input-connection-independent-source-512e.json",
+  "cohort_review": "work/simulator/reviews/live-pl-cohort-independent-512e.json",
+  "final_live_review": "work/simulator/reviews/live-selected-independent-execution-512e.json",
+  "final_baseline_review": "work/simulator/reviews/maxigp0-baseline-independent-execution-512e.json"
 }

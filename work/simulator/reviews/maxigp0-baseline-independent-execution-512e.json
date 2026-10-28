@@ -1,0 +1,165 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "recorded_at": "2026-10-28T17:02:23.756734+00:00",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Current421-source512e cohort, unchanged native selected-logic baseline. Separate from the live-VPI run; no CPU/firmware/board/mining gate.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512e/manifest.json",
+      "sha256": "9bf7b0bdc4c83d02f8980081f576d543b4f489713c850d8114e4f1c9f47e3bc3",
+      "size": 71740
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512e/source-before-build.json",
+      "sha256": "f77b3b270b1e0598ac6075787c4a812d28fb1e4fb914fc88711c0306c8a359a1",
+      "size": 66472
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-driver-512e/source-after-build.json",
+      "sha256": "f77b3b270b1e0598ac6075787c4a812d28fb1e4fb914fc88711c0306c8a359a1",
+      "size": 66472
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-baseline-512e/spec.json",
+      "sha256": "480ceb7c1b5686a7150ddd96f6fb0056f4a2aa46a7598e4a84f91ee44bd6588c",
+      "size": 9203
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-baseline-512e/result.json",
+      "sha256": "55b825d67e2975a36525b70a7fd097e0c30a786c5ac1510562c772b315896ba3",
+      "size": 102997930
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-baseline-512e/hdl-envelope.json",
+      "sha256": "938cec65be23f34b9f1186c359875c33323632996b8a6cd2ebde6163b9b808a7",
+      "size": 51498543
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-baseline-512e/hdl-report.json",
+      "sha256": "549c9871181295f7312a4df8bc458fe20335c47d887623c2c893f0a696d3677b",
+      "size": 575035
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-baseline-512e/selected-vvp.tar.gz",
+      "sha256": "fa10a93780b1c3f3ae31937d710fcfe47bc6879e64a8c1fc495b81418faf9716",
+      "size": 25479379
+    },
+    {
+      "path": "simulator/firmware/s9-hdl-inputs-511d.json",
+      "sha256": "f137f1e433e80074ecb539b8173bd993ce825ca5f1ccfe7f892f90eb0512f25b",
+      "size": 10401
+    }
+  ],
+  "identity": {
+    "frozen_source_copies": 421,
+    "explicit_before_after_equal": true,
+    "frozen_helper": {
+      "path": "work/simulator/qemu-s9/live-driver-512e/s9_hdl_validate",
+      "sha256": "1b386c34d3e0a300a283543c042806e4e47a8767359d537a2b83fef71fc13025",
+      "size": 2569232
+    },
+    "mounts_rehashed": 46,
+    "profile_references_rehashed": 33,
+    "supervisor_tools_rehashed": {
+      "bubblewrap": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "prlimit": {
+        "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+        "size": 27320
+      },
+      "unshare": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      }
+    },
+    "compiled_program": {
+      "sha256": "3a6733a8e480703202c0c5b39d5721f78808f44902e03e064fc240c667036e88",
+      "size": 212935686
+    },
+    "compiled_wrapper": {
+      "sha256": "487ca147fdb023acde4c03d779ee1df15b1e730f73a90a9b63379fc68fd02331",
+      "size": 14250
+    },
+    "archive_members": [
+      "compiled",
+      "compiled/axi-probe.v",
+      "compiled/selected.vvp"
+    ]
+  },
+  "execution": {
+    "exit_code": 0,
+    "wall_milliseconds": 27328,
+    "trace_truncated": false,
+    "stderr_empty": true,
+    "step_stream_hashes_and_truncation_checked": 12,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "observations": {
+    "reads": 48,
+    "writes": 24,
+    "ordered_transactions": 72,
+    "reset_positions_and_times_ps": [
+      [
+        0,
+        1365000
+      ],
+      [
+        60,
+        11885000
+      ]
+    ],
+    "finish_time_ps": 13685000,
+    "per_chain_initial_readback": [
+      {
+        "base": 1136656384,
+        "version": 9441282,
+        "build": 1607092201,
+        "control": 0,
+        "baud": 0
+      },
+      {
+        "base": 1136721920,
+        "version": 9441282,
+        "build": 1607092201,
+        "control": 0,
+        "baud": 0
+      },
+      {
+        "base": 1136787456,
+        "version": 9441282,
+        "build": 1607092201,
+        "control": 0,
+        "baud": 0
+      }
+    ],
+    "complete_ordered_sequence_compared": true,
+    "primitive_assertions": 582,
+    "ram_assertions_each": 510,
+    "ram_traces_equal_502l": true,
+    "wrapper_and_trace_equal_reviewed_511e": true,
+    "compiler_bytes_not_assumed_reproducible": true,
+    "vendor_notice_source_bound_exactly_once_first": true
+  },
+  "source_review": "work/simulator/reviews/live-pl-independent-source-512.json",
+  "parent_component_review": "work/simulator/reviews/maxigp0-independent-execution-511e.json",
+  "unresolved_findings": [],
+  "limits": [
+    "This run has no live VPI transport and cannot pass that separate invocation.",
+    "The vendor PS7 has no behavioral CPU.100MHz is component stimulus.",
+    "Only common register/strobe/reset paths are exercised; ASIC routing and full original board remain open."
+  ],
+  "original_board_gate": false,
+  "firmware_execution_gate": false,
+  "mining_gate": false
+}

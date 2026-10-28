@@ -1,0 +1,2082 @@
+   Compiling md-sim-firmware v0.1.0 (/home/user/src/md-sim/crates/md-sim-firmware)
+    Finished `test` profile [unoptimized] target(s) in 0.37s
+     Running unittests src/main.rs (target/debug/deps/md_sim-6842727139085239)
+
+running 9 tests
+test demo_shared::tests::core_result_must_bind_the_actual_candidate_and_restart_chain ... ok
+test demo_shared::tests::retained_native479_report_streams_and_preserves_failure ... ignored, requires retained native479 evidence; checks parsing, never grants a suite pass
+test demo_shared::tests::native_reader_rejects_links_and_excessive_reports ... ok
+test demo_shared::tests::report_reader_rejects_symlinks_special_files_and_oversized_files ... ok
+test demo_shared::tests::native_evidence_joins_support_identity_and_rejects_changed_execution ... ok
+test demo_shared::tests::fresh_receipt_must_join_the_selected_execution_and_helper ... ok
+test demo_shared::tests::failed_helper_cannot_leave_a_running_group_child_or_use_changed_bytes ... ok
+test demo_shared::tests::failed_and_expired_tools_keep_failure_evidence_and_reap_owned_children ... ok
+test demo_shared::tests::native_reader_streams_large_artifacts_and_rejects_ambiguous_verdicts ... ok
+
+test result: ok. 8 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.57s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_access-f20f9f15a99add19)
+
+running 25 tests
+test browser::tests::malformed_and_oversized_frames_fail_before_allocation ... ok
+test browser::tests::utf8_frames_and_response_identity ... ok
+test carrier::tests::vm_carrier_streams_and_revocation ... ignored, requires a disconnected Linux VM with root, ip, and real socket syscalls
+test remote_carrier::readiness_tests::vm_delayed_nginx_and_failed_listener_lifecycle ... ignored, requires real nginx, OpenSSL, curl and sockets in the isolated VM
+test remote_carrier::readiness_tests::vm_nginx_child_entry ... ignored, owned child entry, executed only by the VM readiness regression
+test gateway::tests::config_paths_reject_variables_and_directives ... ok
+test carrier_inputs::tests::object_token_is_strict_and_canonical ... ok
+test gateway::tests::client_rules_need_real_bounds ... ok
+test carrier::tests::policy_rejects_unbounded_or_unselected_addresses_and_unknown_fields ... ok
+test carrier_inputs::tests::changed_ranges_hex_eof_or_hash_never_publish_and_existing_files_survive ... ok
+test carrier_gateway::tests::publication_requires_the_actual_selected_carrier_without_host_paths ... ok
+test carrier::tests::endpoint_rejects_runtime_binding_imitation_or_changed_origin ... ok
+test carrier::tests::provider_adapter_uses_readonly_monitor_request_and_strict_reply ... ok
+test carrier_gateway::tests::cancelled_start_never_reads_control_or_opens_gateway ... ok
+test carrier::tests::authorization_queries_transports_and_rejects_changed_or_closed_owners ... ok
+test carrier::tests::selection_requires_exact_locked_policy_bytes_and_support_input ... ok
+test remote_carrier::tests::publication_rejects_changed_run_endpoint_browser_or_success_claim ... ok
+test carrier_gateway::tests::atomic_ready_record_binds_exact_endpoint_bytes_and_rejects_overclaims ... ok
+test carrier::tests::provider_config_cannot_substitute_process_or_support ... ok
+test remote_carrier::tests::completed_leader_retains_group_identity_until_descendant_cleanup ... ok
+test browser::tests::slow_partial_frame_cannot_extend_absolute_deadline ... ok
+test remote_carrier::tests::owned_service_limits_retained_output_before_it_is_read ... ok
+test credentials::tests::blocked_and_noisy_helpers_are_bounded ... ok
+test carrier_inputs::tests::actual_worker_get_publishes_exact_multi_chunk_bytes_and_checks_eof ... ok
+test gateway::tests::real_certificate_preflight_checks_ip_and_size_limits ... ok
+
+test result: ok. 22 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running unittests src/main.rs (target/debug/deps/md_sim_access-63708d6c860a81a7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_catalog-8fd9847545150fe8)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/catalog.rs (target/debug/deps/catalog-ebf93523b94e24f0)
+
+running 15 tests
+test migration_never_promotes_a_legacy_validation_claim ... ok
+test hardware_fields_have_types_and_addresses_have_unique_identities ... ok
+test zero_reset_address_is_valid_but_zero_chip_count_is_unknown ... ok
+test resume_changes_with_every_required_execution_setting ... ok
+test duplicate_ids_cannot_be_published ... ok
+test archive_link_cannot_escape_frozen_storage_roots ... ok
+test payload_checks_read_the_bytes_and_never_accept_lfs_pointers ... ok
+test registry_freeze_does_not_make_target_catalogue_identity_circular ... ok
+test missing_implementation_is_blocked_not_incompatible ... ok
+test nonexistent_evidence_and_duplicate_components_cannot_resolve ... ok
+test stale_constraint_review_and_wrong_mode_are_rejected ... ok
+test source_adapter_requires_real_entry_and_explicit_adaptation ... ok
+test cartesian_rule_accounts_for_pairs_without_candidate_evidence ... ok
+test snapshot_preserves_bytes_and_rejects_tampering ... ok
+test all_inventory_and_all_artifact_aliases_remain_accounted ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/catalog_audit.rs (target/debug/examples/catalog_audit-0749f795907b5a70)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_coordinator-fc91cbab2c6aaebc)
+
+running 19 tests
+test remote_trace::tests::final_output_matches_retained_prefix_and_rejects_changed_or_linked_files ... ok
+test ssh_transport::tests::captured_output_is_bounded ... ok
+test ssh_transport::tests::reconnect_never_repeats_mutations_or_protocol_errors_and_is_bounded ... ok
+test ssh_transport::tests::remote_paths_cannot_inject_shell_syntax ... ok
+test ssh_transport::tests::remote_service_preserves_literals_and_rejects_shell_expansion ... ok
+test ssh_transport::tests::replies_reject_truncation_multiple_messages_and_protocol_errors ... ok
+test executor::connected_transport_tests::complete_worker_errors_preserve_independent_requests_on_both_transports ... ok
+test remote_trace::tests::live_protocol_rejects_wrong_run_stream_range_and_budget_without_empty_polls ... ok
+test executor::connected_transport_tests::successful_channels_preserve_sequential_requests ... ok
+test ssh_transport::stream::tests::session_limit_is_observed_before_another_request_is_written ... ok
+test ssh_transport::tests::interrupted_readonly_queries_reconnect_once_with_identical_identity_bytes ... ok
+test ssh_transport::stream::tests::multiple_replies_and_oversized_replies_are_rejected ... ok
+test ssh_transport::tests::owned_service_closes_stdin_and_enforces_file_and_cpu_limits ... ok
+test ssh_transport::stream::tests::one_child_handles_multiple_frames_and_keeps_deadlines ... ok
+test ssh_transport::tests::exchange_deadline_cleans_up_descendant_that_keeps_a_pipe_open ... ok
+test ssh_transport::tests::exchange_delivers_real_bytes_and_bounds_blocked_or_noisy_children ... ok
+test executor::connected_transport_tests::malformed_error_responses_close_both_transports_without_retry ... ok
+test executor::connected_transport_tests::connected_timeout_rejects_late_reply_and_retry ... ok
+test executor::connected_transport_tests::private_timeout_rejects_late_reply_and_retry ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.05s
+
+     Running unittests src/bin/md-sim-remote.rs (target/debug/deps/md_sim_remote-6328ab22de88810c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/md-sim-worker-ipc.rs (target/debug/deps/md_sim_worker_ipc-933730935f8eace8)
+
+running 6 tests
+test carrier::tests::completed_provider_report_never_overwrites_previous_evidence ... ok
+test tests::inherited_control_descriptor_is_cloexec_and_files_are_refused ... ok
+test carrier::tests::provider_requires_its_captured_peer_and_a_finite_lifetime ... ok
+test carrier::tests::provider_lease_requires_the_full_locked_process_and_policy_membership ... ok
+test carrier::tests::actual_provider_thread_panic_is_retained_before_root_release ... ok
+test carrier::tests::an_actual_relay_timeout_is_retained_and_fails_the_provider ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.02s
+
+     Running unittests src/bin/md-sim-worker-relay.rs (target/debug/deps/md_sim_worker_relay-729f00dad8af7c4d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/queue_behavior.rs (target/debug/deps/queue_behavior-b1b93a7f0dc370e3)
+
+running 13 tests
+test cancellation_stops_actual_local_and_worker_processes ... ok
+test external_retention_requires_exact_ack_and_recovers_over_a_fresh_worker_channel ... ok
+test exhausted_queue_budget_rejects_before_creating_a_new_attempt ... ok
+test interrupted_attempt_before_lock_is_retained_then_reexecuted ... ok
+test local_executor_retains_output_before_the_process_stops ... ok
+test local_resume_requires_unchanged_retained_evidence ... ok
+test nonexistent_gate_evidence_and_excessive_export_cannot_pass ... ok
+test unsupported_worker_is_rejected_before_transfer_or_execution ... ok
+test proc_view_uses_the_executing_process_pid_namespace ... ok
+test worker_live_output_is_visible_and_checked_before_cleanup ... ok
+test changed_policy_and_limits_have_different_locked_identity ... ok
+test lost_real_worker_replies_recover_tokens_cleanup_and_partial_history ... ok
+test a_private_worker_executes_transfers_reuses_and_cleans_actual_results has been running for over 60 seconds
+test a_private_worker_executes_transfers_reuses_and_cleans_actual_results ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 65.92s
+
+     Running tests/worker_carrier.rs (target/debug/deps/worker_carrier-44b70d2431702159)
+
+running 2 tests
+test isolated_challenge_guest ... ignored, isolated executable entry; invoked by actual_worker_cli_carrier
+test actual_worker_cli_carrier ... ok
+
+test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 25.31s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_firmware-70f6f4f921e868a4)
+
+running 83 tests
+test bitmain_s2::tests::modbus_check_vector ... ok
+test bitmain_s2::tests::filter_is_not_replaced_by_pool_target ... ok
+test bitmain_s2::tests::partial_crc_and_unknown_packets ... ok
+test bitstream::tests::malformed_fields_truncation_and_extra_bytes_are_rejected ... ok
+test bm1397::core_readback::tests::reply_requires_matching_address_and_pending_core0_read ... ok
+test bm1397::core_control::tests::initialization_word_and_unknown_modes_remain_distinct ... ok
+test bm1397::core_readback::tests::retained_vendor_vectors_preserve_raw_fields_and_reserved_bits ... ok
+test bm1397::identify::programmed_tests::capability_is_explicit_and_real_frames_change_only_programmed_state ... ok
+test bm1397::filter::tests::low_rate_deadlines_include_fixed_bits_and_pool_intersection ... ok
+test bm1397::identify::programmed_tests::addressed_and_broadcast_writes_keep_each_chip_and_unknown_field_distinct ... ok
+test bm1397::identify::programmed_tests::invalid_controls_and_ambiguous_addresses_do_not_partially_update ... ok
+test bm1397::identify::programmed_tests::reset_and_power_loss_remove_knowledge_without_creating_reset_values ... ok
+test bm1397::identify::programmed_tests::uart_words_use_selected_banks_without_acknowledgement_or_readback ... ok
+test bm1397::identify::tests::clock_order_storage_is_per_chip_and_reset_does_not_invent_clock_lock ... ok
+test bitstream::tests::tagged_header_preserves_metadata_and_payload_boundaries ... ok
+test bm1397::identify::programmed_tests::original_divider_frame_and_all_low_bytes_preserve_silent_programmed_state ... ok
+test bm1397::identify::tests::ordered_clock_enable_readback_is_per_chip_and_clears_on_power_loss_or_reset ... ok
+test bm1397::identify::tests::reassignment_power_loss_and_invalid_controls_do_not_hide_aliases ... ok
+test bm1397::programmed::tests::invalid_divisors_remain_errors_and_status_bits_do_not_gate_arithmetic ... ok
+test bm1397::reference::tests::default_chain_retains_counter_and_job_failures ... ok
+test bm1397::reference::tests::one_chip_consumer_accepts_every_nonce_address_field ... ok
+test bm1397::reply::tests::wire_endianness_type_and_midstate_selection_match_archived_drivers ... ok
+test bm1397::tests::decodes_actual_archived_firmware_uart_query ... ok
+test bm1397::uart_control::tests::original_driver_words_preserve_exact_requested_ratios ... ok
+test bm1397::tests::rejects_each_single_bit_error_and_noncanonical_checksum ... ok
+test bitmain_s2::tests::upstream_captured_packets_preserve_queue_and_clean_transition ... ok
+test bitstream::tests::gzip_checksum_limits_and_single_member_are_enforced ... ok
+test bm1397::reference::tests::fixed_genesis_solution_uses_actual_hash_and_real_reply_without_filter_override ... ok
+test bm1397::reference::tests::bounded_replacement_reset_and_address_changes_do_not_credit_work ... ok
+test bm1397::identify::tests::ticket_writes_drive_readback_and_filter_and_reset ... ok
+test bm1397::identify::tests::identification_obeys_power_reset_and_actual_query_without_unknown_registers ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test bm1397::reference::tests::actual_datapath_faults_drop_computed_solutions_and_reset_the_event_epoch ... ok
+test bm1397::uart_control::tests::split_divider_and_selector_are_distinct_from_unrelated_bits ... ok
+test bm1397::uart_control::tests::unknown_clock_and_pll_source_never_get_a_fallback_rate ... ok
+test bm1397::filter::tests::programmed_ticket_bits_and_fixed_filter_are_both_required ... ok
+test bm1397::tests::stream_handles_fragments_noise_recovery_and_reset ... ok
+test esp32s3_adc_calibration::tests::adjacent_seven_bit_fields_do_not_overlap ... ok
+test bm1397::reference::tests::filter_misses_invalid_commands_and_no_work_do_not_become_fault_events ... ok
+test bm1397::identify::programmed_tests::decoded_software_dividers_join_original_arithmetic_results ... ok
+test esp32s3_adc_calibration::tests::invalid_sample_and_selection_are_not_clamped ... ok
+test esp32s3_adc_calibration::tests::missing_version_and_wrong_sizes_are_errors ... ok
+test esp32s3_adc_calibration::tests::independent_endpoint_points_include_the_cross_block_field ... ok
+test esp32s3_adc_calibration::tests::original_unsigned_product_wrap_is_preserved ... ok
+test esp32s3_uart::tests::actual040_words_keep_both_fractional_baud_requests ... ok
+test bm1397::reference::tests::one_chip_four_midstate_range_really_exhausts_at_word_boundary ... ok
+test esp32s3_uart::tests::source_predivider_extremes_and_raw_requests_are_independent ... ok
+test esp32s3_uart::tests::unknown_sources_and_unsupported_encodings_have_no_fallback_rate ... ok
+test lab::tests::isolated_elf_inspection_works_with_more_host_processes_than_parser_limit ... ignored, requires Linux user/network/mount/PID namespaces, bwrap and readelf
+test execution_suite::tests::malformed_recipe_is_an_error_not_a_panic ... ok
+test lab::tests::reject_unrelated_host_interpreters_before_reading ... ok
+test serial_console::tests::completion_requires_a_full_guest_output_line_and_keeps_failure_status ... ok
+test s9_telemetry::tests::equal_samples_are_pending_but_reboot_regression_and_invalid_values_fail ... ok
+test s9_dashboard_state::tests::restart_plan_rejects_missing_state_and_changes_to_other_fields ... ok
+test schedule::tests::lower_caps_reduce_default_difficulty_and_budget_uses_both_targets ... ok
+test serial_console::tests::normal_init_prompt_must_arrive_in_full_after_activation ... ok
+test prepare::tests::member_provenance_checks_parent_bytes_and_absent_new_files ... ok
+test closure_bundle::tests::closure_identity_and_output_boundary_are_enforced ... ok
+test bm1397::identify::tests::chain_positions_receive_distinct_addresses_including_zero ... ok
+test serial_console::tests::service_wait_rejects_an_unexpected_serial_close ... ok
+test bm1397::tests::scheduled_regression_work_preserves_programmed_filter_and_response_bytes ... ok
+test serial_console::tests::reboot_requires_a_prompt_after_the_actual_kernel_reset_line ... ok
+test execution_suite::tests::clean_job_replay_preserves_stale_and_duplicate_verdicts ... ok
+test bm1397::reference::tests::programmed_filter_is_read_back_and_all_actual_hashes_feed_the_ledger ... ok
+test serial_console::tests::spawn_callback_runs_before_console_failure_and_not_after_spawn_failure ... ok
+unit fixture
+reboot: Restarting system
+remaining bytes
+test bm1387::filter::tests::override_keeps_every_programmed_ticket_bit_and_has_exact_probability ... ok
+unit fixture
+reboot: Restarting system
+test serial_console::tests::emulator_accounting_reaps_only_the_owned_child_and_retains_its_status ... ok
+unit fixture
+reboot: Restarting system
+unit fixture refused shutdown
+unit fixture without restart
+test serial_console::tests::native_restart_request_uses_normal_guest_shutdown_and_requires_exit ... ok
+test bitstream::series7::tilegrid::tests::aliases_require_unique_destinations_before_feature_matching ... ok
+reboot: Restarting system
+reboot: Restarting system
+test bitstream::series7::tilegrid::tests::last_two_words_fit_without_requiring_a_logic_database ... ok
+test bm1397::core_control::tests::every_retained_vendor_execution_word_has_the_independent_fields ... ok
+reboot: Restarting system
+test esp32s3_adc_calibration::tests::all_samples_at_minimum_and_maximum_trim_return_without_overflow ... ok
+test serial_console::tests::shell_parses_completion_before_executing_any_script_command ... ok
+test bitstream::series7::tilegrid::tests::word_sharing_is_preserved_but_physical_sites_and_locations_are_unique ... ok
+test bm1397::programmed::tests::every_retained_original_arithmetic_result_matches ... ok
+test serial_console::tests::interruption_requires_owned_signal_exit_and_preserves_pending_serial ... ok
+test bitstream::series7::tilegrid::tests::identity_duplicates_and_wrong_part_ranges_fail ... ok
+test serial_console::tests::service_wait_drains_output_larger_than_the_transport_buffer ... ok
+test serial_console::tests::serial_frame_preserves_quoted_control_bytes_and_long_scripts ... ok
+test bm1397::reply::tests::crc_rejects_every_single_bit_error_and_noncanonical_flags ... ok
+test bm1397::tests::transmitted_midstates_match_independent_complete_header_hashes ... ok
+reboot: Restarting system
+test serial_console::tests::restart_exit_requires_real_successful_exit_marker_and_request ... ok
+
+test result: ok. 82 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 4.02s
+
+     Running unittests src/bin/cgminer-coordinator.rs (target/debug/deps/cgminer_coordinator-1df520fc93c62837)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-fresh-work.rs (target/debug/deps/cgminer_fresh_work-ca4329fefd94989f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cgminer-lab.rs (target/debug/deps/cgminer_lab-0349ade2678ee253)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/axi_gpio.rs (target/debug/deps/axi_gpio-33307015544e8f1d)
+
+running 3 tests
+test absent_channel_interrupts_and_reserved_registers_cannot_change_pins ... ok
+test output_pins_use_wdata_even_with_zero_strobe_and_read_back_zero ... ok
+test settled_input_pins_ignore_output_writes_and_survive_peripheral_reset ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/bm1387_chain.rs (target/debug/deps/bm1387_chain-7d2ec283d825cfba)
+
+running 6 tests
+test profile_and_control_bounds_do_not_silently_change_topology ... ok
+test explicit_sensor_wiring_routes_only_its_selected_chip_and_bus ... ok
+test unsupported_states_are_errors_and_invalid_writes_are_atomic ... ok
+test programmed_filters_and_serial_rates_have_consistent_readback ... ok
+test powered_chain_retains_all_63_addresses_and_resets_real_state ... ok
+test stream_decoder_accepts_all_archived_commands_and_recovers_after_bad_packets ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/bm1387_i2c.rs (target/debug/deps/bm1387_i2c-b8f93e3515c51237)
+
+running 6 tests
+test actual_register_protocol_preserves_address_data_and_busy_deadlines ... ok
+test external_input_plan_continues_during_power_loss_and_rejects_late_replacement ... ok
+test reset_aborts_pending_write_but_preserves_external_sensor_until_power_loss ... ok
+test late_poll_does_not_lose_transient_faults_or_reorder_bus_completion ... ok
+test timed_temperature_edges_reach_real_registers_and_replay_after_timeline_reset ... ok
+test unknown_nack_and_busy_overwrite_fail_without_fabricated_data ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/bm1387_mining.rs (target/debug/deps/bm1387_mining-f5ec138c19fec379)
+
+running 6 tests
+test adapted_filter_keeps_ticket_write_and_readback_after_reset ... ok
+test missing_maps_and_unknown_register_state_do_not_enable_mining ... ok
+test serial_work_bytes_drive_hashes_and_replacement_preserves_clock_and_reset_rules ... ok
+test chains_compute_fresh_work_with_one_weighted_budget_and_cancel_on_reset ... ok
+test reference_core_startup_opens_every_core_without_a_success_shortcut ... ok
+test explicit_filter_adaptation_returns_computed_fresh_results_through_serial ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/bm1387_nonce.rs (target/debug/deps/bm1387_nonce-4db684f33f55fbd9)
+
+running 5 tests
+test invalid_or_overlapping_topologies_cannot_create_a_search_space ... ok
+test non_consecutive_core_maps_keep_per_chip_holes ... ok
+test vendor_reference_map_matches_counted_core_indices ... ok
+test explicit_uniform_fixture_keeps_each_chip_core_and_missing_ranges_distinct ... ok
+test complete_one_core_space_has_no_duplicates_and_respects_archived_owner_bits ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+     Running tests/bm1387_packets.rs (target/debug/deps/bm1387_packets-e959b9c0f4e67220)
+
+running 5 tests
+test ticket_bits_nonce_routing_and_malformed_work_keep_exact_constraints ... ok
+test register_replies_match_literal_hdl_responses_and_independent_crc_oracle ... ok
+test fixed_work_engine_results_are_computed_filtered_and_decoded_as_fpga_words ... ok
+test command_opcodes_and_values_match_all_archived_transmit_vectors ... ok
+test independent_full_header_hashes_match_one_two_and_four_wire_midstates ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.32s
+
+     Running tests/bm1387_search.rs (target/debug/deps/bm1387_search-bbccf94fc8253000)
+
+running 3 tests
+test invalid_ranges_and_work_cannot_start_and_idle_poll_does_not_hash ... ok
+test fixed_regression_computes_a_real_filtered_wire_response ... ok
+test fresh_headers_use_owned_nonces_and_share_one_aggregate_rate_budget ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/bm1387_wire.rs (target/debug/deps/bm1387_wire-b6eed78a6835174f)
+
+running 4 tests
+test model_failure_retains_the_actual_last_receive_byte_and_stop_time ... ok
+test checksum_rejection_and_reply_resource_limits_cannot_emit_success ... ok
+test power_loss_cancels_replies_and_partial_commands_and_restores_baud ... ok
+test broadcast_identifies_63_chips_through_actual_timed_serial_bits ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/configuration_port.rs (target/debug/deps/configuration_port-b79e5b06f906fd7a)
+
+running 5 tests
+test damaged_reference_image_cannot_be_authorized ... ok
+test bus_rejection_preserves_partial_evidence_and_latches_until_reset ... ok
+test programming_reset_discards_prior_words_and_requires_new_enable ... ok
+test complete_image_and_sync_suffix_have_exact_dma_identity_across_chunk_sizes ... ok
+test missing_changed_unaligned_and_extra_data_never_complete ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+     Running tests/fan_controller.rs (target/debug/deps/fan_controller-ca8516169d6a311f)
+
+running 7 tests
+test independent_duties_unwired_tach_stall_and_power_loss ... ok
+test register_widths_and_unsupported_values_do_not_fabricate_feedback ... ok
+test invalid_motor_topology_and_parameters_are_rejected ... ok
+test reset_clears_registers_but_does_not_reset_physical_motion ... ok
+test late_timer_keeps_elapsed_motion_and_measurement_phase ... ok
+test tach_counts_integrated_revolutions_and_elapsed_measurement_windows ... ok
+test sampling_is_invariant_under_irregular_backend_scheduling ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fan_input_plan.rs (target/debug/deps/fan_input_plan-fc54af0e87f92881)
+
+running 3 tests
+test scheduled_power_coasts_and_stall_stops_after_the_previous_sample ... ok
+test invalid_or_late_plans_cannot_replace_valid_pending_inputs ... ok
+test input_timing_survives_late_callbacks_irregular_steps_and_controller_reset ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pic16_controller.rs (target/debug/deps/pic16_controller-a7e643846f79a059)
+
+running 10 tests
+test documented_parser_flush_and_non_rematching_prefix ... ok
+test invalid_ranges_commands_and_overflow_do_not_change_flash ... ok
+test interrupted_flash_changes_do_not_commit_and_committed_cells_persist ... ok
+test heartbeat_expiry_cuts_power_and_keeps_the_application_available ... ok
+test interrupted_application_prefix_consumes_data_without_an_i2c_reply ... ok
+test power_off_pauses_heartbeat_time_without_forgiving_elapsed_power_on_time ... ok
+test exact_application_enable_branch_accepts_every_nonzero_byte ... ok
+test received_heartbeat_while_disabled_resets_only_the_paused_counter ... ok
+test exact_archived_program_identity_and_strict_format ... ok
+test full_program_update_and_bad_image_rejection_use_archived_bytes ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_axi.rs (target/debug/deps/s9io_axi-143e8610933b346c)
+
+running 6 tests
+test archived_pending_response_defects_remain_visible ... ok
+test registered_handshakes_byte_strobes_aliases_and_reset_match_wrapper ... ok
+test simultaneous_control_write_wins_over_acknowledgement_and_error_clear ... ok
+test concurrent_fifo_read_and_write_obey_preclock_fullness_and_clear_priority ... ok
+test write_address_and_data_must_be_valid_together ... ok
+test serial_reply_reaches_synchronous_axi_read_output_and_irq ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_crc.rs (target/debug/deps/s9io_crc-ed4f4d807971f5f1)
+
+running 3 tests
+test synchronous_clear_does_not_reset_busy_state_but_ip_reset_does ... ok
+test response_engine_uses_type_initialization_and_modified_polynomial ... ok
+test clocked_crc_outputs_match_literal_archived_transmit_vectors ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_device.rs (target/debug/deps/s9io_device-949da5bad25af412)
+
+running 3 tests
+test independent_uart_and_packet_errors_survive_fifo_clear_but_reset_clears_them ... ok
+test all_archived_transmit_vectors_cross_registers_crc_fifo_and_serial_pins ... ok
+test archived_receive_vectors_cross_serial_pins_crc_irq_and_register_reads ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.84s
+
+     Running tests/s9io_idle.rs (target/debug/deps/s9io_idle-14e4084438387ddb)
+
+running 13 tests
+test enabled_empty_controller_can_advance_a_guest_sleep ... ok
+test pending_bus_channels_and_low_serial_input_cannot_be_skipped ... ok
+test long_empty_timer_periods_preserve_wrap_and_reload_phase ... ok
+test full_u64_spans_preserve_disabled_timer_and_uart_phase ... ok
+test full_u64_empty_spans_preserve_ack_uart_and_command_phase ... ok
+test incomplete_work_keeps_phase_across_u64_spans_and_obeys_reset_and_mode_changes ... ok
+test active_serial_skips_preserve_bad_stops_breaks_and_recovery ... ok
+test serial_packets_queued_commands_and_live_irqs_survive_idle_advancement ... ok
+test incomplete_command_waits_without_clock_polling_then_sends_the_archived_packet ... ok
+test timer_baud_and_enabled_transitions_match_every_clock ... ok
+test incomplete_work_keeps_words_and_timer_phase_until_the_last_word_arrives ... ok
+test empty_check_phase_survives_timer_changes_and_pending_resets ... ok
+test full_uart_fifo_stalls_keep_every_work_and_command_byte_and_timer_phase ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.19s
+
+     Running tests/s9io_packets.rs (target/debug/deps/s9io_packets-19f544bafebaa2e8)
+
+running 4 tests
+test invalid_lengths_and_real_hardware_flag_behavior_are_explicit ... ok
+test corrupted_stream_resynchronizes_with_the_recorded_error_counts ... ok
+test transmit_bytes_match_archived_hdl_testbench ... ok
+test receive_bytes_and_extended_ids_match_archived_hdl_testbench ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_receive.rs (target/debug/deps/s9io_receive-21459da9af9dd9e4)
+
+running 6 tests
+test crc_error_clock_clear_priority_and_sliding_recovery_follow_source ... ok
+test disable_and_fifo_clear_preserve_current_clock_outputs ... ok
+test receive_fifo_interrupts_follow_clocked_checksum_and_two_word_completion ... ok
+test concurrent_cpu_read_uses_old_fifo_data_and_irq_write_priority ... ok
+test extended_id_uses_transmit_state_at_second_write_after_checksum ... ok
+test receive_fifo_capacity_and_hdl_cross_fifo_backpressure_are_preserved ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_reference.rs (target/debug/deps/s9io_reference-bb460a2e4287bfa8)
+
+running 3 tests
+test reference_clock_break_and_reset_are_distinct_from_legacy ... ok
+test unimplemented_bm139x_mode_cannot_run_as_bm1387 ... ok
+test actual_command_bytes_and_unsupported_disable_are_observable ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_registers.rs (target/debug/deps/s9io_registers-bfeebfed05f0e22b)
+
+running 5 tests
+test receive_read_strobes_clear_irq_and_empty_reads_retain_last_output ... ok
+test register_map_retains_hdl_version_conflict_and_byte_strobes ... ok
+test fifo_strobes_zero_unselected_lanes_and_full_writes_are_dropped ... ok
+test reset_requests_wait_for_sync_and_preserve_irq_enable ... ok
+test errors_clear_once_and_last_id_is_from_transmitted_work ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_transmit.rs (target/debug/deps/s9io_transmit-a51c8734029810cd)
+
+running 9 tests
+test command_bytes_wait_for_eight_checksum_shift_clocks ... ok
+test fifo_capacity_threshold_wrap_and_enable_reset_match_hdl ... ok
+test two_midstates_use_twenty_words_and_an_independent_checksum ... ok
+test work_timer_runs_while_disabled_wraps_at24_bits_and_waits_for_uart_sync ... ok
+test id_changes_at_its_wire_byte_and_unknown_command_length_is_visible ... ok
+test complete_work_has_priority_then_one_command_without_another_sync ... ok
+test partial_command_stalls_until_its_next_word_and_reset_waits_for_sync ... ok
+test transmitted_ids_feed_real_receive_fifo_extension_vectors ... ok
+test hdl_transmit_vectors_survive_independent_uart_and_crc_stalls ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9io_uart.rs (target/debug/deps/s9io_uart-edc45e1e5bb75720)
+
+running 5 tests
+test glitches_bad_stop_fifo_clear_and_ip_reset_have_distinct_effects ... ok
+test fifo_clear_keeps_inflight_bits_and_baud_change_waits_for_drain ... ok
+test receive_fullness_precedes_same_clock_read_and_sets_sticky_overrun ... ok
+test transmitter_emits_exact_bit_periods_without_hash_clock_scaling ... ok
+test receiver_samples_external_8n1_waveforms_for_all_byte_values ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests/serial8n1_wire.rs (target/debug/deps/serial8n1_wire-568d996162b4a252)
+
+running 6 tests
+test false_start_break_reset_rate_change_and_queue_bounds_are_real_state ... ok
+test invalid_sizes_and_time_overflow_do_not_queue_bytes ... ok
+test incompatible_or_corrupt_wire_state_cannot_schedule_events ... ok
+test receiver_decodes_all_bytes_at_both_bm1387_rates_and_arbitrary_phase ... ok
+test saved_partial_frames_and_queues_replay_full_duplex_without_new_edges ... ok
+test transmitter_matches_independent_bit_waveform_without_polling_drift ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/series7.rs (target/debug/deps/series7-f6d1fa6053f6ed34)
+
+running 5 tests
+test crc_domains_include_register_addresses_and_reset_after_a_check ... ok
+test unsupported_encryption_and_crc_discard_are_explicit_failures ... ok
+test data_and_startup_crc_checks_cannot_be_omitted ... ok
+test truncated_overlong_and_unsupported_packets_cannot_silently_end_inspection ... ok
+test damaged_frame_register_and_crc_values_are_rejected ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/series7_features.rs (target/debug/deps/series7_features-7c1de3a4be5b8719)
+
+running 4 tests
+test malformed_or_ambiguous_tables_are_rejected_before_matching ... ok
+test alias_subtracts_word_offset_translates_sites_and_filters_entire_rules ... ok
+test positive_negated_and_default_rules_preserve_unmatched_bits_and_missing_tables ... ok
+test geometry_ecc_part_identity_and_configuration_are_rechecked ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/series7_frames.rs (target/debug/deps/series7_frames-65157c0b88e5f792)
+
+running 6 tests
+test row_transitions_sort_before_the_half_and_block_transition ... ok
+test numeric_column_order_and_every_payload_word_are_accounted_for ... ok
+test invalid_geometry_unknown_fields_and_duplicate_keys_are_rejected ... ok
+test published_part_counts_and_address_boundaries_are_preserved ... ok
+test valid_crc_cannot_hide_nonzero_missing_or_excess_padding_or_partial_data ... ok
+test ecc_bit_labels_cross_reserved_ranges_and_exclude_the_stored_code ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/series7_tilegrid.rs (target/debug/deps/series7_tilegrid-8c7726650e6820d4)
+
+running 2 tests
+test mapping_rechecks_configuration_and_exact_part_identity ... ok
+test fixed_checked_frames_map_exact_words_and_keep_alias_and_overlap_explicit ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tmp421.rs (target/debug/deps/tmp421-7244835a5d6af70b)
+
+running 8 tests
+test adjacent_high_low_reads_are_coherent_across_conversion ... ok
+test channel_enable_rate_and_resistance_correction_change_real_deadlines ... ok
+test independent_temperature_vectors_cover_negative_fraction_and_n_factor ... ok
+test faults_are_sampled_by_conversions_and_reset_clears_state ... ok
+test invalid_operations_do_not_succeed_or_change_configuration ... ok
+test shutdown_finishes_sequence_and_one_shot_returns_to_shutdown ... ok
+test advance_chunking_preserves_registers_and_deadlines ... ok
+test reset_values_sequential_conversions_and_range_change ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/adc_calibration_vectors.rs (target/debug/examples/adc_calibration_vectors-7bc9d5713acbce80)
+
+running 5 tests
+test tests::function_selection_requires_exact_unique_marker ... ok
+test bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test tests::substituted_c_with_self_consistent_hash_is_rejected ... ok
+test bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+test tests::malformed_oracle_words_are_rejected ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/adc_reference_oracle.rs (target/debug/examples/adc_reference_oracle-54c2285615a58232)
+
+running 5 tests
+test bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test tests::compiler_recipe_retains_freestanding_traps_and_fixed_entry_paths ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/aggregate_limits_check.rs (target/debug/examples/aggregate_limits_check-91bbf87dd477eb7e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/aggregate_limits_report.rs (target/debug/examples/aggregate_limits_report-16278682c5988e3c)
+
+running 1 test
+test tests::reject_changed_assessment_errors_and_invalid_budget ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/browser_group_check.rs (target/debug/examples/browser_group_check-955f31f60304dbc2)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/browser_probe.rs (target/debug/examples/browser_probe-a365a379224e99bf)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/browser_profile_check.rs (target/debug/examples/browser_profile_check-69e3ecb862be344d)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/browser_report.rs (target/debug/examples/browser_report-bbe9253ad933d04a)
+
+running 1 test
+test tests::rejects_omitted_origin_changed_replayed_or_cookie_leaking_requests ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/browser_source_inspect.rs (target/debug/examples/browser_source_inspect-2a3a12151e1094af)
+
+running 1 test
+test tests::exact_stored_member_and_changed_inputs ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_cvc_tool.rs (target/debug/examples/build_cvc_tool-fd416befc3996ae2)
+
+running 7 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tests::compiler_warnings_and_wrong_negative_are_rejected ... ok
+test tests::smoke_requires_exact_once_and_no_runtime_error ... ok
+test tests::parsed_manifest_is_bound_to_its_exact_bytes ... ok
+test tests::changed_snapshot_root_is_rejected ... ok
+test tests::modified_input_is_rejected ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_esp_qemu_backend.rs (target/debug/examples/build_esp_qemu_backend-ae79f93ab1ab4463)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_iverilog_tool.rs (target/debug/examples/build_iverilog_tool-59282d705e630881)
+
+running 6 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tests::missing_or_divergent_build_compiler_is_rejected_before_execution ... ok
+test tests::rejects_changed_source_before_execution ... ok
+test tests::input_recheck_rejects_changed_bytes ... ok
+test tests::selected_snapshot_cannot_drift_behind_unchanged_manifest ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_qemu_backend.rs (target/debug/examples/build_qemu_backend-dbba874f5e03f1aa)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/build_qemu_tool.rs (target/debug/examples/build_qemu_tool-ee0d050af85b4f08)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/capture_browser.rs (target/debug/examples/capture_browser-e8b5763496591428)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/checkpoint_qemu_core.rs (target/debug/examples/checkpoint_qemu_core-348f1e186fa9c62b)
+
+running 1 test
+test tests::library_comes_from_cargo_for_the_exact_source_not_the_default_directory ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/esp32_backend_qtest.rs (target/debug/examples/esp32_backend_qtest-623851f063d61748)
+
+running 5 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test runtime_diagnostic_tests::runtime_assertions_and_warnings_do_not_pass_clean_exit ... ok
+test esp_uart_qtest::tests::trace_checker_rejects_missing_overflow_and_reset_budget_renewal ... ok
+test esp_uart_qtest::tests::trace_checker_rejects_wrong_device_clock_value_and_missing_reset ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/esp32_original_probe.rs (target/debug/examples/esp32_original_probe-28b9c5eae4a77a81)
+
+running 12 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test probe_model::tests::configuration_is_strict_bounded_and_excludes_the_observer ... ok
+test write_intent::tests::default_stays_strict_and_observer_sends_no_ack_or_register_state ... ok
+test stderr_tail::tests::fragments_emit_only_complete_lines_and_final_bytes_exactly_once ... ok
+test write_intent::tests::power_reset_and_next_unsupported_boundary_remain_strict ... ok
+test uart_trace::tests::malformed_missing_duplicate_and_reordered_observations_fail ... ok
+test stderr_tail::tests::truncated_file_and_input_bounds_fail_without_a_fabricated_newline ... ok
+test write_intent::tests::one_shot_does_not_expand_to_other_words_addresses_or_repeats ... ok
+test uart_trace::tests::literal_register_observations_keep_raw_bits_and_isolate_devices ... ok
+test stderr_tail::tests::non_utf8_and_buffer_split_lines_remain_exact_bytes ... ok
+test uart_trace::tests::overflow_is_explicit_incomplete_and_reset_cannot_renew_sequence ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/esp32_uart_requests.rs (target/debug/examples/esp32_uart_requests-6ca878fdbe6c19f4)
+
+running 5 tests
+test uart_trace::tests::literal_register_observations_keep_raw_bits_and_isolate_devices ... ok
+test bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+test uart_trace::tests::malformed_missing_duplicate_and_reordered_observations_fail ... ok
+test uart_trace::tests::overflow_is_explicit_incomplete_and_reset_cannot_renew_sequence ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/freeze_cgminer_toolchain.rs (target/debug/examples/freeze_cgminer_toolchain-234c3fb60d134b51)
+
+running 4 tests
+test tests::evidence_limit_retains_partial_diagnostics ... ok
+test tests::package_paths_reject_other_roots_and_traversal ... ok
+test tests::replay_rejects_usr_root_symlink_even_with_consistent_manifest ... ok
+test tests::replay_verification_rejects_changed_missing_and_extra_inputs ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/inspect_s9_spl.rs (target/debug/examples/inspect_s9_spl-7d3565d1b29f645b)
+
+running 8 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test contract::tests::retained_selected_tables_and_parent_identity ... ignored, read-only exact retained input check; set MD_SIM_SPL_BUNDLE to the directory containing boot.bin and spl-payload.bin
+test contract::tests::poll_is_any_bit_with_a_read_count_budget_not_elapsed_time ... ok
+test contract::tests::exact_clock_table_from_independent_binary_range ... ok
+test contract::tests::timer_wrap_and_fixed_point_rounding_preserve_instruction_order ... ok
+test contract::tests::malformed_unknown_unterminated_and_truncated_tables_fail ... ok
+test contract::tests::source_and_instruction_changes_are_rejected_before_semantic_claims ... ok
+
+test result: ok. 7 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/isolated_network_vm.rs (target/debug/examples/isolated_network_vm-c77f37cbc548e24b)
+
+running 11 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test payload::tests::expanded_support_image_keeps_its_declared_byte_bound ... ok
+test trace_port::tests::explicit_kernel_options_reject_duplicates_and_near_matches ... ok
+test trace_port::tests::kernel_message_is_one_complete_write_and_partial_records_fail ... ok
+test tests::evidence_requires_ordered_unique_markers_and_real_tcp_fields ... ok
+test payload::tests::rejects_duplicate_paths_escapes_and_unresolved_links ... ok
+test payload::tests::base_alias_requires_identical_terminal_bytes_and_mode ... ok
+test payload::tests::newc_is_read_by_independent_isolated_cpio ... ok
+test trace_port::tests::verifier_rejects_corruption_missing_noise_and_cross_channel_records ... ok
+test tests::two_stream_export_checks_framing_crc_and_complete_gzip ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.29s
+
+     Running unittests examples/native_browser_check.rs (target/debug/examples/native_browser_check-c91fb8f892fa29bb)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/node_prerequisite_probe.rs (target/debug/examples/node_prerequisite_probe-38a4a4eeb9809d93)
+
+running 10 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tests::candidate_contract_keeps_original_and_source_fixture_evidence_distinct ... ok
+test tests::explicit_shared_arguments_preserve_default_and_offline_modes ... ok
+test tests::shared_node_replay_requires_explicit_provenance_mode ... ok
+test tests::restart_requires_exact_tip_in_distinct_ordered_phase ... ok
+test tests::bounded_copy_rejects_growth_symlink_and_existing_destination ... ok
+test tests::each_phase_requires_its_own_clean_stop ... ok
+test tests::shared_link_rejects_changed_pool_and_outer_identity ... ok
+test tests::complete_submission_evidence_can_exceed_one_mib_but_remains_bounded ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests examples/original_zynq_probe.rs (target/debug/examples/original_zynq_probe-ae49dc5726f42a22)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/pic16_static_listing.rs (target/debug/examples/pic16_static_listing-08484b8ca16708e7)
+
+running 1 test
+test tests::datasheet_examples_and_signed_branch_edges ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/process_vm.rs (target/debug/examples/process_vm-ee8b1d2caf28c840)
+
+running 2 tests
+test tests::complete_transport_retains_failed_execution_and_exact_output ... ok
+test tests::recovery_rejects_missing_reordered_duplicate_and_conflicting_evidence ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/qemu_s9_backend.rs (target/debug/examples/qemu_s9_backend-1491232de22e27d2)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/qemu_socket_link_probe.rs (target/debug/examples/qemu_socket_link_probe-009fc1f98ee76d3b)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/qemu_ttc_reset.rs (target/debug/examples/qemu_ttc_reset-7a93af1cbb2cbf90)
+
+running 3 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test rom_reset_qtest::tests::unexpected_diagnostics_do_not_pass ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/reclaim_qemu_inputs.rs (target/debug/examples/reclaim_qemu_inputs-ba50a33ea136cce2)
+
+running 33 tests
+test browser::tests::real_cli_plan_reclaim_and_restore ... ignored, explicit frozen release binary: MD_SIM_BROWSER_RECLAIM_TOOL
+test t17::tests::actual_cli_reclaims_only_pinned_duplicates_and_preserves_failed_evidence ... ignored, explicit real cleanup CLI scratch-store mutation and copy restoration
+test t17::tests::archived_t17_oracle_evidence_is_complete ... ignored, explicit read-only validation of the retained 272/274/446/447 oracle evidence
+test hdl::tests::rejects_prelaunch_other_cohort_and_alias_shapes ... ok
+test hdl::tests::rejects_nonterminal_and_changed_verdict ... ok
+test hdl::tests::rejects_wrong_executable_and_source_roles ... ok
+test t17::tests::exact_path_and_mode_scope_excludes_other_finished_runs ... ok
+test tests::actual_cli_preserves_evidence_and_unique_inputs_and_restores_the_duplicate ... ignored, requires MD_SIM_RECLAIM_EXECUTABLE pointing to the separately built example
+test hdl::tests::active_store_and_pending_transfers_are_rejected ... ok
+test hdl::tests::retained_journal_restores_bytes_and_changed_restore_prevents_removal ... ok
+test hdl::tests::rejects_malformed_changed_and_pending_store_policy ... ok
+test tests::component_cleanup_requires_exact_three_digit_direct_run_names ... ok
+test tests::original_browser_evidence_requires_the_exact_local_run_path ... ok
+test tests::failed_preparation_cannot_authorize_cleanup_of_a_started_or_successful_run ... ok
+test browser::tests::rejects_active_store_and_incomplete_transfer_before_mutation ... ok
+test tests::journal_identity_prevents_deleting_two_identically_substituted_copies ... ok
+test tests::only_explicit_build_and_run_store_paths_are_eligible ... ok
+test tests::active_component_store_lock_and_post_lock_changed_evidence_are_rejected ... ok
+test tests::component_paths_and_evidence_reject_links_fifos_and_oversize ... ok
+test tests::component_identity_checks_reject_substituted_result_specification_and_log ... ok
+test t17::tests::tar_aliases_traversal_links_extra_members_and_hidden_trailers_are_rejected ... ok
+test tests::exact_terminal_failures_qualify_but_active_or_partial_runs_do_not ... ok
+test browser::tests::rejects_malformed_or_pending_store_policy ... ok
+test browser::tests::rejects_changed_identity_unsafe_paths_and_nonterminal_run ... ok
+test browser::tests::rejects_corrupt_or_aliased_restore_and_output_collisions ... ok
+test t17::tests::changed_after_locked_evidence_and_pinned_journal_copy_are_rejected ... ok
+test t17::tests::historical_name_alone_cannot_omit_an_adjacent_archive_member ... ok
+test t17::tests::evidence_and_directory_links_fifos_and_growth_are_rejected ... ok
+test t17::tests::regular_and_sparse_evidence_and_legacy_packing_remain_distinct ... ok
+test t17::tests::changed_files_or_substituted_process_and_mode_fail_closed ... ok
+test browser::tests::superseded_preparation_keeps_unexecuted_status_without_a_run_result ... ok
+test browser::tests::plan_reclaim_restore_preserves_unique_objects_and_failed_verdict ... ok
+test browser::tests::large_ignored_fields_are_hashed_and_invalid_trailers_are_rejected ... ok
+
+test result: ok. 29 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.54s
+
+     Running unittests examples/remote_namespace_check.rs (target/debug/examples/remote_namespace_check-9acb38a7d636e97c)
+
+running 115 tests
+test board::tests::executor_scope_cannot_be_relabelled_or_inferred_from_a_result_name ... ok
+test board_browser::readiness::tests::cancelled_expired_or_failed_preparation_never_releases_dispatch ... ok
+test board::tests::progress_waits_for_a_complete_selected_run_record ... ok
+test board_browser::tests::live_diagnostic_preserves_failure_and_phase_without_exporting_browser_payloads ... ok
+test board_browser_target::tests::responses_require_the_selected_path_and_published_run ... ok
+test board_browser_target::tests::native_clock_interval_rejects_skew_missing_data_and_overflow ... ok
+test board_dashboard::tests::partial_success_header_is_not_readiness_or_a_permanent_http_failure ... ok
+test board_browser::readiness::tests::partial_or_duplicate_records_cannot_release_dispatch ... ok
+test board_dashboard::tests::readiness_observations_cover_the_selected_long_boot_budget ... ok
+test board_browser_target::tests::selected_clock_is_derived_from_locked_process_and_rejects_conflicts ... ok
+test board_dashboard_probe::luci::tests::damaged_image_needs_rejection_without_install_confirmation ... ok
+test board_dashboard_probe::tests::missing_configuration_is_not_an_unset_value ... ok
+test board_dashboard_probe::luci::tests::form_token_requires_native_routes_and_one_session ... ok
+test board_dashboard_probe::maintenance::tests::control_errors_do_not_count_as_success ... ok
+test board_dashboard_probe::tests::native_response_assessment_rejects_errors_and_static_or_reset_telemetry ... ok
+test browser_startup_tests::actual_selected_client_starts_two_fresh_profiles ... ignored, requires captured Firefox, production helper and private Linux VM
+test browser_startup_tests::selected_startup_role ... ignored, guest-only child entry of the actual selected-client startup fixture
+test board::tests::retained_results_require_exact_uncompressed_bytes_and_bounded_expansion ... ok
+test board::tests::export_preserves_worker_bytes_including_json_layout ... ok
+test carrier_dashboard::startup_tests::actual_supervisor_starts_real_uid1000_service ... ignored, requires captured production helper and root in the isolated test VM
+test board_dashboard_probe::tests::readiness_never_retries_http_errors_or_service_operations ... ok
+test board_browser::readiness::tests::readiness_rejects_wrong_identity_reused_sessions_and_existing_state ... ok
+test board_dashboard_probe::maintenance::tests::progress_requires_correlated_submissions_and_distinct_announced_jobs ... ok
+test channel_artifacts::tests::existing_files_and_links_are_preserved ... ok
+test browser::tests::payload_cannot_be_substituted_after_capture ... ok
+test channel_artifacts::tests::independent_gzip_and_sha256_fixture_imports_exact_bytes ... ok
+test channel_artifacts::tests::content_hash_and_declared_extents_are_required ... ok
+test channel_artifacts::tests::export_limits_apply_during_compression_and_empty_files_work ... ok
+test carrier_dashboard::tests::terminal_refresh_requires_the_actual_selected_terminal_replies ... ok
+test carrier_dashboard::tests::control_reader_rejects_links_fifo_growth_and_wrong_owner ... ok
+test board_dashboard_probe::luci::tests::backup_requires_real_archive_and_active_configuration ... ok
+test channel_artifacts::tests::trailing_bytes_and_extra_members_are_rejected ... ok
+test execution_report::external_pool::tests::shared_success_rejects_failed_or_truncated_outer_execution ... ok
+test board_browser_target::tests::selected_browser_rejects_changed_execution_binding_and_publication ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test carrier_artifacts::tests::snapshot_retains_exact_bytes_and_rejects_links_and_devices ... ok
+test channel_artifacts::tests::unknown_wire_fields_are_rejected ... ok
+test browser::tests::subprocess_report_requires_exact_driver_endpoint_and_one_record ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test execution_report::pcap_audit::tests::ignored_repeated_and_overriding_device_options_fail ... ok
+test device_transport::tests::constructor_rejects_a_regular_file_without_changing_it ... ok
+test browser::tests::dashboard_requires_real_change_completed_poll_and_selected_origin ... ok
+test execution_report::pcap_audit::tests::retained_reference_survives_store_cleanup_and_rejects_substitution ... ok
+test execution_report::tests::report_retains_original_result_layout_and_rejects_changed_execution ... ok
+test input_inventory_tests::actual_isolated_inventory_regression ... ignored, run explicitly to retain the actual isolated process and input identities
+test dashboard_transport_report::tests::reconnect_evidence_rejects_other_run_completed_logs_and_no_channel_recovery ... ok
+test execution_report::external_pool::tests::historical_retention_identity_rejects_rebound_pool_bundle ... ok
+test channel_artifacts::tests::truncated_malformed_and_bad_crc_inputs_do_not_publish ... ok
+test execution_report::pcap_audit::tests::missing_false_early_reordered_and_corrupt_records_cannot_pass ... ok
+test input_inventory_tests::isolated_inventory_guest ... ignored, entry point executed by the real isolated regression
+test device_transport::tests::complete_worker_error_preserves_a_later_independent_request ... ok
+test input_inventory_tests::strict_revisit_rejects_a_previously_allowed_browser_symlink ... ok
+test execution_report::pcap_audit::tests::source_mode_controls_address_extent_and_is_reported ... ok
+test channel_artifacts::tests::binary_roundtrip_preserves_known_digest_and_source ... ok
+test native::tests::native_uptime_and_active_pid_checks_use_observed_values ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test native::tests::backend_and_selected_manifest_use_their_actual_serialization ... ok
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test native::tests::rpc_verifier_binds_raw_http_bytes_and_rejects_reordered_evidence ... ok
+test device_transport::tests::sequential_successes_use_the_same_real_character_channel ... ok
+test pool_service::tests::artifact_open_rejects_symlink_and_fifo_without_a_writer ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test pool_service::tests::retained_log_reader_has_independent_offset_and_inode ... ok
+test pool_vm::tests::browser_wait_requires_its_selected_service_result ... ok
+test pool_service::tests::broker_control_read_checks_owner_links_mode_size_and_file_type ... ok
+test pool_vm::tests::qemu_shutdown_alone_does_not_establish_guest_success ... ok
+test pool_vm::tests::support_startup_budget_is_explicit_bounded_and_separate_from_browser ... ok
+test pool_service::tests::cancel_publication_replaces_symlink_without_changing_its_target ... ok
+test pool_vm::tests::storage_checkpoint_wait_requires_this_native_http_result ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test dashboard_transport_report::tests::artifact_recovery_requires_actual_lost_reply_saved_offset_and_destination_identity ... ok
+test pool_vm::tests::storage_wait_keeps_all_sessions_and_rejects_a_later_success_after_failure ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test pool_vm::wall_clock::tests::clock_epoch_is_explicit_utc_and_bounded_by_original_userspace ... ok
+test pool_vm::tests::update_wait_requires_native_validation_and_cancellation ... ok
+test prepared_vm_image::tests::retained_browser_preparation_selects_exact_combined_image_without_boot ... ignored, read-only retained preparation regression; set MD_SIM_PREPARED_BROWSER_RUN to the completed run directory
+test pool_vm::tests::install_wait_cannot_accept_cancel_or_incomplete_commit_evidence ... ok
+test pool_vm::wall_clock::tests::delayed_dispatch_uses_the_execution_clock_and_keeps_source_explicit ... ok
+test shared_manifest::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test pool_vm::tests::damaged_update_requires_its_exact_input_and_native_rejection ... ok
+test native::restart::tests::restart_requires_changed_live_pid_and_retains_bounded_transient_failure ... ok
+test shared_manifest::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test report_tests::reconnect_report_needs_actual_bounded_recovery_and_worker_identity ... ok
+test report_tests::gateway_policy_evidence_rejects_missing_duplicate_and_different_headers ... ok
+test shared_manifest::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test report_tests::changed_outer_evidence_and_oversized_records_are_rejected ... ok
+test shared_progress::tests::progress_access_report_is_bounded_and_omits_response_data ... ok
+test shared_progress::tests::progress_reads_actual_complete_events_and_existing_result_bytes ... ok
+test shared_retention::tests::access_paths_reject_escape_and_secret_material ... ok
+test shared_retention::tests::actual_channel_accepts_only_the_complete_joined_identity ... ok
+test shared_retention::tests::extra_oversized_and_partial_frames_are_rejected ... ok
+test shared_retention::tests::access_ack_binds_the_additional_bundle_and_never_accepts_missing_identity ... ok
+test shared_progress::tests::progress_nonregular_and_oversized_inputs_do_not_block_or_become_events ... ok
+test execution_report::external_pool::tests::historical_pool_bytes_reject_changed_digest_or_retained_trace ... ok
+test prepared_vm_image::tests::captured_browser_driver_and_payload_require_exact_single_mounts ... ok
+test prepared_vm_image::tests::absent_browser_request_rejects_payload_and_captured_browser_inputs ... ok
+test shared_manifest::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+test prepared_vm_image::tests::prepared_image_kernel_root_and_selected_bytes_must_agree ... ok
+test carrier_artifacts::tests::empty_directory_fanout_counts_toward_the_snapshot_bound ... ok
+test prepared_vm_image::tests::retained_payload_is_portable_but_manifest_and_report_substitution_fails ... ok
+test prepared_vm_image::tests::original_request_outer_flag_and_prepared_mode_cannot_be_substituted ... ok
+test boot_storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+test prepared_vm_image::tests::selected_store_bytes_include_the_second_archive_only_for_browser_request ... ok
+test board_browser_target::tests::carrier_browser_requires_full_original_identity_and_actual_publication_contract ... ok
+test channel_artifacts::tests::fifo_export_rejects_without_waiting_for_writer ... ok
+test board_browser_target::tests::retained_browser_pass_requires_both_origins_and_actual_observations ... ok
+test input_inventory_tests::browser_inventory_then_strict_shared_input_preserves_both_policies ... ok
+test input_inventory_tests::basic_inventory_retains_1024_unique_entry_limit ... ok
+test channel_artifacts::tests::a_small_compressed_stream_cannot_exceed_the_declared_extent ... ok
+test browser::tests::complete_browser_observation_joins_are_checked ... ok
+test input_inventory_tests::browser_inventory_retains_8192_unique_entry_limit ... ok
+test device_transport::tests::malformed_error_responses_close_the_owned_descriptor ... ok
+test shared_retention::tests::silent_actual_peer_hits_the_declared_frame_deadline ... ok
+test device_transport::tests::timeout_closes_channel_and_cannot_consume_a_late_reply ... ok
+
+test result: ok. 107 passed; 0 failed; 8 ignored; 0 measured; 0 filtered out; finished in 5.05s
+
+     Running unittests examples/remote_transport_check.rs (target/debug/examples/remote_transport_check-b23959003b21c7d0)
+
+running 4 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test dashboard_transport_report::tests::reconnect_evidence_rejects_other_run_completed_logs_and_no_channel_recovery ... ok
+test dashboard_transport_report::tests::artifact_recovery_requires_actual_lost_reply_saved_offset_and_destination_identity ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_asic_audit.rs (target/debug/examples/s9_asic_audit-37a064638705998c)
+
+running 61 tests
+test channel_artifacts::tests::unknown_wire_fields_are_rejected ... ok
+test channel_artifacts::tests::trailing_bytes_and_extra_members_are_rejected ... ok
+test channel_artifacts::tests::existing_files_and_links_are_preserved ... ok
+test hash_audit::tests::aggregate_grant_oracle_rejects_bursts_gaps_duplicates_and_missing_clock_evidence ... ok
+test channel_artifacts::tests::content_hash_and_declared_extents_are_required ... ok
+test channel_artifacts::tests::export_limits_apply_during_compression_and_empty_files_work ... ok
+test external_pool::tests::historical_retention_identity_rejects_rebound_pool_bundle ... ok
+test channel_artifacts::tests::independent_gzip_and_sha256_fixture_imports_exact_bytes ... ok
+test hash_audit::tests::rate_audit_checks_executed_cap_and_all_chain_computations ... ok
+test external_pool::tests::shared_success_rejects_failed_or_truncated_outer_execution ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test channel_artifacts::tests::truncated_malformed_and_bad_crc_inputs_do_not_publish ... ok
+test channel_artifacts::tests::binary_roundtrip_preserves_known_digest_and_source ... ok
+test prepared_vm_image::tests::retained_browser_preparation_selects_exact_combined_image_without_boot ... ignored, read-only retained preparation regression; set MD_SIM_PREPARED_BROWSER_RUN to the completed run directory
+test pool_work_audit::tests::pool_rejection_is_evidence_but_not_negotiation_success ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test shared_manifest::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test shared_manifest::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test shared_retention::tests::access_paths_reject_escape_and_secret_material ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test submission_audit::tests::high_session_ids_require_the_new_frozen_budget ... ok
+test shared_retention::tests::extra_oversized_and_partial_frames_are_rejected ... ok
+test shared_retention::tests::access_ack_binds_the_additional_bundle_and_never_accepts_missing_identity ... ok
+test shared_retention::tests::actual_channel_accepts_only_the_complete_joined_identity ... ok
+test submission_audit::tests::crc_long_division_rejects_each_single_bit_error ... ok
+test temperature_audit::fan_fault::tests::fan_fault_plan_and_applied_edges_cannot_silently_change ... ok
+test submission_audit::tests::session_selection_never_changes_a_failed_or_missing_requested_connection ... ok
+test temperature_audit::power_trace::tests::producer_must_precede_and_match_every_consumer_edge ... ok
+test temperature_audit::sensor_fault::tests::fault_flags_cannot_be_treated_as_valid_temperature ... ok
+test temperature_audit::sensor_fault::tests::recovery_markers_require_bounded_time_and_one_process ... ok
+test temperature_audit::tests::captured_fault_flags_invalidate_the_paired_temperature ... ok
+test temperature_audit::tests::completed_sensor_write_requires_exact_data_and_elapsed_bus_time ... ok
+test temperature_audit::sensor_fault::tests::recovery_logs_must_follow_restart_and_belong_to_the_new_process ... ok
+test temperature_audit::fan_fault::tests::range_change_keeps_the_actual_prior_conversion_until_next_completion ... ok
+test temperature_audit::fan_fault::tests::range_change_cannot_hide_faults_wrong_inputs_or_stale_values ... ok
+test submission_audit::tests::serial_reply_requires_prior_matching_computation_and_surviving_reset_state ... ok
+test shared_manifest::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test temperature_audit::tests::repeated_controller_readback_is_one_sensor_transaction ... ok
+test temperature_audit::tests::shutdown_needs_changed_sensor_power_cut_and_actual_recovery ... ok
+test temperature_audit::tests::captured_sensor_reply_requires_a_guest_query_and_the_selected_range ... ok
+test temperature_audit::fan_audit::tests::both_native_commands_and_settled_motion_are_required ... ok
+test temperature_audit::fan_audit::tests::fixture_checks_executed_option_and_motor_parameters ... ok
+test external_pool::tests::historical_pool_bytes_reject_changed_digest_or_retained_trace ... ok
+test prepared_vm_image::tests::absent_browser_request_rejects_payload_and_captured_browser_inputs ... ok
+test shared_manifest::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+test prepared_vm_image::tests::captured_browser_driver_and_payload_require_exact_single_mounts ... ok
+test temperature_audit::sensor_fault::tests::manual_recovery_requires_each_native_error_fault_read_and_power_cycle ... ok
+test prepared_vm_image::tests::prepared_image_kernel_root_and_selected_bytes_must_agree ... ok
+test prepared_vm_image::tests::retained_payload_is_portable_but_manifest_and_report_substitution_fails ... ok
+test prepared_vm_image::tests::original_request_outer_flag_and_prepared_mode_cannot_be_substituted ... ok
+test submission_audit::tests::replay_checks_real_rejection_and_detects_forged_or_incomplete_evidence ... ok
+test prepared_vm_image::tests::selected_store_bytes_include_the_second_archive_only_for_browser_request ... ok
+test channel_artifacts::tests::fifo_export_rejects_without_waiting_for_writer ... ok
+test hash_audit::tests::verifier_checks_fresh_full_headers_and_rejects_a_forged_filter_success ... ok
+test channel_artifacts::tests::a_small_compressed_stream_cannot_exceed_the_declared_extent ... ok
+test pool_work_audit::tests::fresh_prefix_search_requires_the_whole_state_and_all_bounds ... ok
+test pool_work_audit::tests::long_job_history_keeps_every_computed_state_and_checks_its_indices ... ok
+test shared_retention::tests::silent_actual_peer_hits_the_declared_frame_deadline ... ok
+
+test result: ok. 58 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 1.00s
+
+     Running unittests examples/s9_backend_boot.rs (target/debug/examples/s9_backend_boot-52b34c73ded45c43)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_backend_qtest.rs (target/debug/examples/s9_backend_qtest-f0e13c3b42c3e904)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_bitstream_probe.rs (target/debug/examples/s9_bitstream_probe-6176faf66b675c11)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_boot_bundle.rs (target/debug/examples/s9_boot_bundle-142675001009f4b1)
+
+running 70 tests
+test channel_artifacts::tests::unknown_wire_fields_are_rejected ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test execution_report::external_pool::tests::shared_success_rejects_failed_or_truncated_outer_execution ... ok
+test carrier_dashboard::tests::selected_policy_cannot_change_target_source_support_or_wall_budget ... ok
+test channel_artifacts::tests::existing_files_and_links_are_preserved ... ok
+test channel_artifacts::tests::content_hash_and_declared_extents_are_required ... ok
+test channel_artifacts::tests::truncated_malformed_and_bad_crc_inputs_do_not_publish ... ok
+test channel_artifacts::tests::independent_gzip_and_sha256_fixture_imports_exact_bytes ... ok
+test execution_report::pcap_audit::tests::ignored_repeated_and_overriding_device_options_fail ... ok
+test channel_artifacts::tests::trailing_bytes_and_extra_members_are_rejected ... ok
+test execution_report::pcap_audit::tests::source_mode_controls_address_extent_and_is_reported ... ok
+test execution_report::external_pool::tests::historical_retention_identity_rejects_rebound_pool_bundle ... ok
+test execution_report::pcap_audit::tests::retained_reference_survives_store_cleanup_and_rejects_substitution ... ok
+test execution_report::pcap_audit::tests::missing_false_early_reordered_and_corrupt_records_cannot_pass ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test fan_plan::tests::freeze_bytes_without_accepting_unknown_wires_or_reordered_inputs ... ok
+test channel_artifacts::tests::binary_roundtrip_preserves_known_digest_and_source ... ok
+test execution_report::tests::report_retains_original_result_layout_and_rejects_changed_execution ... ok
+test monitor_adaptation::tests::changed_or_missing_source_cannot_be_adapted ... ok
+test channel_artifacts::tests::export_limits_apply_during_compression_and_empty_files_work ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test pool_vm::tests::qemu_shutdown_alone_does_not_establish_guest_success ... ok
+test pool_vm::tests::browser_wait_requires_its_selected_service_result ... ok
+test pool_vm::tests::support_startup_budget_is_explicit_bounded_and_separate_from_browser ... ok
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test pool_vm::wall_clock::tests::clock_epoch_is_explicit_utc_and_bounded_by_original_userspace ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test prepared_vm_image::tests::retained_browser_preparation_selects_exact_combined_image_without_boot ... ignored, read-only retained preparation regression; set MD_SIM_PREPARED_BROWSER_RUN to the completed run directory
+test pool_vm::wall_clock::tests::delayed_dispatch_uses_the_execution_clock_and_keeps_source_explicit ... ok
+test private_pool::tests::boot_allowance_does_not_extend_a_session_work_deadline ... ok
+test pool_vm::tests::storage_wait_keeps_all_sessions_and_rejects_a_later_success_after_failure ... ok
+test private_pool::tests::frozen_pool_input_records_and_checks_both_difficulty_changes ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test shared_pool::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test shared_pool::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test private_pool::tests::primary_selection_preserves_first_authorized_failure_and_rejects_duplicate_ids ... ok
+test pool_vm::tests::update_wait_requires_native_validation_and_cancellation ... ok
+test pool_vm::tests::install_wait_cannot_accept_cancel_or_incomplete_commit_evidence ... ok
+test private_pool::explicit_window_stays_within_the_existing_process_profile ... ok
+test shared_retention::tests::access_paths_reject_escape_and_secret_material ... ok
+test pool_vm::tests::storage_checkpoint_wait_requires_this_native_http_result ... ok
+test shared_retention::tests::extra_oversized_and_partial_frames_are_rejected ... ok
+test shared_retention::tests::actual_channel_accepts_only_the_complete_joined_identity ... ok
+test tests::crc_matches_standard_reference ... ok
+test shared_pool::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test shared_retention::tests::access_ack_binds_the_additional_bundle_and_never_accepts_missing_identity ... ok
+test tests::mbr_rejects_bounds_overlap_and_bad_signature ... ok
+test tests::cross_image_manifest_and_false_stage_metadata_are_rejected ... ok
+test tests::shared_dashboard_cannot_be_requested_without_the_selected_carrier ... ok
+test tests::host_clock_adaptation_requires_the_shared_runner ... ok
+test temperature_plan::tests::input_bytes_and_order_are_pinned_before_backend_selection ... ok
+test pool_vm::tests::damaged_update_requires_its_exact_input_and_native_rejection ... ok
+test tests::shared_pool_requires_explicit_preparation_and_excludes_embedded_pool ... ok
+test execution_report::external_pool::tests::historical_pool_bytes_reject_changed_digest_or_retained_trace ... ok
+test prepared_vm_image::tests::captured_browser_driver_and_payload_require_exact_single_mounts ... ok
+test prepared_vm_image::tests::absent_browser_request_rejects_payload_and_captured_browser_inputs ... ok
+test shared_pool::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+test prepared_vm_image::tests::prepared_image_kernel_root_and_selected_bytes_must_agree ... ok
+test prepared_vm_image::tests::retained_payload_is_portable_but_manifest_and_report_substitution_fails ... ok
+test prepared_vm_image::tests::original_request_outer_flag_and_prepared_mode_cannot_be_substituted ... ok
+test private_pool::tests::connection_slots_are_unique_and_bounded ... ok
+test prepared_vm_image::tests::selected_store_bytes_include_the_second_archive_only_for_browser_request ... ok
+test boot_storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+test channel_artifacts::tests::fifo_export_rejects_without_waiting_for_writer ... ok
+test channel_artifacts::tests::a_small_compressed_stream_cannot_exceed_the_declared_extent ... ok
+test private_pool::tests::waiting_keeps_the_pool_open_and_rejects_an_empty_collection ... ok
+test shared_retention::tests::silent_actual_peer_hits_the_declared_frame_deadline ... ok
+test tests::browser_startup_does_not_extend_miner_wall_budget ... ok
+
+test result: ok. 67 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 30.01s
+
+     Running unittests examples/s9_boot_storage_cycle.rs (target/debug/examples/s9_boot_storage_cycle-caad5c3f36435b1f)
+
+running 1 test
+test tests::observations_require_actual_ordered_output_and_three_boots ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_bootrom_oracle.rs (target/debug/examples/s9_bootrom_oracle-2a68ff3b0e53683b)
+
+running 10 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+test tests::elf_rejects_dynamic_nonexecutable_overlap_and_changed_original ... ok
+test fat::tests::rejects_wrong_geometry_and_missing_name ... ok
+test fat::tests::follows_fragmented_chain_and_keeps_slack_separate ... ok
+test tests::malformed_output_and_changed_inputs_reject ... ok
+test fat::tests::records_mbr_label_conflict_without_changing_bpb_interpretation ... ok
+test fat::tests::rejects_mirror_loop_short_chain_duplicate_and_truncation ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_bosminer_inspect.rs (target/debug/examples/s9_bosminer_inspect-43b45891c9ae1ab5)
+
+running 7 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tests::malformed_ranges_fail_before_foreign_decoder_loading ... ok
+test tests::output_bound_rejects_overflow_without_partial_write ... ok
+test tests::each_range_must_match_one_section_before_decoder_loading ... ok
+test tests::unwind_intervals_reject_changed_boundaries_and_duplicate_entries ... ok
+test tests::changed_or_short_elf_cannot_enter_the_decoder ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running unittests examples/s9_browser_check.rs (target/debug/examples/s9_browser_check-bf4b84538be9e086)
+
+running 12 tests
+test browser_target::tests::responses_require_the_selected_path_and_published_run ... ok
+test browser_target::tests::native_clock_interval_rejects_skew_missing_data_and_overflow ... ok
+test browser_target::tests::selected_clock_is_derived_from_locked_process_and_rejects_conflicts ... ok
+test graph_tests::only_one_empty_408_close_response_can_retry_the_session_check ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test native_telemetry::tests::actual_native_sample_checks_topology_sensors_and_pool_accounting ... ok
+test browser_target::tests::selected_browser_rejects_changed_execution_binding_and_publication ... ok
+test browser_target::tests::carrier_browser_requires_full_original_identity_and_actual_publication_contract ... ok
+test browser_target::tests::retained_browser_pass_requires_both_origins_and_actual_observations ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/s9_cpu_regression.rs (target/debug/examples/s9_cpu_regression-69e564d4462f7298)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_dashboard_cycle.rs (target/debug/examples/s9_dashboard_cycle-80a6eefb4248e3a8)
+
+running 6 tests
+test tests::update_cycle_requires_explicit_browser_and_unique_inputs ... ok
+test evidence::tests::recorded_output_must_be_unique_bounded_and_valid ... ok
+test cycle_update::tests::untrusted_member_names_and_hash_text_cannot_become_shell_commands ... ok
+test evidence::tests::changed_frozen_input_stops_a_cycle ... ok
+test cycle_update::monitor::tests::changed_or_missing_source_cannot_be_adapted ... ok
+test tests::configuration_result_cannot_be_reused_after_execution_or_input_changes ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_execute_prepared.rs (target/debug/examples/s9_execute_prepared-6f2a5cb125ecb433)
+
+running 62 tests
+test channel_artifacts::tests::existing_files_and_links_are_preserved ... ok
+test channel_artifacts::tests::unknown_wire_fields_are_rejected ... ok
+test channel_artifacts::tests::trailing_bytes_and_extra_members_are_rejected ... ok
+test channel_artifacts::tests::independent_gzip_and_sha256_fixture_imports_exact_bytes ... ok
+test execution_report::external_pool::tests::shared_success_rejects_failed_or_truncated_outer_execution ... ok
+test channel_artifacts::tests::content_hash_and_declared_extents_are_required ... ok
+test channel_artifacts::tests::truncated_malformed_and_bad_crc_inputs_do_not_publish ... ok
+test execution_report::pcap_audit::tests::ignored_repeated_and_overriding_device_options_fail ... ok
+test channel_artifacts::tests::binary_roundtrip_preserves_known_digest_and_source ... ok
+test channel_artifacts::tests::export_limits_apply_during_compression_and_empty_files_work ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test execution_report::tests::report_retains_original_result_layout_and_rejects_changed_execution ... ok
+test execution_report::pcap_audit::tests::source_mode_controls_address_extent_and_is_reported ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test execution_report::pcap_audit::tests::retained_reference_survives_store_cleanup_and_rejects_substitution ... ok
+test execution_report::pcap_audit::tests::missing_false_early_reordered_and_corrupt_records_cannot_pass ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test execution_report::external_pool::tests::historical_retention_identity_rejects_rebound_pool_bundle ... ok
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test pool_vm::wall_clock::tests::clock_epoch_is_explicit_utc_and_bounded_by_original_userspace ... ok
+test pool_vm::tests::qemu_shutdown_alone_does_not_establish_guest_success ... ok
+test prepared::fresh::tests::atomic_publish_never_replaces_an_existing_destination ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test pool_vm::wall_clock::tests::delayed_dispatch_uses_the_execution_clock_and_keeps_source_explicit ... ok
+test prepared::fresh::tests::fresh_metadata_rejects_symlinks_hardlinks_and_fifos ... ok
+test pool_vm::tests::support_startup_budget_is_explicit_bounded_and_separate_from_browser ... ok
+test pool_vm::tests::storage_checkpoint_wait_requires_this_native_http_result ... ok
+test prepared_vm_image::tests::retained_browser_preparation_selects_exact_combined_image_without_boot ... ignored, read-only retained preparation regression; set MD_SIM_PREPARED_BROWSER_RUN to the completed run directory
+test shared_manifest::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test pool_vm::tests::storage_wait_keeps_all_sessions_and_rejects_a_later_success_after_failure ... ok
+test shared_manifest::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test prepared::carrier_dashboard::tests::selected_policy_cannot_change_target_source_support_or_wall_budget ... ok
+test shared_manifest::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test shared_retention::tests::access_paths_reject_escape_and_secret_material ... ok
+test prepared::tests::prepared_inputs_remain_read_only_and_copies_are_verified ... ok
+test pool_vm::tests::install_wait_cannot_accept_cancel_or_incomplete_commit_evidence ... ok
+test pool_vm::tests::damaged_update_requires_its_exact_input_and_native_rejection ... ok
+test shared_retention::tests::extra_oversized_and_partial_frames_are_rejected ... ok
+test prepared::tests::dashboard_metadata_requires_the_executed_policy_and_shared_support ... ok
+test shared_retention::tests::actual_channel_accepts_only_the_complete_joined_identity ... ok
+test pool_vm::tests::update_wait_requires_native_validation_and_cancellation ... ok
+test prepared::tests::shared_metadata_must_match_both_executed_mount_and_carrier ... ok
+test pool_vm::tests::browser_wait_requires_its_selected_service_result ... ok
+test shared_retention::tests::access_ack_binds_the_additional_bundle_and_never_accepts_missing_identity ... ok
+test prepared_vm_image::tests::absent_browser_request_rejects_payload_and_captured_browser_inputs ... ok
+test prepared_vm_image::tests::captured_browser_driver_and_payload_require_exact_single_mounts ... ok
+test execution_report::external_pool::tests::historical_pool_bytes_reject_changed_digest_or_retained_trace ... ok
+test shared_manifest::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+test prepared_vm_image::tests::prepared_image_kernel_root_and_selected_bytes_must_agree ... ok
+test prepared::fresh::tests::malformed_preparation_is_not_published_and_does_not_leave_staging ... ok
+test prepared_vm_image::tests::retained_payload_is_portable_but_manifest_and_report_substitution_fails ... ok
+test prepared_vm_image::tests::original_request_outer_flag_and_prepared_mode_cannot_be_substituted ... ok
+test cancellation::tests::actual_signal_records_request_and_sets_runtime_cancel_flag ... ok
+test boot_storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+test prepared_vm_image::tests::selected_store_bytes_include_the_second_archive_only_for_browser_request ... ok
+test channel_artifacts::tests::fifo_export_rejects_without_waiting_for_writer ... ok
+test channel_artifacts::tests::a_small_compressed_stream_cannot_exceed_the_declared_extent ... ok
+test prepared::fresh::tests::derivation_rejects_changes_outside_entropy_and_time ... ok
+test shared_retention::tests::silent_actual_peer_hits_the_declared_frame_deadline ... ok
+test prepared::fresh::tests::full_parent_contract_and_receipt_fields_are_verified ... ok
+test prepared::fresh::tests::fresh_preparation_preserves_policy_and_source_and_binds_two_distinct_runs ... ok
+
+test result: ok. 59 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 3.45s
+
+     Running unittests examples/s9_fan_pause_probe.rs (target/debug/examples/s9_fan_pause_probe-7b77f22c383e35d9)
+
+running 3 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tests::completed_probe_does_not_hide_failed_device_or_missing_pause ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_fasm_export.rs (target/debug/examples/s9_fasm_export-591aeacbabcadfe1)
+
+running 11 tests
+test comparison::tests::frame_bit_digest_uses_canonical_unique_positions ... ok
+test comparison::tests::positive_features_cannot_be_lost_or_replaced_by_defaults ... ok
+test comparison::tests::zero_address_is_canonical_and_invalid_addresses_fail ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test comparison::tests::projection_rejects_ecc_and_conflicting_canonical_defaults ... ok
+test inputs::bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test inputs::bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tool::tests::grammar_correction_is_exact_and_rejects_missing_or_repeated_points ... ok
+test tool::tests::tool_manifest_cannot_override_guard_or_escape_its_prefixes ... ok
+test tool::tests::changing_a_source_hash_under_the_same_revision_is_rejected ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/s9_feature_oracle.rs (target/debug/examples/s9_feature_oracle-d97d77f8d3dddbfc)
+
+running 5 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test inputs::bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+test inputs::bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test comparison::tests::canonical_record_digest_retains_every_semantic_field ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_feature_probe.rs (target/debug/examples/s9_feature_probe-6e632dc196f49f54)
+
+running 5 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tests::report_bound_preserves_exact_limit_and_rejects_extra_bytes ... ok
+test inputs::bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test inputs::bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_fresh_prepared.rs (target/debug/examples/s9_fresh_prepared-6db1429c19b0e613)
+
+running 14 tests
+test prepared_board::fresh::tests::atomic_publish_never_replaces_an_existing_destination ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test prepared_board::tests::prepared_inputs_remain_read_only_and_copies_are_verified ... ok
+test prepared_board::tests::dashboard_metadata_requires_the_executed_policy_and_shared_support ... ok
+test prepared_board::fresh::tests::fresh_metadata_rejects_symlinks_hardlinks_and_fifos ... ok
+test prepared_board::tests::shared_metadata_must_match_both_executed_mount_and_carrier ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test prepared_board::carrier_dashboard::tests::selected_policy_cannot_change_target_source_support_or_wall_budget ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test prepared_board::fresh::tests::malformed_preparation_is_not_published_and_does_not_leave_staging ... ok
+test prepared_board::fresh::tests::derivation_rejects_changes_outside_entropy_and_time ... ok
+test prepared_board::fresh::tests::full_parent_contract_and_receipt_fields_are_verified ... ok
+test prepared_board::fresh::tests::fresh_preparation_preserves_policy_and_source_and_binds_two_distinct_runs ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.33s
+
+     Running unittests examples/s9_hdl_validate.rs (target/debug/examples/s9_hdl_validate-d8109ddf40e0f06e)
+
+running 30 tests
+test axi::tests::extracted_shell_preserves_actual_511e_benchmark_bytes ... ignored, read-only retained511e generator identity; set MD_SIM_AXI_511E_ROOT
+test axi::tests::observer_adds_no_timing_control_or_assertion_change ... ok
+test framed_child::tests::peer ... ignored, owned peer for actual private-channel tests only
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test axi::tests::unknown_error_and_premature_completion_are_rejected ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test axi::tests::response_and_clock_abi_corruption_is_rejected_before_generation ... ok
+test axi::tests::original_instruction_and_literal_bindings_reject_mutation ... ok
+test live_child::tests::fixture_process ... ignored, called only as an owned child by this module's transport tests
+test framed_child::tests::child_initiated_frames_and_multiple_replies_keep_complete_evidence ... ok
+test framed_child::tests::send_pumping_and_successive_receives_do_not_drop_batched_frames ... ok
+test live_protocol::tests::four_state_preserves_x_and_z ... ok
+test live_protocol::tests::error_and_unknown_reads_latch_failure ... ok
+test live_protocol::tests::absolute_edge_rounding_has_no_per_period_drift ... ok
+test axi::tests::exact_absent_cpu_notice_is_retained_without_relaxing_bus_checks ... ok
+test live_protocol::tests::fragments_and_every_truncated_frame_are_checked ... ok
+test live_protocol::tests::later_real_completion_rejects_time_reversal_or_duplicate ... ok
+test live_protocol::tests::literal_wire_layout_and_reserved_values ... ok
+test ram::tests::active_ecc_cascade_and_unreviewed_widths_are_rejected ... ok
+test ram::tests::unsupported_active_modes_and_bad_parameter_structure_fail ... ok
+test tests::success_exit_cannot_hide_semantic_diagnostics ... ok
+test ram::tests::diagnostic_oracle_requires_every_expected_message_and_no_other_warning ... ok
+test axi::tests::retained_bus_trace_rejects_altered_values_ids_strobes_and_reset_result ... ok
+test live_child::tests::actual_fragmented_frames_keep_vendor_logs_and_four_state_data_separate ... ok
+test live_child::tests::exited_leader_keeps_group_identity_until_descendants_are_killed ... ok
+test framed_child::tests::timeout_cannot_exceed_configured_bound_or_be_zero ... ok
+test framed_child::tests::partial_eof_and_unconsumed_shutdown_frames_fail_and_are_retained ... ok
+test live_child::tests::log_bounds_fail_even_after_a_valid_stop_receipt ... ok
+test live_child::tests::malformed_or_partial_reply_is_retained_and_child_is_reaped ... ok
+test live_child::tests::deadline_and_cancellation_interrupt_a_stalled_callback ... ok
+
+test result: ok. 27 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.26s
+
+     Running unittests examples/s9_live_benchmark.rs (target/debug/examples/s9_live_benchmark-e9f36b51a26c8e2a)
+
+running 26 tests
+test axi::tests::extracted_shell_preserves_actual_511e_benchmark_bytes ... ignored, read-only retained511e generator identity; set MD_SIM_AXI_511E_ROOT
+test axi::tests::observer_adds_no_timing_control_or_assertion_change ... ok
+test framed_child::tests::peer ... ignored, owned peer for actual private-channel tests only
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test live_child::tests::fixture_process ... ignored, called only as an owned child by this module's transport tests
+test axi::tests::unknown_error_and_premature_completion_are_rejected ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test axi::tests::original_instruction_and_literal_bindings_reject_mutation ... ok
+test live_protocol::tests::later_real_completion_rejects_time_reversal_or_duplicate ... ok
+test live_protocol::tests::error_and_unknown_reads_latch_failure ... ok
+test framed_child::tests::send_pumping_and_successive_receives_do_not_drop_batched_frames ... ok
+test axi::tests::response_and_clock_abi_corruption_is_rejected_before_generation ... ok
+test live_protocol::tests::fragments_and_every_truncated_frame_are_checked ... ok
+test framed_child::tests::child_initiated_frames_and_multiple_replies_keep_complete_evidence ... ok
+test live_protocol::tests::literal_wire_layout_and_reserved_values ... ok
+test live_protocol::tests::four_state_preserves_x_and_z ... ok
+test live_protocol::tests::absolute_edge_rounding_has_no_per_period_drift ... ok
+test axi::tests::exact_absent_cpu_notice_is_retained_without_relaxing_bus_checks ... ok
+test live_child::tests::actual_fragmented_frames_keep_vendor_logs_and_four_state_data_separate ... ok
+test axi::tests::retained_bus_trace_rejects_altered_values_ids_strobes_and_reset_result ... ok
+test live_child::tests::exited_leader_keeps_group_identity_until_descendants_are_killed ... ok
+test framed_child::tests::timeout_cannot_exceed_configured_bound_or_be_zero ... ok
+test framed_child::tests::partial_eof_and_unconsumed_shutdown_frames_fail_and_are_retained ... ok
+test live_child::tests::log_bounds_fail_even_after_a_valid_stop_receipt ... ok
+test live_child::tests::malformed_or_partial_reply_is_retained_and_child_is_reaped ... ok
+test live_child::tests::deadline_and_cancellation_interrupt_a_stalled_callback ... ok
+
+test result: ok. 23 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running unittests examples/s9_nand_cycle.rs (target/debug/examples/s9_nand_cycle-e463ae638be8e39a)
+
+running 5 tests
+test scenario::tests::native_evidence_requires_the_exact_phase_once_and_in_order ... ok
+test scenario::tests::pattern_input_is_not_a_shell_expression ... ok
+test evidence::tests::recorded_output_must_be_unique_bounded_and_valid ... ok
+test evidence::tests::changed_frozen_input_stops_a_cycle ... ok
+test storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/s9_nand_storage.rs (target/debug/examples/s9_nand_storage-047b3dfed3e9a086)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_native_network.rs (target/debug/examples/s9_native_network-ae0a5eccad02ee1b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_native_service.rs (target/debug/examples/s9_native_service-1bd6c32c0a4ae321)
+
+running 5 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test squashfs_member::tests::larger_member_requires_the_exact_path_and_size ... ok
+test squashfs_member::tests::exact_regular_member_required_even_when_tool_returns_zero ... ok
+test component_capture_tests::a_component_changed_after_preflight_cannot_enter_the_specification ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_netlist_reconstruct.rs (target/debug/examples/s9_netlist_reconstruct-507e2ddadb22a72c)
+
+running 13 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test netlist::tests::import_relocation_requires_unique_points_and_preserves_other_bytes ... ok
+test inputs::bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok
+test structure::tests::alias_evidence_rejects_duplicates_and_invalid_identifiers ... ok
+test inputs::bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok
+test structure::tests::framing_rejects_reordered_endmodule_and_late_timebase ... ok
+test tool::tests::grammar_correction_is_exact_and_rejects_missing_or_repeated_points ... ok
+test structure::tests::cell_comparison_detects_parameter_reassociation ... ok
+test structure::tests::wide_ps7_port_list_is_compared_and_z_cannot_hide_a_lut_connection ... ok
+test netlist::tests::changed_source_under_the_same_revision_is_rejected ... ok
+test tool::tests::tool_manifest_cannot_override_guard_or_escape_its_prefixes ... ok
+test tool::tests::changing_a_source_hash_under_the_same_revision_is_rejected ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/s9_pic_audit.rs (target/debug/examples/s9_pic_audit-63c0a33c4d41e9bd)
+
+running 2 tests
+test tests::incomplete_or_malformed_trace_cannot_be_audited ... ok
+test tests::interleaved_controllers_retain_commands_and_visible_failures ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_pool_guest.rs (target/debug/examples/s9_pool_guest-9c8e422ca949c3d4)
+
+running 19 tests
+test dashboard_probe::maintenance::tests::control_errors_do_not_count_as_success ... ok
+test dashboard_probe::luci::tests::form_token_requires_native_routes_and_one_session ... ok
+test dashboard_probe::luci::tests::damaged_image_needs_rejection_without_install_confirmation ... ok
+test dashboard_probe::tests::missing_configuration_is_not_an_unset_value ... ok
+test dashboard_probe::tests::native_response_assessment_rejects_errors_and_static_or_reset_telemetry ... ok
+test dashboard_probe::tests::readiness_never_retries_http_errors_or_service_operations ... ok
+test shared_pool::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test shared_pool::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test shared_pool::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test shared_service::tests::cancellation_fifo_without_a_writer_is_rejected ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test shared_service::tests::only_the_declared_two_private_networks_are_admitted ... ok
+test shared_service::tests::cancellation_requires_the_exact_private_owned_file ... ok
+test dashboard_probe::maintenance::tests::progress_requires_correlated_submissions_and_distinct_announced_jobs ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test dashboard_probe::luci::tests::backup_requires_real_archive_and_active_configuration ... ok
+test shared_pool::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+
+test result: ok. 17 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_pool_link.rs (target/debug/examples/s9_pool_link-97a2287f4734edc4)
+
+running 18 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test pool_vm::tests::browser_wait_requires_its_selected_service_result ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test pool_vm::tests::qemu_shutdown_alone_does_not_establish_guest_success ... ok
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test pool_vm::tests::support_startup_budget_is_explicit_bounded_and_separate_from_browser ... ok
+test pool_vm::wall_clock::tests::clock_epoch_is_explicit_utc_and_bounded_by_original_userspace ... ok
+test pool_vm::tests::storage_checkpoint_wait_requires_this_native_http_result ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test pool_vm::wall_clock::tests::delayed_dispatch_uses_the_execution_clock_and_keeps_source_explicit ... ok
+test pool_vm::tests::storage_wait_keeps_all_sessions_and_rejects_a_later_success_after_failure ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test pool_vm::tests::update_wait_requires_native_validation_and_cancellation ... ok
+test pool_vm::tests::install_wait_cannot_accept_cancel_or_incomplete_commit_evidence ... ok
+test pool_vm::tests::damaged_update_requires_its_exact_input_and_native_rejection ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_retain_evidence.rs (target/debug/examples/s9_retain_evidence-eee76412d3d88b1c)
+
+running 51 tests
+test channel_artifacts::tests::existing_files_and_links_are_preserved ... ok
+test channel_artifacts::tests::unknown_wire_fields_are_rejected ... ok
+test channel_artifacts::tests::independent_gzip_and_sha256_fixture_imports_exact_bytes ... ok
+test channel_artifacts::tests::trailing_bytes_and_extra_members_are_rejected ... ok
+test execution_report::pcap_audit::tests::ignored_repeated_and_overriding_device_options_fail ... ok
+test execution_report::external_pool::tests::shared_success_rejects_failed_or_truncated_outer_execution ... ok
+test channel_artifacts::tests::content_hash_and_declared_extents_are_required ... ok
+test channel_artifacts::tests::truncated_malformed_and_bad_crc_inputs_do_not_publish ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test execution_report::pcap_audit::tests::source_mode_controls_address_extent_and_is_reported ... ok
+test channel_artifacts::tests::binary_roundtrip_preserves_known_digest_and_source ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test execution_report::pcap_audit::tests::retained_reference_survives_store_cleanup_and_rejects_substitution ... ok
+test execution_report::tests::report_retains_original_result_layout_and_rejects_changed_execution ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test execution_report::pcap_audit::tests::missing_false_early_reordered_and_corrupt_records_cannot_pass ... ok
+test pool_vm::tests::browser_wait_requires_its_selected_service_result ... ok
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test pool_vm::tests::qemu_shutdown_alone_does_not_establish_guest_success ... ok
+test channel_artifacts::tests::export_limits_apply_during_compression_and_empty_files_work ... ok
+test pool_vm::tests::support_startup_budget_is_explicit_bounded_and_separate_from_browser ... ok
+test pool_vm::wall_clock::tests::clock_epoch_is_explicit_utc_and_bounded_by_original_userspace ... ok
+test pool_vm::tests::storage_checkpoint_wait_requires_this_native_http_result ... ok
+test execution_report::external_pool::tests::historical_retention_identity_rejects_rebound_pool_bundle ... ok
+test prepared_vm_image::tests::retained_browser_preparation_selects_exact_combined_image_without_boot ... ignored, read-only retained preparation regression; set MD_SIM_PREPARED_BROWSER_RUN to the completed run directory
+test pool_vm::wall_clock::tests::delayed_dispatch_uses_the_execution_clock_and_keeps_source_explicit ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test shared_manifest::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test shared_manifest::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test pool_vm::tests::storage_wait_keeps_all_sessions_and_rejects_a_later_success_after_failure ... ok
+test shared_manifest::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test pool_vm::tests::update_wait_requires_native_validation_and_cancellation ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test pool_vm::tests::install_wait_cannot_accept_cancel_or_incomplete_commit_evidence ... ok
+test shared_retention::tests::access_paths_reject_escape_and_secret_material ... ok
+test shared_retention::tests::access_ack_binds_the_additional_bundle_and_never_accepts_missing_identity ... ok
+test shared_retention::tests::extra_oversized_and_partial_frames_are_rejected ... ok
+test pool_vm::tests::damaged_update_requires_its_exact_input_and_native_rejection ... ok
+test shared_retention::tests::actual_channel_accepts_only_the_complete_joined_identity ... ok
+test prepared_vm_image::tests::captured_browser_driver_and_payload_require_exact_single_mounts ... ok
+test prepared_vm_image::tests::absent_browser_request_rejects_payload_and_captured_browser_inputs ... ok
+test shared_manifest::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+test prepared_vm_image::tests::prepared_image_kernel_root_and_selected_bytes_must_agree ... ok
+test prepared_vm_image::tests::retained_payload_is_portable_but_manifest_and_report_substitution_fails ... ok
+test execution_report::external_pool::tests::historical_pool_bytes_reject_changed_digest_or_retained_trace ... ok
+test prepared_vm_image::tests::original_request_outer_flag_and_prepared_mode_cannot_be_substituted ... ok
+test prepared_vm_image::tests::selected_store_bytes_include_the_second_archive_only_for_browser_request ... ok
+test boot_storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+test channel_artifacts::tests::fifo_export_rejects_without_waiting_for_writer ... ok
+test channel_artifacts::tests::a_small_compressed_stream_cannot_exceed_the_declared_extent ... ok
+test shared_retention::tests::silent_actual_peer_hits_the_declared_frame_deadline ... ok
+
+test result: ok. 48 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 1.00s
+
+     Running unittests examples/s9_retain_shared_evidence.rs (target/debug/examples/s9_retain_shared_evidence-06171d83a7bb3407)
+
+running 41 tests
+test channel_artifacts::tests::existing_files_and_links_are_preserved ... ok
+test channel_artifacts::tests::unknown_wire_fields_are_rejected ... ok
+test channel_artifacts::tests::independent_gzip_and_sha256_fixture_imports_exact_bytes ... ok
+test channel_artifacts::tests::content_hash_and_declared_extents_are_required ... ok
+test external_pool::tests::shared_success_rejects_failed_or_truncated_outer_execution ... ok
+test channel_artifacts::tests::trailing_bytes_and_extra_members_are_rejected ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test prepared_vm_image::tests::retained_browser_preparation_selects_exact_combined_image_without_boot ... ignored, read-only retained preparation regression; set MD_SIM_PREPARED_BROWSER_RUN to the completed run directory
+test channel_artifacts::tests::export_limits_apply_during_compression_and_empty_files_work ... ok
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test channel_artifacts::tests::truncated_malformed_and_bad_crc_inputs_do_not_publish ... ok
+test channel_artifacts::tests::binary_roundtrip_preserves_known_digest_and_source ... ok
+test recovery::tests::retained_failed453_copy_plan_has_exact_bounded_volume ... ignored, set MD_SIM_SHARED_RECOVERY_SOURCE to exact retained453 execution; metadata-only
+test shared_manifest::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test shared_manifest::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test recovery::tests::empty_extent_never_means_clone_the_whole_source ... ok
+test external_pool::tests::historical_retention_identity_rejects_rebound_pool_bundle ... ok
+test recovery::tests::copied_bytes_are_independent_and_changed_identity_is_rejected ... ok
+test recovery::tests::evidence_paths_types_and_extent_are_bounded ... ok
+test shared_retention::tests::access_paths_reject_escape_and_secret_material ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test shared_retention::tests::extra_oversized_and_partial_frames_are_rejected ... ok
+test shared_manifest::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test recovery::tests::growth_after_open_never_copies_beyond_the_planned_extent ... ok
+test shared_retention::tests::access_ack_binds_the_additional_bundle_and_never_accepts_missing_identity ... ok
+test shared_retention::tests::actual_channel_accepts_only_the_complete_joined_identity ... ok
+test recovery::tests::failed_access_is_bound_to_acknowledged_native_and_outer_results ... ok
+test prepared_vm_image::tests::captured_browser_driver_and_payload_require_exact_single_mounts ... ok
+test prepared_vm_image::tests::absent_browser_request_rejects_payload_and_captured_browser_inputs ... ok
+test shared_manifest::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+test prepared_vm_image::tests::prepared_image_kernel_root_and_selected_bytes_must_agree ... ok
+test prepared_vm_image::tests::retained_payload_is_portable_but_manifest_and_report_substitution_fails ... ok
+test external_pool::tests::historical_pool_bytes_reject_changed_digest_or_retained_trace ... ok
+test prepared_vm_image::tests::original_request_outer_flag_and_prepared_mode_cannot_be_substituted ... ok
+test prepared_vm_image::tests::selected_store_bytes_include_the_second_archive_only_for_browser_request ... ok
+test channel_artifacts::tests::fifo_export_rejects_without_waiting_for_writer ... ok
+test channel_artifacts::tests::a_small_compressed_stream_cannot_exceed_the_declared_extent ... ok
+test shared_retention::tests::silent_actual_peer_hits_the_declared_frame_deadline ... ok
+
+test result: ok. 37 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 1.00s
+
+     Running unittests examples/s9_rom_reset_probe.rs (target/debug/examples/s9_rom_reset_probe-e60eac0f0505aadc)
+
+running 9 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test rom_trace::tests::first_error_is_retained_with_its_exact_raw_offset ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test rom_trace::tests::unsupported_register_messages_are_not_instruction_records ... ok
+test rom_trace::tests::raw_target_dump_is_bounded_and_requires_its_source_defined_frame ... ok
+test rom_trace::tests::raw_target_dump_observer_preserves_next_real_error ... ok
+test rom_trace::tests::startup_messages_require_exact_order_count_and_phase ... ok
+test rom_trace::tests::complete_instructions_pass_but_partial_and_long_lines_cancel ... ok
+test boot_storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/s9_sd_snapshot_inspect.rs (target/debug/examples/s9_sd_snapshot_inspect-1083d6af3e87c8af)
+
+running 5 tests
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test tests::successful_exit_cannot_hide_declined_counter_repairs ... ok
+test tests::inventory_keeps_links_and_whiteouts_distinct_from_regular_files ... ok
+test boot_storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/s9_storage_report.rs (target/debug/examples/s9_storage_report-008ee435d3434f4f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_update_bundle.rs (target/debug/examples/s9_update_bundle-68e44ecb0cdca821)
+
+running 2 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_update_fault.rs (target/debug/examples/s9_update_fault-ae41a88f7c77dfce)
+
+running 3 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test tests::comparison_rejects_extra_missing_or_out_of_bounds_changes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/s9_watchdog_check.rs (target/debug/examples/s9_watchdog_check-5fef1e3c9750f152)
+
+running 1 test
+test scenario::tests::rejects_missing_fault_recovery_and_invalid_traces ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/t17_core_oracle.rs (target/debug/examples/t17_core_oracle-2e19dba35b8c2d0c)
+
+running 9 tests
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test core0::tests::written_control_byte_does_not_create_a_ready_flag ... ok
+test pll::tests::independent_known_frequency_vectors_and_ignored_status_bits ... ok
+test readback::tests::function_requires_exact_unique_executable_mapping ... ok
+test readback::tests::retained_abi_source_is_exact_and_reused ... ok
+test readback::tests::verifier_rejects_each_changed_field_and_length ... ok
+test pll::tests::result_parser_rejects_wrong_values_identity_headers_and_lengths ... ok
+test core0::tests::parser_rejects_mutated_callbacks_metadata_and_incomplete_output ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+     Running unittests examples/t17_source_inspect.rs (target/debug/examples/t17_source_inspect-ee862e704a880c8c)
+
+running 4 tests
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test tests::archive_reader_rejects_duplicate_and_link_members ... ok
+test tests::legacy_header_rejects_bit_damage_truncation_and_trailing_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/worker_channel_probe.rs (target/debug/examples/worker_channel_probe-9ffd0d487bd34894)
+
+running 78 tests
+test channel_artifacts::tests::existing_files_and_links_are_preserved ... ok
+test channel_artifacts::tests::independent_gzip_and_sha256_fixture_imports_exact_bytes ... ok
+test channel_artifacts::tests::content_hash_and_declared_extents_are_required ... ok
+test channel_artifacts::tests::unknown_wire_fields_are_rejected ... ok
+test device_transport::tests::constructor_rejects_a_regular_file_without_changing_it ... ok
+test confinement::proc_protection_tests::execution_profile_requires_an_explicit_bounded_budget ... ok
+test confinement::proc_protection_tests::measured_worker_proc_protections_require_same_private_root_and_all_flags ... ok
+test channel_artifacts::tests::binary_roundtrip_preserves_known_digest_and_source ... ok
+test execution_report::external_pool::tests::shared_success_rejects_failed_or_truncated_outer_execution ... ok
+test channel_artifacts::tests::export_limits_apply_during_compression_and_empty_files_work ... ok
+test channel_artifacts::tests::trailing_bytes_and_extra_members_are_rejected ... ok
+test execution_report::pcap_audit::tests::ignored_repeated_and_overriding_device_options_fail ... ok
+test channel_artifacts::tests::truncated_malformed_and_bad_crc_inputs_do_not_publish ... ok
+test device_transport::tests::sequential_successes_use_the_same_real_character_channel ... ok
+test pool_input::tests::connection_budget_is_explicit_and_cannot_reinterpret_legacy_inputs ... ok
+test execution_report::pcap_audit::tests::retained_reference_survives_store_cleanup_and_rejects_substitution ... ok
+test execution_report::pcap_audit::tests::source_mode_controls_address_extent_and_is_reported ... ok
+test execution_report::pcap_audit::tests::missing_false_early_reordered_and_corrupt_records_cannot_pass ... ok
+test execution_report::tests::report_retains_original_result_layout_and_rejects_changed_execution ... ok
+test execution_report::external_pool::tests::historical_retention_identity_rejects_rebound_pool_bundle ... ok
+test pool_report::tests::collection_cannot_hide_a_missing_probe_or_repeat_a_connection ... ok
+test pool_vm::tests::browser_wait_requires_its_selected_service_result ... ok
+test pool_report::tests::completed_work_does_not_hide_later_session_failure ... ok
+test pool_vm::tests::qemu_shutdown_alone_does_not_establish_guest_success ... ok
+test pool_input::tests::persistent_pool_policy_is_a_separate_frozen_identity ... ok
+test pool_vm::tests::support_startup_budget_is_explicit_bounded_and_separate_from_browser ... ok
+test device_transport::tests::complete_worker_error_preserves_a_later_independent_request ... ok
+test pool_vm::wall_clock::tests::clock_epoch_is_explicit_utc_and_bounded_by_original_userspace ... ok
+test pool_vm::tests::storage_checkpoint_wait_requires_this_native_http_result ... ok
+test pool_vm::wall_clock::tests::delayed_dispatch_uses_the_execution_clock_and_keeps_source_explicit ... ok
+test pool_input::tests::explicit_anchor_roundtrips_and_rejects_changed_or_old_schema_identity ... ok
+test prepared::fresh::tests::atomic_publish_never_replaces_an_existing_destination ... ok
+test prepared::fresh::tests::fresh_metadata_rejects_symlinks_hardlinks_and_fifos ... ok
+test pool_vm::tests::storage_wait_keeps_all_sessions_and_rejects_a_later_success_after_failure ... ok
+test prepared_vm_image::tests::retained_browser_preparation_selects_exact_combined_image_without_boot ... ignored, read-only retained preparation regression; set MD_SIM_PREPARED_BROWSER_RUN to the completed run directory
+test pool_vm::tests::update_wait_requires_native_validation_and_cancellation ... ok
+test pool_input::tests::reconnect_changes_work_entropy_and_legacy_inputs_keep_their_identity ... ok
+test pool_vm::tests::install_wait_cannot_accept_cancel_or_incomplete_commit_evidence ... ok
+test prepared::carrier_dashboard::tests::selected_policy_cannot_change_target_source_support_or_wall_budget ... ok
+test pool_vm::tests::damaged_update_requires_its_exact_input_and_native_rejection ... ok
+test shared_pool::tests::inherited_child ... ignored, executed as the owned child of the descriptor regression
+test prepared::tests::prepared_inputs_remain_read_only_and_copies_are_verified ... ok
+test shared_pool::tests::contract_rejects_changed_network_unbounded_carrier_and_extended_budget ... ok
+test shared_pool::tests::unselected_child ... ignored, executed without attachment by the descriptor regression
+test shared_host::access::tests::resumed_assessment_rejects_edited_extracted_evidence ... ok
+test shared_host::access::browser_target::tests::responses_require_the_selected_path_and_published_run ... ok
+test shared_host::access::browser_target::tests::selected_clock_is_derived_from_locked_process_and_rejects_conflicts ... ok
+test shared_retention::tests::access_paths_reject_escape_and_secret_material ... ok
+test prepared::tests::shared_metadata_must_match_both_executed_mount_and_carrier ... ok
+test shared_retention::tests::access_ack_binds_the_additional_bundle_and_never_accepts_missing_identity ... ok
+test ssh::tests::browser_capture_cannot_downgrade_or_substitute_the_original_request ... ok
+test prepared::tests::dashboard_metadata_requires_the_executed_policy_and_shared_support ... ok
+test shared_retention::tests::extra_oversized_and_partial_frames_are_rejected ... ok
+test shared_retention::tests::actual_channel_accepts_only_the_complete_joined_identity ... ok
+test shared_host::access::browser_target::tests::native_clock_interval_rejects_skew_missing_data_and_overflow ... ok
+test trace_tests::delayed_trace_creation_and_growth_keep_the_original_byte_bound ... ok
+test trace_tests::partial_json_and_kernel_noise_remain_separate_across_live_polls ... ok
+test shared_host::access::browser_target::tests::selected_browser_rejects_changed_execution_binding_and_publication ... ok
+test prepared_vm_image::tests::absent_browser_request_rejects_payload_and_captured_browser_inputs ... ok
+test prepared_vm_image::tests::captured_browser_driver_and_payload_require_exact_single_mounts ... ok
+test execution_report::external_pool::tests::historical_pool_bytes_reject_changed_digest_or_retained_trace ... ok
+test shared_pool::tests::only_selected_child_inherits_carrier_and_parent_close_exposes_eof ... ok
+test prepared_vm_image::tests::prepared_image_kernel_root_and_selected_bytes_must_agree ... ok
+test prepared::fresh::tests::malformed_preparation_is_not_published_and_does_not_leave_staging ... ok
+test prepared_vm_image::tests::retained_payload_is_portable_but_manifest_and_report_substitution_fails ... ok
+test prepared_vm_image::tests::original_request_outer_flag_and_prepared_mode_cannot_be_substituted ... ok
+test boot_storage::tests::snapshot_rejects_changed_backing_path_bytes_and_decode_size ... ok
+test prepared_vm_image::tests::selected_store_bytes_include_the_second_archive_only_for_browser_request ... ok
+test channel_artifacts::tests::fifo_export_rejects_without_waiting_for_writer ... ok
+test shared_host::access::browser_target::tests::carrier_browser_requires_full_original_identity_and_actual_publication_contract ... ok
+test shared_host::access::browser_target::tests::retained_browser_pass_requires_both_origins_and_actual_observations ... ok
+test channel_artifacts::tests::a_small_compressed_stream_cannot_exceed_the_declared_extent ... ok
+test device_transport::tests::malformed_error_responses_close_the_owned_descriptor ... ok
+test shared_retention::tests::silent_actual_peer_hits_the_declared_frame_deadline ... ok
+test prepared::fresh::tests::derivation_rejects_changes_outside_entropy_and_time ... ok
+test prepared::fresh::tests::full_parent_contract_and_receipt_fields_are_verified ... ok
+test prepared::fresh::tests::fresh_preparation_preserves_policy_and_source_and_binds_two_distinct_runs ... ok
+test device_transport::tests::timeout_closes_channel_and_cannot_consume_a_late_reply ... ok
+
+test result: ok. 75 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 5.05s
+
+     Running unittests examples/worker_device_broker.rs (target/debug/examples/worker_device_broker-99b7d97702850c10)
+
+running 5 tests
+test device_transport::tests::constructor_rejects_a_regular_file_without_changing_it ... ok
+test device_transport::tests::sequential_successes_use_the_same_real_character_channel ... ok
+test device_transport::tests::complete_worker_error_preserves_a_later_independent_request ... ok
+test device_transport::tests::malformed_error_responses_close_the_owned_descriptor ... ok
+test device_transport::tests::timeout_closes_channel_and_cannot_consume_a_late_reply ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.05s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_mining-831dcaaac7bf5ab6)
+
+running 7 tests
+test stratum::extensions::tests::negotiation_intersects_masks_without_expanding_permissions ... ok
+test replay_s2::tests::reference_crc_and_corrupted_packet ... ok
+test stratum::io_tests::regtest_export_preserves_actual_share_and_rejects_forged_verdict ... ok
+test replay_s2::tests::trace_order_and_declared_time_budget_are_enforced ... ok
+test stratum::io_tests::rolled_time_covers_long_mining_budget_but_rejects_outside_work_window ... ok
+test regtest::tests::archived_genesis_constants_match_independent_header_hash ... ok
+test stratum::io_tests::stalled_peer_cannot_block_a_large_inherited_write ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/computation_receipts.rs (target/debug/deps/computation_receipts-c175578bd82a06cb)
+
+running 4 tests
+test invalid_midstate_bounds_fail_without_mutating_the_live_queue ... ok
+test live_filter_change_round_robin_and_cancel_preserve_actual_cursors ... ok
+test midstates_match_independent_full_header_hashes_and_exhaustion ... ok
+test receipts_preserve_cap_no_idle_credit_and_original_event_api ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+     Running tests/functional.rs (target/debug/deps/functional-1a32707c248ad7ff)
+
+running 8 tests
+test archived_esp_miner_bm1397_compression_state_vector ... ok
+test core_genesis_and_compact_target ... ok
+test pool_deduplicates_identical_headers_across_job_aliases ... ok
+test rational_pool_target_is_stricter_than_programmed_asic_filter ... ok
+test target_boundaries_and_ticket_intersection_counting ... ok
+test fresh_jobs_clean_transition_difficulty_and_rejections ... ok
+test midstate_and_cgminer_bytes_match_independent_full_header_hashes ... ok
+test engine_preserves_nonce_and_sparse_version_ranges_and_caps ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/midstate_engine.rs (target/debug/deps/midstate_engine-3e63a56d8721fb58)
+
+running 2 tests
+test invalid_ranges_duplicates_cancellation_reset_and_empty_polls_do_not_hash ... ok
+test mixed_inputs_share_one_cap_queue_and_independent_digest_oracle ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/stratum.rs (target/debug/deps/stratum-a7477e3f50d6cd76)
+
+running 10 tests
+test trace_budget_stops_without_discarding_report ... ok
+test malformed_firmware_frame_is_retained_byte_for_byte_without_acceptance ... ok
+test repeated_unknown_submissions_stop_with_bounded_evidence ... ok
+test private_stratum_two_fresh_jobs_and_negative_submissions ... ok
+test bip310_rolls_versions_across_fresh_jobs_and_rejects_unpermitted_bits ... ok
+test command_connections_keep_binary_probe_separate_from_fresh_mining ... ok
+test old_frozen_response_contract_remains_explicit ... ok
+test separate_pipe_descriptors_deliver_fresh_work_and_cancel ... ok
+test persistent_connection_verifies_later_work_and_preserves_failure_bounds ... ok
+test persistent_emulator_command_checks_fresh_work_and_every_shutdown_path ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.07s
+
+     Running unittests examples/replay_s2_trace.rs (target/debug/examples/replay_s2_trace-b2a2791b2d93efc7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_qemu_core-373c829f2a4561ed)
+
+running 3 tests
+test swdt::tests::literal_reload_and_prescaler_vectors ... ok
+test swdt::tests::output_enables_are_independent_of_zero_and_restart ... ok
+test swdt::tests::keys_reserved_bits_and_read_only_status ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/s9_chain.rs (target/debug/deps/s9_chain-7781e93adb06deb1)
+
+running 10 tests
+test a_preempted_multiword_command_advances_one_second_without_per_clock_polling ... ok
+test invalid_peer_configuration_and_pin_phases_fail_closed ... ok
+test timed_calls_reject_backwards_phase_subnanosecond_edges_and_time_overflow ... ok
+test reference_peers_retain_shared_budget_after_the_creating_handle_is_released ... ok
+test gating_the_fabric_does_not_delay_or_queue_the_physical_reply ... ok
+test fresh_fpga_work_reaches_real_nonce_search_with_independent_full_header_checks ... ok
+test adapted_filter_preserves_computed_hashes_and_transmits_real_results ... ok
+test actual_hash_search_continues_while_the_controller_clock_is_stopped ... ok
+test independent_asic_uart_works_with_three_fabric_periods_including_a_fraction ... ok
+test fpga_and_63_asics_preserve_every_wire_edge_across_late_and_split_advancement ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running unittests src/lib.rs (target/debug/deps/md_sim_runtime-ec12621d52a9a56c)
+
+running 41 tests
+test byte_stream::tests::vm_full_duplex_half_close_and_backpressure ... ignored, requires captured private Linux VM; host socket shutdown/send may be restricted
+test byte_stream::tests::limit_rejected_actual_reads_are_retained_without_forwarding ... ok
+test dashboard::tests::gateway_socket_parent_is_private_from_creation ... ok
+test byte_stream::tests::policy_rejects_zero_and_excessive_limits ... ok
+test cgroup::tests::ordinary_directory_cannot_impersonate_delegation ... ok
+test dashboard::tests::cancellation_and_deadline_interrupt_idle_io ... ok
+test byte_stream::tests::regular_file_endpoint_is_rejected_before_io ... ok
+test isolation::tests::guest_mounts_cannot_replace_runtime_mounts ... ok
+test dashboard::tests::publication_rejects_unknown_fields_and_privileged_ports ... ok
+test isolation::tests::large_upload_trace_has_an_explicit_hard_ceiling ... ok
+test dashboard::tests::optional_mount_requires_a_private_owned_socket_and_valid_runtime_environment ... ok
+test file_lock::tests::fork_child_cannot_release_parent_and_cannot_extend_released_lease ... ok
+test store::tests::paths_and_budgets_are_not_controlled_by_hash_text ... ok
+test support_virtualization::tests::host_context_retains_distinct_cpu_features_without_clock_noise ... ok
+test store::tests::rejected_transfer_can_restart_without_deleting_published_bytes ... ok
+test worker::completed_response_tests::complete_error_retains_the_original_envelope ... ok
+test dashboard::tests::receipt_rejects_changed_identity_policy_and_unsafe_files ... ok
+test worker::channel::tests::provider_observation_requires_fresh_valid_selection_and_keeps_terminal_state ... ok
+test byte_stream::tests::shared_admission_cannot_overdraw_under_concurrency ... ok
+test store::tests::transfer_resume_retry_and_destination_verification ... ok
+test worker::endpoint::tests::foreign_files_and_receipts_are_retained ... ok
+test worker::channel::tests::provider_thread_panic_irreversibly_fails_its_own_monitor ... ok
+test worker::ownership_tests::device_channel_rejects_a_regular_file_without_changing_it ... ok
+test isolation::tests::unequal_trace_streams_share_the_bound_and_still_detect_overflow ... ok
+test worker::relay_frame_tests::dispatched_worker_error_preserves_its_complete_envelope ... ok
+test worker::timeout::tests::a_full_actual_unix_backlog_fails_without_a_blocking_connect ... ignored, executed as a captured helper in the private network VM
+test worker::timeout::tests::actual_socket_uses_the_existing_complete_response_and_error_contract ... ignored, executed as a captured helper in the private network VM
+test worker::ownership_tests::worker_rejects_root_runs_and_lock_symlinks ... ok
+test worker::timeout::tests::slow_partial_reply_cannot_extend_the_one_absolute_deadline ... ignored, executed as a captured helper in the private network VM
+test worker::endpoint::tests::only_exact_recorded_socket_is_recovered ... ok
+test worker::ownership_tests::loss_between_result_and_state_commits_keeps_result_identity ... ok
+test worker::ownership_tests::restart_finishes_only_acknowledged_token_cleanup ... ok
+test worker::result_reader::tests::replacement_inode_links_and_growth_cannot_reuse_an_old_verification ... ok
+test worker::completed_response_tests::incomplete_or_malformed_errors_are_never_completed_worker_errors ... ok
+test worker::relay_frame_tests::invalid_input_is_not_dispatched_and_dispatch_finishes_before_output ... ok
+test worker::relay_frame_tests::frames_preserve_buffered_successors_and_reject_partial_or_oversized_input ... ok
+test byte_stream::tests::cancellation_while_waiting_rejects_newly_ready_bytes ... ok
+test worker::result_reader::tests::repeated_ranges_hash_once_and_reject_same_length_changes ... ok
+test worker::ownership_tests::token_reserved_before_spec_commit_is_lost_and_never_launched ... ok
+test worker::timeout::tests::actual_socket_pair_drip_obeys_the_same_absolute_exchange_deadline ... ok
+test byte_stream::tests::cancellation_and_idle_deadline_retain_empty_receipts ... ok
+
+test result: ok. 37 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 1.00s
+
+     Running tests/isolated_worker.rs (target/debug/deps/isolated_worker-e37f72a74f1d595b)
+
+running 15 tests
+test interrupted_run_recovery_retains_failure_evidence_for_acknowledged_cleanup ... ok
+test nonroot_namespace_identity_keeps_isolation_and_the_default_wire_contract ... ok
+test supervisor_loss_terminates_its_live_namespace ... ok
+test completed_namespace_drops_descendant_pipe_descriptors ... ok
+test streamed_stdin_is_a_bounded_recorded_pipe_and_legacy_execution_stays_closed ... ok
+test immutable_stdin_is_a_pipe_and_delivers_exact_binary_bytes ... ok
+test guest_process_bound_is_preserved_when_host_uid_exceeds_it ... ok
+test isolated_process_has_only_locked_inputs_and_bounded_trace ... ok
+test execution_token_survives_reconnect_restart_and_acknowledged_cleanup ... ok
+test active_run_reserves_unwritten_evidence_bytes ... ok
+test timeout_releases_the_namespace ... ok
+test worker_admission_preserves_budget_across_restart_and_cleanup ... ok
+test unread_stdin_does_not_prevent_timeout_or_cancellation ... ok
+test unread_or_idle_streamed_stdin_cannot_hold_the_namespace_after_timeout ... ok
+test connected_ipc_transfers_reconnects_cancels_and_retains_results ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.77s
+
+     Running tests/private_channel.rs (target/debug/deps/private_channel-215cadf5cbe83e51)
+
+running 9 tests
+test guest_channel_fixture ... ignored, guest entry; exercised by private_ethernet_behavior
+test guest_default_descriptor_fixture ... ignored, guest entry; exercised by private_ethernet_behavior
+test host_provider_fixture ... ignored, independent provider entry; exercised by carrier_supervisor_loss
+test worker::owned_worker_root_stays_exclusive_after_service_return ... ok
+test carrier_supervisor_loss ... ok
+test provider::trusted_provider_reuses_framing_caps_and_has_its_own_deadline ... ok
+test worker::worker_binds_one_exact_private_channel_and_retains_token_evidence ... ok
+test worker::worker_cancels_carrier_and_consumes_binding_on_launch_failure ... ok
+test private_ethernet_behavior ... ok
+
+test result: ok. 6 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 5.64s
+
+     Running tests/store_quota.rs (target/debug/deps/store_quota-b1fc33174981be00)
+
+running 6 tests
+test interrupted_publication_counts_once_and_never_overwrites_objects ... ok
+test unsafe_entries_fail_closed_and_preserve_external_files ... ok
+test incomplete_policy_initialization_recovers_without_replacing_valid_policy ... ok
+test concurrent_appends_and_store_handles_cannot_bypass_quota ... ok
+test empty_transfers_consume_slots_across_begin_and_restart ... ok
+test append_retry_abort_publish_and_restart_share_one_quota ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/support_virtualization.rs (target/debug/deps/support_virtualization-b0579cf221e61a9b)
+
+running 3 tests
+test explicitly_granted_kvm_preserves_isolation_limits_and_stream_protocol ... ignored, requires actual /dev/kvm read/write access; run explicitly for the support host
+test guest_support_device_fixture ... ignored, isolated child entry, called by the support virtualization tests
+test default_wire_and_execution_do_not_grant_a_virtualization_device ... ok
+
+test result: ok. 1 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.55s
+

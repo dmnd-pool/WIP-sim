@@ -1,0 +1,74 @@
+{
+  "updated_at": "2026-10-28T18:14:05.795650+00:00",
+  "objective": "Complete selected S9 milestone2; exact original reset path is still open.",
+  "completed": [
+    "Acquired and Git-blob/size/SHA verified12 original public ROM/source/metadata files; preserved archive and headers.",
+    "All required incremental catalogue/archive/index checks pass.",
+    "Raw SD byte audit establishes39 FAT16 clusters,609 allocated zero slack, and1631-byte allocation overrun if the declared full transfer were performed.",
+    "Staged bounded Rust allocation inspector and complete unchanged-ROM f_read oracle; source review fixes applied.",
+    "Staged reusable511e AXI shell transferred to browser512 ownership.",
+    "513 root source review closed; integrated source passes10 focused tests, strict scoped Clippy and formatting.",
+    "513 helper freezes412 before/after-identical source inputs. Actual513b unchanged-ROM f_read routine passes28 cases in217ms, with empty diagnostics and complete evidence.",
+    "Independent513b audit rehashed412 sources,48 mounts, fullROM copy,220 original instruction words,28 raw cases and exact FAT chain/slack; PASS.",
+    "513c independent source review closed;7 production files promoted from reviewed stage.",
+    "513c8 focused tests, strict scoped Clippy, formatting and release builds pass.474 freeze entries and600 fresh core checkpoint files retain exact before/after identities.",
+    "Batch original-ROM/UG585/Eastshore archive/catalogue/index checks pass;10 new physicalpaths21,127,525bytes read,0errors.",
+    "513c actual UBSan backend build passed in182633ms, exit0, untruncated; old fabric reset regression passed.",
+    "513d one-line owner correction independently reviewed;2 helper tests, strict scoped Clippy, formatting and release pass.428 current source entries match before/after; unchanged core/qtest/probe identities reused.",
+    "513d actual UBSan backend build passes188550ms; owner correction removes startup cast failure.",
+    "513e checked585 before/after source entries;9 focusedtests, Clippy, formatting and two releasehelpers pass.",
+    "513e actual ROM-map340, rejected-SWAP383 and fabric128 transactions pass, each with2realQMPresets. Independent audit rehashes428+585sources/213mounts and checks all original-ROM byte hashes and mapping behavior.",
+    "513f startup-classifier source reviews closed after newline-completeness fix.7focusedtests, strictClippy, formatting and release pass;585sourcefreeze unchanged.",
+    "Actual513f passes exact7-line model initialization/running-state boundary and retains153translated-block headers.162rawspans/2436bytes allmatch originalROM.",
+    "513g strictrawparser tests/Clippy/fmt/release pass;585sourcefreeze unchanged. Actual217ms originalROM run reaches unsupportedSLCR0x254 write1. Independent645pin audit checks180rawspans2736bytes and originalMOV/MOVT/BL/STR path.",
+    "513h complete37,471,135B olderTRM and actualAMD52030API originals preserved; source conflict explicit."
+  ],
+  "unresolved": [
+    "PublicROM exact selectedS9 silicon revision binding remains unknown.",
+    "Actual513g firstmissing interface isRST_REASON_CLR0xf8000254.513h documentedclear/persistentstate stage awaitsreview/build/tests.",
+    "PrivateSWAP andROM_SHADOW unimplemented; complete reset-to-archived firmware remainsopen.",
+    "SDHCIconfigured capabilitymask remains a model limitation.128MiBprivateSDoverlay is a declared reference capacity, not physicalevidence.",
+    "No originalboard, physicaltiming or mining gate changed."
+  ],
+  "next_action": "Review513h source then integrate/check/freeze actualUBSanbackend, componenttests and boundedoriginalROMprobe. CoordinateCargo/runtimewithCVCowner.",
+  "reports": [
+    "work/simulator/reviews/zynq-bootrom-acquisition-513.json",
+    "work/simulator/reviews/raw-sd-allocation-513.json",
+    "work/simulator/reviews/zynq-rom-read-path-stage-513.json",
+    "work/simulator/reviews/zynq-rom-read-path-executed-513b-inputs.json",
+    "work/simulator/reviews/zynq-rom-read-path-executed-513b.md",
+    "work/simulator/reviews/zynq-rom-read-independent-execution-513b.json",
+    "work/simulator/reviews/zynq-rom-reset-stage-513c.json",
+    "work/simulator/reviews/zynq-rom-reset-independent-source-513c-root.json",
+    "work/simulator/reviews/zynq-rom-address-basis-513c.json",
+    "work/simulator/reviews/zynq-trm-mirror-acquisition-513c.json",
+    "work/simulator/reviews/zynq-rom-owner-failure-513c.json",
+    "work/simulator/reviews/zynq-rom-owner-independent-source-513d-root.json",
+    "work/simulator/reviews/zynq-rom-reset-attempt-513d.json",
+    "work/simulator/reviews/zynq-rom-reset-executed-513e.md",
+    "work/simulator/reviews/zynq-rom-reset-executed-513e-inputs.json",
+    "work/simulator/reviews/zynq-rom-map-independent-execution-513e.json",
+    "work/simulator/reviews/zynq-rom-reset-independent-execution-513g.json",
+    "work/simulator/reviews/zynq-reset-reason-stage-513h.json",
+    "work/simulator/reviews/zynq-reset-reason-api-acquisition-513h.json"
+  ],
+  "temporary_fetches": [
+    {
+      "path": "/tmp/md-sim-ocm-cfg-513.html",
+      "status": "HTTP200butJSshellonly; no register content, not a valid reference capture"
+    },
+    {
+      "path": "/tmp/md-sim-ug585-513.pdf",
+      "status": "HTTP2streamreset curl92; no source accepted"
+    },
+    {
+      "path": "/tmp/md-sim-ug585-513b.pdf",
+      "status": "FAILED curl28:45000ms timeout with0bytes; no source accepted. No further unchanged retry."
+    }
+  ],
+  "active": {
+    "status": "513h stage awaitingindependentreview; cataloguechecks running",
+    "stage": "work/simulator/reviews/zynq-reset-reason-stage-513h.json",
+    "last_actual": "work/simulator/qemu-s9/rom-reset-513g/assessment.json"
+  }
+}

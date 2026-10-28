@@ -1,0 +1,17 @@
+{
+  "schema": "md-sim-independent-reference-correction/1",
+  "reviewer": "cleanup_resume",
+  "prior_review": {
+    "path": "work/simulator/reviews/s9-measured-reference-independent-512.json",
+    "sha256": "7537e6a6da237fdf4cdf72cfe5313b8742e8b9e9590eef80ea63350852a40837",
+    "size": 5791
+  },
+  "corrected_report": {
+    "path": "work/simulator/reviews/s9-measured-reference-inspection-512.json",
+    "sha256": "10befe11790797b15414303ed6923667d0a516e879fd9f92f87aa817f2a0bbb7",
+    "size": 7789
+  },
+  "correction": "Uncertain meter brand removed. TM9+,1317.8W and all declared limitations remain.",
+  "passed": true,
+  "exact_target_or_calibration_gate_changed": false
+}

@@ -1157,6 +1157,20 @@ CARGO_INCREMENTAL=0 CARGO_TARGET_DIR=work/simulator/check-target-085 TMPDIR=/hom
 TMPDIR=/home/user/src/md-sim/work/simulator/test-tmp-227 work/simulator/check-target-085/release/examples/inspect_s9_spl work/simulator/original-zynq/sd-bundle-291/boot/boot.bin work/simulator/original-zynq/sd-bundle-291/boot/spl-payload.bin work/simulator/original-zynq/spl-contract-454
 ```
 
+The [original ROM read test](work/simulator/reviews/zynq-rom-read-path-executed-513b.md)
+now passes 28 EOF and error cases in isolated QEMU ARM. It uses an unchanged
+public Zynq ROM and the exact saved SD sector. The read routine stops at the
+logical file end and leaves the remaining destination bytes unchanged.
+The separate [ROM mapping and reset tests](work/simulator/reviews/zynq-rom-reset-executed-513e.md)
+pass complete ROM protection, all memory-bank mappings and two resets per case.
+The later [reset diagnostic audit](work/simulator/reviews/zynq-rom-reset-independent-execution-513g.json)
+matches actual translated bytes to the original ROM and records its first
+unsupported SLCR write. The complete firmware boot remains open.
+The report includes the tested command and complete input hashes. Its C
+fixture supplies the ARM32 ABI and exact memory layout; Rust controls the
+test and checks its results. Full reset execution and the ROM's match to
+the selected S9 silicon remain open.
+
 The [normal SD console run](work/simulator/qemu-s9/legacy-s9io-console-001/console.json)
 also executes the archived BOSminer and BOSer web service.
 The miner detects no hashboards. The guest's current FPGA address map differs
@@ -1928,6 +1942,17 @@ The selected logic now passes 72 real bus transactions and two reset
 sequences across all three controller blocks. See the [MAXIGP0 execution
 report and tested command](work/simulator/reviews/maxigp0-executed-511e.md).
 The test drives the declared PS7 interface; it does not execute a CPU.
+The same 72 operations and two resets now pass through the live Rust-to-HDL
+link. Its clock tests check event order, clock changes and unknown signal
+values. See the [live execution report and tested commands](work/simulator/reviews/live-pl-executed-512e.md).
+The [transport regression and measured throughput test](work/simulator/reviews/hdl-throughput-executed-514.md)
+retain a passing bus regression and a failed speed test. A10us fabric interval
+took2.472s; the100us case hit its10s command limit. Full firmware execution
+needs a faster backend with the required signal and event behavior.
+The [isolated CVC tool build](work/simulator/reviews/cvc-tool-executed-516.md)
+passes its compiler, four-state smoke and restored-tool tests. Its selected
+S9 logic and callback-order tests remain open. The retained upstream warnings
+and source-available license are recorded separately.
 The CPU bridge, physical timing, original-board and exact-target gates remain open.
 The exact 2022 Bosminer ELF is now extracted and its version, build, control
 and baud register instructions are checked with isolated Capstone. The selected
@@ -1942,6 +1967,10 @@ capture, isolation, execution and result checks. The selected MAXIGP0 fixture
 uses the same HDL event interface to drive only the PS7 bus, clock and reset
 ports. It does not replace a processor. The existing upstream
 Icarus and gperf source retains its original C/C++ implementation.
+The live link uses a small C module for Icarus's existing VPI callback interface.
+Rust cannot provide this interface without an ABI boundary. Rust owns the
+protocol, child process, limits and result checks. Verilog supplies the actual
+HDL event and four-state signal behavior.
 The browser tests use small JavaScript expressions for DOM access, button
 events, HTTP requests, WebSocket checks and Firefox preferences. These use the browser's native
 interface. Rust and C cannot replace that interface. Rust controls the test,

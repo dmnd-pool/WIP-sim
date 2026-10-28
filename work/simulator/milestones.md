@@ -142,5 +142,6 @@ review must pass against the final frozen release inputs.
 
 Blockers: required implementation and missing evidence across the full matrix.
 Estimate: not defensible before exact target model and input gaps are resolved.
-Next action after milestone 2 completion: extend real execution paths by exact
+Stop after milestone 2 completion and save its tested checkpoint. Resume this
+matrix only when the user asks. Then extend real execution paths by exact
 hardware/firmware identity, preserve all unresolved rows, and run every suite.

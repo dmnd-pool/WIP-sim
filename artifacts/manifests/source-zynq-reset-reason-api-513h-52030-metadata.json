@@ -1,0 +1,26 @@
+{
+  "id": "source-zynq-reset-reason-api-513h-52030-metadata",
+  "url": "https://docs.amd.com/api/khub/maps/pXepEVhufvr8QbEPz36LFg",
+  "kind": "source",
+  "title": "AMD Answer 52030-metadata public API original response",
+  "language": "en",
+  "source_id": "s9-zynq-reset-reason-primary",
+  "license": "AMD/Xilinx copyright; original notices apply",
+  "retrieved_at": "2026-10-28T18:04:48.911017+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/source-zynq-reset-reason-api-513h/52030-metadata.json",
+  "sha256": "c60145b9a2480fa52ce5c6a611953497c3f2c96639d58e9e0bfba34983457e9e",
+  "size_bytes": 4730,
+  "executed": false,
+  "scope": "supporting-tool",
+  "response_headers": {
+    "path": "artifacts/files/source/source-zynq-reset-reason-api-513h/52030-metadata.headers",
+    "sha256": "b24af61e3115cd1cc2fd010e65c655651e613708df42cd7612f1c4a58af4dbbd",
+    "size": 1837
+  },
+  "acquisition": "Bounded public FluidTopics API; no credentials or acquired JavaScript execution. Original body retained unchanged.",
+  "notes": [
+    "Reference for Bitcoin ASIC S9 Zynq reset state only; exact selectedsilicon/ROMbinding remainsunknown.",
+    "52030 narrative all-silicon accumulation/clear/POR semantics are distinct from its inconsistent summary bitlabels; original table preserved for comparison with2012TRM."
+  ]
+}

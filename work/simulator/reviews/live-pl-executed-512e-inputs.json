@@ -1,0 +1,137 @@
+{
+  "schema": "md-sim-live-pl-executed/1",
+  "recorded_at": "2026-10-28T17:00:37.642136+00:00",
+  "passed": true,
+  "scope": "Selected programmable-logic component and transport, not CPU, firmware, original-board, mining or physical timing acceptance.",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/live-driver-512e/manifest.json",
+    "sha256": "9bf7b0bdc4c83d02f8980081f576d543b4f489713c850d8114e4f1c9f47e3bc3",
+    "size": 71740
+  },
+  "helper": {
+    "path": "work/simulator/qemu-s9/live-driver-512e/s9_hdl_validate",
+    "sha256": "1b386c34d3e0a300a283543c042806e4e47a8767359d537a2b83fef71fc13025",
+    "size": 2569232
+  },
+  "runs": {
+    "axi-baseline-512e": {
+      "spec.json": {
+        "path": "work/simulator/qemu-s9/axi-baseline-512e/spec.json",
+        "sha256": "480ceb7c1b5686a7150ddd96f6fb0056f4a2aa46a7598e4a84f91ee44bd6588c",
+        "size": 9203
+      },
+      "result.json": {
+        "path": "work/simulator/qemu-s9/axi-baseline-512e/result.json",
+        "sha256": "55b825d67e2975a36525b70a7fd097e0c30a786c5ac1510562c772b315896ba3",
+        "size": 102997930
+      },
+      "hdl-report.json": {
+        "path": "work/simulator/qemu-s9/axi-baseline-512e/hdl-report.json",
+        "sha256": "549c9871181295f7312a4df8bc458fe20335c47d887623c2c893f0a696d3677b",
+        "size": 575035
+      },
+      "selected-vvp.tar.gz": {
+        "path": "work/simulator/qemu-s9/axi-baseline-512e/selected-vvp.tar.gz",
+        "sha256": "fa10a93780b1c3f3ae31937d710fcfe47bc6879e64a8c1fc495b81418faf9716",
+        "size": 25479379
+      },
+      "stderr.log": {
+        "path": "work/simulator/qemu-s9/axi-baseline-512e/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      "wall_milliseconds": 27328,
+      "gates": {
+        "primitive_vectors_pass": true,
+        "ram_omission_differential_pass": true,
+        "selected_elaboration_pass": true,
+        "selected_vvp_compile_pass": true,
+        "selected_axi_pass": true,
+        "selected_live_pass": null,
+        "clock_chunk_invariant": null,
+        "original_board_gate": false
+      },
+      "selected_program": {
+        "sha256": "3a6733a8e480703202c0c5b39d5721f78808f44902e03e064fc240c667036e88",
+        "size": 212935686
+      }
+    },
+    "live-selected-512e": {
+      "spec.json": {
+        "path": "work/simulator/qemu-s9/live-selected-512e/spec.json",
+        "sha256": "87a2de9509923b0f545c99e77fd38d7d13adecf62c6dd6b740fd5385ea30d723",
+        "size": 9772
+      },
+      "result.json": {
+        "path": "work/simulator/qemu-s9/live-selected-512e/result.json",
+        "sha256": "3ff4c8bf3352ea7fceca1ab4c4dc3073f201fa6dc85d7dc2d18ae2c30a029e53",
+        "size": 103362822
+      },
+      "hdl-report.json": {
+        "path": "work/simulator/qemu-s9/live-selected-512e/hdl-report.json",
+        "sha256": "e9cdf412cb9a2946106265605f6ea1712088e1f20967e0e95ed447fc61523868",
+        "size": 730701
+      },
+      "selected-vvp.tar.gz": {
+        "path": "work/simulator/qemu-s9/live-selected-512e/selected-vvp.tar.gz",
+        "sha256": "ce125b6729eb056bb0b537da036ebae2a2dc1c545e742992b11e8cb18f54890c",
+        "size": 25512922
+      },
+      "stderr.log": {
+        "path": "work/simulator/qemu-s9/live-selected-512e/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      "wall_milliseconds": 31218,
+      "gates": {
+        "primitive_vectors_pass": true,
+        "ram_omission_differential_pass": true,
+        "selected_elaboration_pass": true,
+        "selected_vvp_compile_pass": true,
+        "selected_axi_pass": true,
+        "selected_live_pass": true,
+        "clock_chunk_invariant": true,
+        "original_board_gate": false
+      },
+      "selected_program": {
+        "sha256": "f74b392bab34563977af775fa02eeebb4dd60d67efd71c031d6a1788d43a3705",
+        "size": 212950005
+      }
+    }
+  },
+  "vpi_adapter": {
+    "sha256": "c2515601182797cf5a9b5ac096db7541b41e140f0f88e11e796d15b3bdc032ad",
+    "size": 24464
+  },
+  "requests": 81,
+  "responses_by_kind": {
+    "3": 53,
+    "5": 1,
+    "1": 81,
+    "2": 10
+  },
+  "selected_transactions": 72,
+  "reset_sequences": 2,
+  "selected_final_time_ps": 15040002,
+  "compiler_cleanup_after_success": true,
+  "source_checks": {
+    "tests_passed": 23,
+    "explicit_retained_511e_passed": 1,
+    "fmt": true,
+    "strict_clippy": true,
+    "release": true
+  },
+  "scope_gates": {
+    "cpu_synchronization_complete": false,
+    "firmware_executed": false,
+    "fresh_mining": false,
+    "original_board_gate": false,
+    "physical_timing_calibrated": false
+  },
+  "failed_development_runs": [
+    "live-selected-512",
+    "live-selected-512b",
+    "live-selected-512c",
+    "live-selected-512d"
+  ]
+}

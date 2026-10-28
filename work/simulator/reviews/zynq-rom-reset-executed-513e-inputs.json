@@ -1,0 +1,322 @@
+{
+  "schema": "md-sim-zynq-rom-component-execution/1",
+  "date": "2026-10-28T17:38:54.904241+00:00",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/rom-reset-driver-513e/manifest.json",
+    "sha256": "2f4df5cc70cc9545e12d94366aea83b8dc47df2a60d0a56169af64b21d1a759c",
+    "size": 100499
+  },
+  "backend": {
+    "path": "work/simulator/qemu-s9/backend-build-513d-ubsan/build-report.json",
+    "sha256": "96a797c55abb78966ce73ae06f4fadcb42bab573fd6589c44705cb81f913a5e5",
+    "size": 2670789
+  },
+  "cases": [
+    {
+      "name": "rom-map-513e",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 130,
+      "trace_truncated": false,
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 124047,
+                "seconds": 1793208723
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 126987,
+                "seconds": 1793208723
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 129452,
+                "seconds": 1793208723
+              }
+            }
+          ],
+          "test_kind": "rom-map",
+          "transactions": 340,
+          "warm_resets": 2
+        }
+      ],
+      "translated_instruction_lines": null,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513e/assessment.json",
+          "sha256": "081432867857c75aea0b79c3bb9e93b110a74805e07d0e3ae308626e71f099ce",
+          "size": 2704
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513e/result.json",
+          "sha256": "5220c9597f6c6bd0507ad493e6316556883e0b999ffc7b6e026a6566ea878fc7",
+          "size": 123192
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513e/spec.json",
+          "sha256": "c6a721e08d5c65d8509773b5fc0e717838aca7b205f1a3ce060f9556770cc0f4",
+          "size": 3430
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513e/transactions.log",
+          "sha256": "02bf1bcc761e1baea3dd476074b30b85b4860e74ff7565187ec31740a7f02a3f",
+          "size": 58083
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-map-513e/backend.log",
+          "sha256": "c023cfc023ce32c8014c60ebe400dd7982d6cf48e905c639e044f153e55d6bf1",
+          "size": 3092
+        }
+      ]
+    },
+    {
+      "name": "rom-swap-reject-513e",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 130,
+      "trace_truncated": false,
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 66831,
+                "seconds": 1793208735
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 69921,
+                "seconds": 1793208735
+              }
+            },
+            {
+              "event": "STOP",
+              "timestamp": {
+                "microseconds": 73003,
+                "seconds": 1793208735
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 75528,
+                "seconds": 1793208735
+              }
+            }
+          ],
+          "test_kind": "rom-swap-reject",
+          "transactions": 383,
+          "warm_resets": 2
+        }
+      ],
+      "translated_instruction_lines": null,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/rom-swap-reject-513e/assessment.json",
+          "sha256": "06988e638806087ea399a63970b83717a12e4ea0b2c7c22bdfdf6c68a64e2474",
+          "size": 2871
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-swap-reject-513e/result.json",
+          "sha256": "bbebcfc228c2a4499fe84d60cb71f6abb00f7c24856dacd302a3c90c0413eb33",
+          "size": 144582
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-swap-reject-513e/spec.json",
+          "sha256": "bfa732a5216b6095f9b126621632bdec6385d9d3095178f2d49c9208b11a5877",
+          "size": 3438
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-swap-reject-513e/transactions.log",
+          "sha256": "02edbdcbedb6deebaecb85269a02c31f85f283ac22d5ad8c85de1749eac29b1d",
+          "size": 68726
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-swap-reject-513e/backend.log",
+          "sha256": "b0e07a512ebf66e86309304fa2017992872ddc52d5796b9a6e8e4924a2977d4a",
+          "size": 3144
+        }
+      ]
+    },
+    {
+      "name": "rom-fabric-513e",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 100,
+      "trace_truncated": false,
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 873573,
+                "seconds": 1793208741
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 874581,
+                "seconds": 1793208741
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 875157,
+                "seconds": 1793208741
+              }
+            }
+          ],
+          "test_kind": "fabric",
+          "transactions": 128,
+          "warm_resets": 2
+        }
+      ],
+      "translated_instruction_lines": null,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513e/assessment.json",
+          "sha256": "699a8700a6025a9cf1b0c74ce1d4b6f6179e7c34354d30133974160a1a6c7e3d",
+          "size": 2729
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513e/result.json",
+          "sha256": "1f297d09ddf8262733de3500190a306f0f277f1043e907faadbff4e1de699f39",
+          "size": 60980
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513e/spec.json",
+          "sha256": "d175ec614ebbfcc562ad8579f1165cb7c7ab1eb513d71ed259897ead3970f40a",
+          "size": 3242
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513e/transactions.log",
+          "sha256": "481ac27ebb9b11dd8e83454dd01928b7518c9ae5023eea575eb9a278d92e9b59",
+          "size": 16941
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-fabric-513e/backend.log",
+          "sha256": "57a5760926defc5db16ae7bee1e927c217e09e1cfb12b8193f46accf89ff0f7d",
+          "size": 13128
+        }
+      ]
+    },
+    {
+      "name": "rom-reset-513e",
+      "status": "cancelled",
+      "exit_code": null,
+      "wall_milliseconds": 185,
+      "trace_truncated": false,
+      "passed": false,
+      "observations": [],
+      "translated_instruction_lines": 0,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/rom-reset-513e/assessment.json",
+          "sha256": "7d1ad4f44bc4c7269d6e6d54a569bb2691ca6fa3da03eb402ce911cd3ebd778d",
+          "size": 1164
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-reset-513e/result.json",
+          "sha256": "d2bd00a7f7bbace4fe4403a676ab6dead30380c779406f6b67bc8473ee71fe1a",
+          "size": 2140
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-reset-513e/spec.json",
+          "sha256": "462739c87d3c7bed9e3cc7afbadce7f41e02f1718d4bedb35bb0a95f5a335908",
+          "size": 7905
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-reset-513e/input-identities.json",
+          "sha256": "485faf6d060bf24ade7c69fbafc242b7fe08a54c4aa60afdde00aef651a216f1",
+          "size": 1338
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-reset-513e/serial.stdout",
+          "sha256": "36b0f7abe4e012a6b9b5565d4955cbe2d5c4c113df96d2d5b60272910676d041",
+          "size": 366
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-reset-513e/instruction-trace.log",
+          "sha256": "e18f609055b4f6733f16c3d9362b4c6b1fdbef5181853441400f42d3a237ca79",
+          "size": 280
+        },
+        {
+          "path": "work/simulator/qemu-s9/rom-reset-513e/first-diagnostic.json",
+          "sha256": "7ab02217f791280121c5cc995b5fe44d43f4fad785da8d3d1b88b432e6c0bed9",
+          "size": 275
+        }
+      ]
+    }
+  ],
+  "component_gate": true,
+  "original_board_gate": false,
+  "firmware_boot_gate": false,
+  "functional_mining_gate": false,
+  "reset_diagnostic_status": "Cancelled at the first model initialization diagnostic before any translated instruction. The actual tool-preparation marker verifies private overlay creation; no guest boot message is inferred.",
+  "known_limits": [
+    "PublicROM exactS9silicon binding unknown",
+    "PrivateSWAP andROM_SHADOW unimplemented",
+    "SDHCIconfigured capability-mask diagnostic unresolved; phase classification pending",
+    "Reference128MiB storage overlay and zero extension, no physicalcapacity claim",
+    "No physical timing or originalboard acceptance"
+  ]
+}

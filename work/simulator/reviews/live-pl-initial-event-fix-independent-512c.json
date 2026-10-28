@@ -1,0 +1,51 @@
+{
+  "schema": "md-sim-independent-failure-and-fix-review/1",
+  "recorded_at": "2026-10-28T16:45:58.496097+00:00",
+  "reviewer": "cleanup_resume",
+  "failure_run": "work/simulator/qemu-s9/live-selected-512b",
+  "actual_exit_code": 1,
+  "actual_wall_milliseconds": 10509,
+  "trace_truncated": false,
+  "raw_observation": {
+    "ready_time_ps": 0,
+    "actual_output": 88,
+    "expected_output": 85,
+    "commands_sent": 0,
+    "diagnostics_empty": true,
+    "owned_child_abort_signal": 9,
+    "cleanup_error": null
+  },
+  "failure": "Static first=0 declaration initialization precedes registration of always@(first), so it causes no scheduled transition through the intended NBA chain. Retained Ready88 is correct for second=0 and is not accepted.",
+  "source_delta": "Leave first initiallyX and schedule initial first<=0 in the time0 NBA queue. This creates a real transition after active sensitivity registration, then the original second<=first+7 NBA and continuous expression. No added time, forced output, changed expected85/72, or removed assertion.",
+  "old_fixture": {
+    "path": "work/simulator/qemu-s9/live-driver-512b/source/simulator/backends/icarus/vpi-order-fixture.v",
+    "sha256": "83d4b2f3d94398c7c1b1ed4d232dfcf24c897af70df20abb3dfc0b604df6da06",
+    "size": 1074
+  },
+  "new_fixture": {
+    "path": "simulator/backends/icarus/vpi-order-fixture.v",
+    "sha256": "9a999a5de90ce02ba6f0968331391e5d12534a6ab796f68cf1b17583270723dd",
+    "size": 1243
+  },
+  "evidence": {
+    "work/simulator/qemu-s9/live-selected-512b/result.json": {
+      "sha256": "379edf06df942210fa6497e4be1d8cb70184fd249660259102840b8e4647f353",
+      "size": 1080476
+    },
+    "work/simulator/qemu-s9/live-selected-512b/hdl-envelope.json": {
+      "sha256": "a193daf3ddafad8e2be80958d81c151e7364e300344a887d3ae8832f5c106d60",
+      "size": 539766
+    },
+    "work/simulator/qemu-s9/live-selected-512b/hdl-report.json": {
+      "sha256": "97cc9203dd73b4b15e2f46632296b3ae7cfbe069a34ba535418e35184c92d0a5",
+      "size": 551011
+    },
+    "work/simulator/qemu-s9/live-selected-512b/spec.json": {
+      "sha256": "6b32f5f9a8700c0dc665dad018f8785a1ddb11a9c1e1b7bebbe4af8650e8aad4",
+      "size": 9772
+    }
+  },
+  "fix_source_review_passed": true,
+  "rerun_pending": true,
+  "original_board_gate": false
+}

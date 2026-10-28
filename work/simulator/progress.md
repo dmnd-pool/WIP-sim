@@ -19,15 +19,34 @@ CLI test passed. It records the tested commands, independent mining/Core/
 browser evidence and the501/502 resume inputs. Its historical pause is over.
 
 Latest28 October S9 result: the selected reconstructed FPGA logic passes72
-real MAXIGP0 transactions and two resets across all three chain interfaces.
-Independent review passes. The vendor PS7 CPU-absence notice is preserved;
-this is not an original-board boot. The CPU/FPGA bridge and original SD reset
-path are next. Exact PSU/controller/hashboard identities and physical traces
-remain open. Current workspace checks pass1,171 tests in125 suites, with49
-explicit ignored tests; formatting and strict Clippy pass. All575 source
-inputs match before and after those checks. Other miner development stays
-checkpointed under the user's S9-first instruction. See the
-[verified source checkpoint511e](checkpoint-511e.md).
+real MAXIGP0 transactions and two resets through the live Rust/VPI link.
+Independent review passes for the live run and a separate baseline with the
+same frozen helper. Clock, four-state signal and event-order tests pass.
+See the [execution report](reviews/live-pl-executed-512e.md). This does not
+execute the CPU. The CPU/FPGA bridge and original SD reset path are next.
+The unchanged public ROM's file-read routine also passes28 isolated cases;
+its exact S9 silicon binding remains unknown. See the
+[ROM routine report](reviews/zynq-rom-read-path-executed-513b.md).
+The later original-ROM reset diagnostic reaches actual device writes. It
+stops at missing SLCR register0x254 behavior. The
+[independent audit](reviews/zynq-rom-reset-independent-execution-513g.json)
+matches180 raw translated spans to the archived ROM. Full board boot remains
+open. The shared transport's actual bus regression also passes; its
+[throughput test](reviews/hdl-throughput-executed-514.md) fails at100us after
+the unchanged10s deadline. A faster suitable HDL backend is implementation work.
+Exact PSU/controller/hashboard identities and physical traces remain open.
+At commit `e6fb96cf`, workspace checks passed1,171 tests in125 suites, with49
+explicit ignored tests; formatting and strict Clippy passed. All575 source
+inputs matched before and after those checks. Later changes need their own
+full workspace checks. Other miner development stays checkpointed under the
+user's S9-first instruction. See the [source checkpoint511e](checkpoint-511e.md).
+The [later full workspace checks](reviews/workspace-check-after513g.json)
+pass1,230 tests in128 suites, with55 explicit ignored tests. All595 source
+inputs match before and after formatting, strict Clippy and tests. The new
+CVC tool builder also passes its actual isolated build and smoke tests.
+The [subsequent full checks](reviews/workspace-check-after516.json) pass1,237
+tests in129 suites, with55 ignored tests and596 unchanged source inputs.
+The faster backend still needs the selected-model and callback-order tests.
 
 The earlier [adapted S9 run495 passes](reports/native-browser-mining-pass-495.md)
 the selected SSH/TLS native browser checks, fresh mining, independent header
