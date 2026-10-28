@@ -1,0 +1,152 @@
+{
+  "schema": "md-sim-independent-original-probe-review/1",
+  "date": "2026-10-28",
+  "scope": "Reviewed501 programmed-state integration and actual original factory037 UART boundary. This is not a complete board boot or mining pass.",
+  "source_review": {
+    "findings": [],
+    "base_commit": "f5fbf74ecca369a77d497cfaa3661197891e60be",
+    "original_base_files_verified": 3,
+    "stage_and_production_files_verified": 7,
+    "complete_frozen_source_files_verified": 132,
+    "check_logs_verified": 5,
+    "core_rules": "Repeated posted writes update selected chip bank; ambiguous addresses and invalid core forms fail before mutation; reset/power remove knowledge. No effective clock, lock, completion or guest readback follows from raw programming."
+  },
+  "execution_review": {
+    "result_status": "exited",
+    "exit_code": 1,
+    "wall_milliseconds": 2879,
+    "untruncated": true,
+    "mounts_verified": 17,
+    "logs_exactly_match_retained_result": true,
+    "raw_command_frames": [
+      "55aa520500000a",
+      "55aa5305000003",
+      "55aa400500001c",
+      "55aa51090080000000001c",
+      "55aa510900840000000011",
+      "55aa510900200000000102",
+      "55aa5109003c8000807410",
+      "55aa51090014000000f01e",
+      "55aa51090068c070011100",
+      "55aa510900280600000f18"
+    ],
+    "independent_crc": "Polynomial long division, x^5+x^2+1, initial31; all10 command frames and one51-bit reply verified. No production decoder invoked.",
+    "rx_frames": [
+      "aa5513971800000006"
+    ],
+    "control_state_updates": [
+      {
+        "after_capture_sequence": 13,
+        "chip_position": 0,
+        "effective_clock_known": false,
+        "guest_readback_available": false,
+        "response_bytes": 0,
+        "state": {
+          "core0_write": 116,
+          "pll0_write": null,
+          "pll3_write": null
+        }
+      },
+      {
+        "after_capture_sequence": 17,
+        "chip_position": 0,
+        "effective_clock_known": false,
+        "guest_readback_available": false,
+        "response_bytes": 0,
+        "state": {
+          "core0_write": 116,
+          "pll0_write": null,
+          "pll3_write": {
+            "written_word": 3228565777
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "error": "UnsupportedCommand",
+      "packet": {
+        "Command": {
+          "broadcast": true,
+          "command": {
+            "Write": {
+              "address": 0,
+              "register": 40,
+              "value": 100663311
+            }
+          }
+        }
+      }
+    },
+    "one_shot_observer_selected": false,
+    "write_acknowledgements": 0,
+    "scope": "Original firmware produced these commands. Later guest56.25MHz log is firmware intent while host detects unsupported0x28; it is not observed clock or successful initialization."
+  },
+  "original_arithmetic_provenance": {
+    "all_retained_references_verified": true,
+    "original_function_slice_verified": true,
+    "cases": 22134
+  },
+  "inputs": [
+    {
+      "path": "work/simulator/bm1397-probe-tools-501/inputs.json",
+      "sha256": "5f0bae22816d028a10033e74d0ef06b20470db10df871977bec0bb34338c30d1",
+      "size": 39546
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+      "sha256": "5445f5c5df9f6f6d358522f61116474cd627e29a791c9d997fe254b55732f7af",
+      "size": 34366
+    },
+    {
+      "path": "work/simulator/bm1397-probe-tools-501/esp32_original_probe",
+      "sha256": "5837e5cf26a96a536104a2073a36c7d1f3e7393408d02866657c6f8f6fca4945",
+      "size": 2209392
+    },
+    {
+      "path": "artifacts/files/firmware/open-gh-asset-475665897/esp-miner-factory-102-v2.14.2.bin",
+      "sha256": "3fd36298681d7797429dd72610041d731558c5253430902a3c7feeced232557c",
+      "size": 15802368
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-037/spec.json",
+      "sha256": "c95b22b4ad58afac5e53eab4b2284dd187cc5dc3eccbd670ff0d3ce1c6b09ef2",
+      "size": 3961
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-037/result.json",
+      "sha256": "18d0f5879ae5d0347365e9b5475d59a18593ed59f76b7c8ed0ac6af5a648a0b4",
+      "size": 817979
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-037/input-identities.json",
+      "sha256": "7b27d6b6fc29eef86cd14d7f72c306e9386d4d14c85155c5ffe271ab0b45dfb1",
+      "size": 3073
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-037/adaptation.json",
+      "sha256": "e63e09c945be07c76c16efbe5760c7d01baa7b6a5146b045977edf3cac60091e",
+      "size": 611
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-037/guest.log",
+      "sha256": "d01c8572d6cf195080c475b86d023e1145ecbe19d16b9aa5b2b91011319493eb",
+      "size": 10119
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-037/backend.log",
+      "sha256": "3d04e7007ff4a4b52552cc294bfc009c218a660468028c623248a6e6dceb0e17",
+      "size": 398449
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-037/assessment.json",
+      "sha256": "321781e9a728f699eab092dd89c056972b2e87d33252eb09f1eb829e122a802c",
+      "size": 504
+    }
+  ],
+  "gates": {
+    "complete_original_board_boot": false,
+    "functional_mining": false,
+    "native_dashboard": false
+  },
+  "next_action": "Implement evidenced FastUART0x28 posted state and investigate MiscControl0x18 requested baud; preserve unknown physical UART timing and do not infer PLL lock."
+}

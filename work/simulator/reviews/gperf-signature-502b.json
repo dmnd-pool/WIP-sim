@@ -1,0 +1,79 @@
+{
+  "source": {
+    "id": "source-gperf-3-1-complete-502b",
+    "url": "https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz",
+    "kind": "source",
+    "title": "Complete original GNU gperf3.1 source",
+    "language": "en",
+    "source_id": "gnu-gperf-3-1",
+    "license": "GPL-3.0-or-later",
+    "retrieved_at": "2026-10-28T11:36:32.378547+00:00",
+    "status": "downloaded",
+    "local_path": "artifacts/files/source/source-gperf-3-1-complete-502b/md-sim-gperf-complete-502b.tar.gz",
+    "sha256": "588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2",
+    "size_bytes": 1215925,
+    "executed": false,
+    "scope": "supporting-tool",
+    "response_headers": {
+      "local_path": "artifacts/files/source/source-gperf-3-1-complete-502b/md-sim-gperf-complete-502b.tar.gz.headers",
+      "sha256": "b59c4ad85a5bdd384479dc7cd5b9362f2386f626e7b4b8befb2d5aa320abf0b4",
+      "size_bytes": 699
+    },
+    "http_status": 200,
+    "signature_record": "work/simulator/reviews/gperf-signature-502b.json"
+  },
+  "keyring": {
+    "id": "gnu-keyring-20261028-502b",
+    "url": "https://ftp.gnu.org/gnu/gnu-keyring.gpg",
+    "kind": "metadata",
+    "title": "Official GNU signing keyring captured28October2026",
+    "language": "en",
+    "source_id": "gnu-gperf-3-1",
+    "license": "unknown",
+    "retrieved_at": "2026-10-28T11:36:32.382855+00:00",
+    "status": "downloaded",
+    "local_path": "artifacts/files/metadata/gnu-keyring-20261028-502b/md-sim-gnu-keyring-502b.gpg",
+    "sha256": "0fe55175b96a8ea1c4b670cc3fe11d56b341e4eff81b161ea49958ae550be6ca",
+    "size_bytes": 3698125,
+    "executed": false,
+    "scope": "supporting-tool",
+    "response_headers": {
+      "local_path": "artifacts/files/metadata/gnu-keyring-20261028-502b/md-sim-gnu-keyring-502b.gpg.headers",
+      "sha256": "fb3e6482702a9eeaf1072552036ffa6e287f337dc925fc3816f815e9ae83aca0",
+      "size_bytes": 665
+    },
+    "http_status": 200
+  },
+  "signature": {
+    "id": "gperf-3-1-signature-502",
+    "url": "https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz.sig",
+    "kind": "metadata",
+    "title": "GNU gperf3.1 detached source signature; not verified",
+    "language": "en",
+    "source_id": "gnu-gperf-3-1",
+    "license": "unknown",
+    "retrieved_at": "2026-10-26T21:09:47.276752+00:00",
+    "status": "downloaded",
+    "local_path": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.sig",
+    "sha256": "0554c9102d257d266bb4d9fb4bf76737abcecfc84a06884de84f8f8ff21c23e0",
+    "size_bytes": 543,
+    "executed": false,
+    "scope": "supporting-tool",
+    "response_headers": {
+      "local_path": "artifacts/files/source/source-gperf-3.1/md-sim-gperf-3.1-502.sig.headers",
+      "sha256": "6ad31756eb0b9ed3a20de70aea3abd6da10ee6f4a667e4bdf51799bb2df069ea",
+      "size_bytes": 699
+    },
+    "signature_verification": "not performed"
+  },
+  "verifier": {
+    "path": "/usr/bin/gpgv",
+    "sha256": "779ecd56c57805f4dc953a6ac5300603c3af850e0a73d1d8cfbf88b7ee74d696"
+  },
+  "exit_code": 0,
+  "stdout": "[GNUPG:] NEWSIG\n[GNUPG:] KEY_CONSIDERED EDEB87A500CC0A211677FBFD93C08C88471097CD 0\n[GNUPG:] SIG_ID wgMLRYQQDL9ilvkVh51rOxFNdFg 2017-01-02 1483380945\n[GNUPG:] GOODSIG 93C08C88471097CD Marcel Schaible <marcel.schaible@studium.fernuni-hagen.de>\n[GNUPG:] VALIDSIG EDEB87A500CC0A211677FBFD93C08C88471097CD 2017-01-02 1483380945 0 4 0 1 2 00 EDEB87A500CC0A211677FBFD93C08C88471097CD\n",
+  "stderr": "gpgv: Signature made Mon Jan  2 19:15:45 2017 CET\ngpgv:                using RSA key 93C08C88471097CD\ngpgv: Good signature from \"Marcel Schaible <marcel.schaible@studium.fernuni-hagen.de>\"\n",
+  "trust_basis": "Signing key from exact captured HTTPS official GNU keyring; cryptographic verification successful. No web-of-trust or independent maintainer identity proof claimed.",
+  "prior_failed_transfer": "source-gperf-3-1-partial-502",
+  "execution": "No acquired source executed"
+}

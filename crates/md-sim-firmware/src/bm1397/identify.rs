@@ -12,7 +12,20 @@
 //! initialize a mining chip, return a nonce, or establish a board gate.
 //! Clock-order and enable writes retain per-chip state. Clock routing and
 //! lock/status remain unsupported; register storage is not a clock model.
+use super::programmed::{ProgrammedControls, Write};
 use super::{Command, Packet, Reply};
+
+#[cfg(test)]
+#[path = "programmed_tests.rs"]
+mod programmed_tests;
+
+/// An explicit profile capability. RegisterStorage records posted settings;
+/// it does not establish effective core/clock state or enable mining.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, serde::Serialize)]
+pub enum ControlWriteSupport {
+    Unsupported,
+    RegisterStorage,
+}
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, serde::Serialize)]
 pub enum IdentifyError {
@@ -26,6 +39,7 @@ pub struct IdentificationChain {
     addresses: Vec<u8>,
     clock_registers: Vec<[u32; 3]>,
     ticket_registers: Vec<u32>,
+    programmed_controls: Option<Vec<ProgrammedControls>>,
     /// None means normal operation. Some(index) is the next inactive chip.
     next_address: Option<usize>,
     powered: bool,
@@ -34,6 +48,13 @@ pub struct IdentificationChain {
 
 impl IdentificationChain {
     pub fn new(chips: u16) -> Result<Self, IdentifyError> {
+        Self::with_control_support(chips, ControlWriteSupport::Unsupported)
+    }
+
+    pub fn with_control_support(
+        chips: u16,
+        support: ControlWriteSupport,
+    ) -> Result<Self, IdentifyError> {
         if !(1..=256).contains(&chips) {
             return Err(IdentifyError::ChipCount);
         }
@@ -41,6 +62,8 @@ impl IdentificationChain {
             addresses: vec![0; usize::from(chips)],
             clock_registers: vec![[0xd95c8410, 0xfb73ea62, 0x0000ffff]; usize::from(chips)],
             ticket_registers: vec![0; usize::from(chips)],
+            programmed_controls: (support == ControlWriteSupport::RegisterStorage)
+                .then(|| vec![ProgrammedControls::default(); usize::from(chips)]),
             next_address: None,
             powered: false,
             reset_asserted: true,
@@ -66,6 +89,10 @@ impl IdentificationChain {
         self.clock_registers
             .fill([0xd95c8410, 0xfb73ea62, 0x0000ffff]);
         self.ticket_registers.fill(0);
+        if let Some(banks) = &mut self.programmed_controls {
+            // Loss of programmed knowledge, not a claim of silicon defaults.
+            banks.fill(ProgrammedControls::default());
+        }
         self.next_address = None;
     }
 
@@ -79,11 +106,60 @@ impl IdentificationChain {
         self.ticket_registers.get(chip).copied()
     }
 
+    /// Address by physical chain position. Power and reset gate access.
+    /// This exposes stored addressing only, not chip readiness or routing.
+    pub fn assigned_address(&self, chip: usize) -> Option<u8> {
+        if !self.powered || self.reset_asserted {
+            return None;
+        }
+        self.addresses.get(chip).copied()
+    }
+
+    /// Diagnostic state by physical chain position. It is not guest readback.
+    /// None means no selected capability, no such chip, power off or reset.
+    /// A bank with absent fields has no known posted configuration.
+    pub fn programmed_controls(&self, chip: usize) -> Option<ProgrammedControls> {
+        if !self.powered || self.reset_asserted {
+            return None;
+        }
+        self.programmed_controls.as_ref()?.get(chip).copied()
+    }
+
     pub fn receive(&mut self, packet: &Packet) -> Result<Vec<Reply>, IdentifyError> {
         if !self.powered || self.reset_asserted {
             return Ok(Vec::new());
         }
         match packet {
+            Packet::Command {
+                broadcast,
+                command:
+                    Command::Write {
+                        address,
+                        register,
+                        value,
+                    },
+            } if self.programmed_controls.is_some()
+                && matches!(register, 0x3c | 0x08 | 0x68 | 0x28 | 0x18 | 0x70) =>
+            {
+                let write = Write::decode(*register, *value)?;
+                let selected: Vec<_> = self
+                    .addresses
+                    .iter()
+                    .enumerate()
+                    .filter_map(|(index, candidate)| {
+                        (*broadcast || candidate == address).then_some(index)
+                    })
+                    .collect();
+                if !broadcast && selected.len() > 1 {
+                    return Err(IdentifyError::AmbiguousAddress);
+                }
+                let banks = self.programmed_controls.as_mut().unwrap();
+                for index in selected {
+                    write.apply(&mut banks[index]);
+                }
+                // No ACK, ready event, register reply or effective clock follows.
+                Ok(Vec::new())
+            }
             Packet::Command {
                 broadcast,
                 command: Command::Read { address, register },

@@ -1,0 +1,21 @@
+{
+  "base": {
+    "source": "crates/md-sim-firmware/examples/reclaim_qemu_inputs.rs",
+    "sha256": "5c85347328ca9561a098c46ce4e78bc2b3b92498904aac0b527764e2aebd10dd",
+    "size": 54673
+  },
+  "integrated": [
+    {
+      "path": "work/simulator/cleanup-hdl-development-503/reclaim_qemu_inputs.rs",
+      "sha256": "df6890879dcf2e78174902fe8477240aa2d07b5f4f58465fadf696fba3b0af30",
+      "size": 56477
+    },
+    {
+      "path": "work/simulator/cleanup-hdl-development-503/reclaim_qemu_inputs/hdl.rs",
+      "sha256": "efa2b495be00d5e30171a2d68d33425e2dc0bc24487bdebc2471d6b02a931b91",
+      "size": 17365
+    }
+  ],
+  "authorization": "Parent reviewed stage and permitted integration after immutable502i source capture. Exact-target confirmed502i stopped and Cargo free.",
+  "status": "integrated; focused checks pending"
+}

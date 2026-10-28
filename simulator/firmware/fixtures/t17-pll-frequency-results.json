@@ -1,0 +1,42 @@
+{
+  "schema": "md-sim-original-arithmetic-regression/1",
+  "scope": "Actual original T17 frequency arithmetic output. This fixture is not firmware mining or physical clock evidence.",
+  "encoding": "little-endian u32: magic, version, count, words-per-case; then case ID, register word, software-divider argument, original result",
+  "cases": 22134,
+  "output": {
+    "path": "work/simulator/bitaxe/t17-pll-oracle-496/execution.stdout",
+    "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+    "size": 354160
+  },
+  "original_miner": {
+    "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+    "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+    "size": 553247
+  },
+  "original_function": {
+    "virtual_address": "0x28b2c",
+    "file_offset": 133932,
+    "size": 108,
+    "sha256": "650ae97e0c4c042e4e89b91d2bdf995ce29433b0e3f7f8bd47cacd986155f4d7"
+  },
+  "driver_manifest": {
+    "path": "work/simulator/bitaxe/t17-pll-driver-496/manifest.json",
+    "sha256": "57b7a72e84e8585623409e563e348f01a6ed09775a57e93f921419a471657dcc",
+    "size": 41220
+  },
+  "execution_result": {
+    "path": "work/simulator/bitaxe/t17-pll-oracle-496/result.json",
+    "sha256": "947a09fedbb0acab39cf4efb96e221cbe5731b64bbc52ea438b4b4cc6ff9a981",
+    "size": 754506
+  },
+  "assessment": {
+    "path": "work/simulator/bitaxe/t17-pll-oracle-496/assessment.json",
+    "sha256": "1b5798d0bc3cc21e060876610ee8c53848745f8e5b3f896195be9ab332d0affd",
+    "size": 2814
+  },
+  "independent_review": {
+    "path": "work/simulator/reviews/t17-pll-independent-execution-496.json",
+    "sha256": "f1511bdb86f40ce190d49ca7bad082fd1aa05ad1ec07dfcf2772c0bbfa15b7b5",
+    "size": 2056
+  }
+}

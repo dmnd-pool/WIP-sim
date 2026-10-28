@@ -1,0 +1,142 @@
+{
+  "adaptation": {
+    "id": "fasm2bels-explicit-structure-v2",
+    "component": "fasm2bels optional VPR and interchange imports",
+    "reason": "Retain the optional import relocation; declare final alias sinks, assign the delay-free top a vendor 1 ps timebase, and render only four already omitted scalar RAMB36E1 inputs as explicit Z after requiring TDP18/36, ECC disabled and no cascade. Z preserves omission semantics; it is not a known physical tie. No routing, existing assignment, primitive parameter or existing port value changes.",
+    "source_revision": "bafbcd8727e0807d6a620d1cf5dd151111c4a322",
+    "files": [
+      {
+        "parent": {
+          "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+          "object": {
+            "sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+            "size": 18553
+          }
+        },
+        "result": {
+          "path": "simulator/tools/fasm2bels/fasm2bels/fasm2bels.py",
+          "object": {
+            "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+            "size": 18573
+          }
+        },
+        "changes": [
+          {
+            "from": "from rr_graph.capnp import graph2 as capnp_graph2\n",
+            "to": ""
+          },
+          {
+            "from": "from .lib import vpr_io_place\n",
+            "to": ""
+          },
+          {
+            "from": "from .lib.interchange import output_interchange\n",
+            "to": ""
+          },
+          {
+            "from": "    if eblif:\n        io_place = vpr_io_place.IoPlace()",
+            "to": "    if eblif:\n        from .lib import vpr_io_place\n        io_place = vpr_io_place.IoPlace()"
+          },
+          {
+            "from": "    capnp_graph = capnp_graph2.Graph(",
+            "to": "    from rr_graph.capnp import graph2 as capnp_graph2\n    capnp_graph = capnp_graph2.Graph("
+          },
+          {
+            "from": "    if args.logical_netlist:\n        assert args.physical_netlist",
+            "to": "    if args.logical_netlist:\n        from .lib.interchange import output_interchange\n        assert args.physical_netlist"
+          }
+        ]
+      },
+      {
+        "parent": {
+          "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/verilog_modeling.py",
+          "object": {
+            "sha256": "36e791fc75dccd2a8b1510d64ca71057ff68389d49ebaadf6892747f405495fb",
+            "size": 87988
+          }
+        },
+        "result": {
+          "path": "simulator/tools/fasm2bels/structure-v2/verilog_modeling.py",
+          "object": {
+            "sha256": "905488e90d3826602e759c47840d1bac709069585a36ec1ffaf3719e58769da0",
+            "size": 89210
+          }
+        },
+        "changes": [
+          {
+            "from": "from ..lib.interchange import create_site_routing\n",
+            "to": ""
+          },
+          {
+            "from": "        # Convert site_routing tree into Physical* object tree.\n",
+            "to": "        from ..lib.interchange import create_site_routing\n\n        # Convert site_routing tree into Physical* object tree.\n"
+          },
+          {
+            "from": "        yield 'module {}('.format(self.name)",
+            "to": "        # Match the vendor model units; no physical delay is inferred.\n        yield '`timescale 1ps/1ps'\n        yield 'module {}('.format(self.name)"
+          },
+          {
+            "from": "        for wire, width in make_bus(self.wires):\n            if width is None:\n                yield '  wire [0:0] {};'.format(wire)\n            else:\n                yield '  wire [{}:0] {};'.format(width, wire)\n\n",
+            "to": ""
+          },
+          {
+            "from": "        for site in self.sites:\n            for bel in sorted(site.bels, key=lambda bel: bel.priority):\n",
+            "to": "        # Alias sinks are populated after routing. Declare them before use.\n        declared_wires = self.wires | (set(self.wire_name_net_map) -\n            self.root_in - self.root_out - self.root_inout)\n        for wire, width in make_bus(declared_wires):\n            if width is None:\n                yield '  wire [0:0] {};'.format(wire)\n            else:\n                yield '  wire [{}:0] {};'.format(width, wire)\n\n        for site in self.sites:\n            for bel in sorted(site.bels, key=lambda bel: bel.priority):\n"
+          },
+          {
+            "from": "        if connections:\n            yield ',\\n'.join(\n                '.{}({})'.format(port, connections[port].to_string(net_map))\n                for port in sorted(connections))\n\n        yield '{indent});'.format(indent=indent)\n",
+            "to": "        rendered = {port: connections[port].to_string(net_map)\n                    for port in connections}\n        if rendered:\n            yield ',\\n'.join('.{}({})'.format(port, rendered[port])\n                             for port in sorted(rendered))\n\n        yield '{indent});'.format(indent=indent)\n"
+          },
+          {
+            "from": "        if rendered:\n",
+            "to": "        if self.module == 'RAMB36E1':\n            assert self.parameters['RAM_MODE'] == '\"TDP\"'\n            widths = [self.parameters[key] for key in\n                      ('READ_WIDTH_A', 'READ_WIDTH_B', 'WRITE_WIDTH_A', 'WRITE_WIDTH_B')]\n            assert widths[0] in (18, 36) and len(set(widths)) == 1\n            for key, default in [('EN_ECC_READ', '\"FALSE\"'), ('EN_ECC_WRITE', '\"FALSE\"'),\n                                 ('RAM_EXTENSION_A', '\"NONE\"'), ('RAM_EXTENSION_B', '\"NONE\"')]:\n                assert self.parameters.get(key, default) == default\n            for pin in ('CASCADEINA', 'CASCADEINB', 'INJECTDBITERR', 'INJECTSBITERR'):\n                assert pin not in rendered and self.port_direction[pin] == 'input'\n                assert self.port_width[pin] is None\n                rendered[pin] = \"1'bz\"\n        if rendered:\n"
+          }
+        ]
+      }
+    ],
+    "patch": {
+      "path": "simulator/tools/fasm2bels/structure-v2/converter.patch",
+      "object": {
+        "sha256": "a38d9777fdd456c25b62a7238448be58033cad5ff416369474952f78aaceb59e",
+        "size": 5658
+      }
+    }
+  },
+  "structure_reference": {
+    "verilog": {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/selected.v",
+      "object": {
+        "sha256": "31bef35aaa1e18af42fdd0c01d1045a5d56ae031c569adf9440eab5fa416e848",
+        "size": 12538532
+      }
+    },
+    "diagnostics": {
+      "path": "work/simulator/qemu-s9/hdl-selected-502i/hdl-report.json",
+      "object": {
+        "sha256": "eaab9a4a70f99faa8b3605399171e597a2c13893cf319db97f23ca3e02294c59",
+        "size": 148638
+      }
+    },
+    "ram_evidence": {
+      "path": "work/simulator/qemu-s9/hdl-selected-502j/hdl-report.json",
+      "object": {
+        "sha256": "f61da37e96e1ecc4e2d825a09c1d79cf8f8706eb7d2722e68318d24eb043e6a6",
+        "size": 684151
+      }
+    },
+    "xdc": {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/selected.xdc",
+      "object": {
+        "sha256": "96abe81a11f36f77f3ebcb2e236e829a8d8ae96ddacd6308362354afc3146b27",
+        "size": 8065912
+      }
+    }
+  },
+  "profile": {
+    "path": "simulator/firmware/s9-netlist-tool-inputs-502k.json",
+    "object": {
+      "sha256": "ae8d03d540748c1bbc78d8dfa17ec6f6565b7e227e9aa827115ad525f44ed03d",
+      "size": 21667
+    }
+  }
+}

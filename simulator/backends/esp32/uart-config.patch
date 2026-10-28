@@ -1,0 +1,174 @@
+--- a/hw/char/esp32s3_uart.c
++++ b/hw/char/esp32s3_uart.c
+@@ -12,15 +12,42 @@
+ 
+ #include "qemu/osdep.h"
+ #include "qemu/module.h"
++#include "qemu/timer.h"
+ #include "qapi/error.h"
+ #include "sysemu/sysemu.h"
+ #include "hw/sysbus.h"
+ #include "hw/irq.h"
+ #include "hw/char/esp32s3_uart.h"
+ #include "hw/misc/esp32s3_rtc_cntl.h"
++#include "trace.h"
+ 
+ #define ESP32_UART_AUTOBAUD A_UART_AUTOBAUD
+ #define ESP32_UART_CONF1    A_UART_CONF1
++#define ESP32S3_UART_CLK_CONF_RESET 0x03701000u
++#define ESP32S3_UART_DATE_RESET     0x02008270u
++#define ESP32S3_UART_CONFIG_TRACE_LIMIT 256u
++
++/* Register observations only. This does not establish a physical baud rate.
++ * Keep the trace bounded even when firmware repeatedly resets the device. */
++static void esp32s3_uart_trace_config(ESP32S3UARTState *s, hwaddr addr,
++                                     uint64_t value, unsigned size,
++                                     uint32_t stored)
++{
++    if (s->config_trace_count > ESP32S3_UART_CONFIG_TRACE_LIMIT) {
++        return;
++    }
++    g_autofree char *path = object_get_canonical_path(OBJECT(s));
++    int64_t virtual_ns = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL);
++    assert(path != NULL);
++    if (s->config_trace_count == ESP32S3_UART_CONFIG_TRACE_LIMIT) {
++        trace_esp32s3_uart_config_overflow(path, virtual_ns,
++                                         ESP32S3_UART_CONFIG_TRACE_LIMIT);
++    } else {
++        trace_esp32s3_uart_config_write(path, virtual_ns, s->config_trace_count,
++                                      addr, size, value, stored);
++    }
++    s->config_trace_count++;
++}
+ 
+ static uint64_t esp32s3_uart_read(void *opaque, hwaddr addr, unsigned int size)
+ {
+@@ -30,6 +57,14 @@
+ 
+     switch (addr)
+     {
++    case A_ESP32S3_UART_CLK_CONF:
++        r = s->clk_conf;
++        break;
++
++    case A_ESP32S3_UART_DATE:
++        r = s->date;
++        break;
++
+     case A_ESP32S3_UART_CONF1:
+         /* Return the mirrored conf1 */
+         r = s->conf1;
+@@ -53,6 +88,28 @@
+     /* UART_RXD_CNT_REG register is not at the same address on the ESP32 and ESP32-S3, so make the
+      * the translation here. */
+     switch (addr) {
++
++        case A_ESP32S3_UART_CLKDIV: {
++            uint32_t stored = value &
++                (R_ESP32S3_UART_CLKDIV_INTEGER_MASK |
++                 R_ESP32S3_UART_CLKDIV_FRACTION_MASK);
++            /* The inherited baud calculation is still an uncalibrated
++             * 40 MHz approximation. Only the S3 register mask is fixed here. */
++            class->parent_uart_write(opaque, addr, stored, size);
++            esp32s3_uart_trace_config(s, addr, value, size, stored);
++            break;
++        }
++
++        case A_ESP32S3_UART_CLK_CONF:
++            /* Preserve the programmed fields. Clock-gate and reset-pin
++             * effects require a later clock/serial model; do not infer them. */
++            s->clk_conf = value & R_ESP32S3_UART_CLK_CONF_PROGRAMMED_MASK;
++            esp32s3_uart_trace_config(s, addr, value, size, s->clk_conf);
++            break;
++
++        case A_ESP32S3_UART_DATE:
++            s->date = value;
++            break;
+ 
+         case A_ESP32S3_UART_CONF0:
+             /* On the S3, AUTOBAUD is part of CONF0 register, but on the ESP32, it has its own
+@@ -85,10 +142,27 @@
+     }
+ }
+ 
++static void esp32s3_uart_reset_hold(Object *obj, ResetType type)
++{
++    ESP32S3UARTClass *class = ESP32S3_UART_GET_CLASS(obj);
++    ESP32S3UARTState *s = ESP32S3_UART(obj);
++
++    if (class->parent_reset_phases.hold) {
++        class->parent_reset_phases.hold(obj, type);
++    }
++    s->clk_conf = ESP32S3_UART_CLK_CONF_RESET;
++    s->date = ESP32S3_UART_DATE_RESET;
++}
++
+ static void esp32s3_uart_realize(DeviceState *dev, Error **errp)
+ {
+-    // ESP32S3UARTState* esp32s3 = ESP32S3_UART(dev);
++    ESP32S3UARTState *s = ESP32S3_UART(dev);
+     ESP32S3UARTClass* esp32s3_class = ESP32S3_UART_GET_CLASS(dev);
++
++    /* The parent region ends at0x7c, before the S3 DATE register. Its
++     * storage remains unchanged: the S3 read/write callbacks own DATE.
++     * Extend only this subclass before the board maps the device. */
++    memory_region_set_size(&s->parent.iomem, A_ESP32S3_UART_DATE + 4);
+ 
+     /* Call the realize function of the parent class: ESP32UARTClass */
+     esp32s3_class->parent_realize(dev, errp);
+@@ -107,6 +181,10 @@
+     DeviceClass *dc = DEVICE_CLASS(klass);
+     ESP32S3UARTClass* esp32s3 = ESP32S3_UART_CLASS(klass);
+     ESP32UARTClass* esp32 = ESP32_UART_CLASS(klass);
++    ResettableClass *rc = RESETTABLE_CLASS(klass);
++
++    resettable_class_set_parent_phases(rc, NULL, esp32s3_uart_reset_hold, NULL,
++                                      &esp32s3->parent_reset_phases);
+ 
+     /* Set our class' parent_realize field to the current realize function, set by the
+      * parent class initializer.
+--- a/include/hw/char/esp32s3_uart.h
++++ b/include/hw/char/esp32s3_uart.h
+@@ -1,6 +1,7 @@
+ #pragma once
+ 
+ #include "esp32_uart.h"
++#include "hw/resettable.h"
+ 
+ 
+ #define TYPE_ESP32S3_UART "esp32s3_soc.uart"
+@@ -19,6 +20,10 @@
+     ESP32UARTState parent;
+ 
+     uint32_t conf1;
++    uint32_t clk_conf;
++    uint32_t date;
++    /* Diagnostic lifetime budget. Device reset must not renew this budget. */
++    unsigned config_trace_count;
+ } ESP32S3UARTState;
+ 
+ typedef struct ESP32S3UARTClass {
+@@ -28,6 +33,7 @@
+      * by device_class_set_parent_* functions. They can then be called in the
+      * respective class methods: realize. */
+     DeviceRealize parent_realize;
++    ResettablePhases parent_reset_phases;
+ 
+     /* Virtual attributes/methods overriden */
+     void (*parent_uart_write)(void *opaque, hwaddr addr, uint64_t value, unsigned int size);
+@@ -39,6 +45,15 @@
+  * Define the ESP32-S3 specific registers, or the ones that saw their address or fields
+  * changed from the ESP32 UART
+  */
++REG32(ESP32S3_UART_CLKDIV, 0x14)
++    FIELD(ESP32S3_UART_CLKDIV, INTEGER, 0, 12)
++    FIELD(ESP32S3_UART_CLKDIV, FRACTION, 20, 4)
++
++REG32(ESP32S3_UART_CLK_CONF, 0x78)
++    FIELD(ESP32S3_UART_CLK_CONF, PROGRAMMED, 0, 28)
++
++REG32(ESP32S3_UART_DATE, 0x7c)
++
+ REG32(ESP32S3_UART_CONF0, 0x20)
+     FIELD(ESP32S3_UART_CONF0, MEM_CLK_EN, 28, 1)
+     FIELD(ESP32S3_UART_CONF0, AUTOBAUD_EN, 27, 1)

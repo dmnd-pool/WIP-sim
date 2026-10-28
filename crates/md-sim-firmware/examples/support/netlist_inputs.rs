@@ -20,6 +20,16 @@ pub struct Manifest {
     pub expected: Expected,
     pub parser_adaptation: String,
     pub scope: String,
+    #[serde(default)]
+    pub structure_reference: Option<StructureReference>,
+}
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct StructureReference {
+    pub verilog: tool::Reference,
+    pub xdc: tool::Reference,
+    pub diagnostics: tool::Reference,
+    pub ram_evidence: tool::Reference,
 }
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -66,9 +76,12 @@ pub struct Expected {
 
 pub fn parse(bytes: &[u8]) -> Result<Manifest> {
     ensure!(
-        bytes.len() == 17522
+        (bytes.len() == 17522
             && md_sim_firmware::prepare::hash_bytes(bytes)
-                == "ceaff7522bb00b6914a8ee409405b15bc81b9ae80f82c740bf069e7eafb534fc",
+                == "ceaff7522bb00b6914a8ee409405b15bc81b9ae80f82c740bf069e7eafb534fc")
+            || (bytes.len() == 21667
+                && md_sim_firmware::prepare::hash_bytes(bytes)
+                    == "ae8d03d540748c1bbc78d8dfa17ec6f6565b7e227e9aa827115ad525f44ed03d"),
         "netlist manifest differs from the complete reviewed execution identity"
     );
     let manifest: Manifest = serde_json::from_slice(bytes)?;
@@ -85,7 +98,10 @@ fn validate(m: &Manifest) -> Result<()> {
     ensure!(
         m.inputs.len() == 40
             && m.adaptation.files.len() == 2
-            && m.adaptation.id == "fasm2bels-lazy-optional-outputs-v1"
+            && ((m.adaptation.id == "fasm2bels-lazy-optional-outputs-v1"
+                && m.structure_reference.is_none())
+                || (m.adaptation.id == "fasm2bels-explicit-structure-v2"
+                    && m.structure_reference.is_some()))
             && !m.adaptation.component.is_empty()
             && !m.adaptation.reason.is_empty()
             && !m.parser_adaptation.is_empty()
@@ -186,8 +202,23 @@ pub fn capture(store: &Store, mounts: &mut Vec<Mount>, m: &Manifest) -> Result<(
         let result = store.read_chunk(&file.result.object, 0, file.result.object.size as usize)?;
         ensure!(
             derive(&original, &file.changes)? == result,
-            "netlist source does not match the declared import relocation"
+            "netlist source does not match the declared adaptation"
         );
+    }
+    if let Some(reference) = &m.structure_reference {
+        for (input, name) in [
+            (&reference.verilog, "original.v"),
+            (&reference.xdc, "original.xdc"),
+            (&reference.diagnostics, "diagnostics.json"),
+            (&reference.ram_evidence, "ram-evidence.json"),
+        ] {
+            mount(
+                store,
+                mounts,
+                input,
+                format!("/converter-provenance/{name}"),
+            )?;
+        }
     }
     for (reference, guest) in [
         (&m.export.assessment, "/export-assessment.json"),
@@ -243,6 +274,13 @@ mod tests {
         let text = std::str::from_utf8(original).unwrap();
         let changed = text.replacen(&m.inputs[0].object.sha256, &"0".repeat(64), 1);
         assert_eq!(changed.len(), original.len());
+        assert!(parse(changed.as_bytes()).is_err());
+        let derived =
+            include_bytes!("../../../../simulator/firmware/s9-netlist-tool-inputs-502k.json");
+        let m = parse(derived).unwrap();
+        assert!(m.structure_reference.is_some());
+        let text = std::str::from_utf8(derived).unwrap();
+        let changed = text.replacen(&m.inputs[0].object.sha256, &"0".repeat(64), 1);
         assert!(parse(changed.as_bytes()).is_err());
     }
 }

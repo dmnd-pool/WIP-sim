@@ -1,0 +1,82 @@
+{
+  "schema": "md-sim-maxigp0-inputs/1",
+  "status": "Exact ELF extracted and2604-byte static decode passed. MAXIGP0 execution pending.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/stdout.bin",
+      "sha256": "4997a1c10a09f6881d6f5e0d4967eb31072ea9f1da7a80dac192ae1299d45960",
+      "size": 12699280
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/member.json",
+      "sha256": "1516fea5a3821ff58ad07c5451e50488ff4b97eb83b48c860aa39fb1c35ca1e1",
+      "size": 495
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/selected.v",
+      "sha256": "3ea22dc51d32539e0a52ff83d7152d82009f4e50883bc20e6643e6672d1a2c9b",
+      "size": 12607262
+    },
+    {
+      "path": "work/simulator/original-zynq/attempt-003/components/board.dtb",
+      "sha256": "550c87818cb0db41c00a8351dc4ac7b5dce5bf6d5336539c6951163ebf3cb62a",
+      "size": 12364
+    },
+    {
+      "path": "artifacts/files/source/source-fasm-graph-8372b58/zynq7/ps7_ports.json",
+      "sha256": "be3770d6261c832fe571f9662463f1ccb825bd1f8fa919a23488a71c17680336",
+      "size": 98254
+    }
+  ],
+  "extraction_review": "work/simulator/reviews/bosminer-extraction-independent-execution-511b.json",
+  "scope": "Static input preparation only. No selected CPU or FPGA bus execution pass.",
+  "next_action": "Generate and run bounded MAXIGP0 clock/reset, version/build reads and control/baud writes using original vendor models and the preserved502k netlist. Keep responses and unknowns real.",
+  "clock_observation": "Selected BUFGCTRL I0 connects to PS7 FCLKCLK1, then MAXIGP0ACLK. Static wiring only.",
+  "forbidden_inference": "Legacy/reference model version and build IDs are not expected values for this selected bitstream.",
+  "static_candidates": [
+    {
+      "virtual_start": 3933824,
+      "virtual_end": 3934376,
+      "file_offset": 3868288,
+      "size": 552,
+      "sha256": "6cdf577de75e92760ebd23c8ae8d48de6c1377601d260db6efe97d9bbaefe5c3",
+      "load_address": 3934168,
+      "add_pc_address": 3934176,
+      "literal_address": 3934364,
+      "literal_word": 8601684,
+      "format_table_virtual_address": 12535868,
+      "meaning": "S9 IP core baud log format",
+      "status": "Data-level candidate; captured Capstone instruction check pending."
+    },
+    {
+      "virtual_start": 4698288,
+      "virtual_end": 4698848,
+      "file_offset": 4632752,
+      "size": 560,
+      "sha256": "6fb88eae44d79b4927427f715000b622211935f0ee332b19c717e3fee2f5c25e",
+      "load_address": 4698612,
+      "add_pc_address": 4698620,
+      "literal_address": 4698836,
+      "literal_word": 7856092,
+      "format_table_virtual_address": 12554720,
+      "meaning": "common IP core baud log format",
+      "status": "Data-level candidate; captured Capstone instruction check pending."
+    },
+    {
+      "virtual_start": 4699636,
+      "virtual_end": 4701128,
+      "file_offset": 4634100,
+      "size": 1492,
+      "sha256": "8aacb04b193817188ed86fc246fa49efcf682dd80691e2dcb72b3304f25ba341",
+      "load_address": 4700388,
+      "add_pc_address": 4700392,
+      "literal_address": 4701124,
+      "literal_word": 7854424,
+      "format_table_virtual_address": 12554824,
+      "meaning": "unexpected bitstream version log format",
+      "status": "Data-level candidate; captured Capstone instruction check pending."
+    }
+  ],
+  "reset_observation": "Only FCLKRESETN0 is consumed by selected fabric logic: CLBLM_R_X1Y38_SLICE_X1Y38_D3 alias and the original LUT connection. MAXIGP0ARESETN is connected at the PS7 port but has no other selected logic reference. Static observation, not reset execution.",
+  "static_contract": "simulator/firmware/s9-bosminer-mmio-511.json"
+}

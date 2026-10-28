@@ -1,0 +1,9 @@
+{
+  "schema": "md-sim-evidence-correction/1",
+  "scope": "The first506 helper receipt incorrectly labels its example test count0. Its exact frozen log shows2 inherited confinement tests passed. There were no new UART unit tests in that first helper. The frozen receipt and earlier audit inputs remain unchanged.",
+  "affected_receipt": "work/simulator/esp32-uart-tools-506/inputs.json",
+  "verified_log": "work/simulator/checks-2026-10-28-001/uart506-qtest-tests.log",
+  "actual_tests_passed": 2,
+  "new_uart_tests": 0,
+  "actual_old017_contract_verdict": "Still failed:12 UART mismatches; no firmware pass."
+}

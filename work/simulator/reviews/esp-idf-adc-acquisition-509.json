@@ -1,0 +1,118 @@
+{
+  "schema": "md-sim-source-acquisition/1",
+  "passed": true,
+  "scope": "Pinned manufacturer ADC/calibration source for actual original039 calibration failure. No execution or model change.",
+  "commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "tag_binding": "Existing exact v5.5.3 annotated tag and commit records from UART acquisition; guest version is not an exact firmware rebuild identity.",
+  "files": [
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/efuse/esp32s3/esp_efuse_rtc_calib.c",
+      "sha256": "449b9c4559a08cae21aacd5230390abb2966e25df9333b80fbcd2faa688128f1",
+      "size": 4717,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-efuse-esp32s3-esp_efuse_rtc_calib-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/efuse/esp32s3/esp_efuse_table.c",
+      "sha256": "ebbff31657f49a24c10e1c98947f2f0d00190c985cef2f4714a1c92aa00bcb5f",
+      "size": 65542,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-efuse-esp32s3-esp_efuse_table-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/efuse/esp32s3/include/esp_efuse_rtc_calib.h",
+      "sha256": "b85be53f788c688a863ac7ba35d8bfaef73c98057aaa86a3c95ce613c19d9e21",
+      "size": 1921,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-efuse-esp32s3-include-esp_efuse_rtc_calib-h.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/adc_cali_curve_fitting.c",
+      "sha256": "c5298fde12b7d019148c9d26be894b4837bf99248a1ca5ebb9cfe5de2d8f47b9",
+      "size": 9206,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-adc_cali_curve_fitting-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/adc_oneshot.c",
+      "sha256": "54a187caa8f1c24407f2eb10ab7098dda56612a4e44345210a9ac323b89819be",
+      "size": 13501,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-adc_oneshot-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/curve_fitting_coefficients.h",
+      "sha256": "eb63e37d9b3f726afda4988fb8aabba956597ecde35bd641fcf41489ee2eb726",
+      "size": 922,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-curve_fitting_coefficients-h.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/esp32s3/curve_fitting_coefficients.c",
+      "sha256": "9995bb0e8b76caf0c41268391fcad62f94b6adf7dcdd76bbfb1e7dbb770a7191",
+      "size": 3115,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-esp32s3-curve_fitting_coefficients-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/hal/adc_hal_common.c",
+      "sha256": "8b48c6f87f7d08c81995a3f5a2118b991ce1d7e308c35142a7ee08b47afbe1e5",
+      "size": 6406,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-hal-adc_hal_common-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/hal/adc_oneshot_hal.c",
+      "sha256": "8c683f1ce36b788f564b1e4a2d7e03c27fd2171298d930774cece869091b3c0a",
+      "size": 7346,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-hal-adc_oneshot_hal-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/hal/esp32s3/include/hal/adc_ll.h",
+      "sha256": "c6dc8269df143870aefd9f8d00f3ba1098764da219878b902fdcd374da3fb344",
+      "size": 42835,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-hal-esp32s3-include-hal-adc_ll-h.json"
+    }
+  ],
+  "total_bytes": 155511,
+  "failed_initial_paths": [
+    {
+      "path": "components/esp_adc/esp32s3/include/curve_fitting_coefficients.h",
+      "http_status": 404,
+      "resolution": "Actual C include points to ../curve_fitting_coefficients.h; acquired shared header at components/esp_adc/curve_fitting_coefficients.h."
+    },
+    {
+      "path": "components/hal/esp32s3/include/hal/adc_oneshot_ll.h",
+      "http_status": 404,
+      "resolution": "No such file at pinned revision. Acquired actual adc_oneshot_hal.c and adc_ll.h instead. No interface inferred from guessed name."
+    }
+  ],
+  "raw_acquisition_records": [
+    "work/simulator/adc-contract-509/acquisition-first.json",
+    "work/simulator/adc-contract-509/acquisition-second.json",
+    "work/simulator/adc-contract-509/acquisition-third.json"
+  ],
+  "next": [
+    "Inspect and test a separately identified eFuse input fixture only when its complete calibration contract is defined.",
+    "Keep exact factory trims and analog initial-code transfer unresolved; preserve blank-eFuse failures."
+  ],
+  "checks": [
+    {
+      "path": "work/simulator/adc-contract-509/inspect.log",
+      "sha256": "726d8ebf5586a04c214f254f3c697f8f7d615d0039f8fed40e22e625448b5120",
+      "size": 885
+    },
+    {
+      "path": "work/simulator/adc-contract-509/archive.log",
+      "sha256": "a0cb9f8de261a50cfcaa8e5b407ca2d4ba42a3dd0cabd7821142d3bb7b299b1c",
+      "size": 1723
+    },
+    {
+      "path": "work/simulator/adc-contract-509/coverage.log",
+      "sha256": "bbf3f5d496ec3bf2454a89ad26f8e1018d9c4812d9ae8e2fda129dc91e2eb399",
+      "size": 95
+    },
+    {
+      "path": "work/simulator/adc-contract-509/catalog-build.log",
+      "sha256": "f3a48df8921605496dc525135a26ee57c9410b198710a53d0f5616a2e985a09c",
+      "size": 2236
+    },
+    {
+      "path": "work/simulator/adc-contract-509/catalog-verify.log",
+      "sha256": "fd8e0b5bc6c7bd2b60900f9708b7c08bdd3747416aee8b007607298021785bbb",
+      "size": 145
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "scope": "507 original factory UART observation mode and retained trace parser. Reviewer authored506 backend patch, not507 source.",
+  "stage_manifest": {
+    "path": "work/simulator/uart-observation-507/inputs.json",
+    "sha256": "bda586505c4eb654f82afa92fe83520f0ba035250dfca2c43eaf69b6145dbd36",
+    "size": 1791
+  },
+  "sources": [
+    {
+      "path": "work/simulator/uart-observation-507/esp32_original_probe.rs",
+      "sha256": "367828195b9c4da14791e9850a1cd6a2e8a11e72833cb186c1cea7a4e859b61d",
+      "size": 37019
+    },
+    {
+      "path": "work/simulator/uart-observation-507/esp32_uart_trace.rs",
+      "sha256": "6f547f1c2b5fa650528cd4ac97b7501148dd2719af9ea202d1b488ff12a2165d",
+      "size": 7651
+    }
+  ],
+  "findings": [],
+  "reviewed": [
+    "Explicit new mode preserves505 original factory, control-storage, ADC and support fixtures; no observer bypass and no firmware byte patch.",
+    "New mode requires uart_configuration_model in selected backend report and records parser identity; old modes keep original trace selection.",
+    "Actual QEMU selected-register event format matches506 device path, virtual time, sequence, address, width, raw value and stored word.",
+    "Parser rejects unknown/missing/duplicate fields, invalid masks, reversed per-device time, missing or repeated sequence and all post-overflow writes.",
+    "Latest unknown/incomplete event-prefix rejection and negative tests are present. Unrelated diagnostics remain outside selected UART event parsing.",
+    "Overflow follows exactly256 writes and marks capture incomplete. Process trace truncation also marks it incomplete.",
+    "A complete retained observation file requires actual /machine/soc/uart1 writes. It never establishes effective baud or physical timing.",
+    "All complete-board, mining and dashboard gates remain false; guest failure at unsupported0x04 is not hidden."
+  ],
+  "not_yet_verified": [
+    "Compilation and focused negative tests",
+    "Actual018 qtest/reset/trace results",
+    "Actual original040 capture"
+  ],
+  "outcome": "No blocking source finding. Execution evidence remains required."
+}

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "review_status": "independent audit passed",
+  "run_verdict": "selected structural HDL gate failed; primitive component gate passed",
+  "scope": "582 driven digital primitive vectors and a separate failed strict elaboration of the unchanged selected497 netlist. No compiled selected VVP, processor, AXI, physical timing, original-board or mining gate passes.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502i/spec.json",
+      "sha256": "870ecd589bfe035900f4b74f16663dc021af088d2b918a3fdd6163fd350e3373",
+      "size": 6800
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502i/result.json",
+      "sha256": "9041eb7aff33154f8fa281ae72b1755569a44011fe5e95939ab06a338a27321e",
+      "size": 295721
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502i/hdl-envelope.json",
+      "sha256": "03812b4f7509c1926bd3947c1bc7391284b5ecf327cdcf90baf7a4ac149bebb7",
+      "size": 147360
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502i/hdl-report.json",
+      "sha256": "eaab9a4a70f99faa8b3605399171e597a2c13893cf319db97f23ca3e02294c59",
+      "size": 148638
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502i/stderr.log",
+      "sha256": "81a57fb7c5dacef7a7f00a48e358bb66e27d502f12b86c3e862869a8f261dfea",
+      "size": 79
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-driver-502i/manifest.json",
+      "sha256": "e2ca82dbf14eda9a6b8dca8fe55874485fe778f66d3539bd4e7b6b88d00e0954",
+      "size": 46863
+    }
+  ],
+  "verified": {
+    "frozen_sources": 283,
+    "captured_mounts": 34,
+    "stream_identities_recomputed": 12,
+    "wall_milliseconds": 5735,
+    "component_cases": 582,
+    "component_breakdown": {
+      "LUT_inputs": 64,
+      "carry_inputs": 512,
+      "FDRE_cases": 6
+    },
+    "exact_driven_LUT_parity_oracle": true,
+    "smaller_closed_runtime_without_compiler_archive": true,
+    "selected_elaboration_exit_code": 0,
+    "strict_structural_gate_rejected": true,
+    "selected_stderr_bytes": 141172,
+    "diagnostics": {
+      "implicit_nets": 1453,
+      "dangling_inputs": 60
+    },
+    "dangling_pin_counts": {
+      "CASCADEINA": 15,
+      "CASCADEINB": 15,
+      "INJECTDBITERR": 15,
+      "INJECTSBITERR": 15
+    }
+  },
+  "fixture_correction": "The derived502i fixture starts LUT stimulus at X and creates a timed first drive. All64 truth-table assertions remain. The prior502h failed static-initialization attempt remains a failure. This establishes driven behavior, not static startup settling of the selected netlist.",
+  "limits": [
+    "1,453 implicit nets,60 dangling RAM inputs and missing top timescale remain unresolved.",
+    "The vendor PS7 remains a port shell. The monitor table and33 electrical ambiguities remain open.",
+    "No warning, default value, skipped input or performance event was accepted as a structural pass."
+  ],
+  "open_independent_findings": []
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "md-sim-source-review/1",
+  "date": "2026-10-28",
+  "recorder": "root",
+  "independent_reviewer": "cleanup_resume",
+  "status": "Source review closed; original-C execution comparison pending",
+  "review_record": "Root transcribes independent agent findings and final review messages. The reviewer could not save its planned report because the model service reached capacity. No successful execution result is inferred.",
+  "files": [
+    {
+      "path": "crates/md-sim-firmware/src/esp32s3_adc_calibration.rs",
+      "sha256": "4d82e53f2b9fc03fe44a0ee2de834368d5ab0b11275ea794f3373ba732ac8a4b",
+      "size": 11175
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/adc_calibration_vectors.rs",
+      "sha256": "ca7bd64b3009f70e0806bf324f34ce84ba047dfb219ed879b07ff0468913fd87",
+      "size": 12766
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/adc_reference_oracle.rs",
+      "sha256": "c1c9d59a43f77d1290635a98d1389544e6a70f9d877e780dc72be4dabf2984e0",
+      "size": 12044
+    },
+    {
+      "path": "crates/md-sim-firmware/src/confinement.rs",
+      "sha256": "69a8e5d49dc35d5326cc915c533f6859b35fb84251fa5f97c48863d9f140a9ed",
+      "size": 24181
+    },
+    {
+      "path": "simulator/firmware/fixtures/esp32s3-adc-oracle-prefix.c",
+      "sha256": "114af7d3c807f4eb19ecc2d99efea18127e24089b5634cf9530f81ed42926955",
+      "size": 2268
+    },
+    {
+      "path": "simulator/firmware/fixtures/esp32s3-adc-oracle-suffix.c",
+      "sha256": "f21f6df32352e3a957a72e39076385261d5bc0fa5645ca2f11db733d3c161f78",
+      "size": 1761
+    }
+  ],
+  "findings": [
+    {
+      "issue": "ADC2 attenuation2 field starts at BLOCK2 bit248, width7; earlier computed formula used249.",
+      "fix": "Explicit starts233,241,248 and bit247/248/254/255 neighbor tests.",
+      "status": "fixed"
+    },
+    {
+      "issue": "Original uint64 polynomial multiplication can overflow before division, including ADC1 attenuation3/raw4095.",
+      "fix": "Explicit wrapping multiplication; exact5090mV boundary regression. Physical voltage bound removed.",
+      "status": "fixed"
+    },
+    {
+      "issue": "A self-consistent source hash did not prove that the oracle source retained the pinned original functions.",
+      "fix": "Verification regenerates canonical source and full manifest from four pinned originals, embedded C adapters and declared input images. Both must match byte-for-byte. Substitution regression added.",
+      "status": "fixed"
+    }
+  ],
+  "root_review": "Reviewed runner compiler closure, consumed-source binding, private namespaces, strict output checks, sanitizer traps, explicit Linux x86_64 ABI, bounded files and archive export. The added guard keeps all standard private preparation checks and narrows NPROC to16.",
+  "unresolved_source_findings": [],
+  "test_evidence": [
+    {
+      "path": "work/simulator/checks-2026-10-28-001/adc509-lib-final.log",
+      "sha256": "e347b7f3b4e8c225ce4c0fa1dfb9db87a8f517933114e3f2b4ae0a30d94e1386",
+      "size": 929
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/adc509-examples-final.log",
+      "sha256": "fa1a3050f4f9a357540629a613798e057c6b3e3be61b8c1a551e50d72545bb8e",
+      "size": 1518
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/adc509-oracle-clippy.log",
+      "sha256": "522d1a15b40f9949e0795b8853c69281169e759a1e34cff297056ae38019e257",
+      "size": 143
+    }
+  ],
+  "original_c_execution_passed": false,
+  "physical_calibration_gate": false,
+  "original_board_gate": false,
+  "next_action": "Freeze both helpers, generate exact original-C source and execute it under the reviewed preparation contract. Compare all264 image cases and131072 raw conversions."
+}

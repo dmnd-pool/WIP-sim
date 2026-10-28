@@ -1,0 +1,789 @@
+{
+  "scope": "Task-owned read-only allocated-size inventory and existing reclaimer-compatible Core candidates. Metadata only; no deletion or pair-hash claim.",
+  "largest_directories": [
+    {
+      "allocated_bytes": 437196582912,
+      "path": "work/simulator"
+    },
+    {
+      "allocated_bytes": 207683915776,
+      "path": "work/simulator/qemu-s9"
+    },
+    {
+      "allocated_bytes": 113367252992,
+      "path": "work/simulator/network-vm"
+    },
+    {
+      "allocated_bytes": 39145766912,
+      "path": "work/simulator/bitcoin-core"
+    },
+    {
+      "allocated_bytes": 16131608576,
+      "path": "work/simulator/demos"
+    },
+    {
+      "allocated_bytes": 12463521792,
+      "path": "work/simulator/bitaxe"
+    },
+    {
+      "allocated_bytes": 7308328960,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-263"
+    },
+    {
+      "allocated_bytes": 7277572096,
+      "path": "work/simulator/demos/s9-review-284"
+    },
+    {
+      "allocated_bytes": 7201583104,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-243"
+    },
+    {
+      "allocated_bytes": 7171559424,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-218"
+    },
+    {
+      "allocated_bytes": 7157993472,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-234"
+    },
+    {
+      "allocated_bytes": 7157379072,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-258"
+    },
+    {
+      "allocated_bytes": 7145639936,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-227"
+    },
+    {
+      "allocated_bytes": 6993121280,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-142"
+    },
+    {
+      "allocated_bytes": 6381080576,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-proc-132"
+    },
+    {
+      "allocated_bytes": 6341890048,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-004"
+    },
+    {
+      "allocated_bytes": 5913755648,
+      "path": "work/simulator/qemu-s9/native-update-cycle-002"
+    },
+    {
+      "allocated_bytes": 4895969280,
+      "path": "work/simulator/demos/s9-review-280"
+    },
+    {
+      "allocated_bytes": 4882264064,
+      "path": "work/simulator/native-s9"
+    },
+    {
+      "allocated_bytes": 4389298176,
+      "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-307"
+    },
+    {
+      "allocated_bytes": 4388032512,
+      "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-317"
+    },
+    {
+      "allocated_bytes": 4377833472,
+      "path": "work/simulator/qemu-s9/pcap-dashboard-cycle-322"
+    },
+    {
+      "allocated_bytes": 4267429888,
+      "path": "work/simulator/qemu-s9/automated-nand-cycle-203"
+    },
+    {
+      "allocated_bytes": 4240670720,
+      "path": "work/simulator/qemu-s9/interrupted-nand-cycle-213"
+    },
+    {
+      "allocated_bytes": 4210380800,
+      "path": "work/simulator/qemu-s9/interrupted-nand-cycle-207"
+    },
+    {
+      "allocated_bytes": 4087300096,
+      "path": "work/simulator/qemu-s9/automated-nand-cycle-142"
+    },
+    {
+      "allocated_bytes": 3956334592,
+      "path": "work/simulator/qemu-s9/native-update-cycle-001"
+    },
+    {
+      "allocated_bytes": 3923206144,
+      "path": "work/simulator/demos/s9-shared-500"
+    },
+    {
+      "allocated_bytes": 3808759808,
+      "path": "work/simulator/original-zynq"
+    },
+    {
+      "allocated_bytes": 3505070080,
+      "path": "work/simulator/network-vm/native-browser-479"
+    },
+    {
+      "allocated_bytes": 3504447488,
+      "path": "work/simulator/network-vm/native-browser-453"
+    },
+    {
+      "allocated_bytes": 3498704896,
+      "path": "work/simulator/network-vm/native-browser-492"
+    },
+    {
+      "allocated_bytes": 3341094912,
+      "path": "work/simulator/network-vm/native-browser-495"
+    },
+    {
+      "allocated_bytes": 3328892928,
+      "path": "work/simulator/coordinator"
+    },
+    {
+      "allocated_bytes": 3100483584,
+      "path": "work/simulator/network-vm/board-local-icount-208"
+    },
+    {
+      "allocated_bytes": 3009806336,
+      "path": "work/simulator/firmware"
+    },
+    {
+      "allocated_bytes": 2875817984,
+      "path": "work/simulator/network-vm/native-browser-487"
+    },
+    {
+      "allocated_bytes": 2857250816,
+      "path": "work/simulator/network-vm/native-browser-451"
+    },
+    {
+      "allocated_bytes": 2830372864,
+      "path": "work/simulator/network-vm/board-local-clean-263"
+    },
+    {
+      "allocated_bytes": 2755756032,
+      "path": "work/simulator/network-vm/board-local-icount-220"
+    },
+    {
+      "allocated_bytes": 2740641792,
+      "path": "work/simulator/network-vm/board-local-release-240"
+    },
+    {
+      "allocated_bytes": 2717298688,
+      "path": "work/simulator/network-vm/board-local-clock0-238"
+    },
+    {
+      "allocated_bytes": 2708172800,
+      "path": "work/simulator/network-vm/board-ssh-clock0-250"
+    },
+    {
+      "allocated_bytes": 2706112512,
+      "path": "work/simulator/network-vm/board-local-icount-200"
+    },
+    {
+      "allocated_bytes": 2687086592,
+      "path": "work/simulator/network-vm/board-ssh-clock2-253"
+    },
+    {
+      "allocated_bytes": 2684223488,
+      "path": "work/simulator/network-vm/board-local-clock2-252"
+    },
+    {
+      "allocated_bytes": 2680115200,
+      "path": "work/simulator/network-vm/board-ssh-clean-264"
+    },
+    {
+      "allocated_bytes": 2678542336,
+      "path": "work/simulator/network-vm/board-local-dashboard-171"
+    },
+    {
+      "allocated_bytes": 2674675712,
+      "path": "work/simulator/network-vm/board-local-dashboard-163"
+    },
+    {
+      "allocated_bytes": 2674642944,
+      "path": "work/simulator/network-vm/board-ssh-dashboard-171"
+    },
+    {
+      "allocated_bytes": 2669244416,
+      "path": "work/simulator/network-vm/board-ssh-dashboard-164"
+    },
+    {
+      "allocated_bytes": 2665402368,
+      "path": "work/simulator/network-vm/board-local-realtime-189"
+    },
+    {
+      "allocated_bytes": 2665197568,
+      "path": "work/simulator/network-vm/board-ssh-dashboard-163"
+    },
+    {
+      "allocated_bytes": 2653364224,
+      "path": "work/simulator/network-vm/board-ssh-realtime-179"
+    },
+    {
+      "allocated_bytes": 2651062272,
+      "path": "work/simulator/network-vm/board-ssh-realtime-189"
+    },
+    {
+      "allocated_bytes": 2650574848,
+      "path": "work/simulator/network-vm/board-local-realtime-179"
+    },
+    {
+      "allocated_bytes": 2489581568,
+      "path": "work/simulator/qemu-s9/sd2022-browser-076"
+    },
+    {
+      "allocated_bytes": 2433421312,
+      "path": "work/simulator/browser"
+    },
+    {
+      "allocated_bytes": 2299416576,
+      "path": "work/simulator/network-vm/native-browser-445"
+    },
+    {
+      "allocated_bytes": 2226929664,
+      "path": "work/simulator/check-target-085"
+    },
+    {
+      "allocated_bytes": 2210082816,
+      "path": "work/simulator/network-vm/native-browser-469"
+    },
+    {
+      "allocated_bytes": 1793277952,
+      "path": "work/simulator/network-vm/browser-startup-prepared-456"
+    },
+    {
+      "allocated_bytes": 1456328704,
+      "path": "work/simulator/check-target-085/debug"
+    },
+    {
+      "allocated_bytes": 1312964608,
+      "path": "work/simulator/qemu-s9/interrupted-nand-cycle-206"
+    },
+    {
+      "allocated_bytes": 1286569984,
+      "path": "work/simulator/network-vm/native-access-431"
+    },
+    {
+      "allocated_bytes": 1285533696,
+      "path": "work/simulator/qemu-s9/automated-update-cycle-256"
+    },
+    {
+      "allocated_bytes": 1270444032,
+      "path": "work/simulator/network-vm/native-access-421"
+    },
+    {
+      "allocated_bytes": 1137967104,
+      "path": "work/simulator/network-vm/native-worker-firmware-354"
+    },
+    {
+      "allocated_bytes": 1130373120,
+      "path": "work/simulator/network-vm/native-access-441"
+    },
+    {
+      "allocated_bytes": 1065238528,
+      "path": "work/simulator/qemu-s9/interrupted-nand-recovery-206"
+    }
+  ],
+  "core_candidates": [
+    {
+      "run": "work/simulator/bitcoin-core/channel345-candidate0-350",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/network-vm/native-worker-firmware-345/execution",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/channel345-candidate1-350",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/network-vm/native-worker-firmware-345/execution",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/channel354-candidate0-357",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/network-vm/native-worker-firmware-354/execution",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 155483350,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/channel354-candidate1-357",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/network-vm/native-worker-firmware-354/execution",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-030-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-030",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42506072,
+      "source_copy_bytes": 99578705,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-030-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-030",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-033-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-033",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-033-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-033",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-036-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-036",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-036-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-036",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-037-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-037",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-037-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-037",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-038-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-038",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-038-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-038",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-039-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-039",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-039-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-039",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-040-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-040",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-040-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-040",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-041-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-041",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-041-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-041",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-042-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-042",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42516440,
+      "source_copy_bytes": 104184947,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-042-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/sd2022-private-pool-042",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42516440,
+      "source_copy_bytes": 104184947,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-048-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/tmp/md-sim-original-boser-048",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-048-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/tmp/md-sim-original-boser-048",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-049-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/tmp/md-sim-original-boser-049",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-049-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/tmp/md-sim-original-boser-049",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-057-candidate-0",
+      "unresolved_metadata": "[Errno 2] No such file or directory: 'work/simulator/bitcoin-core/original-s9-057-candidate-0/block-acceptance.json'"
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-057-candidate-1",
+      "unresolved_metadata": "[Errno 2] No such file or directory: 'work/simulator/bitcoin-core/original-s9-057-candidate-1/block-acceptance.json'"
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-059-candidate-0",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/tmp/md-sim-original-boser-059",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42516440,
+      "source_copy_bytes": 47312618,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/original-s9-059-candidate-1",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/tmp/md-sim-original-boser-059",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42516440,
+      "source_copy_bytes": 47312618,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap302-candidate0-303",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-302",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 155670553,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap302-candidate1-303",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-302",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 155670553,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap314-candidate0-316",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-314",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 156221163,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap314-candidate1-316",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-314",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 156221163,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap316-candidate0-318",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-316",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 154239982,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap316-candidate1-318",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-316",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 154239982,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap321-candidate0-323",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-321",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 154692198,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap321-candidate1-323",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-321",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 8,
+      "input_bytes": 42664088,
+      "source_copy_bytes": 154692198,
+      "source_copy_count": 7
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap349-candidate0-351",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-349",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    },
+    {
+      "run": "work/simulator/bitcoin-core/pcap349-candidate1-351",
+      "accepted": true,
+      "persisted": true,
+      "startup_result_exists": true,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/native-pcap-349",
+      "source_exists": true,
+      "source_result": true,
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_bytes": 0,
+      "source_copy_count": 0
+    }
+  ]
+}

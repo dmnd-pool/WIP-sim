@@ -16,6 +16,8 @@ use std::{
 #[allow(dead_code)]
 #[path = "../src/confinement.rs"]
 mod confinement;
+#[path = "support/esp_uart_qtest.rs"]
+mod esp_uart_qtest;
 
 fn inner() -> Result<()> {
     confinement::require_board()?;
@@ -87,15 +89,16 @@ fn inner() -> Result<()> {
             "enable=md_sim_sar_*",
         ]);
     }
+    if std::env::var_os("MD_SIM_UART_RESET_TRACE").is_some() {
+        return esp_uart_qtest::run(&mut command, &script);
+    }
     let mut child = command
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
         .spawn()?;
-    child
-        .stdin
-        .take()
-        .context("qtest input pipe missing")?
-        .write_all(script.as_bytes())?;
+    let mut qtest_input = child.stdin.take().context("qtest input pipe missing")?;
+    qtest_input.write_all(script.as_bytes())?;
+    qtest_input.flush()?;
     let mut responses = BufReader::new(child.stdout.take().context("qtest output pipe missing")?);
     for _ in 0..count {
         let mut line = Vec::new();
@@ -113,6 +116,9 @@ fn inner() -> Result<()> {
     responses.take(1025).read_to_end(&mut extra)?;
     ensure!(extra.is_empty(), "unexpected extra qtest response");
     ensure!(child.wait()?.success(), "QEMU qtest shutdown failed");
+    // Keep the qtest input open through QEMU shutdown. Closing it early
+    // invokes the upstream CLOSED handler twice when HMP later quits.
+    drop(qtest_input);
     Ok(())
 }
 
@@ -127,13 +133,17 @@ fn main() -> Result<()> {
                 && (args[3] == "ds4432"
                     || args[3] == "emc2101"
                     || args[3] == "ina260"
-                    || args[3] == "sar-inputs")),
-        "usage: esp32_backend_qtest BACKEND_BUILD NEW_OUTPUT [ds4432|emc2101|ina260|sar-inputs]"
+                    || args[3] == "sar-inputs"
+                    || args[3] == "uart-config"
+                    || args[3] == "uart-reset-trace")),
+        "usage: esp32_backend_qtest BACKEND_BUILD NEW_OUTPUT [ds4432|emc2101|ina260|sar-inputs|uart-config|uart-reset-trace]"
     );
     let build = PathBuf::from(&args[1]);
     let out = PathBuf::from(&args[2]);
     let sar_inputs = args.get(3).is_some_and(|a| a == "sar-inputs");
-    let ds4432 = args.len() == 4 && !sar_inputs;
+    let uart_reset_trace = args.get(3).is_some_and(|a| a == "uart-reset-trace");
+    let uart_config = uart_reset_trace || args.get(3).is_some_and(|a| a == "uart-config");
+    let ds4432 = args.len() == 4 && !sar_inputs && !uart_config;
     let ina260 = args.get(3).is_some_and(|a| a == "ina260");
     let emc2101 = args.get(3).is_some_and(|a| a == "emc2101");
     ensure!(!out.exists(), "new output required");
@@ -159,6 +169,10 @@ fn main() -> Result<()> {
         report["source"] == "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0"
             && report.get("i2c_master_model").is_some(),
         "unexpected backend source/model"
+    );
+    ensure!(
+        !uart_reset_trace || report.get("uart_configuration_model").is_some(),
+        "S3 UART configuration backend model absent"
     );
     for (file, key) in [
         ("qemu-system-xtensa", "binary"),
@@ -307,6 +321,16 @@ fn main() -> Result<()> {
                 .map(|(a, b)| (a.into(), b.into())),
         );
     }
+    if uart_config {
+        transactions.extend(
+            uart_config_transactions()
+                .into_iter()
+                .map(|(a, b)| (a.into(), b.into())),
+        );
+    }
+    if uart_reset_trace {
+        transactions.extend(esp_uart_qtest::transactions());
+    }
     let script = transactions
         .iter()
         .map(|(t, _)| t.as_str())
@@ -335,6 +359,7 @@ fn main() -> Result<()> {
             ("MD_SIM_EMC2101_FIXTURE", emc2101),
             ("MD_SIM_INA260_FIXTURE", ina260),
             ("MD_SIM_SAR_INPUTS", sar_inputs),
+            ("MD_SIM_UART_RESET_TRACE", uart_reset_trace),
         ]
         .into_iter()
         .filter(|(_, enabled)| *enabled)
@@ -353,7 +378,7 @@ fn main() -> Result<()> {
     save_json(&out.join("spec.json"), &spec)?;
     save_json(
         &out.join("inputs.json"),
-        &json!({"recipe":hash_file(&std::env::current_exe()?)?,"build_report":hash_file(&build.join("build-report.json"))?,"expected":transactions.iter().map(|(_,r)|r).collect::<Vec<_>>()}),
+        &json!({"recipe":hash_file(&std::env::current_exe()?)?,"build_report":hash_file(&build.join("build-report.json"))?,"expected":transactions.iter().filter(|(command,_)|command != esp_uart_qtest::RESET).map(|(_,r)|r).collect::<Vec<_>>()}),
     )?;
     let result = execute(&store, &spec, Arc::new(AtomicBool::new(false)))?;
     save_json(&out.join("result.json"), &result)?;
@@ -362,7 +387,11 @@ fn main() -> Result<()> {
     fs::write(out.join("responses.log"), &stdout)?;
     fs::write(out.join("backend.log"), &stderr)?;
     let actual = String::from_utf8_lossy(&stdout);
-    let expected: Vec<_> = transactions.iter().map(|(_, r)| r.as_str()).collect();
+    let expected: Vec<_> = transactions
+        .iter()
+        .filter(|(command, _)| command != esp_uart_qtest::RESET)
+        .map(|(_, r)| r.as_str())
+        .collect();
     let response_match = actual.lines().collect::<Vec<_>>() == expected;
     let trace = String::from_utf8_lossy(&stderr);
     let actual_nack = trace.lines().any(|l| {
@@ -395,20 +424,38 @@ fn main() -> Result<()> {
             && !trace
                 .lines()
                 .any(|line| line.starts_with("md_sim_ina260_") && !line.ends_with("faults=0"));
+    let uart_observation = if uart_reset_trace {
+        match esp_uart_qtest::verify(&trace) {
+            Ok(value) => value,
+            Err(error) => {
+                json!({"trace_contract_passed":false,"error":format!("{error:#}"),"complete_firmware_capture":false})
+            }
+        }
+    } else {
+        serde_json::Value::Null
+    };
+    let uart_trace_passed = !uart_reset_trace || uart_observation["trace_contract_passed"] == true;
+    let unexpected_diagnostics: Vec<_> = trace
+        .lines()
+        .filter(|line| !expected_runtime_line(line))
+        .collect();
+    let runtime_diagnostics_clean = unexpected_diagnostics.is_empty();
     let passed = result.exit_code == Some(0)
         && !result.trace_truncated
         && response_match
         && actual_nack
         && dac_trace
         && emc_trace
-        && ina_trace;
+        && ina_trace
+        && uart_trace_passed
+        && runtime_diagnostics_clean;
     save_json(
         &out.join("assessment.json"),
-        &json!({"component_passed":passed,"response_match":response_match,"actual_absent_slave_nack":actual_nack,"ds4432_selected":ds4432,"ds4432_trace_match":dac_trace,"emc2101_selected":emc2101,"emc2101_trace_match":emc_trace,"ina260_selected":ina260,"ina260_trace_match":ina_trace,"sar_inputs_selected":sar_inputs,"scope":"Compiled controller MMIO, programmed virtual timing, FIFO, NACK, interrupt state, and independent controller state; optional DS4432, EMC2101, INA260 and explicit ADC inputs. No firmware or physical board acceptance.","complete_original_board_boot":false,"functional_mining":false}),
+        &json!({"component_passed":passed,"response_match":response_match,"runtime_diagnostics_clean":runtime_diagnostics_clean,"unexpected_runtime_diagnostics":unexpected_diagnostics,"actual_absent_slave_nack":actual_nack,"ds4432_selected":ds4432,"ds4432_trace_match":dac_trace,"emc2101_selected":emc2101,"emc2101_trace_match":emc_trace,"ina260_selected":ina260,"ina260_trace_match":ina_trace,"sar_inputs_selected":sar_inputs,"uart_configuration_selected":uart_config,"uart_reset_trace_selected":uart_reset_trace,"uart_observation":uart_observation,"scope":"Compiled controller MMIO, programmed virtual timing, FIFO, NACK, interrupt state, and independent controller state; optional DS4432, EMC2101, INA260 and explicit ADC inputs. No firmware or physical board acceptance.","complete_original_board_boot":false,"functional_mining":false}),
     )?;
     ensure!(
         passed,
-        "compiled I2C component regression failed; retained exact responses"
+        "compiled controller component regression failed; retained exact responses"
     );
     Ok(())
 }
@@ -618,4 +665,74 @@ fn ina_transactions() -> Vec<(String, String)> {
     v.word(7, 0);
     v.word(6, 0); // before new default2.2ms conversion completes
     v.values
+}
+
+/// Literal ESP32-S3 register contract from the pinned IDF5.5.3 declarations.
+/// This first test deliberately also runs against unchanged017. Its failure
+/// is evidence of the original backend defect, not an excluded target.
+fn uart_config_transactions() -> Vec<(&'static str, &'static str)> {
+    vec![
+        ("readl 0x60010078", "OK 0x0000000003701000"),
+        ("readl 0x60000078", "OK 0x0000000003701000"),
+        ("readl 0x60010014", "OK 0x00000000000002b6"),
+        ("readl 0x6001007c", "OK 0x0000000002008270"),
+        ("writel 0x60010078 0x03500000", "OK"),
+        ("readl 0x60010078", "OK 0x0000000003500000"),
+        ("readl 0x60000078", "OK 0x0000000003701000"),
+        ("writel 0x60010078 0xf3501000", "OK"),
+        ("readl 0x60010078", "OK 0x0000000003501000"),
+        ("writel 0x60010014 0xffffffff", "OK"),
+        ("readl 0x60010014", "OK 0x0000000000f00fff"),
+        ("writel 0x60010014 0x000ff000", "OK"),
+        ("readl 0x60010014", "OK 0x0000000000000000"),
+        ("writel 0x60010014 0xffa00abc", "OK"),
+        ("readl 0x60010014", "OK 0x0000000000a00abc"),
+        ("readl 0x60000014", "OK 0x00000000000002b6"),
+        ("writel 0x6001007c 0x12345678", "OK"),
+        ("readl 0x6001007c", "OK 0x0000000012345678"),
+        ("readl 0x6000007c", "OK 0x0000000002008270"),
+        ("readl 0x60010078", "OK 0x0000000003501000"),
+    ]
+}
+
+// These are the exact diagnostic channels produced by this pinned qtest
+// suite. Runtime warnings/assertions must not pass just because QEMU exits0.
+fn expected_runtime_line(line: &str) -> bool {
+    line == "Not initializing SPI Flash"
+        || [
+            "[I ",
+            "[R ",
+            "[S ",
+            "md_sim_i2c_",
+            "md_sim_ds4432_",
+            "md_sim_emc2101_",
+            "md_sim_ina260_",
+            "md_sim_sar_",
+            "esp32s3_uart_config_",
+            "MD_SIM_S3_UART_QMP ",
+        ]
+        .iter()
+        .any(|prefix| line.starts_with(prefix))
+}
+
+#[cfg(test)]
+mod runtime_diagnostic_tests {
+    use super::expected_runtime_line;
+    #[test]
+    fn runtime_assertions_and_warnings_do_not_pass_clean_exit() {
+        for line in [
+            "",
+            "(process:1): GLib-CRITICAL **: g_timer_elapsed: assertion 'timer != NULL' failed",
+            "qemu: runtime error: shift exponent32",
+            "qemu: warning: unknown trace event",
+            "thread 'main' panicked at source:1",
+            "unexpected backend diagnostic",
+        ] {
+            assert!(!expected_runtime_line(line), "{line}");
+        }
+        assert!(expected_runtime_line("[I +0.001000] CLOSED"));
+        assert!(expected_runtime_line(
+            "md_sim_i2c_bus index=0 operation=0 value=0x3c result=1"
+        ));
+    }
 }

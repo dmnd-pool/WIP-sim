@@ -1,0 +1,43 @@
+{
+  "502g": {
+    "result": "failed, no primitive or selected structure pass",
+    "run": "work/simulator/qemu-s9/hdl-selected-502g",
+    "cause": "Icarus returned0 with errors loading VPI plugins: dependency libbz2.so.1.0 was missing. Candidate closure mounted libbz2.so.1 only. Strict diagnostics prevented false success.",
+    "additional_diagnostic": "PS7 specify min/typ/max default was not explicit, so Icarus emitted Choosing typ expression. Vendor values at5176\u20135180 are100:100:100.",
+    "fix": "Use actual .so.1.0 SONAME and explicit upstream -Ttyp (same existing default), keeping every nonempty diagnostic fatal and preserving original model bytes."
+  },
+  "502h": {
+    "result": "failed at LUT truth-vector0, no primitive/selected pass",
+    "run": "work/simulator/qemu-s9/hdl-selected-502h",
+    "passed": "Clean compiler/runtime loading and actual width/implicit/parameter diagnostic probes",
+    "diagnosis": "The first tested LUT value repeats its static declaration initialization0. Vendor source computes on explicit input events, so an X-to-0 drive after processes start is required by the fixture. Initial output values were not printed in502h; next fixture adds diagnostics and preservesall64truth assertions.",
+    "next_profile": "simulator/firmware/s9-hdl-inputs-502i.json",
+    "vendor_source_changed": false
+  },
+  "502i": {
+    "result": "Primitive vectors pass; selected structural gate fails",
+    "run": "work/simulator/qemu-s9/hdl-selected-502i",
+    "primitive_cases": 582,
+    "selected_elaboration_exit": 0,
+    "implicit_wire_warnings": 1453,
+    "dangling_RAM_input_warnings": 60,
+    "top_timebase_warning": true,
+    "independent_review": "work/simulator/reviews/hdl-selected-independent-execution-502i.json",
+    "next": "Derive a separate converter output with explicit alias declarations. Check omitted RAM inputs through selected parameter identities and differential original vendor execution before changing their representation."
+  },
+  "502j": {
+    "result": "RAM differential and primitive components pass; unchanged selected497 structural gate remains failed",
+    "run": "work/simulator/qemu-s9/hdl-selected-502j",
+    "wall_milliseconds": 6556,
+    "RAM_instances": 15,
+    "RAM_observations_per_representation": 510,
+    "representations": [
+      "omitted scalar input",
+      "explicit high impedance Z"
+    ],
+    "all_output_traces_identical": true,
+    "primitive_assertions": 582,
+    "source_freeze": "work/simulator/qemu-s9/hdl-driver-502j/manifest.json",
+    "next": "Derive a separate converter output. Require preservation of every existing cell, parameter, port and assignment before strict HDL compilation."
+  }
+}

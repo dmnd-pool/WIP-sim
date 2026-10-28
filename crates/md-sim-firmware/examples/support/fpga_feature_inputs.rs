@@ -7,9 +7,6 @@ use md_sim_runtime::{
 use serde::Deserialize;
 use std::{
     collections::BTreeSet,
-    fs,
-    io::Read,
-    os::unix::fs::OpenOptionsExt,
     path::{Path, PathBuf},
 };
 
@@ -40,21 +37,10 @@ pub struct Table {
     pub input: Input,
 }
 
-pub fn bounded(path: &Path, limit: u64) -> Result<Vec<u8>> {
-    let file = fs::OpenOptions::new()
-        .read(true)
-        .custom_flags(libc::O_NOFOLLOW | libc::O_NONBLOCK)
-        .open(path)?;
-    let meta = file.metadata()?;
-    ensure!(
-        meta.is_file() && meta.len() <= limit,
-        "FPGA input type or size bound"
-    );
-    let mut bytes = Vec::new();
-    file.take(limit + 1).read_to_end(&mut bytes)?;
-    ensure!(bytes.len() as u64 <= limit, "FPGA input grew beyond bound");
-    Ok(bytes)
-}
+#[allow(dead_code)]
+#[path = "bounded_file.rs"]
+mod bounded_file;
+pub use bounded_file::bounded;
 
 pub fn read(path: &Path) -> Result<(Manifest, ObjectId)> {
     let bytes = bounded(path, MANIFEST_LIMIT)?;

@@ -71,6 +71,55 @@ pub enum EngineEvent {
     },
 }
 
+/// A receipt is emitted only after one real SHA-256d computation. It includes
+/// filtered-out work, so device counters need not infer work from solutions.
+#[derive(Clone, Debug)]
+pub struct Computation {
+    pub work_id: String,
+    pub nonce: u32,
+    pub variant: ComputedVariant,
+    pub digest: [u8; 32],
+    pub filter: Filter,
+    pub admitted_at: Instant,
+    pub completed_at: Instant,
+    pub accepted: bool,
+    pub exhausted: bool,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ComputedVariant {
+    Header { version: u32 },
+    Midstate { index: usize },
+}
+
+impl Computation {
+    fn into_events(self) -> Vec<EngineEvent> {
+        let mut events = Vec::new();
+        if self.accepted {
+            events.push(match self.variant {
+                ComputedVariant::Header { version } => EngineEvent::Solution {
+                    work_id: self.work_id.clone(),
+                    nonce: self.nonce,
+                    version,
+                    digest: self.digest,
+                },
+                ComputedVariant::Midstate { index } => EngineEvent::MidstateSolution {
+                    work_id: self.work_id.clone(),
+                    nonce: self.nonce,
+                    midstate_index: index,
+                    digest: self.digest,
+                },
+            });
+        }
+        if self.exhausted {
+            events.push(EngineEvent::Exhausted {
+                work_id: self.work_id,
+            });
+        }
+        events
+    }
+}
+
 enum HashInput {
     Header {
         header: Header,
@@ -185,6 +234,16 @@ impl Engine {
     pub fn cancel(&mut self, id: &str) {
         self.queue.retain(|cursor| cursor.id != id);
     }
+    /// Apply a device's new programmed filter to live work without restarting
+    /// its nonce cursor or manufacturing a completion event.
+    pub fn update_filter(&mut self, id: &str, filter: Filter) -> bool {
+        if let Some(cursor) = self.queue.iter_mut().find(|cursor| cursor.id == id) {
+            cursor.filter = filter;
+            true
+        } else {
+            false
+        }
+    }
     pub fn queue_len(&self) -> usize {
         self.queue.len()
     }
@@ -195,41 +254,52 @@ impl Engine {
     /// Compute at most one due hash. Calling this early does no work. No
     /// fabricated event or counter is emitted when the rate limiter is idle.
     pub fn poll(&mut self) -> Vec<EngineEvent> {
-        if self.queue.is_empty() || !self.rate.try_acquire() {
-            return Vec::new();
+        self.poll_computation()
+            .map(Computation::into_events)
+            .unwrap_or_default()
+    }
+
+    /// The same bounded worker as poll(), with an actual computation receipt.
+    /// No public callback or supplied counter value can credit work here.
+    pub fn poll_computation(&mut self) -> Option<Computation> {
+        if self.queue.is_empty() {
+            return None;
         }
+        let admitted_at = self.rate.try_acquire_at()?;
         let mut cursor = self.queue.pop_front().unwrap();
         let (digest, version) = cursor.compute();
+        let completed_at = Instant::now();
         self.hashes_computed += 1;
-        let mut events = Vec::new();
-        if cursor.filter.accepts(&digest) {
-            events.push(match version {
-                Some(version) => EngineEvent::Solution {
-                    work_id: cursor.id.clone(),
-                    nonce: cursor.nonce,
-                    version,
-                    digest,
-                },
-                None => EngineEvent::MidstateSolution {
-                    work_id: cursor.id.clone(),
-                    nonce: cursor.nonce,
-                    midstate_index: cursor.version_index as usize,
-                    digest,
-                },
-            });
-        }
+        let nonce = cursor.nonce;
+        let variant = match version {
+            Some(version) => ComputedVariant::Header { version },
+            None => ComputedVariant::Midstate {
+                index: cursor.version_index as usize,
+            },
+        };
+        let accepted = cursor.filter.accepts(&digest);
         if cursor.nonce == cursor.nonce_end {
             cursor.nonce = cursor.nonce_start;
             cursor.version_index += 1;
         } else {
             cursor.nonce += 1;
         }
-        if cursor.version_index == cursor.variant_count() {
-            events.push(EngineEvent::Exhausted { work_id: cursor.id });
-        } else {
+        let exhausted = cursor.version_index == cursor.variant_count();
+        let receipt = Computation {
+            work_id: cursor.id.clone(),
+            nonce,
+            variant,
+            digest,
+            filter: cursor.filter.clone(),
+            admitted_at,
+            completed_at,
+            accepted,
+            exhausted,
+        };
+        if !exhausted {
             self.queue.push_back(cursor);
         }
-        events
+        Some(receipt)
     }
 }
 impl Default for Engine {

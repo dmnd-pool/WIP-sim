@@ -1,0 +1,137 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "stage": "508",
+  "status": "PASS source review; tests and original execution pending",
+  "inputs": {
+    "path": "work/simulator/bm1397-reference-508/inputs.json",
+    "sha256": "95957aefe7758267a618a6a26d2ccea9dd9548abff16bd9459c206efb8ea2d89",
+    "size": 5287
+  },
+  "files": [
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/engine.rs",
+      "destination": "crates/md-sim-mining/src/engine.rs",
+      "sha256": "c97831908edb7af301ef555c4031d3706a67bf5e797d101d73137d26b84e6662",
+      "size": 9710
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/mining-lib.rs",
+      "destination": "crates/md-sim-mining/src/lib.rs",
+      "sha256": "0563df3c57b211654d62462a8192404bc2d8639b66df2126ee841a09ac4fec76",
+      "size": 612
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/computation_receipts.rs",
+      "destination": "crates/md-sim-mining/tests/computation_receipts.rs",
+      "sha256": "bc23ba884bce27492b6c6e249754e60947fe4d78dcfcce5e9383dc2f071019ad",
+      "size": 5083
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/identify.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397/identify.rs",
+      "sha256": "02f305ddcd37e765188e57e79f0dea43cd5219800fe066efd8d6901f6416e754",
+      "size": 31206
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/bm1397.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397.rs",
+      "sha256": "b8a07c9bbec512bc9f2f5194d1f0e9a678d2ee7c82d0e6907a9c0c65a5d492fd",
+      "size": 20327
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/reference.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397/reference.rs",
+      "sha256": "b6123b76b036083baa95a0f45972105b0641bbe8fabe5d7964ddfd4f0439e374",
+      "size": 13523
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/reference_tests.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397/reference_tests.rs",
+      "sha256": "406031a18fc1c0c746a799d23e19dd0c8fbaf9afcec1c137a1ab0cc53db3aecb",
+      "size": 12924
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/bm1397_probe_model.rs",
+      "destination": "crates/md-sim-firmware/examples/support/bm1397_probe_model.rs",
+      "sha256": "236911436cd784a7a0a24b1a69e6c0a7a738d7be9db8a6d4b82f4e6321087bb0",
+      "size": 6489
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/esp32_original_probe.rs",
+      "destination": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+      "sha256": "80348473eaf59fb91842b09e215941cf4f8258f8b0f7bf04b2f1d75c053da7c0",
+      "size": 44539
+    }
+  ],
+  "bases_verified": [
+    {
+      "stage_name": "engine.rs",
+      "path": "crates/md-sim-mining/src/engine.rs",
+      "sha256": "6109407b30e448d4b9bdca5f770f79e69f5ca1c19df6e3684fb030ec45d1ff8d",
+      "size": 7490
+    },
+    {
+      "stage_name": "mining-lib.rs",
+      "path": "crates/md-sim-mining/src/lib.rs",
+      "sha256": "a38f5a57dca98032b24f5c8330bf46472eda6b02f0c9e9dac617deeeb1399f47",
+      "size": 582
+    },
+    {
+      "stage_name": "identify.rs",
+      "path": "crates/md-sim-firmware/src/bm1397/identify.rs",
+      "sha256": "863bf5b308dfd9db5af7d257ddec911e883bd23eee6a0fe66b8a563ea3d2a060",
+      "size": 30859
+    },
+    {
+      "stage_name": "bm1397.rs",
+      "path": "crates/md-sim-firmware/src/bm1397.rs",
+      "sha256": "794d1f28058cac5520d8a7c00898b3b6f89451d50d7e0dfc61f5c8facc5d60de",
+      "size": 20308
+    },
+    {
+      "stage_name": "esp32_original_probe.rs",
+      "path": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+      "sha256": "367828195b9c4da14791e9850a1cd6a2e8a11e72833cb186c1cea7a4e859b61d",
+      "size": 37019
+    }
+  ],
+  "routing_reference": {
+    "path": "work/simulator/bm1397-reference-508/routing-evidence.json",
+    "sha256": "d6a8ee6c1fea06d7d67339ac72facf5fc8365c29172095b3a0c6fa1a60ce308e",
+    "size": 1404
+  },
+  "routing_source": {
+    "path": "work/simulator/bm1397-counter-followup-20261028/components/asic/bm1397.c",
+    "sha256": "9bd28dff43cb3c07a63c4843dba2704f7e071b1bfc7fb310cfd925cb35be2f56",
+    "size": 13118
+  },
+  "checked": [
+    "The final nine-file integration omits the deferred masked-nonce API. Existing generic cursor enumeration and serialized work schemas remain unchanged.",
+    "Every receipt follows an actual SHA-256d computation. Admission uses the existing single rate limiter; early polls and empty queues give no computation. The old event API still maps an accepted final hash to solution followed by exhaustion.",
+    "Live filter updates retain the nonce cursor. The private reference engine and retained job map change together. New jobs, replacement, cancellation, generation IDs, exhaustion and reset do not manufacture work.",
+    "Only one chip at assigned address zero can submit mining work. The exact archived ESP consumer uses an int address_interval=256 for one chip; all 256 encoded nonce address fields map to chip zero. Nonzero mining addresses and multiple chips fail explicitly.",
+    "The immutable fault policy can drop a computation only after its private engine receipt exists. Counter4c records these injected datapath events; ordinary filter misses, CRC errors, pool outcomes and elapsed time do not credit that counter.",
+    "Counter04 uses actual completed hashes in the previous complete one-second host-monotonic window. It has no initial completed-window value and does not infer work from elapsed time. The low-rate rounded-zero result, consumer2^20 scale and unresolved physical2^24 claim are explicit.",
+    "Power loss/reset cancel jobs and clear measurement epoch; lifetime engine hashes remain. Inactive/address changes cancel live work without erasing already computed work. Ticket-filter readback remains delegated to the same identification bank used by the engine.",
+    "The default strict model still rejects counter reads and jobs. The new profile is explicitly selected and recorded, keeps unchanged archived firmware and runtime limits, and gives no physical clock, core routing, original-board or functional-mining pass.",
+    "Probe batches count direct actual receipts and retain spacing across batch boundaries. Every accepted or explicitly dropped computation is separately logged. The trace origin precedes model construction and all computations; full batches and the final partial batch are retained."
+  ],
+  "test_source_review": [
+    "Independent bitcoin_hashes SHA-256d comparison of four midstate variants and full nonce ranges.",
+    "Actual rate-spacing, old event API, replacement, filter changes, invalid work, bounds, reset and default strict rejection cases.",
+    "Actual hash-derived fixed-work reply and injected-drop tests are clearly fixed-work regressions, not fresh firmware mining.",
+    "All256 one-chip consumer routing fields, nonzero-address rejection and u32::MAX four-midstate exhaustion."
+  ],
+  "unresolved_findings": [],
+  "pending": [
+    "Integrate only reviewed current bytes after checking base identities.",
+    "Run focused tests, strict lint and formatting. Preserve test failures and do not count fixtures as fresh mining.",
+    "Freeze helper and execute the original firmware with this separate reference adaptation. Retain any next unsupported command, factory threshold failure or trace-bound failure as failed/incomplete."
+  ],
+  "scope_limits": [
+    "This review did not execute staged Rust or firmware.",
+    "Physical ASIC routing/counter units/timing, hardware identity, factory readiness, fresh-work mining, pool verification and per-target original-board gates remain open."
+  ]
+}

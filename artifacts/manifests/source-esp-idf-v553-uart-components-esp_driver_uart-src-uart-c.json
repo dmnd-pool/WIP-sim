@@ -1,0 +1,24 @@
+{
+  "id": "source-esp-idf-v553-uart-components-esp_driver_uart-src-uart-c",
+  "url": "https://raw.githubusercontent.com/espressif/esp-idf/2c211b236707889e8400c4dc5644dd5c4ee071e0/components/esp_driver_uart/src/uart.c",
+  "kind": "source",
+  "title": "Pinned ESP-IDF v5.5.3 UART reference: components/esp_driver_uart/src/uart.c",
+  "language": "en",
+  "source_id": "esp-idf-v553-uart-2c211b236707",
+  "license": "Apache-2.0",
+  "retrieved_at": "2026-10-28T11:57:36.287754+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/esp-idf-v553-uart-reference/components/esp_driver_uart/src/uart.c",
+  "sha256": "44908b0ad0c2f1b4b5ea6cb250396d080a39b06532146c654f2823a71345879b",
+  "size_bytes": 109933,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "tag": "v5.5.3",
+  "http_status": 200,
+  "final_url": "https://raw.githubusercontent.com/espressif/esp-idf/2c211b236707889e8400c4dc5644dd5c4ee071e0/components/esp_driver_uart/src/uart.c",
+  "etag": "\"10806a2508a00b63ed3949d34a6fa1840e1366d320a7b1ca96464fa91f5bc04c\"",
+  "notes": [
+    "Required ESP32-S3 UART support contract for archived Bitaxe102 firmware. Reference source only; guest version string does not prove an exact firmware rebuild or physical timing."
+  ]
+}

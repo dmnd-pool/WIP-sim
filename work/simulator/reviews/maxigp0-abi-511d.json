@@ -1,0 +1,309 @@
+{
+  "schema": "md-sim-selected-PS7-ABI-audit/1",
+  "vendor_source": {
+    "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+    "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+    "size": 848916
+  },
+  "port_json": {
+    "path": "artifacts/files/source/source-fasm-graph-8372b58/zynq7/ps7_ports.json",
+    "sha256": "be3770d6261c832fe571f9662463f1ccb825bd1f8fa919a23488a71c17680336"
+  },
+  "selected_ports": {
+    "FCLKCLK": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "FCLKRESETN": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0ACLK": {
+      "class": "normal",
+      "direction": "input",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0ARADDR": {
+      "class": "normal",
+      "direction": "output",
+      "max": 31,
+      "min": 0,
+      "width": 32
+    },
+    "MAXIGP0ARBURST": {
+      "class": "normal",
+      "direction": "output",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0ARCACHE": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0ARESETN": {
+      "class": "normal",
+      "direction": "output",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0ARID": {
+      "class": "normal",
+      "direction": "output",
+      "max": 11,
+      "min": 0,
+      "width": 12
+    },
+    "MAXIGP0ARLEN": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0ARLOCK": {
+      "class": "normal",
+      "direction": "output",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0ARPROT": {
+      "class": "normal",
+      "direction": "output",
+      "max": 2,
+      "min": 0,
+      "width": 3
+    },
+    "MAXIGP0ARQOS": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0ARREADY": {
+      "class": "normal",
+      "direction": "input",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0ARSIZE": {
+      "class": "normal",
+      "direction": "output",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0ARVALID": {
+      "class": "normal",
+      "direction": "output",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0AWADDR": {
+      "class": "normal",
+      "direction": "output",
+      "max": 31,
+      "min": 0,
+      "width": 32
+    },
+    "MAXIGP0AWBURST": {
+      "class": "normal",
+      "direction": "output",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0AWCACHE": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0AWID": {
+      "class": "normal",
+      "direction": "output",
+      "max": 11,
+      "min": 0,
+      "width": 12
+    },
+    "MAXIGP0AWLEN": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0AWLOCK": {
+      "class": "normal",
+      "direction": "output",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0AWPROT": {
+      "class": "normal",
+      "direction": "output",
+      "max": 2,
+      "min": 0,
+      "width": 3
+    },
+    "MAXIGP0AWQOS": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0AWREADY": {
+      "class": "normal",
+      "direction": "input",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0AWSIZE": {
+      "class": "normal",
+      "direction": "output",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0AWVALID": {
+      "class": "normal",
+      "direction": "output",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0BID": {
+      "class": "normal",
+      "direction": "input",
+      "max": 11,
+      "min": 0,
+      "width": 12
+    },
+    "MAXIGP0BREADY": {
+      "class": "normal",
+      "direction": "output",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0BRESP": {
+      "class": "normal",
+      "direction": "input",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0BVALID": {
+      "class": "normal",
+      "direction": "input",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0RDATA": {
+      "class": "normal",
+      "direction": "input",
+      "max": 31,
+      "min": 0,
+      "width": 32
+    },
+    "MAXIGP0RID": {
+      "class": "normal",
+      "direction": "input",
+      "max": 11,
+      "min": 0,
+      "width": 12
+    },
+    "MAXIGP0RLAST": {
+      "class": "normal",
+      "direction": "input",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0RREADY": {
+      "class": "normal",
+      "direction": "output",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0RRESP": {
+      "class": "normal",
+      "direction": "input",
+      "max": 1,
+      "min": 0,
+      "width": 2
+    },
+    "MAXIGP0RVALID": {
+      "class": "normal",
+      "direction": "input",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0WDATA": {
+      "class": "normal",
+      "direction": "output",
+      "max": 31,
+      "min": 0,
+      "width": 32
+    },
+    "MAXIGP0WID": {
+      "class": "normal",
+      "direction": "output",
+      "max": 11,
+      "min": 0,
+      "width": 12
+    },
+    "MAXIGP0WLAST": {
+      "class": "normal",
+      "direction": "output",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0WREADY": {
+      "class": "normal",
+      "direction": "input",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    },
+    "MAXIGP0WSTRB": {
+      "class": "normal",
+      "direction": "output",
+      "max": 3,
+      "min": 0,
+      "width": 4
+    },
+    "MAXIGP0WVALID": {
+      "class": "normal",
+      "direction": "output",
+      "max": 0,
+      "min": 0,
+      "width": 1
+    }
+  },
+  "status": "All selected directions/widths equal literal original vendor module declarations. No foreign code executed."
+}

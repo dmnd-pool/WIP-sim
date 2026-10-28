@@ -1,0 +1,135 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "status": "PASS conditional requested-clock result audit",
+  "freeze": {
+    "path": "work/simulator/uart-clock-tools-510/inputs.json",
+    "sha256": "b7fc103acbb70436b262f07b1f97ee6a4250dcbcae540adfd680cd27f753e3c1",
+    "size": 40850
+  },
+  "helper": {
+    "path": "work/simulator/uart-clock-tools-510/esp32_uart_requests",
+    "sha256": "b938b164e525e37ff370953cbcc1b40397cef26370939ce96271d21322c6c837",
+    "size": 1121792
+  },
+  "frozen_source_files_verified": 138,
+  "reviewed_stage_files_identical": 4,
+  "check_logs_verified": [
+    {
+      "path": "work/simulator/checks-2026-10-28-001/uart510-lib.log",
+      "sha256": "a4032026e305729550c8e46ad132612e3100c4940efdd516bd7af6791e92f3fc",
+      "size": 644
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/uart510-examples.log",
+      "sha256": "f201fb26dc53ef943abc892d99d35b67270905b1eb344aa8f29493f810c0414f",
+      "size": 2316
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/uart510-clippy.log",
+      "sha256": "27009c9b8f25b9a89c29c08792a6741ba28a246efc694882043959c7f8ecd29b",
+      "size": 143
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/common510-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/uart510-release.log",
+      "sha256": "2a78b703b30df209480da3de5acffe4bceff2f393aa33c432721c89744d85019",
+      "size": 146
+    }
+  ],
+  "checks": {
+    "decoder_tests": 3,
+    "result_tool_tests": 5,
+    "affected_netlist_tests": 13,
+    "failed": 0,
+    "strict_clippy": "PASS",
+    "format": "PASS",
+    "release": "PASS"
+  },
+  "consumed_report": {
+    "path": "work/simulator/uart-clock-510/actual040/requested-clocks.json",
+    "sha256": "3f0defc65ab35110a8bb31ddb648f6e730e2d84cf9bd3cbffacfcfacc0fbdcab",
+    "size": 17726
+  },
+  "explicit_clocks": {
+    "path": "work/simulator/uart-clock-510/clock-inputs.json",
+    "sha256": "4a3bce3094a9dab245ffb8b7e621576618aef9da0b0b70e00127cae359c6b4d0",
+    "size": 66
+  },
+  "clock_inputs": {
+    "apb_hz": 80000000,
+    "rtc_hz": null,
+    "xtal_hz": 40000000
+  },
+  "original_firmware_execution_review": {
+    "path": "work/simulator/reviews/esp32-uart-original-independent-507.json",
+    "sha256": "60516c5d12101c40f85a02f18cdfc1f95c9c9029751bffd3b5b2328cae07a160",
+    "size": 6985
+  },
+  "run_inputs": {
+    "backend.log": {
+      "sha256": "80a29bbe0fa1ce6b2b7cf6e6d6971a855de4fb5ee68137d761ccb00986a84f42",
+      "size": 2694153
+    },
+    "input-identities.json": {
+      "sha256": "7a11790f869a1828507cdb6a45b0deeae80b2a43e128418f79c9e36c5b75063f",
+      "size": 3615
+    },
+    "result.json": {
+      "sha256": "82eceae786d03fb75e0bf526655c97d1d8335bdf1c055164d5aa3a1d4b51910c",
+      "size": 5456350
+    },
+    "spec.json": {
+      "sha256": "99cab3e8aa3be4e521123df6414ba305d9ab79eb3e205c0bcf23138d58e9f5bb",
+      "size": 4001
+    },
+    "uart-configuration-observations.json": {
+      "sha256": "d9ad494db90f4b130569470eef51a8a20b3e9a9fa89804bccd9fd80d77850b02",
+      "size": 5355
+    }
+  },
+  "independent_observation_comparison": {
+    "raw_write_events": 26,
+    "conditional_pairs": 16,
+    "unpaired": 10,
+    "complete_record_and_request_equality": true,
+    "final_ratios": {
+      "/machine/soc/uart0": {
+        "numerator": 640000000,
+        "denominator": 5555,
+        "floor_hz": 115211,
+        "source": "Xtal"
+      },
+      "/machine/soc/uart2": {
+        "numerator": 1280000000,
+        "denominator": 11111,
+        "floor_hz": 115201,
+        "source": "Apb"
+      },
+      "/machine/soc/uart1": {
+        "numerator": 1280000000,
+        "denominator": 409,
+        "floor_hz": 3129584,
+        "source": "Apb"
+      }
+    }
+  },
+  "checked": [
+    "Every frozen source and helper/check-log hash verified. Four reviewed stage files exactly match frozen source.",
+    "Retained backend bytes equal untruncated process stderr and its embedded QEMU trace hash. Independent text parsing reproduces every observed write, device sequence, raw/stored mask and time.",
+    "Independent integer/rational arithmetic and requested flags reproduce all16 complete conditional views; the10 earlier observations remain unpaired.",
+    "Report input hashes describe exact retained buffers. The clocks are explicit reference inputs, not values measured from firmware or hardware.",
+    "No initial register state or continuity across an unobserved reset is assumed. All physical, effective-clock, board and mining flags remain false."
+  ],
+  "unresolved_findings": [],
+  "scope_limits": [
+    "This executes result processing only. It is not another firmware run.",
+    "Original040 remains a failed diagnostic at unsupported Read04; this report does not upgrade its verdict.",
+    "Effective UART clock/line timing, reset continuity and physical calibration remain unproved."
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-28T13:50:14.758052+00:00",
+  "review_status": "independent strict HDL compilation and component execution audit passed",
+  "scope": "Strict elaboration and compilation of the separately derived selected502k Verilog; driven primitive and RAM representation tests. The compiled selected design was retained but not executed.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/hdl-driver-502l/manifest.json",
+      "sha256": "313188034b76e450ac18b8ce7c81510d181dd94ecb0a893f2b1a701beadd9c97",
+      "size": 49916
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502l/spec.json",
+      "sha256": "5a6965fe483ede8ddd2689bbeb4620fd5732bf241885257d47c32c21239253e4",
+      "size": 7823
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502l/result.json",
+      "sha256": "153efd1c61e725c67b73a3784384d376227c60911cd794422cb07ffaa3247950",
+      "size": 102841466
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502l/hdl-report.json",
+      "sha256": "296327c8900224c6d8d8adc7c7389069409576dbde4856255cb0cb41dd3f1dc5",
+      "size": 548852
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502l/hdl-envelope.json",
+      "sha256": "89507a7c831e703a75f23b71ed88d9d5b4aa43affba7d7b953bf89855940fc70",
+      "size": 51420311
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502l/selected-vvp.tar.gz",
+      "sha256": "75284c7047319c6675fcec9bb2c4bfc54133477b8aeea37a03e3e39f54c7d315",
+      "size": 25452295
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502l/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/reviews/netlist-structure-independent-execution-502k.json",
+      "sha256": "b8eb982a6ae82ae95e237107ffc2fa4dc24164f11303350809b15cacb42a034c",
+      "size": 6345
+    }
+  ],
+  "verified": {
+    "frozen_sources": 302,
+    "captured_mounts": 39,
+    "step_stream_identities": 22,
+    "wall_milliseconds": 14863,
+    "process_exit": 0,
+    "trace_truncated": false,
+    "selected_verilog": {
+      "sha256": "3ea22dc51d32539e0a52ff83d7152d82009f4e50883bc20e6643e6672d1a2c9b",
+      "size": 12607262
+    },
+    "selected_compile_stdout_bytes": 0,
+    "selected_compile_stderr_bytes": 0,
+    "selected_elaboration_stdout_bytes": 0,
+    "selected_elaboration_stderr_bytes": 0,
+    "primitive_cases": 582,
+    "RAM_cases_each_mode": 510,
+    "RAM_complete_traces_equal": true,
+    "RAM_source_only_change": "Parity display changes from hexadecimal to binary; all assertions and parameters unchanged.",
+    "independently_checked_selected_data_words": 510,
+    "independently_checked_selected_parity_words": 510,
+    "compiled_archive": {
+      "sha256": "75284c7047319c6675fcec9bb2c4bfc54133477b8aeea37a03e3e39f54c7d315",
+      "size": 25452295
+    },
+    "compiled_program": {
+      "sha256": "27f1fc48f488b1606dc57b19f31b2b768a542427387b2ff420d23790c38187b6",
+      "size": 211790335
+    },
+    "archive_members": [
+      {
+        "name": "compiled",
+        "size": 0,
+        "type": "directory"
+      },
+      {
+        "name": "compiled/selected.vvp",
+        "size": 211790335,
+        "type": "regular"
+      }
+    ],
+    "original_board_gate": false,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "reviewed": [
+    "All frozen source, mounted input, source-provenance and tool identities were rehashed. The exact HDL profile selects the independently audited502k output and its retained comparison evidence.",
+    "All22 step-stream identities match their actual saved content. Both selected compiler invocations have numeric zero exit and completely empty stdout/stderr; no warning whitelist was used.",
+    "The real negative compiler probes still reject width and implicit-net warnings despite exit0, and reject the missing-parameter input.",
+    "The entire generated RAM fixture equals502j after only the parity-display substitution. All15 copied parameter maps are identical, and the same60 baseline omission diagnostics are required.",
+    "Both510-case RAM streams are byte-equal. An independent checker validates every ordered selected data and parity result, including the lower2 bits previously hidden by mixed-unknown hex formatting, unknown propagation and reset.",
+    "The582 primitive result is unchanged. The exact compressed selected program decodes through a bounded archive inventory to one211790335-byte VVP file with the reported SHA-256.",
+    "Only primitive/RAM fixtures execute through VVP. There is no selected-design execution step, processor/AXI exercise or firmware mining acceptance."
+  ],
+  "limits": [
+    "Missing monitor feature data and33 electrical-setting ambiguities remain unresolved.",
+    "PS7 is a port model without behavioral CPU execution. Strict Verilog compilation does not prove FPGA equivalence or a working controller interface.",
+    "The finite fixture does not cover every RAM, routing, reset, collision or physical timing case.",
+    "Original-board and per-target mining gates remain open."
+  ],
+  "findings": []
+}

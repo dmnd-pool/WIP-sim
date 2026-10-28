@@ -1,0 +1,91 @@
+{
+  "schema": "md-sim-s3-uart-teardown-regression/1",
+  "scope": "Actual old018b qtest with the reviewed stdin-lifetime and runtime-diagnostic fixes. The same device defect remains failed.",
+  "source_files_verified": 170,
+  "mounts_verified": 16,
+  "process": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 50,
+    "trace_truncated": false
+  },
+  "helper_exit_code": 1,
+  "actual_responses": 46,
+  "remaining_mismatches": [
+    {
+      "index": 29,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 43,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000012345678",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 44,
+      "command": "readl 0x6000007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    }
+  ],
+  "runtime_diagnostics_clean": true,
+  "qtest_closed_events": 1,
+  "component_passed": false,
+  "firmware_executed": false,
+  "inputs": [
+    {
+      "path": "work/simulator/esp32-uart-tools-506d/inputs.json",
+      "sha256": "d4e163ca6574859436dfd4e1ff474a5df1f2c5fac54abab3a3e02ae692ddbf14",
+      "size": 50020
+    },
+    {
+      "path": "work/simulator/esp32-uart-tools-506d/esp32_backend_qtest",
+      "sha256": "114c4e3db7759c5c98a05727cee5ed5d4c023bb3edf15206c41ea8c0815a70b4",
+      "size": 2018392
+    },
+    {
+      "path": "work/simulator/esp32-uart-506c/teardown-inputs.json",
+      "sha256": "c34b88cdede32987641912538ee9ee2cf6c66ea1fb6b0e61e8c0b2a385fcbdcb",
+      "size": 1244
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-506d-old018b/spec.json",
+      "sha256": "e657706a2a3fbe9bda7c71ac55e4d99f0591f16c136d41e1046d3dff2ae52baa",
+      "size": 3529
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-506d-old018b/inputs.json",
+      "sha256": "992d098ca06b7485cdbc6844483f2e84a81745c71612318c3817fca771d31d77",
+      "size": 1199
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-506d-old018b/transactions.qtest",
+      "sha256": "b3eb52f79cbc7f3caeec97a70f88b0a795b141abbc89c612e7ce59af6fca6eec",
+      "size": 944
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-506d-old018b/result.json",
+      "sha256": "28bb121626e06bd37c867b32b61f71520fe37fab39915eea6a1341ee7f8b62b0",
+      "size": 11409
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-506d-old018b/responses.log",
+      "sha256": "ba63535550c12cd0244b6646575c127cb6a753b28563a53b9040f257f21def74",
+      "size": 607
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-506d-old018b/backend.log",
+      "sha256": "f4abbe34618fec39c5aad4e8d7eea2c0d6395f607bd0f07d16e746ab550aa476",
+      "size": 4677
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-506d-old018b/assessment.json",
+      "sha256": "23970b9ab11874c5b877309ed97e9037ce660881e8e9e071d3c592c0fd55e7a1",
+      "size": 786
+    }
+  ],
+  "next": "Run this frozen helper against the separately rebuilt018c. Do not ignore unexpected diagnostics or weaken DATE/readback/reset assertions."
+}

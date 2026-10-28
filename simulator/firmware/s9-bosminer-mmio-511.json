@@ -1,0 +1,285 @@
+{
+  "schema": "md-sim-selected-bosminer-mmio-contract/1",
+  "parent_elf": {
+    "sha256": "4997a1c10a09f6881d6f5e0d4967eb31072ea9f1da7a80dac192ae1299d45960",
+    "size": 12699280
+  },
+  "rootfs_sha256": "2bd49c70b915b7e25f6c01013d95a5ffea8d499b73c6c6ec5539fda4247154b3",
+  "static_report": "work/simulator/qemu-s9/axi-bosminer-static-511c/inspection.json",
+  "static_disassembly": "work/simulator/qemu-s9/axi-bosminer-static-511c/a32.txt",
+  "scope": "Static selected-instruction interpretation. Does not prove these branches were executed or establish physical timing. MMIO base mapping comes separately from the exact DTB and archived firmware registration observations.",
+  "common_offsets": {
+    "version": 0,
+    "build_timestamp": 4,
+    "control": 8,
+    "baud_divisor": 16
+  },
+  "version": {
+    "mask": 4293984255,
+    "expected": 9441282,
+    "unchecked_bits": "19:16"
+  },
+  "build_timestamp": {
+    "minimum_inclusive": 1546300801,
+    "maximum_inclusive": 2147483647
+  },
+  "control_startup": {
+    "clear_then_set_mask": 8
+  },
+  "baud_clock_argument": 100000000,
+  "baud_divisor_formula": "Not inferred. Callee0x474180 is outside the current decoded ranges.",
+  "instructions": [
+    {
+      "virtual_address": 4699660,
+      "file_offset": 4634124,
+      "bytes": "081090e5",
+      "decoded": "0047b60c ldr        r1, [r0, #8]"
+    },
+    {
+      "virtual_address": 4699664,
+      "file_offset": 4634128,
+      "bytes": "0810c1e3",
+      "decoded": "0047b610 bic        r1, r1, #8"
+    },
+    {
+      "virtual_address": 4699668,
+      "file_offset": 4634132,
+      "bytes": "081080e5",
+      "decoded": "0047b614 str        r1, [r0, #8]"
+    },
+    {
+      "virtual_address": 4699676,
+      "file_offset": 4634140,
+      "bytes": "081090e5",
+      "decoded": "0047b61c ldr        r1, [r0, #8]"
+    },
+    {
+      "virtual_address": 4699680,
+      "file_offset": 4634144,
+      "bytes": "081081e3",
+      "decoded": "0047b620 orr        r1, r1, #8"
+    },
+    {
+      "virtual_address": 4699684,
+      "file_offset": 4634148,
+      "bytes": "081080e5",
+      "decoded": "0047b624 str        r1, [r0, #8]"
+    },
+    {
+      "virtual_address": 4699696,
+      "file_offset": 4634160,
+      "bytes": "002091e5",
+      "decoded": "0047b630 ldr        r2, [r1]"
+    },
+    {
+      "virtual_address": 4699700,
+      "file_offset": 4634164,
+      "bytes": "1f0272e3",
+      "decoded": "0047b634 cmn        r2, #0xf0000001"
+    },
+    {
+      "virtual_address": 4699704,
+      "file_offset": 4634168,
+      "bytes": "72b0efe6",
+      "decoded": "0047b638 uxtb       fp, r2"
+    },
+    {
+      "virtual_address": 4699708,
+      "file_offset": 4634172,
+      "bytes": "225400e0",
+      "decoded": "0047b63c and        r5, r0, r2, lsr #8"
+    },
+    {
+      "virtual_address": 4699712,
+      "file_offset": 4634176,
+      "bytes": "226600e0",
+      "decoded": "0047b640 and        r6, r0, r2, lsr #12"
+    },
+    {
+      "virtual_address": 4699720,
+      "file_offset": 4634184,
+      "bytes": "222aa0e1",
+      "decoded": "0047b648 lsr        r2, r2, #0x14"
+    },
+    {
+      "virtual_address": 4699724,
+      "file_offset": 4634188,
+      "bytes": "0140a083",
+      "decoded": "0047b64c movhi      r4, #1"
+    },
+    {
+      "virtual_address": 4699728,
+      "file_offset": 4634192,
+      "bytes": "7270efe6",
+      "decoded": "0047b650 uxtb       r7, r2"
+    },
+    {
+      "virtual_address": 4699760,
+      "file_offset": 4634224,
+      "bytes": "041091e5",
+      "decoded": "0047b670 ldr        r1, [r1, #4]"
+    },
+    {
+      "virtual_address": 4699764,
+      "file_offset": 4634228,
+      "bytes": "e4249fe5",
+      "decoded": "0047b674 ldr        r2, [pc, #0x4e4]"
+    },
+    {
+      "virtual_address": 4699772,
+      "file_offset": 4634236,
+      "bytes": "020051e1",
+      "decoded": "0047b67c cmp        r1, r2"
+    },
+    {
+      "virtual_address": 4699776,
+      "file_offset": 4634240,
+      "bytes": "f400003a",
+      "decoded": "0047b680 blo        #0x47ba58"
+    },
+    {
+      "virtual_address": 4699780,
+      "file_offset": 4634244,
+      "bytes": "010071e3",
+      "decoded": "0047b684 cmn        r1, #1"
+    },
+    {
+      "virtual_address": 4699784,
+      "file_offset": 4634248,
+      "bytes": "f20000da",
+      "decoded": "0047b688 ble        #0x47ba58"
+    },
+    {
+      "virtual_address": 4700176,
+      "file_offset": 4634640,
+      "bytes": "000054e3",
+      "decoded": "0047b810 cmp        r4, #0"
+    },
+    {
+      "virtual_address": 4700180,
+      "file_offset": 4634644,
+      "bytes": "09005703",
+      "decoded": "0047b814 cmpeq      r7, #9"
+    },
+    {
+      "virtual_address": 4700184,
+      "file_offset": 4634648,
+      "bytes": "0200001a",
+      "decoded": "0047b818 bne        #0x47b828"
+    },
+    {
+      "virtual_address": 4700188,
+      "file_offset": 4634652,
+      "bytes": "010056e3",
+      "decoded": "0047b81c cmp        r6, #1"
+    },
+    {
+      "virtual_address": 4700192,
+      "file_offset": 4634656,
+      "bytes": "00005503",
+      "decoded": "0047b820 cmpeq      r5, #0"
+    },
+    {
+      "virtual_address": 4700196,
+      "file_offset": 4634660,
+      "bytes": "5000000a",
+      "decoded": "0047b824 beq        #0x47b96c"
+    },
+    {
+      "virtual_address": 4700524,
+      "file_offset": 4634988,
+      "bytes": "02005be3",
+      "decoded": "0047b96c cmp        fp, #2"
+    },
+    {
+      "virtual_address": 4700528,
+      "file_offset": 4634992,
+      "bytes": "acffff1a",
+      "decoded": "0047b970 bne        #0x47b828"
+    },
+    {
+      "virtual_address": 3933852,
+      "file_offset": 3868316,
+      "bytes": "d4219fe5",
+      "decoded": "003c069c ldr        r2, [pc, #0x1d4]"
+    },
+    {
+      "virtual_address": 3933868,
+      "file_offset": 3868332,
+      "bytes": "b3ce02eb",
+      "decoded": "003c06ac bl         #0x474180"
+    },
+    {
+      "virtual_address": 3934248,
+      "file_offset": 3868712,
+      "bytes": "400094e5",
+      "decoded": "003c0828 ldr        r0, [r4, #0x40]"
+    },
+    {
+      "virtual_address": 3934252,
+      "file_offset": 3868716,
+      "bytes": "080090e5",
+      "decoded": "003c082c ldr        r0, [r0, #8]"
+    },
+    {
+      "virtual_address": 3934256,
+      "file_offset": 3868720,
+      "bytes": "106080e5",
+      "decoded": "003c0830 str        r6, [r0, #0x10]"
+    },
+    {
+      "virtual_address": 4698316,
+      "file_offset": 4632780,
+      "bytes": "dc219fe5",
+      "decoded": "0047b0cc ldr        r2, [pc, #0x1dc]"
+    },
+    {
+      "virtual_address": 4698332,
+      "file_offset": 4632796,
+      "bytes": "27e4ffeb",
+      "decoded": "0047b0dc bl         #0x474180"
+    },
+    {
+      "virtual_address": 4698724,
+      "file_offset": 4633188,
+      "bytes": "000094e5",
+      "decoded": "0047b264 ldr        r0, [r4]"
+    },
+    {
+      "virtual_address": 4698728,
+      "file_offset": 4633192,
+      "bytes": "106080e5",
+      "decoded": "0047b268 str        r6, [r0, #0x10]"
+    }
+  ],
+  "literals": [
+    {
+      "virtual_address": 3934328,
+      "file_offset": 3868792,
+      "bytes": "00e1f505",
+      "value": 100000000
+    },
+    {
+      "virtual_address": 4698800,
+      "file_offset": 4633264,
+      "bytes": "00e1f505",
+      "value": 100000000
+    },
+    {
+      "virtual_address": 4701024,
+      "file_offset": 4635488,
+      "bytes": "81ad2a5c",
+      "value": 1546300801
+    }
+  ],
+  "common_bases": [
+    1136656384,
+    1136721920,
+    1136787456
+  ],
+  "base_address_evidence": {
+    "path": "work/simulator/original-zynq/attempt-003/components/board.dtb",
+    "sha256": "550c87818cb0db41c00a8351dc4ac7b5dce5bf6d5336539c6951163ebf3cb62a",
+    "size": 12364
+  }
+}

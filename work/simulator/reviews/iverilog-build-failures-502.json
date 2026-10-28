@@ -1,0 +1,43 @@
+{
+  "502b": {
+    "stage": "capture, before isolated execution",
+    "error": "library libperl.so unavailable",
+    "fix": "Explicit manifest-bound interpreter and nonstandard libperl.so RUNPATH; generic policy unchanged"
+  },
+  "502c": {
+    "stage": "isolated gperf make check",
+    "result": "failed",
+    "report": "work/simulator/qemu-s9/iverilog-build-502c/build-report.json",
+    "report_sha256": "f4adf548b6db7968ea33edce11c1a7d629ea7d8798ab56e8b101fd546fee7730",
+    "cause": "gperf tests/Makefile.in check-test uses aout built by check-ada, but no dependency orders the two prerequisites of check under parallel make. Actual log shows check-test before check-ada and missing ./aout.",
+    "fix": "Run unchanged complete upstream make check with -j1; build remains -j2. No test or expected output removed.",
+    "source_proof": {
+      "archive_sha256": "588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2",
+      "member": "gperf-3.1/tests/Makefile.in",
+      "member_sha256": "4445818743f068b8a685324246ddbcd3c842661f27d04917eccfd44735aa93ea",
+      "lines": {
+        "64": "check : check-c check-ada check-modula3 check-pascal check-lang-utf8 check-lang-ucs2 check-smtp check-test",
+        "67": "extracheck : @CHECK_LANG_SYNTAX@",
+        "77": "check-ada: test.$(OBJEXT)",
+        "80": "\t$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o aout adainset.c test.$(OBJEXT)",
+        "82": "\t./aout -v < $(srcdir)/ada.gperf | LC_ALL=C tr -d '\\r' > ada-res.out",
+        "141": "check-test:",
+        "174": "\t./aout -v < $(srcdir)/c.gperf | $(POSTPROCESS_FOR_MINGW) > test-7.out"
+      }
+    }
+  },
+  "502d": {
+    "stage": "Icarus configure",
+    "result": "failed, exit77",
+    "report": "work/simulator/qemu-s9/iverilog-build-502d/build-report.json",
+    "evidence": "Normal CC with sysroot works; separate build CC resolves bare gcc and cannot create executable. Full config.log was not exported in this attempt.",
+    "diagnosis": "Upstream AX_PROG_CC_FOR_BUILD renames CC/CFLAGS/LDFLAGS to *_FOR_BUILD; driver supplied only normal flags. Precise linker diagnostic unavailable in502d; the next run tests the inferred closure fix.",
+    "fix": "Set upstream *_FOR_BUILD variables explicitly to the same frozen compiler/sysroot; retain bounded config.log on errors."
+  },
+  "502e": {
+    "result": "failed, exit77",
+    "cause": "Driver editing mistake: intended *_FOR_BUILD environment insertion did not match the source text and was absent from executed ProcessSpec. Retained config.log confirms bare gcc fails to find /usr/lib/libc_nonshared.a.",
+    "fix": "Explicit source patch adds variables; parent and inside guard now validate all three normal/build compiler setting pairs. Missing or divergent build compiler regression added.",
+    "report": "work/simulator/qemu-s9/iverilog-build-502e/build-report.json"
+  }
+}

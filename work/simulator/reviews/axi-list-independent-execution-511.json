@@ -1,0 +1,78 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "status": "PASS isolated archive listing only",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/axi-inspection-driver-511/manifest.json",
+    "sha256": "510e8c6c591ea3dfb83efc831c6e9acffff688db0edab0d58b75fc14dab802e0",
+    "size": 67093
+  },
+  "frozen_source_count": 397,
+  "helper": {
+    "path": "work/simulator/qemu-s9/axi-inspection-driver-511/s9_native_service",
+    "sha256": "0929e69426f7f00e8f4c2ff9c55b676663ec02bcd7ad24a72918dc255a706903",
+    "size": 2411264
+  },
+  "run_inputs": [
+    {
+      "path": "work/simulator/qemu-s9/axi-root-list-511/spec.json",
+      "sha256": "d7d7c5a8f37b2c613f8b9ae4fbd8f74062a9f42ca795dfdb1f53df608a8a6c77",
+      "size": 2646
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-root-list-511/result.json",
+      "sha256": "3b4767f56863dcfb47d1fbb0ef8a75777a19646abaa2f9587f9186b054016ef3",
+      "size": 532531
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-root-list-511/stdout.bin",
+      "sha256": "4a59e1bdce3e3d9485511b6a547312fd2347c3127c71a6a7ee68118060148ddc",
+      "size": 265845
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-root-list-511/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-root-list-511/adaptation.json",
+      "sha256": "d6fbff8cf76a06129a7a6f2330d81487fdd68996570179b13e4ea5861ee078db",
+      "size": 1036
+    }
+  ],
+  "captured_mounts_verified": 12,
+  "actual": {
+    "argv": [
+      "/usr/lib/7zip/7z",
+      "l",
+      "-slt",
+      "/ramdisk"
+    ],
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 21,
+    "trace_truncated": false,
+    "stderr_bytes": 0,
+    "exact_regular_member": {
+      "Path": "usr/bin/bosminer",
+      "Folder": "-",
+      "Size": "12699280",
+      "Packed Size": "3368408",
+      "Modified": "2022-04-29 09:23:33",
+      "Mode": "-rwxr-xr-x",
+      "User ID": "0",
+      "Group ID": "0"
+    },
+    "ramdisk": {
+      "sha256": "2bd49c70b915b7e25f6c01013d95a5ffea8d499b73c6c6ec5539fda4247154b3",
+      "size": 15491980
+    }
+  },
+  "limitations": [
+    "This run executes the captured7zip support tool only. It does not extract or execute Bosminer, boot firmware or establish FPGA behavior.",
+    "The pre-change adaptation.json labels the execution as a board diagnostic. That inherited metadata is incorrect for this inspect mode. The511 source change corrects future inspection metadata; this original result is preserved.",
+    "The new fixed-member extraction path needs its final source review, focused tests and actual retained execution.",
+    "Original board, selected FPGA execution and mining gates remain open."
+  ]
+}

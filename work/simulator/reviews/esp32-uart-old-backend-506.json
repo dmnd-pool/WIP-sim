@@ -1,0 +1,143 @@
+{
+  "schema": "md-sim-s3-uart-old-backend-regression/1",
+  "scope": "Actual isolated MMIO regression against unchanged017. The helper failed on the asserted S3 contract. This is a retained backend defect, not a passed firmware target.",
+  "source_files_verified": 134,
+  "mounts_verified": 16,
+  "total_actual_responses": 46,
+  "new_uart_assertions": 20,
+  "uart_mismatches": [
+    {
+      "command_index": 26,
+      "command": "readl 0x60010078",
+      "expected": "OK 0x0000000003701000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "command_index": 27,
+      "command": "readl 0x60000078",
+      "expected": "OK 0x0000000003701000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "command_index": 29,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "command_index": 31,
+      "command": "readl 0x60010078",
+      "expected": "OK 0x0000000003500000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "command_index": 32,
+      "command": "readl 0x60000078",
+      "expected": "OK 0x0000000003701000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "command_index": 34,
+      "command": "readl 0x60010078",
+      "expected": "OK 0x0000000003501000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "command_index": 36,
+      "command": "readl 0x60010014",
+      "expected": "OK 0x0000000000f00fff",
+      "actual": "OK 0x00000000ffffffff"
+    },
+    {
+      "command_index": 38,
+      "command": "readl 0x60010014",
+      "expected": "OK 0x0000000000000000",
+      "actual": "OK 0x00000000000ff000"
+    },
+    {
+      "command_index": 40,
+      "command": "readl 0x60010014",
+      "expected": "OK 0x0000000000a00abc",
+      "actual": "OK 0x00000000ffa00abc"
+    },
+    {
+      "command_index": 43,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000012345678",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "command_index": 44,
+      "command": "readl 0x6000007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "command_index": 45,
+      "command": "readl 0x60010078",
+      "expected": "OK 0x0000000003501000",
+      "actual": "OK 0x0000000015122500"
+    }
+  ],
+  "process": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 40,
+    "trace_truncated": false
+  },
+  "helper_exit_code": 1,
+  "inherited_i2c_nack_passed": true,
+  "inputs": [
+    {
+      "path": "work/simulator/esp32-uart-tools-506/inputs.json",
+      "sha256": "1578e6fae825f68028b645051171b1530b91cec734ef077895d3f9f095399f6b",
+      "size": 39024
+    },
+    {
+      "path": "work/simulator/esp32-uart-tools-506/esp32_backend_qtest",
+      "sha256": "8388d720d2b69a45aef3df67d753a592d4e3632b06ce8d91b050b1bfea84dd33",
+      "size": 1926504
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-old017/spec.json",
+      "sha256": "1acddf968e8d033144d2b42a80508dd344c5e88f43bbda5d67952c83a2f7bc6e",
+      "size": 3529
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-old017/inputs.json",
+      "sha256": "54ebc84393c59c84e082414def70b5059b2a58f2db8a6c699f4656a6693a4f5b",
+      "size": 1199
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-old017/transactions.qtest",
+      "sha256": "b3eb52f79cbc7f3caeec97a70f88b0a795b141abbc89c612e7ce59af6fca6eec",
+      "size": 944
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-old017/result.json",
+      "sha256": "460a11d8092cb6959583f4941d15eed614577066d10775cd9a0b442d7d073e9c",
+      "size": 11575
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-old017/responses.log",
+      "sha256": "a6f1d87b342aec40ae926bd4b4e3e31776bd081596546121232f0e473c250ce2",
+      "size": 607
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-old017/backend.log",
+      "sha256": "3de4732860c651fbb967ba5b469c57e7f6fa97b3d4035ec49e20afc6fe08c81f",
+      "size": 4760
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-old017/assessment.json",
+      "sha256": "e2497b3b8e78c89885c71e128218f53d4897742c85a818910d617db88ca0ef41",
+      "size": 643
+    }
+  ],
+  "gates": {
+    "uart_component_passed": false,
+    "firmware_executed": false,
+    "physical_timing_passed": false
+  },
+  "next_action": "Build reviewed S3-only derived backend separately. Re-run unchanged46 assertions, then actual reset and bounded trace tests."
+}

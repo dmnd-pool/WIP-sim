@@ -1,0 +1,309 @@
+{
+  "scope": "Read-only metadata candidates for existing frozen481 cleanup. No pair hashes or removal yet.",
+  "runs": [
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-002/core-0-0",
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-002/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-002/core-0-1",
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-002/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-004/core-0-0",
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-004/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-004/core-0-1",
+      "input_count": 2,
+      "input_bytes": 1817304,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-004/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-005/core-0-0",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-005/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-005/core-0-1",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-005/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-005/core-1-0",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-005/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-005/core-1-1",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-005/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-006/core-0-0",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-006/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-006/core-0-1",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-006/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-006/core-1-0",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-006/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-006/core-1-1",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-006/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-006/core-2-0",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-006/run-2"
+    },
+    {
+      "run": "work/simulator/qemu-s9/original-dashboard-cycle-006/core-2-1",
+      "input_count": 2,
+      "input_bytes": 1822520,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/original-dashboard-cycle-006/run-2"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-provision-0",
+      "input_count": 3,
+      "input_bytes": 35825040,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-provision-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/provision"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-0-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-0-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-1-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-1-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-2-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-307/core-2-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-307/run-2"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-provision-0",
+      "input_count": 3,
+      "input_bytes": 35825040,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/provision"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-provision-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/provision"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-0-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-0-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-1-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-1-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-2-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/run-2"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-317/core-2-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-317/run-2"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-provision-0",
+      "input_count": 3,
+      "input_bytes": 35825040,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/provision"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-provision-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/provision"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-0-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-0-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-0"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-1-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-1-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-1"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-2-0",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-2"
+    },
+    {
+      "run": "work/simulator/qemu-s9/pcap-dashboard-cycle-322/core-2-1",
+      "input_count": 1,
+      "input_bytes": 192,
+      "source_copy_count": 0,
+      "source_copy_bytes": 0,
+      "source": "/home/user/src/md-sim/work/simulator/qemu-s9/pcap-dashboard-cycle-322/run-2"
+    }
+  ]
+}

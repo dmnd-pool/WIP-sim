@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-libsystemctlm-soc-788e8b2-libremote-port-remote-port-proto-c",
+  "url": "https://raw.githubusercontent.com/Xilinx/libsystemctlm-soc/788e8b24b5d658780a55e97511082b1540fe92ab/libremote-port/remote-port-proto.c",
+  "kind": "source",
+  "title": "Pinned Xilinx/libsystemctlm-soc remote-port reference: libremote-port/remote-port-proto.c",
+  "language": "en",
+  "source_id": "s9-remote-port-libsystemctlm-soc-788e8b2",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-libsystemctlm-soc-788e8b2/libremote-port/remote-port-proto.c",
+  "sha256": "661599e8792a1b642dc3e1f1c397a05fe2871c165e1c382655a7ed86b7e33553",
+  "size_bytes": 17913,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "788e8b24b5d658780a55e97511082b1540fe92ab",
+  "etag": "\"a563eaa62863bc24e5f4f88ce06ba9416ca67c4a1b17b48be277eefb6fe09b99\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

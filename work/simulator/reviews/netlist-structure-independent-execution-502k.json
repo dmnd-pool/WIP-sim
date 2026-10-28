@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-28T13:47:42.125753+00:00",
+  "review_status": "independent conversion and output-preservation audit passed",
+  "scope": "Actual isolated derived converter execution and independent comparison against original497. Selected HDL execution, physical timing, exact FPGA build identity and board/mining acceptance are separate.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/netlist-driver-502k/manifest.json",
+      "sha256": "f6ed200140734203cb5fe46e201f2aeb9229da5fdd9c6fd0f50977ba5bf7c985",
+      "size": 50201
+    },
+    {
+      "path": "simulator/firmware/s9-netlist-tool-inputs-502k.json",
+      "sha256": "ae8d03d540748c1bbc78d8dfa17ec6f6565b7e227e9aa827115ad525f44ed03d",
+      "size": 21667
+    },
+    {
+      "path": "work/simulator/reviews/netlist-structure-independent-source-502k.json",
+      "sha256": "967443922454518986f43558f865da31496e00be17af44583c3c87aa2b54e3a3",
+      "size": 6729
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/spec.json",
+      "sha256": "d4221796062f767d9150720c5426dfa415eef98731461bd663b9ac1720c6acd5",
+      "size": 210955
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/result.json",
+      "sha256": "eee05888ef580bb578889305a9c0a190262d5c67c706006e7bf7f12f8f12dd89",
+      "size": 42440508
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/conversion.json",
+      "sha256": "37e1148b966dc06ac3bade5165eccbdab9e98c3d03a5113280a3eb1b8b4cab42",
+      "size": 21189850
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/comparison-inputs.json",
+      "sha256": "67610f9ba3c7833da3789e32d10d876c10fd1a543c60cef4b3dc868550cc701c",
+      "size": 511
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/assessment.json",
+      "sha256": "b4d4ee8e5b23ebc63f1a919b9d0819b0539a324d6b68d7aea225f6127bb58e19",
+      "size": 1020
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/structure-comparison.json",
+      "sha256": "d1e9548e68343c7807d7011ba64a79fd437ebd39bf7b120a386b0fd12983b5b0",
+      "size": 529
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/selected.v",
+      "sha256": "3ea22dc51d32539e0a52ff83d7152d82009f4e50883bc20e6643e6672d1a2c9b",
+      "size": 12607262
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/selected.xdc",
+      "sha256": "96abe81a11f36f77f3ebcb2e236e829a8d8ae96ddacd6308362354afc3146b27",
+      "size": 8065912
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/stderr.log",
+      "sha256": "dd0ae53adee6bebfbbefbd5a6a34b39f6cba492548c0371ea1b2b931b57321ee",
+      "size": 29982
+    }
+  ],
+  "verified": {
+    "frozen_source_files": 303,
+    "captured_mounts": 1021,
+    "process_exit": 0,
+    "wall_milliseconds": 85653,
+    "trace_truncated": false,
+    "verilog": {
+      "sha256": "3ea22dc51d32539e0a52ff83d7152d82009f4e50883bc20e6643e6672d1a2c9b",
+      "size": 12607262
+    },
+    "xdc": {
+      "sha256": "96abe81a11f36f77f3ebcb2e236e829a8d8ae96ddacd6308362354afc3146b27",
+      "size": 8065912
+    },
+    "XDC_exactly_unchanged": true,
+    "cells": 11122,
+    "exact_cell_attributes_parameters_existing_ports": true,
+    "RAM_instances": 15,
+    "explicit_Z_ports": 60,
+    "new_scalar_alias_declarations": 1453,
+    "unchanged_top_port_header": true,
+    "timebase": "1ps/1ps",
+    "original_line_multiset_preserved_except_declared_additions": true,
+    "graph_identity_unchanged": {
+      "sha256": "445d0ce61f65017aeac7db082c3928cca04b10b2fc90d44accf352f07cc8514f",
+      "size": 271196160,
+      "quick_check": [
+        "ok"
+      ],
+      "counts": {
+        "tile_type": 90,
+        "site_type": 40,
+        "phy_tile": 13440,
+        "site_pin": 6422,
+        "site": 169,
+        "site_instance": 8460,
+        "wire_in_tile": 96705,
+        "node": 1200074,
+        "wire": 3607498
+      },
+      "unassigned_wires": 0,
+      "missing_node_references": 0,
+      "missing_tile_references": 0
+    },
+    "parsed_feature_names": 219702,
+    "parser_consumption_unchanged": true,
+    "remaining_electrical_ambiguity_messages": 33,
+    "remaining_monitor_segments": 1,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 16,
+      "file_bytes": 1073741824,
+      "trace_bytes": 134217728,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "reviewed": [
+    "Every frozen source and captured input object was rehashed. The helper object equals the mounted guard; the exact separate adaptation profile binds all original-output and RAM evidence references.",
+    "The complete raw process streams equal the saved conversion and stderr. Both selected output bodies reproduce their declared identities.",
+    "An independent parser compared every complete cell attribute line, parameter block, existing port body and instance identity. Only the four exactZ entries at each of15 RAM cells were removed for comparison.",
+    "All1453 new scalar declarations name existing original assignment sinks reported by the strict compiler. After removing only these declarations,60Z lines and the leading timebase, the complete existing line multiset is unchanged. Top-header order and the final endmodule are also checked.",
+    "The complete XDC bytes and connection-graph identity remain unchanged. FASM parser consumption,219702 feature names and converter options match original497.",
+    "The same33 electrical ambiguity messages and missing monitor segment remain visible. No timing, sink or clock option was relaxed."
+  ],
+  "limits": [
+    "This proves the bounded representation change and successful converter run. It does not prove that the original recovered logic models the physical FPGA.",
+    "Primitive/strict HDL acceptance is recorded separately for502l; this converter assessment is not silently upgraded.",
+    "PS7 processor/AXI behavior, physical calibration, original-board firmware and per-target mining remain open."
+  ],
+  "findings": [],
+  "audit_notes": [
+    "Initial ambiguity count matched only the singular IOSTANDARD wording. The corrected check includes the19 IOSTANDARD+DRIVE+SLEW messages and14 IOSTANDARD messages, requiring all33 messages to match original497 exactly. No implementation assertion changed."
+  ]
+}

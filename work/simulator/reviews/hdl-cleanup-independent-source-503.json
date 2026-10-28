@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "Independent source review of staged HDL-only cleanup validation and completion journal reservation. Actual deletion is not authorized by this source report alone.",
+  "staged_manifest": {
+    "sha256": "c53ef72206b0d993cb43bba5c18e89e69080c80178549c57467b5280acc4e3ac",
+    "path": "/home/user/src/md-sim/work/simulator/cleanup-hdl-development-503/staged.json"
+  },
+  "source_freeze_pins": {
+    "502c": "6f2559a92d863e82b8756c3cb89964998fdd79d89f254cd46cd6178546d092f7",
+    "502d": "03943c66e21a89c9b22371db793847ae665e75b5ef6701bf5625fbe53349f24d",
+    "502e": "7e87c0d6468d337b6e06772d32c9d2d6fb771693bee909741f135d18c8d61132",
+    "502f": "7b2a9ece9e5f910245a4cc89c49ab64e2e799d0e238abd1184d2d35f1ebcbf32"
+  },
+  "reviewed_behaviors": [
+    "Exact502c/d/e failed stores only; successful502f is canonical;502b prelaunch excluded.",
+    "Source roles and frozen helper checked against original spec; canonical tool export compared to raw envelope.",
+    "Terminal result and stdout/stderr/compact report consistency checked; failed evidence preserved.",
+    "Unchanged store policies; exclusive locks; pending transfers refused; unique objects not selected.",
+    "Only duplicate CAS objects; no adjacent source/archive cleanup.",
+    "Durable restore journal and completion output reservation precede unlink.",
+    "Behavior tests cover invalid roles, scope, nonterminal state, active store, policy change and changed restore source."
+  ],
+  "required_next": [
+    "Focused tests and Clippy.",
+    "Frozen actual plan with byte verification and separate review before deletion."
+  ],
+  "unresolved_findings": []
+}

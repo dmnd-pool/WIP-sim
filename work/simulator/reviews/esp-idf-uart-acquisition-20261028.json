@@ -1,0 +1,119 @@
+{
+  "schema": "md-sim-source-acquisition/1",
+  "date": "2026-10-28T11:57:36.287754+00:00",
+  "commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "tag_object": "b31fcc7a314a44ad992b58f589f7d1d8a4fadff6",
+  "scope": "Small pinned UART-only source acquisition; no firmware or preparation tools executed.",
+  "inputs": [
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/tag-ref.json",
+      "sha256": "122d1c69e6f47436fecf7a649caac8970d47a62e5ebc3dbb86c7afef08af17b4",
+      "size": 337
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/tag-object.json",
+      "sha256": "520d82f86143188e52327cd7e786f36c9cfb9839812898d7445c82527263118e",
+      "size": 1330
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/esp32s3/include/hal/uart_ll.h",
+      "sha256": "2e2dd54fe649007daaddc37072af30871b4161254e9e2929028484bdb62b422d",
+      "size": 33342
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/register/soc/uart_reg.h",
+      "sha256": "eef72592d7949e641faf7c1d153a8bb0eb0e851619a5f579b4a3c3c663d67e07",
+      "size": 65797
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/register/soc/uart_struct.h",
+      "sha256": "bbe3554c245edd126ea944615fae524e5653058916b79d8264faba5d41a7c66e",
+      "size": 44836
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/include/soc/clk_tree_defs.h",
+      "sha256": "d3e24702e9c367a172e47077f551ff06d936ab4786484959f5368f9d9647cf2d",
+      "size": 22302
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/esp_driver_uart/src/uart.c",
+      "sha256": "44908b0ad0c2f1b4b5ea6cb250396d080a39b06532146c654f2823a71345879b",
+      "size": 109933
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/uart_hal.c",
+      "sha256": "09aba8059d4abb94a9d25e9425819d2cbca1a121f3e7d88eded0fd28af85dae5",
+      "size": 4766
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/include/hal/uart_types.h",
+      "sha256": "1514867c826ba1b1dd02eb76f4a3921554da0b4c4cf99c40b3e1701a625df6a7",
+      "size": 5882
+    }
+  ],
+  "catalogue_checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/inspect_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/idf-uart-inspect.log",
+        "sha256": "ae009e9652e67d249798709f96b64ff1ac4655169ef7e779215edfda41bd1b4a",
+        "size": 728
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/verify_archive.py",
+        "--incremental"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/idf-uart-archive.log",
+        "sha256": "49a47a40d6b953db67f7fc0dd433b709cb65eed762eb79424036cec2657b18b4",
+        "size": 1722
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/report_coverage.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/idf-uart-coverage.log",
+        "sha256": "5da50e44ce030d17f2149390d58eb7fa1cab2547578a96b2cee043232fb18d1b",
+        "size": 95
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/catalog.py",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/idf-uart-catalog-build.log",
+        "sha256": "9629e8a485e7e46d51c0711d89afb0363d6762f900437e4cafbbaf1a6a1e5aa8",
+        "size": 2236
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/catalog.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/idf-uart-catalog-verify.log",
+        "sha256": "8f24266918c96b80ef61d274d2132dcbd7215f19692032626d49671246476048",
+        "size": 145
+      }
+    }
+  ]
+}

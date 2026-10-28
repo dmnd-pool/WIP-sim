@@ -1,0 +1,134 @@
+{
+  "schema": "md-sim-adc-calibration-contract/1",
+  "status": "Static exact source and retained guest-log analysis; no execution or model alteration.",
+  "scope": "Explain actual039 missing-calibration failure and identify the next model inputs. No physical calibration or board acceptance.",
+  "idf_commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "sources": [
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/efuse/esp32s3/esp_efuse_rtc_calib.c",
+      "sha256": "449b9c4559a08cae21aacd5230390abb2966e25df9333b80fbcd2faa688128f1",
+      "size": 4717,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-efuse-esp32s3-esp_efuse_rtc_calib-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/efuse/esp32s3/esp_efuse_table.c",
+      "sha256": "ebbff31657f49a24c10e1c98947f2f0d00190c985cef2f4714a1c92aa00bcb5f",
+      "size": 65542,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-efuse-esp32s3-esp_efuse_table-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/efuse/esp32s3/include/esp_efuse_rtc_calib.h",
+      "sha256": "b85be53f788c688a863ac7ba35d8bfaef73c98057aaa86a3c95ce613c19d9e21",
+      "size": 1921,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-efuse-esp32s3-include-esp_efuse_rtc_calib-h.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/adc_cali_curve_fitting.c",
+      "sha256": "c5298fde12b7d019148c9d26be894b4837bf99248a1ca5ebb9cfe5de2d8f47b9",
+      "size": 9206,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-adc_cali_curve_fitting-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/adc_oneshot.c",
+      "sha256": "54a187caa8f1c24407f2eb10ab7098dda56612a4e44345210a9ac323b89819be",
+      "size": 13501,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-adc_oneshot-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/curve_fitting_coefficients.h",
+      "sha256": "eb63e37d9b3f726afda4988fb8aabba956597ecde35bd641fcf41489ee2eb726",
+      "size": 922,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-curve_fitting_coefficients-h.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/esp_adc/esp32s3/curve_fitting_coefficients.c",
+      "sha256": "9995bb0e8b76caf0c41268391fcad62f94b6adf7dcdd76bbfb1e7dbb770a7191",
+      "size": 3115,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-esp_adc-esp32s3-curve_fitting_coefficients-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/hal/adc_hal_common.c",
+      "sha256": "8b48c6f87f7d08c81995a3f5a2118b991ce1d7e308c35142a7ee08b47afbe1e5",
+      "size": 6406,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-hal-adc_hal_common-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/hal/adc_oneshot_hal.c",
+      "sha256": "8c683f1ce36b788f564b1e4a2d7e03c27fd2171298d930774cece869091b3c0a",
+      "size": 7346,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-hal-adc_oneshot_hal-c.json"
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-adc-reference/components/hal/esp32s3/include/hal/adc_ll.h",
+      "sha256": "c6dc8269df143870aefd9f8d00f3ba1098764da219878b902fdcd374da3fb344",
+      "size": 42835,
+      "manifest": "artifacts/manifests/source-esp-idf-v553-adc-components-hal-esp32s3-include-hal-adc_ll-h.json"
+    }
+  ],
+  "qemu_source": {
+    "archive": {
+      "path": "artifacts/files/source/tool-espressif-qemu/qemu-febae182e132.tar.gz",
+      "sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0"
+    },
+    "members": [
+      {
+        "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/hw/nvram/esp32_efuse.c",
+        "path": "work/simulator/adc-contract-509/qemu-source/hw/nvram/esp32_efuse.c",
+        "sha256": "44eb66bd6152dc448f987db7eb64a94f2c55e08d496e8262b025a03d18dd6a93",
+        "size": 9684
+      },
+      {
+        "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/hw/nvram/esp32s3_efuse.c",
+        "path": "work/simulator/adc-contract-509/qemu-source/hw/nvram/esp32s3_efuse.c",
+        "sha256": "870f1d95291aa2a36a0781b9c7aa36276e7277ff1ead5ac5e427994ae8b8d30e",
+        "size": 1289
+      },
+      {
+        "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/include/hw/nvram/esp32_efuse.h",
+        "path": "work/simulator/adc-contract-509/qemu-source/include/hw/nvram/esp32_efuse.h",
+        "sha256": "cefdb9159618707db78ae00507a7bba778d52bc27575bd286b53dc444526e48d",
+        "size": 3832
+      },
+      {
+        "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/include/hw/nvram/esp32s3_efuse.h",
+        "path": "work/simulator/adc-contract-509/qemu-source/include/hw/nvram/esp32s3_efuse.h",
+        "sha256": "4c823e1013a6a00984e462d917718f160f99b8e135c9e1ce60a040d5d9cd8c4e",
+        "size": 866
+      },
+      {
+        "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/hw/nvram/esp_efuse.c",
+        "path": "work/simulator/adc-contract-509/qemu-source/hw/nvram/esp_efuse.c",
+        "sha256": "dbaf2225840181175ab8c508a571f9fa9158cb8411326831c8c4d7d2834acf48",
+        "size": 22677
+      },
+      {
+        "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/include/hw/nvram/esp_efuse.h",
+        "path": "work/simulator/adc-contract-509/qemu-source/include/hw/nvram/esp_efuse.h",
+        "sha256": "655023ed550675e4016d9c9dd2c772892bc2161d66460458b2506d917cea64e9",
+        "size": 8277
+      }
+    ],
+    "scope": "Exact source extraction as data. No code executed.",
+    "note": "S3 inherits TYPE_ESP_EFUSE from esp_efuse.c, not the older esp32_efuse.c. Older ESP32 source is retained reference data only."
+  },
+  "actual_guest_log": {
+    "path": "work/simulator/bitaxe/original-probe-039/guest.log",
+    "sha256": "6f569328fbec3a19c0048299eb4a8846b0c00ff45c258a7aa392496fa51ffbe2"
+  },
+  "findings": [
+    "ESP-IDF efuse S3 esp_efuse_rtc_calib_get_ver accepts BLK_VERSION_MAJOR exactly1; all other values return0 with the actual warning seen in039.",
+    "The S3 eFuse table places BLK_VERSION_MAJOR at BLOCK2 bit128 width2. Calibration version1 is the only accepted curve-fitting version.",
+    "The upstream S3 QEMU model inherits esp_efuse.c, not the older esp32_efuse.c. Without a supplied drive it allocates a zero-filled volatile mirror. Original039 has no eFuse drive.",
+    "adc_cali_create_scheme_curve_fitting rejects version0 before allocating a calibration handle. Archived ESP-Miner ADC_get_vcore then gets a real calibration error and returns0; it does not measure the supplied voltage successfully.",
+    "ADC1 attenuation3 init-code decoding uses four eFuse differences plus1850+90+70. Calibration reference digit for attenuation3 is its eight-bit difference plus900 at850mV. These fields are coupled to real silicon factory measurements.",
+    "Curve conversion uses the exact first-stage integer coefficient and selected manufacturer second-stage polynomial. Supplying a version bit alone would not establish calibrated analog behavior.",
+    "The acquired adc_ll digi power function sets APB digital xpd_sar_force=3 for ON and2 for OFF. This is not by itself the RTC SENS field contract. The prior RTC/TRM conflict remains visible."
+  ],
+  "not_implemented": [
+    "No guessed trim, version bit, voltage reply or calibration success was inserted.",
+    "No eFuse image, ADC model change, original040 rerun or physical calibration claim."
+  ],
+  "next_action": "Define a separate reference eFuse/ADC transfer fixture with explicit provenance and independent conversion vectors, then test actual firmware calibration. Exact physical targets still require their own factory data or an evidenced compatible policy.",
+  "original_board_gate": false,
+  "calibration_gate": false
+}

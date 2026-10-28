@@ -1,0 +1,290 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-28T13:28:07.279556+00:00",
+  "review_status": "independent audit complete; both UART component runs remain failed",
+  "scope": "Actual018b sanitizer build and two retained UART qtest failures. No new build or acquired code execution by this audit.",
+  "inputs": [
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018b/spec.json",
+      "sha256": "47aa9d6b1f5c6ce17ec112dc86ac00bc959bc010d77f8bb597186071b60e963d",
+      "size": 8601
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018b/result.json",
+      "sha256": "f1602f1b50790139e4a8777fd9ef17270705266d1c26a08150b0d17e0c3dccd1",
+      "size": 27928459
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018b/build-envelope.json",
+      "sha256": "df97d951d9c2434fb41166370a1666ad8009c6db3d1728b0c10719c2ac967bb3",
+      "size": 13963807
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018b/build-report.json",
+      "sha256": "f23db9555d38966f8cfff1351749fbbe50784a717e669ebad5a5724d857227ce",
+      "size": 333765
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018b/assessment.json",
+      "sha256": "ea53967d8a423ce1dd807c56c367fe58e10f7d4c3ee6dd5c487341a660636805",
+      "size": 126
+    },
+    {
+      "path": "work/simulator/esp32-uart-tools-506b/inputs.json",
+      "sha256": "e7eb66f647f283d1ab945655be141ee612ca97c48bf65361370ee55a8485f59b",
+      "size": 50008
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018b/spec.json",
+      "sha256": "8ebe18ecc324b589163a59052a68608ce64eff4228fd4d55f49912cf0b713e73",
+      "size": 3529
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018b/result.json",
+      "sha256": "10daee655eb0ac884ed56f0bcddd82282d71040b6da1e348c1d22effdf33b407",
+      "size": 11575
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018b/inputs.json",
+      "sha256": "f7d7686f6b16b7578ba0e9420e45b2bf6b226e8980649caf8b40fe3ec35a94ab",
+      "size": 1199
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018b/assessment.json",
+      "sha256": "0cdcda8ff2d428f795323e30b7289f6500e925187202f5d2a458264b8fbfeb62",
+      "size": 709
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018b/transactions.qtest",
+      "sha256": "b3eb52f79cbc7f3caeec97a70f88b0a795b141abbc89c612e7ce59af6fca6eec",
+      "size": 944
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018b/responses.log",
+      "sha256": "ba63535550c12cd0244b6646575c127cb6a753b28563a53b9040f257f21def74",
+      "size": 607
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018b/backend.log",
+      "sha256": "50fa278993c4615e238273a52d272abd2b7960522de7e3474f8e3800b7e83ce0",
+      "size": 4760
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b/spec.json",
+      "sha256": "3c0c9bc326cf71c870e4f5c17f7a4691b52c84c6d64d4812965b00cb72661012",
+      "size": 3568
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b/result.json",
+      "sha256": "c17120d1736d50fb8c1617769d64a236f9e30d21316bee2977aeece04b41c4c1",
+      "size": 111031
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b/inputs.json",
+      "sha256": "a6c4cb67cf78fd6c0e30a71f494899410bce86a2d68fe2e4e8d6bffd01c33f6b",
+      "size": 4162
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b/assessment.json",
+      "sha256": "29eab467b9f3501376b5b05cf299b075eeec107556f84a5d89b176d0bf97ef36",
+      "size": 861
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b/transactions.qtest",
+      "sha256": "a6041cbf4a7c8a43cc3fb10953314ea69cc9234d94a506181419b14b6e5141be",
+      "size": 7328
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b/responses.log",
+      "sha256": "c7138a9481f36fc31f48b9032a0d19f06ded1c48e1a20eda05d105179237267c",
+      "size": 1687
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b/backend.log",
+      "sha256": "61c2cf64e7acfd16ee71b660e2d2bf273460f05ddbda0f088cf26a2783fbb68d",
+      "size": 53408
+    }
+  ],
+  "source_members": [
+    {
+      "archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+      "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/hw/char/esp32_uart.c",
+      "sha256": "2a3667b901b151d240fc20269d3ddf2b941d184b66dcff15c678657301431794",
+      "size": 12801
+    },
+    {
+      "archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+      "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/hw/char/esp32s3_uart.c",
+      "sha256": "07402dae146f9a8202d1ffe1dfb6ecd48781885a0670ce4e4cb26c9ab196a1be",
+      "size": 4591
+    },
+    {
+      "archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+      "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/include/hw/char/esp32_uart.h",
+      "sha256": "e88430d600c7f1d6333699e3c0d43643dbeb5a8c34d99899fe6ae7422b029c01",
+      "size": 3911
+    },
+    {
+      "archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+      "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/system/qtest.c",
+      "sha256": "f84ec52dfdf715dbf673896c6a166cec058986028a991ddcfb5b6d8e22dd83f1",
+      "size": 27709
+    },
+    {
+      "archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+      "member": "qemu-febae182e132e4055529be423a818225ebddaa3a/util/qemu-timer.c",
+      "sha256": "9b0732cfe1cde5ccec64e3b56e4e4d421618705e4e148ba1873b506dc0983f77",
+      "size": 19768
+    }
+  ],
+  "build": {
+    "passed": true,
+    "wall_milliseconds": 195015,
+    "frozen_source_files": 169,
+    "captured_mounts": 42,
+    "step_stream_identities": 24,
+    "binary": {
+      "sha256": "b35c6bfe7d949da14dd660fca7a1330298dc1307e1cb249333178ad3ae287f88",
+      "size": 19014592
+    },
+    "rom": {
+      "sha256": "b5c7090cc22efce51c1323cef31ca96fcd673a5b1d1b1017e219d393f2659913",
+      "size": 393216
+    },
+    "sanitizer_flags": [
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-fsanitize-undefined-trap-on-error"
+    ],
+    "actual_selected_compiler_command_verified": true,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 120,
+      "memory_bytes": 3221225472,
+      "processes": 128,
+      "file_bytes": 67108864,
+      "trace_bytes": 67108864,
+      "tmp_bytes": 2147483648
+    },
+    "scope": "Successful isolated C compilation and executable production; not UART behavior or firmware-boot acceptance."
+  },
+  "qtests": [
+    {
+      "run": "work/simulator/bitaxe/uart-config-qtest-506-new018b",
+      "process_exit": 0,
+      "process_trace_truncated": false,
+      "wall_milliseconds": 40,
+      "responses": 46,
+      "matching_responses": 43,
+      "mismatches": [
+        {
+          "response": 30,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 44,
+          "expected": "OK 0x0000000012345678",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 45,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        }
+      ],
+      "captured_mounts": 16,
+      "component_passed": false
+    },
+    {
+      "run": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018b",
+      "process_exit": 0,
+      "process_trace_truncated": false,
+      "wall_milliseconds": 60,
+      "responses": 315,
+      "matching_responses": 307,
+      "mismatches": [
+        {
+          "response": 30,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 44,
+          "expected": "OK 0x0000000012345678",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 45,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 49,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 52,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 53,
+          "expected": "OK 100001",
+          "actual": "OK 100000"
+        },
+        {
+          "response": 310,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        },
+        {
+          "response": 313,
+          "expected": "OK 0x0000000002008270",
+          "actual": "OK 0x0000000000000000"
+        }
+      ],
+      "captured_mounts": 16,
+      "component_passed": false,
+      "actual_config_writes": 257,
+      "actual_overflow_events": 1,
+      "uart1_sequences": 256,
+      "uart0_sequences": 1,
+      "all_observed_virtual_ns": 100000,
+      "private_QMP_resets": 2,
+      "QMP_response_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "trace_contract_passed": false
+    }
+  ],
+  "diagnosis": [
+    {
+      "defect": "S3 DATE is outside the inherited mapped MMIO region.",
+      "evidence": "Original parent defines DATE at0x78 and allocates (0x78/4+1)*4=124 bytes. The018b S3 callback adds DATE at0x7c but its patch does not resize that region. All DATE observations return0, including write/readback and post-reset reads.",
+      "status": "Real model defect. The separate506c patch expands only the S3 region to128 bytes; actual018c validation remains required."
+    },
+    {
+      "defect": "The reset fixture assumes clock_step1 advances virtual time without a pending timer.",
+      "evidence": "The exact qtest command calls qemu_clock_advance_virtual_time. Its archived loop runs only while a virtual timer deadline is nonnegative. After the reset, the recorded response stays100000; every later selected trace event is also100000.",
+      "status": "Fixture assumption failed. A separately tested real timer must establish the requested deadline; neither trace timestamps nor expected values were changed in these failed results."
+    }
+  ],
+  "reviewed_limits": [
+    "The build uses undefined-behavior sanitizer trap flags in the actual selected C compile command. Both qtest QEMU processes exit0 without a trap, but their strict behavior assertions correctly fail.",
+    "The reset run completes two real private QMP resets and retains257 config writes plus one lifetime-overflow event. Sequence and raw-to-stored masks are consistent; the missing virtual-time advance still prevents trace-contract acceptance.",
+    "The intentionally exceeded trace budget is not complete firmware capture. No boot, dashboard, physical timing, effective baud or mining acceptance is inferred.",
+    "The old captured patch and frozen helper remain pinned even though production now contains a separate mapping fix."
+  ],
+  "open_work": [
+    "Run the fixed018c model and corrected timer fixture under the same limits; retain new output directories.",
+    "Re-run the original firmware observation path only after these component gates pass."
+  ],
+  "findings": []
+}

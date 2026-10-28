@@ -1,0 +1,44 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "stage": "508c",
+  "status": "Source review closed; stage remains uncompiled and unexecuted by user S9-first priority.",
+  "reviewer": "exact_target_resume",
+  "files": [
+    {
+      "path": "work/simulator/bm1397-receipt-audit-508c/inputs.json",
+      "sha256": "b4a21a26d6bbfbd6d2ad8272724088fbc099b3d1d52d837fbdcfbb81ca90d246",
+      "size": 2766
+    },
+    {
+      "path": "work/simulator/bm1397-receipt-audit-508c/bm1397_receipt_audit.rs",
+      "sha256": "5c8dda07d38f890cc35e30cc6cc30fa3602cc018868af4efb1e60e8cf6999a1a",
+      "size": 30571
+    },
+    {
+      "path": "work/simulator/bm1397-receipt-audit-508c/bm1397-archived-job-508c.json",
+      "sha256": "3bdc38cbbfa2809455ee7d39cca62650f5cfa7854b0a60d9f5672ab043ef2736",
+      "size": 2325
+    }
+  ],
+  "findings": [
+    {
+      "finding": "Generated genesis wire state uses same transform as verifier; not an independent protocol byte-order vector.",
+      "resolution": "Literal original152-byte archived packet joined to independent complete80-byte header and OpenSSL-backed SHA256d; original tar, two archive members and all cited source hashes independently checked."
+    },
+    {
+      "finding": "Nonfirst accepted receipt could repeat same generation/index/nonce and be returned twice.",
+      "resolution": "Strictly increasing sampled ordinal, exact full-nonce-range ordinal mapping and unique candidate pair per generation. Nonfirst accepted-genesis-repeat test rejects without adding receipt/reply."
+    }
+  ],
+  "checks": [
+    "Reviewed all original667 lines plus final deltas and fixture.",
+    "Generation and used-content identities remain separate; unused midstate padding and rotating ID do not create distinct content.",
+    "All source observations bind to raw UART packet lines and process stderr; helper/spec/adaptation/input object joins remain explicit.",
+    "bitcoin_hashes compression-state SHA256d is separate from runtime RustCrypto engine.",
+    "Report keeps failed firmware process status and false board/full-header/fresh-pool/Core flags.",
+    "Batch counts and receipt timestamps remain engine evidence; no independent replay of every hash or physical timing acceptance.",
+    "No downloaded source was executed in this review."
+  ],
+  "open_findings": [],
+  "next": "After S9 priority is complete, integrate reviewed staged source, run focused tests/Clippy/release and actual retained042 audit. Source review is not execution acceptance."
+}

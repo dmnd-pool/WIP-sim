@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-libsystemctlm-soc-788e8b2-libremote-port-safeio-h",
+  "url": "https://raw.githubusercontent.com/Xilinx/libsystemctlm-soc/788e8b24b5d658780a55e97511082b1540fe92ab/libremote-port/safeio.h",
+  "kind": "source",
+  "title": "Pinned Xilinx/libsystemctlm-soc remote-port reference: libremote-port/safeio.h",
+  "language": "en",
+  "source_id": "s9-remote-port-libsystemctlm-soc-788e8b2",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-libsystemctlm-soc-788e8b2/libremote-port/safeio.h",
+  "sha256": "cc4112c6f752ac9a3501c85c2e15fe427268ac0a9db5096376a305841ce6b720",
+  "size_bytes": 1499,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "788e8b24b5d658780a55e97511082b1540fe92ab",
+  "etag": "\"c9ae5710d45d48208e046711efc2ab304552df0be0279b663c0609230dd13dae\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

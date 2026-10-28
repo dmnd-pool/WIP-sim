@@ -1,0 +1,34 @@
+{
+  "schema": "md-sim-source-stage/1",
+  "stage": "511e",
+  "files": [
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9_axi_vectors.rs",
+      "destination": "crates/md-sim-firmware/examples/support/s9_axi_vectors.rs",
+      "sha256": "2cf40e23a30c43b517ba3e68071e43c5e570d094f559b4cb457c03637a8d258b",
+      "size": 26255
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9_hdl_validate.rs",
+      "destination": "crates/md-sim-firmware/examples/s9_hdl_validate.rs",
+      "sha256": "78b87200c897f62ec1fc4065bed7d1030933072a9297e24a21b0bf98c0815b01",
+      "size": 21553
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9-axi-trace-511d.txt",
+      "destination": "simulator/firmware/fixtures/s9-axi-trace-511d.txt",
+      "sha256": "bfd77d63ca7494012be93708b853e462e8aa26a97c266620e566799ea0c44061",
+      "size": 5072
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9-axi-trace-511d.json",
+      "destination": "simulator/firmware/fixtures/s9-axi-trace-511d.json",
+      "sha256": "1b9518c856da33455bb025d9cc94c6ab206ac294c4e649a2897576269c2507ec",
+      "size": 598
+    }
+  ],
+  "scope": "Recognize only unchanged vendor PS7 absent-CPU notice once at first stdout line; literal checked against pinned source. Preserve exact notice and CPU/board false. Every previous compiler policy and72HDL assertion remains unchanged.",
+  "failed_parent": "work/simulator/reviews/maxigp0-failures-511.json",
+  "tests_added": "Actual retained trace positive plus missing/duplicate/late/altered/other notice negatives; altered register value, response ID, strobe, reset result and bus error negatives.",
+  "status": "staged; tests and new actual execution pending"
+}

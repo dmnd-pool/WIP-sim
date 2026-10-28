@@ -1,0 +1,66 @@
+{
+  "schema": "md-sim-source-stage/1",
+  "stage": "511d",
+  "recorded_at": "2026-10-28T15:09:19.562715+00:00",
+  "status": "staged; uncompiled; no selected bus execution yet",
+  "files": [
+    {
+      "stage_path": "work/simulator/axi-dev-511/s9_hdl_validate.rs",
+      "destination": "crates/md-sim-firmware/examples/s9_hdl_validate.rs",
+      "sha256": "7afb1426c9b17d77e7fc5ad6077b905f4f86bccb484f3134dce4c3ad7b50f3d7",
+      "size": 21474
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511/s9_axi_vectors.rs",
+      "destination": "crates/md-sim-firmware/examples/support/s9_axi_vectors.rs",
+      "sha256": "30bef335ec848b4b7a96758461f2beae7b97128586a056eb7ec05c7bf3bf793b",
+      "size": 23189
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511/axi_tasks.v.part",
+      "destination": "simulator/firmware/fixtures/s9-axi-tasks-511.v",
+      "sha256": "d732666ab5778dc9e683968ebcab47f4ba4a06af75a58cd6776be8c4812aecc8",
+      "size": 5038
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511/s9-hdl-inputs-511d.json",
+      "destination": "simulator/firmware/s9-hdl-inputs-511d.json",
+      "sha256": "f137f1e433e80074ecb539b8173bd993ce825ca5f1ccfe7f892f90eb0512f25b",
+      "size": 10401
+    }
+  ],
+  "references": [
+    {
+      "path": "simulator/firmware/s9-bosminer-mmio-511.json",
+      "sha256": "51a575433d6fc493967770f0abda67e317fa0deb70f5a43216d0e743a19978fc",
+      "size": 7610
+    },
+    {
+      "path": "work/simulator/reviews/maxigp0-abi-511d.json",
+      "sha256": "3f799c8a171c71679e5b6bfedd17c8babc8a48cdfc8b72a8b1bffcefcd15e53c",
+      "size": 6166
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/inspection.json",
+      "sha256": "1ed1b8ae0719d7507db47f45786a1f1234fc8dedbbbbd88714bf6bd9447cdc4e",
+      "size": 1533
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/selected.v",
+      "sha256": "3ea22dc51d32539e0a52ff83d7152d82009f4e50883bc20e6643e6672d1a2c9b",
+      "size": 12607262
+    },
+    {
+      "path": "simulator/firmware/s9-hdl-inputs-502l.json",
+      "sha256": "d6d730231227a2f6d299f4900b6868b858768459f9cceec07aa675269731658c",
+      "size": 8530
+    }
+  ],
+  "scope": "72 actual AXI transactions through selected recovered programmable logic. Testbench drives only42 pinned-ABI PS7 outputs/observations. Original PS7 shell is no CPU model. Unknowns/timeouts/errors remain failures. Full board and physical timing open.",
+  "review_fixes": [
+    "All42 selected widths and directions checked against originalPS7.v; corruption negatives included.",
+    "Nonselected byte-strobe write uses differing low-byte data; zero-strobe test preserved.",
+    "Baud registers deliberately changed before reset; reset must recover observed original values."
+  ],
+  "next": "Root independent source review; integrate reviewed source; focused tests/Clippy/release/freeze; run original vendor event models under existing limits; retain actual failure if any."
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "md-sim-reclamation-completed/1",
+  "completed": true,
+  "removed_objects": 1353,
+  "removed_logical_bytes": 14807692817,
+  "retained_files_rehashed": 429,
+  "distinct_restore_files_rehashed": 77,
+  "current_shared_cli_check": {
+    "passed": true,
+    "workspace_inputs": 3579,
+    "host_inputs": 43,
+    "firmware_execution": false
+  },
+  "original_archive_unique_inputs_and_runtime_outputs_preserved": true,
+  "four_failed_builds_remain_failed": true,
+  "scope": "21 finished QEMU build input stores and duplicate derived overlays only; exact restore sources retained in280-release. No conformance verdict changed.",
+  "files": [
+    {
+      "path": "work/simulator/cleanup-qemu-503/request.json",
+      "sha256": "68dbc97eaacdbf0f5a6e2af9c76e35fde60724ba76e378817e1d160d984b6cfa",
+      "size": 9742
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/plan.json",
+      "sha256": "f43863febc47aee293b9328226d0b3688f1bb8788dcf328cbe14ee75bd386305",
+      "size": 623828
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/plan.log",
+      "sha256": "a50fbf048adec110dc0e5ce2139f612b5f2809d68a873ab5a85c2720504e7791",
+      "size": 79
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/before.json",
+      "sha256": "8594db9c86afb1d5d33a90c3cc76d5cb5f69f60a38380cbbcf66127be71fa6dd",
+      "size": 1661203
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/immediate-preflight.json",
+      "sha256": "158c6e6e0a2fcc431f6026d177ee305e1cf86202adee90e1861b764eaac4c01c",
+      "size": 529
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/reclaim.json",
+      "sha256": "369ba5aa8f46791761675343096718f86a07b490fa1e809577e4feb9ee7c9947",
+      "size": 623782
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/reclaim.log",
+      "sha256": "0c5d232c866482fca9d36bcd4a971f60374fab05ac810947c85cfce5250b401f",
+      "size": 51
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/postcheck.json",
+      "sha256": "1c5f0e0117a45eb445abea3b39fec1b91d7fd225929092ed3a93ea2d67559b83",
+      "size": 721
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/shared-cli-check.log",
+      "sha256": "dc8283d6dfd74d022609bde06fc3a303ac0a8c1bfce3cdc3d0843d83a79ad727",
+      "size": 986
+    },
+    {
+      "path": "work/simulator/reviews/qemu-cleanup-independent-plan-503.json",
+      "sha256": "5c7dd41e0a0f894c5c383cabca9277cc0c085a31c3e7bbb30296c8f49f4e3c43",
+      "size": 2543
+    },
+    {
+      "path": "work/simulator/reviews/qemu-cleanup-completed-503.md",
+      "sha256": "a5662d3a874259086aa1b6577d226a47191c1f1a85fb4dc993d95376a884e736",
+      "size": 2798
+    }
+  ]
+}

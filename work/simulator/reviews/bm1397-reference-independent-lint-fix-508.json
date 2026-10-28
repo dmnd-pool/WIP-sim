@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "scope": "Independent post-review508 guard refactor only. No model, input-domain or budget change.",
+  "delta": {
+    "schema": "md-sim-post-review-delta/1",
+    "before": {
+      "path": "work/simulator/bm1397-reference-508/esp32_original_probe.rs",
+      "sha256": "a9a0bd2b8baaac275310fb9e6f77bb343d4a4d092288c49ea8bf6c7d5e369c56",
+      "size": 44539
+    },
+    "after": {
+      "path": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+      "sha256": "1eb1bb2871a5cf59e894e95d8c6b51da6202fe7ea1dff3b77df67dcaa1675827",
+      "size": 44681
+    },
+    "patch": {
+      "path": "work/simulator/bm1397-reference-508/lint-fix.patch",
+      "sha256": "477571e1800b5ad1dfe011a847f3b56201da9491853f1cc0049484b4a98511b3",
+      "size": 1224
+    },
+    "reason": "Strict Clippy nonminimal_bool: split the compound rejection into two explicit checks. Same accepted configuration set; clearer distinct error messages. No limit or assertion weakened.",
+    "retained_failed_check": {
+      "path": "work/simulator/checks-2026-10-28-001/bm1397-508-firmware-clippy.log",
+      "sha256": "72153f9380561d13d48b83810f5fe634075d0b0ba5007fbccb799d0d6940de0f",
+      "size": 1343
+    }
+  },
+  "truth_table_cases": 16,
+  "finding": "The two explicit failure checks reject exactly the same configurations as the previous combined expression. Only their error messages differ.",
+  "tests": "Author reran all9 affected probe tests and strict firmware Clippy; release freeze must use after SHA."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-qemu-51b3f81-accel-tcg-icount-common-c",
+  "url": "https://raw.githubusercontent.com/Xilinx/qemu/51b3f81a0b37d382aef642015ae83973fdf06b1d/accel/tcg/icount-common.c",
+  "kind": "source",
+  "title": "Pinned Xilinx/qemu remote-port reference: accel/tcg/icount-common.c",
+  "language": "en",
+  "source_id": "s9-remote-port-qemu-51b3f81",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-qemu-51b3f81/accel/tcg/icount-common.c",
+  "sha256": "7fc035897ae11e8e80ee7971c63b190c734b41f921aa106e123fa1bb68c01e62",
+  "size_bytes": 16505,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "51b3f81a0b37d382aef642015ae83973fdf06b1d",
+  "etag": "\"b0312e5b91ccbdba260fdbd8df509942d1fe26a65e436f71d264c2a3ff50f9dc\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

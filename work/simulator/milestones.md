@@ -85,7 +85,12 @@ Git exclusions pass 33 include/exclude checks. The [handoff](milestone-1.2-hando
 records the Git scope and next actions at that checkpoint. Work resumed
 on 26 October after the user made the commit.
 
-## 2. One complete exact target and its remote workflow — in progress
+## 2. Complete exact S9 target and its remote workflow — in progress
+
+Priority confirmed by the user on28 October: finish the complete S9 target
+first. Checkpoint other miner development. Stop after all S9 milestone2 gates pass
+and save a tested checkpoint. Do not count the adapted S9
+demonstration, HDL compilation or a bus fixture as this milestone passing.
 
 Acceptance: all applicable original-board, exact component, FPGA, timing,
 mining, Core, storage, fault, native dashboard, isolation and remote gates pass

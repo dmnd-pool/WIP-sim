@@ -1,0 +1,191 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "audit_passed": true,
+  "run_passed": false,
+  "scope": "Audit of failed511d retained execution. Actual selected programmable-logic transaction observations are preserved; the outer failure is not changed into a pass.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/axi-driver-511d/manifest.json",
+      "sha256": "2d273081150b7333b8a19a7ab2e800acfcf6f0dbac38458c9fe36a73d5e7b962",
+      "size": 69002
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-driver-511d/source-before-build.json",
+      "sha256": "24d386625f3e93529fcff8f7e4f029cee1282acced2bba1c67e893e7b8d0ae59",
+      "size": 64049
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-driver-511d/source-after-build.json",
+      "sha256": "24d386625f3e93529fcff8f7e4f029cee1282acced2bba1c67e893e7b8d0ae59",
+      "size": 64049
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-selected-511d/spec.json",
+      "sha256": "1833b69ec1c4d09f1b9fdac87f7fc2c175eb7426b4905e731e5ee16984dd614b",
+      "size": 9203
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-selected-511d/result.json",
+      "sha256": "f53ad9bce8974e0b9df4570ebd6451cbf2458f0a68f5a660ffc57c0d04709bfd",
+      "size": 103106134
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-selected-511d/hdl-envelope.json",
+      "sha256": "9bf9053e01ec6cd40da895057d938b0791245dd847c29cf7f15aba9733aa3ffd",
+      "size": 51552308
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-selected-511d/hdl-report.json",
+      "sha256": "2d2f4a57ac34068bf7265f88119a4ded92fd128b362be0c552d70eb4b9f04868",
+      "size": 574336
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-selected-511d/selected-vvp.tar.gz",
+      "sha256": "5e34ba23a22d772984b4f837361a0fa26d9e7c20c1b9c45da123f91fb838d8a4",
+      "size": 25506502
+    },
+    {
+      "path": "simulator/firmware/s9-hdl-inputs-511d.json",
+      "sha256": "f137f1e433e80074ecb539b8173bd993ce825ca5f1ccfe7f892f90eb0512f25b",
+      "size": 10401
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+      "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+      "size": 848916
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-static-independent-execution-511c.json",
+      "sha256": "fa5eadcb4e99beb711a0e49ea02f91f134506a287f3bf064fd5d7f79135f6d90",
+      "size": 8485
+    },
+    {
+      "path": "work/simulator/reviews/hdl-selected-independent-execution-502l.json",
+      "sha256": "4cbf5107074c8b81eb1331c3edc86f03cd86292dbe8a44a783b044308e0bbbb3",
+      "size": 5309
+    }
+  ],
+  "identity": {
+    "before_after_source_entries": 406,
+    "before_after_equal": true,
+    "frozen_helper": {
+      "path": "work/simulator/qemu-s9/axi-driver-511d/s9_hdl_validate",
+      "sha256": "bc85bbd6fb12914efce5989b791df72d99f192ef7fbae18ec75f11fee7e73f25",
+      "size": 2369808
+    },
+    "mounts_rehashed": 46,
+    "profile_references_rehashed": 33,
+    "compiled_program": {
+      "sha256": "3807cb36058369744f3094f1ddac52c61ceacddb639c2b3090a5136e45af477e",
+      "size": 212935686
+    },
+    "compiled_probe": {
+      "sha256": "487ca147fdb023acde4c03d779ee1df15b1e730f73a90a9b63379fc68fd02331",
+      "size": 14250
+    },
+    "exact_archive_members": [
+      "compiled",
+      "compiled/axi-probe.v",
+      "compiled/selected.vvp"
+    ]
+  },
+  "execution": {
+    "outer_exit_code": 1,
+    "outer_wall_milliseconds": 25891,
+    "outer_trace_truncated": false,
+    "outer_error": "unexpected selected AXI trace line: Warning on instance axi_probe.dut.PSS2_X13Y53_PS7_X0Y0_PS7 : The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.",
+    "selected_vvp_exit_code": 0,
+    "selected_vvp_stderr_empty": true,
+    "all_step_stream_identities_checked": 12,
+    "selected_compiler_diagnostics_empty": true,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    },
+    "no_network_or_device_grant": true
+  },
+  "observations": {
+    "reads": 48,
+    "writes": 24,
+    "ordered_transactions": 72,
+    "reset_positions_and_times_ps": [
+      [
+        0,
+        1365000
+      ],
+      [
+        60,
+        11885000
+      ]
+    ],
+    "finish_time_ps": 13685000,
+    "per_chain_initial_readback": [
+      {
+        "base": 1136656384,
+        "version": 9441282,
+        "build": 1607092201,
+        "control": 0,
+        "baud": 0
+      },
+      {
+        "base": 1136721920,
+        "version": 9441282,
+        "build": 1607092201,
+        "control": 0,
+        "baud": 0
+      },
+      {
+        "base": 1136787456,
+        "version": 9441282,
+        "build": 1607092201,
+        "control": 0,
+        "baud": 0
+      }
+    ],
+    "independent_complete_transaction_comparison": true,
+    "response_ids_strobes_data_and_reset_restoration_checked": true,
+    "driven_ps7_outputs_only": 30,
+    "observed_ps7_inputs": 12,
+    "external_miner_inputs_high_impedance": 16,
+    "unchanged_primitive_assertions": 582,
+    "unchanged_ram_assertions_per_representation": 510,
+    "ram_traces_equal_audited502l": true
+  },
+  "vendor_notice": {
+    "source": {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+      "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+      "size": 848916
+    },
+    "source_line": 5167,
+    "source_statement": "Warning on instance %m : The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.",
+    "actual_line": "Warning on instance axi_probe.dut.PSS2_X13Y53_PS7_X0Y0_PS7 : The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.",
+    "exact_expansion_matches": true,
+    "occurrences": 1,
+    "position_zero": true,
+    "meaning": "The vendor PS7 module has no processor behavioral model. The explicit test master drives only declared PS7 output ports. No CPU execution may be inferred.",
+    "next_parser_constraint": "Classify only this exact pinned-source-derived line exactly once at first position. Reject missing/late/duplicate/changed notices and every other diagnostic. Preserve all compiler checks and explicit no-CPU/board flags."
+  },
+  "unresolved_execution_gate": "511d remains failed because its strict trace parser rejects the vendor startup notice. A separately frozen run must validate any narrow parser correction.",
+  "other_limits": [
+    "This is a selected programmable-logic component stimulus, not an executing firmware master.",
+    "100MHz is declared digital stimulus, not physical timing calibration.",
+    "Only the stated common-register paths and reset sequences were tested; full ASIC work routing remains open.",
+    "The missing monitor feature table and33 electrical-setting ambiguities remain explicit."
+  ],
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "audit_script": {
+    "path": "/tmp/md-sim-axi511d-audit.py",
+    "sha256": "dacf7782d5eda605bd5cdd67d85d9d8f0a11c7fa027d39f38aa76dfe1cec1877",
+    "size": 13316
+  }
+}

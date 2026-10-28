@@ -1,0 +1,184 @@
+{
+  "schema": 1,
+  "agent": "cleanup_resume",
+  "updated_at": "2026-10-28T15:37:54.508999+00:00",
+  "status": "Assigned cleanup and ADC checkpoint audits complete. Continue S9 first; all other miner implementation is deferred by latest user instruction.",
+  "reports": [
+    {
+      "path": "work/simulator/reviews/qemu-cleanup-completed-503.json",
+      "sha256": "4f4065e97e364aab8c0fc7e645d76d553f45977036d91d38154553c283dd77e9",
+      "size": 2648
+    },
+    {
+      "path": "work/simulator/reviews/core-cleanup-completed-503.json",
+      "sha256": "dc5609dffd49c2d569dca542c51ea626a3a35df44936ebd687c71e785aa3e093",
+      "size": 3007
+    },
+    {
+      "path": "work/simulator/reviews/hdl-cleanup-completed-503.json",
+      "sha256": "ad33a83087323e3d92b3981b4e3944636c3d371820429a7760d381991c5ee19f",
+      "size": 3940
+    },
+    {
+      "path": "work/simulator/reviews/hdl-selected-independent-execution-502j.json",
+      "sha256": "a4a43653389761044b495bfc75898c683975f5be495600dffd7331799711d969",
+      "size": 5806
+    },
+    {
+      "path": "work/simulator/reviews/netlist-structure-independent-source-502k.json",
+      "sha256": "967443922454518986f43558f865da31496e00be17af44583c3c87aa2b54e3a3",
+      "size": 6729
+    },
+    {
+      "path": "work/simulator/reviews/esp32-uart-independent-execution-506b.json",
+      "sha256": "bd74f5b98192df0124c33b5bf62e3d5b5a9dea61616238dcda5ca401413b5302",
+      "size": 11323
+    },
+    {
+      "path": "work/simulator/reviews/esp32-uart-independent-execution-506c.json",
+      "sha256": "fd372569a6490d29d56b6786835c0b2f1b7991d5cac6d454e1e32ce42ac4e8dd",
+      "size": 8772
+    },
+    {
+      "path": "work/simulator/reviews/esp32-uart-original-independent-507.json",
+      "sha256": "60516c5d12101c40f85a02f18cdfc1f95c9c9029751bffd3b5b2328cae07a160",
+      "size": 6985
+    },
+    {
+      "path": "work/simulator/reviews/netlist-structure-independent-execution-502k.json",
+      "sha256": "b8eb982a6ae82ae95e237107ffc2fa4dc24164f11303350809b15cacb42a034c",
+      "size": 6345
+    },
+    {
+      "path": "work/simulator/reviews/hdl-selected-independent-execution-502l.json",
+      "sha256": "4cbf5107074c8b81eb1331c3edc86f03cd86292dbe8a44a783b044308e0bbbb3",
+      "size": 5309
+    },
+    {
+      "path": "work/simulator/reviews/uart-clock-independent-source-510.json",
+      "sha256": "a26f793847a7a47b71f6b6b0c0a1d1a97900db255d09658d5ddce94951339f1a",
+      "size": 4065
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-reference-independent-source-508.json",
+      "sha256": "0f892decef369209524e2c9423e6a610dddd924d2959d010351a9ac77da06251",
+      "size": 7746
+    },
+    {
+      "path": "work/simulator/reviews/axi-list-independent-execution-511.json",
+      "sha256": "00decc14b976c8435ae6f14c2394da5522f5ed06aec0b88dfaebcb57aa2a94ef",
+      "size": 2805
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-extraction-independent-source-511.json",
+      "sha256": "119c38a0b0a1f87e24f200ade5fe94a860666d6868606dffba729f92cffdd4eb",
+      "size": 2638
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-reference-jobids-independent-508.json",
+      "sha256": "5ebd35017984b128e6aebb936932d04dc95f23bd388046b4e9a20ee08b26d211",
+      "size": 2894
+    },
+    {
+      "path": "work/simulator/reviews/uart-clock-independent-execution-510.json",
+      "sha256": "3f67be2dcd2523234f61394eb755cb70e2d980bd1e95d8a23d0f76ba179f6ca8",
+      "size": 5012
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-extraction-independent-execution-511b.json",
+      "sha256": "460fb74d416de556b3d86410943d1de33544511550c8b384229a8ea1ffdecb78",
+      "size": 4616
+    },
+    {
+      "path": "work/simulator/reviews/adc-calibration-independent-execution-509.json",
+      "sha256": "77cb7d536dcac84b8b54eab697f168f03af601507d77b35f3b8ab7f30a86e9a1",
+      "size": 5952
+    },
+    {
+      "path": "work/simulator/reviews/adc-calibration-independent-source-509.json",
+      "sha256": "f47c4b9e6dc8892c6cc084041e35873d1457cb974249c903df1b778187d3c809",
+      "size": 3700
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-reference-independent-execution-508.json",
+      "sha256": "c49e024c922323b7f496c7ef8fb0fe9c93b79869ae4f7e885b4fa7f12ed8883d",
+      "size": 4901
+    },
+    {
+      "path": "work/simulator/reviews/esp-storage-readonly-inventory-20261028.json",
+      "sha256": "0b154dafc59a6ded57b7874817fc47807aa9350df02e4f5e18415aa827ef5375",
+      "size": 37120
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-retention-independent-source-508b.json",
+      "sha256": "3fc979e35fb130eb1204e5c7de9c0dd5a9db6bebc187ea6d5ea8ce565b115655",
+      "size": 4181
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-static-independent-source-511c.json",
+      "sha256": "9b010ab271c337e61e60e5fde6746378be51bab091e689e054aa0abf7c1a735d",
+      "size": 3960
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-static-legacy-independent-511c.json",
+      "sha256": "44a80c7c805343cbc20981504dc704f03ceefccb50fae723b31d4feae89afc78",
+      "size": 1403
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-static-independent-execution-511c.json",
+      "sha256": "fa5eadcb4e99beb711a0e49ea02f91f134506a287f3bf064fd5d7f79135f6d90",
+      "size": 8485
+    },
+    {
+      "path": "work/simulator/reviews/maxigp0-independent-execution-511d.json",
+      "sha256": "a33f2619e4437565a5307a4fe9387d9722eec9c7fb29efc9bf2ad6b94505aa05",
+      "size": 7693
+    },
+    {
+      "path": "work/simulator/reviews/maxigp0-notice-independent-source-511e.json",
+      "sha256": "e60e5857e33e2c963a2e00fedcf3f62b26b1b00762e166e3ac184c7735d97082",
+      "size": 3230
+    },
+    {
+      "path": "work/simulator/reviews/maxigp0-independent-execution-511e.json",
+      "sha256": "462a6909adbc6d6c6ad1b87a426899509c3fdbc0589437d5302ccf2e5439501b",
+      "size": 8745
+    },
+    {
+      "path": "work/simulator/reviews/icarus-scheduler-independent-reference-512.json",
+      "sha256": "f5a4abecb6fc73269b9ec6710e82d70171c67affe9b9a20197de6e6d15ecbf19",
+      "size": 5435
+    }
+  ],
+  "completed": [
+    "Reviewed narrow cleanup503 QEMU, Core and HDL copies were removed under the existing verified plans and locks. Parent independently verified post-state. No subsequent deletion.",
+    "The failed turn before compaction performed only metadata reads. Browser later restored017 overlay and recorded its own receipt.",
+    "The latest507 parser received a second source check with no extra finding; browser owns its pinned independent review.",
+    "Actual502j component evidence passed independent audit while selected structural compilation remains failed.",
+    "502k source review found and closed module-framing and XDC-preservation gaps. Source integration and runtime checks are owned by exact_target_resume.",
+    "Actual018b UBSan build passed; both UART behavior tests failed for recorded DATE mapping and timer-fixture issues. Their verdicts remain failed.",
+    "Actual018c build and both corrected UART qtests passed independent evidence audit; prior018b failures remain.",
+    "Original040 fully audited:26 UART writes and253 actual ASIC commands, one ID reply, final unsupported Read04. No jobs, hashes or mining pass.",
+    "Actual502k independently preserves all11122 cells and original XDC; only1453 alias declarations,60 explicit-Z RAM ports and timebase added.",
+    "Actual502l strict compile and582 primitive plus two510-case RAM suites pass. Compiled selected VVP is retained but was not executed.",
+    "510 source review closed two reader identity/type findings; all four stage files and nine reference originals verified.",
+    "508 final nine-file source review closed with no open finding. Deferred masked search is excluded; explicit one-chip reference policy remains separate.",
+    "511 source capture finding is fixed; exact captured components and selected parent are bound. Actual archive listing independently verified, extraction pending.",
+    "508 source delta now restricts the exact producer to32 aligned job IDs0..124, with unsupported high-ID preservation regressions.",
+    "Actual510 conditional rate report independently matches all26 raw writes:16 complete pairs and10 unpaired observations. Explicit clock inputs only; no physical/reset continuity claim.",
+    "Actual511b extraction passes independent full source/mount/byte audit. Original Bosminer ELF4997a1c1\u20265960 is retained, but no firmware instructions executed."
+  ],
+  "pending": [
+    "Audit actual508 original-firmware reference run when browser/root provides retained output."
+  ],
+  "ownership": [
+    "No source file edit, compiler or runtime process is active for this agent.",
+    "No new cleanup is authorized by the current parent instruction.",
+    "Parent owns510 controller view and current run scheduling; browser owns508 reference implementation; exact_target_resume owns the next HDL/FPGA path."
+  ],
+  "priority": "Complete S9 before other miners. No new ADC/Bitaxe work. No new cleanup or deletion.",
+  "next_actions": [
+    "Review browser agent live HDL/Rust transport512 stage, especially event-region handoff, bounded framing, four-state values, time and cancellation.",
+    "S9 is the active implementation priority. No other-miner implementation or new deletion."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "scope": "Independent audit confirms expected regression failure in unchanged017. This is not a component implementation pass or firmware execution.",
+  "source_files_rehashed": 134,
+  "mounts_rehashed": 16,
+  "actual_qemu_exit_code": 0,
+  "helper_assertion_result": "failed as required",
+  "transactions": 46,
+  "baseline_controller_transactions_match": 26,
+  "uart_transactions": 20,
+  "mismatches": [
+    {
+      "transaction": "readl 0x60010078",
+      "expected": "OK 0x0000000003701000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "transaction": "readl 0x60000078",
+      "expected": "OK 0x0000000003701000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "transaction": "readl 0x6001007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "transaction": "readl 0x60010078",
+      "expected": "OK 0x0000000003500000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "transaction": "readl 0x60000078",
+      "expected": "OK 0x0000000003701000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "transaction": "readl 0x60010078",
+      "expected": "OK 0x0000000003501000",
+      "actual": "OK 0x0000000015122500"
+    },
+    {
+      "transaction": "readl 0x60010014",
+      "expected": "OK 0x0000000000f00fff",
+      "actual": "OK 0x00000000ffffffff"
+    },
+    {
+      "transaction": "readl 0x60010014",
+      "expected": "OK 0x0000000000000000",
+      "actual": "OK 0x00000000000ff000"
+    },
+    {
+      "transaction": "readl 0x60010014",
+      "expected": "OK 0x0000000000a00abc",
+      "actual": "OK 0x00000000ffa00abc"
+    },
+    {
+      "transaction": "readl 0x6001007c",
+      "expected": "OK 0x0000000012345678",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "transaction": "readl 0x6000007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "transaction": "readl 0x60010078",
+      "expected": "OK 0x0000000003501000",
+      "actual": "OK 0x0000000015122500"
+    }
+  ],
+  "result": {
+    "sha256": "460a11d8092cb6959583f4941d15eed614577066d10775cd9a0b442d7d073e9c",
+    "size": 11575
+  },
+  "helper": {
+    "sha256": "8388d720d2b69a45aef3df67d753a592d4e3632b06ce8d91b050b1bfea84dd33",
+    "size": 1926504
+  },
+  "clock_register_contract": "Exact manufacturer S3 offsets/defaults/masks checked directly in archived IDF5.5.3 header.",
+  "review_note": "Actual baseline is26 transactions, not the earlier27 summary. Review count assertion corrected; production assertions and retained run unchanged.",
+  "unresolved_findings": []
+}

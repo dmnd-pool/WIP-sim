@@ -1,0 +1,664 @@
+{
+  "schema": "md-sim-read-only-storage-inventory/1",
+  "recorded_at": "2026-10-28T14:34:49.900937+00:00",
+  "scope": "Metadata-only inventory of completed recent ESP preparation stores and known retained008/009 restore stores. This is not a deletion plan.",
+  "filesystem_free": {
+    "root_bytes": 59275902976,
+    "tmp_bytes": 11211771904
+  },
+  "current_allocated_du_human": {
+    "work/simulator": "407GiB",
+    "work/simulator/qemu-s9": "193GiB",
+    "work/simulator/network-vm": "106GiB",
+    "work/simulator/bitcoin-core": "35GiB",
+    "work/simulator/bitaxe": "14GiB",
+    "work/simulator/check-target-085": "2.1GiB"
+  },
+  "stores": [
+    {
+      "directory": "work/simulator/bitaxe/esp-qemu-build-008",
+      "files": 44,
+      "logical_bytes": 731004666,
+      "allocated_bytes": 731148288,
+      "terminal_result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 187222,
+        "trace_truncated": false
+      },
+      "duplicate_metadata_candidates": [],
+      "duplicate_candidate_count": 0,
+      "duplicate_candidate_bytes": 0,
+      "unique_objects_preserved": []
+    },
+    {
+      "directory": "work/simulator/bitaxe/esp-qemu-build-009",
+      "files": 46,
+      "logical_bytes": 760125877,
+      "allocated_bytes": 760283136,
+      "terminal_result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 202418,
+        "trace_truncated": false
+      },
+      "duplicate_metadata_candidates": [],
+      "duplicate_candidate_count": 0,
+      "duplicate_candidate_bytes": 0,
+      "unique_objects_preserved": []
+    },
+    {
+      "directory": "work/simulator/bitaxe/esp-qemu-build-018",
+      "files": 1,
+      "logical_bytes": 225,
+      "allocated_bytes": 4096,
+      "terminal_result": null,
+      "duplicate_metadata_candidates": [],
+      "duplicate_candidate_count": 0,
+      "duplicate_candidate_bytes": 0,
+      "unique_objects_preserved": []
+    },
+    {
+      "directory": "work/simulator/bitaxe/esp-qemu-build-018b",
+      "files": 55,
+      "logical_bytes": 739721419,
+      "allocated_bytes": 739872768,
+      "terminal_result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 195015,
+        "trace_truncated": false
+      },
+      "duplicate_metadata_candidates": [
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+          "sha256_filename": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+          "size": 1733976,
+          "allocated_bytes": 1736704,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/ae8ae31cdfd6a2b5d330296ffec3856fc41700e1afc90625d66624a97853baf0",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/ae8ae31cdfd6a2b5d330296ffec3856fc41700e1afc90625d66624a97853baf0",
+          "sha256_filename": "ae8ae31cdfd6a2b5d330296ffec3856fc41700e1afc90625d66624a97853baf0",
+          "size": 78264,
+          "allocated_bytes": 81920,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+          "sha256_filename": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+          "size": 263152,
+          "allocated_bytes": 266240,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+          "sha256_filename": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+          "size": 457936,
+          "allocated_bytes": 458752,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/2d704dc90ca7cf3ff5bfb43e26625752bcacf35fda71065fb33b9f9012ae3841",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/2d704dc90ca7cf3ff5bfb43e26625752bcacf35fda71065fb33b9f9012ae3841",
+          "sha256_filename": "2d704dc90ca7cf3ff5bfb43e26625752bcacf35fda71065fb33b9f9012ae3841",
+          "size": 145272,
+          "allocated_bytes": 147456,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/8501b5f1ae7bd3c684a2ca4bc58b3a377356d1b77a8b6fc7cd95c64066ec69cc",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/8501b5f1ae7bd3c684a2ca4bc58b3a377356d1b77a8b6fc7cd95c64066ec69cc",
+          "sha256_filename": "8501b5f1ae7bd3c684a2ca4bc58b3a377356d1b77a8b6fc7cd95c64066ec69cc",
+          "size": 761,
+          "allocated_bytes": 4096,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/92459ac0e799cfec4f82b0d24f70f0f72cb3257e59728212cd43abdf6acbd80e",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/92459ac0e799cfec4f82b0d24f70f0f72cb3257e59728212cd43abdf6acbd80e",
+          "sha256_filename": "92459ac0e799cfec4f82b0d24f70f0f72cb3257e59728212cd43abdf6acbd80e",
+          "size": 23964,
+          "allocated_bytes": 24576,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+          "sha256_filename": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+          "size": 41572305,
+          "allocated_bytes": 41578496,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/98f00d0ab8bbd3e41b7ad99596e06bb79b846c6e736613320d9705e2716013b4",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/98f00d0ab8bbd3e41b7ad99596e06bb79b846c6e736613320d9705e2716013b4",
+          "sha256_filename": "98f00d0ab8bbd3e41b7ad99596e06bb79b846c6e736613320d9705e2716013b4",
+          "size": 2394960,
+          "allocated_bytes": 2400256,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/cc98e84002c7b7fefb0128128e4cf4546d333e780715da16d048e17b73dafaa5",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/cc98e84002c7b7fefb0128128e4cf4546d333e780715da16d048e17b73dafaa5",
+          "sha256_filename": "cc98e84002c7b7fefb0128128e4cf4546d333e780715da16d048e17b73dafaa5",
+          "size": 295943185,
+          "allocated_bytes": 295948288,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+          "sha256_filename": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+          "size": 1449352,
+          "allocated_bytes": 1449984,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+          "sha256_filename": "c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+          "size": 1195144,
+          "allocated_bytes": 1196032,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+          "sha256_filename": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+          "size": 727336,
+          "allocated_bytes": 729088,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/90043d803c6c205aa842f3e79a54f7c6151ef98ea4964729915d2f9fc584ea25",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/90043d803c6c205aa842f3e79a54f7c6151ef98ea4964729915d2f9fc584ea25",
+          "sha256_filename": "90043d803c6c205aa842f3e79a54f7c6151ef98ea4964729915d2f9fc584ea25",
+          "size": 775744,
+          "allocated_bytes": 778240,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+          "sha256_filename": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+          "size": 678528,
+          "allocated_bytes": 679936,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+          "sha256_filename": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+          "size": 2215072,
+          "allocated_bytes": 2220032,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+          "sha256_filename": "47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+          "size": 128003553,
+          "allocated_bytes": 128008192,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+          "sha256_filename": "c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+          "size": 371736,
+          "allocated_bytes": 372736,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+          "sha256_filename": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+          "size": 1268336,
+          "allocated_bytes": 1269760,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+          "sha256_filename": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+          "size": 104464,
+          "allocated_bytes": 106496,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/bdff40cf7c514d048c29721bb16acfceceb9fa691d2b111c32ba1f8b77abae39",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/bdff40cf7c514d048c29721bb16acfceceb9fa691d2b111c32ba1f8b77abae39",
+          "sha256_filename": "bdff40cf7c514d048c29721bb16acfceceb9fa691d2b111c32ba1f8b77abae39",
+          "size": 6360840,
+          "allocated_bytes": 6365184,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/a9ba02dcad338ee7f0b03e58a1cf44009b2bd645b09c2b423242e9791d202301",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/a9ba02dcad338ee7f0b03e58a1cf44009b2bd645b09c2b423242e9791d202301",
+          "sha256_filename": "a9ba02dcad338ee7f0b03e58a1cf44009b2bd645b09c2b423242e9791d202301",
+          "size": 68312,
+          "allocated_bytes": 69632,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+          "sha256_filename": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+          "size": 182512,
+          "allocated_bytes": 184320,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "sha256_filename": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "size": 14424,
+          "allocated_bytes": 16384,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+          "sha256_filename": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+          "size": 939976,
+          "allocated_bytes": 942080,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/cdc05a93f82a8673f4a63d4c9e60b58e72d4ada7d2c7a44883407aae74b34a88",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/cdc05a93f82a8673f4a63d4c9e60b58e72d4ada7d2c7a44883407aae74b34a88",
+          "sha256_filename": "cdc05a93f82a8673f4a63d4c9e60b58e72d4ada7d2c7a44883407aae74b34a88",
+          "size": 310,
+          "allocated_bytes": 4096,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/49a325fc4c6c5aa5a8f9ea8c828e37f3900a757c6be48d997ff4af0b51ee8315",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/49a325fc4c6c5aa5a8f9ea8c828e37f3900a757c6be48d997ff4af0b51ee8315",
+          "sha256_filename": "49a325fc4c6c5aa5a8f9ea8c828e37f3900a757c6be48d997ff4af0b51ee8315",
+          "size": 47885368,
+          "allocated_bytes": 47890432,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/42e707cc09abc59fcc893d435653a04b13732b5287054ffb6c6bc3860fbe4931",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-009/inputs/objects/42e707cc09abc59fcc893d435653a04b13732b5287054ffb6c6bc3860fbe4931",
+          "sha256_filename": "42e707cc09abc59fcc893d435653a04b13732b5287054ffb6c6bc3860fbe4931",
+          "size": 434,
+          "allocated_bytes": 4096,
+          "candidate_links": 1
+        }
+      ],
+      "duplicate_candidate_count": 28,
+      "duplicate_candidate_bytes": 534855216,
+      "unique_objects_preserved": [
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/3cbd98a9c48e2cbc4b0c9b38a575c4f079c25a93852fc2c36c74f8526f333e88",
+          "size": 6618
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/b2c00b88036c1ea964da54c7b0aa73bcaf2eb3c3c587fa7680c448f85c9ac076",
+          "size": 2498016
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/5f14e2c440e53e91974066f0d632ab43d0735acb4deec55c0171b81fdf69b3f3",
+          "size": 7161
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/92e51d47a0addd35ad3b3de4caa165561c5444b124071261d8dac28da14b67f5",
+          "size": 341
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/eb03897855a0fb09d49b2ab1beb7ad8b0bcacb7795e396667c76c39d7b4471d9",
+          "size": 6524
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/e004dd36b5392aa226558c76b61c220b2e38535dd9ae87a7167a4fb23155c906",
+          "size": 470
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/cb4b97bf7817eec8c4b2559711ecb0bf80da44fe59310208cee38734cb7ebfeb",
+          "size": 7388644
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/ee64a8768f7d4e4d286511b2b13f899e7c12ed53416da84c986bd6b69603dbcf",
+          "size": 1892
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/0496a69009324f163a2a8ee26f518f171d3df3e865aa42571c9b836698e9fcc8",
+          "size": 287
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/c4171496b46ea6292488b88092aa37643a01b14b619d36e627b92d8e9709d21b",
+          "size": 155
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/f62129fd39dba85b8039d96c28ad8df3ad66f384c9f47bce80a602325329f1d3",
+          "size": 5690
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/95e5aba3c31a614c933b933993ebb0147808274454cfade1488794b53b6ea065",
+          "size": 4935
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018b/inputs/objects/3511839f7dd7acd464ef2917a599750ddcbfd0dce8fd69ede87ea11ec7d9ed8c",
+          "size": 6847
+        }
+      ]
+    },
+    {
+      "directory": "work/simulator/bitaxe/esp-qemu-build-018c",
+      "files": 55,
+      "logical_bytes": 739718676,
+      "allocated_bytes": 739860480,
+      "terminal_result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 194739,
+        "trace_truncated": false
+      },
+      "duplicate_metadata_candidates": [
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+          "sha256_filename": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+          "size": 1733976,
+          "allocated_bytes": 1736704,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/ae8ae31cdfd6a2b5d330296ffec3856fc41700e1afc90625d66624a97853baf0",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/ae8ae31cdfd6a2b5d330296ffec3856fc41700e1afc90625d66624a97853baf0",
+          "sha256_filename": "ae8ae31cdfd6a2b5d330296ffec3856fc41700e1afc90625d66624a97853baf0",
+          "size": 78264,
+          "allocated_bytes": 81920,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+          "sha256_filename": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757",
+          "size": 263152,
+          "allocated_bytes": 266240,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+          "sha256_filename": "7498a0b0f75deb5417e109d1853679f1a6b201e52e03b247c914fec0a36e3a5b",
+          "size": 457936,
+          "allocated_bytes": 458752,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/2d704dc90ca7cf3ff5bfb43e26625752bcacf35fda71065fb33b9f9012ae3841",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/2d704dc90ca7cf3ff5bfb43e26625752bcacf35fda71065fb33b9f9012ae3841",
+          "sha256_filename": "2d704dc90ca7cf3ff5bfb43e26625752bcacf35fda71065fb33b9f9012ae3841",
+          "size": 145272,
+          "allocated_bytes": 147456,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/8501b5f1ae7bd3c684a2ca4bc58b3a377356d1b77a8b6fc7cd95c64066ec69cc",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/8501b5f1ae7bd3c684a2ca4bc58b3a377356d1b77a8b6fc7cd95c64066ec69cc",
+          "sha256_filename": "8501b5f1ae7bd3c684a2ca4bc58b3a377356d1b77a8b6fc7cd95c64066ec69cc",
+          "size": 761,
+          "allocated_bytes": 4096,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/92459ac0e799cfec4f82b0d24f70f0f72cb3257e59728212cd43abdf6acbd80e",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/92459ac0e799cfec4f82b0d24f70f0f72cb3257e59728212cd43abdf6acbd80e",
+          "sha256_filename": "92459ac0e799cfec4f82b0d24f70f0f72cb3257e59728212cd43abdf6acbd80e",
+          "size": 23964,
+          "allocated_bytes": 24576,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+          "sha256_filename": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+          "size": 41572305,
+          "allocated_bytes": 41578496,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/98f00d0ab8bbd3e41b7ad99596e06bb79b846c6e736613320d9705e2716013b4",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/98f00d0ab8bbd3e41b7ad99596e06bb79b846c6e736613320d9705e2716013b4",
+          "sha256_filename": "98f00d0ab8bbd3e41b7ad99596e06bb79b846c6e736613320d9705e2716013b4",
+          "size": 2394960,
+          "allocated_bytes": 2400256,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/cc98e84002c7b7fefb0128128e4cf4546d333e780715da16d048e17b73dafaa5",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/cc98e84002c7b7fefb0128128e4cf4546d333e780715da16d048e17b73dafaa5",
+          "sha256_filename": "cc98e84002c7b7fefb0128128e4cf4546d333e780715da16d048e17b73dafaa5",
+          "size": 295943185,
+          "allocated_bytes": 295948288,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+          "sha256_filename": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+          "size": 1449352,
+          "allocated_bytes": 1449984,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+          "sha256_filename": "c14c8f498f3be96f076ceb07d65dba584a86dca3c86b5dce65ed0f6cae73358d",
+          "size": 1195144,
+          "allocated_bytes": 1196032,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+          "sha256_filename": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58",
+          "size": 727336,
+          "allocated_bytes": 729088,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/90043d803c6c205aa842f3e79a54f7c6151ef98ea4964729915d2f9fc584ea25",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/90043d803c6c205aa842f3e79a54f7c6151ef98ea4964729915d2f9fc584ea25",
+          "sha256_filename": "90043d803c6c205aa842f3e79a54f7c6151ef98ea4964729915d2f9fc584ea25",
+          "size": 775744,
+          "allocated_bytes": 778240,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+          "sha256_filename": "0e263305fd34434c80b9af2ea34fc6131887418d8301e913b3220953dc9a6e49",
+          "size": 678528,
+          "allocated_bytes": 679936,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+          "sha256_filename": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+          "size": 2215072,
+          "allocated_bytes": 2220032,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+          "sha256_filename": "47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+          "size": 128003553,
+          "allocated_bytes": 128008192,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+          "sha256_filename": "c55b53a98e218df23f2f90ca1015974e122be2ee1d5fc93db1cc097440699b65",
+          "size": 371736,
+          "allocated_bytes": 372736,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+          "sha256_filename": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+          "size": 1268336,
+          "allocated_bytes": 1269760,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+          "sha256_filename": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+          "size": 104464,
+          "allocated_bytes": 106496,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/bdff40cf7c514d048c29721bb16acfceceb9fa691d2b111c32ba1f8b77abae39",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/bdff40cf7c514d048c29721bb16acfceceb9fa691d2b111c32ba1f8b77abae39",
+          "sha256_filename": "bdff40cf7c514d048c29721bb16acfceceb9fa691d2b111c32ba1f8b77abae39",
+          "size": 6360840,
+          "allocated_bytes": 6365184,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/a9ba02dcad338ee7f0b03e58a1cf44009b2bd645b09c2b423242e9791d202301",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/a9ba02dcad338ee7f0b03e58a1cf44009b2bd645b09c2b423242e9791d202301",
+          "sha256_filename": "a9ba02dcad338ee7f0b03e58a1cf44009b2bd645b09c2b423242e9791d202301",
+          "size": 68312,
+          "allocated_bytes": 69632,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+          "sha256_filename": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+          "size": 182512,
+          "allocated_bytes": 184320,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "sha256_filename": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "size": 14424,
+          "allocated_bytes": 16384,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+          "sha256_filename": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+          "size": 939976,
+          "allocated_bytes": 942080,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/cdc05a93f82a8673f4a63d4c9e60b58e72d4ada7d2c7a44883407aae74b34a88",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/cdc05a93f82a8673f4a63d4c9e60b58e72d4ada7d2c7a44883407aae74b34a88",
+          "sha256_filename": "cdc05a93f82a8673f4a63d4c9e60b58e72d4ada7d2c7a44883407aae74b34a88",
+          "size": 310,
+          "allocated_bytes": 4096,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/49a325fc4c6c5aa5a8f9ea8c828e37f3900a757c6be48d997ff4af0b51ee8315",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-008/inputs/objects/49a325fc4c6c5aa5a8f9ea8c828e37f3900a757c6be48d997ff4af0b51ee8315",
+          "sha256_filename": "49a325fc4c6c5aa5a8f9ea8c828e37f3900a757c6be48d997ff4af0b51ee8315",
+          "size": 47885368,
+          "allocated_bytes": 47890432,
+          "candidate_links": 1
+        },
+        {
+          "candidate": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/42e707cc09abc59fcc893d435653a04b13732b5287054ffb6c6bc3860fbe4931",
+          "restore": "work/simulator/bitaxe/esp-qemu-build-009/inputs/objects/42e707cc09abc59fcc893d435653a04b13732b5287054ffb6c6bc3860fbe4931",
+          "sha256_filename": "42e707cc09abc59fcc893d435653a04b13732b5287054ffb6c6bc3860fbe4931",
+          "size": 434,
+          "allocated_bytes": 4096,
+          "candidate_links": 1
+        }
+      ],
+      "duplicate_candidate_count": 28,
+      "duplicate_candidate_bytes": 534855216,
+      "unique_objects_preserved": [
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/3cbd98a9c48e2cbc4b0c9b38a575c4f079c25a93852fc2c36c74f8526f333e88",
+          "size": 6618
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/b2c00b88036c1ea964da54c7b0aa73bcaf2eb3c3c587fa7680c448f85c9ac076",
+          "size": 2498016
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/5f14e2c440e53e91974066f0d632ab43d0735acb4deec55c0171b81fdf69b3f3",
+          "size": 7161
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/92e51d47a0addd35ad3b3de4caa165561c5444b124071261d8dac28da14b67f5",
+          "size": 341
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/eb03897855a0fb09d49b2ab1beb7ad8b0bcacb7795e396667c76c39d7b4471d9",
+          "size": 6524
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/e004dd36b5392aa226558c76b61c220b2e38535dd9ae87a7167a4fb23155c906",
+          "size": 470
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/cb4b97bf7817eec8c4b2559711ecb0bf80da44fe59310208cee38734cb7ebfeb",
+          "size": 7388644
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/ee64a8768f7d4e4d286511b2b13f899e7c12ed53416da84c986bd6b69603dbcf",
+          "size": 1892
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/0496a69009324f163a2a8ee26f518f171d3df3e865aa42571c9b836698e9fcc8",
+          "size": 287
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/c4171496b46ea6292488b88092aa37643a01b14b619d36e627b92d8e9709d21b",
+          "size": 155
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/95e5aba3c31a614c933b933993ebb0147808274454cfade1488794b53b6ea065",
+          "size": 4935
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/a52423c3231be93ea322e33516984dea1d51be1acf7f65df6a00e09a9f653f68",
+          "size": 6217
+        },
+        {
+          "path": "work/simulator/bitaxe/esp-qemu-build-018c/inputs/objects/3511839f7dd7acd464ef2917a599750ddcbfd0dce8fd69ede87ea11ec7d9ed8c",
+          "size": 6847
+        }
+      ]
+    }
+  ],
+  "candidate_total_count": 56,
+  "candidate_total_logical_bytes": 1069710432,
+  "retained_by_policy": [
+    "All original archive inputs.",
+    "All source freezes, helper/backend binaries, derived overlays and currently required direct paths.",
+    "All failed/terminal reports, logs and unique objects.",
+    "All active stores and current compiler output."
+  ],
+  "limits": [
+    "A prior comparable full storage census does not exist here; the root free-space change cannot be attributed to this task from this inventory.",
+    "Candidate matching uses SHA-like filenames plus size and distinct inode only. Full content verification, active-lock checks, exact role validation and an independently reviewed durable restore plan are still required before any later deletion.",
+    "No file content was deleted or modified, no store lock was acquired, and no cleanup scope was expanded."
+  ],
+  "next": "Retain this inventory. Storage is currently adequate; parent requested no cleanup or deletion."
+}

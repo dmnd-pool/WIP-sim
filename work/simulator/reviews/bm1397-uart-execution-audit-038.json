@@ -1,0 +1,203 @@
+{
+  "schema": "md-sim-original-probe-execution-audit/1",
+  "date": "2026-10-28",
+  "scope": "Independent byte and CRC reconstruction of actual original038. Auditor also authored504; root supplied the independent source review. This retains the failed diagnostic boundary.",
+  "source_files_verified": 133,
+  "staged_production_files_verified": 6,
+  "mounts_verified": 17,
+  "unchanged_from037": [
+    "original factory",
+    "ROM",
+    "backend",
+    "host dependency closure",
+    "limits",
+    "environment",
+    "argv"
+  ],
+  "changed_from037": [
+    "probe helper with reviewed504 model"
+  ],
+  "status": "exited",
+  "exit_code": 1,
+  "wall_milliseconds": 2913,
+  "trace_truncated": false,
+  "raw_command_frames": [
+    "55aa520500000a",
+    "55aa5305000003",
+    "55aa400500001c",
+    "55aa51090080000000001c",
+    "55aa510900840000000011",
+    "55aa510900200000000102",
+    "55aa5109003c8000807410",
+    "55aa51090014000000f01e",
+    "55aa51090068c070011100",
+    "55aa510900280600000f18",
+    "55aa5109001800007a3115",
+    "55aa510900700f0f0f0019"
+  ],
+  "independent_crc": "Polynomial long division verified all12 command CRCs and one51-bit response CRC; production codec not invoked.",
+  "rx_frames": [
+    "aa5513971800000006"
+  ],
+  "control_state_updates": [
+    {
+      "after_capture_sequence": 10,
+      "chip_position": 0,
+      "effective_clock_known": false,
+      "effective_uart_baud_known": false,
+      "guest_readback_available": false,
+      "response_bytes": 0,
+      "state": {
+        "core0_write": 116,
+        "fast_uart_write": null,
+        "misc_write": null,
+        "pll0_write": null,
+        "pll3_write": null
+      }
+    },
+    {
+      "after_capture_sequence": 14,
+      "chip_position": 0,
+      "effective_clock_known": false,
+      "effective_uart_baud_known": false,
+      "guest_readback_available": false,
+      "response_bytes": 0,
+      "state": {
+        "core0_write": 116,
+        "fast_uart_write": null,
+        "misc_write": null,
+        "pll0_write": null,
+        "pll3_write": {
+          "written_word": 3228565777
+        }
+      }
+    },
+    {
+      "after_capture_sequence": 16,
+      "chip_position": 0,
+      "effective_clock_known": false,
+      "effective_uart_baud_known": false,
+      "guest_readback_available": false,
+      "response_bytes": 0,
+      "state": {
+        "core0_write": 116,
+        "fast_uart_write": {
+          "written_word": 100663311
+        },
+        "misc_write": null,
+        "pll0_write": null,
+        "pll3_write": {
+          "written_word": 3228565777
+        }
+      }
+    },
+    {
+      "after_capture_sequence": 18,
+      "chip_position": 0,
+      "effective_clock_known": false,
+      "effective_uart_baud_known": false,
+      "guest_readback_available": false,
+      "response_bytes": 0,
+      "state": {
+        "core0_write": 116,
+        "fast_uart_write": {
+          "written_word": 100663311
+        },
+        "misc_write": {
+          "written_word": 31281
+        },
+        "pll0_write": null,
+        "pll3_write": {
+          "written_word": 3228565777
+        }
+      }
+    }
+  ],
+  "one_shot_observer_selected": false,
+  "write_acknowledgements": 0,
+  "boundary": {
+    "error": "UnsupportedCommand",
+    "packet": {
+      "Command": {
+        "broadcast": true,
+        "command": {
+          "Write": {
+            "address": 0,
+            "register": 112,
+            "value": 252645120
+          }
+        }
+      }
+    }
+  },
+  "derived_default_baud_request": {
+    "source": "original0x18=0x00007a31",
+    "declared_input_hz": 25000000,
+    "cycles_per_bit": 216,
+    "integer_part": 115740,
+    "remainder_numerator": 160,
+    "effective_baud_claimed": false
+  },
+  "source_review_reference": {
+    "sha256": "0adbfdf1791761b5cbf9bae4f6792333009bb56cfd1b4915d3ba21c35728be6c",
+    "size": 2862
+  },
+  "inputs": [
+    {
+      "path": "work/simulator/bm1397-probe-tools-504/inputs.json",
+      "sha256": "6eb5a1a0609607611ad9626fd51b885ab47b1f362cd5c05fda7b095ac29b07ee",
+      "size": 39362
+    },
+    {
+      "path": "work/simulator/bm1397-probe-tools-504/esp32_original_probe",
+      "sha256": "88d05953e9c9408f4665bbf8e6d8e2c412aa49d8dc83f9638124a1d7e6f26df3",
+      "size": 2220640
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-uart-stage-504.json",
+      "sha256": "85974f33c485b45ab1b4f5ec3c725af0a8b0aef6c28d57003cb43aecfd0745fb",
+      "size": 11856
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-038/spec.json",
+      "sha256": "cf918802a0307f437954050eb4940e8919cf923f9f5f7085671d0b898ae335c9",
+      "size": 3961
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-038/result.json",
+      "sha256": "d276f5daa7339ad252380eca81c1ddde86e2aed4a5cb58dd73d2aa719d697faa",
+      "size": 858221
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-038/input-identities.json",
+      "sha256": "b541d5bf20cfc0267daa82b48aa6245e1f9f4f7daa56453b4e0b059fe99a825a",
+      "size": 3206
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-038/adaptation.json",
+      "sha256": "a4615bb13dfb6ac6984618777b3344959a0cc46985f8755caff16ff61c7d9feb",
+      "size": 742
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-038/guest.log",
+      "sha256": "a1dd683c7703483246f6f3ebdd24a8d68efae3acb3638cc3e4540ab64ea22c5e",
+      "size": 10259
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-038/backend.log",
+      "sha256": "24196f633f34d3e6e40291152fe73731d584168b1202ead9ee581e539025db20",
+      "size": 418430
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-038/assessment.json",
+      "sha256": "321781e9a728f699eab092dd89c056972b2e87d33252eb09f1eb829e122a802c",
+      "size": 504
+    }
+  ],
+  "gates": {
+    "complete_original_board_boot": false,
+    "functional_mining": false,
+    "native_dashboard": false
+  },
+  "next_action": "Implement actual observed0x70 posted state and only the evidenced software-divider relation. Preserve physical timing/lock/readback and original-board gaps."
+}

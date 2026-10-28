@@ -26,6 +26,13 @@ pub(crate) fn require_netlist_preparation() -> Result<()> {
     require_with_memory_limit(true, 4 << 30, 600, 1 << 30)
 }
 
+/// Compile the pinned existing HDL toolchain. Two compiler jobs share a closed
+/// preparation namespace. The600-second CPU budget does not change guest time.
+#[allow(dead_code)]
+pub(crate) fn require_hdl_tool_build() -> Result<()> {
+    require_with_memory_limit(true, 3 << 30, 600, 128 << 20)
+}
+
 /// Read-only filesystem inspection needs room for an expanded firmware disk.
 /// Acquired programs remain data; only captured host analysis tools execute.
 #[allow(dead_code)]
@@ -499,6 +506,23 @@ fn validate_proc_protection(fields: &[&str], filesystem: &str, proc_root: &[&str
                 .all(|required| fields[5].split(',').any(|flag| flag == *required))
             && !fields[5].split(',').any(|flag| flag == "rw"),
         "proc protection is writable, foreign or has an unexpected root"
+    );
+    Ok(())
+}
+
+/// Compile and execute the explicit scalar ADC arithmetic adapter only.
+/// Keep the standard private preparation namespaces and read-only inputs.
+#[allow(dead_code)]
+pub(crate) fn require_adc_reference_oracle() -> Result<()> {
+    require_with_memory_limit(true, 2 << 30, 60, 2 << 20)?;
+    let mut limit = std::mem::MaybeUninit::<libc::rlimit>::uninit();
+    ensure!(
+        unsafe { libc::getrlimit(libc::RLIMIT_NPROC, limit.as_mut_ptr()) } == 0,
+        "cannot read oracle process limit"
+    );
+    ensure!(
+        unsafe { limit.assume_init() }.rlim_max <= 16,
+        "oracle process limit exceeds16"
     );
     Ok(())
 }

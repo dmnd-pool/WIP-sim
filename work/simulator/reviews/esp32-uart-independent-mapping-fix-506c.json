@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "scope": "Independent S3-only DATE MMIO boundary fix. Runtime results remain required.",
+  "stage": {
+    "path": "work/simulator/esp32-uart-506c/inputs.json",
+    "sha256": "195913849ee7a925798c21f1f77d5990c0fc2dbd35ceca7a11a36d383d43b19c",
+    "size": 3343
+  },
+  "review": [
+    "OriginalUART_REG_CNT=(R_UART_DATE+1) yields124 bytes with last offset0x78.",
+    "S3DATE at0x7c requires128 bytes; subclass callbacks intercept its read/write and do not index the old parent register array.",
+    "Exact archived memory_region_set_size signature and source bytes checked.",
+    "S3 machine calls qdev_realize before mapping all three UARTs; size is extended before parent realization.",
+    "Only derived S3 patch changed. Original archives, failed018b tests and all assertions remain."
+  ],
+  "production_patch": {
+    "path": "simulator/backends/esp32/uart-config.patch",
+    "sha256": "a52423c3231be93ea322e33516984dea1d51be1acf7f65df6a00e09a9f653f68",
+    "size": 6217
+  },
+  "unresolved_findings": []
+}

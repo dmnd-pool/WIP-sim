@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "scope": "Independent root retained-byte and polynomial-division UART review of original038. Diagnostic boundary only; board/mining/dashboard remain incomplete.",
+  "source_files_verified": 133,
+  "mounts_verified": 17,
+  "command_frames_crc_verified": [
+    "55aa520500000a",
+    "55aa5305000003",
+    "55aa400500001c",
+    "55aa51090080000000001c",
+    "55aa510900840000000011",
+    "55aa510900200000000102",
+    "55aa5109003c8000807410",
+    "55aa51090014000000f01e",
+    "55aa51090068c070011100",
+    "55aa510900280600000f18",
+    "55aa5109001800007a3115",
+    "55aa510900700f0f0f0019"
+  ],
+  "sole_reply": "aa5513971800000006",
+  "state_updates_without_ack": 4,
+  "actual_unsupported_register": "0x70",
+  "actual_unsupported_value": "0x0f0f0f00",
+  "guest_exit": 1,
+  "wall_milliseconds": 2913,
+  "trace_truncated": false,
+  "review_correction": "Initial one-off audit supplied an incorrect literal CRC for the final frame. Independent polynomial division already verified every actual CRC; the corrected packet identity checks the exact data body and independently computed CRC. No implementation or retained bytes changed.",
+  "process_specification": {
+    "sha256": "cf918802a0307f437954050eb4940e8919cf923f9f5f7085671d0b898ae335c9",
+    "size": 3961
+  },
+  "result": {
+    "sha256": "d276f5daa7339ad252380eca81c1ddde86e2aed4a5cb58dd73d2aa719d697faa",
+    "size": 858221
+  },
+  "source_manifest": {
+    "sha256": "6eb5a1a0609607611ad9626fd51b885ab47b1f362cd5c05fda7b095ac29b07ee",
+    "size": 39362
+  }
+}

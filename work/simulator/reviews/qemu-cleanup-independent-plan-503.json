@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "scope": "Independent exact-path/byte/finished-result review of cleanup503. Deletion not yet performed.",
+  "plan": {
+    "path": "work/simulator/cleanup-qemu-503/plan.json",
+    "sha256": "f43863febc47aee293b9328226d0b3688f1bb8788dcf328cbe14ee75bd386305",
+    "size": 623828
+  },
+  "selected_files_rehashed": 1353,
+  "restore_files_rehashed": 77,
+  "selected_bytes": 14807692817,
+  "allocated_bytes_at_sample": 14811127808,
+  "target_stores": {
+    "backend-build-166-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-173-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-183-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-188-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-191-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-192-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-201-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-212-ubsan": {
+      "status": "exited",
+      "exit_code": 1
+    },
+    "backend-build-213-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-218-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-223-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-226-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-231-ubsan": {
+      "status": "exited",
+      "exit_code": 1
+    },
+    "backend-build-232-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-239-release": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-256-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-263-release": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-276-release": {
+      "status": "exited",
+      "exit_code": 0
+    },
+    "backend-build-278-release": {
+      "status": "exited",
+      "exit_code": 1
+    },
+    "backend-build-279-release": {
+      "status": "exited",
+      "exit_code": 1
+    },
+    "backend-build-280-ubsan": {
+      "status": "exited",
+      "exit_code": 0
+    }
+  },
+  "canonical_preserved": "/home/user/src/md-sim/work/simulator/qemu-s9/backend-build-280-release",
+  "exact_demo_manifest_path_overlap": false,
+  "original_archive_path_selected": false,
+  "restore_requires_copy_not_hardlink": true
+}

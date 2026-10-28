@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume independent review",
+  "date": "2026-10-28",
+  "status": "source review closed; actual build and selected HDL checks remain pending",
+  "scope": "Rust driver for the exact upstream GNU gperf and Icarus build, isolated resource contract, archive restoration, and language smoke tests. This is not selected netlist, processor, board, or mining acceptance.",
+  "inputs": [
+    {
+      "path": "crates/md-sim-firmware/examples/build_iverilog_tool.rs",
+      "sha256": "f85093b4403dee12874ec59388c241d31e9b769e9d50a56190a919275bbb15e4",
+      "size": 22625
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/qemu_build.rs",
+      "sha256": "f6010fb91d4a5ab246e4e378614a11a9c2e6745e69b90418b31fef97451efbb1",
+      "size": 10167
+    },
+    {
+      "path": "crates/md-sim-firmware/src/confinement.rs",
+      "sha256": "a1d7211bbdbdcc56421b2359475d61f135415c87264b50b7af8e3aa29c22cc9d",
+      "size": 23549
+    },
+    {
+      "path": "crates/md-sim-firmware/src/lab.rs",
+      "sha256": "eb88622c2bc826b0fd43c1a9a7d1dff51e966dc1eedc3a2b2d6973895af7482f",
+      "size": 19296
+    },
+    {
+      "path": "work/simulator/reviews/gperf-signature-502b.json",
+      "sha256": "908a3d9b99bbd2be389230b3b0f7d2acf70546a9ee115e5017212805c8448dcf",
+      "size": 3877
+    },
+    {
+      "path": "work/simulator/reviews/iverilog-original-tree-audit-502.json",
+      "sha256": "1b3176587a7f8d7fa150b2af7d33802e8f6b9069507a32d106f02496becbd1da",
+      "size": 441
+    },
+    {
+      "path": "work/simulator/firmware/toolchain-snapshot-003/manifest.json",
+      "sha256": "e2eabd7bd16c22397c37cfbcfd0115223406f7850b5ad8f0733de6ac79e4d12a",
+      "size": 7144215
+    }
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Selected compiler snapshot files could drift while the driver cited the old manifest.",
+      "resolution": "snapshot_file checks regular paths and expected manifest objects; selected ELF roots, explicit Perl and autoconf captures must equal those objects. A changed-file regression was added. The parsed manifest bytes and captured manifest object also match the exact constant."
+    },
+    {
+      "finding": "An exported installation was not proven to be a standalone runtime closure.",
+      "resolution": "install_contract now records standalone_runtime_closure=false, the exact compiler archive and manifest, and captured ProcessSpec loader dependencies. It requires extraction at the compiled /work/iverilog-install path."
+    },
+    {
+      "finding": "Initial actual capture could not resolve the pinned Perl RUNPATH.",
+      "resolution": "The exact manifest-checked Perl interpreter and libperl are bound at their required guest paths. libperl dependencies use the existing ELF closure. Generic ELF runpath rules are unchanged."
+    }
+  ],
+  "review_checks": [
+    "Downloaded source remains data until the guard validates the private runtime. No acquired source or tool executes on the host.",
+    "The only new confinement profile has a 3 GiB per-process address cap, 600-second per-process CPU cap and 128 MiB file cap. The exact ProcessSpec also sets a 1200-second outer wall limit, 128 processes, 64 MiB trace and 2 GiB scratch. Existing namespace, mount, capability, private network and no-KVM checks remain. These are not aggregate memory/CPU guarantees.",
+    "All three source/compiler archives are SHA-256 checked before capture and inside before unpack. Compiler selected-file captures are tied to the frozen manifest. Fresh bison/flex, data and loader files are individually captured in the ProcessSpec.",
+    "The build runs upstream gperf checks, actual Icarus compilation and event/four-state arithmetic vectors. Malformed HDL must fail with a non-signal nonzero exit and a literal syntax diagnostic. Truncated step diagnostics cannot pass.",
+    "The exported archive uses the exact iverilog-install root. The original installation is renamed away before restore. A fresh HDL compilation and execution must pass using the restored path. The larger build closure remains explicitly required.",
+    "The output archive has a 24 MiB bound and is checked against the emitted size and SHA before host retention. Raw result and build-envelope evidence remain on failure. All captured mounts are reverified after success."
+  ],
+  "open_findings": [],
+  "pending": [
+    "Run focused tests and strict Clippy for the final source.",
+    "Freeze the final helper and exact source inputs.",
+    "Complete the isolated tool build and independently verify its retained output.",
+    "Bind selected HDL profile to the actual derived tool identity and run vendor primitive vectors plus exact selected-netlist elaboration and compilation. These do not prove PS7/AXI behavior or original-board execution."
+  ]
+}

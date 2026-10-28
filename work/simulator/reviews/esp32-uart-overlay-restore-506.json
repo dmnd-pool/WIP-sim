@@ -1,0 +1,49 @@
+{
+  "schema": "md-sim-required-input-restoration/1",
+  "time_utc": "2026-10-28T13:08:58.098613+00:00",
+  "reason": "The frozen506b builder018 failed before execution because017 overlay direct path was absent. Restore only the exact required object, preserving all terminal017 evidence.",
+  "source": {
+    "path": "work/simulator/bitaxe/esp-qemu-build-008/overlay.tar.gz",
+    "sha256": "47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+    "size": 128003553
+  },
+  "restored": {
+    "path": "work/simulator/bitaxe/esp-qemu-build-017/overlay.tar.gz",
+    "sha256": "47bd011b3d0f6d64837171ae8a46aca0ad92c428bb0916dc0382a83dede41feb",
+    "size": 128003553
+  },
+  "matching_overlay_manifest": {
+    "sha256": "01dd75fc8c3a413b5609a9cb3416f047152ba00e219683c5e60014c0440484cb",
+    "size": 5267979
+  },
+  "protected_terminal_inputs": {
+    "work/simulator/bitaxe/esp-qemu-build-017/spec.json": {
+      "sha256": "77d6f6ade1412346ba27ba148aec3840317e5a4c7581b11c55219b59eee0921a",
+      "size": 8221
+    },
+    "work/simulator/bitaxe/esp-qemu-build-017/input-identities.json": {
+      "sha256": "69828b11a207600fbe454304febe4b75312e3057ca9d9e214f0ec0fabc9d098a",
+      "size": 467
+    },
+    "work/simulator/bitaxe/esp-qemu-build-017/overlay-manifest.json": {
+      "sha256": "01dd75fc8c3a413b5609a9cb3416f047152ba00e219683c5e60014c0440484cb",
+      "size": 5267979
+    },
+    "work/simulator/bitaxe/esp-qemu-build-017/build-report.json": {
+      "sha256": "5f971077433b8675a352843526082991c0e9c115ab47204f40ea829889ed2c6d",
+      "size": 314961
+    },
+    "work/simulator/bitaxe/esp-qemu-build-017/qemu-system-xtensa": {
+      "sha256": "ce946687f1b97577ba2a6434d08b38a8a6dfeb8cbf072bfbf2545d2e7356cd9e",
+      "size": 17058432
+    }
+  },
+  "locks": [
+    "008 existing input store shared",
+    "017 newly created temporary input store lock exclusive; original input-store directory was absent"
+  ],
+  "method": "Opened regular source with O_NOFOLLOW; copied under locks to exclusive temp, hashed while copying, verified stable source metadata, fsynced, linked without replacement, removed temporary name, rehashed destination. No existing file overwritten.",
+  "historical_journal": "No exact017 direct-path journal was located in the narrow saved QEMU/Bitaxe cleanup records. The original017 spec and matching008 retained source/manifest establish the required bytes.",
+  "failed_preparation_retained": "work/simulator/bitaxe/esp-qemu-build-018/assessment.json",
+  "next_output": "work/simulator/bitaxe/esp-qemu-build-018b"
+}

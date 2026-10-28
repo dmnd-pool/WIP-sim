@@ -16,6 +16,8 @@ use std::{
 
 #[path = "reclaim_qemu_inputs/browser.rs"]
 mod browser;
+#[path = "reclaim_qemu_inputs/hdl.rs"]
+mod hdl;
 #[path = "reclaim_qemu_inputs/t17.rs"]
 mod t17;
 
@@ -427,6 +429,7 @@ fn eligible(path: &Path, repository: &Path) -> bool {
         || channel_store(path, repository).is_some()
         || component_store(path, repository).is_some()
         || t17::selected(path, repository).is_some()
+        || hdl::selected(path, repository).is_some()
 }
 
 fn input_store(path: &Path) -> Result<PathBuf> {
@@ -455,6 +458,11 @@ fn input_store_in(path: &Path, repository: &Path) -> Result<PathBuf> {
         ensure!(supplied == path, "oracle store path must not be an alias");
         t17::directories(&supplied, repository)?;
     }
+    if hdl::selected(&supplied, repository).is_some() || hdl::selected(&path, repository).is_some()
+    {
+        ensure!(supplied == path, "HDL store path must not be an alias");
+        hdl::directories(&path, repository)?;
+    }
     ensure!(
         eligible(&path, repository),
         "only declared local QEMU or original-S9 Core input stores are eligible"
@@ -466,7 +474,9 @@ fn input_store_in(path: &Path, repository: &Path) -> Result<PathBuf> {
             "the complete cycle must have stopped before cleanup"
         );
     }
-    if t17::selected(&path, repository).is_some() {
+    if hdl::selected(&path, repository).is_some() {
+        hdl::finished(&path, repository)?;
+    } else if t17::selected(&path, repository).is_some() {
         t17::finished(&path, repository)?;
     } else if let Some(run) = component_store(&path, repository) {
         require_finished_component(run)?;
@@ -565,8 +575,20 @@ fn main() -> Result<()> {
     let repository = std::env::current_dir()?.canonicalize()?;
     let journal = Path::new(&args[2]);
     ensure!(!journal.exists(), "journal must be new");
+    ensure!(
+        !journal.with_extension("completed.tmp").exists(),
+        "completion path must be new before any removal"
+    );
     // Store handles hold exclusive file locks. An active owner prevents cleanup.
     let keeper = open_store(&canonical)?;
+    let mut hdl_evidence = Vec::new();
+    if let Some(evidence) = hdl::locked(&canonical, &repository, &keeper)? {
+        ensure!(
+            canonical == hdl::canonical(&repository),
+            "HDL restore store must be the verified502f build"
+        );
+        hdl_evidence.push(evidence);
+    }
     let mut component_evidence = Vec::new();
     if let Some(evidence) = locked_component_evidence(&canonical, &repository)? {
         component_evidence.push(evidence);
@@ -582,9 +604,17 @@ fn main() -> Result<()> {
         let root = input_store(Path::new(path))?;
         ensure!(root != canonical, "canonical store cannot be reclaimed");
         locks.push(open_store(&root)?);
+        let hdl = hdl::locked(&root, &repository, locks.last().unwrap())?;
+        if let Some(evidence) = &hdl {
+            ensure!(
+                canonical == hdl::canonical(&repository),
+                "HDL restore store must be the verified502f build"
+            );
+            hdl_evidence.push(evidence.clone());
+        }
         let component = locked_component_evidence(&root, &repository)?;
         let oracle = t17::finished(&root, &repository)?;
-        let component_only = component.is_some() || oracle.is_some();
+        let component_only = component.is_some() || oracle.is_some() || hdl.is_some();
         if let Some(evidence) = component {
             component_evidence.push(evidence);
         }
@@ -710,10 +740,19 @@ fn main() -> Result<()> {
             "oracle evidence changed while preparing cleanup"
         );
     }
+    for evidence in &hdl_evidence {
+        ensure!(
+            hdl::finished(&evidence.run.join("inputs"), &repository)?.as_ref() == Some(evidence),
+            "HDL evidence changed while preparing cleanup"
+        );
+    }
     let mut report = json!({"scope":"Finished build/run/Core-check CAS, derived build archives and Core evidence copies. Original run evidence is retained. Restore with copies, never hard links",
         "objects":objects,"removed_bytes":total,"completed":false,
         "component_cas_only_evidence":component_evidence,
         "tool":hash_file(Path::new("/proc/self/exe"))?});
+    if !hdl_evidence.is_empty() {
+        report["hdl_cas_only_evidence"] = serde_json::to_value(&hdl_evidence)?;
+    }
     if !oracle_evidence.is_empty() {
         report["oracle_cas_only_evidence"] = serde_json::to_value(&oracle_evidence)?;
     }
@@ -741,16 +780,18 @@ fn main() -> Result<()> {
         );
         return Ok(());
     }
-    for object in &objects {
-        reclaim_object(object)?;
-    }
-    report["completed"] = json!(true);
+    // Reserve completion output before the first unlink. The durable journal
+    // still lists every restore source if a later removal fails.
     let completed = journal.with_extension("completed.tmp");
-    ensure!(!completed.exists(), "completion path must be new");
     let mut completed_file = OpenOptions::new()
         .write(true)
         .create_new(true)
         .open(&completed)?;
+    fs::File::open(journal_parent)?.sync_all()?;
+    for object in &objects {
+        reclaim_object(object)?;
+    }
+    report["completed"] = json!(true);
     completed_file.write_all(&serde_json::to_vec_pretty(&report)?)?;
     completed_file.sync_all()?;
     fs::rename(&completed, journal)?;
@@ -765,6 +806,9 @@ fn main() -> Result<()> {
 
 fn open_store(path: &Path) -> Result<Store> {
     let repository = std::env::current_dir()?.canonicalize()?;
+    if hdl::selected(path, &repository).is_some() {
+        return hdl::open(path, &repository);
+    }
     if t17::selected(path, &repository).is_some() {
         // Original oracle stores use1GiB/object and the standard aggregate
         // limits. Do not expand their persisted policy during cleanup.

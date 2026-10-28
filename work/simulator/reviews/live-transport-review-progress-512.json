@@ -1,0 +1,48 @@
+{
+  "schema": "md-sim-review-progress/1",
+  "agent": "cleanup_resume",
+  "updated_at": "2026-10-28T15:53:46.125538+00:00",
+  "priority": "S9 first; no new other-miner work or deletion",
+  "status": "Draft live transport review; no implementation or execution pass claimed",
+  "sources": [
+    "work/simulator/s9-cosim-512/live_protocol.rs",
+    "work/simulator/s9-cosim-512/mdsim_live.c"
+  ],
+  "reference_review": "work/simulator/reviews/icarus-scheduler-independent-reference-512.json",
+  "findings": [
+    {
+      "id": "interval-events",
+      "finding": "Events between last receipt and a future requested command timestamp must not be rejected as before admission.",
+      "status": "Fixed in current draft; final pins and tests pending."
+    },
+    {
+      "id": "reserved-completion-word",
+      "finding": "Completion args8 was not defined or checked.",
+      "status": "Fixed in current draft: actual AXI posedge count1..1024 for bus operations and0 for others; final checks pending."
+    },
+    {
+      "id": "typed-response-bypass",
+      "finding": "Public Response construction could bypass wire width/reserved checks in Order::observe.",
+      "status": "Fixed in current draft by shared decoder validation; final checks pending."
+    },
+    {
+      "id": "active-region-blocking-and-ro-order",
+      "finding": "cbValueChange calls blocking response transfer. A later RO event flush could be overtaken by completion/next-sequence admission if buffering is added without an explicit drain barrier.",
+      "requested_fix": "Bounded FIFO of complete raw event frames with captured sequence/time/four-state bits; emit only at RO; drain before Ready/Complete and before receive_future; overflow fails.",
+      "status": "Sent to owner; pending updated C stage."
+    }
+  ],
+  "checked_details": [
+    "Private duplex FD3 keeps binary framing separate from unchanged vendor stdout/stderr.",
+    "Exact Icarus callbacks copy local callback time/value descriptors, so the current stack descriptor registration lifetime is supported.",
+    "Future active input application followed by RO completion avoids illegal same-slot writes; current code rejects equal/past times and does not add1ps."
+  ],
+  "next_actions": [
+    "Review updated event FIFO and HDL wrapper once staged.",
+    "Review source-final Rust deadline/cancel/child ownership and exact binary/C ABI contract.",
+    "Only after source review, execute meaningful isolated delta/NBA/four-state/time/EOF/cancel regressions and then fresh selected-S9 transactions."
+  ],
+  "cpu_synchronization_proven": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false
+}

@@ -1,0 +1,287 @@
+{
+  "schema": 1,
+  "source_revision": "1c8e05fd1e9a79ceb8b996a0996674122eed086f",
+  "files": [
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/glbl.v",
+      "guest_path": "/vendor/glbl.v",
+      "object": {
+        "sha256": "de59a57e3e0091f1b9162d9914dce24c469820a0c5b5a41d1d202d93fae0abdd",
+        "size": 2548
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/BUFGCTRL.v",
+      "guest_path": "/vendor/BUFGCTRL.v",
+      "object": {
+        "sha256": "088242595d7c85b1ba75a617fc0078064d64de9aedd1a0cc4c7c47cf968bf263",
+        "size": 25482
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/CARRY4.v",
+      "guest_path": "/vendor/CARRY4.v",
+      "object": {
+        "sha256": "f2f62f5b5736dfa889da76f24cf7fdc9b456282420ef6a203e06d34408d4d75d",
+        "size": 5713
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/FDRE.v",
+      "guest_path": "/vendor/FDRE.v",
+      "object": {
+        "sha256": "c6fdb4feddc181a2e7ec5c3abef314fef6d5755f999fc9ccad3bf79d1b543a1c",
+        "size": 6665
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/FDSE.v",
+      "guest_path": "/vendor/FDSE.v",
+      "object": {
+        "sha256": "173afee3263388433ef35431935175575fea2b4592d77cf87641ea83d416de82",
+        "size": 6664
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/IBUF.v",
+      "guest_path": "/vendor/IBUF.v",
+      "object": {
+        "sha256": "594f51b2321e68cc0e2175c12996a37fe9d3bd7ea0063420795cb51accef9fe5",
+        "size": 3640
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/IOBUF.v",
+      "guest_path": "/vendor/IOBUF.v",
+      "object": {
+        "sha256": "6aaf4a942e5ffbbf4bdeae6aea7d0dc5380db4cbc72eacf3bacb4e8acf472522",
+        "size": 2724
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/LUT6_2.v",
+      "guest_path": "/vendor/LUT6_2.v",
+      "object": {
+        "sha256": "d4927b9fa9299db1332257c215c48fad31954dbab189d2bd2aa098571d65f945",
+        "size": 6115
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/MUXF7.v",
+      "guest_path": "/vendor/MUXF7.v",
+      "object": {
+        "sha256": "9ea29291c201b0eac484317a1151d7597f98e5426dee30d0d68b4acde00d6aba",
+        "size": 2179
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/OBUF.v",
+      "guest_path": "/vendor/OBUF.v",
+      "object": {
+        "sha256": "577fb9b1936020a37933c8aacea86dded84c9e4182d728d9368afbf3e7caab85",
+        "size": 2219
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+      "guest_path": "/vendor/PS7.v",
+      "object": {
+        "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+        "size": 848916
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PULLDOWN.v",
+      "guest_path": "/vendor/PULLDOWN.v",
+      "object": {
+        "sha256": "5d327d20add5ea4b0f6122dbba58847d0cde209ebe00ee5506a1c33cf1acd33e",
+        "size": 1528
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PULLUP.v",
+      "guest_path": "/vendor/PULLUP.v",
+      "object": {
+        "sha256": "1f66d11f5695d994490258adc40253c8d6ab08e2a6c93de2836bcf3dab90b637",
+        "size": 1524
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/RAM32M.v",
+      "guest_path": "/vendor/RAM32M.v",
+      "object": {
+        "sha256": "a91031066a8ea64c02eb52a24302ea53aebf38057ad91c8c45581251b4c22143",
+        "size": 12374
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/RAMB36E1.v",
+      "guest_path": "/vendor/RAMB36E1.v",
+      "object": {
+        "sha256": "b6153b595696f7eebe6840b2b8d518e32df698cb8e8b2730c8838648ceec72fb",
+        "size": 295535
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/SRL16E.v",
+      "guest_path": "/vendor/SRL16E.v",
+      "object": {
+        "sha256": "a5a215d3175be5f1dfc778c2f5bc02855188dd0b77a5abd99710840b50298bc4",
+        "size": 4958
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/SRLC16E.v",
+      "guest_path": "/vendor/SRLC16E.v",
+      "object": {
+        "sha256": "723041c5115572de532018d2046d0a1183c860aa2c41d83feab99e60f54df070",
+        "size": 5056
+      }
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/SRLC32E.v",
+      "guest_path": "/vendor/SRLC32E.v",
+      "object": {
+        "sha256": "7e4c51d1a39b15f304c084fea738c1ba1f19c17110a43d8e8f97ad299209e740",
+        "size": 5127
+      }
+    }
+  ],
+  "netlist": {
+    "path": "work/simulator/qemu-s9/netlist-selected-502k/selected.v",
+    "object": {
+      "sha256": "3ea22dc51d32539e0a52ff83d7152d82009f4e50883bc20e6643e6672d1a2c9b",
+      "size": 12607262
+    }
+  },
+  "electrical_ambiguities": "work/simulator/reviews/netlist-io-ambiguities-497.json",
+  "scope": "Selected502k derived structural HDL input closure. All497 cells, parameters, existing ports, assignments and XDC are preserved. Declared aliases, top timebase and explicitZ at60 originally omitted inputs are recorded in the converter adaptation. PS7 is a vendor port shell only; no CPU/AXI behavior. Digital primitive/RAM tests remain separate from selected chip execution and physical timing.",
+  "tools": {
+    "path": "work/simulator/qemu-s9/iverilog-build-502f/iverilog-tools.tar.gz",
+    "object": {
+      "sha256": "3c5631a6d6285affa39d9fddb9acca3758988b9c2fe6cbc4e3ce227f5fc33f61",
+      "size": 3828781
+    }
+  },
+  "vectors": {
+    "path": "simulator/firmware/fixtures/s9-primitives-502i.v",
+    "object": {
+      "sha256": "20b8de386ba8dd8c78095e8fe7cb8a7cc721e26320dbc7c9a8104f3c6509d442",
+      "size": 1989
+    }
+  },
+  "tool_build": {
+    "report": {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/build-report.json",
+      "object": {
+        "sha256": "ef6efe2fd4a4de23bac58497c04a301eb9f6390ef938a2c92f3943288cb0181e",
+        "size": 170063
+      }
+    },
+    "source_manifest": "work/simulator/qemu-s9/iverilog-driver-502f/manifest.json",
+    "runtime_contract": "Exact installed prefix /work/iverilog-install; this next run tests a separately captured smaller runtime library closure."
+  },
+  "vector_revision": {
+    "parent_profile": "simulator/firmware/s9-hdl-inputs-502.json",
+    "parent_fixture": "simulator/firmware/fixtures/s9-primitives-502.v",
+    "change": "First LUT vector is a scheduled X-to-0 input drive. All64 truth assertions and582 total checks remain; no output force or vendor model modification. Failure diagnostics now include actual and expected outputs."
+  },
+  "provenance": [
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/assessment.json",
+      "object": {
+        "sha256": "b4d4ee8e5b23ebc63f1a919b9d0819b0539a324d6b68d7aea225f6127bb58e19",
+        "size": 1020
+      },
+      "guest_path": "/provenance/conversion-assessment.json"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/structure-comparison.json",
+      "object": {
+        "sha256": "d1e9548e68343c7807d7011ba64a79fd437ebd39bf7b120a386b0fd12983b5b0",
+        "size": 529
+      },
+      "guest_path": "/provenance/structure-comparison.json"
+    },
+    {
+      "path": "simulator/firmware/s9-netlist-tool-inputs-502k.json",
+      "object": {
+        "sha256": "ae8d03d540748c1bbc78d8dfa17ec6f6565b7e227e9aa827115ad525f44ed03d",
+        "size": 21667
+      },
+      "guest_path": "/provenance/converter-inputs.json"
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-driver-502k/manifest.json",
+      "object": {
+        "sha256": "f6ed200140734203cb5fe46e201f2aeb9229da5fdd9c6fd0f50977ba5bf7c985",
+        "size": 50201
+      },
+      "guest_path": "/provenance/converter-build.json"
+    },
+    {
+      "path": "simulator/tools/fasm2bels/structure-v2/adaptation.json",
+      "object": {
+        "sha256": "e952ff74fee4d43204e9ce53c17326e160556aaa15d7e50b6bfaa4905004c391",
+        "size": 7464
+      },
+      "guest_path": "/provenance/tool-adaptation.json"
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/stdout.bin",
+      "object": {
+        "sha256": "4997a1c10a09f6881d6f5e0d4967eb31072ea9f1da7a80dac192ae1299d45960",
+        "size": 12699280
+      },
+      "guest_path": "/provenance/bosminer.elf"
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/member.json",
+      "object": {
+        "sha256": "1516fea5a3821ff58ad07c5451e50488ff4b97eb83b48c860aa39fb1c35ca1e1",
+        "size": 495
+      },
+      "guest_path": "/provenance/bosminer-member.json"
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/inspection.json",
+      "object": {
+        "sha256": "1ed1b8ae0719d7507db47f45786a1f1234fc8dedbbbbd88714bf6bd9447cdc4e",
+        "size": 1533
+      },
+      "guest_path": "/provenance/bosminer-inspection.json"
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/a32.txt",
+      "object": {
+        "sha256": "cecfeab06fbe77b43804543efabf435869d02711d7f56ea310affef71f4c7160",
+        "size": 21534
+      },
+      "guest_path": "/provenance/bosminer-a32.txt"
+    },
+    {
+      "path": "work/simulator/original-zynq/attempt-003/components/board.dtb",
+      "guest_path": "/provenance/bosminer-board.dtb",
+      "object": {
+        "sha256": "550c87818cb0db41c00a8351dc4ac7b5dce5bf6d5336539c6951163ebf3cb62a",
+        "size": 12364
+      }
+    }
+  ],
+  "axi": {
+    "ports": {
+      "path": "artifacts/files/source/source-fasm-graph-8372b58/zynq7/ps7_ports.json",
+      "object": {
+        "sha256": "be3770d6261c832fe571f9662463f1ccb825bd1f8fa919a23488a71c17680336",
+        "size": 98254
+      }
+    },
+    "contract": {
+      "path": "simulator/firmware/s9-bosminer-mmio-511.json",
+      "object": {
+        "sha256": "51a575433d6fc493967770f0abda67e317fa0deb70f5a43216d0e743a19978fc",
+        "size": 7610
+      }
+    }
+  }
+}

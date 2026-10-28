@@ -1,0 +1,70 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "stage": "508b",
+  "status": "PASS source review; tests and actual execution pending",
+  "stage_manifest": {
+    "path": "work/simulator/bm1397-reference-retention-508b/inputs.json",
+    "sha256": "fa255d6be1720b5e386210fe135c7d81d6c2a88ae26d4999f2c3f28bd3b1b065",
+    "size": 2954
+  },
+  "source_files": [
+    {
+      "sha256": "d61a76f0f961cde3aef8eabbdd95120bc28f7373f6e1be978ee67f180ca39c14",
+      "size": 13938,
+      "stage_path": "work/simulator/bm1397-reference-retention-508b/reference.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397/reference.rs"
+    },
+    {
+      "sha256": "5ec46c1b305f6cdf46ec31861f7ede47f2e20d8ad7139e3fbcd124fb85d3ce8a",
+      "size": 13473,
+      "stage_path": "work/simulator/bm1397-reference-retention-508b/reference_tests.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397/reference_tests.rs"
+    },
+    {
+      "sha256": "c1ea5402e0410cc93567b78efd08eabbe74aa77015e7d4da359265906f4a62ad",
+      "size": 48559,
+      "stage_path": "work/simulator/bm1397-reference-retention-508b/esp32_original_probe.rs",
+      "destination": "crates/md-sim-firmware/examples/esp32_original_probe.rs"
+    },
+    {
+      "sha256": "984b267bde6e8fff716165cf14cd4b8ad01af5c231ed78a6787a872dc8d641eb",
+      "size": 6241,
+      "stage_path": "work/simulator/bm1397-reference-retention-508b/qemu_stderr_tail.rs",
+      "destination": "crates/md-sim-firmware/examples/support/qemu_stderr_tail.rs"
+    }
+  ],
+  "base": {
+    "path": "work/simulator/bm1397-reference-retention-508b/base.json",
+    "sha256": "d839cb0f8c89fbd877f04ca968a386f03efcc3a1b187edef64deab4e23bc718d",
+    "size": 745
+  },
+  "parent_failed_execution_audit": {
+    "path": "work/simulator/reviews/bm1397-reference-independent-execution-508.json",
+    "sha256": "c49e024c922323b7f496c7ef8fb0fe9c93b79869ae4f7e885b4fa7f12ed8883d",
+    "size": 4901
+  },
+  "closed_findings": [
+    {
+      "finding": "A success-like final summary was emitted before byte count and SHA validation; the outer reader could label a mismatched export complete.",
+      "resolution": "verified_summary requires complete lines, matching seen/emitted byte counts and SHA256 first. Only success emits the final prefix with complete=true. Failure retains a distinct incomplete/error record; raw observations contain only line_boundary_complete. Changed-content/count tests cannot produce verified summaries."
+    }
+  ],
+  "checked": [
+    "The live tail is enabled only for the explicit reference profile and reads the existing run-owned QEMU stderr file. Complete byte lines are written under the same Rust stderr lock as ASIC JSON records, preventing line splicing.",
+    "The same16MiB input cap bounds read bytes and fragment storage. File shrink, overflow, partial final lines, differing count or differing SHA fail. Final file bytes are not emitted a second time.",
+    "The outer result retains complete observed UART writes but requires a verified final receipt and no outer truncation for complete capture. Timeout/nonzero exit still fails the reference run; missing final receipt is explicit.",
+    "Per-job ordinals increment only after the private engine actually computes. Replacement creates a new ordinal epoch. First computation receipts, all solutions and injected drops are logged without added hashes, altered filters or nonce substitutions.",
+    "The unchanged60-second/45CPU/1GiB process limits,8MiB outer trace cap, raw firmware identity, thermal assertions and unbound reference power/reset remain explicit."
+  ],
+  "unresolved_findings": [],
+  "pending": [
+    "Run focused first-receipt, line-fragment, byte identity, truncation and bound tests plus strict checks.",
+    "Freeze the new helper and rerun the original diagnostic. Verify retained first receipts independently and preserve remaining thermal/factory/timeout failures."
+  ],
+  "scope_limits": [
+    "Source review only. The prior041 timeout and missing trace remain failed.",
+    "This change does not establish a complete physical board, effective UART timing, fresh-pool share or regtest block."
+  ]
+}

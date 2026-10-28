@@ -9,9 +9,12 @@ pub mod core_control;
 pub mod core_readback;
 mod filter;
 mod identify;
+pub mod programmed;
+pub mod reference;
 mod reply;
+pub mod uart_control;
 pub use filter::ticket_filter;
-pub use identify::{IdentificationChain, IdentifyError};
+pub use identify::{ControlWriteSupport, IdentificationChain, IdentifyError};
 pub use reply::Reply;
 
 const COMMAND_TYPE: u8 = 0x40;

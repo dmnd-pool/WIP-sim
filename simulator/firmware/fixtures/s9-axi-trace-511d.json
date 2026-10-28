@@ -1,0 +1,15 @@
+{
+  "schema": "md-sim-retained-component-trace/1",
+  "origin": {
+    "path": "work/simulator/qemu-s9/axi-selected-511d/hdl-report.json",
+    "sha256": "2d2f4a57ac34068bf7265f88119a4ded92fd128b362be0c552d70eb4b9f04868",
+    "size": 574336
+  },
+  "json_field": "selected_axi_execute.stdout",
+  "trace": {
+    "path": "simulator/firmware/fixtures/s9-axi-trace-511d.txt",
+    "sha256": "bfd77d63ca7494012be93708b853e462e8aa26a97c266620e566799ea0c44061",
+    "size": 5072
+  },
+  "scope": "Fixed regression data copied unchanged from a failed outer run. Not a new execution or firmware mining result."
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "md-sim-independent-reference-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "status": "Static API boundary established; component implementation and actual regression remain pending",
+  "inputs": {
+    "path": "work/simulator/s9-cosim-512/icarus-review/inputs.json",
+    "sha256": "bda47ebd1f57875e6940f59487a42eb1583f6504a357ef16dc9e9ea21e215be5",
+    "size": 1902
+  },
+  "members": [
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/vvp/schedule.cc",
+      "path": "work/simulator/s9-cosim-512/icarus-review/vvp-schedule.cc",
+      "sha256": "75478e9600a7d2f9ec0acdd3444db3912abd84bbd0f8233a42ab0a4b57b71590",
+      "size": 33204
+    },
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/vvp/schedule.h",
+      "path": "work/simulator/s9-cosim-512/icarus-review/vvp-schedule.h",
+      "sha256": "6fa0becd03a072b24d467631d2ab10ff19405033444157274e44815c228ea74c",
+      "size": 7932
+    },
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/vvp/vpi_callback.cc",
+      "path": "work/simulator/s9-cosim-512/icarus-review/vvp-vpi_callback.cc",
+      "sha256": "024dc7a1598ffbe5b0278982a671c10b8e5f43ca3316994b6e4782c9286d1a98",
+      "size": 24201
+    },
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/vvp/vpi_priv.h",
+      "path": "work/simulator/s9-cosim-512/icarus-review/vvp-vpi_priv.h",
+      "sha256": "c9795bf26b981be7f1e88b612dfb0f7e08aded2202c928c98af8c8c4c0c89c30",
+      "size": 34332
+    },
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/vvp/vpi_priv.cc",
+      "path": "work/simulator/s9-cosim-512/icarus-review/vvp-vpi_priv.cc",
+      "sha256": "45b6cf413c9eff86952182673b66efa270053845f7393b357008bc6b0b4b28ac",
+      "size": 45430
+    },
+    {
+      "member": "iverilog-4fd5291632232fbe1ba49b2c26bb6b2bf1c6c9cf/vvp/vpi_signal.cc",
+      "path": "work/simulator/s9-cosim-512/icarus-review/vvp-vpi_signal.cc",
+      "sha256": "cda74cd9d56f9b088b65b6a557fda19751b4cdd86a01c5a5c5a1612fdc6ea940",
+      "size": 43939
+    }
+  ],
+  "source_archive": {
+    "path": "artifacts/files/source/source-iverilog-4fd5291/md-sim-iverilog-source-502.tar.gz",
+    "sha256": "690f02e6fd0e0c05e4768bcb65a2c7f1b64d20289344d1ad3ccfb69bae8bd55b"
+  },
+  "checked": [
+    {
+      "source": "vvp/schedule.cc",
+      "lines": "1076-1117,1210-1234",
+      "finding": "Read-only callbacks run after active, inactive, nonblocking-assignment and read-write queues drain. The current time slot is then deleted. Creating same-slot read-write work in a read-only callback produces a scheduler error."
+    },
+    {
+      "source": "vvp/vpi_callback.cc",
+      "lines": "311-380",
+      "finding": "Read-only/read-write synchronization callbacks use relative delay; cbAfterDelay schedules an active callback. The callback records actual simulator time. Future active work can be scheduled from a completed current time slot."
+    },
+    {
+      "source": "vvp/vpi_priv.cc",
+      "lines": "1090-1186",
+      "finding": "Zero-delay writes and direct/force/release writes are rejected during read-only synchronization. A positive delayed write copies supplied vector data and schedules a future active event."
+    },
+    {
+      "source": "vvp/schedule.h",
+      "lines": "176-185",
+      "finding": "The reviewed header exposes current simulation time and read-only-state query. It does not expose a next-event-time query. No earliest-event guarantee is inferred."
+    }
+  ],
+  "recommended_component_contract": [
+    "Sample settled values and emit a bounded receipt from a read-only callback. Blocking for the next command here cannot stop an unfinished current active/NBA calculation.",
+    "Apply a simultaneous input batch only at an explicitly requested future simulator time via cbAfterDelay or another verified future active callback. Then request a same-time read-only observation so resulting delta work drains first.",
+    "Reject equal or past timestamps after a settled receipt. Do not silently add1ps or pretend public VPI can reopen the finished slot. Handle startup input initialization separately before the first settled receipt.",
+    "Capture four-state values with explicit masks. Keep raw same-time value-change observations distinct from the settled level used at a barrier.",
+    "Rust owns bounded framing, command IDs, monotonic time, external deadlines, EOF/cancel and run-owned process cleanup. It must not wait indefinitely for a callback blocked on input.",
+    "Do not advertise next-event lookahead or CPU synchronization until a conservative scheduler contract is established. No optimistic HDL run-ahead across an earlier possible CPU MMIO or IRQ is justified by these APIs."
+  ],
+  "required_actual_regressions": [
+    "A tiny explicit fixture with sequential NBA and combinational delta updates must be fully settled at the receipt without any invented time increment.",
+    "Future input batches, simultaneous updates, same/past-time rejection, X/Z masks, truncated input, EOF and cancellation must retain exact times and terminate within declared bounds.",
+    "The selected S9 logic path must consume fresh external commands and return its actual responses. A fixture pass alone is not selected-logic acceptance."
+  ],
+  "foreign_code_executed": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "physical_timing_calibrated": false
+}

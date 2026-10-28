@@ -1,0 +1,147 @@
+{
+  "schema": "md-sim-original-probe-execution-audit/1",
+  "date": "2026-10-28",
+  "scope": "Independent byte, polynomial CRC and state replay of actual original039. Auditor authored505; parent supplied independent source review. This preserves the failed diagnostic boundary.",
+  "source_files_verified": 133,
+  "staged_production_files_verified": 4,
+  "mounts_verified": 17,
+  "unchanged_from038": [
+    "original factory",
+    "ROM",
+    "backend",
+    "host dependency closure",
+    "limits",
+    "environment",
+    "argv"
+  ],
+  "changed_from038": [
+    "probe helper with reviewed505 posted divider state"
+  ],
+  "status": "exited",
+  "exit_code": 1,
+  "wall_milliseconds": 11898,
+  "trace_truncated": false,
+  "raw_tx_chunks": 479,
+  "complete_command_frames": 253,
+  "frame_list_sha256": "3c790e94a65ade6c1b5e4b6739f701490d680dee65e9e344662993b5aff2fa50",
+  "independent_crc": "Polynomial long division verified all253 command CRCs and the one51-bit identification response CRC. No production codec was invoked.",
+  "write_register_counts": {
+    "0x80": 1,
+    "0x84": 1,
+    "0x20": 1,
+    "0x3c": 1,
+    "0x14": 1,
+    "0x68": 1,
+    "0x28": 1,
+    "0x18": 2,
+    "0x70": 120,
+    "0x08": 120
+  },
+  "programmed_state_updates_replayed": 245,
+  "all_state_updates_matched": true,
+  "final_programmed_state": {
+    "core0_write": 116,
+    "fast_uart_write": {
+      "written_word": 100663311
+    },
+    "misc_write": {
+      "written_word": 24625
+    },
+    "pll0_divider_write": {
+      "written_word": 252645120
+    },
+    "pll0_write": {
+      "written_word": 1078198817
+    },
+    "pll3_write": {
+      "written_word": 3228565777
+    }
+  },
+  "rx_frames": [
+    "aa5513971800000006"
+  ],
+  "write_acknowledgements": 0,
+  "one_shot_observer_selected": false,
+  "boundary": {
+    "error": "UnsupportedCommand",
+    "packet": {
+      "Command": {
+        "broadcast": true,
+        "command": {
+          "Read": {
+            "address": 0,
+            "register": 4
+          }
+        }
+      }
+    }
+  },
+  "last_command_frame": "55aa520500041e",
+  "source_review_reference": {
+    "sha256": "29d459179073fd736bfab958f23a4f7fa50f12cc1ffdb7303d5e25aec15cfc90",
+    "size": 2323
+  },
+  "inputs": [
+    {
+      "path": "work/simulator/bm1397-probe-tools-505/inputs.json",
+      "sha256": "a3f6dfb75adb8491d03594b4ebc33f53a35b3bfeac2cfed171dd9038b7c8e59c",
+      "size": 39266
+    },
+    {
+      "path": "work/simulator/bm1397-probe-tools-505/esp32_original_probe",
+      "sha256": "dfa59ac3778b936e53cc3ae144562cc774572bce8bb31c5976d039af63ee926c",
+      "size": 2223608
+    },
+    {
+      "path": "work/simulator/reviews/bm1397-divider-stage-505.json",
+      "sha256": "ec86f0e14c8ee0ba2ffe266f35fbf85a0b2e0bbc4b96380a4f74ff2fba123ff6",
+      "size": 3933
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-039/spec.json",
+      "sha256": "25a75397225be5b181e8f5b2f74ef19c36860b798d086c478af51e31c3abb0a4",
+      "size": 3961
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-039/result.json",
+      "sha256": "d6fe8b6ea1cfb05187868d0a3b6fb5a397cb5dc8c7adee40148cca0b69ce0e74",
+      "size": 5412762
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-039/input-identities.json",
+      "sha256": "67761c2ec7e04c76c6b945532daf984dec78bee8164b257dc25467ff91686b86",
+      "size": 3227
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-039/adaptation.json",
+      "sha256": "fbc1e76b03c6be0f77169c37e0155ef57924df5d45cbfa20e67e48f2414d0b0b",
+      "size": 763
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-039/guest.log",
+      "sha256": "6f569328fbec3a19c0048299eb4a8846b0c00ff45c258a7aa392496fa51ffbe2",
+      "size": 33551
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-039/backend.log",
+      "sha256": "84d91d2d64321a608f64b336e80b6e2714f6c2a1c970b5662a8557f06abcd695",
+      "size": 2672408
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-039/assessment.json",
+      "sha256": "321781e9a728f699eab092dd89c056972b2e87d33252eb09f1eb829e122a802c",
+      "size": 504
+    }
+  ],
+  "gates": {
+    "complete_original_board_boot": false,
+    "functional_mining": false,
+    "native_dashboard": false
+  },
+  "limits": [
+    "Firmware log statements ASIC initialized and ASIC Ready are guest claims, not board or clock acceptance.",
+    "Posted PLL/divider state and requested3125000baud do not establish effective frequency or wire timing.",
+    "The factory self-test read0x04 remains unsupported. No zero counter or inferred hashrate was returned."
+  ],
+  "next_action": "Determine actual counter semantics and connect replies only to computed work. First correct the S3 clock-register observations and capture actual guest configuration; keep timing and factory self-test adaptations separate."
+}

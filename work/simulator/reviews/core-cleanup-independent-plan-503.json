@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "scope": "Independent frozen481 Core cleanup exact-path, finished-result and full byte review. No deletion performed.",
+  "plan": {
+    "path": "/home/user/src/md-sim/work/simulator/cleanup-core-503/plan.json",
+    "sha256": "73e7bde4f18a18e31d49dfa161d8f811b3cf25ff227a7c54aab1f60488448468",
+    "size": 63162
+  },
+  "selected_files_rehashed": 151,
+  "restore_files_rehashed": 56,
+  "selected_bytes": 2013780471,
+  "stores": [
+    {
+      "name": "channel354-candidate0-357",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "original-s9-030-candidate-0",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "original-s9-042-candidate-0",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "original-s9-042-candidate-1",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "pcap302-candidate0-303",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "pcap302-candidate1-303",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "pcap314-candidate0-316",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "pcap314-candidate1-316",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "pcap316-candidate0-318",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "pcap316-candidate1-318",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    },
+    {
+      "name": "pcap321-candidate1-323",
+      "result": "regtest-offline-import-startup-result.json",
+      "status": "exited",
+      "exit_code": 0
+    }
+  ],
+  "original_archive_selected": false,
+  "canonical_preserved": "/home/user/src/md-sim/work/simulator/bitcoin-core/pcap321-candidate0-323",
+  "restore_requires_copy": true,
+  "review_notes": [
+    "Review explicitly includes original354 execution source path and checks Core regtest-offline-import-startup-result.json; no file deleted during review."
+  ]
+}

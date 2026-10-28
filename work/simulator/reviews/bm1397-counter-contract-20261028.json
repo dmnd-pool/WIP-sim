@@ -1,0 +1,80 @@
+{
+  "schema": "md-sim-counter-contract-analysis/1",
+  "date": "2026-10-28",
+  "status": "Read-only source analysis; no counter reply or implementation added.",
+  "actual_boundary": {
+    "path": "work/simulator/reviews/bm1397-divider-execution-audit-039.json",
+    "sha256": "31e4d8d73d9d331a5037d66663b923ed0106e5e11785ddf385e77a1632412267",
+    "size": 4816
+  },
+  "sources": [
+    {
+      "path": "work/simulator/bm1397-counter-followup-20261028/extraction.json",
+      "sha256": "9b09c896dd0c5d227c8f629786e2cefe9077b912d7a11e1499d0b821859946e4",
+      "size": 1688
+    },
+    {
+      "path": "work/simulator/bm1397-counter-followup-20261028/components/asic/bm1397.c",
+      "sha256": "9bd28dff43cb3c07a63c4843dba2704f7e071b1bfc7fb310cfd925cb35be2f56",
+      "size": 13118
+    },
+    {
+      "path": "work/simulator/bm1397-counter-followup-20261028/main/tasks/hashrate_monitor_task.c",
+      "sha256": "4391786c3e8faf2bbd5b9c4f12da25a9b70d9f8f706a6ca331190f576d06fceb",
+      "size": 10371
+    },
+    {
+      "path": "work/simulator/bitaxe/bm1397-source-002/utils.c",
+      "sha256": "ec8951977a8d3814249debe543db749710b8b64bcf672fdb517fd977d35bab83",
+      "size": 6867
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/hash_rate.rs",
+      "sha256": "aad02a598eba472deabd51b99ef9b9c8fab502ac21005a3b8fcef8388982a3e9",
+      "size": 708
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/nonce_counter.rs",
+      "sha256": "71ae8dbec54d573b6447a452ff32241e907618cef992ae9c3154727defc139cd",
+      "size": 1413
+    },
+    {
+      "path": "artifacts/files/source/source-bm13xx-d00c086/bm1397/src/lib.rs",
+      "sha256": "8eb409c1304b30eb35c3cd6229e01d7bafad902a103d7f826e361c3c5ebb7436",
+      "size": 35923
+    }
+  ],
+  "firmware_consumer": {
+    "source_revision": "64680f8a4da0b9a3b532051f0aa18429fcf04e82; exact bm1397.c bytes match retained002. Matching source/version does not independently establish a factory rebuild.",
+    "read04": "REGISTER_HASHRATE calls update_hashrate. This is a rate value, not the cumulative counter path. Bit31 must be clear and low31 bits must not equal0x007fffff, otherwise the previous displayed measurement is retained.",
+    "rate_scaling": "Literal HASHRATE_UNIT=0x100000 =2^20. GH/s=value*1048576/1e9. The comment incorrectly says2^24 and is not used as executable semantics.",
+    "rate_interval": "The consumer polls each1000ms but does not pass elapsed time to update_hashrate. This does not establish the ASIC measurement window, latch or read-clear policy.",
+    "read4c": "REGISTER_ERROR_COUNT calls update_hash_counter. It subtracts prior uint32 values with wraparound, ignores intervals<1000000us, and calls hashCounterToGhs. That helper scales each count by2^32 hashes and divides by elapsed seconds. A CRC error, pool rejection or software error must not be substituted for a silicon nonce-error count.",
+    "reply_endian": "BM1397 command result value is converted with ntohl; serial response representation must remain consistent with existing independent reply vectors."
+  },
+  "supporting_reference_limits": {
+    "hash_rate_rs": "ADDR04 implemented. LONG31 and7fffffff masks are comments only, with no measurement algorithm.",
+    "bm1397_constructor": "Seeds0x80000000 as reference-project state. This is not measured physical reset evidence.",
+    "nonce_counter_rs": "ADDR4c and50 implemented, but field masks are comments and error/overflow event definitions are absent."
+  },
+  "low_rate_consequence": {
+    "cap_hashes_per_second": 10000,
+    "one_raw_rate_unit_hashes_per_second": 1048576,
+    "honest_quantized_reference_rate_at_cap": 0,
+    "explanation": "A one-second computed-work measurement at or below the functional cap cannot produce one raw rate unit. A zero must be derived from measured completed work under an explicit model policy; it must not be returned merely to bypass the read. Production-rate self-test acceptance will require its own recorded firmware adaptation or remain failed."
+  },
+  "proposal_not_implemented": {
+    "default": "Keep exact/default counter capability unknown and unsupported.",
+    "reference_policy": "Add a separately identified measurement policy with explicit window, quantization, initial state, reset, rollover, latch and read semantics; bind it in run identity/adaptation. Physical semantics are not inferred.",
+    "work_source": "Only completed per-chip SHA-256d computations from actual hardware-submitted jobs can advance measurement state. Never use requested PLL frequency, cap*elapsed or synthetic performance events.",
+    "before_jobs": "The policy may report zero only with evidence that its actual computation ledger is empty. The initial039 call has no accepted job or completed hash. This is an explicit reference-model adaptation, not an exact ASIC reset claim.",
+    "errors": "Do not invent a4c mapping. Define any reference error policy separately, based on actual injected/observed computation faults and their counted unit; physical error-counter behavior stays unresolved.",
+    "next_actual_test": "After018/040 clock observation, execute a separate reference measurement capability if reviewed. Preserve any high-rate factory self-test failure, then inspect its exact executable thresholds before a minimal low-rate firmware adaptation."
+  },
+  "gates": {
+    "physical_counter_semantics_known": false,
+    "counter_implemented": false,
+    "firmware_mining_passed": false,
+    "exact_target_passed": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-qemu-51b3f81-include-hw-remote-port-gpio-h",
+  "url": "https://raw.githubusercontent.com/Xilinx/qemu/51b3f81a0b37d382aef642015ae83973fdf06b1d/include/hw/remote-port-gpio.h",
+  "kind": "source",
+  "title": "Pinned Xilinx/qemu remote-port reference: include/hw/remote-port-gpio.h",
+  "language": "en",
+  "source_id": "s9-remote-port-qemu-51b3f81",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-qemu-51b3f81/include/hw/remote-port-gpio.h",
+  "sha256": "9cf4d411adf613ff025779a3a71a18040ecec9cf09d14052c68cd31ab6c39f3b",
+  "size_bytes": 758,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "51b3f81a0b37d382aef642015ae83973fdf06b1d",
+  "etag": "\"e42a73ae54f2289d26ba52a8efbf5408287900108405978a6c1567eb2e27a313\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

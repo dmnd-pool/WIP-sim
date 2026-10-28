@@ -1,0 +1,46 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "stage": "511",
+  "status": "PASS source review; extraction execution pending",
+  "sources": [
+    {
+      "path": "crates/md-sim-firmware/examples/s9_native_service.rs",
+      "sha256": "1f0ef1533613aec0b6986878c6448e945a15358c63e78e43de179faef6a90647",
+      "size": 13314
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/squashfs_member.rs",
+      "sha256": "e4fcd075b9a945f237ec45b8a6957cb4fc1032b67cf566951baf01fbd760cdcb",
+      "size": 5905
+    }
+  ],
+  "listing_evidence": {
+    "path": "work/simulator/reviews/axi-list-independent-execution-511.json",
+    "sha256": "00decc14b976c8435ae6f14c2394da5522f5ed06aec0b88dfaebcb57aa2a94ef",
+    "size": 2805
+  },
+  "closed_findings": [
+    {
+      "finding": "Preflight component identity was not bound to the later captured mount; member metadata reopened its parent path.",
+      "resolution": "add_input requires the captured hash to equal the fixed component hash, then Store.import verifies those exact bytes before adding its mount. member.json takes parent_ramdisk from the selected specification object. The mutation regression rejects changed contents before a mount is added."
+    }
+  ],
+  "checked": [
+    "The new entry point accepts no path or size override. It extracts only usr/bin/bosminer of12699280 bytes, as measured in the independently verified511 listing.",
+    "Existing regular-file/unique-field/exact-path parser is reused. Extraction size must equal its listing and selected constant; stdout is bounded.",
+    "The larger helper bound is14MiB. Ordinary extract remains7MiB. The new mode alone selects32MiB trace instead of16MiB; other isolation/resource settings and the confined entry guard remain unchanged.",
+    "The argv invokes only captured7zip and the Rust helper for extraction; no acquired firmware instructions are executed. Future metadata now states this correctly.",
+    "Wrong member path, wrong exact size, default-bound excess, larger-cap excess, and post-preflight content change have focused regressions."
+  ],
+  "unresolved_findings": [],
+  "pending": [
+    "Run focused tests, strict lint and format.",
+    "Freeze the exact tested helper and execute the isolated Bosminer extraction. Verify output size/hash and bound parent image, result streams and captured mount identities."
+  ],
+  "scope_limits": [
+    "This is data preparation. It does not execute Bosminer, its FPGA path, the selected HDL design or a miner.",
+    "Exact physical-target, original-board and mining completion gates remain open."
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "schema": "md-sim-s9-psu-source-inspection/1",
+  "status": "Original document acquired and photos inspected; exact PSU revision and calibration unresolved",
+  "parent": {
+    "path": "artifacts/files/document/bitmain-apw7-acrt1901202-20261028/ACRT1901202.pdf",
+    "sha256": "65b6188f0c0f43567af73c2b758189529c3a0803005c09655d97b88343b169bf",
+    "size": 2936196
+  },
+  "acquisition": {
+    "path": "artifacts/manifests/bitmain-apw7-acrt1901202-20261028.json",
+    "sha256": "0b7853efbcac8782e23cfe636496b7820b5522bed35669f77d980d63491849f3",
+    "size": 869
+  },
+  "previous_dependency": "work/simulator/reviews/s9-psu-identity-352.md",
+  "observations": [
+    "Original46-page laboratory report ACRT1901202 is now archived. It lists six APW7-12-1800 suffixes; it is a material test, not an electrical behavior test.",
+    "Pages39\u201346 show case/label, assembled supply, individual components, bare PCB faces and retest samples. Source photographs are mostly640\u00d7480 pixels. No uncertain PCB marking or suffix is transcribed as an exact target identity.",
+    "No power-on/load-step/protection/reset waveform, clock uncertainty or measured thermal model was found in these photos.",
+    "The PDF contains an Encrypt dictionary. Direct rawJPEG extraction was rejected when stream bytes lacked JPEG markers; no image from that attempt was retained. Standard Poppler rendering works with the public document."
+  ],
+  "rendering": {
+    "runtime": {
+      "path": "work/simulator/cli-tools-500/md-sim",
+      "sha256": "7c39149aa98bb74dc697f1e7ba64e3e627e276cd93ddf7293f2209c110639ad8",
+      "size": 5173016
+    },
+    "inputs": {
+      "path": "work/simulator/s9-psu-512/captured-inputs.json",
+      "sha256": "4f17fa831517fc436cb8c4ed3c7ae084ba7377836302d8da5dd629e16ce5c435",
+      "size": 12487
+    },
+    "font_note": {
+      "path": "work/simulator/s9-psu-512/render-note.json",
+      "sha256": "669ee5de003e9211a44dee16605b5a9708796da41f44b1b097c66f4f5723155e",
+      "size": 2258
+    },
+    "pages": [
+      {
+        "page": 39,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page39-002/process-spec.json",
+          "sha256": "c81b81615e3763291fe3bf1e0605a0cd2a0e23615efde8e3e326cf2170b17f4a",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page39-002/result.json",
+          "sha256": "098a721427cc315b10a90834c026a076bc04fb5035b5c7ba5260aa5e331c12e2",
+          "size": 3546969
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page39-002/lock.json",
+          "sha256": "6402c19ac0b4e354aa53a4823de4fde7865301ec855e1c693ae835843df9cbbd",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page39-002/page39.png",
+          "sha256": "36f34cbcb933e0541acdf4cbb5e5d645629383bd4c5f99d1826446a7a372c6cf",
+          "size": 1773063
+        },
+        "wall_ms": 2831
+      },
+      {
+        "page": 40,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page40-001/process-spec.json",
+          "sha256": "e124051bfe72dfeef75dd864815810eaff8775ea329c0af622fa53987a5b60fe",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page40-001/result.json",
+          "sha256": "577f4f07980f384880b079b7e719196088512a53995ef5d28fede924b7c67704",
+          "size": 4223521
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page40-001/lock.json",
+          "sha256": "9882e45960b6471e8c120714425f097ee28777fc06aedc2739468b5662a268f4",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page40-001/page40.png",
+          "sha256": "3ef0e7b035a6289f0a08589f0895abb747dbcb72aa4ef543227ebbd514a1116a",
+          "size": 2111339
+        },
+        "wall_ms": 2351
+      },
+      {
+        "page": 41,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page41-001/process-spec.json",
+          "sha256": "704ce816af3757bc14b5cab367e865d2713b6e1a03a19378bd5315774d57902d",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page41-001/result.json",
+          "sha256": "e9d74956de9db381dce894b4d0c60d673df1d408e1ee8ee81d2c7ecf8e9cde98",
+          "size": 4423897
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page41-001/lock.json",
+          "sha256": "10553ad486d1de662366430f6adc319bc7838601531e57e87a659c01ced3b510",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page41-001/page41.png",
+          "sha256": "64abafafcd933500cf3efc3c447588225eb677ea15025e2b877630737fb012ab",
+          "size": 2211527
+        },
+        "wall_ms": 2231
+      },
+      {
+        "page": 42,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page42-001/process-spec.json",
+          "sha256": "eace405f2824110fb7272b02d5052b885508a3e2835e12e510d48d84f88d6d56",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page42-001/result.json",
+          "sha256": "8b3037c25b9251f52c3309b537baf4d78fb2458dfe3bb8ee651c156f63ea4685",
+          "size": 4487991
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page42-001/lock.json",
+          "sha256": "0766019de6a40931ad4733366a845d79a0c6ab8123a6fd4d61901619903c23e9",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page42-001/page42.png",
+          "sha256": "24d5dc0afbb95582c7047fba70a7b9d3f742a6e7fa278bf66a9d0f9dee4dce27",
+          "size": 2243574
+        },
+        "wall_ms": 2202
+      },
+      {
+        "page": 43,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page43-001/process-spec.json",
+          "sha256": "c62481169762ca3c70e0e53331481d361e87ab59f38bacee1e7c145bc8c28be3",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page43-001/result.json",
+          "sha256": "3621e6a085b6e5f1cbd452fd695c515cbc6ecf1e3c21ce326d79d817b26db288",
+          "size": 4476045
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page43-001/lock.json",
+          "sha256": "3c778c12319fbf7b117e417acfa79735bde08ea3f9f0507d24e2acf7a66e6f40",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page43-001/page43.png",
+          "sha256": "b3bfe13fcbd4ba623a4756d77cb6fd85b4fb1d9bd3c18f9316fb73f31a033d59",
+          "size": 2237601
+        },
+        "wall_ms": 2232
+      },
+      {
+        "page": 44,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page44-001/process-spec.json",
+          "sha256": "d5c2c19651d106f17ba26d3fb26dca39eb6008ac4811f4f1d52a03d9f55b9116",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page44-001/result.json",
+          "sha256": "ab392007cc9dceb37ac78fb170ff6424867a8f81a44a51b01e71e3c10bb0f3c6",
+          "size": 4265305
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page44-001/lock.json",
+          "sha256": "bceaf4a3f63859f6cbd65180d96f3686d7c1e6249aee6ec707f644a23ea0c3ca",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page44-001/page44.png",
+          "sha256": "f0310cc795e7db14f16328096fb887ff677ea6a169005035e7e2938c0315dfbd",
+          "size": 2132231
+        },
+        "wall_ms": 2314
+      },
+      {
+        "page": 45,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page45-001/process-spec.json",
+          "sha256": "1435636a1ee77ad7bb7b3fcade306b6982f8b2845501d35e2f3d43ee457a3918",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page45-001/result.json",
+          "sha256": "f68dd23ffa53ff6d5fa61f87541b70d2e573f643f110df0e4726a82216e4ada3",
+          "size": 2626693
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page45-001/lock.json",
+          "sha256": "f29f0ea1e938b82062a4bf10247acf63c2ea1637edb50d9745224d48fad4f249",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page45-001/page45.png",
+          "sha256": "cc62acf5350df3986746fff7cbc9fec7e7b7d397529d9927bfab7cb5b77c05a6",
+          "size": 1312925
+        },
+        "wall_ms": 2085
+      },
+      {
+        "page": 46,
+        "spec": {
+          "path": "work/simulator/s9-psu-512/render-page46-001/process-spec.json",
+          "sha256": "007fd04fe67c1fdbf89d8a67d4f6cb898654d446ce828eea7d9cca1f7ff43129",
+          "size": 12428
+        },
+        "result": {
+          "path": "work/simulator/s9-psu-512/render-page46-001/result.json",
+          "sha256": "cfa81b612b80ade06b130cc1d6827a1594a00c2860080915cd7097bd285b9161",
+          "size": 3898863
+        },
+        "lock": {
+          "path": "work/simulator/s9-psu-512/render-page46-001/lock.json",
+          "sha256": "7dacaeace824557e4e9dea4fb0d06d3571567fc84da1d7e294b82787e401db84",
+          "size": 384
+        },
+        "image": {
+          "path": "work/simulator/s9-psu-512/render-page46-001/page46.png",
+          "sha256": "ddaff7071f4eb62da04bb4224ada13b86f1680c53ea33d0689d4dd23db6618e9",
+          "size": 1949010
+        },
+        "wall_ms": 2132
+      }
+    ],
+    "first_partial_render": {
+      "path": "work/simulator/s9-psu-512/render-page39-001/result.json",
+      "sha256": "8ca7ca71849c11390fbb15fa83cfeb2e73a31ae4e2a6879070a600cca90a3534",
+      "size": 3479719
+    },
+    "limits": "Read-only hashed inputs; no egress;45s wall,20s CPU,512MiB per-process memory,8processes,16MiB files/trace,32MiB scratch. Captured Liberation Sans substitution replaces unavailable Arial for document captions; embedded photographs remain source data."
+  },
+  "exact_psu_identity_resolved": false,
+  "physical_calibration_gate": false,
+  "original_board_gate": false,
+  "next_action": "Use a separately evidenced suffix/PCB identity and its measured electrical/thermal traces. Do not promote family-level compatibility or these material-test photos to calibrated S9 power behavior."
+}

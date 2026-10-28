@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "status": "completed and postchecked",
+  "scope": "Only333 reviewed CAS duplicates from failed502c/d/e, restored from retained successful502f.502b and all unique files remain. No firmware, FPGA or mining verdict changes.",
+  "logical_bytes_reclaimed": 1322525463,
+  "removed_copies": 333,
+  "postcheck": {
+    "passed": true,
+    "removed_paths_absent": 333,
+    "retained_files_rehashed": 148,
+    "distinct_restore_files_rehashed": 111,
+    "bound_hdl_evidence_files_rehashed": 41,
+    "locks_verified": 5,
+    "exact_remaining_object_sets": true,
+    "502b_untouched": true,
+    "original_verdicts": [
+      {
+        "run": "/home/user/src/md-sim/work/simulator/qemu-s9/iverilog-build-502f",
+        "status": "exited",
+        "exit": 0,
+        "success": true
+      },
+      {
+        "run": "/home/user/src/md-sim/work/simulator/qemu-s9/iverilog-build-502c",
+        "status": "exited",
+        "exit": 1,
+        "success": false
+      },
+      {
+        "run": "/home/user/src/md-sim/work/simulator/qemu-s9/iverilog-build-502d",
+        "status": "exited",
+        "exit": 1,
+        "success": false
+      },
+      {
+        "run": "/home/user/src/md-sim/work/simulator/qemu-s9/iverilog-build-502e",
+        "status": "exited",
+        "exit": 1,
+        "success": false
+      }
+    ],
+    "logical_bytes_reclaimed": 1322525463,
+    "scope": "Only the independently reviewed333 duplicate CAS files. No archive, adjacent output, unique guard, source freeze or original/failed evidence was removed."
+  },
+  "records": [
+    {
+      "path": "work/simulator/cleanup-hdl-503/request.json",
+      "sha256": "f2ae6e3783656d3186dcd4ca1d2a8b6ea36dee3ba3227e4d4655b2531530bd82",
+      "size": 624
+    },
+    {
+      "path": "work/simulator/cleanup-hdl-503/plan.json",
+      "sha256": "cc4b12d4267c64a28f717f22f18665b99fbb87212c25d09e08624df3d43575d6",
+      "size": 162953
+    },
+    {
+      "path": "work/simulator/cleanup-hdl-503/before.json",
+      "sha256": "d56fc1e628e94a2ea82079e78da6ddeb444ad4756fe2ad8614a2cee90958e9ff",
+      "size": 412928
+    },
+    {
+      "path": "work/simulator/cleanup-hdl-503/reclaim.json",
+      "sha256": "307c111c96694532af92e36320199390cefba3e0f005ca8a5fd19dd076111fa4",
+      "size": 162907
+    },
+    {
+      "path": "work/simulator/cleanup-hdl-503/reclaim.log",
+      "sha256": "b4ef146332995e43ec1178df2d713792b57155ef204f8c770ee77e0efcda79a6",
+      "size": 49
+    },
+    {
+      "path": "work/simulator/cleanup-hdl-503/postcheck.json",
+      "sha256": "1cc9dca5891a543803231f12792ebf9eda9c56e80ffcf63343fc25e132be534f",
+      "size": 1136
+    }
+  ],
+  "helper_freeze": {
+    "path": "work/simulator/cleanup-hdl-tools-503/manifest.json",
+    "sha256": "8ea089633dd1f2c9b49b4f926ff9d60e8ea05a19cbda1324a0099e0b5fa4add7",
+    "size": 92544
+  },
+  "source_review": {
+    "path": "work/simulator/reviews/hdl-cleanup-independent-source-503.json",
+    "sha256": "f68279579ebba864db710bf36fb2ed56c81d46dedd73f6ba3416cdf4197a3660",
+    "size": 1650
+  },
+  "pair_review": {
+    "path": "work/simulator/reviews/hdl-cleanup-independent-plan-503.json",
+    "sha256": "6b24440d52b36d240862d5573c1559b870e939d0916891f191517ad7c8c0af8f",
+    "size": 794
+  },
+  "checks": "29 focused tests passed,4 existing tests remain ignored; scoped rustfmt, strict Clippy and release passed. New tests reject wrong roles/nonterminal states/active stores/malformed or changed policies, and prove unchanged restoration bytes.",
+  "restoration": "Take the destination Store lock. Use the exact retained path in restore_copy_from, verify its SHA256 and size, create a new regular byte copy at the missing destination, and rehash. Never hard-link or replace a differing file. Do not rerun cleanup on emptied source stores before restoration.",
+  "space_accounting": "Only1,322,525,463 logical bytes are attributed to this cleanup. The larger concurrent filesystem free-space change is outside this action."
+}

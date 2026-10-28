@@ -1,5 +1,10 @@
 # HDL validation resume point 502
 
+Update28 October: the user resumed work. The complete signed gperf input and
+[isolated Icarus tool build502f](hdl-tool-executed-502f.md) now pass. Continue
+from [the current checkpoint](hdl-acquisition-checkpoint-502b.json). The
+remaining text records the earlier paused state; do not repeat closed work.
+
 The user asked to finish the fresh CLI test, then save a checkpoint and pause.
 Do not start an HDL build or simulator while that pause is active. The full
 simulator and exact-board gates remain incomplete.

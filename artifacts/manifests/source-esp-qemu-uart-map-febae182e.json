@@ -1,0 +1,22 @@
+{
+  "id": "source-esp-qemu-uart-map-febae182e",
+  "url": "https://raw.githubusercontent.com/espressif/qemu/febae182e132e4055529be423a818225ebddaa3a/include/hw/misc/esp32s3_reg.h",
+  "kind": "source",
+  "title": "Pinned ESP32-S3 QEMU UART register map",
+  "language": "en",
+  "source_id": "esp-qemu-uart-map-febae182e",
+  "license": "GPL-2.0-or-later",
+  "retrieved_at": "2026-10-28T12:10:40.566861+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/esp-qemu-uart-map-febae182e/include/hw/misc/esp32s3_reg.h",
+  "sha256": "419900361d82595a306b411b46b2e8803174d7099b076284548b58cab3b8928f",
+  "size_bytes": 4677,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "febae182e132e4055529be423a818225ebddaa3a",
+  "etag": "\"8f917161b7f57f67699e98dcdfaeb84abb9cef92e4d0135f45bbfd3710f34d55\"",
+  "notes": [
+    "Required ASIC UART controller address map for archived Bitaxe firmware probe.",
+    "Matches the backend source commit and archived member path/size. Source reference only; not a hardware timing claim."
+  ]
+}

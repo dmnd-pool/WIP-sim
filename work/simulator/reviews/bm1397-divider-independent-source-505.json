@@ -1,0 +1,45 @@
+{
+  "scope": "Independent505 source review and integration; actual039 execution pending.",
+  "source_findings": [],
+  "verified_base_files": 4,
+  "mapping_contract": {
+    "source_instructions": "T17 original0x28e44 loads software byte;0x28e4c subtracts1;0x28e50 ORs with0x0f0f0f00;0x28e70 selects register0x70.",
+    "inverse": "(written_word &255)+1 for encoded0..254; encoded255 is UnrepresentableSoftwareDivider.",
+    "why_not256": "The original arithmetic leaf takes only the low8bits of its software argument. Passing256 would become zero. No rate is manufactured or clamped.",
+    "unimplemented": "Upper field semantics, silicon-valid output range, effective clock and lock remain unknown. Raw storage retains all32 bits regardless.",
+    "reference_only": "Original firmware038 sends0x0f0f0f00, which maps tosoftware argument1. Other encodings are a software packing relation, not a physical validation."
+  },
+  "staged_files": [
+    {
+      "path": "work/simulator/bm1397-divider-505/programmed.rs",
+      "sha256": "6c9cd0c895decd8ee08f18c426f54ef20697a266a3e610990c91d7e82363197c",
+      "size": 7531
+    },
+    {
+      "path": "work/simulator/bm1397-divider-505/identify.rs",
+      "sha256": "863bf5b308dfd9db5af7d257ddec911e883bd23eee6a0fe66b8a563ea3d2a060",
+      "size": 30859
+    },
+    {
+      "path": "work/simulator/bm1397-divider-505/programmed_tests.rs",
+      "sha256": "5f0c85d9d3ea14f80ed41755e1d050ff877926c551789d285b1839f8872068d9",
+      "size": 14742
+    },
+    {
+      "path": "work/simulator/bm1397-divider-505/esp32_original_probe.rs",
+      "sha256": "46799c612f976c4952c64caa5c330c2d52cbb0dc65c54d69818b2ad4c6dda2f0",
+      "size": 35043
+    }
+  ],
+  "base": {
+    "path": "work/simulator/bm1397-divider-505/base.json",
+    "sha256": "08224e6dc0116fa0d5c0c63a1e6aa3b841c51f2b38cf58d94a0d9391324a1d8f",
+    "size": 801
+  },
+  "original_arithmetic_fixture": {
+    "path": "simulator/firmware/fixtures/t17-pll-frequency-results.bin",
+    "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+    "size": 354160
+  },
+  "source_review": "Raw word preserved per existing chip; low-byte inverse checked_add rejects255, no upper-field/PLL3/physical-clock interpretation. Tests retain no-ACK/readback and actual038 CRC plus original496 complete software-divider sweep."
+}

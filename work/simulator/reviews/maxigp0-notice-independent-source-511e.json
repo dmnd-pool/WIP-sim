@@ -1,0 +1,63 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "stage": {
+    "path": "work/simulator/reviews/maxigp0-notice-stage-511e.json",
+    "sha256": "ada54c3179efa9b2dc8bdb97a08ff3e6a9b6d5894d6b97623585d67ccf187005",
+    "size": 1706
+  },
+  "status": "PASS source review; new actual execution pending",
+  "files": [
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9_axi_vectors.rs",
+      "destination": "crates/md-sim-firmware/examples/support/s9_axi_vectors.rs",
+      "sha256": "2cf40e23a30c43b517ba3e68071e43c5e570d094f559b4cb457c03637a8d258b",
+      "size": 26255
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9_hdl_validate.rs",
+      "destination": "crates/md-sim-firmware/examples/s9_hdl_validate.rs",
+      "sha256": "78b87200c897f62ec1fc4065bed7d1030933072a9297e24a21b0bf98c0815b01",
+      "size": 21553
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9-axi-trace-511d.txt",
+      "destination": "simulator/firmware/fixtures/s9-axi-trace-511d.txt",
+      "sha256": "bfd77d63ca7494012be93708b853e462e8aa26a97c266620e566799ea0c44061",
+      "size": 5072
+    },
+    {
+      "stage_path": "work/simulator/axi-dev-511e/s9-axi-trace-511d.json",
+      "destination": "simulator/firmware/fixtures/s9-axi-trace-511d.json",
+      "sha256": "1b9518c856da33455bb025d9cc94c6ab206ac294c4e649a2897576269c2507ec",
+      "size": 598
+    }
+  ],
+  "parent_failed_execution_audit": {
+    "path": "work/simulator/reviews/maxigp0-independent-execution-511d.json",
+    "sha256": "a33f2619e4437565a5307a4fe9387d9722eec9c7fb29efc9bf2ad6b94505aa05",
+    "size": 7693
+  },
+  "vendor_ps7": {
+    "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+    "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+    "size": 848916
+  },
+  "checked": [
+    "Only the exact source-bound PS7 no-processor notice is accepted, exactly once at stdout line0. Missing, duplicate, late, changed and unrelated messages fail.",
+    "The original vendor display literal is checked against the already hash-verified PS7 source before selected compilation. No upstream source, model output or HDL stimulus changes.",
+    "The full72-operation verifier, response/error/ID/strobe/reset checks and all compiler/other-runtime diagnostic rules remain unchanged.",
+    "The notice is retained verbatim and the result explicitly records no behavioral CPU model and no original-board gate.",
+    "Actual failed511d stdout is copied byte-for-byte into the fixed regression fixture. The original failed run remains immutable.",
+    "New negatives cover notice mutations and actual bus value, ID, strobe, reset and response-error changes. Existing malformed-record tests retain their intended parser depth by adding the now-required notice prefix.",
+    "The derived fixture manifest now names its production path, so it can survive a Git checkpoint without ignored staging."
+  ],
+  "unresolved_findings": [],
+  "pending": [
+    "Focused tests, strict checks and new frozen511e actual run.",
+    "Independent retained-output audit after the new run stops."
+  ],
+  "firmware_execution_gate": false,
+  "original_board_gate": false
+}

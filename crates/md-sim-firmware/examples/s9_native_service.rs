@@ -40,10 +40,22 @@ const COMPONENTS: &[(&str, &str)] = &[
     ),
 ];
 const BOOTARGS: &str = "earlycon=cdns,mmio,0xe0001000 console=ttyPS0,115200n8 initcall_blacklist=xiic_i2c_driver_init root=/dev/ram0 init=/bin/sh";
+const BOSMINER_MEMBER: &str = "usr/bin/bosminer";
+const BOSMINER_SIZE: u64 = 12_699_280;
 use md_sim_firmware::serial_console::SerialGuest;
 
-fn add_input(store: &Store, inputs: &mut Vec<Mount>, source: &Path, guest: &str) -> Result<()> {
+fn add_input(
+    store: &Store,
+    inputs: &mut Vec<Mount>,
+    source: &Path,
+    guest: &str,
+    expected: &str,
+) -> Result<()> {
     let object = hash_file(source)?;
+    ensure!(
+        object.sha256 == expected,
+        "captured component differs from archived FIT: {guest}"
+    );
     store.import(source, &object)?;
     inputs.push(Mount {
         object,
@@ -115,6 +127,14 @@ fn serial_guest(disk: Option<&Path>, allow_reset: bool) -> Result<SerialGuest> {
 
 fn main() -> Result<()> {
     let args: Vec<_> = std::env::args_os().collect();
+    if args.get(1).is_some_and(|s| s == "__extract-bosminer") {
+        confinement::require_board()?;
+        ensure!(
+            args.len() == 2,
+            "fixed Bosminer extraction takes no member override"
+        );
+        return squashfs_member::extract_sized(BOSMINER_MEMBER, BOSMINER_SIZE);
+    }
     if args.get(1).is_some_and(|s| s == "__extract") {
         confinement::require_board()?;
         ensure!(args.len() == 3, "exact extraction needs one member");
@@ -154,11 +174,11 @@ fn main() -> Result<()> {
         );
         return Ok(());
     }
-    ensure!((4..=5).contains(&args.len()), "usage: s9_native_service inspect|extract|shell|storage-cycle|storage-warm-cycle COMPONENT_DIRECTORY NEW_OUTPUT [MEMBER|SCRIPT_FILE]");
+    ensure!((4..=5).contains(&args.len()), "usage: s9_native_service inspect|extract|extract-bosminer|shell|storage-cycle|storage-warm-cycle COMPONENT_DIRECTORY NEW_OUTPUT [MEMBER|SCRIPT_FILE]");
     let mode = args[1].to_str().context("mode is not UTF-8")?;
     let is_storage = matches!(mode, "storage-cycle" | "storage-warm-cycle");
     ensure!(
-        matches!(mode, "inspect" | "extract" | "shell") || is_storage,
+        matches!(mode, "inspect" | "extract" | "extract-bosminer" | "shell") || is_storage,
         "unknown mode"
     );
     let component_dir = PathBuf::from(&args[2]);
@@ -194,12 +214,13 @@ fn main() -> Result<()> {
         programs.push(("/mke2fs".into(), PathBuf::from("/usr/bin/mke2fs")));
     }
     let mut inputs = md_sim_firmware::lab::elf_closure(&store, programs)?;
-    for (name, _) in COMPONENTS {
+    for (name, expected) in COMPONENTS {
         add_input(
             &store,
             &mut inputs,
             &component_dir.join(name),
             &format!("/{name}"),
+            expected,
         )?;
     }
     let mut stdin_object = None;
@@ -217,6 +238,13 @@ fn main() -> Result<()> {
                 "__extract".into(),
                 args[4].to_str().context("invalid member")?.into(),
             ]
+        }
+        "extract-bosminer" => {
+            ensure!(
+                args.len() == 4,
+                "fixed Bosminer extraction takes no member override"
+            );
+            vec!["/probe".into(), "__extract-bosminer".into()]
         }
         "shell" => {
             ensure!(args.len() == 5, "shell needs a script file");
@@ -258,7 +286,7 @@ fn main() -> Result<()> {
             memory_bytes: 3 * 1024 * 1024 * 1024,
             processes: 64,
             file_bytes: 32 * 1024 * 1024,
-            trace_bytes: 16 * 1024 * 1024,
+            trace_bytes: if mode == "extract-bosminer" { 32 } else { 16 } * 1024 * 1024,
             tmp_bytes: 32 * 1024 * 1024,
         },
     };
@@ -271,7 +299,7 @@ fn main() -> Result<()> {
             "fit_sha256":"8b2a32020281aa67490c01633adf99c1a2ca6c9897e4c210bb6d0d001c15caca",
             "component_bytes_unchanged":true, "components":COMPONENTS,
             "mode":mode, "bootargs":if mode=="shell" || is_storage {Some(BOOTARGS)} else {None},
-            "execution_mode":"board diagnostic; direct Linux loader, generic machine, one CPU, missing XIIC driver disabled, init shell override",
+            "execution_mode":if mode=="shell" || is_storage {"board diagnostic; direct Linux loader, generic machine, one CPU, missing XIIC driver disabled, init shell override"} else {"isolated data inspection; no firmware instructions execute"},
             "network":"no host network; guest loopback only; no remote dashboard claim",
             "original_board_gate":"incomplete", "native_dashboard_gate":"incomplete",
             "script_completion_is_not_service_health":true,
@@ -292,13 +320,14 @@ fn main() -> Result<()> {
         result.exit_code == Some(0) && !result.trace_truncated,
         "isolated {mode} failed; see saved result"
     );
-    if mode == "extract" {
+    if matches!(mode, "extract" | "extract-bosminer") {
         save_json(
             &out.join("member.json"),
             &json!({
-                "member":args[4].to_str().context("invalid member")?,
+                "member":if mode=="extract-bosminer" { BOSMINER_MEMBER } else { args[4].to_str().context("invalid member")? },
                 "object":hash_file(&out.join("stdout.bin"))?,
-                "parent_ramdisk":hash_file(&component_dir.join("ramdisk"))?,
+                "parent_ramdisk":spec.inputs.iter().find(|input|input.guest_path=="/ramdisk")
+                    .map(|input|&input.object).context("captured ramdisk identity absent")?,
                 "kind":"Exact regular SquashFS member; isolated listing and extracted size agree",
                 "result":hash_file(&out.join("result.json"))?,
             }),
@@ -309,4 +338,31 @@ fn main() -> Result<()> {
         json!({"mode":mode,"output":out,"status":result.status,"original_board_gate":"incomplete"})
     );
     Ok(())
+}
+
+#[cfg(test)]
+mod component_capture_tests {
+    use super::*;
+    #[test]
+    fn a_component_changed_after_preflight_cannot_enter_the_specification() {
+        let root = std::env::temp_dir().join(format!(
+            "md-sim-component-511-{}-{}",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_nanos()
+        ));
+        fs::create_dir(&root).unwrap();
+        let file = root.join("ramdisk");
+        fs::write(&file, b"original component").unwrap();
+        let expected = hash_file(&file).unwrap();
+        fs::write(&file, b"changed component").unwrap();
+        let store = Store::open(&root.join("objects"), 1024).unwrap();
+        let mut mounts = Vec::new();
+        assert!(add_input(&store, &mut mounts, &file, "/ramdisk", &expected.sha256).is_err());
+        assert!(mounts.is_empty());
+        drop(store);
+        fs::remove_dir_all(root).unwrap();
+    }
 }

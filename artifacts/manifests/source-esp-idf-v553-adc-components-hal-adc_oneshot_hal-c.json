@@ -1,0 +1,24 @@
+{
+  "id": "source-esp-idf-v553-adc-components-hal-adc_oneshot_hal-c",
+  "url": "https://raw.githubusercontent.com/espressif/esp-idf/2c211b236707889e8400c4dc5644dd5c4ee071e0/components/hal/adc_oneshot_hal.c",
+  "kind": "source",
+  "title": "Pinned ESP-IDF v5.5.3 ADC reference: components/hal/adc_oneshot_hal.c",
+  "language": "en",
+  "source_id": "esp-idf-v553-adc-2c211b236707",
+  "license": "Apache-2.0",
+  "retrieved_at": "2026-10-28T12:58:34.652112+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/esp-idf-v553-adc-reference/components/hal/adc_oneshot_hal.c",
+  "sha256": "8c683f1ce36b788f564b1e4a2d7e03c27fd2171298d930774cece869091b3c0a",
+  "size_bytes": 7346,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "tag": "v5.5.3",
+  "http_status": 200,
+  "final_url": "https://raw.githubusercontent.com/espressif/esp-idf/2c211b236707889e8400c4dc5644dd5c4ee071e0/components/hal/adc_oneshot_hal.c",
+  "etag": "\"88714b86c021cafbd239dc3ecb5447492c9e500467beb53a65659c901d5392ac\"",
+  "notes": [
+    "Required ADC/calibration support reference for archived ESP32-S3 Bitcoin miner firmware. Guest version does not prove an exact rebuild or physical calibration."
+  ]
+}

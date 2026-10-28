@@ -82,3 +82,12 @@ __pycache__/
 !/work/simulator/cli-tools-500/
 /work/simulator/cli-tools-500/*
 !/work/simulator/cli-tools-500/build.json
+
+# Compact verified source checkpoint. Keep runtime payloads and credentials out.
+!/work/simulator/source-checkpoint-511e/
+/work/simulator/source-checkpoint-511e/*
+!/work/simulator/source-checkpoint-511e/manifest.json
+!/work/simulator/source-checkpoint-511e/fmt.log
+!/work/simulator/source-checkpoint-511e/clippy.log
+!/work/simulator/source-checkpoint-511e/tests.log
+!/work/simulator/source-checkpoint-511e/guide-links.log

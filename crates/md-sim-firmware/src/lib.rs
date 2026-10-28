@@ -5,6 +5,8 @@ pub mod bitmain_s2;
 pub mod bitstream;
 pub mod bm1387;
 pub mod bm1397;
+pub mod esp32s3_adc_calibration;
+pub mod esp32s3_uart;
 pub mod fan;
 pub mod pic16;
 pub mod s9io;

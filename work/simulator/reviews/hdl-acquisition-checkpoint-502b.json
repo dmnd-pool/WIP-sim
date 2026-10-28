@@ -1,0 +1,101 @@
+{
+  "recorded_at": "2026-10-28T11:48:13.209762+00:00",
+  "state": "Converter502k preservation and strict HDL502l pass. All11122cells and original XDC preserved; selected compilation has no diagnostics.582primitive assertions and510RAM observations per representation pass. Selected bus/chip execution and original-board gates remain open.",
+  "prior": "work/simulator/reviews/hdl-acquisition-checkpoint-502.json",
+  "signature": "work/simulator/reviews/gperf-signature-502b.json",
+  "source": "crates/md-sim-firmware/examples/build_iverilog_tool.rs",
+  "confinement": "crates/md-sim-firmware/src/confinement.rs",
+  "selected_hdl_stage": "work/simulator/hdl-dev-502b/s9_hdl_validate.rs",
+  "checks": {
+    "document-index": {
+      "path": "work/simulator/checks-2026-10-28-502b/document-index.log",
+      "sha256": "8137f466a0325ac940164df2cf5291aa7b8b807bc52f62d6aa5a25fd865c6ca0",
+      "size": 311
+    },
+    "archive": {
+      "path": "work/simulator/checks-2026-10-28-502b/archive.log",
+      "sha256": "ed9af898f010112d16b8bfc60889a6c145aee2eb05bdd11cf87e7acfd2671896",
+      "size": 1723
+    },
+    "archive-index": {
+      "path": "work/simulator/checks-2026-10-28-502b/archive-index.log",
+      "sha256": "adcf9e1892bb135abc1e68ffa24f37c9cd5f47b4e8d8bd141f848c1b4714f92a",
+      "size": 270
+    },
+    "inspect": {
+      "path": "work/simulator/checks-2026-10-28-502b/inspect.log",
+      "sha256": "8bb4cf9b5d1cd6f1b31ff075b03cfb17c2512f09dfa47384b337cb8c23209a4e",
+      "size": 177
+    },
+    "coverage": {
+      "path": "work/simulator/checks-2026-10-28-502b/coverage.log",
+      "sha256": "6eee2f471479295cdbedde750044c0fa00d50fd69d85bce6bc94dcf2dff10f69",
+      "size": 95
+    },
+    "catalog-build": {
+      "path": "work/simulator/checks-2026-10-28-502b/catalog-build.log",
+      "sha256": "73bd07caf2fa73c9abd23e580d6326c6a9080c96a4feaec2480936c2c6254db2",
+      "size": 2236
+    },
+    "catalog-verify": {
+      "path": "work/simulator/checks-2026-10-28-502b/catalog-verify.log",
+      "sha256": "cdb5a6f78fa880961bc3837f5fb7c280c1c5752ffb6bd472869b82bdc8a24751",
+      "size": 145
+    }
+  },
+  "archive_read_bytes": 4914050,
+  "catalogue_records": 13986,
+  "next_action": "Browser agent owns live existing-QEMU/PL bridge. Exact-target agent owns original reset/BootROM/SPL dependency from spl-contract454, including boot.bin transfer length versus actual SD/FAT slack bytes. Root owns exact S9 physical identities. Complete S9 milestone2 then stop per latest user instruction.",
+  "open_limits": [
+    "PS7 is a port shell, not a CPU model",
+    "Missing monitor feature table",
+    "33 electrical ambiguities",
+    "No original-board boot or exact target gate"
+  ],
+  "updated_at": "2026-10-28T15:34:48.952723+00:00",
+  "current_run": "work/simulator/qemu-s9/iverilog-build-502f",
+  "source_freeze": "work/simulator/qemu-s9/iverilog-driver-502f/manifest.json",
+  "helper_sha256": "778f5c4e528c6a409e9d3afd77df4772832ff08c804afc35ffaeaddc654e79a8",
+  "focused_checks": "6tests, strict Clippy and release pass; logs under work/simulator/checks-2026-10-28-502b/*-f.log",
+  "failures": "work/simulator/reviews/iverilog-build-failures-502.json",
+  "tool_report": "work/simulator/reviews/hdl-tool-executed-502f.md",
+  "tool_archive": {
+    "path": "work/simulator/qemu-s9/iverilog-build-502f/iverilog-tools.tar.gz",
+    "sha256": "3c5631a6d6285affa39d9fddb9acca3758988b9c2fe6cbc4e3ce227f5fc33f61",
+    "size": 3828781
+  },
+  "selected_profile": "simulator/firmware/s9-hdl-inputs-502i.json",
+  "selected_profile_sha256": "85b6e19e0a297e09bf4422498507bd738585c5d508569786103b7d8ee83e25ac",
+  "selected_failures": "work/simulator/reviews/hdl-selected-failures-502.json",
+  "selected_actual": "work/simulator/qemu-s9/hdl-selected-502i",
+  "selected_independent_review": "work/simulator/reviews/hdl-selected-independent-execution-502i.json",
+  "latest_component": "work/simulator/qemu-s9/hdl-selected-502j",
+  "next_stage": "work/simulator/reviews/maxigp0-source-stage-511d.json",
+  "converter_freeze": "work/simulator/qemu-s9/netlist-driver-502k/manifest.json",
+  "converter_profile": "simulator/firmware/s9-netlist-tool-inputs-502k.json",
+  "converter_profile_sha256": "ae8d03d540748c1bbc78d8dfa17ec6f6565b7e227e9aa827115ad525f44ed03d",
+  "converter_checks": "11focusedtests, strictClippy and release pass;303entry capture unchanged before/after",
+  "converter_review": "work/simulator/reviews/netlist-structure-independent-source-502k.json",
+  "RAM_review": "work/simulator/reviews/hdl-selected-independent-execution-502j.json",
+  "latest_converter": "work/simulator/qemu-s9/netlist-selected-502k",
+  "latest_hdl": "work/simulator/qemu-s9/hdl-selected-502l",
+  "latest_report": "work/simulator/reviews/hdl-selected-executed-502l.md",
+  "latest_static": {
+    "run": "work/simulator/qemu-s9/axi-bosminer-static-511c",
+    "freeze": "work/simulator/qemu-s9/axi-static-driver-511c/manifest.json",
+    "report": "work/simulator/reviews/bosminer-static-executed-511c.md",
+    "result": "PASS31ms;651 A32 words from2604 original bytes; independent source and execution reviews closed.",
+    "firmware_executed": false,
+    "independent_execution_review": "work/simulator/reviews/bosminer-static-independent-execution-511c.json"
+  },
+  "user_stop_boundary": "Latest parent-relayed user instruction: complete S9 milestone2 first, then stop and save tested checkpoint. Other miner work remains staged; full matrix is not the current stop boundary.",
+  "latest_bus": {
+    "run": "work/simulator/qemu-s9/axi-selected-511e",
+    "freeze": "work/simulator/qemu-s9/axi-driver-511e/manifest.json",
+    "report": "work/simulator/reviews/maxigp0-executed-511e.md",
+    "result": "PASS72actualtransactions/2resets/582primitive/510RAMx2;26663ms; independent execution audit closed",
+    "independent_execution_review": "work/simulator/reviews/maxigp0-independent-execution-511e.json",
+    "cpu_executed": false,
+    "board_gate": false
+  }
+}

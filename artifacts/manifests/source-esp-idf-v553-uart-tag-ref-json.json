@@ -1,0 +1,24 @@
+{
+  "id": "source-esp-idf-v553-uart-tag-ref-json",
+  "url": "https://api.github.com/repos/espressif/esp-idf/git/ref/tags/v5.5.3",
+  "kind": "source",
+  "title": "Pinned ESP-IDF v5.5.3 UART reference: tag-ref.json",
+  "language": "en",
+  "source_id": "esp-idf-v553-uart-2c211b236707",
+  "license": "reference metadata",
+  "retrieved_at": "2026-10-28T11:57:36.287754+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/esp-idf-v553-uart-reference/tag-ref.json",
+  "sha256": "122d1c69e6f47436fecf7a649caac8970d47a62e5ebc3dbb86c7afef08af17b4",
+  "size_bytes": 337,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "tag": "v5.5.3",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/espressif/esp-idf/git/ref/tags/v5.5.3",
+  "etag": "W/\"122d1c69e6f47436fecf7a649caac8970d47a62e5ebc3dbb86c7afef08af17b4\"",
+  "notes": [
+    "Required ESP32-S3 UART support contract for archived Bitaxe102 firmware. Reference source only; guest version string does not prove an exact firmware rebuild or physical timing."
+  ]
+}

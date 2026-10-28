@@ -1,0 +1,80 @@
+{
+  "schema": "md-sim-reclamation-plan-review/1",
+  "status": "verified_plan_independent_review_pending",
+  "checkpoint": 503,
+  "removed_files": 1353,
+  "logical_bytes": 14807692817,
+  "allocated_bytes": 14811127808,
+  "cas_copies": 1311,
+  "cas_bytes": 12152944259,
+  "derived_archive_copies": 42,
+  "derived_archive_bytes": 2654748558,
+  "canonical_store": "work/simulator/qemu-s9/backend-build-280-release/inputs",
+  "target_stores": [
+    "work/simulator/qemu-s9/backend-build-166-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-173-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-183-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-188-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-191-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-192-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-201-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-212-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-213-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-218-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-223-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-226-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-231-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-232-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-239-release/inputs",
+    "work/simulator/qemu-s9/backend-build-256-ubsan/inputs",
+    "work/simulator/qemu-s9/backend-build-263-release/inputs",
+    "work/simulator/qemu-s9/backend-build-276-release/inputs",
+    "work/simulator/qemu-s9/backend-build-278-release/inputs",
+    "work/simulator/qemu-s9/backend-build-279-release/inputs",
+    "work/simulator/qemu-s9/backend-build-280-ubsan/inputs"
+  ],
+  "retained_files": 429,
+  "retained_bytes": 2609300924,
+  "checks": [
+    "Frozen reviewed481 helper SHA matches its immutable receipt. No source change or Cargo was needed.",
+    "All22 store locks acquired, persisted policies equal the existing2GiB object/16GiB total/4096-object limits, and incoming directories are empty.",
+    "Every plan pair has distinct device/inode identities, one hard link, current owner, regular file type and exact matching sizes. Frozen Rust planner independently hashed both copies.",
+    "All21 targeted builds have terminal exited results. Four failures remain failures and are retained.",
+    "All429 retained files, including binaries, build evidence, unique CAS objects, policies and canonical objects, were rehashed and recorded before removal.",
+    "No exact removed path occurs in the current simulator/demos manifests. The adapted S9 profile still retains its backend263 binary/build identities; no runtime executable is selected.",
+    "Original downloaded archives, canonical274, current Cargo stores, frozen helpers, browser state and new501/502 inputs are outside every selected path."
+  ],
+  "next": "Root independently reviews exact pairs and guards. Then invoke the same frozen helper with the same canonical/target arguments, without --plan, and a fresh durable journal. Rehash all retained files and every restore copy afterward.",
+  "inputs": [
+    {
+      "path": "work/simulator/cleanup-qemu-503/request.json",
+      "sha256": "68dbc97eaacdbf0f5a6e2af9c76e35fde60724ba76e378817e1d160d984b6cfa",
+      "size": 9742
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/plan.json",
+      "sha256": "f43863febc47aee293b9328226d0b3688f1bb8788dcf328cbe14ee75bd386305",
+      "size": 623828
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/before.json",
+      "sha256": "8594db9c86afb1d5d33a90c3cc76d5cb5f69f60a38380cbbcf66127be71fa6dd",
+      "size": 1661203
+    },
+    {
+      "path": "work/simulator/cleanup-qemu-503/plan.log",
+      "sha256": "a50fbf048adec110dc0e5ce2139f612b5f2809d68a873ab5a85c2720504e7791",
+      "size": 79
+    },
+    {
+      "path": "work/simulator/cleanup-browser-tools-481/inputs.json",
+      "sha256": "fecf96edfc1aeea17d0d9517151815bac52a430cb6b5880f5b28ccacb9008fe6",
+      "size": 3739
+    },
+    {
+      "path": "work/simulator/cleanup-browser-tools-481/reclaim_qemu_inputs",
+      "sha256": "d2e2c71c68de741cb5c3e227f2eba0864c17048475e6c181fd842e50e3a24c1d",
+      "size": 1783776
+    }
+  ]
+}

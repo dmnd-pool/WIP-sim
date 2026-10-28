@@ -1,0 +1,48 @@
+{
+  "scope": "Reviewed501 integration after user resume2026-10-28. Tests and actual probe pending.",
+  "base_commit": "f5fbf74ecca369a77d497cfaa3661197891e60be",
+  "patch": {
+    "path": "work/simulator/reviews/bm1397-programmed-501.patch",
+    "sha256": "5445f5c5df9f6f6d358522f61116474cd627e29a791c9d997fe254b55732f7af",
+    "size": 34366
+  },
+  "production_files": [
+    {
+      "target": "crates/md-sim-firmware/src/bm1397.rs",
+      "sha256": "8d1a819f603ed88e51db479d4489613ac5891aabaf0c7b18e119c2cbdc6411a8",
+      "size": 20286
+    },
+    {
+      "target": "crates/md-sim-firmware/src/bm1397/identify.rs",
+      "sha256": "fc85ca0dfdac3e555553eca08f19694bfd6b9a22e32624ba4cb5cf1a93e444c7",
+      "size": 30810
+    },
+    {
+      "target": "crates/md-sim-firmware/src/bm1397/programmed.rs",
+      "sha256": "47a02091c4cb5e2a5e914ac821bac04f18b735f3894ab5a6bc8aef37251f5946",
+      "size": 5619
+    },
+    {
+      "target": "crates/md-sim-firmware/src/bm1397/programmed_tests.rs",
+      "sha256": "83caadd2a579a4f8918b4b3ca900fd12a1335d6b1970c6980f33893d404f4eab",
+      "size": 7498
+    },
+    {
+      "target": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+      "sha256": "d4c62e92652a6501ebb466f3b320469708eef915395b9bdc003ba1bfb2b1b461",
+      "size": 34528
+    },
+    {
+      "target": "simulator/firmware/fixtures/t17-pll-frequency-results.json",
+      "sha256": "55a65f5712d26eaadd96c93f89ddc194c78b5b40a5d044efab9d7d26b443a8c6",
+      "size": 1717
+    },
+    {
+      "target": "simulator/firmware/fixtures/t17-pll-frequency-results.bin",
+      "sha256": "9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+      "size": 354160
+    }
+  ],
+  "original_firmware_changed": false,
+  "mining_or_board_gate_passed": false
+}

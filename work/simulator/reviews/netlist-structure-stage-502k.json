@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-28T13:13:21.221396+00:00",
+  "state": "Source staged; final new profile identity not yet promoted or tested. Browser018b owns heavy runtime. Original497 source and output stay unchanged.",
+  "sources": [
+    {
+      "path": "work/simulator/hdl-dev-502j/verilog_modeling.py",
+      "sha256": "905488e90d3826602e759c47840d1bac709069585a36ec1ffaf3719e58769da0",
+      "size": 89210
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/converter.patch",
+      "sha256": "a124a0bc9c0219cde96ede231e4819635de62bfab877338801643b9ccc4bcb85",
+      "size": 5647
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/netlist_structure.rs",
+      "sha256": "111365833e95814595d229ff7b4cca8378c3e11459a8d702828676d597298ab0",
+      "size": 9073
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/netlist_inputs.rs",
+      "sha256": "123730c95222cb6c6c2771121e2f5babf0be27a4da42616a26ef01a1c9d38951",
+      "size": 9163
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/s9_netlist_reconstruct.rs",
+      "sha256": "18a553635b2c243c89540da0205993daa17971d904abeb629dfef33c7fb8577e",
+      "size": 15455
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/s9-netlist-tool-inputs-502j.json",
+      "sha256": "f35cd3f9ce3258aa10d39119a6147b55da9a9060a54e9b70375b14d05327a328",
+      "size": 21213
+    }
+  ],
+  "actual_component_evidence": "work/simulator/qemu-s9/hdl-selected-502j/hdl-report.json",
+  "component_result": "510 RAM observations per representation; complete traces identical. All582 primitive assertions pass. The original selected structure still fails.",
+  "new_output_contract": "Only1453 scalar alias declarations, one1ps/1ps timebase and60 explicitZ connections at the four already omitted input pins on15 mode-checked RAMs. Preserve11122cell identities/attributes/parameters/otherports and every existing assignment.",
+  "next": [
+    "Independent review of staged comparison and exact manifest support",
+    "Promote separate derived source/patch/profile with final hash",
+    "Run focused Rust checks/release and freeze after browser018b",
+    "Execute full existing converter under unchanged4GiB/600CPU limits",
+    "Require full output-preservation comparison then strict HDL compilation with exactnewprofile"
+  ],
+  "open": [
+    "Missing monitor feature table",
+    "33electrical ambiguities",
+    "Selected chip execution and PS7/AXI integration",
+    "Physicaltiming",
+    "Original-board and per-target matrix gates"
+  ]
+}

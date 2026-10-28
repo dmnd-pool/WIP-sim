@@ -1,0 +1,282 @@
+{
+  "schema": "md-sim-source-stage/1",
+  "status": "staged_only_not_compiled_or_executed",
+  "scope": "Extend explicit per-chip programmed storage with raw FastUART0x28/MiscControl0x18 words and a pure requested CLKI baud ratio. No guest readback, acknowledgement, lock, source-switch completion or effective UART timing.",
+  "base": {
+    "path": "work/simulator/bm1397-uart-504/base.json",
+    "sha256": "e55f1dd8dd6260bc47b9da7208cfec24e32d862c8c262cc75bfcf2c37cef1b46",
+    "size": 971
+  },
+  "production_mapping": {
+    "bm1397.rs": "crates/md-sim-firmware/src/bm1397.rs",
+    "identify.rs": "crates/md-sim-firmware/src/bm1397/identify.rs",
+    "programmed.rs": "crates/md-sim-firmware/src/bm1397/programmed.rs",
+    "programmed_tests.rs": "crates/md-sim-firmware/src/bm1397/programmed_tests.rs",
+    "esp32_original_probe.rs": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+    "uart_control.rs": "crates/md-sim-firmware/src/bm1397/uart_control.rs"
+  },
+  "staged_files": [
+    {
+      "path": "work/simulator/bm1397-uart-504/bm1397.rs",
+      "sha256": "794d1f28058cac5520d8a7c00898b3b6f89451d50d7e0dfc61f5c8facc5d60de",
+      "size": 20308
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/identify.rs",
+      "sha256": "a81ab2d851bce550f5d19d6532bd955f94e5193f280eb9fa113a7d37d618f56e",
+      "size": 30852
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/programmed.rs",
+      "sha256": "3b09afa58e7f3bc04851de73106e321d25af4f400b52b6e537ce5938bf751b70",
+      "size": 6218
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/programmed_tests.rs",
+      "sha256": "9f25cc8657bd7cbb5c5ec9702e7458e4e45e17a8f315c3eef7632e4c5e511545",
+      "size": 11272
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/esp32_original_probe.rs",
+      "sha256": "1c3f06aa9ef740c2f92f13a7c23642d85307a15ca1951af05c12c5dc8e32da2c",
+      "size": 34735
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/uart_control.rs",
+      "sha256": "615e1b2751cd51868fd7ec0efe44036f1669d164fd5fe8388c2fb5c41e4d264e",
+      "size": 5897
+    }
+  ],
+  "original_firmware_boundary": {
+    "path": "work/simulator/reviews/bm1397-programmed-independent-execution-037.json",
+    "sha256": "72c37f9a391eb4c2b50a8773eacc1b4f8fabd31c9e9a2da0f31d36e2ce8cf8fd",
+    "size": 5375
+  },
+  "original_esp_source": [
+    {
+      "path": "work/simulator/bitaxe/bm1397-source-002/bm1397.c",
+      "sha256": "9bd28dff43cb3c07a63c4843dba2704f7e071b1bfc7fb310cfd925cb35be2f56",
+      "size": 13118
+    },
+    {
+      "path": "work/simulator/bitaxe/adc-source-001/components_asic_serial.c",
+      "sha256": "7650dbed99922ef11405f1dd1708191539f4507fdc1a69d5f3cfad10ef8bb447",
+      "size": 2999
+    },
+    {
+      "path": "artifacts/files/source/open-bitaxeorg-esp-miner-release-source-351118297/ESP-Miner-64680f8a4da0b9a3b532051f0aa18429fcf04e82.tar.gz",
+      "sha256": "ccba9a695c3661a7d536cd649c0dcd6935cb0f9d59d24ff667391d65398ce069",
+      "size": 900415
+    }
+  ],
+  "original_t17": {
+    "miner": {
+      "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+      "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+      "size": 553247
+    },
+    "inspection": {
+      "path": "work/simulator/bitaxe/t17-static-262/inspection.json",
+      "sha256": "d8bd27292ccbdd799bb0137c309de34e65eca596002858865a630092ca964e7f",
+      "size": 4072
+    },
+    "disassembly": {
+      "path": "work/simulator/bitaxe/t17-static-262/a32.txt",
+      "sha256": "d519092b11da763c50b6aed3cfc1de0f9945ea2a228acc15cbafb5a67817004b",
+      "size": 3506185
+    },
+    "ranges": [
+      {
+        "name": "original-low-speed-divider",
+        "virtual_address": "0x1a220",
+        "file_offset": 74272,
+        "size": 60,
+        "sha256": "3627a249f89e4015a5f9dd6f9d6719e5c9e53c1bc30f6e3f2146e16a055888d6",
+        "hex": "c0360ce32d3040e3030050e1f0402de90040a0e114d04de21b0000ca8411a0e1400807e37d0140e3986e01eb64229fe5011040e20400a0e1258c00eb",
+        "disassembly": [
+          "0001a220 movw       r3, #0xc6c0",
+          "0001a224 movt       r3, #0x2d",
+          "0001a228 cmp        r0, r3",
+          "0001a22c push       {r4, r5, r6, r7, lr}",
+          "0001a230 mov        r4, r0",
+          "0001a234 sub        sp, sp, #0x14",
+          "0001a238 bgt        #0x1a2ac",
+          "0001a23c lsl        r1, r4, #3",
+          "0001a240 movw       r0, #0x7840",
+          "0001a244 movt       r0, #0x17d",
+          "0001a248 bl         #0x75cb0",
+          "0001a24c ldr        r2, [pc, #0x264]",
+          "0001a250 sub        r1, r0, #1",
+          "0001a254 mov        r0, r4",
+          "0001a258 bl         #0x3d2f4"
+        ]
+      },
+      {
+        "name": "original-split-divider-pack-and-source-selection",
+        "virtual_address": "0x3d2f4",
+        "file_offset": 217844,
+        "size": 72,
+        "sha256": "6e7fc1a56f7003f2bb4186a0b94b0aeb51bb41b041a6b502a93342c246c87bc0",
+        "hex": "f04f2de9c0360ce3006092e52d3040e3030050e1c132a0e11164cce71cd04de2136cdbe70170a0e1016886c31f68d0d700a0a0e110519fe50040a0e30c819fe50c919fe50cb19fe5",
+        "disassembly": [
+          "0003d2f4 push       {r4, r5, r6, r7, r8, sb, sl, fp, lr}",
+          "0003d2f8 movw       r3, #0xc6c0",
+          "0003d2fc ldr        r6, [r2]",
+          "0003d300 movt       r3, #0x2d",
+          "0003d304 cmp        r0, r3",
+          "0003d308 asr        r3, r1, #5",
+          "0003d30c bfi        r6, r1, #8, #5",
+          "0003d310 sub        sp, sp, #0x1c",
+          "0003d314 bfi        r6, r3, #0x18, #4",
+          "0003d318 mov        r7, r1",
+          "0003d31c orrgt      r6, r6, #0x10000",
+          "0003d320 bfcle      r6, #0x10, #1",
+          "0003d324 mov        sl, r0",
+          "0003d328 ldr        r5, [pc, #0x110]",
+          "0003d32c mov        r4, #0",
+          "0003d330 ldr        r8, [pc, #0x10c]",
+          "0003d334 ldr        sb, [pc, #0x10c]",
+          "0003d338 ldr        fp, [pc, #0x10c]"
+        ]
+      },
+      {
+        "name": "misc-divider-high-format",
+        "virtual_address": "0x1cb9c",
+        "file_offset": 84892,
+        "size": 16,
+        "sha256": "ec400227e0926c84578e6fc3148313f53fd3b85e2cc0a2da2aeda89d73672938",
+        "hex": "c4169fe5553ce3e7c4269fe5a2b6ffeb",
+        "disassembly": [
+          "0001cb9c ldr        r1, [pc, #0x6c4]",
+          "0001cba0 ubfx       r3, r5, #0x18, #4",
+          "0001cba4 ldr        r2, [pc, #0x6c4]",
+          "0001cba8 bl         #0xa638"
+        ]
+      },
+      {
+        "name": "misc-divider-low-format",
+        "virtual_address": "0x1d040",
+        "file_offset": 86080,
+        "size": 16,
+        "sha256": "8204914980db7140200580d3ca797773217e5743a011553d47f19ffb553d0548",
+        "hex": "20129fe55534e4e74c229fe579b5ffeb",
+        "disassembly": [
+          "0001d040 ldr        r1, [pc, #0x220]",
+          "0001d044 ubfx       r3, r5, #8, #5",
+          "0001d048 ldr        r2, [pc, #0x24c]",
+          "0001d04c bl         #0xa638"
+        ]
+      },
+      {
+        "name": "misc-clock-select-format",
+        "virtual_address": "0x1ce90",
+        "file_offset": 85648,
+        "size": 16,
+        "sha256": "74005650be67f0069d175b416916441fbb54e7488f60e2afe60c1a2a3ec61f5b",
+        "hex": "d0139fe55538e0e7ec239fe5e5b5ffeb",
+        "disassembly": [
+          "0001ce90 ldr        r1, [pc, #0x3d0]",
+          "0001ce94 ubfx       r3, r5, #0x10, #1",
+          "0001ce98 ldr        r2, [pc, #0x3ec]",
+          "0001ce9c bl         #0xa638"
+        ]
+      },
+      {
+        "name": "fast-uart-divider-format",
+        "virtual_address": "0x1d4bc",
+        "file_offset": 87228,
+        "size": 16,
+        "sha256": "cd4e4fa38e970663384d7b9522479cb6e095f88b0a185320136785618120e8cc",
+        "hex": "64139fe5563ce3e768239fe55ab4ffeb",
+        "disassembly": [
+          "0001d4bc ldr        r1, [pc, #0x364]",
+          "0001d4c0 ubfx       r3, r6, #0x18, #4",
+          "0001d4c4 ldr        r2, [pc, #0x368]",
+          "0001d4c8 bl         #0xa638"
+        ]
+      }
+    ],
+    "formatter_strings": [
+      {
+        "file_offset": 465280,
+        "virtual_address": "0x79980",
+        "text": "BIT[27:24]  BT8D_8_5"
+      },
+      {
+        "file_offset": 465444,
+        "virtual_address": "0x79a24",
+        "text": "BIT[16]     BCLK_SEL"
+      },
+      {
+        "file_offset": 465536,
+        "virtual_address": "0x79a80",
+        "text": "BIT[12:8]   BT8D_4_0"
+      },
+      {
+        "file_offset": 465764,
+        "virtual_address": "0x79b64",
+        "text": "BIT[27:24] PLL3_DIV4"
+      }
+    ],
+    "execution_claim": "These UART ranges have been statically inspected only. No existing executed UART packing oracle was found. The separate executed PLL oracle496 does not prove UART timing."
+  },
+  "supporting_reference_only": [
+    {
+      "manifest": {
+        "path": "artifacts/manifests/source-bm13xx-d00c086-bm13xx-asic-src-register-fast-uart-rs.json",
+        "sha256": "fe713ae1c1c9d53d6ad8c6193c2d1ddd1f4393a10aa3cdb1eb06b7d7ec006493",
+        "size": 1259
+      },
+      "file": {
+        "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/fast_uart.rs",
+        "sha256": "fb321a0c379ecb2555e40620aa6d980160104a7709c7b2cd8552dbbaeebd158a",
+        "size": 8681
+      },
+      "git_commit": "d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d",
+      "git_blob_sha1": "b41a7079818dc30d359d429d7ed487eaccf4a77e"
+    },
+    {
+      "manifest": {
+        "path": "artifacts/manifests/source-bm13xx-d00c086-bm13xx-asic-src-register-misc-rs.json",
+        "sha256": "819e8822289fa97b603b6b4ab0ead1d7f0600577743eada0c402f152daf6eb8c",
+        "size": 1234
+      },
+      "file": {
+        "path": "artifacts/files/source/source-bm13xx-d00c086/bm13xx-asic/src/register/misc.rs",
+        "sha256": "1af15bf11c141a7a9ba504ef191e0f6b9c62fc6aa04f7529978176261a6b6655",
+        "size": 9670
+      },
+      "git_commit": "d00c086bc66e6d4d4fa47fa6191ae40e7e566c0d",
+      "git_blob_sha1": "115afc8b7f539921e8ddf28382fbc4651d937906"
+    }
+  ],
+  "resolved_conflicts": [
+    {
+      "source": "archived ESP bm1397.c lines238-245",
+      "conflict": "Comment says bits9-13 and returns115749. Actual word0x00007a31 contains26 in bits8-12.25MHz/(8*(26+1)) is115740+160/216 bits/s.",
+      "resolution": "Use original T17 split-field packing and exact requested ratio. Preserve ESP firmware bytes and its unaltered log/return values."
+    },
+    {
+      "source": "pinned bm13xx misc.rs From<bool>",
+      "conflict": "From<bool> reverses CLKI/PLL3 compared with the enum repr, bclk_sel getter and original T17 bit16 packing.",
+      "resolution": "Do not import the conflicting conversion. Decode bit16 directly, and refuse PLL3 baud calculations."
+    },
+    {
+      "source": "pinned bm13xx FastUARTConfigurationV2",
+      "conflict": "V2 shares address0x28 but has different fields.",
+      "resolution": "Use original BM1397/T17 field layout only; no family-wide compatibility inferred."
+    }
+  ],
+  "validation_plan": [
+    "Parent review staged sources and evidence before integration.",
+    "Affected BM1397 library and original-probe tests, strict Clippy, formatting, release build.",
+    "Freeze all new helper/model inputs, run actual original-probe-038 with unchanged firmware/backend/budgets and explicit updated profile.",
+    "Verify raw TX/RX, state, failure boundary and no write ACK independently. Actual firmware logs are not a physical clock or board pass."
+  ],
+  "remaining_limits": [
+    "No effective UART line clock or baud mismatch enforcement in current host pipe.",
+    "PLL3 output divider encoding/clock effects remain unimplemented; raw field is diagnostic only.",
+    "No physical power/reset pin binding, silicon reset defaults, core effects or full chip job execution.",
+    "Original board, fresh mining and exact target gates remain open."
+  ]
+}

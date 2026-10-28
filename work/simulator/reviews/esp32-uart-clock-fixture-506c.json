@@ -1,0 +1,119 @@
+{
+  "schema": "md-sim-s3-uart-clock-fixture-regression/1",
+  "scope": "Actual corrected test fixture against unchanged failed018b backend. This isolates the qtest clock precondition from the separate DATE mapping defect.",
+  "source_files_verified": 170,
+  "mounts_verified": 16,
+  "process": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 60,
+    "trace_truncated": false
+  },
+  "helper_exit_code": 1,
+  "actual_responses": 332,
+  "remaining_mismatches": [
+    {
+      "index": 29,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 43,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000012345678",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 44,
+      "command": "readl 0x6000007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 48,
+      "command": "readl 0x6000007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 51,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 326,
+      "command": "readl 0x6000007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    },
+    {
+      "index": 329,
+      "command": "readl 0x6001007c",
+      "expected": "OK 0x0000000002008270",
+      "actual": "OK 0x0000000000000000"
+    }
+  ],
+  "actual_qmp_resets": 2,
+  "actual_uart_write_events": 257,
+  "actual_overflow_events": 1,
+  "clock_result": "The real I2C pending deadline permits clock100001. All UART trace expectations pass unchanged. The same transaction then reaches actual NACK400 at200000.",
+  "component_passed": false,
+  "trace_contract_passed": true,
+  "firmware_capture_complete": false,
+  "firmware_executed": false,
+  "inputs": [
+    {
+      "path": "work/simulator/esp32-uart-tools-506c/inputs.json",
+      "sha256": "6386e05c3e058660036842f0a99b337337aa819601dd9ffac8df4f4c3d69e77d",
+      "size": 49868
+    },
+    {
+      "path": "work/simulator/esp32-uart-tools-506c/esp32_backend_qtest",
+      "sha256": "bea4126e0bc33bff5d7fd57127d62ccaa9b80cb93fcdce0229213600441bbda0",
+      "size": 2015400
+    },
+    {
+      "path": "work/simulator/esp32-uart-506c/qtest-inputs.json",
+      "sha256": "df24796103658646b8c8027d36ae8996764dfb5f4afbac6af6b02ec3b9c3b33a",
+      "size": 1946
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-506c-old018b/spec.json",
+      "sha256": "bd39b33f5f084be6d858a58f7dfe88304f27be38f3e2b474dc40b1d2115978a0",
+      "size": 3568
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-506c-old018b/inputs.json",
+      "sha256": "9085f40f459f3849bd7b35518760e798f1cb7b67c50826a4d83730a5de73bb32",
+      "size": 4396
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-506c-old018b/transactions.qtest",
+      "sha256": "55bdf218558d7beb86ddd3bc5dc7637de11a47f0e7fc11940eb19391ee3de01e",
+      "size": 7704
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-506c-old018b/result.json",
+      "sha256": "e4ad4d254ef96b067ead480722c223e1d400645adc0bc1d034ae6b576138e1a2",
+      "size": 115685
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-506c-old018b/responses.log",
+      "sha256": "4448faa9675d36d6c2e9d38a6171f5d133aa0736b80f06ee37a5ff0b8573a363",
+      "size": 1802
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-506c-old018b/backend.log",
+      "sha256": "60c985b569e4f1c689b7874d70e4f1c297ca9e3e4e41f92c215e13d1fa905d79",
+      "size": 55620
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-506c-old018b/assessment.json",
+      "sha256": "430538a2dc46d95f4009f20b0f60cd4e79b8709db87b8c79aa17807e37eac650",
+      "size": 1090
+    }
+  ],
+  "next": "Use the separate reviewed region fix018c to resolve DATE. Retain this failed comparison and all existing assertions."
+}

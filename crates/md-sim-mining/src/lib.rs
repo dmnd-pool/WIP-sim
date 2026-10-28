@@ -7,7 +7,7 @@ pub mod regtest;
 pub mod stratum;
 pub mod target;
 pub mod work;
-pub use engine::{Engine, EngineEvent};
+pub use engine::{Computation, ComputedVariant, Engine, EngineEvent};
 pub use pool::{PoolJob, PoolVerifier, Share, Verdict};
 pub use target::{Filter, Target};
 pub use work::{Header, MidstateWork, Work};

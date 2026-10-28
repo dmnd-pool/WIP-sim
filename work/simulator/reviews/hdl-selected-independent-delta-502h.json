@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "status": "source delta review closed; actual502h result pending",
+  "base_review": "work/simulator/reviews/hdl-selected-independent-source-502.json",
+  "inputs": [
+    {
+      "path": "crates/md-sim-firmware/examples/s9_hdl_validate.rs",
+      "sha256": "880a3edb9b703948bca88275d5d85770d406bdfb2d5b3501b5ee4f80dbb32a2c",
+      "size": 14973
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+      "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+      "size": 848916
+    },
+    {
+      "path": "artifacts/files/source/source-iverilog-4fd5291/md-sim-iverilog-source-502.tar.gz",
+      "sha256": "690f02e6fd0e0c05e4768bcb65a2c7f1b64d20289344d1ad3ccfb69bae8bd55b",
+      "size": 2997829
+    }
+  ],
+  "reviewed_changes": [
+    "All selected compiler diagnostics must be empty after a successful exit. Three actual malformed-HDL oracles verify width, implicit-wire and missing-parameter diagnostics; every oracle requires a non-signal exit. Width and implicit-wire fixtures must exercise exit0 warnings.",
+    "Primitive runtime stderr must be empty before its582-case marker is accepted.",
+    "The actual libbz2 SONAME is now captured at /usr/lib/libbz2.so.1.0. The failed502g loader diagnostics remain a failure.",
+    "The explicit -Ttyp option records the existing typical-value selection. This removes an unspecified policy, not a semantic diagnostic whitelist; all other compiler diagnostics still fail."
+  ],
+  "upstream_timing_policy_evidence": {
+    "members": [
+      {
+        "path": "driver/main.c",
+        "sha256": "4c5db0a3e8ab312581f989d4bb54ee464039ffd83a5f4e0a01f68285a44449c6",
+        "size": 42322
+      },
+      {
+        "path": "main.cc",
+        "sha256": "bd8b0eae0fd1b4ae82245eadae8d1756c5f22e7c946f8d831567220483e932c9",
+        "size": 37684
+      },
+      {
+        "path": "parse.y",
+        "sha256": "6c3b619bd6bf9ab0e8595e85e1e66230c1e9c8c7da6a08454fd8d23e904a25a2",
+        "size": 198450
+      },
+      {
+        "path": "pform.cc",
+        "sha256": "c2312433003b7d539483f5eb4a92de0ea136f58b7042425928e6540276e06831",
+        "size": 101323
+      }
+    ],
+    "default": "Icarus main.cc lines932\u2013933 and pform.cc lines1770\u20131771 initialize TYP with an unspecified-choice warning. main.cc lines778\u2013779 explicitly selects the same TYP and suppresses only that ambiguity when -Ttyp is supplied. parse.y selects the same middle expression.",
+    "ps7_numeric_triplets": 8406,
+    "ps7_unique_triplets": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "100",
+        "100",
+        "100"
+      ]
+    ],
+    "scope": "All inspected PS7 numeric triplets have identical minimum/typical/maximum fields. No acquired source changes and no measured hardware timing claim."
+  },
+  "open_source_findings": []
+}

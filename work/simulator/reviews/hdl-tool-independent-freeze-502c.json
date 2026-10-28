@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "frozen_sources_checked": 279,
+  "helper": {
+    "sha256": "aa54e43302602f53676d3830ce9266d92c80df8dad916ca8ca01625263be503c",
+    "size": 2225624
+  },
+  "check_logs": {
+    "tests": {
+      "path": "work/simulator/checks-2026-10-28-502b/tests-c.log",
+      "sha256": "62a0ba1be52bc4f6e747c9b4aad3955833838e50314a91fcf811abf2bae76fe2",
+      "size": 811,
+      "result": "pass"
+    },
+    "clippy": {
+      "path": "work/simulator/checks-2026-10-28-502b/clippy-c.log",
+      "sha256": "48c2f2c6d9b055baa5bc9b7c1ef8752ed62b7203d5f9f424aa57c6aa553c5733",
+      "size": 143,
+      "result": "pass"
+    },
+    "release": {
+      "path": "work/simulator/checks-2026-10-28-502b/release-c.log",
+      "sha256": "3e2e97b5dc58ecd64c85362a0e140f39b2de278662a046390667c693fdb73dcf",
+      "size": 145,
+      "result": "pass"
+    }
+  },
+  "source_review_matches_frozen_files": true,
+  "freeze_manifest": {
+    "path": "work/simulator/qemu-s9/iverilog-driver-502c/manifest.json",
+    "sha256": "6f2559a92d863e82b8756c3cb89964998fdd79d89f254cd46cd6178546d092f7",
+    "size": 46225
+  },
+  "scope": "Pre-execution source and check-log identity verification. Actual isolated build outcome remains pending."
+}

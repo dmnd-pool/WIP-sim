@@ -22,7 +22,14 @@ mod qemu_build;
 use qemu_build::{capture_overlay_with, pack_dir, reuse_overlay, step, unpack};
 const SOURCE: &str = "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0";
 const PREFIX: &str = "qemu-febae182e132e4055529be423a818225ebddaa3a";
-fn inner(sar: bool, i2c: bool, ds4432: bool, emc2101: bool, ina260: bool) -> Result<()> {
+fn inner(
+    sar: bool,
+    i2c: bool,
+    ds4432: bool,
+    emc2101: bool,
+    ina260: bool,
+    uart: bool,
+) -> Result<()> {
     confinement::require_board()?;
     ensure!(
         hash_file(Path::new("/qemu.tar.gz"))?.sha256 == SOURCE,
@@ -138,6 +145,27 @@ fn inner(sar: bool, i2c: bool, ds4432: bool, emc2101: bool, ina260: bool) -> Res
         }
         report["ina260_model"] = json!({"library":hash_file(Path::new("/libmd_sim_esp32s3_sar.a"))?,"patch":hash_file(Path::new("/ina260.patch"))?,"scope":"Explicit optional INA260 sensor at0x40. Real virtual conversion deadlines, configured averages and explicit VIN/shunt current. No inferred ASIC load or core-voltage telemetry.","incomplete":["Physical PSU/regulator/load coupling", "ADC integration/noise/thermal calibration", "SMBus ARA/SCL-low timeout/HS filters", "Dynamic straps and migration", "Undefined partial-word and power-overflow behavior is flagged"]});
     }
+    if success && uart {
+        let mut patch = Command::new("/work/toolchain/usr/bin/patch");
+        patch
+            .current_dir(&src)
+            .args(["-p1", "--batch", "--forward", "--input=/uart-config.patch"]);
+        success = step(&mut report, "uart_configuration_patch", patch)?;
+        if success {
+            fs::OpenOptions::new()
+                .append(true)
+                .open(src.join("hw/char/trace-events"))?
+                .write_all(&fs::read("/uart-config-trace-events")?)?;
+        }
+        report["uart_configuration_model"] = json!({
+            "patch":hash_file(Path::new("/uart-config.patch"))?,
+            "trace_events":hash_file(Path::new("/uart-config-trace-events"))?,
+            "scope":"S3-only CLKDIV masks, CLK_CONF and DATE storage/readback, device-reset defaults. Selected writes carry canonical device identity, QEMU virtual time, raw value and stored value.",
+            "trace_limit_per_device_lifetime":256,
+            "trace_overflow":"One explicit overflow event; reset does not renew the budget. An overflow is incomplete capture, never firmware evidence success.",
+            "incomplete":["Inherited40MHz baud approximation", "Clock-gate and reset-pin effects", "Character pacing and electrical line behavior", "Physical clock and timing calibration", "UART migration state"]
+        });
+    }
     if success {
         let mut config = Command::new("/bin/sh");
         config.current_dir(build).arg(src.join("configure")).args([
@@ -159,7 +187,55 @@ fn inner(sar: bool, i2c: bool, ds4432: bool, emc2101: bool, ina260: bool) -> Res
             "--cc=/work/toolchain/usr/bin/gcc --sysroot=/work/toolchain -B/work/toolchain/usr/bin",
             "--cxx=/work/toolchain/usr/bin/g++ --sysroot=/work/toolchain -B/work/toolchain/usr/bin",
         ]);
+        if uart {
+            let sanitizer =
+                "-fsanitize=undefined -fno-sanitize-recover=all -fsanitize-undefined-trap-on-error";
+            config
+                .arg(format!("--extra-cflags={sanitizer}"))
+                .arg(format!("--extra-ldflags={sanitizer}"));
+            report["undefined_behavior_sanitizer"] = json!({
+                "mode":"undefined-trap", "flags":sanitizer,
+                "failure_policy":"Any compiler failure or runtime sanitizer trap fails the build/test; no external sanitizer runtime is added."
+            });
+            report["configure_arguments"] = json!(config
+                .get_args()
+                .map(|arg| arg.to_string_lossy().into_owned())
+                .collect::<Vec<_>>());
+        }
         success = step(&mut report, "configure", config)?;
+    }
+    if success && uart {
+        let commands_path = build.join("compile_commands.json");
+        let mut bytes = Vec::new();
+        fs::File::open(&commands_path)?
+            .take(16 * 1024 * 1024 + 1)
+            .read_to_end(&mut bytes)?;
+        ensure!(
+            bytes.len() <= 16 * 1024 * 1024,
+            "compiler command capture bound"
+        );
+        let commands: Vec<serde_json::Value> = serde_json::from_slice(&bytes)?;
+        let selected: Vec<_> = commands
+            .iter()
+            .filter(|entry| {
+                entry["file"]
+                    .as_str()
+                    .is_some_and(|file| file.ends_with("/hw/char/esp32s3_uart.c"))
+            })
+            .collect();
+        let flags = [
+            "-fsanitize=undefined",
+            "-fno-sanitize-recover=all",
+            "-fsanitize-undefined-trap-on-error",
+        ];
+        let instrumented = selected.len() == 1
+            && selected[0]["command"].as_str().is_some_and(|command| {
+                flags
+                    .iter()
+                    .all(|flag| command.split_whitespace().any(|word| word == *flag))
+            });
+        report["uart_compiler_commands"] = json!({"database":hash_file(&commands_path)?,"selected":selected,"instrumentation_verified":instrumented});
+        success = instrumented;
     }
     if success {
         let mut c = Command::new("/samu");
@@ -224,29 +300,36 @@ fn run() -> Result<()> {
             || v == "__inside-ds4432"
             || v == "__inside-emc2101"
             || v == "__inside-ina260"
+            || v == "__inside-uart"
     }) {
         return inner(
             args[1] != "__inside",
             args[1] == "__inside-i2c"
                 || args[1] == "__inside-ds4432"
                 || args[1] == "__inside-emc2101"
-                || args[1] == "__inside-ina260",
+                || args[1] == "__inside-ina260"
+                || args[1] == "__inside-uart",
             args[1] == "__inside-ds4432"
                 || args[1] == "__inside-emc2101"
-                || args[1] == "__inside-ina260",
-            args[1] == "__inside-emc2101" || args[1] == "__inside-ina260",
-            args[1] == "__inside-ina260",
+                || args[1] == "__inside-ina260"
+                || args[1] == "__inside-uart",
+            args[1] == "__inside-emc2101"
+                || args[1] == "__inside-ina260"
+                || args[1] == "__inside-uart",
+            args[1] == "__inside-ina260" || args[1] == "__inside-uart",
+            args[1] == "__inside-uart",
         );
     }
     ensure!(
-        args.len() == 4 || ((args.len() == 5 || args.len() == 6) && (args[4] == "rtc-sar" || args[4] == "rtc-sar-i2c" || args[4] == "rtc-sar-i2c-ds4432" || args[4] == "rtc-sar-i2c-ds4432-emc2101" || args[4] == "rtc-sar-i2c-ds4432-emc2101-ina260")),
-        "usage: build_esp_qemu_backend REPO SAMURAI_BUILD_DIRECTORY NEW_OUTPUT [rtc-sar|rtc-sar-i2c|rtc-sar-i2c-ds4432|rtc-sar-i2c-ds4432-emc2101|rtc-sar-i2c-ds4432-emc2101-ina260 [PRIOR_OVERLAY_BUILD]]"
+        args.len() == 4 || ((args.len() == 5 || args.len() == 6) && (args[4] == "rtc-sar" || args[4] == "rtc-sar-i2c" || args[4] == "rtc-sar-i2c-ds4432" || args[4] == "rtc-sar-i2c-ds4432-emc2101" || args[4] == "rtc-sar-i2c-ds4432-emc2101-ina260" || args[4] == "rtc-sar-i2c-ds4432-emc2101-ina260-uart")),
+        "usage: build_esp_qemu_backend REPO SAMURAI_BUILD_DIRECTORY NEW_OUTPUT [rtc-sar|rtc-sar-i2c|rtc-sar-i2c-ds4432|rtc-sar-i2c-ds4432-emc2101|rtc-sar-i2c-ds4432-emc2101-ina260|rtc-sar-i2c-ds4432-emc2101-ina260-uart [PRIOR_OVERLAY_BUILD]]"
     );
     let repo = PathBuf::from(&args[1]);
     let prior = PathBuf::from(&args[2]);
     let out = PathBuf::from(&args[3]);
     let sar = args.len() >= 5;
-    let ina260 = sar && args[4] == "rtc-sar-i2c-ds4432-emc2101-ina260";
+    let uart = sar && args[4] == "rtc-sar-i2c-ds4432-emc2101-ina260-uart";
+    let ina260 = sar && (args[4] == "rtc-sar-i2c-ds4432-emc2101-ina260" || uart);
     let emc2101 = sar && (args[4] == "rtc-sar-i2c-ds4432-emc2101" || ina260);
     let ds4432 = sar && (args[4] == "rtc-sar-i2c-ds4432" || emc2101);
     let i2c = sar && (args[4] == "rtc-sar-i2c" || ds4432);
@@ -389,6 +472,17 @@ fn run() -> Result<()> {
             });
         }
     }
+    if uart {
+        for name in ["uart-config.patch", "uart-config-trace-events"] {
+            let host = repo.join("simulator/backends/esp32").join(name);
+            let object = hash_file(&host)?;
+            store.import(&host, &object)?;
+            inputs.push(Mount {
+                object,
+                guest_path: format!("/{name}"),
+            });
+        }
+    }
     let spec = ProcessSpec {
         support_virtualization: None,
         private_channel: None,
@@ -399,7 +493,9 @@ fn run() -> Result<()> {
         schema_version: "2.0".into(),
         argv: vec![
             "/probe".into(),
-            if ina260 {
+            if uart {
+                "__inside-uart"
+            } else if ina260 {
                 "__inside-ina260"
             } else if emc2101 {
                 "__inside-emc2101"

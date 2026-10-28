@@ -1,0 +1,87 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "stage": "511c",
+  "status": "PASS source review; actual decoder execution pending",
+  "sources": [
+    {
+      "path": "work/simulator/axi-dev-511/s9_bosminer_inspect.rs",
+      "sha256": "6665b6c3ed8a03e962fb917b90570ec165260bcff45e1ec037d539283d79c515",
+      "size": 14502
+    },
+    {
+      "path": "work/simulator/axi-dev-511/arm_static.rs",
+      "sha256": "275c48ff83c4f834f179521bbc56c57811af06e8f42db26e9a74dbfdf53a9064",
+      "size": 10916
+    }
+  ],
+  "shared_module_base": {
+    "path": "crates/md-sim-firmware/examples/support/arm_static.rs",
+    "sha256": "275c48ff83c4f834f179521bbc56c57811af06e8f42db26e9a74dbfdf53a9064",
+    "size": 10916
+  },
+  "exact_elf": {
+    "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/stdout.bin",
+    "sha256": "4997a1c10a09f6881d6f5e0d4967eb31072ea9f1da7a80dac192ae1299d45960",
+    "size": 12699280
+  },
+  "parent_extraction_review": {
+    "path": "work/simulator/reviews/bosminer-extraction-independent-execution-511b.json",
+    "sha256": "460fb74d416de556b3d86410943d1de33544511550c8b384229a8ea1ffdecb78",
+    "size": 4616
+  },
+  "closed_findings": [
+    {
+      "finding": "Only comparing total decoded sections with requested range count could accept duplicatedA plus absentB.",
+      "resolution": "Each requested range must occur in exactly one executable section before Capstone loads. Synthetic duplicate/missing cases check that specific preflight error."
+    }
+  ],
+  "independent_data_checks": {
+    "unwind_entries": 23665,
+    "selected_total_bytes": 2604,
+    "ranges": [
+      {
+        "address": 3933824,
+        "end": 3934376,
+        "section_index": 2,
+        "file_offset": 3868288,
+        "sha256": "6cdf577de75e92760ebd23c8ae8d48de6c1377601d260db6efe97d9bbaefe5c3",
+        "size": 552
+      },
+      {
+        "address": 4698288,
+        "end": 4698848,
+        "section_index": 2,
+        "file_offset": 4632752,
+        "sha256": "6fb88eae44d79b4927427f715000b622211935f0ee332b19c717e3fee2f5c25e",
+        "size": 560
+      },
+      {
+        "address": 4699636,
+        "end": 4701128,
+        "section_index": 2,
+        "file_offset": 4634100,
+        "sha256": "8aacb04b193817188ed86fc246fa49efcf682dd80691e2dcb72b3304f25ba341",
+        "size": 1492
+      }
+    ],
+    "method": "Independent little-endian ELF section parsing and signed31-bit PREL31 arithmetic, without executing the ELF or loading a foreign decoder."
+  },
+  "checked": [
+    "The exact previously extracted ARM ELF hash and byte length are fixed and enforced before decode. Store import binds the selected captured bytes.",
+    "The three requested intervals equal consecutive original ARM.exidx boundaries and map uniquely into executable section2. Range count/size/alignment/order and file offsets are bounded.",
+    "The original inspect API remains available; the selected-range path calls the same captured Capstone ABI and literal-vector checks under the ordinary isolated firmware-inspection guard.",
+    "1MiB disassembly writer,2MiB trace and512MiB/30CPU policy are explicit. Only two exact regular archive members are retained, with complete-stream checks and output hash comparison.",
+    "The report labels static linear decode as neither control-flow proof nor firmware execution. Original instruction bytes are unchanged."
+  ],
+  "unresolved_findings": [],
+  "pending": [
+    "Run five focused negative/identity/range tests, strict checks and the affected old inspect-path regression.",
+    "Freeze the exact helper and capture the small isolated Capstone decode. Verify all output intervals and input hashes."
+  ],
+  "scope_limits": [
+    "No ARM instructions execute here. This is static preparation for later exact register/control-flow research.",
+    "The ranges alone do not prove the complete FPGA protocol, selected HDL behavior, original-board boot or mining."
+  ]
+}

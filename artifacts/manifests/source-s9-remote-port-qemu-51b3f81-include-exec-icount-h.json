@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-qemu-51b3f81-include-exec-icount-h",
+  "url": "https://raw.githubusercontent.com/Xilinx/qemu/51b3f81a0b37d382aef642015ae83973fdf06b1d/include/exec/icount.h",
+  "kind": "source",
+  "title": "Pinned Xilinx/qemu remote-port reference: include/exec/icount.h",
+  "language": "en",
+  "source_id": "s9-remote-port-qemu-51b3f81",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-qemu-51b3f81/include/exec/icount.h",
+  "sha256": "e7e4544aa5fed1724a2d8a967387b40992aad1fd12c9e4bc9ba81f02616de0a3",
+  "size_bytes": 2136,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "51b3f81a0b37d382aef642015ae83973fdf06b1d",
+  "etag": "\"491fc77d5b6909c816711e0b54f665d9bbbe496678b06268ca4fda5288da2cb8\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "review_status": "independent audit passed",
+  "recorded_at": "2026-10-28T13:15:39.343157+00:00",
+  "run_verdict": "RAM omission differential and primitive component gates passed; selected structural HDL gate failed",
+  "scope": "Read-only independent source and actual retained-output audit. No new foreign execution. Omitted versus explicit Z is a bounded digital representation test, not complete RAM, electrical, board or mining acceptance.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502j/spec.json",
+      "sha256": "75eb59dfe89cfc72ca018bca61c62a00c1a7b9ad709b68c02ac3f97f8b5fe820",
+      "size": 6800
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502j/result.json",
+      "sha256": "ca568b1ce84dbde6961ea68196c14e5dbc5e329e4a6d383c1895bc86998c31a0",
+      "size": 1303667
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502j/hdl-report.json",
+      "sha256": "f61da37e96e1ecc4e2d825a09c1d79cf8f8706eb7d2722e68318d24eb043e6a6",
+      "size": 684151
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502j/hdl-envelope.json",
+      "sha256": "6227d7a6cad1392ec146cc2cb6d8baa4f90650edf4780050f5011aa598785dbc",
+      "size": 651333
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502j/stderr.log",
+      "sha256": "81a57fb7c5dacef7a7f00a48e358bb66e27d502f12b86c3e862869a8f261dfea",
+      "size": 79
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-driver-502j/manifest.json",
+      "sha256": "49dbbdef82ece934b4f794fe06ccc55cf056de549c78a799595ac2b102d530da",
+      "size": 49774
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-driver-502j/s9_hdl_validate",
+      "sha256": "6333f130b6605ecda207893e44a231ec4632cc272f64ac772369903dad945125",
+      "size": 2254632
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_hdl_validate.rs",
+      "sha256": "4af7e9970aad887a72c0509f42d187f7fc74a445c33b1ee13184757c6f10748d",
+      "size": 17732
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_ram_vectors.rs",
+      "sha256": "59e761df3b43c96591785b560790538e154adbdb1bceb600f66a2f0d522d1135",
+      "size": 10297
+    }
+  ],
+  "verified": {
+    "frozen_source_files": 301,
+    "captured_mounts": 34,
+    "step_stream_identities": 20,
+    "host_supervisor_identities": 3,
+    "wall_milliseconds": 6556,
+    "ram_instances": 15,
+    "width_inventory": {
+      "18": 6,
+      "36": 9
+    },
+    "parameter_text_exact_against_selected497": true,
+    "generated_source_sha256": "e2f69faf552daac72797ef1105655f2098baa27a166fc23fe7eeeba57cffcfb7",
+    "ram_cases_each_mode": 510,
+    "complete_stdout_equal": true,
+    "ram_stdout_identity": {
+      "sha256": "68ef5826574c458d591fecd035902949fb783f0db6a22fda5512aca1c106509f",
+      "size": 44842
+    },
+    "independently_checked_selected_port_data_words": 510,
+    "independently_checked_full_parity_hex_words": 306,
+    "omission_diagnostics": 60,
+    "primitive_cases": 582,
+    "strict_selected_diagnostics_identical_to502i": true,
+    "selected_implicit_wires": 1453,
+    "selected_dangling_inputs": 60,
+    "selected_top_timebase_warning": true,
+    "selected_vvp_emitted": false,
+    "isolation": "Ordinary isolated support-tool process, no KVM/private channel/network/dashboard; exact34 read-only mounts; no compiler snapshot archive mounted.",
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "source_review": [
+    "Every selected parameter block is copied unchanged from the exact497 netlist and bound by text hash; all15 names/maps agree independently.",
+    "The fixture rejects active ECC/cascade and unexpected widths. Both input ports are driven with data/parity, followed by unknown propagation and reset.",
+    "Each check uses case inequality against expected data/parity slices and requires all four hierarchical optional inputs to remain Z. The same source is compiled with and without explicit-open macro.",
+    "The unchanged vendor TDP branch passes literal zero to its internal error-injection ports; archived defaults disable ECC and cascade extensions. No driven zero substitute is introduced into the generated fixture.",
+    "Baseline omission diagnostics require all60 expected messages and no other line. Explicit-Z compilation and both executions have empty diagnostics and numeric zero exit.",
+    "All510 ordered trace records, complete stream equality, exact end marker and simulated finish time are retained. The selected structural failure remains independent of these component passes."
+  ],
+  "limitations": [
+    "18-bit RAM parity prints as a mixed-unknown hex digit X. Its lower2 bits are checked by the actual compiled case-inequality assertion, but cannot be recovered independently from that formatted hex trace. The306 full4-bit parity values from36-bit instances were independently recalculated.",
+    "This finite driven fixture does not prove every RAM collision, address, write-enable, reset or timing behavior.",
+    "Original497 structural compilation still fails on1453 implicit wires,60 omitted RAM inputs and missing top timebase; no compiled selected VVP artifact exists.",
+    "Missing monitor feature table,33 electrical ambiguities, PS7 processor/AXI behavior, original-board execution and mining gates remain open."
+  ],
+  "audit_notes": [
+    "Initial audit asserted each copied parameter text occurred once. Identical selected parameters legitimately occur6 or9 times. The corrected check binds each exact text to its distinct generated ram0..ram14 instance, each occurring once. No implementation or execution assertion was changed."
+  ],
+  "findings": []
+}

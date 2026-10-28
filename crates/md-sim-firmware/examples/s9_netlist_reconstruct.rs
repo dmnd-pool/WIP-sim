@@ -25,6 +25,8 @@ mod inputs;
 mod netlist;
 #[path = "support/python_tool_inputs.rs"]
 mod python;
+#[path = "support/netlist_structure.rs"]
+mod structure;
 #[path = "support/fasm_tool_inputs.rs"]
 mod tool;
 
@@ -371,6 +373,49 @@ fn main() -> Result<()> {
             }
         }
         check_output(&output, &m, &manifest_value, &tool)?;
+        if let Some(reference) = &m.structure_reference {
+            let read = |reference: &tool::Reference| -> Result<Vec<u8>> {
+                let bytes = inputs::bounded(&store.verified_path(&reference.object)?, 32 << 20)?;
+                ensure!(
+                    bytes.len() as u64 == reference.object.size
+                        && hash_bytes(&bytes) == reference.object.sha256,
+                    "captured structure reference changed"
+                );
+                Ok(bytes)
+            };
+            let checked = (|| -> Result<Value> {
+                let original = read(&reference.verilog)?;
+                ensure!(
+                    output
+                        .files
+                        .get("selected.xdc")
+                        .context("selected XDC absent")?
+                        .object
+                        == reference.xdc.object,
+                    "routing constraints changed outside the Verilog adaptation"
+                );
+                store.verified_path(&reference.xdc.object)?;
+                let diagnostics = serde_json::from_slice(&read(&reference.diagnostics)?)?;
+                let ram = serde_json::from_slice(&read(&reference.ram_evidence)?)?;
+                structure::compare(
+                    std::str::from_utf8(&original)?,
+                    &output
+                        .files
+                        .get("selected.v")
+                        .context("selected Verilog absent")?
+                        .text,
+                    &diagnostics,
+                    &ram,
+                )
+            })();
+            save_json(
+                &out.join("structure-comparison.json"),
+                &json!({"passed":checked.is_ok(),
+                "details":checked.as_ref().ok(),"error":checked.as_ref().err().map(|e|format!("{e:#}"))}),
+            )?;
+            checked?;
+        }
+
         ensure!(
             result.status == "exited" && result.exit_code == Some(0),
             "isolated converter did not exit successfully"

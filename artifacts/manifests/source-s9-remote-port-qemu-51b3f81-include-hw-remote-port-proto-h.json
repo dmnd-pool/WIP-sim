@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-qemu-51b3f81-include-hw-remote-port-proto-h",
+  "url": "https://raw.githubusercontent.com/Xilinx/qemu/51b3f81a0b37d382aef642015ae83973fdf06b1d/include/hw/remote-port-proto.h",
+  "kind": "source",
+  "title": "Pinned Xilinx/qemu remote-port reference: include/hw/remote-port-proto.h",
+  "language": "en",
+  "source_id": "s9-remote-port-qemu-51b3f81",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-qemu-51b3f81/include/hw/remote-port-proto.h",
+  "sha256": "93bb19e97d36bc82885dd58f6b82f9472879fe0785d90bbb0f308d2d122ff55e",
+  "size_bytes": 16537,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "51b3f81a0b37d382aef642015ae83973fdf06b1d",
+  "etag": "\"0ec2df121ded6b0acce5adb441c248a25efa60510fbf616b2856b434d2d2b294\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

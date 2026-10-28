@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "status": "source review closed; real compile/qtest/original-firmware execution pending",
+  "scope": "S3 word-register storage/masks/reset observations and bounded diagnostic trace. No effective baud, UART pacing, physical clock, firmware or mining acceptance.",
+  "stage_manifest": {
+    "path": "work/simulator/esp32-uart-506/inputs.json",
+    "sha256": "1c556601a0aa63778544dac0e64b9f75fec979964eb9cf317f6b34a8c0074c38",
+    "size": 7989
+  },
+  "inputs_checked": [
+    {
+      "path": "work/simulator/esp32-uart-506/base.json",
+      "sha256": "c0e6914c6adf0495c9ff2ebdb47e900fa7037fdbe3a740450922d0b368b87ec1",
+      "size": 1273
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/esp32_backend_qtest.rs",
+      "sha256": "4a391e8d5c2bfd639d80a463554098343dd52417520873b297f10e9eb3502a4e",
+      "size": 27311
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/esp_uart_qtest.rs",
+      "sha256": "ca742da28d40ad88292b118377c8942434686e925f4791ee330348b678d9d70b",
+      "size": 10159
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/build_esp_qemu_backend.rs",
+      "sha256": "0ffb84f49d3857ed19bb97ee970cdada5a6b19989388c2ace2a17f29cd47b843",
+      "size": 27373
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/uart-config.patch",
+      "sha256": "f62129fd39dba85b8039d96c28ad8df3ad66f384c9f47bce80a602325329f1d3",
+      "size": 5690
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/uart-config-trace-events",
+      "sha256": "e004dd36b5392aa226558c76b61c220b2e38535dd9ae87a7167a4fb23155c906",
+      "size": 470
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/esp32s3_uart.c",
+      "sha256": "59520924d0f918961c9f08b027bd805b94f46fbfbc1213d76fb87c9335200576",
+      "size": 7424
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/esp32s3_uart.h",
+      "sha256": "2b9527916269e860f2d1896d81dce788b53199114a021de3ea9596c80420e97e",
+      "size": 4140
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/register/soc/uart_reg.h",
+      "sha256": "eef72592d7949e641faf7c1d153a8bb0eb0e851619a5f579b4a3c3c663d67e07",
+      "size": 65797
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/register/soc/uart_struct.h",
+      "sha256": "bbe3554c245edd126ea944615fae524e5653058916b79d8264faba5d41a7c66e",
+      "size": 44836
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/esp32s3/include/hal/uart_ll.h",
+      "sha256": "2e2dd54fe649007daaddc37072af30871b4161254e9e2929028484bdb62b422d",
+      "size": 33342
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-hw_char_esp32_uart.c",
+      "sha256": "2a3667b901b151d240fc20269d3ddf2b941d184b66dcff15c678657301431794",
+      "size": 12801
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-hw_char_esp32s3_uart.c",
+      "sha256": "07402dae146f9a8202d1ffe1dfb6ecd48781885a0670ce4e4cb26c9ab196a1be",
+      "size": 4591
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-hw_xtensa_esp32s3.c",
+      "sha256": "bdb0748bcb529e99084554e728e3edd3b0cd17f3d125a48f9db8c5ddf8adcebd",
+      "size": 38810
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/resettable-original.h",
+      "sha256": "4a14299e2e70765f61a1e351248ea5f49ca2c4867c511b994072226033f58247",
+      "size": 8778
+    },
+    {
+      "path": "work/simulator/esp32-uart-506/archive-member-equality.json",
+      "sha256": "70de7129a887e5d678c3a48ad4dc347dfbd9f09fa4b589c57d9dec501c7a674c",
+      "size": 2335
+    },
+    {
+      "path": "work/simulator/reviews/esp32-uart-old-backend-506.json",
+      "sha256": "7d89ea8d4f5e3553d439b70bc230215b504331c9c416f4ad93afc46b82a14137",
+      "size": 4527
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-017/qemu-system-xtensa",
+      "sha256": "ce946687f1b97577ba2a6434d08b38a8a6dfeb8cbf072bfbf2545d2e7356cd9e",
+      "size": 17058432
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-017/build-report.json",
+      "sha256": "5f971077433b8675a352843526082991c0e9c115ab47204f40ea829889ed2c6d",
+      "size": 314961
+    }
+  ],
+  "archive": {
+    "path": "artifacts/files/source/tool-espressif-qemu/qemu-febae182e132.tar.gz",
+    "sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+    "size": 41572305
+  },
+  "exact_archive_members_rechecked": 6,
+  "patch_reapplied_as_text": {
+    "hw/char/esp32s3_uart.c": {
+      "sha256": "59520924d0f918961c9f08b027bd805b94f46fbfbc1213d76fb87c9335200576",
+      "size": 7424
+    },
+    "include/hw/char/esp32s3_uart.h": {
+      "sha256": "2b9527916269e860f2d1896d81dce788b53199114a021de3ea9596c80420e97e",
+      "size": 4140
+    }
+  },
+  "review_checks": [
+    "CLKDIV mask0x00f00fff and CLK_CONF writable low28bits match exact archived IDF declarations. Reset CLK_CONF0x03701000 and DATE0x02008270 derive from those defaults. The parent reset retains CLKDIV0x2b6.",
+    "The original reset API saves inherited phases and overrides only nonnull phases. The child calls the saved parent hold and restores only its new storage fields. Trace count is not reset.",
+    "The counter has a finite257 state:256 selected writes plus one overflow. Further writes still update state; neither device reset nor trace output can renew the per-device budget. Device identity and QEMU virtual time are recorded explicitly.",
+    "The optional builder profile preserves previous mode branches. Only this profile enables UBSan undefined-trap flags; the generated S3 compile command must contain each exact flag. Original source and017 backend remain unchanged.",
+    "The qtest extension keeps the original46 responses and adds two real private QMP resets, both-UART readback, independent device counters, overflow and post-overflow state changes. It records actual QMP replies/events and checks exact sequence/time/raw/stored trace fields.",
+    "QMP is only a run-owned Unix socket inside the existing private board runtime. Commands and reply lines are bounded, and a failed child is killed/reaped. No firmware runs in qtest mode.",
+    "Final qtest line-reader correction removes only the required newline. It preserves spaces and other observed response bytes; QMP JSON still parses its ordinary trailing whitespace."
+  ],
+  "open_source_findings": [],
+  "limits": [
+    "Inherited40MHz baud approximation, clock-gate/reset-pin effects, serial pacing and migration remain unimplemented or unverified.",
+    "The reviewed register vectors use32-bit MMIO accesses; they do not establish partial-width access behavior.",
+    "An overflow is intentional only in the negative trace-budget regression; it cannot pass a complete firmware capture."
+  ],
+  "pending": [
+    "Compile exact derived018 backend with the recorded sanitizer flags.",
+    "Run unchanged46-response mode and the new reset/trace mode under the same isolated limits.",
+    "Run the separate original040 observation path; preserve unsupported boundaries and incomplete physical timing claims."
+  ]
+}

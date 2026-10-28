@@ -1,0 +1,235 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Retained isolated static decode of exact original S9 Bosminer bytes. No ARM execution or FPGA response is inferred.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/axi-static-driver-511c/manifest.json",
+      "sha256": "dc56f97fde2567465b179e0e49ae72d6ba25f4a5eb4c1791e8ef0b197e9d95c8",
+      "size": 67648
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-static-driver-511c/source-before-build.json",
+      "sha256": "0e4faae1eb18178ba5166ff3911a05b505983e91a158edf9278e6d5137bd3edb",
+      "size": 63244
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/spec.json",
+      "sha256": "a617bfcfe19f15b07fe732ab51e7e3070b28249e9c1bec2605a65d2837ab9e4a",
+      "size": 1688
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/result.json",
+      "sha256": "38a4bb85c642c18cf3db0db560bf87a45c0ca27b32606c525592a3c03ef2045d",
+      "size": 52041
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/inspection.json",
+      "sha256": "1ed1b8ae0719d7507db47f45786a1f1234fc8dedbbbbd88714bf6bd9447cdc4e",
+      "size": 1533
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/derived.tar",
+      "sha256": "6efddf231a78f5c06eaaa54139042e49e867d7c9392ea3e064e1aae00c92db92",
+      "size": 25600
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/a32.txt",
+      "sha256": "cecfeab06fbe77b43804543efabf435869d02711d7f56ea310affef71f4c7160",
+      "size": 21534
+    },
+    {
+      "path": "simulator/firmware/s9-bosminer-mmio-511.json",
+      "sha256": "51a575433d6fc493967770f0abda67e317fa0deb70f5a43216d0e743a19978fc",
+      "size": 7610
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-static-independent-source-511c.json",
+      "sha256": "9b010ab271c337e61e60e5fde6746378be51bab091e689e054aa0abf7c1a735d",
+      "size": 3960
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-static-legacy-independent-511c.json",
+      "sha256": "44a80c7c805343cbc20981504dc704f03ceefccb50fae723b31d4feae89afc78",
+      "size": 1403
+    },
+    {
+      "path": "work/simulator/reviews/bosminer-extraction-independent-execution-511b.json",
+      "sha256": "460fb74d416de556b3d86410943d1de33544511550c8b384229a8ea1ffdecb78",
+      "size": 4616
+    }
+  ],
+  "source_closure": {
+    "recorded_before_entries": 401,
+    "manifest_map_equals_before": true,
+    "manifest_records_successful_postbuild_rehash": true,
+    "separate_after_map_retained": false,
+    "current_matching_files": 396,
+    "later_changed_files": [
+      {
+        "path": "crates/md-sim-firmware/examples/s9_hdl_validate.rs",
+        "frozen": {
+          "sha256": "b8487ee4669e54c7b787875fb5039828f5d02678d29ef115ab379d9350ac92c6",
+          "size": 18421
+        },
+        "current": {
+          "sha256": "7afb1426c9b17d77e7fc5ad6077b905f4f86bccb484f3134dce4c3ad7b50f3d7",
+          "size": 21474
+        }
+      },
+      {
+        "path": "crates/md-sim-firmware/src/bm1397/reference.rs",
+        "frozen": {
+          "sha256": "d0f2ce76922ed876606dd791d06b3d0b3da360f63379d6d3c71ee6ef7f4c623a",
+          "size": 13708
+        },
+        "current": {
+          "sha256": "d61a76f0f961cde3aef8eabbdd95120bc28f7373f6e1be978ee67f180ca39c14",
+          "size": 13938
+        }
+      },
+      {
+        "path": "crates/md-sim-firmware/src/bm1397/reference_tests.rs",
+        "frozen": {
+          "sha256": "f5c18ad00941eb8cc3901102b016122dd30b1319f3b26124cb671b2996af8c66",
+          "size": 13304
+        },
+        "current": {
+          "sha256": "5ec46c1b305f6cdf46ec31861f7ede47f2e20d8ad7139e3fbcd124fb85d3ce8a",
+          "size": 13473
+        }
+      },
+      {
+        "path": "crates/md-sim-firmware/src/confinement.rs",
+        "frozen": {
+          "sha256": "a1d7211bbdbdcc56421b2359475d61f135415c87264b50b7af8e3aa29c22cc9d",
+          "size": 23549
+        },
+        "current": {
+          "sha256": "69a8e5d49dc35d5326cc915c533f6859b35fb84251fa5f97c48863d9f140a9ed",
+          "size": 24181
+        }
+      },
+      {
+        "path": "crates/md-sim-firmware/src/lib.rs",
+        "frozen": {
+          "sha256": "e72ce575bca0d76e3ce9f2bdf83bf3e8ea40a352657b58af430adb1318cd159b",
+          "size": 567
+        },
+        "current": {
+          "sha256": "866a0c889ef6ee464024e891125638a30ff17d084dac408ed7b1c2799b8b338d",
+          "size": 600
+        }
+      }
+    ],
+    "reviewed_helper_and_shared_source_match": true,
+    "check_logs_rehashed": 3,
+    "helper": {
+      "path": "work/simulator/qemu-s9/axi-static-driver-511c/s9_bosminer_inspect",
+      "sha256": "29fb60291d537c177444411b9d9c2473fb467a6beb3f583c6b1a436bd0268771",
+      "size": 2026832
+    }
+  },
+  "execution": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 31,
+    "trace_truncated": false,
+    "stderr_empty": true,
+    "mounts_rehashed": 7,
+    "unique_objects_rehashed": 6,
+    "supervisor_tools_rehashed": [
+      "bubblewrap",
+      "prlimit",
+      "unshare"
+    ],
+    "limits": {
+      "wall_seconds": 60,
+      "cpu_seconds": 30,
+      "memory_bytes": 536870912,
+      "processes": 16,
+      "file_bytes": 134217728,
+      "trace_bytes": 2097152,
+      "tmp_bytes": 4194304
+    },
+    "no_network_or_device_grant": true,
+    "raw_archive_equals_process_stdout": true,
+    "regular_unique_archive_members": 2
+  },
+  "decode": {
+    "captured_capstone": {
+      "sha256": "682d8f1d8dbad76b2748ca55f2e5ddbbdf23ab61f5c5933aecfbbf07a3e546b9",
+      "size": 7411696
+    },
+    "required_abi": "5.0 checked inside the isolated helper before use",
+    "legacy_api_literal_regression_passed": true,
+    "literal_vectors_passed": 2,
+    "elf": {
+      "sha256": "4997a1c10a09f6881d6f5e0d4967eb31072ea9f1da7a80dac192ae1299d45960",
+      "size": 12699280
+    },
+    "unwind_entries_independently_parsed": 23665,
+    "ranges": [
+      {
+        "index": 2,
+        "file_offset": 3868288,
+        "address": 3933824,
+        "size": 552,
+        "instructions": 138,
+        "sha256": "6cdf577de75e92760ebd23c8ae8d48de6c1377601d260db6efe97d9bbaefe5c3"
+      },
+      {
+        "index": 2,
+        "file_offset": 4632752,
+        "address": 4698288,
+        "size": 560,
+        "instructions": 140,
+        "sha256": "6fb88eae44d79b4927427f715000b622211935f0ee332b19c717e3fee2f5c25e"
+      },
+      {
+        "index": 2,
+        "file_offset": 4634100,
+        "address": 4699636,
+        "size": 1492,
+        "instructions": 373,
+        "sha256": "8aacb04b193817188ed86fc246fa49efcf682dd80691e2dcb72b3304f25ba341"
+      }
+    ],
+    "total_bytes": 2604,
+    "complete_four_byte_output_positions": 651
+  },
+  "static_contract_review": {
+    "instruction_byte_records_checked": 37,
+    "literal_records_checked": 3,
+    "load_store_offsets_and_operands_independently_checked": 8,
+    "version_mask": "0xfff0ffff",
+    "version_expected": "0x00901002",
+    "ignored_version_bits": "19:16",
+    "timestamp_range_inclusive": [
+      1546300801,
+      2147483647
+    ],
+    "baud_literal_argument": 100000000,
+    "baud_callee": "0x474180",
+    "baud_formula_inferred": false,
+    "method": "Direct ELF bytes, executable-section offsets, signed PREL31 bounds, A32 load/store and PC-relative fields, and branch predicate algebra. No acquired code or foreign decoder was executed during this audit."
+  },
+  "unresolved_findings": [],
+  "limits": [
+    "The freeze retains one before-map and the author post-build rehash assertion, not a separate after-map. Later unrelated source changes are recorded without claiming current full-tree equality.",
+    "Linear A32 output includes literal pool data. It is not control-flow proof.",
+    "The legacy literal regression and Capstone ABI checks ran inside the retained helper; this audit does not execute a second disassembler.",
+    "MMIO base mapping comes from separate DTB and registration evidence. These instructions alone do not prove that the firmware reached those operations.",
+    "No FPGA clock frequency, hardware register response, baud formula, board boot, mining or physical-target gate is established."
+  ],
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "audit_script": {
+    "path": "/tmp/md-sim-static511c-audit.py",
+    "sha256": "8e9bd97a986c411e8568f66633a7ff4b4d453015534d1753e27f15c7380b989f",
+    "size": 11559
+  }
+}

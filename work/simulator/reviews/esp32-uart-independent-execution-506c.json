@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-28T13:39:01.628736+00:00",
+  "review_status": "independent execution audit passed",
+  "scope": "Actual018c isolated sanitizer build and two UART component tests. This establishes only the declared register, reset and bounded-trace behavior.",
+  "inputs": [
+    {
+      "path": "work/simulator/esp32-uart-tools-506b/inputs.json",
+      "sha256": "e7eb66f647f283d1ab945655be141ee612ca97c48bf65361370ee55a8485f59b",
+      "size": 50008
+    },
+    {
+      "path": "work/simulator/esp32-uart-tools-506d/inputs.json",
+      "sha256": "d4e163ca6574859436dfd4e1ff474a5df1f2c5fac54abab3a3e02ae692ddbf14",
+      "size": 50020
+    },
+    {
+      "path": "work/simulator/esp32-uart-506c/build-request.json",
+      "sha256": "4e30b8f6aad8a4d290c027cbb826f897e90fd948f4e326b32727867d7153cf56",
+      "size": 1235
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018c/spec.json",
+      "sha256": "d6fab2d3512b6ba29a8aa7523e5eac7eb5e29802c0f85aa3eeab71a35150929b",
+      "size": 8601
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018c/result.json",
+      "sha256": "bb205b714ff9515ad2f80a2608a8771fc0351575c2426625503fefbac1abee2f",
+      "size": 27926279
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018c/build-report.json",
+      "sha256": "118cfe04d94ae12764dda15dffae1da1bda13ec579525902c74a9447a5e397ea",
+      "size": 333765
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018c/build-envelope.json",
+      "sha256": "a7f019609b6574c9b8879e84935968c1ac17a1653e6fb87c2b2d4b9a2ce06c71",
+      "size": 13962717
+    },
+    {
+      "path": "work/simulator/bitaxe/esp-qemu-build-018c/assessment.json",
+      "sha256": "ea53967d8a423ce1dd807c56c367fe58e10f7d4c3ee6dd5c487341a660636805",
+      "size": 126
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018c/spec.json",
+      "sha256": "ecdbc8bd9c8b59ab155975b94f829bfd51f60b84a5105f5af48d0e64af0b0ad8",
+      "size": 3529
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018c/result.json",
+      "sha256": "380db8538dcef6cead1bc7b797c4b317e74fb8678833c4d93cf4166eee380253",
+      "size": 11409
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018c/inputs.json",
+      "sha256": "9b4b02cdc603b7dcf384beb69a5a4712b92c6038af4024a6637d9d453009702e",
+      "size": 1199
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018c/assessment.json",
+      "sha256": "1b59a3e002854bea5c4f00c4d6ca636ed624b0169b6cdc6c9708741cf07226ef",
+      "size": 784
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018c/transactions.qtest",
+      "sha256": "b3eb52f79cbc7f3caeec97a70f88b0a795b141abbc89c612e7ce59af6fca6eec",
+      "size": 944
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018c/responses.log",
+      "sha256": "c8ee2ab2a96305c757c7fcce453ae8e7f2dd49a65a78e928a2bd5e7265fe26a0",
+      "size": 607
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-config-qtest-506-new018c/backend.log",
+      "sha256": "361ec7746084025a4ede4528c2e17eb66ddeaf6fbdbbbcc217f58dd682849902",
+      "size": 4677
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c/spec.json",
+      "sha256": "d1d7eaca0b8b8780691ea39162fb9f6d13b99f18b20c6425a60e543ee9d58cc9",
+      "size": 3568
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c/result.json",
+      "sha256": "8a08adecf084fa3a438bb2df61fd69be214785b2d821802b738d7c247a1bcf39",
+      "size": 115685
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c/inputs.json",
+      "sha256": "05c1f1a8ac2cdf8b795f6ea486c13cb0dd23745d8776c2cc1518bbb179936a7b",
+      "size": 4396
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c/assessment.json",
+      "sha256": "33750965250be449c95862d2043828cfe3e3aad39ee8ce7c6f352b8aca150d73",
+      "size": 1165
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c/transactions.qtest",
+      "sha256": "55bdf218558d7beb86ddd3bc5dc7637de11a47f0e7fc11940eb19391ee3de01e",
+      "size": 7704
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c/responses.log",
+      "sha256": "b85b40e69d21ab49ed8cf2a266e0ed3b2f6f4606b645b228f046fb106f277953",
+      "size": 1802
+    },
+    {
+      "path": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c/backend.log",
+      "sha256": "41d0c1c6472e3e6034deefe5fab02d7926b25e3fe8dbcca195afd0d770aa344c",
+      "size": 55620
+    }
+  ],
+  "build": {
+    "passed": true,
+    "wall_milliseconds": 194739,
+    "builder_frozen_source_files": 169,
+    "qtest_frozen_source_files": 170,
+    "captured_mounts": 42,
+    "step_stream_identities": 24,
+    "only_build_input_change": "/uart-config.patch",
+    "runtime_patch": {
+      "sha256": "a52423c3231be93ea322e33516984dea1d51be1acf7f65df6a00e09a9f653f68",
+      "size": 6217
+    },
+    "binary": {
+      "sha256": "b15458cea0c5a54d85f6f524f19c9caff9cdced48e2cc9c6b8e51b9868e30342",
+      "size": 19014592
+    },
+    "rom": {
+      "sha256": "b5c7090cc22efce51c1323cef31ca96fcd673a5b1d1b1017e219d393f2659913",
+      "size": 393216
+    },
+    "actual_selected_compiler_flags": [
+      "-fsanitize=undefined",
+      "-fno-sanitize-recover=all",
+      "-fsanitize-undefined-trap-on-error"
+    ],
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 120,
+      "memory_bytes": 3221225472,
+      "processes": 128,
+      "file_bytes": 67108864,
+      "trace_bytes": 67108864,
+      "tmp_bytes": 2147483648
+    }
+  },
+  "qtests": [
+    {
+      "run": "work/simulator/bitaxe/uart-config-qtest-506-new018c",
+      "process_exit": 0,
+      "wall_milliseconds": 50,
+      "responses": 46,
+      "response_match": true,
+      "captured_mounts": 16,
+      "runtime_diagnostics_clean": true,
+      "component_passed": true
+    },
+    {
+      "run": "work/simulator/bitaxe/uart-reset-trace-qtest-506-new018c",
+      "process_exit": 0,
+      "wall_milliseconds": 70,
+      "responses": 332,
+      "response_match": true,
+      "captured_mounts": 16,
+      "runtime_diagnostics_clean": true,
+      "component_passed": true,
+      "original315_response_assertions_preserved": true,
+      "additional_timer_responses": 17,
+      "actual_I2C_address_NACKs": 2,
+      "clock_steps": [
+        [
+          "clock_step 99999",
+          "OK 99999"
+        ],
+        [
+          "clock_step 1",
+          "OK 100000"
+        ],
+        [
+          "clock_step 1",
+          "OK 100001"
+        ],
+        [
+          "clock_step 99999",
+          "OK 200000"
+        ]
+      ],
+      "uart1_write_events": 256,
+      "uart0_write_events": 1,
+      "intentional_overflow_events": 1,
+      "actual_QMP_resets": 2,
+      "trace_contract_passed": true,
+      "complete_firmware_capture": false
+    }
+  ],
+  "reviewed": [
+    "The reused506b builder is byte-identical to its frozen helper. The new C patch is an explicit separately hashed runtime preparation input. Comparing complete018b and018c specs shows only that patch identity changed.",
+    "The actual generated C command retains undefined-behavior sanitizer trap flags. Every build step exits0 with complete streams. The retained gzip decodes to the exact backend binary; ROM bytes also match.",
+    "The fixed S3 region now exposes DATE at0x7c. All original46 register assertions pass, including defaults, masks, write/readback and independent UART state. The same frozen506d helper against old018b still fails only its DATE checks.",
+    "The reset fixture preserves all315 earlier response assertions and adds17 real I2C timer operations. Actual clock responses reach100001 and200000, with a second real absent-slave NACK at completion. No observed clock value is overwritten.",
+    "The reset run retains two real QMP reset events and complete exact UART sequences. Its256 per-device limit persists across resets; a single intentional overflow is explicit and later writes still update stored registers.",
+    "The qtest input stays open through backend shutdown, eliminating the earlier double-CLOSED teardown diagnostic. Actual logs contain one CLOSED event each and no warning, sanitizer or assertion diagnostic.",
+    "All process caps and ordinary private namespaces are unchanged. No firmware runs in these qtests."
+  ],
+  "limits": [
+    "Inherited UART effective-baud approximation, line pacing, clock gating, reset-pin effects, migration and physical calibration remain outside this component pass.",
+    "The overflow fixture is deliberately not complete firmware capture.",
+    "Original-board boot, dashboard and functional mining gates remain false."
+  ],
+  "findings": []
+}

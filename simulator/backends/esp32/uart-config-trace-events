@@ -1,0 +1,4 @@
+
+# S3 UART programmed register evidence. These are not wire-timing events.
+esp32s3_uart_config_write(const char *device, int64_t virtual_ns, unsigned sequence, uint64_t address, unsigned size, uint64_t value, uint32_t stored) "device=%s virtual_ns=%" PRId64 " sequence=%u address=0x%" PRIx64 " size=%u value=0x%" PRIx64 " stored=0x%" PRIx32
+esp32s3_uart_config_overflow(const char *device, int64_t virtual_ns, unsigned limit) "device=%s virtual_ns=%" PRId64 " limit=%u"

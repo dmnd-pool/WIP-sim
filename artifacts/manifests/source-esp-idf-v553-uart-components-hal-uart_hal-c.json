@@ -1,0 +1,24 @@
+{
+  "id": "source-esp-idf-v553-uart-components-hal-uart_hal-c",
+  "url": "https://raw.githubusercontent.com/espressif/esp-idf/2c211b236707889e8400c4dc5644dd5c4ee071e0/components/hal/uart_hal.c",
+  "kind": "source",
+  "title": "Pinned ESP-IDF v5.5.3 UART reference: components/hal/uart_hal.c",
+  "language": "en",
+  "source_id": "esp-idf-v553-uart-2c211b236707",
+  "license": "Apache-2.0",
+  "retrieved_at": "2026-10-28T11:57:36.287754+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/uart_hal.c",
+  "sha256": "09aba8059d4abb94a9d25e9425819d2cbca1a121f3e7d88eded0fd28af85dae5",
+  "size_bytes": 4766,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "tag": "v5.5.3",
+  "http_status": 200,
+  "final_url": "https://raw.githubusercontent.com/espressif/esp-idf/2c211b236707889e8400c4dc5644dd5c4ee071e0/components/hal/uart_hal.c",
+  "etag": "\"0c01c24574b3b32f8cba3e5e5a6e246d8d3ec2fcd0e06998da61acb4cd510be2\"",
+  "notes": [
+    "Required ESP32-S3 UART support contract for archived Bitaxe102 firmware. Reference source only; guest version string does not prove an exact firmware rebuild or physical timing."
+  ]
+}

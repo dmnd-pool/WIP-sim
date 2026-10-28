@@ -1,0 +1,162 @@
+{
+  "schema": "md-sim-small-source-acquisition/1",
+  "inputs": [
+    {
+      "path": "artifacts/files/source/esp-qemu-uart-map-febae182e/include/hw/misc/esp32s3_reg.h",
+      "sha256": "419900361d82595a306b411b46b2e8803174d7099b076284548b58cab3b8928f",
+      "size": 4677
+    },
+    {
+      "path": "artifacts/files/source/esp-qemu-uart-map-febae182e/include/hw/char/esp32_uart.h",
+      "sha256": "e88430d600c7f1d6333699e3c0d43643dbeb5a8c34d99899fe6ae7422b029c01",
+      "size": 3911
+    },
+    {
+      "path": "artifacts/files/source/esp-qemu-uart-map-febae182e/include/hw/char/esp32s3_uart.h",
+      "sha256": "a5b8ac745b165c602127d4cc34991d2789435e1adcbb221a9bafed6c21afba19",
+      "size": 3668
+    }
+  ],
+  "origin": "https://raw.githubusercontent.com/espressif/qemu/febae182e132e4055529be423a818225ebddaa3a/include/hw/misc/esp32s3_reg.h",
+  "backend_source_archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+  "archive_member": "qemu-febae182e132e4055529be423a818225ebddaa3a/include/hw/misc/esp32s3_reg.h",
+  "archive_member_size": 4677,
+  "scope": "Pinned source and address-map contract only. Exact archive-member equality is now verified without executing source code.",
+  "initial_lookup": "Guessed hw/xtensa/cpu_esp32s3.h returned404; existing archive member index resolved the relevant header. No unchanged retry.",
+  "previous_catalogue_checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/inspect_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/qemu-uart-map-inspect.log",
+        "sha256": "1f6282f067db2d8c45ece42374a2f25d97fef712df1741ec929df86157ab8abc",
+        "size": 56
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/verify_archive.py",
+        "--incremental"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/qemu-uart-map-archive.log",
+        "sha256": "0fdcc83bb9fb8b76ce9828da93774144e81278bcac9e80ea5417df6a2a95d026",
+        "size": 1720
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/report_coverage.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/qemu-uart-map-coverage.log",
+        "sha256": "7dba0b373e5ef912cfde06bc952a7f91926c106e2479b6f6db77571c9ca37462",
+        "size": 95
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/catalog.py",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/qemu-uart-map-build.log",
+        "sha256": "79f90396df7e28cb00b1539f297082bc8c345a869c9dcb38de54a476bd1c7ebc",
+        "size": 2236
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/catalog.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/qemu-uart-map-verify.log",
+        "sha256": "2e1dcb5df4fe01323175aa61726bac4f0da60501f86dd397eb7868cfdd618eb1",
+        "size": 145
+      }
+    }
+  ],
+  "catalogue_checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/inspect_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/uart506-inspect.log",
+        "sha256": "f8ee403ab9a45b5c9d7285f7b42839f7a925f4e22c31862f5131ee005941cb06",
+        "size": 136
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/verify_archive.py",
+        "--incremental"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/uart506-archive.log",
+        "sha256": "7d4abb8abce7b1b5a477c4fb4ee18076306678a36631c540dbbfe13bf925d997",
+        "size": 1720
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/report_coverage.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/uart506-coverage.log",
+        "sha256": "a835be68f83f45197b6d90d3b5013909785af76ee44cb50b4a7677f43c260707",
+        "size": 95
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/catalog.py",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/uart506-catalog-build.log",
+        "sha256": "de616b95d8dfcff0222fd3c1cff9cfe02bf4db946a7a7a91f2d45a9f24a762b0",
+        "size": 2236
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/catalog.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-001/uart506-catalog-verify.log",
+        "sha256": "d64e3561e8767f903f7afa566e7e4782e9fa02b7bf8b9980b58d7f660988a256",
+        "size": 145
+      }
+    }
+  ],
+  "confirmed_conflict": "Original parent declares UART_DATE at0x78 and returns constant0x15122500; S3 does not override. Reading S3 CLK_CONF0x78 cannot recover actual guest writes.",
+  "archive_member_equality": {
+    "path": "work/simulator/esp32-uart-506/archive-member-equality.json",
+    "sha256": "70de7129a887e5d678c3a48ad4dc347dfbd9f09fa4b589c57d9dec501c7a674c",
+    "size": 2335
+  }
+}

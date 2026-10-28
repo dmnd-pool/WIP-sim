@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-qemu-51b3f81-hw-core-remote-port-memory-master-c",
+  "url": "https://raw.githubusercontent.com/Xilinx/qemu/51b3f81a0b37d382aef642015ae83973fdf06b1d/hw/core/remote-port-memory-master.c",
+  "kind": "source",
+  "title": "Pinned Xilinx/qemu remote-port reference: hw/core/remote-port-memory-master.c",
+  "language": "en",
+  "source_id": "s9-remote-port-qemu-51b3f81",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-qemu-51b3f81/hw/core/remote-port-memory-master.c",
+  "sha256": "26c0323d78f76c9613fcc2f4ab5ea7a90a173f385f97ec3bcf65d8e4f9ee57ad",
+  "size_bytes": 9001,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "51b3f81a0b37d382aef642015ae83973fdf06b1d",
+  "etag": "\"a2a646269bd0c86b407fc17f90338a298289dbafd9816712a190c0b8749ed8ee\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

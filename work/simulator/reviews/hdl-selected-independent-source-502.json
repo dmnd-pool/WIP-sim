@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "status": "source review closed; focused checks and actual selected HDL execution pending",
+  "scope": "Compile exact reconstructed497 Verilog with unchanged pinned vendor primitives, run independent primitive vectors and retain the compiled VVP program. No processor, AXI, original-board, physical timing or mining claim.",
+  "inputs": [
+    {
+      "path": "simulator/firmware/s9-hdl-inputs-502.json",
+      "sha256": "bdf8d46eaa04598919633cb3108677421ff85fb7ff74d75164d73439f85f4f00",
+      "size": 6557
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/glbl.v",
+      "sha256": "de59a57e3e0091f1b9162d9914dce24c469820a0c5b5a41d1d202d93fae0abdd",
+      "size": 2548
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/BUFGCTRL.v",
+      "sha256": "088242595d7c85b1ba75a617fc0078064d64de9aedd1a0cc4c7c47cf968bf263",
+      "size": 25482
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/CARRY4.v",
+      "sha256": "f2f62f5b5736dfa889da76f24cf7fdc9b456282420ef6a203e06d34408d4d75d",
+      "size": 5713
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/FDRE.v",
+      "sha256": "c6fdb4feddc181a2e7ec5c3abef314fef6d5755f999fc9ccad3bf79d1b543a1c",
+      "size": 6665
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/FDSE.v",
+      "sha256": "173afee3263388433ef35431935175575fea2b4592d77cf87641ea83d416de82",
+      "size": 6664
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/IBUF.v",
+      "sha256": "594f51b2321e68cc0e2175c12996a37fe9d3bd7ea0063420795cb51accef9fe5",
+      "size": 3640
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/IOBUF.v",
+      "sha256": "6aaf4a942e5ffbbf4bdeae6aea7d0dc5380db4cbc72eacf3bacb4e8acf472522",
+      "size": 2724
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/LUT6_2.v",
+      "sha256": "d4927b9fa9299db1332257c215c48fad31954dbab189d2bd2aa098571d65f945",
+      "size": 6115
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/MUXF7.v",
+      "sha256": "9ea29291c201b0eac484317a1151d7597f98e5426dee30d0d68b4acde00d6aba",
+      "size": 2179
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/OBUF.v",
+      "sha256": "577fb9b1936020a37933c8aacea86dded84c9e4182d728d9368afbf3e7caab85",
+      "size": 2219
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+      "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+      "size": 848916
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PULLDOWN.v",
+      "sha256": "5d327d20add5ea4b0f6122dbba58847d0cde209ebe00ee5506a1c33cf1acd33e",
+      "size": 1528
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PULLUP.v",
+      "sha256": "1f66d11f5695d994490258adc40253c8d6ab08e2a6c93de2836bcf3dab90b637",
+      "size": 1524
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/RAM32M.v",
+      "sha256": "a91031066a8ea64c02eb52a24302ea53aebf38057ad91c8c45581251b4c22143",
+      "size": 12374
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/RAMB36E1.v",
+      "sha256": "b6153b595696f7eebe6840b2b8d518e32df698cb8e8b2730c8838648ceec72fb",
+      "size": 295535
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/SRL16E.v",
+      "sha256": "a5a215d3175be5f1dfc778c2f5bc02855188dd0b77a5abd99710840b50298bc4",
+      "size": 4958
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/SRLC16E.v",
+      "sha256": "723041c5115572de532018d2046d0a1183c860aa2c41d83feab99e60f54df070",
+      "size": 5056
+    },
+    {
+      "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/SRLC32E.v",
+      "sha256": "7e4c51d1a39b15f304c084fea738c1ba1f19c17110a43d8e8f97ad299209e740",
+      "size": 5127
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/selected.v",
+      "sha256": "31bef35aaa1e18af42fdd0c01d1045a5d56ae031c569adf9440eab5fa416e848",
+      "size": 12538532
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/iverilog-tools.tar.gz",
+      "sha256": "3c5631a6d6285affa39d9fddb9acca3758988b9c2fe6cbc4e3ce227f5fc33f61",
+      "size": 3828781
+    },
+    {
+      "path": "simulator/firmware/fixtures/s9-primitives-502.v",
+      "sha256": "1559916d4bcbb1bf26e7c6427731b23f07b6b1e71760044fcb4e0c510606b683",
+      "size": 1669
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/build-report.json",
+      "sha256": "ef6efe2fd4a4de23bac58497c04a301eb9f6390ef938a2c92f3943288cb0181e",
+      "size": 170063
+    },
+    {
+      "path": "work/simulator/hdl-dev-502b/s9_hdl_validate.rs",
+      "sha256": "0c619f827359159d91c8d690ad0d2e0dbfa5190a399563792f1777b6aca9800a",
+      "size": 11159
+    },
+    {
+      "path": "crates/md-sim-firmware/src/confinement.rs",
+      "sha256": "a1d7211bbdbdcc56421b2359475d61f135415c87264b50b7af8e3aa29c22cc9d",
+      "size": 23549
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/qemu_build.rs",
+      "sha256": "f6010fb91d4a5ab246e4e378614a11a9c2e6745e69b90418b31fef97451efbb1",
+      "size": 10167
+    },
+    {
+      "path": "work/simulator/reviews/hdl-tool-independent-execution-502f.json",
+      "sha256": "d17dec947ab10bc5bf033150c9995fa91d1904ff7894853abc5018def791cb51",
+      "size": 16992
+    }
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Candidate runtime library roots were mounted at diagnostic aliases that the Icarus dynamic loader could not use.",
+      "resolution": "All five candidates now use their actual /usr/lib SONAME guest paths, preserving the existing ELF closure and closed runtime. No host directory or generic loader-policy exception was added."
+    }
+  ],
+  "review_checks": [
+    "Exact profile SHA is enforced both outside and inside the runtime. The18 vendor files, selected497 netlist, actual502f tool archive and vector fixture match their pinned bytes.",
+    "The vector fixture independently checks all64 LUT inputs,512 carry inputs and6 FDRE cases. Its582 result does not claim coverage of every selected primitive or physical timing.",
+    "Compilation explicitly selects top plus glbl, enables warnings, and does not enable XIL_TIMING or XIL_DR. Missing modules and actual compiler failures are not accepted.",
+    "The successful primitive run is separate from selected elaboration and VVP compilation. Each step requires exit success and complete bounded diagnostics.",
+    "The existing netlist preparation guard retains private namespaces, no network egress, read-only inputs, no KVM, and resource limits. The96 MiB trace can hold the bounded32 MiB compressed compiled artifact plus its hex framing.",
+    "The output archive is hashed inside, bounded, decoded and rehashed outside before retention. Raw envelope/result and failures remain. All input objects are reverified after success.",
+    "The vendor PS7 input is only a port shell. original_board_gate remainsfalse. The missing monitor table and33 electrical ambiguities remain explicit."
+  ],
+  "open_source_findings": [],
+  "pending": [
+    "Integrate exact reviewed staged Rust source and run focused format/Clippy/test checks.",
+    "Freeze final source/helper and run the selected HDL path.",
+    "Independently inspect retained diagnostics, compiled artifact identity and exact actual runtime inputs."
+  ]
+}

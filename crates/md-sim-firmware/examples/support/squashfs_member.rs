@@ -31,6 +31,19 @@ fn bounded(args: &[&str], limit: u64) -> Result<Vec<u8>> {
 }
 
 pub fn extract(member: &str) -> Result<()> {
+    extract_checked(member, 7 * 1024 * 1024, None)
+}
+
+/// The caller must identify the exact larger member from its pinned image.
+pub fn extract_sized(member: &str, expected_size: u64) -> Result<()> {
+    ensure!(
+        expected_size <= 14 * 1024 * 1024,
+        "exact member size exceeds preparation bound"
+    );
+    extract_checked(member, expected_size, Some(expected_size))
+}
+
+fn extract_checked(member: &str, maximum_size: u64, expected_size: Option<u64>) -> Result<()> {
     ensure!(
         !member.is_empty()
             && member.len() <= 1024
@@ -45,11 +58,12 @@ pub fn extract(member: &str) -> Result<()> {
         &["l", "-ba", "-slt", "-spd", "/ramdisk", member],
         1024 * 1024,
     )?;
-    let size = member_size(std::str::from_utf8(&listing)?, member)?;
-    ensure!(
-        size <= 7 * 1024 * 1024,
-        "member exceeds retained-output budget"
-    );
+    let size = checked_member_size(
+        std::str::from_utf8(&listing)?,
+        member,
+        maximum_size,
+        expected_size,
+    )?;
     let bytes = bounded(&["x", "-so", "-spd", "/ramdisk", member], size)?;
     ensure!(
         bytes.len() as u64 == size,
@@ -57,6 +71,20 @@ pub fn extract(member: &str) -> Result<()> {
     );
     std::io::stdout().write_all(&bytes)?;
     Ok(())
+}
+
+fn checked_member_size(
+    listing: &str,
+    member: &str,
+    maximum: u64,
+    exact: Option<u64>,
+) -> Result<u64> {
+    let size = member_size(listing, member)?;
+    ensure!(
+        size <= maximum && exact.is_none_or(|expected| size == expected),
+        "member size differs or exceeds retained-output budget"
+    );
+    Ok(size)
 }
 
 fn member_size(listing: &str, member: &str) -> Result<u64> {
@@ -91,6 +119,22 @@ fn member_size(listing: &str, member: &str) -> Result<u64> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn larger_member_requires_the_exact_path_and_size() {
+        let listing = "Path = usr/bin/bosminer\nFolder = -\nSize = 12699280\nMode = -rwxr-xr-x\n";
+        assert_eq!(
+            checked_member_size(listing, "usr/bin/bosminer", 14 << 20, Some(12699280)).unwrap(),
+            12699280
+        );
+        assert!(
+            checked_member_size(listing, "usr/sbin/bosminer", 14 << 20, Some(12699280)).is_err()
+        );
+        assert!(
+            checked_member_size(listing, "usr/bin/bosminer", 14 << 20, Some(12699281)).is_err()
+        );
+        assert!(checked_member_size(listing, "usr/bin/bosminer", 7 << 20, None).is_err());
+        assert!(extract_sized("usr/bin/bosminer", 15 << 20).is_err());
+    }
     #[test]
     fn exact_regular_member_required_even_when_tool_returns_zero() {
         let listing =

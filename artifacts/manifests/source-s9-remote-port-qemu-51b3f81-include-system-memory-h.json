@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-qemu-51b3f81-include-system-memory-h",
+  "url": "https://raw.githubusercontent.com/Xilinx/qemu/51b3f81a0b37d382aef642015ae83973fdf06b1d/include/system/memory.h",
+  "kind": "source",
+  "title": "Pinned Xilinx/qemu remote-port reference: include/system/memory.h",
+  "language": "en",
+  "source_id": "s9-remote-port-qemu-51b3f81",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-qemu-51b3f81/include/system/memory.h",
+  "sha256": "e58c2d5bd6e6cc1db45edb0eadd01219d9a2c28f5bd4bdc900123e08d1418c20",
+  "size_bytes": 124874,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "51b3f81a0b37d382aef642015ae83973fdf06b1d",
+  "etag": "\"180ec451b8ec16b06cbeb8365add1a35572880a8e215b1920c0e3bc85aed1aee\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

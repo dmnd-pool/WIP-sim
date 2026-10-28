@@ -1,0 +1,509 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "reviewer": "cleanup_resume independent review",
+  "scope": "Existing upstream tool build, full gperf check target, Icarus language smoke tests, strict negative syntax rejection and exported-install restoration. This does not pass selected FPGA HDL, PS7/AXI execution, firmware boot or mining.",
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/result.json",
+      "sha256": "07ebc4f36809d37eb597bb3684bee9e2fb3ecfe5341488ff8ff93ba41faeb573",
+      "size": 15653253
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/spec.json",
+      "sha256": "fce0b43a66e4622d10f772d730bb0a78f365e132478cce039bee55a622b68cba",
+      "size": 24312
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/input-identities.json",
+      "sha256": "4efde29363435e074130e6ced39ebd7527a0cf3d02dfe9e98cabcdd4f64fa1d8",
+      "size": 43464
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/build-envelope.json",
+      "sha256": "dc40d9983a877037ebbf0036082443f703c69e84cbafdcd13040b5e6ae442c51",
+      "size": 7826204
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/build-report.json",
+      "sha256": "ef6efe2fd4a4de23bac58497c04a301eb9f6390ef938a2c92f3943288cb0181e",
+      "size": 170063
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-build-502f/iverilog-tools.tar.gz",
+      "sha256": "3c5631a6d6285affa39d9fddb9acca3758988b9c2fe6cbc4e3ce227f5fc33f61",
+      "size": 3828781
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-driver-502f/manifest.json",
+      "sha256": "7b2a9ece9e5f910245a4cc89c49ab64e2e799d0e238abd1184d2d35f1ebcbf32",
+      "size": 46193
+    },
+    {
+      "path": "work/simulator/qemu-s9/iverilog-driver-502f/source/crates/md-sim-firmware/examples/build_iverilog_tool.rs",
+      "sha256": "01c31ff885f9a0ee6dd5d100c290ea6b4c1081b0aca9f3615551dbedb4255242",
+      "size": 24979
+    }
+  ],
+  "source_review": "work/simulator/reviews/hdl-tool-independent-source-502b.json",
+  "serial_check_review": "work/simulator/reviews/hdl-tool-independent-delta-502d.json",
+  "final_source_delta": "Adds bounded failed-config logs and explicit CC/CFLAGS/LDFLAGS_FOR_BUILD equal to the normal settings. Host and isolated guard reject missing/divergent values. No source archive, assertion, ordinary isolation or limit change.",
+  "verified": {
+    "frozen_sources": 279,
+    "captured_mounts": 114,
+    "distinct_input_objects": 112,
+    "step_streams_rehashed": 28,
+    "positive_steps": 13,
+    "negative_syntax_exit": 2,
+    "wall_milliseconds": 113082,
+    "raw_result_matches_saved_envelope": true,
+    "envelope_archive_matches_saved_bytes": true,
+    "ordinary_runtime_private": true,
+    "check_logs": {
+      "tests": {
+        "path": "work/simulator/checks-2026-10-28-502b/tests-f.log",
+        "sha256": "d583086a2931003e1d6ce913ef91818d2c7df00d5404646253c9a015a1b4e034",
+        "size": 895,
+        "result": "pass"
+      },
+      "clippy": {
+        "path": "work/simulator/checks-2026-10-28-502b/clippy-f.log",
+        "sha256": "0d6ea5b4e0658908730c7141e6ec7c681374a10f47413be4a96712e1ea51bfbd",
+        "size": 143,
+        "result": "pass"
+      },
+      "release": {
+        "path": "work/simulator/checks-2026-10-28-502b/release-f.log",
+        "sha256": "7ba9ca9395af91c01ddd15a4a2f8fbcea5c036a968153d349fdf7c1b421f8369",
+        "size": 145,
+        "result": "pass"
+      }
+    },
+    "archive_members": [
+      {
+        "path": "iverilog-install",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/bin",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/bin/iverilog-vpi",
+        "size": 3430,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "b3fe3ec66941c32415769cd82d9089ebbb9f27ab856530f4dd9c9aecb2e2eadb"
+      },
+      {
+        "path": "iverilog-install/bin/vvp",
+        "size": 1809200,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "5ac851cd2359aa59012e984f116db0203b5195c0821a04ba7aae3345b672093d"
+      },
+      {
+        "path": "iverilog-install/bin/iverilog",
+        "size": 65920,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "6888b37f939551e05baf936031689b5744d20ac7b89136f130ce99f0da25b5c7"
+      },
+      {
+        "path": "iverilog-install/include",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/include/iverilog",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/include/iverilog/ivl_target.h",
+        "size": 96557,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "33428c43621b0458a1d58ed83fdda0d12c37b347d4b6212ce58655ab82421016"
+      },
+      {
+        "path": "iverilog-install/include/iverilog/_pli_types.h",
+        "size": 2510,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "137d065d29901d444219bbc671bac851908ff34c64dcfdb645b91dc7c3507137"
+      },
+      {
+        "path": "iverilog-install/include/iverilog/sv_vpi_user.h",
+        "size": 2610,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "1567de8c0b87042a0e0808fbc80d0997ff9b7a4df1dda06c238940a0f92f27df"
+      },
+      {
+        "path": "iverilog-install/include/iverilog/vpi_user.h",
+        "size": 24883,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "9365a319491d22ba7ee2d38ab334afd37b6d09e2932545140c6bc8bd99daa250"
+      },
+      {
+        "path": "iverilog-install/include/iverilog/acc_user.h",
+        "size": 7658,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "75a2d6e0918ab3353ac2a2da8fad8b3eb94e5dcd38a390b276bd32f025491c37"
+      },
+      {
+        "path": "iverilog-install/include/iverilog/veriuser.h",
+        "size": 11724,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "fbee71d530b70f3a102d3115e19b516c8cb48639eb042413ae244d43790e13fb"
+      },
+      {
+        "path": "iverilog-install/lib",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/lib/ivl",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/include",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/include/constants.vams",
+        "size": 1377,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "48cb40767dd73f50a3288c0b8b5fc779a6462b4e27f565dd9aae31a53f4a6f09"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/include/disciplines.vams",
+        "size": 1125,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "6540e1f3f01b64eee3a26239c1bab6fe80db5b1fca30e336fe40189b52add231"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/ivl",
+        "size": 3644040,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "84a9b5bf4e35d877d692339d84d71c335a3969dccda13a0583ef12e96803192e"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/ivlpp",
+        "size": 82016,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "1fa572c0ccdae6f5a7a9fdcc801cb84559a29cc591f0f128e5475bbad915278e"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vhdlpp",
+        "size": 748848,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "4f908028f84df4673cf554f9fcfb8ac85f3381d6b6af4e2561c0e730f0ecc952"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/system.vpi",
+        "size": 522840,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "c9e0f0941ca1f678b3203196e42131c0f3f9c4780f264572bbab0cc2ee28af08"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/va_math.vpi",
+        "size": 17768,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "1e2310fb4e758cd5ef7ad375999ecbcb22a6046d6f7067fca312727939d2d7e6"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/v2005_math.vpi",
+        "size": 23016,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "c6d5e2e4f516109acae2a6605d65e41fe955cc887fba0383f52cfda634076eb0"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/v2009.vpi",
+        "size": 45952,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "c681e9b76e28cff3cc40ed9880309efb8f17ad5dd380f7ba3a8db61406e5b7c0"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vhdl_sys.vpi",
+        "size": 27408,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "bb696a6416a0fae65ee5caad7bf4e49232b24a2f3fb03d27bf8f5be0646518ee"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vhdl_textio.vpi",
+        "size": 39968,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "638a2eb0649c4ad62433058e84970d2f3dccdf8c3b90b7ced9c32fc78df43756"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vpi_debug.vpi",
+        "size": 16064,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "3b338bc417d2661e2c5e86b9f9b8c06996b7137433539ac033e415c2abcfc702"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/cadpli.vpl",
+        "size": 59208,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "ca6d87028b9eb5c0a85bdd50ad456dee3fae3dcaa31f3cda11fe5207d583a0b4"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/null.tgt",
+        "size": 15448,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "517fd26bee29f96844d10d1366fd30fff80cba6c395770657b2f7997a85f5745"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/null.conf",
+        "size": 18,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "313ef43d707cf69cabac9b02c1cee5223b7179007aa627c0963a567691751cd0"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/null-s.conf",
+        "size": 65,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "8a4b79342b5d58fcd576238e928403c986bf623e5e9c63fc7e199f5c5bf57fae"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/stub.tgt",
+        "size": 90984,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "88e1e98080bb8a0787b6a271a141bf110c65606627e9728501c0065c74e9c4d8"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/stub.conf",
+        "size": 49,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "03c9241decbe4502f087790fe7eaf6568fb7992788fbf56be0f69737a98c67fb"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/stub-s.conf",
+        "size": 96,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "ca77cff51d74ad77e33efd589c82fb410823ad88a5933a5e4aca86251250b302"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vvp.tgt",
+        "size": 226792,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "fdb90fa1363d439c71cf805570dd00a96ba33216599106a98519ef3cea57eb72"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vvp.conf",
+        "size": 99,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "e93c07d9386daeab2cc1fc04676a08427c1c8c6e3548501ce01bbf2efd9e779e"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vvp-s.conf",
+        "size": 146,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "26f62ba35954178223ca47d4557baad66b56b9a65e6d5ca8987884d60b2bc1e7"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vhdl.tgt",
+        "size": 379664,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "e6b254829cd3861dc376711745fd8d606963f5874905b39d7b712ad20cdcd4a7"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vhdl.conf",
+        "size": 86,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "7f8563bd0a386bedf111f5f23ce827b8efd6749cb3b104cf236358324ccd840a"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vhdl-s.conf",
+        "size": 103,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "d9b3d7de12e25e14c86738110f4e2baf3711f60a161e34ad329104f13ccabc5d"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vlog95.tgt",
+        "size": 189200,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "25e4ab20fdbaa569f32f0bd118a62e27b6f9b22704cdd3b9b8ef0215b58b029f"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vlog95.conf",
+        "size": 57,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "47d4a923819bdf601c5fa62065b6787f81d2ea64cb0e6b33c33c4e9001d356c0"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/vlog95-s.conf",
+        "size": 141,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "f4f09237dc90f1e4e58658b2bb14bb446e93619c911b8ead10cc0240f64cad51"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/pcb.tgt",
+        "size": 86928,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "614e4adbabaf4a4e8d982ddf63587fd6e29c2cfbad66eab8be888ad517002fa0"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/pcb.conf",
+        "size": 48,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "5a84492e9e830658590cc28d5c39d8b137124ac2f6e5c111a838d91b99aa3cb9"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/pcb-s.conf",
+        "size": 95,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "2f184346cab431bfa26ef1bf0a906a8d78469aae495f93974896ec952dee3657"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/blif.tgt",
+        "size": 60816,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "3c6a64ae20a76051ba89f728d8f6ebb456ec79c5a8ab86e877a691f81d32ffff"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/blif.conf",
+        "size": 96,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "3ce285013d51a0f632be229a513c17d4f8a314319c0e7d7fbbe53a2339580e1c"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/blif-s.conf",
+        "size": 96,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "3ce285013d51a0f632be229a513c17d4f8a314319c0e7d7fbbe53a2339580e1c"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/sizer.tgt",
+        "size": 36656,
+        "mode": 33261,
+        "type": "file",
+        "sha256": "6057eec8f17818efc04d8ec77af779f46fd9d2ca47e47998c022b75f6655ae12"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/sizer.conf",
+        "size": 97,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "03a8f24468995e87b23840915b613abd339843a6ec6d0931b57ea56720ff415d"
+      },
+      {
+        "path": "iverilog-install/lib/ivl/sizer-s.conf",
+        "size": 97,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "03a8f24468995e87b23840915b613abd339843a6ec6d0931b57ea56720ff415d"
+      },
+      {
+        "path": "iverilog-install/lib/libvpi.a",
+        "size": 1386,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "8a1cdad36699e68c3f3c9f2d18f0299755996941189800359acfa70d4e3cdab1"
+      },
+      {
+        "path": "iverilog-install/lib/libveriuser.a",
+        "size": 75168,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "9716d62d011596bc7896aacbe2fe24847c5b7bebafc5b44a5c49103572850204"
+      },
+      {
+        "path": "iverilog-install/share",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/share/man",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/share/man/man1",
+        "size": 0,
+        "mode": 16877,
+        "type": "directory"
+      },
+      {
+        "path": "iverilog-install/share/man/man1/iverilog-vpi.1",
+        "size": 3704,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "159ee0fa08dd8c4c9bae845012a3a1632bfeb47b687d7e9a1b4d26d12db5c363"
+      },
+      {
+        "path": "iverilog-install/share/man/man1/vvp.1",
+        "size": 7768,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "36e5ff7ffe2843d9b9dff9b37ddedb310374d7459caf99d24ecb58db77b3e42e"
+      },
+      {
+        "path": "iverilog-install/share/man/man1/iverilog.1",
+        "size": 26875,
+        "mode": 33188,
+        "type": "file",
+        "sha256": "f826cc7b46cc93ffae3ccd11df5e0b42fbbf67193b89be7b12dc515f5fef800a"
+      }
+    ]
+  },
+  "limitations": [
+    "The tool archive needs its compiled prefix /work/iverilog-install and the recorded build runtime closure. A separate smaller runtime closure test remains pending.",
+    "Warnings in gperf and Icarus logs remain in the evidence. They were not removed or changed into absent diagnostics.",
+    "No selected netlist was compiled in this run. The selected-netlist validation driver and vendor primitive tests are a separate next step.",
+    "Failed captures/builds502b,502c,502d,502e retain their original failure verdicts."
+  ],
+  "open_review_findings": []
+}

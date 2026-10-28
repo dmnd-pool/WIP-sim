@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "status": "completed and postchecked",
+  "scope": "Previously reviewed duplicates only. No implementation, firmware execution or mining verdict is changed.",
+  "removed_objects": 151,
+  "logical_bytes_reclaimed": 2013780471,
+  "retained_files_rehashed": 234,
+  "restore_files_rehashed": 56,
+  "locks_verified": 19,
+  "checks": [
+    {
+      "path": "work/simulator/cleanup-core-503/request.json",
+      "sha256": "0684024722a21aa7ff966237688c4fa9a19adff40dbe932b3570808e83e4f82e",
+      "size": 1825
+    },
+    {
+      "path": "work/simulator/cleanup-core-503/plan.json",
+      "sha256": "73e7bde4f18a18e31d49dfa161d8f811b3cf25ff227a7c54aab1f60488448468",
+      "size": 63162
+    },
+    {
+      "path": "work/simulator/cleanup-core-503/before.json",
+      "sha256": "f8b69bc01c9b9c166d30d188eafb14e3e7da4038aade2f4183f18e1067c59d0f",
+      "size": 253379
+    },
+    {
+      "path": "work/simulator/cleanup-core-503/immediate-preflight.json",
+      "sha256": "9cff6cee8ccf98c147eb63ddfac76a634de3b5bc7c45a69deee08693a49ff3e2",
+      "size": 117
+    },
+    {
+      "path": "work/simulator/cleanup-core-503/reclaim.json",
+      "sha256": "adbdcb90acf2ff52050714649a592a4bec736b2e72fd06e8f3f09d09ab11efff",
+      "size": 63116
+    },
+    {
+      "path": "work/simulator/cleanup-core-503/reclaim.log",
+      "sha256": "7c07da1c2483715473ae83cda0abc1e39c8f3c52338866e2893de7da20c1e7cd",
+      "size": 49
+    },
+    {
+      "path": "work/simulator/cleanup-core-503/postcheck.json",
+      "sha256": "9fe67486bbc2c1b2f27b87c7ec1baec6e0e32964974edbe524d4f58df1252065",
+      "size": 729
+    },
+    {
+      "path": "work/simulator/cleanup-core-503/shared-cli-check.log",
+      "sha256": "dc8283d6dfd74d022609bde06fc3a303ac0a8c1bfce3cdc3d0843d83a79ad727",
+      "size": 986
+    }
+  ],
+  "independent_review": {
+    "path": "work/simulator/reviews/core-cleanup-independent-plan-503.json",
+    "sha256": "9ffa0c8ee1a3965d9e44564fa8229ca01e49f08420e352e1ce7656e5f09e244a",
+    "size": 2610
+  },
+  "actual_command": "Frozen cleanup-browser-tools-481/reclaim_qemu_inputs with the canonical/target arguments in request.json, new reclaim.json journal, without --plan.",
+  "restoration": "The completed journal names a retained restore_copy_from for each removed path. Take the affected input-store lock first. Check retained SHA256 and size, create a new regular byte copy, then verify it. Never hard-link or overwrite a differing file. Source-evidence copies use their owning Core store lock.",
+  "current_cli_input_check": "Frozen cli-tools-500/md-sim demo s9-shared --check exited0 after cleanup. This is an input integrity check, not a new firmware run.",
+  "preserved": [
+    "All source firmware runs and their original evidence.",
+    "All original downloaded archives, unique CAS objects and frozen helpers.",
+    "All Core block-acceptance/restart verdicts and their unique node evidence.",
+    "The full canonical pcap321-candidate0-323 store."
+  ],
+  "root_free_bytes_at_postcheck": 8974434304
+}

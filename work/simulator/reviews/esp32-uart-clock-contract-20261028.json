@@ -1,0 +1,120 @@
+{
+  "schema": "md-sim-controller-clock-reference/1",
+  "date": "2026-10-28",
+  "scope": "Static manufacturer source contract for the UART controller used by original ESP firmware. This is not a measured clock, exact firmware rebuild or completed ASIC line model.",
+  "commit": "2c211b236707889e8400c4dc5644dd5c4ee071e0",
+  "tag_object": "b31fcc7a314a44ad992b58f589f7d1d8a4fadff6",
+  "acquisition": {
+    "path": "work/simulator/reviews/esp-idf-uart-acquisition-20261028.json",
+    "sha256": "a069ba53d26312d3ed5127af3c00b652da23a7b8dde28f0a9258905b3088e219",
+    "size": 4026
+  },
+  "sources": [
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/tag-ref.json",
+      "sha256": "122d1c69e6f47436fecf7a649caac8970d47a62e5ebc3dbb86c7afef08af17b4",
+      "size": 337
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/tag-object.json",
+      "sha256": "520d82f86143188e52327cd7e786f36c9cfb9839812898d7445c82527263118e",
+      "size": 1330
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/esp32s3/include/hal/uart_ll.h",
+      "sha256": "2e2dd54fe649007daaddc37072af30871b4161254e9e2929028484bdb62b422d",
+      "size": 33342
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/register/soc/uart_reg.h",
+      "sha256": "eef72592d7949e641faf7c1d153a8bb0eb0e851619a5f579b4a3c3c663d67e07",
+      "size": 65797
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/register/soc/uart_struct.h",
+      "sha256": "bbe3554c245edd126ea944615fae524e5653058916b79d8264faba5d41a7c66e",
+      "size": 44836
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/soc/esp32s3/include/soc/clk_tree_defs.h",
+      "sha256": "d3e24702e9c367a172e47077f551ff06d936ab4786484959f5368f9d9647cf2d",
+      "size": 22302
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/esp_driver_uart/src/uart.c",
+      "sha256": "44908b0ad0c2f1b4b5ea6cb250396d080a39b06532146c654f2823a71345879b",
+      "size": 109933
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/uart_hal.c",
+      "sha256": "09aba8059d4abb94a9d25e9425819d2cbca1a121f3e7d88eded0fd28af85dae5",
+      "size": 4766
+    },
+    {
+      "path": "artifacts/files/source/esp-idf-v553-uart-reference/components/hal/include/hal/uart_types.h",
+      "sha256": "1514867c826ba1b1dd02eb76f4a3921554da0b4c4cf99c40b3e1701a625df6a7",
+      "size": 5882
+    }
+  ],
+  "factory_observation": {
+    "guest_log": {
+      "path": "work/simulator/bitaxe/original-probe-038/guest.log",
+      "sha256": "a1dd683c7703483246f6f3ebdd24a8d68efae3acb3638cc3e4540ab64ea22c5e",
+      "size": 10259
+    },
+    "idf_version_string": "v5.5.3",
+    "application": "esp-miner v2.14.2",
+    "limitation": "Version text joins the candidate source version, not an exact rebuild identity."
+  },
+  "archived_miner_serial_source": {
+    "path": "work/simulator/bitaxe/adc-source-001/components_asic_serial.c",
+    "sha256": "7650dbed99922ef11405f1dd1708191539f4507fdc1a69d5f3cfad10ef8bb447",
+    "size": 2999
+  },
+  "contract": {
+    "uart_ll": "components/hal/esp32s3/include/hal/uart_ll.h:176-264",
+    "clock_selection": {
+      "register_offset": "0x78",
+      "field_bits": "21:20",
+      "1": "APB",
+      "2": "RTC",
+      "3": "XTAL",
+      "source_frequency": "Must be supplied by modeled clock tree; not unconditionally40MHz."
+    },
+    "predivider": {
+      "register_offset": "0x78",
+      "integer_bits": "19:12",
+      "factor": "encoded integer +1",
+      "fractional_fields": "A bits11:6 and B bits5:0. Not configured by selected HAL baud setter; remain unsupported if nonzero until TRM semantics are established."
+    },
+    "baud_divider": {
+      "register_offset": "0x14",
+      "integer_bits": "11:0",
+      "fractional_bits": "23:20",
+      "exact_rate": "(source_hz*16)/((integer*16+fraction)*(predivider+1))",
+      "zero_divisor": "Must not manufacture a fallback rate."
+    },
+    "selection_default": "uart_param_config uses UART_SCLK_DEFAULT for source_clk0; ESP32-S3 defines defaultAPB. Archived miner serial.c omits source_clk. Actual guest registers still need capture.",
+    "source_clock_controls": {
+      "global_gate": 22,
+      "core_reset": 23,
+      "tx_gate": 24,
+      "rx_gate": 25,
+      "tx_reset": 26,
+      "scope": "CLK_CONF fields. Proper FIFO/IRQ/reset effects require implementation and execution tests."
+    },
+    "tx_completion": "Archived SERIAL_set_baud calls uart_wait_tx_done before uart_set_baudrate with a1000ms deadline; preserve ordinary bus deadline."
+  },
+  "next_implementation": [
+    "Capture actual CLK_CONF, CLKDIV and format writes with QEMU virtual timestamps for the selected original run.",
+    "Replace the S3 fixed40MHz assumption with its selected modeled clock source and predivider, preserving existing UART FIFO/IRQ infrastructure.",
+    "Schedule TX/RX character completion with virtual time. Keep bus time independent of functional hash cap.",
+    "Make clock gating/reset, buffered writes, baud transitions and framing errors real state. Validate with isolated register/transport tests and original firmware execution.",
+    "Keep the ASIC programmed request distinct from effective communication state; do not silently accept baud mismatches or fabricate replies."
+  ],
+  "not_done": [
+    "No code from downloaded source executed.",
+    "No backend modification or test.",
+    "No physical timing calibration or complete board pass."
+  ]
+}

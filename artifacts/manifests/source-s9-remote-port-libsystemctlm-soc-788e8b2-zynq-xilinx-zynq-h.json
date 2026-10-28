@@ -1,0 +1,22 @@
+{
+  "id": "source-s9-remote-port-libsystemctlm-soc-788e8b2-zynq-xilinx-zynq-h",
+  "url": "https://raw.githubusercontent.com/Xilinx/libsystemctlm-soc/788e8b24b5d658780a55e97511082b1540fe92ab/zynq/xilinx-zynq.h",
+  "kind": "source",
+  "title": "Pinned Xilinx/libsystemctlm-soc remote-port reference: zynq/xilinx-zynq.h",
+  "language": "en",
+  "source_id": "s9-remote-port-libsystemctlm-soc-788e8b2",
+  "license": "see-original-source-header",
+  "retrieved_at": "2026-10-28T15:19:03.363878+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/s9-remote-port-libsystemctlm-soc-788e8b2/zynq/xilinx-zynq.h",
+  "sha256": "02af6a79b65a1016fd001f1771f0a6c8d2dcbf8b169bbe4ea30951646291097a",
+  "size_bytes": 1255,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "788e8b24b5d658780a55e97511082b1540fe92ab",
+  "etag": "\"14df5bc8a27df221585c5b06c0ce2a12632e7f43e6f40fe4a6971a73a134bc52\"",
+  "notes": [
+    "S9 CPU-to-selected-FPGA co-simulation transport and virtual-time reference only. Not executed.",
+    "No physical target, timing, firmware or mining pass is inferred. Existing QEMU API compatibility must be checked before reuse."
+  ]
+}

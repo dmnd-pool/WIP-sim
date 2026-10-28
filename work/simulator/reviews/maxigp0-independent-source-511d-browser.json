@@ -1,0 +1,83 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "browser_resume",
+  "recorded_at": "2026-10-28T15:14:19.952610+00:00",
+  "stage": {
+    "path": "work/simulator/reviews/maxigp0-source-stage-511d.json",
+    "sha256": "a526841ede5310017af6198a570de7e661209187ec5bebd3488caecccee884a8",
+    "size": 2964
+  },
+  "status": "PASS source review; actual selected AXI execution remains required",
+  "checked_stage_and_reference_inputs": [
+    {
+      "path": "work/simulator/axi-dev-511/s9_hdl_validate.rs",
+      "sha256": "7afb1426c9b17d77e7fc5ad6077b905f4f86bccb484f3134dce4c3ad7b50f3d7",
+      "size": 21474
+    },
+    {
+      "path": "work/simulator/axi-dev-511/s9_axi_vectors.rs",
+      "sha256": "30bef335ec848b4b7a96758461f2beae7b97128586a056eb7ec05c7bf3bf793b",
+      "size": 23189
+    },
+    {
+      "path": "work/simulator/axi-dev-511/axi_tasks.v.part",
+      "sha256": "d732666ab5778dc9e683968ebcab47f4ba4a06af75a58cd6776be8c4812aecc8",
+      "size": 5038
+    },
+    {
+      "path": "work/simulator/axi-dev-511/s9-hdl-inputs-511d.json",
+      "sha256": "f137f1e433e80074ecb539b8173bd993ce825ca5f1ccfe7f892f90eb0512f25b",
+      "size": 10401
+    },
+    {
+      "path": "simulator/firmware/s9-bosminer-mmio-511.json",
+      "sha256": "51a575433d6fc493967770f0abda67e317fa0deb70f5a43216d0e743a19978fc",
+      "size": 7610
+    },
+    {
+      "path": "work/simulator/reviews/maxigp0-abi-511d.json",
+      "sha256": "3f799c8a171c71679e5b6bfedd17c8babc8a48cdfc8b72a8b1bffcefcd15e53c",
+      "size": 6166
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-static-511c/inspection.json",
+      "sha256": "1ed1b8ae0719d7507db47f45786a1f1234fc8dedbbbbd88714bf6bd9447cdc4e",
+      "size": 1533
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-502k/selected.v",
+      "sha256": "3ea22dc51d32539e0a52ff83d7152d82009f4e50883bc20e6643e6672d1a2c9b",
+      "size": 12607262
+    },
+    {
+      "path": "simulator/firmware/s9-hdl-inputs-502l.json",
+      "sha256": "d6d730231227a2f6d299f4900b6868b858768459f9cceec07aa675269731658c",
+      "size": 8530
+    }
+  ],
+  "vendor_abi": {
+    "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+    "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+    "size": 848916
+  },
+  "port_table": {
+    "path": "artifacts/files/source/source-fasm-graph-8372b58/zynq7/ps7_ports.json",
+    "sha256": "be3770d6261c832fe571f9662463f1ccb825bd1f8fa919a23488a71c17680336",
+    "size": 98254
+  },
+  "selected_port_declarations_checked": 42,
+  "profile_payloads_rehashed": 33,
+  "original_elf_instructions_checked": 37,
+  "original_elf_literals_checked": 3,
+  "reviewed_behavior": [
+    "Only42 declared PS7 clock/reset/master ports are driven or observed. No programmable-logic state or response is forced. External miner inputs remain high impedance.",
+    "72 operations on three independently addressed common blocks; exact original ELF version/build predicates and DTB identity retained. Baud test uses changed data on excluded low byte and zero strobes. Reset follows deliberate baud modification.",
+    "Actual AXI handshakes preserve VALID until READY, hold response backpressure for three cycles, check response IDs/errors/unknowns, and fail at bounded handshakes/global simulation deadline. Digital100MHz stimulus is not a physical calibration claim.",
+    "Complete trace parser checks all72 ordered IDs/addresses/data/strobes and both reset positions. Selected gate requires clean actual compiler/runtime output, successful exit and trace verification. Existing primitive/RAM tests and old502l profile remain.",
+    "Compile/runtime stays inside existing confined input closure and unchanged900wall/600CPU/4GiB limits. Original downloaded vendor models and selected recovered netlist remain immutable."
+  ],
+  "unresolved_source_findings": [],
+  "original_board_gate": false,
+  "physical_timing_calibrated": false,
+  "next_action": "Integrate exact reviewed stage, execute focused checks and actual selected AXI vectors; retain any failure before CPU integration."
+}

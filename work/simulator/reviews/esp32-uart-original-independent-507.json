@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-28T13:43:11.766713+00:00",
+  "review_status": "independent diagnostic execution audit passed; firmware run remains failed at explicit unsupported ASIC read",
+  "scope": "Original ESP-Miner factory102 v2.14.2 bytes and archived ROM execute on the declared ESP32-S3 reference environment. Complete selected UART configuration capture is separate from hardware readiness or mining acceptance.",
+  "inputs": [
+    {
+      "path": "work/simulator/bm1397-probe-tools-507/inputs.json",
+      "sha256": "33b1cf330b2b13c4158dd52f7e53f5eb828e6d4712e4fc0a35b373659500e721",
+      "size": 39683
+    },
+    {
+      "path": "artifacts/manifests/open-gh-asset-475665897.json",
+      "sha256": "25b5355b26c52f5564eafe7e5c9e3fd575aea06d99e563f66724a8e94848d782",
+      "size": 1890
+    },
+    {
+      "path": "artifacts/files/firmware/open-gh-asset-475665897/esp-miner-factory-102-v2.14.2.bin",
+      "sha256": "3fd36298681d7797429dd72610041d731558c5253430902a3c7feeced232557c",
+      "size": 15802368
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/spec.json",
+      "sha256": "99cab3e8aa3be4e521123df6414ba305d9ab79eb3e205c0bcf23138d58e9f5bb",
+      "size": 4001
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/result.json",
+      "sha256": "82eceae786d03fb75e0bf526655c97d1d8335bdf1c055164d5aa3a1d4b51910c",
+      "size": 5456350
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/input-identities.json",
+      "sha256": "7a11790f869a1828507cdb6a45b0deeae80b2a43e128418f79c9e36c5b75063f",
+      "size": 3615
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/adaptation.json",
+      "sha256": "fbc1e76b03c6be0f77169c37e0155ef57924df5d45cbfa20e67e48f2414d0b0b",
+      "size": 763
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/assessment.json",
+      "sha256": "321781e9a728f699eab092dd89c056972b2e87d33252eb09f1eb829e122a802c",
+      "size": 504
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/guest.log",
+      "sha256": "9719525660fe7eb84c103d18961d10312e3c86886af994a7e814ddb2f1a0c349",
+      "size": 33600
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/backend.log",
+      "sha256": "80a29bbe0fa1ce6b2b7cf6e6d6971a855de4fb5ee68137d761ccb00986a84f42",
+      "size": 2694153
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-040/uart-configuration-observations.json",
+      "sha256": "d9ad494db90f4b130569470eef51a8a20b3e9a9fa89804bccd9fd80d77850b02",
+      "size": 5355
+    },
+    {
+      "path": "work/simulator/reviews/esp32-uart-independent-execution-506c.json",
+      "sha256": "fd372569a6490d29d56b6786835c0b2f1b7991d5cac6d454e1e32ce42ac4e8dd",
+      "size": 8772
+    }
+  ],
+  "verified": {
+    "frozen_sources": 134,
+    "captured_mounts": 17,
+    "firmware": {
+      "sha256": "3fd36298681d7797429dd72610041d731558c5253430902a3c7feeced232557c",
+      "size": 15802368
+    },
+    "backend": {
+      "sha256": "b15458cea0c5a54d85f6f524f19c9caff9cdced48e2cc9c6b8e51b9868e30342",
+      "size": 19014592
+    },
+    "rom": {
+      "sha256": "b5c7090cc22efce51c1323cef31ca96fcd673a5b1d1b1017e219d393f2659913",
+      "size": 393216
+    },
+    "process_exit": 1,
+    "wall_milliseconds": 12534,
+    "trace_truncated": false,
+    "derived_flash": {
+      "sha256": "3ac16430aa0836a447b4306c3f6d68dff62a4ad0941d99ddce4c390afbf27b93",
+      "size": 16777216
+    },
+    "raw_QEMU_stderr": {
+      "sha256": "6b117d8c14f3a56f4f6488abd8e247174aed8d3b4b4d123a1423947286cdc358",
+      "size": 2491983
+    },
+    "uart_configuration_writes": 26,
+    "per_device": {
+      "/machine/soc/uart0": {
+        "writes": 11,
+        "last_virtual_ns": 500312422,
+        "overflow": false
+      },
+      "/machine/soc/uart2": {
+        "writes": 6,
+        "last_virtual_ns": 1910791282,
+        "overflow": false
+      },
+      "/machine/soc/uart1": {
+        "writes": 9,
+        "last_virtual_ns": 12436034648,
+        "overflow": false
+      }
+    },
+    "uart_capture_complete": true,
+    "ASIC_tx_chunks": 445,
+    "ASIC_tx_bytes": 2767,
+    "independently_decoded_CRC5_frames": 253,
+    "ASIC_tx_identity": {
+      "sha256": "9fb380b0fab144eb588ec1a1682867bced440b8686abe550fa3b64c7243d4230",
+      "size": 2767
+    },
+    "ASIC_response_frames": 1,
+    "identification_reply": "aa5513971800000006",
+    "programmed_control_observations": 245,
+    "write_acknowledgements": 0,
+    "mining_jobs": 0,
+    "terminal_frame": "55aa520500041e",
+    "terminal_command": {
+      "Command": {
+        "broadcast": true,
+        "command": {
+          "Read": {
+            "address": 0,
+            "register": 4
+          }
+        }
+      }
+    },
+    "limits": {
+      "wall_seconds": 60,
+      "cpu_seconds": 45,
+      "memory_bytes": 1073741824,
+      "processes": 64,
+      "file_bytes": 33554432,
+      "trace_bytes": 8388608,
+      "tmp_bytes": 67108864
+    }
+  },
+  "reviewed": [
+    "All archived firmware bytes match the captured object and original acquisition hash. Independently appending erased bytes reproduces the reported derived16MiB flash identity.",
+    "Both process streams exactly match retained guest/backend logs. The separately captured QEMU stderr identity also matches the embedded byte range.",
+    "The frozen parser result equals an independent parse of all26 actual UART register events, including device identity, sequence, virtual time, address, raw value and masked storage. No overflow or process truncation is present.",
+    "All445 raw UART chunks reconstruct253 complete independently checksum-verified ASIC commands. Their independently decoded values equal the retained command log. The sole return frame is register0 identification; all245 programmed-control records report zero response bytes and unknown effective clock/baud.",
+    "The final raw frame55aa520500041e requests register0x04 and is followed by explicit UnsupportedCommand with no response. The helper stops QEMU at this boundary and exits1.",
+    "The guest itself prints ASIC initialization and frequency messages. These messages are preserved as firmware output and do not override the model limitations or failed completion verdict.",
+    "The run uses no NIC and ordinary private network/filesystem namespaces. A guest log names its stored public pool, but no pool connection, share or block acceptance is established."
+  ],
+  "limits": [
+    "This reference device profile has one explicitly powered, reset-released BM1397. Physical board topology, regulator coupling and clock/baud effects are not established.",
+    "ADC calibration errors remain in the original guest log. The fixed analog fixture does not supply unknown manufacturing fuse values.",
+    "No ASIC work/job packet, nonce or accepted share occurred. No effective clock or UART baud is inferred from programmed values.",
+    "Complete original-board boot, native dashboard and functional mining remain false."
+  ],
+  "findings": []
+}

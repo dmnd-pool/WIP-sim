@@ -1,0 +1,62 @@
+{
+  "scope": "Independent504 source/evidence review and exact integration; no original firmware execution pass yet.",
+  "source_findings": [],
+  "verified_base_files": 5,
+  "integrated_files": [
+    {
+      "path": "work/simulator/bm1397-uart-504/bm1397.rs",
+      "sha256": "794d1f28058cac5520d8a7c00898b3b6f89451d50d7e0dfc61f5c8facc5d60de",
+      "size": 20308
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/identify.rs",
+      "sha256": "a81ab2d851bce550f5d19d6532bd955f94e5193f280eb9fa113a7d37d618f56e",
+      "size": 30852
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/programmed.rs",
+      "sha256": "3b09afa58e7f3bc04851de73106e321d25af4f400b52b6e537ce5938bf751b70",
+      "size": 6218
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/programmed_tests.rs",
+      "sha256": "9f25cc8657bd7cbb5c5ec9702e7458e4e45e17a8f315c3eef7632e4c5e511545",
+      "size": 11272
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/esp32_original_probe.rs",
+      "sha256": "1c3f06aa9ef740c2f92f13a7c23642d85307a15ca1951af05c12c5dc8e32da2c",
+      "size": 34735
+    },
+    {
+      "path": "work/simulator/bm1397-uart-504/uart_control.rs",
+      "sha256": "615e1b2751cd51868fd7ec0efe44036f1669d164fd5fe8388c2fb5c41e4d264e",
+      "size": 5897
+    }
+  ],
+  "original_t17_ranges_verified": 6,
+  "baud_contract": "Only exact requested CLKI ratio with supplied clock; bit16 PLL3 path remains unsupported even after parameter storage. No line timing/readback/ACK completion inferred.",
+  "source_conflicts": [
+    {
+      "source": "archived ESP bm1397.c lines238-245",
+      "conflict": "Comment says bits9-13 and returns115749. Actual word0x00007a31 contains26 in bits8-12.25MHz/(8*(26+1)) is115740+160/216 bits/s.",
+      "resolution": "Use original T17 split-field packing and exact requested ratio. Preserve ESP firmware bytes and its unaltered log/return values."
+    },
+    {
+      "source": "pinned bm13xx misc.rs From<bool>",
+      "conflict": "From<bool> reverses CLKI/PLL3 compared with the enum repr, bclk_sel getter and original T17 bit16 packing.",
+      "resolution": "Do not import the conflicting conversion. Decode bit16 directly, and refuse PLL3 baud calculations."
+    },
+    {
+      "source": "pinned bm13xx FastUARTConfigurationV2",
+      "conflict": "V2 shares address0x28 but has different fields.",
+      "resolution": "Use original BM1397/T17 field layout only; no family-wide compatibility inferred."
+    }
+  ],
+  "remaining_limits": [
+    "No effective UART line clock or baud mismatch enforcement in current host pipe.",
+    "PLL3 output divider encoding/clock effects remain unimplemented; raw field is diagnostic only.",
+    "No physical power/reset pin binding, silicon reset defaults, core effects or full chip job execution.",
+    "Original board, fresh mining and exact target gates remain open."
+  ]
+}

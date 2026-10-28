@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "scope": "Independent source delta review and final502d source/check freeze. Actual isolated build outcome remains pending.",
+  "base_review": "work/simulator/reviews/hdl-tool-independent-source-502b.json",
+  "freeze_manifest": {
+    "path": "work/simulator/qemu-s9/iverilog-driver-502d/manifest.json",
+    "sha256": "03943c66e21a89c9b22371db793847ae665e75b5ef6701bf5625fbe53349f24d",
+    "size": 46193
+  },
+  "frozen_sources_checked": 279,
+  "helper": {
+    "sha256": "452ab42bb5394c061ec2264ede7cb5566c6cc460a4443817b4b886b352080d60",
+    "size": 2225624
+  },
+  "check_logs": {
+    "tests": {
+      "path": "work/simulator/checks-2026-10-28-502b/tests-d.log",
+      "sha256": "6d2abb89ac5808e97d269b89425db3d562ba6909086fc48c387cdf8a2b9e6975",
+      "size": 811,
+      "result": "pass"
+    },
+    "clippy": {
+      "path": "work/simulator/checks-2026-10-28-502b/clippy-d.log",
+      "sha256": "6bd1f759d06ec3593c9068fa106b578744d01315b416475b8c8da428b629bbca",
+      "size": 143,
+      "result": "pass"
+    },
+    "release": {
+      "path": "work/simulator/checks-2026-10-28-502b/release-d.log",
+      "sha256": "c7ad3306369f00508d2ec0c0487cb004d4117739bb1bea9026695fed672db1b6",
+      "size": 145,
+      "result": "pass"
+    }
+  },
+  "source_changes_from_502c": [
+    "crates/md-sim-firmware/examples/build_iverilog_tool.rs"
+  ],
+  "driver": {
+    "path": "work/simulator/qemu-s9/iverilog-driver-502d/source/crates/md-sim-firmware/examples/build_iverilog_tool.rs",
+    "sha256": "ac2ebf514b3cda7b69688ffcea690278700bb31c62a368534bc61b793ca8610c",
+    "size": 22625
+  },
+  "unchanged_assertions": true,
+  "scheduling_fix": {
+    "change": "Only the gperf upstream check command changes -j2 to -j1. Source build parallelism and all tests/assertions stay unchanged.",
+    "exact_upstream_archive": {
+      "path": "artifacts/files/source/source-gperf-3-1-complete-502b/md-sim-gperf-complete-502b.tar.gz",
+      "sha256": "588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2",
+      "size": 1215925
+    },
+    "member": {
+      "path": "gperf-3.1/tests/Makefile.in",
+      "sha256": "4445818743f068b8a685324246ddbcd3c842661f27d04917eccfd44735aa93ea",
+      "size": 20422
+    },
+    "evidence": "Line64 declares independent check prerequisites. check-ada line80 creates aout, but check-test line141 has no dependency on it and line174 uses aout. Serial check preserves the suite while satisfying its undeclared order.",
+    "failed_attempt": {
+      "path": "work/simulator/qemu-s9/iverilog-build-502c/build-report.json",
+      "sha256": "f4adf548b6db7968ea33edce11c1a7d629ea7d8798ab56e8b101fd546fee7730",
+      "size": 16598
+    },
+    "original_failed_verdict_preserved": true
+  },
+  "open_source_findings": []
+}

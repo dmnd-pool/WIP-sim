@@ -1,0 +1,144 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "status": "Independent evidence audit complete; original041 remains FAILED/incomplete",
+  "freeze": {
+    "path": "work/simulator/bm1397-probe-tools-508/inputs.json",
+    "sha256": "971e96fa2601136989408eafec9b92a40e6e76b54436475cf67b7b0f88840f17",
+    "size": 43399
+  },
+  "helper": {
+    "path": "work/simulator/bm1397-probe-tools-508/esp32_original_probe",
+    "sha256": "fffa11cb134de1c5e46c4370346253806430227ab4de028e5ac6b188eb8dcaa6",
+    "size": 2428856
+  },
+  "frozen_sources_verified": 139,
+  "captured_mounts_verified": 17,
+  "run_files": [
+    {
+      "path": "work/simulator/bitaxe/original-probe-041/spec.json",
+      "sha256": "785724160f0b894c1ffeb7d196212bfb8416043f5c9743af5e1cbc50dd2f65c7",
+      "size": 4130
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-041/result.json",
+      "sha256": "3c94a2e86fd8db5a40036bd1431aceb6591bb54c4e491a3209764a65f16841f8",
+      "size": 1320616
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-041/input-identities.json",
+      "sha256": "e3d9a898412af794a9745a622f22f89e4bfbde02b7cada217cac0d5cef82d383",
+      "size": 7538
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-041/adaptation.json",
+      "sha256": "c4192015c600650085255c334ce681b42d6c1a02168665340f3ad399b8ae032c",
+      "size": 2346
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-041/assessment.json",
+      "sha256": "75dcff5aeebb966aa4390fc207f1b74acb7e1507b680e48b1f9557c82fcda32b",
+      "size": 140
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-041/backend.log",
+      "sha256": "5a8da8a67de2dc2cf5423bd9e993c580045f1ac27df1acec7b5e1b81745107be",
+      "size": 602420
+    },
+    {
+      "path": "work/simulator/bitaxe/original-probe-041/guest.log",
+      "sha256": "f007ad894ba9d0dcebd672649a7eff4a1b9a2624ce39daab8a4a2a3135dfac89",
+      "size": 57463
+    }
+  ],
+  "actual_process": {
+    "status": "timed-out",
+    "exit_code": null,
+    "wall_milliseconds": 60008,
+    "trace_truncated": false
+  },
+  "protocol": {
+    "raw_chunks": 1351,
+    "wire": {
+      "sha256": "d7da7cbed947e3c5c3ff52c29f1cb14fcecbfcc9c55f74431ac59cff92067655",
+      "size": 9188
+    },
+    "complete_crc_checked_frames": 536,
+    "crc16_checked_job_frames": 24,
+    "wire_job_ids": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48,
+      52,
+      56,
+      60,
+      64,
+      68,
+      72,
+      76,
+      80,
+      84,
+      88,
+      92,
+      96
+    ],
+    "distinct_jobs_excluding_id": 24,
+    "programmed_ticket_register": 240,
+    "register_replies": [
+      {
+        "register": 0,
+        "value": 328669184,
+        "count": 1
+      },
+      {
+        "register": 4,
+        "value": 0,
+        "count": 10
+      },
+      {
+        "register": 76,
+        "value": 0,
+        "count": 10
+      }
+    ],
+    "solution_replies": 0,
+    "full_computation_records": 0
+  },
+  "retained_batch_evidence": {
+    "batches": 445,
+    "receipt_count_lower_bound": 455680,
+    "minimum_reported_admission_spacing_ns": 100010,
+    "last_partial_batch_unknown": true,
+    "independent_digest_verification_available": false,
+    "scope": "Counts come from reviewed actual-computation receipt code. These retained batches do not contain enough data to independently verify each digest or a complete Bitcoin header."
+  },
+  "filter_interval": {
+    "fixed_zero_bits": 32,
+    "ticket_zero_bits": 4,
+    "asic_only_mean_seconds_at_cap": 6871947.6736,
+    "asic_only_mean_days_at_cap": 79.5364314074074,
+    "scope": "Ideal hash-distribution estimate for the declared reference filter. A stricter pool target can increase it; no pool acceptance is established."
+  },
+  "failures_preserved": [
+    "The unchanged60-second wall limit terminated the process.",
+    "QEMU stderr remained inside private scratch and was not exported. Missing UART observations make capture incomplete despite untruncated outer streams.",
+    "Original guest factory self-test fails on an open/no-result temperature sensor and enters safe mode. No self-test or thermal assertion was bypassed.",
+    "Reference model power/reset is not connected to guestGPIO. Retained hashing continues after guest safe-mode messages, so this is not physical powered-down ASIC behavior.",
+    "No complete computed digest, nonce reply, accepted pool share or regtest block is retained. Distinct guest job packets alone are not fresh-work mining proof."
+  ],
+  "scope_limits": [
+    "Archived firmware bytes execute in an explicit one-chip reference environment; physical topology/timing and support models remain incomplete.",
+    "No original-board, native-dashboard, independent fresh-header or regtest completion gate passes."
+  ],
+  "unresolved_review_findings": []
+}

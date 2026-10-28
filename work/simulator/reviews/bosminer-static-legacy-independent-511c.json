@@ -1,0 +1,28 @@
+{
+  "schema": "md-sim-independent-source-review-delta/1",
+  "date": "2026-10-28",
+  "stage": "511c",
+  "reviewer": "cleanup_resume",
+  "status": "PASS source delta; execution pending",
+  "previous_review": {
+    "path": "work/simulator/reviews/bosminer-static-independent-source-511c.json",
+    "sha256": "9b010ab271c337e61e60e5fde6746378be51bab091e689e054aa0abf7c1a735d",
+    "size": 3960
+  },
+  "helper_source": {
+    "path": "crates/md-sim-firmware/examples/s9_bosminer_inspect.rs",
+    "sha256": "6665b6c3ed8a03e962fb917b90570ec165260bcff45e1ec037d539283d79c515",
+    "size": 14502
+  },
+  "shared_source": {
+    "path": "crates/md-sim-firmware/examples/support/arm_static.rs",
+    "sha256": "275c48ff83c4f834f179521bbc56c57811af06e8f42db26e9a74dbfdf53a9064",
+    "size": 10916
+  },
+  "checked": [
+    "The added legacy regression constructs a bounded140-byte ELF with one8-byte executable section. Its independent literal MOV r0,#1 and BX lr bytes are decoded through both public APIs.",
+    "Both exact output byte strings and complete reports must agree with the literal expected assembly. The regression runs only after the firmware-inspection confinement guard.",
+    "No source input, selected interval, resource cap or existing assertion changes. The actual isolated report must retain legacy_api_regression_passed=true before the selected decode can pass."
+  ],
+  "unresolved_findings": []
+}

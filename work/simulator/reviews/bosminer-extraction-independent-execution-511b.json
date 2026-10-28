@@ -1,0 +1,116 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "status": "PASS exact original Bosminer member extraction",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/axi-inspection-driver-511b/manifest.json",
+    "sha256": "0dcdef9ba5baf38aba9f4affbc3c7961e9b0062826c5b0a537af40dab7d104ec",
+    "size": 66987
+  },
+  "helper": {
+    "path": "work/simulator/qemu-s9/axi-inspection-driver-511b/s9_native_service",
+    "sha256": "2e62fff8b0f94d17a321be5eeb1cb11c60a446f112ccea71fb0fa2160659e33f",
+    "size": 2412984
+  },
+  "frozen_source_files_verified": 397,
+  "captured_mounts_verified": 12,
+  "reviewed_source_files_identical": 2,
+  "checks": {
+    "tests": {
+      "path": "work/simulator/checks-2026-10-28-502b/inspect-tests-511b.log",
+      "sha256": "288877118374bc59729102573d717c65a4e17ed2bbc6133cfa6bb6e48101b245",
+      "size": 898
+    },
+    "clippy": {
+      "path": "work/simulator/checks-2026-10-28-502b/inspect-clippy-511b.log",
+      "sha256": "48c2f2c6d9b055baa5bc9b7c1ef8752ed62b7203d5f9f424aa57c6aa553c5733",
+      "size": 143
+    },
+    "release": {
+      "path": "work/simulator/checks-2026-10-28-502b/inspect-release-511b.log",
+      "sha256": "7df3bac39c9c9e62b3a8177e2866012b953c81db6c34e2f0fe053ee1db490671",
+      "size": 145
+    }
+  },
+  "source_review": {
+    "path": "work/simulator/reviews/bosminer-extraction-independent-source-511.json",
+    "sha256": "119c38a0b0a1f87e24f200ade5fe94a860666d6868606dffba729f92cffdd4eb",
+    "size": 2638
+  },
+  "listing_review": {
+    "path": "work/simulator/reviews/axi-list-independent-execution-511.json",
+    "sha256": "00decc14b976c8435ae6f14c2394da5522f5ed06aec0b88dfaebcb57aa2a94ef",
+    "size": 2805
+  },
+  "run_evidence": [
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/spec.json",
+      "sha256": "1ab8ebd3806c96f050f2cc8e306e4e3970eb69af1f8e9c2c2c1e90e50cc0336a",
+      "size": 2625
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/result.json",
+      "sha256": "88f6db630be7104cfdc6d49ad07da23b8fb4bd3d8ffb615dfac2a78b213e0caf",
+      "size": 25399402
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/member.json",
+      "sha256": "1516fea5a3821ff58ad07c5451e50488ff4b97eb83b48c860aa39fb1c35ca1e1",
+      "size": 495
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/adaptation.json",
+      "sha256": "b2d734660b6db77a1757149bec7173a539fb1d2f0bec20fba1f7da39136f7991",
+      "size": 989
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/stdout.bin",
+      "sha256": "4997a1c10a09f6881d6f5e0d4967eb31072ea9f1da7a80dac192ae1299d45960",
+      "size": 12699280
+    },
+    {
+      "path": "work/simulator/qemu-s9/axi-bosminer-extract-511b/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  ],
+  "actual": {
+    "argv": [
+      "/probe",
+      "__extract-bosminer"
+    ],
+    "exit_code": 0,
+    "wall_milliseconds": 192,
+    "trace_truncated": false,
+    "stderr_bytes": 0,
+    "member": "usr/bin/bosminer",
+    "object": {
+      "sha256": "4997a1c10a09f6881d6f5e0d4967eb31072ea9f1da7a80dac192ae1299d45960",
+      "size": 12699280
+    },
+    "parent_ramdisk": {
+      "sha256": "2bd49c70b915b7e25f6c01013d95a5ffea8d499b73c6c6ec5539fda4247154b3",
+      "size": 15491980
+    },
+    "elf_data_header": {
+      "class_bits": 32,
+      "endianness": "little",
+      "machine": 40,
+      "type": 2
+    },
+    "firmware_instructions_executed": false
+  },
+  "checked": [
+    "All397 frozen source objects and12 captured mounts match their recorded hashes. The reviewed two-file source delta is byte-identical in the freeze.",
+    "Actual run selects only the fixed __extract-bosminer entry point and captured support tool; parent SquashFS identity equals independently audited511 listing.",
+    "All retained output bytes equal the untruncated process stdout. The exact12699280-byte member, result and selected ramdisk identities agree with member.json.",
+    "Actual stderr is empty. Five focused tests include changed-component rejection and exact/default size/path negatives; strict lint and release logs pass.",
+    "ELF header is inspected as data only. This has no board compatibility, CPU execution or FPGA behavior implication."
+  ],
+  "unresolved_findings": [],
+  "scope_limits": [
+    "No firmware, Bosminer instruction, selected HDL design or FPGA register path is executed by this preparation run.",
+    "Original board, native dashboard and mining gates remain incomplete."
+  ]
+}

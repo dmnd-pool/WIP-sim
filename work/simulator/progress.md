@@ -2,24 +2,42 @@
 
 Status: **incomplete**. Started 19 October 2026. Current checkpoint: v11.
 
+Current priority, confirmed28 October: complete exact S9 milestone2 first.
+Other miner development is checkpointed. Stop after the complete S9 milestone2 gates
+pass and save a tested checkpoint. Read the current continuation and
+[milestone2 acceptance](milestones.md).
+
 23 October: [milestone 1.2 passed](milestone-1.2-handoff.md). The user committed
 the checkpoint as `b276dd7a` and resumed work on 26 October. Read the
 [current continuation](continuation-2026-10-26.md) before the older records.
 Milestone 2 and the full matrix remain incomplete.
 
-Latest instruction: finish the full CLI test, save a checkpoint and pause.
-CLI500 passed. Work is now paused. Read
-[checkpoint500](checkpoint-500.md) before resuming. It records the tested
-commands, independent mining/Core/browser evidence and the staged501/502 work.
+The user resumed implementation on28 October2026. Read the
+[current continuation](continuation-2026-10-28.md). The preceding
+[checkpoint500](checkpoint-500.md) was committed as`f5fbf74e` after the complete
+CLI test passed. It records the tested commands, independent mining/Core/
+browser evidence and the501/502 resume inputs. Its historical pause is over.
 
-Latest26 October result: [adapted S9 run495 passes](reports/native-browser-mining-pass-495.md)
+Latest28 October S9 result: the selected reconstructed FPGA logic passes72
+real MAXIGP0 transactions and two resets across all three chain interfaces.
+Independent review passes. The vendor PS7 CPU-absence notice is preserved;
+this is not an original-board boot. The CPU/FPGA bridge and original SD reset
+path are next. Exact PSU/controller/hashboard identities and physical traces
+remain open. Current workspace checks pass1,171 tests in125 suites, with49
+explicit ignored tests; formatting and strict Clippy pass. All575 source
+inputs match before and after those checks. Other miner development stays
+checkpointed under the user's S9-first instruction. See the
+[verified source checkpoint511e](checkpoint-511e.md).
+
+The earlier [adapted S9 run495 passes](reports/native-browser-mining-pass-495.md)
 the selected SSH/TLS native browser checks, fresh mining, independent header
 verification and two Core block acceptance/restart checks. The topology uses
 one execution host with an isolated worker and KVM client VM. Original-board
 and exact-target gates remain open. The PLL arithmetic oracle496 and FPGA
-netlist conversion497 also pass their limited component checks. Fresh CLI
-preparation498, HDL validation502 and BM1397 configuration state501 are in
-progress. Read the current continuation for exact source and test identities.
+netlist conversion497 also pass their limited component checks. CLI500 then
+passes the complete shared demonstration. Icarus tool502f passes, while its
+selected HDL validation remains open. Read the current continuation for exact
+source and test identities.
 
 Implementation has continued after v11. The
 [21 October record](continuation-2026-10-21.md) and

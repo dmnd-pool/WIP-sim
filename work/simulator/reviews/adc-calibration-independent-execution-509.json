@@ -1,0 +1,166 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Independent data-only audit of retained original-C scalar arithmetic execution. Checkpoint closure only; S9 is now the implementation priority.",
+  "inputs": [
+    {
+      "path": "work/simulator/adc-tools-509/inputs.json",
+      "sha256": "ce2eaa44b48294ffb26b7df77e3e302747a61d6591e40cde6c5beb48bb5e92e9",
+      "size": 210241
+    },
+    {
+      "path": "work/simulator/reviews/adc-calibration-independent-source-509.json",
+      "sha256": "f47c4b9e6dc8892c6cc084041e35873d1457cb974249c903df1b778187d3c809",
+      "size": 3700
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-prepared-001/source.json",
+      "sha256": "dcd1e8fa6c7e94e0e10a52c9c9e39cee0adcbcf40bce45082ad3636cbb71f091",
+      "size": 3764
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-prepared-001/oracle.c",
+      "sha256": "3c3fde85e5843dfb2d1caa96efefcecf78b5611452a9b6259bf14af7ad07b195",
+      "size": 257741
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-execution-001/input-identities.json",
+      "sha256": "8226df98098bbe6c4a4a2c3609f08ad3c7ba0577c1532dbb1c70ead0e763ac3c",
+      "size": 5287
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-execution-001/spec.json",
+      "sha256": "11fa8b3fd04ba8965f91aebce05824896a1cf9becbc009604172cf86bffbab99",
+      "size": 5161
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-execution-001/result.json",
+      "sha256": "47acf365287a11d17a4a19f002cc49f9a875530610b09ea24efb0fb8cc24531c",
+      "size": 1379146
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-execution-001/assessment.json",
+      "sha256": "9948937cdbecd71bed7b034aa767511cafa11ba7ee61c83303ec46b67bb6cf1d",
+      "size": 4526
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-execution-001/evidence.tar",
+      "sha256": "c6cabbc68e375df45911d1e02d8ea506c7c9688e6e0915617cedd3449baa2347",
+      "size": 689152
+    },
+    {
+      "path": "work/simulator/adc-contract-509/original-c-verified-001/verified.json",
+      "sha256": "ac252f6bd35e9263e509b78d3de2fea2c4b9a774914e579c277331f46b98f375",
+      "size": 1141
+    }
+  ],
+  "source": {
+    "before_after_equal": true,
+    "source_files_rehashed": 570,
+    "helpers_rehashed": 2,
+    "parents_rehashed": 4,
+    "retained_functions_byte_checked": 4,
+    "complete_generated_source_reconstructed": true,
+    "adapter_files": [
+      {
+        "path": "simulator/firmware/fixtures/esp32s3-adc-oracle-prefix.c",
+        "sha256": "114af7d3c807f4eb19ecc2d99efea18127e24089b5634cf9530f81ed42926955",
+        "size": 2268
+      },
+      {
+        "path": "simulator/firmware/fixtures/esp32s3-adc-oracle-suffix.c",
+        "sha256": "f21f6df32352e3a957a72e39076385261d5bc0fa5645ca2f11db733d3c161f78",
+        "size": 1761
+      }
+    ],
+    "descriptor_source_and_coefficient_source_used_independently": true
+  },
+  "execution": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 244,
+    "trace_truncated": false,
+    "outer_and_all_step_stderr_empty": true,
+    "mounts_rehashed": 25,
+    "unique_objects_rehashed": 24,
+    "supervisor_tools_rehashed": [
+      "bubblewrap",
+      "prlimit",
+      "unshare"
+    ],
+    "limits": {
+      "wall_seconds": 90,
+      "cpu_seconds": 60,
+      "memory_bytes": 2147483648,
+      "processes": 16,
+      "file_bytes": 2097152,
+      "trace_bytes": 8388608,
+      "tmp_bytes": 33554432
+    },
+    "archive_members": 10,
+    "static_native_elf": {
+      "sha256": "45a767aa5b8d0e7478f872452a7f034b209bcc7bdeaf549924d3eb166d11925f",
+      "size": 125192
+    },
+    "compiler_arguments": [
+      "--target=x86_64-linux-gnu",
+      "-std=c11",
+      "-O2",
+      "-nostdinc",
+      "-nostdlib",
+      "-static",
+      "-fno-pie",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables",
+      "-mstackrealign",
+      "-fsanitize=undefined",
+      "-fsanitize-trap=undefined",
+      "-fno-sanitize-recover=all",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "--ld-path=/tools/ld",
+      "-Wl,-e,_start,-z,noexecstack",
+      "/oracle.c",
+      "-o",
+      "/work/oracle"
+    ],
+    "undefined_behavior_traps": true,
+    "unsigned_wrap_is_defined_c_behavior": true,
+    "no_network_or_device_grant": true,
+    "no_aggregate_cgroup_claim": true
+  },
+  "independent_comparison": {
+    "images": 264,
+    "points": 2112,
+    "raw_samples": 131072,
+    "output_words": 137940,
+    "output": {
+      "sha256": "02a2bf6727f8abcfc690065d9e4010dff0b0aedfa0b6c4136494a1d39bb20363",
+      "size": 551760
+    },
+    "method": "Parse exact archived eFuse descriptors and coefficient/sign tables; derive packed image fields and point arithmetic independently in Python; apply uint64 modulo before each coefficient division and compare every emitted word. No runtime or Rust decoder arithmetic is reused.",
+    "wrapped_coefficient_products_in_samples": 512,
+    "adc1_attenuation3_zero_trim_raw4095_mv": 5090
+  },
+  "unresolved_findings": [],
+  "limits": [
+    "SDK field reader, fixed-width Linux x86_64 ABI, syscall output and controlled images are explicit adapters.",
+    "The first-stage coefficient operation is adapter code; the exact original get_reading_error and three RTC functions execute unchanged.",
+    "No acquired firmware, physical ADC transfer, measured calibration, board boot, mining or full-matrix gate is established.",
+    "Existing failed firmware results remain unchanged."
+  ],
+  "firmware_execution_gate": false,
+  "physical_calibration_gate": false,
+  "original_board_gate": false,
+  "audit_script": {
+    "path": "/tmp/md-sim-adc509-audit.py",
+    "sha256": "ccfd558a5fd121da855914650796fe85a2cc7c63680e494b1eee3cd7a4074d90",
+    "size": 15336
+  }
+}

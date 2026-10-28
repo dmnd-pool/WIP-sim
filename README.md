@@ -24,7 +24,7 @@ Milestone 1.2 passed: adapted S9 mining and selected SSH/TLS access.
 See the [handoff and resume steps](work/simulator/milestone-1.2-handoff.md).
 The checkpoint was committed as `b276dd7a`. The user resumed work on
 26 October. The full task remains incomplete. See the
-[current continuation](work/simulator/continuation-2026-10-26.md).
+[current continuation](work/simulator/continuation-2026-10-28.md).
 
 The isolated KVM support guest now passes Linux boot and a fresh private TCP
 exchange. Its pinned x86 backend builds with undefined-behavior checks. See
@@ -43,8 +43,10 @@ The [full shared CLI test500 also passes](work/simulator/reports/shared-cli-pass
 It creates and records fresh pool inputs on each invocation, then runs the
 selected native SSH/TLS browser, independent mining verification and two Core
 acceptance/restart checks. Run500 verifies15 firmware submissions. All1,069
-workspace tests, strict Clippy and formatting pass. The user requested a
-pause after this test. See the [saved checkpoint and resume steps](work/simulator/checkpoint-500.md).
+workspace tests, strict Clippy and formatting passed for that source. The
+checkpoint was committed as`f5fbf74e`. The user resumed implementation on
+28 October. See the [saved checkpoint](work/simulator/checkpoint-500.md) and
+the current continuation above.
 
 These commands were tested in this prepared workspace:
 
@@ -215,6 +217,20 @@ work/simulator/qemu-s9/netlist-driver-497/s9_netlist_reconstruct \
 
 Use a new output directory. Conversion does not establish HDL behavior or an
 original-board boot. The next HDL validation gate remains open.
+
+The [isolated Icarus12.0 tool build](work/simulator/reviews/hdl-tool-executed-502f.md)
+now passes its upstream gperf tests, compiler checks, language vectors,
+malformed-input rejection and installation restore test. This command ran:
+
+```sh
+work/simulator/qemu-s9/iverilog-driver-502f/build_iverilog_tool \
+  /home/user/src/md-sim work/simulator/qemu-s9/iverilog-build-502f
+```
+
+Use a new output path for a repeat. The command needs the pinned source
+archives and compiler snapshot in this prepared workspace. The saved tool
+still requires its recorded library environment. The selected HDL check
+will verify a smaller runtime closure. A compiler build is not FPGA behavior.
 
 The report lists exact inputs and build commands. Complete netlist behavior,
 physical timing and exact-board acceptance remain open.
@@ -835,6 +851,24 @@ work/simulator/bitaxe/t17-pll-driver-496/t17_core_oracle \
 Use a new output directory to repeat it. The report pins its tools, source
 and results. This arithmetic pass does not establish PLL lock, clock timing,
 ASIC state or a valid physical operating range.
+
+The [posted-control implementation501](work/simulator/reviews/bm1397-programmed-executed-501.md)
+now stores evidenced core and PLL requests in the existing chip chain. The
+[UART extension504](work/simulator/reviews/bm1397-uart-executed-504.md) records
+FastUART and MiscControl words, with an exact requested CLKI baud view.
+The [output-divider extension505](work/simulator/reviews/bm1397-divider-executed-505.md)
+records`0x70` and checks the original software encoding. Original factory
+probe039 completes the requested frequency ramp and reaches factory self-test.
+It stops at unsupported hash-rate read`0x04`. The trace audit checks253
+commands and245 posted updates, with no invented acknowledgement or nonce.
+Physical clocks, UART timing, complete board execution and mining remain open.
+
+The [S3 UART register tests now pass](work/simulator/reviews/esp32-uart-executed-506c.md).
+They cover masks, mapped addresses, reset, two real controller deadlines and
+the bounded trace. Original040 captures26 actual UART configuration writes
+and stops at the same unsupported ASIC read. No mining job or nonce occurs.
+The [UART model scope](simulator/backends/esp32/UART.md) keeps line timing,
+clock-gate effects and physical calibration open.
 
 The BM1387 packet and hashing checks are:
 `cargo test -p md-sim-firmware --test bm1387_packets --lib --offline --locked`.
@@ -1852,6 +1886,12 @@ work/simulator/ssh-target-188/release/examples/s9_pool_link work/simulator/netwo
 Use a new output directory to repeat it. The first two test failures and their
 fixes remain in the [progress record](work/simulator/continuation-2026-10-21.md).
 The existing cgminer program and its necessary source changes are C.
+The S3 ADC arithmetic check also retains the original Espressif C functions.
+Two small C fixtures supply their SDK callbacks and Linux process interface.
+Rewriting those functions in Rust would remove the independent reference.
+The model, source checks, isolated runner and result verifier use Rust.
+The [retained comparison](work/simulator/reviews/adc-calibration-independent-execution-509.json)
+passes 131,072 samples. It does not establish physical ADC calibration.
 The existing Bitcoin Core C++ implementation, upstream build tools, and Python catalogue tools retain their languages.
 The independent FPGA feature checker uses a small Python adapter to call the
 unchanged, pinned Project X-Ray matcher and alias APIs. Rust or C would require
@@ -1878,7 +1918,30 @@ Four optional imports move to their existing use sites in a separate
 [tool adaptation](simulator/tools/fasm2bels/adaptation.json). The adapter reuses
 the checked bounded parser on the exact verified FASM file. It does not relax
 missing-sink or clock checks. Actual conversion passes and retains Verilog/XDC.
-HDL validation remains pending; see the [execution report](work/simulator/reviews/netlist-executed-497.md).
+See the [conversion report](work/simulator/reviews/netlist-executed-497.md).
+The derived converter now preserves all 11,122 cells and the exact original
+routing constraints while declaring alias wires and making open RAM inputs explicit.
+Strict selected HDL compilation passes with no diagnostics. The run also
+passes 582 primitive assertions and both 510-case RAM comparisons. See the
+[execution report and tested commands](work/simulator/reviews/hdl-selected-executed-502l.md).
+The selected logic now passes 72 real bus transactions and two reset
+sequences across all three controller blocks. See the [MAXIGP0 execution
+report and tested command](work/simulator/reviews/maxigp0-executed-511e.md).
+The test drives the declared PS7 interface; it does not execute a CPU.
+The CPU bridge, physical timing, original-board and exact-target gates remain open.
+The exact 2022 Bosminer ELF is now extracted and its version, build, control
+and baud register instructions are checked with isolated Capstone. The selected
+firmware passes a 100 MHz argument to its baud calculation. This is static
+evidence, not a measured clock rate. See the [input hashes, instruction evidence
+and tested commands](work/simulator/reviews/bosminer-static-executed-511c.md).
+
+The HDL checks use Verilog test fixtures as inputs to the existing Icarus
+compiler and vendor models. Rust or C source cannot test that Verilog parser
+or express the same four-state HDL stimulus directly. Rust controls input
+capture, isolation, execution and result checks. The selected MAXIGP0 fixture
+uses the same HDL event interface to drive only the PS7 bus, clock and reset
+ports. It does not replace a processor. The existing upstream
+Icarus and gperf source retains its original C/C++ implementation.
 The browser tests use small JavaScript expressions for DOM access, button
 events, HTTP requests, WebSocket checks and Firefox preferences. These use the browser's native
 interface. Rust and C cannot replace that interface. Rust controls the test,

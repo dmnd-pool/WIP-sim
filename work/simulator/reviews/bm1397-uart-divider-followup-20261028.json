@@ -1,0 +1,78 @@
+{
+  "schema": "md-sim-read-only-next-boundary-research/1",
+  "date": "2026-10-28",
+  "scope": "Research while504 awaits execution. No new production code or firmware/tool execution.",
+  "controller_uart": {
+    "views": [
+      {
+        "path": "work/simulator/bitaxe/esp-qemu-hw_char_esp32_uart.c",
+        "sha256": "2a3667b901b151d240fc20269d3ddf2b941d184b66dcff15c678657301431794",
+        "size": 12801
+      },
+      {
+        "path": "work/simulator/bitaxe/esp-qemu-hw_char_esp32s3_uart.c",
+        "sha256": "07402dae146f9a8202d1ffe1dfb6ecd48781885a0670ce4e4cb26c9ab196a1be",
+        "size": 4591
+      }
+    ],
+    "view_provenance": {
+      "path": "work/simulator/bitaxe/inspection-identities-003.json",
+      "sha256": "36084d648865c958a517768cb0047cc000687ed9b123259271978d828edf1e02",
+      "size": 3102
+    },
+    "upstream_archive_sha256": "5456034eb8a9f348b1f4c8820dc79f55677bddfe0d1c66566b6c42ceb9df66f0",
+    "findings": [
+      "Parent UART CLKDIV handler uses fixed40MHz and ignores the S3 clock-selection contract.",
+      "TX drains bytes immediately through the QEMU chardev; no per-character transmit deadline.",
+      "RX throttles only at full128-byte FIFO; short ASIC replies do not prove character timing.",
+      "S3 subclass delegates CLKDIV to the parent. Existing baud_rate field alone is not an accurate S3 timing oracle."
+    ],
+    "next_action": "Bind exact S3 clock-register writes and QEMU virtual time before asserting effective baud or framing. Reuse existing UART/FIFO/interrupt implementation. Preserve original firmware and keep any adapter explicit."
+  },
+  "next_source_predicted_asic_command": {
+    "register": "0x70",
+    "word": "0x0f0f0f00",
+    "source": {
+      "path": "work/simulator/bitaxe/bm1397-source-002/bm1397.c",
+      "sha256": "9bd28dff43cb3c07a63c4843dba2704f7e071b1bfc7fb310cfd925cb35be2f56",
+      "size": 13118
+    },
+    "function": "BM1397_send_hash_frequency",
+    "source_lines": "158-171",
+    "status": "Source prediction after504; requires actual original038 evidence."
+  },
+  "original_t17_divider_bridge": {
+    "miner": {
+      "path": "work/simulator/bitaxe/t17-static-262/bmminer",
+      "sha256": "ad090e7abbf525a7a8a23c7153529e45af94b864e1170e677e1f85b4c4091367",
+      "size": 553247
+    },
+    "virtual_address": "0x28e38",
+    "file_offset": 134712,
+    "size": 68,
+    "sha256": "3dac41f64f1c512f31c5914e966d752da4ff8c28323aec83f5cf72a5f9e972dc",
+    "hex": "0f4ca0e30f0096e80f4f40e324a0dde523c0dde501e04ae204408ee138e08de200408de540c08ce30f000ee90500a0e10110a0e30020a0e37030a0e323c0cde5ce4f00eb",
+    "disassembly": [
+      "00028e38 mov        r4, #0xf00",
+      "00028e3c ldm        r6, {r0, r1, r2, r3}",
+      "00028e40 movt       r4, #0xf0f",
+      "00028e44 ldrb       sl, [sp, #0x24]",
+      "00028e48 ldrb       ip, [sp, #0x23]",
+      "00028e4c sub        lr, sl, #1",
+      "00028e50 orr        r4, lr, r4",
+      "00028e54 add        lr, sp, #0x38",
+      "00028e58 str        r4, [sp]",
+      "00028e5c orr        ip, ip, #0x40",
+      "00028e60 stmdb      lr, {r0, r1, r2, r3}",
+      "00028e64 mov        r0, r5",
+      "00028e68 mov        r1, #1",
+      "00028e6c mov        r2, #0",
+      "00028e70 mov        r3, #0x70",
+      "00028e74 strb       ip, [sp, #0x23]",
+      "00028e78 bl         #0x3cdb8"
+    ],
+    "interpretation": "Original code loads the software-divider byte, subtracts1, ORs it into0x0f0f0f00, and sends register0x70. This explains the relationship to the software-divider argument in executed arithmetic oracle496. The raw instruction does not mask the low value to4bits. Hardware-valid domain and other output effects must remain explicit.",
+    "execution_claim": false,
+    "next_action": "Use an unchanged original builder capture if extending the encoding beyond directly observed words. Do not infer physical PLL frequency or lock from this arithmetic/packing relation."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "md-sim-workspace-check/1",
+  "status": "PASS workspace checks, not S9 milestone2",
+  "source_before": {
+    "path": "work/simulator/checks-2026-10-28-001/workspace-after511e-before.json",
+    "sha256": "dd3bf4398bed15e972d7d03aa9784998afcfd9e8bb2165a0cdbda5b8f2e265bf",
+    "size": 99057
+  },
+  "source_after": {
+    "path": "work/simulator/checks-2026-10-28-001/workspace-after511e-after.json",
+    "sha256": "dd3bf4398bed15e972d7d03aa9784998afcfd9e8bb2165a0cdbda5b8f2e265bf",
+    "size": 99057
+  },
+  "identical_source_inputs": 575,
+  "source_set_identical": true,
+  "suites": 125,
+  "passed": 1171,
+  "failed": 0,
+  "ignored": 49,
+  "logs": [
+    {
+      "path": "work/simulator/checks-2026-10-28-001/workspace-after511e-fmt.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/workspace-after511e-clippy.log",
+      "sha256": "25aa31a5d3b39675434fcfb18f77df3010729132335d069d493b62c4cb9aa719",
+      "size": 229
+    },
+    {
+      "path": "work/simulator/checks-2026-10-28-001/workspace-after511e-tests.log",
+      "sha256": "8a352633d7dad754e906029c87c77caa36d28208b6c2ed405eb62184853524cc",
+      "size": 143711
+    }
+  ],
+  "guide_check": {
+    "path": "work/simulator/checks-2026-10-28-001/s9-511e-guides-root.log",
+    "sha256": "6f304ce6acc9a877dcef20aa354c2099aea9c0ec1389471ffb367e199339fb6b",
+    "size": 176
+  },
+  "limits": "Ignored tests remain explicit. Individual executed source/HDL/C oracles have separate evidence. No original-board or complete exact S9 gate follows from workspace checks."
+}

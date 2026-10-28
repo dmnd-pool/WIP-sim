@@ -1,0 +1,23 @@
+{
+  "schema": "md-sim-source-review/1",
+  "reviewer": "root",
+  "stage": {
+    "path": "work/simulator/reviews/maxigp0-notice-stage-511e.json",
+    "sha256": "a1ed13ab376507b4650b0b8e9106c4ac908407b81d3570f34af930903ef0290d",
+    "size": 1706
+  },
+  "status": "PASS narrow source classification; new actual run still required",
+  "vendor_source": {
+    "path": "artifacts/files/source/source-unisim-1c8e05f/verilog/src/unisims/PS7.v",
+    "sha256": "98d0039a5a292e3d4233b7ee1712f377a80d6b0d1c9964b9fa5c0241a2d9be31",
+    "size": 848916
+  },
+  "source_line": 5167,
+  "exact_notice": "Warning on instance axi_probe.dut.PSS2_X13Y53_PS7_X0Y0_PS7 : The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.",
+  "failed_parent_trace_matches": true,
+  "classification": "Require exact unchanged vendor notice once at line0. Record CPU model absent. Every other notice/diagnostic is rejected; compiler policy unchanged.",
+  "unchanged_assertions": "Generated HDL and all72 transaction assertions unchanged. Rust value/ID/strobe/reset checks remain intact. New fixed regression comes from the retained failed511d execution.",
+  "open_findings": [],
+  "original_board_gate": false,
+  "next_action": "Integrate and run affected tests, freeze exact sources, rerun real selected logic. Preserve511d failed verdict."
+}

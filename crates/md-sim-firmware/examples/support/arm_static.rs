@@ -152,7 +152,41 @@ impl Capstone {
     }
 }
 
-pub fn inspect(elf: &[u8], mut output: impl Write) -> Result<Value> {
+#[allow(dead_code)]
+pub fn inspect(elf: &[u8], output: impl Write) -> Result<Value> {
+    inspect_selected(elf, output, None)
+}
+
+/// Decode only the stated A32 intervals after executable-section validation.
+#[allow(dead_code)]
+pub fn inspect_ranges(elf: &[u8], ranges: &[(u32, u32)], output: impl Write) -> Result<Value> {
+    ensure!(
+        !ranges.is_empty() && ranges.len() <= 64,
+        "A32 range count bound"
+    );
+    let mut previous = 0;
+    let mut total = 0u64;
+    for &(start, end) in ranges {
+        ensure!(
+            start >= previous && end > start && start % 4 == 0 && end % 4 == 0,
+            "invalid, overlapping or unordered A32 interval"
+        );
+        ensure!(end - start <= 64 << 10, "A32 interval size bound");
+        total += u64::from(end - start);
+        previous = end;
+    }
+    ensure!(
+        total <= 1 << 20 && elf.len() <= 16 << 20,
+        "A32 selection aggregate bound"
+    );
+    inspect_selected(elf, output, Some(ranges))
+}
+
+fn inspect_selected(
+    elf: &[u8],
+    mut output: impl Write,
+    ranges: Option<&[(u32, u32)]>,
+) -> Result<Value> {
     ensure!(
         elf.len() >= 52 && elf[..7] == [0x7f, b'E', b'L', b'F', 1, 1, 1] && elf[18..20] == [40, 0],
         "not an ARM ELF32 image"
@@ -182,6 +216,26 @@ pub fn inspect(elf: &[u8], mut output: impl Write) -> Result<Value> {
         .checked_add(size * count)
         .context("ELF section table overflow")?;
     ensure!(end <= elf.len(), "ELF section table outside file");
+    if let Some(ranges) = ranges {
+        for &(first, last) in ranges {
+            let mut matches = 0;
+            for index in 0..count {
+                let at = offset + size * index;
+                if word(at + 4)? != 1 || word(at + 8)? & 4 == 0 {
+                    continue;
+                }
+                let address = u64::from(word(at + 12)?);
+                let end = address + u64::from(word(at + 20)?);
+                if u64::from(first) >= address && u64::from(last) <= end {
+                    matches += 1;
+                }
+            }
+            ensure!(
+                matches == 1,
+                "A32 interval absent from a unique executable section"
+            );
+        }
+    }
     let engine = Capstone::new()?;
     let fixed = engine.instructions(&[1, 0, 0xa0, 0xe3, 0x1e, 0xff, 0x2f, 0xe1], 0x1000)?;
     ensure!(
@@ -201,19 +255,46 @@ pub fn inspect(elf: &[u8], mut output: impl Write) -> Result<Value> {
         let address = u64::from(word(at + 12)?);
         let start = usize::try_from(word(at + 16)?)?;
         let bytes = usize::try_from(word(at + 20)?)?;
-        ensure!(
-            bytes > 0 && bytes <= 4 << 20 && bytes % 4 == 0,
-            "A32 section size bound"
-        );
-        let end = start.checked_add(bytes).context("ELF section overflow")?;
-        let code = elf.get(start..end).context("ELF section outside file")?;
-        let instructions = engine.instructions(code, address)?;
-        for (address, mnemonic, operands) in &instructions {
-            writeln!(output, "{address:08x} {mnemonic:<10} {operands}")?;
+        let section_end = address
+            .checked_add(bytes as u64)
+            .context("ELF address overflow")?;
+        let selected = if let Some(ranges) = ranges {
+            ranges
+                .iter()
+                .copied()
+                .filter(|&(a, b)| u64::from(a) >= address && u64::from(b) <= section_end)
+                .collect::<Vec<_>>()
+        } else {
+            vec![(u32::try_from(address)?, u32::try_from(section_end)?)]
+        };
+        for (first, last) in selected {
+            let address = u64::from(first);
+            let start = start
+                .checked_add(usize::try_from(
+                    u64::from(first) - u64::from(word(at + 12)?),
+                )?)
+                .context("ELF selected offset overflow")?;
+            let bytes = usize::try_from(last - first)?;
+            ensure!(
+                bytes > 0 && bytes <= 4 << 20 && bytes % 4 == 0,
+                "A32 section size bound"
+            );
+            let end = start.checked_add(bytes).context("ELF section overflow")?;
+            let code = elf.get(start..end).context("ELF section outside file")?;
+            let instructions = engine.instructions(code, address)?;
+            for (address, mnemonic, operands) in &instructions {
+                writeln!(output, "{address:08x} {mnemonic:<10} {operands}")?;
+            }
+            sections.push(json!({"index":index,"file_offset":start,"address":address,"size":bytes,"instructions":instructions.len()}));
         }
-        sections.push(json!({"index":index,"file_offset":start,"address":address,"size":bytes,"instructions":instructions.len()}));
     }
     ensure!(!sections.is_empty(), "executable A32 sections absent");
+    if let Some(ranges) = ranges {
+        ensure!(
+            sections.len() == ranges.len(),
+            "A32 interval absent from a unique executable section"
+        );
+    }
     Ok(
         json!({"library":"Capstone5.0 ABI, captured installed5.0.9 build","mode":"ARM little-endian A32","literal_vectors_passed":2,"sections":sections,
         "scope":"Static linear disassembly only. Embedded data can decode as instructions. No control-flow or firmware-execution pass is inferred."}),

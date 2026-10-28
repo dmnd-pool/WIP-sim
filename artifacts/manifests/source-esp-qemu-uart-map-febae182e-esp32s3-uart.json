@@ -1,0 +1,22 @@
+{
+  "id": "source-esp-qemu-uart-map-febae182e-esp32s3-uart",
+  "url": "https://raw.githubusercontent.com/espressif/qemu/febae182e132e4055529be423a818225ebddaa3a/include/hw/char/esp32s3_uart.h",
+  "kind": "source",
+  "title": "Pinned QEMU UART declaration: include/hw/char/esp32s3_uart.h",
+  "language": "en",
+  "source_id": "esp-qemu-uart-map-febae182e",
+  "license": "GPL-2.0-or-later",
+  "retrieved_at": "2026-10-28T12:15:37.550915+00:00",
+  "status": "downloaded",
+  "local_path": "artifacts/files/source/esp-qemu-uart-map-febae182e/include/hw/char/esp32s3_uart.h",
+  "sha256": "a5b8ac745b165c602127d4cc34991d2789435e1adcbb221a9bafed6c21afba19",
+  "size_bytes": 3668,
+  "executed": false,
+  "scope": "bitcoin-asic",
+  "git_commit": "febae182e132e4055529be423a818225ebddaa3a",
+  "etag": "\"6479dc8982d1ba50b6fa53bcbf736885cc15e33415762a4b9f8e633425bd614c\"",
+  "notes": [
+    "Required ESP32-S3 controller support reference for original Bitaxe firmware execution.",
+    "No downloaded code executed; not physical timing or firmware compatibility evidence."
+  ]
+}

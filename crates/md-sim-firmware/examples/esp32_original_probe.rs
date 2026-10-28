@@ -24,6 +24,12 @@ use std::{
 #[allow(dead_code)]
 #[path = "../src/confinement.rs"]
 mod confinement;
+#[path = "support/bm1397_probe_model.rs"]
+mod probe_model;
+#[path = "support/qemu_stderr_tail.rs"]
+mod stderr_tail;
+#[path = "support/esp32_uart_trace.rs"]
+mod uart_trace;
 #[path = "support/bm1397_write_intent.rs"]
 mod write_intent;
 const FIRMWARE: &str = "3fd36298681d7797429dd72610041d731558c5253430902a3c7feeced232557c";
@@ -57,21 +63,47 @@ impl UartCapture {
         let thread = std::thread::spawn(move || {
             let start = std::time::Instant::now();
             let identify = std::env::var_os("MD_SIM_BM1397_IDENTIFY").is_some();
-            let mut chain = md_sim_firmware::bm1397::IdentificationChain::new(1).unwrap();
-            let mut observer = std::env::var_os("MD_SIM_BM1397_CORE0_WRITE_INTENT")
-                .map(|_| write_intent::Observer::default());
+            let control_storage = std::env::var_os("MD_SIM_BM1397_CONTROL_STORAGE").is_some();
+            let support = if control_storage {
+                md_sim_firmware::bm1397::ControlWriteSupport::RegisterStorage
+            } else {
+                md_sim_firmware::bm1397::ControlWriteSupport::Unsupported
+            };
+            let observe = std::env::var_os("MD_SIM_BM1397_CORE0_WRITE_INTENT").is_some();
+            let reference: Option<probe_model::Config> =
+                std::env::var("MD_SIM_BM1397_REFERENCE_POLICY")
+                    .ok()
+                    .map(|text| serde_json::from_str(&text))
+                    .transpose()
+                    .map_err(std::io::Error::other)?;
+            if control_storage && (!identify || observe) {
+                return Err(std::io::Error::other("control storage requires identification and excludes the write-intent observer"));
+            }
+            if reference.is_some() && (!identify || !control_storage) {
+                return Err(std::io::Error::other(
+                    "reference work requires identification and control storage",
+                ));
+            }
+            let mut chain = probe_model::Model::new(support, observe, reference.as_ref())
+                .map_err(|error| std::io::Error::other(format!("ASIC policy: {error:?}")))?;
+            if let Some(config) = &reference {
+                eprintln!(
+                    "md-sim ASIC reference policy: {}",
+                    serde_json::to_string(config).map_err(std::io::Error::other)?
+                );
+            }
+            let mut batch = probe_model::Batch::default();
             if identify {
                 // Explicit development-stage inputs. GPIO, regulator, UART
                 // timing and mining support are not inferred from this probe.
-                chain.power(true);
-                chain.reset_line(false);
+                chain.power_and_release_reset();
                 eprintln!(
                     "md-sim ASIC identification stage: {}",
                     json!({
-                        "chips":1,"powered":true,"reset_asserted":false,
+                        "chips":1,"powered":true,"reset_asserted":false,"control_write_support":support,
                         "pin_binding":"explicit stage input; not connected to GPIO or regulator",
                         "timing":"host pipe response; no calibrated guest UART timing",
-                        "supported":"register0 identification, INACTIVE/SETADDRESS, per-chip ticket filter and clock-order/enable register storage; clock routing and status unsupported",
+                        "supported":if reference.is_some(){"Explicit one-chip computed-work reference policy; physical core, clock and line timing unresolved."}else{"register0 identification, INACTIVE/SETADDRESS, per-chip ticket filter and clock-order/enable register storage; clock routing and status unsupported"},
                         "reference_view_sha256":"501c855b43ecf49a37575766454d1e4e439d0911f1b0c2f5bd2bef287642fe67"
                     })
                 );
@@ -80,104 +112,183 @@ impl UartCapture {
             let mut sequence = 0u64;
             let mut decoder = md_sim_firmware::bm1397::Decoder::default();
             let mut bytes = [0; 4096];
-            loop {
-                match output.read(&mut bytes) {
-                    Ok(0) => return Ok(()),
-                    Ok(count) => {
-                        total += count;
-                        if total > 1024 * 1024 {
-                            return Err(std::io::Error::other("ASIC UART capture exceeds1MiB"));
+            let capture_result = (|| {
+                loop {
+                    if reference.is_some() && stopped.load(Ordering::Relaxed) {
+                        return Ok(());
+                    }
+                    if let Some(step) = chain.poll() {
+                        batch.record(&step);
+                        if step.job_computation_ordinal == 1
+                            || step.computation.accepted
+                            || step.datapath_dropped
+                        {
+                            eprintln!(
+                                "md-sim ASIC actual computation: {}",
+                                json!({
+                            "work_id":step.computation.work_id,"wire_job_id":step.job_id,
+                            "chip_address":step.chip_address,"nonce":step.computation.nonce,
+                            "variant":format!("{:?}",step.computation.variant),"digest":hex::encode(step.computation.digest),
+                            "filter":step.computation.filter,"filter_accepted":step.computation.accepted,
+                            "datapath_dropped":step.datapath_dropped,"exhausted":step.computation.exhausted,
+                            "job_computation_ordinal":step.job_computation_ordinal,"first_for_job":step.job_computation_ordinal==1,
+                            "admission_ns":step.computation.admitted_at.duration_since(start).as_nanos(),
+                            "completion_ns":step.computation.completed_at.duration_since(start).as_nanos()})
+                            );
                         }
-                        eprintln!(
-                            "md-sim ASIC UART TX: {}",
-                            json!({"sequence":sequence,"capture_wall_microseconds":start.elapsed().as_micros(),"hex":hex::encode(&bytes[..count])})
-                        );
-                        sequence += 1;
-                        for byte in &bytes[..count] {
-                            if let Some(packet) = decoder.push(*byte) {
-                                eprintln!(
-                                    "md-sim ASIC decoded TX: {}",
-                                    json!({"after_capture_sequence":sequence-1,
+                        if let Some(reply) = step.reply {
+                            let frame = reply.encode().map_err(|error| {
+                                std::io::Error::other(format!("ASIC computed reply: {error:?}"))
+                            })?;
+                            if reply_pipe.write(&frame)? != frame.len() {
+                                return Err(std::io::Error::other("short ASIC computed reply"));
+                            }
+                            eprintln!(
+                                "md-sim ASIC UART RX: {}",
+                                json!({"after_capture_sequence":sequence.checked_sub(1),
+                            "capture_wall_microseconds":start.elapsed().as_micros(),"hex":hex::encode(frame),"state":reply})
+                            );
+                        }
+                        if batch.due() {
+                            if let Some(record) = batch.take(start) {
+                                eprintln!("md-sim ASIC computation batch: {record}");
+                            }
+                        }
+                    }
+                    match output.read(&mut bytes) {
+                        Ok(0) => return Ok(()),
+                        Ok(count) => {
+                            total += count;
+                            if total > 1024 * 1024 {
+                                return Err(std::io::Error::other("ASIC UART capture exceeds1MiB"));
+                            }
+                            eprintln!(
+                                "md-sim ASIC UART TX: {}",
+                                json!({"sequence":sequence,"capture_wall_microseconds":start.elapsed().as_micros(),"hex":hex::encode(&bytes[..count])})
+                            );
+                            sequence += 1;
+                            for byte in &bytes[..count] {
+                                if let Some(packet) = decoder.push(*byte) {
+                                    eprintln!(
+                                        "md-sim ASIC decoded TX: {}",
+                                        json!({"after_capture_sequence":sequence-1,
                                         "capture_wall_microseconds":start.elapsed().as_micros(),
                                         "packet":packet})
-                                );
-                                if identify {
-                                    let packet = packet.map_err(|error| {
-                                        std::io::Error::other(format!(
-                                            "ASIC TX decode failed: {error:?}"
-                                        ))
-                                    })?;
-                                    let received = write_intent::receive(
-                                        &mut chain,
-                                        observer.as_mut(),
-                                        &packet,
-                                    )
-                                    .map_err(|error| {
-                                        eprintln!(
-                                            "md-sim ASIC identification boundary: {}",
-                                            json!({"error":error,"packet":packet})
-                                        );
-                                        std::io::Error::other(format!(
-                                            "ASIC identification stage boundary: {error:?}"
-                                        ))
-                                    })?;
-                                    if let Some(intent) = received.intent {
-                                        eprintln!(
-                                            "md-sim ASIC write-intent adaptation: {}",
-                                            json!({"after_capture_sequence":sequence-1,"intent":intent,"scope":"One posted firmware write observed; no ASIC acknowledgement, state, timing or success inferred."})
-                                        );
-                                    }
-                                    for reply in received.replies {
-                                        let frame = reply.encode().map_err(|error| {
+                                    );
+                                    if identify {
+                                        let packet = packet.map_err(|error| {
                                             std::io::Error::other(format!(
-                                                "ASIC reply failed: {error:?}"
+                                                "ASIC TX decode failed: {error:?}"
                                             ))
                                         })?;
-                                        // Nine bytes fit atomically in this private FIFO.
-                                        let written = reply_pipe.write(&frame)?;
-                                        if written != frame.len() {
-                                            return Err(std::io::Error::other(
-                                                "short ASIC identification reply",
-                                            ));
+                                        let received = chain.receive(&packet).map_err(|error| {
+                                            eprintln!(
+                                                "md-sim ASIC identification boundary: {}",
+                                                json!({"error":error,"packet":packet})
+                                            );
+                                            std::io::Error::other(format!(
+                                                "ASIC identification stage boundary: {error:?}"
+                                            ))
+                                        })?;
+                                        if let Some(intent) = received.intent {
+                                            eprintln!(
+                                                "md-sim ASIC write-intent adaptation: {}",
+                                                json!({"after_capture_sequence":sequence-1,"intent":intent,"scope":"One posted firmware write observed; no ASIC acknowledgement, state, timing or success inferred."})
+                                            );
                                         }
-                                        eprintln!(
-                                            "md-sim ASIC UART RX: {}",
-                                            json!({
-                                                "after_capture_sequence":sequence-1,
-                                                "capture_wall_microseconds":start.elapsed().as_micros(),
-                                                "hex":hex::encode(frame),"state":reply
-                                            })
-                                        );
+                                        if control_storage
+                                            && matches!(
+                                                packet,
+                                                md_sim_firmware::bm1397::Packet::Command {
+                                                    command:
+                                                        md_sim_firmware::bm1397::Command::Write {
+                                                            register: 0x3c
+                                                                | 0x08
+                                                                | 0x68
+                                                                | 0x28
+                                                                | 0x18
+                                                                | 0x70,
+                                                            ..
+                                                        },
+                                                    ..
+                                                }
+                                            )
+                                        {
+                                            eprintln!(
+                                                "md-sim ASIC programmed controls: {}",
+                                                json!({"after_capture_sequence":sequence-1,"chip_position":0,
+                                                "state":chain.programmed_controls(0),"effective_clock_known":false,
+                                                "guest_readback_available":false,"effective_uart_baud_known":false,"response_bytes":0})
+                                            );
+                                        }
+                                        for reply in received.replies {
+                                            let frame = reply.encode().map_err(|error| {
+                                                std::io::Error::other(format!(
+                                                    "ASIC reply failed: {error:?}"
+                                                ))
+                                            })?;
+                                            // Nine bytes fit atomically in this private FIFO.
+                                            let written = reply_pipe.write(&frame)?;
+                                            if written != frame.len() {
+                                                return Err(std::io::Error::other(
+                                                    "short ASIC identification reply",
+                                                ));
+                                            }
+                                            eprintln!(
+                                                "md-sim ASIC UART RX: {}",
+                                                json!({
+                                                    "after_capture_sequence":sequence-1,
+                                                    "capture_wall_microseconds":start.elapsed().as_micros(),
+                                                    "hex":hex::encode(frame),"state":reply
+                                                })
+                                            );
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    Err(error) if error.kind() == std::io::ErrorKind::WouldBlock => {
-                        if stopped.load(Ordering::Relaxed) {
-                            return Ok(());
-                        }
-                        let mut poll = libc::pollfd {
-                            fd: output.as_raw_fd(),
-                            events: libc::POLLIN,
-                            revents: 0,
-                        };
-                        let result = unsafe { libc::poll(&mut poll, 1, 100) };
-                        if result < 0 {
-                            let error = std::io::Error::last_os_error();
-                            if error.kind() != std::io::ErrorKind::Interrupted {
-                                return Err(error);
+                        Err(error) if error.kind() == std::io::ErrorKind::WouldBlock => {
+                            if stopped.load(Ordering::Relaxed) {
+                                return Ok(());
                             }
-                        } else if poll.revents & (libc::POLLERR | libc::POLLNVAL) != 0 {
-                            return Err(std::io::Error::other(
-                                "ASIC UART capture descriptor error",
-                            ));
+                            let mut poll = libc::pollfd {
+                                fd: output.as_raw_fd(),
+                                events: libc::POLLIN,
+                                revents: 0,
+                            };
+                            let delay = chain.wait_duration();
+                            let timeout = libc::timespec {
+                                tv_sec: delay.as_secs() as libc::time_t,
+                                tv_nsec: delay.subsec_nanos() as libc::c_long,
+                            };
+                            let result =
+                                unsafe { libc::ppoll(&mut poll, 1, &timeout, std::ptr::null()) };
+                            if result < 0 {
+                                let error = std::io::Error::last_os_error();
+                                if error.kind() != std::io::ErrorKind::Interrupted {
+                                    return Err(error);
+                                }
+                            } else if poll.revents & (libc::POLLERR | libc::POLLNVAL) != 0 {
+                                return Err(std::io::Error::other(
+                                    "ASIC UART capture descriptor error",
+                                ));
+                            }
                         }
+                        Err(error) if error.kind() == std::io::ErrorKind::Interrupted => {}
+                        Err(error) => return Err(error),
                     }
-                    Err(error) if error.kind() == std::io::ErrorKind::Interrupted => {}
-                    Err(error) => return Err(error),
                 }
+            })();
+            if let Some(record) = batch.take(start) {
+                eprintln!("md-sim ASIC computation batch: {record}");
             }
+            if reference.is_some() {
+                eprintln!(
+                    "md-sim ASIC measurement: {}",
+                    json!({"measurement":chain.measurement()})
+                );
+            }
+            capture_result
         });
         Ok(Self {
             stop,
@@ -265,6 +376,9 @@ fn inner(registers: bool) -> Result<()> {
         "-D",
         "/dev/stderr",
     ]);
+    if std::env::var_os("MD_SIM_S3_UART_CONFIG_TRACE").is_some() {
+        command.args(["-trace", "enable=esp32s3_uart_config_*"]);
+    }
     if std::env::var_os("MD_SIM_SAR_TRACE").is_some() {
         command.args(["-trace", "md_sim_sar_complete"]);
     }
@@ -379,10 +493,26 @@ fn inner(registers: bool) -> Result<()> {
         // Keep the child C stdio stream separate while the UART collector
         // writes JSON records. Cross-process writes otherwise split records.
         command.stderr(fs::File::create("/work/qemu-stderr.log")?);
+        let live_export = std::env::var_os("MD_SIM_BM1397_REFERENCE_POLICY").is_some();
+        let mut live_tail = if live_export {
+            // Open before child spawn, with an independent file offset.
+            Some(stderr_tail::Tail::new(fs::File::open(
+                "/work/qemu-stderr.log",
+            )?))
+        } else {
+            None
+        };
         let capture = attach_asic_uart(&mut command)?;
         let (status, captured) = if let Some(capture) = capture {
             let mut child = command.spawn()?;
             let status = loop {
+                if let Some(tail) = live_tail.as_mut() {
+                    if let Err(error) = tail.drain(&mut std::io::stderr().lock()) {
+                        eprintln!("md-sim QEMU stderr live error: {error}");
+                        child.kill()?;
+                        break child.wait()?;
+                    }
+                }
                 if let Some(status) = child.try_wait()? {
                     break status;
                 }
@@ -404,11 +534,26 @@ fn inner(registers: bool) -> Result<()> {
             backend.len() <= 16 * 1024 * 1024,
             "QEMU stderr exceeds diagnostic budget"
         );
+        if let Some(tail) = live_tail.as_mut() {
+            tail.drain(&mut std::io::stderr().lock())?;
+            match tail.verified_summary(&backend) {
+                Ok(receipt) => eprintln!("md-sim QEMU stderr live final: {receipt}"),
+                Err(error) => {
+                    eprintln!(
+                        "md-sim QEMU stderr live incomplete: {}",
+                        json!({"observed":tail.summary(),"error":error.to_string()})
+                    );
+                    return Err(error.into());
+                }
+            }
+        }
         eprintln!(
             "md-sim separate QEMU stderr: {}",
-            json!({"sha256":md_sim_firmware::prepare::hash_bytes(&backend),"size":backend.len()})
+            json!({"sha256":md_sim_firmware::prepare::hash_bytes(&backend),"size":backend.len(),"live_export":live_export})
         );
-        std::io::stderr().write_all(&backend)?;
+        if !live_export {
+            std::io::stderr().write_all(&backend)?;
+        }
         drop(held_input);
         captured?;
         status
@@ -425,6 +570,9 @@ struct Options {
     identify: bool,
     sar_input_fixture: bool,
     core0_write_intent: bool,
+    control_storage: bool,
+    uart_configuration: bool,
+    reference_work: Option<probe_model::Config>,
 }
 fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<()> {
     let Options {
@@ -436,6 +584,9 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
         identify,
         sar_input_fixture,
         core0_write_intent,
+        control_storage,
+        uart_configuration,
+        reference_work,
     } = options;
     ensure!(!out.exists(), "new output required");
     fs::create_dir_all(out)?;
@@ -529,7 +680,48 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
         );
         environment.insert("MD_SIM_BM1397_CORE0_WRITE_INTENT".into(), "1".into());
     }
-    let adaptation = if core0_write_intent {
+    if control_storage {
+        ensure!(identify && sar_input_fixture && !core0_write_intent,
+            "control storage requires the reference identification/ADC profile and excludes the observer");
+        environment.insert("MD_SIM_BM1397_CONTROL_STORAGE".into(), "1".into());
+    }
+    if uart_configuration {
+        ensure!(
+            control_storage && build["uart_configuration_model"].is_object(),
+            "UART observations require the posted-control profile and S3 UART configuration backend"
+        );
+        environment.insert("MD_SIM_S3_UART_CONFIG_TRACE".into(), "1".into());
+    }
+    let adaptation = if let Some(config) = &reference_work {
+        ensure!(
+            control_storage && uart_configuration && !core0_write_intent,
+            "computed reference work needs the explicit control/ADC/UART profile"
+        );
+        let model = config
+            .build()
+            .map_err(|error| anyhow::anyhow!("reference policy: {error:?}"))?;
+        environment.insert(
+            "MD_SIM_BM1397_REFERENCE_POLICY".into(),
+            serde_json::to_string(config)?,
+        );
+        json!({"id":md_sim_firmware::bm1397::reference::POLICY,"kind":"reference-device-adaptation",
+            "configuration":config,"policy":model.policy(),
+            "trace_policy":"Live complete QEMU stderr lines through one locked writer; final receipt required for complete export. First actual computation of each submitted job, plus all solutions/faults, retained with real nonce/digest; no additional hash computation.",
+            "source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/reference.rs")),
+            "engine_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../../md-sim-mining/src/engine.rs")),
+            "scope":"Actual software hashing at the programmed filter; reference queue, chip routing, rate windows and optional computation-drop faults. Factory assertions and firmware bytes unchanged; physical core/clock and multi-chip behavior unresolved.",
+            "original_board_gate":false,"functional_mining_gate":false})
+    } else if control_storage {
+        json!({
+            "id":"bm1397-programmed-control-storage-v3","kind":"reference-device-capability",
+            "capability":md_sim_firmware::bm1397::ControlWriteSupport::RegisterStorage,
+            "scope":"Per-chip posted core0, PLL0/PLL3, PLL0 output divider, FastUART and MiscControl configuration. Reset/power invalidate unknown defaults. No effective core fan-out, clock, lock, UART baud, completion or guest readback is inferred. No write acknowledgement is sent.",
+            "source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/programmed.rs")),
+            "original_arithmetic_fixture_sha256":"9fd7c05d9f83cdab32094688708aac380fd9a5997a2493be0a2515e6af17b13c",
+            "uart_view_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/uart_control.rs")),
+            "original_board_gate":false,"functional_mining_gate":false
+        })
+    } else if core0_write_intent {
         json!({
             "id":write_intent::ADAPTATION,"kind":"reference-environment-observer",
             "command_hex":"55aa5109003c8000807410","maximum_observations":1,
@@ -583,7 +775,7 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
     save_json(&out.join("spec.json"), &spec)?;
     save_json(
         &out.join("input-identities.json"),
-        &json!({"firmware":original,"source":SOURCE,"recipe":hash_file(&std::env::current_exe()?)?,"backend_build_report":hash_file(&backend.join("build-report.json"))?,"backend_spec":hash_file(&backend.join("spec.json"))?,"scope":"Original archived factory firmware and ROM on an upstream ESP32-S3 machine; no claim of complete Bitaxe device models.","storage_adaptation":"Erase-fill trailing16MiB flash capacity in private scratch; preserve all original factory bytes.","register_diagnostic":registers,"sar_external_fixture":if sar_input_fixture {json!({"unit":1,"channel":1,"microvolts":550000,"scope":"Independent fixed test input; no regulator coupling or physical core-voltage claim."})}else{Value::Null},"ds4432_register_fixture":ds4432,"ds4432_scope":"When selected: explicit 3.3V supply, OUT0 80kOhm FS resistor, OUT1 disconnected. No modeled regulator or ASIC-voltage telemetry; exact Max R14 remains unresolved.","emc2101_register_fixture":emc2101,"emc2101_scope":"When selected: host-load0% strap, explicit internal27C test input, external diode open, no connected fan tachometer. These are declared fixture inputs, not measured physical board telemetry.","ina260_register_fixture":ina260,"ina260_scope":"When selected: explicit5V VIN and0A current diagnostic input. No physical PSU or ASIC load is inferred; no core-voltage measurement.","asic_uart_tx_capture":asic_uart,"asic_uart_scope":if identify {"Identification, addresses and clock-control register storage: one explicitly powered, reset-released reference chip; no GPIO/regulator binding or calibrated guest UART timing. Per-chip state follows writes and reset. Clock routing, status and all other unsupported commands remain visible failures. No mining initialization or nonce response."} else {"When selected: private second UART output capture only; no response bytes or ASIC model. Capture timestamps use host wall time, not calibrated guest UART timing."},"core0_write_intent_adaptation":adaptation,"bm1397_identification_stage":identify,"bm1397_identification_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/identify.rs")),"bm1397_reply_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/reply.rs"))}),
+        &json!({"firmware":original,"source":SOURCE,"recipe":hash_file(&std::env::current_exe()?)?,"backend_build_report":hash_file(&backend.join("build-report.json"))?,"backend_spec":hash_file(&backend.join("spec.json"))?,"scope":"Original archived factory firmware and ROM on an upstream ESP32-S3 machine; no claim of complete Bitaxe device models.","storage_adaptation":"Erase-fill trailing16MiB flash capacity in private scratch; preserve all original factory bytes.","register_diagnostic":registers,"sar_external_fixture":if sar_input_fixture {json!({"unit":1,"channel":1,"microvolts":550000,"scope":"Independent fixed test input; no regulator coupling or physical core-voltage claim."})}else{Value::Null},"ds4432_register_fixture":ds4432,"ds4432_scope":"When selected: explicit 3.3V supply, OUT0 80kOhm FS resistor, OUT1 disconnected. No modeled regulator or ASIC-voltage telemetry; exact Max R14 remains unresolved.","emc2101_register_fixture":emc2101,"emc2101_scope":"When selected: host-load0% strap, explicit internal27C test input, external diode open, no connected fan tachometer. These are declared fixture inputs, not measured physical board telemetry.","ina260_register_fixture":ina260,"ina260_scope":"When selected: explicit5V VIN and0A current diagnostic input. No physical PSU or ASIC load is inferred; no core-voltage measurement.","uart_configuration_observation":uart_configuration,"uart_configuration_scope":"When selected: bounded programmed-register observations with device identity and QEMU virtual time. Overflow is incomplete capture. No effective clock, baud, line timing or physical calibration is inferred.","uart_configuration_parser_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/esp32_uart_trace.rs")),"asic_uart_tx_capture":asic_uart,"asic_uart_scope":if reference_work.is_some() {"Explicit one-chip computed-work reference capability. Actual engine hashes and optional named fault events; no GPIO/power coupling, calibrated line timing, physical clock/core map, or factory-gate bypass."} else if identify {"Identification, addresses and clock-control register storage: one explicitly powered, reset-released reference chip; no GPIO/regulator binding or calibrated guest UART timing. Per-chip state follows writes and reset. Clock routing, status and all other unsupported commands remain visible failures. No mining initialization or nonce response."} else {"When selected: private second UART output capture only; no response bytes or ASIC model. Capture timestamps use host wall time, not calibrated guest UART timing."},"core0_write_intent_adaptation":if core0_write_intent {adaptation.clone()}else{Value::Null},"programmed_control_profile":if control_storage {adaptation.clone()}else{Value::Null},"reference_work_adaptation":if reference_work.is_some(){adaptation.clone()}else{Value::Null},"bm1397_identification_stage":identify,"bm1397_identification_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/identify.rs")),"bm1397_reply_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("../src/bm1397/reply.rs"))}),
     )?;
     let result = execute(&store, &spec, Arc::new(AtomicBool::new(false)))?;
     save_json(&out.join("result.json"), &result)?;
@@ -591,6 +783,55 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
     let stderr = hex::decode(&result.stderr)?;
     fs::write(out.join("guest.log"), &stdout)?;
     fs::write(out.join("backend.log"), &stderr)?;
+    let live_final = if reference_work.is_some() {
+        let final_lines: Vec<_> = std::str::from_utf8(&stderr)?
+            .lines()
+            .filter_map(|line| line.strip_prefix("md-sim QEMU stderr live final: "))
+            .collect();
+        ensure!(
+            final_lines.len() <= 1,
+            "duplicate live QEMU stderr final receipt"
+        );
+        let final_record: Option<Value> = final_lines
+            .first()
+            .map(|text| serde_json::from_str(text))
+            .transpose()?;
+        let complete =
+            final_record.as_ref().is_some_and(|r| r["complete"] == true) && !result.trace_truncated;
+        save_json(
+            &out.join("qemu-stderr-retention.json"),
+            &json!({
+            "process_status":result.status,"exit_code":result.exit_code,"trace_truncated":result.trace_truncated,
+            "final_receipt":final_record,"final_export_complete":complete,
+            "partial_line_status":if final_record.is_none(){"Unknown: process ended before final receipt; complete emitted lines are retained."}else{"See exact final receipt."},
+            "scope":"Run-owned file; complete byte lines emitted under the Rust stderr lock. Missing final receipt cannot establish complete QEMU output."}),
+        )?;
+        complete
+    } else {
+        true
+    };
+    if uart_configuration {
+        let mut observations =
+            uart_trace::parse(std::str::from_utf8(&stderr)?).with_context(|| {
+                format!(
+                    "UART observations unavailable; actual process status {}, exit {:?}",
+                    result.status, result.exit_code
+                )
+            })?;
+        observations.complete &= !result.trace_truncated && live_final;
+        save_json(
+            &out.join("uart-configuration-observations.json"),
+            &observations,
+        )?;
+        ensure!(
+            observations.complete,
+            "UART configuration capture incomplete (overflow, truncation or missing final stderr receipt); actual process status {}, exit {:?}", result.status, result.exit_code
+        );
+        ensure!(
+            observations.devices.contains_key("/machine/soc/uart1"),
+            "ASIC controller UART observations absent"
+        );
+    }
     if registers {
         let text = String::from_utf8_lossy(&stderr);
         if let Some(line) = text
@@ -626,6 +867,11 @@ fn run(backend: &Path, firmware: &Path, out: &Path, options: Options) -> Result<
             )?;
         }
     }
+    if reference_work.is_some() {
+        ensure!(result.status == "exited" && result.exit_code == Some(0) && live_final,
+            "reference probe incomplete: actual process status {}, exit {:?}, complete QEMU stderr export {}",
+            result.status, result.exit_code, live_final);
+    }
     let log = String::from_utf8_lossy(&stdout);
     save_json(
         &out.join("assessment.json"),
@@ -642,19 +888,58 @@ fn main() -> Result<()> {
         return inner(args[1] == "__inside-registers");
     }
     ensure!(
-        args.len() == 4 || (args.len() == 5 && (args[4] == "registers" || args[4] == "ds4432" || args[4] == "emc2101" || args[4] == "asic-trace" || args[4] == "power-asic-trace" || args[4] == "bm1397-identify" || args[4] == "bm1397-identify-registers" || args[4] == "bm1397-identify-adc" || args[4] == "bm1397-observe-core0-adc")),
-        "usage: esp32_original_probe BACKEND_BUILD FACTORY_FIRMWARE NEW_OUTPUT [registers|ds4432|emc2101|asic-trace|power-asic-trace|bm1397-identify|bm1397-identify-registers|bm1397-identify-adc|bm1397-observe-core0-adc]"
+        (5..=7).contains(&args.len()) && args[4] == "bm1397-reference-work-adc-uart-config" || args.len() == 4 || (args.len() == 5 && (args[4] == "registers" || args[4] == "ds4432" || args[4] == "emc2101" || args[4] == "asic-trace" || args[4] == "power-asic-trace" || args[4] == "bm1397-identify" || args[4] == "bm1397-identify-registers" || args[4] == "bm1397-identify-adc" || args[4] == "bm1397-observe-core0-adc" || args[4] == "bm1397-control-storage-adc" || args[4] == "bm1397-control-storage-adc-uart-config")),
+        "usage: esp32_original_probe BACKEND_BUILD FACTORY_FIRMWARE NEW_OUTPUT [registers|ds4432|emc2101|asic-trace|power-asic-trace|bm1397-identify|bm1397-identify-registers|bm1397-identify-adc|bm1397-observe-core0-adc|bm1397-control-storage-adc|bm1397-control-storage-adc-uart-config|bm1397-reference-work-adc-uart-config [HASH_CAP_HPS [FAULT_EVERY_N]]]"
     );
     let mode = args.get(4).and_then(|a| a.to_str());
-    let identify = matches!(
-        mode,
-        Some(
-            "bm1397-identify"
-                | "bm1397-identify-registers"
-                | "bm1397-identify-adc"
-                | "bm1397-observe-core0-adc"
-        )
-    );
+    let reference_mode = mode == Some("bm1397-reference-work-adc-uart-config");
+    let reference_work = if reference_mode {
+        let cap = args
+            .get(5)
+            .map(|s| {
+                s.to_str()
+                    .context("UTF-8 hash cap")?
+                    .parse::<f64>()
+                    .context("hash cap")
+            })
+            .transpose()?
+            .unwrap_or(10_000.0);
+        let fault = if let Some(n) = args.get(6) {
+            md_sim_firmware::bm1397::reference::FaultPolicy::DropEveryNthComputation {
+                interval: n
+                    .to_str()
+                    .context("UTF-8 fault interval")?
+                    .parse()
+                    .context("fault interval")?,
+            }
+        } else {
+            md_sim_firmware::bm1397::reference::FaultPolicy::NoFaults
+        };
+        let config = probe_model::Config {
+            chips: 1,
+            hash_cap_hps: cap,
+            queue_slots: 32,
+            fault_policy: fault,
+        };
+        config
+            .build()
+            .map_err(|error| anyhow::anyhow!("reference policy: {error:?}"))?;
+        Some(config)
+    } else {
+        None
+    };
+    let identify = reference_mode
+        || matches!(
+            mode,
+            Some(
+                "bm1397-identify"
+                    | "bm1397-identify-registers"
+                    | "bm1397-identify-adc"
+                    | "bm1397-observe-core0-adc"
+                    | "bm1397-control-storage-adc"
+                    | "bm1397-control-storage-adc-uart-config"
+            )
+        );
     let asic_uart = identify || matches!(mode, Some("asic-trace" | "power-asic-trace"));
     let out = PathBuf::from(&args[3]);
     let new = !out.exists();
@@ -669,11 +954,25 @@ fn main() -> Result<()> {
             ina260: identify || mode == Some("power-asic-trace"),
             asic_uart,
             identify,
-            sar_input_fixture: matches!(
-                mode,
-                Some("bm1397-identify-adc" | "bm1397-observe-core0-adc")
-            ),
+            sar_input_fixture: reference_mode
+                || matches!(
+                    mode,
+                    Some(
+                        "bm1397-identify-adc"
+                            | "bm1397-observe-core0-adc"
+                            | "bm1397-control-storage-adc"
+                            | "bm1397-control-storage-adc-uart-config"
+                    )
+                ),
             core0_write_intent: mode == Some("bm1397-observe-core0-adc"),
+            control_storage: reference_mode
+                || matches!(
+                    mode,
+                    Some("bm1397-control-storage-adc" | "bm1397-control-storage-adc-uart-config")
+                ),
+            uart_configuration: reference_mode
+                || mode == Some("bm1397-control-storage-adc-uart-config"),
+            reference_work,
         },
     );
     if let Err(error) = &result {

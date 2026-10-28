@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-28T13:21:42.438960+00:00",
+  "review_status": "source review closed; focused checks and actual execution pending",
+  "scope": "Separate selected converter structure adaptation and its exact original-versus-derived output comparison. This does not promote original 497 or HDL 502i/502j verdicts.",
+  "inputs": [
+    {
+      "path": "simulator/firmware/s9-netlist-tool-inputs-502k.json",
+      "sha256": "ae8d03d540748c1bbc78d8dfa17ec6f6565b7e227e9aa827115ad525f44ed03d",
+      "size": 21667
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/netlist_inputs.rs",
+      "sha256": "06aa7da9ac9de6068370b1e79344f2e6cb27d7b3492e3fa0fe60928cc7b3d2f9",
+      "size": 9698
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/netlist_structure.rs",
+      "sha256": "25e1b23ec05371c3938f897b4bf52db094138524b612863b89dd3e8d3ce5e64e",
+      "size": 11614
+    },
+    {
+      "path": "work/simulator/hdl-dev-502j/s9_netlist_reconstruct.rs",
+      "sha256": "74bc13caa7cd3faac36e38ff5be104e19ddad0d8f7e8887fc75bbd8557627408",
+      "size": 15882
+    },
+    {
+      "path": "simulator/tools/fasm2bels/structure-v2/converter.patch",
+      "sha256": "a38d9777fdd456c25b62a7238448be58033cad5ff416369474952f78aaceb59e",
+      "size": 5658
+    },
+    {
+      "path": "simulator/tools/fasm2bels/fasm2bels/fasm2bels.py",
+      "sha256": "4b42788fbe15f37497500d8c539fb167a437a828ca1e7c6dae742587bc28e0ea",
+      "size": 18573
+    },
+    {
+      "path": "simulator/tools/fasm2bels/structure-v2/verilog_modeling.py",
+      "sha256": "905488e90d3826602e759c47840d1bac709069585a36ec1ffaf3719e58769da0",
+      "size": 89210
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/fasm2bels.py",
+      "sha256": "5c67b3f59bda75da076dee325d451608e6f57d194c23c4713a2ca087ab52fc04",
+      "size": 18553
+    },
+    {
+      "path": "artifacts/files/source/source-fasm2bels-bafbcd8/fasm2bels/models/verilog_modeling.py",
+      "sha256": "36e791fc75dccd2a8b1510d64ca71057ff68389d49ebaadf6892747f405495fb",
+      "size": 87988
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/selected.v",
+      "sha256": "31bef35aaa1e18af42fdd0c01d1045a5d56ae031c569adf9440eab5fa416e848",
+      "size": 12538532
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502i/hdl-report.json",
+      "sha256": "eaab9a4a70f99faa8b3605399171e597a2c13893cf319db97f23ca3e02294c59",
+      "size": 148638
+    },
+    {
+      "path": "work/simulator/qemu-s9/hdl-selected-502j/hdl-report.json",
+      "sha256": "f61da37e96e1ecc4e2d825a09c1d79cf8f8706eb7d2722e68318d24eb043e6a6",
+      "size": 684151
+    },
+    {
+      "path": "work/simulator/qemu-s9/netlist-selected-497/selected.xdc",
+      "sha256": "96abe81a11f36f77f3ebcb2e236e829a8d8ae96ddacd6308362354afc3146b27",
+      "size": 8065912
+    },
+    {
+      "path": "work/simulator/reviews/hdl-selected-independent-execution-502j.json",
+      "sha256": "a4a43653389761044b495bfc75898c683975f5be495600dffd7331799711d969",
+      "size": 5806
+    }
+  ],
+  "verified_input_counts": {
+    "converter_inputs": 40,
+    "exact_parent_derivations": 2,
+    "structure_references": 4,
+    "export_references": 4
+  },
+  "reviewed": [
+    "Original input profile remains accepted by its unchanged exact byte hash and size. The separate derived profile is also selected only by its complete hash and size; arbitrary profile or evidence substitutions fail.",
+    "Derived sources are separate from archived originals. Every declared text change has one exact match; independently applying both change lists gives the pinned derived files exactly.",
+    "The new source changes only final alias declarations, an explicit timebase and four previously omitted scalar RAM inputs represented as Z after mode checks. No zero tie, route relaxation or extra feature is supplied.",
+    "All four reference artifacts are imported into the content-addressed store with their pinned identities. The output comparison uses verified captured objects and rechecks bounded read hashes, rather than reopening mutable original paths.",
+    "The RAM evidence is the independently audited actual 502j report. The comparator binds each of the fifteen original RAM names and complete parameter hashes to this evidence.",
+    "The comparator requires one ordered top-module header, one terminal endmodule, and the sole adapted timebase before the module. It compares all 11,122 cell identities, attributes, parameter text and existing port bodies.",
+    "Only 1,453 original scalar assignment sinks may gain declarations, and only 60 reviewed RAM Z connections are removed for comparison. Remaining nonblank line multiplicities and every existing assignment are preserved.",
+    "The emitted XDC artifact must retain the complete original 497 identity. Its content hash was already recomputed by check_output, so a changed routing-constraint output fails.",
+    "All original converter argument, graph, FASM-consumption, output-size, process isolation and resource checks remain. Comparison failure is retained before the final assessment fails.",
+    "Old 497 conversion and failed selected HDL evidence remain unchanged. Successful structural conversion still requires subsequent strict HDL compilation and does not establish board or mining execution."
+  ],
+  "closed_findings": [
+    {
+      "finding": "Line-multiset comparison did not constrain module framing and could allow an early endmodule or late timescale.",
+      "resolution": "Added ordered top-header, single terminal endmodule and leading-timebase checks, plus negative tests for both misplaced forms."
+    },
+    {
+      "finding": "The Verilog-only adaptation did not bind output XDC to the original routing constraints.",
+      "resolution": "The separate profile now pins and captures original 497 XDC. The comparator requires exact emitted object equality and verifies the retained object."
+    }
+  ],
+  "open_findings": [],
+  "pending": [
+    "Integrate the reviewed staged Rust files with exact source hashes.",
+    "Run formatting, focused tests, strict Clippy and release build.",
+    "Execute the new converter in its unchanged isolated budget and retain both successful or failed output comparisons.",
+    "Require strict selected HDL compilation on the derived output; keep physical, PS7, original-board and mining gates open."
+  ],
+  "limits": [
+    "Only the selected pinned converter output format is accepted; this is not a general Verilog equivalence checker.",
+    "An actual XDC byte-order difference is a failed strict comparison until investigated. No normalization waiver is present.",
+    "Missing monitor data and 33 electrical-setting ambiguities remain unresolved."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "md-sim-independent-source-review-delta/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "stage": "508",
+  "status": "PASS source delta; execution pending",
+  "previous_review": {
+    "path": "work/simulator/reviews/bm1397-reference-independent-source-508.json",
+    "sha256": "0f892decef369209524e2c9423e6a610dddd924d2959d010351a9ac77da06251",
+    "size": 7746
+  },
+  "current_stage": {
+    "path": "work/simulator/bm1397-reference-508/inputs.json",
+    "sha256": "368fbcec8ed4725a0d9783ef2f7c0e814f92df005af33c4979a1f0bcfc9d5f3c",
+    "size": 5380
+  },
+  "changed_files": [
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/reference.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397/reference.rs",
+      "sha256": "d0f2ce76922ed876606dd791d06b3d0b3da360f63379d6d3c71ee6ef7f4c623a",
+      "size": 13708
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/reference_tests.rs",
+      "destination": "crates/md-sim-firmware/src/bm1397/reference_tests.rs",
+      "sha256": "f5c18ad00941eb8cc3901102b016122dd30b1319f3b26124cb671b2996af8c66",
+      "size": 13304
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/bm1397_probe_model.rs",
+      "destination": "crates/md-sim-firmware/examples/support/bm1397_probe_model.rs",
+      "sha256": "ef40106b99df7c350ef80972674edacd91571395a84cc6deeea2a7c7c02895b5",
+      "size": 6489
+    },
+    {
+      "stage_path": "work/simulator/bm1397-reference-508/esp32_original_probe.rs",
+      "destination": "crates/md-sim-firmware/examples/esp32_original_probe.rs",
+      "sha256": "a9a0bd2b8baaac275310fb9e6f77bb343d4a4d092288c49ea8bf6c7d5e369c56",
+      "size": 44539
+    }
+  ],
+  "unchanged_reviewed_files": 5,
+  "source_reference": {
+    "path": "work/simulator/bm1397-counter-followup-20261028/components/asic/bm1397.c",
+    "sha256": "9bd28dff43cb3c07a63c4843dba2704f7e071b1bfc7fb310cfd925cb35be2f56",
+    "size": 13118
+  },
+  "checked": [
+    "Exact archived producer increments its job ID by4 modulo128. The32 IDs0,4,...124 are the evidenced reference profile.",
+    "Reference queue capacity and probe configuration are at most32. Aligned IDs128..252 return UnsupportedJobId before generation, cursor, queue or counters change. Unaligned lower IDs remain InvalidJob.",
+    "Regression visits every unsupported aligned high ID and verifies the existing live job identity, queue length and actual hash count are preserved. Capacity33 is rejected.",
+    "The policy marks other silicon job-ID behavior unresolved. No incompatible-target exclusion, physical capability or completion gate is introduced."
+  ],
+  "unresolved_findings": [],
+  "pending": [
+    "Run all focused tests and the actual original firmware path after integration/freeze."
+  ],
+  "scope_limits": [
+    "This closes the source delta only. All prior physical and fresh-mining limits remain."
+  ]
+}

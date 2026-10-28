@@ -1,0 +1,91 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "date": "2026-10-28",
+  "reviewer": "cleanup_resume",
+  "stage": "510",
+  "status": "PASS source review; execution pending",
+  "inputs": {
+    "path": "work/simulator/uart-clock-510/inputs.json",
+    "sha256": "2d1afc7b706721e62544e3bdc1d2ce10a3d67310c669355d70b428febf64118e",
+    "size": 3631
+  },
+  "source_files": [
+    {
+      "path": "work/simulator/uart-clock-510/esp32s3_uart.rs",
+      "sha256": "0eda08e44090d8bb01f4acefc4160c581d46461f0207806a299e3095137e7127",
+      "size": 6750
+    },
+    {
+      "path": "work/simulator/uart-clock-510/esp32_uart_requests.rs",
+      "sha256": "ccf66baf82649b98cffc0726cbab240340ea0b7b33f3d3e4bd2e33d56cf24a89",
+      "size": 4356
+    },
+    {
+      "path": "work/simulator/uart-clock-510/bounded_file.rs",
+      "sha256": "725a1d9682b92e7a7f9548ca266c6ef7b29908bd1e50d9b6e413183f7c754ea2",
+      "size": 3045
+    },
+    {
+      "path": "work/simulator/uart-clock-510/fpga_feature_inputs.rs",
+      "sha256": "688d4f9a28b3bcec31d947e38af511836a3755eb2279b6ddd0e68a1279c0829b",
+      "size": 4083
+    }
+  ],
+  "reference": {
+    "path": "work/simulator/reviews/esp32-uart-clock-contract-20261028.json",
+    "sha256": "4b0875972337e0b4f61b56ee140e5228665fe852c862008d29b87ef7b34ee1fb",
+    "size": 5620
+  },
+  "reference_sources_verified": 9,
+  "closed_findings": [
+    {
+      "finding": "Run and clock identity could describe bytes reopened after parsing.",
+      "resolution": "CapturedFile now hashes the same buffer passed to parsers. The mutation regression asserts the consumed bytes keep their original identity."
+    },
+    {
+      "finding": "A plain File::open could follow a final symlink or block on FIFO.",
+      "resolution": "The shared reader opens O_NOFOLLOW|O_NONBLOCK, requires a bounded regular descriptor, compares device/inode/size/mtime/ctime before and after reading, and rejects size/limit overflow. The old FPGA bounded function is re-exported with the same signature."
+    }
+  ],
+  "checked": [
+    "Exact source-selection bits, encoded integer predivider plus one, four-bit baud fraction, and requested gate/reset bits match the pinned manufacturer HAL/register source.",
+    "Maximum source multiplication and denominator fit u64. Reserved fields, zero divisor, unknown selected frequency and unsupported fractional predivider fail explicitly.",
+    "Raw result stderr must equal backend.log. The complete strict parser result must equal the retained observation JSON. Input identities derive from the captured buffers; self identity uses /proc/self/exe.",
+    "No initial register values are seeded. Pairing reports only last observed words and explicitly denies established reset continuity. Requested rates do not imply effective clocks, serial timing, calibration, board or mining success.",
+    "New reader negative tests cover final symlink, FIFO, directory, size bound, u64 limit overflow, and path-content mutation after capture."
+  ],
+  "independent_actual040_arithmetic": {
+    "explicit_clocks_hz": {
+      "apb": 80000000,
+      "rtc": null,
+      "xtal": 40000000
+    },
+    "conditional_pairs": 16,
+    "unpaired_observations": 10,
+    "final_ratios": {
+      "uart0": [
+        640000000,
+        5555
+      ],
+      "uart1": [
+        1280000000,
+        409
+      ],
+      "uart2": [
+        1280000000,
+        11111
+      ]
+    },
+    "meaning": "Independent integer arithmetic over retained040 words, not execution of the proposed Rust helper or measurement of UART timing."
+  },
+  "unresolved_findings": [],
+  "pending": [
+    "Integrate only reviewed bytes after checking production bases.",
+    "Run focused tests, strict lint, formatting and relevant FPGA reader checks.",
+    "Freeze helper and run actual040 result processing; compare complete retained report and input identities."
+  ],
+  "scope_limits": [
+    "Source review only; new tests and result helper have not run in this review.",
+    "Physical clock, reset continuity, UART timing and all original-board/mining completion gates remain open."
+  ]
+}
