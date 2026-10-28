@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:50:36.739809+00:00",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Third explicit original/RW/combined CVC probe tool selection. Fixture and oracle behavior unchanged.",
+  "inputs": [
+    {
+      "path": "work/simulator/s9-cvc-516/lexer-context/combined-probe-stage.json",
+      "sha256": "5de23ac25b1732d0d42e04bd503e2b5f4d1ac753c614db033569f265dd462c55",
+      "size": 1070
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-lexer-driver-516e/source/crates/md-sim-firmware/examples/cvc_rw_probe.rs",
+      "sha256": "47e3193b8d485cd4996681fe67a93cd8ef25af850adad6e73ae559982469c1ae",
+      "size": 25870
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/lexer-context/combined_cvc_rw_probe.rs",
+      "sha256": "90a7c80e7195530319ccfc2ed0121bd3700d2fa8970339c1d300ba46a8c6c068",
+      "size": 27343
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516f/cvc-tools.tar.gz",
+      "sha256": "9a5ed2d7e4c5d5ca0f26f5009265bda9188dfd314a64e01ad9d8922d0239d41f",
+      "size": 5382343
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516f/build-report.json",
+      "sha256": "c7536dd1f4368e95dcd313edce4f5fd9d23d613411aa9396698381dded8c247a",
+      "size": 166034
+    },
+    {
+      "path": "work/simulator/reviews/cvc-combined-build-independent-execution-516f.json",
+      "sha256": "1a5372961236386ed902c9e33ae40646fbd3b25daa3ad43cbd4bdc50a3adcbd1",
+      "size": 5815
+    }
+  ],
+  "checked": [
+    "Tool enum binds exact archive hash, repository path and profile name in both parent capture and isolated unpack.",
+    "Combined flag is accepted only after --rw-after-nba; repeated/misplaced or mixed lexer/phase flags reject. Original and RW modes select their prior exact tools.",
+    "Compiled and interpreted RW behavior remains enabled for both derived profiles. The same literal lexer and33 scheduler comparisons are required for the combined tool.",
+    "No fixture bytes, compiler options, expected values, retained-artifact list, isolation or resource limits changed.",
+    "Actual combined516f archive/build independently verified; this source selection does not grant callback or selected-HDL acceptance."
+  ],
+  "unresolved_findings": [],
+  "required_next": "Execute exact lexer plus all33 callbacks on one frozen combined helper, then selected HDL equivalence.",
+  "selected_hdl_gate": false,
+  "original_board_gate": false
+}

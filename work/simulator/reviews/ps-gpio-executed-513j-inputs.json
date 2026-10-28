@@ -1,0 +1,734 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:43:35.787361+00:00",
+  "scope": "PS GPIO component and original public ROM diagnostic. Exact S9 silicon binding and boot remain incomplete.",
+  "binary": {
+    "sha256": "cc311dd5fab5233f696110e4eb1d22c4efb4fd18121e705513016edf5ea854ba",
+    "size": 20208792
+  },
+  "core": {
+    "library": {
+      "sha256": "77d159a1ee6c7a53a630e2c3df3a16396a78c8ff489c7a25470b5d46aa27c2ac",
+      "size": 35324374
+    },
+    "manifest": {
+      "sha256": "a7eee7e758c13dc6042ebea321bf131078455abb266ec11e0b2cef3aea7c9f46",
+      "size": 105083
+    }
+  },
+  "backend_wall_milliseconds": 186108,
+  "runs": [
+    {
+      "run": "work/simulator/qemu-s9/rom-gpio-513j",
+      "passed": true,
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false,
+      "observations": [
+        {
+          "irq_events": [
+            [
+              20,
+              true
+            ],
+            [
+              20,
+              false
+            ],
+            [
+              20,
+              true
+            ],
+            [
+              20,
+              false
+            ],
+            [
+              20,
+              true
+            ],
+            [
+              20,
+              false
+            ],
+            [
+              20,
+              true
+            ],
+            [
+              20,
+              false
+            ],
+            [
+              20,
+              true
+            ],
+            [
+              20,
+              false
+            ],
+            [
+              20,
+              true
+            ],
+            [
+              20,
+              false
+            ],
+            [
+              20,
+              true
+            ],
+            [
+              20,
+              false
+            ]
+          ],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 720071,
+                "seconds": 1793216520
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 720562,
+                "seconds": 1793216520
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 720806,
+                "seconds": 1793216520
+              }
+            }
+          ],
+          "test_kind": "rom-gpio",
+          "transactions": 144,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/rom-gpio-reject-513j",
+      "passed": true,
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "event": "STOP",
+              "timestamp": {
+                "microseconds": 134533,
+                "seconds": 1793216522
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 135949,
+                "seconds": 1793216522
+              }
+            }
+          ],
+          "test_kind": "rom-gpio-reject",
+          "transactions": 19,
+          "warm_resets": 0
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/rom-lvttl-513j",
+      "passed": true,
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 100,
+      "trace_truncated": false,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 523628,
+                "seconds": 1793216523
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 524035,
+                "seconds": 1793216523
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 524224,
+                "seconds": 1793216523
+              }
+            }
+          ],
+          "test_kind": "rom-lvttl",
+          "transactions": 20,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/rom-reason-513j",
+      "passed": true,
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": true,
+                "reason": "guest-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 879982,
+                "seconds": 1793216524
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 880743,
+                "seconds": 1793216524
+              }
+            },
+            {
+              "data": {
+                "guest": true,
+                "reason": "guest-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 881181,
+                "seconds": 1793216524
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 881548,
+                "seconds": 1793216524
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 881740,
+                "seconds": 1793216524
+              }
+            }
+          ],
+          "test_kind": "rom-reason",
+          "transactions": 44,
+          "warm_resets": 4
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/rom-map-513j",
+      "passed": true,
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 316729,
+                "seconds": 1793216526
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 319632,
+                "seconds": 1793216526
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 322864,
+                "seconds": 1793216526
+              }
+            }
+          ],
+          "test_kind": "rom-map",
+          "transactions": 340,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/rom-swap-reject-513j",
+      "passed": true,
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 140,
+      "trace_truncated": false,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 744253,
+                "seconds": 1793216527
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 747007,
+                "seconds": 1793216527
+              }
+            },
+            {
+              "event": "STOP",
+              "timestamp": {
+                "microseconds": 749535,
+                "seconds": 1793216527
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 751826,
+                "seconds": 1793216527
+              }
+            }
+          ],
+          "test_kind": "rom-swap-reject",
+          "transactions": 383,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/rom-fabric-513j",
+      "passed": true,
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 100,
+      "trace_truncated": false,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 105097,
+                "seconds": 1793216529
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 106432,
+                "seconds": 1793216529
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 107080,
+                "seconds": 1793216529
+              }
+            }
+          ],
+          "test_kind": "fabric",
+          "transactions": 128,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "work/simulator/qemu-s9/rom-reset-513j",
+      "passed": null,
+      "status": "cancelled",
+      "exit_code": null,
+      "wall_milliseconds": 205,
+      "trace_truncated": false,
+      "first_diagnostic": {
+        "byte_offset": 8604,
+        "bytes": 43,
+        "line_hex": "7a796e715f736c63723a20496e76616c69642077726974652061636365737320746f206164647220353030",
+        "line_sha256": "e98f6a971265b2ac31d855cec065058114d75d1fa6fdac02e692e92c30f54a1d",
+        "reason": "first unexpected emulator diagnostic"
+      },
+      "translated_block_address_headers": 169,
+      "original_board_gate": false,
+      "firmware_boot_gate": false,
+      "functional_mining_gate": false
+    }
+  ],
+  "identities": [
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-driver-513j/manifest.json",
+      "sha256": "d8255810dbfb0dfba327580a54863351b978c86cb5bbc115f4cc75e6fad2fe6b",
+      "size": 105804
+    },
+    {
+      "path": "work/simulator/qemu-s9/core-checkpoint-513j/manifest.json",
+      "sha256": "a7eee7e758c13dc6042ebea321bf131078455abb266ec11e0b2cef3aea7c9f46",
+      "size": 105083
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513j-ubsan/result.json",
+      "sha256": "25641003ed82c2347a7e8c184426f7713534add31309d3e284b4bdfa6e380d4c",
+      "size": 32159327
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513j-ubsan/spec.json",
+      "sha256": "5c8d83aec5c324258ca87d01cd96845c1b2a38bd7abd1f3528bfa0ffb26bd3fa",
+      "size": 16906
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513j-ubsan/build-report.json",
+      "sha256": "c6170a4e7791a51fc36efa5d846f6f1eb8d57a16fbb3a87791d00fe33c741abf",
+      "size": 2675286
+    },
+    {
+      "path": "work/simulator/reviews/ps-gpio-core-independent-source-513j-root.json",
+      "sha256": "a8f6f533499ffbe1b04d7fb43b3b86d1b676b0b928e238e9da212fb9ce76ad1d",
+      "size": 3133
+    },
+    {
+      "path": "work/simulator/reviews/ps-gpio-core-independent-source-513j-exact.json",
+      "sha256": "eeb16d8baa75333fce97fa908a848d78eae8b9fd41108ff015d8a87d1248dff2",
+      "size": 2589
+    },
+    {
+      "path": "work/simulator/reviews/ps-gpio-binding-independent-source-513j-cleanup.json",
+      "sha256": "266bf9e300bf33284cbd9fb0b651eaff74c7cd1ccbaba066642bd085f904049a",
+      "size": 6574
+    },
+    {
+      "path": "work/simulator/reviews/ps-gpio-reuse-independent-513j.json",
+      "sha256": "35b26ff657591c0d248dced63faa4db5315300c223ad3b8444185d95a468110d",
+      "size": 8831
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-513j/assessment.json",
+      "sha256": "7e6dc131bee2f0a303cc81b74e995698efed95caa0a9c74a96849dd370518e32",
+      "size": 3583
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-513j/result.json",
+      "sha256": "4911c8cdaf3a8f107aac2789e1d6745f1dd4e6d372d2464d0fa2d6e1b438e929",
+      "size": 53740
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-513j/spec.json",
+      "sha256": "fab2a4fe23e28e82028af06992b7b2506f3a5625b9fd9c59f74be474071f77fa",
+      "size": 3431
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-513j/transactions.log",
+      "sha256": "7766b00e73de267fc131e26add56ab9904d662e2601e88f2ff3c029904298721",
+      "size": 18359
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-513j/backend.log",
+      "sha256": "4d97cede55942a45d460499635e3a6dd2d576c01e830dd6cf2f037ff06d4928c",
+      "size": 8090
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-reject-513j/assessment.json",
+      "sha256": "b0d644a7615ddad7fcb595c6aef38d3f8949b45aea41a4108b8509590113de3c",
+      "size": 2512
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-reject-513j/result.json",
+      "sha256": "0167ea01066e31e58f663df940efab669647c2d48a5dbfd9df6e513c79cb2e6c",
+      "size": 12276
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-reject-513j/spec.json",
+      "sha256": "cf346ebd70751e3d5821650b28ef72e2df134c1897ec2991a1c878863d9f7c9c",
+      "size": 3438
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-reject-513j/transactions.log",
+      "sha256": "9bc759288adb64cba1601ee8f664ddfa6220ea48b9d6f323bba00f59a3f395b7",
+      "size": 3475
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-gpio-reject-513j/backend.log",
+      "sha256": "93628f7c2f66be95553f9a28cff28b41d0d2f0eaceb7212e8f928012567bfcd7",
+      "size": 2242
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513j/assessment.json",
+      "sha256": "87a567d921d0ad34e58c44b32e31cc6b8f5ccb79cd84ab3f696ca0617a0a1379",
+      "size": 2834
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513j/result.json",
+      "sha256": "729ad895f95017517d13314be8ed7af2eadbbe86844bfd697e4d79f93ca661e0",
+      "size": 12080
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513j/spec.json",
+      "sha256": "72657b65c537049096cc0d33ec5a821b21053fb9eb7d64b99d67c874dbea983c",
+      "size": 3432
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513j/transactions.log",
+      "sha256": "8a588ff97ee5e5216ecc84e0e1056811766aeb266df807b18105c63785fa6972",
+      "size": 3591
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513j/backend.log",
+      "sha256": "bc85edc14f8359b2ea663c4ad0123f6ae750644de7502c1950488b7b0d6da062",
+      "size": 2028
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513j/assessment.json",
+      "sha256": "443659d8486914c63572a1f3efc5b9ad91bf8d0fd66219823db8566a2c467e97",
+      "size": 3427
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513j/result.json",
+      "sha256": "d26ed262dea3a68869d72456beaeaa5c0f149bf51a532d04d539e9b5a08d98a1",
+      "size": 22124
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513j/spec.json",
+      "sha256": "44e943df941737a2cef41a1d5e1220d329ab860d8ad6b7b1b231255b208e1f6f",
+      "size": 3433
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513j/transactions.log",
+      "sha256": "13d7d4c8407fc4a480a15f4b752708a84f960c58945febc427563e0cb2ddc215",
+      "size": 7261
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513j/backend.log",
+      "sha256": "bbc8146d83b0576d7ae3b16d746502d7a884f86d89a5abcaa430c07ba086bf6e",
+      "size": 3380
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513j/assessment.json",
+      "sha256": "c0045df365c83fdba59014a81636684eecc213d1a38c647aa77d2ff5ae5e04ed",
+      "size": 2799
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513j/result.json",
+      "sha256": "634781e701c2e91ca4bfeea6137c9da843d65f425db5c8825ee508f3cc06bfa9",
+      "size": 123192
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513j/spec.json",
+      "sha256": "5a0162d57cfd5f2e2ee7129de36c6844629d220c14741073bea96633895859ec",
+      "size": 3430
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513j/transactions.log",
+      "sha256": "8749742708a50863029059d5fc270206e243244827c4f39baae5834caa1577e5",
+      "size": 58083
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513j/backend.log",
+      "sha256": "c023cfc023ce32c8014c60ebe400dd7982d6cf48e905c639e044f153e55d6bf1",
+      "size": 3092
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513j/assessment.json",
+      "sha256": "9a13cfc9d8c04161b6eb437281665020639fd08cc66a0b2c73842a64acf6c323",
+      "size": 2970
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513j/result.json",
+      "sha256": "3ac3902883bb709e5ef0fd431e2aff4d2dd554768d53ac805f952347e0c7cccc",
+      "size": 144598
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513j/spec.json",
+      "sha256": "861a5a9bfa821534e8269b605ce5a8edac8e3e56100a332df4c95cdd37170c0e",
+      "size": 3438
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513j/transactions.log",
+      "sha256": "81ecd620bf92ee39fb4a7a50940e87d07477f2f4ca62cc0de8f6c26657837f9a",
+      "size": 68734
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513j/backend.log",
+      "sha256": "b0e07a512ebf66e86309304fa2017992872ddc52d5796b9a6e8e4924a2977d4a",
+      "size": 3144
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513j/assessment.json",
+      "sha256": "3b0a92e62232147c20af5ebfe2035bb03f5d60f81acbf232bf64d12ce2c721e1",
+      "size": 2824
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513j/result.json",
+      "sha256": "89d6e6ebf586d52bcb143bbe6ca5725b4e16a57982e94fe4228f3ce668412e3d",
+      "size": 60980
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513j/spec.json",
+      "sha256": "41c98aafc5c4dfcf32e4fb40c462a3b62eb8ce967ba589357b78a7bec54cea45",
+      "size": 3242
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513j/transactions.log",
+      "sha256": "34b1368208e95bff1c4bb9148b9719a07e48ff5e40b29ad9c694d3246f669a48",
+      "size": 16941
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513j/backend.log",
+      "sha256": "7b3a79c03756a0ea484d8fda6e4b3ad23dc58a8d69a6f8fdbc80581d8464047b",
+      "size": 13128
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513j/assessment.json",
+      "sha256": "0a0a209d7d77946e9110f3d96f1b653e0e25b2ae09e1fb099b301f0713657175",
+      "size": 3474
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513j/result.json",
+      "sha256": "db267b5c7afb7a6dcf284e5542759e1de8572716f22dde213f7607dbfe33e117",
+      "size": 29984
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513j/spec.json",
+      "sha256": "02dd7c2a6a24ab0d19174426dbc8bd17a7eacdd0066232bf2fe2f87e0d4f7008",
+      "size": 7949
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513j/instruction-trace.log",
+      "sha256": "d6542afb11c658ca35597358c14e5e1665edd9b97f334688ef073791910b0e4d",
+      "size": 14202
+    }
+  ],
+  "independent_execution_audit": {
+    "path": "work/simulator/reviews/ps-gpio-independent-execution-513j.json",
+    "sha256": "1f16b5bbeb469f747a19b338126518b7aa88894ec3e3c96df5eccd3d4cbf4f46",
+    "size": 6900,
+    "passed": true
+  },
+  "note": "Frozen513j builder ARM path is tested. Its missing x86 guard was independently fixed; affected current-source tests/lint/format/release pass in separate513j2 freeze. No new complete x86 build is claimed.",
+  "current_builder_fix": {
+    "freeze": "work/simulator/qemu-s9/rom-reset-builder-513j2/manifest.json",
+    "sha256": "c29170f210c2ee1a408a6232852dad2381eb78981db2c82f7e00017a3c6c7588",
+    "tests": 3,
+    "clippy": true,
+    "format": true,
+    "release": true,
+    "complete_x86_build_executed": false
+  }
+}

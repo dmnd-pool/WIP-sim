@@ -1,0 +1,320 @@
+{
+  "schema": 1,
+  "scope": "Actual unchanged scanner and scheduler comparisons on the separately derived combined CVC tool. Selected CVC HDL execution is untested for this tool; CPU, original-board, physical timing, mining and full S9 gates remain open.",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/cvc-combined-driver-516f/manifest.json",
+    "sha256": "3c0a8f075478a74a601e043fd2438bbb121ed1fb16b19a002394d9d8c1277531",
+    "size": 107724
+  },
+  "tool": {
+    "path": "work/simulator/qemu-s9/cvc-build-516f/cvc-tools.tar.gz",
+    "sha256": "9a5ed2d7e4c5d5ca0f26f5009265bda9188dfd314a64e01ad9d8922d0239d41f",
+    "size": 5382343
+  },
+  "runs": {
+    "cvc-lexer-repaired-516f": {
+      "command": "work/simulator/qemu-s9/cvc-combined-driver-516f/cvc_rw_probe /home/user/src/md-sim work/simulator/qemu-s9/cvc-lexer-repaired-516f --rw-after-nba --lexer-context --lexer",
+      "exit_code": 0,
+      "wall_milliseconds": 3694,
+      "trace_truncated": false,
+      "success": true,
+      "scheduler_comparisons": 0,
+      "retained_artifacts": {
+        "lexer-cvc": {
+          "sha256": "0847de9acf1508238f1070def6e5fda94d0be36ad36055f1e7b2b17e32cd142b",
+          "size": 3945712
+        },
+        "lexer-library.v": {
+          "sha256": "dd06b9449f01aaa08ce8770f3170c548dd5cd31410fc1de4f96def837c974fc6",
+          "size": 910
+        },
+        "lexer-top.v": {
+          "sha256": "3eac6e24ca879ecae3fc3df947aa611edb2597b233590ca4ca9b720da6b91cad",
+          "size": 458
+        },
+        "lexer.vvp": {
+          "sha256": "88d50cd6fd5956875ac54f25b1a33ac6723dfcc4bb8806126ee31495fbeb9b76",
+          "size": 3087
+        }
+      },
+      "inputs": [
+        {
+          "path": "work/simulator/qemu-s9/cvc-lexer-repaired-516f/spec.json",
+          "sha256": "fc54e1ec23a75d75e73c3b7c42d00ad42c5a05365b1b6e898ac8d48d81670ae9",
+          "size": 6878
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-lexer-repaired-516f/inputs.json",
+          "sha256": "753f2115e293df1842bb94ff0acb561183f087e1e96c4d4296a01d3a18c05d8d",
+          "size": 882
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-lexer-repaired-516f/result.json",
+          "sha256": "c4cc04a71cd9e6895aeaad0dcc1e7d949d680ebd3382b0c6ac6a3f9851a6b69f",
+          "size": 8438189
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-lexer-repaired-516f/report.json",
+          "sha256": "4243d8c9c35c38fa01ae63d7a703a9464d43d8fb17d4dcd52f3eb4da0733d227",
+          "size": 4617
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-lexer-repaired-516f/compiled.tar.gz",
+          "sha256": "24c3a250d9dad5ebb7b875e49cfe2410960900cf24b2bddee5209f0a82410042",
+          "size": 2107418
+        }
+      ]
+    },
+    "cvc-rw-combined-516f": {
+      "command": "work/simulator/qemu-s9/cvc-combined-driver-516f/cvc_rw_probe /home/user/src/md-sim work/simulator/qemu-s9/cvc-rw-combined-516f --rw-after-nba --lexer-context",
+      "exit_code": 0,
+      "wall_milliseconds": 3852,
+      "trace_truncated": false,
+      "success": true,
+      "scheduler_comparisons": 3,
+      "retained_artifacts": {
+        "rw-cvc": {
+          "sha256": "43f0226f66c9627f40e7c387c044896c9195bab33014c7f51a7756c3c73e9905",
+          "size": 4105200
+        },
+        "rw-order.c": {
+          "sha256": "d8c7d961d4e17fb175c9b01dd41813836d9a9094b65d699262d5ba97dd733905",
+          "size": 2863
+        },
+        "rw-order.v": {
+          "sha256": "d44bb7fb157664681d134ce5116cceb7db6a8f4b0ffbf06ba131a9bebc08dfcc",
+          "size": 470
+        },
+        "rw.vvp": {
+          "sha256": "2a65569e8298ad6eea8158184419564f3e850f5600649aea7c7da93bb2698f4f",
+          "size": 2067
+        },
+        "rw_cvc.so": {
+          "sha256": "12efa9c4bd163862b4913517338cb0b43f1ee876fa81e5e2768b8938f262d74b",
+          "size": 16456
+        },
+        "rw_icarus.so": {
+          "sha256": "12efa9c4bd163862b4913517338cb0b43f1ee876fa81e5e2768b8938f262d74b",
+          "size": 16456
+        }
+      },
+      "inputs": [
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-combined-516f/spec.json",
+          "sha256": "d8f77b266a7ea7cee604ed09e5f6a5ff07449593a1e011c9723ae703e50e0908",
+          "size": 6863
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-combined-516f/inputs.json",
+          "sha256": "295565fa371203014014ba2104d0aec923e5df406ab563f42f1ee5c9395b330a",
+          "size": 883
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-combined-516f/result.json",
+          "sha256": "90e53173cc125ca079c2dcc9c8ed2219fd7ad461a1a3a26b419b6b7688d2822e",
+          "size": 8798347
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-combined-516f/report.json",
+          "sha256": "ff0f3c630980d4ccd25d5b859fb5b88775e2ae0cf0ce38f7f44586345f3dc100",
+          "size": 7485
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-combined-516f/compiled.tar.gz",
+          "sha256": "1a8d72bdc324917696eebba455c91fe594cb41ba0f34f5fc4efe4b675359d56f",
+          "size": 2196358
+        }
+      ]
+    },
+    "cvc-rw-nba-combined-516f": {
+      "command": "work/simulator/qemu-s9/cvc-combined-driver-516f/cvc_rw_probe /home/user/src/md-sim work/simulator/qemu-s9/cvc-rw-nba-combined-516f --rw-after-nba --lexer-context --phase nba",
+      "exit_code": 0,
+      "wall_milliseconds": 3943,
+      "trace_truncated": false,
+      "success": true,
+      "scheduler_comparisons": 12,
+      "retained_artifacts": {
+        "phases-nba-cvc": {
+          "sha256": "7270ffb13308a5382874e69b06285e0c4338929572792a76e3cde50c6ab4d5f5",
+          "size": 4105968
+        },
+        "phases-nba.vvp": {
+          "sha256": "4c4228870a5c446c752c5c07f5dca37b742a989f3c78d4faa9abbbcd6dca13d4",
+          "size": 2608
+        },
+        "phases_cvc.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases_icarus.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "rw-phases.c": {
+          "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+          "size": 5927
+        },
+        "rw-phases.v": {
+          "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+          "size": 977
+        }
+      },
+      "inputs": [
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-nba-combined-516f/spec.json",
+          "sha256": "12709b7100ce6c7ab21f224f971d164a9a02daaec068e7ef412999fe76468461",
+          "size": 6889
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-nba-combined-516f/inputs.json",
+          "sha256": "62d5de6d1623fa0032ec1d07e66bdc2c135da8c647d104e22a422daa604a02d8",
+          "size": 884
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-nba-combined-516f/result.json",
+          "sha256": "b59a47d1cc13eb8db2780cd41f6ec251db98b6600ec0e24cbcbe92f450fff157",
+          "size": 8838679
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-nba-combined-516f/report.json",
+          "sha256": "d2f948a0f7097eeb3d0e15c28cc879c65948cf4b0e0a46a5c05ca4db076d996f",
+          "size": 16036
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-nba-combined-516f/compiled.tar.gz",
+          "sha256": "e84a162ccbf13f7a7374343b3391283ab547ae07d19930a1aa9dbc31a92113f6",
+          "size": 2202829
+        }
+      ]
+    },
+    "cvc-rw-delayed-combined-516f": {
+      "command": "work/simulator/qemu-s9/cvc-combined-driver-516f/cvc_rw_probe /home/user/src/md-sim work/simulator/qemu-s9/cvc-rw-delayed-combined-516f --rw-after-nba --lexer-context --phase delayed",
+      "exit_code": 0,
+      "wall_milliseconds": 3942,
+      "trace_truncated": false,
+      "success": true,
+      "scheduler_comparisons": 12,
+      "retained_artifacts": {
+        "phases-delayed-cvc": {
+          "sha256": "64c6c9222325db719472369d11ea182052bb3b144e65bf6a164ff5b73abab937",
+          "size": 4106176
+        },
+        "phases-delayed.vvp": {
+          "sha256": "e2723cb496de35aee5628ccf314d84813a61cab8c637ecf214b6c877a3cfb106",
+          "size": 2608
+        },
+        "phases_cvc.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases_icarus.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "rw-phases.c": {
+          "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+          "size": 5927
+        },
+        "rw-phases.v": {
+          "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+          "size": 977
+        }
+      },
+      "inputs": [
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-delayed-combined-516f/spec.json",
+          "sha256": "9e5f1c8944371d4f8400e66b761651ba71b82cbb4494266f8e15c23378173c3e",
+          "size": 6893
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-delayed-combined-516f/inputs.json",
+          "sha256": "00c2cfcd237d352a4d4100f48ed6cce79f52f592368eb0a8f1874f53c49387d6",
+          "size": 888
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-delayed-combined-516f/result.json",
+          "sha256": "223b7dcb2aef273c6ef327cae4704655691e6fea9e1db77aa297c7a18f231d15",
+          "size": 8840763
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-delayed-combined-516f/report.json",
+          "sha256": "a7c63bd8ebe711cca2bda62e51339a014a4b9822e07d6a853cf1d6c0a2e37048",
+          "size": 16382
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-delayed-combined-516f/compiled.tar.gz",
+          "sha256": "e0b1aa3a7d5cf782cfacf00e9293362055b9ad7029220cc37147f769f5f2cc00",
+          "size": 2203198
+        }
+      ]
+    },
+    "cvc-rw-no-nba-combined-516f": {
+      "command": "work/simulator/qemu-s9/cvc-combined-driver-516f/cvc_rw_probe /home/user/src/md-sim work/simulator/qemu-s9/cvc-rw-no-nba-combined-516f --rw-after-nba --lexer-context --phase no-nba",
+      "exit_code": 0,
+      "wall_milliseconds": 3929,
+      "trace_truncated": false,
+      "success": true,
+      "scheduler_comparisons": 6,
+      "retained_artifacts": {
+        "phases-no-nba-cvc": {
+          "sha256": "43f65d54428dde63ad7aee69ba65892d0212e5df06424a3148e60bd8194849e1",
+          "size": 4105304
+        },
+        "phases-no-nba.vvp": {
+          "sha256": "3b354cd8c8ac7f08aa2d66798e21b17239402089a22e5bbfd47433b0b43a1a72",
+          "size": 2375
+        },
+        "phases_cvc.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases_icarus.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "rw-phases.c": {
+          "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+          "size": 5927
+        },
+        "rw-phases.v": {
+          "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+          "size": 977
+        }
+      },
+      "inputs": [
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-no-nba-combined-516f/spec.json",
+          "sha256": "d06b16eb725f139a88021cfc02dcef627f6449664ce4ed9739f30be5fda5d61c",
+          "size": 6892
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-no-nba-combined-516f/inputs.json",
+          "sha256": "8fe75c41f4939c56e1b90dc1d2b27b68b16228ba415e607b8daaefa78d5dae21",
+          "size": 887
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-no-nba-combined-516f/result.json",
+          "sha256": "870f7d3c40c3604cf4b0e4865c7833c300b2a3bee4e54478f427b100cebb572f",
+          "size": 8826583
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-no-nba-combined-516f/report.json",
+          "sha256": "3923e45c85bce1ed69c762ed8db041bd5026a15257ea02d04f1ad3db21df7e7d",
+          "size": 10944
+        },
+        {
+          "path": "work/simulator/qemu-s9/cvc-rw-no-nba-combined-516f/compiled.tar.gz",
+          "sha256": "faba1994586715cf0a51c8eec1693d91d1a14bb4672addc98f49697dfed36d9e",
+          "size": 2201949
+        }
+      ]
+    }
+  },
+  "scheduler_comparisons_passed": 33,
+  "lexer_observations_per_engine": 3,
+  "selected_hdl_started": false,
+  "original_board_gate": false,
+  "full_s9_complete": false,
+  "stop_reason": "User requested a tested checkpoint because weekly tokens are low. Finish active serial cohort; do not start selected HDL.",
+  "author_report_note": "Initial metadata assembly used a nonexistent interpreted-pass key and stopped before writing. The corrected join checks the retained interpreted process receipt and exact observation, without changing test outputs."
+}

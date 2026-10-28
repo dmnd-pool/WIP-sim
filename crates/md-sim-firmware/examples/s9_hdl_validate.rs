@@ -19,6 +19,8 @@ mod axi;
 #[allow(dead_code)]
 #[path = "../src/confinement.rs"]
 mod confinement;
+#[path = "support/cvc_engine.rs"]
+mod cvc_engine;
 // Different callers use either strict PL transactions or raw QEMU requests.
 #[allow(dead_code)]
 #[path = "support/framed_child.rs"]
@@ -36,10 +38,13 @@ mod live_wrapper;
 mod qemu_build;
 #[path = "support/s9_ram_vectors.rs"]
 mod ram;
-const PROFILES: [&str; 3] = [
+const PROFILES: [&str; 6] = [
     "d6d730231227a2f6d299f4900b6868b858768459f9cceec07aa675269731658c",
     "f137f1e433e80074ecb539b8173bd993ce825ca5f1ccfe7f892f90eb0512f25b",
     "47dc7c50b5eb0e89ce0836f2ae33e617fa6e6050028b7a09db9c94d2966b95b1",
+    "251764b432069b365e1a0f6c96bf7a33a61e8d0c5e0b67bb6592ae1273e399a7",
+    "52f1fd366f0e399f22298dbfafe89ae5f194b1dadf2a124e62cc122018880a34",
+    "25f0aac6bb39af4536d2d5dd9143b8ed11a07ecaa0eca6365420e65feef3a773",
 ];
 #[derive(Deserialize)]
 struct Input {
@@ -59,6 +64,8 @@ struct Profile {
     axi: Option<Axi>,
     #[serde(default)]
     live: Option<Live>,
+    #[serde(default)]
+    cvc: Option<NamedInput>,
 }
 #[derive(Deserialize)]
 struct Live {
@@ -219,7 +226,18 @@ fn ram_differential(report: &mut Value, profile: &Profile) -> Result<()> {
 
 fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
     qemu_build::unpack("/compiler.tar.gz", "/work")?;
-    let compiler_args = [
+    let cvc = profile.cvc.is_some();
+    if cvc {
+        cvc_engine::vectors(
+            report,
+            &profile
+                .files
+                .iter()
+                .map(|f| f.guest_path.clone())
+                .collect::<Vec<_>>(),
+        )?;
+    }
+    let mut compiler_args = [
         "--sysroot=/work/toolchain",
         "-B/work/toolchain/usr/bin",
         "-std=c11",
@@ -239,10 +257,20 @@ fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
         "/vpi-shim.c",
         "-o",
         "/work/compiled/mdsim_live.vpi",
-    ];
+    ]
+    .map(str::to_owned)
+    .to_vec();
+    if cvc {
+        let header = compiler_args
+            .iter_mut()
+            .find(|s| s.as_str() == "-I/work/iverilog-install/include/iverilog")
+            .context("VPI header flag")?;
+        *header = "-I/work/cvc-install/pli_incs".into();
+        compiler_args.insert(0, "-DMD_SIM_CVC".into());
+    }
     let mut compiler = Command::new("/work/toolchain/usr/bin/gcc");
     compiler
-        .args(compiler_args)
+        .args(&compiler_args)
         .env("LD_LIBRARY_PATH", "/work/toolchain/usr/lib")
         .current_dir("/work");
     let built = qemu_build::step(report, "vpi_compile", compiler)?;
@@ -259,9 +287,11 @@ fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
     report["vpi_adapter"] = json!(hash_file(Path::new("/work/compiled/mdsim_live.vpi"))?);
     // This isolated compiler tree is temporary. The pinned archive and full
     // compile diagnostics remain inputs/evidence; the actual plugin is retained.
-    fs::remove_dir_all("/work/toolchain")?;
-    report["temporary_compiler_removed_after_build"] = json!(true);
-    run_vpi_oracles(report)?;
+    if !cvc {
+        fs::remove_dir_all("/work/toolchain")?;
+        report["temporary_compiler_removed_after_build"] = json!(true);
+    }
+    run_vpi_oracles(report, cvc)?;
     let (source, inventory) = live_wrapper::generate(
         &fs::read_to_string("/selected.v")?,
         &fs::read("/axi-ports.json")?,
@@ -269,28 +299,52 @@ fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
     report["live_wrapper"] = inventory;
     report["live_wrapper"]["source"] = json!(source);
     fs::write("/work/compiled/live-probe.v", source)?;
-    let mut args = compile_args(
-        profile,
-        "/work/compiled/live-probe.v",
-        "axi_probe",
-        Some("/work/compiled/live.vvp"),
-    );
-    args.push("/selected.v".into());
+    let model = if cvc {
+        "/work/compiled/live-cvc"
+    } else {
+        "/work/compiled/live.vvp"
+    };
+    let args = if cvc {
+        cvc_engine::compile_args(
+            &["/work/compiled/live-probe.v", "/selected.v"],
+            model,
+            &profile
+                .files
+                .iter()
+                .map(|f| f.guest_path.clone())
+                .collect::<Vec<_>>(),
+            &[],
+            true,
+        )
+    } else {
+        let mut args = compile_args(
+            profile,
+            "/work/compiled/live-probe.v",
+            "axi_probe",
+            Some(model),
+        );
+        args.push("/selected.v".into());
+        args
+    };
     ensure!(
         run_step(report, "live_compile", &args)?,
         "live selected compilation failed"
     );
-    clean_diagnostics(&report["live_compile"])?;
-    report["selected_program"] = json!(hash_file(Path::new("/work/compiled/live.vvp"))?);
-    report["selected_vvp_compile_pass"] = json!(true);
-    let mut command = Command::new("/work/iverilog-install/bin/vvp");
-    command
-        .args([
-            "-M/work/compiled",
-            "-mmdsim_live",
-            "/work/compiled/live.vvp",
-        ])
-        .current_dir("/work");
+    clean_live(&report["live_compile"], cvc)?;
+    report["selected_program"] = json!(hash_file(Path::new(model))?);
+    report["selected_program_format"] = json!(if cvc { "CVC native ELF" } else { "Icarus VVP" });
+    report["selected_program_compile_pass"] = json!(true);
+    report["selected_vvp_compile_pass"] = json!(!cvc);
+    if cvc {
+        fs::remove_dir_all("/work/toolchain")?;
+        report["temporary_compiler_removed_after_build"] = json!(true);
+    }
+    let command = live_command(model, cvc);
+    report["live_child_argv"] = json!(std::iter::once(
+        command.get_program().to_string_lossy().into_owned()
+    )
+    .chain(command.get_args().map(|a| a.to_string_lossy().into_owned()))
+    .collect::<Vec<_>>());
     let mut child = live_child::LiveChild::launch(
         command,
         live_child::ChildLimits {
@@ -308,12 +362,6 @@ fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
         let _ = child.abort(&format!("selected live assertion: {error:#}"));
     }
     report["live_child_evidence"] = serde_json::to_value(child.evidence())?;
-    report["live_child_argv"] = json!([
-        "/work/iverilog-install/bin/vvp",
-        "-M/work/compiled",
-        "-mmdsim_live",
-        "/work/compiled/live.vvp"
-    ]);
     match result {
         Ok(scenario) => {
             let evidence = &report["live_child_evidence"];
@@ -324,7 +372,7 @@ fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
             let stdout = String::from_utf8(hex::decode(
                 evidence["stdout_hex"].as_str().context("live stdout")?,
             )?)?;
-            live_scenario::verify_stdout(&stdout, &scenario)?;
+            live_scenario::verify_stdout(live_body(&stdout, cvc)?, &scenario)?;
             report["live_scenario"] = scenario;
             report["selected_live_pass"] = json!(true);
             report["selected_axi_pass"] = json!(true);
@@ -338,42 +386,120 @@ fn run_live(report: &mut Value, profile: &Profile) -> Result<()> {
     Ok(())
 }
 
-fn live_command(model: &str) -> Command {
+fn clean_live(row: &Value, cvc: bool) -> Result<()> {
+    if cvc {
+        cvc_engine::clean(row)
+    } else {
+        clean_diagnostics(row)
+    }
+}
+fn live_body(stdout: &str, cvc: bool) -> Result<&str> {
+    if cvc {
+        cvc_engine::body(stdout)
+    } else {
+        Ok(stdout)
+    }
+}
+fn live_command(model: &str, cvc: bool) -> Command {
+    if cvc {
+        return cvc_engine::command(model);
+    }
     let mut command = Command::new("/work/iverilog-install/bin/vvp");
     command
         .args(["-M/work/compiled", "-mmdsim_live", model])
         .current_dir("/work");
     command
 }
+fn fixture_args(cvc: bool, source: &str, top: &str, output: &str, defines: &[&str]) -> Vec<String> {
+    if cvc {
+        return cvc_engine::compile_args(&[source], output, &[], defines, true);
+    }
+    let mut args = [
+        "/work/iverilog-install/bin/iverilog",
+        "-g2012",
+        "-Wall",
+        "-s",
+        top,
+        "-o",
+        output,
+        source,
+    ]
+    .map(str::to_owned)
+    .to_vec();
+    for define in defines {
+        args.insert(1, format!("-D{define}"));
+    }
+    args
+}
+fn empty_live_output(evidence: &Value, cvc: bool) -> Result<()> {
+    ensure!(evidence["stderr_hex"] == "", "live fixture diagnostic");
+    let stdout = String::from_utf8(hex::decode(
+        evidence["stdout_hex"].as_str().context("fixture stdout")?,
+    )?)?;
+    ensure!(
+        live_body(&stdout, cvc)?.is_empty(),
+        "live fixture unexpected output"
+    );
+    Ok(())
+}
 
-fn run_vpi_oracles(report: &mut Value) -> Result<()> {
+fn verify_duplicate_failure(evidence: &Value, cvc: bool) -> Result<()> {
+    let error = String::from_utf8(hex::decode(
+        evidence["stderr_hex"]
+            .as_str()
+            .context("negative fixture stderr")?,
+    )?)?;
+    ensure!(
+        error == "MDPL_FAILURE sequence=1 time_ps=1000 reason=unexpected-completion-task\n",
+        "negative fixture diagnostic differs"
+    );
+    let stdout = String::from_utf8(hex::decode(
+        evidence["stdout_hex"]
+            .as_str()
+            .context("negative fixture stdout")?,
+    )?)?;
+    ensure!(
+        live_body(&stdout, cvc)?.is_empty(),
+        "negative fixture unexpected stdout"
+    );
+    ensure!(
+        evidence["cleanup_error"].is_null()
+            && evidence["exit"]["code"] == 1
+            && evidence["exit"]["signal"].is_null(),
+        "negative VPI failure or cleanup differs"
+    );
+    Ok(())
+}
+
+fn run_vpi_oracles(report: &mut Value, cvc: bool) -> Result<()> {
     const FIXTURE: &str = include_str!("../../../simulator/backends/icarus/vpi-order-fixture.v");
     fs::write("/work/compiled/vpi-order-fixture.v", FIXTURE)?;
     report["vpi_fixture_source_sha256"] =
         json!(md_sim_firmware::prepare::hash_bytes(FIXTURE.as_bytes()));
     for (label, negative) in [("event_regions", false), ("duplicate_completion", true)] {
-        let model = format!("/work/compiled/{label}.vvp");
-        let mut args = vec![
-            "/work/iverilog-install/bin/iverilog".to_string(),
-            "-g2012".into(),
-            "-Wall".into(),
-            "-s".into(),
-            "vpi_order".into(),
-            "-o".into(),
-            model.clone(),
-            "/work/compiled/vpi-order-fixture.v".into(),
-        ];
-        if negative {
-            args.insert(1, "-DMD_DUPLICATE_COMPLETE".into());
-        }
+        let model = format!(
+            "/work/compiled/{label}.{}",
+            if cvc { "native" } else { "vvp" }
+        );
+        let args = fixture_args(
+            cvc,
+            "/work/compiled/vpi-order-fixture.v",
+            "vpi_order",
+            &model,
+            if negative {
+                &["MD_DUPLICATE_COMPLETE"]
+            } else {
+                &[]
+            },
+        );
         let compile = format!("{label}_compile");
         ensure!(
             run_step(report, &compile, &args)?,
             "VPI event fixture compile failed"
         );
-        clean_diagnostics(&report[&compile])?;
+        clean_live(&report[&compile], cvc)?;
         let mut child = live_child::LiveChild::launch(
-            live_command(&model),
+            live_command(&model, cvc),
             live_child::ChildLimits {
                 command_timeout_ms: 5_000,
                 shutdown_timeout_ms: 5_000,
@@ -400,21 +526,7 @@ fn run_vpi_oracles(report: &mut Value) -> Result<()> {
                 response.is_err(),
                 "VPI duplicate completion incorrectly passed"
             );
-            let error = String::from_utf8(hex::decode(
-                evidence["stderr_hex"]
-                    .as_str()
-                    .context("negative fixture stderr")?,
-            )?)?;
-            ensure!(
-                error.contains("reason=unexpected-completion-task"),
-                "negative failed for an unrelated reason"
-            );
-            ensure!(
-                evidence["cleanup_error"].is_null()
-                    && evidence["exit"]["code"] == 1
-                    && evidence["exit"]["signal"].is_null(),
-                "negative VPI failure or cleanup differs"
-            );
+            verify_duplicate_failure(&evidence, cvc)?;
             report[label]["passed"] = json!(true);
         } else {
             let result = live_scenario::event_regions(&mut child);
@@ -424,53 +536,55 @@ fn run_vpi_oracles(report: &mut Value) -> Result<()> {
             report[label] = json!({"evidence":child.evidence()});
             report[label]["assessment"] = result?;
             let evidence = &report[label]["evidence"];
-            ensure!(
-                evidence["stderr_hex"] == "" && evidence["stdout_hex"] == "",
-                "VPI event fixture diagnostic"
-            );
+            empty_live_output(evidence, cvc)?;
         }
     }
-    run_clock_oracle(report)
+    run_clock_oracle(report, cvc)
 }
 
-fn run_clock_oracle(report: &mut Value) -> Result<()> {
+fn run_clock_oracle(report: &mut Value, cvc: bool) -> Result<()> {
     let source = live_wrapper::clock_fixture();
     fs::write("/work/compiled/clock-order-fixture.v", &source)?;
     report["clock_fixture_source_sha256"] =
         json!(md_sim_firmware::prepare::hash_bytes(source.as_bytes()));
-    let model = "/work/compiled/clock-order.vvp";
-    let args = [
-        "/work/iverilog-install/bin/iverilog",
-        "-g2012",
-        "-Wall",
-        "-s",
-        "clock_order",
-        "-o",
-        model,
-        "/work/compiled/clock-order-fixture.v",
-    ]
-    .map(str::to_string);
-    ensure!(
-        run_step(report, "clock_compile", &args)?,
-        "clock fixture compile failed"
-    );
-    clean_diagnostics(&report["clock_compile"])?;
-    let unknown_model = "/work/compiled/clock-unknown.vvp";
-    let mut unknown_args = args.to_vec();
-    unknown_args[6] = unknown_model.into();
-    unknown_args.insert(1, "-DMD_UNKNOWN_CLOCK".into());
-    ensure!(
-        run_step(report, "clock_unknown_compile", &unknown_args)?,
-        "unknown clock fixture compile failed"
-    );
-    clean_diagnostics(&report["clock_unknown_compile"])?;
+    let model = if cvc {
+        "/work/compiled/clock-order.native"
+    } else {
+        "/work/compiled/clock-order.vvp"
+    };
+    let unknown_model = if cvc {
+        "/work/compiled/clock-unknown.native"
+    } else {
+        "/work/compiled/clock-unknown.vvp"
+    };
+    for (key, output, defines) in [
+        ("clock_compile", model, &[][..]),
+        (
+            "clock_unknown_compile",
+            unknown_model,
+            &["MD_UNKNOWN_CLOCK"][..],
+        ),
+    ] {
+        let args = fixture_args(
+            cvc,
+            "/work/compiled/clock-order-fixture.v",
+            "clock_order",
+            output,
+            defines,
+        );
+        ensure!(
+            run_step(report, key, &args)?,
+            "clock fixture compile failed"
+        );
+        clean_live(&report[key], cvc)?;
+    }
     for (label, split, unknown_start) in [
         ("clock_unsplit", false, false),
         ("clock_split", true, false),
         ("clock_unknown", false, true),
     ] {
         let mut child = live_child::LiveChild::launch(
-            live_command(if unknown_start { unknown_model } else { model }),
+            live_command(if unknown_start { unknown_model } else { model }, cvc),
             live_child::ChildLimits {
                 command_timeout_ms: 5_000,
                 shutdown_timeout_ms: 5_000,
@@ -486,11 +600,7 @@ fn run_clock_oracle(report: &mut Value) -> Result<()> {
         }
         report[label] = json!({"evidence":child.evidence()});
         report[label]["assessment"] = result?;
-        ensure!(
-            report[label]["evidence"]["stderr_hex"] == ""
-                && report[label]["evidence"]["stdout_hex"] == "",
-            "clock fixture diagnostic"
-        );
+        empty_live_output(&report[label]["evidence"], cvc)?;
     }
     ensure!(
         report["clock_unsplit"]["assessment"]["events"]
@@ -539,6 +649,17 @@ fn inner() -> Result<()> {
             ensure!(hash_file(Path::new(path))? == *id, "live PL input differs");
         }
     }
+    if let Some(cvc) = &profile.cvc {
+        ensure!(
+            profile.live.is_some() && profile.axi.is_some(),
+            "CVC profile requires live AXI contract"
+        );
+        ensure!(
+            hash_file(Path::new("/cvc-tools.tar.gz"))? == cvc.object,
+            "CVC tool differs"
+        );
+        qemu_build::unpack("/cvc-tools.tar.gz", "/work")?;
+    }
     for input in profile.files.iter().chain(&profile.provenance) {
         ensure!(
             hash_file(Path::new(&input.guest_path))? == input.object,
@@ -560,6 +681,15 @@ fn inner() -> Result<()> {
     );
     qemu_build::unpack("/tools.tar.gz", "/work")?;
     let mut report = json!({"schema":1,"profile_sha256":md_sim_firmware::prepare::hash_bytes(&raw),"selected_axi_pass":false,"primitive_vectors_pass":false,"ram_omission_differential_pass":false,"selected_elaboration_pass":false,"selected_vvp_compile_pass":false,"original_board_gate":false,"diagnostic_policy":"Every nonempty selected compiler output is unresolved and prevents structural pass; no warning whitelist. Timing/model warnings are not timing acceptance.","min_typ_max_policy":"Explicit Icarus -Ttyp selects its existing default; selected PS7 values are100:100:100. No XIL_TIMING or physical calibration claim.","limits":["Vendor PS7 has no behavioral CPU model; compiler resolution is not AXI execution.","Missing monitor feature table and33 electrical ambiguities remain open.","Digital simulation delays are vendor model semantics, not physical timing calibration."]});
+    report["structural_checker"] = json!("Pinned Icarus, unchanged strict diagnostic oracles");
+    report["behavioral_engine"] = json!(if let Some(cvc) = &profile.cvc {
+        format!(
+            "CVC {}; additional actual primitive/RAM/live execution",
+            cvc.object.sha256
+        )
+    } else {
+        "Icarus".to_owned()
+    });
     let mut result = (|| -> Result<()> {
         diagnostic_oracles(&mut report)?;
         ram_differential(&mut report, &profile)?;
@@ -668,6 +798,7 @@ fn inner() -> Result<()> {
             report["compiled_archive_hex"] =
                 json!(hex::encode(fs::read("/work/selected-vvp.tar.gz")?));
             report["selected_vvp_compile_pass"] = json!(true);
+            report["selected_program_compile_pass"] = json!(true);
             if profile.axi.is_some() {
                 ensure!(
                     run_step(
@@ -841,12 +972,30 @@ fn main() -> Result<()> {
             )?;
         }
     }
+    if let Some(cvc) = &profile.cvc {
+        add(
+            repo.join(&cvc.path),
+            "/cvc-tools.tar.gz".into(),
+            Some(&cvc.object),
+        )?;
+    }
     for input in profile.files.iter().chain(&profile.provenance) {
         add(
             repo.join(&input.path),
             input.guest_path.clone(),
             Some(&input.object),
         )?;
+    }
+    let mut environment = BTreeMap::from([
+        ("PATH".into(), "/work/iverilog-install/bin".into()),
+        ("LC_ALL".into(), "C".into()),
+    ]);
+    if profile.cvc.is_some() {
+        environment.insert(
+            "PATH".into(),
+            "/work/toolchain/usr/bin:/work/iverilog-install/bin".into(),
+        );
+        environment.insert("LD_LIBRARY_PATH".into(), "/work/toolchain/usr/lib".into());
     }
     let spec = ProcessSpec {
         support_virtualization: None,
@@ -859,10 +1008,7 @@ fn main() -> Result<()> {
         argv: vec!["/guard".into(), "__inside".into()],
         inputs,
         stdin_object: None,
-        environment: BTreeMap::from([
-            ("PATH".into(), "/work/iverilog-install/bin".into()),
-            ("LC_ALL".into(), "C".into()),
-        ]),
+        environment,
         limits: Limits {
             wall_seconds: 900,
             cpu_seconds: 600,
@@ -889,7 +1035,14 @@ fn main() -> Result<()> {
                 && md_sim_firmware::prepare::hash_bytes(&data) == id.sha256,
             "compiled model output differs"
         );
-        fs::write(out.join("selected-vvp.tar.gz"), data)?;
+        fs::write(
+            out.join(if profile.cvc.is_some() {
+                "selected-native.tar.gz"
+            } else {
+                "selected-vvp.tar.gz"
+            }),
+            data,
+        )?;
     }
     report
         .as_object_mut()
@@ -904,7 +1057,7 @@ fn main() -> Result<()> {
         report["ram_omission_differential_pass"] == true
             && report["primitive_vectors_pass"] == true
             && report["selected_elaboration_pass"] == true
-            && report["selected_vvp_compile_pass"] == true,
+            && report["selected_program_compile_pass"] == true,
         "incomplete HDL report"
     );
     ensure!(
@@ -915,6 +1068,12 @@ fn main() -> Result<()> {
         profile.live.is_none() || report["selected_live_pass"] == true,
         "selected live PL gate incomplete"
     );
+    ensure!(
+        profile.cvc.is_none()
+            || (report["cvc_primitive_vectors_pass"] == true
+                && report["cvc_ram_omission_differential_pass"] == true),
+        "CVC behavior gates incomplete"
+    );
     for m in &spec.inputs {
         store.verified_path(&m.object)?;
     }
@@ -924,6 +1083,20 @@ fn main() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn negative_completion_rejects_extra_diagnostics_and_wrong_banner() {
+        let stderr = "MDPL_FAILURE sequence=1 time_ps=1000 reason=unexpected-completion-task\n";
+        let mut row = json!({"stderr_hex":hex::encode(stderr),"stdout_hex":hex::encode(cvc_engine::BANNER),"exit":{"code":1,"signal":null},"cleanup_error":null});
+        verify_duplicate_failure(&row, true).unwrap();
+        row["stderr_hex"] = json!(hex::encode(format!("{stderr}extra warning\n")));
+        assert!(verify_duplicate_failure(&row, true).is_err());
+        row["stderr_hex"] = json!(hex::encode(stderr));
+        row["stdout_hex"] = json!("");
+        assert!(verify_duplicate_failure(&row, true).is_err());
+        verify_duplicate_failure(&row, false).unwrap();
+        row["exit"]["code"] = json!(0);
+        assert!(verify_duplicate_failure(&row, false).is_err());
+    }
     #[test]
     fn success_exit_cannot_hide_semantic_diagnostics() {
         // Icarus12.0 elaborate.cc lines1871–1904 prints the port-width warning

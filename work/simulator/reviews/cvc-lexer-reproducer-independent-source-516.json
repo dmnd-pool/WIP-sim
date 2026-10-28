@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:42:09.387900+00:00",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Independent source review of the bounded CVC library/conditional lexer reproducer. No actual execution or repair acceptance.",
+  "inputs": [
+    {
+      "path": "work/simulator/s9-cvc-516/lexer-context/reproducer-stage.json",
+      "sha256": "ccd3a435091df4fa422f59b33e61e9afb76b7e92ee997417524d29c9c0cb46ba",
+      "size": 1444
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-live-driver-516d/source/crates/md-sim-firmware/examples/cvc_rw_probe.rs",
+      "sha256": "5c9846e773a1626edc58148b6d92167e56082d108cde3c52f97dd6a8807ba785",
+      "size": 24389
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/lexer-context/cvc_rw_probe.rs",
+      "sha256": "47e3193b8d485cd4996681fe67a93cd8ef25af850adad6e73ae559982469c1ae",
+      "size": 25870
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/lexer-context/cvc_lexer.rs",
+      "sha256": "0a01a841ca6a2447b446357697433bd62b9a821d80e92280ea7e1777a2961b65",
+      "size": 3512
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/lexer-context/lexer-library.v",
+      "sha256": "dd06b9449f01aaa08ce8770f3170c548dd5cd31410fc1de4f96def837c974fc6",
+      "size": 910
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/lexer-context/lexer-top.v",
+      "sha256": "3eac6e24ca879ecae3fc3df947aa611edb2597b233590ca4ca9b720da6b91cad",
+      "size": 458
+    }
+  ],
+  "checked": [
+    "Existing tool identities, closure, isolation and limits are unchanged; lexer mode is explicit and cannot be combined with a phase suite.",
+    "Four uninstantiated library modules exercise false ifdef, else, elsif and nested conditionals before implicit event controls. The selected module requires attribute parsing in the restored normal context.",
+    "Independent four-state XOR gives1010 for0,1111 for5 andx1x0 forx1z0. The three ordered delays end at3ps; case inequality rejects unknown mismatches.",
+    "Both engines compile and execute the same literal source bytes. All step output remains bounded/untruncated; nonzero/signal failure, stderr and source-defined diagnostic markers fail. Missing/repeated/changed MD_CVC observations fail.",
+    "Always-retain now includes both fixture sources and any actual compiler outputs on success or failure. No failing compile is counted as a completed behavioral test."
+  ],
+  "procedure_note": "Production was integrated after the review verdict and before receipt write. The before identity is verified against immutable516d source; all staged identities remain exact.",
+  "required_execution": [
+    "Run unchanged original CVC first and preserve any parser failure.",
+    "Only after independent kernel patch review, rerun exact fixture plus all affected scheduler and selected-model gates."
+  ],
+  "unresolved_findings": [],
+  "selected_hdl_gate": false,
+  "firmware_gate": false,
+  "original_board_gate": false
+}

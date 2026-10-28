@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Actual separately adapted existing CVC tool build, compiled smoke, invalid HDL rejection and restored-tool smoke. Scheduler equivalence and selected HDL execution are not established.",
+  "source_entries": 605,
+  "before_after_equal": true,
+  "captured_mounts": 35,
+  "process": {
+    "status": "exited",
+    "exit_code": 0,
+    "wall_milliseconds": 52701,
+    "trace_truncated": false
+  },
+  "tool_binary": {
+    "sha256": "852f07681dd2a09e5da6e2cad575cfe83377c2836ad7fc1bdc75fbcc02ed6b2b",
+    "size": 10789160
+  },
+  "tool_archive": {
+    "sha256": "f0d6e315d8bfd32412e78bf206fd5d4fd7056705828f6b796f46d8bd66a3fb47",
+    "size": 5299377
+  },
+  "steps_checked": [
+    "build",
+    "help",
+    "invalid_compile",
+    "original_compile",
+    "original_execute",
+    "restored_compile",
+    "restored_execute",
+    "scheduler_patch"
+  ],
+  "sanitizer": {
+    "actual_CC_commands_checked": 57,
+    "hexasm_instrumented": true,
+    "runtime_C_instrumented": true,
+    "generated_assembly_not_C_instrumentation": true,
+    "flags": [
+      "-fsanitize=undefined",
+      "-fsanitize-undefined-trap-on-error",
+      "-fno-sanitize-recover=all"
+    ]
+  },
+  "source_build_diagnostics": {
+    "bytes": 85046,
+    "warning_occurrences": 253,
+    "retained_in_full": true,
+    "claimed_warning_free": false
+  },
+  "smoke_oracles": {
+    "unsigned_wrap": 0,
+    "unknown_word": "x101",
+    "rising_edges_ns": [
+      3,
+      7
+    ],
+    "completion_ns": 8,
+    "both_compiled_runs_pass": true,
+    "compiler_and_runtime_stderr_empty": true
+  },
+  "negative_syntax": {
+    "exit_code": 1,
+    "location": "/work/invalid.v(1)",
+    "diagnostic": "right hand side expression missing"
+  },
+  "restore": {
+    "source_and_initial_install_renamed_before_unpack": true,
+    "fresh_compilation_and_execution_passed": true,
+    "compiler_closure_still_required": true
+  },
+  "export_members_checked": 17,
+  "artifact_limit": "The exported tool/header/license archive is retained. Smoke program identities are retained; their full executable bytes are not in this tool archive. No cross-build binary reproducibility claim.",
+  "scheduler_adaptation": {
+    "files": {
+      "v_asmlnk.c": {
+        "derived": {
+          "sha256": "4a87cb2d4de5bcdd974c7d9d2f4343f8f88335e3127277f325d1e6cdd288b863",
+          "size": 325412
+        },
+        "original": {
+          "sha256": "bfbad3e6de0fdb39cb20693d4b02f42cda42ec4361fe384eedf2416918e23fb9",
+          "size": 324410
+        }
+      },
+      "v_sim.c": {
+        "derived": {
+          "sha256": "cb5cc29de2fdcb85eb1d0c32d411b9b35028857eefd3ca1303c93ec3efa799e0",
+          "size": 281047
+        },
+        "original": {
+          "sha256": "15ac6269456204b4289f8050ce08956220aa18beb898d0a0269d78818ed731cb",
+          "size": 280533
+        }
+      },
+      "v_vpi.c": {
+        "derived": {
+          "sha256": "c0ebc1dc54b5d15cb7db10e19212f506ee6c79ab52afa7b38320f339c42d20ce",
+          "size": 200470
+        },
+        "original": {
+          "sha256": "e99de7e4438868af1e70cdc04addeb8ab55edc65f1625c66255bb6c3e03bca98",
+          "size": 199481
+        }
+      }
+    },
+    "kernel": "existing CVC compiled and interpreted scheduler",
+    "name": "rw-after-nba-v1",
+    "original_source_changed": true,
+    "patch_sha256": "ca1c050f0ba065eff566f948459152262ecd478cfa5ad10e0032f810492e572a",
+    "physical_timing_claim": false,
+    "policy": "Queue zero and future VPI RW callbacks after all preceding active/inactive/NBA work. Drain whole RW batches, settle new work, then process RO without moving time.",
+    "schema": 1,
+    "source_archive_sha256": "bb9d8acd54f168db608b4a16a6bebc758cca59836fdfacebd89d0b635aa2cf13",
+    "timestamp_or_hdl_change": false,
+    "validation": "Pending separate unchanged oracle and lifecycle tests; tool smoke does not validate this scheduler contract."
+  },
+  "scheduler_oracle_executed": false,
+  "review_procedure_note": "Audit adaptation first used the old check-record shape, argv and output filename. It stopped safely before output creation. The exact derived schema, explicit profile flag and new create-new report paths were then used; no behavioral assertion changed.",
+  "evidence_audit_passed": true,
+  "selected_hdl_equivalence": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "next": "Run exact RW-order comparison, then separately reviewed scheduling/HDL compatibility work and all unchanged selected equivalence gates.",
+  "inputs": {
+    "path": "work/simulator/reviews/cvc-derived-build-independent-execution-516b-inputs.json",
+    "sha256": "383238e8ff70cf3867bed3182b10c3b3b323724f00d68be475e18c8276411e0e",
+    "size": 159167
+  }
+}

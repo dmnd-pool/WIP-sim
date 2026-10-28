@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "time": "2026-10-28T19:32:43.544116+00:00",
+  "status": "closed",
+  "passed": true,
+  "scope": "Independent source review of the staged PS GPIO C binding, QEMU clock/reset/build wiring, literal qtest and strict result validator. Rust state core is separately reviewed by root and exact_target_resume. No GPIO C/ABI/QEMU execution claim.",
+  "inputs": [
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/binding-inputs.json",
+      "sha256": "790065e2a81b8ad9ce824d6267b49779c82f2e6c69c6f18dd5d51d73d01412b8",
+      "size": 2031
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/md-sim-ps-gpio.c",
+      "sha256": "60fa3ee4da5417d600aeb1d6c8f40e5badf6287e1734575cc762024a289832f6",
+      "size": 7447
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/md-sim-ps-gpio.h",
+      "sha256": "47804c6ad4e3797daa3656abacb7377fb320443f2468156f7d95b22ab7919f12",
+      "size": 1235
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/s9-ps-gpio.patch",
+      "sha256": "9776c6b2c0010af64bf56def4a7268db1b772b065486e8de8fbd11a990062e5f",
+      "size": 5513
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/source-identities.json",
+      "sha256": "fa43fa2bdbe3f6b6452641c5578555890b42a649c15728c458476416e45fed10",
+      "size": 424
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/ps_gpio_qtest.rs",
+      "sha256": "a7e0e09a92bf85dfa2ad6096bf3940500bb54c4bba5c7969e546761775111956",
+      "size": 11857
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/qemu_ttc_reset.rs",
+      "sha256": "ec024cfae1cead215352c172f8aa513b90b702f2dad71706d74a8a0a4c563bd7",
+      "size": 25700
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/build_qemu_backend.rs",
+      "sha256": "e7277851a6f5555cbcc273fd438ad75b8c78a8440986c418df1f82b0a791e424",
+      "size": 59429
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/PS-GPIO.md",
+      "sha256": "65485317efa477dbc8c629cfe9a147bfae58e41dd4c7f9971d2a54e6741bf914",
+      "size": 3951
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/core-inputs.json",
+      "sha256": "d3e41acbf2b022428b1477994b27fd3b820b9ca623d5e1570f3e4b62deb06020",
+      "size": 1691
+    },
+    {
+      "path": "work/simulator/reviews/ps-gpio-patch-derivation-513j.json",
+      "sha256": "7f614f54fd1a67134e862aa73bbab1d4b28031e5dd08ab1f1982c3a5b826a258",
+      "size": 3860
+    },
+    {
+      "path": "work/simulator/reviews/ps-gpio-core-standalone-tests-513j.json",
+      "sha256": "c367e53bfc67b1ac0aa059acda8b41c63324ad108272f8b4ff82a9c3b9207004",
+      "size": 1319
+    },
+    {
+      "path": "work/simulator/reviews/ps-gpio-reuse-independent-513j.json",
+      "sha256": "35b26ff657591c0d248dced63faa4db5315300c223ad3b8444185d95a468110d",
+      "size": 8831
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/misc/zynq_slcr.c",
+      "sha256": "369ca416465d43abad564d0fcbae78568022eabc3c7d267617ac168e70fd522b",
+      "size": 29565
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/arm/xilinx_zynq.c",
+      "sha256": "013ba4de47b293d60cc9667c98c85998f7fc7a53ebba1be047ce1cbff29c4a48",
+      "size": 38368
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/i2c/trace-events",
+      "sha256": "28407eafafe35efddfdd5d4faf9f73684d4b8f4d5b8ba832a2125a81b2403d36",
+      "size": 6036
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/i2c/meson.build",
+      "sha256": "4d6017a360e4ecf424daaee4f32eb9553e38c22569cbeeffa6f3b7a59a194aa3",
+      "size": 2044
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/i2c/meson.build.orig",
+      "sha256": "bc5aa6d52d6c6368abce822511054e1204b4e2025626e3aed8b3e84e102b8f86",
+      "size": 2024
+    }
+  ],
+  "checked": [
+    "C dispatch permits 1..8-byte requests to reach explicit aligned32-bit validation; invalid access does not mutate Rust state. Full64-bit rejected write and actual update failure remain visible in trace.",
+    "Unknown input/read/IRQ stays explicit. Successful bus read requires all32 bits known; failure returns MEMTX_ERROR and requests VM stop. Output-known and enable are separate from output level.",
+    "Only public-ROM reference mode creates the PS GPIO device. CPU_1x/APER22 clock, bus-only reset and GIC SPI20 are explicit. C cold construction is distinct from preserved controller state across QMP warm reset.",
+    "All four patch files are covered by the exact patch identity and zero-fuzz application receipt. Board and SLCR parent/result hashes are enforced by the builder; all four derived patch outputs independently rehashed. C/header/contract/patch are captured inputs; existing isolation/resource budgets are unchanged.",
+    "Literal positive plan has144 qtest transactions including interception, two actual QMP resets and14 expected shared IRQ transitions. The separate19-transaction rejection plan has nine faults and register-preservation readbacks.",
+    "Diagnostic comparison requires the complete ordered GPIO trace and fault lines with terminal newline. Missing, extra, duplicate, reordered and truncated records reject. Existing known clock/reset trace prefixes are separate from GPIO records.",
+    "Outer pass binds actual exited0, untruncated streams, one exact test-kind record, literal transaction/reset/IRQ counts and strict diagnostics. Firmware/original-board and physical pad timing are not asserted."
+  ],
+  "closed_findings": [
+    "64-bit requests previously could bypass explicit rejection; valid/implementation size bounds now reach callback and literal readq/writeq regressions retain unchanged state.",
+    "Write trace previously could report success before update/IRQ failure; it now reflects the actual final outcome.",
+    "Diagnostic tests now exercise valid full sequences and missing/extra/duplicate/reordered/truncated variants, with independently fixed counts144/19."
+  ],
+  "remaining": [
+    "Run scoped Rust/ABI tests and sanitizer-enabled QEMU build after integration.",
+    "Execute positive/rejection suites and original-ROM continuation; retain failures.",
+    "Negative suite verifies each explicit rejection record while the VM remains stopped after its first fault. It does not claim nine fresh running-to-stopped transitions.",
+    "External wiring, MIO mux/pulls/pads, input synchronizer latency, migration and exact physical S9 identity remain outside this component contract."
+  ],
+  "unresolved_findings": [],
+  "original_board_gate": false,
+  "mining_gate": false
+}

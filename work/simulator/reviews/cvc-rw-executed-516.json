@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "scope": "Original CVC scheduler API boundary; failed, no selected HDL acceptance",
+  "passed": false,
+  "inputs": {
+    "work/simulator/qemu-s9/cvc-rw-driver-516/manifest.json": {
+      "sha256": "1b3f3ac146e43cf1fd377f5f215a547d1fd22994776640a9e0496ab16eb567a1",
+      "size": 102507
+    },
+    "work/simulator/qemu-s9/cvc-rw-516/spec.json": {
+      "sha256": "82ead91a6ad5736f264c5c7fc9056817b5b2ba0d8c84b92f0a8e13b106a837d9",
+      "size": 6818
+    },
+    "work/simulator/qemu-s9/cvc-rw-516/result.json": {
+      "sha256": "e0b25cd0abef24029093a240d8c0e854a4442342ac0975ee6e5f38a895644fda",
+      "size": 8795569
+    },
+    "work/simulator/qemu-s9/cvc-rw-516/report.json": {
+      "sha256": "f50418176b4d38b70252598713b992a7082a975cd28f27a90394b18db7b61d0a",
+      "size": 6522
+    },
+    "work/simulator/qemu-s9/cvc-rw-516/compiled.tar.gz": {
+      "sha256": "96eee47d16f9fb79fc5ff1536c7dbbfd25322316def2ee944ae197a4936f1c17",
+      "size": 2196048
+    },
+    "work/simulator/reviews/cvc-rw-independent-execution-516.json": {
+      "sha256": "6a9c07b0bc591c173abb320acac77a6390d1cd78a6a1854de086d2bb27ee4a0c",
+      "size": 2156
+    }
+  },
+  "actual": {
+    "wall_ms": 3816,
+    "exit": 1,
+    "truncated": false,
+    "icarus_sampled": 0,
+    "cvc_compiled_sampled": 1,
+    "time_ps": 5,
+    "expected_sampled": 0
+  },
+  "next_action": "Review and build separate existing-kernel RW queue adaptation, then repeat unchanged oracle and extra callback lifecycle tests."
+}

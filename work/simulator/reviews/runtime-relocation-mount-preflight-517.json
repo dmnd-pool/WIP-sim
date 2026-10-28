@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "scope": "Read-only mount/path semantics supplement; no directory created or moved.",
+  "recorded_at": "2026-10-28T18:59:07.955258+00:00",
+  "plan_sha256": "46062b0a31038c87698d317848abeb446e9e8e6798998fc45d11c6ec7591ef9b",
+  "external_root": "/home/user/mnt/small/md-sim-archive-20261019",
+  "actual_stat_device": "8:33",
+  "actual_mountinfo": [
+    "474 308 8:33 / /home/user/mnt/small rw,relatime shared:361 - ext4 /dev/sdc1 rw"
+  ],
+  "mount_selection_note": "findmnt lists two stacked mounts at the same path. Actual stat device8:33 identifies the visible ext4 /dev/sdc1, not the underlying vfat entry.",
+  "checked": [
+    "External visible filesystem is writable ext4 with no noexec flag in the observed mount record. Runtime read-only bind uses Store.verified_path after canonicalization.",
+    "Both selected workspace run paths remain ignored by git check-ignore.",
+    "Store final-node type/link-count and canonical lock validation remain unchanged; scratch actual Store/isolation regression still required."
+  ],
+  "executed_or_moved": false
+}

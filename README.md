@@ -26,6 +26,11 @@ The checkpoint was committed as `b276dd7a`. The user resumed work on
 26 October. The full task remains incomplete. See the
 [current continuation](work/simulator/continuation-2026-10-28.md).
 
+The user requested a pause at [checkpoint518](work/simulator/checkpoint-518.md)
+to save the weekly allowance. GPIO execution tests and the repaired CVC
+component tests pass. Selected CVC FPGA execution and complete S9 boot remain
+open. The checkpoint records the exact next steps and pending source work.
+
 The isolated KVM support guest now passes Linux boot and a fresh private TCP
 exchange. Its pinned x86 backend builds with undefined-behavior checks. See
 the [independent evidence review](work/simulator/reviews/kvm-boot-build-independent-485.json).
@@ -1165,8 +1170,14 @@ The separate [ROM mapping and reset tests](work/simulator/reviews/zynq-rom-reset
 pass complete ROM protection, all memory-bank mappings and two resets per case.
 The later [reset diagnostic audit](work/simulator/reviews/zynq-rom-reset-independent-execution-513g.json)
 matches actual translated bytes to the original ROM and records its first
-unsupported SLCR write. The complete firmware boot remains open.
-The report includes the tested command and complete input hashes. Its C
+unsupported SLCR write. The later reset-reason and voltage-control models
+pass five component suites. The unchanged ROM now stops at the unimplemented
+PS GPIO interrupt-disable register. The later Rust GPIO model now passes144
+transactions,14 interrupt transitions and two resets. Its rejection suite
+passes nine faults. The unchanged ROM advances to unsupported SLCR0x500.
+See the [GPIO execution report](work/simulator/reviews/ps-gpio-executed-513j.md).
+The complete firmware boot remains open.
+The reports include the tested commands and complete input hashes. The C
 fixture supplies the ARM32 ABI and exact memory layout; Rust controls the
 test and checks its results. Full reset execution and the ROM's match to
 the selected S9 silicon remain open.
@@ -1950,9 +1961,15 @@ retain a passing bus regression and a failed speed test. A10us fabric interval
 took2.472s; the100us case hit its10s command limit. Full firmware execution
 needs a faster backend with the required signal and event behavior.
 The [isolated CVC tool build](work/simulator/reviews/cvc-tool-executed-516.md)
-passes its compiler, four-state smoke and restored-tool tests. Its selected
-S9 logic and callback-order tests remain open. The retained upstream warnings
-and source-available license are recorded separately.
+passes its compiler, four-state smoke and restored-tool tests. The original
+CVC scheduler failed the callback-order oracle. A separate recorded kernel
+adaptation now passes33 comparisons against Icarus. See the
+[scheduler execution report](work/simulator/reviews/cvc-derived-rw-executed-516c.md).
+The later parser repair passes its literal failure fixture and all33
+scheduler comparisons on the combined tool. See the
+[combined component results](work/simulator/reviews/cvc-combined-components-executed-516f.json).
+Selected S9 execution and throughput remain open. The retained upstream
+warnings and source-available license are recorded separately.
 The CPU bridge, physical timing, original-board and exact-target gates remain open.
 The exact 2022 Bosminer ELF is now extracted and its version, build, control
 and baud register instructions are checked with isolated Capstone. The selected
@@ -1967,6 +1984,8 @@ capture, isolation, execution and result checks. The selected MAXIGP0 fixture
 uses the same HDL event interface to drive only the PS7 bus, clock and reset
 ports. It does not replace a processor. The existing upstream
 Icarus and gperf source retains its original C/C++ implementation.
+The PS GPIO state is Rust. Its small C binding is required by QEMU's
+SysBus, Clock and qdev interfaces.
 The live link uses a small C module for Icarus's existing VPI callback interface.
 Rust cannot provide this interface without an ABI boundary. Rust owns the
 protocol, child process, limits and result checks. Verilog supplies the actual

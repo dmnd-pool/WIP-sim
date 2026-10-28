@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "One-line result metadata correction only; full actual runtime audit remains separate.",
+  "files": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/qemu_ttc_reset.rs",
+      "sha256": "91f28019150229ca28155f93875d17b0dda534eb86e78c8725a01dee05fa052e",
+      "size": 23856
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h2/qemu_ttc_reset.rs",
+      "sha256": "b5f474eefe9200d93b3dd43f83ef119eb88ab22e2fc2ae5cd83be73797bc9881",
+      "size": 23851
+    },
+    {
+      "path": "work/simulator/reviews/zynq-reset-count-fix-513h2.json",
+      "sha256": "5b52f3c7dd05ea68cfa36792034523417cf801848033bc049ad4b20cf9abbe36",
+      "size": 478
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513h/assessment.json",
+      "sha256": "fdac53aae0385d64a33b6a4d435a93809c6f786db099ed9ae0abdc1d67401182",
+      "size": 3328
+    }
+  ],
+  "exact_delta": "Replace hard-coded emitted warm_resets with the actual RESET-event count after all QMP commands and successful backend exit.",
+  "evidence": {
+    "failed_outer_verdict_preserved": true,
+    "inner_transactions": 44,
+    "actual_reset_events": 4,
+    "guest_flags": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "old_incorrect_emitted_count": 2
+  },
+  "assertions_unchanged": [
+    "rom-reason44transactions",
+    "exactly4actualreset events",
+    "two guest and two host resets",
+    "all register assertions and strict diagnostics",
+    "old modes retain their existing expected event counts"
+  ],
+  "source_review_passed": true,
+  "open_findings": [],
+  "retry_execution_audited": false,
+  "physical_reset_or_original_board_gate": false
+}

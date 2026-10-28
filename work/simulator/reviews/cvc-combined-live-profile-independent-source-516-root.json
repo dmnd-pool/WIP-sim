@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "scope": "New combined-tool selected-HDL profile and exact driver allow-list update",
+  "inputs": {
+    "work/simulator/s9-cvc-516/lexer-context/live-profile-stage.json": {
+      "sha256": "f57245ebbe048baa15bfeff4fb5747e22b89eef9dba498172f330db2119a0a3a",
+      "size": 1167
+    },
+    "work/simulator/s9-cvc-516/lexer-context/s9_hdl_validate.rs": {
+      "sha256": "5dc86980a9269833ee1e70178df7acb809b4151d31eeb6e931ce8fbc627429e6",
+      "size": 40971
+    },
+    "work/simulator/s9-cvc-516/lexer-context/s9-hdl-inputs-516f-cvc.json": {
+      "sha256": "25f0aac6bb39af4536d2d5dd9143b8ed11a07ecaa0eca6365420e65feef3a773",
+      "size": 12717
+    },
+    "simulator/firmware/s9-hdl-inputs-516-cvc.json": {
+      "sha256": "52f1fd366f0e399f22298dbfafe89ae5f194b1dadf2a124e62cc122018880a34",
+      "size": 12633
+    }
+  },
+  "checks": [
+    "Only tool archive and its build provenance change among executable inputs. Selected netlist, vendor cells, vectors, VPI adapter and clock sources remain identical.",
+    "The profile explains both scheduler and scanner adaptations. It explicitly leaves CPU timing and original-board gates false.",
+    "Driver accepts only the exact new profile hash; old profiles remain present. It records actual CVC archive identity instead of a stale profile label.",
+    "Assertions, compiler flags and resource limits are unchanged. Literal and scheduler checks precede selected execution."
+  ],
+  "findings": [],
+  "disposition": "Source review permits integration and affected checks. No selected execution or speed pass is inferred."
+}

@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:55:19.715190+00:00",
+  "scope": "Actual scratch-only storage copy/publication/rollback/retirement and isolated read regression. No real pilot copy, publication or removal.",
+  "checks": [
+    {
+      "command": "cargo test -p md-sim-firmware --example relocate_runtime_run --offline --locked",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/runtime-relocation-dev-517/tests.log",
+        "sha256": "1a7cb6a81865e2ced090e8ec3f059f0395a64b6d85e03782197dda1eed28c5e7",
+        "size": 1137
+      },
+      "complete_output": "   Compiling md-sim-firmware v0.1.0 (/home/user/src/md-sim/crates/md-sim-firmware)\n    Finished `test` profile [unoptimized] target(s) in 2.64s\n     Running unittests examples/relocate_runtime_run.rs (target/debug/examples/relocate_runtime_run-bfbde89cf241ca2a)\n\nrunning 8 tests\ntest tests::isolated_read_uses_real_store_beneath_published_run_symlink ... ignored, requires Linux user/mount/PID namespaces; actual isolated read through relocated parent\ntest bounded_file::tests::identity_describes_consumed_bytes_after_path_changes ... ok\ntest bounded_file::tests::type_alias_and_size_fail_without_opening_a_blocking_stream ... ok\ntest tests::store_and_object_symlinks_are_rejected_without_new_store_state ... ok\ntest tests::changed_extra_linked_pending_or_active_inputs_fail_before_switch ... ok\ntest tests::journal_collision_and_post_exchange_interruption_keep_restore_path ... ok\ntest tests::copy_publish_store_access_and_atomic_rollback_preserve_bytes_and_modes ... ok\ntest tests::retirement_removes_only_the_verified_local_backup ... ok\n\ntest result: ok. 7 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.01s\n\n"
+    },
+    {
+      "command": "cargo clippy -p md-sim-firmware --example relocate_runtime_run --offline --locked -- -D warnings",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/runtime-relocation-dev-517/clippy.log",
+        "sha256": "c787391bf8b9eeb2212432eef42cda729c018eb76dc76175651e316738067ad2",
+        "size": 143
+      },
+      "complete_output": "    Checking md-sim-firmware v0.1.0 (/home/user/src/md-sim/crates/md-sim-firmware)\n    Finished `dev` profile [unoptimized] target(s) in 2.37s\n"
+    },
+    {
+      "command": "cargo test -p md-sim-firmware --example relocate_runtime_run --offline --locked tests::isolated_read_uses_real_store_beneath_published_run_symlink -- --exact --ignored --nocapture --test-threads=1",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/runtime-relocation-dev-517/namespace-test.log",
+        "sha256": "f72e2a2c0adc2ee109e4b64f8214bbbafbc231b154d10ba3c430d5843ff1a2bc",
+        "size": 370
+      },
+      "complete_output": "    Finished `test` profile [unoptimized] target(s) in 0.05s\n     Running unittests examples/relocate_runtime_run.rs (target/debug/examples/relocate_runtime_run-bfbde89cf241ca2a)\n\nrunning 1 test\ntest tests::isolated_read_uses_real_store_beneath_published_run_symlink ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.65s\n\n"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "crates/md-sim-firmware/examples/relocate_runtime_run.rs",
+      "sha256": "b85c7df90918c4f61e5731f061227c5886ad2eae8fe79ea130edacc858f4880a",
+      "size": 35798
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/bounded_file.rs",
+      "sha256": "725a1d9682b92e7a7f9548ca266c6ef7b29908bd1e50d9b6e413183f7c754ea2",
+      "size": 3045
+    },
+    {
+      "path": "crates/md-sim-runtime/src/store.rs",
+      "sha256": "9948fd6d6c3cc3f35d96744267b9ce6a1504380a716a49d08c9238125b80e924",
+      "size": 22662
+    },
+    {
+      "path": "crates/md-sim-runtime/src/file_lock.rs",
+      "sha256": "3398955ae5ddc637c662b165a3e2e9204c0ac2485f508531ca4d1142401f4069",
+      "size": 4609
+    },
+    {
+      "path": "crates/md-sim-runtime/src/isolation.rs",
+      "sha256": "fb637faa44fa2d05ca9c7a83161502cd2c4ad59242920cd13c850f976cc0639c",
+      "size": 40390
+    },
+    {
+      "path": "crates/md-sim-firmware/src/lab.rs",
+      "sha256": "eb88622c2bc826b0fd43c1a9a7d1dff51e966dc1eedc3a2b2d6973895af7482f",
+      "size": 19296
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "77f38205ee6b83919c36a42067bc2cc3306f0000f0021192175fd31ff24e6086",
+      "size": 16546
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "da58784bc91761072d1bc17bea20627066dc766872c69cad881924f526ca9e36",
+      "size": 654
+    },
+    {
+      "path": "work/simulator/reviews/runtime-relocation-integration-517.json",
+      "sha256": "2805fa444d4d2fc67961f159e840159e16ba5f7649ba44f22f7637064ff38ab6",
+      "size": 966
+    },
+    {
+      "path": "target/debug/examples/relocate_runtime_run-bfbde89cf241ca2a",
+      "sha256": "353bae2c42daee9adcbc038ad497abb88169e8fd8c74bdc5a2c3a10278b736ef",
+      "size": 4925936
+    }
+  ],
+  "ordinary_passed": 7,
+  "ordinary_ignored": 1,
+  "explicit_ignored_namespace_passed": 1,
+  "failed": 0,
+  "source_changed_after_tests": false,
+  "real_data_moved_or_deleted": false,
+  "limits": [
+    "Real513c/d destination copy and post-publication review remain required before any retirement.",
+    "Scratch test proves the top-directory link works with Store and actual namespace isolation. It does not grant firmware or exact target acceptance.",
+    "Metadata preservation covers bytes/mode/owner/group/modification times. Access and change times are not preserved.",
+    "The ignored test was explicitly selected by full name and ran once; it was not counted from a zero-test filter."
+  ],
+  "next": "Root final workspace checks and checkpoint; no new runtime work until user resumes."
+}

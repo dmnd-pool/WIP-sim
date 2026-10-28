@@ -80,7 +80,7 @@ pub fn generate(netlist: &str, ports: &[u8]) -> Result<(String, Value)> {
         "ps7_driven_ports":inventory["driven_ports"],
         "ps7_observed_ports":inventory["observed_ports"],
         "additional_observed_port":{"name":"IRQF2P","width":20,"direction":"input"},
-        "clock_policy":"No default frequency. Explicit QEMU-Q32 periods. First enabled level0; period changes preserve level and start a new half-period. Gating holds level. Absolute edges round up to the1ps Icarus lattice without repeated rounding drift.",
+        "clock_policy":"No default frequency. Explicit QEMU-Q32 periods. First enabled level0; period changes preserve level and start a new half-period. Gating holds level. Absolute edges round up to thedeclared1ps HDL lattice without repeated rounding drift.",
         "command_policy":"Only future timestamp drives. Existing clock edges and their active/NBA work settle before the batch in future read-write synchronization. New input work settles before the read-only receipt, at the same requested timestamp. IRQ and raw output changes retain time and four-state values separately.",
         "next_boundary_policy":"Only the next owned clock edge can be reported. This is not the next kernel event or a CPU run-ahead grant.",
         "external_role_policy":"Raw package-facing pin identity only. ASIC/UART/PSU role is not inferred from the port name.",

@@ -1,0 +1,121 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T18:27:30.077723+00:00",
+  "component": "513h originalROM reset reason interface",
+  "stage": {
+    "path": "work/simulator/reviews/zynq-reset-reason-stage-513h.json",
+    "sha256": "03d9f11814ec44b9b5a3914270efc17c25af56a664b1532f2273feb53581fe3c"
+  },
+  "checked_files": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/ROM-RESET.md",
+      "sha256": "8dd1420d58e41e8fd4699f115153772e33bc1ec72a2d3722995ad1f1d30f1b68",
+      "size": 7284
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/build_qemu_backend.rs",
+      "sha256": "d52d0636a68d133aa5e62fb6b6833ddfdd0598d89d47b2307dffaf48912d42d8",
+      "size": 56531
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/derived/hw/arm/trace-events",
+      "sha256": "f28abcb79a79acaebd3dc5d92638d55dbc73a004b35a934ce7d51880dc6ac277",
+      "size": 8811
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/derived/hw/arm/xilinx_zynq.c",
+      "sha256": "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+      "size": 37768
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/derived/hw/misc/zynq_slcr.c",
+      "sha256": "80c11fdc0a5650364c136595aa6b2b68913adb196c18807cc6ae307cd657c63d",
+      "size": 27482
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/derived/include/hw/arm/xilinx_zynq.h",
+      "sha256": "fc6bf9d4b15419ab8f643bfeb323ded68f4bf04c7c5a07dd577984412678fd49",
+      "size": 787
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/qemu_ttc_reset.rs",
+      "sha256": "91f28019150229ca28155f93875d17b0dda534eb86e78c8725a01dee05fa052e",
+      "size": 23856
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/rom_reset_qtest.rs",
+      "sha256": "c44464bb427d4061bb80b2688e8ea2e3323dc2f92be703587df9f25834547274",
+      "size": 9164
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/s9-rom-reset.patch",
+      "sha256": "82505980fac2a7f9b3302ac55f0ee05e7e3e694d5c13504557121274907786da",
+      "size": 13159
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513h/source-identities.json",
+      "sha256": "0d9399e88ac3ebaaf518620703e24c9514f47b588243ae7f1ffbf55ea91d03da",
+      "size": 901
+    }
+  ],
+  "checked_references": [
+    {
+      "path": "artifacts/files/source/source-zynq-ug585-v1-bdtic-513h/ug585-v1.pdf",
+      "sha256": "15bc69f0aaa6e94f4c9191278279c3e9070382760851874df10596e1f9bd758a",
+      "size": 37471135
+    },
+    {
+      "path": "artifacts/files/source/source-zynq-reset-reason-api-513h/52030-solution.html",
+      "sha256": "3758538aebdfbd42afb1a4b87c6a2d6d39207f520c54aedae5cf989716579e4d",
+      "size": 7670
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-v1-reset-513h.txt",
+      "sha256": "cc118590cea49a3690af07e54340a899ad785734739946dedc88697f7600e51c",
+      "size": 10136
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-v1-page1442-513h.png",
+      "sha256": "f35586ac278cd628c5f43dd1c01a212fbb896b755c4b56871d680f28ff8b931b",
+      "size": 266895
+    },
+    {
+      "path": "work/simulator/boot-dev-513/amd-52030-solution-513h.txt",
+      "sha256": "7789cbe2ad831467a89c41a7ab84af8e29ce3c3c653f9a0d92d5801748395cc4",
+      "size": 4678
+    },
+    {
+      "path": "work/simulator/boot-dev-513/system-runstate.c",
+      "sha256": "9b0b8d6b8b5c026a32d69be1201b92d9b69bb324a6c46fc11cafbba8ac08f01f",
+      "size": 34570
+    },
+    {
+      "path": "work/simulator/reviews/zynq-rom-reset-independent-execution-513g.json",
+      "sha256": "e279d3ab434ee26277104874672280ddfe2793e6aefae7bb8d115fb55c1bcc59",
+      "size": 2940
+    }
+  ],
+  "reviewed_behavior": [
+    "Visually checked originalUG585v1.0 page1442; reset-source bits and CLR write-one/read-zero/reserved rules agree with new C behavior. AMD52030 narrative confirms non-POR persistence; conflicting summary bit table is explicitly separated.",
+    "Reset state initialized once at realization. Ordinary QMP reset cannot be reclassified as physical POR from QEMU RESET_TYPE_COLD label. RST_REASON and REBOOT_STATUS survive subsequent reset callbacks.",
+    "Only actual guest SOFT_RST request adds SLC bit3. Zero write adds no cause, and control resets tozero. No invented cause from QMP management reset.",
+    "Reference-only decoder preserves existing direct-SPL/default behavior, enforces read-only source/masked reserved bits and explicit partial/unaligned unsupported stop.",
+    "Reviewed44 actual-mapped-operation qtest expectations: initialPOR, read-only and reserved writes, clear0/1, independentREBOOT retention, two guest-triggeredreset events and two QMPreset events. GIC must stay quiet.",
+    "All17 stage/reference hashes checked. Actual C patch stays in existing QEMU device interface; no newCPU emulator or synthetic boot message."
+  ],
+  "result": "pass-for-integration-build-and-actual-tests",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "Focused Rust checks and immutable source/helper capture",
+    "UBSan backend rebuild with exactsourcehashes",
+    "Run new44-transactioncase plus unchangedROMmap/SWAP/fabric regressions",
+    "Fresh bounded actualROM reset and independent byte/device audit"
+  ],
+  "limits": [
+    "No watchdog/external/debug cause wiring is implemented or tested by this narrow change. These remain implementation work for their relevant capabilities.",
+    "Partial/unaligned failure branches are explicit but unexercised.",
+    "Existing VMstate register-array declaration is not evidence that fullS9 migration is supported; otherboarddevices already block it.",
+    "Physical reset timing, exact selected silicon and complete boot/mining gates remain open."
+  ]
+}

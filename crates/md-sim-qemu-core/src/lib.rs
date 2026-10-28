@@ -6,6 +6,7 @@ mod fan;
 mod gpio;
 pub mod pcap;
 mod pic16;
+mod ps_gpio;
 mod s9_chain;
 mod timing;
 pub use timing::{

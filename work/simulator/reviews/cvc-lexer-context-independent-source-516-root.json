@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "time": "2026-10-28T19:41:30.267069+00:00",
+  "scope": "Independent narrow CVC conditional-preprocessor scanner context repair review.",
+  "inputs": {
+    "work/simulator/s9-cvc-516/lexer-context/patch-stage.json": {
+      "sha256": "025f3b8027ea3be9fbf9d0e023fbf4bd8bd9bf9934270563088ade55fae498bb",
+      "size": 1016
+    },
+    "work/simulator/s9-cvc-516/lexer-context/lexer-context.patch": {
+      "sha256": "39dde71edcc0d4eaf97caa3a29d3baf7217da433b3516e4756298b1a64259a2d",
+      "size": 2064
+    },
+    "work/simulator/s9-cvc-516/lexer-context/original/v_ms.c": {
+      "sha256": "d3a0eaf053dedea1567446cd088df7c8bf2ae5d35c4af74b88cc6bc082d74dc8",
+      "size": 238964
+    },
+    "work/simulator/s9-cvc-516/lexer-context/derived/v_ms.c": {
+      "sha256": "d8308b138f83b9f47f0da7462c814e0196cd1b8c41f8ea75e07e9f7300907809",
+      "size": 239295
+    },
+    "work/simulator/s9-cvc-516/lexer-context/reproducer-stage.json": {
+      "sha256": "ccd3a435091df4fa422f59b33e61e9afb76b7e92ee997417524d29c9c0cb46ba",
+      "size": 1444
+    }
+  },
+  "checks": [
+    "The caller library-module skipper keeps __canbe_impl_evctrl true while scanning the unused module. The current conditional skip helper overwrites it with false after an inactive conditional.",
+    "The lexer treats (* as an attribute when that flag is false; later legal always @(*) in a skipped module can therefore enter rd_attribute incorrectly.",
+    "The repair saves the entry flag and restores it at all four exits of ifdef_skip_section. Other skip flags and module-skip callers remain unchanged.",
+    "No vendor model, signal, timing control, assertion or warning policy is changed. Modification header and original license remain.",
+    "The stage requires an actual original-tool reproducer before rebuilding; source reasoning alone is not the failure/repair execution evidence."
+  ],
+  "findings": [],
+  "disposition": "Source review closed. Actual focused and integration checks remain required.",
+  "runtime_execution_claim": false,
+  "original_board_gate": false
+}

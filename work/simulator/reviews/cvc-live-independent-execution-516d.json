@@ -1,0 +1,84 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "recorded_at": "2026-10-28T19:35:12.769828+00:00",
+  "reviewer": "cleanup_resume",
+  "audit_passed": true,
+  "run_passed": false,
+  "scope": "Independent identity and failure audit of the actual compiled-CVC selected-library attempt. Failure remains unresolved; no selected-CVC equivalence, firmware or board pass.",
+  "inputs": {
+    "path": "work/simulator/reviews/cvc-live-independent-execution-516d-inputs.json",
+    "sha256": "87f2180f73f10ff8719ba859e87a5596dea977c82d40573479a6f4bb07754c38",
+    "size": 158151
+  },
+  "source_freeze": {
+    "files": 610,
+    "before_after_equal": true,
+    "helper": {
+      "built_mtime_ns": 1793215703092496811,
+      "path": "work/simulator/qemu-s9/cvc-live-driver-516d/s9_hdl_validate",
+      "sha256": "f43a05b5014ddf012e233ed9738a2c46571ffdf20586fa59e2099bba341a63a4",
+      "size": 2624808
+    },
+    "historical_copies_verified": true,
+    "current_production_equality_not_required": true
+  },
+  "execution": {
+    "status": "exited",
+    "exit_code": 1,
+    "wall_milliseconds": 10075,
+    "trace_truncated": false,
+    "mounts_verified": 52,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    },
+    "supervisor_tools": {
+      "bubblewrap": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "prlimit": {
+        "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+        "size": 27320
+      },
+      "unshare": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      }
+    }
+  },
+  "checked": [
+    "Outer result bytes equal retained envelope and stderr. Envelope report and archive equal separately retained outputs. All per-step stream identities and truncation flags checked.",
+    "All610 frozen source copies, before/after maps, helper/check logs and52 captured mounts rehashed. Current-cohort Icarus uses the same original vendor bytes.",
+    "Preceding actual Icarus582 primitive assertions, two510 RAM traces and strict selected elaboration pass. Their full outputs match the independently audited current Icarus run.",
+    "Compiled CVC exits1 with five retained parser errors. No CVC primitive simulation, VPI plugin, live scheduler or selected bus transactions executed in this attempt.",
+    "The retained113-byte archive contains only the actual empty compiled directory. No nonexistent compiled program is reported as retained."
+  ],
+  "failure": {
+    "step": "cvc_primitive_compile",
+    "errors": [
+      "**/vendor/BUFGCTRL.v(532) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance",
+      "**/vendor/BUFGCTRL.v(560) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance",
+      "**/vendor/BUFGCTRL.v(569) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance",
+      "**/vendor/BUFGCTRL.v(578) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance",
+      "**/vendor/FDRE.v(173) ERROR** [709] library file module, primitive or directive expected - endmodule read"
+    ],
+    "observed_source": "Exact BUFGCTRL line532 contains ordinary always@(*) syntax; FDRE line173 is endmodule. The subsequent CVC line numbers do not justify modifying vendor semantics without a separate parser/API investigation.",
+    "next_action": "Trace the pinned CVC source parser/library-scan path and test a minimal separately recorded correction or invocation. Preserve original libraries and all diagnostic assertions."
+  },
+  "unresolved_correctness_findings": [],
+  "remaining_limits": [
+    "CVC support for the selected original vendor HDL is not yet established.",
+    "This backend failure does not classify the S9 target as incompatible.",
+    "Physical clock/pad calibration, CPU coupling, original-board and fresh mining remain incomplete."
+  ],
+  "selected_cvc_live_gate": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

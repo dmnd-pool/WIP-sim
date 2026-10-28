@@ -1,0 +1,448 @@
+{
+  "schema": 1,
+  "scope": "Existing HDL scheduler API component only; same-helper final cohort. No selected FPGA, CPU, original-board, physical timing or mining gate.",
+  "passed": true,
+  "comparisons_passed": 33,
+  "helper": {
+    "path": "work/simulator/qemu-s9/cvc-rw-driver-516c/cvc_rw_probe",
+    "sha256": "eb8c798c2aff96c0c90e6fd07bd58d451d190cee964f8a1209f3307f690e9d6c",
+    "size": 2306488
+  },
+  "frozen_source_manifest": {
+    "path": "work/simulator/qemu-s9/cvc-rw-driver-516c/manifest.json",
+    "sha256": "28b87306a9af329af3a9e81f262ce6dd4adc846774bcbf05f811b002288fa7d5",
+    "size": 103903
+  },
+  "derived_build": {
+    "path": "work/simulator/reviews/cvc-derived-tool-executed-516b.json",
+    "sha256": "fd6edb19d01252e05fcab6bf1842a09664838bddfcf67c95963267c662af57bb",
+    "size": 3976
+  },
+  "runs": [
+    {
+      "run": "work/simulator/qemu-s9/cvc-rw-516c",
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-516c/spec.json": {
+          "sha256": "c4515ff2b9866a804c6144e9d8108886ef9b250a2e16aa75657f66a261937037",
+          "size": 6840
+        },
+        "work/simulator/qemu-s9/cvc-rw-516c/result.json": {
+          "sha256": "3a4324fd139d3077b46054fbf4ebea1d68fcad5e62c43d280b7c42dd1a32f967",
+          "size": 8799693
+        },
+        "work/simulator/qemu-s9/cvc-rw-516c/inputs.json": {
+          "sha256": "67200cde4ced0d1f46d2f406587672d7876655092645d82026fce676c6b93215",
+          "size": 846
+        },
+        "work/simulator/qemu-s9/cvc-rw-516c/report.json": {
+          "sha256": "4eff515799f4104b8796455fc5f536cab3c64824839f2b448becabe827262cb3",
+          "size": 7448
+        },
+        "work/simulator/qemu-s9/cvc-rw-516c/compiled.tar.gz": {
+          "sha256": "d3d560fd7871ab48ce45e1fabfe7ffb4e01786efcd74223a224972caba343639",
+          "size": 2196711
+        }
+      },
+      "wall_milliseconds": 3864,
+      "argv": [
+        "/guard",
+        "__inside",
+        "--rw-after-nba"
+      ],
+      "limits": {
+        "wall_seconds": 180,
+        "cpu_seconds": 120,
+        "memory_bytes": 2147483648,
+        "processes": 64,
+        "file_bytes": 67108864,
+        "trace_bytes": 25165824,
+        "tmp_bytes": 1073741824
+      },
+      "actual_receipts": {
+        "cvc_execute": [
+          "MD_RW_ORDER time=5 input=1 edge=1 sampled=0",
+          "MD_RW_ORDER_CONTRACT_PASS"
+        ],
+        "cvc_interpreted": [
+          "MD_RW_ORDER time=5 input=1 edge=1 sampled=0",
+          "MD_RW_ORDER_CONTRACT_PASS"
+        ],
+        "icarus_execute": [
+          "MD_RW_ORDER time=5 input=1 edge=1 sampled=0",
+          "MD_RW_ORDER_CONTRACT_PASS"
+        ]
+      },
+      "retained_artifacts": {
+        "rw.vvp": {
+          "sha256": "93245532d41955e3ad8381db1f16f58d575ee7182f09760e00ea9449012157e7",
+          "size": 2067
+        },
+        "rw-cvc": {
+          "sha256": "3968a89246b3dbfa18bbdfb10211f03b51297a013c9ff00d3a7b076ba07d8e6a",
+          "size": 4105200
+        },
+        "rw_icarus.so": {
+          "sha256": "12efa9c4bd163862b4913517338cb0b43f1ee876fa81e5e2768b8938f262d74b",
+          "size": 16456
+        },
+        "rw_cvc.so": {
+          "sha256": "12efa9c4bd163862b4913517338cb0b43f1ee876fa81e5e2768b8938f262d74b",
+          "size": 16456
+        },
+        "rw-order.c": {
+          "sha256": "d8c7d961d4e17fb175c9b01dd41813836d9a9094b65d699262d5ba97dd733905",
+          "size": 2863
+        },
+        "rw-order.v": {
+          "sha256": "d44bb7fb157664681d134ce5116cceb7db6a8f4b0ffbf06ba131a9bebc08dfcc",
+          "size": 470
+        }
+      }
+    },
+    {
+      "run": "work/simulator/qemu-s9/cvc-rw-nba-516c",
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-nba-516c/spec.json": {
+          "sha256": "567c72fdad872d7e0ae1ef22aa3810bccbd6cd6dfe13564727d4e4250f2746e6",
+          "size": 6866
+        },
+        "work/simulator/qemu-s9/cvc-rw-nba-516c/result.json": {
+          "sha256": "51672fd063952273276ca7ae6d665e090700487e411eec29b94a300ab1e0b3ec",
+          "size": 8838933
+        },
+        "work/simulator/qemu-s9/cvc-rw-nba-516c/inputs.json": {
+          "sha256": "d33d113fe67d1b6cb669837549f21804b3bcc4f93ff2fc909d1b595289fa2e9b",
+          "size": 847
+        },
+        "work/simulator/qemu-s9/cvc-rw-nba-516c/report.json": {
+          "sha256": "364fda89e0f3f7bfade7d3a15713b281dc95bfcb43a5e2c4b83950bc4e338ec9",
+          "size": 15999
+        },
+        "work/simulator/qemu-s9/cvc-rw-nba-516c/compiled.tar.gz": {
+          "sha256": "3ea3e41ac7850b3de8a9f6261dfacb306dd8154d1b75d6f0a093a2b546c4926e",
+          "size": 2202909
+        }
+      },
+      "wall_milliseconds": 3991,
+      "argv": [
+        "/guard",
+        "__inside",
+        "--rw-after-nba",
+        "--phase",
+        "nba"
+      ],
+      "limits": {
+        "wall_seconds": 180,
+        "cpu_seconds": 120,
+        "memory_bytes": 2147483648,
+        "processes": 64,
+        "file_bytes": 67108864,
+        "trace_bytes": 25165824,
+        "tmp_bytes": 1073741824
+      },
+      "actual_receipts": {
+        "phases_nba_cancel_cvc_compiled": [
+          "MD_RW_PHASE case=cancel time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_cancel_cvc_interpreted": [
+          "MD_RW_PHASE case=cancel time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_cancel_icarus": [
+          "MD_RW_PHASE case=cancel time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_future_cvc_compiled": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_future_cvc_interpreted": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_future_icarus": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_nested_cvc_compiled": [
+          "MD_RW_PHASE case=nested time=5 input=0 edge=1 sampled=0 echo=0 first=1 peer=1 nested=1 final=1 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_nested_cvc_interpreted": [
+          "MD_RW_PHASE case=nested time=5 input=0 edge=1 sampled=0 echo=0 first=1 peer=1 nested=1 final=1 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_nested_icarus": [
+          "MD_RW_PHASE case=nested time=5 input=0 edge=1 sampled=0 echo=0 first=1 peer=1 nested=1 final=1 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_zero_cvc_compiled": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_zero_cvc_interpreted": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_nba_zero_icarus": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ]
+      },
+      "retained_artifacts": {
+        "rw-phases.c": {
+          "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+          "size": 5927
+        },
+        "rw-phases.v": {
+          "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+          "size": 977
+        },
+        "phases_icarus.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases_cvc.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases-nba.vvp": {
+          "sha256": "41d65ba370ef0cf30d84b4db774aeb58207168001e8bb2948e2b12e83f9e804c",
+          "size": 2608
+        },
+        "phases-nba-cvc": {
+          "sha256": "d15b6c13d12f19f94d2f84885c6f958d5d5dff5ef58c24bcd1aebbcc1cfa6d42",
+          "size": 4105968
+        }
+      }
+    },
+    {
+      "run": "work/simulator/qemu-s9/cvc-rw-delayed-516c",
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-delayed-516c/spec.json": {
+          "sha256": "2cde09ec5762783ea3f6f462e14f5bb7d536dc037ae3a9bbef45b314f4ef10e2",
+          "size": 6870
+        },
+        "work/simulator/qemu-s9/cvc-rw-delayed-516c/result.json": {
+          "sha256": "bb7042bddcb265a38e0cf850339c57b8faa9644569f2016b2cdfd6ce6ba06e37",
+          "size": 8841061
+        },
+        "work/simulator/qemu-s9/cvc-rw-delayed-516c/inputs.json": {
+          "sha256": "ec003ef7be1650c4bfd69e750d012e399f4b98798a9b6c960b9ba7b201762fc5",
+          "size": 851
+        },
+        "work/simulator/qemu-s9/cvc-rw-delayed-516c/report.json": {
+          "sha256": "a4ecee170abaa43f78b2fd677680c4d0b1dd9ab303776947dc3f7ad2c220bf24",
+          "size": 16345
+        },
+        "work/simulator/qemu-s9/cvc-rw-delayed-516c/compiled.tar.gz": {
+          "sha256": "644b3be339acd824e61743abda9659189b1f4e83510a76d856e3f785ac1c6947",
+          "size": 2203289
+        }
+      },
+      "wall_milliseconds": 3995,
+      "argv": [
+        "/guard",
+        "__inside",
+        "--rw-after-nba",
+        "--phase",
+        "delayed"
+      ],
+      "limits": {
+        "wall_seconds": 180,
+        "cpu_seconds": 120,
+        "memory_bytes": 2147483648,
+        "processes": 64,
+        "file_bytes": 67108864,
+        "trace_bytes": 25165824,
+        "tmp_bytes": 1073741824
+      },
+      "actual_receipts": {
+        "phases_delayed_cancel_cvc_compiled": [
+          "MD_RW_PHASE case=cancel time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_cancel_cvc_interpreted": [
+          "MD_RW_PHASE case=cancel time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_cancel_icarus": [
+          "MD_RW_PHASE case=cancel time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_future_cvc_compiled": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_future_cvc_interpreted": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_future_icarus": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_nested_cvc_compiled": [
+          "MD_RW_PHASE case=nested time=5 input=0 edge=1 sampled=0 echo=0 first=1 peer=1 nested=1 final=1 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_nested_cvc_interpreted": [
+          "MD_RW_PHASE case=nested time=5 input=0 edge=1 sampled=0 echo=0 first=1 peer=1 nested=1 final=1 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_nested_icarus": [
+          "MD_RW_PHASE case=nested time=5 input=0 edge=1 sampled=0 echo=0 first=1 peer=1 nested=1 final=1 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_zero_cvc_compiled": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_zero_cvc_interpreted": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_delayed_zero_icarus": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ]
+      },
+      "retained_artifacts": {
+        "rw-phases.c": {
+          "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+          "size": 5927
+        },
+        "rw-phases.v": {
+          "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+          "size": 977
+        },
+        "phases_icarus.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases_cvc.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases-delayed.vvp": {
+          "sha256": "5615504b0370e78a83aea21505b317e35b49614590da31c29936260e0b63a5da",
+          "size": 2608
+        },
+        "phases-delayed-cvc": {
+          "sha256": "d7fe8fb434067d327602af4dc2ebf63840acbceee1fdf01ecdba7c6e2fe95437",
+          "size": 4106176
+        }
+      }
+    },
+    {
+      "run": "work/simulator/qemu-s9/cvc-rw-no-nba-516c2",
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516c2/spec.json": {
+          "sha256": "a8e7cd626991f842b01cbff241fce2af9c99bbb81979f2bd3e0d7b1f98ea3a37",
+          "size": 6869
+        },
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516c2/result.json": {
+          "sha256": "0b9fb271e3fb1ef736bf59afce4d04d3c406a995027a46b8007490d95bc50a07",
+          "size": 8825853
+        },
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516c2/inputs.json": {
+          "sha256": "423667c98a1b74e05d731e66a40175704bd5088def808757b7cbaabf66ef7592",
+          "size": 850
+        },
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516c2/report.json": {
+          "sha256": "9aa842a8ac1b45268c70a4f3165a7201b42a6ce6d9adf5210bf85b224403534c",
+          "size": 10907
+        },
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516c2/compiled.tar.gz": {
+          "sha256": "7ab743383aac8fec6d73df7a4886fd3d66c086bab4ff4133a1f3172cbfad3d2c",
+          "size": 2201783
+        }
+      },
+      "wall_milliseconds": 3923,
+      "argv": [
+        "/guard",
+        "__inside",
+        "--rw-after-nba",
+        "--phase",
+        "no-nba"
+      ],
+      "limits": {
+        "wall_seconds": 180,
+        "cpu_seconds": 120,
+        "memory_bytes": 2147483648,
+        "processes": 64,
+        "file_bytes": 67108864,
+        "trace_bytes": 25165824,
+        "tmp_bytes": 1073741824
+      },
+      "actual_receipts": {
+        "phases_no_nba_future_cvc_compiled": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_no_nba_future_cvc_interpreted": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_no_nba_future_icarus": [
+          "MD_RW_PHASE case=future time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_no_nba_zero_cvc_compiled": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_no_nba_zero_cvc_interpreted": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ],
+        "phases_no_nba_zero_icarus": [
+          "MD_RW_PHASE case=zero time=5 input=1 edge=1 sampled=0 echo=1 first=1 peer=0 nested=0 final=0 cancelled=0",
+          "MD_RW_PHASE_PASS"
+        ]
+      },
+      "retained_artifacts": {
+        "rw-phases.c": {
+          "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+          "size": 5927
+        },
+        "rw-phases.v": {
+          "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+          "size": 977
+        },
+        "phases_icarus.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases_cvc.so": {
+          "sha256": "b06035bf517f79f4690c5be5bdfb32518e87825edc561f8223eb06dee8620b43",
+          "size": 21272
+        },
+        "phases-no-nba.vvp": {
+          "sha256": "f1e56d0c0fa471ace8a58c09aac643329256d9fd4b4176181bc45a61358c3093",
+          "size": 2375
+        },
+        "phases-no-nba-cvc": {
+          "sha256": "3e73c19b828622fe8809b54e83ccefbc0b5f71db0355a1d4ec97df5092a9215b",
+          "size": 4105304
+        }
+      }
+    }
+  ],
+  "preserved_failures": [
+    {
+      "path": "work/simulator/qemu-s9/cvc-rw-516",
+      "scope": "Original compiled CVC returned sampled1; expected0 remains unchanged."
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-rw-no-nba-516b",
+      "scope": "Report step naming failed before HDL execution."
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-rw-no-nba-516c",
+      "scope": "Prelaunch shared store-lock failure after orchestration started preparation before the previous helper stopped; no ProcessSpec/result/guest exists."
+    }
+  ],
+  "next_action": "Independent raw audit, then existing VPI live bridge portability checks with unchanged X/Z, event, clock and72-operation selected FPGA assertions."
+}

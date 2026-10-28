@@ -140,6 +140,132 @@ pub fn run(
     Ok(())
 }
 
+fn reset_count(events: &[Value], count: usize, guest: bool) -> Result<()> {
+    let actual: Vec<_> = events.iter().filter(|e| e["event"] == "RESET").collect();
+    ensure!(actual.len() == count, "reset-reason event count differs");
+    ensure!(
+        actual.last().is_some_and(|e| e["data"]["guest"] == guest),
+        "reset-reason event source differs"
+    );
+    Ok(())
+}
+
+/// Documented persistent registers only. QMP resets have no physical cause.
+/// Actual PSS_RST_CTRL writes must produce guest reset events and SLC_RST.
+pub fn run_reason(
+    io: &mut Transactions,
+    output: &mut impl Write,
+    input: &mut impl BufRead,
+    events: &mut Vec<Value>,
+) -> Result<()> {
+    const REASON: u32 = 0xf8000250;
+    const CLEAR: u32 = 0xf8000254;
+    const REBOOT: u32 = 0xf8000258;
+    const SOFT: u32 = 0xf8000200;
+    const UNLOCK: u32 = 0xf8000008;
+    const LOCK: u32 = 0xf800000c;
+    io.read(REASON, 0x40)?;
+    io.read(CLEAR, 0)?;
+    io.read(REBOOT, 0)?;
+    // Read-only bits ignore both clear and set attempts, including reserved bits.
+    io.write(REASON, 0)?;
+    io.read(REASON, 0x40)?;
+    io.write(REASON, u32::MAX)?;
+    io.read(REASON, 0x40)?;
+    io.write(UNLOCK, 0xdf0d)?;
+    io.write(CLEAR, 0)?;
+    io.read(CLEAR, 0)?;
+    io.read(REASON, 0x40)?;
+    io.write(CLEAR, 0xffff_fffe)?;
+    io.read(CLEAR, 0)?;
+    io.read(REASON, 0x40)?;
+    io.write(REBOOT, 0xa513_72c9)?;
+    io.read(REBOOT, 0xa513_72c9)?;
+    io.write(SOFT, 0)?;
+    io.read(REASON, 0x40)?;
+    io.write(SOFT, 1)?;
+    qmp(output, input, 20, "query-status", events)?;
+    qmp(output, input, 21, "query-status", events)?;
+    reset_count(events, 1, true)?;
+    io.read(REASON, 0x48)?;
+    io.read(REBOOT, 0xa513_72c9)?;
+    io.read(SOFT, 0)?;
+    io.read(LOCK, 1)?;
+    io.write(UNLOCK, 0xdf0d)?;
+    io.write(CLEAR, 1)?;
+    io.read(CLEAR, 0)?;
+    io.read(REASON, 0)?;
+    io.read(REBOOT, 0xa513_72c9)?;
+    qmp(output, input, 22, "system_reset", events)?;
+    qmp(output, input, 23, "query-status", events)?;
+    reset_count(events, 2, false)?;
+    io.read(REASON, 0)?;
+    io.read(REBOOT, 0xa513_72c9)?;
+    io.read(LOCK, 1)?;
+    io.write(UNLOCK, 0xdf0d)?;
+    io.write(SOFT, 1)?;
+    qmp(output, input, 24, "query-status", events)?;
+    qmp(output, input, 25, "query-status", events)?;
+    reset_count(events, 3, true)?;
+    io.read(REASON, 8)?;
+    io.read(REBOOT, 0xa513_72c9)?;
+    io.write(UNLOCK, 0xdf0d)?;
+    io.write(CLEAR, u32::MAX)?;
+    io.read(CLEAR, 0)?;
+    io.read(REASON, 0)?;
+    io.write(REBOOT, 0)?;
+    io.read(REBOOT, 0)?;
+    qmp(output, input, 26, "system_reset", events)?;
+    qmp(output, input, 27, "query-status", events)?;
+    reset_count(events, 4, false)?;
+    io.read(REASON, 0)?;
+    io.read(REBOOT, 0)?;
+    ensure!(
+        io.irq_events.is_empty(),
+        "unexpected reset-reason GIC event"
+    );
+    Ok(())
+}
+
+/// Only the documented LVTTL register state; no electrical pin model claim.
+pub fn run_lvttl(
+    io: &mut Transactions,
+    output: &mut impl Write,
+    input: &mut impl BufRead,
+    events: &mut Vec<Value>,
+) -> Result<()> {
+    const REG: u32 = 0xf8000b10;
+    const NORMAL: u32 = 0x0c301166; // Original UG585v1.0 BootROM value table.
+    io.read(REG, 0)?;
+    io.write(0xf8000008, 0xdf0d)?;
+    io.write(REG, NORMAL)?;
+    io.read(REG, NORMAL.into())?;
+    io.write(REG, NORMAL | 0xf0000000)?;
+    io.read(REG, NORMAL.into())?;
+    // Exercise every modeled storage bit, including bit0, independently of
+    // the original firmware value. This is not an electrical pin stimulus.
+    io.write(REG, u32::MAX)?;
+    io.read(REG, 0x0fff_ffff)?;
+    io.write(REG, 0)?;
+    io.read(REG, 0)?;
+    io.write(REG, NORMAL)?;
+    io.read(REG, NORMAL.into())?;
+    for cycle in 0..2 {
+        qmp(output, input, 20 + cycle * 2, "system_reset", events)?;
+        qmp(output, input, 21 + cycle * 2, "query-status", events)?;
+        reset_count(events, cycle as usize + 1, false)?;
+        io.read(REG, 0)?;
+        io.read(0xf800000c, 1)?;
+        if cycle == 0 {
+            io.write(0xf8000008, 0xdf0d)?;
+            io.write(REG, NORMAL)?;
+            io.read(REG, NORMAL.into())?;
+        }
+    }
+    ensure!(io.irq_events.is_empty(), "unexpected LVTTL GIC event");
+    Ok(())
+}
+
 pub fn verify_diagnostics(text: &str, reject: bool) -> bool {
     let mut errors = 0;
     for line in text.lines() {
@@ -166,6 +292,16 @@ pub fn verify_diagnostics(text: &str, reject: bool) -> bool {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn reset_reason_requires_actual_count_and_source() {
+        let reset = serde_json::json!({"event":"RESET", "data":{"guest":true}});
+        assert!(reset_count(std::slice::from_ref(&reset), 1, true).is_ok());
+        assert!(reset_count(std::slice::from_ref(&reset), 1, false).is_err());
+        assert!(reset_count(&[reset.clone(), reset], 1, true).is_err());
+        assert!(reset_count(&[serde_json::json!({"event":"STOP"})], 1, false).is_err());
+        assert!(reset_count(&[serde_json::json!({"event":"RESET"})], 1, false).is_err());
+    }
+
     #[test]
     fn unexpected_diagnostics_do_not_pass() {
         let error = "qemu: md-sim: unsupported ROM OCM configuration0x18\n";

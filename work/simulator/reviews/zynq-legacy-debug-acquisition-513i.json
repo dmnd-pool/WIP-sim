@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "status": "all originals acquired; source not executed",
+  "commit": "6619bc5c55c1322a89009e2edd530113da95d551",
+  "rewrite": "db302f8f9364580a90b383d8531d28500e4e5bb5",
+  "git_blob": "d1cc23303abde28d463f823a19af273d3ae32fbf",
+  "source_sha256": "9f907c7832926765f0d867f69c0e941a21ebec67f8484e8068c8f467ba18f7d8",
+  "raw_equals_api_blob": true,
+  "inputs": [
+    {
+      "id": "source-qemu-slcr-history-513i",
+      "url": "https://api.github.com/repos/qemu/qemu/commits?path=hw/misc/zynq_slcr.c&until=2014-04-30T00:00:00Z&per_page=10",
+      "retrieved_at": "2026-10-28T18:41:31+00:00",
+      "local_path": "artifacts/files/source/source-qemu-slcr-history-513i/slcr-history.json",
+      "sha256": "cdd92418a47a0b9cb9e622cb86d12487a7b3a772aad912a0d21f6b9f525eac73",
+      "size_bytes": 27518
+    },
+    {
+      "id": "source-qemu-slcr-parent-513i",
+      "url": "https://raw.githubusercontent.com/qemu/qemu/6619bc5c55c1322a89009e2edd530113da95d551/hw/misc/zynq_slcr.c",
+      "retrieved_at": "2026-10-28T18:42:03+00:00",
+      "local_path": "artifacts/files/source/source-qemu-slcr-parent-513i/zynq_slcr.c",
+      "sha256": "9f907c7832926765f0d867f69c0e941a21ebec67f8484e8068c8f467ba18f7d8",
+      "size_bytes": 15120
+    },
+    {
+      "id": "source-qemu-slcr-blob-513i",
+      "url": "https://api.github.com/repos/qemu/qemu/contents/hw/misc/zynq_slcr.c?ref=6619bc5c55c1322a89009e2edd530113da95d551",
+      "retrieved_at": "2026-10-28T18:42:03+00:00",
+      "local_path": "artifacts/files/source/source-qemu-slcr-blob-513i/slcr-blob.json",
+      "sha256": "b6e7c1be281d525c57b29c79a0fd20869d1b740aed029f2ea88d844c1178137f",
+      "size_bytes": 21780
+    },
+    {
+      "id": "source-qemu-slcr-rewrite-513i",
+      "url": "https://api.github.com/repos/qemu/qemu/commits/db302f8f9364580a90b383d8531d28500e4e5bb5",
+      "retrieved_at": "2026-10-28T18:42:03+00:00",
+      "local_path": "artifacts/files/source/source-qemu-slcr-rewrite-513i/slcr-rewrite.json",
+      "sha256": "16c0e780474b6274dc95870bf4770da33d305d01dab9601419bcd5b394cdd90c",
+      "size_bytes": 28369
+    },
+    {
+      "id": "source-qemu-qom-parent-513i",
+      "url": "https://raw.githubusercontent.com/qemu/qemu/6619bc5c55c1322a89009e2edd530113da95d551/qom/object.c",
+      "retrieved_at": "2026-10-28T18:47:41+00:00",
+      "local_path": "artifacts/files/source/source-qemu-qom-parent-513i/object.c",
+      "sha256": "996ac38097ffd8282b12c1f8592382e4af6a173eb3f0e942a7ba5b751eabbd3f",
+      "size_bytes": 38631
+    },
+    {
+      "id": "source-qemu-qom-blob-513i",
+      "url": "https://api.github.com/repos/qemu/qemu/contents/qom/object.c?ref=6619bc5c55c1322a89009e2edd530113da95d551",
+      "retrieved_at": "2026-10-28T18:47:41+00:00",
+      "local_path": "artifacts/files/source/source-qemu-qom-blob-513i/qom-blob.json",
+      "sha256": "3cb4e371ac47908c1500dfa4f7142aaab1ae81ff1a117bde8fbd956b96f6ea75",
+      "size_bytes": 54129
+    }
+  ],
+  "scope": [
+    "S9 Bitcoin ASIC Zynq boot dependency0xf8000500 only. No acquired code executed.",
+    "Exact parent6619bc5c55c1322a89009e2edd530113da95d551; original source15120B SHA9f907c7832926765f0d867f69c0e941a21ebec67f8484e8068c8f467ba18f7d8 and Gitblobd1cc23303abde28d463f823a19af273d3ae32fbf. Raw source equals API blob bytes.",
+    "Historical dbg_ctrl stores32bits, requires normal SLCR unlock and retains value through the actual warm-reset callback. Rewrite prose reset-zero does not imply that callback cleared it.",
+    "No physical debug signal, sticky security-lock, silicon revision or exact S9 compatibility behavior is established."
+  ],
+  "next_action": "Independent field/source review, then decide declared reference model; no0x500 code integrated.",
+  "cold_state_proof": "Exact parent QOM lines327\u2013343 initializes full instance to0; object_new_with_type calls it. SLCR init only creates MMIO.",
+  "independent_reviews": [
+    "work/simulator/reviews/zynq-debug-parent-independent-source-513i.json",
+    "work/simulator/reviews/zynq-debug-cold-init-independent-513i.json"
+  ]
+}

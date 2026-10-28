@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "time": "2026-10-28T19:27:19.276545+00:00",
+  "scope": "Independent source review of staged Rust PS GPIO core and ABI, plus QEMU C binding and board/clock/reset patch. Not an execution result.",
+  "inputs": {
+    "work/simulator/ps-gpio-dev-513j/ps_gpio.rs": {
+      "sha256": "fad5dec18d6178bc51ac44fcd67ebc478c2ca0cc3dcf6050707762f787b6534a",
+      "size": 21741
+    },
+    "work/simulator/ps-gpio-dev-513j/ps_gpio_ffi.rs": {
+      "sha256": "d6823b540212789309033c92a3be28eea12163ff4815a81db33cd267b12ded5a",
+      "size": 4900
+    },
+    "work/simulator/ps-gpio-dev-513j/md-sim-ps-gpio.h": {
+      "sha256": "47804c6ad4e3797daa3656abacb7377fb320443f2468156f7d95b22ab7919f12",
+      "size": 1235
+    },
+    "work/simulator/ps-gpio-dev-513j/md-sim-ps-gpio.c": {
+      "sha256": "60fa3ee4da5417d600aeb1d6c8f40e5badf6287e1734575cc762024a289832f6",
+      "size": 7447
+    },
+    "work/simulator/ps-gpio-dev-513j/s9-ps-gpio.patch": {
+      "sha256": "9776c6b2c0010af64bf56def4a7268db1b772b065486e8de8fbd11a990062e5f",
+      "size": 5513
+    },
+    "work/simulator/ps-gpio-dev-513j/CORE-CONTRACT.md": {
+      "sha256": "ed86bdfbc3967208e4c4854e7f74fdf41784161abf89c3128e65b02cd4df2d2d",
+      "size": 4148
+    },
+    "work/simulator/ps-gpio-dev-513j/core-inputs.json": {
+      "sha256": "d3e41acbf2b022428b1477994b27fd3b820b9ca623d5e1570f3e4b62deb06020",
+      "size": 1691
+    },
+    "work/simulator/ps-gpio-dev-513j/binding-inputs.json": {
+      "sha256": "d4c1f9389dc08bb7af6890eecdc8b3c57752405307d0498a4cd11fa5584967bf",
+      "size": 2031
+    },
+    "work/simulator/boot-dev-513/ug585-1122.txt": {
+      "sha256": "6be50c5be29490766dd6bf313de88378a1aa96556c48768eb8820dcb087675d3",
+      "size": 5840304
+    }
+  },
+  "checks": [
+    "Four banks have widths32/22/32/32 and exact register decoding; invalid accesses precede mutation.",
+    "Masked writes match literal UG585 example0xbdef4210; DATA latches and external input samples remain separate.",
+    "MIO7/8 DATA_RO read known0; caller cannot supply them as general inputs. No interrupt pad value is fabricated.",
+    "IRQ52 is the OR of all enabled sources. Table14-1 trigger modes, edge latch W1C, live level status and unknown propagation follow chapter14.2.4.",
+    "INT_MASK reset0 and INT_TYPE resetones match AppendixB; unknown MIO latches/external samples remain explicit.",
+    "GPIO_CPU1X_RST resets only the bus interface per14.4.2; warm reset preserves controller state. Cold reset is a distinct Rust operation.",
+    "ABI pointers have documented ownership; invalid output calls retain destination, u32 bank cannot truncate to valid u8, null IRQ is unknown.",
+    "C rejects non-word, misaligned, unknown and gated/reset accesses. IRQ consumers receive errors rather than fabricated unknown success.",
+    "CPU_1x/APer22 and GPIO_RST_CTRL bit0 are used; no MIO mux, synchronizer latency or physical pad timing is claimed."
+  ],
+  "findings": [],
+  "disposition": "Source review permits integration and focused checks. Actual Rust and QEMU tests remain required.",
+  "original_board_gate": false,
+  "mining_gate": false
+}

@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "time": "2026-10-28T19:41:30.266698+00:00",
+  "scope": "Review of repair for root finding: ARM-only GPIO preparation ran unconditionally for x86 support builds.",
+  "inputs": {
+    "crates/md-sim-firmware/examples/build_qemu_backend.rs": {
+      "sha256": "e7277851a6f5555cbcc273fd438ad75b8c78a8440986c418df1f82b0a791e424",
+      "size": 59429
+    },
+    "work/simulator/ps-gpio-dev-513j/build_qemu_backend-x86-fix.rs": {
+      "sha256": "c880f33d0a401ac30815a049bbb62d26d19127c427c75695c8f11bc006047eca",
+      "size": 60492
+    },
+    "work/simulator/reviews/ps-gpio-x86-selection-stage-513j.json": {
+      "sha256": "b0911dc14531ffc7f54d641b2beb48179d94a934f28d019194cb450dc1125ccc",
+      "size": 583
+    }
+  },
+  "checks": [
+    "The x86 return occurs before any ARM path access, command execution or report mutation.",
+    "The existing ARM GPIO patch body and input/derived identity checks are preserved in one function. No second implementation is introduced.",
+    "The caller invokes the stage only after prior success; x86 retains success without ARM output claims.",
+    "The regression invokes the production function with an absent ARM tree: x86 skips and ARM rejects. A malformed ARM parent also rejects before a patch tool can run.",
+    "The already frozen ARM513j build has unchanged branch behavior. Its success must not be reused as a current-source hash match."
+  ],
+  "findings": [],
+  "disposition": "Source review closed. Actual focused and integration checks remain required.",
+  "runtime_execution_claim": false,
+  "original_board_gate": false
+}

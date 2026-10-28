@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "scope": "Three passing component invocations and one failed harness invocation. Cohort incomplete; no selected HDL gate.",
+  "all_required_passed": false,
+  "oracle_backend_comparisons_passed": 3,
+  "phase_backend_comparisons_passed": 24,
+  "phase_backend_comparisons_untested": 6,
+  "runs": {
+    "cvc-rw-516b": {
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-516b/spec.json": {
+          "sha256": "19d286950ecfaace5642e53d0cfe1fdd51a0a661742275c1b7d563e63a08aa07",
+          "size": 6840
+        },
+        "work/simulator/qemu-s9/cvc-rw-516b/result.json": {
+          "sha256": "de7887c9d5f536dd011b8c1578f98f08e1bea2fecd53b24857a40f1d27865c44",
+          "size": 8799657
+        },
+        "work/simulator/qemu-s9/cvc-rw-516b/report.json": {
+          "sha256": "5ed4e1b0eef8436b9a54c4eab62850fcadc6f2e51c96c3aba67a44ab20ee6e53",
+          "size": 7448
+        },
+        "work/simulator/qemu-s9/cvc-rw-516b/compiled.tar.gz": {
+          "sha256": "a89c42df536cf24037d33c6266a3338fbfc5cb275858dd4e62a93b3e9dd93318",
+          "size": 2196702
+        }
+      },
+      "exit_code": 0,
+      "wall_milliseconds": 3847,
+      "truncated": false,
+      "success": true,
+      "error": null,
+      "phase_cases_passed": [],
+      "archive": {
+        "sha256": "a89c42df536cf24037d33c6266a3338fbfc5cb275858dd4e62a93b3e9dd93318",
+        "size": 2196702
+      }
+    },
+    "cvc-rw-nba-516b": {
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-nba-516b/spec.json": {
+          "sha256": "8958be90df5e10749bcd5b2a870890a9cb1e3d0e09c767800d40fc1e1947ee6e",
+          "size": 6866
+        },
+        "work/simulator/qemu-s9/cvc-rw-nba-516b/result.json": {
+          "sha256": "5acb6465a23b1d645f54ceb0933f049400f18ad1ce933ac3bbb3b041fd9bba6b",
+          "size": 8839009
+        },
+        "work/simulator/qemu-s9/cvc-rw-nba-516b/report.json": {
+          "sha256": "c916cb8ee6d9f48c62103fc8b251a32c45a04326057f4fb0b1fef6647274a93d",
+          "size": 15999
+        },
+        "work/simulator/qemu-s9/cvc-rw-nba-516b/compiled.tar.gz": {
+          "sha256": "af7002d6178116c4410137973bb35f190f59fc757c8d71fdfa6c84c30733f329",
+          "size": 2202928
+        }
+      },
+      "exit_code": 0,
+      "wall_milliseconds": 3976,
+      "truncated": false,
+      "success": true,
+      "error": null,
+      "phase_cases_passed": [
+        "phases_nba_future_icarus",
+        "phases_nba_future_cvc_compiled",
+        "phases_nba_future_cvc_interpreted",
+        "phases_nba_zero_icarus",
+        "phases_nba_zero_cvc_compiled",
+        "phases_nba_zero_cvc_interpreted",
+        "phases_nba_nested_icarus",
+        "phases_nba_nested_cvc_compiled",
+        "phases_nba_nested_cvc_interpreted",
+        "phases_nba_cancel_icarus",
+        "phases_nba_cancel_cvc_compiled",
+        "phases_nba_cancel_cvc_interpreted"
+      ],
+      "archive": {
+        "sha256": "af7002d6178116c4410137973bb35f190f59fc757c8d71fdfa6c84c30733f329",
+        "size": 2202928
+      }
+    },
+    "cvc-rw-delayed-516b": {
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-delayed-516b/spec.json": {
+          "sha256": "c834fc65f3e658ab926821229feb8f146b4028892f4827b38fa76b1f20390650",
+          "size": 6870
+        },
+        "work/simulator/qemu-s9/cvc-rw-delayed-516b/result.json": {
+          "sha256": "a9e0a4d310be8e645da68693336e3612045c0e67afaa6463638fe142d504cce1",
+          "size": 8841041
+        },
+        "work/simulator/qemu-s9/cvc-rw-delayed-516b/report.json": {
+          "sha256": "a6d10abe79600071e7d0d23924819c20ec22a65bddb7957a08e1e87b7f853269",
+          "size": 16345
+        },
+        "work/simulator/qemu-s9/cvc-rw-delayed-516b/compiled.tar.gz": {
+          "sha256": "fae22c770bed4110a52206cf7d8e4608f277bca89cae8bb24013480688a3a847",
+          "size": 2203284
+        }
+      },
+      "exit_code": 0,
+      "wall_milliseconds": 3942,
+      "truncated": false,
+      "success": true,
+      "error": null,
+      "phase_cases_passed": [
+        "phases_delayed_future_icarus",
+        "phases_delayed_future_cvc_compiled",
+        "phases_delayed_future_cvc_interpreted",
+        "phases_delayed_zero_icarus",
+        "phases_delayed_zero_cvc_compiled",
+        "phases_delayed_zero_cvc_interpreted",
+        "phases_delayed_nested_icarus",
+        "phases_delayed_nested_cvc_compiled",
+        "phases_delayed_nested_cvc_interpreted",
+        "phases_delayed_cancel_icarus",
+        "phases_delayed_cancel_cvc_compiled",
+        "phases_delayed_cancel_cvc_interpreted"
+      ],
+      "archive": {
+        "sha256": "fae22c770bed4110a52206cf7d8e4608f277bca89cae8bb24013480688a3a847",
+        "size": 2203284
+      }
+    },
+    "cvc-rw-no-nba-516b": {
+      "pins": {
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516b/spec.json": {
+          "sha256": "85fab61c846e538eb6c8ab6d42b62e93f9925d38cd339cd56ee8c8ebc6ea91d0",
+          "size": 6869
+        },
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516b/result.json": {
+          "sha256": "570b54cac72211e5f9d030285a51376dc3c75b24d3d80dc2b2b5a571e41a8357",
+          "size": 46935
+        },
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516b/report.json": {
+          "sha256": "48d9ada69ad930e615458b9a86d25343caec7fa666ec3dbde2c1f119ddccb462",
+          "size": 3449
+        },
+        "work/simulator/qemu-s9/cvc-rw-no-nba-516b/compiled.tar.gz": {
+          "sha256": "a571ae812d539ae05382fa5d01aa28fd98b206a3f48873381dd9d871401f71ac",
+          "size": 10122
+        }
+      },
+      "exit_code": 1,
+      "wall_milliseconds": 3764,
+      "truncated": false,
+      "success": false,
+      "error": "invalid step name",
+      "phase_cases_passed": [],
+      "archive": {
+        "sha256": "a571ae812d539ae05382fa5d01aa28fd98b206a3f48873381dd9d871401f71ac",
+        "size": 10122
+      }
+    }
+  },
+  "defect": "no-nba report step labels contain a hyphen; existing shared step helper rejects them before HDL compilation.",
+  "next": "Review minimal report-label fix; rebuild/freeze and execute all four invocations on that final helper. Preserve all516b artifacts."
+}

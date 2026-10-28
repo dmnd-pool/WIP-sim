@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "status": "Incomplete, unreviewed dispatcher wiring. Staged only; no production changes or execution.",
+  "base": {
+    "path": "crates/md-sim-firmware/examples/qemu_ttc_reset.rs",
+    "sha256": "ec024cfae1cead215352c172f8aa513b90b702f2dad71706d74a8a0a4c563bd7"
+  },
+  "stage": {
+    "path": "work/simulator/debug-ref-dev-513k/qemu_ttc_reset.rs",
+    "sha256": "46ecda9fa45aed8999bea065b8212fffc2a1797e0b07fc6a41cd21367f962c34"
+  },
+  "pending": [
+    "Review dispatcher mode/record/reset counts; plans33/20 plus one common irq_intercept must total34/21",
+    "Add and review exact-parent/output isolated builder wiring for the patch and documentation",
+    "Wire strict ROM-probe trace capture/classification",
+    "Integrate only after reviews, then run focused, UBSan build, nine component suites and actual ROM probe"
+  ],
+  "format_note": "Initial formatter stopped on relative module paths outside their production location. A source-only skip_children format pass then succeeded. No runtime/test result is claimed."
+}

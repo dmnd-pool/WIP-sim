@@ -24,6 +24,65 @@ use qemu_build::{capture_overlay, pack_dir, reuse_overlay, step, unpack};
 const SOURCE: &str = "2a40e6705e59fd8807012631bc6b2c0877f10481b12768f78e4f9d7b88376cce";
 const PREFIX: &str = "qemu-11661d857254b27fca5568c6deacf4f6b6f3460f";
 const DECODETREE_SHA256: &str = "91e068b1993166ba9bf259573f457342c54de70a117f7db42355a3a50fcc0c68";
+// Skip the complete ARM-only stage before touching any ARM source or tool.
+// This function is also the host-side regression boundary; the actual patch
+// command is reached only after both exact ARM parents are verified.
+fn patch_ps_gpio(src: &Path, report: &mut serde_json::Value, pool_x86: bool) -> Result<bool> {
+    if pool_x86 {
+        return Ok(true);
+    }
+    let identities = [
+        (
+            "hw/arm/xilinx_zynq.c",
+            "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+            "013ba4de47b293d60cc9667c98c85998f7fc7a53ebba1be047ce1cbff29c4a48",
+        ),
+        (
+            "hw/misc/zynq_slcr.c",
+            "dd74ec65e82a06c5791510024bbb20bedc99f461f55cdd32ffc38db272dc975a",
+            "369ca416465d43abad564d0fcbae78568022eabc3c7d267617ac168e70fd522b",
+        ),
+    ];
+    for (member, parent, _) in identities {
+        ensure!(
+            hash_file(&src.join(member))?.sha256 == parent,
+            "PS GPIO parent differs: {member}"
+        );
+    }
+    let mut patch = Command::new("/work/toolchain/usr/bin/patch");
+    patch.current_dir(src).args([
+        "-p1",
+        "--fuzz=0",
+        "--batch",
+        "--forward",
+        "--input=/ps-gpio.patch",
+    ]);
+    let success = step(report, "ps_gpio_patch", patch)?;
+    let mut sources = BTreeMap::new();
+    for (member, _, derived) in identities {
+        let object = hash_file(&src.join(member))?;
+        ensure!(
+            !success || object.sha256 == derived,
+            "PS GPIO derived source differs: {member}"
+        );
+        sources.insert(member, object);
+    }
+    report["ps_gpio_reference"] = json!({
+        "contract":"md-sim-zynq7000-ps-gpio/1",
+        "patch":hash_file(Path::new("/ps-gpio.patch"))?,
+        "basis":hash_file(Path::new("/ps-gpio-contract.md"))?,
+        "binding":hash_file(&src.join("hw/i2c/md-sim-ps-gpio.c"))?,
+        "header":hash_file(&src.join("hw/i2c/md-sim-ps-gpio.h"))?,
+        "sources":sources,"default_enabled":false,
+        "bank_widths":[32,22,32,32],"gic_spi":20,
+        "clock":"Existing CPU_1x with APER bit22; explicit settled samples only",
+        "reset":"Construction cold state; GPIO bus reset and QMP warm reset preserve controller state",
+        "unknown":"Unknown guest reads and IRQs stop; external pin levels are never synthesized",
+        "limits":["No physical MIO mux/straps/pulls or S9 pin wiring","No synchronizer/physical timing calibration","No migration, firmware boot or exact-board pass"]
+    });
+    Ok(success)
+}
+
 fn inner() -> Result<()> {
     confinement::require_emulator_build()?;
     ensure!(
@@ -78,6 +137,8 @@ fn inner() -> Result<()> {
         "md-sim-pic16.h",
         "md-sim-swdt.c",
         "md-sim-swdt.h",
+        "md-sim-ps-gpio.c",
+        "md-sim-ps-gpio.h",
     ] {
         fs::copy(format!("/{name}"), src.join("hw/i2c").join(name))?;
     }
@@ -609,7 +670,7 @@ fn inner() -> Result<()> {
             (
                 "hw/misc/zynq_slcr.c",
                 "d28d0a65580b353dc3664418cd4656fb567479c260ba7f9017394a4e718c797f",
-                "8285286d0338af77a41a35c7c2d1bd28173281b7e58781eafd0b7d541610a66e",
+                "dd74ec65e82a06c5791510024bbb20bedc99f461f55cdd32ffc38db272dc975a",
             ),
             (
                 "include/hw/arm/xilinx_zynq.h",
@@ -651,9 +712,13 @@ fn inner() -> Result<()> {
             "patch":hash_file(Path::new("/rom-reset.patch"))?,
             "basis":hash_file(Path::new("/rom-reset-contract.md"))?,
             "sources":sources,"default_enabled":false,
+            "reset_reason_contract":"POR at realization; persistent RST_REASON/REBOOT_STATUS across reference warm reset; actual PSS_SOFT_RST records SLC_RST; QMP reset has no invented hardware cause",
             "scope":"Read-only public ROM, architectural CPU reset and internal OCM mapping. No direct stage entry. Private SWAP is rejected.",
             "limits":["Exact S9 silicon and ROM binding unresolved","Other support devices remain reference models","No physical timing, complete reset-to-firmware, board or mining pass"]
         });
+    }
+    if success {
+        success = patch_ps_gpio(&src, &mut report, pool_x86)?;
     }
     if success {
         if pool_x86 {
@@ -1018,6 +1083,22 @@ fn main() -> Result<()> {
             "/backend.patch",
             repo.join("simulator/backends/qemu/s9-axi-iic.patch"),
         ),
+        (
+            "/ps-gpio.patch",
+            repo.join("simulator/backends/qemu/s9-ps-gpio.patch"),
+        ),
+        (
+            "/ps-gpio-contract.md",
+            repo.join("simulator/backends/qemu/PS-GPIO.md"),
+        ),
+        (
+            "/md-sim-ps-gpio.c",
+            repo.join("simulator/backends/qemu/md-sim-ps-gpio.c"),
+        ),
+        (
+            "/md-sim-ps-gpio.h",
+            repo.join("simulator/backends/qemu/md-sim-ps-gpio.h"),
+        ),
         ("/libmd_sim_qemu_core.a", model_library),
         ("/core-checkpoint.json", core_manifest),
         (
@@ -1262,4 +1343,23 @@ fn main() -> Result<()> {
         "isolated QEMU build failed; evidence retained"
     );
     Ok(())
+}
+
+#[cfg(test)]
+mod ps_gpio_selection_tests {
+    use super::*;
+    #[test]
+    fn support_target_does_not_require_arm_tree_or_patch_tool() {
+        let temp = tempfile::tempdir().unwrap();
+        let absent = temp.path().join("no-arm-source-tree");
+        let mut report = json!({"sentinel": 17});
+        assert!(patch_ps_gpio(&absent, &mut report, true).unwrap());
+        assert_eq!(report, json!({"sentinel": 17}));
+        assert!(!absent.exists());
+        assert!(patch_ps_gpio(&absent, &mut report, false).is_err());
+        std::fs::create_dir_all(absent.join("hw/arm")).unwrap();
+        std::fs::write(absent.join("hw/arm/xilinx_zynq.c"), b"changed source").unwrap();
+        assert!(patch_ps_gpio(&absent, &mut report, false).is_err());
+        assert_eq!(report, json!({"sentinel": 17}));
+    }
 }

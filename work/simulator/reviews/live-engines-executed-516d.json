@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "claim": "Actual shared live adapter regression and failed compiled-engine attempt. No CPU, original-board, physical timing or mining acceptance.",
+  "runs": {
+    "live-icarus-516d": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 30089,
+      "trace_truncated": false,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/live-icarus-516d/spec.json",
+          "sha256": "7002253bae6801d87e2f1f8ddb74545cae044c870339cea51bbd2352d8f22bde",
+          "size": 9772
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-icarus-516d/result.json",
+          "sha256": "dc4c1790d1e553bd0019a056291cdc63fb39cc6fc0845fc06d1df3cdf9ae233a",
+          "size": 103380004
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-icarus-516d/hdl-report.json",
+          "sha256": "9b2f8c581dbf88a7b53572561bb309fa15cd52086891415cca4c085688c7db7d",
+          "size": 730932
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-icarus-516d/hdl-envelope.json",
+          "sha256": "8091338f9916acff58169fdce6704f58a6c6cc31ef9e962ffdb350e6089651b8",
+          "size": 51689580
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-icarus-516d/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      ],
+      "behavioral_engine": "Icarus",
+      "selected_live_pass": true,
+      "selected_axi_pass": true,
+      "original_board_gate": false,
+      "archive": {
+        "sha256": "e42311af3acb566bef789870387d8337ef7721b7ead10a741303ebeaafad4f18",
+        "size": 25517110
+      },
+      "independent_review": {
+        "path": "work/simulator/reviews/live-icarus-independent-execution-516d.json",
+        "sha256": "35add24f62be60af2f08cb5d0a3322c5f17ec37309a21ed84d9c275e59937c90",
+        "size": 8325
+      }
+    },
+    "live-cvc-516d": {
+      "status": "exited",
+      "exit_code": 1,
+      "wall_milliseconds": 10075,
+      "trace_truncated": false,
+      "files": [
+        {
+          "path": "work/simulator/qemu-s9/live-cvc-516d/spec.json",
+          "sha256": "665a5b7c5149b5269100c6ed67042320eebf4c3d07f61e8045e75c011c5f2ba8",
+          "size": 10458
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-cvc-516d/result.json",
+          "sha256": "9764e44defa9a86bea28c41397103e03fcf00e97688756f6e99a3d9184d8d8a0",
+          "size": 1034712
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-cvc-516d/hdl-report.json",
+          "sha256": "103262413d666fa72cb28b80399403ffb465c7098ee25380cccea252f3164c9a",
+          "size": 549919
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-cvc-516d/hdl-envelope.json",
+          "sha256": "1607e6c7dc394477b8dfe709ecaaf3219f35cef4292dbc457907473d5bc397d1",
+          "size": 516911
+        },
+        {
+          "path": "work/simulator/qemu-s9/live-cvc-516d/stderr.log",
+          "sha256": "bea94940d206b99468af15c1ab5de8f85e503ee29a95f2163ff20736a2e76ad7",
+          "size": 23
+        }
+      ],
+      "behavioral_engine": "CVC rw-after-nba-v1; additional actual primitive/RAM/live execution",
+      "selected_live_pass": false,
+      "selected_axi_pass": false,
+      "original_board_gate": false,
+      "archive": {
+        "sha256": "08cf2367cf0e49d316df0d7ea08d5a98c6d6559e48724e830695b5ea5ea4057e",
+        "size": 113
+      },
+      "failure": {
+        "error": "CVC step failed",
+        "step": {
+          "argv": [
+            "/work/cvc-install/cvc64",
+            "-q",
+            "-sv",
+            "+acc+2",
+            "+typdelays",
+            "-o",
+            "/work/compiled/primitive-cvc",
+            "/vectors.v",
+            "/vendor/glbl.v",
+            "-v",
+            "/vendor/BUFGCTRL.v",
+            "-v",
+            "/vendor/CARRY4.v",
+            "-v",
+            "/vendor/FDRE.v",
+            "-v",
+            "/vendor/FDSE.v",
+            "-v",
+            "/vendor/IBUF.v",
+            "-v",
+            "/vendor/IOBUF.v",
+            "-v",
+            "/vendor/LUT6_2.v",
+            "-v",
+            "/vendor/MUXF7.v",
+            "-v",
+            "/vendor/OBUF.v",
+            "-v",
+            "/vendor/PS7.v",
+            "-v",
+            "/vendor/PULLDOWN.v",
+            "-v",
+            "/vendor/PULLUP.v",
+            "-v",
+            "/vendor/RAM32M.v",
+            "-v",
+            "/vendor/RAMB36E1.v",
+            "-v",
+            "/vendor/SRL16E.v",
+            "-v",
+            "/vendor/SRLC16E.v",
+            "-v",
+            "/vendor/SRLC32E.v"
+          ],
+          "code": 1,
+          "stderr": "",
+          "stderr_identity": {
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size": 0
+          },
+          "stderr_truncated": false,
+          "stdout": "Copyright (c) 1991-2014 Tachyon Design Automation Corp.\n  All Rights reserved.  Licensed software subject to prohibitions and\n  restrictions.  See OSS CVC artistic license included with release.\n**/vendor/BUFGCTRL.v(532) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance\n**/vendor/BUFGCTRL.v(560) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance\n**/vendor/BUFGCTRL.v(569) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance\n**/vendor/BUFGCTRL.v(578) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance\n**/vendor/FDRE.v(173) ERROR** [709] library file module, primitive or directive expected - endmodule read\n",
+          "stdout_identity": {
+            "sha256": "27a67f88c0f18eb7888a8a2d5f33d6d4a4a460dd79cc1f712b195e3eef1212be",
+            "size": 717
+          },
+          "stdout_truncated": false
+        },
+        "stage": "Before any CVC HDL execution, VPI load or selected live bus operation."
+      },
+      "independent_review": {
+        "path": "work/simulator/reviews/cvc-live-independent-execution-516d.json",
+        "sha256": "e6877808df04e53f1950955b91822b9f0cd6e0fe93a8ce866858e5d1e2688920",
+        "size": 4226
+      }
+    }
+  },
+  "source_freeze": {
+    "path": "work/simulator/qemu-s9/cvc-live-driver-516d/manifest.json",
+    "sha256": "e7bb3dd3474d7b823a8fb81aa2a31039afee5e7f6138010d865b47ae6bad8787",
+    "size": 104401
+  },
+  "next_action": "Run the literal conditional/library scanner reproducer on the original archived CVC tool. Keep vendor HDL unchanged. Only after actual reproduction and source review, build a separate derived scanner repair."
+}

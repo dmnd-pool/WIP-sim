@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T18:38:06.355228+00:00",
+  "scope": "Actual originalROM reset-reference increment, not an exact S9 or full boot pass",
+  "build": {
+    "passed": true,
+    "ubsan": true,
+    "wall_milliseconds": 186101,
+    "exit_code": 0,
+    "trace_truncated": false
+  },
+  "results": [
+    {
+      "run": "rom-reason-513h",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false,
+      "passed": false,
+      "observations": [
+        {
+          "transactions": 44,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "rom-reason-513h2",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false,
+      "passed": true,
+      "observations": [
+        {
+          "transactions": 44,
+          "warm_resets": 4
+        }
+      ]
+    },
+    {
+      "run": "rom-map-513h2",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false,
+      "passed": true,
+      "observations": [
+        {
+          "transactions": 340,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "rom-swap-reject-513h2",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 130,
+      "trace_truncated": false,
+      "passed": true,
+      "observations": [
+        {
+          "transactions": 383,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "rom-fabric-513h2",
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false,
+      "passed": true,
+      "observations": [
+        {
+          "transactions": 128,
+          "warm_resets": 2
+        }
+      ]
+    },
+    {
+      "run": "rom-reset-513h",
+      "status": "cancelled",
+      "exit_code": null,
+      "wall_milliseconds": 207,
+      "trace_truncated": false,
+      "first_diagnostic": {
+        "byte_offset": 5086,
+        "bytes": 43,
+        "line_hex": "7a796e715f736c63723a20496e76616c69642077726974652061636365737320746f206164647220623130",
+        "line_sha256": "d14fb9b94942201907e092d9318e6cee7cc676c89de7753e15e7f4d57c258115",
+        "reason": "first unexpected emulator diagnostic"
+      },
+      "translated_block_address_headers": 169,
+      "original_board_gate": false,
+      "firmware_boot_gate": false,
+      "functional_mining_gate": false
+    }
+  ],
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513h/assessment.json",
+      "sha256": "fdac53aae0385d64a33b6a4d435a93809c6f786db099ed9ae0abdc1d67401182",
+      "size": 3328
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513h/result.json",
+      "sha256": "d410480e995fc3ae512558b2b74d9d29c060d28ce986b0cbc5d985073c21cfc8",
+      "size": 22104
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513h/spec.json",
+      "sha256": "8ad6a5e70ec857f1f9db15123369c26b947525a1fe4762ffa2fbd09f0e70d9f4",
+      "size": 3433
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513h2/assessment.json",
+      "sha256": "308845f17aa4704449c135e00806b5e8059c7feec7b83c82c2c1b9d1147a5931",
+      "size": 3332
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513h2/result.json",
+      "sha256": "adf72fd89f9822d42132f3b62803b995b86dce6d228a6231057974f78d137764",
+      "size": 22124
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513h2/spec.json",
+      "sha256": "5f065ea9d38576186d6e192411f6f1c07ca142f7160706aac799487eb2850aca",
+      "size": 3433
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513h2/assessment.json",
+      "sha256": "bf456b164f508c7ca526c2f9937cb75a2e2dd4eb3faa7a96f94a560136c9c3e7",
+      "size": 2704
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513h2/result.json",
+      "sha256": "43d1ad4bd5a6e473f85720ff2a086b28c2151170103b6c8b7b2c86dbe76b2b1e",
+      "size": 123192
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513h2/spec.json",
+      "sha256": "b2b131c07b1de74cf821fcd28eaa49da6db16777e43866ce06dc27e2cf6f9573",
+      "size": 3430
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513h2/assessment.json",
+      "sha256": "b875f0091c41b87971f80d74e18b61b5ff3025c797bac80eeb96161f9042c390",
+      "size": 2875
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513h2/result.json",
+      "sha256": "f7157ad9bacdce2930dc7c464ff9a332869e63734be82b6c34543dc5b06af073",
+      "size": 144598
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513h2/spec.json",
+      "sha256": "80b23e082df603d1f26a96909a87d1f241dd9ea397d31086b759aa94cb43bfcc",
+      "size": 3438
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513h2/assessment.json",
+      "sha256": "5dc0c65f8271b12cf8b41231d33b559fb967f0cd4e7359f431a1d160c33abd34",
+      "size": 2729
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513h2/result.json",
+      "sha256": "6e759aee6ff6e01d92884472d340aeb1db278d74e03f1db2f9107f0d3c4c8f7e",
+      "size": 60980
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513h2/spec.json",
+      "sha256": "540a3ba728567307a6a9d54d04b3a0e0fdd5765182ecc348e41985b572ac0f59",
+      "size": 3242
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513h/assessment.json",
+      "sha256": "2fea3873cdc47c066defa1752534757bfa2e821412d5da056c4df182bfbb0f2d",
+      "size": 3474
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513h/result.json",
+      "sha256": "3c6ce8936d1f644c638a43c91d1d87979f9d63c63998a374c6ad8bf9c153d5e5",
+      "size": 30704
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513h/spec.json",
+      "sha256": "10ff3307d324828ae6f1f37f1076b536c7a0e3339719dd011bbeb06216523ac3",
+      "size": 7949
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-driver-513h/manifest.json",
+      "sha256": "723dbed41c5be24230bc33f8b94c5268e660c27cf4ab3c1df57dce2f8b5a4983",
+      "size": 103859
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-driver-513h2/manifest.json",
+      "sha256": "69a5fd189ed2940bcd31c73eebb1e29d302d60c9e2d86c720e73e747213027fa",
+      "size": 103419
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513h-ubsan/build-report.json",
+      "sha256": "f7e8db5027bbd492c0ce7ceeb7e2b1555c23d417f60826afe9db6549d709e07a",
+      "size": 2671067
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513h-ubsan/qemu-system-arm",
+      "sha256": "05c531a8722c824963d5cb25e3b9dbde5c67bd1baca82550a4f5b0653c9c558f",
+      "size": 20194232
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513h-ubsan/spec.json",
+      "sha256": "139e24963360992d0da520994beb2b04d223316331bb07940e2a733891b9179c",
+      "size": 16158
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513h-ubsan/result.json",
+      "sha256": "7c074c101444d15ae5c7cdab7fc5632c4b5f03721287593a3bf9ad2bc7432fcb",
+      "size": 32134813
+    },
+    {
+      "path": "work/simulator/reviews/zynq-reset-reason-independent-execution-513h2.json",
+      "sha256": "49a16045053fd56de037f514bd31a4c3e723898269a840c878ad2d430bb537af",
+      "size": 8430
+    }
+  ],
+  "review_status": "Independent execution review closed: zynq-reset-reason-independent-execution-513h2.json",
+  "limits": [
+    "Public ROM exactS9 silicon identity unresolved",
+    "Partial/unaligned reason-register reject branches unexercised",
+    "Watchdog/external/debug reset cause interfaces unimplemented",
+    "Register-array serialization is not a tested board-migration capability",
+    "PrivateSWAP/ROM_SHADOW and later boot dependencies remainopen",
+    "No timing calibration, originalboard, firmwareboot or mining acceptance"
+  ]
+}

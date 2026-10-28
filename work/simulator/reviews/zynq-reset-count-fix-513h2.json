@@ -1,0 +1,8 @@
+{
+  "parent_failure": "work/simulator/qemu-s9/rom-reason-513h/assessment.json",
+  "change": "Report observed RESET-event count; unchanged hard expected4 and all actual guest/state assertions.",
+  "parent_sha256": "91f28019150229ca28155f93875d17b0dda534eb86e78c8725a01dee05fa052e",
+  "derived_sha256": "b5f474eefe9200d93b3dd43f83ef119eb88ab22e2fc2ae5cd83be73797bc9881",
+  "backend_unchanged": true,
+  "source": "work/simulator/boot-dev-513/reset-stage-513h2/qemu_ttc_reset.rs"
+}

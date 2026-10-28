@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "agent": "cleanup_resume",
-  "updated_at": "2026-10-28T17:47:21.852163+00:00",
-  "status": "Assigned cleanup and ADC checkpoint audits complete. Continue S9 first; all other miner implementation is deferred by latest user instruction.",
+  "updated_at": "2026-10-28T19:57:17.226574+00:00",
+  "status": "User requested checkpoint and pause. All owned builds/runtimes are stopped. GPIO513j and combined CVC516f component audits are closed. Relocation517 scratch tests and namespace read pass; no real data copied, published or retired. Full S9 and full matrix completion remain open.",
   "reports": [
     {
       "path": "work/simulator/reviews/qemu-cleanup-completed-503.json",
@@ -169,7 +169,10 @@
     "Actual511b extraction passes independent full source/mount/byte audit. Original Bosminer ELF4997a1c1\u20265960 is retained, but no firmware instructions executed."
   ],
   "pending": [
-    "Audit actual508 original-firmware reference run when browser/root provides retained output."
+    "Root final workspace checks and checkpoint commit. No further owned work unless a final-check failure needs a fix.",
+    "On user resume, run the selected CVC HDL profile and preserve its real result. The combined tool has passed only lexer/scheduler components.",
+    "On user resume, freeze reviewed relocation helper, verify fixed real inventory, copy only the two approved completed runs, and obtain independent full destination review before publication; no real copy has happened.",
+    "Continue exact S9 original ROM/device/CPU-PL path. Original-board/mining/full-matrix gates remain incomplete."
   ],
   "ownership": [
     "No compiler/runtime process owned by this agent",
@@ -178,17 +181,19 @@
   ],
   "priority": "Complete S9 first; no other-miner implementation or new deletion",
   "next_actions": [
-    "Review browser agent live HDL/Rust transport512 stage, especially event-region handoff, bounded framing, four-state values, time and cancellation.",
-    "S9 is the active implementation priority. No other-miner implementation or new deletion."
+    "Root final workspace checks and checkpoint commit. No further owned work unless a final-check failure needs a fix.",
+    "On user resume, run the selected CVC HDL profile and preserve its real result. The combined tool has passed only lexer/scheduler components.",
+    "On user resume, freeze reviewed relocation helper, verify fixed real inventory, copy only the two approved completed runs, and obtain independent full destination review before publication; no real copy has happened.",
+    "Continue exact S9 original ROM/device/CPU-PL path. Original-board/mining/full-matrix gates remain incomplete."
   ],
-  "latest_closed_audit": "work/simulator/reviews/live-pl-cohort-independent-512e.json",
-  "active_stage": "Next QEMU/PL bridge source stage owned by browser agent; not yet reviewed or executed.",
-  "next_action": "Independent review of S9 bridge synchronization/isolation once source is ready. No new deletion or non-S9 work.",
+  "latest_closed_audit": "work/simulator/reviews/cvc-combined-components-independent-execution-516f.json",
+  "active_stage": "No active process. Relocation production source is tested; selected CVC run is untested.",
+  "next_action": "Root final workspace checks and checkpoint commit. No further owned work unless a final-check failure needs a fix.",
   "next_work": [
-    "Audit actual small Icarus/CVC RW comparison when terminal; expected CVC contract mismatch remains a failure",
-    "Audit513h build/register tests and next actual original-ROM diagnostic after owner run",
-    "Review separately recorded CVC scheduler/HDL compatibility adaptation before selected equivalence run",
-    "Review browser514 CPU/PL coordinator when source is stable"
+    "Root final workspace checks and checkpoint commit. No further owned work unless a final-check failure needs a fix.",
+    "On user resume, run the selected CVC HDL profile and preserve its real result. The combined tool has passed only lexer/scheduler components.",
+    "On user resume, freeze reviewed relocation helper, verify fixed real inventory, copy only the two approved completed runs, and obtain independent full destination review before publication; no real copy has happened.",
+    "Continue exact S9 original ROM/device/CPU-PL path. Original-board/mining/full-matrix gates remain incomplete."
   ],
   "new_reference_reviews": [
     "work/simulator/reviews/s9-measured-reference-independent-512.json",
@@ -196,7 +201,7 @@
     "work/simulator/reviews/s9-controller-donor-independent-515.json",
     "work/simulator/reviews/qemu-virtual-clock-independent-reference-514.json"
   ],
-  "current_status": "S9 only. Verilator5.052 source lacks required four-state execution/VPI contract; no acquired execution or target incompatibility classification. CVC516 actual isolated tool build/restore audit passed with all253 source warnings preserved. Exact RW comparison runner source findings fixed.513h reset-reason reference source review closed; actual checks pending. No compiler/runtime/deletion owned.",
+  "current_status": "User requested checkpoint and pause. All owned builds/runtimes are stopped. GPIO513j and combined CVC516f component audits are closed. Relocation517 scratch tests and namespace read pass; no real data copied, published or retired. Full S9 and full matrix completion remain open.",
   "closed_reviews_latest": [
     "work/simulator/reviews/live-selected-independent-execution-514.json",
     "work/simulator/reviews/live-throughput-independent-execution-514.json",
@@ -207,7 +212,19 @@
     "work/simulator/reviews/verilator-fourstate-independent-reference-516.json",
     "work/simulator/reviews/cvc-build-independent-execution-516.json",
     "work/simulator/reviews/cvc-rw-runner-independent-source-516.json",
-    "work/simulator/reviews/zynq-reset-reason-independent-source-513h-cleanup.json"
+    "work/simulator/reviews/zynq-reset-reason-independent-source-513h-cleanup.json",
+    "work/simulator/reviews/cvc-rw-retention-independent-source-516.json",
+    "work/simulator/reviews/cvc-rw-independent-execution-516.json",
+    "work/simulator/reviews/zynq-debug-storage-independent-reference-513.json",
+    "work/simulator/reviews/zynq-reset-count-independent-source-513h2.json",
+    "work/simulator/reviews/zynq-reset-reason-independent-execution-513h2.json",
+    "work/simulator/reviews/cvc-rw-kernel-independent-source-516.json",
+    "work/simulator/reviews/cvc-rw-expanded-runner-independent-source-516.json",
+    "work/simulator/reviews/zynq-lvttl-independent-source-513i-cleanup.json",
+    "work/simulator/reviews/zynq-debug-parent-independent-source-513i.json",
+    "work/simulator/reviews/zynq-debug-cold-init-independent-513i.json",
+    "work/simulator/reviews/cvc-derived-build-independent-execution-516b.json",
+    "work/simulator/reviews/cvc-rw-split-runner-independent-source-516b.json"
   ],
   "temporary_audit_scripts": [
     "/tmp/md-sim-audit513c.py",
@@ -216,7 +233,61 @@
     "/tmp/md-sim-live514-audit.py",
     "/tmp/md-sim-throughput514-audit.py",
     "/tmp/md-sim-audit513g.py",
-    "/tmp/md-sim-audit-cvc516.py"
+    "/tmp/md-sim-audit-cvc516.py",
+    "/tmp/md-sim-audit-rw516.py",
+    "/tmp/md-sim-audit513h2.py",
+    "/tmp/md-sim-relocation-plan517.py",
+    "/tmp/md-sim-audit-cvc516b.py",
+    "/tmp/md-sim-audit513i.py",
+    "/tmp/md-sim-audit-rw516c.py"
   ],
-  "no_new_deletion": true
+  "no_new_deletion": true,
+  "storage_plan": {
+    "path": "work/simulator/reviews/runtime-relocation-plan-517.json",
+    "inventory": "work/simulator/reviews/runtime-relocation-inventory-517.json",
+    "status": "Integrated source passed7 ordinary tests, strict example Clippy and1 explicit actual namespace regression. No real copy, publication or retirement. Independent real destination/post-link review remains required.",
+    "logical_bytes": 1625797133,
+    "allocated_bytes": 1626238976,
+    "files": 184,
+    "moved_or_deleted": false,
+    "stage": "work/simulator/runtime-relocation-dev-517/stage.json",
+    "checkpoint_document": "work/simulator/reviews/runtime-relocation-checkpoint-517.md",
+    "checks": "work/simulator/reviews/runtime-relocation-checks-517.json"
+  },
+  "latest_reports": [
+    "work/simulator/reviews/zynq-lvttl-allbits-independent-source-513i.json",
+    "work/simulator/reviews/cvc-rw-step-key-independent-source-516c.json",
+    "work/simulator/reviews/zynq-lvttl-independent-execution-513i.json",
+    "work/simulator/reviews/cvc-rw-independent-execution-516c.json",
+    "work/simulator/reviews/cvc-live-port-independent-source-516.json",
+    "work/simulator/reviews/ps-gpio-reuse-independent-513j.json",
+    "work/simulator/reviews/ps-gpio-binding-independent-source-513j-cleanup.json",
+    "work/simulator/reviews/cvc-live-driver-independent-source-516.json",
+    "work/simulator/reviews/ps-gpio-core-standalone-tests-513j.json",
+    "work/simulator/reviews/ps-gpio-independent-execution-513j.json",
+    "work/simulator/reviews/cvc-lexer-reproducer-independent-source-516.json",
+    "work/simulator/reviews/cvc-lexer-original-independent-execution-516e.json",
+    "work/simulator/reviews/cvc-combined-build-independent-execution-516f.json",
+    "work/simulator/reviews/cvc-combined-probe-independent-source-516f.json",
+    "work/simulator/reviews/live-icarus-independent-execution-516d.json",
+    "work/simulator/reviews/cvc-live-independent-execution-516d.json",
+    "work/simulator/reviews/cvc-combined-components-independent-execution-516f.json",
+    "work/simulator/reviews/runtime-relocation-integration-517.json",
+    "work/simulator/reviews/runtime-relocation-checks-517.json",
+    "work/simulator/reviews/ps-gpio-test-lint-independent-513j.json"
+  ],
+  "staged_gpio": {
+    "manifest": "work/simulator/ps-gpio-dev-513j/core-inputs.json",
+    "sha256": "d3e41acbf2b022428b1477994b27fd3b820b9ca623d5e1570f3e4b62deb06020",
+    "scope": "One sampled value/known core and matching FFI; binding source reviewed. No GPIO firmware pass.",
+    "production_edited_by_this_agent": false,
+    "test_status": "Integrated by exact peer.7core+1ABI+16helper tests and actual144positive/19reject transactions independently verified. OriginalROM stops atSLCR0x500."
+  },
+  "owned_processes": [],
+  "git_checkpoint_requirements": [
+    "crates/md-sim-firmware/examples/relocate_runtime_run.rs contains all production source and tests; it is Git-eligible.",
+    "work/simulator/reviews/runtime-relocation-checks-517.json embeds complete small check outputs.",
+    "work/simulator/reviews/runtime-relocation-checkpoint-517.md preserves metadata/rollback limits and verified test commands.",
+    "Ignored runtime-relocation-dev-517 source is a byte-identical redundant copy; no required build source is kept only there."
+  ]
 }

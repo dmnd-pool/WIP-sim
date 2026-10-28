@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "time": "2026-10-28T19:46:10.884846+00:00",
+  "audit_passed": true,
+  "run_passed": false,
+  "scope": "Actual original-tool lexer defect reproduction; no adapted-tool or selected HDL pass.",
+  "freeze": {
+    "sources": 620,
+    "before_after_equal": true,
+    "helper": {
+      "built_mtime_ns": 1793216599264148995,
+      "path": "work/simulator/qemu-s9/cvc-lexer-driver-516e/cvc_rw_probe",
+      "sha256": "e4bedff6746bbf34a90d5a0050271a28aa2ad6387c4132cfdf80ab784d7cc068",
+      "size": 2324152
+    }
+  },
+  "execution": {
+    "status": "exited",
+    "exit_code": 1,
+    "elapsed_ms": 3532,
+    "trace_truncated": false,
+    "mounts_rehashed": 33,
+    "limits": {
+      "wall_seconds": 180,
+      "cpu_seconds": 120,
+      "memory_bytes": 2147483648,
+      "processes": 64,
+      "file_bytes": 67108864,
+      "trace_bytes": 25165824,
+      "tmp_bytes": 1073741824
+    }
+  },
+  "checked": [
+    "All frozen sources/helper/checks/source-review and input mounts rehashed. Actual result/envelope/report/archive bytes join exactly.",
+    "Actual Icarus fixture passes all three literal known/unknown outputs at1/2/3ps. Exact fixture source and compiled Icarus program retained.",
+    "Original CVC fails the first skipped-library always@(*) at line7 with the same3403 marker observed in vendor compilation. Three original errors are retained; no CVC simulation occurred.",
+    "Three actual files, including the passing Icarus program, remain in the1723-byte archive. Failure is not recoded as pass."
+  ],
+  "cvc_errors": [
+    "**/work/lexer-library.v(7) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance",
+    "**/work/lexer-library.v(8) ERROR** [925] `endif read but no previous matching initial `ifdef",
+    "**/work/lexer-library.v(14) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance"
+  ],
+  "inputs": {
+    "path": "work/simulator/reviews/cvc-lexer-original-independent-execution-516e-inputs.json",
+    "sha256": "402adf3ca5fbc732c3defe08a226b4f0886c2d729c176aa692a3c96e596056d6",
+    "size": 156880
+  },
+  "next_action": "Review and execute the separately declared scanner-context repair; rerun this exact reproducer and all affected callbacks before selected-model equivalence.",
+  "unresolved_audit_findings": [],
+  "selected_hdl_gate": false,
+  "firmware_gate": false,
+  "original_board_gate": false
+}

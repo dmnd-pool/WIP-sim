@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "scope": "Derived existing CVC tool build only. RW equivalence, selected HDL, CPU, board and mining gates remain pending.",
+  "passed": true,
+  "input_pins": {
+    "work/simulator/qemu-s9/cvc-build-516b/spec.json": {
+      "sha256": "947b229c378f541770715e1fc2b5cdd821be0f0d9cb1cd37600e3c61dd481cfe",
+      "size": 7231
+    },
+    "work/simulator/qemu-s9/cvc-build-516b/result.json": {
+      "sha256": "c7a22ebc4922549cf6b23f5e081a856cd3212221abfdc8e80d0a2e2f096739c0",
+      "size": 21523562
+    },
+    "work/simulator/qemu-s9/cvc-build-516b/build-report.json": {
+      "sha256": "8bd91812245f7fb98ececa1744f3f024c9ba34b3d1073904b453614da0b1668f",
+      "size": 164252
+    },
+    "work/simulator/qemu-s9/cvc-build-516b/cvc-tools.tar.gz": {
+      "sha256": "f0d6e315d8bfd32412e78bf206fd5d4fd7056705828f6b796f46d8bd66a3fb47",
+      "size": 5299377
+    },
+    "work/simulator/qemu-s9/cvc-derived-driver-516b/manifest.json": {
+      "sha256": "4ed4788c7b45acf563d7e15aa719ae10825b2ce7974a32d71f8a71fefefc55ba",
+      "size": 103715
+    },
+    "work/simulator/reviews/cvc-rw-kernel-independent-source-516.json": {
+      "sha256": "672abbf7b0bcd3e409958736e873bb7abfd39aad9363885e2cf451292a093f92",
+      "size": 5834
+    },
+    "work/simulator/reviews/cvc-adapted-builder-independent-source-516-root.json": {
+      "sha256": "5d62df60581450f33002075710d3bd44c6d1644fb648906521b488d1af1100b5",
+      "size": 2431
+    }
+  },
+  "actual": {
+    "wall_milliseconds": 52701,
+    "exit_code": 0,
+    "trace_truncated": false,
+    "outer_stderr_bytes": 0,
+    "binary": {
+      "sha256": "852f07681dd2a09e5da6e2cad575cfe83377c2836ad7fc1bdc75fbcc02ed6b2b",
+      "size": 10789160
+    },
+    "tools": {
+      "sha256": "f0d6e315d8bfd32412e78bf206fd5d4fd7056705828f6b796f46d8bd66a3fb47",
+      "size": 5299377
+    },
+    "build_stderr_bytes": 85046,
+    "build_warning_lines": 253,
+    "steps": {
+      "build": 0,
+      "help": 0,
+      "invalid_compile": 1,
+      "original_compile": 0,
+      "original_execute": 0,
+      "restored_compile": 0,
+      "restored_execute": 0,
+      "scheduler_patch": 0
+    }
+  },
+  "adaptation": {
+    "files": {
+      "v_asmlnk.c": {
+        "derived": {
+          "sha256": "4a87cb2d4de5bcdd974c7d9d2f4343f8f88335e3127277f325d1e6cdd288b863",
+          "size": 325412
+        },
+        "original": {
+          "sha256": "bfbad3e6de0fdb39cb20693d4b02f42cda42ec4361fe384eedf2416918e23fb9",
+          "size": 324410
+        }
+      },
+      "v_sim.c": {
+        "derived": {
+          "sha256": "cb5cc29de2fdcb85eb1d0c32d411b9b35028857eefd3ca1303c93ec3efa799e0",
+          "size": 281047
+        },
+        "original": {
+          "sha256": "15ac6269456204b4289f8050ce08956220aa18beb898d0a0269d78818ed731cb",
+          "size": 280533
+        }
+      },
+      "v_vpi.c": {
+        "derived": {
+          "sha256": "c0ebc1dc54b5d15cb7db10e19212f506ee6c79ab52afa7b38320f339c42d20ce",
+          "size": 200470
+        },
+        "original": {
+          "sha256": "e99de7e4438868af1e70cdc04addeb8ab55edc65f1625c66255bb6c3e03bca98",
+          "size": 199481
+        }
+      }
+    },
+    "kernel": "existing CVC compiled and interpreted scheduler",
+    "name": "rw-after-nba-v1",
+    "original_source_changed": true,
+    "patch_sha256": "ca1c050f0ba065eff566f948459152262ecd478cfa5ad10e0032f810492e572a",
+    "physical_timing_claim": false,
+    "policy": "Queue zero and future VPI RW callbacks after all preceding active/inactive/NBA work. Drain whole RW batches, settle new work, then process RO without moving time.",
+    "schema": 1,
+    "source_archive_sha256": "bb9d8acd54f168db608b4a16a6bebc758cca59836fdfacebd89d0b635aa2cf13",
+    "timestamp_or_hdl_change": false,
+    "validation": "Pending separate unchanged oracle and lifecycle tests; tool smoke does not validate this scheduler contract."
+  },
+  "next": "Same frozen runner, four separate bounded invocations: unchanged original oracle plus nba/delayed/no-nba lifecycle variants."
+}

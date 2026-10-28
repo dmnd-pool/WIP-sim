@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "scope": "Actual original CVC scanner defect reproduction. No selected FPGA or firmware acceptance.",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/cvc-lexer-driver-516e/manifest.json",
+    "sha256": "b2f91634d3d749207a0564ffd91f448ad7134a23afaaa4192d5f0a27d26c267a",
+    "size": 106213
+  },
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/cvc-lexer-original-516e/spec.json",
+      "sha256": "f8444fe2480fea2ea7b9889d1b3eac23020ee905f8a6ab0e1295ab6a4c7d8a89",
+      "size": 6833
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-lexer-original-516e/inputs.json",
+      "sha256": "9e7c426308c80b51e4890517461c72ff0e9f07bb68c563b978768333ae8ac241",
+      "size": 861
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-lexer-original-516e/result.json",
+      "sha256": "e07ada0455819bb7ede0884366eba56f668f5edce64d676d60e59f14a3f24e41",
+      "size": 14505
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-lexer-original-516e/report.json",
+      "sha256": "2daaff05ed9a82f164c80ddd2603095fb6713387c60617c0861eb0a4e362420a",
+      "size": 3966
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-lexer-original-516e/compiled.tar.gz",
+      "sha256": "4c3b84a4a549f0b8a6e053253d091dbfc5d787a8b18826ee921560cfe7c9b31d",
+      "size": 1723
+    }
+  ],
+  "status": "exited",
+  "exit_code": 1,
+  "wall_milliseconds": 3532,
+  "trace_truncated": false,
+  "icarus_observation": {
+    "argv": [
+      "/work/lexer.vvp"
+    ],
+    "code": 0,
+    "program": "/work/iverilog-install/bin/vvp",
+    "stderr": "",
+    "stderr_identity": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "stderr_truncated": false,
+    "stdout": "MD_CVC_LEXER_PASS cases=3 time=3 output=x1x0\n/work/lexer-top.v:12: $finish called at 3 (1ps)\n",
+    "stdout_identity": {
+      "sha256": "6f15bc4297c113c8c9401e6f66177566c6c57e25c99c5dcb3849499bb3458468",
+      "size": 93
+    },
+    "stdout_truncated": false
+  },
+  "cvc_compile": {
+    "argv": [
+      "-q",
+      "-sv",
+      "+define+MD_PRESENT",
+      "-o",
+      "/work/lexer-cvc",
+      "/work/lexer-top.v",
+      "-v",
+      "/work/lexer-library.v"
+    ],
+    "code": 1,
+    "program": "/work/cvc-install/cvc64",
+    "stderr": "",
+    "stderr_identity": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "stderr_truncated": false,
+    "stdout": "Copyright (c) 1991-2014 Tachyon Design Automation Corp.\n  All Rights reserved.  Licensed software subject to prohibitions and\n  restrictions.  See OSS CVC artistic license included with release.\n**/work/lexer-library.v(7) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance\n**/work/lexer-library.v(8) ERROR** [925] `endif read but no previous matching initial `ifdef\n**/work/lexer-library.v(14) ERROR** [3403] atttribute start sequence (* illegal inside attribute_instance\n",
+    "stdout_identity": {
+      "sha256": "03e9e7106c576959c7af6fd6f127da1374f5e20f68a380a6d2fc2d658d3dbf1d",
+      "size": 499
+    },
+    "stdout_truncated": false
+  },
+  "result": "Original CVC fails at ordinary always @(*) after inactive conditional in an unused library module. Icarus executes the same literal fixture and all three exact observations pass.",
+  "next_action": "Review explicit derived builder, build separately, then run unchanged literal fixture and all33 scheduler comparisons before selected HDL."
+}

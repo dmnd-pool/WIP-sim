@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Final same-helper CVC scheduler adaptation cohort; unchanged original RW oracle plus30phase/backend cases. Not selected-S9 HDL equivalence.",
+  "review_procedure_note": "Initial audit expected another emulator interpreter flag; it stopped before report output. The frozen CVC runner and actual argv use the documented +interp flag. No expected callback, time, or success assertion changed.",
+  "source_entries": 607,
+  "before_after_equal": true,
+  "helper": {
+    "sha256": "eb8c798c2aff96c0c90e6fd07bd58d451d190cee964f8a1209f3307f690e9d6c",
+    "size": 2306488
+  },
+  "tool_identities": {
+    "compiler": "cc98e84002c7b7fefb0128128e4cf4546d333e780715da16d048e17b73dafaa5",
+    "cvc_tools": "f0d6e315d8bfd32412e78bf206fd5d4fd7056705828f6b796f46d8bd66a3fb47",
+    "helper": {
+      "sha256": "eb8c798c2aff96c0c90e6fd07bd58d451d190cee964f8a1209f3307f690e9d6c",
+      "size": 2306488
+    },
+    "icarus_tools": "3c5631a6d6285affa39d9fddb9acca3758988b9c2fe6cbc4e3ce227f5fc33f61",
+    "oracle_c": "d8c7d961d4e17fb175c9b01dd41813836d9a9094b65d699262d5ba97dd733905",
+    "oracle_hdl": "d44bb7fb157664681d134ce5116cceb7db6a8f4b0ffbf06ba131a9bebc08dfcc",
+    "phase_c": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+    "phase_hdl": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+    "prior_spec": "b4a4222c83556dd01d1e3060b3fdf6935978cfb1a71e5bc491cd83f1aaa0d00a",
+    "profile": "rw-after-nba-v1"
+  },
+  "cohort": [
+    {
+      "name": "cvc-rw-516c",
+      "variant": null,
+      "result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 3864,
+        "trace_truncated": false
+      },
+      "steps_checked": 7,
+      "oracle_executions": 3,
+      "mounts": 33
+    },
+    {
+      "name": "cvc-rw-nba-516c",
+      "variant": "nba",
+      "result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 3991,
+        "trace_truncated": false
+      },
+      "steps_checked": 16,
+      "oracle_executions": 12,
+      "mounts": 33
+    },
+    {
+      "name": "cvc-rw-delayed-516c",
+      "variant": "delayed",
+      "result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 3995,
+        "trace_truncated": false
+      },
+      "steps_checked": 16,
+      "oracle_executions": 12,
+      "mounts": 33
+    },
+    {
+      "name": "cvc-rw-no-nba-516c2",
+      "variant": "no-nba",
+      "result": {
+        "status": "exited",
+        "exit_code": 0,
+        "wall_milliseconds": 3923,
+        "trace_truncated": false
+      },
+      "steps_checked": 10,
+      "oracle_executions": 6,
+      "mounts": 33
+    }
+  ],
+  "original_oracle_passes": 3,
+  "phase_cases_passed": 30,
+  "total_executions": 33,
+  "independent_expected": {
+    "time_ps": 5,
+    "sampled_before_RW": 0,
+    "nested_final_input_echo": 0,
+    "other_final_input_echo": 1,
+    "cancelled_callbacks": 0,
+    "nested_batch_counts": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "source_basis": "Reviewed original clock/NBA C/HDL fixtures and separate derived kernel adaptation; no timestamp or oracle adjustment."
+  },
+  "source_and_input_mounts_rehashed": true,
+  "all_step_stream_hashes_and_complete_bounds_checked": true,
+  "all_C_VPI_compiler_sanitizer_flags_checked": true,
+  "compiler_and_runtime_diagnostics_clean": true,
+  "artifacts_per_run": 6,
+  "preserved_failures": [
+    {
+      "name": "cvc-rw-516",
+      "result": {
+        "sha256": "e0b25cd0abef24029093a240d8c0e854a4442342ac0975ee6e5f38a895644fda",
+        "size": 8795569
+      },
+      "report": {
+        "sha256": "f50418176b4d38b70252598713b992a7082a975cd28f27a90394b18db7b61d0a",
+        "size": 6522
+      },
+      "error": "RW oracle process failed"
+    },
+    {
+      "name": "cvc-rw-no-nba-516b",
+      "result": {
+        "sha256": "570b54cac72211e5f9d030285a51376dc3c75b24d3d80dc2b2b5a571e41a8357",
+        "size": 46935
+      },
+      "report": {
+        "sha256": "48d9ada69ad930e615458b9a86d25343caec7fa666ec3dbde2c1f119ddccb462",
+        "size": 3449
+      },
+      "error": "invalid step name"
+    },
+    {
+      "name": "cvc-rw-no-nba-516c",
+      "status": "prelaunch preparation stopped on busy input-store lock; no process result or guest execution claim"
+    }
+  ],
+  "evidence_audit_passed": true,
+  "scheduler_cohort_passed": true,
+  "selected_hdl_equivalence": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "limits": [
+    "The executed kernel is a separately identified three-file adaptation of archived CVC, not the original CVC binary.",
+    "Fixtures cover ordinary/delayed/no-NBA, zero/future/nested/cancel paths under64-bit compiled/interpreted CVC and Icarus. They do not establish every VPI operation or32-bit generated path.",
+    "Retained phase summaries and failing callback guards establish these fixture assertions; this is not a complete simulator callback trace.",
+    "Artifact archives retain exact binary bytes but do not claim preserved executable modes or a stand-alone replay installation.",
+    "Selected reconstructed FPGA equivalence, full throughput and CPU/PL timing synchronization remain open."
+  ],
+  "inputs": {
+    "path": "work/simulator/reviews/cvc-rw-independent-execution-516c-inputs.json",
+    "sha256": "460446da50e467024ae688a35be7994f5cc313888dc79defc3ef5b2f5cb16050",
+    "size": 189025
+  }
+}

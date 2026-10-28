@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Source-only review of separately derived existing CVC RW phase dispatch, plus new unchanged-time regression fixtures. Not an execution pass.",
+  "pins": [
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/inputs.json",
+      "sha256": "85bacf1fad2930e48996a981aa48c0e9ed5df71eeab5a1e74416a2257cd9fcbb",
+      "size": 1894
+    },
+    {
+      "path": "artifacts/files/source/source-cvc-mirror-1c5e043-20261028/open-src-cvc-1c5e043ec33e.tar.gz",
+      "sha256": "bb9d8acd54f168db608b4a16a6bebc758cca59836fdfacebd89d0b635aa2cf13",
+      "size": 5409351
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/rw-after-nba.patch",
+      "sha256": "ca1c050f0ba065eff566f948459152262ecd478cfa5ad10e0032f810492e572a",
+      "size": 6818
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/original/src/v_vpi.c",
+      "sha256": "e99de7e4438868af1e70cdc04addeb8ab55edc65f1625c66255bb6c3e03bca98",
+      "size": 199481
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/derived/src/v_vpi.c",
+      "sha256": "c0ebc1dc54b5d15cb7db10e19212f506ee6c79ab52afa7b38320f339c42d20ce",
+      "size": 200470
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/original/src/v_sim.c",
+      "sha256": "15ac6269456204b4289f8050ce08956220aa18beb898d0a0269d78818ed731cb",
+      "size": 280533
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/derived/src/v_sim.c",
+      "sha256": "cb5cc29de2fdcb85eb1d0c32d411b9b35028857eefd3ca1303c93ec3efa799e0",
+      "size": 281047
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/original/src/v_asmlnk.c",
+      "sha256": "bfbad3e6de0fdb39cb20693d4b02f42cda42ec4361fe384eedf2416918e23fb9",
+      "size": 324410
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/derived/src/v_asmlnk.c",
+      "sha256": "4a87cb2d4de5bcdd974c7d9d2f4343f8f88335e3127277f325d1e6cdd288b863",
+      "size": 325412
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/fixtures.json",
+      "sha256": "3999f7d02ddfc06a09e2c24591ea8cfa7354edea1c32093bc8f12c839c5bbb2c",
+      "size": 794
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/fixtures/rw-phases.c",
+      "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+      "size": 5927
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/fixtures/rw-phases.v",
+      "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+      "size": 977
+    }
+  ],
+  "original_archive_member_bytes_checked": 3,
+  "zero_fuzz_patch_reconstructed_all_derived_files": true,
+  "source_review_passed": true,
+  "open_findings": [],
+  "checks": [
+    "RW callbacks append to their existing typed callback list in registration order. A batch is detached only when pending active/inactive and NBA work has settled.",
+    "Detached events enter existing pending-event dispatch with the compiled sentinel or interpreter NULL tail; the old dispatch retains IDP, callback execution and event reclamation.",
+    "The interpreter loops through newly generated NBA work before taking another RW batch or reaching RO.",
+    "All four generated move_time variants test the RW queue before slot-end RO and before deciding whether the future event heap is empty.",
+    "The compiled jump uses existing event-entry code and pending-list cleanup. It neither changes __simtime nor adds a settling delay.",
+    "Future carriers update cbtevp to the current queued event, so cancellation no longer targets the freed carrier. Removal uses the existing cancellation entry and null callback payload.",
+    "New RW batches queued during a batch remain separate. Ordinary pending-event machinery settles changes and NBA work before the next batch.",
+    "Existing callback initialization/reset ownership is reused; no new HDL scheduler, CPU model or global simulator option is introduced."
+  ],
+  "fixture_contract": {
+    "time_ps": 5,
+    "unchanged_original_rw_order": true,
+    "new_case_count": 10,
+    "modes": {
+      "ordinary_nba": [
+        "future",
+        "zero",
+        "nested",
+        "cancel"
+      ],
+      "delayed_nba": [
+        "future",
+        "zero",
+        "nested",
+        "cancel"
+      ],
+      "no_nba": [
+        "future",
+        "zero"
+      ]
+    },
+    "backends_required": [
+      "Icarus baseline",
+      "derived CVC compiled +acc+2",
+      "derived CVC interpreter"
+    ],
+    "checks": [
+      "Old clock/NBA waves sample input0 before RW writes1",
+      "Current RW batch retains first/peer order",
+      "Nested RW follows two fresh NBA waves and precedes already-registered RO",
+      "Cancellation before carrier, after carrier reaches batch, and newly queued zero-RW callback",
+      "No future HDL fallback keeps the slot alive; missing receipt is failure even on exit0"
+    ]
+  },
+  "pending": [
+    "Build both existing compiler and runtime C from the exact derived files with the retained sanitizer policy",
+    "Execute the original failed5ps oracle unchanged",
+    "Execute every new phase fixture under Icarus, derived compiled CVC and derived interpreter; retain nonzero exits and diagnostics",
+    "Run selected four-state/primitive/RAM/AXI/event-region/clock equivalence tests before throughput or CPU/PL claims"
+  ],
+  "limits": [
+    "32-bit generated paths have source review only until an actual32-bit toolchain test is run.",
+    "The selected simulator currently uses64-bit compiled CVC; this review does not claim arbitrary PLI feature conformance.",
+    "Original CVC516 failure remains immutable. Derived scheduler results have a distinct source/backend identity."
+  ],
+  "executed": false,
+  "selected_hdl_equivalence": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false
+}

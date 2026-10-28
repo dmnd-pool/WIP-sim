@@ -1,0 +1,132 @@
+--- a/hw/arm/xilinx_zynq.c
++++ b/hw/arm/xilinx_zynq.c
+@@ -752,7 +752,18 @@
+     create_unimplemented_device("zynq.i2c1", 0xE0005000, 4 * KiB);
+     create_unimplemented_device("zynq.can0", 0xE0008000, 4 * KiB);
+     create_unimplemented_device("zynq.can1", 0xE0009000, 4 * KiB);
+-    create_unimplemented_device("zynq.gpio", 0xE000A000, 4 * KiB);
++    if (md_rom) {
++        dev = qdev_new("md-sim-zynq-ps-gpio");
++        object_property_add_child(OBJECT(machine), "ps-gpio", OBJECT(dev));
++        qdev_connect_clock_in(dev, "pclk", qdev_get_clock_out(slcr, "gpio_pclk"));
++        qdev_connect_gpio_out_named(slcr, "md-gpio-bus-reset", 0,
++                                   qdev_get_gpio_in_named(dev, "bus-reset", 0));
++        sysbus_realize_and_unref(SYS_BUS_DEVICE(dev), &error_fatal);
++        sysbus_mmio_map(SYS_BUS_DEVICE(dev), 0, 0xE000A000);
++        sysbus_connect_irq(SYS_BUS_DEVICE(dev), 0, pic[52 - GIC_INTERNAL]);
++    } else {
++        create_unimplemented_device("zynq.gpio", 0xE000A000, 4 * KiB);
++    }
+     create_unimplemented_device("zynq.smcc", 0xE000E000, 4 * KiB);
+ 
+     /* Direct Memory Access Controller, PL330, Non-Secure Mode */
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -211,6 +211,8 @@
+     Clock *ps_clk;
+     Clock *cpu_3or2x;
+     Clock *cpu_1x;
++    Clock *gpio_pclk;
++    qemu_irq md_gpio_bus_reset;
+     Clock *swdt_refclk;
+     Clock *fclk[4];
+     qemu_irq fclk_reset_n[4];
+@@ -315,6 +317,10 @@
+               (4 + 2 * (s->regs[R_CLK_621_TRUE] & 1)) *
+               zynq_slcr_compute_clock(cpu_mux, s->regs[R_ARM_CLK_CTRL], 27));
+ 
++    /* UG58514.4.1: GPIO uses CPU_1x through APER bit22. */
++    clock_set(s->gpio_pclk, (s->regs[R_APER_CLK_CTRL] & (1u << 22)) ?
++              clock_get(s->cpu_1x) : 0);
++
+     /* External MIO/EMIO watchdog inputs are not connected in this board. */
+     clock_set(s->swdt_refclk, (s->regs[R_WDT_CLK_SEL] & 1) ?
+               0 : clock_get(s->cpu_1x));
+@@ -369,6 +375,7 @@
+ {
+     clock_propagate(s->cpu_3or2x);
+     clock_propagate(s->cpu_1x);
++    clock_propagate(s->gpio_pclk);
+     clock_propagate(s->swdt_refclk);
+     for (unsigned n = 0; n < 4; n++) {
+         clock_propagate(s->fclk[n]);
+@@ -399,6 +406,7 @@
+     if (s->md_rom_reference) {
+         s->regs[R_OCM_CFG] = 0;
+         s->regs[R_GPIOB_CFG_LVTTL] = 0;
++        s->regs[R_GPIO_RST_CTRL] = 0;
+     }
+     /* 0x100 - 0x11C */
+     s->regs[R_ARM_PLL_CTRL]   = 0x0001A008;
+@@ -516,6 +524,9 @@
+     ZynqSLCRState *s = ZYNQ_SLCR(obj);
+ 
+     zynq_slcr_fabric_reset(s);
++    if (s->md_rom_reference) {
++        qemu_set_irq(s->md_gpio_bus_reset, 1);
++    }
+     /* will disable all output clocks */
+     zynq_slcr_compute_clocks_internal(s, 0);
+     zynq_slcr_propagate_clocks(s);
+@@ -526,6 +537,9 @@
+     ZynqSLCRState *s = ZYNQ_SLCR(obj);
+ 
+     zynq_slcr_fabric_reset(s);
++    if (s->md_rom_reference) {
++        qemu_set_irq(s->md_gpio_bus_reset, s->regs[R_GPIO_RST_CTRL] & 1);
++    }
+     /* will compute output clocks according to ps_clk and registers */
+     zynq_slcr_compute_clocks_internal(s, clock_get(s->ps_clk));
+     zynq_slcr_propagate_clocks(s);
+@@ -731,6 +745,17 @@
+         s->regs[offset] = val & 0x0fffffff;
+         return;
+     }
++    if (s->md_rom_reference && offset == R_GPIO_RST_CTRL) {
++        if (size != 4 || (byte_offset & 3)) {
++            error_report("md-sim: unsupported GPIO reset access size%u at0x%"
++                         HWADDR_PRIx, size, byte_offset);
++            qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++            return;
++        }
++        s->regs[offset] = val & 1;
++        qemu_set_irq(s->md_gpio_bus_reset, val & 1);
++        return;
++    }
+     if (s->md_cpu_control && offset == R_A9_CPU_RST_CTRL) {
+         unsigned old = s->regs[offset];
+         for (unsigned n = 0; n < 2; n++) {
+@@ -770,6 +795,7 @@
+     case R_DDR_PLL_CTRL:
+     case R_ARM_CLK_CTRL:
+     case R_UART_CLK_CTRL:
++    case R_APER_CLK_CTRL:
+     case R_CLK_621_TRUE:
+     case R_WDT_CLK_SEL:
+     case R_FPGA0_CLK_CTRL ... R_FPGA0_THR_CNT:
+@@ -797,6 +823,7 @@
+     QDEV_CLOCK_IN(ZynqSLCRState, ps_clk, zynq_slcr_ps_clk_callback, ClockUpdate),
+     QDEV_CLOCK_OUT(ZynqSLCRState, cpu_3or2x),
+     QDEV_CLOCK_OUT(ZynqSLCRState, cpu_1x),
++    QDEV_CLOCK_OUT(ZynqSLCRState, gpio_pclk),
+     QDEV_CLOCK_OUT(ZynqSLCRState, swdt_refclk),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart0_ref_clk),
+     QDEV_CLOCK_OUT(ZynqSLCRState, uart1_ref_clk),
+@@ -828,6 +855,7 @@
+ 
+     qdev_init_clocks(DEVICE(obj), zynq_slcr_clocks);
+     qdev_init_gpio_out_named(DEVICE(obj), &s->md_rom_ocm, "md-rom-ocm", 1);
++    qdev_init_gpio_out_named(DEVICE(obj), &s->md_gpio_bus_reset, "md-gpio-bus-reset", 1);
+     for (unsigned n = 0; n < 4; n++) {
+         g_autofree char *name = g_strdup_printf("fclk%u", n);
+         s->fclk[n] = qdev_init_clock_out(DEVICE(obj), name);
+--- a/hw/i2c/meson.build
++++ b/hw/i2c/meson.build
+@@ -1 +1 @@
+-  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c', 'md-sim-fan.c', 'md-sim-pic16.c', 'md-sim-swdt.c'), md_core,
++  i2c_ss.add(when: 'CONFIG_ZYNQ', if_true: [files('md-sim-axi-iic.c', 'md-sim-s9io.c', 'md-sim-axi-gpio.c', 'md-sim-fan.c', 'md-sim-pic16.c', 'md-sim-swdt.c', 'md-sim-ps-gpio.c'), md_core,
+--- a/hw/i2c/trace-events
++++ b/hw/i2c/trace-events
+@@ -0,0 +1,2 @@
++# Zynq7000 PS GPIO reference transactions
++md_sim_ps_gpio_mmio(bool write, uint64_t addr, uint64_t value, unsigned error) "write=%d addr=0x%" PRIx64 " value=0x%" PRIx64 " error=%u"

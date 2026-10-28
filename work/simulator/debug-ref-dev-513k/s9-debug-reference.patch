@@ -1,0 +1,127 @@
+--- a/hw/misc/zynq_slcr.c
++++ b/hw/misc/zynq_slcr.c
+@@ -124,6 +124,9 @@
+ REG32(RS_AWDT_CTRL, 0x24c)
+ REG32(RST_REASON, 0x250)
+ REG32(RST_REASON_CLR, 0x254)
++
++/* Historical QEMU reference storage only; no debug/security side effects. */
++REG32(MD_DEBUG_REFERENCE, 0x500)
+ 
+ REG32(REBOOT_STATUS, 0x258)
+ REG32(BOOT_MODE, 0x25c)
+@@ -636,6 +639,11 @@
+         return ret & 0x0fffffff;
+     }
+ 
++    if (s->md_rom_reference && offset == R_MD_DEBUG_REFERENCE) {
++        trace_md_sim_zynq_debug_reference(false, ret, true);
++        return ret;
++    }
++
+     if (!zynq_slcr_check_offset(offset, true)) {
+         qemu_log_mask(LOG_GUEST_ERROR, "zynq_slcr: Invalid read access to "
+                       " addr %" HWADDR_PRIx "\n", offset * 4);
+@@ -678,7 +686,8 @@
+     }
+ 
+     if (!zynq_slcr_check_offset(offset, false) &&
+-        !(s->md_rom_reference && offset == R_GPIOB_CFG_LVTTL)) {
++        !(s->md_rom_reference && (offset == R_GPIOB_CFG_LVTTL ||
++                                  offset == R_MD_DEBUG_REFERENCE))) {
+         qemu_log_mask(LOG_GUEST_ERROR, "zynq_slcr: Invalid write access to "
+                       "addr %" HWADDR_PRIx "\n", offset * 4);
+         return;
+@@ -730,8 +739,19 @@
+     }
+ 
+     if (s->regs[R_LOCKSTA]) {
++        if (s->md_rom_reference && offset == R_MD_DEBUG_REFERENCE) {
++            trace_md_sim_zynq_debug_reference(true, val, false);
++        }
+         qemu_log_mask(LOG_GUEST_ERROR,
+                       "SCLR registers are locked. Unlock them first\n");
++        return;
++    }
++    if (s->md_rom_reference && offset == R_MD_DEBUG_REFERENCE) {
++        /* Prior QEMU db302f8's exact parent stores all32bits here. Its
++         * warm-reset callback does not clear the stored value. This adds
++         * no physical debug/trace/security signal behavior. */
++        s->regs[offset] = val;
++        trace_md_sim_zynq_debug_reference(true, s->regs[offset], true);
+         return;
+     }
+     if (s->md_rom_reference && offset == R_GPIOB_CFG_LVTTL) {
+@@ -813,10 +833,34 @@
+     }
+ }
+ 
++/* A reference-only word contract. Let original requests reach validation
++ * before AddressSpace or the implementation can split them into words.
++ * The generic machine keeps the original slcr_ops unchanged. */
++static bool md_slcr_reference_access(void *opaque, hwaddr offset, unsigned size,
++                                     bool is_write, MemTxAttrs attrs)
++{
++    if (size != 4 || (offset & 3)) {
++        error_report("md-sim: unsupported ROM SLCR %s size%u at0x%"
++                     HWADDR_PRIx, is_write ? "write" : "read", size, offset);
++        qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++        return false;
++    }
++    return true;
++}
++
+ static const MemoryRegionOps slcr_ops = {
+     .read = zynq_slcr_read,
+     .write = zynq_slcr_write,
+     .endianness = DEVICE_NATIVE_ENDIAN,
++};
++
++static const MemoryRegionOps slcr_reference_ops = {
++    .read = zynq_slcr_read,
++    .write = zynq_slcr_write,
++    .endianness = DEVICE_NATIVE_ENDIAN,
++    .valid = { .min_access_size = 1, .max_access_size = 8,
++               .unaligned = true, .accepts = md_slcr_reference_access },
++    .impl = { .min_access_size = 1, .max_access_size = 8, .unaligned = true },
+ };
+ 
+ static const ClockPortInitArray zynq_slcr_clocks = {
+@@ -839,19 +883,23 @@
+          * existing migrated register array carries later persistent state. */
+         s->regs[R_RST_REASON] = 1u << 6; /* POR */
+         s->regs[R_REBOOT_STATUS] = 0;
++        s->regs[R_MD_DEBUG_REFERENCE] = 0; /* Construction only, not reset. */
+     }
+     if (s->boot_mode > 0xF) {
+         error_setg(errp, "Invalid boot mode %d specified", s->boot_mode);
+-    }
++        return;
++    }
++    /* Properties are now set. Select the explicit reference access contract
++     * before the board maps this SysBus region. */
++    memory_region_init_io(&s->iomem, OBJECT(dev),
++                          s->md_rom_reference ? &slcr_reference_ops : &slcr_ops,
++                          s, "slcr", ZYNQ_SLCR_MMIO_SIZE);
++    sysbus_init_mmio(SYS_BUS_DEVICE(dev), &s->iomem);
+ }
+ 
+ static void zynq_slcr_init(Object *obj)
+ {
+     ZynqSLCRState *s = ZYNQ_SLCR(obj);
+-
+-    memory_region_init_io(&s->iomem, obj, &slcr_ops, s, "slcr",
+-                          ZYNQ_SLCR_MMIO_SIZE);
+-    sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->iomem);
+ 
+     qdev_init_clocks(DEVICE(obj), zynq_slcr_clocks);
+     qdev_init_gpio_out_named(DEVICE(obj), &s->md_rom_ocm, "md-rom-ocm", 1);
+--- a/hw/misc/trace-events
++++ b/hw/misc/trace-events
+@@ -467,3 +467,6 @@
+ # tt_atlantis_prcm.c
+ tt_atlantis_prcm_read(uint32_t domain, uint64_t offset, uint64_t data) "domain 0x%02x offset 0x%" PRIx64 " data 0x%" PRIx64
+ tt_atlantis_prcm_write(uint32_t domain, uint64_t offset, uint64_t data) "domain 0x%02x offset 0x%" PRIx64 " data 0x%" PRIx64
++
++# Historical QEMU SLCR storage reference; no physical debug signals
++md_sim_zynq_debug_reference(bool write, uint32_t value, bool committed) "write=%d value=0x%x committed=%d"

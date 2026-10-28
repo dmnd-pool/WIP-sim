@@ -27,3 +27,5 @@ pub mod s9_dashboard_state;
 pub mod s9_telemetry;
 pub mod s9_update_validation;
 pub mod serial_console;
+
+pub mod ps_gpio;

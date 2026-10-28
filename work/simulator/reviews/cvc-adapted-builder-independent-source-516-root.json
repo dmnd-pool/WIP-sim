@@ -1,0 +1,41 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T18:46:12.907890+00:00",
+  "component": "CVC explicit RW-after-NBA adaptation build profile",
+  "stage": {
+    "path": "work/simulator/s9-cvc-516/rw-after-nba/builder-stage.json",
+    "sha256": "b7ff53fa6fe564a712d793e98054414ac2b4fa7164b1dce3c166b472bf8b884d"
+  },
+  "builder": {
+    "path": "work/simulator/s9-cvc-516/rw-after-nba/build_cvc_tool.rs",
+    "object": {
+      "sha256": "49cd6a4608a6f50393d397ef316f11910a104f685ba522bcffa8416cd3c31a9f",
+      "size": 23063
+    }
+  },
+  "kernel_manifest": {
+    "path": "work/simulator/s9-cvc-516/rw-after-nba/inputs.json",
+    "object": {
+      "sha256": "85bacf1fad2930e48996a981aa48c0e9ed5df71eeab5a1e74416a2257cd9fcbb",
+      "size": 1894
+    }
+  },
+  "reviewed_behavior": [
+    "Original default build remains separate; closed optional flag explicitly selects adapted profile in host and confined argv.",
+    "Exact original and derived3-file identities checked around zero-fuzz patch, with captured exact patch executable/library closure. Archived source remains unchanged; only isolated extracted build tree changes.",
+    "Adaptation exports exact patch, changed upstream files and source identities alongside retained original license. No selectedmodel or callback equivalence inferred from build smoke.",
+    "Existing process/resource/sanitizer limits retained. Compile and native smoke results remain independently validated; failedoriginal516 callback oracle is not reused as a pass.",
+    "Root read existing pending0 sentinels and compiled move_time dispatch; both p0head andtail clear before quiescent batch transfer. Existing native/interpreter event processing is reused. Independent kernel source review has no open finding."
+  ],
+  "result": "pass-for-integration-and-actual-build; scheduler acceptance remains pending",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "FocusedRust tests/Clippy/fmt/release and stable source/helper freeze",
+    "Actual isolated adapted source build with complete compiler diagnostics",
+    "Unchanged5ps originaloracle: retain oldfailure and require actual adapted pass",
+    "Expanded zero/future/nested/cancel/NBA/noNBA/delayedNBA cases in interpreter and compiled modes againstIcarus",
+    "Then selectedprimitive/RAM/event/bus vectors and measuredthroughput before CPUintegration"
+  ],
+  "gate_changes": []
+}

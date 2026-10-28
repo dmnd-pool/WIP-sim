@@ -1,0 +1,110 @@
+{
+  "schema": "md-sim-independent-source-review/1",
+  "reviewer": "root",
+  "date": "2026-10-28T18:54:25.940870+00:00",
+  "component": "513i legacySLCR LVTTL register interface",
+  "stage": {
+    "path": "work/simulator/reviews/zynq-lvttl-stage-513i.json",
+    "sha256": "8c0a7abc933d40b4194e94b3d0d615538c349f4d55fe2ef719f11026eeef0e46"
+  },
+  "files": [
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/ROM-RESET.md",
+      "sha256": "7b3680bfd27b1fdc174c496c8236b7f7757711f2f3a134c0043265146c3e2f70",
+      "size": 8329
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/build_qemu_backend.rs",
+      "sha256": "a2a8184a3e6984289eecb01f760df6b5b06e700976c4abf576d2469cbea2b431",
+      "size": 56531
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/hw/arm/trace-events",
+      "sha256": "f28abcb79a79acaebd3dc5d92638d55dbc73a004b35a934ce7d51880dc6ac277",
+      "size": 8811
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/hw/arm/xilinx_zynq.c",
+      "sha256": "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+      "size": 37768
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/hw/misc/zynq_slcr.c",
+      "sha256": "dd74ec65e82a06c5791510024bbb20bedc99f461f55cdd32ffc38db272dc975a",
+      "size": 28461
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/include/hw/arm/xilinx_zynq.h",
+      "sha256": "fc6bf9d4b15419ab8f643bfeb323ded68f4bf04c7c5a07dd577984412678fd49",
+      "size": 787
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/qemu_ttc_reset.rs",
+      "sha256": "7887f125352ba72af071df2bd8f33c7a6f692d0b6716f4ec349a6779e04b821d",
+      "size": 24421
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/rom_reset_qtest.rs",
+      "sha256": "254268ef7a67509eef670bc3f2ca7122542d029c6d3b9c2042e3f249b93987c1",
+      "size": 10541
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/s9-rom-reset.patch",
+      "sha256": "af02874cf6c3e1961ee6fa2d07d75490ecbb08f56bb3c2c92a08784404f32082",
+      "size": 14744
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/source-identities.json",
+      "sha256": "6d26bec239000f1023f5eefcbf91bbe0509271dad0c91acd00932330b9eb3e01",
+      "size": 901
+    }
+  ],
+  "references": [
+    {
+      "path": "artifacts/files/source/source-zynq-ug585-v1-bdtic-513h/ug585-v1.pdf",
+      "sha256": "15bc69f0aaa6e94f4c9191278279c3e9070382760851874df10596e1f9bd758a",
+      "size": 37471135
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-v1-lvttl-513h.txt",
+      "sha256": "b7dd379c78d9e47b904d2211548196b5ed8e8ef1954a73a2e6dcd1fab7790608",
+      "size": 2186
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-v1-full-513h.txt",
+      "sha256": "7c0fb4915ded97c7a8f81051909735c43e65f4f260742f0fdbad84c71fad07e3",
+      "size": 5037322
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513h/assessment.json",
+      "sha256": "2fea3873cdc47c066defa1752534757bfa2e821412d5da056c4df182bfbb0f2d",
+      "size": 3474
+    },
+    {
+      "path": "work/simulator/reviews/zynq-reset-reason-independent-execution-513h2.json",
+      "sha256": "49a16045053fd56de037f514bd31a4c3e723898269a840c878ad2d430bb537af",
+      "size": 8430
+    }
+  ],
+  "reviewed_behavior": [
+    "Old originalUG585v1.0 table identifies0xF8000B10, resetzero, lower28bitsRW andupper4bits ignored/readzero. Its electrical meanings are not inferred.",
+    "C changes are confined to optionalROM reference. ExistingSLCRlock is retained; subword/unaligned access is explicitly unsupported. Register clears through existing reset callback. Defaultmode stays unchanged.",
+    "Exact originalROM write0c301166 is independently traced, not a fabricated register request. Newbehavior stores that real write through the actual MMIO path.",
+    "Reviewed20transactioncase: initialzero, normalvalue, all28bitsset, ignoreduppernibble, clear and two actualQMPreset events with readback/lockchecks. NoGIC transitions accepted.",
+    "Patch ancestry and15source/reference hashes checked; priorreset-reason behavior remains intact."
+  ],
+  "finding_resolved": "Root required allones lower28-bit readback, since the originalnormalword has bit0clear and could not catch lostbit0. Addedwriteffffffff/read0fffffff; allpriorassertionsretained.",
+  "result": "pass-for-integration-build-and-actual-tests",
+  "unresolved_correctness_findings": [],
+  "required_checks": [
+    "FocusedRustchecks/source-helperfreeze",
+    "ActualUBSanbackendbuild",
+    "20transactionLVTTLcase plus resetreason/map/SWAP/fabricregressions",
+    "FreshunchangedROMprobe; retainfirstunsupportedaccess andindependentbyteaudit"
+  ],
+  "limits": [
+    "Registerstateonly; analogthresholds, driveandpropagation effectsareunimplemented/uncalibrated.",
+    "Partial/unaligned errorbranch remains unexercised.",
+    "Noexactcontroller/silicon ororiginalboard/boot/mining acceptance."
+  ]
+}

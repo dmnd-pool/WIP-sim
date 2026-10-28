@@ -1,0 +1,332 @@
+{
+  "schema": "md-sim-independent-execution-review/1",
+  "recorded_at": "2026-10-28T19:33:48.548220+00:00",
+  "reviewer": "cleanup_resume",
+  "passed": true,
+  "scope": "Actual selected S9 programmable-logic component through live private Rust/VPI transport. No CPU or firmware master, ASIC work routing, original board, mining or physical timing acceptance.",
+  "pins": [
+    {
+      "path": "work/simulator/qemu-s9/cvc-live-driver-516d/manifest.json",
+      "sha256": "e7bb3dd3474d7b823a8fb81aa2a31039afee5e7f6138010d865b47ae6bad8787",
+      "size": 104401
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-live-driver-516d/source-before-build.json",
+      "sha256": "6b68ea5744d5642977a9e4388b70aa8a384ff83217ef080fa0c48f9080519af7",
+      "size": 97705
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-live-driver-516d/source-after-build.json",
+      "sha256": "6b68ea5744d5642977a9e4388b70aa8a384ff83217ef080fa0c48f9080519af7",
+      "size": 97705
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-icarus-516d/spec.json",
+      "sha256": "7002253bae6801d87e2f1f8ddb74545cae044c870339cea51bbd2352d8f22bde",
+      "size": 9772
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-icarus-516d/result.json",
+      "sha256": "dc4c1790d1e553bd0019a056291cdc63fb39cc6fc0845fc06d1df3cdf9ae233a",
+      "size": 103380004
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-icarus-516d/hdl-envelope.json",
+      "sha256": "8091338f9916acff58169fdce6704f58a6c6cc31ef9e962ffdb350e6089651b8",
+      "size": 51689580
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-icarus-516d/hdl-report.json",
+      "sha256": "9b2f8c581dbf88a7b53572561bb309fa15cd52086891415cca4c085688c7db7d",
+      "size": 730932
+    },
+    {
+      "path": "work/simulator/qemu-s9/live-icarus-516d/selected-vvp.tar.gz",
+      "sha256": "e42311af3acb566bef789870387d8337ef7721b7ead10a741303ebeaafad4f18",
+      "size": 25517110
+    }
+  ],
+  "identity": {
+    "source_copies": 610,
+    "before_after_equal": true,
+    "helper": {
+      "built_mtime_ns": 1793215703092496811,
+      "path": "work/simulator/qemu-s9/cvc-live-driver-516d/s9_hdl_validate",
+      "sha256": "f43a05b5014ddf012e233ed9738a2c46571ffdf20586fa59e2099bba341a63a4",
+      "size": 2624808
+    },
+    "mounts_rehashed": 49,
+    "supervisor_tools_rehashed": {
+      "bubblewrap": {
+        "sha256": "d9498f8b15b1c69e09791badee317d56f33abd359a306d6e96534f136381ad74",
+        "size": 84464
+      },
+      "prlimit": {
+        "sha256": "092bb6db10a743ecccfc7d6e72055007064abf8910c85d736832fb53697fff96",
+        "size": 27320
+      },
+      "unshare": {
+        "sha256": "e4e385ae4accf4af5302c4bb32859355b1c640315bef56ce73d31b8b1f97fdc0",
+        "size": 43408
+      }
+    },
+    "selected_program": {
+      "sha256": "259a508e74233c71e192fbb73f4dacf638c09d2a2499002edd821d2d794b343f",
+      "size": 212950093
+    },
+    "vpi_plugin": {
+      "sha256": "2289ceb6098a539ea76b0c4464c9d32951253860a8556a23ae74a3d1d2f2f7f7",
+      "size": 24472
+    },
+    "wrapper": {
+      "sha256": "216904ff0d97095507d346b89b393cec0b2364315ccda3e2ab993a9b7492f6a3",
+      "size": 17753
+    },
+    "captured_c_matches_frozen_source": true
+  },
+  "execution": {
+    "exit_code": 0,
+    "wall_milliseconds": 30089,
+    "trace_truncated": false,
+    "outer_stderr_empty": true,
+    "owned_live_exit0": true,
+    "all_child_descriptors_closed": true,
+    "live_stderr_empty": true,
+    "limits": {
+      "wall_seconds": 900,
+      "cpu_seconds": 600,
+      "memory_bytes": 4294967296,
+      "processes": 32,
+      "file_bytes": 1073741824,
+      "trace_bytes": 100663296,
+      "tmp_bytes": 1073741824
+    },
+    "child_limits": {
+      "command_timeout_ms": 10000,
+      "frame_limit": 8192,
+      "shutdown_timeout_ms": 5000,
+      "stderr_limit": 1048576,
+      "stdout_limit": 1048576
+    },
+    "compiler_removed_only_after_clean_plugin_build": true
+  },
+  "checked": {
+    "actual_sent_frames": 81,
+    "actual_received_frames": 145,
+    "raw_events": 63,
+    "complete_receipts": 81,
+    "all_frame_values_times_ids_and_reserved_fields_checked": true,
+    "bus_clock_edge_counts_independently_recomputed": true,
+    "next_owned_clock_edges_independently_recomputed": true,
+    "read_transactions": 48,
+    "write_transactions": 24,
+    "resets": 2,
+    "full_register_strobe_reset_sequence_checked": true,
+    "exact_text_wire_join": true,
+    "native_vendor_notice_exact_once_first": true,
+    "ps7_output_forces_only": 30,
+    "normal_input_connections": 14,
+    "resolved_inouts": 2,
+    "event_nba_xz_and_duplicate_oracles_rechecked": true,
+    "clock_cases": {
+      "clock_unsplit": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_split": {
+        "records": 16,
+        "commands": 5,
+        "events": [
+          [
+            5001,
+            3,
+            1
+          ],
+          [
+            5001,
+            3,
+            3
+          ],
+          [
+            10001,
+            3,
+            2
+          ],
+          [
+            15001,
+            3,
+            3
+          ],
+          [
+            15001,
+            3,
+            5
+          ],
+          [
+            25001,
+            3,
+            4
+          ],
+          [
+            35001,
+            3,
+            5
+          ],
+          [
+            35001,
+            3,
+            7
+          ],
+          [
+            35001,
+            3,
+            71
+          ],
+          [
+            35001,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      },
+      "clock_unknown": {
+        "records": 15,
+        "commands": 4,
+        "events": [
+          [
+            5201,
+            3,
+            1
+          ],
+          [
+            5201,
+            3,
+            3
+          ],
+          [
+            10201,
+            3,
+            2
+          ],
+          [
+            15201,
+            3,
+            3
+          ],
+          [
+            15201,
+            3,
+            5
+          ],
+          [
+            25201,
+            3,
+            4
+          ],
+          [
+            35201,
+            3,
+            5
+          ],
+          [
+            35201,
+            3,
+            7
+          ],
+          [
+            35201,
+            3,
+            71
+          ],
+          [
+            35201,
+            3,
+            103
+          ]
+        ],
+        "sampled_boundary": 5,
+        "sampled_later": 103,
+        "actual_clean_exit": true
+      }
+    },
+    "primitive_assertions": 582,
+    "ram_assertions_each": 510
+  },
+  "baseline_scope": "This is the Icarus regression of the shared CVC/Icarus source cohort. The separate CVC516d attempt failed before live execution and is not a passing equivalent backend.",
+  "preserved_failures": [
+    "512",
+    "512b",
+    "512c",
+    "512d",
+    "live-cvc-516d"
+  ],
+  "unresolved_correctness_findings": [],
+  "remaining_limits": [
+    "Only common register/strobe/reset paths were exercised.",
+    "Known next clock edge is not the HDL earliest event and does not authorize CPU run-ahead.",
+    "Clock/reset/input order is an explicit digital reference policy, not measured physical timing.",
+    "Missing monitor feature table and33 electrical ambiguities remain open."
+  ],
+  "firmware_execution_gate": false,
+  "cpu_synchronization_complete": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

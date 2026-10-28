@@ -99,3 +99,23 @@ __pycache__/
 !/work/simulator/source-checkpoint-516/tests.log
 !/work/simulator/source-checkpoint-516/guide-links.log
 !/work/simulator/source-checkpoint-516/source-inputs.json
+
+# Reviewed pending ROM increment and incomplete dispatcher wiring for resume.
+!/work/simulator/debug-ref-dev-513k/
+/work/simulator/debug-ref-dev-513k/*
+!/work/simulator/debug-ref-dev-513k/s9-debug-reference.patch
+!/work/simulator/debug-ref-dev-513k/debug_reference_qtest.rs
+!/work/simulator/debug-ref-dev-513k/qemu_ttc_reset.rs
+!/work/simulator/debug-ref-dev-513k/DEBUG-REFERENCE.md
+!/work/simulator/debug-ref-dev-513k/stage-inputs.json
+!/work/simulator/debug-ref-dev-513k/wiring-work-in-progress.json
+
+# Small source-check evidence only; no executables, disks or credentials.
+!/work/simulator/source-checkpoint-518/
+/work/simulator/source-checkpoint-518/*
+!/work/simulator/source-checkpoint-518/manifest.json
+!/work/simulator/source-checkpoint-518/source-inputs.json
+!/work/simulator/source-checkpoint-518/fmt.log
+!/work/simulator/source-checkpoint-518/clippy.log
+!/work/simulator/source-checkpoint-518/tests.log
+!/work/simulator/source-checkpoint-518/guide-links.log

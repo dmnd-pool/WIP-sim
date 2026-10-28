@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "time": "2026-10-28T19:49:18.855714+00:00",
+  "audit_passed": true,
+  "component_tests_passed": true,
+  "scope": "Actual Rust PS GPIO core through sanitizer-enabled QEMU binding; separate cancelled public-ROM continuation. No exact board/boot/mining acceptance.",
+  "freeze": {
+    "helper_sources": 617,
+    "core_sources": 619,
+    "before_after_equal": true,
+    "all_common_source_identities_equal": true,
+    "current_source_equality_not_required": true
+  },
+  "backend": {
+    "sha256": "cc311dd5fab5233f696110e4eb1d22c4efb4fd18121e705513016edf5ea854ba",
+    "size": 20208792
+  },
+  "core_library": {
+    "sha256": "77d159a1ee6c7a53a630e2c3df3a16396a78c8ff489c7a25470b5d46aa27c2ac",
+    "size": 35324374
+  },
+  "build_steps": 39,
+  "sanitizer_flags": [
+    "CFLAGS                          : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all -g -O2",
+    "LDFLAGS                         : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all"
+  ],
+  "mount_counts": {
+    "backend-build-513j-ubsan": 86,
+    "rom-gpio-513j": 16,
+    "rom-gpio-reject-513j": 16,
+    "rom-lvttl-513j": 16,
+    "rom-reason-513j": 16,
+    "rom-map-513j": 16,
+    "rom-swap-reject-513j": 16,
+    "rom-fabric-513j": 15,
+    "rom-reset-513j": 36
+  },
+  "results": {
+    "backend-build-513j-ubsan": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 186108,
+      "trace_truncated": false
+    },
+    "rom-gpio-513j": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-gpio-reject-513j": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-lvttl-513j": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 100,
+      "trace_truncated": false
+    },
+    "rom-reason-513j": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-map-513j": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false
+    },
+    "rom-swap-reject-513j": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 140,
+      "trace_truncated": false
+    },
+    "rom-fabric-513j": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 100,
+      "trace_truncated": false
+    },
+    "rom-reset-513j": {
+      "status": "cancelled",
+      "exit_code": null,
+      "wall_milliseconds": 205,
+      "trace_truncated": false
+    }
+  },
+  "positive": {
+    "transactions": 144,
+    "warm_resets": 2,
+    "independent_reference": "Scalar per-pin latch/sample/edge/level state from UG585, driven by every retained command, independent of Rust core and qtest expected fields.",
+    "all_actual_readbacks_match": true,
+    "all_gpio_device_traces_match": true,
+    "irq_transitions": [
+      [
+        20,
+        true
+      ],
+      [
+        20,
+        false
+      ],
+      [
+        20,
+        true
+      ],
+      [
+        20,
+        false
+      ],
+      [
+        20,
+        true
+      ],
+      [
+        20,
+        false
+      ],
+      [
+        20,
+        true
+      ],
+      [
+        20,
+        false
+      ],
+      [
+        20,
+        true
+      ],
+      [
+        20,
+        false
+      ],
+      [
+        20,
+        true
+      ],
+      [
+        20,
+        false
+      ],
+      [
+        20,
+        true
+      ],
+      [
+        20,
+        false
+      ]
+    ],
+    "actual_irq_command_positions": [
+      [
+        53,
+        20,
+        true
+      ],
+      [
+        59,
+        20,
+        false
+      ],
+      [
+        60,
+        20,
+        true
+      ],
+      [
+        61,
+        20,
+        false
+      ],
+      [
+        63,
+        20,
+        true
+      ],
+      [
+        65,
+        20,
+        false
+      ],
+      [
+        67,
+        20,
+        true
+      ],
+      [
+        69,
+        20,
+        false
+      ],
+      [
+        70,
+        20,
+        true
+      ],
+      [
+        72,
+        20,
+        false
+      ],
+      [
+        76,
+        20,
+        true
+      ],
+      [
+        79,
+        20,
+        false
+      ],
+      [
+        80,
+        20,
+        true
+      ],
+      [
+        84,
+        20,
+        false
+      ]
+    ],
+    "input_output_independence_and_masked_write": true
+  },
+  "reject": {
+    "transactions": 19,
+    "faults": 9,
+    "exact_diagnostics_and_full64bit_value": true,
+    "state_preservation_reads": true,
+    "stopped_qmp_observations": 9,
+    "distinct_stop_events": 1,
+    "scope": "Each fault explicitly reports rejection; the VM remains stopped after the first. Zero failure data is not a successful hardware read."
+  },
+  "same_backend_regressions": {
+    "lvttl": 20,
+    "reason": 44,
+    "map": 340,
+    "swap-reject": 383,
+    "fabric": 128
+  },
+  "original_rom": {
+    "status": "cancelled",
+    "elapsed_ms": 205,
+    "address_headers": 169,
+    "raw_spans": 180,
+    "raw_bytes": 2736,
+    "all_raw_bytes_match_original": true,
+    "first_diagnostic": {
+      "byte_offset": 8604,
+      "bytes": 43,
+      "line_hex": "7a796e715f736c63723a20496e76616c69642077726974652061636365737320746f206164647220353030",
+      "line_sha256": "e98f6a971265b2ac31d855cec065058114d75d1fa6fdac02e692e92c30f54a1d",
+      "reason": "first unexpected emulator diagnostic"
+    },
+    "independent_A32": {
+      "offset": "0x1704",
+      "words": [
+        "0xe3a00c05",
+        "0xe1a01009",
+        "0xe34f0800",
+        "0xeb00263a"
+      ],
+      "address": "0xf8000500",
+      "value": "r9; value not established by this local slice alone",
+      "call_target": "0xb000",
+      "store_word": "e5801000"
+    },
+    "gpio_bus_trace_in_this_rom_run": false,
+    "translated_blocks_not_all_proven_executed": true
+  },
+  "inputs": {
+    "path": "work/simulator/reviews/ps-gpio-independent-execution-513j-inputs.json",
+    "sha256": "4cddc32d71f1dc728ce495eaadb9f9461d3897ff044484b63f27d3a200bc34fe",
+    "size": 391151
+  },
+  "limits": [
+    "Reference four-bank digital state only. MIO mux/pulls/physical pads, input synchronizer timing and exact S9 silicon/wiring remain unverified.",
+    "Positive qtest uses explicit settled samples and a declared bus reset model; no physical timing calibration follows.",
+    "Original public ROM advances beyond the previous GPIO stop and now stops at SLCR0x500. It has no completed board boot or firmware mining result.",
+    "Old failed attempts and run verdicts remain unchanged."
+  ],
+  "unresolved_audit_findings": [],
+  "firmware_boot_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:14:13.009040+00:00",
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "scripts/inspect_artifacts.py"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-0-513j.log",
+      "sha256": "e355f105e6d99ea9021198dbaa8f9d826d7c70c8a0e2b16fa6851cb019f7f9cd",
+      "bytes": 189
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/verify_archive.py",
+        "--incremental"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-1-513j.log",
+      "sha256": "abae92f4e16a69ebaa11af57617d018b9830e4543d1d0263095b097a9fc1c106",
+      "bytes": 1721
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/report_coverage.py"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-2-513j.log",
+      "sha256": "e040c8052aa330664866e23a642f9f8760f431d819a485a64f2295bf1cc1a4ae",
+      "bytes": 95
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/catalog.py",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-3-513j.log",
+      "sha256": "30989229334c52e70c7549f2712d2e212b1b6585aaa9cb1a09427cce1f4af0c8",
+      "bytes": 2236
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/catalog.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-4-513j.log",
+      "sha256": "91c85d40d3d2a7812f6bfa3ffde0be97c1953546222315359fbb454911cb0ded",
+      "bytes": 145
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/index_archive_members.py"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-5-513j.log",
+      "sha256": "597c9df8f96e4d028a22f8b38815a24c8415472b96bd4f9f803c6c394c9db5e8",
+      "bytes": 270
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/index_documents.py"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-6-513j.log",
+      "sha256": "60d45b51c01fad0fc6243b2cc4fbbcee7d6bdc1ca48d80eb2ecfc814278d4673",
+      "bytes": 311
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_guide_links.py"
+      ],
+      "exit_code": 0,
+      "log": "work/simulator/boot-dev-513/gpio-archive-check-7-513j.log",
+      "sha256": "1f60eac11a62c59350bd7a7fdbc6fb28d95142c700a3c2028432fee47723d604",
+      "bytes": 176
+    }
+  ],
+  "passed": true
+}

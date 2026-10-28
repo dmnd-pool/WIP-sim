@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:13:20.613985+00:00",
+  "commit": "474335bc0411186d5ec1e51e82af941c28929166",
+  "raw_equals_api": true,
+  "git_blob": "100e89270dc6c4baa68619a6f5904329d1759af7",
+  "executed": false,
+  "files": [
+    {
+      "path": "artifacts/files/source/source-xlnx-psgpio-history-513j/gpio-history.json",
+      "sha256": "d441266dd91350819a5be09dcb44a34a970a2ee57a038ab8fd22e919746558dc",
+      "bytes": 3478
+    },
+    {
+      "path": "artifacts/files/source/source-xlnx-psgpio-source-513j/xlnx-zynqmp-gpio.c",
+      "sha256": "f0fbc98a4df95fc3e07b173886f025bfcc56b888ba272e0a7cefb77c7bda60fd",
+      "bytes": 28732
+    },
+    {
+      "path": "artifacts/files/source/source-xlnx-psgpio-blob-513j/gpio-blob.json",
+      "sha256": "8788773ce4939bee81810841bcb7e46e4c9322273c588be8c95bf5e77d352014",
+      "bytes": 40601
+    },
+    {
+      "path": "artifacts/files/source/source-xlnx-psgpio-commit-513j/gpio-commit.json",
+      "sha256": "074550895ab6d3b6948adfd05ff2de6d42332519f1befb89dccd73edca8fb048",
+      "bytes": 5175
+    }
+  ],
+  "manifests": [
+    {
+      "path": "artifacts/manifests/source-xlnx-psgpio-history-513j.json",
+      "sha256": "31378b68a1c35d46917f444aa8e7fc8871a940e1b05037e05e9b7652fd8690dd",
+      "bytes": 976
+    },
+    {
+      "path": "artifacts/manifests/source-xlnx-psgpio-source-513j.json",
+      "sha256": "381b802a9eed8f6fad89972d5c424248192d2697a986c4096c66c8d7a775832c",
+      "bytes": 960
+    },
+    {
+      "path": "artifacts/manifests/source-xlnx-psgpio-blob-513j.json",
+      "sha256": "42fcc810387da6af025d1bf9dc7fe31fbec70171c4516960c41092f3f6b22c51",
+      "bytes": 979
+    },
+    {
+      "path": "artifacts/manifests/source-xlnx-psgpio-commit-513j.json",
+      "sha256": "b01ccb98d8df0e3a2cd326102f8b0a03b3269e8b66b954f97cfb9427eac99c04",
+      "bytes": 949
+    }
+  ]
+}

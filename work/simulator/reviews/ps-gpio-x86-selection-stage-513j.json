@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "parent": {
+    "path": "crates/md-sim-firmware/examples/build_qemu_backend.rs",
+    "sha256": "e7277851a6f5555cbcc273fd438ad75b8c78a8440986c418df1f82b0a791e424"
+  },
+  "derived": {
+    "path": "work/simulator/ps-gpio-dev-513j/build_qemu_backend-x86-fix.rs",
+    "sha256": "c880f33d0a401ac30815a049bbb62d26d19127c427c75695c8f11bc006047eca"
+  },
+  "change": "Move unchanged PS GPIO stage into a guarded function; x86 returns before ARM filesystem or patch-tool access. Add missing/wrong ARM input and no-ARM-tree x86 regressions.",
+  "frozen513j_unchanged": true
+}

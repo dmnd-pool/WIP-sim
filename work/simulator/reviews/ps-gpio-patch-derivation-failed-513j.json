@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "passed": false,
+  "operation": "Independent data-only reconstruction of existing historical parent patches with an extra --fuzz=0 option",
+  "failure": "Historical s9-pl353 meson hunk rejected with --fuzz=0 despite its complete context occurring once; current tested builder uses ordinary patch flags for that parent. No new patch was applied yet.",
+  "next_action": "Reconstruct parents with their actual builder flags, then apply new PS GPIO patch with its required --fuzz=0 and exact parent/derived hashes.",
+  "files": [
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check/hw/misc/zynq_slcr.c",
+      "sha256": "dd74ec65e82a06c5791510024bbb20bedc99f461f55cdd32ffc38db272dc975a",
+      "bytes": 28461
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check/hw/arm/xilinx_zynq.c",
+      "sha256": "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+      "bytes": 37768
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check/hw/i2c/trace-events",
+      "sha256": "b3de1b04b9a9400c0ead3f6a057709e93f9b6ea753a2fbab5a6450e989c63e65",
+      "bytes": 4249
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check/hw/i2c/meson.build",
+      "sha256": "122cf1d35a017422e52045b17e1130884b26f6758257e91ce12f289ab7111516",
+      "bytes": 1786
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check/hw/i2c/meson.build.rej",
+      "sha256": "8d8bf79bb5e3de310cecd4019a7e727fad35ebe799e1f378c662a4489bc09618",
+      "bytes": 410
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check/hw/i2c/meson.build.orig",
+      "sha256": "122cf1d35a017422e52045b17e1130884b26f6758257e91ce12f289ab7111516",
+      "bytes": 1786
+    }
+  ]
+}

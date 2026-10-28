@@ -1,0 +1,62 @@
+--- a/src/v_ms.c
++++ b/src/v_ms.c
+@@ -1,3 +1,5 @@
++/* md-sim change, 2026-10-28: preserve the caller's implicit-event-control
++ * scanner context across conditional preprocessing; vendor HDL is unchanged. */
+ /* Copyright (c) 1991-2014 Tachyon Design Automation Corp. */
+ 
+ /* === INSERT LICENSE ===
+@@ -2072,7 +2074,7 @@
+  */
+ static int32 ifdef_skip_section(FILE *f, int32 begtok)
+ {
+- int32 level, ttyp2, sav_lin_cnt, savfnam_ind;
++ int32 level, ttyp2, sav_lin_cnt, savfnam_ind, sav_impl_evctrl;
+ 
+  /* ifdef must be on line by itself - anything treated as comment */
+  /* SJM 01-24-24 - IFDEF ANYWHERE */
+@@ -2085,6 +2087,8 @@
+  __ifdef_skipping = TRUE;
+  /* AIV 07/13/09 - had a bug for new altera_mf.v cannot ifdef/endif */
+  /* with a always@(*) - need this flag on to mark as not an attribute */
++ /* A caller may itself be skipping a library module. Restore its context. */
++ sav_impl_evctrl = __canbe_impl_evctrl;
+  __canbe_impl_evctrl = TRUE;
+  /* know reading stars after directive line */
+  for (level = 0;;)
+@@ -2111,7 +2115,7 @@
+       { 
+        /* reset flags */
+        __ifdef_skipping = FALSE; 
+-       __canbe_impl_evctrl = FALSE;
++       __canbe_impl_evctrl = sav_impl_evctrl;
+        return(CDIR_ENDIF); 
+       }
+      level--;
+@@ -2137,7 +2141,7 @@
+      /* skipping now when see top leve eslif - must return - caller then */
+      /* may restart skipping - can't eat the line */
+      /* AIV 06/01/11 - need to put this flag back to false on return */
+-     __canbe_impl_evctrl = FALSE;
++     __canbe_impl_evctrl = sav_impl_evctrl;
+      return(CDIR_ELSIF);
+     case CDIR_ELSE:
+      // IFDEF ANYWHERE if (!__chk_beg_line(CDIR_ELSE)) break;
+@@ -2154,7 +2158,7 @@
+         }
+        __ifdef_skipping = FALSE;
+        /* reset flag */
+-       __canbe_impl_evctrl = FALSE;
++       __canbe_impl_evctrl = sav_impl_evctrl;
+        return(CDIR_ELSE);
+       }
+      continue;
+@@ -2167,7 +2171,7 @@
+    }
+   }
+  /*UNREACHABLE*/
+- __canbe_impl_evctrl = FALSE;
++ __canbe_impl_evctrl = sav_impl_evctrl;
+  __ifdef_skipping = FALSE;
+  return(-1);
+ }

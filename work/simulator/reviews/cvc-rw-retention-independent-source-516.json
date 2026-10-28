@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Additive pre-execution review of always-retain delta; prior source review remains immutable",
+  "stage": {
+    "path": "work/simulator/s9-cvc-516/rw-probe-stage.json",
+    "sha256": "aa0f2974e7f30dd5cc61a596e7c938c9a98a60b3ec50d42e891d045be3bd419e",
+    "size": 1529
+  },
+  "source": {
+    "path": "work/simulator/s9-cvc-516/cvc_rw_probe.rs",
+    "object": {
+      "sha256": "6342e0419f92a9101fa43d3aad043dcf12ce70bb7f223a7770d03dc5b9544c23",
+      "size": 13976
+    }
+  },
+  "prior_review": {
+    "path": "work/simulator/reviews/cvc-rw-runner-independent-source-516.json",
+    "sha256": "34fd9667d0448df9b6b7376db91721486a930dff4d473740ed947590424753ce",
+    "size": 3974
+  },
+  "source_review_passed": true,
+  "findings_open": 0,
+  "checks": [
+    "probe result and retention result are both evaluated; either failure prevents success",
+    "Original assertion error and retention error have separate retained fields",
+    "Every existing fixed-name fixture/plugin/program is retained after success or failure; absent files remain absent",
+    "Regular-file/no-follow/nonblocking capture and32MiB per-file cap; copied bytes rehashed; unchanged8MiB archive cap",
+    "No fixture/protocol/expected-result change; expected CVC boundary mismatch remains failed"
+  ],
+  "artifact_mode_limit": "New copies use fs::write and do not preserve executable modes. The archive retains executable bytes as evidence; it is not claimed as a directly executable replay package.",
+  "executed": false,
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false
+}

@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Staged explicit-ROM reference GPIOB_CFG_LVTTL state and its new qtest. Source review only.",
+  "pins": [
+    {
+      "path": "work/simulator/reviews/zynq-lvttl-stage-513i.json",
+      "sha256": "bc89fdcf35d246bc3617983f0120609d2a4fcd6c17e9fc07c04b2ca52d3adace",
+      "size": 3834
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/ROM-RESET.md",
+      "sha256": "1242777bc149c502c1b1127a2535ef976dd7eb430fc5a5b49acbffbbebede95c",
+      "size": 8289
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/build_qemu_backend.rs",
+      "sha256": "a2a8184a3e6984289eecb01f760df6b5b06e700976c4abf576d2469cbea2b431",
+      "size": 56531
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/hw/arm/trace-events",
+      "sha256": "f28abcb79a79acaebd3dc5d92638d55dbc73a004b35a934ce7d51880dc6ac277",
+      "size": 8811
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/hw/arm/xilinx_zynq.c",
+      "sha256": "c51200a1fdbab897a190b764a8f9caaa483b846e5174ebe2d7d4c97d6721efb4",
+      "size": 37768
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/hw/misc/zynq_slcr.c",
+      "sha256": "dd74ec65e82a06c5791510024bbb20bedc99f461f55cdd32ffc38db272dc975a",
+      "size": 28461
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/derived/include/hw/arm/xilinx_zynq.h",
+      "sha256": "fc6bf9d4b15419ab8f643bfeb323ded68f4bf04c7c5a07dd577984412678fd49",
+      "size": 787
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/qemu_ttc_reset.rs",
+      "sha256": "1fd042a20b639a0d31520150a1ca00c0be98f14a1d5a2fed035a915350810d83",
+      "size": 24421
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/rom_reset_qtest.rs",
+      "sha256": "0e7983cd139ae419f7e290c99c18bba2c2be4a8df6ea2195f9a417373a8d3a80",
+      "size": 10327
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/s9-rom-reset.patch",
+      "sha256": "af02874cf6c3e1961ee6fa2d07d75490ecbb08f56bb3c2c92a08784404f32082",
+      "size": 14744
+    },
+    {
+      "path": "work/simulator/boot-dev-513/reset-stage-513i/source-identities.json",
+      "sha256": "6d26bec239000f1023f5eefcbf91bbe0509271dad0c91acd00932330b9eb3e01",
+      "size": 901
+    },
+    {
+      "path": "artifacts/files/source/source-zynq-ug585-v1-bdtic-513h/ug585-v1.pdf",
+      "sha256": "15bc69f0aaa6e94f4c9191278279c3e9070382760851874df10596e1f9bd758a",
+      "size": 37471135
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-v1-lvttl-513h.txt",
+      "sha256": "b7dd379c78d9e47b904d2211548196b5ed8e8ef1954a73a2e6dcd1fab7790608",
+      "size": 2186
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-v1-full-513h.txt",
+      "sha256": "7c0fb4915ded97c7a8f81051909735c43e65f4f260742f0fdbad84c71fad07e3",
+      "size": 5037322
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513h/assessment.json",
+      "sha256": "2fea3873cdc47c066defa1752534757bfa2e821412d5da056c4df182bfbb0f2d",
+      "size": 3474
+    },
+    {
+      "path": "work/simulator/reviews/zynq-reset-reason-independent-execution-513h2.json",
+      "sha256": "49a16045053fd56de037f514bd31a4c3e723898269a840c878ad2d430bb537af",
+      "size": 8430
+    },
+    {
+      "path": "work/simulator/boot-dev-513/qemu-parent-b/hw/arm/xilinx_zynq.c",
+      "sha256": "943b7cf7ac9f2b93b246b0ca4e073c4f442ee43ab4cb10172027056be03bcd21",
+      "size": 33665
+    },
+    {
+      "path": "work/simulator/boot-dev-513/qemu-parent-b/hw/misc/zynq_slcr.c",
+      "sha256": "d28d0a65580b353dc3664418cd4656fb567479c260ba7f9017394a4e718c797f",
+      "size": 24900
+    },
+    {
+      "path": "work/simulator/boot-dev-513/qemu-parent-b/include/hw/arm/xilinx_zynq.h",
+      "sha256": "293904617a00c991e264e640bd58da0f192d7fbc31bcd4ae62c601a7d68d87b6",
+      "size": 756
+    },
+    {
+      "path": "work/simulator/boot-dev-513/qemu-parent-b/hw/arm/trace-events",
+      "sha256": "40f9c13e75844e755b910ea82964a66b30ae17b8df578b7d00cce8d6e65b3bde",
+      "size": 8675
+    }
+  ],
+  "zero_fuzz_patch_matches_all_four_derived_files": true,
+  "source_review_passed": true,
+  "open_findings": [],
+  "evidence": [
+    "UG585v1.0p1516 identifies32-bit RW0xF8000B10 with default0; upper nibble ignores writes/reads zero. Lower28 fields are reserved RW without public electrical meaning.",
+    "The archived BootROM-value table uses0x0c301166, independently seen in actual original513h instructions and failed MMIO write."
+  ],
+  "checks": [
+    "New offset admitted only when existing md_rom_reference is selected; default behavior unchanged.",
+    "Full-word read/write stores only lower28 bits; existing SLCR lock remains before mutation.",
+    "Existing reset callback clears this register only in reference mode; this is stated reference reset behavior, not measured physical retention.",
+    "Partial/unaligned access is rejected with model-stop diagnostics after normal address/lock handling; no guessed subword behavior.",
+    "All source parents and outputs pinned in the builder and zero-fuzz derivation rechecked.",
+    "New mode selects the existing constrained ROM profile, unchanged limits and strict diagnostics. Outer verdict requires18transactions,2observedRESET events and zero IRQ events.",
+    "Independent count:1IRQ-intercept+10initialregistertransactions+5afterfirstreset+2aftersecondreset=18.",
+    "Original reason44/map340/SWAP383/fabric128 tests remain separate unchanged regressions."
+  ],
+  "tests_pending": [
+    "Actual UBSan backend rebuild and all component runs",
+    "Actual original-ROM continuation with first unsupported interface retained",
+    "Dedicated partial/unaligned and locked-write negative coverage remains incomplete; not claimed by18transaction suite"
+  ],
+  "gates": {
+    "source_review": true,
+    "runtime": false,
+    "electrical_behavior": false,
+    "exact_S9": false,
+    "original_board": false,
+    "mining": false
+  }
+}

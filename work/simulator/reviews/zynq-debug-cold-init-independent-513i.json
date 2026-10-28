@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Exact historical QOM construction default closes the last source-only initialization caveat from the prior0x500 report.",
+  "pins": [
+    {
+      "path": "artifacts/manifests/source-qemu-qom-parent-513i.json",
+      "sha256": "1d288a7380fca21fc9bca40d6757f06c09420bfa5b5ca8f87db6f106461f4398",
+      "size": 926
+    },
+    {
+      "path": "artifacts/files/source/source-qemu-qom-parent-513i/object.c",
+      "sha256": "996ac38097ffd8282b12c1f8592382e4af6a173eb3f0e942a7ba5b751eabbd3f",
+      "size": 38631
+    },
+    {
+      "path": "artifacts/manifests/source-qemu-qom-blob-513i.json",
+      "sha256": "8991790352af84d553b195da009201dd06ba70d9ab84c5df0e733bfa76e24f48",
+      "size": 949
+    },
+    {
+      "path": "artifacts/files/source/source-qemu-qom-blob-513i/qom-blob.json",
+      "sha256": "3cb4e371ac47908c1500dfa4f7142aaab1ae81ff1a117bde8fbd956b96f6ea75",
+      "size": 54129
+    },
+    {
+      "path": "artifacts/files/source/source-qemu-slcr-parent-513i/zynq_slcr.c",
+      "sha256": "9f907c7832926765f0d867f69c0e941a21ebec67f8484e8068c8f467ba18f7d8",
+      "size": 15120
+    },
+    {
+      "path": "work/simulator/reviews/zynq-debug-parent-independent-source-513i.json",
+      "sha256": "fef0ec07c77cee7061794e75f21faf30d469d89f510dd83df68b23d51fec9243",
+      "size": 2761
+    }
+  ],
+  "commit": "6619bc5c55c1322a89009e2edd530113da95d551",
+  "QOM_Git_blob_recomputed": "9a730e74c1a2240fba72b9e3f6f300a5fa835ba2",
+  "raw_equals_API_blob": true,
+  "initialization_chain": [
+    "object_new_with_type allocates instance_size bytes and calls object_initialize_with_type.",
+    "object_initialize_with_type zeroes the full instance before class/instance initialization callbacks.",
+    "Exact SLCR TypeInfo sets instance_size=sizeof(ZynqSLCRState); its init only creates and attaches MMIO. dbg_ctrl has no separate initializer or reset assignment."
+  ],
+  "conclusion": "Historical dbg_ctrl starts at0 on fresh construction, stores32-bit unlocked writes, and retains that word through its actual warm-reset callback. This is an exact prior-QEMU reference contract, not physical silicon behavior.",
+  "source_evidence_complete_for_this_storage_contract": true,
+  "runtime_executed": false,
+  "debug_security_side_effects_established": false,
+  "physical_S9_compatibility": false,
+  "original_board_gate": false,
+  "prior_reports_preserved": true
+}

@@ -73,3 +73,64 @@ The original is preserved at
 PDF pages159,205 and1689 contain the checked security description, boot
 register values and OCM_CFG fields. The mirror identity is explicit; no
 publisher signature or publisher-supplied digest was available.
+
+## Reset reason in the ROM reference mode
+
+The 2012 UG585v1.0 tables at pages1441–1443 specify RST_REASON0x250,
+RST_REASON_CLR0x254 and persistent REBOOT_STATUS0x258. The original mirrored
+PDF is `artifacts/files/source/source-zynq-ug585-v1-bdtic-513h/ug585-v1.pdf`,
+SHA-25615bc69f0aaa6e94f4c9191278279c3e9070382760851874df10596e1f9bd758a.
+The mirror adds its own watermark and metadata. Publisher byte identity is
+not claimed. The page was checked as both text and a rendered image.
+
+RST_REASON bits6..0 are POR, SRST_B, DBG_RST, SLC_RST, AWDT1_RST,
+AWDT0_RST and SWDT_RST. It is read-only; reserved bits read zero. Writing
+CLR bit0 clears these causes; zero and reserved bits have no effect. CLR
+always reads zero. A newly constructed reference device initializes POR=1
+and REBOOT_STATUS=0. Later reset callbacks preserve these registers. A guest
+PSS_RST_CTRL.SOFT_RST write records SLC_RST before requesting the existing
+QEMU reset. Reset clears the PSS control register. UG585v1.12.2 pages1608–1609
+specify that control's reset-zero and generated-pulse behavior.
+
+The exact original AMD Answer52030 API response is
+`artifacts/files/source/source-zynq-reset-reason-api-513h/52030-solution.html`,
+SHA-2563758538aebdfbd42afb1a4b87c6a2d6d39207f520c54aedae5cf989716579e4d.
+Its narrative confirms accumulation and retention through every non-POR
+reset, and POR clearing all causes except POR. Its RST_REASON summary table
+conflicts with the full 2012 register table: it swaps DBG/SRST, omits SLC and
+labels bit0 as a BootROM error. The model uses the full register table. This
+conflict remains in the original evidence. The same answer's production
+REBOOT_STATUS mapping agrees with the full table shifted by16 bits.
+
+QEMU maps both QMP and guest reset to RESET_TYPE_COLD. That API label is not
+a physical POR. POR is established only during realization; the existing
+migrated register array holds persistent state. QMP reset represents a
+control-plane warm reset and adds no guessed hardware cause. The new test
+checks two actual PSS software resets and two QMP resets. It checks initial
+POR, cause accumulation, read-only writes, clear-zero/one/reserved behavior,
+read-zero CLR and independent REBOOT_STATUS retention. The default mode's
+reset behavior is unchanged. No watchdog, external-reset or debug-reset
+cause is implemented or accepted by this component test. Partial/unaligned
+access to the two reason registers is explicitly unsupported and stops the
+model; no physical subword access behavior is claimed.
+
+These changes remove one observed missing interface in the real original
+ROM trace. They do not establish a complete boot or bind the public ROM to
+the selected S9 silicon. Private SWAP and ROM_SHADOW remain incomplete.
+
+## Legacy LVTTL register
+
+The same original 2012 UG585 table at page1516 identifies GPIOB_CFG_LVTTL
+at0xf8000b10. It specifies a32-bit read/write register with reset value0.
+Bits31:28 ignore writes and read zero. Bits27:0 are read/write reserved
+fields whose meaning is not public. The BootROM register-value table gives
+0x0c301166 for this register. The actual original-ROM513h diagnostic reaches
+this address after the reset-clear operation. The later2018manual omits it.
+
+The ROM-reference model stores the lower28 bits, ignores the upper nibble,
+and clears the register on the existing reset callback. It retains the SLCR
+write lock. The component test checks0, the original BootROM value, an independent all-bits storage vector, ignored
+upper bits and two actual QMP resets. Partial and unaligned accesses stop as
+unsupported. The default mode stays unchanged. This is register behavior
+only; electrical thresholds, drive strength and propagation are not modeled
+or calibrated by these tests. No input voltage or pin result is fabricated.

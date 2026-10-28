@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "scope": "Standard host patch applied reference source data only; acquired code not executed",
+  "steps": [
+    {
+      "patch": "simulator/backends/qemu/s9-axi-iic.patch",
+      "flags": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward"
+      ],
+      "exit_code": 0,
+      "stdout": "patching file hw/i2c/meson.build\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    },
+    {
+      "patch": "simulator/backends/qemu/s9-pl353.patch",
+      "flags": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward"
+      ],
+      "exit_code": 0,
+      "stdout": "patching file hw/i2c/meson.build\nHunk #1 succeeded at 19 with fuzz 2.\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    },
+    {
+      "patch": "simulator/backends/qemu/s9-legacy-io.patch",
+      "flags": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward"
+      ],
+      "exit_code": 0,
+      "stdout": "patching file hw/i2c/meson.build\nHunk #1 succeeded at 23 (offset 3 lines).\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    },
+    {
+      "patch": "simulator/backends/qemu/s9-gpio.patch",
+      "flags": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward"
+      ],
+      "exit_code": 0,
+      "stdout": "patching file hw/i2c/meson.build\nHunk #1 succeeded at 25 (offset 3 lines).\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    },
+    {
+      "patch": "simulator/backends/qemu/s9-fan.patch",
+      "flags": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward"
+      ],
+      "exit_code": 0,
+      "stdout": "patching file hw/i2c/meson.build\nHunk #1 succeeded at 25 (offset 3 lines).\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    },
+    {
+      "patch": "simulator/backends/qemu/s9-pic16.patch",
+      "flags": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward"
+      ],
+      "exit_code": 0,
+      "stdout": "patching file hw/i2c/meson.build\nHunk #1 succeeded at 25 (offset 3 lines).\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    },
+    {
+      "patch": "simulator/backends/qemu/s9-swdt.patch",
+      "flags": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward"
+      ],
+      "exit_code": 0,
+      "stdout": "patching file hw/i2c/meson.build\nHunk #1 succeeded at 25 (offset 24 lines).\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    },
+    {
+      "patch": "work/simulator/ps-gpio-dev-513j/s9-ps-gpio.patch",
+      "zero_fuzz": true,
+      "exit_code": 0,
+      "stdout": "patching file hw/arm/xilinx_zynq.c\npatching file hw/misc/zynq_slcr.c\npatching file hw/i2c/meson.build\nHunk #1 succeeded at 25 (offset 24 lines).\npatching file hw/i2c/trace-events\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/misc/zynq_slcr.c",
+      "sha256": "369ca416465d43abad564d0fcbae78568022eabc3c7d267617ac168e70fd522b",
+      "bytes": 29565
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/arm/xilinx_zynq.c",
+      "sha256": "013ba4de47b293d60cc9667c98c85998f7fc7a53ebba1be047ce1cbff29c4a48",
+      "bytes": 38368
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/i2c/trace-events",
+      "sha256": "28407eafafe35efddfdd5d4faf9f73684d4b8f4d5b8ba832a2125a81b2403d36",
+      "bytes": 6036
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/i2c/meson.build",
+      "sha256": "4d6017a360e4ecf424daaee4f32eb9553e38c22569cbeeffa6f3b7a59a194aa3",
+      "bytes": 2044
+    },
+    {
+      "path": "work/simulator/ps-gpio-dev-513j/patch-check-b/hw/i2c/meson.build.orig",
+      "sha256": "bc5aa6d52d6c6368abce822511054e1204b4e2025626e3aed8b3e84e102b8f86",
+      "bytes": 2024
+    }
+  ],
+  "passed": true
+}

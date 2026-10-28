@@ -1,0 +1,90 @@
+{
+  "schema": "md-sim-source-checkpoint/1",
+  "time": "2026-10-28T20:00:19.126449+00:00",
+  "status": "PASS component/source checkpoint; full S9 remains incomplete; paused at user request",
+  "parent_commit": "599530edda5000a3d82e7f3b6b3054d2611da2cd",
+  "source_inputs": {
+    "path": "work/simulator/source-checkpoint-518/source-inputs.json",
+    "sha256": "4b9fa8bdcc0863c12c3897e271fbf0a395b78dd6c5f48b6c1f36d3fbb9324f44",
+    "count": 618,
+    "before_after_equal": true,
+    "scope": "Git tracked and unignored files under crates/,simulator/,.cargo/,Cargo.toml and Cargo.lock. Pending work under work/ is separately labelled and not compiled."
+  },
+  "tests": {
+    "passed": 1269,
+    "failed": 0,
+    "ignored": 56,
+    "suites": 131
+  },
+  "commands": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "environment": {
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_TARGET_DIR": "work/simulator/check-target-085",
+        "TMPDIR": "/home/user/src/md-sim/work/simulator/test-tmp-227"
+      },
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/source-checkpoint-518/fmt.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      }
+    },
+    {
+      "command": "cargo clippy --workspace --all-targets --offline --locked -- -D warnings",
+      "environment": {
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_TARGET_DIR": "work/simulator/check-target-085",
+        "TMPDIR": "/home/user/src/md-sim/work/simulator/test-tmp-227"
+      },
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/source-checkpoint-518/clippy.log",
+        "sha256": "07c3d2b4dea91e16b8439cc48858b1310e3f2c5e763a38ae46f9b13918d1b699",
+        "size": 228
+      }
+    },
+    {
+      "command": "cargo test --workspace --all-targets --offline --locked",
+      "environment": {
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_TARGET_DIR": "work/simulator/check-target-085",
+        "TMPDIR": "/home/user/src/md-sim/work/simulator/test-tmp-227"
+      },
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/source-checkpoint-518/tests.log",
+        "sha256": "ae9e65d4b1ec12a893d8b10d1110881087fcc4db8663de39966485952b751981",
+        "size": 154234
+      }
+    },
+    {
+      "command": "python3 scripts/check_guide_links.py",
+      "exit_code": 0,
+      "checked_links": 591,
+      "log": {
+        "path": "work/simulator/source-checkpoint-518/guide-links.log",
+        "sha256": "cb35793a8a46cdff615484f90967dd5424afb615310b11aad203ec3440bc1cc2",
+        "size": 176
+      }
+    }
+  ],
+  "independent_execution_reports": [
+    "work/simulator/reviews/ps-gpio-independent-execution-513j.json",
+    "work/simulator/reviews/cvc-combined-build-independent-execution-516f.json",
+    "work/simulator/reviews/cvc-combined-components-independent-execution-516f.json",
+    "work/simulator/reviews/live-icarus-independent-execution-516d.json",
+    "work/simulator/reviews/runtime-relocation-checks-517.json"
+  ],
+  "git_scope_check": "work/simulator/reviews/git-scope-checkpoint-518.json",
+  "remaining": [
+    "Selected FPGA execution and throughput with combined CVC tool not started",
+    "CPU/FPGA coupling and timed stall not implemented",
+    "Original ROM first unsupported access remains SLCR0x500; its reviewed reference and incomplete dispatcher are staged only",
+    "Exact component binding, full original-board boot, physical calibration and exact-target mining remain open",
+    "Real data relocation not performed; utility scratch tests are separate",
+    "No full-matrix or clean-install acceptance"
+  ],
+  "pause_reason": "User has8% weekly allowance and requested a checkpoint. Active tests finished; commit and pause."
+}

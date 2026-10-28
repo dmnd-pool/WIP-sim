@@ -1,0 +1,60 @@
+{
+  "schema": "md-sim-workspace-check/1",
+  "date": "2026-10-28T19:17:40.499924+00:00",
+  "status": "PASS workspace checks; S9 milestone2 remains incomplete",
+  "source_before": {
+    "path": "work/simulator/checks-2026-10-28-003/before.json",
+    "sha256": "25ddb83b2f5d3e40a4bfc620d368a0464732ae0814c3aef69f6ec079ff99d491",
+    "size": 103674
+  },
+  "source_after": {
+    "path": "work/simulator/checks-2026-10-28-003/after.json",
+    "sha256": "25ddb83b2f5d3e40a4bfc620d368a0464732ae0814c3aef69f6ec079ff99d491",
+    "size": 103674
+  },
+  "source_set_identical": true,
+  "identical_source_inputs": 602,
+  "source_scope": "Git tracked and unignored files under crates/,simulator/,.cargo/,Cargo.toml and Cargo.lock; helper execution closures have their own manifests.",
+  "suites": 130,
+  "passed": 1246,
+  "failed": 0,
+  "ignored": 55,
+  "commands": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-003/fmt.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      }
+    },
+    {
+      "command": "cargo clippy --workspace --all-targets --offline --locked -- -D warnings",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-003/clippy.log",
+        "sha256": "4dfd924e52e692a748fa643f3af5bd2b7ade8a8a29815a249a6695063d2739e5",
+        "size": 143
+      }
+    },
+    {
+      "command": "cargo test --workspace --all-targets --offline --locked",
+      "exit_code": 0,
+      "log": {
+        "path": "work/simulator/checks-2026-10-28-003/tests.log",
+        "sha256": "064abf59d786b964873d594f1d1cabcb76371780c09867e592946f0912f3cd4f",
+        "size": 148758
+      }
+    }
+  ],
+  "execution_audits": [
+    "work/simulator/reviews/cvc-rw-independent-execution-516c.json",
+    "work/simulator/reviews/zynq-lvttl-independent-execution-513i.json"
+  ],
+  "limits": [
+    "Ignored tests remain explicit.",
+    "CVC selected HDL andCPU bridge remain staged; PSI GPIO interface is unimplemented.",
+    "No complete original-board boot, exacttarget mining orphysicalcalibration pass."
+  ]
+}

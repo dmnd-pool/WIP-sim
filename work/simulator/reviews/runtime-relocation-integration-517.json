@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:52:21.435433+00:00",
+  "source": {
+    "path": "work/simulator/runtime-relocation-dev-517/relocate_runtime_run.rs",
+    "sha256": "b85c7df90918c4f61e5731f061227c5886ad2eae8fe79ea130edacc858f4880a",
+    "size": 35798
+  },
+  "production": {
+    "path": "crates/md-sim-firmware/examples/relocate_runtime_run.rs",
+    "sha256": "b85c7df90918c4f61e5731f061227c5886ad2eae8fe79ea130edacc858f4880a",
+    "size": 35798
+  },
+  "bytes_equal": true,
+  "documentation": {
+    "path": "work/simulator/runtime-relocation-dev-517/README.md",
+    "sha256": "c1dc0aec33c2d289edfc2f471ad022f67c7530d7601f024cc41931db721f7a33",
+    "size": 2853
+  },
+  "source_review": "Parent root reviewed all source lines and authorized integration after browser freeze516f. No blocking finding; modification-time wording corrected.",
+  "tests_status": "Pending coordinated Cargo/runtime slot after selected CVC run",
+  "real_data_moved_or_deleted": false
+}

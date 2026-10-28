@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "time": "2026-10-28T19:46:05.547407+00:00",
+  "scope": "Independent explicit combined CVC RW/lexer tool builder source review",
+  "inputs": {
+    "crates/md-sim-firmware/examples/build_cvc_tool.rs": {
+      "sha256": "49cd6a4608a6f50393d397ef316f11910a104f685ba522bcffa8416cd3c31a9f",
+      "size": 23063
+    },
+    "work/simulator/s9-cvc-516/lexer-context/build_cvc_tool.rs": {
+      "sha256": "f4ce1fc1adfab8963bbb74b20ff51b1c009838dadf499e3b0fc1222c8f6ea888",
+      "size": 26749
+    },
+    "work/simulator/s9-cvc-516/lexer-context/builder-stage.json": {
+      "sha256": "080f06223eec4ccc73d60badd348abcc01c018ba1f37bd4b4a88788d91fc8555",
+      "size": 1454
+    },
+    "work/simulator/s9-cvc-516/lexer-context/lexer-context.patch": {
+      "sha256": "39dde71edcc0d4eaf97caa3a29d3baf7217da433b3516e4756298b1a64259a2d",
+      "size": 2064
+    },
+    "work/simulator/reviews/cvc-lexer-original-executed-516e.json": {
+      "sha256": "ba9274ae40b8fbdf1f1feb9fe64e742a55b8d72217de3a7f9276fcb07146f618",
+      "size": 3472
+    }
+  },
+  "checks": [
+    "Only explicit --rw-after-nba --lexer-context selects the new profile. Missing, reversed or duplicate flags reject; old original/RW selections retain their identity.",
+    "The shared patch function preserves both exact parent and exact derived checks, patch identity, forward-only no-fuzz application and stderr rejection. Static source names avoid dynamic traversal.",
+    "The original archived source and both older tool outputs are preserved. Both adaptations, changed files and source identities are exported with the new tool.",
+    "The actual original-tool fixture failed with the same invalid-attribute diagnostic; the source review does not substitute for rerunning that literal fixture on the derived tool.",
+    "Build limits, sanitizer policy, smoke and restored-tool tests remain unchanged. Vendor source, model assertions and FPGA clocks are untouched."
+  ],
+  "findings": [],
+  "disposition": "Permits integration, focused checks and isolated derived build. Literal scanner, scheduler and selected-model execution checks remain required.",
+  "selected_hdl_pass": false,
+  "original_board_gate": false,
+  "physical_timing_claim": false
+}

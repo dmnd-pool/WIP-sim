@@ -1,0 +1,201 @@
+--- a/src/v_vpi.c
++++ b/src/v_vpi.c
+@@ -1,3 +1,6 @@
++/* md-sim change, 2026-10-28: keep VPI read/write synchronization after
++ * active/inactive/NBA settling and before read-only synchronization. Preserve
++ * callback batches, cancellation and original virtual timestamps. */
+ /* Copyright (c) 1991-2014 Tachyon Design Automation Corp. */
+ 
+ /* === INSERT LICENSE ===
+@@ -2502,6 +2505,34 @@
+  *
+  * SJM 07/24/00 - delay call backs can't be turned off by user
+  */
++/* RW callbacks have their own phase. Reuse the existing typed callback
++ * lists; only the scheduler's quiescent boundary transfers this batch. */
++static void md_sim_queue_rw_sync(struct tev_t *tevp)
++{
++ tevp->tenxtp = NULL;
++ if (__vpicb_tehdri[cbReadWriteSynch] == NULL)
++  __vpicb_tehdri[cbReadWriteSynch] = tevp;
++ else __vpicb_teendi[cbReadWriteSynch]->tenxtp = tevp;
++ __vpicb_teendi[cbReadWriteSynch] = tevp;
++}
++
++extern struct tev_t *__md_sim_take_rw_sync(void)
++{
++ struct tev_t *head, *tail;
++ head = __vpicb_tehdri[cbReadWriteSynch];
++ if (head == NULL) return(NULL);
++ if (__p0_te_hdrp != NULL || __p0_te_endp != NULL)
++  __vpi_terr(__FILE__, __LINE__);
++ tail = __vpicb_teendi[cbReadWriteSynch];
++ if (tail == NULL) __vpi_terr(__FILE__, __LINE__);
++ __vpicb_tehdri[cbReadWriteSynch] = NULL;
++ __vpicb_teendi[cbReadWriteSynch] = NULL;
++ __p0_te_hdrp = head;
++ __p0_te_endp = tail;
++ tail->tenxtp = __compiled_sim ? __free_event_pnd0_tevp : NULL;
++ return(head);
++}
++
+ static vpiHandle delay_cb_register(p_cb_data datp) 
+ {
+  word64 ticksdel, schtim;
+@@ -2576,7 +2607,8 @@
+      __have_vpi_actions = TRUE;
+      break;
+     case cbReadWriteSynch:
+-     /* MAYBE FIXME  - for now same as #0 except future becomes #0 */
++     md_sim_queue_rw_sync(tevp);
++     break;
+     case cbAfterDelay:
+      if (__p0_te_hdrp == NULL) __p0_te_hdrp = __p0_te_endp = tevp;
+      else
+@@ -2742,13 +2774,9 @@
+ 
+    if (cbp->cb_reason == cbReadWriteSynch)
+     {
+-     if (__p0_te_hdrp == NULL) __p0_te_hdrp = __p0_te_endp = tevp2;
+-     else 
+-      { 
+-       __p0_te_endp->tenxtp = tevp2; __p0_te_endp = tevp2; 
+-       /* AIV 08/23/10 - if compiled need to set end of time event handler */
+-      if (__compiled_sim) tevp2->tenxtp = __free_event_pnd0_tevp;
+-     }
++     /* Removal must cancel this rescheduled event, not the old carrier. */
++     cbp->cbtevp = tevp2;
++     md_sim_queue_rw_sync(tevp2);
+     }
+    else if (cbp->cb_reason == cbReadOnlySynch)
+     {
+--- a/src/v_sim.c
++++ b/src/v_sim.c
+@@ -1,3 +1,6 @@
++/* md-sim change, 2026-10-28: keep VPI read/write synchronization after
++ * active/inactive/NBA settling and before read-only synchronization. Preserve
++ * callback batches, cancellation and original virtual timestamps. */
+ /* Copyright (c) 1991-2014 Tachyon Design Automation Corp. */
+ 
+ /* === INSERT LICENSE ===
+@@ -349,6 +352,7 @@
+ extern void __exec_strobes(void);
+ extern void __exec_rosync_misctf(void);
+ extern void __vpi_del_rosync_call(void);
++extern struct tev_t *__md_sim_take_rw_sync(void);
+ extern void __vpi_del_nxtsimtim_trycall(void);
+ extern void __do_dmpvars_baseline(char *);
+ extern void __turnoff_all_dumpvars(void);
+@@ -666,19 +670,26 @@
+    /* blocking events processing nb events can add new pnd0's that are */
+    /* processed as added and new nb's that are saved and added to do */
+    /* after all current level nbs and pnd0s done */
+-   if (__nb_te_hdrp != NULL)
+-    {
+-     for (;;)
+-      { 
+-       __p0_te_hdrp = __nb_te_hdrp; 
+-       __p0_te_endp = __nb_te_endp;
+-       __nb_te_hdrp = __nb_te_endp = NULL;
+-
+-       /* notice the move to pnd 0 queue events add to free list in */
+-       /* process pnd0 routine */
+-       process_pnd0s();
+-       if (__nb_te_hdrp == NULL) break;
++   for (;;)
++    {
++    if (__nb_te_hdrp != NULL)
++     {
++      for (;;)
++       { 
++        __p0_te_hdrp = __nb_te_hdrp; 
++        __p0_te_endp = __nb_te_endp;
++        __nb_te_hdrp = __nb_te_endp = NULL;
++
++        /* notice the move to pnd 0 queue events add to free list in */
++        /* process pnd0 routine */
++        process_pnd0s();
++        if (__nb_te_hdrp == NULL) break;
++      }
+      }
++     if (__md_sim_take_rw_sync() == NULL) break;
++     /* Reuse normal event processing. Any new NBA work must settle before
++      * another RW batch or the read-only phase can run. */
++     process_pnd0s();
+     }
+    /* --- DBG remove
+    if (__debug_flg && __ev_tracing
+--- a/src/v_asmlnk.c
++++ b/src/v_asmlnk.c
+@@ -1,3 +1,6 @@
++/* md-sim change, 2026-10-28: keep VPI read/write synchronization after
++ * active/inactive/NBA settling and before read-only synchronization. Preserve
++ * callback batches, cancellation and original virtual timestamps. */
+ /* Copyright (c) 1991-2014 Tachyon Design Automation Corp. */
+ 
+ /* === INSERT LICENSE ===
+@@ -299,6 +302,7 @@
+ static void emit_ialst_enter_points_array(FILE *, struct mod_t *);
+ static void emit_process_next_event(FILE *, char *, int32);
+ static void emit_move_time_routine(FILE *);
++static void emit_md_rw_sync_dispatch(FILE *);
+ static void emit_move_time_routine_nonb(FILE *);
+ static void emit_next_event(FILE *);
+ static void emit_jump_to_next_event(FILE *, int32);
+@@ -7187,6 +7191,20 @@
+  emit_one_insn(fp, "\tjmp    *%s\n", __regs[AR_BX]);
+ }
+ 
++/* This boundary is reached only after active, pending#0 and NBA work.
++ * Transfer a waiting RW batch before slot-end/RO work, without moving time.
++ * Its events use the existing cancellation, IDP and pending-event machinery. */
++static void emit_md_rw_sync_dispatch(FILE *fp)
++{
++ if (!__pli_access_level && !__design_has_ld_pli_libs) return;
++ emit_one_insn(fp, "\tcall   __md_sim_take_rw_sync\n");
++ emit_one_insn(fp, "\t%s   %s, %s\n", TESTA_STR,
++  __regs[AR_AX], __regs[AR_AX]);
++ emit_one_insn(fp, "\tje     md_no_rw_sync\n");
++ emit_jump_to_next_event(fp, AR_AX);
++ emit_one_insn(fp, "md_no_rw_sync:\n");
++}
++
+ /*
+  * AIV 07/24/08 - inlined the routine to move time
+  *
+@@ -7207,6 +7225,8 @@
+ {
+  emit_one_insn(fp, "\t%s\n", ALIGN_FUNC_STR);
+  emit_one_insn(fp,"move_time:\n"); 
++
++ emit_md_rw_sync_dispatch(fp);
+ 
+  if (__cvc_slotend_action != 0)
+   {
+@@ -7368,6 +7388,8 @@
+  emit_one_insn(fp, "\t%s\n", ALIGN_FUNC_STR);
+  emit_one_insn(fp,"move_time:\n"); 
+ 
++ emit_md_rw_sync_dispatch(fp);
++
+  if (__cvc_slotend_action != 0)
+   {
+    /* if has pli access all different end time move to check for end time */
+@@ -7504,6 +7526,8 @@
+  emit_one_insn(fp, "\t%s\n", ALIGN_FUNC_STR);
+  emit_one_insn(fp,"move_time:\n"); 
+  emit_one_insn(fp,"\t.cfi_startproc\n"); 
++
++ emit_md_rw_sync_dispatch(fp);
+ 
+  if (__cvc_slotend_action != 0)
+   {
+@@ -7658,6 +7682,8 @@
+  emit_one_insn(fp,"move_time:\n"); 
+  emit_one_insn(fp,"\t.cfi_startproc\n"); 
+ 
++ emit_md_rw_sync_dispatch(fp);
++
+  if (__cvc_slotend_action != 0)
+   {
+    /* if has pli access all different end time move to check for end time */

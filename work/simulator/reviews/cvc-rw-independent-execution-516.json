@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Independent retained-output audit of the same future-RW/two-NBA oracle in unchanged Icarus and compiled CVC. The CVC contract failure remains failed.",
+  "source_entries": 599,
+  "before_after_equal": true,
+  "captured_mounts": 33,
+  "process": {
+    "status": "exited",
+    "exit_code": 1,
+    "wall_milliseconds": 3816,
+    "trace_truncated": false
+  },
+  "same_fixture_inputs": {
+    "c": "d8c7d961d4e17fb175c9b01dd41813836d9a9094b65d699262d5ba97dd733905",
+    "hdl": "d44bb7fb157664681d134ce5116cceb7db6a8f4b0ffbf06ba131a9bebc08dfcc"
+  },
+  "independent_expected": {
+    "time_ps": 5,
+    "incoming": 1,
+    "edge_seen": 1,
+    "sampled_before_future_RW": 0,
+    "reason": "Clock edge schedules two NBA waves; the second consumes incoming0 before post-NBA RW writes1."
+  },
+  "actual": {
+    "icarus": {
+      "exit": 0,
+      "sampled": 0,
+      "time_ps": 5,
+      "contract_pass": true
+    },
+    "cvc_original": {
+      "exit": 1,
+      "sampled": 1,
+      "time_ps": 5,
+      "contract_pass": false
+    }
+  },
+  "compiler_diagnostics_empty": true,
+  "sanitizer_flags_checked_in_both_VPI_compiles": true,
+  "all_stream_hashes_and_untruncated_bounds_checked": true,
+  "original_error_retained": "RW oracle process failed",
+  "retained_failure_archive": {
+    "sha256": "96eee47d16f9fb79fc5ff1536c7dbbfd25322316def2ee944ae197a4936f1c17",
+    "size": 2196048
+  },
+  "retained_members": 6,
+  "artifact_mode_limit": "Archive keeps exact executable bytes; copied files do not retain executable mode and are not claimed as a direct replay installation.",
+  "evidence_audit_passed": true,
+  "execution_passed": false,
+  "selected_hdl_equivalence": false,
+  "firmware_execution_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "next": "Review a separately pinned existing-CVC scheduler adaptation, then rerun this unchanged oracle and all selected equivalence gates.",
+  "inputs": {
+    "path": "work/simulator/reviews/cvc-rw-independent-execution-516-inputs.json",
+    "sha256": "8fbec5633cc1c798d9e965cb34a72600a47f6841d0534097fecaa20c97da0c20",
+    "size": 150850
+  }
+}

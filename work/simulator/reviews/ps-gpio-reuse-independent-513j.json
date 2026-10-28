@@ -1,0 +1,184 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Static suitability assessment of one exact existing QEMU GPIO implementation for the next actual S9 public-ROM dependency. No acquired code executed.",
+  "pins": [
+    {
+      "path": "artifacts/files/source/source-xlnx-psgpio-source-513j/xlnx-zynqmp-gpio.c",
+      "sha256": "f0fbc98a4df95fc3e07b173886f025bfcc56b888ba272e0a7cefb77c7bda60fd",
+      "size": 28732
+    },
+    {
+      "path": "artifacts/files/source/source-xlnx-psgpio-blob-513j/gpio-blob.json",
+      "sha256": "8788773ce4939bee81810841bcb7e46e4c9322273c588be8c95bf5e77d352014",
+      "size": 40601
+    },
+    {
+      "path": "artifacts/files/source/source-xlnx-psgpio-commit-513j/gpio-commit.json",
+      "sha256": "074550895ab6d3b6948adfd05ff2de6d42332519f1befb89dccd73edca8fb048",
+      "size": 5175
+    },
+    {
+      "path": "artifacts/manifests/source-xlnx-psgpio-source-513j.json",
+      "sha256": "381b802a9eed8f6fad89972d5c424248192d2697a986c4096c66c8d7a775832c",
+      "size": 960
+    },
+    {
+      "path": "artifacts/files/source/source-zynq-ug585-1122-mirror/ug585-Zynq-7000-TRM-v1.12.2.pdf",
+      "sha256": "e24b2574c52110f351e6aee0375b97f62556d2decd957e006646367ca43b7a66",
+      "size": 20474087
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-1122.txt",
+      "sha256": "6be50c5be29490766dd6bf313de88378a1aa96556c48768eb8820dcb087675d3",
+      "size": 5840304
+    },
+    {
+      "path": "work/simulator/reviews/zynq-trm-mirror-acquisition-513c.json",
+      "sha256": "edce1f425d78e9b8eaa5b6cb86d27884aa1f9fa1a8ee131aba67ce4f17558a2a",
+      "size": 1531
+    },
+    {
+      "path": "work/simulator/reviews/zynq-lvttl-independent-execution-513i.json",
+      "sha256": "15b10b1677a79f7bf61cba19aacf23b7f7db706d6b779e39e261dadc56b9fc0b",
+      "size": 7263
+    }
+  ],
+  "source_commit": "474335bc0411186d5ec1e51e82af941c28929166",
+  "source_git_blob": "100e89270dc6c4baa68619a6f5904329d1759af7",
+  "raw_api_blob_equal": true,
+  "primary_basis": [
+    "UG585v1.12.2 Chapter14 pp389\u2013395: pin paths, five interrupt trigger modes, aligned32-bit access, clock and bus-reset scope.",
+    "UG585v1.12.2 AppendixB gpio pp1346\u20131373: exact bank/register widths, masks, access types and reset values."
+  ],
+  "comparison": [
+    {
+      "area": "Profile and valid offsets",
+      "source": "Six banks26/26/26/32/32/32 with174pins and threeMIO banks.",
+      "required": "Four banks32/22/32/32 with118pins, twoMIO banks and32-bit aligned MMIO only.",
+      "change": "Profile/bounds data alone can handle widths and absent banks."
+    },
+    {
+      "area": "Shared IRQ",
+      "source_lines": [
+        277,
+        289
+      ],
+      "source": "Each bank calls qemu_set_irq on the same line; the last bank replaces earlier assertions.",
+      "required": "OR all unmasked bank status bits into IRQ52.",
+      "literal_counterexample": "bank0status1/unmasked; all laterstatus0 => source ends low, required high.",
+      "change": "Replace IRQ reduction and all relevant update hooks."
+    },
+    {
+      "area": "Edge/level status",
+      "source_lines": [
+        292,
+        301
+      ],
+      "source": "Only polarity is used. A falling event deposits level0; TYPE and ANY do not affect detection.",
+      "required": "Rising/falling/either-edge latches; active-low/high levels remain asserted until source deasserts.",
+      "literal_counterexample": "Falling configured, old1/new0, clearstatus => source stores0, required latched1. TYPE0activehigh held1 must assert without another transition.",
+      "change": "Replace interrupt detection/state and W1C/update behavior."
+    },
+    {
+      "area": "Input versus output data",
+      "source_lines": [
+        344,
+        363,
+        448,
+        453
+      ],
+      "source": "Input callback changes DATA only when DIRM0; DATA_RO returns that same DATA register.",
+      "required": "DATA remains output latch. DATA_RO observes independent settled pad/input value, with explicit unknown/unavailable pins.",
+      "literal_counterexample": "Write output latch1, keep inputmode, supply external0 => DATA must remain1 and DATA_RO0.",
+      "change": "Separate output latch, input samples and their known masks."
+    },
+    {
+      "area": "Output changes and interrupt origin",
+      "source_lines": [
+        332,
+        340,
+        380,
+        383
+      ],
+      "source": "DATA writes invoke input ISR for every pin before the output-enable check; upper-half update offsets reuse low-bit interrupt positions.",
+      "required": "Interrupt detector observes the input signal, not an unconnected output-register write.",
+      "change": "Separate output notification from external settled-input detector; no implicit board feedback."
+    },
+    {
+      "area": "Interrupt mask update",
+      "source_lines": [
+        456,
+        471
+      ],
+      "source": "EN/DIS change mask storage but do not recompute IRQ.",
+      "required": "Unmasking a pending event exposes it; masking removes it from shared reduction.",
+      "change": "Recompute after mask/status/type/input changes."
+    },
+    {
+      "area": "Masked DATA readback",
+      "source_lines": [
+        443,
+        445,
+        510,
+        548
+      ],
+      "source": "MASK_DATA register post-read always returns0.",
+      "required": "Upper16mask reads0; lowhalf reads selected prior output-latch half, including sixvalid highbits of bank1.",
+      "literal_counterexample": "DATA0=0x12345678 => MASK_DATA_0_LSW0x5678 and MSW0x1234.",
+      "change": "Return actual selected stored data and unknown mask."
+    },
+    {
+      "area": "Direction/output enable",
+      "source_lines": [
+        474,
+        505,
+        605,
+        614
+      ],
+      "source": "Only OEN changes drive enable notifications; DIRM has no such hook; rawOEN forwarded.",
+      "required": "Controller output-enable intent is DIRM&OEN; physical MIO TRI_ENABLE and pin mux remain separate.",
+      "change": "Recompute from both registers and do not infer external pin level."
+    },
+    {
+      "area": "Reset and unknowns",
+      "source_lines": [
+        611,
+        616,
+        766,
+        786
+      ],
+      "source": "All DATA cold state defaults0; mask defaultsallones. Later reset skips DATA only and resets remainingregisters.",
+      "required": "UG585 MIO DATA resetunknown, EMIO DATA reset0; mask reset0. GPIO_CPU1X_RST resets onlybusinterface, notcontrollerlogic.",
+      "change": "Explicit reset kinds and input/latch knowledge. Do not equate QMP warm reset with cold power reset."
+    }
+  ],
+  "decision": "Profile-only reuse is insufficient. Correcting the candidate requires replacing its input/output state and interrupt behavioral core, not just width constants. Retain this original as independent reference; use the existing QEMU CPU/register/bus infrastructure and a small new Rust behavioral core if root selects that route. Do not keep two competing PS GPIO models.",
+  "reuse_available": [
+    "Existing QEMU CPU, SysBus/MMIO/qdev IRQ infrastructure and existing Rust static-library ABI.",
+    "The archived mask-data formula and register offsets are useful cross-checks, not acceptance oracles for their known differing behaviors."
+  ],
+  "proposed_interface": [
+    "read32(offset)->word with explicit value/known bits, or access error; no unpredictable WO read manufactured.",
+    "write32(offset,value)->success/error, rejecting unaligned/non32bit/absent offsets before mutation.",
+    "cold_reset versus bus_interface_reset; separate supplied settled input value/known mask.",
+    "Controller output latch plus DIRM/OEN intent; independent pad/EMIO binding and shared IRQ known/unknown result."
+  ],
+  "required_tests": [
+    "Literal masked-data vector0xBDEF4210 from the manual; bank1six-bit upperhalf and absentbanks.",
+    "Independent five-mode interrupt truth table, multi-bankOR, maskedpending/unmask, W1C/reassert and output-latch independence.",
+    "Coldunknown MIO versus knownEMIO reset, busresetretention, invalidaccess no mutation and unknown input/IRQ propagation.",
+    "QEMU qtest must issue actual fourbank INT_DIS writes from the originalROM and test realreadback; continue originalROM only after strict component checks."
+  ],
+  "open_limits": [
+    "Physical MIOmux/strap/pull and inputclock synchronization need separate exactboard binding. Bank0bits7/8 cannot be generalinputs.",
+    "The manual lists reset values but does not license invented S9 pin levels. No unknown value can be silently converted tozero at the guestboundary.",
+    "No source-based profile claim proves physicalS9/silicon compatibility."
+  ],
+  "reuse_assessment_complete": true,
+  "profile_only_reuse_sufficient": false,
+  "new_model_implemented": false,
+  "firmware_boot_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

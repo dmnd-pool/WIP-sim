@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Exact no-NBA report-key normalization delta; shared safety validation remains unchanged.",
+  "pins": [
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/step-fix-stage.json",
+      "sha256": "87273f257bc6dd25f8156762b45c0b1e052e4fe9ac29b2d6ba3857f274213c4a",
+      "size": 715
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/cvc_rw_probe.rs",
+      "sha256": "8573c71d8d8776d4e565c4cb2f3335f60198209692e45839eaecd7e9be0590d4",
+      "size": 24245
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/cvc_rw_probe-step-fix.rs",
+      "sha256": "5c9846e773a1626edc58148b6d92167e56082d108cde3c52f97dd6a8807ba785",
+      "size": 24389
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/qemu_build.rs",
+      "sha256": "f6010fb91d4a5ab246e4e378614a11a9c2e6745e69b90418b31fef97451efbb1",
+      "size": 10167
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-rw-no-nba-516b/report.json",
+      "sha256": "48d9ada69ad930e615458b9a86d25343caec7fa666ec3dbde2c1f119ddccb462",
+      "size": 3449
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-rw-no-nba-516b/result.json",
+      "sha256": "570b54cac72211e5f9d030285a51376dc3c75b24d3d80dc2b2b5a571e41a8357",
+      "size": 46935
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-rw-no-nba-516b/compiled.tar.gz",
+      "sha256": "a571ae812d539ae05382fa5d01aa28fd98b206a3f48873381dd9d871401f71ac",
+      "size": 10122
+    }
+  ],
+  "checks": [
+    "The only behavior change is the report label no-nba to no_nba for step keys and associated program/case receipt keys.",
+    "CLI no-nba, source definitions, executable names, actual backend arguments, expected receipts and resource limits are unchanged.",
+    "The failed run executed only the two C VPI plugin compiles; it reached no HDL compile and has an empty passed-case prefix. Its error and partial archive remain retained.",
+    "All generated step keys now use only alphanumeric/underscore characters accepted by the existing bounded runner.",
+    "Full same-final-helper rerun is still needed for unchanged oracle and all30phase/backend comparisons."
+  ],
+  "source_review_passed": true,
+  "open_findings": [],
+  "runtime_retry_audited": false,
+  "full_phase_suite_complete": false,
+  "original_board_gate": false
+}

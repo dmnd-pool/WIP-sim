@@ -1,0 +1,301 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "513h UBSan backend, final513h2 reset-reason/mapping/fabric components and preserved cancelled original-ROM diagnostic",
+  "freezes": {
+    "rom-reset-driver-513h": 604,
+    "rom-reset-driver-513h2": 604
+  },
+  "core_reused_source_entries": 600,
+  "before_after_equal": true,
+  "backend": {
+    "sha256": "05c531a8722c824963d5cb25e3b9dbde5c67bd1baca82550a4f5b0653c9c558f",
+    "size": 20194232
+  },
+  "build_steps_checked": 38,
+  "sanitizer_flags": [
+    "CFLAGS                          : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all -g -O2",
+    "LDFLAGS                         : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all"
+  ],
+  "mount_counts": {
+    "backend-build-513h-ubsan": 82,
+    "rom-map-513h": 16,
+    "rom-swap-reject-513h": 16,
+    "rom-fabric-513h": 15,
+    "rom-reason-513h": 16,
+    "rom-map-513h2": 16,
+    "rom-swap-reject-513h2": 16,
+    "rom-fabric-513h2": 15,
+    "rom-reason-513h2": 16,
+    "rom-reset-513h": 36
+  },
+  "results": {
+    "backend-build-513h-ubsan": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 186101,
+      "trace_truncated": false
+    },
+    "rom-map-513h": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false
+    },
+    "rom-swap-reject-513h": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false
+    },
+    "rom-fabric-513h": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-reason-513h": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-map-513h2": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false
+    },
+    "rom-swap-reject-513h2": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 130,
+      "trace_truncated": false
+    },
+    "rom-fabric-513h2": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-reason-513h2": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-reset-513h": {
+      "status": "cancelled",
+      "exit_code": null,
+      "wall_milliseconds": 207,
+      "trace_truncated": false
+    }
+  },
+  "map_oracles": [
+    {
+      "name": "rom-map-513h",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 340,
+      "complete_rom_blocks": 96,
+      "rom_bytes_compared": 393216,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 0,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    },
+    {
+      "name": "rom-swap-reject-513h",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 383,
+      "complete_rom_blocks": 128,
+      "rom_bytes_compared": 524288,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 1,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    },
+    {
+      "name": "rom-map-513h2",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 340,
+      "complete_rom_blocks": 96,
+      "rom_bytes_compared": 393216,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 0,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    },
+    {
+      "name": "rom-swap-reject-513h2",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 383,
+      "complete_rom_blocks": 128,
+      "rom_bytes_compared": 524288,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 1,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    }
+  ],
+  "fabric": {
+    "transactions_each": 128,
+    "qmp_resets_each": 2,
+    "actual_wire_joined": true,
+    "independent_register_reference": "reviews/zynq-rom-build-independent-execution-513c.json"
+  },
+  "reset_reason_oracles": [
+    {
+      "name": "rom-reason-513h",
+      "transactions": 44,
+      "reads": 28,
+      "writes": 15,
+      "guest_flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "emitted_count": 2,
+      "separate_raw_qtest_log_retained": false,
+      "outer_passed": false
+    },
+    {
+      "name": "rom-reason-513h2",
+      "transactions": 44,
+      "reads": 28,
+      "writes": 15,
+      "guest_flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "emitted_count": 4,
+      "separate_raw_qtest_log_retained": false,
+      "outer_passed": true
+    }
+  ],
+  "failed_metadata_preserved": "513h executed the44 assertions and4 actual reset events, but emitted inherited2 and failed outer validation.513h2 reruns the unchanged assertions with observed event count.",
+  "original_rom": {
+    "process_status": "cancelled",
+    "elapsed_ms": 207,
+    "address_headers": 169,
+    "raw_spans": 180,
+    "raw_bytes": 2736,
+    "all_raw_bytes_match_original": true,
+    "first_diagnostic_offset": 5086,
+    "first_diagnostic": "zynq_slcr: Invalid write access to addr b10",
+    "independent_A32": {
+      "original_offset": "0x3c4",
+      "words": [
+        "0xe3a00eb1",
+        "0xe3011166",
+        "0xe34f0800",
+        "0xe3401c30",
+        "0xe34f7800",
+        "0xeb002b08"
+      ],
+      "r0_address": "0xf8000b10",
+      "r1_data": "0xc301166",
+      "call_target": "0xb000",
+      "target_word": "e5801000",
+      "meaning": "STR r1,[r0]"
+    },
+    "translated_blocks_not_all_proven_executed": true
+  },
+  "review_procedure_note": "Audit preparation first used older freeze filenames and a driver mount name, then assumed a separate ROM qtest log. It stopped before writing output. Exact paths and disabled ROM qtest logging were read from frozen source/spec; no expected register or verdict assertion changed.",
+  "evidence_audit_passed": true,
+  "component_tests_passed": true,
+  "firmware_boot_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "limits": [
+    "Reset cause mapping is an explicit documented reference. No physical S9 silicon/ROM compatibility is established.",
+    "QMP reset has no invented hardware reset cause. External/watchdog/debug reset causes and physical reset retention remain untested.",
+    "ROM-mode qtest responses are retained by the driver as complete actual strings or hashes; separate QEMU request/response logging is disabled. This audit checks those retained observations against an independent oracle.",
+    "Partial and unaligned reference-register accesses are unsupported; they were not exercised by this44transaction suite.",
+    "Actual original ROM continues beyond254 but stops on unsupportedB10; serial contains preparation metadata only.",
+    "Prior failures remain unchanged. Conditional applicability fields do not count unselected devices as exercised."
+  ],
+  "inputs": {
+    "path": "work/simulator/reviews/zynq-reset-reason-independent-execution-513h2-inputs.json",
+    "sha256": "f088d0b8cf37fbee268c5c47db8f1a73a46ca691d6c0255c0588477cb7c3b3f9",
+    "size": 529438
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T18:14:05.795650+00:00",
+  "updated_at": "2026-10-28T19:50:21.265225+00:00",
   "objective": "Complete selected S9 milestone2; exact original reset path is still open.",
   "completed": [
     "Acquired and Git-blob/size/SHA verified12 original public ROM/source/metadata files; preserved archive and headers.",
@@ -21,16 +21,33 @@
     "513f startup-classifier source reviews closed after newline-completeness fix.7focusedtests, strictClippy, formatting and release pass;585sourcefreeze unchanged.",
     "Actual513f passes exact7-line model initialization/running-state boundary and retains153translated-block headers.162rawspans/2436bytes allmatch originalROM.",
     "513g strictrawparser tests/Clippy/fmt/release pass;585sourcefreeze unchanged. Actual217ms originalROM run reaches unsupportedSLCR0x254 write1. Independent645pin audit checks180rawspans2736bytes and originalMOV/MOVT/BL/STR path.",
-    "513h complete37,471,135B olderTRM and actualAMD52030API originals preserved; source conflict explicit."
+    "513h complete37,471,135B olderTRM and actualAMD52030API originals preserved; source conflict explicit.",
+    "513h root and cleanup source reviews closed; five reviewed production files integrated.15focused tests, strict scoped Clippy, formatting and release pass.604 source entries match before/after; three immutable helpers captured.",
+    "513h seven primary-reference records registered; all incremental archive/catalogue/index/link checks pass.6newphysical paths37,598,316B checked,0errors.",
+    "513h actualUBSan backend passes186101ms.513h2 finalreason44/fourresets,ROMmap340,SWAP383,fabric128allpass; originalmetadatafailurepreserved.Independentexecutionauditclosed forboth604-sourcefreezes andall actualobservations.",
+    "ActualoriginalROM513h proceeds to firstmissingGPIOB_CFG_LVTTL0xb10.Independent180span2736B auditmatchesoriginalinstructions; nofullboot.",
+    "513i root and cleanup source reviews closed after adding independent all-bits storage vector. Five production files integrated;15 focused tests, strict Clippy, formatting and release pass.607 source entries match before/after; three immutable helpers captured.",
+    "Exact historical QEMU0x500 source, rewrite and QOM initialization originals acquired, Git-blob/API equality verified. All6 originals and catalogue checks preserved; no historical code executed or model integrated.",
+    "513i actual UBSan backend passed186484ms. LVTTL20, reason44, ROM-map340, SWAP383 and fabric128 component transactions all pass, with actual resets preserved.",
+    "Independent513i execution audit closed:1473 input identities and179 original-ROM spans/2728bytes checked. Fresh CPU diagnostic reaches PS GPIO INT_DIS_0 at0xe000a214; no full boot.",
+    "513j exact Xilinx PS GPIO original/raw API/Git blob identities and all incremental catalogue/archive/index checks pass. Independent reuse assessment finds behavioral core replacement necessary beyond bank-width profile.",
+    "513j Rust core/ABI and C bus/clock/reset binding with literal qtest positive/rejection plans staged. Root and peer core source reviews close without a finding; final binding review is pending.",
+    "513j reviews closed and source integrated.7 Rust core,1 ABI and16 helper tests pass; strict helper/library Clippy and test-target Clippy pass after retained redundant-mask test-only fix; formatting passes.",
+    "513j final source freeze retains617 equal before/after files and4helpers. Fresh Rust model checkpoint retains619sources.7core+1ABI+16helper tests, strict library/helper/test Clippy, formatting and release pass.",
+    "Actual513j UBSan backend build passed186108ms. GPIO144transactions/14IRQtransitions/2resets and19transaction nine-fault rejection suite pass. All five prior reset/fabric regressions pass.",
+    "Fresh original ROM513j crosses all four GPIO interrupt-disable writes and stops first on SLCR0x500;205ms,169translated-blockheaders,untruncated. No boot or board pass.",
+    "513j independent execution audit closed:617helper/619model source maps, actual144transactions/14IRQs with independent per-pin state,19transactions/9faults, all regressions and2736 originalROM bytes. OriginalCPUrun did not enableGPIO MMIOtrace; no such claim.",
+    "513j2 x86-selection fix:3tests, strictClippy, formatting and release pass;620sourcefreeze unchanged. No newcompletex86backendrun.",
+    "513k independent source review of root historical0x500 stage closed after correcting LOCKaddress, negativeprefix and locked-write trace; actualintegration/execution pending."
   ],
   "unresolved": [
     "PublicROM exact selectedS9 silicon revision binding remains unknown.",
-    "Actual513g firstmissing interface isRST_REASON_CLR0xf8000254.513h documentedclear/persistentstate stage awaitsreview/build/tests.",
+    "SLCR0x500 is the fresh first missing interface. Root is staging the exact historical reference behavior; physical debug/security effects and selectedS9 equivalence remain unknown.",
     "PrivateSWAP andROM_SHADOW unimplemented; complete reset-to-archived firmware remainsopen.",
     "SDHCIconfigured capabilitymask remains a model limitation.128MiBprivateSDoverlay is a declared reference capacity, not physicalevidence.",
     "No originalboard, physicaltiming or mining gate changed."
   ],
-  "next_action": "Review513h source then integrate/check/freeze actualUBSanbackend, componenttests and boundedoriginalROMprobe. CoordinateCargo/runtimewithCVCowner.",
+  "next_action": "Review root513k wiring and strict original-ROM transaction parser; then execute isolated backend/positive/rejection/reset/default suites and fresh originalROM under unchanged limits.",
   "reports": [
     "work/simulator/reviews/zynq-bootrom-acquisition-513.json",
     "work/simulator/reviews/raw-sd-allocation-513.json",
@@ -50,7 +67,18 @@
     "work/simulator/reviews/zynq-rom-map-independent-execution-513e.json",
     "work/simulator/reviews/zynq-rom-reset-independent-execution-513g.json",
     "work/simulator/reviews/zynq-reset-reason-stage-513h.json",
-    "work/simulator/reviews/zynq-reset-reason-api-acquisition-513h.json"
+    "work/simulator/reviews/zynq-reset-reason-api-acquisition-513h.json",
+    "work/simulator/reviews/zynq-reset-reason-executed-513h2.md",
+    "work/simulator/reviews/zynq-reset-reason-independent-execution-513h2.json",
+    "work/simulator/reviews/zynq-lvttl-stage-513i.json",
+    "work/simulator/reviews/zynq-lvttl-executed-513i-inputs.json",
+    "work/simulator/reviews/zynq-lvttl-independent-execution-513i.json",
+    "work/simulator/reviews/ps-gpio-reuse-independent-513j.json",
+    "work/simulator/reviews/ps-gpio-core-independent-source-513j-exact.json",
+    "work/simulator/reviews/ps-gpio-patch-derivation-513j.json",
+    "work/simulator/reviews/ps-gpio-executed-513j-inputs.json",
+    "work/simulator/reviews/ps-gpio-independent-execution-513j.json",
+    "work/simulator/reviews/zynq-debug-independent-source-513k-exact.json"
   ],
   "temporary_fetches": [
     {
@@ -67,8 +95,7 @@
     }
   ],
   "active": {
-    "status": "513h stage awaitingindependentreview; cataloguechecks running",
-    "stage": "work/simulator/reviews/zynq-reset-reason-stage-513h.json",
-    "last_actual": "work/simulator/qemu-s9/rom-reset-513g/assessment.json"
+    "status": "No active process. Root owns513k debug-reference builder/probe wiring; browser owns CVC lexer progress.",
+    "last_actual": "work/simulator/qemu-s9/rom-reset-513j/assessment.json"
   }
 }

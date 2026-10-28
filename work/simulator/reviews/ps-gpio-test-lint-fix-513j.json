@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "scope": "Test-only identity-operation lint fix. All four mask values and behavior assertions are unchanged.",
+  "path": "crates/md-sim-firmware/src/ps_gpio.rs",
+  "parent_sha256": "fad5dec18d6178bc51ac44fcd67ebc478c2ca0cc3dcf6050707762f787b6534a",
+  "derived_sha256": "c553b8362c99eb08d4936d879212e7238782d1f37088fcb02812276a464a6085",
+  "replacements": {
+    "u32::MAX & !1": "!1u32",
+    "u32::MAX & !2": "!2u32",
+    "u32::MAX & !8": "!8u32"
+  },
+  "failed_check": "work/simulator/ps-gpio-dev-513j/test-clippy.log"
+}

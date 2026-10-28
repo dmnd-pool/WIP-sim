@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "status": "proposed; no copy, rename, link or deletion performed",
+  "purpose": "Move completed task-owned runtime data to registered external storage, preserving every existing workspace path and unique result. This is storage management, not a quota blocker.",
+  "storage_policy": {
+    "path": "catalog/storage.json",
+    "sha256": "f2e2227a50ebf678fcb1138242204ee0a0b8dd62a372fe31826ad64e7ccbb98d",
+    "size": 370
+  },
+  "inventory": {
+    "path": "work/simulator/reviews/runtime-relocation-inventory-517.json",
+    "sha256": "d43823ade46c8e282e8642dddd4c27d4f473b9babb4de68ecd9627371c145a1d",
+    "size": 93803
+  },
+  "runs": [
+    {
+      "source": "work/simulator/qemu-s9/backend-build-513c-ubsan",
+      "destination": "/home/user/mnt/small/md-sim-archive-20261019/runtime-work/md-sim/work/simulator/qemu-s9/backend-build-513c-ubsan",
+      "logical_bytes": 812898267,
+      "allocated_bytes": 813117440
+    },
+    {
+      "source": "work/simulator/qemu-s9/backend-build-513d-ubsan",
+      "destination": "/home/user/mnt/small/md-sim-archive-20261019/runtime-work/md-sim/work/simulator/qemu-s9/backend-build-513d-ubsan",
+      "logical_bytes": 812898866,
+      "allocated_bytes": 813121536
+    }
+  ],
+  "total_logical_bytes": 1625797133,
+  "potential_root_allocated_reclaim": 1626238976,
+  "source_contract_pins": [
+    {
+      "path": "crates/md-sim-runtime/src/store.rs",
+      "sha256": "9948fd6d6c3cc3f35d96744267b9ce6a1504380a716a49d08c9238125b80e924",
+      "size": 22662
+    },
+    {
+      "path": "crates/md-sim-runtime/src/file_lock.rs",
+      "sha256": "3398955ae5ddc637c662b165a3e2e9204c0ac2485f508531ca4d1142401f4069",
+      "size": 4609
+    },
+    {
+      "path": "crates/md-sim-runtime/src/isolation.rs",
+      "sha256": "fb637faa44fa2d05ca9c7a83161502cd2c4ad59242920cd13c850f976cc0639c",
+      "size": 40390
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/reclaim_qemu_inputs.rs",
+      "sha256": "df6890879dcf2e78174902fe8477240aa2d07b5f4f58465fadf696fba3b0af30",
+      "size": 56477
+    }
+  ],
+  "path_semantics": {
+    "supported": "A symlink at the run parent leaves inputs, objects and final object files as real directories/files. Store::open validates those final nodes then canonicalizes the store and uses its real lock. Existing workspace paths resolve through the run link.",
+    "not_supported": "A symlink at inputs or objects is rejected by Store. Hardlinked CAS/locks violate link-count policy. Neither is proposed.",
+    "reclaimer_limit": "Current strict cleanup path allowlists canonicalize targets and will reject the new external location. Do not run the old reclaimer through these links. A future receipt-aware external-root extension needs its own review.",
+    "exact_byte_identities": "All hashes and file bytes remain unchanged. Absolute canonical path changes do not establish cache reuse; run identity and evidence checks still apply."
+  },
+  "proposed_transaction": [
+    "Require coordinator hold for these two completed runs. Recheck exact source tree and all manifest hashes under existing source store locks. Reject any new file, link, pending transfer or nonterminal result.",
+    "Create only a new task-owned external runtime-work transaction directory with restrictive permissions and a create-new durable journal. Never modify original artifacts/files or existing external archive entries.",
+    "Copy every inventoried regular file without hardlinks or symlinks. Preserve byte content, executable modes, uid/gid where permitted and timestamps. Fsync files and containing directories. The destination store.lock must be a distinct regular one-link empty file.",
+    "Hash the complete destination tree and compare every file, size and mode against the locked inventory. Acquire the copied destination store lock before publishing any workspace link.",
+    "Run a scratch Store::open/isolation read regression using the exact run-parent symlink topology before publishing the real links. Keep final inputs/objects ordinary directories; test a final-store symlink rejection too.",
+    "After independent copy verification, atomically exchange each workspace run directory with a prepared sibling symlink using Linux renameat2(RENAME_EXCHANGE). The old complete local directory becomes a task-owned backup. Verify every original workspace path now resolves to its recorded external bytes.",
+    "Keep both original and destination lock descriptors held through exchange and verification. The external lock prevents new Store writers after publication. Do not delete old local data during this first publication phase.",
+    "Obtain independent post-copy/post-link review. Then remove only the exact inventoried old-backup files and empty directories under the recorded inode/hash checks; never traverse the workspace symlink or external archive during that removal.",
+    "Retain a permanent relocation/restore receipt in work/simulator/reviews with source/destination mappings, complete hashes, lock/inode identities, transaction phases and rollback instructions."
+  ],
+  "rollback": "Before removing the local backup, exchange the workspace link and backup directory back atomically under both locks. After removal, restore by a new verified copy of the full external run to a real workspace directory, then exchange it with the link. Existing hashes and verdicts remain unchanged.",
+  "implementation_status": "No relocation utility or scratch regression has been implemented in this task. This plan requires source review and tests before execution; it is not an instruction to run ad-hoc rm/mv.",
+  "excluded": [
+    "All active513h/513i stores and helpers",
+    "All frozen helper/source directories",
+    "Original archive files and unrelated external data",
+    "All other runs, including larger historical cycles, pending later scoped plans"
+  ],
+  "audit_refs": [
+    {
+      "path": "work/simulator/reviews/zynq-rom-build-independent-execution-513c.json",
+      "sha256": "16feea2268c8e14696160c04efe3ac0ed3d26c3bf1c2823e078be7527c579789",
+      "size": 2654
+    },
+    {
+      "path": "work/simulator/reviews/zynq-rom-map-independent-execution-513e.json",
+      "sha256": "ab2cce8d49a3f4f812965314ff2eec2d3e741a3fd0048cefd8bd82fbb92fc47e",
+      "size": 6696
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Source-only review of the small CVC ABI/fork-syntax port. Runtime remains pending.",
+  "pins": [
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/inputs.json",
+      "sha256": "b2ed48ed33f57335ff74998a75abf1ebf3a85c960634bebf13aa2d65a67bc4f1",
+      "size": 1152
+    },
+    {
+      "path": "simulator/backends/icarus/mdsim_live.c",
+      "sha256": "a8198c3a10114e950bd6b85f6cdfda6fad84340b80b69bbb1c316a90ed0c1b06",
+      "size": 11437
+    },
+    {
+      "path": "simulator/backends/icarus/live-control.v",
+      "sha256": "d49f6ca3274cfa9a72a739021a0e96efb4fb7bcbe06551f95d03dcaff8a1b1c6",
+      "size": 6080
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/mdsim_live.c",
+      "sha256": "9649059f2781a5b45926f8916917e1c271d7a89d5f39219dcef4b1c610f7d99b",
+      "size": 11690
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/live-control-cvc.v",
+      "sha256": "831b4ac62059360c34a8a60c70ee4edcdaafafaa94c95e494384d62c8d64ba7c",
+      "size": 6110
+    },
+    {
+      "path": "work/simulator/reviews/cvc-rw-independent-execution-516c.json",
+      "sha256": "15b7054adf12f2399e7cf0c6942eb79720bfd905d550c124995da2cc3013aa57",
+      "size": 5438
+    },
+    {
+      "path": "work/simulator/reviews/live-child-independent-source-512-root.json",
+      "sha256": "8cad45ca7eabda3343db670fad2603cc5c0a68addc9754c2c5df0782341358d1",
+      "size": 2249
+    }
+  ],
+  "checks": [
+    "MD_SIM_CVC only changes the error termination branch to fflush followed by exit1; the inherited FD3 framing, four-state reads, callback timing and ordinary Icarus failure branch remain unchanged.",
+    "Exported bootstrap registers the same two tasks and remains the vlog_startup_routines entry. The runner must choose one loading path per engine, so double registration remains an execution test obligation.",
+    "Each named-fork branch now disables its own enclosing pending_edge after the same prior work. This terminates the peer and resumes the parent at the same fork end, matching join_any plus disable without a new delay. The generated channels retain distinct scopes.",
+    "Clock arithmetic, pending-edge recheck, data/mask widths, request timing and vendor HDL are unchanged.",
+    "All33 preceding scheduler cases pass in the separately pinned derived CVC, but this does not establish these live bridge paths."
+  ],
+  "source_review_passed": true,
+  "open_findings": [],
+  "required_actual_tests": [
+    "Compile both engine profiles with the strict warning and UBSan flags.",
+    "Require the unchanged X/Z event-settling and duplicate-completion failure fixtures.",
+    "Require split/unsplit same-edge and unknown-clock-start cases with unchanged times and samples.",
+    "Run the selected72operations and resets only after those boundaries pass; measure throughput separately."
+  ],
+  "executed": false,
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

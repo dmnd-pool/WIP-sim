@@ -399,3 +399,68 @@ two-state execution cannot substitute for the required X/Z behavior. The
 CPU/PL bridge remains staged. CVC owns the next heavy runtime slot; exact
 agent stages the SLCR correction and root reviews source and provenance.
 Only S9 work continues. The full S9 milestone remains incomplete.
+
+
+## Checkpoint599530ed and next original-ROM interface
+
+Committed checkpoint is599530edda5000a3d82e7f3b6b3054d2611da2cd. Its compact
+source/check evidence is in source-checkpoint-516/. It has1237passing tests,
+55explicit ignored tests,129suites and596unchanged source inputs. Later
+changes need their own affected/full checks before another release claim.
+
+ActualRW516 compared identical5ps C/HDL: Icarus sampled0, original compiled
+CVC sampled1 and failed. The existing CVC kernel now has a separately recorded
+RW-after-NBA queue adaptation. Its516b tool build passes; unchanged oracle and
+ordinary/delayedNBA cases pass acrossIcarus, compiledCVC and interpretedCVC.
+The no-NBA invocation stopped before compilation because a report key used a
+hyphen. That remains failed. The narrow label correction is source-reviewed;
+browser owns final516c four-invocation rerun. Only after all33comparisons pass
+may selected primitive/RAM/event/clock/bus validation and throughput continue.
+No selected-CVC or CPUbridge acceptance is inherited from tool tests.
+
+Actual513h2 and513i reset/register work progresses through original ROM code.
+The reset-clear writeF8000254=1 now has real read-only/clear/reserved and warm
+state behavior. Its44transaction/fourreset test passes. LVTTL F8000B10 stores
+lower28bits, masks upperbits and resets; its20transaction/tworeset test passes.
+Both source/audit records and the unchangedROMmap/SWAP/fabric regressions are
+in reviews/. These are reference register models; no analog behavior is claimed.
+
+The latest513i probe passes both writes and stops on unimplemented ZynqGPIO
+write offset214,valueffffffff, at originalROM658. Later buffered writes are
+GPIO254/294/2d4 andSLCR500. Exact agent follows the firstGPIO interface and
+will reuse a suitable existing model. The oldQEMU500 state-only source is now
+pinned, including its zero-at-construction and warm-retention behavior; it has
+no physicaldebug/security implementation and stays a separate reference.
+
+Storage remains available (roughly34–37GiB root;2.5TiB registered external).
+Cleanup has a reviewed staged-only relocation plan517 for completed513c/d
+backend runs, about1.52GiB. It preserves all files and workspace paths via
+run-parent links, distinctStorelocks and independent hashes. A narrowRust
+utility and scratchStore/isolation/atomic-exchange/rollback tests are next.
+No real copy/link/delete has occurred. Do not relocate active runs, hardlink
+CAS objects or symlink finalinputs/objects. Existing strict reclaimer does
+not accept external canonical paths; that limit remains explicit.
+
+S9milestone2 is still incomplete. Otherminers remain paused. Stop only after
+completeS9acceptance and a tested finalcheckpoint.
+
+## User-requested pause at checkpoint518
+
+The user requested a checkpoint with8% weekly allowance remaining. Finish only
+already active checks, save source/evidence/stages, commit, then pause. The S9
+milestone2 is still incomplete. The previous instruction to continue until S9
+passes resumes only when the user asks to restart.
+
+Read [checkpoint518](checkpoint-518.md) first. GPIO513j and its independent
+execution audit pass; the original ROM now stops atSLCR0x500. Root's reviewed
+513k patch/test plan and incomplete dispatcher wiring are saved in
+`debug-ref-dev-513k/`; none is integrated or executed. Exact's513l record saves
+only the eFuse source lead; no files were acquired for it.
+
+The combined CVC516f build, literal parser fixture and33 scheduler comparisons
+pass. Selected CVC FPGA execution did not start. Its exact next command, frozen
+helper hashes and unchanged limits are in [the FPGA handoff](checkpoint-518-cvc.md).
+No worker, guest or compiler remains active. The relocation517 utility passes
+component/namespace checks but has moved no real data. Final current-source
+workspace checks and Git exclusions are in the518 compact manifest. Preserve
+all raw failures and the external archive when transferring work.

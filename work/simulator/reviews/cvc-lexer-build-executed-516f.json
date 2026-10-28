@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "scope": "Separate derived existing HDL tool build. No selected model, CPU, firmware, physical timing or mining acceptance.",
+  "freeze": {
+    "path": "work/simulator/qemu-s9/cvc-lexer-build-driver-516f/manifest.json",
+    "sha256": "5564674866008e4d53a965c4b3fed8678bc5042bde6a1be84a92a9c44d571a58",
+    "size": 106431
+  },
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516f/spec.json",
+      "sha256": "2db18a7ef57c34007c3bac7879ab2b181370f0735f8f3e2fea97128d80a319ad",
+      "size": 7444
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516f/input-identities.json",
+      "sha256": "cf2de639e88941aa68b0db5f1317d1d08fe09071bdf17281d4e31b3ba05c8dde",
+      "size": 1949
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516f/result.json",
+      "sha256": "a4995ac572e9b77f51698a3996c5731c57b2a3802daf38c10f71a575ae58beb1",
+      "size": 21858320
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516f/build-report.json",
+      "sha256": "c7536dd1f4368e95dcd313edce4f5fd9d23d613411aa9396698381dded8c247a",
+      "size": 166034
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516f/cvc-tools.tar.gz",
+      "sha256": "9a5ed2d7e4c5d5ca0f26f5009265bda9188dfd314a64e01ad9d8922d0239d41f",
+      "size": 5382343
+    }
+  ],
+  "exit_code": 0,
+  "wall_milliseconds": 52647,
+  "trace_truncated": false,
+  "stderr": "",
+  "profile": "rw-after-nba-lexer-context-v1",
+  "binary": {
+    "sha256": "af75045efe3a1809d2fb1d40fd496cae76ce1643e8688fd548ff7469809acaf2",
+    "size": 10789160
+  },
+  "tools": {
+    "sha256": "9a5ed2d7e4c5d5ca0f26f5009265bda9188dfd314a64e01ad9d8922d0239d41f",
+    "size": 5382343
+  },
+  "adaptations": {
+    "scheduler_adaptation": {
+      "files": {
+        "v_asmlnk.c": {
+          "derived": {
+            "sha256": "4a87cb2d4de5bcdd974c7d9d2f4343f8f88335e3127277f325d1e6cdd288b863",
+            "size": 325412
+          },
+          "original": {
+            "sha256": "bfbad3e6de0fdb39cb20693d4b02f42cda42ec4361fe384eedf2416918e23fb9",
+            "size": 324410
+          }
+        },
+        "v_sim.c": {
+          "derived": {
+            "sha256": "cb5cc29de2fdcb85eb1d0c32d411b9b35028857eefd3ca1303c93ec3efa799e0",
+            "size": 281047
+          },
+          "original": {
+            "sha256": "15ac6269456204b4289f8050ce08956220aa18beb898d0a0269d78818ed731cb",
+            "size": 280533
+          }
+        },
+        "v_vpi.c": {
+          "derived": {
+            "sha256": "c0ebc1dc54b5d15cb7db10e19212f506ee6c79ab52afa7b38320f339c42d20ce",
+            "size": 200470
+          },
+          "original": {
+            "sha256": "e99de7e4438868af1e70cdc04addeb8ab55edc65f1625c66255bb6c3e03bca98",
+            "size": 199481
+          }
+        }
+      },
+      "kernel": "existing CVC compiled and interpreted scheduler",
+      "name": "rw-after-nba-v1",
+      "original_source_changed": true,
+      "patch_sha256": "ca1c050f0ba065eff566f948459152262ecd478cfa5ad10e0032f810492e572a",
+      "physical_timing_claim": false,
+      "policy": "Queue zero and future VPI RW callbacks after all preceding active/inactive/NBA work. Drain whole RW batches, settle new work, then process RO without moving time.",
+      "schema": 1,
+      "source_archive_sha256": "bb9d8acd54f168db608b4a16a6bebc758cca59836fdfacebd89d0b635aa2cf13",
+      "timestamp_or_hdl_change": false,
+      "validation": "Pending separate unchanged oracle and lifecycle tests; tool smoke does not validate this scheduler contract."
+    },
+    "lexer_adaptation": {
+      "files": {
+        "v_ms.c": {
+          "derived": {
+            "sha256": "d8308b138f83b9f47f0da7462c814e0196cd1b8c41f8ea75e07e9f7300907809",
+            "size": 239295
+          },
+          "original": {
+            "sha256": "d3a0eaf053dedea1567446cd088df7c8bf2ae5d35c4af74b88cc6bc082d74dc8",
+            "size": 238964
+          }
+        }
+      },
+      "name": "lexer-context-v1",
+      "original_source_changed": true,
+      "patch_sha256": "39dde71edcc0d4eaf97caa3a29d3baf7217da433b3516e4756298b1a64259a2d",
+      "physical_timing_claim": false,
+      "policy": "Save and restore the caller implicit-event-control scanner context across inactive conditional preprocessing. Preserve unused-module skip and ordinary attribute parsing.",
+      "schema": 1,
+      "source_archive_sha256": "bb9d8acd54f168db608b4a16a6bebc758cca59836fdfacebd89d0b635aa2cf13",
+      "timestamp_or_hdl_change": false,
+      "validation": "Pending unchanged literal original-failure fixture and selected HDL tests; build smoke does not establish parser or hardware equivalence.",
+      "vendor_hdl_changed": false
+    }
+  },
+  "step_codes": {
+    "build": 0,
+    "help": 0,
+    "invalid_compile": 1,
+    "lexer_patch": 0,
+    "original_compile": 0,
+    "original_execute": 0,
+    "restored_compile": 0,
+    "restored_execute": 0,
+    "scheduler_patch": 0
+  },
+  "compiler_warnings": "Original compiler warnings remain in the exact build report; no warning-free claim.",
+  "next_action": "Run unchanged literal scanner fixture and all33 callback comparisons, then strict selected-model compilation and real live bus assertions."
+}

@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T18:54:24.114119+00:00",
+  "result": "pass",
+  "scope": "Two additional exact historical QOM originals, not executed model or firmware",
+  "logs": [
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/artifact-inspection-513i2.log",
+      "sha256": "ff450b3eb99c564bcea8e585c23bb26f400e46db581a8fa9b8c0fcbb6f268d34",
+      "size": 90
+    },
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/archive-incremental-513i2.log",
+      "sha256": "f62afafa8927b67f0e84855a99c1a0b096c78e0690995bb5b0474bc0ade37931",
+      "size": 1721
+    },
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/coverage-513i2.log",
+      "sha256": "e36d3298196fb8a6d21872b401114fa77f0fc7c45e1333622db1b0cf5a769da9",
+      "size": 95
+    },
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/catalog-build-513i2.log",
+      "sha256": "a29054f182f0c9f7b0b262376ebdc1615947dcf874e62baf6c1b2bd15889639f",
+      "size": 2236
+    },
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/catalog-verify-513i2.log",
+      "sha256": "764561dda5fec9179b4429b25c5beeddb4ec86d62b89691a88cb62c1cce4ac92",
+      "size": 145
+    },
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/archive-index-513i2.log",
+      "sha256": "1ed222da7a7ffdbab2e7597691736d3b6444d8683789d167f42ab835bcfc9858",
+      "size": 270
+    },
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/document-index-513i2.log",
+      "sha256": "5db26aa5ce5fc38d43ef8f9013a8b1969797278e3f52201dc6111862d88ccfe6",
+      "size": 311
+    },
+    {
+      "exit_code": 0,
+      "path": "work/simulator/boot-dev-513/download-failures-513i2.log",
+      "sha256": "16b5992ca12cce8aa41a966ef48e2a9cff63b4fa7d86a0e9bbabc6dac3f84b83",
+      "size": 614
+    }
+  ],
+  "archive_summary": {
+    "checked_at": "2026-10-28T18:49:43+00:00",
+    "result": "pass",
+    "scope": "Downloaded main and retained supplementary artifacts; queued and failed transfers are excluded.",
+    "downloaded_records": 14082,
+    "unique_physical_paths": 13702,
+    "paths_read": 2,
+    "prior_checks_reused": 13700,
+    "bytes_read": 92760,
+    "errors": [],
+    "cache_rule": "A prior hash is reused only when path, size, mtime, ctime, inode, device and expected hash agree. Use no --incremental flag for a fresh read."
+  },
+  "catalogue_summary": {
+    "checked_at": "2026-10-28T18:51:43.913381+00:00",
+    "sha256_checked": false,
+    "errors": [],
+    "artifact_count": 14095,
+    "result": "pass"
+  }
+}

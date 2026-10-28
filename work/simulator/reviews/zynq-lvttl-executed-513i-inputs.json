@@ -1,0 +1,452 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:13:20.613985+00:00",
+  "scope": "Selected S9 reset reference dependency; no exact S9 ROM identity or full boot pass",
+  "build": {
+    "passed": true,
+    "ubsan": true,
+    "wall_milliseconds": 186484,
+    "exit_code": 0,
+    "trace_truncated": false
+  },
+  "runs": [
+    {
+      "run": "rom-lvttl-513i",
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 777370,
+                "seconds": 1793214062
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 777714,
+                "seconds": 1793214062
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 777901,
+                "seconds": 1793214062
+              }
+            }
+          ],
+          "test_kind": "rom-lvttl",
+          "transactions": 20,
+          "warm_resets": 2
+        }
+      ],
+      "verification_applicability": {
+        "pcap": false,
+        "rom": true,
+        "uart": false
+      }
+    },
+    {
+      "run": "rom-reason-513i",
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": true,
+                "reason": "guest-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 204871,
+                "seconds": 1793214086
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 205335,
+                "seconds": 1793214086
+              }
+            },
+            {
+              "data": {
+                "guest": true,
+                "reason": "guest-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 205641,
+                "seconds": 1793214086
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 206019,
+                "seconds": 1793214086
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 206195,
+                "seconds": 1793214086
+              }
+            }
+          ],
+          "test_kind": "rom-reason",
+          "transactions": 44,
+          "warm_resets": 4
+        }
+      ],
+      "verification_applicability": {
+        "pcap": false,
+        "rom": true,
+        "uart": false
+      }
+    },
+    {
+      "run": "rom-map-513i",
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 582152,
+                "seconds": 1793214087
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 584984,
+                "seconds": 1793214087
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 587450,
+                "seconds": 1793214087
+              }
+            }
+          ],
+          "test_kind": "rom-map",
+          "transactions": 340,
+          "warm_resets": 2
+        }
+      ],
+      "verification_applicability": {
+        "pcap": false,
+        "rom": true,
+        "uart": false
+      }
+    },
+    {
+      "run": "rom-swap-reject-513i",
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 937045,
+                "seconds": 1793214088
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 939945,
+                "seconds": 1793214088
+              }
+            },
+            {
+              "event": "STOP",
+              "timestamp": {
+                "microseconds": 942732,
+                "seconds": 1793214088
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 945211,
+                "seconds": 1793214088
+              }
+            }
+          ],
+          "test_kind": "rom-swap-reject",
+          "transactions": 383,
+          "warm_resets": 2
+        }
+      ],
+      "verification_applicability": {
+        "pcap": false,
+        "rom": true,
+        "uart": false
+      }
+    },
+    {
+      "run": "rom-fabric-513i",
+      "passed": true,
+      "observations": [
+        {
+          "irq_events": [],
+          "passed": true,
+          "qmp_events": [
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 322796,
+                "seconds": 1793214090
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-system-reset"
+              },
+              "event": "RESET",
+              "timestamp": {
+                "microseconds": 324379,
+                "seconds": 1793214090
+              }
+            },
+            {
+              "data": {
+                "guest": false,
+                "reason": "host-qmp-quit"
+              },
+              "event": "SHUTDOWN",
+              "timestamp": {
+                "microseconds": 325060,
+                "seconds": 1793214090
+              }
+            }
+          ],
+          "test_kind": "fabric",
+          "transactions": 128,
+          "warm_resets": 2
+        }
+      ],
+      "verification_applicability": {
+        "pcap": false,
+        "rom": false,
+        "uart": false
+      }
+    },
+    {
+      "run": "rom-reset-513i",
+      "process_status": "cancelled",
+      "exit_code": null,
+      "elapsed_ms": 207,
+      "first_diagnostic": {
+        "byte_offset": 8214,
+        "bytes": 78,
+        "line_hex": "7a796e712e6770696f3a20756e696d706c656d656e74656420646576696365207772697465202873697a6520342c206f66667365742030783231342c2076616c7565203078666666666666666629",
+        "line_sha256": "579c41da71c5ee77961f827dd42326b4b4f684bf28e749c7bd66e1380999365c",
+        "reason": "first unexpected emulator diagnostic"
+      },
+      "translated_block_address_headers": 168,
+      "firmware_boot_gate": false,
+      "original_board_gate": false,
+      "functional_mining_gate": false
+    }
+  ],
+  "inputs": [
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-driver-513i/manifest.json",
+      "sha256": "1d6f01b9fa73049332a1d5d303f3a46d976920a737e64f01c34c2fa206561942",
+      "bytes": 104279
+    },
+    {
+      "path": "work/simulator/reviews/zynq-lvttl-stage-513i.json",
+      "sha256": "8c0a7abc933d40b4194e94b3d0d615538c349f4d55fe2ef719f11026eeef0e46",
+      "bytes": 4052
+    },
+    {
+      "path": "work/simulator/reviews/zynq-lvttl-independent-source-513i-root.json",
+      "sha256": "2eab4f090846f2756408984cb543647aca269413ee1294f4ac1928b9d6e59d7b",
+      "bytes": 5041
+    },
+    {
+      "path": "work/simulator/reviews/zynq-lvttl-allbits-independent-source-513i.json",
+      "sha256": "00b95ceea0b9b30a0f6e265ca8e73c6e6512841072b3ce44c4725126fbab27c7",
+      "bytes": 4475
+    },
+    {
+      "path": "work/simulator/reviews/zynq-lvttl-independent-execution-513i.json",
+      "sha256": "15b10b1677a79f7bf61cba19aacf23b7f7db706d6b779e39e261dadc56b9fc0b",
+      "bytes": 7263
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513i-ubsan/result.json",
+      "sha256": "4bb66273932cb9a35c6a39db2aa1d9cd39e68aebe63c87dcd28f572e657c2b60",
+      "bytes": 32134539
+    },
+    {
+      "path": "work/simulator/qemu-s9/backend-build-513i-ubsan/spec.json",
+      "sha256": "92b974c661a324979b621e6fbbc65deba55fcc46b61def806ada108d1f0021de",
+      "bytes": 16158
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513i/result.json",
+      "sha256": "415dc7e680091bbff5e0cf562ed9faaaf6f5fba920cb2316792be6abd5fcc58d",
+      "bytes": 12080
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513i/assessment.json",
+      "sha256": "22b6b365e8db6a78e3e082bad3507df098a5e735c6c9fec6f4aec4f6c409cae0",
+      "bytes": 2739
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-lvttl-513i/spec.json",
+      "sha256": "649527abf715e2c4e0641ab61b51d5b41f991f51c004f6c4d634631bae184199",
+      "bytes": 3432
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513i/result.json",
+      "sha256": "6eadd3cddfe7f50adf0d5793a02d56a7d0ad6bce7e765612d1ec05b01ecd5dda",
+      "bytes": 22124
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513i/assessment.json",
+      "sha256": "5140f042f2e1dda30331aababa8b69676c4a3088915e3448ec201d07e4445e37",
+      "bytes": 3332
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reason-513i/spec.json",
+      "sha256": "e823417ee7f5d44554ad4870131d83467166a1379820ea3d2097f96a699f3828",
+      "bytes": 3433
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513i/result.json",
+      "sha256": "55912df981a7e81d46440939a8fcfaba591743fb031ce0f39f5a3a6be385169a",
+      "bytes": 123192
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513i/assessment.json",
+      "sha256": "5394f28ec4cb65052e6690664920e63afae0833c6e3c4eead99ff5b0f0bf3fa3",
+      "bytes": 2704
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-map-513i/spec.json",
+      "sha256": "a6667c6262a7180d058a307b5c3b9ffd0d190f60c8db32b09a63641f11f5c0b1",
+      "bytes": 3430
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513i/result.json",
+      "sha256": "57ef200a6475728a0b5e8d80af60fd98d27cf0555c02585421e172f2a725f9d0",
+      "bytes": 144598
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513i/assessment.json",
+      "sha256": "b2ff053d4b690ee7e633573537b845661744a178bc00696817165d9c728af6f8",
+      "bytes": 2875
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-swap-reject-513i/spec.json",
+      "sha256": "36611e7a0941e9cdc2c0f0fdff912f18cab11c6ee50c7414ab38c81251501450",
+      "bytes": 3438
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513i/result.json",
+      "sha256": "6405386b7fbe2e0a385eaa3002b15b2d9628d7fa3afc7c81f3cf01741e8d6ee4",
+      "bytes": 60980
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513i/assessment.json",
+      "sha256": "34cb7bfdbe84f30d85cfc8b8149eaa31fe8e8f40ae5365c73e7a76280a0a2cdc",
+      "bytes": 2729
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-fabric-513i/spec.json",
+      "sha256": "6a953ecb2a1687e8c63be8109ab63654f5f4f4912c635e191d995664afb070ee",
+      "bytes": 3242
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513i/result.json",
+      "sha256": "bf5386e15c053bcb4915f8f82b37cee0b827e92ad64239985e282910f373229f",
+      "bytes": 30492
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513i/assessment.json",
+      "sha256": "6565053a4ccc242a33ae83b4cc05446a0d750bbddde844617f70474f7d3d8741",
+      "bytes": 3544
+    },
+    {
+      "path": "work/simulator/qemu-s9/rom-reset-513i/spec.json",
+      "sha256": "349a71c26299ebd71c3f6172c6809db4e7749d04b71f333e8ed12bcac66f9fc7",
+      "bytes": 7949
+    }
+  ]
+}

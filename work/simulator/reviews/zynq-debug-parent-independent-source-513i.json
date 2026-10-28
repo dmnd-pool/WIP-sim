@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Additive exact-source closure for the prior read-only0x500 investigation. No model integration.",
+  "pins": [
+    {
+      "path": "work/simulator/reviews/zynq-legacy-debug-acquisition-513i.json",
+      "sha256": "9e099edd415f7dd999110cfb7204297d8e9f0dfb7c6dd221d15073ce5ac55b4c",
+      "size": 2874
+    },
+    {
+      "path": "artifacts/files/source/source-qemu-slcr-history-513i/slcr-history.json",
+      "sha256": "cdd92418a47a0b9cb9e622cb86d12487a7b3a772aad912a0d21f6b9f525eac73",
+      "size": 27518
+    },
+    {
+      "path": "artifacts/files/source/source-qemu-slcr-parent-513i/zynq_slcr.c",
+      "sha256": "9f907c7832926765f0d867f69c0e941a21ebec67f8484e8068c8f467ba18f7d8",
+      "size": 15120
+    },
+    {
+      "path": "artifacts/files/source/source-qemu-slcr-blob-513i/slcr-blob.json",
+      "sha256": "b6e7c1be281d525c57b29c79a0fd20869d1b740aed029f2ea88d844c1178137f",
+      "size": 21780
+    },
+    {
+      "path": "artifacts/files/source/source-qemu-slcr-rewrite-513i/slcr-rewrite.json",
+      "sha256": "16c0e780474b6274dc95870bf4770da33d305d01dab9601419bcd5b394cdd90c",
+      "size": 28369
+    },
+    {
+      "path": "work/simulator/reviews/zynq-debug-storage-independent-reference-513.json",
+      "sha256": "44425893766c75719d55cec5eef577b779e9b23d83fad9efcc6fd92805830ce0",
+      "size": 5246
+    }
+  ],
+  "exact_parent_commit": "6619bc5c55c1322a89009e2edd530113da95d551",
+  "rewrite_commit": "db302f8f9364580a90b383d8531d28500e4e5bb5",
+  "full_Git_blob_recomputed": "d1cc23303abde28d463f823a19af273d3ae32fbf",
+  "source_sha256": "9f907c7832926765f0d867f69c0e941a21ebec67f8484e8068c8f467ba18f7d8",
+  "raw_source_equals_API_blob": true,
+  "rewrite_parent_and_deleted_field_cases_checked": true,
+  "semantics": [
+    "Full32-bit dbg_ctrl read/write remains under ordinary SLCR unlock.",
+    "Warm-reset callback relocks but neither assigns dbg_ctrl nor clears the state union; its stored word survives that callback.",
+    "No debug signal output or security-lock/eFuse behavior is implemented by this field.",
+    "The exact source confirms the earlier v1.7.2 observation; rewrite reset-zero prose still does not prove a warm-reset clear."
+  ],
+  "remaining_before_model": [
+    "If claiming the exact historical construction default, pin its QOM allocation/initialization path too.",
+    "Declare reference-only support, access-size policy, reset behavior and unsupported debug/security effects.",
+    "Actual original-ROM compatibility and physical S9 silicon binding remain open."
+  ],
+  "source_review_passed": true,
+  "executed": false,
+  "physical_or_board_gate": false,
+  "prior_report_preserved": "work/simulator/reviews/zynq-debug-storage-independent-reference-513.json"
+}

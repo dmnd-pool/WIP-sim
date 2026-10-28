@@ -1,0 +1,287 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "513i UBSan backend and LVTTL/mapping/reset components; cancelled original public-ROM diagnostic",
+  "source_freeze": {
+    "entries": 607,
+    "before_after_equal": true,
+    "historical_closure_checked": true,
+    "current_production_equality_not_claimed": true
+  },
+  "reused_core_entries": 600,
+  "backend": {
+    "sha256": "05148c1cd34235782fc6d12a2c82a7eefb3b109cdd5d57c7568e257ae8d3f749",
+    "size": 20194296
+  },
+  "build_steps_checked": 38,
+  "sanitizer_flags": [
+    "CFLAGS                          : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all -g -O2",
+    "LDFLAGS                         : --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all --sysroot=/work/toolchain -B/work/toolchain/usr/bin -fsanitize=undefined -fno-sanitize-recover=all"
+  ],
+  "mount_counts": {
+    "backend-build-513i-ubsan": 82,
+    "rom-lvttl-513i": 16,
+    "rom-reason-513i": 16,
+    "rom-map-513i": 16,
+    "rom-swap-reject-513i": 16,
+    "rom-fabric-513i": 15,
+    "rom-reset-513i": 36
+  },
+  "results": {
+    "backend-build-513i-ubsan": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 186484,
+      "trace_truncated": false
+    },
+    "rom-lvttl-513i": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-reason-513i": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-map-513i": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 120,
+      "trace_truncated": false
+    },
+    "rom-swap-reject-513i": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 130,
+      "trace_truncated": false
+    },
+    "rom-fabric-513i": {
+      "status": "exited",
+      "exit_code": 0,
+      "wall_milliseconds": 110,
+      "trace_truncated": false
+    },
+    "rom-reset-513i": {
+      "status": "cancelled",
+      "exit_code": null,
+      "wall_milliseconds": 207,
+      "trace_truncated": false
+    }
+  },
+  "lvttl_oracle": {
+    "transactions": 20,
+    "reset_events": 2,
+    "all_actual_responses_match_independent_mask_lock_reset": true,
+    "all_bits_written_and_read": true,
+    "read_observations": [
+      [
+        4160752400,
+        0
+      ],
+      [
+        4160752400,
+        204476774
+      ],
+      [
+        4160752400,
+        204476774
+      ],
+      [
+        4160752400,
+        268435455
+      ],
+      [
+        4160752400,
+        0
+      ],
+      [
+        4160752400,
+        204476774
+      ],
+      [
+        4160752400,
+        0
+      ],
+      [
+        4160749580,
+        1
+      ],
+      [
+        4160752400,
+        204476774
+      ],
+      [
+        4160752400,
+        0
+      ],
+      [
+        4160749580,
+        1
+      ]
+    ],
+    "write_observations": [
+      [
+        4160749576,
+        57101
+      ],
+      [
+        4160752400,
+        204476774
+      ],
+      [
+        4160752400,
+        4231008614
+      ],
+      [
+        4160752400,
+        4294967295
+      ],
+      [
+        4160752400,
+        0
+      ],
+      [
+        4160752400,
+        204476774
+      ],
+      [
+        4160749576,
+        57101
+      ],
+      [
+        4160752400,
+        204476774
+      ]
+    ]
+  },
+  "reset_reason": {
+    "transactions": 44,
+    "actual_guest_flags": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "all_actual_responses_match": true
+  },
+  "map_oracles": [
+    {
+      "name": "rom-map-513i",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 340,
+      "complete_rom_blocks": 96,
+      "rom_bytes_compared": 393216,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 0,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    },
+    {
+      "name": "rom-swap-reject-513i",
+      "actual_exit_code": 0,
+      "outer_assessment_passed": true,
+      "transactions": 383,
+      "complete_rom_blocks": 128,
+      "rom_bytes_compared": 524288,
+      "all_ram_hi_masks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "qmp_resets": 2,
+      "private_swap_rejections": 1,
+      "raw_wire_available": false,
+      "retained_response_values_or_hashes_match_independent_bytes": true
+    }
+  ],
+  "fabric": {
+    "transactions": 128,
+    "qmp_resets": 2,
+    "actual_wire_joined": true,
+    "independent_register_reference": "reviews/zynq-rom-build-independent-execution-513c.json"
+  },
+  "original_rom": {
+    "process_status": "cancelled",
+    "elapsed_ms": 207,
+    "address_headers": 168,
+    "raw_spans": 179,
+    "raw_bytes": 2728,
+    "all_raw_bytes_match_original": true,
+    "first_diagnostic_offset": 8214,
+    "first_diagnostic": {
+      "byte_offset": 8214,
+      "bytes": 78,
+      "line_hex": "7a796e712e6770696f3a20756e696d706c656d656e74656420646576696365207772697465202873697a6520342c206f66667365742030783231342c2076616c7565203078666666666666666629",
+      "line_sha256": "579c41da71c5ee77961f827dd42326b4b4f684bf28e749c7bd66e1380999365c",
+      "reason": "first unexpected emulator diagnostic"
+    },
+    "independent_A32": {
+      "original_offset": "0x658",
+      "words": [
+        "0xe30a0214",
+        "0xe3e01000",
+        "0xe34e0000",
+        "0xeb002a65"
+      ],
+      "r0_address": "0xe000a214",
+      "r1_data": "0xffffffff",
+      "call_target": "0xb000",
+      "target_word": "e5801000",
+      "meaning": "STR r1,[r0]"
+    },
+    "translated_blocks_not_all_proven_executed": true
+  },
+  "evidence_audit_passed": true,
+  "component_tests_passed": true,
+  "firmware_boot_gate": false,
+  "original_board_gate": false,
+  "mining_gate": false,
+  "limits": [
+    "LVTTL lower28-bit raw storage/mask/reset is an explicit old-TRM reference. Analog/electrical behavior and exact physical S9 compatibility are not established.",
+    "Two QMP reset events are exercised. LVTTL guest PSS reset, partial/unaligned access rejection and locked-write failure are not separately exercised by this20transaction suite.",
+    "ROM-mode qtest replies are retained as complete actual strings or hashes; separate QEMU wire logging is disabled. Independent oracles check the retained observations.",
+    "Original public ROM advances beyondB10, then stops on GPIO0x214. No complete firmware boot, mining or dashboard gate passes.",
+    "The public-ROM diagnostic may retain later translated data during cancellation; it still records the first unsupported write and remains cancelled.",
+    "All prior failed attempts remain unchanged."
+  ],
+  "inputs": {
+    "path": "work/simulator/reviews/zynq-lvttl-independent-execution-513i-inputs.json",
+    "sha256": "9d935889d5c65be7ed6b6381f5b72b54d6453b2d16e5d4368dfe2c5a79e00fb9",
+    "size": 370370
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:49:31.995479+00:00",
+  "reviewer": "exact_target_resume",
+  "scope": "Independent static source/primary and exact data-only patch review of SLCR0x500 reference. No firmware, backend or device execution.",
+  "inputs": {
+    "work/simulator/debug-ref-dev-513k/s9-debug-reference.patch": {
+      "sha256": "443a8a79a99d4f8a41e17f2d4b6274001eb86614280e42c85cc2286a01ad79a1",
+      "size": 4997
+    },
+    "work/simulator/debug-ref-dev-513k/zynq_slcr.c": {
+      "sha256": "4a953471288040e448371772d4e1abc41dc1396b1682fedaedbb5b3bf974b602",
+      "size": 31767
+    },
+    "work/simulator/debug-ref-dev-513k/debug_reference_qtest.rs": {
+      "sha256": "2755ed46fb662fa38e98f3a9ff572431ed32a2da0fcefe91d9c6c5395f4911bb",
+      "size": 9493
+    },
+    "work/simulator/debug-ref-dev-513k/DEBUG-REFERENCE.md": {
+      "sha256": "0af03ed2b5a73ccf6c5abcc0e92921c8d05a8a36c288b077e464a6eb7739380c",
+      "size": 3178
+    },
+    "work/simulator/debug-ref-dev-513k/misc-trace-events-parent": {
+      "sha256": "bc5f8dcb2da29c382a809955988f8903d09554a79f5415e539ea3c42d2f92a56",
+      "size": 31127
+    },
+    "work/simulator/debug-ref-dev-513k/misc-trace-events": {
+      "sha256": "8ff25a6b156cb0e49f91f71360d3f25ba45c2e84425ae1b3bc61dd6d052accf6",
+      "size": 31303
+    },
+    "work/simulator/debug-ref-dev-513k/system-physmem.c": {
+      "sha256": "549ab13752ef0653a52d8d68a9cab77f66e821408b922ab1e65e1b90e5d1fac4",
+      "size": 143564
+    },
+    "work/simulator/debug-ref-dev-513k/include-system-memory.h": {
+      "sha256": "70d3a02ee98ddd42ea1e83340d796ac261415df53a4f83c0a1fa6f77517a248f",
+      "size": 106198
+    },
+    "work/simulator/ps-gpio-dev-513j/derived/hw/misc/zynq_slcr.c": {
+      "sha256": "369ca416465d43abad564d0fcbae78568022eabc3c7d267617ac168e70fd522b",
+      "size": 29565
+    },
+    "work/simulator/boot-dev-513/system-memory.c": {
+      "sha256": "ec1106c0249bf8f9f7a33f9756962d689bebcdd9c95c36876be2336d1044f5cc",
+      "size": 116900
+    },
+    "work/simulator/reviews/zynq-debug-storage-independent-reference-513.json": {
+      "sha256": "44425893766c75719d55cec5eef577b779e9b23d83fad9efcc6fd92805830ce0",
+      "size": 5246
+    },
+    "work/simulator/reviews/zynq-debug-parent-independent-source-513i.json": {
+      "sha256": "fef0ec07c77cee7061794e75f21faf30d469d89f510dd83df68b23d51fec9243",
+      "size": 2761
+    },
+    "work/simulator/reviews/zynq-debug-cold-init-independent-513i.json": {
+      "sha256": "cab091923a143cefe7b6a5e5e58ec3c6b098d4659ce45e3095ca625f918376aa",
+      "size": 2417
+    },
+    "work/simulator/debug-ref-dev-513k/stage-inputs.json": {
+      "sha256": "5b846c707862b58ec8b918766d1d1ed7bd2991017b26fa98dfcdf1c24fcc8424",
+      "size": 3704
+    }
+  },
+  "resolved_findings": [
+    {
+      "finding": "Qtest wrote LOCKSTA0xc instead of LOCK0x4",
+      "resolution": "Separate LOCK4 and LOCKSTA-c constants; wrong-key/full-key and readback tests retained."
+    },
+    {
+      "finding": "Negative diagnostic classifier used an obsolete prefix",
+      "resolution": "Classifier matches exact source-defined ROM SLCR error form; positive/negative fixed expected fixtures remain required."
+    },
+    {
+      "finding": "Locked-write expected diagnostics used disabled LOG_GUEST_ERROR",
+      "resolution": "New committed=false trace at the existing lock guard records attempted data; unchanged readback proves rejected mutation. No broad guest-error startup exception."
+    }
+  ],
+  "checks": [
+    "All current stage files match manifest5b846c707862b58ec8b918766d1d1ed7bd2991017b26fa98dfcdf1c24fcc8424.",
+    "New patch applies with zero fuzz to exact513j SLCR and pinned original misc trace file; both derived outputs equal staged bytes.",
+    "Historical original parent read/write storage and same-parent QOM cold-zero basis remain separate from physical debug/security semantics. Warm-reset callback leaves this storage unchanged.",
+    "Reference-only MemoryRegionOps selected at realization before board mapping. Generic ops bytes/policy remain unchanged; ordinary SLCR lock guard precedes storage update.",
+    "Pinned system/physmem.c and include/system/memory.h were independently re-extracted from the exact QEMU archive and compared byte-for-byte. valid.max8 plus impl.unaligned preserves the tested overlapping8-byte transaction before validation.",
+    "MemoryRegion accepts callback rejects before dispatch. Rejected reads return unassigned emulator0 with MEMTX_DECODE_ERROR; explicit VM stop is required and included. No such zero is a successful device read.",
+    "Literal all-bits/fullword/invalid-key/valid-low16-key/warm-retention plan and ninefault sentinel readbacks are preserved. Ancillary trace lines have bounded exact field grammar.",
+    "Module33/20 transaction counts exclude initial irq_intercept; final dispatcher must require34/21 total."
+  ],
+  "findings": [],
+  "source_review_passed": true,
+  "pending": [
+    "Production builder/dispatcher/probe wiring review and unit checks",
+    "Actual isolated UBSan build and new component/default/reset regressions",
+    "Fresh original-ROM run with bounded trace capture",
+    "Independent execution audit"
+  ],
+  "original_board_gate": false,
+  "physical_debug_security_claim": false,
+  "mining_gate": false
+}

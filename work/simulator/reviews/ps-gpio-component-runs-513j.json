@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:42:09.135320+00:00",
+  "runs": [
+    {
+      "name": "rom-gpio",
+      "argv": [
+        "work/simulator/qemu-s9/rom-reset-driver-513j/qemu_ttc_reset",
+        "work/simulator/qemu-s9/backend-build-513j-ubsan",
+        "work/simulator/qemu-s9/rom-gpio-513j",
+        "rom-gpio"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "assessment": "work/simulator/qemu-s9/rom-gpio-513j/assessment.json",
+      "log": "work/simulator/ps-gpio-dev-513j/rom-gpio-run.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rom-gpio-reject",
+      "argv": [
+        "work/simulator/qemu-s9/rom-reset-driver-513j/qemu_ttc_reset",
+        "work/simulator/qemu-s9/backend-build-513j-ubsan",
+        "work/simulator/qemu-s9/rom-gpio-reject-513j",
+        "rom-gpio-reject"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "assessment": "work/simulator/qemu-s9/rom-gpio-reject-513j/assessment.json",
+      "log": "work/simulator/ps-gpio-dev-513j/rom-gpio-reject-run.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rom-lvttl",
+      "argv": [
+        "work/simulator/qemu-s9/rom-reset-driver-513j/qemu_ttc_reset",
+        "work/simulator/qemu-s9/backend-build-513j-ubsan",
+        "work/simulator/qemu-s9/rom-lvttl-513j",
+        "rom-lvttl"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "assessment": "work/simulator/qemu-s9/rom-lvttl-513j/assessment.json",
+      "log": "work/simulator/ps-gpio-dev-513j/rom-lvttl-run.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rom-reason",
+      "argv": [
+        "work/simulator/qemu-s9/rom-reset-driver-513j/qemu_ttc_reset",
+        "work/simulator/qemu-s9/backend-build-513j-ubsan",
+        "work/simulator/qemu-s9/rom-reason-513j",
+        "rom-reason"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "assessment": "work/simulator/qemu-s9/rom-reason-513j/assessment.json",
+      "log": "work/simulator/ps-gpio-dev-513j/rom-reason-run.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rom-map",
+      "argv": [
+        "work/simulator/qemu-s9/rom-reset-driver-513j/qemu_ttc_reset",
+        "work/simulator/qemu-s9/backend-build-513j-ubsan",
+        "work/simulator/qemu-s9/rom-map-513j",
+        "rom-map"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "assessment": "work/simulator/qemu-s9/rom-map-513j/assessment.json",
+      "log": "work/simulator/ps-gpio-dev-513j/rom-map-run.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rom-swap-reject",
+      "argv": [
+        "work/simulator/qemu-s9/rom-reset-driver-513j/qemu_ttc_reset",
+        "work/simulator/qemu-s9/backend-build-513j-ubsan",
+        "work/simulator/qemu-s9/rom-swap-reject-513j",
+        "rom-swap-reject"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "assessment": "work/simulator/qemu-s9/rom-swap-reject-513j/assessment.json",
+      "log": "work/simulator/ps-gpio-dev-513j/rom-swap-reject-run.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rom-fabric",
+      "argv": [
+        "work/simulator/qemu-s9/rom-reset-driver-513j/qemu_ttc_reset",
+        "work/simulator/qemu-s9/backend-build-513j-ubsan",
+        "work/simulator/qemu-s9/rom-fabric-513j",
+        "fabric"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "assessment": "work/simulator/qemu-s9/rom-fabric-513j/assessment.json",
+      "log": "work/simulator/ps-gpio-dev-513j/rom-fabric-run.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": true
+}

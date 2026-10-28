@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Source review of shared Icarus/CVC HDL driver, strict banner/diagnostic adapter and actual vector comparison path. No new execution claim.",
+  "pins": [
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/driver-stage.json",
+      "sha256": "260f3a72ee322d1a88d28ba18b786d216c4c52678b6dad02eebc832461ef0081",
+      "size": 3173
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/s9_hdl_validate.rs",
+      "sha256": "5deb661873f7ecfd8e8af0ba131fd9ce8fa2eaf73c6e8a62450b78b8a1b72c9d",
+      "size": 35590
+    },
+    {
+      "path": "simulator/backends/icarus/mdsim_live.c",
+      "sha256": "a8198c3a10114e950bd6b85f6cdfda6fad84340b80b69bbb1c316a90ed0c1b06",
+      "size": 11437
+    },
+    {
+      "path": "simulator/backends/icarus/live-control.v",
+      "sha256": "d49f6ca3274cfa9a72a739021a0e96efb4fb7bcbe06551f95d03dcaff8a1b1c6",
+      "size": 6080
+    },
+    {
+      "path": "simulator/firmware/s9-hdl-inputs-512.json",
+      "sha256": "47dc7c50b5eb0e89ce0836f2ae33e617fa6e6050028b7a09db9c94d2966b95b1",
+      "size": 11692
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/support/s9_live_wrapper.rs",
+      "sha256": "ee99393387da06d7e559f8fefa7674eb839f89e86393a9ddc600cb0c66972b0a",
+      "size": 5163
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/s9_hdl_validate.rs",
+      "sha256": "31fd36744b38032f72ec2ffb5a52600d7d44691282d45211d76775bb2e42ff68",
+      "size": 40832
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/cvc_engine.rs",
+      "sha256": "43a4cf3a41dc71bf5260ebb74b963d453ff3b9bdf8a2cc1067854f37e23397e6",
+      "size": 7000
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/mdsim_live.c",
+      "sha256": "9649059f2781a5b45926f8916917e1c271d7a89d5f39219dcef4b1c610f7d99b",
+      "size": 11690
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/live-control-cvc.v",
+      "sha256": "831b4ac62059360c34a8a60c70ee4edcdaafafaa94c95e494384d62c8d64ba7c",
+      "size": 6110
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/s9-hdl-inputs-516-icarus.json",
+      "sha256": "251764b432069b365e1a0f6c96bf7a33a61e8d0c5e0b67bb6592ae1273e399a7",
+      "size": 11859
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/s9-hdl-inputs-516-cvc.json",
+      "sha256": "52f1fd366f0e399f22298dbfafe89ae5f194b1dadf2a124e62cc122018880a34",
+      "size": 12633
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/live-port/s9_live_wrapper.rs",
+      "sha256": "46b630187b7b0914a8872cf969d6ce03c823150a582078b69931e5567fb8ba2b",
+      "size": 5168
+    },
+    {
+      "path": "work/simulator/reviews/cvc-live-port-independent-source-516.json",
+      "sha256": "08df8676a23e5fc645a964b2e837209cd06398aaefb88fffbbecec64789fff75",
+      "size": 2991
+    },
+    {
+      "path": "work/simulator/reviews/cvc-rw-independent-execution-516c.json",
+      "sha256": "15b7054adf12f2399e7cf0c6942eb79720bfd905d550c124995da2cc3013aa57",
+      "size": 5438
+    },
+    {
+      "path": "work/simulator/reviews/cvc-derived-build-independent-execution-516b.json",
+      "sha256": "d5919355bf24039658596d4d1c26e0c9cbcca40a437c71f34e538c6c82bd0a2e",
+      "size": 4744
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516b/cvc-tools.tar.gz",
+      "sha256": "f0d6e315d8bfd32412e78bf206fd5d4fd7056705828f6b796f46d8bd66a3fb47",
+      "size": 5299377
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516b/build-report.json",
+      "sha256": "8bd91812245f7fb98ececa1744f3f024c9ba34b3d1073904b453614da0b1668f",
+      "size": 164252
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516b/spec.json",
+      "sha256": "947b229c378f541770715e1fc2b5cdd821be0f0d9cb1cd37600e3c61dd481cfe",
+      "size": 7231
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-rw-516c/report.json",
+      "sha256": "4eff515799f4104b8796455fc5f536cab3c64824839f2b448becabe827262cb3",
+      "size": 7448
+    }
+  ],
+  "finding_closed": {
+    "issue": "Duplicate-completion negative path accepted a substring and ignored stdout, which could hide additional CVC runtime diagnostics.",
+    "fix": "Require the exact existing sequence1/time1000 error line, exact-once banner then empty stdout forCVC (empty forIcarus), exit1/no signal/no cleanup error. Negative tests retain extra diagnostics, missing banner and exit0 rejection."
+  },
+  "checks": [
+    "Both new profiles preserve exact selected netlist, vendor cell bytes,582-vectorfixture,tools,AXIcontract and prior converter provenance. CVC adds one independently audited derived toolarchive and its pinned buildreceipts.",
+    "Compiler args list explicit design roots and glbl, with vendor models as-v libraries. No two-state or timing-disable flags. Actual strict compiles must establish tool support.",
+    "Unchanged Icarus structural and malformed-HDL diagnostic oracles remain mandatory. CVC compilers allow only the exact known copyright banner and empty diagnostic body/stderr.",
+    "The CVC path executes the same582 primitive assertions and both510 RAM assertions, then compares every observation line to the same-run Icarus outputs. Only the exact banner and independently parsed Icarus source/line/time finish footer differ.",
+    "Live FD3, X/Z, duplicate-completion, same-edge split/unsplit, unknown-start and selected72operation/reset assertions remain shared. The wording-only wrapper change cannot alter generated HDL.",
+    "CVC retains the compiler tree until all native programs/plugins finish compilation, then removes only the isolated temporary tree. The fixed runtime closure and actual runs must prove subsequent execution.",
+    "Separate engine invocations keep prior900wall/600CPU/4GiB/1GiBscratch and32MiBcompressedexport/96MiBtrace limits; no budget increases or VVP normalization. All actual compiled artifacts are retained, including failures when available.",
+    "Old baseline profiles set selected_program_compile_pass after actual compilation; CVC final gate additionally requires primitive and RAM comparison pass. No selectedVVP claim is made for nativeCVCELF."
+  ],
+  "source_review_passed": true,
+  "open_findings": [],
+  "required_execution": [
+    "Focused tests and strictClippy on final integrated source.",
+    "New same-helper Icarus live run to check the shared C/fork syntax port.",
+    "CVC actual primitive/RAM/XZ/failure/clock/72operation path; preserve any unsupported compile/runtime failure.",
+    "Independent retained-output audit before any selectedHDLequivalence or throughput claim."
+  ],
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false,
+  "mining_gate": false
+}

@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Pre-build structural review of the expanded RW oracle runner. Derived tool identity remains unset, so execution is not yet a reviewed capability.",
+  "pins": [
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/probe-stage.json",
+      "sha256": "dfb45f7825778e265189224c040eb55bba83823ea8c369371460ba5737ebed40",
+      "size": 1080
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/cvc_rw_probe.rs",
+      "sha256": "6342e0419f92a9101fa43d3aad043dcf12ce70bb7f223a7770d03dc5b9544c23",
+      "size": 13976
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/cvc_rw_probe.rs",
+      "sha256": "cb73fd890d98311e338b2792d3d7d476872640ce4d70a42a15f83a7db389ab9b",
+      "size": 22187
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/fixtures/rw-phases.c",
+      "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+      "size": 5927
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/fixtures/rw-phases.v",
+      "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+      "size": 977
+    }
+  ],
+  "source_structure_review_passed": true,
+  "correctness_findings_open": [],
+  "checks": [
+    "Original oracleC/HDL and original mode receipt keys/flags are unchanged; VPI compile helper preserves exact safety arguments.",
+    "Derived mode checks its exact archive identity both before capture and inside isolation; placeholder cannot equal a validSHA256.",
+    "Original two-NBA fixture runs first under unchanged Icarus and derived compiled/interpreted CVC, before phase tests.",
+    "Ten phase cases run under three engines; case names are fixed and unique, with complete expected scalar/time/count receipts.",
+    "Each passed-case key appends only after successful oracle validation. Partial failures keep their passed prefix; final success requires all30.",
+    "Exact nonzero/diagnostic/truncated output remains a failure. No missing-callback exit0 or duplicate receipt can count as pass.",
+    "All existing fixed artifacts, new fixture bytes/plugins and three actual compiled variant programs are retained on either success or failure.",
+    "No runtime limits, network/device permissions, expected observations or selected-HDL gates change."
+  ],
+  "pending_before_execution": [
+    "Replace visibleDERIVED_CVC placeholder and exact source path only after independently checked derived isolated tool build; review that final pin.",
+    "Run focused parser/profile tests and scoped lint/build.",
+    "Preflight the actual fast-gzip archive bound: four~4.1MiB CVC programs may exceed8MiB. Split current-cohort variant invocations if necessary; preserve all compiled outputs and do not silently increase caps."
+  ],
+  "resource_observation": {
+    "original_one_program_archive": 2196048,
+    "archive_cap": 8388608,
+    "new_CVC_program_count": 4,
+    "exact_final_size_unknown": true,
+    "python_zlib_not_identical_to_Rust_flate2_fast": true
+  },
+  "executed": false,
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false
+}

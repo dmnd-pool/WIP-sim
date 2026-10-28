@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Final split-invocation and exact derived-tool binding delta, additive to prior expanded-runner review.",
+  "pins": [
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/probe-stage.json",
+      "sha256": "f7782b8090e11c0e5eb38e8d4343cc775f61f7e224bd097b3f18093317fab77d",
+      "size": 1533
+    },
+    {
+      "path": "crates/md-sim-firmware/examples/cvc_rw_probe.rs",
+      "sha256": "6342e0419f92a9101fa43d3aad043dcf12ce70bb7f223a7770d03dc5b9544c23",
+      "size": 13976
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/cvc_rw_probe.rs",
+      "sha256": "8573c71d8d8776d4e565c4cb2f3335f60198209692e45839eaecd7e9be0590d4",
+      "size": 24245
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/fixtures/rw-phases.c",
+      "sha256": "77e69ea0aefb9e8ce0a8b20da88472aae2c772ef313cf574aa07bc99d35932bf",
+      "size": 5927
+    },
+    {
+      "path": "work/simulator/s9-cvc-516/rw-after-nba/fixtures/rw-phases.v",
+      "sha256": "87b17fbdb8e8533be4e8b21f7521dcbcbc27901c626a4a31ed390a1a1c03aa85",
+      "size": 977
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516b/build-report.json",
+      "sha256": "8bd91812245f7fb98ececa1744f3f024c9ba34b3d1073904b453614da0b1668f",
+      "size": 164252
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516b/spec.json",
+      "sha256": "947b229c378f541770715e1fc2b5cdd821be0f0d9cb1cd37600e3c61dd481cfe",
+      "size": 7231
+    },
+    {
+      "path": "work/simulator/qemu-s9/cvc-build-516b/cvc-tools.tar.gz",
+      "sha256": "f0d6e315d8bfd32412e78bf206fd5d4fd7056705828f6b796f46d8bd66a3fb47",
+      "size": 5299377
+    },
+    {
+      "path": "work/simulator/reviews/cvc-derived-build-independent-execution-516b.json",
+      "sha256": "d5919355bf24039658596d4d1c26e0c9cbcca40a437c71f34e538c6c82bd0a2e",
+      "size": 4744
+    }
+  ],
+  "source_review_passed": true,
+  "open_findings": [],
+  "checks": [
+    "Explicit derived profile alone runs the unchanged original oracle with Icarus and compiled/interpreted derived CVC.",
+    "Only exact --phase nba|delayed|no-nba following the derived flag selects a phase run; unknown, missing, repeated or extra arguments fail.",
+    "Selected phase has12,12or6 fixed backend cases. Every successful receipt is retained in the passed-case prefix; each run enforces its own exact required count.",
+    "All four invocations must use the same frozen helper and exact derived archive. No single invocation sets full_phase_suite_complete.",
+    "Each invocation now creates one actual compiled CVC program, preserving all new fixture/plugin/HDL outputs with the existing8MiB archive bound. The combined archive risk is removed by separating runs, not by deleting evidence or increasing limits.",
+    "Derived archiveSHA f0d6e315d8bfd32412e78bf206fd5d4fd7056705828f6b796f46d8bd66a3fb47 is checked in both host capture and guard and independently tied to actual516b isolated build.",
+    "Original mode inputs, oracle bytes, flags and pass assertions remain unchanged.",
+    "Runtime scopes and always-retain/error paths are unchanged."
+  ],
+  "pending": [
+    "Focused tests/lint/build of final runner",
+    "Actual four-run same-helper cohort:3original-oracle comparisons plus30phase/backend cases",
+    "Retained archive size and complete outputs verified for each actual invocation",
+    "Independent full-cohort audit; selected HDL and CPU/PL gates remain open"
+  ],
+  "executed": false,
+  "full_phase_suite_complete": false,
+  "selected_hdl_equivalence": false,
+  "original_board_gate": false
+}

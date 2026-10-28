@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:55:36.074980+00:00",
+  "owner": "exact_target_resume",
+  "status": "Paused at user-requested checkpoint; S9 milestone 2 incomplete. No process or transfer remains active.",
+  "inputs": {
+    "work/simulator/reviews/ps-gpio-executed-513j.md": {
+      "sha256": "3cd7ee7ad3be58167f3ba8e13832954be93ca9a3a5c4cd125a18ac9d4061d1f2",
+      "size": 5070
+    },
+    "work/simulator/reviews/ps-gpio-executed-513j-inputs.json": {
+      "sha256": "d8cacab669017071cedad28cc0a564ffd3496c20d07c6feab296df4936d5a37b",
+      "size": 21973
+    },
+    "work/simulator/reviews/ps-gpio-independent-execution-513j.json": {
+      "sha256": "1f16b5bbeb469f747a19b338126518b7aa88894ec3e3c96df5eccd3d4cbf4f46",
+      "size": 6900
+    },
+    "work/simulator/reviews/zynq-debug-independent-source-513k-exact.json": {
+      "sha256": "d9f46cbbf474baf098f926b5db45b96b09e87b1eaa06d727e83ec21c1916d216",
+      "size": 5277
+    },
+    "work/simulator/debug-ref-dev-513k/stage-inputs.json": {
+      "sha256": "5b846c707862b58ec8b918766d1d1ed7bd2991017b26fa98dfcdf1c24fcc8424",
+      "size": 3704
+    },
+    "work/simulator/qemu-s9/rom-reset-builder-513j2/manifest.json": {
+      "sha256": "c29170f210c2ee1a408a6232852dad2381eb78981db2c82f7e00017a3c6c7588",
+      "size": 105125
+    }
+  },
+  "terminal_state": {
+    "ps_gpio_513j": "Implemented and independently audited: 144 positive transactions, 14 IRQ transitions, 19 rejection transactions with 9 explicit faults; all retained reset/mapping/fabric regressions pass. UBSan backend build passed.",
+    "rom_513j": "Cancelled at first unsupported SLCR write0x500; public ROM identity is pinned but exact S9 silicon binding remains unknown. No full boot, board or mining acceptance.",
+    "x86_selection_513j2": "Current builder guard repair passed 3 focused tests, strict Clippy, formatting and release; frozen builder retained. No new complete x86 backend build was run.",
+    "debug_reference_513k": "C patch and qtest stage independently source-reviewed. Parent-owned builder/dispatcher/probe wiring remains incomplete and unintegrated. No 513k build or execution.",
+    "catalogue": "All acquired GPIO and historical debug/QOM originals are archived and registered. Their incremental checks were completed. No 513l acquisition, manifest or catalogue mutation occurred."
+  },
+  "resume_order": [
+    "Read root checkpoint and current source ownership before edits.",
+    "Finish and independently review parent-owned513k builder/dispatcher/strict ROM trace wiring. Positive and negative qtest totals must include the initial IRQ interception:34 and21.",
+    "Integrate reviewed513k, run focused checks, freeze exact helper/model source, then build and run component regressions and fresh original-ROM diagnostic at unchanged limits. Preserve failed results.",
+    "Only after the first new unsupported interface is established, pin the bounded primary Zynq PS eFuse sources listed below. Do not infer fuse contents or security mode."
+  ],
+  "read_only_efuse_lead": {
+    "acquired": false,
+    "status": "Unpinned public source lead only; no compatibility evidence or executed test.",
+    "observations": "Later bytes in cancelled513j trace mention PS eFuse F800D010 reads and F800D000/004/014 accesses. Cancellation is asynchronous; these do not replace the first-gap test. Original ROM static sequences test F800D010 bits0x800 and0x400.",
+    "primary_urls": [
+      "https://github.com/Xilinx/embeddedsw/blob/master/lib/sw_apps/zynq_fsbl/src/fsbl.h",
+      "https://github.com/Xilinx/embeddedsw/blob/master/lib/sw_apps/zynq_fsbl/src/image_mover.c",
+      "https://github.com/Xilinx/embeddedsw/tree/master/lib/sw_services/xilskey/src"
+    ],
+    "next": "Resolve an exact repository revision and the Zynq PS register/source closure using bounded API metadata. Preserve original bytes, Git blob/size/SHA and provenance before using them. The separate ZynqMP FFCC0000 profile is not interchangeable.",
+    "limits": [
+      "PS and PL fuse arrays are distinct.",
+      "No zero-valued fuse image may be assumed.",
+      "No readiness, security bypass, RSA-disable or physical S9 fuse claim.",
+      "No acquired code was executed."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "scope": "Independent source review of fixed two-run relocation utility. No approval or claim of actual data relocation.",
+  "inputs": {
+    "crates/md-sim-firmware/examples/relocate_runtime_run.rs": {
+      "sha256": "b85c7df90918c4f61e5731f061227c5886ad2eae8fe79ea130edacc858f4880a",
+      "size": 35798
+    },
+    "work/simulator/reviews/runtime-relocation-checks-517.json": {
+      "sha256": "185bb08b943db9f005c88ad52285a570982687b6250137ddb7ac9b40da044776",
+      "size": 5702
+    },
+    "work/simulator/reviews/runtime-relocation-checkpoint-517.md": {
+      "sha256": "6192ed0a74c571572a5ef6c81b8208a8089fb1d1cde42e6102c188e1edc14efd",
+      "size": 3622
+    },
+    "work/simulator/reviews/runtime-relocation-plan-517.json": {
+      "sha256": "46062b0a31038c87698d317848abeb446e9e8e6798998fc45d11c6ec7591ef9b",
+      "size": 6305
+    }
+  },
+  "checks": [
+    "Fixed two-run/inventory/storage/mount allow-list; no original archive or active run selected.",
+    "No symlink, hardlink, special file, pending transfer, unsafe ancestry or extended attributes accepted.",
+    "Source/destination leases protect full byte/identity comparisons for each phase. Copies have distinct inodes and lock files.",
+    "Create-new durable intents and receipts precede copy/exchange/retirement. Atomic exchange retains the original backup; rollback works after exchange without completion receipt.",
+    "Retirement separately rehashes both trees and removes only exact original backup files/directories, then verifies destination and source link.",
+    "Actual namespace read through relocated parent passes; final Store/object symlinks still reject. Fixture deletion preserves unrelated file and the original failed verdict.",
+    "Documentation now states modification-time preservation only; access/change times are not promised. No physical-execution result changes."
+  ],
+  "findings": [],
+  "disposition": "Source review closed. No real513c/d move occurred. Actual copy, independent destination audit, publication and retirement remain deferred at user checkpoint request."
+}

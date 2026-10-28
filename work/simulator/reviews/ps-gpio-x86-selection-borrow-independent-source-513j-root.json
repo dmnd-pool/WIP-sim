@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "reviewer": "root",
+  "scope": "Supplement to the independent x86 selection source review.",
+  "parent_review": "work/simulator/reviews/ps-gpio-x86-selection-independent-source-513j-root.json",
+  "derived": {
+    "path": "work/simulator/ps-gpio-dev-513j/build_qemu_backend-x86-fix.rs",
+    "sha256": "c880f33d0a401ac30815a049bbb62d26d19127c427c75695c8f11bc006047eca"
+  },
+  "change": "Remove only redundant borrow in patch.current_dir(src); src already has type &Path. Reconstructing the previous bytes yields its exact reviewed7cf1f4ef hash.",
+  "findings": [],
+  "execution_claim": false
+}

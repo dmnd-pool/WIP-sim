@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "reviewer": "cleanup_resume",
+  "scope": "Read-only evidence for next original-ROM SLCR access0xF8000500. Proposed historical-QEMU storage reference only; no implementation or acquired execution.",
+  "archived_reference": [
+    {
+      "path": "artifacts/files/source/source-zynq-ug585-v1-bdtic-513h/ug585-v1.pdf",
+      "sha256": "15bc69f0aaa6e94f4c9191278279c3e9070382760851874df10596e1f9bd758a",
+      "size": 37471135
+    },
+    {
+      "path": "work/simulator/boot-dev-513/ug585-v1-full-513h.txt",
+      "sha256": "7c0fb4915ded97c7a8f81051909735c43e65f4f260742f0fdbad84c71fad07e3",
+      "size": 5037322
+    }
+  ],
+  "public_primary_references": [
+    {
+      "url": "https://lists.nongnu.org/archive/html/qemu-devel/2014-04/msg00415.html",
+      "identity": "Peter Crosthwaite, 2014-04-02, patch v1 1/3 misc zynq-slcr rewrite; diff blob prefixes d1cc233..cc29444",
+      "observations": [
+        "The patch removes named dbg_ctrl state and its0x500 read/write cases as undocumented stock storage.",
+        "Its description calls deleted fields read-as-written with reset-zero defaults. This prose alone does not establish warm-reset behavior."
+      ],
+      "archive_pin_status": "Browsed source only; exact immutable parent must be acquired and pinned before implementing its semantics."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/qemu/qemu/v1.7.2/hw/misc/zynq_slcr.c",
+      "identity": "Official QEMU repository tagv1.7.2; immutable commit/blob not established by this read-only review",
+      "observations": [
+        "State line134 is uint32_t dbg_ctrl. Read lines277\u2013278 returns it. Write lines407\u2013409 stores val under the unlocked guard at363.",
+        "Lock/unlock use low16-bit keys0x767b/0xdf0d. The reset callback155\u2013236 restores lockval but never assigns dbg_ctrl or clears the union.",
+        "Thus this callback preserves prior dbg_ctrl writes. Zero at construction depends on zero-initialized QOM allocation, not a demonstrated register-reset assignment.",
+        "The callbacks ignore access size. Do not infer physical partial-access behavior or silently broaden a new32-bit-only reference profile."
+      ],
+      "archive_pin_status": "Not downloaded or registered by this review. Full source must be pinned before a derived implementation."
+    }
+  ],
+  "trm_findings": [
+    {
+      "location": "UG585v1.0 printedp89 Table4-5; fulltext5080\u20135104",
+      "finding": "The address map names F8000500 as CoreSight SoC debug control. This is a range summary, not a field-level behavioral table."
+    },
+    {
+      "location": "Fulltext exact-name/address searches and Chapter28",
+      "finding": "No DBG_CTRL field definition was found. This is a search result, not proof that no independent document exists."
+    },
+    {
+      "location": "DevC CTRL F8007000, printedpp964\u2013967; LOCK F8007004,pp967\u2013968",
+      "finding": "SPNIDEN/SPIDEN/NIDEN/DBGEN/DAP_EN and sticky DBG_LOCK are in the separate device-configuration block. Their fields must not be assigned to SLCR0x500 by analogy."
+    },
+    {
+      "location": "Section33.3.3 printedpp583\u2013584;33.3.5p584",
+      "finding": "The security policy can clear OCM/caches, reset PL and lock PS until power-on reset. DAP enable conflicts with a JTAG-disable eFuse can trigger this behavior. Secure-boot debug defaults and DevC lock state are separate constraints."
+    }
+  ],
+  "proposed_contract": {
+    "defensible_scope": "An explicitly named historical-QEMU reference register, after exact source pinning, can advance an original-ROM diagnostic. It cannot establish actual S9 silicon behavior.",
+    "storage": "Full32-bit raw write/readback, gated by existing SLCR lock; no guessed bit effects.",
+    "reset": "Preserve historical callback behavior if claiming reuse. If cold/reset-zero policy is chosen instead, record it as a separate adaptation and test it; do not label it unchanged prior behavior.",
+    "unsupported": [
+      "Physical bit layout and reserved-bit masks",
+      "Debug/trace/CPU halt side effects",
+      "Secure/nonsecure permissions and eFuse state",
+      "Physical reset domains/defaults",
+      "Partial/unaligned access behavior"
+    ],
+    "tests_before_execution": [
+      "Cold instance plus full-word write/readback under explicit profile",
+      "Locked writes do not alter stored word; correct/incorrect unlock and relock keys",
+      "Warm reset relocks access and preserves stored word if restoring the inspected historical callback",
+      "Negative partial/unaligned accesses preserve state if the new profile declares them unsupported",
+      "Migration/state retention if advertised",
+      "Default strict model still rejects the access and no host debug service is exposed"
+    ]
+  },
+  "missing_security_side_effects_remain_explicit": true,
+  "source_execution_performed": false,
+  "production_or_archive_or_catalogue_changed": false,
+  "exact_S9_compatibility_established": false,
+  "original_board_gate": false,
+  "next_action": "Owner acquires the exact pre-rewrite QEMU file and allocation/reset evidence, then stages a narrow opt-in reference with its reset policy and tests. Continue original ROM diagnostic with unchanged evidence gates."
+}

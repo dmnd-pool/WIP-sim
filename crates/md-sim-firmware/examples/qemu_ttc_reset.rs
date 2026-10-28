@@ -25,6 +25,8 @@ mod fabric_uart_qtest;
 mod pcap_migration_qtest;
 #[path = "support/pcap_qtest.rs"]
 mod pcap_qtest;
+#[path = "support/ps_gpio_qtest.rs"]
+mod ps_gpio_qtest;
 #[path = "support/rom_reset_qtest.rs"]
 mod rom_reset_qtest;
 #[path = "support/swdt_reset.rs"]
@@ -175,7 +177,10 @@ fn inner(kind: &str) -> Result<()> {
     let swdt = kind == "swdt";
     let fabric = kind == "fabric";
     let uart = kind == "fabric-uart";
-    let rom = matches!(kind, "rom-map" | "rom-swap-reject");
+    let rom = matches!(
+        kind,
+        "rom-map" | "rom-swap-reject" | "rom-reason" | "rom-lvttl" | "rom-gpio" | "rom-gpio-reject"
+    );
     let pcap_case = pcap_qtest::Case::from_kind(kind);
     let pcap = pcap_case.is_some();
     confinement::require(false)?;
@@ -270,7 +275,19 @@ fn inner(kind: &str) -> Result<()> {
         now: 0,
     };
     io.command("irq_intercept_in gic".into(), "OK".into())?;
-    if rom {
+    if kind == "rom-gpio" || kind == "rom-gpio-reject" {
+        ps_gpio_qtest::run(
+            &mut io,
+            &mut qmp_output,
+            &mut qmp_input,
+            &mut events,
+            kind == "rom-gpio-reject",
+        )?;
+    } else if kind == "rom-reason" {
+        rom_reset_qtest::run_reason(&mut io, &mut qmp_output, &mut qmp_input, &mut events)?;
+    } else if kind == "rom-lvttl" {
+        rom_reset_qtest::run_lvttl(&mut io, &mut qmp_output, &mut qmp_input, &mut events)?;
+    } else if rom {
         rom_reset_qtest::run(
             &mut io,
             &mut qmp_output,
@@ -346,7 +363,7 @@ fn inner(kind: &str) -> Result<()> {
     ensure!(backend.0.wait()?.success(), "backend did not exit cleanly");
     println!(
         "MD_SIM_TTC_RESET_RESULT {}",
-        json!({"passed":true,"transactions":io.records.len(),"qmp_events":events,"warm_resets":if uart {0} else if swdt || kind == "pcap-unlock-reset" {3} else {2},"irq_events":io.irq_events,"test_kind":kind})
+        json!({"passed":true,"transactions":io.records.len(),"qmp_events":events,"warm_resets":events.iter().filter(|event| event["event"] == "RESET").count(),"irq_events":io.irq_events,"test_kind":kind})
     );
     Ok(())
 }
@@ -360,14 +377,17 @@ fn main() -> Result<()> {
         (3..=4).contains(&args.len())
             && args
                 .get(3)
-                .is_none_or(|s| s == "rom-map" || s == "rom-swap-reject" || s == "swdt" || s == "fabric" || s == "fabric-uart" || s == "pcap-migration" || s.to_str().and_then(pcap_qtest::Case::from_kind).is_some()),
-        "usage: qemu_ttc_reset BACKEND_BUILD NEW_OUTPUT [rom-map|rom-swap-reject|swdt|fabric|fabric-uart|pcap|pcap-fixed-source|pcap-control-recovery|pcap-unsupported-dma|pcap-unlock-reset|pcap-migration]"
+                .is_none_or(|s| s == "rom-map" || s == "rom-swap-reject" || s == "rom-reason" || s == "rom-lvttl" || s == "rom-gpio" || s == "rom-gpio-reject" || s == "swdt" || s == "fabric" || s == "fabric-uart" || s == "pcap-migration" || s.to_str().and_then(pcap_qtest::Case::from_kind).is_some()),
+        "usage: qemu_ttc_reset BACKEND_BUILD NEW_OUTPUT [rom-map|rom-swap-reject|rom-reason|rom-lvttl|rom-gpio|rom-gpio-reject|swdt|fabric|fabric-uart|pcap|pcap-fixed-source|pcap-control-recovery|pcap-unsupported-dma|pcap-unlock-reset|pcap-migration]"
     );
     let kind = args.get(3).and_then(|s| s.to_str()).unwrap_or("ttc");
     let swdt = kind == "swdt";
     let fabric = kind == "fabric";
     let uart = kind == "fabric-uart";
-    let rom = matches!(kind, "rom-map" | "rom-swap-reject");
+    let rom = matches!(
+        kind,
+        "rom-map" | "rom-swap-reject" | "rom-reason" | "rom-lvttl" | "rom-gpio" | "rom-gpio-reject"
+    );
     let pcap_case = pcap_qtest::Case::from_kind(kind);
     let migration = kind == "pcap-migration";
     let pcap = pcap_case.is_some() || migration;
@@ -453,11 +473,19 @@ fn main() -> Result<()> {
     } else {
         pcap_case.is_none_or(|case| pcap_qtest::verify(&String::from_utf8_lossy(&stderr), case))
     };
-    let rom_verified = !rom
-        || rom_reset_qtest::verify_diagnostics(
+    let gpio = kind == "rom-gpio" || kind == "rom-gpio-reject";
+    let rom_verified = if gpio {
+        ps_gpio_qtest::verify_diagnostics(
+            &String::from_utf8_lossy(&stderr),
+            kind == "rom-gpio-reject",
+        )
+    } else {
+        !rom || rom_reset_qtest::verify_diagnostics(
             &String::from_utf8_lossy(&stderr),
             kind == "rom-swap-reject",
-        );
+        )
+    };
+
     let passed = rom_verified
         && uart_verified
         && pcap_verified
@@ -468,7 +496,13 @@ fn main() -> Result<()> {
         && records[0]["passed"] == true
         && records[0]["transactions"]
             == if rom {
-                if kind == "rom-swap-reject" {
+                if gpio {
+                    ps_gpio_qtest::transaction_count(kind == "rom-gpio-reject")
+                } else if kind == "rom-lvttl" {
+                    20
+                } else if kind == "rom-reason" {
+                    44
+                } else if kind == "rom-swap-reject" {
                     383
                 } else {
                     340
@@ -495,8 +529,10 @@ fn main() -> Result<()> {
                 385
             }
         && records[0]["warm_resets"]
-            == if uart || migration {
+            == if uart || migration || kind == "rom-gpio-reject" {
                 0
+            } else if kind == "rom-reason" {
+                4
             } else if swdt || kind == "pcap-unlock-reset" {
                 3
             } else {
@@ -505,7 +541,9 @@ fn main() -> Result<()> {
         && records[0]["test_kind"] == kind
         && records[0]["irq_events"].as_array().is_some_and(|events| {
             events.len()
-                == if migration {
+                == if kind == "rom-gpio" {
+                    14
+                } else if migration {
                     0
                 } else if pcap {
                     8
@@ -517,7 +555,13 @@ fn main() -> Result<()> {
                     24
                 }
         });
-    let scope = if rom {
+    let scope = if gpio {
+        "Actual four-bank Zynq PS GPIO register/IRQ reference: masked writes, settled inputs, unknown rejection, five interrupt modes, multi-bank OR, bus/clock guards and warm-reset retention. No CPU execution, physical MIO mux/pad timing or exact S9 pin-wiring claim."
+    } else if kind == "rom-lvttl" {
+        "Actual documented GPIOB_CFG_LVTTL register state, original BootROM programming value, ignored upper nibble and two warm-reset clears. No analog electrical behavior, physical pin calibration, CPU or exact S9 identity claim."
+    } else if kind == "rom-reason" {
+        "Actual SLCR read-only reset reason, write-one clear, reserved-bit behavior, one construction POR, two guest PSS soft resets and two QMP warm resets with retained REBOOT_STATUS. QMP has no invented hardware cause. No CPU execution, watchdog/external/debug cause, physical power cycle or exact S9 silicon claim."
+    } else if rom {
         "Actual read-only public ROM and OCM alias checks, all RAM_HI masks, two QMP resets, and optional private SWAP rejection. No CPU, full ROM boot, physical retention or S9 identity acceptance."
     } else if migration {
         "Actual QEMU device-state save and reload in a qtest-only DevC fixture. Generic state reload is the positive control; strict save and load both reject before registers change. Existing S9 board migration restrictions remain separate. No firmware, FPGA, physical security or mining claim."
@@ -542,7 +586,7 @@ fn main() -> Result<()> {
     };
     save_json(
         &out.join("assessment.json"),
-        &json!({"passed":passed,"test_kind":kind,"verification_applicability":{"rom":rom,"pcap":pcap || migration,"uart":uart},"conditional_verifier_policy":"An inapplicable validator is true by definition; only test_kind and observations identify exercised checks.","rom_verified":rom_verified,"rom_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/rom_reset_qtest.rs")),"pcap_verified":pcap_verified,"pcap_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/pcap_qtest.rs")),"pcap_migration_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/pcap_migration_qtest.rs")),"uart_verified":uart_verified,"fabric_uart_case":if uart {Some(fabric_uart_qtest::transactions())} else {None},"fabric_uart_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/fabric_uart_qtest.rs")),"backend":report["binary"],"driver":hash_file(&std::env::current_exe()?)?,"source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("qemu_ttc_reset.rs")),"swdt_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/swdt_reset.rs")),"fabric_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/fabric_reset.rs")),"spec":hash_file(&out.join("spec.json"))?,"result":hash_file(&out.join("result.json"))?,"observations":records,"scope":scope}),
+        &json!({"passed":passed,"test_kind":kind,"verification_applicability":{"rom":rom,"pcap":pcap || migration,"uart":uart},"conditional_verifier_policy":"An inapplicable validator is true by definition; only test_kind and observations identify exercised checks.","rom_verified":rom_verified,"ps_gpio_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/ps_gpio_qtest.rs")),"rom_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/rom_reset_qtest.rs")),"pcap_verified":pcap_verified,"pcap_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/pcap_qtest.rs")),"pcap_migration_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/pcap_migration_qtest.rs")),"uart_verified":uart_verified,"fabric_uart_case":if uart {Some(fabric_uart_qtest::transactions())} else {None},"fabric_uart_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/fabric_uart_qtest.rs")),"backend":report["binary"],"driver":hash_file(&std::env::current_exe()?)?,"source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("qemu_ttc_reset.rs")),"swdt_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/swdt_reset.rs")),"fabric_source_sha256":md_sim_firmware::prepare::hash_bytes(include_bytes!("support/fabric_reset.rs")),"spec":hash_file(&out.join("spec.json"))?,"result":hash_file(&out.join("result.json"))?,"observations":records,"scope":scope}),
     )?;
     ensure!(
         passed,

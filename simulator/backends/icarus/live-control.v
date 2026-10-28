@@ -56,12 +56,13 @@ generate for(md_channel=0;md_channel<4;md_channel=md_channel+1) begin: md_clock
           md_next_scaled[md_channel]=md_next_scaled[md_channel]+
             ({64'd0,md_period_q32[md_channel]}*128'd1000);
         end
+        disable pending_edge;
       end
       begin
         while((md_clock_epoch[md_channel]!=epoch)!==1'b1) @(md_clock_epoch[md_channel]);
+        disable pending_edge;
       end
-    join_any
-    disable pending_edge;
+    join
   end
 end endgenerate
 

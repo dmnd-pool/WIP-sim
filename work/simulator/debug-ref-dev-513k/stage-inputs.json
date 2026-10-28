@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "time": "2026-10-28T19:45:08.447568+00:00",
+  "status": "staged only; no production integration, compile or execution",
+  "files": {
+    "work/simulator/debug-ref-dev-513k/s9-debug-reference.patch": {
+      "sha256": "443a8a79a99d4f8a41e17f2d4b6274001eb86614280e42c85cc2286a01ad79a1",
+      "size": 4997
+    },
+    "work/simulator/debug-ref-dev-513k/zynq_slcr.c": {
+      "sha256": "4a953471288040e448371772d4e1abc41dc1396b1682fedaedbb5b3bf974b602",
+      "size": 31767
+    },
+    "work/simulator/debug-ref-dev-513k/debug_reference_qtest.rs": {
+      "sha256": "2755ed46fb662fa38e98f3a9ff572431ed32a2da0fcefe91d9c6c5395f4911bb",
+      "size": 9493
+    },
+    "work/simulator/debug-ref-dev-513k/DEBUG-REFERENCE.md": {
+      "sha256": "0af03ed2b5a73ccf6c5abcc0e92921c8d05a8a36c288b077e464a6eb7739380c",
+      "size": 3178
+    },
+    "work/simulator/debug-ref-dev-513k/misc-trace-events-parent": {
+      "sha256": "bc5f8dcb2da29c382a809955988f8903d09554a79f5415e539ea3c42d2f92a56",
+      "size": 31127
+    },
+    "work/simulator/debug-ref-dev-513k/misc-trace-events": {
+      "sha256": "8ff25a6b156cb0e49f91f71360d3f25ba45c2e84425ae1b3bc61dd6d052accf6",
+      "size": 31303
+    },
+    "work/simulator/debug-ref-dev-513k/system-physmem.c": {
+      "sha256": "549ab13752ef0653a52d8d68a9cab77f66e821408b922ab1e65e1b90e5d1fac4",
+      "size": 143564
+    },
+    "work/simulator/debug-ref-dev-513k/include-system-memory.h": {
+      "sha256": "70d3a02ee98ddd42ea1e83340d796ac261415df53a4f83c0a1fa6f77517a248f",
+      "size": 106198
+    },
+    "work/simulator/ps-gpio-dev-513j/derived/hw/misc/zynq_slcr.c": {
+      "sha256": "369ca416465d43abad564d0fcbae78568022eabc3c7d267617ac168e70fd522b",
+      "size": 29565
+    },
+    "work/simulator/boot-dev-513/system-memory.c": {
+      "sha256": "ec1106c0249bf8f9f7a33f9756962d689bebcdd9c95c36876be2336d1044f5cc",
+      "size": 116900
+    },
+    "work/simulator/reviews/zynq-debug-storage-independent-reference-513.json": {
+      "sha256": "44425893766c75719d55cec5eef577b779e9b23d83fad9efcc6fd92805830ce0",
+      "size": 5246
+    },
+    "work/simulator/reviews/zynq-debug-parent-independent-source-513i.json": {
+      "sha256": "fef0ec07c77cee7061794e75f21faf30d469d89f510dd83df68b23d51fec9243",
+      "size": 2761
+    },
+    "work/simulator/reviews/zynq-debug-cold-init-independent-513i.json": {
+      "sha256": "cab091923a143cefe7b6a5e5e58ec3c6b098d4659ce45e3095ca625f918376aa",
+      "size": 2417
+    }
+  },
+  "parent_source": "369ca416465d43abad564d0fcbae78568022eabc3c7d267617ac168e70fd522b",
+  "derived_source": "4a953471288040e448371772d4e1abc41dc1396b1682fedaedbb5b3bf974b602",
+  "parent_misc_trace": "bc5f8dcb2da29c382a809955988f8903d09554a79f5415e539ea3c42d2f92a56",
+  "derived_misc_trace": "8ff25a6b156cb0e49f91f71360d3f25ba45c2e84425ae1b3bc61dd6d052accf6",
+  "pending": [
+    "Independent source review",
+    "Production builder/input capture wiring with strict parent/derived checks",
+    "Rust focused checks and actual isolated C build",
+    "New positive/rejection and existing ROM/GPIO/default regressions",
+    "Fresh original-ROM probe; no boot gate inferred",
+    "Wire explicit debug-reference trace into the ROM probe and classify its exact fields without loosening unknown-line rejection"
+  ],
+  "original_board_gate": false,
+  "mining_gate": false,
+  "physical_debug_security_claim": false,
+  "review_fixes": [
+    "Use LOCK write address0xf8000004 and separate LOCKSTA read0xf800000c.",
+    "Match actual ROM SLCR rejection diagnostics.",
+    "Trace locked reference writes with committed=false; retain exact unchanged readback.",
+    "Validate ancillary trace field grammar instead of accepting arbitrary prefix lines."
+  ]
+}

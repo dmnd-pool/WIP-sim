@@ -1,13 +1,3 @@
---- a/include/hw/arm/xilinx_zynq.h
-+++ b/include/hw/arm/xilinx_zynq.h
-@@ -26,6 +26,7 @@
-     Clock *ps_clk;
-     ARMCPU *cpu[ZYNQ_MAX_CPUS];
-     uint8_t boot_mode;
-+    bool md_bootrom_reference;
-     struct arm_boot_info bootinfo;
- };
- 
 --- a/hw/arm/xilinx_zynq.c
 +++ b/hw/arm/xilinx_zynq.c
 @@ -313,7 +313,8 @@
@@ -191,7 +181,23 @@
      object_class_property_set_description(oc, "boot-mode",
 --- a/hw/misc/zynq_slcr.c
 +++ b/hw/misc/zynq_slcr.c
-@@ -216,6 +216,8 @@
+@@ -123,6 +123,7 @@
+ 
+ REG32(RS_AWDT_CTRL, 0x24c)
+ REG32(RST_REASON, 0x250)
++REG32(RST_REASON_CLR, 0x254)
+ 
+ REG32(REBOOT_STATUS, 0x258)
+ REG32(BOOT_MODE, 0x25c)
+@@ -179,6 +180,7 @@
+ REG32(GPIOB_CFG_CMOS18, 0xb04)
+ REG32(GPIOB_CFG_CMOS25, 0xb08)
+ REG32(GPIOB_CFG_CMOS33, 0xb0c)
++REG32(GPIOB_CFG_LVTTL, 0xb10)
+ REG32(GPIOB_CFG_HSTL, 0xb14)
+ REG32(GPIOB_DRVR_BIAS_CTRL, 0xb18)
+ 
+@@ -216,6 +218,8 @@
      Clock *uart1_ref_clk;
      uint8_t boot_mode;
      bool md_cpu_control;
@@ -200,17 +206,64 @@
      qemu_irq md_cpu_control_out[2];
      uint32_t md_pss_idcode;
  };
-@@ -392,6 +394,9 @@
+@@ -392,6 +396,10 @@
      s->ddriob_dci_ctrl_reset_toggled = false;
  
      s->regs[R_LOCKSTA] = 1;
 +    if (s->md_rom_reference) {
 +        s->regs[R_OCM_CFG] = 0;
++        s->regs[R_GPIOB_CFG_LVTTL] = 0;
 +    }
      /* 0x100 - 0x11C */
      s->regs[R_ARM_PLL_CTRL]   = 0x0001A008;
      s->regs[R_DDR_PLL_CTRL]   = 0x0001A008;
-@@ -599,6 +604,7 @@
+@@ -438,7 +446,13 @@
+ 
+     /* 0x200 - 0x25C */
+     s->regs[R_FPGA_RST_CTRL]  = 0x01F33F0F;
+-    s->regs[R_RST_REASON]     = 0x00000040;
++    if (!s->md_rom_reference) {
++        s->regs[R_RST_REASON] = 0x00000040;
++    } else {
++        /* POR state is established once at realization. QEMU also uses
++         * RESET_TYPE_COLD for ordinary QMP and guest system resets. */
++        s->regs[R_PSS_RST_CTRL] = 0;
++    }
+ 
+     s->regs[R_BOOT_MODE]      = s->boot_mode & R_BOOT_MODE_BOOT_MODE_MASK;
+     s->regs[R_PSS_IDCODE] = s->md_pss_idcode;
+@@ -583,8 +597,30 @@
+     unsigned size)
+ {
+     ZynqSLCRState *s = opaque;
++    hwaddr byte_offset = offset;
+     offset /= 4;
+     uint32_t ret = s->regs[offset];
++
++    if (s->md_rom_reference &&
++        (offset == R_RST_REASON || offset == R_RST_REASON_CLR)) {
++        if (size != 4 || (byte_offset & 3)) {
++            error_report("md-sim: unsupported reset-reason read size%u at0x%"
++                         HWADDR_PRIx, size, byte_offset);
++            qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++            return 0;
++        }
++        return offset == R_RST_REASON ? ret & 0x7f : 0;
++    }
++
++    if (s->md_rom_reference && offset == R_GPIOB_CFG_LVTTL) {
++        if (size != 4 || (byte_offset & 3)) {
++            error_report("md-sim: unsupported LVTTL read size%u at0x%"
++                         HWADDR_PRIx, size, byte_offset);
++            qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++            return 0;
++        }
++        return ret & 0x0fffffff;
++    }
+ 
+     if (!zynq_slcr_check_offset(offset, true)) {
+         qemu_log_mask(LOG_GUEST_ERROR, "zynq_slcr: Invalid read access to "
+@@ -599,11 +635,36 @@
                            uint64_t val, unsigned size)
  {
      ZynqSLCRState *s = (ZynqSLCRState *)opaque;
@@ -218,11 +271,58 @@
      offset /= 4;
  
      DB_PRINT("addr: %08" HWADDR_PRIx " data: %08" PRIx64 "\n", offset * 4, val);
-@@ -670,6 +676,14 @@
-                 qemu_set_irq(s->md_cpu_control_out[n], flags);
+ 
+-    if (!zynq_slcr_check_offset(offset, false)) {
++    if (s->md_rom_reference &&
++        (offset == R_RST_REASON || offset == R_RST_REASON_CLR)) {
++        if (size != 4 || (byte_offset & 3)) {
++            error_report("md-sim: unsupported reset-reason write size%u at0x%"
++                         HWADDR_PRIx, size, byte_offset);
++            qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++            return;
++        }
++        /* RST_REASON is hardware-owned; writes do not modify it. */
++        if (offset == R_RST_REASON) {
++            return;
++        }
++        if (s->regs[R_LOCKSTA]) {
++            qemu_log_mask(LOG_GUEST_ERROR,
++                          "SCLR registers are locked. Unlock them first\n");
++            return;
++        }
++        if (val & 1) {
++            s->regs[R_RST_REASON] = 0;
++        }
++        return;
++    }
++
++    if (!zynq_slcr_check_offset(offset, false) &&
++        !(s->md_rom_reference && offset == R_GPIOB_CFG_LVTTL)) {
+         qemu_log_mask(LOG_GUEST_ERROR, "zynq_slcr: Invalid write access to "
+                       "addr %" HWADDR_PRIx "\n", offset * 4);
+         return;
+@@ -659,6 +720,17 @@
+                       "SCLR registers are locked. Unlock them first\n");
+         return;
+     }
++    if (s->md_rom_reference && offset == R_GPIOB_CFG_LVTTL) {
++        if (size != 4 || (byte_offset & 3)) {
++            error_report("md-sim: unsupported LVTTL write size%u at0x%"
++                         HWADDR_PRIx, size, byte_offset);
++            qemu_system_vmstop_request(RUN_STATE_INTERNAL_ERROR);
++            return;
++        }
++        /* UG585v1.0p1516: bits31:28 read zero and ignore writes. */
++        s->regs[offset] = val & 0x0fffffff;
++        return;
++    }
+     if (s->md_cpu_control && offset == R_A9_CPU_RST_CTRL) {
+         unsigned old = s->regs[offset];
+         for (unsigned n = 0; n < 2; n++) {
+@@ -671,6 +743,14 @@
              }
          }
-+    }
+     }
 +    if (s->md_rom_reference && offset == R_OCM_CFG) {
 +        if (size != 4 || (byte_offset & 3) || (val & ~0xfull)) {
 +            error_report("md-sim: unsupported ROM OCM configuration0x%" PRIx64, val);
@@ -230,10 +330,34 @@
 +            return;
 +        }
 +        qemu_set_irq(s->md_rom_ocm, val);
-     }
++    }
      s->regs[offset] = val;
  
-@@ -738,6 +752,7 @@
+     switch (offset) {
+@@ -679,6 +759,9 @@
+         break;
+     case R_PSS_RST_CTRL:
+         if (FIELD_EX32(val, PSS_RST_CTRL, SOFT_RST)) {
++            if (s->md_rom_reference) {
++                s->regs[R_RST_REASON] |= 1u << 3; /* SLC_RST */
++            }
+             qemu_system_reset_request(SHUTDOWN_CAUSE_GUEST_RESET);
+         }
+         break;
+@@ -724,6 +807,12 @@
+ {
+     ZynqSLCRState *s = ZYNQ_SLCR(dev);
+ 
++    if (s->md_rom_reference) {
++        /* A newly constructed reference device represents power-on. The
++         * existing migrated register array carries later persistent state. */
++        s->regs[R_RST_REASON] = 1u << 6; /* POR */
++        s->regs[R_REBOOT_STATUS] = 0;
++    }
+     if (s->boot_mode > 0xF) {
+         error_setg(errp, "Invalid boot mode %d specified", s->boot_mode);
+     }
+@@ -738,6 +827,7 @@
      sysbus_init_mmio(SYS_BUS_DEVICE(obj), &s->iomem);
  
      qdev_init_clocks(DEVICE(obj), zynq_slcr_clocks);
@@ -241,12 +365,22 @@
      for (unsigned n = 0; n < 4; n++) {
          g_autofree char *name = g_strdup_printf("fclk%u", n);
          s->fclk[n] = qdev_init_clock_out(DEVICE(obj), name);
-@@ -762,6 +777,7 @@
+@@ -762,6 +852,7 @@
  static const Property zynq_slcr_props[] = {
      DEFINE_PROP_UINT8("boot-mode", ZynqSLCRState, boot_mode, 1),
      DEFINE_PROP_BOOL("md-cpu-control", ZynqSLCRState, md_cpu_control, false),
 +    DEFINE_PROP_BOOL("md-rom-reference", ZynqSLCRState, md_rom_reference, false),
      DEFINE_PROP_UINT32("md-pss-idcode", ZynqSLCRState, md_pss_idcode, 0),
+ };
+ 
+--- a/include/hw/arm/xilinx_zynq.h
++++ b/include/hw/arm/xilinx_zynq.h
+@@ -26,6 +26,7 @@
+     Clock *ps_clk;
+     ARMCPU *cpu[ZYNQ_MAX_CPUS];
+     uint8_t boot_mode;
++    bool md_bootrom_reference;
+     struct arm_boot_info bootinfo;
  };
  
 --- a/hw/arm/trace-events

@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-2.0-or-later */
-/* Icarus VPI callback adapter. State, process ownership and evidence are Rust.
+/* Existing HDL backend VPI callback adapter. State, process ownership and evidence are Rust.
  * The original vpi_user.h is a required hashed build input. This module must
  * run only as an owned child of the bounded Rust transport, on inherited fd3.
  * Blocking I/O occurs at read-only synchronization, never in an HDL task.
@@ -10,6 +10,7 @@
 #include <errno.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
@@ -47,8 +48,15 @@ static void fail(const char *reason)
                          (unsigned long long)sequence,
                          (unsigned long long)now_ps(), reason);
     failed = 1;
+#ifdef MD_SIM_CVC
+    /* CVC's vpiFinish argument is a diagnostic level, not an exit status.
+     * Preserve this owned process failure and its diagnostic explicitly. */
+    fflush(NULL);
+    exit(1);
+#else
     vpip_set_return_value(1);
     vpi_control(vpiFinish, 1);
+#endif
 }
 static int transfer(void *data, size_t length, int writing)
 {
@@ -287,11 +295,11 @@ static PLI_INT32 complete(PLI_BYTE8 *unused)
     schedule(cbReadOnlySynch, 0, completed);
     return 0;
 }
-static void register_tasks(void)
+void mdsim_live_bootstrap(void)
 {
     s_vpi_systf_data init = { .type = vpiSysTask, .tfname = "$mdsim_init", .calltf = initialize };
     s_vpi_systf_data done = { .type = vpiSysTask, .tfname = "$mdsim_complete", .calltf = complete };
     vpi_register_systf(&init);
     vpi_register_systf(&done);
 }
-void (*vlog_startup_routines[])(void) = { register_tasks, NULL };
+void (*vlog_startup_routines[])(void) = { mdsim_live_bootstrap, NULL };
