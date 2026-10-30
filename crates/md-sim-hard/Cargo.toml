@@ -1,0 +1,17 @@
+[package]
+name = "md-sim-hard"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Hard-mode tools: compare the rebuilt S9 FPGA circuit with the Rust S9IO model."
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+sha2.workspace = true
+hex.workspace = true
+flate2 = "=1.1.9"
+tar = "=0.4.45"
+md-sim-firmware = { path = "../md-sim-firmware" }

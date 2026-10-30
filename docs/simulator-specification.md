@@ -796,6 +796,10 @@ For G4, classify absent native UI as `not-applicable` only when the target is do
 A missing or unbootable UI from firmware that should have one is `blocked` or `fail`.
 For G6, direct kernel boot cannot pass tests for the omitted boot ROM or bootloader path.
 For G7/G8, supplier headline specifications alone are insufficient.
+Track note, 30 October 2026: no hardware access is available. Hard mode
+compares G7/G8 with file-based ground truth and records the source and
+confidence of each value. Easy mode records G7/G8 as `not-applicable` for
+pool testing. See [the track rules](tracks.md).
 
 Required suites:
 

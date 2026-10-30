@@ -7,6 +7,14 @@ The collection date is 19 October 2026.
 Read [the current counts](reports/statistics.json) for the build time and download status.
 A queued file is not a downloaded file.
 
+## Work tracks: easy mode and hard mode
+
+Since 30 October 2026, simulator work runs in two separate tracks.
+Easy mode runs each miner's real firmware, to test a mining pool later.
+Hard mode builds faithful hardware models from files only, with no hardware access.
+Read [the track rules](docs/tracks.md), the [easy-mode guide](docs/easy-mode.md) and the [hard-mode guide](docs/hard-mode.md).
+The hard-mode overnight FPGA comparison is ready. Its guide gives the start command.
+
 ## Simulator status and specification
 
 Read the [detailed simulator specification](docs/simulator-specification.md) for the system to build.

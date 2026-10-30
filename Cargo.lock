@@ -414,6 +414,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "md-sim-hard"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "flate2",
+ "hex",
+ "md-sim-firmware",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tar",
+]
+
+[[package]]
 name = "md-sim-mining"
 version = "0.1.0"
 dependencies = [

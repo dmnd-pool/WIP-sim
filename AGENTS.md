@@ -8,6 +8,13 @@
 - Rust components provide frozen catalogue import, strict coverage accounting, functional hashing, independent verification, and isolated process primitives. The archived cgminer source fixture and original S9 firmware in an adapted reference environment produce Core-accepted regtest blocks. Neither is an exact physical target. Original-board, per-target, dashboard, remote, and full-matrix completion gates remain open. See the README and `work/simulator/progress.md`.
 - Use Rust first for new simulator code, including the CLI, coordinator, worker, resolver, pool, and device models. Use C second, where backend integration or an existing component requires it. Use another language only when necessary and document the reason. Retain useful existing catalogue tools and upstream firmware without an unnecessary rewrite.
 
+## Work tracks
+
+- Simulator work runs in two tracks: easy mode (real firmware, for pool testing) and hard mode (faithful hardware from files only). Read [the track rules](docs/tracks.md) and your track's `work/<track>/handoff.md` first. These replace the old exact-S9 milestone 2 and the checkpoint-518 next actions.
+- Never use hardware access: no captures, measurements, scans, flashing, or purchases.
+- Edit only your track's paths. Commit only your own paths with `git commit -m "..." -- <paths>`. Build with `CARGO_TARGET_DIR=work/<track>/target`.
+- Run long or repeated jobs as scripts outside the session. Read their JSON summaries, not raw logs.
+
 ## Writing and implementation
 
 - Use ASD-STE100 writing rules for documentation and responses. Use short sentences and established words. Define technical terms before use. Do not claim formal conformance without an audit.

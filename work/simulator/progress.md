@@ -1,5 +1,9 @@
 # Simulator implementation checkpoint
 
+**30 October 2026:** work now runs in two tracks. Start from
+[the track rules](../../docs/tracks.md) and the handoff of your track. This
+file is history.
+
 Status: **incomplete**. Started 19 October 2026. Current checkpoint: v11.
 
 Current priority, confirmed28 October: complete exact S9 milestone2 first.

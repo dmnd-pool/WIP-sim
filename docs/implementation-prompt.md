@@ -1,5 +1,9 @@
 # Implementation task: Bitcoin ASIC simulator
 
+**Scope note, 30 October 2026:** work runs in two tracks. See
+[the track rules](tracks.md). The completion rules below apply to the final
+full specification only, not to track milestones. Do not use hardware access.
+
 Implement the simulator in this repository. Do the work, run it, test it, review it, and fix it.
 This is an implementation task. A plan, scaffold, catalogue, mock service, or first working target is not the requested final result.
 

@@ -41,6 +41,13 @@ __pycache__/
 # Run data, disks, downloaded tools and credentials stay local. Allow only
 # durable notes, compact authored reports, paused source work and check logs.
 /work/*
+# Track notes only. Track run data and build directories stay local.
+!/work/hard/
+/work/hard/*
+!/work/hard/*.md
+!/work/easy/
+/work/easy/*
+!/work/easy/*.md
 !/work/simulator/
 /work/simulator/*
 !/work/simulator/*.md

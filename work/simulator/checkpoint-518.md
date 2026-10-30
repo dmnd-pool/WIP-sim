@@ -1,5 +1,8 @@
 # Paused S9 checkpoint518
 
+**30 October 2026:** the next actions in this file are replaced by
+[the hard-mode handoff](../hard/handoff.md). Keep this file as history.
+
 The user requested this checkpoint because the weekly allowance is low.
 All active component runs finished. No new selected CVC run started after
 that request. Work is paused after the final checks and Git commit.

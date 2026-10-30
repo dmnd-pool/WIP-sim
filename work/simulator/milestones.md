@@ -1,5 +1,10 @@
 # Simulator milestones
 
+**30 October 2026:** milestone 2 below is replaced. Work now runs in two
+tracks. See [the track rules](../../docs/tracks.md), the
+[hard-mode milestones](../hard/milestones.md) and the
+[easy-mode milestones](../easy/milestones.md). The text below is history.
+
 The full specification remains the project goal. No exact physical target has
 passed all gates. The frozen matrix still has 79,599 rows and zero full
 exact-target passes.
